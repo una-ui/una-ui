@@ -7,12 +7,12 @@
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/phojie",
-  "homepage": "https://github.com/phojie/jieui#readme",
+  "homepage": "https://github.com/nexvelt/jieui#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phojie/jieui.git"
+    "url": "git+https://github.com/nexvelt/jieui.git"
   },
-  "bugs": "https://github.com/phojie/jieui/issues",
+  "bugs": "https://github.com/nexvelt/jieui/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
