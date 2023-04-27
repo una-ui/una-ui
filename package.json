@@ -6,13 +6,13 @@
   "description": "A Vue 3 UI library built with Vite, TypeScript, and Uno CSS.",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/nexvelt",
-  "homepage": "https://github.com/nexvelt/jieui#readme",
+  "funding": "https://github.com/sponsors/phojie",
+  "homepage": "https://github.com/phojie/jieui#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nexvelt/jieui.git"
+    "url": "git+https://github.com/phojie/jieui.git"
   },
-  "bugs": "https://github.com/nexvelt/jieui/issues",
+  "bugs": "https://github.com/phojie/jieui/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
