@@ -10,9 +10,9 @@
   "homepage": "https://jieui.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phojie/jieui.git"
+    "url": "git+https://github.com/nexvelt/jie-ui.git"
   },
-  "bugs": "https://github.com/phojie/jieui/issues",
+  "bugs": "https://github.com/nexvelt/jie-ui/issues",
   "keywords": [
     "design-system",
     "tailwindcss",
