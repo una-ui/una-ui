@@ -44,7 +44,8 @@
     "release": "bumpp && npm publish",
     "start": "esno src/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "clear": "rimraf dist"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
