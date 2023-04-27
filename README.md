@@ -1,11 +1,13 @@
 # JIE-UI
 
-[![NPM version](https://img.shields.io/npm/v/jieui?color=a1b858&label=)](https://www.npmjs.com/package/jieui)
+⚠️ This project is still under development
 
-## Sponsors
+<!-- [![NPM version](https://img.shields.io/npm/v/jieui?color=a1b858&label=)](https://www.npmjs.com/package/jieui) -->
 
-<p align="center">
-</p>
+<!-- ## Sponsors -->
+
+<!-- <p align="center">
+</p> -->
 
 ## License
 
