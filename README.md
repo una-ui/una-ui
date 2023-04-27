@@ -1,4 +1,4 @@
-# 🌼 JIE-UI
+# 🌼 JIE UI
 
 ⚠️ This project is still under development
 
