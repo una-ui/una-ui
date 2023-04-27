@@ -7,13 +7,27 @@
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/phojie",
-  "homepage": "https://github.com/phojie/jieui#readme",
+  "homepage": "https://jieui.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/phojie/jieui.git"
   },
   "bugs": "https://github.com/phojie/jieui/issues",
-  "keywords": [],
+  "keywords": [
+    "design-system",
+    "tailwindcss",
+    "unocss",
+    "components",
+    "ui-library",
+    "component",
+    "framework",
+    "tailwind",
+    "theming",
+    "postcss",
+    "design",
+    "css",
+    "ui"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
