@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "JieUI"
+  name: "jie UI"
   text: "A Vue 3 UI library built with Vite, Typescript, Uno CSS"
   tagline: My great project tagline
   actions:

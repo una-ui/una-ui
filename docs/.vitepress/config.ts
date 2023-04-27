@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'jie UI',
+  title: 'jieUI',
   description: 'A Vue 3 UI library built with Vite, Typescript, Uno CSS',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
