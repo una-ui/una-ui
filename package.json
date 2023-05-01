@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "rimraf packages/*/{dist,es,lib} && pnpm run build:packages",
+    "build": "echo 'No build script defined'",
     "build:packages": "nr --recursive --parallel prepack",
     "package:nuxt": "nr --filter @nexvelt/ui-nuxt",
     "dev": "nr --recursive --parallel dev",
