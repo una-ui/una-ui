@@ -12,6 +12,6 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true
-  },
-  "extends": "./packages/nuxt/playground/.nuxt/tsconfig.json"
+  }
+  // "extends": "./packages/nuxt/playground/.nuxt/tsconfig.json"
 }
