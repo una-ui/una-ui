@@ -8,7 +8,7 @@
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/phojie",
-  "homepage": "https://jieui.com",
+  "homepage": "https://ui.nexvelt.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nexvelt/nexvelt-ui.git"
@@ -38,10 +38,7 @@
     "start": "",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "clear": "rimraf packages/*/{dist,es,lib}",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "clear": "rimraf packages/*/{dist,es,lib}"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
@@ -54,9 +51,6 @@
     "rimraf": "^4.4.1",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.0.4",
-    "unbuild": "^1.2.1",
-    "vite": "^4.3.3",
-    "vitepress": "1.0.0-alpha.74",
     "vitest": "^0.29.8"
   },
   "simple-git-hooks": {
