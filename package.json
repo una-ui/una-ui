@@ -32,9 +32,10 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "rimraf packages/*/{dist,es,lib} && pnpm run build:packages",
-    "build:packages": "echo 'No build:packages script defined'",
-    "dev": "echo 'No dev script defined'",
+    "build:packages": "echo 'No build:packages script defined -eg nr -r publish'",
+    "dev": "nr --recursive --parallel dev",
     "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "release": "bumpp package.json packages/**/package.json",
     "start": "echo 'No start script defined'",
     "test": "vitest",
