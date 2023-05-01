@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "rimraf packages/*/{dist,es,lib} &&",
+    "build": "rimraf packages/*/{dist,es,lib}",
     "dev": "",
     "lint": "eslint .",
     "release": "bumpp package.json packages/**/package.json",
