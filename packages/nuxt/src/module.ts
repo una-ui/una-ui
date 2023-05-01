@@ -1,18 +1,27 @@
-import { createResolver, defineNuxtModule } from '@nuxt/kit'
+import { addImportsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
-export interface ModuleOptions { }
+export interface ModuleOptions {
+  activate: boolean
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: '@nexvelt/ui-nuxt',
-    configKey: 'myModule',
+    configKey: 'nexveltUi',
   },
   // Default configuration options of the Nuxt module
-  defaults: {},
+  defaults: {
+    activate: true,
+  },
   setup() {
     // options, nuxt
 
-    const resolver = createResolver(import.meta.url)
+    const { resolve } = createResolver(import.meta.url)
+
+    // add composables
+    addImportsDir(resolve('runtime/composables/'))
+
+    //
   },
 })
