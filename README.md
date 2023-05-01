@@ -1,4 +1,4 @@
-# 🌼 JIE UI
+# 🌼 Nexvelt-UI
 
 ⚠️ This project is still under development
 

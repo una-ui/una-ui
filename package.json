@@ -1,7 +1,8 @@
 {
-  "name": "@nexvelt/jie-ui",
+  "name": "@nexvelt/ui-monorepo",
   "type": "module",
-  "version": "0.0.1-beta.0.1",
+  "version": "0.0.0",
+  "private": true,
   "packageManager": "pnpm@8.3.1",
   "description": "A Vue 3 UI library built with Vite, TypeScript, and Uno CSS.",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
@@ -10,9 +11,9 @@
   "homepage": "https://jieui.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nexvelt/jie-ui.git"
+    "url": "git+https://github.com/nexvelt/nexvelt-ui.git"
   },
-  "bugs": "https://github.com/nexvelt/jie-ui/issues",
+  "bugs": "https://github.com/nexvelt/nexvelt-ui/issues",
   "keywords": [
     "design-system",
     "tailwindcss",
@@ -28,38 +29,16 @@
     "css",
     "ui"
   ],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./dist/*",
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
+    "preinstall": "npx only-allow pnpm",
+    "build": "rimraf packages/*/{dist,es,lib} &&",
+    "dev": "",
     "lint": "eslint .",
-    "prepublishOnly": "nr build",
-    "release": "bumpp && npm publish --access=public",
-    "start": "esno src/index.ts",
+    "release": "bumpp package.json packages/**/package.json",
+    "start": "",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "clear": "rimraf dist",
+    "clear": "rimraf packages/*/{dist,es,lib}",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
@@ -67,11 +46,9 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
     "@antfu/ni": "^0.21.3",
-    "@antfu/utils": "^0.7.2",
     "@types/node": "^18.16.1",
     "bumpp": "^9.1.0",
     "eslint": "^8.39.0",
-    "esno": "^0.16.3",
     "lint-staged": "^13.2.2",
     "pnpm": "^8.3.1",
     "rimraf": "^4.4.1",
