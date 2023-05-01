@@ -33,6 +33,7 @@
     "preinstall": "npx only-allow pnpm",
     "build": "rimraf packages/*/{dist,es,lib} && pnpm run build:packages",
     "build:packages": "echo 'No build:packages script defined -eg nr -r publish'",
+    "package:nuxt": "nr --filter @nexvelt/ui-nuxt",
     "dev": "nr --recursive --parallel dev",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
