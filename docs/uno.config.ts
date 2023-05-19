@@ -8,7 +8,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import nexveltPreset from '../packages/un-preset'
+import nexveltPreset from '../packages/preset'
 
 export default defineConfig({
 
@@ -40,6 +40,6 @@ export default defineConfig({
   ],
   configDeps: [
     // enable hmr to this files
-    '../packages/un-preset/index.ts',
+    '../packages/preset/index.ts',
   ],
 })
