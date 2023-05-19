@@ -1,0 +1,32 @@
+:root {
+  --c-primary: var(--c-primary-9);
+  --c-primary-active: var(--c-primary-10);
+  --c-primary-1: #fffcfc;
+  --c-primary-2: #fff8f7;
+  --c-primary-3: #fff0ee;
+  --c-primary-4: #ffe6e2;
+  --c-primary-5: #fdd8d3;
+  --c-primary-6: #fac7be;
+  --c-primary-7: #f3b0a2;
+  --c-primary-8: #ea9280;
+  --c-primary-9: #e54d2e;
+  --c-primary-10: #db4324;
+  --c-primary-11: #ca3214;
+  --c-primary-12: #341711;
+
+  --c-dark-primary: var(--c-dark-primary-9);
+  --c-dark-primary-active: var(--c-dark-primary-10);
+  --c-dark-primary-1: #1d1412;
+  --c-dark-primary-2: #2a1410;
+  --c-dark-primary-3: #3b1813;
+  --c-dark-primary-4: #481a14;
+  --c-dark-primary-5: #541c15;
+  --c-dark-primary-6: #652016;
+  --c-dark-primary-7: #7f2315;
+  --c-dark-primary-8: #a42a12;
+  --c-dark-primary-9: #e54d2e;
+  --c-dark-primary-10: #ec5e41;
+  --c-dark-primary-11: #f16a50;
+  --c-dark-primary-12: #feefec;
+}
+

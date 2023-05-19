@@ -1,0 +1,35 @@
+:root {
+  --c-bg-selection: var(--c-base-5);
+
+  --color-tester: 255, 115, 179;
+}
+
+.dark {
+  --c-primary-1: var(--c-dark-primary-1);
+  --c-primary-2: var(--c-dark-primary-2);
+  --c-primary-3: var(--c-dark-primary-3);
+  --c-primary-4: var(--c-dark-primary-4);
+  --c-primary-5: var(--c-dark-primary-5);
+  --c-primary-6: var(--c-dark-primary-6);
+  --c-primary-7: var(--c-dark-primary-7);
+  --c-primary-8: var(--c-dark-primary-8);
+  --c-primary-9: var(--c-dark-primary-9);
+  --c-primary-10: var(--c-dark-primary-10);
+  --c-primary-11: var(--c-dark-primary-11);
+  --c-primary-12: var(--c-dark-primary-12);
+
+  --c-base-1: var(--c-dark-base-1);
+  --c-base-2: var(--c-dark-base-2);
+  --c-base-3: var(--c-dark-base-3);
+  --c-base-4: var(--c-dark-base-4);
+  --c-base-5: var(--c-dark-base-5);
+  --c-base-6: var(--c-dark-base-6);
+  --c-base-7: var(--c-dark-base-7);
+  --c-base-8: var(--c-dark-base-8);
+  --c-base-9: var(--c-dark-base-9);
+  --c-base-10: var(--c-dark-base-10);
+  --c-base-11: var(--c-dark-base-11);
+  --c-base-12: var(--c-dark-base-12);
+
+}
+

@@ -6,7 +6,7 @@
     "source.fixAll.eslint": true
   },
   "files.exclude": {
-    "**/.git": false,
+    "**/.git": true,
     "**/.svn": false,
     "**/.hg": false,
     "**/CVS": false,

@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "echo 'No build script defined'",
+    "build": "rimraf packages/*/dist && esno scripts/copy-files.ts && pnpm -r --filter=./packages/* run build && pnpm -r run build-post",
     "build:packages": "nr --recursive --parallel prepack",
     "package:nuxt": "nr --filter @nexvelt/ui-nuxt",
     "dev": "nr --recursive --parallel dev",
@@ -41,7 +41,8 @@
     "start": "echo 'No start script defined'",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "clear": "rimraf packages/*/{dist,es,lib}"
+    "clear": "rimraf packages/*/{dist,es,lib}",
+    "stub": "nr -r --filter=./packages/* --parallel run stub"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
@@ -50,10 +51,11 @@
     "bumpp": "^9.1.0",
     "eslint": "^8.39.0",
     "lint-staged": "^13.2.2",
-    "pnpm": "^8.3.1",
     "rimraf": "^4.4.1",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.0.4",
+    "unbuild": "^1.2.1",
+    "unocss": "^0.51.13",
     "vitest": "^0.29.8"
   },
   "simple-git-hooks": {
