@@ -11,9 +11,9 @@
   "homepage": "https://ui.nexvelt.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nexvelt/nexvelt-ui.git"
+    "url": "git+https://github.com/nexvelt/ui.git"
   },
-  "bugs": "https://github.com/nexvelt/nexvelt-ui/issues",
+  "bugs": "https://github.com/nexvelt/ui/issues",
   "keywords": [
     "design-system",
     "tailwindcss",
