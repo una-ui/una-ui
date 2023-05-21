@@ -16,6 +16,6 @@ export default defineConfig({
     transformerVariantGroup(),
   ],
   configDeps: [
-    // '../src/index.ts',
+    //
   ],
 })
