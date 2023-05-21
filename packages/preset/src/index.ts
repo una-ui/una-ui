@@ -1,9 +1,11 @@
 import type { Preset } from 'unocss'
+import { theme } from './theme'
 import type { presetNexveltOptions } from './types'
 
 export default function presetNexvelt(options: presetNexveltOptions = {}): Preset {
   return {
     name: '@nexvelt/ui-preset',
+    theme,
     shortcuts: [
       {
         'bg-inverted': 'bg-$c-gray-12',
@@ -29,43 +31,6 @@ export default function presetNexvelt(options: presetNexveltOptions = {}): Prese
         'btn-outline': 'rounded-md btn-md btn-base text-$c-primary border border-$c-primary hover:bg-$c-primary hover:text-white',
       },
     ],
-    theme: {
-      colors: {
-        primary: {
-        // TODO convert to regex
-          // DEFAULT: 'rgba(var(--c-primary-9) / <alpha-value>)',
-          DEFAULT: 'var(--c-primary)',
-          active: 'rgba(var(--c-primary-10) / <alpha-value>)',
-          1: 'rgba(var(--c-primary-1) / <alpha-value>)',
-          2: 'rgba(var(--c-primary-2) / <alpha-value>)',
-          3: 'rgba(var(--c-primary-3) / <alpha-value>)',
-          4: 'rgba(var(--c-primary-4) / <alpha-value>)',
-          5: 'rgba(var(--c-primary-5) / <alpha-value>)',
-          6: 'rgba(var(--c-primary-6) / <alpha-value>)',
-          7: 'rgba(var(--c-primary-7) / <alpha-value>)',
-          8: 'rgba(var(--c-primary-8) / <alpha-value>)',
-          9: 'rgba(var(--c-primary-9) / <alpha-value>)',
-          10: 'rgba(var(--c-primary-10) / <alpha-value>)',
-          11: 'rgba(var(--c-primary-11) / <alpha-value>)',
-          12: 'rgba(var(--c-primary-12) / <alpha-value>)',
-        },
-        gray: {
-          DEFAULT: 'var(--c-gray)',
-          active: 'var(--c-gray-active)',
-          1: 'var(--c-gray-1)',
-          2: 'var(--c-gray-2)',
-          3: 'var(--c-gray-3)',
-          4: 'var(--c-gray-4)',
-          5: 'var(--c-gray-5)',
-          6: 'var(--c-gray-6)',
-          7: 'var(--c-gray-7)',
-          8: 'var(--c-gray-8)',
-          9: 'var(--c-gray-9)',
-          10: 'var(--c-gray-10)',
-          11: 'var(--c-gray-11)',
-          12: 'var(--c-gray-12)',
-        },
-      },
-    },
+
   }
 }

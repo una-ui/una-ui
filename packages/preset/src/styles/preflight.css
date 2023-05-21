@@ -1,7 +1,7 @@
 html {
   font-size: var(--font-size, 15px);
   background-color: var(--c-gray);
-  color: var(--c-gray-12);
+  color: var(--c-gray-inverted);
 }
 
 ::-moz-selection {

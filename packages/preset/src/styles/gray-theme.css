@@ -1,6 +1,6 @@
 :root {
   --c-gray: var(--c-gray-1);
-  --c-gray-inverse: var(--c-dark-gray-12);
+  --c-gray-inverted: var(--c-gray-12);
 
   --c-gray-1: #fcfdfc;
   --c-gray-2: #f8faf8;
@@ -15,8 +15,8 @@
   --c-gray-11: #6b716a;
   --c-gray-12: #141e12;
 
-  --c-dark-gray: var(--c-dark-gray-12); 
-  --c-gray-inverse: var(--c-dark-gray-1);
+  --c-dark-gray: var(--c-dark-gray-1); 
+  --c-dark-gray-inverted: var(--c-dark-gray-12);
   
   --c-dark-gray-1: #151715;
   --c-dark-gray-2: #1a1d19;

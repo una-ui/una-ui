@@ -8,16 +8,14 @@ import presetNexvelt from '@nexvelt/ui-preset'
 
 export default defineConfig({
   presets: [
-    presetNexvelt(),
     presetUno(),
     presetAttributify(),
+    presetNexvelt(),
   ],
   transformers: [
     transformerVariantGroup(),
   ],
   configDeps: [
     // '../src/index.ts',
-    '@nexvelt/ui-preset/dist/style.css',
-    '@nexvelt/ui-preset/dist/index.ts',
   ],
 })
