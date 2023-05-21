@@ -1,0 +1,34 @@
+html {
+  font-size: var(--font-size, 15px);
+  background-color: var(--c-gray);
+  color: var(--c-gray-12);
+}
+
+::-moz-selection {
+  background: var(--c-bg-selection);
+}
+
+::selection {
+  background: var(--c-bg-selection);
+}
+
+/* Force vertical scrollbar to be always visible to avoid layout shift while loading the content */
+body {
+  overflow-y: auto; /* scroll */
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#__nuxt {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+

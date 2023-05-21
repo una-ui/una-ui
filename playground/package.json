@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "play": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
