@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 // relative to scripts directory
 const destinations = [
-  ['../LICENSE', '../packages/vscode/LICENSE'],
+  ['../README.md', '../packages/nuxt/README.md'],
   ['../README.md', '../packages/preset/README.md'],
 ]
 

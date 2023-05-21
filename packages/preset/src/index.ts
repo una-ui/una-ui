@@ -13,14 +13,14 @@ export default function preset(options?: nexveltPresetOptions): Preset {
         'text-inverted': 'text-$c-base-1',
 
         // input-base
-        'input-base-focus': 'focus:(ring-2 ring-inset ring-primary-10)',
+        'input-base-focus': 'focus:(ring-2 ring-inset ring-$c-primary-10)',
         'input-base-disabled': 'disabled:pointer-events-none disabled:bg-base-9/5 disabled:text-base-9/50',
         'input-base': 'input-base-focus input-base-disabled sm:(text-sm leading-6) placeholder:(font-light text-base-10) block outline-none ring-base-7 ring-1 ring-inset px-3 py-1.5 rounded-md w-full shadow-sm bg-transparent',
         // 'input-error': 'border-$c-error focus:(outline-offset-0 outline-$c-error outline-1px)',
 
         // btn-default
         'btn-disabled': 'disabled:pointer-events-none disabled:bg-base-4 disabled:text-base-9',
-        'btn-base': 'btn-disabled cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-active',
+        'btn-base': 'btn-disabled cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-$c-primary-active',
 
         // btn-size
         'btn-sm': 'px-2 py-1 text-xs',
@@ -28,8 +28,8 @@ export default function preset(options?: nexveltPresetOptions): Preset {
         'btn-lg': 'px-6 py-3 text-base',
 
         // btn-type
-        'btn-solid': 'rounded-md btn-md btn-base bg-primary font-semibold text-white shadow-sm hover:bg-primary-active focus-visible:outline',
-        'btn-outline': 'rounded-md btn-md btn-base text-primary border border-primary hover:bg-primary hover:text-white',
+        'btn-solid': 'rounded-md btn-md btn-base bg-$c-primary font-semibold text-white shadow-sm hover:bg-$c-primary-active focus-visible:outline',
+        'btn-outline': 'rounded-md btn-md btn-base text-$c-primary border border-$c-primary hover:bg-$c-primary hover:text-white',
       },
     ],
     // theme: {
