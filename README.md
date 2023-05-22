@@ -2,7 +2,7 @@
 
 ⚠️ This project is still under development
 
-## 🚧 Todo
+## 📌 Todo
 
 - [x] Playground
 - [ ] Docs
