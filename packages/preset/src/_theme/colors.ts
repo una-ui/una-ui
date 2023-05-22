@@ -1,18 +1,17 @@
 import type { Theme } from './types'
+import radixColors from './radix-colors'
 
 export const colors = {
-  tomato: {
-    1: '#fffcfc',
-    2: '#fff8f7',
-    3: '#fff0ee',
-    4: '#ffe6e2',
-    5: '#fdd8d3',
-    6: '#fac7be',
-    7: '#f3b0a2',
-    8: '#ea9280',
-    9: '#e54d2e',
-    10: '#db4324',
-    11: '#ca3214',
-    12: '#341711',
-  },
+  inherit: 'inherit',
+  current: 'currentColor',
+  transparent: 'transparent',
+  black: '#000',
+  white: '#fff',
+  ...radixColors,
 } satisfies Theme['colors']
+
+// assign default color
+Object.values(colors as Required<Theme>['colors']).forEach((color) => {
+  if (typeof color !== 'string' && color !== undefined)
+    color.DEFAULT = color.DEFAULT || color[9] as string
+})

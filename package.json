@@ -43,12 +43,19 @@
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
-    "stub": "pnpm -r --filter=./packages/* --parallel run stub"
+    "stub": "pnpm -r --filter=./packages/* --parallel run stub",
+    "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\""
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "chroma-js": "^2.4.2",
+    "ignore-dependency-scripts": "^1.0.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
     "@antfu/ni": "^0.21.3",
     "@nexvelt/ui-preset": "workspace:^",
+    "@types/chroma-js": "^2.4.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.16.3",
     "@unocss/transformer-variant-group": "^0.51.13",
