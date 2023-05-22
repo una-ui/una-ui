@@ -18,7 +18,7 @@ export default defineBuildConfig({
     'mkdist:done': () => {
       const compiledSass = sass.compile('./src/index.scss', { style: 'compressed', loadPaths: ['./node_modules/'] })
       writeFileSync(
-        'dist/style.css',
+        'style.css',
         compiledSass.css,
         { encoding: 'utf-8' },
       )
