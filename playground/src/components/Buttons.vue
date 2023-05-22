@@ -1,10 +1,9 @@
 <script setup lang="ts">
-
+import Divider from './Divider.vue'
 </script>
 
 <template>
-  <div>
-    Buttons
+  <Divider title="Buttons">
     <div class="flex gap-2">
       <button class="btn-outline">
         btn-outline
@@ -14,5 +13,5 @@
         btn-solid
       </button>
     </div>
-  </div>
+  </Divider>
 </template>

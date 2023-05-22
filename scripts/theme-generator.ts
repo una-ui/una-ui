@@ -2,8 +2,8 @@ import chroma from 'chroma-js'
 import { colors } from './generate-themes'
 
 // write gray-theme.css
-const grayName = colors.mauve
-const grayDarkName = colors.mauveDark
+const grayName = colors.slate
+const grayDarkName = colors.slateDark
 const grayThemeLight = Object.entries(grayName).map(([name, color], key) => {
   return `--c-gray-${key + 1}: ${chroma(color).rgb()};`
 }).join(' ')

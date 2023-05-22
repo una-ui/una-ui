@@ -1,12 +1,11 @@
 <script setup lang="ts">
-
+import Divider from './Divider.vue'
 </script>
 
 <template>
-  <div>
-    Inputs
+  <Divider title="Inputs">
     <div class="flex gap2">
       <input type="text" class="input-base">
     </div>
-  </div>
+  </Divider>
 </template>
