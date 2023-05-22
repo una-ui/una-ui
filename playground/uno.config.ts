@@ -4,7 +4,9 @@ import {
   presetUno,
 } from 'unocss'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
-import presetNexvelt from '@nexvelt/ui-preset'
+
+// import presetNexvelt from '@nexvelt/ui-preset'
+import presetNexvelt from '../packages/preset/src/index'
 
 export default defineConfig({
   presets: [
@@ -16,6 +18,7 @@ export default defineConfig({
     transformerVariantGroup(),
   ],
   configDeps: [
-    //
+    '../packages/preset/src/index.ts',
+    '../packages/preset/src/style.css',
   ],
 })

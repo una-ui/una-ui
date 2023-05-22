@@ -1,5 +1,7 @@
 :root {
   --c-bg-selection: var(--c-gray-5);
+
+  --c-primary: var(--c-primary-9);
 }
 
 .dark {
@@ -16,8 +18,6 @@
   --c-primary-11: var(--c-dark-primary-11);
   --c-primary-12: var(--c-dark-primary-12);
 
-  --c-gray: var(--c-dark-gray);
-  --c-gray-inverted: var(--c-dark-gray-inverted);
   --c-gray-1: var(--c-dark-gray-1);
   --c-gray-2: var(--c-dark-gray-2);
   --c-gray-3: var(--c-dark-gray-3);

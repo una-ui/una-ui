@@ -1,7 +1,7 @@
 html {
   font-size: var(--font-size, 15px);
-  background-color: var(--c-gray);
-  color: var(--c-gray-inverted);
+  background-color: rgb(var(--c-gray-1));
+  color: rgb(var(--c-gray-12));
 }
 
 ::-moz-selection {
@@ -30,5 +30,4 @@ body,
 html.dark {
   color-scheme: dark;
 }
-
 
