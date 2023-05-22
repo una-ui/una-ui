@@ -2,12 +2,12 @@
 
 ⚠️ This project is still under development
 
-# 🚧 Todo
+## 🚧 Todo
 
-- [] Built-in preset
-- [] UI-Components
-- [] Vue3 / Vite plugins
-- [] Nuxt 3 modules
+- [ ] Built-in preset
+- [ ] UI-Components
+- [ ] Vue3 / Vite plugins
+- [ ] Nuxt 3 modules
 
 <!-- [![NPM version](https://img.shields.io/npm/v/jieui?color=a1b858&label=)](https://www.npmjs.com/package/@nexvelt) -->
 
@@ -16,6 +16,6 @@
 <!-- <p align="center">
 </p> -->
 
-## License
+## 🏛️ License
 
 [MIT](./LICENSE) License © 2023 [Phojie](https://github.com/phojie)
