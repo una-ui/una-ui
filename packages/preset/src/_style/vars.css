@@ -1,34 +1,6 @@
 :root {
-  --c-bg-selection: var(--c-gray-5);
+  --n-bg-selection: var(--n-gray-5);
 
-  --c-primary: var(--c-primary-9);
-}
-
-.dark {
-  --c-primary-1: var(--c-dark-primary-1);
-  --c-primary-2: var(--c-dark-primary-2);
-  --c-primary-3: var(--c-dark-primary-3);
-  --c-primary-4: var(--c-dark-primary-4);
-  --c-primary-5: var(--c-dark-primary-5);
-  --c-primary-6: var(--c-dark-primary-6);
-  --c-primary-7: var(--c-dark-primary-7);
-  --c-primary-8: var(--c-dark-primary-8);
-  --c-primary-9: var(--c-dark-primary-9);
-  --c-primary-10: var(--c-dark-primary-10);
-  --c-primary-11: var(--c-dark-primary-11);
-  --c-primary-12: var(--c-dark-primary-12);
-
-  --c-gray-1: var(--c-dark-gray-1);
-  --c-gray-2: var(--c-dark-gray-2);
-  --c-gray-3: var(--c-dark-gray-3);
-  --c-gray-4: var(--c-dark-gray-4);
-  --c-gray-5: var(--c-dark-gray-5);
-  --c-gray-6: var(--c-dark-gray-6);
-  --c-gray-7: var(--c-dark-gray-7);
-  --c-gray-8: var(--c-dark-gray-8);
-  --c-gray-9: var(--c-dark-gray-9);
-  --c-gray-10: var(--c-dark-gray-10);
-  --c-gray-11: var(--c-dark-gray-11);
-  --c-gray-12: var(--c-dark-gray-12);
+  --n-primary: var(--n-primary-9);
 }
 

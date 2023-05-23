@@ -1,8 +1,7 @@
 import type { Theme } from './types'
+import { gray, primary } from './default-colors'
 
 // import radixColors from './radix-colors'
-import grayColors from './gray-colors'
-import primaryColors from './primary-colors'
 
 export const colors = {
   inherit: 'inherit',
@@ -11,8 +10,8 @@ export const colors = {
   black: '#000',
   white: '#fff',
   // ...radixColors,
-  ...grayColors,
-  ...primaryColors,
+  ...gray,
+  ...primary,
 } satisfies Theme['colors']
 
 // assign default color

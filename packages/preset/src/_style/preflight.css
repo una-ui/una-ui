@@ -1,15 +1,15 @@
 html {
   font-size: var(--font-size, 15px);
-  background-color: rgb(var(--c-gray-1));
-  color: rgb(var(--c-gray-12));
+  background-color: rgb(var(--n-gray-1));
+  color: rgb(var(--n-gray-12));
 }
 
 ::-moz-selection {
-  background: var(--c-bg-selection);
+  background: rgb(var(--n-bg-selection));
 }
 
 ::selection {
-  background: var(--c-bg-selection);
+  background: rgb(var(--n-bg-selection));
 }
 
 /* Force vertical scrollbar to be always visible to avoid layout shift while loading the content */
@@ -30,4 +30,5 @@ body,
 html.dark {
   color-scheme: dark;
 }
+
 

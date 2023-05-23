@@ -27,7 +27,7 @@ export default function presetNexvelt(options: presetNexveltOptions = {}): Prese
 
         // btn-types
         'btn-solid': 'rounded-md btn-md btn-base bg-primary text-white shadow-sm hover:bg-primary-10 focus-visible:outline',
-        'btn-outline': 'rounded-md btn-md btn-base text-primary border border-primary hover:bg-primary hover:text-white',
+        'btn-outline': 'rounded-md btn-md btn-base text-primary border border-primary hover:bg-primary/15',
       },
     ],
     theme,

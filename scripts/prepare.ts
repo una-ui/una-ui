@@ -1,5 +1,5 @@
 import fs from 'fs-extra'
-import { grayColors, grayTheme, primaryColors, primaryTheme } from './theme-generator'
+import { grayColors, grayDarkTheme, grayTheme, primaryColors, primaryDarkTheme, primaryTheme } from './theme-generator'
 
 // const theme = Object.entries(colors).map(([name, color], key) => {
 //   return `${name}: ${
@@ -17,18 +17,10 @@ import { grayColors, grayTheme, primaryColors, primaryTheme } from './theme-gene
 //   `export default {\n${theme}}`,
 //   { encoding: 'utf-8' })
 
-await fs.writeFile('./packages/preset/src/_style/gray-theme.css',
-  `:root{${grayTheme}}`,
+await fs.writeFile('./packages/preset/src/_style/default-vars.css',
+  `:root{ ${primaryTheme} }\n:root{ ${grayTheme} }\n.dark{ ${primaryDarkTheme};${grayDarkTheme} }`,
   { encoding: 'utf-8' })
 
-await fs.writeFile('./packages/preset/src/_theme/gray-colors.ts',
-  `export default {gray:{${grayColors}}}`,
-  { encoding: 'utf-8' })
-
-await fs.writeFile('./packages/preset/src/_style/primary-theme.css',
-  `:root{${primaryTheme}}`,
-  { encoding: 'utf-8' })
-
-await fs.writeFile('./packages/preset/src/_theme/primary-colors.ts',
-  `export default {primary:{${primaryColors}}}`,
+await fs.writeFile('./packages/preset/src/_theme/default-colors.ts',
+  `export const primary = { primary: { ${primaryColors} } }\nexport const gray = { gray: { ${grayColors} } }\n`,
   { encoding: 'utf-8' })

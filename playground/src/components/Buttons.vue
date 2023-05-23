@@ -9,7 +9,7 @@ import Divider from './Divider.vue'
         btn-outline
       </button>
 
-      <button class="btn-solid animate-pulse">
+      <button class="btn-solid">
         btn-solid
       </button>
     </div>
