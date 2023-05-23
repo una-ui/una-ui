@@ -10,6 +10,8 @@ export default function presetNexvelt(options: presetNexveltOptions = {}): Prese
         'bg-inverted': 'bg-gray-12',
         'text-inverted': 'text-gray-1',
 
+        'label': 'block text-sm font-medium leading-6',
+
         // input-gray
         'input-base-focus': 'focus:(ring-2 ring-inset ring-primary-10)',
         'input-base-disabled': 'disabled:pointer-events-none disabled:bg-gray-9/5 disabled:text-gray-9/50',

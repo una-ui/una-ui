@@ -19,6 +19,6 @@ export default defineConfig({
   ],
   configDeps: [
     '../packages/preset/src/index.ts',
-    '../packages/preset/src/style.css',
+    '../packages/preset/style.css',
   ],
 })
