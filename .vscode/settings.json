@@ -17,6 +17,7 @@
   },
   "explorerExclude.backup": {},
   "unocss.root": [
+    "docs",
     "playground"
   ]
 }

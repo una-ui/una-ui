@@ -1,5 +1,5 @@
 import chroma from 'chroma-js'
-import { colors } from './generate-themes'
+import colors from './radix-colors'
 
 // write gray-theme.css
 const grayName = colors.slate

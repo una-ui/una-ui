@@ -1,13 +1,19 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    exclude: [
+      'vitepress',
+    ],
+  },
+  server: {
+    hmr: {
+      overlay: false,
+    },
+  },
   plugins: [
-    vue(),
-    UnoCSS({
-      configFile: '../uno.config.ts',
-    }),
+    UnoCSS(),
   ],
 })

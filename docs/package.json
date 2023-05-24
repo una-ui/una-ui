@@ -14,6 +14,7 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
+    "@nexvelt/ui-preset": "workspace:^",
     "vitepress": "1.0.0-beta.1"
   }
 }

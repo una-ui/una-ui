@@ -231,3 +231,5 @@ export const colors = {
   yellowDark,
   yellowDarkA,
 }
+
+export default colors

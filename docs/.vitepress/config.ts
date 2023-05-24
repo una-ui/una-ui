@@ -6,17 +6,18 @@ export default defineConfig({
   description: 'The next level UI',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/logo.svg',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
+      { text: 'Guide', link: '/guide/index' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Guide',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: 'Introduction', link: '/guide/' },
+          { text: 'Installation', link: '/guide/installation' },
         ],
       },
     ],

@@ -1,7 +1,10 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import Theme from 'vitepress/theme'
-import './style.css'
+import '@nexvelt/ui-preset/style.css'
+import './rainbow.css'
+import './vars.css'
+import 'virtual:uno.css'
 
 export default {
   ...Theme,
