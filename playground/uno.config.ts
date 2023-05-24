@@ -3,9 +3,8 @@ import {
   presetAttributify,
   presetIcons,
   presetUno,
+  transformerVariantGroup,
 } from 'unocss'
-import transformerVariantGroup from '@unocss/transformer-variant-group'
-
 import presetNexvelt from '@nexvelt/ui-preset'
 
 export default defineConfig({
@@ -17,5 +16,8 @@ export default defineConfig({
   ],
   transformers: [
     transformerVariantGroup(),
+  ],
+  configDeps: [
+    '@nexvelt/ui-preset',
   ],
 })
