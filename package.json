@@ -47,7 +47,7 @@
     "clear": "rimraf packages/*/{dist,es,lib}",
     "stub": "pnpm -r --filter=./packages/* --parallel run stub",
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\"",
-    "setup": "ignore-dependency-scripts \"esno scripts/setup.ts\""
+    "setup": "ignore-dependency-scripts \"esno scripts/setup.ts\" pnpm lint:fix"
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",

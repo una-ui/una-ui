@@ -3,8 +3,8 @@ import {
   presetAttributify,
   presetIcons,
   presetUno,
+  transformerVariantGroup,
 } from 'unocss'
-import transformerVariantGroup from '@unocss/transformer-variant-group'
 
 import presetNexvelt from '@nexvelt/ui-preset'
 
