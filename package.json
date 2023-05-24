@@ -33,7 +33,7 @@
     "preinstall": "npx only-allow pnpm",
     "build": "rimraf packages/*/dist && esno scripts/copy-files.ts && pnpm -r --filter=./packages/* run build && pnpm -r run build-post",
     "build:packages": "nr --recursive --parallel prepack",
-    "docs:deploy": "nr build && pnpm -C docs run docs:build",
+    "deploy": "nr build && pnpm -C docs run docs:build",
     "package:nuxt": "nr --filter @nexvelt/ui-nuxt",
     "dev": "nr --recursive --parallel dev",
     "play": "nr --filter @nexvelt/ui-playground play",
