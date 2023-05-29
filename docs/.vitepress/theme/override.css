@@ -3,14 +3,14 @@
   border-radius: 50% !important;
 }
 
-.dark .title {
+/* .dark .title {
   filter: drop-shadow(0 0 1mm var(--vp-c-brand-darker));
-}
+} */
 
-.title {
+/* .title {
   filter: drop-shadow(0 0 .2mm var(--vp-c-brand-lighter));
   padding-right: 0.5em;
-}
+} */
 
 .VPTeamPageTitle .title,.VPTeamPageSection .title {
   filter: none !important;

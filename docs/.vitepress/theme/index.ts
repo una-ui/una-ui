@@ -1,11 +1,13 @@
 // https://vitepress.dev/guide/custom-theme
 import { h, watch } from 'vue'
 import Theme from 'vitepress/theme'
-import '@nexvelt/ui-preset/style.css'
+
 import './rainbow.css'
 import './vars.css'
 import './override.css'
 import 'virtual:uno.css'
+
+// import '@nexvelt/ui-preset/style.css'
 
 import TeamMember from './components/TeamMember.vue'
 
