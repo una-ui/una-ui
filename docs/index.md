@@ -16,12 +16,12 @@ hero:
       text: Getting Started
       link: /guide/
     - theme: alt
-      text: Interactive Docs
-      link: https://NexveltUI.dev/interactive/
-      target: _blank
-    - theme: alt
       text: Playground
       link: https://NexveltUI.dev/play/
+      target: _blank
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/nexvelt/ui
       target: _blank
 
 features:
