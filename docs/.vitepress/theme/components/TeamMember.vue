@@ -12,7 +12,7 @@ import { sponsorMembers, teamMembers } from '../../contributors'
   <VPTeamPage class="mt-10">
     <VPTeamPageTitle>
       <template #title>
-        <span class="text-3xl">
+        <span class="text-3xl  px-10 border-t-solid border-gray-3 py-10">
           Meet The Team
         </span>
       </template>
@@ -29,7 +29,7 @@ import { sponsorMembers, teamMembers } from '../../contributors'
         NexveltUI is free and open source, made possible by wonderful sponsors.
       </template>
       <template #members>
-        <VPTeamMembers size="small" :members="sponsorMembers" />
+        <VPTeamMembers size="medium" :members="sponsorMembers" />
       </template>
     </VPTeamPageSection>
   </VPTeamPage>

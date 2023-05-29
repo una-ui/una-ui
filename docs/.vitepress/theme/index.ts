@@ -30,7 +30,7 @@ export default {
   },
 }
 
-// Speed up the rainbow animation on home page
+// Speed up the rainbow animation on home page (default is 10s)
 function updateteamMemberStyle(value: boolean) {
   if (value) {
     if (teamMemberStyle)
