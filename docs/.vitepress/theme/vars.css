@@ -9,7 +9,7 @@
 
  :root {
   --vp-c-bg: rgb(var(--n-gray-1));
-  --vp-c-text: rgb(var(--n-gray-11));
+  --vp-c-text: rgb(var(--n-gray-1));
   
   --vp-c-gutter: var(--vp-c-divider);
   --vp-code-block-bg: rgba(125,125,125,0.04);

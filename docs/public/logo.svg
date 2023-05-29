@@ -17,16 +17,17 @@
         clip-rule="nonzero" />
     </clipPath>
   </defs>
-  <!-- <g clip-path="url(#5c841748a6)">
+  <g clip-path="url(#5c841748a6)">
     <g clip-path="url(#252df25e52)">
       <g clip-path="url(#04e24f4ffd)">
         <path 
           id="circle"
+          fill="#000" 
           d="M 31.863281 94.8125 L 293.011719 46.96875 L 340.851562 308.117188 L 79.707031 355.957031 Z M 31.863281 94.8125 "
-          fill-opacity=".1" fill-rule="nonzero" />
+          fill-opacity="0" fill-rule="nonzero" />
       </g>
     </g>
-  </g> -->
+  </g>
   <g fill="#000000" fill-opacity="1">
     <g transform="translate(152.930231, 260.413412)">
       <g>

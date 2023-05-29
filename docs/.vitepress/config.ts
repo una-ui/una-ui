@@ -6,11 +6,10 @@ export default defineConfig({
   title: 'Nexvelt UI',
   description: 'The next level UI',
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    logo: {
-      light: '/logo.svg',
-      dark: '/logo-dark.svg',
-    },
+    // logo: {
+    //   light: '/logo.svg',
+    //   dark: '/logo-dark.svg',
+    // },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/index' },
@@ -29,5 +28,14 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/nexvelt/ui' },
     ],
+
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2023-present Phojie Rengel',
+    },
+  },
+
+  markdown: {
+    theme: 'one-dark-pro',
   },
 })
