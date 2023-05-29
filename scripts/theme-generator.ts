@@ -2,8 +2,8 @@ import chroma from 'chroma-js'
 import colors from './radix-colors'
 
 // write gray-theme.css
-const grayName = colors.mauve
-const grayDarkName = colors.mauveDark
+const grayName = colors.sand
+const grayDarkName = colors.sandDark
 const grayThemeLight = Object.entries(grayName).map(([name, color], key) => {
   return `--n-gray-${key + 1}: ${chroma(color).rgb()};`
 }).join(' ')
