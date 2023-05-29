@@ -27,7 +27,7 @@ hero:
 features:
   - icon: <span class="i-carbon-ibm-cloud-direct-link-1-dedicated-hosting"></span>
     title: Modern
-    details: "Built with Vue 3 and TypeScript and based on radix-ui colors"
+    details: "Built with Vue 3 and TypeScript and based on radix-ui perspective"
     link: /guide/
     linkText: Getting Started
   - icon: <span class="i-carbon-code"></span>
