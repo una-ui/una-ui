@@ -4,7 +4,11 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   lang: 'en-US',
   title: 'Nexvelt UI',
-  description: 'The next level UI',
+  description: 'The Next Level UI Technology.',
+
+  lastUpdated: true,
+  cleanUrls: true,
+
   themeConfig: {
     logo: {
       light: '/logo-solid.svg',
@@ -20,6 +24,13 @@ export default defineConfig({
         text: 'Guide',
         items: [
           { text: 'Introduction', link: '/guide/' },
+          { text: 'Installation', link: '/guide/installation' },
+        ],
+      },
+      {
+        text: 'Components',
+        items: [
+          { text: 'Alert', link: '/components/alert' },
           { text: 'Installation', link: '/guide/installation' },
         ],
       },
