@@ -53,39 +53,4 @@ features:
     details: "Aliasing or grouping utilities, dynamically"
     link: /config/shortcuts
     linkText: "Configuration and usage"
-  - icon: <span class="i-carbon:code"></span>
-    title: Attributify Mode
-    details: "Group utilities in attributes"
-    link: /presets/attributify
-    linkText: "@NexveltUI/preset-attributify"
-  - icon: <span class="i-carbon-face-wink hover:i-carbon-face-satisfied"></span>
-    title: Pure CSS Icons
-    details: "Use any icon as a single class"
-    link: /presets/icons 
-    linkText: "@NexveltUI/preset-icons"
-  - icon: <span class="i-carbon:group-objects"></span>
-    title: Variant Groups
-    details: "Shorthand for group utils with common prefixes"
-    link: /transformers/variant-group
-    linkText: "@NexveltUI/transformer-variant-group"
-  - icon: <span class="i-carbon:at"></span>
-    title: CSS Directives
-    details: "Reuse utils in CSS with @apply directive"
-    link: /transformers/directives
-    linkText: "@NexveltUI/transformer-directives"
-  - icon: <span class="i-carbon-tree-view-alt scale-x--100"></span>
-    title: Compilation Mode
-    details: "Synthesizes multiple classes into one at build time"
-    link: /transformers/compile-class
-    linkText: "@NexveltUI/transformer-compile-class"
-  - icon: <span class="i-carbon:inspection"></span>
-    title: Inspector
-    details: "Inspect and debug interactively"
-    link: /tools/inspector
-    linkText: "@NexveltUI/inspector"
-  - icon: <span class="i-carbon:executable-program"></span>
-    title: CDN Runtime Build
-    details: "Use NexveltUI with one line of CDN import"
-    link: /integrations/runtime
-    linkText: "@NexveltUI/runtime"
 ---
