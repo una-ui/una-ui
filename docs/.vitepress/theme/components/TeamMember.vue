@@ -9,10 +9,10 @@ import { sponsorMembers, teamMembers } from '../../contributors'
 </script>
 
 <template>
-  <VPTeamPage class="mt-10">
+  <VPTeamPage class="py-10 vp">
     <VPTeamPageTitle>
       <template #title>
-        <span class="text-3xl  px-10 border-t-solid border-gray-3 py-10">
+        <span class="text-3xl px-30 border-t-solid border-$vp-c-brand-light py-20">
           Meet The Team
         </span>
       </template>
@@ -20,7 +20,7 @@ import { sponsorMembers, teamMembers } from '../../contributors'
         NexveltUI is a community-driven project with people from all over the world.
       </template>
     </VPTeamPageTitle>
-    <VPTeamMembers size="small" :members="teamMembers" />
+    <VPTeamMembers size="small" class="vp-doc" :members="teamMembers" />
     <VPTeamPageSection>
       <template #title>
         Partners
@@ -29,7 +29,7 @@ import { sponsorMembers, teamMembers } from '../../contributors'
         NexveltUI is free and open source, made possible by wonderful sponsors.
       </template>
       <template #members>
-        <VPTeamMembers size="medium" :members="sponsorMembers" />
+        <VPTeamMembers size="medium" class="vp-doc" :members="sponsorMembers" />
       </template>
     </VPTeamPageSection>
   </VPTeamPage>

@@ -1,20 +1,18 @@
 .logo {
   height: 35px !important;
   border-radius: 50% !important;
-  /* filter: drop-shadow(0 0 3mm var(--vp-c-brand)); */
 }
 
 .dark .title {
-  filter: drop-shadow(0 0 2mm var(--vp-c-brand-darker));
-  padding-right: 0.5em;
+  filter: drop-shadow(0 0 1mm var(--vp-c-brand-darker));
 }
 
 .title {
-  filter: drop-shadow(0 0 .1mm var(--vp-c-brand-lighter));
+  filter: drop-shadow(0 0 .2mm var(--vp-c-brand-lighter));
   padding-right: 0.5em;
 }
 
-.VPTeamPageSection .title {
+.VPTeamPageTitle .title,.VPTeamPageSection .title {
   filter: none !important;
 }
 
