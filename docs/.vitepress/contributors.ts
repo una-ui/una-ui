@@ -48,6 +48,15 @@ const plainTeamMembers: CoreTeam[] = [
   },
 ]
 
-const teamMembers = plainTeamMembers.map(tm => createLinks(tm))
+const plainSponsors: CoreTeam[] = [
+  {
+    avatar: 'https://github.com/nexvelt.png',
+    name: 'Nexvelt Technologies',
+    github: 'nexvelt',
+  },
+]
 
-export { teamMembers }
+const teamMembers = plainTeamMembers.map(tm => createLinks(tm))
+const sponsorMembers = plainSponsors.map(tm => createLinks(tm))
+
+export { teamMembers, sponsorMembers }

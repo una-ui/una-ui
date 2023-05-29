@@ -1,7 +1,7 @@
 .logo {
-  width: 40px !important;
-  height: 40px !important;
+  height: 35px !important;
   border-radius: 50% !important;
+  rotate: -10deg !important;
   filter: drop-shadow(0 0 3mm var(--vp-c-brand));
 }
 
