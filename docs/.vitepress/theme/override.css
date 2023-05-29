@@ -1,7 +1,7 @@
 .logo {
   height: 35px !important;
   border-radius: 50% !important;
-  filter: drop-shadow(0 0 3mm var(--vp-c-brand));
+  /* filter: drop-shadow(0 0 3mm var(--vp-c-brand)); */
 }
 
 .dark .title {
