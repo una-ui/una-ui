@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "NexveltUI: The Next Level User Interface Technologies"
+title: "NexveltUI: The Next Level User Interface Technology"
 
 hero:
   image:
