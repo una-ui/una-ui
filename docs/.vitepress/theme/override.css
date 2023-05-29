@@ -5,7 +5,7 @@
 }
 
 .dark .logo {
-  filter: drop-shadow(0 0 2mm var(--vp-c-brand-darker));
+  filter: drop-shadow(0 0 1mm var(--vp-c-brand-darker));
 }
 
 .dark .title {
