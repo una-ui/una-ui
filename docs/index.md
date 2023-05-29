@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "NexveltUI: A Vue 3 UI Library"
+title: "NexveltUI: The Next Level User Interface Technologies"
 
 hero:
   image:
@@ -9,7 +9,7 @@ hero:
     alt: NexveltUI
     id: hero-logo
   name: "NexveltUI"
-  text: "A Vue 3 UI Library"
+  text: "The Next Level UI Technology"
   tagline: Built-in Preset · Radix-ui colors · Rich Integrations
   actions:
     - theme: brand
@@ -32,7 +32,7 @@ features:
     linkText: Getting Started
   - icon: <span class="i-carbon-code"></span>
     title: Components
-    details: "A set of Vue 3 components with built-in preset styles"
+    details: "A set of Vue 3 components works with built-in preset styles"
     link: /components/
     linkText: "Learn more"
   - icon: <span class="i-carbon-ibm-cloud-event-notification"></span>
@@ -46,11 +46,7 @@ features:
   - icon: <span class="i-carbon-ibm-cloud-transit-gateway"></span>
     title: Rich Integrations
     details: "First class support of Vite, Webpack, PostCSS, CLI, VS Code, ESLint, etc."
-    link: /integrations/vite
-    linkText: "Learn more"
-  - icon: <span class="i-carbon-asset"></span>
-    title: Shortcuts
-    details: "Aliasing or grouping utilities, dynamically"
-    link: /config/shortcuts
-    linkText: "Configuration and usage"
+  - icon: <span class="i-simple-icons-unocss"></span>
+    title: UnoCSS
+    details: "Powered by UnoCSS to provide a powerful CSS-in-JS solution"
 ---

@@ -1,5 +1,5 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from 'vue'
+import { h, watch } from 'vue'
 import Theme from 'vitepress/theme'
 import '@nexvelt/ui-preset/style.css'
 import './rainbow.css'
@@ -7,14 +7,47 @@ import './vars.css'
 import './override.css'
 import 'virtual:uno.css'
 
+import TeamMember from './components/TeamMember.vue'
+
+let teamMemberStyle: HTMLStyleElement | undefined
+
 export default {
   ...Theme,
   Layout: () => {
     return h(Theme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
+      'home-features-after': () => h(TeamMember),
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    // ...
+  enhanceApp({ router }) {
+    if (typeof window === 'undefined')
+      return
+
+    watch(
+      () => router.route.data.relativePath,
+      () => updateteamMemberStyle(location.pathname === '/'),
+      { immediate: true },
+    )
   },
+}
+
+// Speed up the rainbow animation on home page
+function updateteamMemberStyle(value: boolean) {
+  if (value) {
+    if (teamMemberStyle)
+      return
+
+    teamMemberStyle = document.createElement('style')
+    teamMemberStyle.innerHTML = `
+    :root {
+      animation: rainbow 12s linear infinite;
+    }`
+    document.body.appendChild(teamMemberStyle)
+  }
+  else {
+    if (!teamMemberStyle)
+      return
+
+    teamMemberStyle.remove()
+    teamMemberStyle = undefined
+  }
 }

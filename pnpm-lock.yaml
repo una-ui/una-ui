@@ -23,6 +23,9 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.1.17
         version: 1.1.17
+      '@iconify-json/simple-icons':
+        specifier: ^1.1.55
+        version: 1.1.55
       '@nexvelt/ui-preset':
         specifier: workspace:^
         version: link:packages/preset
@@ -863,6 +866,12 @@ packages:
 
   /@iconify-json/heroicons@1.1.10:
     resolution: {integrity: sha512-BQNQIQEL6QZ4FoPxJzLrTBAz7OHQezFFdEEl3gyDOZK8rawIIaPl7AtOZrvyOoSgtkU/Xp8V9pJ5JekdREEsQA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/simple-icons@1.1.55:
+    resolution: {integrity: sha512-bQG9NtG3EnJbNCuwBrTLjoyWX61djNvHCJ7cG+96qzcchFxAP2BVy9qug5YrTsJoOIaOsXqFrYFjITHyI8e4Og==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
