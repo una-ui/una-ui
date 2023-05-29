@@ -10,7 +10,7 @@ hero:
     id: hero-logo
   name: "NexveltUI"
   text: "The Next Level UI Technology"
-  tagline: Built-in Preset · Radix-ui colors · Rich Integrations
+  tagline: Built-in Preset · Components · Radix-ui based 
   actions:
     - theme: brand
       text: Getting Started
