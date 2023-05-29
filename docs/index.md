@@ -4,8 +4,10 @@ title: "NexveltUI: A Vue 3 UI Library"
 
 hero:
   image:
-    src: /logo.svg
+    light: /logo.svg
+    dark: /logo-dark.svg
     alt: NexveltUI
+    id: hero-logo
   name: "NexveltUI"
   text: "A Vue 3 UI Library"
   tagline: Built-in Preset · Radix-ui colors · Rich Integrations

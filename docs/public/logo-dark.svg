@@ -27,7 +27,7 @@
       </g>
     </g>
   </g> -->
-  <g fill="#000000" fill-opacity="1">
+  <g fill="#fff" fill-opacity="1">
     <g transform="translate(152.930231, 260.413412)">
       <g>
         <path
@@ -35,7 +35,7 @@
       </g>
     </g>
   </g>
-  <g fill="#000000" fill-opacity="1">
+  <g fill="#fff" fill-opacity="1">
     <g transform="translate(5.814455, 270.801539)">
       <g>
         <path
@@ -43,19 +43,20 @@
       </g>
     </g>
   </g>
-  <g fill="#000000" fill-opacity="1">
+  <g fill="#fff" fill-opacity="1">
     <g transform="translate(213.218049, 269.090954)">
       <g />
     </g>
   </g>
-  <!-- stroke="#000000"  -->
+  <!-- stroke="#fff"  -->
   <path stroke-linecap="butt" transform="matrix(0.75, 0, 0, 0.75, 159.38248, 97.17372)" fill="none"
     stroke-linejoin="miter"
     d="M 167.010873 227.1486 L 263.917131 54.273587 L 191.724417 54.273587 L 133.531704 180.153805 L 75.338991 54.273587 L 3.021277 54.273587 L 99.927534 227.1486 Z M 167.984831 228.851725 L 98.953576 228.851725 L 0.0994014 52.570461 L 76.432741 52.570461 L 133.531704 176.13818 L 190.625458 52.570461 L 266.839006 52.570461 Z M 167.984831 228.851725 "
-    stroke="#000000" stroke-width="8.57089" stroke-opacity="1" stroke-miterlimit="4" />
+    stroke="#fff"
+    stroke-width="8.57089" stroke-opacity="1" stroke-miterlimit="4" />
   <path stroke-linecap="butt"
     transform="matrix(0.747316, -0.0633932, 0.0633932, 0.747316, -2.381026, 108.223659)" fill="none"
     stroke-linejoin="miter"
     d="M 277.818331 227.148116 L 277.815988 54.148606 L 206.231565 54.15007 L 206.235226 173.217103 L 106.28016 54.149661 L 20.33188 54.150569 L 20.329033 227.149638 L 91.913456 227.148174 L 91.9139 107.354932 L 191.864862 227.148584 Z M 279.524294 228.850486 L 191.014574 228.853649 L 93.623134 112.099717 L 93.61942 228.850545 L 18.627102 228.850412 L 18.625917 52.448199 L 107.010203 52.44485 L 204.526687 168.587372 L 204.530791 52.44814 L 279.523109 52.448273 Z M 279.524294 228.850486 "
-    stroke="#000000" stroke-width="8.570822" stroke-opacity="1" stroke-miterlimit="4" />
+    stroke="#fff" stroke-width="8.570822" stroke-opacity="1" stroke-miterlimit="4" />
 </svg>
