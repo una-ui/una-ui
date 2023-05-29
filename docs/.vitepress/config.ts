@@ -7,8 +7,8 @@ export default defineConfig({
   description: 'The next level UI',
   themeConfig: {
     logo: {
-      light: '/logo.svg',
-      dark: '/logo-dark.svg',
+      light: '/logo-solid.svg',
+      dark: '/logo-solid-dark.svg',
     },
     nav: [
       { text: 'Home', link: '/' },
