@@ -2,10 +2,7 @@
   width: 35px !important;
   height: 35px !important;
   border-radius: 50% !important;
-}
-
-.title {
-  filter: drop-shadow(0 0 2mm var(--vp-c-brand));
+  filter: drop-shadow(0 0 3mm var(--vp-c-brand));
 }
 
 .vp-code-group .tabs label {

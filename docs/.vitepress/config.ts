@@ -6,10 +6,10 @@ export default defineConfig({
   title: 'Nexvelt UI',
   description: 'The next level UI',
   themeConfig: {
-    // logo: {
-    //   light: '/logo.svg',
-    //   dark: '/logo-dark.svg',
-    // },
+    logo: {
+      light: '/logo.svg',
+      dark: '/logo-dark.svg',
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/index' },
