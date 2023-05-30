@@ -8,11 +8,6 @@ export default defineConfig({
       'vitepress',
     ],
   },
-  server: {
-    hmr: {
-      overlay: false,
-    },
-  },
   plugins: [
     UnoCSS(),
   ],
