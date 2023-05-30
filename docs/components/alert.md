@@ -3,16 +3,15 @@ title: Alert
 description: Alerts are used to communicate a state that affects a system, feature or page.
 ---
 
-<script setup lang="ts">
-import Alert from '../src/components/alert.vue'
-</script>
-
 # Alert
 
 Alerts are used to communicate a state that affects a system, feature or page.
 
 ## Usage
 
+<script setup>
+import Alert from '../.vitepress/theme/components/Alert.vue'
+</script>
 <Alert>
   A new software update is available. See what’s new in version 2.0.4.
 </Alert>

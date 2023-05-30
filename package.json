@@ -76,6 +76,7 @@
     "typescript": "^5.0.4",
     "unbuild": "^1.2.1",
     "unocss": "^0.51.13",
+    "unplugin-auto-import": "^0.16.4",
     "vitest": "^0.29.8"
   },
   "simple-git-hooks": {
