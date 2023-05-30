@@ -11,16 +11,6 @@ import Alert from '../src/components/alert.vue'
 
 Alerts are used to communicate a state that affects a system, feature or page.
 
-## Preset Reference
-
-| shortcut name   |                classes                |
-| --------------- | :-----------------------------------: |
-| `alert-base`    |       `text-sm rounded-md p-4`        |
-| `alert-success` | `alert-base bg-blue-50 text-blue-700` |
-| `alert-info`    |                                       |
-| `alert-warning` |                                       |
-| `alert-danger`  |                                       |
-
 ## Usage
 
 <Alert>
@@ -57,5 +47,15 @@ Alerts are used to communicate a state that affects a system, feature or page.
 ```
 
 :::
+
+## Preset Reference
+
+| shortcut name   |                classes                |
+| --------------- | :-----------------------------------: |
+| `alert-base`    |       `text-sm rounded-md p-4`        |
+| `alert-success` | `alert-base bg-blue-50 text-blue-700` |
+| `alert-info`    |                                       |
+| `alert-warning` |                                       |
+| `alert-danger`  |                                       |
 
 ## Props

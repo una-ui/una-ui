@@ -8,6 +8,7 @@ export default defineConfig({
 
   lastUpdated: true,
   cleanUrls: true,
+  appearance: 'dark',
 
   themeConfig: {
     logo: {
