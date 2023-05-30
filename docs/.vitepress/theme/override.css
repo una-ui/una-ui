@@ -95,3 +95,8 @@ table {
 .VPLocalSearchBox .excerpt-wrapper {
   margin-top: 4px;
 }
+
+/* VitePress Local Search */
+.DocSearch-Button {
+  background: var(--vp-c-bg-lighter) !important;
+}

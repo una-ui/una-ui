@@ -9,7 +9,11 @@
 
  :root {
   --vp-c-bg: rgb(var(--n-gray-2));
+  --vp-c-bg-lighter: rgb(var(--n-gray-1));
+
   --vp-c-text: rgb(var(--n-gray-2)); 
+  --vp-c-text-lighter: rgb(var(--n-gray-1));
+  
   --vp-sidebar-bg-color: rgb(var(--n-gray-1));
 }
 
@@ -67,4 +71,17 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand) !important;
+}
+
+/**
+  * Component: Local Search
+  * -------------------------------------------------------------------------- */
+:root {
+  --vp-local-search-bg: var(--vp-c-bg-lighter) !important;
+  --vp-local-search-result-bg: var(--vp-c-bg);
+  --vp-local-search-result-border: var(--vp-c-divider);
+  --vp-local-search-result-selected-bg: var(--vp-c-bg);
+  --vp-local-search-result-selected-border: var(--vp-c-brand);
+  --vp-local-search-highlight-bg: var(--vp-c-green-lighter);
+  --vp-local-search-highlight-text: var(--vp-c-black);
 }
