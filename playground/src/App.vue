@@ -3,6 +3,7 @@ import Buttons from './components/Buttons.vue'
 import Colors from './components/Colors.vue'
 import ToggleDark from './components/ToggleDark.vue'
 import Inputs from './components/Inputs.vue'
+import Alerts from './components/Alerts.vue'
 </script>
 
 <template>
@@ -14,5 +15,7 @@ import Inputs from './components/Inputs.vue'
     <Inputs />
 
     <Colors />
+
+    <Alerts />
   </div>
 </template>

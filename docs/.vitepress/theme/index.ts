@@ -7,7 +7,8 @@ import './vars.css'
 import './override.css'
 import 'virtual:uno.css'
 
-// import '@nexvelt/ui-preset/style.css'
+import '@unocss/reset/tailwind.css'
+import '@nexvelt/ui-preset/style.css'
 
 import TeamMember from './components/TeamMember.vue'
 

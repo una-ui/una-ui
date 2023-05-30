@@ -9,10 +9,10 @@ import { sponsorMembers, teamMembers } from '../../contributors'
 </script>
 
 <template>
-  <VPTeamPage class="py-10 vp">
+  <VPTeamPage class="mt-20 vp">
     <VPTeamPageTitle>
       <template #title>
-        <span class="text-3xl px-30 border-t-solid border-$vp-c-brand-light py-20">
+        <span class="text-3xl md:px-30 border-solid border-t border-$vp-c-brand-light py-20">
           Meet The Team
         </span>
       </template>

@@ -1,7 +1,7 @@
 html {
   font-size: var(--font-size, 15px);
-  background-color: rgb(var(--n-gray-1));
-  color: rgb(var(--n-gray-12));
+  background-color: rgb(var(--n-gray-2));
+  color: rgb(var(--n-gray-11));
 }
 
 ::-moz-selection {

@@ -31,7 +31,7 @@ export default defineConfig({
         text: 'Components',
         items: [
           { text: 'Alert', link: '/components/alert' },
-          { text: 'Installation', link: '/guide/installation' },
+          { text: 'Avatar', link: '/components/avatar' },
         ],
       },
     ],
