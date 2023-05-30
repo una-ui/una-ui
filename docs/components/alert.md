@@ -17,7 +17,7 @@ Alerts are used to communicate a state that affects a system, feature or page.
   A new software update is available. See what’s new in version 2.0.4.
 </Alert>
 
-:::details Preview the code
+::: details Preview the code
 
 ::: code-group
 
