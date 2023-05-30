@@ -40,12 +40,12 @@ features:
     details: "Built-in preset styles for components"
     link: /presets/
     linkText: "Learn more"
-  - icon: <span class="i-carbon-wind-gusts"></span>
+  - icon: <span class="i-carbon-forecast-lightning"></span>
     title: Lightweight
-    details: "Zero deps and browser friendly: ~6kb min+brotli"
-  - icon: <span class="i-carbon-ibm-cloud-transit-gateway"></span>
-    title: Rich Integrations
-    details: "First class support of Vite, Webpack, PostCSS, CLI, VS Code, ESLint, etc."
+    details: "Use only the components and presets you need. No more, no less."
+  - icon: <span class="i-carbon-window-black-saturation"></span>
+    title: Auto Dark Mode
+    details: "Auto dark mode support based on prefers-color-scheme and radix-ui colors"
   - icon: <span class="i-simple-icons-unocss"></span>
     title: UnoCSS
     details: "Powered by UnoCSS to provide a powerful CSS-in-JS solution"
