@@ -97,6 +97,8 @@ table {
 }
 
 /* VitePress Local Search */
-.DocSearch-Button {
-  background: var(--vp-c-bg-soft) !important;
+@media (min-width: 640px) {
+  .DocSearch-Button {
+    background: var(--vp-c-bg-soft) !important;
+  }
 }
