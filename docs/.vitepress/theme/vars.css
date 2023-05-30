@@ -8,13 +8,10 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-bg: rgb(var(--n-gray-2));
-  --vp-c-bg-lighter: rgb(var(--n-gray-1));
-
-  --vp-c-text: rgb(var(--n-gray-2)); 
-  --vp-c-text-lighter: rgb(var(--n-gray-1));
+  --vp-c-bg: rgb(var(--n-gray-1));
+  --vp-c-text: rgb(var(--n-gray-12)); 
   
-  --vp-sidebar-bg-color: rgb(var(--n-gray-1));
+  --vp-sidebar-bg-color: rgb(var(--n-gray-2));
 
   --vp-c-bg-soft: rgb(var(--n-gray-3));
   --vp-c-bg-soft-up: rgb(var(--n-gray-4));
@@ -36,6 +33,11 @@
 
   --vp-c-highlight-bg: var(--vp-c-brand-light);
   --vp-c-highlight-text: var(--vp-c-bg);
+
+  --vp-c-border: rgb(var(--n-gray-7));
+  --vp-c-gray: rgb(var(--n-gray-9));
+  --vp-c-mute: rgb(var(--n-gray-8));
+  --vp-c-bg-alt: rgb(var(--n-gray-2));
 }
 
 .dark {
@@ -64,6 +66,18 @@
   --vp-button-brand-active-border: var(--vp-c-brand-light);
   --vp-button-brand-active-text: var(--vp-c-white);
   --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+}
+
+/**
+ * Component: Input
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-input-border-color: var(--vp-c-border);
+  --vp-input-bg-color: var(--vp-c-bg-alt);
+  --vp-input-hover-border-color: var(--vp-c-gray);
+
+  --vp-input-switch-bg-color: var(--vp-c-mute);
 }
 
 /**
@@ -125,17 +139,4 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand) !important;
-}
-
-/**
-  * Component: Local Search
-  * -------------------------------------------------------------------------- */
-:root {
-  --vp-local-search-bg: var(--vp-c-bg-lighter) !important;
-  --vp-local-search-result-bg: var(--vp-c-bg);
-  --vp-local-search-result-border: var(--vp-c-divider);
-  --vp-local-search-result-selected-bg: var(--vp-c-bg);
-  --vp-local-search-result-selected-border: var(--vp-c-brand);
-  --vp-local-search-highlight-bg: var(--vp-c-green-lighter);
-  --vp-local-search-highlight-text: var(--vp-c-black);
 }

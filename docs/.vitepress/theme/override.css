@@ -98,5 +98,5 @@ table {
 
 /* VitePress Local Search */
 .DocSearch-Button {
-  background: var(--vp-c-bg-lighter) !important;
+  background: var(--vp-c-bg-soft) !important;
 }
