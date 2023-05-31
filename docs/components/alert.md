@@ -29,16 +29,14 @@ import Alert from '../.vitepress/theme/components/Alert.vue'
 </template>
 ```
 
-```html [HTML]
+```html [Presets]
 <div class="alert-wrapper">
   <div class="flex">
     <div class="flex-shrink-0">
       <div class="alert-icon i-carbon-information-filled" aria-hidden="true" />
     </div>
     <div class="flex-1 md:flex md:justify-between">
-      <div class="alert-info">
-        This is an info alert
-      </div>
+      <div class="alert-info">A new software update is available. See what’s new in version 2.0.4.</div>
     </div>
   </div>
 </div>
@@ -48,12 +46,12 @@ import Alert from '../.vitepress/theme/components/Alert.vue'
 
 ## Preset Reference
 
-| shortcut name   |                classes                |
-| --------------- | :-----------------------------------: |
-| alert-base   |       `text-sm rounded-md p-4`        |
-| alert-info | `alert-base bg-blue-50 text-blue-700 dark:(text-blue-300 bg-blue-950)` |
-| alert-success    |                                       |
-| alert-warning |                                       |
-| alert-danger  |                                       |
+| shortcut name | classes                                                                |
+| ------------- | ---------------------------------------------------------------------- |
+| alert-base    | `text-sm rounded-md p-4`                                               |
+| alert-info    | `alert-base bg-blue-50 text-blue-700 dark:(text-blue-300 bg-blue-950)` |
+| alert-success |                                                                        |
+| alert-warning |                                                                        |
+| alert-danger  |                                                                        |
 
 ## Props
