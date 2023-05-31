@@ -5,11 +5,11 @@ html {
 }
 
 ::-moz-selection {
-  background: rgb(var(--n-bg-selection));
+  background: rgba(var(--n-bg-selection), 0.3);
 }
 
 ::selection {
-  background: rgb(var(--n-bg-selection));
+  background: rgba(var(--n-bg-selection), 0.3);
 }
 
 /* Force vertical scrollbar to be always visible to avoid layout shift while loading the content */

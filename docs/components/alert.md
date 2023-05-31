@@ -12,36 +12,35 @@ Alerts are used to communicate a state that affects a system, feature or page.
 <script setup>
 import Alert from '../.vitepress/theme/components/Alert.vue'
 </script>
-<Alert>
-  A new software update is available. See what’s new in version 2.0.4.
-</Alert>
 
-::: details Preview the code
+<div class="vp-raw">
+  <Alert>
+    A new software update is available. See what’s new in version 2.0.4.
+  </Alert>
+</div>
 
 ::: code-group
 
 ```vue [Component]
 <template>
-  <div>
-    <Alert type="info">
-      This is an info alert
-    </Alert>
-    <Alert type="success">
-      This is a success alert
-    </Alert>
-    <Alert type="warning">
-      This is a warning alert
-    </Alert>
-    <Alert type="danger">
-      This is a danger alert
-    </Alert>
-  </div>
+  <NVAlert type="info">
+    This is an info alert
+  </NVAlert>
 </template>
 ```
 
-```html [Preset]
-<div>
-  <div class="alert-info">This is an info alert</div>
+```html [HTML]
+<div class="alert-wrapper">
+  <div class="flex">
+    <div class="flex-shrink-0">
+      <div class="alert-icon i-carbon-information-filled" aria-hidden="true" />
+    </div>
+    <div class="flex-1 md:flex md:justify-between">
+      <p class="alert-info">
+        <slot />
+      </p>
+    </div>
+  </div>
 </div>
 ```
 
@@ -51,10 +50,10 @@ import Alert from '../.vitepress/theme/components/Alert.vue'
 
 | shortcut name   |                classes                |
 | --------------- | :-----------------------------------: |
-| `alert-base`    |       `text-sm rounded-md p-4`        |
-| `alert-success` | `alert-base bg-blue-50 text-blue-700` |
-| `alert-info`    |                                       |
-| `alert-warning` |                                       |
-| `alert-danger`  |                                       |
+| alert-base   |       `text-sm rounded-md p-4`        |
+| alert-info | `alert-base bg-blue-50 text-blue-700 dark:(text-blue-300 bg-blue-950)` |
+| alert-success    |                                       |
+| alert-warning |                                       |
+| alert-danger  |                                       |
 
 ## Props
