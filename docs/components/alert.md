@@ -24,7 +24,7 @@ import Alert from '../.vitepress/theme/components/Alert.vue'
 ```vue [Component]
 <template>
   <NVAlert type="info">
-    This is an info alert
+    A new software update is available. See what’s new in version 2.0.4.
   </NVAlert>
 </template>
 ```
