@@ -28,7 +28,7 @@ import Button from '../.vitepress/theme/components/Button.vue'
 ```
 
 ```html [Presets]
-<button type="button" class="btn-solid">
+<button type="button" class="btn-solid-primary">
   solid-primary
 </button>
 ```
