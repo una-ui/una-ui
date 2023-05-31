@@ -36,9 +36,9 @@ import Alert from '../.vitepress/theme/components/Alert.vue'
       <div class="alert-icon i-carbon-information-filled" aria-hidden="true" />
     </div>
     <div class="flex-1 md:flex md:justify-between">
-      <p class="alert-info">
-        <slot />
-      </p>
+      <div class="alert-info">
+        This is an info alert
+      </div>
     </div>
   </div>
 </div>
