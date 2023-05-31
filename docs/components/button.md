@@ -1,11 +1,11 @@
 ---
 title: Button
-description: Buttons are used to communicate a state that affects a system, feature or page.
+description: Button are used to initialize an action, either in the background or foreground of an experience.
 ---
 
 # Button
 
-Button are used to communicate a state that affects a system, feature or page.
+Button are used to initialize an action, either in the background or foreground of an experience.
 
 ## Usage
 
