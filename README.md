@@ -4,7 +4,7 @@
 
 ## 📌 Todo
 
-- [x] Playground
+- [ ] Playground
 - [ ] Docs
 - [ ] Built-in preset
 - [ ] UI-Components
