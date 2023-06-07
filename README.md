@@ -1,6 +1,6 @@
 # 🌼 Nexvelt-UI
 
-⚠️ This project is heavily under development
+ > **Warning**: This project is heavily working in progress.
 
 ## 📌 Todo
 
