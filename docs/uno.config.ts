@@ -26,8 +26,6 @@ export default defineConfig({
       'alert-wrapper': 'relative rounded-md bg-blue-50 dark:bg-blue-950 alert-base',
       'alert-icon': 'mr-3 h-5 w-5 text-blue-400 dark:text-blue-300',
     },
-    [/^btn-solid-(.*)$/, ([, c]: [string, string]) => `rounded-md btn-md btn-base bg-${c} text-white shadow-sm hover:bg-${c}-10 focus-visible:outline`],
-    [/^btn-outline-(.*)$/, ([, c]: [string, string]) => `rounded-md btn-md btn-base text-${c} ring-1 ring-inset ring-${c}-7 hover:(ring-${c}-8 bg-${c}/15)`],
   ],
   presets: [
     presetUno(),

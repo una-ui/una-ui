@@ -36,7 +36,7 @@
   --vp-c-gutter: rgba(var(--nv-gray-600), 0.12);
 
   
-  --vp-sidebar-bg-color: var(--c-background);
+  --vp-sidebar-bg-color: rgba(var(--nv-gray-50), 0.7);
 
   --vp-c-brand-lightest: var(--vp-c-brand);
 
@@ -52,6 +52,8 @@
 }
 
 .dark {
+  --vp-sidebar-bg-color: rgba(var(--nv-gray-900), 0.7);
+
   --vp-c-border: rgba(var(--nv-gray-600), 0.68);
   --vp-c-divider: rgba(var(--nv-gray-600), 0.32);
   --vp-c-gutter: rgba(var(--nv-gray-600), 1);

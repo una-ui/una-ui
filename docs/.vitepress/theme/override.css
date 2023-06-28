@@ -8,6 +8,10 @@
   opacity: 0.5;
 }
 
+.curtain {
+  background: transparent !important;
+}
+
 .logo {
   height: 45px !important;
   margin-top: -5px;

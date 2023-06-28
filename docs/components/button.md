@@ -13,9 +13,7 @@ Button are used to initialize an action, either in the background or foreground 
 import Button from '../.vitepress/theme/components/Button.vue'
 </script>
 
-<Button>
-  A new software update is available. See what’s new in version 2.0.4.
-</Button>
+<Button/>
 
 ::: code-group
 
@@ -28,9 +26,30 @@ import Button from '../.vitepress/theme/components/Button.vue'
 ```
 
 ```html [Presets]
-<button type="button" class="btn-solid-primary">
-  solid-primary
-</button>
+<template>
+  <div class="flex gap-2">
+    <button btn="solid-primary">
+      solid-primary
+    </button>
+
+    <button btn="solid-blue">
+      solid-indigo
+    </button>
+
+    <button btn="solid-green">
+      solid-success
+    </button>
+
+    <button btn="solid-yellow">
+      solid-success
+    </button>
+
+    <button btn="solid-gray">
+      solid-gray
+    </button>
+  </div>
+</template>
+
 ```
 
 :::
