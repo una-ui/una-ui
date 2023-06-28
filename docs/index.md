@@ -10,7 +10,7 @@ hero:
     id: hero-logo
   name: "NexveltUI"
   text: "The Next Level UI Technology"
-  tagline: Built-in Preset · Components · Radix-ui based 
+  tagline: "Presets · Components · Themeable · Lightweight"
   actions:
     - theme: brand
       text: Getting Started
@@ -25,27 +25,27 @@ hero:
       target: _blank
 
 features:
-  - icon: <span class="i-carbon-ibm-cloud-direct-link-1-dedicated-hosting"></span>
-    title: Modern
-    details: "Built with Vue 3 and TypeScript and based on radix-ui perspective"
+  - icon: <span class="i-carbon-3rd-party-connected"></span>
+    title: Presets
+    details: "Built-in preset styles for components"
     link: /guide/
-    linkText: Getting Started
-  - icon: <span class="i-carbon-code"></span>
+    linkText: "Getting Started"
+  - icon: <span class="i-carbon-change-catalog"></span>
+    title: Themeable
+    details: "Built-in theming system with dark mode support"
+    link: /guide/
+    linkText: "Learn more"
+  - icon: <span class="i-simple-icons-codersrank"></span>
     title: Components
     details: "A set of Vue 3 components works with built-in preset styles"
     link: /components/
     linkText: "Learn more"
-  - icon: <span class="i-carbon-ibm-cloud-event-notification"></span>
-    title: Presets
-    details: "Built-in preset styles for components"
-    link: /presets/
-    linkText: "Learn more"
-  - icon: <span class="i-carbon-forecast-lightning"></span>
+  - icon: <span class="i-simple-icons-cloudflarepages"></span>
     title: Lightweight
     details: "Use only the components and presets you need. No more, no less."
   - icon: <span class="i-carbon-window-black-saturation"></span>
     title: Auto Dark Mode
-    details: "Auto dark mode support based on prefers-color-scheme and radix-ui colors"
+    details: "Auto dark mode support based on prefers-color-scheme and user's system theme"
   - icon: <span class="i-simple-icons-unocss"></span>
     title: UnoCSS
     details: "Powered by UnoCSS to provide a powerful CSS-in-JS solution"
