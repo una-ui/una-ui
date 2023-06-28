@@ -1,6 +1,6 @@
 import { colors } from '@unocss/preset-mini/colors'
 import chroma from 'chroma-js'
-import type { Colors } from '../packages/preset/src/_theme/types'
+import type { Colors } from '@nexvelt/ui-preset/src/_theme/types'
 
 interface ColorPalette {
   50: string
