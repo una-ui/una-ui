@@ -1,6 +1,7 @@
 export interface presetNexveltOptions {
   // themes supported
-  themes?: string[] // default: ['tomato', 'lime']
+  themes?: string[]
+
   // primary theme
-  primaryTheme?: string // default: 'tomato'
+  primaryTheme?: string
 }

@@ -1,10 +1,10 @@
 # 🌼 Nexvelt-UI
 
-⚠️ This project is still under development
+ > **Warning**: This project is heavily working in progress.
 
 ## 📌 Todo
 
-- [x] Playground
+- [ ] Playground
 - [ ] Docs
 - [ ] Built-in preset
 - [ ] UI-Components

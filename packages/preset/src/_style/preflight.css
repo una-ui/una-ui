@@ -1,15 +1,15 @@
 html {
-  font-size: var(--font-size, 15px);
-  background-color: rgb(var(--n-gray-1));
-  color: rgb(var(--n-gray-12));
+  font-size: var(--font-size, 16px);
+  /* width: 100%;
+  width: 100vw; */
 }
 
 ::-moz-selection {
-  background: rgba(var(--n-bg-selection), 0.3);
+  background: var(--c-bg-selection);
 }
 
 ::selection {
-  background: rgba(var(--n-bg-selection), 0.3);
+  background: var(--c-bg-selection);
 }
 
 /* Force vertical scrollbar to be always visible to avoid layout shift while loading the content */
@@ -31,4 +31,6 @@ html.dark {
   color-scheme: dark;
 }
 
-
+html {
+  --at-apply: bg-base text-base;
+}

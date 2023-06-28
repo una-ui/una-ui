@@ -3,9 +3,12 @@ import {
   presetAttributify,
   presetIcons,
   presetUno,
+  transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import presetNexvelt from '@nexvelt/ui-preset'
+
+// import presetNexvelt from '@nexvelt/ui-preset'
+import presetNexvelt from '../../packages/preset/src/index'
 
 export default defineConfig({
   shortcuts: [
@@ -29,10 +32,16 @@ export default defineConfig({
     presetIcons(),
     presetNexvelt(),
   ],
+
   transformers: [
+    transformerDirectives(),
     transformerVariantGroup(),
   ],
   configDeps: [
-    '@nexvelt/ui-preset',
+    // all shortcuts
+    '../../packages/preset/src/_shortcuts/button.ts',
+    '../../packages/preset/src/_shortcuts/general.ts',
+    '../../packages/preset/src/_shortcuts/index.ts',
+    '../../packages/preset/src/_shortcuts/input.ts',
   ],
 })

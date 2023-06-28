@@ -1,5 +1,44 @@
 :root {
-  --n-bg-selection: var(--n-primary-9);
+  /* global vars */
+  --c-bg-selection: rgba(var(--nv-primary-600), 0.9);
 
-  --n-primary: var(--n-primary-9);
+  /* light config */
+  --c-background: rgb(255 255 255); /* white */
+  --c-foreground: rgb(var(--nv-gray-950));
+
+  --c-muted: rgba(var(--nv-gray-50));
+  --c-muted-foreground: rgba(var(--nv-gray-900));
+
+  --c-card: rgb(var(--nv-gray-100));
+  --c-card-foreground: rgb(var(--nv-gray-900));
+
+  --c-border: rgb(var(--nv-gray-200));
+  --c-border-foreground: rgb(var(--nv-gray-700));
+
+  --c-gray: var(--nv-gray-600);
+  --c-gray-active: var(--nv-gray-500);
+
+  --c-primary: var(--nv-primary-600);
+  --c-primary-active: var(--nv-primary-500);
+}
+
+.dark {
+  /* dark config */
+  --c-background: rgb(var(--nv-gray-950));
+  --c-foreground:  rgb(255 255 255);  /* white */
+
+  --c-muted: rgba(var(--nv-gray-900));
+  --c-muted-foreground: rgba(var(--nv-gray-50));
+
+  --c-card: rgb(var(--nv-gray-800));
+  --c-card-foreground: rgb(var(--nv-gray-100));
+
+  --c-border: rgb(var(--nv-gray-700));
+  --c-border-foreground: rgb(var(--nv-gray-200));
+
+  --c-gray: var(--nv-gray-500);
+  --c-gray-active: var(--nv-gray-400);
+
+  --c-primary: var(--nv-primary-500);
+  --c-primary-active: var(--nv-primary-400);
 }

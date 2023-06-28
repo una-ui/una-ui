@@ -8,7 +8,12 @@ import Divider from './Divider.vue'
       <div>
         <label for="email" class="label">Email</label>
         <div class="mt-2">
-          <input id="email" type="email" placeholder="phojrengel@ckcm.edu.ph" class="input-base">
+          <input
+            id="email"
+            type="email"
+            placeholder="phojrengel@ckcm.edu.ph"
+            input="outline"
+          >
         </div>
       </div>
     </div>

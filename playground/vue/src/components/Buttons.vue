@@ -5,7 +5,7 @@ import Divider from './Divider.vue'
 <template>
   <Divider title="Buttons">
     <div class="flex gap-2">
-      <button class="btn-outline">
+      <button class="btn-outline-indigo">
         btn-outline
       </button>
 
