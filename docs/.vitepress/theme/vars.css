@@ -28,12 +28,33 @@
   --vp-c-bg-soft-up: var(--c-gray-100);
   --vp-c-bg-soft-down: var(--c-gray-200);
   --vp-c-bg-soft-mute: var(--c-gray-300);
+
+  --vp-c-bg-alt: var(--c-card);
+
+  --vp-c-border: rgba(var(--nv-gray-600), 0.29);
+  --vp-c-divider: rgba(var(--nv-gray-600), 0.12);
+  --vp-c-gutter: rgba(var(--nv-gray-600), 0.12);
+
   
   --vp-sidebar-bg-color: var(--c-background);
 
   --vp-c-brand-lightest: var(--vp-c-brand);
 
   --vp-c-highlight-bg: var(--vp-c-brand-light);
+
+  --vp-c-text-code: var(--c-foreground);
+
+  --vp-c-mute: var(--c-gray-200);
+  --vp-c-mute-light: var(--c-gray-300);
+  --vp-c-mute-lighter: var(--c-gray-200);
+  --vp-c-mute-dark: var(--c-gray-300);
+  --vp-c-mute-darker: var(--c-gray-200);
+}
+
+.dark {
+  --vp-c-border: rgba(var(--nv-gray-600), 0.68);
+  --vp-c-divider: rgba(var(--nv-gray-600), 0.32);
+  --vp-c-gutter: rgba(var(--nv-gray-600), 1);
 }
 
 
@@ -100,6 +121,16 @@
   --vp-input-hover-border-color: var(--vp-c-gray);
 
   --vp-input-switch-bg-color: var(--vp-c-mute);
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --vp-code-block-bg: var(--vp-c-bg-soft);
+  --vp-code-block-bg-light: var(--vp-c-bg-soft-up);
+  --vp-code-block-divider-color: var(--vp-c-black);
 }
 
 /**
