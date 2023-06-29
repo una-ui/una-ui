@@ -1,7 +1,28 @@
 :root {
   /* global vars */
-  --c-bg-selection: rgba(var(--nv-primary-600), 0.9);
+  --c-bg-selection: rgba(var(--nv-primary-600), 0.5);
 
+  --c-background: var(--c-gray-0); 
+  --c-foreground: var(--c-gray-950);
+
+  --c-muted: var(--c-gray-50);
+  --c-muted-foreground: var(--c-gray-900);
+
+  --c-card: var(--c-gray-100);
+  --c-card-foreground: var(--c-gray-800);
+
+  --c-border: var(--c-gray-200);
+  --c-border-foreground: var(--c-gray-700);
+  
+  /* defaults */
+  --c-gray: var(--nv-gray-600);
+  --c-gray-active: var(--nv-gray-500);
+
+  --c-primary: var(--nv-primary-600);
+  --c-primary-active: var(--nv-primary-500);
+
+  /* config gray light */
+  --c-gray-0: rgb(255 255 255);
   --c-gray-50: rgb(var(--nv-gray-50));
   --c-gray-100: rgb(var(--nv-gray-100));
   --c-gray-200: rgb(var(--nv-gray-200));
@@ -13,29 +34,11 @@
   --c-gray-800: rgb(var(--nv-gray-800));
   --c-gray-900: rgb(var(--nv-gray-900));
   --c-gray-950: rgb(var(--nv-gray-950));
-
-  /* light config */
-  --c-background: rgb(255 255 255); 
-  --c-foreground: rgb(var(--nv-gray-950));
-
-  --c-muted: rgba(var(--nv-gray-50));
-  --c-muted-foreground: rgba(var(--nv-gray-900));
-
-  --c-card: rgb(var(--nv-gray-100));
-  --c-card-foreground: rgb(var(--nv-gray-900));
-
-  --c-border: rgb(var(--nv-gray-200));
-  --c-border-foreground: rgb(var(--nv-gray-700));
-  
-  --c-gray: var(--nv-gray-600);
-  --c-gray-active: var(--nv-gray-500);
-
-  --c-primary: var(--nv-primary-600);
-  --c-primary-active: var(--nv-primary-500);
 }
 
 .dark {
-  /* global vars */
+  /* config gray dark */
+  --c-gray-0: rgb(var(--nv-gray-950));
   --c-gray-50: rgb(var(--nv-gray-900));
   --c-gray-100: rgb(var(--nv-gray-800));
   --c-gray-200: rgb(var(--nv-gray-700));
@@ -48,23 +51,10 @@
   --c-gray-900: rgb(var(--nv-gray-50));
   --c-gray-950: rgb(255 255 255);
 
-  /* dark config */
-  --c-background: rgb(var(--nv-gray-950));
-  --c-foreground:  rgb(255 255 255);
-
-  --c-muted: rgba(var(--nv-gray-900));
-  --c-muted-foreground: rgba(var(--nv-gray-50));
-
-  --c-card: rgb(var(--nv-gray-800));
-  --c-card-foreground: rgb(var(--nv-gray-100));
-
-  --c-border: rgb(var(--nv-gray-700));
-  --c-border-foreground: rgb(var(--nv-gray-200));
-
+  /* defaults */
   --c-gray: var(--nv-gray-500);
   --c-gray-active: var(--nv-gray-400);
 
   --c-primary: var(--nv-primary-500);
   --c-primary-active: var(--nv-primary-400);
-
 }
