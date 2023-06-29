@@ -8,11 +8,18 @@ const buttons = [
   'btn-outline-purple',
   'btn-outline-green',
   'btn-outline-yellow',
-  // 'link-primary',
-  // 'link-blue',
-  // 'link-green',
-  // 'link-yellow',
-  // 'link-gray',
+  'btn-soft',
+  'btn-soft-purple',
+  'btn-soft-green',
+  'btn-soft-yellow',
+  'btn-ghost',
+  'btn-ghost-purple',
+  'btn-ghost-green',
+  'btn-ghost-yellow',
+  'btn-link',
+  'btn-link-purple',
+  'btn-link-green',
+  'btn-link-yellow',
 ]
 </script>
 

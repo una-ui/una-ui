@@ -1,10 +1,10 @@
 import type { Preset } from 'unocss'
-import type { presetNexveltOptions } from './types'
+import type { nexveltUIOptions } from './types'
 import { shortcuts } from './shortcuts'
 
 // import { theme } from './theme'
 
-export default function presetNexvelt(options: presetNexveltOptions = {
+export default function presetNexvelt(options: nexveltUIOptions = {
   colorThemes: [
     'blue',
     'green',
@@ -12,6 +12,9 @@ export default function presetNexvelt(options: presetNexveltOptions = {
 }): Preset {
   return {
     name: '@nexvelt/ui-preset',
+    options,
+    enforce: 'pre',
+    prefix: '',
     shortcuts,
     // theme,
     theme: {
