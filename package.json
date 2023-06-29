@@ -46,8 +46,7 @@
     "typecheck": "tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
     "stub": "pnpm -r --filter=./packages/* --parallel run stub",
-    "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\"",
-    "prepare:theme": "ignore-dependency-scripts \"esno scripts/setup.ts\" pnpm lint:fix"
+    "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\""
   },
   "dependencies": {
     "chroma-js": "^2.4.2",

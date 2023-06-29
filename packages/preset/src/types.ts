@@ -1,7 +1,3 @@
 export interface presetNexveltOptions {
-  // themes supported
-  themes?: string[]
-
-  // primary theme
-  primaryTheme?: string
+  colorThemes?: ('blue' | 'green' | 'red' | 'yellow' | 'purple' | 'indigo' | 'pink' | 'orange')[]
 }
