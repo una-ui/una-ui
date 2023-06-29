@@ -21,10 +21,12 @@ export default {
       'home-features-after': () => h(TeamMember),
     })
   },
+  // this hook is called before the root Vue app is mounted to the DOM.
   enhanceApp({ router }) {
     if (typeof window === 'undefined')
       return
 
+    // update rainbow animation on route change
     watch(
       () => router.route.data.relativePath,
       () => updateteamMemberStyle(location.pathname === '/'),

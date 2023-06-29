@@ -12,7 +12,7 @@ export default defineConfig({
   },
   plugins: [
     UnoCSS({
-      configFile: '../uno.config.ts'
+      configFile: '../uno.config.ts',
     }),
   ],
 })
