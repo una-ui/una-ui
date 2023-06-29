@@ -6,6 +6,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: [
       'vitepress',
+      // 'nexvelt-ui'
     ],
   },
   plugins: [
