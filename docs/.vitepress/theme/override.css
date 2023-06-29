@@ -78,6 +78,10 @@ table {
 
 
 /* VitePress Search */
+.VPNavBarSearch {
+  /* justify-content: flex-end; */
+}
+
 .VPLocalSearchBox .result {
   --vp-c-bg-search-result: var(--vp-c-bg);
   background: var(--vp-c-bg-search-result) !important;
@@ -105,4 +109,16 @@ table {
   .DocSearch-Button {
     background: var(--vp-c-bg-soft) !important;
   }
+}
+
+
+/* Header */
+.has-sidebar .content-body {
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+
+
+/* Sidebar */
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-divider);
 }
