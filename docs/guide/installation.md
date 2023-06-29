@@ -33,16 +33,28 @@ pnpm install @unocss @nexvelt/ui -D
 2. Create a `unocss.config.ts` file in your project root:
 
 ```ts
-import { defineConfig } from 'unocss'
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  transformerDirectives,
+  transformerVariantGroup,
+} from 'unocss'
+
+import presetNexvelt from '@nexvelt/ui-preset'
 
 export default defineConfig({
-  theme: {
-    extend: {
-      colors: {
-        primary: '#1DA1F2',
-      },
-    },
-  },
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons(),
+    presetNexvelt(),
+  ],
+  transformers: [
+    transformerVariantGroup(),
+    transformerDirectives(),
+  ],
 })
 ```
 
@@ -51,7 +63,8 @@ export default defineConfig({
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import '@nexvelt/ui/dist/style.css'
+
+import '@nexvelt/ui-preset/style.css' // Import Nexvelt UI styles
 
 createApp(App).mount('#app')
 ```
@@ -99,7 +112,9 @@ export default defineConfig({
   theme: {
     extend: {
       colors: {
-        primary: '#1DA1F2',
+        primary: {
+          // 50-950
+        }
       },
     },
   },
