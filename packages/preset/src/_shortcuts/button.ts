@@ -12,6 +12,6 @@ export const staticButton = {
 
 export const dynamicButton = [
   [/^btn-base(-(\S+))?$/, ([, , c = 'primary']) => `inline-flex justify-center items-center btn-disabled focus-visible:outline-${c}-500 dark:focus-visible:outline-${c}-400 rounded-md btn-md font-semibold cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`],
-  [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-base-${c} bg-${c}-600 text-white shadow-sm hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
+  [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-base-${c} bg-${c}-600 text-white shadow-sm bg-${c}-500 hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
   [/^btn-outline(-(\S+))?$/, ([, , c = 'primary']) => `btn-base-${c} text-${c}-500 dark:text-${c}-400 ring-1 ring-current hover:bg-${c}-50 dark:hover:bg-${c}-900`],
 ]
