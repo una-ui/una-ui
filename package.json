@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.3.1",
+  "packageManager": "pnpm@8.6.0",
   "description": "The next level UI Library for Vue.js and Nuxt.js",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
