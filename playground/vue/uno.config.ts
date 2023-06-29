@@ -43,5 +43,6 @@ export default defineConfig({
     '../../packages/preset/src/_shortcuts/general.ts',
     '../../packages/preset/src/_shortcuts/index.ts',
     '../../packages/preset/src/_shortcuts/input.ts',
+    '../../packages/preset/src/index',
   ],
 })
