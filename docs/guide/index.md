@@ -53,6 +53,7 @@ The NexveltUI documentation is organized into several sections to help you navig
 
 ## Contributions and Feedback
 
-We appreciate your interest in NexveltUI! If you have any suggestions, bug reports, or would like to contribute to the framework, please refer to the [Contributing Guidelines](./contributing.md).
+We appreciate your interest in NexveltUI! If you have any suggestions, bug reports, or would like to contribute to the framework, please refer to the [Contributing Guidelines](./index.md).
+<!-- TODO update contributing guideliens link -->
 
 Let's build amazing user interfaces together with NexveltUI!
