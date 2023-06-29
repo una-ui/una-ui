@@ -104,18 +104,10 @@ table {
   margin-top: 4px;
 }
 
-/* VitePress Local Search */
-@media (min-width: 640px) {
-  .DocSearch-Button {
-    background: var(--vp-c-bg-soft) !important;
-  }
-}
-
 /* Header */
 .has-sidebar .content-body {
   border-bottom: 1px solid var(--vp-c-divider) !important;
 }
-
 
 /* Sidebar */
 .VPSidebar {
@@ -126,3 +118,4 @@ table {
 .VPFeature {
   border: 1px solid var(--vp-c-divider) !important;
 }
+

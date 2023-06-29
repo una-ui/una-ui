@@ -18,6 +18,11 @@
 
   --vp-c-gray: var(--c-gray-600);
 
+  --vp-c-bg-elv: var(--c-gray-50);
+  --vp-c-bg-elv-up: var(--c-gray-100);
+  --vp-c-bg-elv-down: var(--c-gray-200);
+  --vp-c-bg-elv-mute: var(--c-gray-100);
+
   --vp-c-text-light-1: var(--c-border-foreground);
   --vp-c-text-light-2: var(--c-card-foreground);
   --vp-c-text-light-3: var(--c-muted-foreground);
