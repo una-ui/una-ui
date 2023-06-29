@@ -7,6 +7,10 @@ description: Getting started with NexveltUI
 
 Welcome to the official documentation for NexveltUI - the next level UI framework for Vue.js.
 
+::: warning
+This documentation is still a work in progress. The package itself is not yet officially released and some sections may be incomplete or missing entirely until the first release. We are working hard to complete the documentation as soon as possible.
+:::
+
 ## What is NexveltUI ?
 
 ::: tip
