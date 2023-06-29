@@ -39,6 +39,11 @@ export default defineConfig({
       },
     ],
 
+    editLink: {
+      pattern: 'https://github.com/nexvelt/ui/edit/main/docs/:path',
+      text: 'Suggest changes to this page',
+    },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/nexvelt/ui' },
     ],
