@@ -31,9 +31,9 @@ export default defineConfig({
       {
         text: 'Elements',
         items: [
-          { text: 'Alert', link: '/components/alert' },
-          { text: 'Avatar', link: '/components/avatar' },
-          { text: 'Badge', link: '/components/badge' },
+          // { text: 'Alert', link: '/components/alert' },
+          // { text: 'Avatar', link: '/components/avatar' },
+          // { text: 'Badge', link: '/components/badge' },
           { text: 'Button', link: '/elements/button' },
         ],
       },
