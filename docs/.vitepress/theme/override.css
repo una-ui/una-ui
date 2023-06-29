@@ -1,13 +1,3 @@
-::-moz-selection {
-  background: var(--vp-c-brand);
-  opacity: 0.5;
-}
-
-::selection {
-  background: var(--vp-c-brand);
-  opacity: 0.5;
-}
-
 .curtain {
   background: transparent !important;
 }

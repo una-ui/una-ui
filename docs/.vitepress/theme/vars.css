@@ -36,13 +36,14 @@
   --vp-c-gutter: rgba(var(--nv-gray-600), 0.12);
 
   
-  --vp-sidebar-bg-color: rgba(var(--nv-gray-50), 0.7);
+  /* --vp-sidebar-bg-color: rgba(var(--nv-gray-50), 0.7); */
+  --vp-sidebar-bg-color: var(--c-muted);
 
   --vp-c-brand-lightest: var(--vp-c-brand);
 
   --vp-c-highlight-bg: var(--vp-c-brand-light);
 
-  --vp-c-text-code: var(--c-foreground);
+  --vp-c-text-code: var(--vp-c-brand);
 
   --vp-c-mute: var(--c-gray-200);
   --vp-c-mute-light: var(--c-gray-300);
@@ -52,7 +53,7 @@
 }
 
 .dark {
-  --vp-sidebar-bg-color: rgba(var(--nv-gray-900), 0.7);
+  /* --vp-sidebar-bg-color: rgba(var(--nv-gray-900), 0.7); */
 
   --vp-c-border: rgba(var(--nv-gray-600), 0.68);
   --vp-c-divider: rgba(var(--nv-gray-600), 0.32);

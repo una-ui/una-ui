@@ -17,17 +17,14 @@ const buttons = [
 </script>
 
 <template>
-  <div class="grid grid-cols-4 gap-2">
-    <div
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+    <button
       v-for="button in buttons"
       :key="button"
-      class="flex items-center justify-center"
+      type="button"
+      :class="button"
     >
-      <button
-        :class="button"
-      >
-        {{ button }}
-      </button>
-    </div>
+      {{ button }}
+    </button>
   </div>
 </template>

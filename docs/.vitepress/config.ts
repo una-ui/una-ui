@@ -29,12 +29,12 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Components',
+        text: 'Elements',
         items: [
           { text: 'Alert', link: '/components/alert' },
           { text: 'Avatar', link: '/components/avatar' },
           { text: 'Badge', link: '/components/badge' },
-          { text: 'Button', link: '/components/button' },
+          { text: 'Button', link: '/elements/button' },
         ],
       },
     ],
