@@ -8,6 +8,8 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --font-size: 15px;
+
   --vp-c-white: var(--c-foreground); 
   --vp-c-black: var(--c-background);
 
