@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const buttons = [
   'btn-solid',
-  'btn-solid-blue',
+  'btn-solid-purple',
   'btn-solid-green',
   'btn-solid-yellow',
   'btn-outline',
-  'btn-outline-blue',
+  'btn-outline-purple',
   'btn-outline-green',
   'btn-outline-yellow',
   // 'link-primary',
