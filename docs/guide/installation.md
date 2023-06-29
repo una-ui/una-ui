@@ -1,12 +1,23 @@
 ---
 title: Guide
-description: Getting started with UnoCSS
+description: Installation
 ---
 
 # Installation
 
-### PNPM
+::: code-group
 
-```bash
-pnpm install -g @unocss @nexvelt/ui
+```bash [npm]
+npm install @unocss @nexvelt/ui -D
 ```
+
+```bash [yarn]
+yarn add @unocss @nexvelt/ui -D
+```
+  
+```bash [pnpm]
+pnpm install @unocss @nexvelt/ui -D
+```
+  
+:::
+
