@@ -61,8 +61,10 @@ watchEffect(() => {
 <template>
   <div flex="~ col" space-y-4>
     <div>
-      <h4>Primary Colors</h4>
-      <div class="wrap grid grid-cols-6 gap4" p2>
+      <h4 text="primary-active">
+        Primary Theme
+      </h4>
+      <div class="wrap grid grid-cols-6 gap2" py-4>
         <button
           v-for="[key, theme] in primaryThemes"
           :key="key"
@@ -82,8 +84,10 @@ watchEffect(() => {
     </div>
 
     <div>
-      <h4>Gray Colors</h4>
-      <div class="wrap grid grid-cols-6 gap4" p2>
+      <h4 text="gray-active">
+        Gray Theme
+      </h4>
+      <div class="wrap grid grid-cols-6 gap2" py-4>
         <button
           v-for="[key, theme] in grayThemes"
           :key="key"
