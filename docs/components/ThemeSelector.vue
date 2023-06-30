@@ -72,9 +72,9 @@ watchEffect(() => {
           :key="key"
           :style="{ background: theme['--nv-primary-hex'] }"
           type="button"
-          :class="currentPrimaryThemeName === key ? 'ring-2' : 'scale-90'"
+          :class="currentPrimaryThemeName === key ? 'ring-2' : 'scale-95'"
           :title="key"
-          h-10 transition-all
+          h-15 transition-all
           ring="primary offset-3 offset-base"
           btn="base"
           text-white
@@ -95,9 +95,9 @@ watchEffect(() => {
           :key="key"
           :style="{ background: theme['--nv-gray-hex'] }"
           type="button"
-          :class="currentGrayThemeName === key ? 'ring-2' : 'scale-90'"
+          :class="currentGrayThemeName === key ? 'ring-2' : 'scale-95'"
           :title="key"
-          h-10 transition-all
+          h-14 transition-all
           ring="gray offset-3 offset-base"
           btn="base"
           text-white
