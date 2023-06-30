@@ -107,7 +107,7 @@ export const primaryThemes = Object.entries({ ...filteredPrimaryColors, ...filte
   getColors(color, 'primary'),
 ]) as [string, Colors][]
 
-export const grayThemes = Object.entries(filteredGrayColors).map(([color]) => [
+export const grayThemes = Object.entries({ ...filteredPrimaryColors, ...filteredGrayColors }).map(([color]) => [
   color,
   getColors(color, 'gray'),
 ]) as [string, Colors][]
