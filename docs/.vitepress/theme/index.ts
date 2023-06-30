@@ -27,29 +27,27 @@ export default {
   },
   // this hook is called before the root Vue app is mounted to the DOM.
   async enhanceApp({ router }) {
-    if (typeof window === 'undefined')
-      return
-
     const settings = await useStorage('nv-settings', {
       primaryColors: undefined as ThemeColors | undefined,
       grayColors: undefined as ThemeColors | undefined,
       fontSize: 15,
     })
 
-    // if dev mode
-    if (import.meta.env.DEV)
-      console.log(settings.value)
+    console.log(settings.value)
 
-    html = document.documentElement
-    watch(settings, () => {
-      html.style.setProperty('--font-size', `${settings.value.fontSize}px`)
-      Object.entries(settings.value.primaryColors || {}).forEach(([k, v]) => {
-        html.style.setProperty(k, v)
-      })
-      Object.entries(settings.value.grayColors || {}).forEach(([k, v]) => {
-        html.style.setProperty(k, v)
-      })
-    }, { immediate: true })
+    if (!import.meta.env.SSR) {
+      html = document.documentElement
+      watch(settings, () => {
+        const html = document.documentElement
+        html.style.setProperty('--font-size', `${settings.value.fontSize}px`)
+        Object.entries(settings.value.primaryColors || {}).forEach(([k, v]) => {
+          html.style.setProperty(k, v)
+        })
+        Object.entries(settings.value.grayColors || {}).forEach(([k, v]) => {
+          html.style.setProperty(k, v)
+        })
+      }, { immediate: true })
+    }
 
     // nexveltUIStyle = document.createElement('style')
     // nexveltUIStyle.id = 'nexvelt-ui'
@@ -68,6 +66,8 @@ export default {
     //   }
     // })
 
+    if (typeof window === 'undefined')
+      return
     // update rainbow animation on route change
     watch(
       () => router.route.data.relativePath,
