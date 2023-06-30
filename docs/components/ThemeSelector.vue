@@ -7,9 +7,10 @@ interface ThemeColors {
   [key: string]: string
 }
 
-const settings = useStorage('nv-theme', {
+const settings = useStorage('nv-settings', {
   primaryColors: undefined as ThemeColors | undefined,
   grayColors: undefined as ThemeColors | undefined,
+  fontSize: 15,
 })
 
 // use orange primary theme as default
@@ -50,6 +51,7 @@ watchEffect(() => {
   if (styleTag) {
     styleTag.innerHTML = `
     :root {
+        --font-size: ${settings.value.fontSize}px;
         ${Object.entries(settings.value.primaryColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
         ${Object.entries(settings.value.grayColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
     }
@@ -104,6 +106,13 @@ watchEffect(() => {
           {{ key }}
         </button>
       </div>
+    </div>
+
+    <div>
+      <h4 text="gray-active">
+        Font Size ({{ settings.fontSize }}px)
+      </h4>
+      <input v-model.number="settings.fontSize" input="base" type="range" min="10" max="30">
     </div>
   </div>
 </template>
