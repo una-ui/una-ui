@@ -3,6 +3,10 @@ title: Button
 description: Buttons are used to initiate an action within an experience.
 ---
 
+<script setup>
+import Button from '../components/Button.vue'
+</script>
+
 # Button
 
 Buttons are used to initiate an action within an experience.
@@ -43,9 +47,6 @@ If you want to change the variant of the button, you can use the `btn` attribute
 
 
 ## Example
-<script setup>
-import Button from '../.vitepress/theme/components/Button.vue'
-</script>
 
 <Button/>
 

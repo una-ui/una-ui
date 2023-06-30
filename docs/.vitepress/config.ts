@@ -17,7 +17,17 @@ export default defineConfig({
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
+      {
+        text: 'Guide',
+        link: '/guide',
+        activeMatch: '^/guide/',
+      },
+      {
+        text: 'Merchandise',
+        link: 'https://www.thegithubshop.com/',
+        target: '_self',
+        rel: 'sponsored',
+      },
     ],
 
     sidebar: [
@@ -26,10 +36,11 @@ export default defineConfig({
         items: [
           { text: 'Introduction', link: '/guide/' },
           { text: 'Installation', link: '/guide/installation' },
+          { text: 'Themes', link: '/guide/themes' },
         ],
       },
       {
-        text: 'Elements',
+        text: 'Components',
         items: [
           // { text: 'Alert', link: '/components/alert' },
           // { text: 'Avatar', link: '/components/avatar' },

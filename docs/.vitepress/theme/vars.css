@@ -8,6 +8,12 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --vp-c-brand: var(--nv-primary-hex);
+  --vp-c-brand-light: rgb(var(--nv-primary-500));
+  --vp-c-brand-lighter: rgb(var(--nv-primary-400));
+  --vp-c-brand-dark: rgb(var(--nv-primary-700));
+  --vp-c-brand-darker: rgb(var(--nv-primary-800));
+
   --vp-font-family-base: var(--font-family-sans-serif);
   --vp-font-family-mono: var(--font-family-monospace);
 
