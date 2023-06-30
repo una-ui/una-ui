@@ -14,7 +14,7 @@ const settings = useStorage('nv-settings', {
 })
 
 // use orange primary theme as default
-const defaultPrimaryTheme = primaryThemes.filter(([color]) => color === 'orange')[0][1]['--nv-primary-hex']
+const defaultPrimaryTheme = primaryThemes.filter(([color]) => color === 'blue')[0][1]['--nv-primary-hex']
 // check storage for theme or use default (orange)
 const currentPrimaryTheme = computed(() => settings.value.primaryColors?.['--nv-primary-hex'] || defaultPrimaryTheme)
 // get current theme name
@@ -40,76 +40,59 @@ function updatePrimaryTheme(theme: ThemeColors) {
 function updateGrayTheme(theme: ThemeColors) {
   settings.value.grayColors = theme
 }
-
-// TODO: move to global
-const style = document.createElement('style') as HTMLStyleElement
-style.id = 'nexvelt-ui'
-document.head.appendChild(style)
-
-watchEffect(() => {
-  const styleTag = document.getElementById('nexvelt-ui')
-  if (styleTag) {
-    styleTag.innerHTML = `
-    :root {
-        --font-size: ${settings.value.fontSize}px;
-        ${Object.entries(settings.value.primaryColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
-        ${Object.entries(settings.value.grayColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
-    }
-  `.replace(/\s*\n+\s*/g, '')
-  }
-})
 </script>
 
 <template>
-  <div flex="~ col" space-y-4>
+  <div flex="~ col" space-y-5>
     <div>
-      <h4 text="primary-active">
-        Primary Theme
+      <h4 text="primary">
+        Primary
       </h4>
-      <div class="wrap grid grid-cols-6 gap2" py-4>
+      <div class="mt-5 wrap grid grid-cols-8 gap-5">
         <button
           v-for="[key, theme] in primaryThemes"
           :key="key"
           :style="{ background: theme['--nv-primary-hex'] }"
           type="button"
-          :class="currentPrimaryThemeName === key ? 'ring-2' : 'scale-95'"
+          :class="currentPrimaryThemeName === key ? 'ring-3' : 'scale-93'"
           :title="key"
-          h-15 transition-all
+          h-10 w-10 transition-all
+          rounded-full
           ring="primary offset-3 offset-base"
           btn="base"
           text-white
           @click="updatePrimaryTheme(theme)"
         >
-          {{ key }}
+          <!-- {{ key }} -->
         </button>
       </div>
     </div>
 
     <div>
-      <h4 text="gray-active">
-        Gray Theme
+      <h4 text="primary">
+        Gray
       </h4>
-      <div class="wrap grid grid-cols-6 gap2" py-4>
+      <div class="mt-5 wrap grid grid-cols-8 gap-5">
         <button
           v-for="[key, theme] in grayThemes"
           :key="key"
           :style="{ background: theme['--nv-gray-hex'] }"
           type="button"
-          :class="currentGrayThemeName === key ? 'ring-2' : 'scale-95'"
+          :class="currentGrayThemeName === key ? 'ring-3' : 'scale-93'"
           :title="key"
-          h-14 transition-all
+          h-10 w-10 transition-all
+          rounded-full
           ring="gray offset-3 offset-base"
-          btn="base"
           text-white
           @click="updateGrayTheme(theme)"
         >
-          {{ key }}
+          <!-- {{ key }} -->
         </button>
       </div>
     </div>
 
     <div>
-      <h4 text="gray-active">
+      <h4 text="primary">
         Font Size ({{ settings.fontSize }}px)
       </h4>
       <input v-model.number="settings.fontSize" input="base" type="range" min="10" max="30">
