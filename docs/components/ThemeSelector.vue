@@ -7,11 +7,13 @@ interface ThemeColors {
   [key: string]: string
 }
 
-const settings = useStorage('nv-settings', {
-  primaryColors: undefined as ThemeColors | undefined,
-  grayColors: undefined as ThemeColors | undefined,
-  fontSize: 15,
-})
+const defaultSettings = {
+  primaryColors: primaryThemes[0][1],
+  grayColors: grayThemes[0][1],
+  fontSize: 16,
+}
+
+const settings = useStorage('nv-settings', defaultSettings)
 
 // use orange primary theme as default
 const defaultPrimaryTheme = primaryThemes.filter(([color]) => color === 'blue')[0][1]['--nv-primary-hex']

@@ -33,7 +33,7 @@ export default {
 
     const style = document.createElement('style') as HTMLStyleElement
     style.id = 'nexvelt-ui'
-    document.head.appendChild(style)
+    document.body.appendChild(style)
 
     watchEffect(() => {
       const styleTag = document.getElementById('nexvelt-ui')
