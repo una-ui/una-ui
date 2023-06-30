@@ -19,9 +19,6 @@
 
   --font-size: 15px;
 
-  --vp-c-white: var(--c-foreground); 
-  --vp-c-black: var(--c-background);
-
   --vp-c-gray: var(--c-gray-600);
 
   --vp-c-bg-elv: var(--c-gray-50);
