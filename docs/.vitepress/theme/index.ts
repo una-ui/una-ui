@@ -25,6 +25,9 @@ export default {
   },
   // this hook is called before the root Vue app is mounted to the DOM.
   enhanceApp({ router }) {
+    if (typeof window === 'undefined')
+      return
+
     const settings = useStorage('nv-settings', {
       primaryColors: undefined as ThemeColors | undefined,
       grayColors: undefined as ThemeColors | undefined,
@@ -33,7 +36,7 @@ export default {
 
     const style = document.createElement('style') as HTMLStyleElement
     style.id = 'nexvelt-ui'
-    document.body.appendChild(style)
+    document.head.appendChild(style)
 
     watchEffect(() => {
       const styleTag = document.getElementById('nexvelt-ui')
@@ -47,9 +50,6 @@ export default {
     `.replace(/\s*\n+\s*/g, '')
       }
     })
-
-    if (typeof window === 'undefined')
-      return
 
     // update rainbow animation on route change
     watch(

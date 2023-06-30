@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { grayThemes, primaryThemes } from '../../config/color-themes'
+import type { ThemeColors } from '../types'
 
 // TODO can dynamic theme to play
-
-interface ThemeColors {
-  [key: string]: string
-}
 
 const defaultSettings = {
   primaryColors: primaryThemes[0][1],
@@ -93,11 +90,11 @@ function updateGrayTheme(theme: ThemeColors) {
       </div>
     </div>
 
-    <div>
+    <!-- <div>
       <h4 text="primary">
         Font Size ({{ settings.fontSize }}px)
       </h4>
       <input v-model.number="settings.fontSize" input="base" type="range" min="10" max="30">
-    </div>
+    </div> -->
   </div>
 </template>
