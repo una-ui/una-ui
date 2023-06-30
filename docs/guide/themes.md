@@ -9,8 +9,8 @@ description: Themes
 
 NexveltUI has a built-in theming system that allows you to switch between themes as you wish. 
 
-<!-- <script setup>
+<script setup>
 import ThemeSelector from '../components/ThemeSelector.vue'
 </script>
 
-<ThemeSelector/> -->
+<ThemeSelector/>
