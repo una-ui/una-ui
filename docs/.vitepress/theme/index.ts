@@ -1,7 +1,8 @@
+import { useStorage } from '@vueuse/core'
+
 // https://vitepress.dev/guide/custom-theme
 import { h, watch } from 'vue'
 import Theme from 'vitepress/theme'
-import { useStorage } from '@vueuse/core'
 import type { ThemeColors } from '../../types'
 
 import 'virtual:uno.css'
@@ -25,15 +26,19 @@ export default {
     })
   },
   // this hook is called before the root Vue app is mounted to the DOM.
-  enhanceApp({ router }) {
+  async enhanceApp({ router }) {
     if (typeof window === 'undefined')
       return
 
-    const settings = useStorage('nv-settings', {
+    const settings = await useStorage('nv-settings', {
       primaryColors: undefined as ThemeColors | undefined,
       grayColors: undefined as ThemeColors | undefined,
       fontSize: 15,
     })
+
+    // if dev mode
+    if (import.meta.env.DEV)
+      console.log(settings.value)
 
     html = document.documentElement
     watch(settings, () => {
