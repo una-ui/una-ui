@@ -15,7 +15,7 @@ import './override.css'
 import TeamMember from './components/TeamMember.vue'
 
 let teamMemberStyle: HTMLStyleElement | undefined
-let nexveltUIStyle: HTMLStyleElement | undefined
+let html: HTMLElement | undefined
 
 export default {
   ...Theme,
@@ -26,13 +26,16 @@ export default {
   },
   // this hook is called before the root Vue app is mounted to the DOM.
   enhanceApp({ router }) {
+    if (typeof window === 'undefined')
+      return
+
     const settings = useStorage('nv-settings', {
       primaryColors: undefined as ThemeColors | undefined,
       grayColors: undefined as ThemeColors | undefined,
       fontSize: 15,
     })
 
-    const html = document.documentElement
+    html = document.documentElement
     watch(settings, () => {
       html.style.setProperty('--font-size', `${settings.value.fontSize}px`)
       Object.entries(settings.value.primaryColors || {}).forEach(([k, v]) => {
@@ -59,9 +62,6 @@ export default {
     // `.replace(/\s*\n+\s*/g, '')
     //   }
     // })
-
-    if (typeof window === 'undefined')
-      return
 
     // update rainbow animation on route change
     watch(
