@@ -11,6 +11,10 @@ import Button from '../components/Button.vue'
 
 Buttons are used to initiate an action within an experience.
 
+:::warning
+Work in progress - this component is not yet ready for use.
+:::
+
 ## Usage
 
 In its simplest form, the only thing required of the developer is to add the `btn` attribute to a `<button>` element which is the prefix value for the `<button>` component. This will apply the default button styles, but will not provide any color or hover state.

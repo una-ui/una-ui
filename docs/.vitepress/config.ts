@@ -45,16 +45,41 @@ export default defineConfig({
       {
         text: 'Components',
         items: [
-          // { text: 'Alert', link: '/components/alert' },
-          // { text: 'Avatar', link: '/components/avatar' },
-          // { text: 'Badge', link: '/components/badge' },
           {
             text: 'Elements',
             collapsed: false,
             items: [
               {
-                text: 'Button',
+                text: 'Accordion (Coming Soon)',
+                link: '/elements/accordion',
+              },
+              {
+                text: 'Alert (Coming Soon)',
+                link: '/elements/alert',
+              },
+              {
+                text: 'Avatar (Coming Soon)',
+                link: '/elements/avatar',
+              },
+              {
+                text: 'Badge (Coming Soon)',
+                link: '/elements/badge',
+              },
+              {
+                text: 'Button (WIP)',
                 link: '/elements/button',
+              },
+              {
+                text: 'Dropdown (Coming Soon)',
+                link: '/elements/dropdown',
+              },
+              {
+                text: 'Icon (Coming Soon)',
+                link: '/elements/icon',
+              },
+              {
+                text: 'Kbd (Coming Soon)',
+                link: '/elements/kbd',
               },
             ],
           },
