@@ -42,53 +42,54 @@ function updateGrayTheme(theme: ThemeColors) {
 </script>
 
 <template>
-  <div flex="~ col" space-y-5>
-    <div>
-      <h4 text="primary">
-        Primary
-      </h4>
-      <div class="mt-5 wrap grid grid-cols-8 gap-5">
-        <button
-          v-for="[key, theme] in primaryThemes"
-          :key="key"
-          :style="{ background: theme['--nv-primary-hex'] }"
-          type="button"
-          :class="currentPrimaryThemeName === key ? 'ring-3' : 'scale-93'"
-          :title="key"
-          h-10 w-10 transition-all
-          rounded-full
-          ring="primary offset-3 offset-base"
-          btn="base"
-          text-white
-          @click="updatePrimaryTheme(theme)"
-        >
+  <ClientOnly>
+    <div flex="~ col" space-y-5>
+      <div>
+        <h4 text="primary">
+          Primary
+        </h4>
+        <div class="mt-5 wrap grid grid-cols-8 gap-5">
+          <button
+            v-for="[key, theme] in primaryThemes"
+            :key="key"
+            :style="{ background: theme['--nv-primary-hex'] }"
+            type="button"
+            :class="currentPrimaryThemeName === key ? 'ring-3' : 'scale-93'"
+            :title="key"
+            h-10 w-10 transition-all
+            rounded-full
+            ring="primary offset-3 offset-base"
+            btn="base"
+            text-white
+            @click="updatePrimaryTheme(theme)"
+          >
           <!-- {{ key }} -->
-        </button>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <h4 text="primary">
-        Gray
-      </h4>
-      <div class="mt-5 wrap grid grid-cols-8 gap-5">
-        <button
-          v-for="[key, theme] in grayThemes"
-          :key="key"
-          :style="{ background: theme['--nv-gray-hex'] }"
-          type="button"
-          :class="currentGrayThemeName === key ? 'ring-3' : 'scale-93'"
-          :title="key"
-          h-10 w-10 transition-all
-          rounded-full
-          ring="gray offset-3 offset-base"
-          text-white
-          @click="updateGrayTheme(theme)"
-        >
+      <div>
+        <h4 text="primary">
+          Gray
+        </h4>
+        <div class="mt-5 wrap grid grid-cols-8 gap-5">
+          <button
+            v-for="[key, theme] in grayThemes"
+            :key="key"
+            :style="{ background: theme['--nv-gray-hex'] }"
+            type="button"
+            :class="currentGrayThemeName === key ? 'ring-3' : 'scale-93'"
+            :title="key"
+            h-10 w-10 transition-all
+            rounded-full
+            ring="gray offset-3 offset-base"
+            text-white
+            @click="updateGrayTheme(theme)"
+          >
           <!-- {{ key }} -->
-        </button>
+          </button>
+        </div>
       </div>
-    </div>
 
     <!-- <div>
       <h4 text="primary">
@@ -96,5 +97,6 @@ function updateGrayTheme(theme: ThemeColors) {
       </h4>
       <input v-model.number="settings.fontSize" input="base" type="range" min="10" max="30">
     </div> -->
-  </div>
+    </div>
+  </ClientOnly>
 </template>
