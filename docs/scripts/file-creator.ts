@@ -6,6 +6,7 @@ function createFile(name: string, content: string) {
   fs.writeFileSync(name, content, { encoding: 'utf-8' })
 }
 
+// just copy a list sidebar items from the sidebar
 const listOfDirectoriesWithFiles: DefaultTheme.SidebarItem[] = [
   {
     // text: 'Accordion (WIP)',
@@ -13,6 +14,7 @@ const listOfDirectoriesWithFiles: DefaultTheme.SidebarItem[] = [
   },
 ]
 
+// create a file for each sidebar item base on the link and text from the sidebar
 for (const directory of listOfDirectoriesWithFiles) {
   if (!directory.link || !directory.text)
     continue
