@@ -37,6 +37,10 @@ h1 {
   border: 1px solid var(--vp-c-divider) !important;
 }
 
+.VPFeature:hover {
+  border-color: var(--vp-c-brand) !important;
+}
+
 /* Code */
 .vp-doc :not(pre) > code {
   background: var(--vp-c-bg-soft);
