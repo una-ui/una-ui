@@ -13,6 +13,8 @@ export const sidebarGuide: DefaultTheme.SidebarItem = {
   ],
 }
 
+const isDev = process.env.NODE_ENV === 'development'
+
 export const sidebarComponents: DefaultTheme.SidebarItem = {
   items: [
     {
@@ -154,15 +156,19 @@ export default defineConfig({
   description: 'The Next Level UI Technology.',
 
   head: [
-    ['script', {
-      'defer': 'true',
-      'data-domain': 'ui.nexvelt.com',
-      'src': 'https://plausible.io/js/script.js',
-    }],
-    ['script', {
-      defer: 'true',
-      src: '/_vercel/insights/script.js',
-    }],
+    !isDev
+      ? ['script', {
+          'defer': 'true',
+          'data-domain': 'ui.nexvelt.com',
+          'src': 'https://plausible.io/js/script.js',
+        }]
+      : ['script', {}],
+    !isDev
+      ? ['script', {
+          defer: 'true',
+          src: '/_vercel/insights/script.js',
+        }]
+      : ['script', {}],
   ],
 
   lastUpdated: true,
