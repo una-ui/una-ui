@@ -82,6 +82,11 @@
 100% { #00a98e; --vp-c-brand-light: #4ad1b4;  --vp-c-brand-next: #009ff7; }
 }
 
+@keyframes ratate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 :root {
   --vp-c-brand: rgba(var(--c-primary), 1); 
   --vp-c-brand-lighter: rgba(var(--c-primary-active), 1);
@@ -89,6 +94,15 @@
   --vp-c-brand-darker: rgba(var(--c-primary), 1);
   --vp-c-brand-next: #009ff7;
   animation: flow 10s infinite;
+}
+
+.image-bg {
+  animation: ratate 10s linear infinite;
+  box-shadow: 1vmin 0 3vmin 2vmin rgb(var(--nv-primary-800)),
+              inset -1vmin 0 3vmin 4vmin rgb(var(--nv-primary-400)),
+              -4vmin 0 35vmin 0 var(--nv-primary-800);
+  margin-top: -15vmin;
+  margin-left: -15vmin;
 }
 
 @media (prefers-reduced-motion: reduce) {
