@@ -1,3 +1,4 @@
+/* Header */
 .curtain {
   background: transparent !important;
 }
@@ -17,33 +18,19 @@
   padding-right: 0.1em;
 }
 
-.VPTeamPageTitle .title,.VPTeamPageSection .title {
-  filter: none !important;
+.has-sidebar .content-body {
+  border-bottom: 1px solid var(--vp-c-divider) !important;
 }
 
-.vp-code-group .tabs label {
-  background-color: transparent;
+/* Sidebar */
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-divider);
 }
 
-table {
-  width: 100% !important;
-  display: table;
+/* Landing */
+.VPFeature {
+  border: 1px solid var(--vp-c-divider) !important;
 }
-
-.custom-block.tip .custom-block-title {
-  color: var(--vp-c-brand);
-}
-
-.VPHero .image-bg {
-  z-index: 1;
-  opacity: 0.8;
-  transition: opacity 1s ease;
-}
-
-.VPHero .image-container:hover .image-bg {
-  opacity: 0.2;
-}
-
 
 /**
  * VitePress: Custom fix
@@ -76,12 +63,6 @@ table {
   transition: color 0.25s;
 }
 
-
-/* VitePress Search */
-.VPNavBarSearch {
-  /* justify-content: flex-end; */
-}
-
 .VPLocalSearchBox .result {
   --vp-c-bg-search-result: var(--vp-c-bg);
   background: var(--vp-c-bg-search-result) !important;
@@ -104,18 +85,30 @@ table {
   margin-top: 4px;
 }
 
-/* Header */
-.has-sidebar .content-body {
-  border-bottom: 1px solid var(--vp-c-divider) !important;
+/* Misc */
+.VPTeamPageTitle .title,.VPTeamPageSection .title {
+  filter: none !important;
 }
 
-/* Sidebar */
-.VPSidebar {
-  border-right: 1px solid var(--vp-c-divider);
+.vp-code-group .tabs label {
+  background-color: transparent;
 }
 
-/* Landing */
-.VPFeature {
-  border: 1px solid var(--vp-c-divider) !important;
+table {
+  width: 100% !important;
+  display: table;
 }
 
+.custom-block.tip .custom-block-title {
+  color: var(--vp-c-brand);
+}
+
+.VPHero .image-bg {
+  z-index: 1;
+  opacity: 0.8;
+  transition: opacity 1s ease;
+}
+
+.VPHero .image-container:hover .image-bg {
+  opacity: 0.2;
+}

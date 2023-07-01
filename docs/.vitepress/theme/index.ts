@@ -8,7 +8,6 @@ import 'virtual:uno.css'
 import '@nexvelt/ui-preset/style.css'
 import '@unocss/reset/tailwind-compat.css'
 
-// import './rainbow.css'
 import './flow.css'
 import './vars.css'
 import './override.css'
@@ -53,7 +52,7 @@ export default {
       }
     })
 
-    // update rainbow animation on route change
+    // update flow animation on route change
     watch(
       () => router.route.data.relativePath,
       () => updateteamMemberStyle(location.pathname === '/'),
@@ -62,7 +61,7 @@ export default {
   },
 }
 
-// Speed up the rainbow animation on home page (default is 10s)
+// Speed up the flow animation on home page (default is 10s)
 function updateteamMemberStyle(value: boolean) {
   if (value) {
     if (teamMemberStyle)
@@ -71,7 +70,7 @@ function updateteamMemberStyle(value: boolean) {
     teamMemberStyle = document.createElement('style')
     teamMemberStyle.innerHTML = `
     :root {
-      animation: rainbow 5s linear infinite;
+      animation: flow 5s linear infinite;
     }`
     document.body.appendChild(teamMemberStyle)
   }
