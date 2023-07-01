@@ -8,7 +8,7 @@ description: Introduction
 Bring your web applications to the next level with NexveltUI, a comprehensive UI framework for Vue.js and UNOCSS.
 
 ::: warning
-This documentation is still a work in progress. The package itself is not yet officially released and some sections may be incomplete or missing entirely until the first release. We are working hard to complete the documentation as soon as possible.
+This documentation is still a work in progress. The package itself is not yet officially released and some sections of this documentation may be incomplete or missing entirely until the first release. We are working hard to complete the documentation as soon as possible.
 :::
 
 ## What is NexveltUI ?
