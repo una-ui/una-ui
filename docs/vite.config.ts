@@ -6,9 +6,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 export default defineConfig({
   optimizeDeps: {
     exclude: [
-      // 'vitepress',
-      // '@nexvelt/ui-preset',
-      // 'unocss',
+      'vitepress',
+      '@nexvelt/ui-preset',
+      'unocss',
     ],
   },
   plugins: [
@@ -25,7 +25,7 @@ export default defineConfig({
       ],
       dirs: [
         // List the directories to search for components.
-        'vitepress/theme/components',
+        '.vitepress/theme/components',
       ],
     }),
   ],

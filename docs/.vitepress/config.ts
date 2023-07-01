@@ -36,6 +36,9 @@ export default defineConfig({
         items: [
           { text: 'Introduction', link: '/guide/' },
           { text: 'Installation', link: '/guide/installation' },
+          { text: 'Configuration', link: '/guide/configuration' },
+          { text: 'Customization', link: '/guide/customization' },
+          { text: 'Presets', link: '/guide/presets' },
           { text: 'Themes', link: '/guide/themes' },
         ],
       },
@@ -45,7 +48,16 @@ export default defineConfig({
           // { text: 'Alert', link: '/components/alert' },
           // { text: 'Avatar', link: '/components/avatar' },
           // { text: 'Badge', link: '/components/badge' },
-          { text: 'Button', link: '/elements/button' },
+          {
+            text: 'Elements',
+            collapsed: false,
+            items: [
+              {
+                text: 'Button',
+                link: '/elements/button',
+              },
+            ],
+          },
         ],
       },
     ],
