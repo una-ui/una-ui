@@ -1,6 +1,6 @@
 ---
 title: Skeleton (WIP)
-description: 
+description: 'Work in progress - this component is not yet ready for use.'
 ---
 
 # Skeleton (WIP)

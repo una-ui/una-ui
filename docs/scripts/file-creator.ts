@@ -12,10 +12,34 @@ function createDirectory(name: string) {
 
 // just copy a list sidebar items from the config file
 const listOfDirectoriesWithFiles: DefaultTheme.SidebarItem[] = [
-  // {
-  //   text: 'Checkbox (WIP)',
-  //   link: '/forms/checkbox',
-  // },
+  {
+    text: 'Table (WIP)',
+    link: '/data/table',
+  },
+  {
+    text: 'Breadcrumb (WIP)',
+    link: '/navigation/breadcrumb',
+  },
+  {
+    text: 'Pagination (WIP)',
+    link: '/navigation/pagination',
+  },
+  {
+    text: 'Tabs (WIP)',
+    link: '/navigation/tabs',
+  },
+  {
+    text: 'Card (WIP)',
+    link: '/layout/card',
+  },
+  {
+    text: 'Divider (WIP)',
+    link: '/layout/divider',
+  },
+  {
+    text: 'Skeleton (WIP)',
+    link: '/layout/skeleton',
+  },
 ]
 
 // create a file for each sidebar item base on the link and text from the sidebar
@@ -32,7 +56,7 @@ for (const directory of listOfDirectoriesWithFiles) {
   const path = `./${directoryName}/${fileName}.md`
   const content = `---
 title: ${directory.text}
-description: 
+description: 'Work in progress - this component is not yet ready for use.'
 ---
 
 # ${directory.text.charAt(0).toUpperCase() + directory.text.slice(1)}

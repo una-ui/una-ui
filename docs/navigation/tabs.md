@@ -1,6 +1,6 @@
 ---
 title: Tabs (WIP)
-description: 
+description: 'Work in progress - this component is not yet ready for use.'
 ---
 
 # Tabs (WIP)
