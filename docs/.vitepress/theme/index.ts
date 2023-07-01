@@ -1,5 +1,5 @@
 // https://vitepress.dev/guide/custom-theme
-import { h, watch, watchEffect } from 'vue'
+import { h, watchEffect } from 'vue'
 import Theme from 'vitepress/theme'
 import { useStorage } from '@vueuse/core'
 import type { ThemeColors } from '../../types'
@@ -8,7 +8,7 @@ import 'virtual:uno.css'
 import '@nexvelt/ui-preset/style.css'
 import '@unocss/reset/tailwind-compat.css'
 
-import './flow.css'
+import './color-transition.css'
 import './vars.css'
 import './override.css'
 
@@ -51,34 +51,5 @@ export default {
     `.replace(/\s*\n+\s*/g, '')
       }
     })
-
-    // update flow animation on route change
-    watch(
-      () => router.route.data.relativePath,
-      () => updateteamMemberStyle(location.pathname === '/'),
-      { immediate: true },
-    )
   },
-}
-
-// Speed up the flow animation on home page (default is 10s)
-function updateteamMemberStyle(value: boolean) {
-  if (value) {
-    if (teamMemberStyle)
-      return
-
-    teamMemberStyle = document.createElement('style')
-    teamMemberStyle.innerHTML = `
-    :root {
-      animation: flow 5s linear infinite;
-    }`
-    document.body.appendChild(teamMemberStyle)
-  }
-  else {
-    if (!teamMemberStyle)
-      return
-
-    teamMemberStyle.remove()
-    teamMemberStyle = undefined
-  }
 }

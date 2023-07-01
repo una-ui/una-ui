@@ -78,6 +78,16 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --vp-button-brand-border: var(--vp-c-brand-lighter);
+  --vp-button-brand-text: var(--c-background);
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-border: var(--vp-c-brand-lighter);
+  --vp-button-brand-hover-text: var(--c-background);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-dark);
+  --vp-button-brand-active-border: var(--vp-c-brand-lighter);
+  --vp-button-brand-active-text: var(--c-background);
+  --vp-button-brand-active-bg: var(--vp-c-brand-darker);
+
   --vp-button-alt-border: var(--c-border);
   --vp-button-alt-text: var(--c-card-foreground);
   --vp-button-alt-bg: var(--c-card);
