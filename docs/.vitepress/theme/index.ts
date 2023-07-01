@@ -71,7 +71,7 @@ function updateteamMemberStyle(value: boolean) {
     teamMemberStyle = document.createElement('style')
     teamMemberStyle.innerHTML = `
     :root {
-      animation: rainbow 3s linear infinite;
+      animation: rainbow 5s linear infinite;
     }`
     document.body.appendChild(teamMemberStyle)
   }

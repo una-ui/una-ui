@@ -1,16 +1,95 @@
-@keyframes flow {
-  0% { --vp-c-brand: rgb(var(--nv-primary-300)); --vp-c-brand-light: rgb(var(--nv-primary-400)); --vp-c-brand-lighter: rgb(var(--nv-primary-500)); --vp-c-brand-dark: rgb(var(--nv-primary-600)); --vp-c-brand-darker: rgb(var(--nv-primary-700)); --vp-c-brand-next: rgb(var(--nv-primary-800)); }
-  16.6% { --vp-c-brand: rgb(var(--nv-primary-400)); --vp-c-brand-light: rgb(var(--nv-primary-500)); --vp-c-brand-lighter: rgb(var(--nv-primary-600)); --vp-c-brand-dark: rgb(var(--nv-primary-700)); --vp-c-brand-darker: rgb(var(--nv-primary-800)); --vp-c-brand-next: rgb(var(--nv-primary-300)); }
-  33.3% { --vp-c-brand: rgb(var(--nv-primary-500)); --vp-c-brand-light: rgb(var(--nv-primary-600)); --vp-c-brand-lighter: rgb(var(--nv-primary-700)); --vp-c-brand-dark: rgb(var(--nv-primary-800)); --vp-c-brand-darker: rgb(var(--nv-primary-300)); --vp-c-brand-next: rgb(var(--nv-primary-400)); }
-  50% { --vp-c-brand: rgb(var(--nv-primary-600)); --vp-c-brand-light: rgb(var(--nv-primary-700)); --vp-c-brand-lighter: rgb(var(--nv-primary-800)); --vp-c-brand-dark: rgb(var(--nv-primary-300)); --vp-c-brand-darker: rgb(var(--nv-primary-400)); --vp-c-brand-next: rgb(var(--nv-primary-500)); }
-  66.6% { --vp-c-brand: rgb(var(--nv-primary-700)); --vp-c-brand-light: rgb(var(--nv-primary-800)); --vp-c-brand-lighter: rgb(var(--nv-primary-300)); --vp-c-brand-dark: rgb(var(--nv-primary-400)); --vp-c-brand-darker: rgb(var(--nv-primary-500)); --vp-c-brand-next: rgb(var(--nv-primary-600)); }
-  83.3% { --vp-c-brand: rgb(var(--nv-primary-800)); --vp-c-brand-light: rgb(var(--nv-primary-300)); --vp-c-brand-lighter: rgb(var(--nv-primary-400)); --vp-c-brand-dark: rgb(var(--nv-primary-500)); --vp-c-brand-darker: rgb(var(--nv-primary-600)); --vp-c-brand-next: rgb(var(--nv-primary-700)); }
-  100% { --vp-c-brand: rgb(var(--nv-primary-200)); --vp-c-brand-light: rgb(var(--nv-primary-300)); --vp-c-brand-lighter: rgb(var(--nv-primary-400)); --vp-c-brand-dark: rgb(var(--nv-primary-500)); --vp-c-brand-darker: rgb(var(--nv-primary-600)); --vp-c-brand-next: rgb(var(--nv-primary-700)); }
+@keyframes rainbow {
+  0% { --vp-c-brand-next: #009ff7; }
+1.25% { --vp-c-brand-next: #009dfa; }
+2.5% { --vp-c-brand-next: #009bfc; }
+3.75% { --vp-c-brand-next: #0098fd; }
+  5% { --vp-c-brand-next: #0096fd; }
+6.25% { --vp-c-brand-next: #0093fd; }
+7.5% { --vp-c-brand-next: #2e90fc; }
+8.75% { --vp-c-brand-next: #4d8dfa; }
+ 10% { --vp-c-brand-next: #638af8; }
+11.25% { --vp-c-brand-next: #7587f5; }
+12.5% { --vp-c-brand-next: #8583f1; }
+13.75% { --vp-c-brand-next: #9280ed; }
+ 15% { --vp-c-brand-next: #9f7ce9; }
+16.25% { --vp-c-brand-next: #aa78e3; }
+17.5% { --vp-c-brand-next: #b574dd; }
+18.75% { --vp-c-brand-next: #be71d7; }
+ 20% { --vp-c-brand-next: #c76dd1; }
+21.25% { --vp-c-brand-next: #cf69c9; }
+22.5% { --vp-c-brand-next: #d566c2; }
+23.75% { --vp-c-brand-next: #dc63ba; }
+ 25% { --vp-c-brand-next: #e160b3; }
+26.25% { --vp-c-brand-next: #e65eab; }
+27.5% { --vp-c-brand-next: #e95ca2; }
+28.75% { --vp-c-brand-next: #ed5a9a; }
+ 30% { --vp-c-brand-next: #ef5992; }
+31.25% { --vp-c-brand-next: #f15989; }
+32.5% { --vp-c-brand-next: #f25981; }
+33.75% { --vp-c-brand-next: #f25a79; }
+ 35% { --vp-c-brand-next: #f25c71; }
+36.25% { --vp-c-brand-next: #f15e69; }
+37.5% { --vp-c-brand-next: #ef6061; }
+38.75% { --vp-c-brand-next: #ed635a; }
+ 40% { --vp-c-brand-next: #eb6552; }
+41.25% { --vp-c-brand-next: #e8694b; }
+42.5% { --vp-c-brand-next: #e46c44; }
+43.75% { --vp-c-brand-next: #e06f3d; }
+ 45% { --vp-c-brand-next: #db7336; }
+46.25% { --vp-c-brand-next: #d77630; }
+47.5% { --vp-c-brand-next: #d17a2a; }
+48.75% { --vp-c-brand-next: #cc7d24; }
+ 50% { --vp-c-brand-next: #c6811e; }
+51.25% { --vp-c-brand-next: #bf8418; }
+52.5% { --vp-c-brand-next: #b98713; }
+53.75% { --vp-c-brand-next: #b28a0f; }
+ 55% { --vp-c-brand-next: #ab8d0c; }
+56.25% { --vp-c-brand-next: #a3900b; }
+57.5% { --vp-c-brand-next: #9c920d; }
+58.75% { --vp-c-brand-next: #949510; }
+ 60% { --vp-c-brand-next: #8b9715; }
+61.25% { --vp-c-brand-next: #83991b; }
+62.5% { --vp-c-brand-next: #7a9b21; }
+63.75% { --vp-c-brand-next: #719d27; }
+ 65% { --vp-c-brand-next: #679e2e; }
+66.25% { --vp-c-brand-next: #5da035; }
+67.5% { --vp-c-brand-next: #51a13c; }
+68.75% { --vp-c-brand-next: #44a244; }
+ 70% { --vp-c-brand-next: #34a44b; }
+71.25% { --vp-c-brand-next: #1ba553; }
+72.5% { --vp-c-brand-next: #00a65b; }
+73.75% { --vp-c-brand-next: #00a663; }
+ 75% { --vp-c-brand-next: #00a76c; }
+76.25% { --vp-c-brand-next: #00a874; }
+77.5% { --vp-c-brand-next: #00a87d; }
+78.75% { --vp-c-brand-next: #00a985; }
+ 80% { --vp-c-brand-next: #00a98e; }
+81.25% { --vp-c-brand-next: #00a996; }
+82.5% { --vp-c-brand-next: #00a99f; }
+83.75% { --vp-c-brand-next: #00a9a7; }
+ 85% { --vp-c-brand-next: #00a9b0; }
+86.25% { --vp-c-brand-next: #00a9b8; }
+87.5% { --vp-c-brand-next: #00a9c0; }
+88.75% { --vp-c-brand-next: #00a8c7; }
+ 90% { --vp-c-brand-next: #00a8cf; }
+91.25% { --vp-c-brand-next: #00a7d5; }
+92.5% { --vp-c-brand-next: #00a6dc; }
+93.75% { --vp-c-brand-next: #00a6e2; }
+ 95% { --vp-c-brand-next: #00a4e7; }
+96.25% { --vp-c-brand-next: #00a3ec; }
+97.5% { --vp-c-brand-next: #00a2f1; }
+98.75% { --vp-c-brand-next: #00a0f4; }
+100% { --vp-c-brand-next: #009ff7; }
 }
 
 :root {
-  --vp-c-brand: rgb(var(--nv-primary-200)); --vp-c-brand-light: rgb(var(--nv-primary-300)); --vp-c-brand-lighter: rgb(var(--nv-primary-400)); --vp-c-brand-dark: rgb(var(--nv-primary-500)); --vp-c-brand-darker: rgb(var(--nv-primary-600)); --vp-c-brand-next: rgb(var(--nv-primary-700));
-  animation: flow 5s linear infinite;
+  --vp-c-brand: rgba(var(--nv-primary-600), 1); 
+  --vp-c-brand-light: rgba(var(--nv-primary-500), 1);
+  --vp-c-brand-lighter: rgba(var(--nv-primary-400), 1);
+  --vp-c-brand-dark: rgba(var(--nv-primary-700), 1); 
+  --vp-c-brand-darker: rgba(var(--nv-primary-800), 1);
+  --vp-c-brand-next: #009ff7; 
+  animation: rainbow 10s infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
