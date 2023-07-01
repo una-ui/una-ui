@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types'
 
-const sidebarGuide: DefaultTheme.SidebarItem = {
+export const sidebarGuide: DefaultTheme.SidebarItem = {
   text: 'Guide',
   items: [
     { text: 'Introduction', link: '/guide/' },
@@ -13,7 +13,7 @@ const sidebarGuide: DefaultTheme.SidebarItem = {
   ],
 }
 
-const sidebarComponents: DefaultTheme.SidebarItem = {
+export const sidebarComponents: DefaultTheme.SidebarItem = {
   items: [
     {
       text: 'Elements',
@@ -171,7 +171,7 @@ export default defineConfig({
       },
       {
         text: 'Merchandise',
-        link: 'https://www.thegithubshop.com/',
+        link: '#',
         target: '_self',
         rel: 'sponsored',
       },
