@@ -1,5 +1,6 @@
 {
   "name": "@nexvelt/ui-docs",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
   "description": "",
@@ -11,7 +12,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "c": "esno scripts/color-transition.ts"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.1.10",

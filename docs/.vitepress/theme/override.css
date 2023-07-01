@@ -1,20 +1,3 @@
-:root {
-  --vp-c-brand: rgba(var(--c-primary), 1); 
-  --vp-c-brand-lighter: rgba(var(--c-primary-active), 1);
-  --vp-c-brand-dark: rgba(var(--c-primary-active), 1);
-  --vp-c-brand-darker: rgba(var(--c-primary), 1);
-  --vp-c-brand-next: rgba(var(--c-primary), .8);
-  -webkit-animation: colorTransition 5s infinite;
-          animation: colorTransition 5s infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    -webkit-animation: none !important;
-            animation: none !important;
-  }
-}
-
 /* Typography */
 h1 {
   color: var(--vp-c-brand);

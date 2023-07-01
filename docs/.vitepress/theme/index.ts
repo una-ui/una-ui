@@ -9,6 +9,7 @@ import '@nexvelt/ui-preset/style.css'
 import '@unocss/reset/tailwind-compat.css'
 
 import './color-transition.css'
+import './transition.css'
 import './vars.css'
 import './override.css'
 
