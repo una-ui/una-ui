@@ -1,4 +1,106 @@
 import { defineConfig } from 'vitepress'
+import type { DefaultTheme } from 'vitepress/types'
+
+const sidebarGuide: DefaultTheme.SidebarItem = {
+  text: 'Guide',
+  items: [
+    { text: 'Introduction', link: '/guide/' },
+    { text: 'Installation', link: '/guide/installation' },
+    { text: 'Configuration', link: '/guide/configuration' },
+    { text: 'Customization', link: '/guide/customization' },
+    { text: 'Presets', link: '/guide/presets' },
+    { text: 'Themes', link: '/guide/themes' },
+  ],
+}
+
+const sidebarComponents: DefaultTheme.SidebarItem = {
+  items: [
+    {
+      text: 'Elements',
+      collapsed: false,
+      items: [
+        {
+          text: 'Accordion (WIP)',
+          link: '/elements/accordion',
+        },
+        {
+          text: 'Alert (WIP)',
+          link: '/elements/alert',
+        },
+        {
+          text: 'Avatar (WIP)',
+          link: '/elements/avatar',
+        },
+        {
+          text: 'Badge (WIP)',
+          link: '/elements/badge',
+        },
+        {
+          text: 'Button (coming soon)',
+          link: '/elements/button',
+        },
+        {
+          text: 'Dropdown (WIP)',
+          link: '/elements/dropdown',
+        },
+        {
+          text: 'Icon (WIP)',
+          link: '/elements/icon',
+        },
+        {
+          text: 'Kbd (WIP)',
+          link: '/elements/kbd',
+        },
+      ],
+    },
+    {
+      text: 'Forms',
+      collapsed: false,
+      items: [
+        {
+          text: 'Checkbox (WIP)',
+          link: '/forms/checkbox',
+        },
+        {
+          text: 'Datepicker (WIP)',
+          link: '/forms/datepicker',
+        },
+        {
+          text: 'File (WIP)',
+          link: '/forms/file',
+        },
+        {
+          text: 'forms group (WIP)',
+          link: '/forms/forms-group',
+        },
+        {
+          text: 'Input (WIP)',
+          link: '/forms/input',
+        },
+        {
+          text: 'Radio (WIP)',
+          link: '/forms/radio',
+        },
+        {
+          text: 'Select (WIP)',
+          link: '/forms/select',
+        },
+        {
+          text: 'Switch (WIP)',
+          link: '/forms/switch',
+        },
+        {
+          text: 'Textarea (WIP)',
+          link: '/forms/textarea',
+        },
+        {
+          text: 'Toggle (WIP)',
+          link: '/forms/toggle',
+        },
+      ],
+    },
+  ],
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -31,60 +133,9 @@ export default defineConfig({
     ],
 
     sidebar: [
-      {
-        text: 'Guide',
-        items: [
-          { text: 'Introduction', link: '/guide/' },
-          { text: 'Installation', link: '/guide/installation' },
-          { text: 'Configuration', link: '/guide/configuration' },
-          { text: 'Customization', link: '/guide/customization' },
-          { text: 'Presets', link: '/guide/presets' },
-          { text: 'Themes', link: '/guide/themes' },
-        ],
-      },
-      {
-        text: 'Components',
-        items: [
-          {
-            text: 'Elements',
-            collapsed: false,
-            items: [
-              {
-                text: 'Accordion (Coming Soon)',
-                link: '/elements/accordion',
-              },
-              {
-                text: 'Alert (Coming Soon)',
-                link: '/elements/alert',
-              },
-              {
-                text: 'Avatar (Coming Soon)',
-                link: '/elements/avatar',
-              },
-              {
-                text: 'Badge (Coming Soon)',
-                link: '/elements/badge',
-              },
-              {
-                text: 'Button (WIP)',
-                link: '/elements/button',
-              },
-              {
-                text: 'Dropdown (Coming Soon)',
-                link: '/elements/dropdown',
-              },
-              {
-                text: 'Icon (Coming Soon)',
-                link: '/elements/icon',
-              },
-              {
-                text: 'Kbd (Coming Soon)',
-                link: '/elements/kbd',
-              },
-            ],
-          },
-        ],
-      },
+      // insert guide sidebar
+      sidebarGuide,
+      sidebarComponents,
     ],
 
     editLink: {

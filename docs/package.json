@@ -13,7 +13,8 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "c": "esno scripts/color-transition.ts"
+    "c": "esno scripts/color-transition.ts",
+    "f": "esno scripts/file-creator.ts"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.1.10",
