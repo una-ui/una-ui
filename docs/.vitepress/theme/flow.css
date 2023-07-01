@@ -82,9 +82,22 @@
 100% { #00a98e; --vp-c-brand-light: #4ad1b4;  --vp-c-brand-next: #009ff7; }
 }
 
-@keyframes ratate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg) scale(2);
+  }
+  50% {
+    transform: rotate(360deg) scale(1);
+  }
+  75% {
+    transform: rotate(540deg) scale(2);
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+  }
 }
 
 :root {
@@ -97,12 +110,12 @@
 }
 
 .image-bg {
-  animation: ratate 10s linear infinite;
+  animation: rotation 10s infinite;
   box-shadow: 1vmin 0 3vmin 2vmin rgb(var(--nv-primary-800)),
               inset -1vmin 0 3vmin 4vmin rgb(var(--nv-primary-400)),
               -4vmin 0 35vmin 0 var(--nv-primary-800);
-  margin-top: -17vmin;
-  margin-left: -17vmin;
+  margin-top: -18vmin;
+  margin-left: -18vmin;
 }
 
 @media (prefers-reduced-motion: reduce) {
