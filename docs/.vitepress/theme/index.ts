@@ -8,7 +8,8 @@ import 'virtual:uno.css'
 import '@nexvelt/ui-preset/style.css'
 import '@unocss/reset/tailwind-compat.css'
 
-import './rainbow.css'
+// import './rainbow.css'
+import './flow.css'
 import './vars.css'
 import './override.css'
 
@@ -70,7 +71,7 @@ function updateteamMemberStyle(value: boolean) {
     teamMemberStyle = document.createElement('style')
     teamMemberStyle.innerHTML = `
     :root {
-      animation: rainbow 12s linear infinite;
+      animation: rainbow 3s linear infinite;
     }`
     document.body.appendChild(teamMemberStyle)
   }

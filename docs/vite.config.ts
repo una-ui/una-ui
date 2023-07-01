@@ -6,9 +6,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 export default defineConfig({
   optimizeDeps: {
     exclude: [
-      'vitepress',
-      '@nexvelt/ui-preset',
-      'unocss',
+      // 'vitepress',
+      // '@nexvelt/ui-preset',
+      // 'unocss',
     ],
   },
   plugins: [
@@ -20,6 +20,7 @@ export default defineConfig({
         // List the libraries you want to automatically import
         'vue',
         '@vueuse/core',
+        'vitepress',
         // Add more imports as needed
       ],
       dirs: [

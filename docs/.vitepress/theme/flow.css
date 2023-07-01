@@ -1,0 +1,20 @@
+@keyframes flow {
+  0% { --vp-c-brand: rgb(var(--nv-primary-300)); --vp-c-brand-light: rgb(var(--nv-primary-400)); --vp-c-brand-lighter: rgb(var(--nv-primary-500)); --vp-c-brand-dark: rgb(var(--nv-primary-600)); --vp-c-brand-darker: rgb(var(--nv-primary-700)); --vp-c-brand-next: rgb(var(--nv-primary-800)); }
+  16.6% { --vp-c-brand: rgb(var(--nv-primary-400)); --vp-c-brand-light: rgb(var(--nv-primary-500)); --vp-c-brand-lighter: rgb(var(--nv-primary-600)); --vp-c-brand-dark: rgb(var(--nv-primary-700)); --vp-c-brand-darker: rgb(var(--nv-primary-800)); --vp-c-brand-next: rgb(var(--nv-primary-300)); }
+  33.3% { --vp-c-brand: rgb(var(--nv-primary-500)); --vp-c-brand-light: rgb(var(--nv-primary-600)); --vp-c-brand-lighter: rgb(var(--nv-primary-700)); --vp-c-brand-dark: rgb(var(--nv-primary-800)); --vp-c-brand-darker: rgb(var(--nv-primary-300)); --vp-c-brand-next: rgb(var(--nv-primary-400)); }
+  50% { --vp-c-brand: rgb(var(--nv-primary-600)); --vp-c-brand-light: rgb(var(--nv-primary-700)); --vp-c-brand-lighter: rgb(var(--nv-primary-800)); --vp-c-brand-dark: rgb(var(--nv-primary-300)); --vp-c-brand-darker: rgb(var(--nv-primary-400)); --vp-c-brand-next: rgb(var(--nv-primary-500)); }
+  66.6% { --vp-c-brand: rgb(var(--nv-primary-700)); --vp-c-brand-light: rgb(var(--nv-primary-800)); --vp-c-brand-lighter: rgb(var(--nv-primary-300)); --vp-c-brand-dark: rgb(var(--nv-primary-400)); --vp-c-brand-darker: rgb(var(--nv-primary-500)); --vp-c-brand-next: rgb(var(--nv-primary-600)); }
+  83.3% { --vp-c-brand: rgb(var(--nv-primary-800)); --vp-c-brand-light: rgb(var(--nv-primary-300)); --vp-c-brand-lighter: rgb(var(--nv-primary-400)); --vp-c-brand-dark: rgb(var(--nv-primary-500)); --vp-c-brand-darker: rgb(var(--nv-primary-600)); --vp-c-brand-next: rgb(var(--nv-primary-700)); }
+  100% { --vp-c-brand: rgb(var(--nv-primary-200)); --vp-c-brand-light: rgb(var(--nv-primary-300)); --vp-c-brand-lighter: rgb(var(--nv-primary-400)); --vp-c-brand-dark: rgb(var(--nv-primary-500)); --vp-c-brand-darker: rgb(var(--nv-primary-600)); --vp-c-brand-next: rgb(var(--nv-primary-700)); }
+}
+
+:root {
+  --vp-c-brand: rgb(var(--nv-primary-200)); --vp-c-brand-light: rgb(var(--nv-primary-300)); --vp-c-brand-lighter: rgb(var(--nv-primary-400)); --vp-c-brand-dark: rgb(var(--nv-primary-500)); --vp-c-brand-darker: rgb(var(--nv-primary-600)); --vp-c-brand-next: rgb(var(--nv-primary-700));
+  animation: flow 5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    animation: none !important;
+  }
+}
