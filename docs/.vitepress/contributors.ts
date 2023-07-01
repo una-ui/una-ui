@@ -44,7 +44,7 @@ const plainTeamMembers: CoreTeam[] = [
     title: 'Software engineer',
     org: 'Nexvelt Technologies',
     orgLink: 'https://nexvelt.com/',
-    desc: 'The creator of Nexvelt UI and the founder of Nexvelt Technologies.',
+    desc: 'The creator of NexveltUI',
   },
 ]
 

@@ -12,12 +12,12 @@ import { sponsorMembers, teamMembers } from '../../contributors'
   <VPTeamPage class="mt-20 vp">
     <VPTeamPageTitle>
       <template #title>
-        <span class="text-3xl md:px-30 border-solid border-t border-$vp-c-brand-light py-20">
+        <span class="text-3xl md:px-30 border-solid border-t border-$c-primary-active py-20">
           Meet The Team
         </span>
       </template>
       <template #lead>
-        NexveltUI is a community-driven project with people from all over the world.
+        NexveltUI is built by a team of passionate developers and designers from all over the world.
       </template>
     </VPTeamPageTitle>
     <VPTeamMembers size="small" class="vp-doc" :members="teamMembers" />
