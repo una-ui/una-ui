@@ -4,8 +4,8 @@ title: "NexveltUI: The Next Level User Interface Technology"
 
 hero:
   image:
-    light: /logo.svg
-    dark: /logo-dark.svg
+    light: /logo-solid.svg
+    dark: /logo-solid-dark.svg
     alt: NexveltUI
     id: hero-logo
   name: "NexveltUI"
