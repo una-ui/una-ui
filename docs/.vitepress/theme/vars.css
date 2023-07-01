@@ -17,8 +17,8 @@
   --vp-c-green-dimm-2: rgba(var(--nv-primary-600, 0.2));
   --vp-c-green-dimm-3: rgba(var(--nv-primary-600, 0.3));
 
-  --vp-font-family-base: var(--font-family-sans-serif);
-  --vp-font-family-mono: var(--font-family-monospace);
+  /* --vp-font-family-base: var(--font-family-sans-serif);
+  --vp-font-family-mono: var(--font-family-monospace); */
 
   --font-size: 15px;
 
