@@ -27,13 +27,13 @@
   --vp-c-bg-elv-down: var(--c-gray-200);
   --vp-c-bg-elv-mute: var(--c-gray-100);
 
-  --vp-c-text-light-1: var(--c-border-foreground);
-  --vp-c-text-light-2: var(--c-card-foreground);
-  --vp-c-text-light-3: var(--c-muted-foreground);
+  --vp-c-text-light-1: var(--c-gray-700);
+  --vp-c-text-light-2: var(--c-gray-500);
+  --vp-c-text-light-3: var(--c-gray-300);
 
-  --vp-c-text-dark-1: var(--c-border-foreground);
-  --vp-c-text-dark-2: var(--c-card-foreground);
-  --vp-c-text-dark-3: var(--c-muted-foreground);
+  --vp-c-text-dark-1: var(--c-gray-700);
+  --vp-c-text-dark-2: var(--c-gray-500);
+  --vp-c-text-dark-3: var(--c-gray-300);
 
   --vp-c-bg: var(--c-background);
   --vp-c-text: var(--c-foreground); 
