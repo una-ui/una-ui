@@ -91,12 +91,12 @@ function updateGrayTheme(theme: ThemeColors) {
         </div>
       </div>
 
-    <!-- <div>
-      <h4 text="primary">
-        Font Size ({{ settings.fontSize }}px)
-      </h4>
-      <input v-model.number="settings.fontSize" input="base" type="range" min="10" max="30">
-    </div> -->
+      <!-- <div>
+        <h4 text="primary">
+          Font Size ({{ settings.fontSize }}px)
+        </h4>
+        <input v-model.number="settings.fontSize" input="base" type="range" min="10" max="30">
+      </div> -->
     </div>
   </ClientOnly>
 </template>
