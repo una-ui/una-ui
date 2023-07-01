@@ -33,7 +33,7 @@ features:
   - icon: <span class="i-carbon-change-catalog"></span>
     title: Themeable
     details: "Built-in theming system with dark mode support"
-    link: /guide/
+    link: /guide/themes
     linkText: "Learn more"
   - icon: <span class="i-simple-icons-codersrank"></span>
     title: Components
