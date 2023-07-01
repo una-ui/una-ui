@@ -150,8 +150,20 @@ export const sidebarComponents: DefaultTheme.SidebarItem = {
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'en-US',
-  title: 'Nexvelt UI',
+  title: 'NexveltUI',
   description: 'The Next Level UI Technology.',
+
+  head: [
+    ['script', {
+      'defer': 'true',
+      'data-domain': 'ui.nexvelt.com',
+      'src': 'https://plausible.io/js/script.js',
+    }],
+    ['script', {
+      defer: 'true',
+      src: '/_vercel/insights/script.js',
+    }],
+  ],
 
   lastUpdated: true,
   cleanUrls: true,

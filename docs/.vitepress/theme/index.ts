@@ -19,10 +19,6 @@ let nexveltUIStyle: HTMLStyleElement | undefined
 
 export default {
   ...Theme,
-  head: [
-    ['script', { 'defer': true, 'data-domain': 'ui.nexvelt.com', 'src': 'https://plausible.io/js/script.js' }],
-    ['script', { defer: true, src: '/_vercel/insights/script.js' }],
-  ],
   Layout: () => {
     return h(Theme.Layout, null, {
       'home-features-after': () => h(TeamMember),
