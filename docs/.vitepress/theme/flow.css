@@ -101,8 +101,8 @@
   box-shadow: 1vmin 0 3vmin 2vmin rgb(var(--nv-primary-800)),
               inset -1vmin 0 3vmin 4vmin rgb(var(--nv-primary-400)),
               -4vmin 0 35vmin 0 var(--nv-primary-800);
-  margin-top: -15vmin;
-  margin-left: -15vmin;
+  margin-top: -17vmin;
+  margin-left: -17vmin;
 }
 
 @media (prefers-reduced-motion: reduce) {
