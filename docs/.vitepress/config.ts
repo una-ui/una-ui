@@ -9,7 +9,7 @@ export const sidebarGuide: DefaultTheme.SidebarItem = {
     { text: 'Configuration', link: '/guide/configuration' },
     { text: 'Customization', link: '/guide/customization' },
     { text: 'Presets', link: '/guide/presets' },
-    { text: 'Themes', link: '/guide/themes' },
+    { text: 'Theming', link: '/guide/theming' },
   ],
 }
 
