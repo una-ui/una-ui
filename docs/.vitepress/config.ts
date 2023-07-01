@@ -16,6 +16,7 @@ export const sidebarGuide: DefaultTheme.SidebarItem = {
 const isDev = process.env.NODE_ENV === 'development'
 
 export const sidebarComponents: DefaultTheme.SidebarItem = {
+  text: 'Components',
   items: [
     {
       text: 'Elements',

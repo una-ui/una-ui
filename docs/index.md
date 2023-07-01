@@ -10,7 +10,7 @@ hero:
     id: hero-logo
   name: "NexveltUI"
   text: "The Next Level UI Technology"
-  tagline: "Presets · Components · Themeable · Lightweight"
+  tagline: "Presets · Components · Theming system "
   actions:
     - theme: brand
       text: Getting Started
