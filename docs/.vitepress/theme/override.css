@@ -1,3 +1,8 @@
+/* Typography */
+h1 {
+  color: var(--vp-c-brand);
+}
+
 /* Header */
 .curtain {
   background: transparent !important;
@@ -30,6 +35,12 @@
 /* Landing */
 .VPFeature {
   border: 1px solid var(--vp-c-divider) !important;
+}
+
+/* Code */
+.vp-doc :not(pre) > code {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand);
 }
 
 /**

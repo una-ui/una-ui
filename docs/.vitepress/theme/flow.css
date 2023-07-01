@@ -83,9 +83,9 @@
 }
 
 :root {
-  --vp-c-brand: rgba(var(--nv-primary-600), 1); 
+  --vp-c-brand: rgba(var(--c-primary), 1); 
   --vp-c-brand-lighter: rgba(var(--c-primary-active), 1);
-  --vp-c-brand-dark: rgba(var(--nv-primary-500), 1);
+  --vp-c-brand-dark: rgba(var(--c-primary-active), 1);
   --vp-c-brand-darker: rgba(var(--c-primary), 1);
   --vp-c-brand-next: #009ff7;
   animation: flow 10s infinite;
