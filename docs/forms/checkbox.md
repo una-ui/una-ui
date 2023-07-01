@@ -1,6 +1,6 @@
 ---
 title: Checkbox (WIP)
-description: Checkbox (WIP)
+description: 
 ---
 
 # Checkbox (WIP)

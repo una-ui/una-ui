@@ -1,6 +1,6 @@
 ---
 title: Input (WIP)
-description: Input (WIP)
+description: 
 ---
 
 # Input (WIP)

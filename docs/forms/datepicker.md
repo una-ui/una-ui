@@ -1,6 +1,6 @@
 ---
 title: Datepicker (WIP)
-description: Datepicker (WIP)
+description: 
 ---
 
 # Datepicker (WIP)

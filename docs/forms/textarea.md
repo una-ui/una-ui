@@ -1,6 +1,6 @@
 ---
 title: Textarea (WIP)
-description: Textarea (WIP)
+description: 
 ---
 
 # Textarea (WIP)
