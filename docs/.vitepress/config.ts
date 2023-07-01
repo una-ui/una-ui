@@ -99,6 +99,51 @@ const sidebarComponents: DefaultTheme.SidebarItem = {
         },
       ],
     },
+    {
+      text: 'Data',
+      collapsed: false,
+      items: [
+        {
+          text: 'Table (WIP)',
+          link: '/data/table',
+        },
+      ],
+    }, {
+      text: 'Navigation',
+      collapsed: false,
+      items: [
+        {
+          text: 'Breadcrumb (WIP)',
+          link: '/navigation/breadcrumb',
+        },
+        {
+          text: 'Pagination (WIP)',
+          link: '/navigation/pagination',
+        },
+        {
+          text: 'Tabs (WIP)',
+          link: '/navigation/tabs',
+        },
+      ],
+    },
+    {
+      text: 'Layout',
+      collapsed: false,
+      items: [
+        {
+          text: 'Card (WIP)',
+          link: '/layout/card',
+        },
+        {
+          text: 'Divider (WIP)',
+          link: '/layout/divider',
+        },
+        {
+          text: 'Skeleton (WIP)',
+          link: '/layout/skeleton',
+        },
+      ],
+    },
   ],
 }
 
