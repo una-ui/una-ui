@@ -20,8 +20,10 @@
     }
   },
   "exclude": [
-    "**/dist/**",
-    "**/node_modules/**",
-    "**/playground/**"
+    "**/node_modules",
+    "**/dist",
+    "**/playground",
+    "**/playgrounds",
+    "**/docs"
   ]
 }
