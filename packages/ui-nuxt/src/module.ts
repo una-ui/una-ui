@@ -1,4 +1,5 @@
 import { addComponentsDir, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
+import { name, version } from '../package.json'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -8,9 +9,9 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: '@nexvelt/ui-nuxt',
+    name,
     configKey: 'nexveltUI',
-    version: '0.0.0', // TODO: get version from package.json
+    version,
     compatibility: {
       nuxt: '^3.0.0-rc.8',
     },
@@ -23,15 +24,13 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
-    // transpile and alias
+    // transpile
     const runtimeDir = resolve('./runtime')
     nuxt.options.build.transpile.push(runtimeDir)
 
-    nuxt.options.css.push('@unocss/reset/tailwind-compat.css')
-    nuxt.options.css.push('@nexvelt/ui-preset/style.css')
-
-    // nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
-    // nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
+    // css
+    nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
+    nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
 
     // modules
     await installModule('@unocss/nuxt', {

@@ -1,14 +1,22 @@
-<script setup>
+<script setup lang="ts">
+const test = ref('')
 </script>
 
 <template>
-  <div class="flex h-screen items-center justify-center">
-    <NVButton btn-solid>
+  <div class="flex flex-col h-screen items-center justify-center container">
+    <NVButton btn="solid">
       Test sdf
       <template #icon>
         Icon
       </template>
     </NVButton>
     <ColorMode />
+
+    <input v-model="test" type="range">
+
+    <input
+      type="text"
+      input="outline-error"
+    >
   </div>
 </template>
