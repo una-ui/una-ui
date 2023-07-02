@@ -5,11 +5,11 @@
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/phojie",
-  "homepage": "https://github.com/nexvelt/ui/tree/main/packages/preset#readme",
+  "homepage": "https://github.com/nexvelt/ui/tree/main/packages/ui-preset#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/nexvelt/ui",
-    "directory": "packages/preset"
+    "directory": "packages/ui-preset"
   },
   "bugs": {
     "url": "https://github.com/nexvelt/ui/issues"
