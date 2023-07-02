@@ -4,12 +4,12 @@ const test = ref('')
 
 <template>
   <div class="flex flex-col h-screen items-center justify-center container">
-    <NVButton btn="solid">
+    <NButton btn="solid">
       Test sdf
       <template #icon>
         Icon
       </template>
-    </NVButton>
+    </NButton>
     <ColorMode />
 
     <input v-model="test" type="range">

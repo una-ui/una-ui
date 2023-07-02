@@ -8,7 +8,7 @@ function toggleDark() {
 
 <template>
   <button @click="toggleDark()">
-    <NVIcon
+    <NIcon
       icon="i-carbon-sun dark:i-carbon-moon"
       aria-label="Toggle theme"
     />

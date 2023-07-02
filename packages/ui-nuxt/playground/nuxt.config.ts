@@ -2,8 +2,8 @@ export default defineNuxtConfig({
   modules: [
     '../src/module',
   ],
-  myModule: {
-    // prefix: 'N',
+  nexveltUI: {
+    prefix: 'N',
   },
   devtools: { enabled: true },
 })

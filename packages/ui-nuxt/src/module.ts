@@ -3,8 +3,18 @@ import { name, version } from '../package.json'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
+  /**
+   * @default 'NV'
+   */
   prefix?: string
+
+  /**
+   * @default true
+   * @description Register components globally
+   */
   global?: boolean
+
+  // add some options here
 }
 
 export default defineNuxtModule<ModuleOptions>({
