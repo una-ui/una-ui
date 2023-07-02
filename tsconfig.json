@@ -16,7 +16,7 @@
       "vite/client"
     ],
     "paths": {
-      "@nexvelt/ui-preset": ["./packages/preset/src/index.ts"]
+      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
     }
   },
   "exclude": [

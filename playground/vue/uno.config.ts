@@ -8,7 +8,7 @@ import {
 } from 'unocss'
 
 // import presetNexvelt from '@nexvelt/ui-preset'
-import presetNexvelt from '../../packages/preset/src/index'
+import presetNexvelt from '../../packages/ui-preset/src/index'
 
 export default defineConfig({
   shortcuts: [
@@ -39,10 +39,10 @@ export default defineConfig({
   ],
   configDeps: [
     // all shortcuts
-    '../../packages/preset/src/_shortcuts/button.ts',
-    '../../packages/preset/src/_shortcuts/general.ts',
-    '../../packages/preset/src/_shortcuts/index.ts',
-    '../../packages/preset/src/_shortcuts/input.ts',
-    '../../packages/preset/src/index',
+    '../../packages/ui-preset/src/_shortcuts/button.ts',
+    '../../packages/ui-preset/src/_shortcuts/general.ts',
+    '../../packages/ui-preset/src/_shortcuts/index.ts',
+    '../../packages/ui-preset/src/_shortcuts/input.ts',
+    '../../packages/ui-preset/src/index',
   ],
 })

@@ -7,7 +7,7 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
-import presetNexvelt from './packages/preset/src/index'
+import presetNexvelt from './packages/ui-preset/src/index'
 
 export default defineConfig({
   shortcuts: [
@@ -38,9 +38,9 @@ export default defineConfig({
     transformerDirectives(),
   ],
   configDeps: [
-    './packages/preset/src/_shortcuts/button.ts',
-    './packages/preset/src/_shortcuts/general.ts',
-    './packages/preset/src/_shortcuts/index.ts',
-    './packages/preset/src/_shortcuts/input.ts',
+    './packages/ui-preset/src/_shortcuts/button.ts',
+    './packages/ui-preset/src/_shortcuts/general.ts',
+    './packages/ui-preset/src/_shortcuts/index.ts',
+    './packages/ui-preset/src/_shortcuts/input.ts',
   ],
 })
