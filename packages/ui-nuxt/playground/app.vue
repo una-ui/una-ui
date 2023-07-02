@@ -3,17 +3,12 @@
 
 <template>
   <div class="flex h-screen items-center justify-center">
-    <Button
-
-      to="/#" btn="solid-indigo"
-    >
+    <NVButton btn-solid>
       Test sdf
-
       <template #icon>
         Icon
       </template>
-    </Button>
-
+    </NVButton>
     <ColorMode />
   </div>
 </template>

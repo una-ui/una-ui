@@ -9,7 +9,6 @@
   "homepage": "https://github.com/nexvelt/ui/tree/main/packages/ui-nuxt#readme",
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
       "require": "./dist/module.cjs",
       "import": "./dist/module.mjs"
     }
@@ -19,6 +18,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=v16.14.0"
+  },
   "scripts": {
     "build": "nuxt-build-module",
     "stub": "nuxt-build-module --stub",
@@ -28,7 +30,7 @@
   },
   "dependencies": {
     "@nexvelt/ui-preset": "workspace:^",
-    "@nuxt/kit": "^3.5.2",
+    "@nuxt/kit": "^3.6.1",
     "@nuxtjs/color-mode": "^3.3.0",
     "@unocss/core": "^0.53.4",
     "@unocss/nuxt": "^0.53.4",
@@ -40,6 +42,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/module-builder": "^0.4.0",
+    "@nuxt/schema": "^3.6.1",
     "nuxt": "^3.6.1"
   }
 }

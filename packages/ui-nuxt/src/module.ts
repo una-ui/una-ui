@@ -1,36 +1,54 @@
-import { fileURLToPath } from 'node:url'
 import { addComponentsDir, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
-import defu from 'defu'
 
 // Module options TypeScript interface definition
-export interface ModuleOptions {}
-
-function rPath(p: string) {
-  return fileURLToPath(new URL(p, import.meta.url).toString())
+export interface ModuleOptions {
+  prefix?: string
+  global?: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: '@nexvelt/ui-nuxt',
     configKey: 'nexveltUI',
+    version: '0.0.0', // TODO: get version from package.json
+    compatibility: {
+      nuxt: '^3.0.0-rc.8',
+    },
   },
   // Default configuration options of the Nuxt module
-  defaults: {},
+  defaults: {
+    prefix: 'NV',
+    global: true,
+  },
   async setup(options, nuxt) {
-    // Standard components
-    addComponentsDir({ path: rPath('./components') })
+    const { resolve } = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    // addPlugin(resolver.resolve('./runtime/plugin'))
+    // transpile and alias
+    const runtimeDir = resolve('./runtime')
+    nuxt.options.build.transpile.push(runtimeDir)
 
-    // @ts-expect-error - module options
-    nuxt.options.vueuse = nuxt.options.vueuse || {}
-    // @ts-expect-error - module options
-    nuxt.options.colorMode = defu(nuxt.options.colorMode, { classSuffix: '' })
+    nuxt.options.css.push('@unocss/reset/tailwind-compat.css')
+    nuxt.options.css.push('@nexvelt/ui-preset/style.css')
 
-    const resolver = createResolver(import.meta.url)
-    await installModule(await resolver.resolvePath('@unocss/nuxt'))
-    await installModule(await resolver.resolvePath('@vueuse/nuxt'))
-    await installModule(await resolver.resolvePath('@nuxtjs/color-mode'))
+    // nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
+    // nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
+
+    // modules
+    await installModule('@unocss/nuxt', {
+      preflight: true,
+      configFile: resolve(__dirname, '../unocss.config.ts'),
+    })
+    await installModule('@nuxtjs/color-mode', { classSuffix: '' })
+    // await installModule('@vueuse/nuxt')
+
+    // components
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'elements'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: false, // nuxt.options.dev
+    })
+
+    // composables
   },
 })

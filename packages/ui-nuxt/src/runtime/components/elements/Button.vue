@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Icon from '../elements/Icon.vue'
+
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
 import { NuxtLink } from '#components'
