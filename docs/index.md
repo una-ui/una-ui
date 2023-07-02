@@ -28,8 +28,8 @@ features:
   - icon: <span class="i-carbon-3rd-party-connected"></span>
     title: Presets
     details: "Built-in preset styles for components"
-    link: /guide/
-    linkText: "Getting Started"
+    link: /guide/presets
+    linkText: "Learn more"
   - icon: <span class="i-carbon-change-catalog"></span>
     title: Themeable
     details: "Built-in theming system with dark mode support"
