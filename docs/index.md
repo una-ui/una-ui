@@ -9,7 +9,7 @@ hero:
     alt: NexveltUI
     id: nexvelt-logo
   name: "NexveltUI"
-  text: "The Next Level UI Technology"
+  text: "State-of-the-art UI/UX technology"
   tagline: "Presets · Components · Theming system"
   actions:
     - theme: brand
