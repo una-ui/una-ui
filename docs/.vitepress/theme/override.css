@@ -42,6 +42,11 @@ h1 {
   color: var(--vp-c-brand);
 }
 
+/* Dropdown */
+.VPMenu {
+  min-width: 200px !important;
+}
+
 /**
  * VitePress: Custom fix
  * -------------------------------------------------------------------------- */
