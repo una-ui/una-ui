@@ -32,6 +32,14 @@ h1 {
   border: 1px solid var(--vp-c-divider) !important;
 }
 
+/* .icon {
+  color: rgb(var(--c-primary)) !important;
+} */
+
+.icon:hover {
+  color: rgb(var(--c-primary-active)) !important;
+}
+
 .VPFeature:hover {
   border-color: var(--vp-c-brand) !important;
 }
@@ -51,30 +59,25 @@ h1 {
  * VitePress: Custom fix
  * -------------------------------------------------------------------------- */
 
-/*
-  Use lighter colors for links in dark mode for a11y.
-  Also specify some classes twice to have higher specificity
-  over scoped class data attribute.
-*/
-.dark .vp-doc a,
-.dark .vp-doc a > code,
-.dark .VPNavBarMenuLink.VPNavBarMenuLink:hover,
-.dark .VPNavBarMenuLink.VPNavBarMenuLink.active,
-.dark .link.link:hover,
-.dark .link.link.active,
-.dark .edit-link-button.edit-link-button,
-.dark .pager-link .title {
+.vp-doc a,
+.vp-doc a > code,
+.VPNavBarMenuLink.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.VPNavBarMenuLink.active,
+.link.link:hover,
+.link.link.active,
+.edit-link-button.edit-link-button,
+.pager-link .title {
   color: var(--vp-c-brand-lighter);
 }
 
-.dark .vp-doc a:hover,
-.dark .vp-doc a > code:hover {
+.vp-doc a:hover,
+.vp-doc a > code:hover {
   color: var(--vp-c-brand-lightest);
   opacity: 1;
 }
 
 /* Transition by color instead of opacity */
-.dark .vp-doc .custom-block a {
+.vp-doc .custom-block a {
   transition: color 0.25s;
 }
 
