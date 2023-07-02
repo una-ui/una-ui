@@ -2,14 +2,13 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "lib": ["esnext"],
+    "lib": ["esnext", "dom"],
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "skipDefaultLibCheck": true,
-    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export (nuxt module)
     "skipLibCheck": true,
     "jsx": "preserve",
     "types": [
@@ -18,8 +17,13 @@
     ],
     "paths": {
       "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
-    }
+      // "@nexvelt/ui-nuxt": ["./packages/ui-nuxt/src/module.ts"]
+    },
+
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true // Allow default imports from modules with no default export (nuxt module)
   },
+  "extends": "./packages/ui-nuxt/playground/.nuxt/tsconfig.json",
   "exclude": [
     "**/node_modules",
     "**/dist",
