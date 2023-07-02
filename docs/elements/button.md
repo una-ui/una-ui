@@ -1,5 +1,5 @@
 ---
-title: Button
+title: Button 🟡
 description: Buttons are used to initiate an action within an experience.
 ---
 
@@ -7,7 +7,7 @@ description: Buttons are used to initiate an action within an experience.
 import Button from '../components/Button.vue'
 </script>
 
-# Button
+# Button 🟡
 
 Buttons are used to initiate an action within an experience.
 
