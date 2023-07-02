@@ -1,9 +1,9 @@
 ---
-title: Pagination (WIP)
+title: Pagination 🔴
 description: 'Work in progress - this component is not yet ready for use.'
 ---
 
-# Pagination (WIP)
+# Pagination 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

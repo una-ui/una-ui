@@ -1,9 +1,9 @@
 ---
-title: Divider (WIP)
+title: Divider 🔴
 description: 'Work in progress - this component is not yet ready for use.'
 ---
 
-# Divider (WIP)
+# Divider 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

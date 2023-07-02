@@ -3,7 +3,7 @@ title: Guide
 description: Customization
 ---
 
-# Customization (WIP)
+# Customization 🔴
 
 :::warning
 Work in progress - this page is not ready yet.

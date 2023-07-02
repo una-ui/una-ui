@@ -1,9 +1,9 @@
 ---
-title: File (WIP)
+title: File 🔴
 description: 
 ---
 
-# File (WIP)
+# File 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

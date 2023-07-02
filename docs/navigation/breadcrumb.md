@@ -1,9 +1,9 @@
 ---
-title: Breadcrumb (WIP)
+title: Breadcrumb 🔴
 description: 'Work in progress - this component is not yet ready for use.'
 ---
 
-# Breadcrumb (WIP)
+# Breadcrumb 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

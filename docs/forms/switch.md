@@ -1,9 +1,9 @@
 ---
-title: Switch (WIP)
+title: Switch 🔴
 description: 
 ---
 
-# Switch (WIP)
+# Switch 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

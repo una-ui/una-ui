@@ -1,9 +1,9 @@
 ---
-title: Radio (WIP)
+title: Radio 🔴
 description: 
 ---
 
-# Radio (WIP)
+# Radio 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

@@ -23,35 +23,35 @@ export const sidebarComponents: DefaultTheme.SidebarItem = {
       collapsed: false,
       items: [
         {
-          text: 'Accordion (WIP)',
+          text: '🔴 Accordion',
           link: '/elements/accordion',
         },
         {
-          text: 'Alert (WIP)',
+          text: '🔴 Alert',
           link: '/elements/alert',
         },
         {
-          text: 'Avatar (WIP)',
+          text: '🔴 Avatar',
           link: '/elements/avatar',
         },
         {
-          text: 'Badge (WIP)',
+          text: '🔴 Badge',
           link: '/elements/badge',
         },
         {
-          text: 'Button (coming soon)',
+          text: '🟡 Button',
           link: '/elements/button',
         },
         {
-          text: 'Dropdown (WIP)',
+          text: '🔴 Dropdown',
           link: '/elements/dropdown',
         },
         {
-          text: 'Icon (WIP)',
+          text: '🔴 Icon',
           link: '/elements/icon',
         },
         {
-          text: 'Kbd (WIP)',
+          text: '🔴 Kbd',
           link: '/elements/kbd',
         },
       ],
@@ -61,43 +61,43 @@ export const sidebarComponents: DefaultTheme.SidebarItem = {
       collapsed: false,
       items: [
         {
-          text: 'Checkbox (WIP)',
+          text: '🔴 Checkbox',
           link: '/forms/checkbox',
         },
         {
-          text: 'Datepicker (WIP)',
+          text: '🔴 Datepicker',
           link: '/forms/datepicker',
         },
         {
-          text: 'File (WIP)',
+          text: '🔴 File',
           link: '/forms/file',
         },
         {
-          text: 'forms group (WIP)',
-          link: '/forms/forms-group',
+          text: '🔴 Form group',
+          link: '/forms/form-group',
         },
         {
-          text: 'Input (WIP)',
+          text: '🔴 Input',
           link: '/forms/input',
         },
         {
-          text: 'Radio (WIP)',
+          text: '🔴 Radio',
           link: '/forms/radio',
         },
         {
-          text: 'Select (WIP)',
+          text: '🔴 Select',
           link: '/forms/select',
         },
         {
-          text: 'Switch (WIP)',
+          text: '🔴 Switch',
           link: '/forms/switch',
         },
         {
-          text: 'Textarea (WIP)',
+          text: '🔴 Textarea',
           link: '/forms/textarea',
         },
         {
-          text: 'Toggle (WIP)',
+          text: '🔴 Toggle',
           link: '/forms/toggle',
         },
       ],
@@ -107,7 +107,7 @@ export const sidebarComponents: DefaultTheme.SidebarItem = {
       collapsed: false,
       items: [
         {
-          text: 'Table (WIP)',
+          text: '🔴 Table',
           link: '/data/table',
         },
       ],
@@ -116,15 +116,15 @@ export const sidebarComponents: DefaultTheme.SidebarItem = {
       collapsed: false,
       items: [
         {
-          text: 'Breadcrumb (WIP)',
+          text: '🔴 Breadcrumb',
           link: '/navigation/breadcrumb',
         },
         {
-          text: 'Pagination (WIP)',
+          text: '🔴 Pagination',
           link: '/navigation/pagination',
         },
         {
-          text: 'Tabs (WIP)',
+          text: '🔴 Tabs',
           link: '/navigation/tabs',
         },
       ],
@@ -134,15 +134,15 @@ export const sidebarComponents: DefaultTheme.SidebarItem = {
       collapsed: false,
       items: [
         {
-          text: 'Card (WIP)',
+          text: '🔴 Card',
           link: '/layout/card',
         },
         {
-          text: 'Divider (WIP)',
+          text: '🔴 Divider',
           link: '/layout/divider',
         },
         {
-          text: 'Skeleton (WIP)',
+          text: '🔴 Skeleton',
           link: '/layout/skeleton',
         },
       ],

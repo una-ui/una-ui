@@ -1,9 +1,9 @@
 ---
-title: Textarea (WIP)
+title: Textarea 🔴
 description: 
 ---
 
-# Textarea (WIP)
+# Textarea 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

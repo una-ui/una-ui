@@ -1,9 +1,9 @@
 ---
-title: Select (WIP)
+title: Select 🔴
 description: 
 ---
 
-# Select (WIP)
+# Select 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

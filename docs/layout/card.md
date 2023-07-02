@@ -1,9 +1,9 @@
 ---
-title: Card (WIP)
+title: Card 🔴
 description: 'Work in progress - this component is not yet ready for use.'
 ---
 
-# Card (WIP)
+# Card 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

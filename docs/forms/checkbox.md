@@ -1,9 +1,9 @@
 ---
-title: Checkbox (WIP)
+title: Checkbox 🔴
 description: 
 ---
 
-# Checkbox (WIP)
+# Checkbox 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

@@ -3,7 +3,7 @@ title: Guide
 description: Configuration
 ---
 
-# Configuration (WIP)
+# Configuration 🔴
 
 :::warning
 Work in progress - this page is not ready yet.

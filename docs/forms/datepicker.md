@@ -1,9 +1,9 @@
 ---
-title: Datepicker (WIP)
+title: Datepicker 🔴
 description: 
 ---
 
-# Datepicker (WIP)
+# Datepicker 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

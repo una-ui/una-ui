@@ -1,9 +1,9 @@
 ---
-title: Toggle (WIP)
+title: Toggle 🔴
 description: 
 ---
 
-# Toggle (WIP)
+# Toggle 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.

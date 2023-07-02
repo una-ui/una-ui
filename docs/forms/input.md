@@ -1,9 +1,9 @@
 ---
-title: Input (WIP)
+title: Input 🔴
 description: 
 ---
 
-# Input (WIP)
+# Input 🔴
 
 :::warning
 Work in progress - this component is not yet ready for use.
