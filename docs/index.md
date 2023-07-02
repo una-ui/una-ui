@@ -7,10 +7,10 @@ hero:
     light: /logo-solid.svg
     dark: /logo-solid-dark.svg
     alt: NexveltUI
-    id: hero-logo
+    id: nexvelt-logo
   name: "NexveltUI"
   text: "The Next Level UI Technology"
-  tagline: "Presets · Components · Theming system "
+  tagline: "Presets · Components · Theming system"
   actions:
     - theme: brand
       text: Getting Started
@@ -33,7 +33,7 @@ features:
   - icon: <span class="i-carbon-change-catalog"></span>
     title: Themeable
     details: "Built-in theming system with dark mode support"
-    link: /guide/themes
+    link: /guide/theming
     linkText: "Learn more"
   - icon: <span class="i-simple-icons-codersrank"></span>
     title: Components
