@@ -1,0 +1,36 @@
+{
+  "name": "@nexvelt/ui-nuxt",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Nuxt module for @nexvelt/ui",
+  "author": "Phojie Rengel <phojrengel@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/phojie",
+  "homepage": "https://github.com/nexvelt/ui/tree/main/packages/ui-nuxt#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "require": "./dist/module.cjs",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "nuxt-build-module",
+    "stub": "nuxt-build-module --stub",
+    "dev": "nuxi dev playground",
+    "prepublishOnly": "npm run build",
+    "playground:build": "nuxi generate playground"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.5.2"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "nuxt": "^3.6.1"
+  }
+}
