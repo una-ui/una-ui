@@ -23,7 +23,6 @@
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true // Allow default imports from modules with no default export (nuxt module)
   },
-  "extends": "./packages/ui-nuxt/playground/.nuxt/tsconfig.json",
   "exclude": [
     "**/node_modules",
     "**/dist",
