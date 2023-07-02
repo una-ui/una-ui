@@ -9,6 +9,7 @@
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export (nuxt module)
     "skipLibCheck": true,
     "jsx": "preserve",
     "types": [
