@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["esnext", "dom"],
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "strict": true,
     "strictNullChecks": true,
@@ -16,8 +16,7 @@
       "vite/client"
     ],
     "paths": {
-      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"],
-      "@nexvelt/ui-nuxt": ["./packages/ui-nuxt/src/module.ts"]
+      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
     },
 
     "noUnusedLocals": true,
