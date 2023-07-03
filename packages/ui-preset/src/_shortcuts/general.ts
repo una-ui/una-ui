@@ -1,7 +1,7 @@
 export const staticGeneral = {
   /* border */
   'border-base': 'border-$c-border',
-  'border-inverted': 'border-$c-foreground',
+  'border-inverted': 'border-$c-border-foreground',
 
   /* ring */
   'ring-base': 'ring-$c-border',
