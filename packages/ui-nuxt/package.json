@@ -7,6 +7,10 @@
   "license": "MIT",
   "funding": "https://github.com/sponsors/phojie",
   "homepage": "https://github.com/nexvelt/ui/tree/main/packages/ui-nuxt#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexvelt/ui.git"
+  },
   "exports": {
     ".": {
       "require": "./dist/module.cjs",
