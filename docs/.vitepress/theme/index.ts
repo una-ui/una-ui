@@ -25,7 +25,7 @@ export default {
     })
   },
   // this hook is called before the root Vue app is mounted to the DOM.
-  enhanceApp({ router }) {
+  enhanceApp() {
     if (typeof window === 'undefined')
       return
 
