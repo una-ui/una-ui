@@ -16,12 +16,12 @@ export const staticInput = {
 
   /* static */
   'input-wrapper': 'space-y-1 flex flex-col',
-  'input-top-wrapper': 'flex justify-between',
+  'input-top-wrapper': 'flex justify-between items-center',
   'input-label-base': 'block text-sm font-medium leading-6 text-$c-gray-900',
   'input-label-required': 'after:content-[\'*\'] after:ms-0.5 after:text-error-500 dark:after:text-error-400',
   'input-hint-wrapper': 'text-sm leading-6 text-$c-gray-500',
 
-  'input-bottom-wrapper': 'flex justify-between space-x-2',
+  'input-bottom-wrapper': 'flex justify-between items-center space-x-2',
   'input-error-message': 'text-sm leading-6 text-error-500 dark:text-error-400',
   'input-help-message': 'text-sm leading-6 text-$c-gray-500',
   'input-counter-wrapper': 'text-sm leading-6',
