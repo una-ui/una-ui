@@ -6,12 +6,12 @@ function toggleDark() {
 </script>
 
 <template>
-  <button
-    btn-ghost
+  <NButton
+    btn="solid"
     @click="toggleDark()"
   >
     <NIcon
       icon="i-carbon-sun dark:i-carbon-moon"
     />
-  </button>
+  </NButton>
 </template>

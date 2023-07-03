@@ -19,6 +19,6 @@
   "unocss.root": [
     "docs",
     "playground/**/*",
-    "packages/**/*"
+    "packages/**/**/*"
   ]
 }

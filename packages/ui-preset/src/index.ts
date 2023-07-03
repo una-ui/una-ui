@@ -13,8 +13,8 @@ export default function presetNexvelt(options: nexveltUIOptions = {
   return {
     name: '@nexvelt/ui-preset',
     options,
-    enforce: 'pre',
-    prefix: '',
+    // enforce: 'pre',
+    // prefix: '',
     shortcuts,
     // theme,
     theme: {

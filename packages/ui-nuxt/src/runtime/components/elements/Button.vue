@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
     :to="to"
     :type="to ? undefined : props.type"
     v-bind="$attrs"
+    btn="base"
   >
     <slot name="icon">
       <Icon v-if="icon" :icon="icon" class="btn-icon" />

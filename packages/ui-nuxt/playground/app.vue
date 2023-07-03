@@ -24,14 +24,17 @@ const buttons = [
 </script>
 
 <template>
-  <div class="h-screen place-content-center container mx-auto grid grid-cols-2 sm:grid-cols-4 gap-2">
-    <NButton
-      v-for="button in buttons"
-      :key="button"
-      :class="button"
-    >
-      Button text
+  <div class="h-screen flex flex-col items-center justify-center container mx-auto gap-4">
+    <ColorMode />
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+      <NButton
+        v-for="button in buttons"
+        :key="button"
+        :class="button"
+      >
+        Button text
       <!-- {{ button }} -->
-    </NButton>
+      </NButton>
+    </div>
   </div>
 </template>

@@ -47,12 +47,14 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // css
-    nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
-    // nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
+    nuxt.options.css.push('@nexvelt/ui-preset/style.css')
+    nuxt.options.css.push('@unocss/reset/tailwind-compat.css')
+
+    // insert tailwind compat css before meta tag in head
 
     // modules
     await installModule('@unocss/nuxt', {
-      // preflight: true,
+      preflight: false,
       configFile: resolve(__dirname, '../unocss.config.ts'),
     })
     await installModule('@nuxtjs/color-mode', { classSuffix: '' })
