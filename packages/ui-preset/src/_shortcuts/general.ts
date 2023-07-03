@@ -4,8 +4,8 @@ export const staticGeneral = {
   'border-inverted': 'border-$c-border-foreground',
 
   /* ring */
-  'ring-base': 'ring-$c-border',
-  'ring-inverted': 'ring-$c-border-foreground',
+  'ring-base': 'ring-$c-ring',
+  'ring-inverted': 'ring-$c-ring-foreground',
 
   /* background */
   'bg-base': 'bg-$c-background',

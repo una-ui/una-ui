@@ -18,10 +18,10 @@ export const miscButton = {
 export const staticButton = {
   'btn-base': 'bg-transparent inline-flex justify-center items-center btn-disabled rounded btn-md text-sm font-semibold cursor-pointer',
 
-  'btn-solid-white': 'btn-base bg-base text-base ring-1 ring-$c-gray-200 shadow-sm btn-focus-primary hover:bg-$c-gray-50',
+  'btn-solid-white': 'btn-base bg-base text-base ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-50',
   'btn-ghost-white': 'btn-base text-base btn-focus-primary hover:bg-$c-gray-50',
 
-  'btn-solid-gray': 'btn-base bg-$c-gray-50 text-$c-gray-800 ring-1 ring-$c-gray-300 shadow-sm btn-focus-primary hover:bg-$c-gray-100',
+  'btn-solid-gray': 'btn-base bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-100',
   'btn-ghost-gray': 'btn-base text-$c-gray-500 btn-focus-primary hover:text-$c-gray-950 hover:bg-$c-gray-50',
   'btn-link-gray': 'btn-base text-$c-gray-500 btn-focus-primary hover:text-$c-gray-950 hover:underline underline-offset-4',
 

@@ -20,11 +20,10 @@ export const staticInput = {
   'input-label-base': 'block text-sm font-medium leading-6 text-$c-gray-900',
   'input-label-required': 'after:content-[\'*\'] after:ms-0.5 after:text-error-500 dark:after:text-error-400',
   'input-hint-wrapper': 'text-sm leading-6 text-$c-gray-500',
-  'input-bottom-wrapper': 'flex justify-between',
 
+  'input-bottom-wrapper': 'flex justify-between space-x-2',
   'input-error-message': 'text-sm leading-6 text-error-500 dark:text-error-400',
   'input-help-message': 'text-sm leading-6 text-$c-gray-500',
-
   'input-counter-wrapper': 'text-sm leading-6',
   'input-counter-error': 'text-error-500 dark:text-error-400',
   'input-counter-current': 'text-$c-gray-900',
@@ -33,7 +32,7 @@ export const staticInput = {
 }
 
 export const dynamicInput = [
-  [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400`],
+  [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400 focus:bg-base`],
   [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c} ring-1 ring-inset ring-base`],
   [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c}  ring-1 ring-${c}-500 dark:ring-${c}-400`],
 ]

@@ -13,6 +13,9 @@
 
   --c-border: var(--c-gray-200);
   --c-border-foreground: var(--c-gray-700);
+
+  --c-ring: var(--c-gray-300);
+  --c-ring-foreground: var(--c-gray-600);
   
   /* defaults */
   --c-gray: var(--nv-gray-600);

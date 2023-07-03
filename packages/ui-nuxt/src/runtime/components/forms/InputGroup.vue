@@ -23,8 +23,6 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   required: false,
-  counterValue: 0,
-  counterMax: 0,
 })
 </script>
 
@@ -73,17 +71,19 @@ withDefaults(defineProps<Props>(), {
         </slot>
       </div>
 
-      <div>
-        <!-- counter -->
+      <!-- counter -->
+      <div
+        v-if="counterCurrent"
+        input="counter-wrapper"
+      >
         <slot name="counter">
           <span
-            v-if="counterCurrent"
-            input="counter-wrapper"
-          >
-            <span :class="`${counterCurrent >= counterMax ? 'input-counter-error' : 'input-counter-current'}`">{{ counterCurrent }}</span>
-            <span v-if="counterMax" input="counter-separator">/</span>
-            <span v-if="counterMax" input="counter-max">{{ counterMax }}</span>
-          </span>
+            :class="`${counterCurrent >= (counterMax || 0) && counterMax
+              ? 'input-counter-error'
+              : 'input-counter-current'}`"
+          >{{ counterCurrent }}</span>
+          <span v-if="counterMax" input="counter-separator">/</span>
+          <span v-if="counterMax" input="counter-max">{{ counterMax }}</span>
         </slot>
       </div>
     </div>
