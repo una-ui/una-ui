@@ -23,13 +23,13 @@
     "stub": "nuxt-build-module --stub",
     "dev": "nuxi dev playground",
     "prepublishOnly": "npm run build",
-    "playground:build": "nuxi build playground"
+    "playground:build": "nuxi build playground",
+    "playground:preview": "nuxi preview playground"
   },
   "dependencies": {
     "@nexvelt/ui-preset": "workspace:^",
     "@nuxt/kit": "^3.6.1",
-    "@nuxtjs/color-mode": "^3.3.0",
-    "@unocss/nuxt": "^0.53.4"
+    "@nuxtjs/color-mode": "^3.3.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

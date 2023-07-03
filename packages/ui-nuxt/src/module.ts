@@ -36,19 +36,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // transpile
     const runtimeDir = resolve('./runtime')
-    nuxt.options.build.transpile.push(runtimeDir)
-
-    // css
-    // nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
-    nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
-
-    // modules
-    await installModule('@unocss/nuxt', {
-      preflight: true,
-      configFile: resolve(__dirname, '../unocss.config.ts'),
-    })
-    await installModule('@nuxtjs/color-mode', { classSuffix: '' })
-    // await installModule('@vueuse/nuxt')
+    // nuxt.options.build.transpile.push(runtimeDir) // explain this line
 
     // components
     addComponentsDir({
@@ -57,6 +45,18 @@ export default defineNuxtModule<ModuleOptions>({
       global: options.global,
       watch: false, // nuxt.options.dev
     })
+
+    // css
+    nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
+    // nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
+
+    // modules
+    await installModule('@unocss/nuxt', {
+      // preflight: true,
+      configFile: resolve(__dirname, '../unocss.config.ts'),
+    })
+    await installModule('@nuxtjs/color-mode', { classSuffix: '' })
+    // await installModule('@vueuse/nuxt')
 
     // composables
   },

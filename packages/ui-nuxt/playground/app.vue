@@ -1,22 +1,37 @@
 <script setup lang="ts">
-const test = ref('')
+const buttons = [
+  'btn-solid',
+  'btn-solid-indigo',
+  'btn-solid-green',
+  'btn-solid-yellow',
+  'btn-outline',
+  'btn-outline-indigo',
+  'btn-outline-green',
+  'btn-outline-yellow',
+  'btn-soft',
+  'btn-soft-indigo',
+  'btn-soft-green',
+  'btn-soft-yellow',
+  'btn-ghost',
+  'btn-ghost-indigo',
+  'btn-ghost-green',
+  'btn-ghost-yellow',
+  'btn-link',
+  'btn-link-indigo',
+  'btn-link-green',
+  'btn-link-yellow',
+]
 </script>
 
 <template>
-  <div class="flex flex-col h-screen items-center justify-center container">
-    <NButton btn="solid">
-      Test sdf
-      <template #icon>
-        Icon
-      </template>
-    </NButton>
-    <ColorMode />
-
-    <input v-model="test" type="range">
-
-    <input
-      type="text"
-      input="outline-error"
+  <div class="h-screen place-content-center container mx-auto grid grid-cols-2 sm:grid-cols-4 gap-2">
+    <NButton
+      v-for="button in buttons"
+      :key="button"
+      :class="button"
     >
+      Button text
+      <!-- {{ button }} -->
+    </NButton>
   </div>
 </template>
