@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["esnext", "dom"],
-    "moduleResolution": "nodenext",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
     "strictNullChecks": true,
