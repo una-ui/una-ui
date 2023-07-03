@@ -6,4 +6,11 @@ export default defineNuxtConfig({
     prefix: 'N',
   },
   devtools: { enabled: true },
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        moduleResolution: 'bundler',
+      },
+    },
+  },
 })
