@@ -39,7 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.build.transpile.push(runtimeDir)
 
     // css
-    nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
+    // nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
     nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
 
     // modules
