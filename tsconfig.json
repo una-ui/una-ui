@@ -16,8 +16,8 @@
       "vite/client"
     ],
     "paths": {
-      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
-      // "@nexvelt/ui-nuxt": ["./packages/ui-nuxt/src/module.ts"]
+      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"],
+      "@nexvelt/ui-nuxt": ["./packages/ui-nuxt/src/module.ts"]
     },
 
     "noUnusedLocals": true,
