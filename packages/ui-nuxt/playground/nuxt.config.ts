@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   typescript: {
     tsConfig: {
       compilerOptions: {
-        moduleResolution: 'bundler',
+        moduleResolution: 'Node16',
       },
     },
   },
