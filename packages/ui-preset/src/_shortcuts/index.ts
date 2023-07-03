@@ -4,12 +4,12 @@ import { dynamicInput, staticInput } from './input'
 import { staticGeneral } from './general'
 
 export const shortcuts = [
+  /* dynamic */
+  ...dynamicButton,
+  ...dynamicInput,
+
   /* static */
   staticGeneral,
   staticButton,
   staticInput,
-
-  /* dynamic */
-  ...dynamicButton,
-  ...dynamicInput,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

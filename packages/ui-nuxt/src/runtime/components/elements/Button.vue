@@ -9,9 +9,10 @@ interface Props {
   type?: 'button' | 'submit' | 'reset'
   to?: string
   icon?: string
+  label?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   type: 'button',
 })
 </script>
@@ -20,13 +21,15 @@ const props = withDefaults(defineProps<Props>(), {
   <Component
     :is="to ? NuxtLink : 'button'"
     :to="to"
-    :type="to ? undefined : props.type"
+    :type="to ? undefined : type"
     v-bind="$attrs"
-    btn="base"
+    class="btn-base"
   >
     <slot name="icon">
       <Icon v-if="icon" :icon="icon" class="btn-icon" />
     </slot>
-    <slot />
+    <slot>
+      {{ label }}
+    </slot>
   </Component>
 </template>

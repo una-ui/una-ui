@@ -43,7 +43,13 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'elements'),
       prefix: options.prefix,
       global: options.global,
-      watch: false, // nuxt.options.dev
+      watch: nuxt.options.dev,
+    })
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'forms'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
     })
 
     // css

@@ -21,6 +21,8 @@ const buttons = [
   'btn-link-green',
   'btn-link-yellow',
 ]
+
+const isError = ref(false)
 </script>
 
 <template>
@@ -36,5 +38,29 @@ const buttons = [
       <!-- {{ button }} -->
       </NButton>
     </div>
+
+    <NInput
+      input="outline block"
+      placeholder="you@example.com"
+      :is-error="isError"
+    />
+
+    <NButton
+      btn="solid-gray block"
+      :label="isError ? 'solid-gray' : 'No error'"
+      @click="isError = !isError"
+    />
+
+    <NButton
+      btn="solid-black block"
+      :label="isError ? 'solid-black' : 'No error'"
+      @click="isError = !isError"
+    />
+
+    <NButton
+      btn="solid-white block"
+      :label="isError ? 'solid-white' : 'No error'"
+      @click="isError = !isError"
+    />
   </div>
 </template>
