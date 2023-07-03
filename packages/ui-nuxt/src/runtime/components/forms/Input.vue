@@ -3,6 +3,15 @@ interface Props {
   modelValue?: string | number
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
   isError?: boolean
+  placeholder?: string
+  id?: string
+  name?: string
+
+  // nv: {
+  //   input?: string
+  //   inputOutline?: string
+  //   inputSolidError?: string
+  // }
 }
 
 withDefaults(defineProps<Props>(), {
@@ -17,13 +26,18 @@ function onInput(event: InputEvent) {
 </script>
 
 <template>
-  <input
-    v-bind="$attrs"
-    :value="modelValue"
-    :type="type"
-    :class="[
-      !isError ? 'input-outline' : 'input-solid-error',
-    ]"
-    @input="onInput($event as InputEvent)"
-  >
+  <div input="wrapper">
+    <input
+      v-bind="$attrs"
+      :id="id ?? name"
+      :value="modelValue"
+      :type="type"
+      :class="[
+        !isError ? 'input-outline' : 'input-solid-error',
+      ]"
+      :placeholder="placeholder"
+      :name="name ?? id"
+      @input="onInput($event as InputEvent)"
+    >
+  </div>
 </template>

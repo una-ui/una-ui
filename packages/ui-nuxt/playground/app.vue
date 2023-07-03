@@ -20,9 +20,20 @@ const buttons = [
   'btn-link-indigo',
   'btn-link-green',
   'btn-link-yellow',
+
+  'btn-solid-white',
+  'btn-ghost-white',
+
+  'btn-solid-gray',
+  'btn-ghost-gray',
+  'btn-link-gray',
+
+  'btn-solid-black',
+  'btn-link-black',
 ]
 
-const isError = ref(false)
+const isLoading = ref(false)
+const input = ref('')
 </script>
 
 <template>
@@ -34,33 +45,71 @@ const isError = ref(false)
         :key="button"
         :class="button"
       >
-        Button text
-      <!-- {{ button }} -->
+        {{ button }}
       </NButton>
     </div>
 
-    <NInput
-      input="outline block"
-      placeholder="you@example.com"
-      :is-error="isError"
-    />
+    <form
+      class="bg-muted grid grid-cols-1 w-lg gap-4 py-8 px-6 border border-base rounded-md"
+    >
+      {{ input }}
+      <NFormGroup
+        label="Email"
+      >
+        <NInput
+          id="email"
+          v-model="input"
+          placeholder="Email"
+        />
+      </NFormGroup>
 
-    <NButton
-      btn="solid-gray block"
-      :label="isError ? 'solid-gray' : 'No error'"
-      @click="isError = !isError"
-    />
+      <NFormGroup
+        label="Name"
+        name="firstname"
+        required
+      >
+        <NInput
+          id="firstname"
+          autocomplete
+          placeholder="Firstname"
+        />
+      </NFormGroup>
 
-    <NButton
-      btn="solid-black block"
-      :label="isError ? 'solid-black' : 'No error'"
-      @click="isError = !isError"
-    />
+      <NFormGroup
+        label="Middlename"
+        hint="Optional"
+      >
+        <NInput
 
-    <NButton
-      btn="solid-white block"
-      :label="isError ? 'solid-white' : 'No error'"
-      @click="isError = !isError"
-    />
+          id="middlename"
+          placeholder="Middlename"
+        />
+      </NFormGroup>
+
+      <NFormGroup
+        name="lastname"
+        label="Lastname"
+        required
+      >
+        <NInput
+          id="lastname"
+          placeholder="Lastname"
+        />
+      </NFormGroup>
+
+      <NButton
+        type="submit"
+        btn="solid"
+        :label="!isLoading ? 'Submit' : 'Processing...'"
+        :class="isLoading ? 'animate-pulse' : ''"
+        @click="isLoading = !isLoading"
+      />
+
+      <NButton
+        btn="solid-gray"
+        label="Cancel"
+        @click="isLoading = !isLoading"
+      />
+    </form>
   </div>
 </template>

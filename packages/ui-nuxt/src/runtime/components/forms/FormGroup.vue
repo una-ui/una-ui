@@ -27,25 +27,25 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div input="wrapper" :class="nv?.wrapper ?? undefined">
+  <div form-group="wrapper" :class="nv?.wrapper ?? undefined">
     <!-- top -->
     <div
-      input="top-wrapper"
+      form-group="top-wrapper"
       :class="nv?.topWrapper ?? undefined"
     >
       <!-- label area -->
       <slot name="label">
         <label
-          input="label-base"
+          form-group="label-base"
           :for="name ? name : label.toLowerCase()"
         >
-          {{ label }} <span v-if="required" input="label-required" :class="nv?.label?.required ?? undefined" />
+          {{ label }} <span v-if="required" form-group="label-required" :class="nv?.label?.required ?? undefined" />
         </label>
       </slot>
 
       <!-- hint area -->
       <slot name="hint">
-        <span input="hint-wrapper">{{ hint }}</span>
+        <span form-group="hint-wrapper">{{ hint }}</span>
       </slot>
     </div>
 
@@ -53,19 +53,19 @@ withDefaults(defineProps<Props>(), {
     <slot />
 
     <!-- bottom area -->
-    <div input="bottom-wrapper">
+    <div form-group="bottom-wrapper">
       <!-- messages -->
       <div>
         <!-- error message -->
         <slot name="error">
-          <p v-if="error" input="error-message">
+          <p v-if="error" form-group="error-message">
             {{ error }}
           </p>
         </slot>
 
         <!-- help message -->
         <slot name="help">
-          <p v-if="!error && help" input="help-message">
+          <p v-if="!error && help" form-group="help-message">
             {{ help }}
           </p>
         </slot>
@@ -74,16 +74,16 @@ withDefaults(defineProps<Props>(), {
       <!-- counter -->
       <div
         v-if="counterCurrent"
-        input="counter-wrapper"
+        form-group="counter-wrapper"
       >
         <slot name="counter">
           <span
             :class="`${counterCurrent >= (counterMax || 0) && counterMax
-              ? 'input-counter-error'
-              : 'input-counter-current'}`"
+              ? 'form-group-counter-error'
+              : 'form-group-counter-current'}`"
           >{{ counterCurrent }}</span>
-          <span v-if="counterMax" input="counter-separator">/</span>
-          <span v-if="counterMax" input="counter-max">{{ counterMax }}</span>
+          <span v-if="counterMax" form-group="counter-separator">/</span>
+          <span v-if="counterMax" form-group="counter-max">{{ counterMax }}</span>
         </slot>
       </div>
     </div>
