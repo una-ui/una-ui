@@ -72,7 +72,6 @@ onMounted(() => {
       ref="inputRef"
       v-model="inputValue"
       :disabled="disabled"
-      :value="modelValue"
       :type="type"
       :class="[
         status ? `input-solid-${status} input-status-${status}` : 'input-outline',
