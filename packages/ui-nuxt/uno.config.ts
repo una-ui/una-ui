@@ -27,5 +27,6 @@ export default defineConfig({
     '../ui-preset/src/_shortcuts/general.ts',
     '../ui-preset/src/_shortcuts/index.ts',
     '../ui-preset/src/_shortcuts/input.ts',
+    '../ui-preset/src/_shortcuts/form-group.ts',
   ],
 })
