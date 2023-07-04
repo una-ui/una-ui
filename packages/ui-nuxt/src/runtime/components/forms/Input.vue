@@ -1,30 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
 import { useVModel } from '@vueuse/core'
 
 import Icon from '../elements/Icon.vue'
-
-interface Props {
-  modelValue?: string | number
-  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
-  placeholder?: string
-  id?: string
-  name?: string
-  leading?: string
-  trailing?: string
-  input?: string
-  status?: 'info' | 'success' | 'warning' | 'error'
-  autofocus?: boolean
-  disabled?: boolean
-
-  nv?: {
-    wrapper?: string
-    leadingWrapper?: string
-    trailingWrapper?: string
-
-    inputBase?: string
-  }
-}
 
 defineOptions({
   inheritAttrs: false,
@@ -36,16 +13,24 @@ const props = withDefaults(defineProps<Props>(), {
 
 // emits
 const emit = defineEmits<{ (...args: any): void }>()
+
+interface Props {
+  modelValue?: string | number
+  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
+  leading?: string
+  trailing?: string
+  status?: 'info' | 'success' | 'warning' | 'error'
+
+  nv?: {
+    wrapper?: string
+    leadingWrapper?: string
+    trailingWrapper?: string
+
+    inputBase?: string
+  }
+}
+
 const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
-
-// refs
-const inputRef = ref<HTMLInputElement | null>(null)
-
-onMounted(() => {
-  // auto focus
-  if (props.autofocus && inputRef.value)
-    inputRef.value.focus()
-})
 </script>
 
 <template>
@@ -68,10 +53,7 @@ onMounted(() => {
     </slot>
 
     <input
-      :id="id ?? name"
-      ref="inputRef"
       v-model="inputValue"
-      :disabled="disabled"
       :type="type"
       :class="[
         status ? `input-solid-${status} input-status-${status}` : 'input-outline',
@@ -79,9 +61,7 @@ onMounted(() => {
         leading ? 'pl-10' : '',
         nv?.inputBase ?? undefined,
       ]"
-      :input="input"
-      :placeholder="placeholder"
-      :name="name ?? id"
+      v-bind="$attrs"
     >
 
     <div
