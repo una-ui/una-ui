@@ -7,7 +7,6 @@ interface Props {
   error?: string
   counterCurrent?: number
   counterMax?: number
-  help?: string
   description?: string
   status?: 'info' | 'success' | 'warning' | 'error'
   message?: string
