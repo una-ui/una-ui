@@ -15,6 +15,27 @@ export default function presetNexvelt(options: nexveltUIOptions = {
     options,
     // enforce: 'pre',
     // prefix: '',
+    safelist: [
+      'text-info',
+      'text-warning',
+      'text-success',
+      'text-error',
+
+      'input-info-icon',
+      'input-warning-icon',
+      'input-success-icon',
+      'input-error-icon',
+
+      'input-status-info',
+      'input-status-error',
+      'input-status-success',
+      'input-status-warning',
+
+      'input-solid-info',
+      'input-solid-error',
+      'input-solid-success',
+      'input-solid-warning',
+    ],
     shortcuts,
     // theme,
     theme: {
