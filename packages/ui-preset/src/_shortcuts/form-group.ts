@@ -1,4 +1,4 @@
-export const staticFormGroup = {
+export const miscFormGroup = {
   'form-group-wrapper': 'space-y-2 flex flex-col',
   'form-group-top-wrapper': 'flex justify-between items-center',
   'form-group-bottom-wrapper': 'flex justify-between items-center space-x-2',
@@ -17,10 +17,14 @@ export const staticFormGroup = {
   'form-group-counter-max': 'text-$c-gray-500',
 }
 
+export const staticFormGroup = {
+}
+
 export const dynamicFormGroup = [
 ]
 
 export const formGroup = [
   ...dynamicFormGroup,
   staticFormGroup,
+  miscFormGroup,
 ]

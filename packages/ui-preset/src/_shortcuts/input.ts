@@ -1,6 +1,4 @@
-export const staticInput = {
-  // defaults config
-  'input-base': 'w-full input-md input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
+export const miscInput = {
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
 
   'input-error-icon': 'i-carbon-warning-filled',
@@ -20,6 +18,11 @@ export const staticInput = {
   'input-xl': 'px-4 py-2.5 text-xl',
 }
 
+export const staticInput = {
+  // defaults config
+  'input-base': 'w-full input-md input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
+}
+
 export const dynamicInput = [
   // defaults config
   [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400 focus:bg-base focus:outline-2 focus:outline-offset-0 focus:outline-${c}-500/20 dark:focus:outline-${c}-400/30`],
@@ -30,4 +33,10 @@ export const dynamicInput = [
 
   // status
   [/^input-status(-(\S+))?$/, ([, , c = '']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-400/70 dark:placeholder-${c}-300/70`],
+]
+
+export const input = [
+  ...dynamicInput,
+  miscInput,
+  staticInput,
 ]
