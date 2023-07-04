@@ -26,7 +26,7 @@ withDefaults(defineProps<Props>(), {
     class="btn-base"
   >
     <slot name="icon">
-      <Icon v-if="icon" :icon="icon" class="btn-icon" />
+      <Icon v-if="icon" :name="icon" class="btn-icon" />
     </slot>
     <slot>
       {{ label }}

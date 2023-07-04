@@ -16,4 +16,7 @@ export const staticGeneral = {
   'text-base': 'text-$c-foreground',
   'text-inverted': 'text-$c-background',
   'text-muted': 'text-$c-muted-foreground',
+  'text-error': 'text-error-500 dark:text-error-400',
+  'text-success': 'text-success-500 dark:text-success-400',
+  'text-warning': 'text-warning-500 dark:text-warning-400',
 }

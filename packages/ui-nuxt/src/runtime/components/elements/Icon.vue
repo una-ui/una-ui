@@ -1,9 +1,9 @@
 <script setup lang="ts">
 defineProps<{
-  icon?: string
+  name?: string
 }>()
 </script>
 
 <template>
-  <div class="flex-none" :class="icon" />
+  <div class="flex-none" :class="name" />
 </template>

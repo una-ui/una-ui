@@ -8,18 +8,21 @@ interface Props {
   counterCurrent?: number
   counterMax?: number
   help?: string
+  // description? string // TODO
 
   // classes
   nv?: {
     wrapper?: string
     topWrapper?: string
-    label?: {
-      wrapper?: string
-      base?: string
-      required?: string
-    }
+    labelWrapper?: string
+    labelBase?: string
+    labelRequired?: string
   }
 }
+
+defineOptions({
+  inheritAttrs: false,
+})
 
 withDefaults(defineProps<Props>(), {
   required: false,
@@ -27,7 +30,12 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div form-group="wrapper" :class="nv?.wrapper ?? undefined">
+  <div
+    form-group="wrapper"
+    :class="[
+      nv?.wrapper ?? undefined,
+    ]"
+  >
     <!-- top -->
     <div
       form-group="top-wrapper"
@@ -37,9 +45,20 @@ withDefaults(defineProps<Props>(), {
       <slot name="label">
         <label
           form-group="label-base"
+          class="form-group-label-wrapper"
+          :class="[nv?.labelWrapper ?? undefined]"
           :for="name ? name : label.toLowerCase()"
         >
-          {{ label }} <span v-if="required" form-group="label-required" :class="nv?.label?.required ?? undefined" />
+          <span
+            :class="nv?.labelBase ?? undefined"
+          >
+            {{ label }}
+          </span>
+          <span
+            v-if="required"
+            form-group="label-required"
+            :class="nv?.labelRequired ?? undefined"
+          />
         </label>
       </slot>
 
@@ -59,12 +78,14 @@ withDefaults(defineProps<Props>(), {
         <!-- error message -->
         <slot name="error">
           <p v-if="error" form-group="error-message">
+            <!-- TODO ADD Transition -->
             {{ error }}
           </p>
         </slot>
 
         <!-- help message -->
         <slot name="help">
+          <!-- TODO ADD Transition -->
           <p v-if="!error && help" form-group="help-message">
             {{ help }}
           </p>
