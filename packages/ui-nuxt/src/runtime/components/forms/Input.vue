@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+import { useVModel } from '@vueuse/core'
 import Icon from '../elements/Icon.vue'
 
 interface Props {
@@ -34,22 +35,24 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 // emits
-const emit = defineEmits(['update:modelValue'])
-function onInput(event: InputEvent) {
-  emit('update:modelValue', (event.target as HTMLInputElement).value)
-}
+// const emit = defineEmits(['update:modelValue'])
+// function onInput(event: InputEvent) {
+//   emit('update:modelValue', (event.target as HTMLInputElement).value)
+// }
+const emit = defineEmits<{ (...args: any): void }>()
+const input = useVModel(props, 'modelValue', emit, { passive: true })
 
 // status
 const isError = computed(() => props.status === 'error')
 const isWarning = computed(() => props.status === 'warning')
 const isSuccess = computed(() => props.status === 'success')
 
-const input = ref<HTMLInputElement | null>(null)
+const inputRef = ref<HTMLInputElement | null>(null)
 
 onMounted(() => {
   // auto focus
-  if (props.autofocus && input.value)
-    input.value.focus()
+  if (props.autofocus && inputRef.value)
+    inputRef.value.focus()
 })
 </script>
 
@@ -77,7 +80,8 @@ onMounted(() => {
 
     <input
       :id="id ?? name"
-      ref="input"
+      ref="inputRef"
+      v-model="input"
       :disabled="disabled"
       :value="modelValue"
       :type="type"
@@ -93,7 +97,6 @@ onMounted(() => {
       :input="input"
       :placeholder="placeholder"
       :name="name ?? id"
-      @input="onInput($event as InputEvent)"
     >
 
     <div
