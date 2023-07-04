@@ -13,7 +13,7 @@ interface Props {
   leading?: string
   trailing?: string
   input?: string
-  status?: 'none' | 'info' | 'success' | 'warning' | 'error'
+  status?: 'info' | 'success' | 'warning' | 'error'
   autofocus?: boolean
   disabled?: boolean
 
@@ -32,12 +32,10 @@ defineOptions({
 
 const props = withDefaults(defineProps<Props>(), {
   type: 'text',
-  status: 'none',
 })
 
 // emits
 const emit = defineEmits<{ (...args: any): void }>()
-
 const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
 
 // refs
@@ -96,7 +94,7 @@ onMounted(() => {
     >
       <slot name="trailing">
         <Icon
-          v-if="props.status !== 'none'"
+          v-if="props.status"
           :name="`input-${props.status}-icon`"
         />
 
