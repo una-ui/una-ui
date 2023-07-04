@@ -16,11 +16,13 @@ export default function presetNexvelt(options: nexveltUIOptions = {
     // enforce: 'pre',
     // prefix: '',
     safelist: [
+      // text
       'text-info',
       'text-warning',
       'text-success',
       'text-error',
 
+      // input
       'input-info-icon',
       'input-warning-icon',
       'input-success-icon',
