@@ -1,5 +1,5 @@
 export const staticFormGroup = {
-  'form-group-wrapper': 'space-y-1 flex flex-col',
+  'form-group-wrapper': 'space-y-2 flex flex-col',
   'form-group-top-wrapper': 'flex justify-between items-center',
   'form-group-bottom-wrapper': 'flex justify-between items-center space-x-2',
 
