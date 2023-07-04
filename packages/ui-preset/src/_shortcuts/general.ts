@@ -2,6 +2,8 @@ export const text = {
   'text-base': 'text-$c-foreground',
   'text-inverted': 'text-$c-background',
   'text-muted': 'text-$c-muted-foreground',
+
+  'text-info': 'text-info-500 dark:text-info-400',
   'text-error': 'text-error-500 dark:text-error-400',
   'text-success': 'text-success-500 dark:text-success-400',
   'text-warning': 'text-warning-500 dark:text-warning-400',

@@ -1,6 +1,7 @@
 export const miscInput = {
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
 
+  'input-info-icon': 'i-carbon-information-filled',
   'input-error-icon': 'i-carbon-warning-filled',
   'input-success-icon': 'i-carbon-checkmark-filled',
   'input-warning-icon': 'i-carbon-warning-alt-filled',

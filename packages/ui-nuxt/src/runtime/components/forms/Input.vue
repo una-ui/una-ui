@@ -13,7 +13,7 @@ interface Props {
   leading?: string
   trailing?: string
   input?: string
-  status?: 'success' | 'error' | 'warning' | 'none'
+  status?: 'none' | 'info' | 'success' | 'warning' | 'error'
   autofocus?: boolean
   disabled?: boolean
 
