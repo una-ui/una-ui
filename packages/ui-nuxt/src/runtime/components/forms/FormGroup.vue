@@ -9,16 +9,27 @@ interface Props {
   counterMax?: number
   help?: string
   description?: string
+  status?: 'info' | 'success' | 'warning' | 'error'
+  message?: string
 
-  // classes
   nv?: {
     wrapper?: string
+
     topWrapper?: string
-    labelWrapper?: string
     topWrapperInner?: string
+
+    descriptionWrapper?: string
+
+    bottomWrapper?: string
+
+    labelWrapper?: string
     labelBase?: string
     labelRequired?: string
-    descriptionWrapper?: string
+
+    hintBase?: string
+
+    messageWrapper?: string
+    messageBase?: string
   }
 }
 
@@ -46,7 +57,6 @@ withDefaults(defineProps<Props>(), {
         form-group="top-wrapper-inner"
         :class="nv?.topWrapperInner ?? undefined"
       >
-        <!-- label area -->
         <slot name="label">
           <label
             v-if="label"
@@ -68,9 +78,11 @@ withDefaults(defineProps<Props>(), {
           </label>
         </slot>
 
-        <!-- hint area -->
         <slot name="hint">
-          <p v-if="hint" form-group="hint-wrapper">
+          <p
+            v-if="hint" form-group="hint-base"
+            :class="nv?.hintBase ?? undefined"
+          >
             {{ hint }}
           </p>
         </slot>
@@ -86,21 +98,31 @@ withDefaults(defineProps<Props>(), {
         </p>
       </slot>
     </div>
+
     <slot />
 
-    <div form-group="bottom-wrapper">
-      <div>
-        <slot name="error">
-          <p v-if="error" form-group="error-message">
-            <!-- TODO ADD Transition -->
-            {{ error }}
-          </p>
-        </slot>
-
-        <slot name="help">
-          <!-- TODO ADD Transition -->
-          <p v-if="!error && help" form-group="help-message">
-            {{ help }}
+    <div
+      form-group="bottom-wrapper"
+      :class="[
+        nv?.bottomWrapper ?? undefined,
+      ]"
+    >
+      <div
+        form-group="message-wrapper"
+        :class="[
+          nv?.messageWrapper ?? undefined,
+        ]"
+      >
+        <slot name="message">
+          <!-- TODO add transition when value CHANGE (ease-in-out) -->
+          <p
+            v-if="message" form-group="message-base"
+            :class="[
+              nv?.messageBase ?? undefined,
+              status ? `text-${status}` : '',
+            ]"
+          >
+            {{ message }}
           </p>
         </slot>
       </div>
