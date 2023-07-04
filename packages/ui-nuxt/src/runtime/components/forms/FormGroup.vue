@@ -8,15 +8,17 @@ interface Props {
   counterCurrent?: number
   counterMax?: number
   help?: string
-  // description? string // TODO
+  description?: string
 
   // classes
   nv?: {
     wrapper?: string
     topWrapper?: string
     labelWrapper?: string
+    topWrapperInner?: string
     labelBase?: string
     labelRequired?: string
+    descriptionWrapper?: string
   }
 }
 
@@ -41,30 +43,49 @@ withDefaults(defineProps<Props>(), {
       form-group="top-wrapper"
       :class="nv?.topWrapper ?? undefined"
     >
-      <!-- label area -->
-      <slot name="label">
-        <label
-          form-group="label-base"
-          class="form-group-label-wrapper"
-          :class="[nv?.labelWrapper ?? undefined]"
-          :for="name ? name : label.toLowerCase()"
-        >
-          <span
-            :class="nv?.labelBase ?? undefined"
+      <div
+        form-group="top-wrapper-inner"
+        :class="nv?.topWrapperInner ?? undefined"
+      >
+        <!-- label area -->
+        <slot name="label">
+          <label
+            v-if="label"
+            form-group="label-base"
+            class="form-group-label-wrapper"
+            :class="[nv?.labelWrapper ?? undefined]"
+            :for="name ? name : label.toLowerCase()"
           >
-            {{ label }}
-          </span>
-          <span
-            v-if="required"
-            form-group="label-required"
-            :class="nv?.labelRequired ?? undefined"
-          />
-        </label>
-      </slot>
+            <span
+              :class="nv?.labelBase ?? undefined"
+            >
+              {{ label }}
+            </span>
+            <span
+              v-if="required"
+              form-group="label-required"
+              :class="nv?.labelRequired ?? undefined"
+            />
+          </label>
+        </slot>
 
-      <!-- hint area -->
-      <slot name="hint">
-        <span form-group="hint-wrapper">{{ hint }}</span>
+        <!-- hint area -->
+        <slot name="hint">
+          <p v-if="hint" form-group="hint-wrapper">
+            {{ hint }}
+          </p>
+        </slot>
+      </div>
+
+      <!-- description area -->
+      <slot name="description">
+        <p
+          v-if="description"
+          form-group="description-wrapper"
+          :class="nv?.descriptionWrapper ?? undefined"
+        >
+          {{ description }}
+        </p>
       </slot>
     </div>
 
