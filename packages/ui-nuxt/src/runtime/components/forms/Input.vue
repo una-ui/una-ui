@@ -65,7 +65,8 @@ onMounted(() => {
         input="leading-wrapper"
         :class="[
           nv?.leadingWrapper ?? undefined,
-          isError ? 'text-error' : isSuccess ? 'text-success'
+          isError ? 'text-error'
+          : isSuccess ? 'text-success'
             : isWarning ? 'text-warning'
               : '',
         ]"
