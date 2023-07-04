@@ -38,7 +38,6 @@ withDefaults(defineProps<Props>(), {
       nv?.wrapper ?? undefined,
     ]"
   >
-    <!-- top -->
     <div
       form-group="top-wrapper"
       :class="nv?.topWrapper ?? undefined"
@@ -77,7 +76,6 @@ withDefaults(defineProps<Props>(), {
         </slot>
       </div>
 
-      <!-- description area -->
       <slot name="description">
         <p
           v-if="description"
@@ -88,15 +86,10 @@ withDefaults(defineProps<Props>(), {
         </p>
       </slot>
     </div>
-
-    <!-- default area -->
     <slot />
 
-    <!-- bottom area -->
     <div form-group="bottom-wrapper">
-      <!-- messages -->
       <div>
-        <!-- error message -->
         <slot name="error">
           <p v-if="error" form-group="error-message">
             <!-- TODO ADD Transition -->
@@ -104,7 +97,6 @@ withDefaults(defineProps<Props>(), {
           </p>
         </slot>
 
-        <!-- help message -->
         <slot name="help">
           <!-- TODO ADD Transition -->
           <p v-if="!error && help" form-group="help-message">
@@ -113,7 +105,6 @@ withDefaults(defineProps<Props>(), {
         </slot>
       </div>
 
-      <!-- counter -->
       <div
         v-if="counterCurrent"
         form-group="counter-wrapper"
