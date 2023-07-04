@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import Icon from '../elements/Icon.vue'
 
 interface Props {
@@ -12,6 +12,8 @@ interface Props {
   trailing?: string
   input?: string
   status?: 'success' | 'error' | 'warning' | 'none'
+  autofocus?: boolean
+  disabled?: boolean
 
   nv?: {
     wrapper?: string
@@ -39,9 +41,16 @@ function onInput(event: InputEvent) {
 
 // status
 const isError = computed(() => props.status === 'error')
-// const isWarning = computed(() => props.status === 'warning')
-const isSuccess = computed(() => props.status === 'success')
 const isWarning = computed(() => props.status === 'warning')
+const isSuccess = computed(() => props.status === 'success')
+
+const input = ref<HTMLInputElement | null>(null)
+
+onMounted(() => {
+  // auto focus
+  if (props.autofocus && input.value)
+    input.value.focus()
+})
 </script>
 
 <template>
@@ -67,6 +76,8 @@ const isWarning = computed(() => props.status === 'warning')
 
     <input
       :id="id ?? name"
+      ref="input"
+      :disabled="disabled"
       :value="modelValue"
       :type="type"
       :class="[
@@ -84,26 +95,22 @@ const isWarning = computed(() => props.status === 'warning')
       @input="onInput($event as InputEvent)"
     >
 
-    <slot name="trailing">
-      <div
-        input="trailing-wrapper"
-        :class="[
-          nv?.trailingWrapper ?? undefined,
-          isError ? 'text-error'
-          : isSuccess ? 'text-success'
-            : isWarning ? 'text-warning'
-              : '',
-        ]"
-      >
+    <div
+      input="trailing-wrapper"
+      :class="[
+        nv?.trailingWrapper ?? undefined,
+      ]"
+    >
+      <slot name="trailing">
         <!-- trailing="i-carbon-warning-filled" -->
         <Icon
           :name="
-            isError ? 'input-error-icon'
-            : isSuccess ? 'input-success-icon'
-              : isWarning ? 'input-warning-icon'
+            isError ? 'input-error-icon text-error'
+            : isSuccess ? 'input-success-icon text-success'
+              : isWarning ? 'input-warning-icon text-warning'
                 : trailing "
         />
-      </div>
-    </slot>
+      </slot>
+    </div>
   </div>
 </template>
