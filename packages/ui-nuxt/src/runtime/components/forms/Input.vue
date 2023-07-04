@@ -35,10 +35,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 // emits
-// const emit = defineEmits(['update:modelValue'])
-// function onInput(event: InputEvent) {
-//   emit('update:modelValue', (event.target as HTMLInputElement).value)
-// }
 const emit = defineEmits<{ (...args: any): void }>()
 const input = useVModel(props, 'modelValue', emit, { passive: true })
 
@@ -47,6 +43,7 @@ const isError = computed(() => props.status === 'error')
 const isWarning = computed(() => props.status === 'warning')
 const isSuccess = computed(() => props.status === 'success')
 
+// refs
 const inputRef = ref<HTMLInputElement | null>(null)
 
 onMounted(() => {
