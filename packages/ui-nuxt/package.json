@@ -33,7 +33,8 @@
   "dependencies": {
     "@nexvelt/ui-preset": "workspace:^",
     "@nuxt/kit": "^3.6.1",
-    "@nuxtjs/color-mode": "^3.3.0"
+    "@nuxtjs/color-mode": "^3.3.0",
+    "@vueuse/nuxt": "^10.2.1"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
