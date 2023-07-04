@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useVModel } from '@vueuse/core'
+
 import Icon from '../elements/Icon.vue'
 
 interface Props {
@@ -36,12 +37,8 @@ const props = withDefaults(defineProps<Props>(), {
 
 // emits
 const emit = defineEmits<{ (...args: any): void }>()
-const input = useVModel(props, 'modelValue', emit, { passive: true })
 
-// status
-const isError = computed(() => props.status === 'error')
-const isWarning = computed(() => props.status === 'warning')
-const isSuccess = computed(() => props.status === 'success')
+const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
 
 // refs
 const inputRef = ref<HTMLInputElement | null>(null)
@@ -65,10 +62,7 @@ onMounted(() => {
         input="leading-wrapper"
         :class="[
           nv?.leadingWrapper ?? undefined,
-          isError ? 'text-error'
-          : isSuccess ? 'text-success'
-            : isWarning ? 'text-warning'
-              : '',
+          `text-${props.status}`,
         ]"
       >
         <Icon :name="leading" />
@@ -78,15 +72,12 @@ onMounted(() => {
     <input
       :id="id ?? name"
       ref="inputRef"
-      v-model="input"
+      v-model="inputValue"
       :disabled="disabled"
       :value="modelValue"
       :type="type"
       :class="[
-        isError ? 'input-status-error input-solid-error'
-        : isSuccess ? 'input-status-success input-solid-success'
-          : isWarning ? 'input-status-warning input-solid-warning'
-            : 'input-outline',
+        status ? `input-solid-${status} input-status-${status}` : 'input-outline',
         trailing ? 'pr-10' : '',
         leading ? 'pl-10' : '',
         nv?.inputBase ?? undefined,
@@ -100,17 +91,16 @@ onMounted(() => {
       input="trailing-wrapper"
       :class="[
         nv?.trailingWrapper ?? undefined,
+        `text-${props.status}`,
       ]"
     >
       <slot name="trailing">
-        <!-- trailing="i-carbon-warning-filled" -->
         <Icon
-          :name="
-            isError ? 'input-error-icon text-error'
-            : isSuccess ? 'input-success-icon text-success'
-              : isWarning ? 'input-warning-icon text-warning'
-                : trailing "
+          v-if="props.status !== 'none'"
+          :name="`input-${props.status}-icon`"
         />
+
+        <Icon v-else :name="trailing" />
       </slot>
     </div>
   </div>
