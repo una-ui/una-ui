@@ -59,7 +59,7 @@ export default defineNuxtModule<ModuleOptions>({
     // modules
     await installModule('@unocss/nuxt', {
       preflight: false,
-      configFile: resolve(__dirname, '../unocss.config.ts'),
+      configFile: resolve(__dirname, './src/nexveltui.config.ts'),
     })
     await installModule('@nuxtjs/color-mode', { classSuffix: '' })
     await installModule('@vueuse/nuxt')
