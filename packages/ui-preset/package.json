@@ -1,7 +1,6 @@
 {
   "name": "@nexvelt/ui-preset",
   "version": "0.0.2-beta.0",
-  "private": false,
   "description": "The default preset for NexveltUI",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -38,5 +37,8 @@
   "scripts": {
     "build": "unbuild",
     "stub": "unbuild --stub"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
