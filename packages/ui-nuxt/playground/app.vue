@@ -52,13 +52,18 @@ const input = ref('')
     <form
       class="bg-muted grid grid-cols-1 w-lg gap-4 py-8 px-6 border border-base rounded-md"
     >
-      {{ input }}
       <NFormGroup
         label="Email"
+        description="We'll never share your email with anyone else."
+        :message="input.length > 0 ? `We'll never share your email with anyone else.` : 'You have entered an invalid email'"
+        hint="Optional"
+        :status="input.length > 0 ? undefined : 'info'"
+        required
       >
         <NInput
           id="email"
           v-model="input"
+          :status="input.length > 0 ? undefined : 'info'"
           placeholder="Email"
         />
       </NFormGroup>
@@ -66,11 +71,13 @@ const input = ref('')
       <NFormGroup
         label="Name"
         name="firstname"
+        error="Firstname is required"
         required
       >
         <NInput
           id="firstname"
-          autocomplete
+          v-model="input"
+          leading="i-carbon-user-avatar-filled"
           placeholder="Firstname"
         />
       </NFormGroup>
@@ -80,8 +87,9 @@ const input = ref('')
         hint="Optional"
       >
         <NInput
-
           id="middlename"
+          input="outline-yellow"
+          status="warning"
           placeholder="Middlename"
         />
       </NFormGroup>
@@ -93,6 +101,7 @@ const input = ref('')
       >
         <NInput
           id="lastname"
+          input="outline-green"
           placeholder="Lastname"
         />
       </NFormGroup>
