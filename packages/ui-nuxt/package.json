@@ -1,7 +1,7 @@
 {
   "name": "@nexvelt/ui-nuxt",
   "type": "module",
-  "version": "0.0.2-beta.0",
+  "version": "0.0.2-beta.1",
   "description": "Nuxt module for @nexvelt/ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
