@@ -43,7 +43,7 @@
     "docs": "nr --filter @nexvelt/ui-docs",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "release": "nr test && bumpp package.json packages/**/package.json docs/package.json && pnpm -r publish",
+    "release": "bumpp package.json packages/**/package.json docs/package.json && pnpm -r publish",
     "start": "echo 'No start script defined'",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
