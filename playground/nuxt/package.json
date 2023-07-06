@@ -9,7 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nexvelt/ui-nuxt": "workspace:0.0.2-beta.1"
+    "@nexvelt/ui-nuxt": "workspace:0.0.2-beta.2"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
