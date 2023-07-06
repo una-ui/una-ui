@@ -3,7 +3,7 @@ title: Guide
 description: Installation
 ---
 
-# Installation f
+# Installation 
 
 You can install `Nexvelt UI` in your project using one of the following methods:
 
