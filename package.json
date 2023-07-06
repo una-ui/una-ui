@@ -38,7 +38,6 @@
     "build:packages": "nr --recursive --parallel prepack",
     "deploy": "nr build && pnpm -C docs run docs:build",
     "dev": "nr --recursive --parallel dev",
-    "play": "nr --filter @nexvelt/ui-playground play",
     "nuxt": "nr --filter @nexvelt/ui-nuxt",
     "docs": "nr --filter @nexvelt/ui-docs",
     "lint": "eslint .",
