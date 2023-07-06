@@ -106,10 +106,10 @@ const input = ref('')
         />
       </NFormGroup>
 
+      <!-- :label="!isLoading ? 'Submit' : 'Processing...'" -->
       <NButton
-        type="submit"
         btn="solid"
-        :label="!isLoading ? 'Submit' : 'Processing...'"
+        :label="23434"
         :class="isLoading ? 'animate-pulse' : ''"
         @click="isLoading = !isLoading"
       />
