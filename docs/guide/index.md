@@ -19,17 +19,17 @@ NexveltUI, derived from the combination of "Next" and "Level," represents our co
 
 NexveltUI is a comprehensive UI framework designed to simplify and accelerate web development using Vue.js and UNOCSS. It provides a collection of reusable and customizable components, utilities, and presets styles that enable developers to create modern, responsive, and visually appealing user interfaces.
 
-## Key Features
+# Key Features
 
-✅ **Vue.js Integration**: NexveltUI is built on top of Vue.js, leveraging its reactive components and powerful ecosystem to enhance your development experience.
+- `NexveltUI Presets`: Provides UNOCSS presets for consistent design can that can be integrated across React, Vue, Svelte, Angular, and more.
 
-✅ **UNOCSS**: NexveltUI utilizes UNOCSS, a utility-first CSS framework, for styling and component customization. UNOCSS provides a large set of utility classes that allow you to easily modify and extend the appearance of NexveltUI components.
+- `Auto Dark Mode`: Automatically switches between light and dark mode based on user preferences.
 
-✅ **Responsive Design**: NexveltUI is designed to support responsive layouts out of the box. Its components are mobile-friendly and adapt seamlessly to different screen sizes and devices.
+- `Vue.js Components`: Built on top of Vue.js for enhanced development experience.
 
-✅ **Customizability**: With NexveltUI, you have full control over the look and feel of your application. The framework provides extensive customization options, allowing you to easily modify colors, typography, spacing, and more to match your branding and design requirements.
+- `Customizability`: Offers extensive customization options for colors, typography, and spacing.
 
-✅ **Rich Component Library**: NexveltUI comes with a comprehensive library of pre-designed components that cover a wide range of use cases. From buttons and forms to modals and navigation bars, you'll find a wealth of ready-to-use components that can be easily integrated into your projects.
+- `Fully typed`: Components are fully typed with TypeScript for static typing and error prevention.
 
 ## Getting Started
 
