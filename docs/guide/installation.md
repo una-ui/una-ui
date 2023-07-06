@@ -7,13 +7,65 @@ description: Installation
 
 You can install `Nexvelt UI` in your project using one of the following methods:
 
-::: warning
-`Nexvelt UI` requires `Unocss` to work. Please make sure you have installed `Unocss` before installing `Nexvelt UI`.
+## Nuxt.js
+
+1. Install `@nexvelt/ui-nuxt` module:
+
+::: code-group
+
+```bash [npm]
+npm install @nexvelt/ui-nuxt -D
+```
+
+```bash [yarn]
+yarn add @nexvelt/ui-nuxt -D
+```
+  
+```bash [pnpm]
+pnpm install @nexvelt/ui-nuxt -D
+```
+
 :::
+
+1. Add `@nexvelt/ui-nuxt` to the `modules` section of `nuxt.config.js`:
+
+```js
+export default {
+  modules: [
+    '@nexvelt/ui-nuxt',
+  ],
+}
+```
+
+2. That's it! You're ready to go! 🚀
+
+:::warning
+Customizing the module is not yet supported until the first release. 
+:::
+
+<!-- ```ts
+import { defineConfig } from 'unocss'
+
+export default defineConfig({
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          // 50-950
+        }
+      },
+    },
+  },
+})
+``` -->
 
 ## Vue 3
 
-1. Install `@unocss` and `@nexvelt/ui`:
+:::warning
+This method is not yet supported. Please use the `Nuxt.js` method instead.
+:::
+
+2. Install `@unocss` and `@nexvelt/ui`:
 ::: code-group
 
 ```bash [npm]
@@ -70,55 +122,3 @@ createApp(App).mount('#app')
 ```
 
 That's it! You're ready to go! 🚀
-
-## Nuxt.js
-
-1. Install `@nexvelt/ui-nuxt` module:
-
-::: code-group
-
-```bash [npm]
-npm install @nexvelt/ui-nuxt -D
-```
-
-```bash [yarn]
-yarn add @nexvelt/ui-nuxt -D
-```
-  
-```bash [pnpm]
-pnpm install @nexvelt/ui-nuxt -D
-```
-
-:::
-
-2. Add `@nexvelt/ui-nuxt` to the `buildModules` section of `nuxt.config.js`:
-
-```js
-export default {
-  buildModules: [
-    '@nexvelt/ui-nuxt',
-  ],
-}
-```
-
-3. That's it! You're ready to go! 🚀
-
-4. If you want to customize the theme, you can create a `unocss.config.ts` file in your project root:
-
-```ts
-import { defineConfig } from 'unocss'
-
-export default defineConfig({
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          // 50-950
-        }
-      },
-    },
-  },
-})
-```
-
-
