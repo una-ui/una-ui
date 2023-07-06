@@ -1,7 +1,7 @@
 {
   "name": "@nexvelt/ui-monorepo",
   "type": "module",
-  "version": "0.0.2-beta.2",
+  "version": "0.0.2-beta.3",
   "private": true,
   "packageManager": "pnpm@8.6.0",
   "description": "The next level UI Library for building beautiful and accessible Web Applications.",
