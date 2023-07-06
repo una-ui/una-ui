@@ -3,23 +3,19 @@ title: Guide
 description: Introduction
 ---
 
-# Introduction
+# Nexvelt UI
 
-Bring your web applications to the next level with NexveltUI, a comprehensive UI framework for Vue.js and UNOCSS.
+###### **NexveltUI** is a Vue.js UI framework inspired by [Tailwind CSS](https://tailwindcss.com/) and [UNOCSS](https://unocss.dev/). It provides a set of components and presets that can be used to build beautiful user interfaces with minimal effort.
 
 ::: warning
 This documentation is still a work in progress. The package itself is not yet officially released and some sections of this documentation may be incomplete or missing entirely until the first release. We are working hard to complete the documentation as soon as possible.
 :::
 
-## What is NexveltUI ?
+## Vision
 
-::: tip
-NexveltUI, derived from the combination of "Next" and "Level," represents our commitment to taking user interface development to the next level. 
-:::
+NexveltUI aims to provide a complete solution for building user interfaces using Vue.js and UNOCSS. It is designed to be simple, intuitive, and easy to use, while also providing extensive customization options for developers who want to create unique and visually appealing user interfaces.
 
-NexveltUI is a comprehensive UI framework designed to simplify and accelerate web development using Vue.js and UNOCSS. It provides a collection of reusable and customizable components, utilities, and presets styles that enable developers to create modern, responsive, and visually appealing user interfaces.
-
-# Key Features
+## Key Features
 
 - `NexveltUI Presets`: Provides UNOCSS presets for consistent design can that can be integrated across React, Vue, Svelte, Angular, and more.
 
