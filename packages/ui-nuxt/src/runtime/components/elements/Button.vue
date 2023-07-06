@@ -1,18 +1,12 @@
 <script setup lang="ts">
 import Icon from '../elements/Icon.vue'
+import type { Button } from '../../types'
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
 import { NuxtLink } from '#components'
 
-interface Props {
-  type?: 'button' | 'submit' | 'reset'
-  to?: string
-  icon?: string
-  label?: string
-}
-
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Button>(), {
   type: 'button',
 })
 </script>

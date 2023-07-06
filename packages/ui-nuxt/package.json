@@ -13,21 +13,14 @@
   },
   "exports": {
     ".": {
-      "require": "./module.cjs",
+      "require": "./dist/module.cjs",
       "import": "./dist/module.mjs"
-    },
-    "./module": {
-      "require": "./module.cjs",
-      "import": "./dist/module.mjs"
-    },
-    "./unocss": {
-      "import": "./dist/unocss.mjs"
     }
   },
-  "main": "./dist/module.mjs",
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "files": [
-    "dist",
-    "*.cjs"
+    "dist"
   ],
   "scripts": {
     "build": "nuxt-build-module",
