@@ -3,26 +3,28 @@ title: Guide
 description: Installation
 ---
 
-# Installation
+# Installation f
 
 You can install `Nexvelt UI` in your project using one of the following methods:
 
-## Nuxt.js
+## NexveltUI Components and Presets
+
+### Nuxt.js
 
 1. Install `@nexvelt/ui-nuxt` module:
 
 ::: code-group
 
 ```bash [npm]
-npm install @nexvelt/ui-nuxt -D
+npm install @nexvelt/ui-nuxt 
 ```
 
 ```bash [yarn]
-yarn add @nexvelt/ui-nuxt -D
+yarn add @nexvelt/ui-nuxt 
 ```
   
 ```bash [pnpm]
-pnpm install @nexvelt/ui-nuxt -D
+pnpm install @nexvelt/ui-nuxt 
 ```
 
 :::
@@ -43,50 +45,40 @@ export default {
 Customizing the module is not yet supported until the first release. 
 :::
 
-<!-- ```ts
-import { defineConfig } from 'unocss'
+### Vue.js (coming soon)
 
-export default defineConfig({
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          // 50-950
-        }
-      },
-    },
-  },
-})
-``` -->
+---
 
-## Vue 3
+## NexveltUI Presets Only
 
-:::warning
-This method is not yet supported. Please use the `Nuxt.js` method instead.
-:::
+You can installl `NexveltUI Presets` in your project using one of the following methods:
 
-2. Install `@unocss` and `@nexvelt/ui`:
+1. Install `@nexvelt/ui-preset` preset:
+
 ::: code-group
 
 ```bash [npm]
-npm install @unocss @nexvelt/ui -D
+npm install unocss @nexvelt/ui-preset  
 ```
 
 ```bash [yarn]
-yarn add @unocss @nexvelt/ui -D
+yarn add unocss @nexvelt/ui-preset 
 ```
   
 ```bash [pnpm]
-pnpm install @unocss @nexvelt/ui -D
+pnpm install unocss @nexvelt/ui-preset 
 ```
-  
+
 :::
 
-2. Create a `unocss.config.ts` file in your project root:
+2.  Add `@nexvelt/ui-preset` to the `presets` section of `unocss.config.ts`:
+
+::: tip
+If you don't have `unocss.config.ts` file, you can create it in the root directory of your project. Below is the recommended configuration for NexveltUI Presets.
+:::
 
 ```ts
 import {
-  defineConfig,
   presetAttributify,
   presetIcons,
   presetUno,
@@ -96,29 +88,16 @@ import {
 
 import presetNexvelt from '@nexvelt/ui-preset'
 
-export default defineConfig({
+export default {
   presets: [
     presetUno(),
     presetAttributify(),
     presetIcons(),
-    presetNexvelt(),
+    presetNexvelt(), // Add this line
   ],
   transformers: [
-    transformerVariantGroup(),
     transformerDirectives(),
+    transformerVariantGroup(),
   ],
-})
+}
 ```
-
-3. Create a `main.ts` file in your project root:
-
-```ts
-import { createApp } from 'vue'
-import App from './App.vue'
-
-import '@nexvelt/ui-preset/style.css' // Import Nexvelt UI styles
-
-createApp(App).mount('#app')
-```
-
-That's it! You're ready to go! 🚀
