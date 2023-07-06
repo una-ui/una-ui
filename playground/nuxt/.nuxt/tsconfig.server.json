@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "paths": {
+      "#imports": [
+        "/Users/einstein/_Future/Projects/nexvelt/ui/playground/nuxt/.nuxt/types/nitro-imports"
+      ],
+      "#paths": [
+        "/Users/einstein/_Future/Projects/nexvelt/ui/node_modules/.pnpm/nuxt@3.6.1_@types+node@20.3.3_eslint@8.44.0_rollup@3.26.0_sass@1.63.6_typescript@5.1.6_vue-tsc@1.8.3/node_modules/nuxt/dist/core/runtime/nitro/paths"
+      ],
+      "~": [
+        "/Users/einstein/_Future/Projects/nexvelt/ui/playground/nuxt"
+      ],
+      "@": [
+        "/Users/einstein/_Future/Projects/nexvelt/ui/playground/nuxt"
+      ],
+      "~~": [
+        "/Users/einstein/_Future/Projects/nexvelt/ui/playground/nuxt"
+      ],
+      "@@": [
+        "/Users/einstein/_Future/Projects/nexvelt/ui/playground/nuxt"
+      ],
+      "assets": [
+        "/Users/einstein/_Future/Projects/nexvelt/ui/playground/nuxt/assets"
+      ],
+      "public": [
+        "/Users/einstein/_Future/Projects/nexvelt/ui/playground/nuxt/public"
+      ]
+    }
+  },
+  "include": [
+    "/Users/einstein/_Future/Projects/nexvelt/ui/playground/nuxt/.nuxt/types/nitro-nuxt.d.ts",
+    "./types/nitro.d.ts",
+    "../**/*",
+    "../server/**/*"
+  ]
+}
