@@ -22,14 +22,6 @@ export const miscFormGroup = {
   'form-group-counter-max': 'text-$c-gray-500',
 }
 
-export const staticFormGroup = {
-}
-
-export const dynamicFormGroup = [
-]
-
 export const formGroup = [
-  ...dynamicFormGroup,
-  staticFormGroup,
   miscFormGroup,
 ]

@@ -1,7 +1,7 @@
 html {
   font-size: var(--font-size, 16px);
-  /* width: 100%;
-  width: 100vw; */
+  background-color: var(--c-background);
+  color: var(--c-foreground);
 }
 
 ::-moz-selection {
@@ -29,10 +29,6 @@ body,
 
 html.dark {
   color-scheme: dark;
-}
-
-html {
-  --at-apply: bg-base text-base;
 }
 
 /* remove ugly outline on focus */

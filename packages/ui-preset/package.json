@@ -40,5 +40,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@unocss/core": "^0.53.4",
+    "unocss": "^0.53.4"
   }
 }

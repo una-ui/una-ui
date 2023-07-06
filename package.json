@@ -54,7 +54,7 @@
   "dependencies": {
     "chroma-js": "^2.4.2",
     "ignore-dependency-scripts": "^1.0.1",
-    "unocss": "^0.51.12"
+    "unocss": "^0.53.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.6",

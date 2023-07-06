@@ -1,6 +1,12 @@
+import { fileURLToPath } from 'node:url'
 import { addComponentsDir, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
 
+import { extendUnocssOptions } from './unocss'
+
+function rPath(p: string) {
+  return fileURLToPath(new URL(p, import.meta.url).toString())
+}
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   /**
@@ -14,7 +20,17 @@ export interface ModuleOptions {
    */
   global?: boolean
 
-  // add some options here
+  /**
+   * @default '@nexvelt/ui-preset'
+   * @description Path to preset
+   * @example
+   */
+  preset?: string
+
+  /**
+   * @default false
+   */
+  dev: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -29,10 +45,16 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     prefix: 'NV',
+    preset: rPath('./preset'),
     global: true,
+    dev: false,
   },
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
+
+    // css
+    nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
+    nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
 
     // transpile
     const runtimeDir = resolve('./runtime')
@@ -52,16 +74,17 @@ export default defineNuxtModule<ModuleOptions>({
       watch: nuxt.options.dev,
     })
 
-    // css
-    nuxt.options.css.push('@nexvelt/ui-preset/style.css')
-    nuxt.options.css.push('@unocss/reset/tailwind-compat.css')
+    // @ts-expect-error - module options
+    nuxt.options.vueuse = nuxt.options.vueuse || {}
+
+    if (!options.dev)
+      nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
 
     // modules
-    await installModule('@unocss/nuxt', {
-      preflight: false,
-      configFile: resolve(__dirname, './src/nexveltui.config.ts'),
+    await installModule('@unocss/nuxt')
+    await installModule('@nuxtjs/color-mode', {
+      classSuffix: '',
     })
-    await installModule('@nuxtjs/color-mode', { classSuffix: '' })
     await installModule('@vueuse/nuxt')
 
     // composables

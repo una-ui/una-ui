@@ -45,7 +45,7 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
         input="leading-wrapper"
         :class="[
           nv?.leadingWrapper ?? undefined,
-          `text-${props.status}`,
+          status ? `text-${status}` : '',
         ]"
       >
         <Icon :name="leading" />
@@ -68,13 +68,13 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
       input="trailing-wrapper"
       :class="[
         nv?.trailingWrapper ?? undefined,
-        `text-${props.status}`,
+        status ? `text-${status}` : '',
       ]"
     >
       <slot name="trailing">
         <Icon
-          v-if="props.status"
-          :name="`input-${props.status}-icon`"
+          v-if="status"
+          :name="status ? `input-${props.status}-icon` : ''"
         />
 
         <Icon v-else :name="trailing" />

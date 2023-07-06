@@ -12,7 +12,7 @@
     "**/CVS": false,
     "**/.DS_Store": false,
     "**/Thumbs.db": false,
-    "**/node_modules": true,
+    "**/node_modules": false,
     "env*": false
   },
   "explorerExclude.backup": {},

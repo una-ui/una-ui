@@ -1,32 +1,9 @@
-import {
-  defineConfig,
-  presetAttributify,
-  presetIcons,
-  presetUno,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
+import { extendUnocssOptions } from './src/unocss'
 
-import presetNexvelt from '../ui-preset/src/index'
-
-export default defineConfig({
-  presets: [
-    presetUno(),
-    presetAttributify(),
-    presetIcons({
-      scale: 1.2,
-    }),
-    presetNexvelt(),
-  ],
-  transformers: [
-    transformerVariantGroup(),
-    transformerDirectives(),
-  ],
+// for IDE support
+export default {
+  ...extendUnocssOptions(),
   configDeps: [
-    '../ui-preset/src/_shortcuts/button.ts',
-    '../ui-preset/src/_shortcuts/general.ts',
-    '../ui-preset/src/_shortcuts/index.ts',
-    '../ui-preset/src/_shortcuts/input.ts',
-    '../ui-preset/src/_shortcuts/form-group.ts',
+    './src/unocss.ts',
   ],
-})
+}
