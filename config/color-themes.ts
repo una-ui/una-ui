@@ -19,7 +19,7 @@ interface ColorPalette {
   950: string
 }
 
-type Shade = keyof ColorPalette // '50' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | '950'
+type Shade = keyof ColorPalette
 
 // filter out the primary colors from the color palette
 const filteredPrimaryColors = Object.fromEntries(
@@ -154,12 +154,12 @@ export const grayThemes = Object.entries({ ...filteredPrimaryColors, ...filtered
   getColors(color, 'gray'),
 ]) as [string, Colors][]
 
-export const grayThemesDefault = Object.entries(filteredGrayColors).map(([color]) => [
-  color,
-  getColors(color, 'gray'),
-]) as [string, Colors][]
-
 export const primaryThemesDefault = Object.entries(filteredPrimaryColors).map(([color]) => [
   color,
   getColors(color, 'primary'),
+]) as [string, Colors][]
+
+export const grayThemesDefault = Object.entries(filteredGrayColors).map(([color]) => [
+  color,
+  getColors(color, 'gray'),
 ]) as [string, Colors][]
