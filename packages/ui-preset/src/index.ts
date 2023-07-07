@@ -13,8 +13,6 @@ export default function presetNexvelt(options: nexveltUIOptions = {
   return {
     name: '@nexvelt/ui-preset',
     options,
-    // enforce: 'pre',
-    // prefix: '',
     safelist: [
       // text
       'text-info',
@@ -37,6 +35,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
       'input-solid-error',
       'input-solid-success',
       'input-solid-warning',
+
     ],
     shortcuts,
     // theme,

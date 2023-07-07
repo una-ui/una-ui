@@ -8,6 +8,8 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --font-size: 16px !important;
+
   --vp-c-green: rgb(var(--c-primary));
   --vp-c-green-light: rgb(var(--nv-primary-500));
   --vp-c-green-lighter: rgb(var(--nv-primary-400));
@@ -16,9 +18,6 @@
   --vp-c-green-dimm-1: rgba(var(--nv-primary-600, 0.1));
   --vp-c-green-dimm-2: rgba(var(--nv-primary-600, 0.2));
   --vp-c-green-dimm-3: rgba(var(--nv-primary-600, 0.3));
-
-  /* --vp-font-family-base: var(--font-family-sans-serif);
-  --vp-font-family-mono: var(--font-family-monospace); */
 
   --vp-c-gray: var(--c-gray-600);
 

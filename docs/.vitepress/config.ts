@@ -250,10 +250,10 @@ export default defineConfig({
 
   vite: {
     optimizeDeps: {
-      exclude: [
-        '@nexvelt/ui-preset',
-        'unocss',
-      ],
+      // exclude: [
+      //   '@nexvelt/ui-preset',
+      //   'unocss',
+      // ],
     },
     plugins: [
       UnoCSS({

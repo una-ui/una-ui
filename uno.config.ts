@@ -26,4 +26,21 @@ export default {
     transformerDirectives(),
     transformerVariantGroup(),
   ],
+  preflights: [
+    {
+      getCSS: () => `
+        *:focus-visible {
+          outline: 2px solid rgb(var(--c-primary-active)); /* 2 */
+          border-radius: 0.25rem; /* 1 */
+          outline-offset: 0.10rem; /* 1 */
+        }
+
+        input:focus, textarea:focus, select:focus{
+          /* outline: none; !* 1 *! */
+          outline: 2px solid transparent; /* 1 */
+        }
+      `,
+    },
+  ],
+
 }
