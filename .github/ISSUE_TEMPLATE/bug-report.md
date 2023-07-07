@@ -8,8 +8,7 @@ labels: ['s: pending triage', 'c: bug']
 Before reporting a bug, please make sure that you have read through our documentation and you think your problem is indeed an issue related to our module. -->
 
 ### Version
-@nexvelt/ui-preset: <!-- ex: v0.0.1 -->
-<!-- @nexvelt/ui-nuxt:  ex: v0.0.1 --> 
+@nexvelt/ui: <!-- ex: v0.0.1 -->
 
 ### Description
 <!-- A clear and concise description of what the bug is. -->
