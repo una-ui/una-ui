@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types'
+import UnoCSS from 'unocss/vite'
 import { version } from '../../package.json'
 
 /* guide items */
@@ -245,5 +246,19 @@ export default defineConfig({
 
   markdown: {
     theme: 'one-dark-pro',
+  },
+
+  vite: {
+    optimizeDeps: {
+      exclude: [
+        '@nexvelt/ui-preset',
+        'unocss',
+      ],
+    },
+    plugins: [
+      UnoCSS({
+        configFile: '../uno.config.ts',
+      }),
+    ],
   },
 })

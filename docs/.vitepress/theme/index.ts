@@ -15,6 +15,13 @@ import './override.css'
 
 import TeamMember from './components/TeamMember.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
+import AppExamplar from './components/AppExamplar.vue'
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+const exampleComponents = import.meta.glob('./components/examples/*.vue')
+
+// import SponsorButton from './components/SponsorButton.vue'
 
 let nexveltUIStyle: HTMLStyleElement | undefined
 
@@ -24,10 +31,22 @@ export default {
     return h(Theme.Layout, null, {
       'home-features-after': () => h(TeamMember),
       'nav-bar-content-after': () => h(ThemeSwitcher),
+      // 'aside-top': () => h(SponsorButton),
     })
   },
   // this hook is called before the root Vue app is mounted to the DOM.
-  enhanceApp({ router, siteData }) {
+  enhanceApp({ router, siteData, app }) {
+    // register examplar components
+    app.component('AppExamplar', AppExamplar)
+
+    // register components from examples
+    for (const path in exampleComponents) {
+      exampleComponents[path]().then((mod) => {
+        const name = path.match(/\.\/components\/examples\/(.*)\.vue$/)![1]
+        app.component(name, mod.default)
+      })
+    }
+
     if (typeof window === 'undefined')
       return
 
