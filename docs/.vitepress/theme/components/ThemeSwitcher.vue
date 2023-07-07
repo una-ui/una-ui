@@ -74,6 +74,8 @@ function shuffleTheme() {
               />
             </div>
 
+            <hr class="border-$vp-c-border my-2">
+
             <div class="grid grid-cols-5 gap-3">
               <button
                 v-for="[key, theme] in grayThemesDefault"
@@ -86,6 +88,8 @@ function shuffleTheme() {
                 @click="updateGrayTheme(theme)"
               />
             </div>
+
+            <hr class="border-$vp-c-border my-2">
 
             <div>
               <button
