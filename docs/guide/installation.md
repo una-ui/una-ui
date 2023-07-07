@@ -51,7 +51,11 @@ Customizing the module is not yet supported until the first release.
 
 ## NexveltUI Presets Only
 
-You can installl `NexveltUI Presets` in your project using one of the following methods:
+You can install `NexveltUI Presets` in your project using one of the following methods:
+
+::: tip
+This is applicable to all UI frameworks that are supported by `Unocss`.
+:::
 
 1. Install `@nexvelt/ui-preset` preset:
 
@@ -101,3 +105,12 @@ export default {
   ],
 }
 ```
+
+3. Import style in your `main.ts` file:
+
+```ts
+import '@nexvelt/ui-preset/style.css'
+import '@unocss/reset/tailwind-compat.css'
+```
+
+4. That's it! You're ready to go! 🚀
