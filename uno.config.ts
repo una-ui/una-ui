@@ -14,7 +14,6 @@ export default {
     presetUno(),
     presetAttributify(),
     presetIcons({
-      prefix: ['i-', ''],
       scale: 1.2,
       extraProperties: {
         'display': 'inline-block',

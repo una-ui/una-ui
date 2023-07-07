@@ -19,7 +19,6 @@ export function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOpt
       presetUno(),
       presetAttributify(),
       presetIcons({
-        prefix: ['i-', ''],
         scale: 1.2,
         extraProperties: {
           'display': 'inline-block',
