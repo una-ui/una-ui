@@ -68,14 +68,10 @@ function shuffleTheme() {
                 :key="key"
                 :style="{ background: theme['--nv-primary-hex'] }"
                 type="button"
-                :class="currentPrimaryThemeName === key ? 'ring-3' : 'scale-93'"
-                h-7 w-7 transition-all
-                rounded-full
+                class="h-7 w-7 transition-all rounded-full" :class="[currentPrimaryThemeName === key ? 'ring-3' : 'scale-93']"
                 ring="primary offset-2 offset-base"
                 @click="updatePrimaryTheme(theme)"
-              >
-              <!-- {{ key }} -->
-              </button>
+              />
             </div>
 
             <div class="grid grid-cols-5 gap-3">
@@ -85,23 +81,13 @@ function shuffleTheme() {
                 :style="{ background: theme['--nv-gray-hex'] }"
                 type="button"
                 :class="currentGrayThemeName === key ? 'ring-3' : 'scale-93'"
-                h-7 w-7 transition-all
-                rounded-full
+                class="h-7 w-7 transition-all rounded-full"
                 ring="gray offset-2 offset-base"
                 @click="updateGrayTheme(theme)"
-              >
-              <!-- {{ key }} -->
-              </button>
+              />
             </div>
 
             <div>
-              <!-- <button
-                type="button"
-                class="h-7 w-7 transition-all rounded-full ring-3 scale-93 ring-primary offset-2 offset-base"
-                @click="shuffleTheme"
-              >
-                <span i-carbon-shuffle />
-              </button> -->
               <button
                 type="button"
                 btn="solid block"
