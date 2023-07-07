@@ -1,9 +1,31 @@
-import { extendUnocssOptions } from './packages/ui-nuxt/src/unocss'
+import {
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  transformerDirectives,
+  transformerVariantGroup,
+} from 'unocss'
 
-// for IDE support
+import presetNexvelt from '@nexvelt/ui-preset'
+
 export default {
-  ...extendUnocssOptions(),
-  configDeps: [
-    './packages/ui-nuxt/src/unocss.ts',
+  preflight: false,
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons({
+      prefix: ['i-', ''],
+      scale: 1.2,
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+      // ...(user?.icons || {})
+    }),
+    presetNexvelt(),
+  ],
+  transformers: [
+    transformerDirectives(),
+    transformerVariantGroup(),
   ],
 }
