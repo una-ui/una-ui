@@ -76,6 +76,34 @@ filteredGrayColors.olive = {
   950: '#000000',
 } satisfies ColorPalette
 
+filteredGrayColors.sage = {
+  50: '#f2f2f2',
+  100: '#e6e6e6',
+  200: '#d9d9d9',
+  300: '#b8b8b8',
+  400: '#939393',
+  500: '#6f6f6f',
+  600: '#4b4b4b',
+  700: '#323232',
+  800: '#1f1f1f',
+  900: '#0b0b0b',
+  950: '#000000',
+} satisfies ColorPalette
+
+filteredGrayColors.leaf = {
+  50: '#f2faf2',
+  100: '#e6f5e6',
+  200: '#d9ebd9',
+  300: '#b8d6b8',
+  400: '#93b393',
+  500: '#6f8f6f',
+  600: '#4b6b4b',
+  700: '#326432',
+  800: '#1f2a1f',
+  900: '#0b0e0b',
+  950: '#000000',
+} satisfies ColorPalette
+
 // merge the primary colors and the gray colors
 const filteredColors = {
   ...filteredPrimaryColors,
