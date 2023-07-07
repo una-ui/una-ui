@@ -42,5 +42,10 @@ export default {
       `,
     },
   ],
-
+  configDeps: [
+    './packages/ui-preset/src/_shortcuts/button.ts',
+    './packages/ui-preset/src/_shortcuts/general.ts',
+    './packages/ui-preset/src/_shortcuts/index.ts',
+    './packages/ui-preset/src/_shortcuts/input.ts',
+  ],
 }
