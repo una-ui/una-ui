@@ -19,7 +19,6 @@ export default {
         'display': 'inline-block',
         'vertical-align': 'middle',
       },
-      // ...(user?.icons || {})
     }),
     presetNexvelt(),
   ],
