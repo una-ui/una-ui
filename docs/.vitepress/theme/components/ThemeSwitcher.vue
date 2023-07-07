@@ -74,7 +74,7 @@ function shuffleTheme() {
               />
             </div>
 
-            <hr class="border-$vp-c-border my-2">
+            <hr class="border-$vp-c-divider my-2">
 
             <div class="grid grid-cols-5 gap-3">
               <button
@@ -89,7 +89,7 @@ function shuffleTheme() {
               />
             </div>
 
-            <hr class="border-$vp-c-border my-2">
+            <hr class="border-$vp-c-divider my-2">
 
             <div>
               <button
