@@ -6,7 +6,7 @@ import { useStorage } from '@vueuse/core'
 import { grayThemesDefault, primaryThemesDefault } from '../../../../config/color-themes'
 import type { ThemeColors } from '../../../types'
 
-// TODO can dynamic theme to play
+// TODO transfer to comsables
 
 const defaultSettings = {
   primaryColors: primaryThemesDefault[0][1],
