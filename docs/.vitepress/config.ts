@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types'
+import { version } from '../../package.json'
 
 /* guide items */
 const Guides: DefaultTheme.NavItemWithLink[] = [
@@ -166,6 +167,19 @@ const Nav: DefaultTheme.NavItem[] = [
       },
     ],
     activeMatch: '^/guide/',
+  },
+  {
+    text: `v${version}`,
+    items: [
+      {
+        text: 'Release Notes',
+        link: 'https://github.com/nexvelt/ui/releases',
+      },
+      {
+        text: 'Contributing',
+        link: 'https://github.com/nexvelt/ui/blob/main/CONTRIBUTING.md',
+      },
+    ],
   },
 ]
 
