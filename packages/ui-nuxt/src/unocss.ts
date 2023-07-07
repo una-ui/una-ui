@@ -9,8 +9,6 @@ import type { UnocssNuxtOptions } from '@unocss/nuxt'
 
 import presetNexvelt from '@nexvelt/ui-preset'
 
-// @unocss-include
-
 export function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
   return {
     ...user,
@@ -24,7 +22,6 @@ export function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOpt
           'display': 'inline-block',
           'vertical-align': 'middle',
         },
-        // ...(user?.icons || {})
       }),
       presetNexvelt(),
       ...(user.presets || []),
