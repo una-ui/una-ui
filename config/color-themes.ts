@@ -62,20 +62,6 @@ const filteredGrayColors = Object.fromEntries(
 ) as unknown as Record<string, ColorPalette>
 
 // insert your custom gray colors here
-filteredGrayColors.olive = {
-  50: '#fafaf2',
-  100: '#f5f5e6',
-  200: '#ebebd9',
-  300: '#d6d6b8',
-  400: '#b3b393',
-  500: '#8f8f6f',
-  600: '#6b6b4b',
-  700: '#4a4a32',
-  800: '#2a2a1f',
-  900: '#0e0e0b',
-  950: '#000000',
-} satisfies ColorPalette
-
 filteredGrayColors.sage = {
   50: '#f2f2f2',
   100: '#e6e6e6',
@@ -87,6 +73,34 @@ filteredGrayColors.sage = {
   700: '#323232',
   800: '#1f1f1f',
   900: '#0b0b0b',
+  950: '#000000',
+} satisfies ColorPalette
+
+filteredGrayColors.ash = {
+  50: '#f9f9f8',
+  100: '#f1f0ee',
+  200: '#dad7d3',
+  300: '#c3beb8',
+  400: '#a9a49e',
+  500: '#908c84',
+  600: '#777168',
+  700: '#5e5950',
+  800: '#45403a',
+  900: '#2c2823',
+  950: '#161511',
+} satisfies ColorPalette
+
+filteredGrayColors.olive = {
+  50: '#fafaf2',
+  100: '#f5f5e6',
+  200: '#ebebd9',
+  300: '#d6d6b8',
+  400: '#b3b393',
+  500: '#8f8f6f',
+  600: '#6b6b4b',
+  700: '#4a4a32',
+  800: '#2a2a1f',
+  900: '#0e0e0b',
   950: '#000000',
 } satisfies ColorPalette
 
