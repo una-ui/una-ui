@@ -11,9 +11,6 @@ importers:
       '@headlessui/vue':
         specifier: ^1.7.14
         version: 1.7.14(vue@3.3.4)
-      '@iconify-json/ion':
-        specifier: ^1.1.11
-        version: 1.1.11
       chroma-js:
         specifier: ^2.4.2
         version: 2.4.2
@@ -36,6 +33,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: ^1.1.58
         version: 1.1.58
+      '@iconify-json/zondicons':
+        specifier: ^1.1.4
+        version: 1.1.4
       '@nexvelt/ui-preset':
         specifier: workspace:^
         version: link:packages/ui-preset
@@ -1174,14 +1174,14 @@ packages:
     dependencies:
       '@iconify/types': 2.0.0
 
-  /@iconify-json/ion@1.1.11:
-    resolution: {integrity: sha512-2HSbDxBLhyi4mgZ6uuvzafJdcqIf3dJWYgrNrlejGBHNpvF3OuqLQP6fQ+Stlk+rjoJv3wEeQXs8TvuMLckxZQ==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: false
-
   /@iconify-json/simple-icons@1.1.58:
     resolution: {integrity: sha512-W4Kj3eADpGNwOi5ICXF0CHKCeHMugNUnY3KDfz/Z8rgQzWDh3eRTIVqwmzwr0EkA3EkPAiV1XeNQbzhx98ZNJQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/zondicons@1.1.4:
+    resolution: {integrity: sha512-fIuY0p7/yEGFtzTURlqWKw9FvJFUP/NZ0pYYfWZapv8aXGsqfNLr0tGDxW6GqRXd+cfpNZYXsNkBioWQRppONg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

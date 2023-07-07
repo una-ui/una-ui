@@ -52,7 +52,6 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.14",
-    "@iconify-json/ion": "^1.1.11",
     "chroma-js": "^2.4.2",
     "ignore-dependency-scripts": "^1.0.1",
     "unocss": "^0.53.4"
@@ -62,6 +61,7 @@
     "@antfu/ni": "^0.21.4",
     "@iconify-json/carbon": "^1.1.18",
     "@iconify-json/simple-icons": "^1.1.58",
+    "@iconify-json/zondicons": "^1.1.4",
     "@nexvelt/ui-preset": "workspace:^",
     "@types/chroma-js": "^2.4.0",
     "@types/fs-extra": "^11.0.1",

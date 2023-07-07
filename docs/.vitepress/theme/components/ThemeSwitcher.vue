@@ -53,10 +53,10 @@ function shuffleTheme() {
 </script>
 
 <template>
-  <div class="sm:ml-7">
+  <div class="sm:ml-5">
     <Popover class="relative inline-block">
-      <PopoverButton btn="solid" class="rounded-lg !text-white">
-        <span i-ion-color-palette-sharp />
+      <PopoverButton btn="outline-primary" class="rounded-lg">
+        <span i-zondicons-color-palette />
       </PopoverButton>
 
       <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
