@@ -167,12 +167,6 @@ const Nav: DefaultTheme.NavItem[] = [
     ],
     activeMatch: '^/guide/',
   },
-  {
-    text: 'Merchandise',
-    link: '#',
-    target: '_self',
-    rel: 'sponsored',
-  },
 ]
 
 const isDev = process.env.NODE_ENV === 'development'

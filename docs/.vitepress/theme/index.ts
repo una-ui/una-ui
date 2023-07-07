@@ -14,6 +14,7 @@ import './vars.css'
 import './override.css'
 
 import TeamMember from './components/TeamMember.vue'
+import ThemeSwitcher from './components/ThemeSwitcher.vue'
 
 let nexveltUIStyle: HTMLStyleElement | undefined
 
@@ -22,10 +23,11 @@ export default {
   Layout: () => {
     return h(Theme.Layout, null, {
       'home-features-after': () => h(TeamMember),
+      'nav-bar-content-after': () => h(ThemeSwitcher),
     })
   },
   // this hook is called before the root Vue app is mounted to the DOM.
-  enhanceApp() {
+  enhanceApp({ router, siteData }) {
     if (typeof window === 'undefined')
       return
 
