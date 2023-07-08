@@ -24,6 +24,6 @@ watch(value, () => {
     input="outline"
     leading="i-carbon-search"
     :loading="loading"
-    placeholder="Start typing."
+    placeholder="Start typing..."
   />
 </template>
