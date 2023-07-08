@@ -74,7 +74,6 @@ export default defineNuxtModule<ModuleOptions>({
       watch: nuxt.options.dev,
     })
 
-    // @ts-expect-error - module options
     nuxt.options.vueuse = nuxt.options.vueuse || {}
 
     if (!options.dev)
