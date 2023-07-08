@@ -35,7 +35,7 @@ export default {
     })
   },
   // this hook is called before the root Vue app is mounted to the DOM.
-  enhanceApp({ router, siteData, app }) {
+  enhanceApp({ app }) {
     // register exemplar components
     app.component('AppExemplar', AppExemplar)
 
