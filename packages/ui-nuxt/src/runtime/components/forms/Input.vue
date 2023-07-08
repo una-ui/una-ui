@@ -17,8 +17,8 @@ const emit = defineEmits<{ (...args: any): void }>()
 interface Props {
   modelValue?: string | number
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
-  leading?: string
-  trailing?: string
+  leading?: string | boolean
+  trailing?: string | boolean
   status?: 'info' | 'success' | 'warning' | 'error'
   loading?: boolean
 
@@ -48,6 +48,7 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
     ]"
   >
     <div
+      v-if="leading"
       input="leading-wrapper"
       :class="[
         nv?.leadingWrapper ?? undefined,
@@ -55,7 +56,7 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
       ]"
     >
       <slot name="leading">
-        <Icon :name="leading" />
+        <Icon v-if="typeof leading === 'string'" :name="leading" />
       </slot>
     </div>
 
@@ -72,6 +73,7 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
     >
 
     <div
+      v-if="trailing || status || loading"
       input="trailing-wrapper"
       :class="[
         nv?.trailingWrapper ?? undefined,
@@ -90,7 +92,7 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
           :name="status ? `input-${status}-icon` : ''"
         />
 
-        <Icon v-else :name="trailing" />
+        <Icon v-else-if="typeof trailing === 'string'" :name="trailing" />
       </slot>
     </div>
   </div>

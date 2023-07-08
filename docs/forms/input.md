@@ -101,7 +101,6 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
   <<< @/.vitepress/theme/components/examples/vue/input/Status.vue [Vue]
 :::
 
-## Disabled | Readonly
 `disabled` - disable the input outline.
 
 `readonly` - make the input outline readonly.
@@ -112,6 +111,28 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 
 ::: details Preview the code
   <<< @/.vitepress/theme/components/examples/vue/input/Disabled.vue [Vue]
+:::
+
+## Slots
+##### #leading
+
+<AppExemplar>
+  <ExampleVueInputLeadingSlot/>
+</AppExemplar>
+
+::: details Preview the code
+  <<< @/.vitepress/theme/components/examples/vue/input/LeadingSlot.vue [Vue]
+:::
+
+
+##### #trailing
+
+<AppExemplar>
+  <ExampleVueInputTrailingSlot/>
+</AppExemplar>
+
+::: details Preview the code
+  <<< @/.vitepress/theme/components/examples/vue/input/TrailingSlot.vue [Vue]
 :::
 
 
