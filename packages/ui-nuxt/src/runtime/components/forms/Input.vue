@@ -13,15 +13,15 @@ interface Props {
   reverse?: boolean
 
   nv?: {
-    wrapper?: string
-    leadingWrapper?: string
-    trailingWrapper?: string
+    inputWrapper?: string
+    inputLeadingWrapper?: string
+    inputTrailingWrapper?: string
 
-    warningIcon?: string
-    errorIcon?: string
-    successIcon?: string
-    infoIcon?: string
-    loadingIcon?: string
+    inputWarningIcon?: string
+    inputErrorIcon?: string
+    inputSuccessIcon?: string
+    inputInfoIcon?: string
+    inputLoadingIcon?: string
 
     inputBase?: string
   }
@@ -48,12 +48,11 @@ const slots = defineSlots<{
 const inputValue = useVModel(props, 'modelValue', emits, { passive: true })
 
 const isLeading = props.leading || slots.leading
-const isTrailing
-  = props.trailing || props.status || props.loading || slots.trailing || true
+const isTrailing = props.trailing || props.status || props.loading || slots.trailing
 </script>
 
 <template>
-  <div input="wrapper" :class="[nv?.wrapper ?? undefined]">
+  <div input="wrapper" :class="[nv?.inputWrapper ?? undefined]">
     <input
       v-model="inputValue"
       :type="type"
@@ -71,7 +70,7 @@ const isTrailing
     <div
       v-if="isLeading"
       :class="[
-        nv?.leadingWrapper ?? undefined,
+        nv?.inputLeadingWrapper ?? undefined,
         status ? `text-${status}` : '',
         reverse ? 'input-trailing-wrapper' : 'input-leading-wrapper',
       ]"
@@ -84,14 +83,14 @@ const isTrailing
     <div
       v-if="isTrailing"
       :class="[
-        nv?.trailingWrapper ?? undefined,
+        nv?.inputTrailingWrapper ?? undefined,
         status ? `text-${status}` : '',
         !reverse ? 'input-trailing-wrapper' : 'input-leading-wrapper',
       ]"
     >
       <Icon
         v-if="loading"
-        :name="nv?.loadingIcon ? nv?.loadingIcon : 'input-loading-icon'"
+        :name="nv?.inputLoadingIcon ? nv?.inputLoadingIcon : 'input-loading-icon'"
         class="animate-spin"
       />
       <slot v-else name="trailing">
