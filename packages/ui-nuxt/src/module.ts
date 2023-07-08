@@ -58,7 +58,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // transpile
     const runtimeDir = resolve('./runtime')
-    // nuxt.options.build.transpile.push(runtimeDir) // explain this line
+    // nuxt.options.build.transpile.push(runtimeDir) // TODO: use this later for headless ui
 
     // components
     addComponentsDir({
