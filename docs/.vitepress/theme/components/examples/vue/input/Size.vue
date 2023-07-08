@@ -1,23 +1,23 @@
 <template>
   <div flex="~ col" space-y-4>
     <NVInput
-      input="outline xs"
+      input="xs"
       placeholder="This is the extra small size"
     />
     <NVInput
-      input="outline sm"
+      input="sm"
       placeholder="This is the small size"
     />
     <NVInput
-      input="outline md"
+      input="md"
       placeholder="This is the medium size (default)"
     />
     <NVInput
-      input="outline lg"
+      input="lg"
       placeholder="This is the large size"
     />
     <NVInput
-      input="outline xl"
+      input="xl"
       placeholder="This is the extra large size"
     />
   </div>

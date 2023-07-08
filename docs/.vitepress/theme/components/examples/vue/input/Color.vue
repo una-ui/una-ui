@@ -1,7 +1,6 @@
 <template>
   <div flex="~ col" space-y-4>
     <NVInput
-      input="outline"
       placeholder="This is the default color (primary)"
     />
     <NVInput

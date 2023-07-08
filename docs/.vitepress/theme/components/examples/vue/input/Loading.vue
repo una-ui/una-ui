@@ -21,7 +21,6 @@ watch(value, () => {
 <template>
   <NVInput
     v-model="value"
-    input="outline"
     leading="i-carbon-search"
     :loading="loading"
     placeholder="Start typing..."
