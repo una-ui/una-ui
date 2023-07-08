@@ -12,14 +12,10 @@ Work in progress - this component is not yet ready for use.
 :::
 
 ## Basic
-`input="outline"` - add basic outline to the input.
+`NVInput` - the basic input
 
 <AppExemplar>
-  <NVInput
-    type="email"
-    input="outline"
-    placeholder="Enter your email address"
-  />
+  <ExampleVueInputBasic/>
 </AppExemplar>
 
 ::: details Preview the code
@@ -40,6 +36,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::: details Preview the code
   <<< @/.vitepress/theme/components/examples/vue/input/Color.vue [Vue]
 :::
+
 
 ## Variant
 `input="{variant}"` - change the variant of the input outline.

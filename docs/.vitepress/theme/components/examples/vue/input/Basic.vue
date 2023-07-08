@@ -1,7 +1,13 @@
+<script setup>
+import { ref } from 'vue'
+
+const value = ref('')
+</script>
+
 <template>
   <NVInput
+    v-model="value"
     type="email"
-    input="outline"
-    placeholder="Enter your email address"
+    placeholder="Enter your email"
   />
 </template>
