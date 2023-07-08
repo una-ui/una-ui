@@ -21,7 +21,7 @@ Work in progress - this component is not yet ready for use.
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/basic.vue [Vue]
+  <<< @/.vitepress/theme/components/examples/vue/input/Basic.vue [Vue]
 :::
 
 ## Color
@@ -36,7 +36,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/color.vue [Vue]
+  <<< @/.vitepress/theme/components/examples/vue/input/Color.vue [Vue]
 :::
 
 ## Variant
@@ -49,7 +49,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/variant.vue [Vue]
+  <<< @/.vitepress/theme/components/examples/vue/input/Variant.vue [Vue]
 :::
 
 ## Size
@@ -60,7 +60,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/size.vue [Vue]
+  <<< @/.vitepress/theme/components/examples/vue/input/Size.vue [Vue]
 :::
 
 ## Icon
@@ -73,7 +73,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/icon.vue [Vue]
+  <<< @/.vitepress/theme/components/examples/vue/input/Icon.vue [Vue]
 :::
 
 
@@ -85,5 +85,5 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/status.vue [Vue]
+  <<< @/.vitepress/theme/components/examples/vue/input/Status.vue [Vue]
 :::

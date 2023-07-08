@@ -16,10 +16,8 @@ import TeamMember from './components/TeamMember.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 import AppExemplar from './components/AppExemplar.vue'
 
-const NVForms = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/forms/*.vue', { eager: true })
+const NVComponents = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/forms/*.vue', { eager: true })
 // const NVElements = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/elements/*.vue', { eager: true })
-
-const NVComponents = NVForms
 
 const ExampleComponents = import.meta.glob('./components/examples/*.vue', { eager: true })
 const ExampleVueInputComponents = import.meta.glob('./components/examples/vue/input/*.vue', { eager: true })
