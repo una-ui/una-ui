@@ -10,6 +10,7 @@ interface Props {
   trailing?: string // icon
   status?: 'info' | 'success' | 'warning' | 'error'
   loading?: boolean
+  reverse?: boolean
 
   nv?: {
     wrapper?: string
@@ -47,23 +48,21 @@ const slots = defineSlots<{
 const inputValue = useVModel(props, 'modelValue', emits, { passive: true })
 
 const isLeading = props.leading || slots.leading
-const isTrailing = props.trailing || props.status || props.loading || slots.trailing || true
+const isTrailing
+  = props.trailing || props.status || props.loading || slots.trailing || true
 </script>
 
 <template>
-  <div
-    input="wrapper"
-    :class="[
-      nv?.wrapper ?? undefined,
-    ]"
-  >
+  <div input="wrapper" :class="[nv?.wrapper ?? undefined]">
     <input
       v-model="inputValue"
       :type="type"
       :class="[
         status ? `input-solid-${status} input-status-${status}` : 'input-outline',
-        isLeading ? 'ps-10' : '',
-        isTrailing ? 'pe-10' : '',
+        isLeading && !reverse ? 'ps-10' : '',
+        isTrailing && !reverse ? 'pe-10' : '',
+        isLeading && reverse ? 'pe-10' : '',
+        isTrailing && reverse ? 'ps-10' : '',
         nv?.inputBase ?? undefined,
       ]"
       v-bind="$attrs"
@@ -71,10 +70,10 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
 
     <div
       v-if="isLeading"
-      input="leading-wrapper"
       :class="[
         nv?.leadingWrapper ?? undefined,
         status ? `text-${status}` : '',
+        reverse ? 'input-trailing-wrapper' : 'input-leading-wrapper',
       ]"
     >
       <slot name="leading">
@@ -84,10 +83,10 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
 
     <div
       v-if="isTrailing"
-      input="trailing-wrapper"
       :class="[
         nv?.trailingWrapper ?? undefined,
         status ? `text-${status}` : '',
+        !reverse ? 'input-trailing-wrapper' : 'input-leading-wrapper',
       ]"
     >
       <Icon
@@ -96,10 +95,7 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
         class="animate-spin"
       />
       <slot v-else name="trailing">
-        <Icon
-          v-if="status"
-          :name="status ? `input-${status}-icon` : ''"
-        />
+        <Icon v-if="status" :name="status ? `input-${status}-icon` : ''" />
 
         <Icon v-else :name="trailing" />
       </slot>
