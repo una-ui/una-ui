@@ -1,9 +1,11 @@
 ---
-title: Input 🔴
-description: 
+title: Input 🟡
+description: Inputs are used to collect data from the user.
 ---
 
-# Input 🔴
+# Input 🟡
+
+Inputs are used to collect data from the user.
 
 :::warning
 Work in progress - this component is not yet ready for use.
