@@ -1,6 +1,5 @@
 <template>
   <NVInput
-    :leading="true"
     placeholder="Search"
   >
     <template #leading>

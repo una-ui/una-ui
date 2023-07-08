@@ -1,6 +1,5 @@
 <template>
   <NVInput
-    :trailing="true"
     placeholder="Search"
   >
     <template #trailing>

@@ -3,22 +3,11 @@ import { useVModel } from '@vueuse/core'
 
 import Icon from '../elements/Icon.vue'
 
-defineOptions({
-  inheritAttrs: false,
-})
-
-const props = withDefaults(defineProps<Props>(), {
-  type: 'text',
-})
-
-// emits
-const emit = defineEmits<{ (...args: any): void }>()
-
 interface Props {
   modelValue?: string | number
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
-  leading?: string | boolean
-  trailing?: string | boolean
+  leading?: string // icon
+  trailing?: string // icon
   status?: 'info' | 'success' | 'warning' | 'error'
   loading?: boolean
 
@@ -37,7 +26,28 @@ interface Props {
   }
 }
 
-const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
+defineOptions({
+  inheritAttrs: false,
+})
+
+// props
+const props = withDefaults(defineProps<Props>(), {
+  type: 'text',
+})
+
+// emits
+const emits = defineEmits<{ (...args: any): void }>()
+
+// slots
+const slots = defineSlots<{
+  leading?: void
+  trailing?: void
+}>()
+
+const inputValue = useVModel(props, 'modelValue', emits, { passive: true })
+
+const isLeading = props.leading || slots.leading
+const isTrailing = props.trailing || props.status || props.loading || slots.trailing
 </script>
 
 <template>
@@ -47,8 +57,20 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
       nv?.wrapper ?? undefined,
     ]"
   >
+    <input
+      v-model="inputValue"
+      :type="type"
+      :class="[
+        status ? `input-solid-${status} input-status-${status}` : 'input-outline',
+        isLeading ? 'ps-10' : '',
+        isTrailing ? 'pe-10' : '',
+        nv?.inputBase ?? undefined,
+      ]"
+      v-bind="$attrs"
+    >
+
     <div
-      v-if="leading"
+      v-if="isLeading"
       input="leading-wrapper"
       :class="[
         nv?.leadingWrapper ?? undefined,
@@ -56,24 +78,12 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
       ]"
     >
       <slot name="leading">
-        <Icon v-if="typeof leading === 'string'" :name="leading" />
+        <Icon :name="leading" />
       </slot>
     </div>
 
-    <input
-      v-model="inputValue"
-      :type="type"
-      :class="[
-        status ? `input-solid-${status} input-status-${status}` : 'input-outline',
-        leading ? 'ps-10' : '',
-        trailing || status || loading ? 'pe-10' : '',
-        nv?.inputBase ?? undefined,
-      ]"
-      v-bind="$attrs"
-    >
-
     <div
-      v-if="trailing || status || loading"
+      v-if="isTrailing || $slots.trailing"
       input="trailing-wrapper"
       :class="[
         nv?.trailingWrapper ?? undefined,
@@ -92,7 +102,7 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
           :name="status ? `input-${status}-icon` : ''"
         />
 
-        <Icon v-else-if="typeof trailing === 'string'" :name="trailing" />
+        <Icon v-else :name="trailing" />
       </slot>
     </div>
   </div>
