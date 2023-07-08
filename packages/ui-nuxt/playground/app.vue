@@ -43,9 +43,9 @@ const input = ref('')
       <div>test</div>
     </div>
 
-    <div class="h-screen flex flex-col items-center justify-center container mx-auto gap-4">
+    <div class="mx-auto h-screen flex flex-col items-center justify-center gap-4 container">
       <ColorMode />
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+      <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <NButton
           v-for="button in buttons"
           :key="button"
@@ -56,7 +56,7 @@ const input = ref('')
       </div>
 
       <form
-        class="bg-muted grid grid-cols-1 w-lg gap-4 py-8 px-6 border border-base rounded-md"
+        class="grid grid-cols-1 w-lg gap-4 border border-base rounded-md bg-muted px-6 py-8"
       >
         <NFormGroup
           label="Email"

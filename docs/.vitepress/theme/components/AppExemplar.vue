@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <div flex="~ col" p-4 bg-muted rounded-lg shadow class="vp-raw !font-sans">
+  <div flex="~ col" rounded-lg bg-muted p-4 shadow class="vp-raw !font-sans">
     <slot />
   </div>
 </template>

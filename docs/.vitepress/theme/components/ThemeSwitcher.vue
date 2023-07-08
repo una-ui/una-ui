@@ -60,7 +60,7 @@ function shuffleTheme() {
       </PopoverButton>
 
       <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-        <PopoverPanel class="py-5 px-2 absolute right-0 z-10 mt-2 bg-$vp-c-bg-elv border-$vp-c-divider border-1 w-54 rounded-xl shadow-lg">
+        <PopoverPanel class="absolute right-0 z-10 mt-2 w-54 border-1 border-$vp-c-divider rounded-xl bg-$vp-c-bg-elv px-2 py-5 shadow-lg">
           <div class="flex flex-col space-y-5">
             <div class="grid grid-cols-5 gap-3">
               <button
@@ -68,13 +68,13 @@ function shuffleTheme() {
                 :key="key"
                 :style="{ background: theme['--nv-primary-hex'] }"
                 type="button"
-                class="h-7 w-7 transition-all rounded-full" :class="[currentPrimaryThemeName === key ? 'ring-3' : 'scale-93']"
+                class="h-7 w-7 rounded-full transition-all" :class="[currentPrimaryThemeName === key ? 'ring-3' : 'scale-93']"
                 ring="primary offset-2 offset-base"
                 @click="updatePrimaryTheme(theme)"
               />
             </div>
 
-            <hr class="border-$vp-c-divider my-2">
+            <hr class="my-2 border-$vp-c-divider">
 
             <div class="grid grid-cols-5 gap-3">
               <button
@@ -83,13 +83,13 @@ function shuffleTheme() {
                 :style="{ background: theme['--nv-gray-hex'] }"
                 type="button"
                 :class="currentGrayThemeName === key ? 'ring-3' : 'scale-93'"
-                class="h-7 w-7 transition-all rounded-full"
+                class="h-7 w-7 rounded-full transition-all"
                 ring="gray offset-2 offset-base"
                 @click="updateGrayTheme(theme)"
               />
             </div>
 
-            <hr class="border-$vp-c-divider my-2">
+            <hr class="my-2 border-$vp-c-divider">
 
             <div>
               <button
@@ -98,7 +98,7 @@ function shuffleTheme() {
                 class="rounded-lg"
                 @click="shuffleTheme"
               >
-                Shuffle <span ml-2 i-carbon-shuffle />
+                Shuffle <span i-carbon-shuffle ml-2 />
               </button>
             </div>
           </div>

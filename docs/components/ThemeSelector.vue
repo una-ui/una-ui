@@ -48,7 +48,7 @@ function updateGrayTheme(theme: ThemeColors) {
         <h4 text="primary">
           Primary
         </h4>
-        <div class="mt-5 wrap grid grid-cols-8 gap-5">
+        <div class="wrap grid grid-cols-8 mt-5 gap-5">
           <button
             v-for="[key, theme] in primaryThemes"
             :key="key"
@@ -56,11 +56,10 @@ function updateGrayTheme(theme: ThemeColors) {
             type="button"
             :class="currentPrimaryThemeName === key ? 'ring-3' : 'scale-93'"
             :title="key"
-            h-10 w-10 transition-all
-            rounded-full
+
             ring="primary offset-3 offset-base"
             btn="base"
-            text-white
+            h-10 w-10 rounded-full text-white transition-all
             @click="updatePrimaryTheme(theme)"
           >
           <!-- {{ key }} -->
@@ -72,7 +71,7 @@ function updateGrayTheme(theme: ThemeColors) {
         <h4 text="primary">
           Gray
         </h4>
-        <div class="mt-5 wrap grid grid-cols-8 gap-5">
+        <div class="wrap grid grid-cols-8 mt-5 gap-5">
           <button
             v-for="[key, theme] in grayThemes"
             :key="key"
@@ -80,10 +79,9 @@ function updateGrayTheme(theme: ThemeColors) {
             type="button"
             :class="currentGrayThemeName === key ? 'ring-3' : 'scale-93'"
             :title="key"
-            h-10 w-10 transition-all
-            rounded-full
+
             ring="gray offset-3 offset-base"
-            text-white
+            h-10 w-10 rounded-full text-white transition-all
             @click="updateGrayTheme(theme)"
           >
           <!-- {{ key }} -->
