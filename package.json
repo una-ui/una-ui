@@ -67,6 +67,7 @@
     "@types/chroma-js": "^2.4.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.3.3",
+    "@unocss/eslint-config": "^0.53.4",
     "@unocss/transformer-variant-group": "^0.51.13",
     "@vueuse/core": "^10.2.1",
     "bumpp": "^9.1.1",
