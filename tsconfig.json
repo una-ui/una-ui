@@ -12,23 +12,16 @@
     "skipLibCheck": true,
     "jsx": "preserve",
     "types": [
-      "node",
-      "vite/client"
+      "node"
     ],
     "paths": {
       "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
     },
-
-    "rootDir": ".", // Required for path aliases
-    "baseUrl": ".", // Required for path aliases
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true // Allow default imports from modules with no default export (nuxt module)
   },
   "exclude": [
-    "**/node_modules",
-    "**/dist",
-    "**/playground",
-    "**/playgrounds",
-    "**/docs"
+    "**/node_modules/**",
+    "**/dist/**"
   ]
 }
