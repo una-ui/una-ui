@@ -14,14 +14,20 @@
     "types": [
       "node"
     ],
+    "noUnusedLocals": true,
     "paths": {
       "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
     },
-    "noUnusedLocals": true,
+
+    "rootDir": ".", // Ressquired for path aliases (nuxt module)
+    "baseUrl": ".", // Required for path aliases (nuxt module)
     "allowSyntheticDefaultImports": true // Allow default imports from modules with no default export (nuxt module)
   },
+  "extends": [
+    "./packages/ui-nuxt/playground/tsconfig.json"
+  ],
   "exclude": [
-    "**/node_modules/**",
-    "**/dist/**"
+    "**/node_modules",
+    "**/dist"
   ]
 }
