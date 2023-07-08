@@ -15,12 +15,12 @@
       "node",
       "vite/client"
     ],
-    // "paths": {
-    //   "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
-    // },
+    "paths": {
+      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
+    },
 
-    // "rootDir": ".", // Required for path aliases
-    // "baseUrl": ".", // Required for path aliases
+    "rootDir": ".", // Required for path aliases
+    "baseUrl": ".", // Required for path aliases
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true // Allow default imports from modules with no default export (nuxt module)
   },
