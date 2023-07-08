@@ -40,8 +40,8 @@ const emits = defineEmits<{ (...args: any): void }>()
 
 // slots
 const slots = defineSlots<{
-  leading?: void
-  trailing?: void
+  leading?: any
+  trailing?: any
 }>()
 
 const inputValue = useVModel(props, 'modelValue', emits, { passive: true })
@@ -83,7 +83,7 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
     </div>
 
     <div
-      v-if="isTrailing || $slots.trailing"
+      v-if="isTrailing"
       input="trailing-wrapper"
       :class="[
         nv?.trailingWrapper ?? undefined,
