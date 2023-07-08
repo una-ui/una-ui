@@ -143,7 +143,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 
 ## Props
 
-| Name    | Description        | Type     | Required | Default           |
+| Prefix name    | Description        | Type     | Required | Default    |
 | ------- | ------------------ | -------- | -------- | ----------------- |
 | `input` | The input variant. | `string` | `false`  | `outline-primary` |
 
