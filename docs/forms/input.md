@@ -83,6 +83,16 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 <<< @/.vitepress/theme/components/examples/vue/input/Icon.vue
 :::
 
+`reverse` - reverse the icon position.
+
+<AppExemplar>
+  <ExampleVueInputReverse/>
+</AppExemplar>
+
+::: details Preview the code
+<<< @/.vitepress/theme/components/examples/vue/input/Reverse.vue
+:::
+
 ## Loading
 
 `loading` - add a loading icon to the input outline.
