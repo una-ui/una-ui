@@ -6,7 +6,6 @@ const loading = ref(false)
 let typingTimer = null
 const typingDelay = 1000
 
-// Function to stop loading after typing is done
 function stopLoading() {
   loading.value = false
 }

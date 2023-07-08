@@ -47,7 +47,7 @@ const slots = defineSlots<{
 const inputValue = useVModel(props, 'modelValue', emits, { passive: true })
 
 const isLeading = props.leading || slots.leading
-const isTrailing = props.trailing || props.status || props.loading || slots.trailing
+const isTrailing = props.trailing || props.status || props.loading || slots.trailing || true
 </script>
 
 <template>
@@ -90,15 +90,14 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
         status ? `text-${status}` : '',
       ]"
     >
-      <slot name="trailing">
+      <Icon
+        v-if="loading"
+        :name="nv?.loadingIcon ? nv?.loadingIcon : 'input-loading-icon'"
+        class="animate-spin"
+      />
+      <slot v-else name="trailing">
         <Icon
-          v-if="loading"
-          :name="nv?.loadingIcon ? `input-${nv?.loadingIcon}` : 'input-loading-icon'"
-          class="animate-spin"
-        />
-
-        <Icon
-          v-else-if="status"
+          v-if="status"
           :name="status ? `input-${status}-icon` : ''"
         />
 
