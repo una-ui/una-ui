@@ -52,7 +52,7 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
 </script>
 
 <template>
-  <div input="wrapper" :class="[nv?.inputWrapper ?? undefined]">
+  <div input="wrapper" :class="nv?.inputWrapper">
     <input
       v-model="inputValue"
       :type="type"
@@ -62,7 +62,7 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
         isTrailing && !reverse ? 'pe-10' : '',
         isLeading && reverse ? 'pe-10' : '',
         isTrailing && reverse ? 'ps-10' : '',
-        nv?.inputBase ?? undefined,
+        nv?.inputBase,
       ]"
       v-bind="$attrs"
     >
@@ -70,7 +70,7 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
     <div
       v-if="isLeading"
       :class="[
-        nv?.inputLeadingWrapper ?? undefined,
+        nv?.inputLeadingWrapper,
         status ? `text-${status}` : '',
         reverse ? 'input-trailing-wrapper' : 'input-leading-wrapper',
       ]"
@@ -83,7 +83,7 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
     <div
       v-if="isTrailing"
       :class="[
-        nv?.inputTrailingWrapper ?? undefined,
+        nv?.inputTrailingWrapper,
         status ? `text-${status}` : '',
         !reverse ? 'input-trailing-wrapper' : 'input-leading-wrapper',
       ]"
