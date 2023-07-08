@@ -114,7 +114,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 :::
 
 ## Slots
-##### #leading
+### Leading
 
 <AppExemplar>
   <ExampleVueInputLeadingSlot/>
@@ -125,7 +125,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 :::
 
 
-##### #trailing
+### Trailing
 
 <AppExemplar>
   <ExampleVueInputTrailingSlot/>
