@@ -16,18 +16,18 @@
     ],
     "noUnusedLocals": true,
     "paths": {
-      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
+      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"],
+      "@nexvelt/ui-nuxt": ["./packages/ui-nuxt/src/module.ts"]
     },
 
     "rootDir": ".", // Ressquired for path aliases (nuxt module)
     "baseUrl": ".", // Required for path aliases (nuxt module)
     "allowSyntheticDefaultImports": true // Allow default imports from modules with no default export (nuxt module)
   },
-  "extends": [
-    "./packages/ui-nuxt/playground/tsconfig.json"
-  ],
   "exclude": [
     "**/node_modules",
-    "**/dist"
+    "**/dist",
+    "**/playground",
+    "**/playgrounds"
   ]
 }

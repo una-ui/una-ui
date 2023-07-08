@@ -58,7 +58,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // transpile
     const runtimeDir = resolve('./runtime')
-    // nuxt.options.build.transpile.push(runtimeDir) // TODO: use this later for headless ui
+    // nuxt.options.build.transpile.push(runtimeDir) // enable this later
 
     // components
     addComponentsDir({
@@ -74,6 +74,7 @@ export default defineNuxtModule<ModuleOptions>({
       watch: nuxt.options.dev,
     })
 
+    // @ts-expect-error - module options
     nuxt.options.vueuse = nuxt.options.vueuse || {}
 
     if (!options.dev)
