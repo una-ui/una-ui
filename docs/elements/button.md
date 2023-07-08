@@ -3,10 +3,6 @@ title: Button 🟡
 description: Buttons are used to initiate an action within an experience.
 ---
 
-<script setup>
-import Button from '../components/Button.vue'
-</script>
-
 # Button 🟡
 
 Buttons are used to initiate an action within an experience.
@@ -52,7 +48,16 @@ If you want to change the variant of the button, you can use the `btn` attribute
 
 ## Example
 
-<Button/>
+<AppExamplar class="flex flex-col gap-4">
+  <NVButton btn="solid lg block">
+    solid-primary
+  </NVButton>
+
+  <NVButton btn="outline">
+    outline-primary
+  </NVButton>
+</AppExamplar>
+
 
 ::: code-group
 

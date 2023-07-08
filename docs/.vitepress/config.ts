@@ -72,7 +72,7 @@ const Components: DefaultTheme.NavItemWithChildren[] = [
         link: '/forms/form-group',
       },
       {
-        text: '🔴 Input',
+        text: '🟡 Input',
         link: '/forms/input',
       },
       {

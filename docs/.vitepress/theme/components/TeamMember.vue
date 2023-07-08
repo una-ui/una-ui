@@ -12,7 +12,7 @@ import { sponsorMembers, teamMembers } from '../../contributors'
   <VPTeamPage class="mt-20 vp">
     <VPTeamPageTitle>
       <template #title>
-        <span class="text-3xl md:px-30 border-solid border-t border-$c-primary-active py-20">
+        <span class="text-3xl md:px-30 border-solid border-0 border-t border-$c-primary-active py-20">
           Meet The Team
         </span>
       </template>

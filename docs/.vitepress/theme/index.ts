@@ -1,4 +1,3 @@
-// https://vitepress.dev/guide/custom-theme
 import { h, watchEffect } from 'vue'
 import Theme from 'vitepress/theme'
 import { useStorage } from '@vueuse/core'
@@ -15,12 +14,15 @@ import './override.css'
 
 import TeamMember from './components/TeamMember.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
-import AppExamplar from './components/AppExamplar.vue'
+import AppExemplar from './components/AppExemplar.vue'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-const exampleComponents = import.meta.glob('./components/examples/*.vue')
+const NVForms = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/forms/*.vue', { eager: true })
+// const NVElements = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/elements/*.vue', { eager: true })
 
+const NVComponents = NVForms
+
+const ExampleComponents = import.meta.glob('./components/examples/*.vue', { eager: true })
+const ExampleVueInputComponents = import.meta.glob('./components/examples/vue/input/*.vue', { eager: true })
 // import SponsorButton from './components/SponsorButton.vue'
 
 let nexveltUIStyle: HTMLStyleElement | undefined
@@ -36,15 +38,28 @@ export default {
   },
   // this hook is called before the root Vue app is mounted to the DOM.
   enhanceApp({ router, siteData, app }) {
-    // register examplar components
-    app.component('AppExamplar', AppExamplar)
+    // register exemplar components
+    app.component('AppExemplar', AppExemplar)
+
+    // register input vue components from examples
+    for (const path in ExampleVueInputComponents) {
+      const mod = ExampleVueInputComponents[path]
+      const name = path.match(/\/([^/]+)\.vue$/)![1]
+      app.component(`ExampleVueInput${name}`, mod.default)
+    }
 
     // register components from examples
-    for (const path in exampleComponents) {
-      exampleComponents[path]().then((mod) => {
-        const name = path.match(/\.\/components\/examples\/(.*)\.vue$/)![1]
-        app.component(name, mod.default)
-      })
+    for (const path in ExampleComponents) {
+      const mod = ExampleComponents[path]
+      const name = path.match(/\/([^/]+)\.vue$/)![1]
+      app.component(`Example${name}`, mod.default)
+    }
+
+    // register components from @nexvelt/ui-nuxt
+    for (const path in NVComponents) {
+      const mod = NVComponents[path]
+      const name = path.match(/\/([^/]+)\.vue$/)![1]
+      app.component(`NV${name}`, mod.default)
     }
 
     if (typeof window === 'undefined')
@@ -69,7 +84,7 @@ export default {
           ${Object.entries(settings.value.primaryColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
           ${Object.entries(settings.value.grayColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
       }
-    `.replace(/\s*\n+\s*/g, '')
+      `.replace(/\s*\n+\s*/g, '')
       }
     })
   },

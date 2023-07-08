@@ -78,23 +78,23 @@ withDefaults(defineProps<Props>(), {
         </slot>
 
         <slot name="hint">
-          <p
+          <span
             v-if="hint" form-group="hint-base"
             :class="nv?.hintBase ?? undefined"
           >
             {{ hint }}
-          </p>
+          </span>
         </slot>
       </div>
 
       <slot name="description">
-        <p
+        <span
           v-if="description"
           form-group="description-wrapper"
           :class="nv?.descriptionWrapper ?? undefined"
         >
           {{ description }}
-        </p>
+        </span>
       </slot>
     </div>
 
@@ -114,7 +114,7 @@ withDefaults(defineProps<Props>(), {
       >
         <slot name="message">
           <!-- TODO add transition when value CHANGE (ease-in-out) -->
-          <p
+          <span
             v-if="message" form-group="message-base"
             :class="[
               nv?.messageBase ?? undefined,
@@ -122,7 +122,7 @@ withDefaults(defineProps<Props>(), {
             ]"
           >
             {{ message }}
-          </p>
+          </span>
         </slot>
       </div>
 
