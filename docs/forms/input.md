@@ -12,6 +12,7 @@ Work in progress - this component is not yet ready for use.
 :::
 
 ## Basic
+
 `NVInput` - the basic input
 
 <AppExemplar>
@@ -19,10 +20,11 @@ Work in progress - this component is not yet ready for use.
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/Basic.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/Basic.vue
 :::
 
 ## Color
+
 `input="outline-{color}"` - change the color of the input outline.
 
 ::: info
@@ -34,11 +36,11 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/Color.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/Color.vue
 :::
 
-
 ## Variant
+
 `input="{variant}"` - change the variant of the input outline.
 
 `input="{variant}-{color}"` - change the variant and color of the input outline.
@@ -48,10 +50,11 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/Variant.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/Variant.vue
 :::
 
 ## Size
+
 `input="solid-lime {size}"` - change the size of the input outline.
 
 <AppExemplar>
@@ -59,10 +62,11 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/Size.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/Size.vue
 :::
 
 ## Icon
+
 `trailing="{icon}"` - add a trailing icon to the input outline.
 
 `leading="{icon}"` - add a leading icon to the input outline.
@@ -76,10 +80,11 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/Icon.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/Icon.vue
 :::
 
 ## Loading
+
 `loading` - add a loading icon to the input outline.
 
 <AppExemplar>
@@ -87,10 +92,11 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/Loading.vue{26} [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/Loading.vue{26}
 :::
 
 ## Status
+
 `status="{status}"` - change the status of the input outline.
 
 <AppExemplar>
@@ -98,7 +104,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/Status.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/Status.vue
 :::
 
 `disabled` - disable the input outline.
@@ -110,10 +116,11 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/Disabled.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/Disabled.vue
 :::
 
 ## Slots
+
 ### Leading
 
 <AppExemplar>
@@ -121,9 +128,8 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/LeadingSlot.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/LeadingSlot.vue
 :::
-
 
 ### Trailing
 
@@ -132,7 +138,13 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-  <<< @/.vitepress/theme/components/examples/vue/input/TrailingSlot.vue [Vue]
+<<< @/.vitepress/theme/components/examples/vue/input/TrailingSlot.vue
 :::
 
+## Props
 
+| Name    | Description        | Type     | Required | Default           |
+| ------- | ------------------ | -------- | -------- | ----------------- |
+| `input` | The input variant. | `string` | `false`  | `outline-primary` |
+
+## Presets
