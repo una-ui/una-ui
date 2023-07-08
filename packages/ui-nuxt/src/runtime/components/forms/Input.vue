@@ -47,17 +47,17 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
       nv?.wrapper ?? undefined,
     ]"
   >
-    <slot name="leading">
-      <div
-        input="leading-wrapper"
-        :class="[
-          nv?.leadingWrapper ?? undefined,
-          status ? `text-${status}` : '',
-        ]"
-      >
+    <div
+      input="leading-wrapper"
+      :class="[
+        nv?.leadingWrapper ?? undefined,
+        status ? `text-${status}` : '',
+      ]"
+    >
+      <slot name="leading">
         <Icon :name="leading" />
-      </div>
-    </slot>
+      </slot>
+    </div>
 
     <input
       v-model="inputValue"
