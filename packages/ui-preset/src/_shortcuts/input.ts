@@ -5,6 +5,7 @@ export const miscInput = {
   'input-error-icon': 'i-carbon-warning-filled',
   'input-success-icon': 'i-carbon-checkmark-filled',
   'input-warning-icon': 'i-carbon-warning-alt-filled',
+  'input-loading-icon': 'i-gg-spinner text-lg',
 
   'input-wrapper': 'relative',
   'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-$c-gray-400',

@@ -70,6 +70,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 `leading="{icon}"` - add a leading icon to the input outline.
 
+::: tip
+You can use any icon provided by the [Icones](https://icones.js.org/) library.
+:::
+
 <AppExemplar>
   <ExampleVueInputIcon/>
 </AppExemplar>
@@ -78,6 +82,16 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
   <<< @/.vitepress/theme/components/examples/vue/input/Icon.vue [Vue]
 :::
 
+## Loading
+`loading` - add a loading icon to the input outline.
+
+<AppExemplar>
+  <ExampleVueInputLoading/>
+</AppExemplar>
+
+::: details Preview the code
+  <<< @/.vitepress/theme/components/examples/vue/input/Loading.vue{26} [Vue]
+:::
 
 ## Status
 `status="{status}"` - change the status of the input outline.
@@ -89,3 +103,18 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::: details Preview the code
   <<< @/.vitepress/theme/components/examples/vue/input/Status.vue [Vue]
 :::
+
+## Disabled | Readonly
+`disabled` - disable the input outline.
+
+`readonly` - make the input outline readonly.
+
+<AppExemplar>
+  <ExampleVueInputDisabled/>
+</AppExemplar>
+
+::: details Preview the code
+  <<< @/.vitepress/theme/components/examples/vue/input/Disabled.vue [Vue]
+:::
+
+

@@ -20,11 +20,18 @@ interface Props {
   leading?: string
   trailing?: string
   status?: 'info' | 'success' | 'warning' | 'error'
+  loading?: boolean
 
   nv?: {
     wrapper?: string
     leadingWrapper?: string
     trailingWrapper?: string
+
+    warningIcon?: string
+    errorIcon?: string
+    successIcon?: string
+    infoIcon?: string
+    loadingIcon?: string
 
     inputBase?: string
   }
@@ -57,8 +64,8 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
       :type="type"
       :class="[
         status ? `input-solid-${status} input-status-${status}` : 'input-outline',
-        trailing ? 'pr-10' : '',
-        leading ? 'pl-10' : '',
+        leading ? 'ps-10' : '',
+        trailing || status || loading ? 'pe-10' : '',
         nv?.inputBase ?? undefined,
       ]"
       v-bind="$attrs"
@@ -73,8 +80,14 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
     >
       <slot name="trailing">
         <Icon
-          v-if="status"
-          :name="status ? `input-${props.status}-icon` : ''"
+          v-if="loading"
+          :name="nv?.loadingIcon ? `input-${nv?.loadingIcon}` : 'input-loading-icon'"
+          class="animate-spin"
+        />
+
+        <Icon
+          v-else-if="status"
+          :name="status ? `input-${status}-icon` : ''"
         />
 
         <Icon v-else :name="trailing" />

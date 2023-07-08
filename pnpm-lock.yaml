@@ -30,6 +30,9 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.1.18
         version: 1.1.18
+      '@iconify-json/gg':
+        specifier: ^1.1.5
+        version: 1.1.5
       '@iconify-json/simple-icons':
         specifier: ^1.1.58
         version: 1.1.58
@@ -1184,6 +1187,12 @@ packages:
     resolution: {integrity: sha512-RbKET6KS9xUMeYVq1FUH3UUA7AYNcnApkHt2AccCwTWTQQs/O58ji4Of6z6PhRajGlbfvrJzT/Uqh19OKECRvA==}
     dependencies:
       '@iconify/types': 2.0.0
+
+  /@iconify-json/gg@1.1.5:
+    resolution: {integrity: sha512-Xn6rVvyG2uLbsg8nedDDJmJk3tgdERIKgicZzO9kFPgvTCfzwIVos5FNZ7g1BIQlDA5M0h7+7yOUjFiNePsnDw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
 
   /@iconify-json/simple-icons@1.1.58:
     resolution: {integrity: sha512-W4Kj3eADpGNwOi5ICXF0CHKCeHMugNUnY3KDfz/Z8rgQzWDh3eRTIVqwmzwr0EkA3EkPAiV1XeNQbzhx98ZNJQ==}

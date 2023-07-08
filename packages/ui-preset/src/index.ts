@@ -25,6 +25,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
       'input-warning-icon',
       'input-success-icon',
       'input-error-icon',
+      'input-loading-icon',
 
       'input-status-info',
       'input-status-error',
@@ -35,7 +36,6 @@ export default function presetNexvelt(options: nexveltUIOptions = {
       'input-solid-error',
       'input-solid-success',
       'input-solid-warning',
-
     ],
     shortcuts,
     // theme,
