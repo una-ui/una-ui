@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
 
+import { computed } from 'vue' // TODO: remove this
 import Icon from '../elements/Icon.vue'
 
 interface Props {
@@ -47,8 +48,8 @@ const slots = defineSlots<{
 
 const inputValue = useVModel(props, 'modelValue', emits, { passive: true })
 
-const isLeading = props.leading || slots.leading
-const isTrailing = props.trailing || props.status || props.loading || slots.trailing
+const isLeading = computed(() => props.leading || slots.leading)
+const isTrailing = computed(() => props.trailing || slots.trailing || props.status || props.loading)
 </script>
 
 <template>
@@ -66,7 +67,6 @@ const isTrailing = props.trailing || props.status || props.loading || slots.trai
       ]"
       v-bind="$attrs"
     >
-
     <div
       v-if="isLeading"
       :class="[
