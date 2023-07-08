@@ -6,7 +6,7 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
-import presetNexvelt from '@nexvelt/ui-preset'
+import presetNexvelt from './packages/ui-preset/src/index'
 
 export default {
   preflight: false,
