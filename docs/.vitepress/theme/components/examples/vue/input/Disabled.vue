@@ -3,13 +3,13 @@
     <NVInput
       input="outline"
       disabled
-      placeholder="You can't type here (disabled))"
+      placeholder="You can't click here (disabled)"
     />
 
     <NVInput
       input="outline"
       readonly
-      placeholder="You can't type here either (readonly))"
+      placeholder="You can't type here (readonly)"
     />
   </div>
 </template>
