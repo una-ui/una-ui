@@ -51,6 +51,10 @@ Customizing the module is not yet supported until the first release.
 
 ## NexveltUI Presets Only
 
+::: danger
+  Documentation for `NexveltUI Presets` is not yet available.
+::: 
+
 You can install `NexveltUI Presets` in your project using one of the following methods:
 
 ::: tip
@@ -106,9 +110,10 @@ export default {
 }
 ```
 
-3. Import style in your `main.ts` file:
+3. Import styles in your `main.ts` or any other entry point of your application:
 
 ```ts
+import 'unocss'
 import '@nexvelt/ui-preset/style.css'
 import '@unocss/reset/tailwind-compat.css'
 ```
