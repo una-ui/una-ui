@@ -130,3 +130,8 @@ table {
 .VPHero .image-container:hover .image-bg {
   opacity: 0.2;
 }
+
+.vp-doc .custom-block div[class*='language-'] code:not(:where(.vp-raw *)) {
+  font-weight: 550 !important;
+}
+
