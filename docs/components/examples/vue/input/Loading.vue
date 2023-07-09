@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-
 const value = ref('')
 const loading = ref(false)
-let typingTimer = null
+const typingTimer = ref<any>(null)
 const typingDelay = 1000
 
 function stopLoading() {
@@ -12,8 +10,8 @@ function stopLoading() {
 
 watch(value, () => {
   loading.value = true
-  clearTimeout(typingTimer)
-  typingTimer = setTimeout(stopLoading, typingDelay)
+  clearTimeout(typingTimer.value)
+  typingTimer.value = setTimeout(stopLoading, typingDelay)
 })
 </script>
 
