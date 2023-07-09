@@ -16,6 +16,8 @@ import TeamMember from './components/TeamMember.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 import AppExemplar from './components/AppExemplar.vue'
 
+// import AppMisc from './components/AppMisc.vue'
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 const NVComponents = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/forms/*.vue', { eager: true })
@@ -24,7 +26,6 @@ const NVComponents = import.meta.glob('../../../packages/ui-nuxt/src/runtime/com
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 const ExampleVueInputComponents = import.meta.glob('../../components/examples/vue/input/*.vue', { eager: true })
-// import SponsorButton from './components/SponsorButton.vue'
 
 let nexveltUIStyle: HTMLStyleElement | undefined
 
@@ -34,7 +35,7 @@ export default {
     return h(Theme.Layout, null, {
       'home-features-after': () => h(TeamMember),
       'nav-bar-content-after': () => h(ThemeSwitcher),
-      // 'aside-top': () => h(SponsorButton),
+      // 'aside-bottom': () => h(AppMisc),
     })
   },
   // this hook is called before the root Vue app is mounted to the DOM.
