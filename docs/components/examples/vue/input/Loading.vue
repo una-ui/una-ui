@@ -21,10 +21,18 @@ watch(value, () => {
 </script>
 
 <template>
-  <NVInput
-    v-model="value"
-    leading="i-carbon-search"
-    :loading="loading"
-    placeholder="Start typing..."
-  />
+  <div flex="~ col" space-y-4>
+    <NVInput
+      disabled
+      loading
+      placeholder="This is the disabled variant with loading indicator"
+    />
+
+    <NVInput
+      v-model="value"
+      leading="i-carbon-search"
+      :loading="loading"
+      placeholder="Start typing..."
+    />
+  </div>
 </template>
