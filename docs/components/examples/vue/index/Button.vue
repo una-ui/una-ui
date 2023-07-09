@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-2">
+  <div class="flex flex-col gap-2 sm:flex-row">
     <div>
       <button
         btn="solid-pink sm"
