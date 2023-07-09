@@ -14,7 +14,8 @@ function stopLoading(): void {
 
 watch(value, () => {
   loading.value = true
-  clearTimeout(typingTimer.value.timer ?? undefined)
+  if (typingTimer.value.timer)
+    clearTimeout(typingTimer.value.timer)
   typingTimer.value.timer = setTimeout(stopLoading, typingDelay)
 })
 </script>

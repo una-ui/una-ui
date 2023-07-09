@@ -102,7 +102,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/components/examples/vue/input/Loading.vue{26}
+<<< @/components/examples/vue/input/Loading.vue{27}
 :::
 
 ## Status
