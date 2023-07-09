@@ -267,6 +267,7 @@ export default defineConfig({
         ],
         imports: [
           'vue',
+          '@vueuse/core',
         ],
         dirs: [
           './components/examples/vue/**',
