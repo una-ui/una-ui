@@ -15,6 +15,117 @@ This documentation is still a work in progress. The package itself is not yet of
 
 NexveltUI aims to provide a complete solution for building user interfaces using Vue.js and UNOCSS. It is designed to be simple, intuitive, and easy to use, while also providing extensive customization options for developers who want to create unique and visually appealing user interfaces.
 
+## Design Principles
+
+NexveltUI follows UNOCSS design principles, offering a customizable and lightweight UI framework. UNOCSS, being an Atomic CSS framework, generates CSS only for the classes used in a project, making NexveltUI fast and lightweight, even for large-scale projects.
+
+## Comparison with other UI frameworks and presets
+
+#### ❌ Typical UI framework approach
+```html
+<XButton
+  size="sm"
+  rounded="full"
+  variant="solid"
+  color="info"
+>
+  Solid Button
+</XButton>
+
+<XButton
+  variant="solid"
+  color="primary"
+>
+  Solid primary
+</XButton>
+
+<XButton
+  size="lg"
+  variant="outline"
+  color="secondary"
+>
+  Outline Button
+</XButton>
+
+<XButton
+  size="lg"
+  variant="soft"
+  color="accent"
+>
+  Ghost Button
+</XButton>
+```
+
+>This generates a lot of unnecessary CSS because it generates CSS for all the possible combinations of the props. Which can slow down the application and increase the bundle size. 
+
+#### ❌ DaisyUI preset approach
+```html
+<button
+  class="btn btn-info btn-sm rounded-full"
+>
+  Solid info
+</button>
+
+<button
+  class="btn btn-primary"
+>
+  Solid primary
+</button>
+
+<button
+  class="btn btn-outline btn-secondary btn-lg"
+>
+  Outline Button
+</button>
+
+<button
+  class="btn btn-ghost btn-accent btn-lg"
+>
+  Ghost Button
+</button>
+```
+
+>This approach is better than the previous one, but it still generates a lot of unnecessary CSS. It also doesn't provide the ability to customize the component using utility classes.
+
+#### ✅ NexveltUI preset approach
+```html
+<button
+  btn="solid-pink sm"
+  class="rounded-full"
+>
+  Solid pink
+</button>
+
+<button
+  btn="solid"
+>
+  Default
+</button>
+
+<button
+  btn="outline-lime lg"
+  class="rounded-none"
+>
+  Outline lime
+</button>
+
+<button
+  btn="soft-orange xl"
+>
+  Soft orange
+</button>
+```
+
+>This approach is the best of both worlds. It generates CSS only for the classes used in the project, and also provides the ability to customize the component using utility classes.
+
+Heres a quick example output of the above code.
+
+<ExampleVueIndexButton/>
+
+::: tip
+NexveltUI preset is shown as an example, but components haven't been used yet. The output looks good and can be further customized with utility classes.
+:::
+
 ## Key Features
 
 - `NexveltUI Presets`: Provides UNOCSS presets for consistent design that can be integrated across React, Vue, Svelte, Angular, and more.
