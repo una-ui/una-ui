@@ -13,7 +13,7 @@ Work in progress - this component is not yet ready for use.
 
 ## Basic
 
-`NVInput` - the basic input
+`NVInput` - use the `NVInput` component to create an input outline.
 
 <AppExemplar>
   <ExampleVueInputBasic/>
