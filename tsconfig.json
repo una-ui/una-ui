@@ -27,7 +27,6 @@
   "exclude": [
     "**/node_modules",
     "**/dist",
-    "**/playground",
-    "**/playgrounds"
+    "**/playground"
   ]
 }
