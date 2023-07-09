@@ -5,7 +5,5 @@ const value = ref('')
 <template>
   <NVInput
     v-model="value"
-    type="email"
-    placeholder="Enter your email"
   />
 </template>
