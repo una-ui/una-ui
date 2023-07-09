@@ -1,17 +1,21 @@
 <script setup lang="ts">
-const value = ref('')
-const loading = ref(false)
-const typingTimer = ref<any>(null)
+interface TypingTimer {
+  timer: ReturnType<typeof setTimeout> | null
+}
+
+const value: Ref<string> = ref('')
+const loading: Ref<boolean> = ref(false)
+const typingTimer: Ref<TypingTimer> = ref({ timer: null })
 const typingDelay = 1000
 
-function stopLoading() {
+function stopLoading(): void {
   loading.value = false
 }
 
 watch(value, () => {
   loading.value = true
-  clearTimeout(typingTimer.value)
-  typingTimer.value = setTimeout(stopLoading, typingDelay)
+  clearTimeout(typingTimer.value.timer ?? undefined)
+  typingTimer.value.timer = setTimeout(stopLoading, typingDelay)
 })
 </script>
 
