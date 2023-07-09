@@ -3,7 +3,7 @@ import Theme from 'vitepress/theme'
 import { useStorage } from '@vueuse/core'
 import type { ThemeColors } from '../../types'
 
-import 'virtual:uno.css'
+import 'uno.css'
 import '@nexvelt/ui-preset/style.css'
 import '@unocss/reset/tailwind-compat.css'
 
