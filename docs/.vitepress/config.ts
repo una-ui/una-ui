@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types'
 import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 import { version } from '../../package.json'
 
 /* guide items */
@@ -190,7 +191,7 @@ const isDev = process.env.NODE_ENV === 'development'
 export default defineConfig({
   lang: 'en-US',
   title: 'NexveltUI',
-  description: 'The Next Level UI Technology.',
+  description: 'The Next Level User Interface Technology',
 
   head: [
     !isDev
@@ -258,6 +259,18 @@ export default defineConfig({
     plugins: [
       UnoCSS({
         configFile: '../uno.config.ts',
+      }),
+      AutoImport({
+        include: [
+          /\.vue$/, /\.vue\?vue/, // .vue
+          /\.md$/, // .md
+        ],
+        imports: [
+          'vue',
+        ],
+        dirs: [
+          './components/examples/vue/**',
+        ],
       }),
     ],
   },

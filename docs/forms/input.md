@@ -20,7 +20,7 @@ Work in progress - this component is not yet ready for use.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Basic.vue
+<<< @/components/examples/vue/input/Basic.vue
 :::
 
 ## Color
@@ -36,7 +36,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Color.vue
+<<< @/components/examples/vue/input/Color.vue
 :::
 
 ## Variant
@@ -50,7 +50,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Variant.vue
+<<< @/components/examples/vue/input/Variant.vue
 :::
 
 ## Size
@@ -62,7 +62,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Size.vue
+<<< @/components/examples/vue/input/Size.vue
 :::
 
 ## Icon
@@ -80,7 +80,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Icon.vue
+<<< @/components/examples/vue/input/Icon.vue
 :::
 
 `reverse` - reverse the icon position.
@@ -90,7 +90,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Reverse.vue
+<<< @/components/examples/vue/input/Reverse.vue
 :::
 
 ## Loading
@@ -102,7 +102,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Loading.vue{26}
+<<< @/components/examples/vue/input/Loading.vue{26}
 :::
 
 ## Status
@@ -114,7 +114,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Status.vue
+<<< @/components/examples/vue/input/Status.vue
 :::
 
 `disabled` - disable the input outline.
@@ -126,7 +126,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/Disabled.vue
+<<< @/components/examples/vue/input/Disabled.vue
 :::
 
 ## Slots
@@ -138,7 +138,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/LeadingSlot.vue
+<<< @/components/examples/vue/input/LeadingSlot.vue
 :::
 
 ### Trailing
@@ -148,7 +148,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library.
 </AppExemplar>
 
 ::: details Preview the code
-<<< @/.vitepress/theme/components/examples/vue/input/TrailingSlot.vue
+<<< @/components/examples/vue/input/TrailingSlot.vue
 :::
 
 ## Props

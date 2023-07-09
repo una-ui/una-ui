@@ -16,11 +16,14 @@ import TeamMember from './components/TeamMember.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 import AppExemplar from './components/AppExemplar.vue'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 const NVComponents = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/forms/*.vue', { eager: true })
 // const NVElements = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/elements/*.vue', { eager: true })
 
-const ExampleComponents = import.meta.glob('./components/examples/*.vue', { eager: true })
-const ExampleVueInputComponents = import.meta.glob('./components/examples/vue/input/*.vue', { eager: true })
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+const ExampleVueInputComponents = import.meta.glob('../../components/examples/vue/input/*.vue', { eager: true })
 // import SponsorButton from './components/SponsorButton.vue'
 
 let nexveltUIStyle: HTMLStyleElement | undefined
@@ -44,13 +47,6 @@ export default {
       const mod = ExampleVueInputComponents[path]
       const name = path.match(/\/([^/]+)\.vue$/)![1]
       app.component(`ExampleVueInput${name}`, mod.default)
-    }
-
-    // register components from examples
-    for (const path in ExampleComponents) {
-      const mod = ExampleComponents[path]
-      const name = path.match(/\/([^/]+)\.vue$/)![1]
-      app.component(`Example${name}`, mod.default)
     }
 
     // register components from @nexvelt/ui-nuxt
