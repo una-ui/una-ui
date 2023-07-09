@@ -7,7 +7,7 @@ description: Installation
 
 You can install `Nexvelt UI` in your project using one of the following methods:
 
-## NexveltUI Components and Presets
+## NexveltUI Components
 
 ### Nuxt.js
 
@@ -49,7 +49,7 @@ Customizing the module is not yet supported until the first release.
 
 ---
 
-## NexveltUI Presets Only
+## NexveltUI Presets 
 
 ::: danger
   Documentation for `NexveltUI Presets` is not yet available.
@@ -81,7 +81,7 @@ pnpm install unocss @nexvelt/ui-preset
 
 2.  Add `@nexvelt/ui-preset` to the `presets` section of `unocss.config.ts`:
 
-::: tip
+::: info
 If you don't have `unocss.config.ts` file, you can create it in the root directory of your project. Below is the recommended configuration for NexveltUI Presets.
 :::
 
