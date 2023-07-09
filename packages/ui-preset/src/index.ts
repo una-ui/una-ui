@@ -5,10 +5,6 @@ import { shortcuts } from './shortcuts'
 // import { theme } from './theme'
 
 export default function presetNexvelt(options: nexveltUIOptions = {
-  colorThemes: [
-    'blue',
-    'green',
-  ],
 }): Preset {
   return {
     name: '@nexvelt/ui-preset',
