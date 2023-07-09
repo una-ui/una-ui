@@ -17,7 +17,7 @@ NexveltUI aims to provide a complete solution for building user interfaces using
 
 ## Key Features
 
-- `NexveltUI Presets`: Provides UNOCSS presets for consistent design can that can be integrated across React, Vue, Svelte, Angular, and more.
+- `NexveltUI Presets`: Provides UNOCSS presets for consistent design that can be integrated across React, Vue, Svelte, Angular, and more.
 
 - `Auto Dark Mode`: Automatically switches between light and dark mode based on user preferences.
 
