@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
-
-import { computed } from 'vue' // TODO: remove this
 import Icon from '../elements/Icon.vue'
 
 interface Props {
@@ -67,6 +65,7 @@ const isTrailing = computed(() => props.trailing || slots.trailing || props.stat
       ]"
       v-bind="$attrs"
     >
+
     <div
       v-if="isLeading"
       :class="[
