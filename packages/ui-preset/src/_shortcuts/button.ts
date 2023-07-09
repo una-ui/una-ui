@@ -6,6 +6,7 @@ export const miscButton = {
   'btn-disabled': '!disabled:(opacity-75 cursor-not-allowed)',
 
   /* btn-size */
+  'btn-xs': 'px-1.5 py-0.5',
   'btn-sm': 'px-2 py-1',
   'btn-md': 'px-2.5 py-1.5',
   'btn-lg': 'px-3 py-2',
