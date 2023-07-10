@@ -1,0 +1,8 @@
+@import "@nexvelt/ui-preset/style.css";
+@import '@unocss/reset/tailwind-compat.css';
+
+@import "./override.css";
+@import "./variables.css";
+@import "./transition.css";
+@import "./colors.css";
+

@@ -4,13 +4,7 @@ import { useStorage } from '@vueuse/core'
 import type { ThemeColors } from '../../types'
 
 import 'uno.css'
-import '@nexvelt/ui-preset/style.css'
-import '@unocss/reset/tailwind-compat.css'
-
-import './color-transition.css'
-import './transition.css'
-import './vars.css'
-import './override.css'
+import './styles/index.css'
 
 import TeamMember from './components/TeamMember.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
