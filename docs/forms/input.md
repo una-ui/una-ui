@@ -166,7 +166,7 @@ By default we use `heroicons` for the icons, you can use any icon provided by `I
 :::
 
 
-## Props & Events Reference
+## Reference
 
 | Name       | Description                      | Type                                           | Required | Default |
 | ---------- | -------------------------------- | ---------------------------------------------- | -------- | ------- |
