@@ -101,6 +101,10 @@ importers:
         version: 1.8.3(typescript@5.1.6)
 
   docs:
+    dependencies:
+      fuse.js:
+        specifier: ^6.6.2
+        version: 6.6.2
     devDependencies:
       '@nexvelt/ui-preset':
         specifier: workspace:^
@@ -113,7 +117,7 @@ importers:
         version: 1.16.0(postcss@8.4.25)
       vitepress:
         specifier: 1.0.0-beta.4
-        version: 1.0.0-beta.4(@algolia/client-search@4.18.0)(@types/node@20.3.3)(sass@1.63.6)(search-insights@2.6.0)
+        version: 1.0.0-beta.4(@algolia/client-search@4.18.0)(@types/node@20.3.3)(fuse.js@6.6.2)(sass@1.63.6)(search-insights@2.6.0)
 
   packages/ui-nuxt:
     dependencies:
@@ -149,7 +153,7 @@ importers:
         version: 10.2.1(vue@3.3.4)
       '@vueuse/integrations':
         specifier: ^10.2.1
-        version: 10.2.1(focus-trap@7.4.3)(vue@3.3.4)
+        version: 10.2.1(focus-trap@7.4.3)(fuse.js@6.6.2)(vue@3.3.4)
       '@vueuse/nuxt':
         specifier: ^10.2.1
         version: 10.2.1(nuxt@3.6.1)(rollup@3.26.0)(vue@3.3.4)
@@ -2478,7 +2482,7 @@ packages:
       - '@vue/composition-api'
       - vue
 
-  /@vueuse/integrations@10.2.1(focus-trap@7.4.3)(vue@3.3.4):
+  /@vueuse/integrations@10.2.1(focus-trap@7.4.3)(fuse.js@6.6.2)(vue@3.3.4):
     resolution: {integrity: sha512-FDP5lni+z9FjHE9H3xuvwSjoRV9U8jmDvJpmHPCBjUgPGYRynwb60eHWXCFJXLUtb4gSIHy0e+iaEbrKdalCkQ==}
     peerDependencies:
       async-validator: '*'
@@ -2522,6 +2526,7 @@ packages:
       '@vueuse/core': 10.2.1(vue@3.3.4)
       '@vueuse/shared': 10.2.1(vue@3.3.4)
       focus-trap: 7.4.3
+      fuse.js: 6.6.2
       vue-demi: 0.14.5(vue@3.3.4)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -4493,6 +4498,10 @@ packages:
   /functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
+
+  /fuse.js@6.6.2:
+    resolution: {integrity: sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==}
+    engines: {node: '>=10'}
 
   /gauge@3.0.2:
     resolution: {integrity: sha512-+5J6MS/5XksCuXq++uFRsnUd7Ovu1XenbeuIuNRJxYWjgQbPuFhT14lAvsWfqfAmnwluf1OwMjz39HjfLPci0Q==}
@@ -7972,7 +7981,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress@1.0.0-beta.4(@algolia/client-search@4.18.0)(@types/node@20.3.3)(sass@1.63.6)(search-insights@2.6.0):
+  /vitepress@1.0.0-beta.4(@algolia/client-search@4.18.0)(@types/node@20.3.3)(fuse.js@6.6.2)(sass@1.63.6)(search-insights@2.6.0):
     resolution: {integrity: sha512-dpWnpdUFrKU9spTAHaxfkYauFAaIokQwr/1Kx2ipGvHDij47ebuHXF/O7gD+5xnpwV3eUb8Z2zPVZn1kbGu9lQ==}
     hasBin: true
     dependencies:
@@ -7981,7 +7990,7 @@ packages:
       '@vitejs/plugin-vue': 4.2.3(vite@4.4.0-beta.3)(vue@3.3.4)
       '@vue/devtools-api': 6.5.0
       '@vueuse/core': 10.2.1(vue@3.3.4)
-      '@vueuse/integrations': 10.2.1(focus-trap@7.4.3)(vue@3.3.4)
+      '@vueuse/integrations': 10.2.1(focus-trap@7.4.3)(fuse.js@6.6.2)(vue@3.3.4)
       body-scroll-lock: 4.0.0-beta.0
       focus-trap: 7.4.3
       mark.js: 8.11.1

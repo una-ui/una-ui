@@ -15,6 +15,7 @@ import './override.css'
 import TeamMember from './components/TeamMember.vue'
 import ThemeSwitcher from './components/ThemeSwitcher.vue'
 import AppExemplar from './components/AppExemplar.vue'
+import SlotsTable from './components/SlotsTable.vue'
 
 // import AppMisc from './components/AppMisc.vue'
 
@@ -42,6 +43,7 @@ export default {
   enhanceApp({ app }) {
     // register exemplar components
     app.component('AppExemplar', AppExemplar)
+    app.component('SlotsTable', SlotsTable)
 
     // register input vue components from examples
     for (const path in ExampleVueInputComponents) {

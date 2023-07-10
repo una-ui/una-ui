@@ -42,5 +42,8 @@
     "postcss": "^8.4.25",
     "postcss-prefix-selector": "^1.16.0",
     "vitepress": "1.0.0-beta.4"
+  },
+  "dependencies": {
+    "fuse.js": "^6.6.2"
   }
 }

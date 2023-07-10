@@ -166,31 +166,50 @@ By default we use `heroicons` for the icons, you can use any icon provided by `I
 :::
 
 
-## Reference
+<!-- ## Props
 
 | Name       | Description                      | Type                                           | Default |
 | ---------- | -------------------------------- | ---------------------------------------------- | ------- |
-| modelValue | the value of the input           | `string`                                       | `''`    |
-| type       | the type of the input            | `text` `password` `email` `number` `tel` `url` | `false` | `text` |
+| modelValue | the value of the input           | `string`                                       | `null`    |
+| type       | the type of the input            | `text` `password` `email` `number` `tel` `url` | `text` |
 | leading    | the leading icon and classes     | `string`                                       | `null`  |
 | trailing   | the trailing icon and classes    | `string`                                       | `null`  |
-| status     | the status of the input          | `info` `success` `warning` `error`             | `false` | `null` |
+| status     | the status of the input          | `info` `success` `warning` `error`             | `null`  |
 | loading    | the loading state                | `boolean`                                      | `null`  |
 | reverse    | the reverse state                | `boolean`                                      | `null`  |
 | nv         | list of nexveltUI presets config | `object`                                       | `null`  |
 | @leading   | the leading icon clicked         | `void`                                         | `null`  |
-| @trailing  | the trailing icon clicked        | `void`                                         | `null`  |
+| @trailing  | the trailing icon clicked        | `void`                                         | `null`  | -->
+
+## Props
+```ts
+interface Props {
+  modelValue?: string | number
+  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
+  leading?: string // icon
+  trailing?: string // icon
+  status?: 'info' | 'success' | 'warning' | 'error'
+  loading?: boolean
+  reverse?: boolean
+
+  nv?: {
+    inputWrapper?: string
+    inputLeadingWrapper?: string
+    inputTrailingWrapper?: string
+
+    inputWarningIcon?: string
+    inputErrorIcon?: string
+    inputSuccessIcon?: string
+    inputInfoIcon?: string
+    inputLoadingIcon?: string
+
+    inputBase?: string
+    inputLoadingBase?: string
+  }
+}
+```
+
 
 ## Presets
 
-::: warning
-Not yet completed.
-:::
-
-| Name             | Class                                                                                                                                                                                      |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| input-base       | `w-full input-md input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent` |
-| input-outline-*color | `input-base input-focus-${color} ring-1 ring-inset ring-base                                                   `                                                                               |
-| 
-
-
+<SlotsTable/>
