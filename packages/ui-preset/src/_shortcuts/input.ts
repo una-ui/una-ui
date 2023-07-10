@@ -1,4 +1,6 @@
-export const miscInput = {
+export const staticInput = {
+  'input-base': 'w-full input-md input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
+
   'input-loading-base': 'animate-spin',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
 
@@ -19,16 +21,13 @@ export const miscInput = {
   'input-md': 'px-3 py-1.5',
   'input-lg': 'px-3.5 py-2 text-lg',
   'input-xl': 'px-4 py-2.5 text-xl',
-}
 
-export const staticInput = {
-  // default config
-  'input-base': 'w-full input-md input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
 }
 
 export const dynamicInput = [
   // variants
   [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c} ring-1 ring-inset ring-base`],
+  // [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c} ring-1 ring-inset ring-base`],
   [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c} ring-1 ring-inset ring-${c}-500 dark:ring-${c}-400`],
 
   // default config
@@ -38,6 +37,5 @@ export const dynamicInput = [
 
 export const input = [
   ...dynamicInput,
-  miscInput,
   staticInput,
 ]

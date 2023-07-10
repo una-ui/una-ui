@@ -5,6 +5,12 @@ import sass from 'sass'
 export default defineBuildConfig({
   entries: [
     'src/index',
+    'src/shortcuts',
+    // 'src/theme',
+    // 'src/utils',
+    // 'src/rules',
+    // 'src/colors',
+    // 'src/variants',
   ],
   declaration: true,
   clean: true,

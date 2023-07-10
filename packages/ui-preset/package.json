@@ -25,6 +25,11 @@
       "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     },
+    "./shortcuts": {
+      "types": "./dist/shortcuts.d.ts",
+      "require": "./dist/shortcuts.cjs",
+      "import": "./dist/shortcuts.mjs"
+    },
     "./*": "./*"
   },
   "main": "dist/index.cjs",
@@ -32,6 +37,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
+    "*.d.ts",
     "*.css"
   ],
   "scripts": {
