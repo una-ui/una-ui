@@ -123,7 +123,7 @@ Heres a quick example output of the above code.
 <ExampleVueIndexButton/>
 
 ::: tip
-NexveltUI preset is shown as an example, but components haven't been used yet. The output looks good and can be further customized with utility classes.
+NexveltUI preset is shown as an example, components haven't been used yet but the output looks good and can be further customized with utility classes.
 :::
 
 ## Key Features
