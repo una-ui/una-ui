@@ -166,10 +166,19 @@ By default we use `heroicons` for the icons, you can use any icon provided by `I
 :::
 
 
-## Props
+## Props & Events Reference
 
-| Prefix name    | Description        | Type     | Required | Default    |
-| ------- | ------------------ | -------- | -------- | ----------------- |
-| `input` | The input variant. | `string` | `false`  | `outline-primary` |
+| Name       | Description                   | Type                                           | Required | Default |
+| ---------- | ----------------------------- | ---------------------------------------------- | -------- | ------- |
+| modelValue | the value of the input        | `string`                                       | `false`  | `''`    |
+| type       | the type of the input         | `text` `password` `email` `number` `tel` `url` | `false`  | `text`  |
+| leading    | the leading icon and classes  | `string`                                       | `false`  | `null`  |
+| trailing   | the trailing icon and classes | `string`                                       | `false`  | `null`  |
+| status     | the status of the input       | `info` `success` `warning` `error`             | `false`  | `null`  |
+| loading    | the loading state             | `boolean`                                      | `false`  | `null`  |
+| reverse    | the reverse state             | `boolean`                                      | `false`  | `null`  |
+| nv         | the nv object classes         | `object`                                       | `false`  | `null`  |
+| @leading   | the leading icon clicked      | `void`                                         | `false`  | `null`  |
+| @trailing  | the trailing icon clicked     | `void`                                         | `false`  | `null`  |
 
 ## Presets
