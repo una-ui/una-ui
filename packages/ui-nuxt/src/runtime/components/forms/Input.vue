@@ -57,7 +57,7 @@ const isTrailing = computed(() => props.trailing || slots.trailing || props.stat
       v-model="inputValue"
       :type="type"
       :class="[
-        status ? `input-solid-${status} input-status-${status}` : 'input-outline',
+        status ? `input-solid-${status} input-status-${status} input-status-ring` : 'input-outline',
         isLeading && !reverse ? 'ps-10' : '',
         isTrailing && !reverse ? 'pe-10' : '',
         isLeading && reverse ? 'pe-10' : '',
