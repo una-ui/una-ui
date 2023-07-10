@@ -27,12 +27,12 @@ export const staticInput = {
 }
 
 export const dynamicInput = [
-  // defaults config
-  [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400 focus:bg-base focus:outline-2 focus:outline-offset-0 focus:outline-${c}-500/20 dark:focus:outline-${c}-400/30`],
-
   // variants
   [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c} ring-1 ring-inset ring-base`],
   [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c} ring-1 ring-inset ring-${c}-500 dark:ring-${c}-400`],
+
+  // defaults config
+  [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400 focus:bg-base focus:outline-2 focus:outline-offset-0 focus:outline-${c}-500/20 dark:focus:outline-${c}-400/30`],
 
   // status
   [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-400/70 dark:placeholder-${c}-300/70`],
