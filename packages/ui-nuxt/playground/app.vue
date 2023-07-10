@@ -37,95 +37,88 @@ const input = ref('')
 </script>
 
 <template>
-  <div>
-    <div class="grid grid-rows-2 divide-y-2">
-      <div>test</div>
-      <div>test</div>
-    </div>
-
-    <div class="mx-auto h-screen flex flex-col items-center justify-center gap-4 container">
-      <ColorMode />
-      <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
-        <NButton
-          v-for="button in buttons"
-          :key="button"
-          :class="button"
-        >
-          {{ button }}
-        </NButton>
-      </div>
-
-      <form
-        class="grid grid-cols-1 w-lg gap-4 border border-base rounded-md bg-muted px-6 py-8"
+  <div class="mx-auto h-screen flex flex-col items-center justify-center gap-4 container">
+    <ColorMode />
+    <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <NButton
+        v-for="button in buttons"
+        :key="button"
+        :class="button"
       >
-        <NFormGroup
-          label="Email"
-          description="We'll never share your email with anyone else."
-          :message="input.length > 0 ? `We'll never share your email with anyone else.` : 'You have entered an invalid email'"
-          hint="Optional"
-          :status="input.length > 0 ? undefined : 'info'"
-          required
-        >
-          <NInput
-            id="email"
-            v-model="input"
-            :status="input.length > 0 ? undefined : 'info'"
-            placeholder="Email"
-          />
-        </NFormGroup>
-
-        <NFormGroup
-          label="Name"
-          name="firstname"
-          error="Firstname is required"
-          required
-        >
-          <NInput
-            id="firstname"
-            v-model="input"
-            leading="i-carbon-user-avatar-filled"
-            placeholder="Firstname"
-          />
-        </NFormGroup>
-
-        <NFormGroup
-          label="Middlename"
-          hint="Optional"
-        >
-          <NInput
-            id="middlename"
-            input="outline-yellow"
-            status="warning"
-            placeholder="Middlename"
-          />
-        </NFormGroup>
-
-        <NFormGroup
-          name="lastname"
-          label="Lastname"
-          required
-        >
-          <NInput
-            id="lastname"
-            input="outline-green"
-            placeholder="Lastname"
-          />
-        </NFormGroup>
-
-        <NButton
-          type="submit"
-          btn="solid"
-          :label="!isLoading ? 'Submit' : 'Processing...'"
-          :class="isLoading ? 'animate-pulse' : ''"
-          @click="isLoading = !isLoading"
-        />
-
-        <NButton
-          btn="solid-gray"
-          label="Cancel"
-          @click="isLoading = !isLoading"
-        />
-      </form>
+        {{ button }}
+      </NButton>
     </div>
+
+    <form
+      class="grid grid-cols-1 w-lg gap-4 border border-base rounded-md bg-muted px-6 py-8"
+    >
+      <NFormGroup
+        label="Email"
+        description="We'll never share your email with anyone else."
+        :message="input.length > 0 ? `We'll never share your email with anyone else.` : 'You have entered an invalid email'"
+        hint="Optional"
+        :status="input.length > 0 ? undefined : 'info'"
+        required
+      >
+        <NInput
+          id="email"
+          v-model="input"
+          :status="input.length > 0 ? undefined : 'info'"
+          placeholder="Email"
+        />
+      </NFormGroup>
+
+      <NFormGroup
+        label="Name"
+        name="firstname"
+        error="Firstname is required"
+        required
+      >
+        <NInput
+          id="firstname"
+          v-model="input"
+          leading="i-carbon-user-avatar-filled"
+          placeholder="Firstname"
+        />
+      </NFormGroup>
+
+      <NFormGroup
+        label="Middlename"
+        hint="Optional"
+      >
+        <NInput
+          id="middlename"
+          input="outline-yellow"
+          status="warning"
+          placeholder="Middlename"
+        />
+      </NFormGroup>
+
+      <NFormGroup
+        name="lastname"
+        label="Lastname"
+        required
+      >
+        <NInput
+          id="lastname"
+          input="outline-green"
+          placeholder="Lastname"
+        />
+      </NFormGroup>
+
+      <NButton
+        type="submit"
+        btn="solid"
+        :label="!isLoading ? 'Submit' : 'Processing...'"
+        :class="isLoading ? 'animate-pulse' : ''"
+        @click="isLoading = !isLoading"
+      />
+
+      <NButton
+        btn="solid-gray"
+        label="Cancel"
+        @click="isLoading = !isLoading"
+      />
+    </form>
   </div>
 </template>
