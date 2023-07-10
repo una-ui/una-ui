@@ -168,22 +168,29 @@ By default we use `heroicons` for the icons, you can use any icon provided by `I
 
 ## Reference
 
-| Name       | Description                      | Type                                           | Required | Default |
-| ---------- | -------------------------------- | ---------------------------------------------- | -------- | ------- |
-| modelValue | the value of the input           | `string`                                       | `false`  | `''`    |
-| type       | the type of the input            | `text` `password` `email` `number` `tel` `url` | `false`  | `text`  |
-| leading    | the leading icon and classes     | `string`                                       | `false`  | `null`  |
-| trailing   | the trailing icon and classes    | `string`                                       | `false`  | `null`  |
-| status     | the status of the input          | `info` `success` `warning` `error`             | `false`  | `null`  |
-| loading    | the loading state                | `boolean`                                      | `false`  | `null`  |
-| reverse    | the reverse state                | `boolean`                                      | `false`  | `null`  |
-| nv         | list of nexveltUI presets config | `object`                                       | `false`  | `null`  |
-| @leading   | the leading icon clicked         | `void`                                         | `false`  | `null`  |
-| @trailing  | the trailing icon clicked        | `void`                                         | `false`  | `null`  |
+| Name       | Description                      | Type                                           | Default |
+| ---------- | -------------------------------- | ---------------------------------------------- | ------- |
+| modelValue | the value of the input           | `string`                                       | `''`    |
+| type       | the type of the input            | `text` `password` `email` `number` `tel` `url` | `false` | `text` |
+| leading    | the leading icon and classes     | `string`                                       | `null`  |
+| trailing   | the trailing icon and classes    | `string`                                       | `null`  |
+| status     | the status of the input          | `info` `success` `warning` `error`             | `false` | `null` |
+| loading    | the loading state                | `boolean`                                      | `null`  |
+| reverse    | the reverse state                | `boolean`                                      | `null`  |
+| nv         | list of nexveltUI presets config | `object`                                       | `null`  |
+| @leading   | the leading icon clicked         | `void`                                         | `null`  |
+| @trailing  | the trailing icon clicked        | `void`                                         | `null`  |
 
 ## Presets
 
 ::: warning
-Soon to be added.
+Not yet completed.
 :::
+
+| Name             | Class                                                                                                                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| input-base       | `w-full input-md input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent` |
+| input-outline-*color | `input-base input-focus-${color} ring-1 ring-inset ring-base                                                   `                                                                               |
+| 
+
 
