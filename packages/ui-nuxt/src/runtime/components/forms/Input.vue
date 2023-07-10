@@ -24,7 +24,6 @@ interface Props {
 
     inputBase?: string
     inputLoadingBase?: string
-
   }
 }
 
