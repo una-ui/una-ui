@@ -46,7 +46,7 @@ h1 {
 
 /* Code */
 .vp-doc :not(pre) > code {
-  background: var(--vp-c-bg-soft);
+  background: var(--vp-c-bg-soft-down);
   color: var(--vp-c-brand);
 }
 
