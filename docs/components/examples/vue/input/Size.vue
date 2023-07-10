@@ -1,5 +1,5 @@
 <template>
-  <div grid="~ cols-2" gap-4>
+  <div grid="~ cols-1 sm:cols-2" gap-4>
     <NVInput
       input="xs"
       placeholder="This is the extra small size"

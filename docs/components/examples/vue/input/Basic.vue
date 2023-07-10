@@ -3,7 +3,7 @@ const value = ref('')
 </script>
 
 <template>
-  <div grid="~ cols-2" gap-4>
+  <div grid="~ cols-1 sm:cols-2" gap-4>
     <NVInput
       v-model="value"
     />
