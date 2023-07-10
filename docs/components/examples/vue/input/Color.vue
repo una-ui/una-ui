@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col" space-y-4>
+  <div grid="~ sm:cols-2" gap-4>
     <NVInput
       placeholder="This is the default color (primary)"
     />

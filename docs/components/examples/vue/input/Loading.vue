@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col" space-y-4>
+  <div grid="~ cols-2" gap-4>
     <NVInput
       disabled
       loading
@@ -8,20 +8,28 @@
 
     <NVInput
       :nv="{
-        inputLoadingIcon: 'i-gg-spinner-two text-primary-500',
+        inputLoadingIcon: 'i-gg-spinner-two text-lime',
       }"
       loading
-      placeholder="Start typing..."
+      placeholder="Custom color loading icon"
     />
 
     <NVInput
-      leading="i-carbon-search"
+      leading="i-heroicons-magnifying-glass-plus-20-solid text-blue"
       :nv="{
-        inputLoadingIcon: 'i-gg-spinner-two-alt',
+        inputLoadingIcon: 'i-gg-spinner-two-alt text-rose',
       }"
       loading
       reverse
       placeholder="Loading icon is on the left side"
+    />
+
+    <NVInput
+      :nv="{
+        inputLoadingIcon: 'i-heroicons-ellipsis-horizontal-20-solid animate-pulse text-primary',
+      }"
+      loading
+      placeholder="Custom animation icon"
     />
   </div>
 </template>

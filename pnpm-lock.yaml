@@ -33,12 +33,12 @@ importers:
       '@iconify-json/gg':
         specifier: ^1.1.5
         version: 1.1.5
+      '@iconify-json/heroicons':
+        specifier: ^1.1.11
+        version: 1.1.11
       '@iconify-json/simple-icons':
         specifier: ^1.1.58
         version: 1.1.58
-      '@iconify-json/zondicons':
-        specifier: ^1.1.4
-        version: 1.1.4
       '@nexvelt/ui-preset':
         specifier: workspace:^
         version: link:packages/ui-preset
@@ -1196,14 +1196,14 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify-json/simple-icons@1.1.58:
-    resolution: {integrity: sha512-W4Kj3eADpGNwOi5ICXF0CHKCeHMugNUnY3KDfz/Z8rgQzWDh3eRTIVqwmzwr0EkA3EkPAiV1XeNQbzhx98ZNJQ==}
+  /@iconify-json/heroicons@1.1.11:
+    resolution: {integrity: sha512-Autw98FvUTmBCgb4CuKZ7iQQ2633YBCmcCbAbVNU9hAo6vms9uVcbtrAQt/qlB+qzNi52PV3DWDiRtJgmPeZIw==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify-json/zondicons@1.1.4:
-    resolution: {integrity: sha512-fIuY0p7/yEGFtzTURlqWKw9FvJFUP/NZ0pYYfWZapv8aXGsqfNLr0tGDxW6GqRXd+cfpNZYXsNkBioWQRppONg==}
+  /@iconify-json/simple-icons@1.1.58:
+    resolution: {integrity: sha512-W4Kj3eADpGNwOi5ICXF0CHKCeHMugNUnY3KDfz/Z8rgQzWDh3eRTIVqwmzwr0EkA3EkPAiV1XeNQbzhx98ZNJQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

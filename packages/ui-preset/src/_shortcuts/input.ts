@@ -1,12 +1,12 @@
 export const miscInput = {
-  'input-loading-base': 'text-lg animate-spin',
+  'input-loading-base': 'animate-spin',
 
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
 
-  'input-info-icon': 'i-carbon-information-filled',
-  'input-error-icon': 'i-carbon-warning-filled',
-  'input-success-icon': 'i-carbon-checkmark-filled',
-  'input-warning-icon': 'i-carbon-warning-alt-filled',
+  'input-info-icon': 'i-heroicons-information-circle-20-solid',
+  'input-error-icon': 'i-heroicons-exclamation-circle-20-solid',
+  'input-success-icon': 'i-heroicons-check-circle-20-solid',
+  'input-warning-icon': 'i-heroicons-exclamation-triangle-20-solid',
   'input-loading-icon': 'i-gg-spinner',
 
   'input-wrapper': 'relative',

@@ -11,7 +11,7 @@ function toggleDark() {
     @click="toggleDark()"
   >
     <NIcon
-      name="i-carbon-sun dark:i-carbon-moon"
+      name="i-heroicons-sun-20-solid dark:i-heroicons-moon-20-solid"
     />
   </NButton>
 </template>

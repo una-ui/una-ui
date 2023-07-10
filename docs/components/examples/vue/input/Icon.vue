@@ -1,22 +1,22 @@
 <template>
-  <div flex="~ col" space-y-4>
+  <div grid="~ cols-2" gap-4>
     <NVInput
-      input="outline-yellow"
-      leading="i-carbon-search"
+      leading="i-heroicons-magnifying-glass-20-solid"
       placeholder="This is leading icon"
     />
     <NVInput
       input="outline-lime"
-      trailing="i-carbon-shopping-cart text-blue"
-      placeholder="You can also use attribute to add custom class"
+      trailing="i-heroicons-question-mark-circle-20-solid text-primary"
+      placeholder="This is trailing icon with custom class"
     />
     <NVInput
       input="outline-purple"
-      leading="i-carbon-search"
-      trailing="i-carbon-location-person-filled"
+      leading="i-heroicons-paper-clip-20-solid"
+      trailing="i-heroicons-chat-bubble-left-ellipsis-20-solid"
       :nv="{
-        inputLeadingWrapper: 'text-orange',
-        inputTrailingWrapper: 'text-lime',
+        inputLeadingWrapper: 'text-yellow',
+        inputTrailingWrapper: 'text-blue',
+        inputWrapper: 'col-span-2',
       }"
       placeholder="You can also use nv to add custom class"
     />

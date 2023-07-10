@@ -1,12 +1,12 @@
 <template>
-  <div flex="~ col" space-y-4>
+  <div grid="~ sm:cols-2" gap-4>
     <NVInput
       input="outline"
       placeholder="This is the outline variant (default color)"
     />
     <NVInput
-      input="solid-orange"
-      placeholder="This is the solid variant (orange color)"
+      input="solid"
+      placeholder="This is the solid variant (default color)"
     />
   </div>
 </template>
