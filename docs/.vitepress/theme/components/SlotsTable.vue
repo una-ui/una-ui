@@ -30,11 +30,7 @@ onMounted(() => {
 
 <template>
   <div class="relative">
-    <input
-      v-model="search"
-      placeholder="Search"
-      input="outline"
-    >
+    <input v-model="search" placeholder="Search" input="outline">
     <table>
       <thead>
         <tr>
@@ -47,12 +43,16 @@ onMounted(() => {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="data in results" :key="data.refIndex">
+        <tr
+          v-for="(data, i) in results"
+          :key="data.refIndex"
+          :class="i > (0. * results.length) && search !== '' ? 'opacity-40' : ''"
+        >
           <td class="whitespace-nowrap">
-            <span class="text-xs text-gray">
-              {{ data.refIndex + 1 }}.
-            </span>
-            <span class="rounded-md bg-primary/5 px-2 py-.5 text-sm text-primary !font-medium">
+            <span class="text-xs text-gray"> {{ data.refIndex + 1 }}. </span>
+            <span
+              class="rounded-md bg-primary/5 px-2 py-.5 text-sm text-primary !font-medium"
+            >
               {{ data.item.name }}
               <!-- change case | vueuse -->
             </span>
