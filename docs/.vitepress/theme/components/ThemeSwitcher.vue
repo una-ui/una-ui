@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useStorage } from '@vueuse/core'
 import { grayThemesDefault, primaryThemesDefault } from '../../../../config/color-themes'
 import type { ThemeColors } from '../../../types'
@@ -44,11 +44,13 @@ function updateGrayTheme(theme: ThemeColors) {
   settings.value.grayColors = theme
 }
 
+const trigger = ref(false) // 📌
 function shuffleTheme() {
   const randomPrimaryTheme = primaryThemesDefault[Math.floor(Math.random() * primaryThemesDefault.length)][1]
   const randomGrayTheme = grayThemesDefault[Math.floor(Math.random() * grayThemesDefault.length)][1]
   updatePrimaryTheme(randomPrimaryTheme)
   updateGrayTheme(randomGrayTheme)
+  trigger.value = !trigger.value
 }
 </script>
 
@@ -98,7 +100,11 @@ function shuffleTheme() {
                 class="rounded-lg"
                 @click="shuffleTheme"
               >
-                Shuffle <span i-heroicons-adjustments-horizontal-20-solid ml-2 />
+                Shuffle
+                <span
+                  i-heroicons-adjustments-horizontal-20-solid ml-2
+                  :class="trigger ? 'rotate-180 transform' : 'rotate-0'"
+                />
               </button>
             </div>
           </div>
