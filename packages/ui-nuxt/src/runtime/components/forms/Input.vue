@@ -23,6 +23,8 @@ interface Props {
     inputLoadingIcon?: string
 
     inputBase?: string
+    inputLoadingBase?: string
+
   }
 }
 
@@ -75,7 +77,10 @@ const isTrailing = computed(() => props.trailing || slots.trailing || props.stat
       ]"
     >
       <slot name="leading">
-        <Icon :name="leading" />
+        <Icon
+          v-if="leading"
+          :name="leading"
+        />
       </slot>
     </div>
 
@@ -89,13 +94,13 @@ const isTrailing = computed(() => props.trailing || slots.trailing || props.stat
     >
       <Icon
         v-if="loading"
-        :name="nv?.inputLoadingIcon ? nv?.inputLoadingIcon : 'input-loading-icon'"
-        class="animate-spin"
+        :name="nv?.inputLoadingIcon ?? 'input-loading-icon'"
+        class="input-loading-base"
       />
       <slot v-else name="trailing">
         <Icon v-if="status" :name="status ? `input-${status}-icon` : ''" />
 
-        <Icon v-else :name="trailing" />
+        <Icon v-else-if="trailing" :name="trailing" />
       </slot>
     </div>
   </div>
