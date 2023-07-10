@@ -72,7 +72,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 `leading="{icon}"` - add a leading icon to the input outline.
 
 ::: tip
-You can use any icon provided by the [Icones](https://icones.js.org/) library, See the [configuration](/guide/configuration) section on how to add additional set of icons.
+By default we use `heroicons` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/guide/configuration) for more information.
 :::
 
 <AppExemplar>
