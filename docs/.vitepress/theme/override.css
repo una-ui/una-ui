@@ -116,6 +116,7 @@ h1 {
 table {
   width: 100% !important;
   display: table;
+  border-radius: 8px;
 }
 
 .custom-block.tip .custom-block-title {
