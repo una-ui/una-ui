@@ -129,6 +129,20 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library, S
 <<< @/components/examples/vue/input/Disabled.vue
 :::
 
+## Events
+
+`@leading` - emit an event when the leading icon is clicked.
+
+`@trailing` - emit an event when the trailing icon is clicked.
+
+<AppExemplar>
+  <ExampleVueInputEvents/>
+</AppExemplar>
+
+::: details Preview the code
+<<< @/components/examples/vue/input/Events.vue
+:::
+
 ## Slots
 
 ### Leading
@@ -150,6 +164,7 @@ You can use any icon provided by the [Icones](https://icones.js.org/) library, S
 ::: details Preview the code
 <<< @/components/examples/vue/input/TrailingSlot.vue
 :::
+
 
 ## Props
 
