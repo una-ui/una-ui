@@ -21,7 +21,7 @@
       }"
       loading
       reverse
-      placeholder="Start typing..."
+      placeholder="Loading icon is on the left side"
     />
   </div>
 </template>
