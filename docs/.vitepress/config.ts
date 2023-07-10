@@ -241,7 +241,12 @@ export default defineConfig({
     },
 
     search: {
-      provider: 'local',
+      provider: 'algolia',
+      options: {
+        apiKey: '2ba23d853d78509c327fc7605cd61b5d',
+        appId: '5WBZ065X33',
+        indexName: 'ui-nexvelt',
+      },
     },
   },
 
