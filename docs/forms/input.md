@@ -165,23 +165,8 @@ By default we use `heroicons` for the icons, you can use any icon provided by `I
 <<< @/components/examples/vue/input/TrailingSlot.vue
 :::
 
-
-<!-- ## Props
-
-| Name       | Description                      | Type                                           | Default |
-| ---------- | -------------------------------- | ---------------------------------------------- | ------- |
-| modelValue | the value of the input           | `string`                                       | `null`    |
-| type       | the type of the input            | `text` `password` `email` `number` `tel` `url` | `text` |
-| leading    | the leading icon and classes     | `string`                                       | `null`  |
-| trailing   | the trailing icon and classes    | `string`                                       | `null`  |
-| status     | the status of the input          | `info` `success` `warning` `error`             | `null`  |
-| loading    | the loading state                | `boolean`                                      | `null`  |
-| reverse    | the reverse state                | `boolean`                                      | `null`  |
-| nv         | list of nexveltUI presets config | `object`                                       | `null`  |
-| @leading   | the leading icon clicked         | `void`                                         | `null`  |
-| @trailing  | the trailing icon clicked        | `void`                                         | `null`  | -->
-
 ## Props
+
 ```ts
 interface Props {
   modelValue?: string | number
@@ -208,7 +193,6 @@ interface Props {
   }
 }
 ```
-
 
 ## Presets
 
