@@ -37,7 +37,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 // emits
-const emits = defineEmits<{ (...args: any): void }>()
+const emit = defineEmits<{ (...args: any): void }>()
 
 // slots
 const slots = defineSlots<{
@@ -45,7 +45,7 @@ const slots = defineSlots<{
   trailing?: any
 }>()
 
-const inputValue = useVModel(props, 'modelValue', emits, { passive: true })
+const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
 
 const isLeading = computed(() => props.leading || slots.leading)
 const isTrailing = computed(() => props.trailing || slots.trailing || props.status || props.loading)
@@ -79,6 +79,7 @@ const isTrailing = computed(() => props.trailing || slots.trailing || props.stat
         <Icon
           v-if="leading"
           :name="leading"
+          @click="emit('leading')"
         />
       </slot>
     </div>
@@ -99,7 +100,11 @@ const isTrailing = computed(() => props.trailing || slots.trailing || props.stat
       <slot v-else name="trailing">
         <Icon v-if="status" :name="status ? `input-${status}-icon` : ''" />
 
-        <Icon v-else-if="trailing" :name="trailing" />
+        <Icon
+          v-else-if="trailing"
+          :name="trailing"
+          @click="emit('trailing')"
+        />
       </slot>
     </div>
   </div>
