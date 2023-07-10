@@ -1,16 +1,17 @@
 export const miscInput = {
+  'input-loading-base': 'text-lg animate-spin',
+
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
 
   'input-info-icon': 'i-carbon-information-filled',
   'input-error-icon': 'i-carbon-warning-filled',
   'input-success-icon': 'i-carbon-checkmark-filled',
   'input-warning-icon': 'i-carbon-warning-alt-filled',
-  'input-loading-icon': 'i-gg-spinner text-lg',
+  'input-loading-icon': 'i-gg-spinner',
 
   'input-wrapper': 'relative',
   'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-$c-gray-400',
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-$c-gray-400',
-
   // options
   // TODO convert to regex and make sizes dynamic
   'input-xs': 'px-2 py-0.5 text-xs',
