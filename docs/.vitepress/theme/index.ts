@@ -33,9 +33,10 @@ export default {
       // 'aside-bottom': () => h(AppMisc),
     })
   },
+
   // this hook is called before the root Vue app is mounted to the DOM.
   enhanceApp({ app }) {
-    // register exemplar components
+    // register components
     app.component('AppExemplar', AppExemplar)
     app.component('SlotsTable', SlotsTable)
 
