@@ -28,7 +28,8 @@
 
     <NVInput
       :nv="{
-        inputLoadingIcon: 'i-heroicons-ellipsis-horizontal-20-solid animate-pulse text-yellow',
+        inputLoadingIcon: 'i-heroicons-ellipsis-horizontal-20-solid',
+        inputLoadingBase: 'animate-pulse text-yellow',
       }"
       loading
       placeholder="This is possible too"
