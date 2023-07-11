@@ -171,11 +171,11 @@ By default we use `heroicons` for the icons, you can use any icon provided by `I
 ## Props
 
 ```ts
-interface Props {
+interface InputProps {
   modelValue?: string | number
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
-  leading?: string // icon
-  trailing?: string // icon
+  leading?: string
+  trailing?: string
   status?: 'info' | 'success' | 'warning' | 'error'
   loading?: boolean
   reverse?: boolean
