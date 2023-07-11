@@ -10,14 +10,14 @@
       :nv="{
         inputLoadingIcon: 'i-gg-spinner-two text-lime',
       }"
-      loading
+      status="info"
       placeholder="Custom color loading icon"
     />
 
     <NVInput
       leading="i-heroicons-magnifying-glass-plus-20-solid text-blue"
       :nv="{
-        inputLoadingIcon: 'i-gg-spinner-two-alt text-rose',
+        inputLoadingIcon: 'i-gg-spinner-two-alt text-orange',
       }"
       loading
       reverse
@@ -26,7 +26,7 @@
 
     <NVInput
       :nv="{
-        inputLoadingIcon: 'i-heroicons-ellipsis-horizontal-20-solid animate-pulse text-primary',
+        inputLoadingIcon: 'i-heroicons-ellipsis-horizontal-20-solid animate-pulse text-yellow',
       }"
       loading
       placeholder="Custom animation icon"
