@@ -2,38 +2,14 @@
 import { useVModel } from '@vueuse/core'
 import { cva } from 'class-variance-authority'
 import Icon from '../elements/Icon.vue'
-
-interface Props {
-  modelValue?: string | number
-  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
-  leading?: string
-  trailing?: string
-  status?: 'info' | 'success' | 'warning' | 'error'
-  loading?: boolean
-  reverse?: boolean
-
-  nv?: {
-    inputWrapper?: string
-    inputLeadingWrapper?: string
-    inputTrailingWrapper?: string
-
-    inputWarningIcon?: string
-    inputErrorIcon?: string
-    inputSuccessIcon?: string
-    inputInfoIcon?: string
-    inputLoadingIcon?: string
-
-    inputBase?: string
-    inputLoadingBase?: string
-  }
-}
+import type { InputProps } from '../types'
 
 defineOptions({
   inheritAttrs: false,
 })
 
 // props
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<InputProps>(), {
   type: 'text',
 })
 
