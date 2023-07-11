@@ -5,6 +5,7 @@ description: Inputs are used to collect data from the user.
 
 # Input 🟡
 
+
 Inputs are used to collect data from the user.
 
 :::warning
@@ -25,7 +26,9 @@ Work in progress - this component is not yet ready for use.
 
 ## Color
 
+<!-- @unocss-skip-start -->
 `input="outline-{color}"` - change the color of the input outline.
+<!-- @unocss-skip-end -->
 
 ::: info
 You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors) color palette, the default is `primary`. You can also add your own colors to the palette through the [Unocss CSS configuration file](https://unocss.dev/guide/config-file).
