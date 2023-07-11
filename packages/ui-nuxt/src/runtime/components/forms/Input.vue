@@ -75,18 +75,14 @@ const inputBaseClass = computed(() => {
   })
 })
 
-const inputStatusText = computed(() => {
-  return cva('', {
-    variants: {
-      status: {
-        info: 'text-info',
-        success: 'text-success',
-        warning: 'text-warning',
-        error: 'text-error',
-      },
-    },
-  })
-})
+const inputStatusText = {
+  status: {
+    info: 'text-info',
+    success: 'text-success',
+    warning: 'text-warning',
+    error: 'text-error',
+  },
+}
 
 const inputLeadingWrapper = computed(() => {
   return cva(props.nv?.inputLeadingWrapper, {
@@ -95,6 +91,7 @@ const inputLeadingWrapper = computed(() => {
         false: 'input-leading-wrapper',
         true: 'input-trailing-wrapper',
       },
+      ...inputStatusText,
     },
   })
 })
@@ -106,6 +103,7 @@ const inputTrailingWrapper = computed(() => {
         false: 'input-trailing-wrapper',
         true: 'input-leading-wrapper',
       },
+      ...inputStatusText,
     },
   })
 })
@@ -132,11 +130,14 @@ const inputIcon = computed(() => {
     <input
       v-model="inputValue"
       :type="type"
-      :class="[inputBaseClass({ status, reverse }), inputStatusText({ status })]"
+      :class="[inputBaseClass({ status, reverse })]"
       v-bind="$attrs"
     >
 
-    <div v-if="isLeading" :class="inputLeadingWrapper({ reverse })">
+    <div
+      v-if="isLeading"
+      :class="[inputLeadingWrapper({ reverse, status })]"
+    >
       <slot name="leading">
         <Icon v-if="leading" :name="leading" @click="emit('leading')" />
       </slot>
@@ -144,7 +145,7 @@ const inputIcon = computed(() => {
 
     <div
       v-if="isTrailing"
-      :class="[inputTrailingWrapper({ reverse }), inputStatusText({ status })]"
+      :class="[inputTrailingWrapper({ reverse, status })]"
     >
       <Icon
         v-if="loading"
