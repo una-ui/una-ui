@@ -5,8 +5,8 @@ import { input } from './input'
 import { general } from './general'
 
 export const shortcuts = [
+  ...general,
   ...button,
   ...formGroup,
   ...input,
-  ...general,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
