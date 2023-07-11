@@ -2,11 +2,8 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "lib": ["esnext", "dom"],
-    "types": ["vite/client"], // vite/client is required for Vite to work properly
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "types": ["vite/client"]
   },
   "exclude": ["**/dist/**"],
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue"]
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", ".vitepress/**/*"]
 }

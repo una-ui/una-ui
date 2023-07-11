@@ -1,3 +1,4 @@
+import type { App } from 'vue'
 import { h, watchEffect } from 'vue'
 import Theme from 'vitepress/theme'
 import { useStorage } from '@vueuse/core'
@@ -13,16 +14,9 @@ import SlotsTable from './components/SlotsTable.vue'
 
 // import AppMisc from './components/AppMisc.vue'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 const NVComponents = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/forms/*.vue', { eager: true })
-// const NVElements = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/elements/*.vue', { eager: true })
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
+const NVElements = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/elements/*.vue', { eager: true })
 const ExampleVueInputComponents = import.meta.glob('../../components/examples/vue/input/*.vue', { eager: true })
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 const ExampleVueIndexComponents = import.meta.glob('../../components/examples/vue/index/*.vue', { eager: true })
 
 let nexveltUIStyle: HTMLStyleElement | undefined
@@ -38,28 +32,33 @@ export default {
   },
 
   // this hook is called before the root Vue app is mounted to the DOM.
-  enhanceApp({ app }) {
+  enhanceApp({ app }: { app: App }) {
     // register components
     app.component('AppExemplar', AppExemplar)
     app.component('SlotsTable', SlotsTable)
 
     // register input vue components from examples
     for (const path in ExampleVueInputComponents) {
-      const mod = ExampleVueInputComponents[path]
+      const mod = ExampleVueInputComponents[path] as any
       const name = path.match(/\/([^/]+)\.vue$/)![1]
       app.component(`ExampleVueInput${name}`, mod.default)
     }
 
     // register index vue components from examples
     for (const path in ExampleVueIndexComponents) {
-      const mod = ExampleVueIndexComponents[path]
+      const mod = ExampleVueIndexComponents[path] as any
       const name = path.match(/\/([^/]+)\.vue$/)![1]
       app.component(`ExampleVueIndex${name}`, mod.default)
     }
 
     // register components from @nexvelt/ui-nuxt
     for (const path in NVComponents) {
-      const mod = NVComponents[path]
+      const mod = NVComponents[path] as any
+      const name = path.match(/\/([^/]+)\.vue$/)![1]
+      app.component(`NV${name}`, mod.default)
+    }
+    for (const path in NVElements) {
+      const mod = NVElements[path] as any
       const name = path.match(/\/([^/]+)\.vue$/)![1]
       app.component(`NV${name}`, mod.default)
     }
