@@ -1,7 +1,7 @@
 export const staticInput = {
   'input-base': 'w-full input-md input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
-
   'input-loading-base': 'animate-spin',
+
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
 
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
