@@ -14,10 +14,7 @@ import SlotsTable from './components/SlotsTable.vue'
 
 // import AppMisc from './components/AppMisc.vue'
 
-const NVComponents = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/forms/*.vue', { eager: true })
-const NVElements = import.meta.glob('../../../packages/ui-nuxt/src/runtime/components/elements/*.vue', { eager: true })
-const ExampleVueInputComponents = import.meta.glob('../../components/examples/vue/input/*.vue', { eager: true })
-const ExampleVueIndexComponents = import.meta.glob('../../components/examples/vue/index/*.vue', { eager: true })
+import { ExampleVueIndexComponents, ExampleVueInputComponents, NVComponents, NVElements } from './imports'
 
 let nexveltUIStyle: HTMLStyleElement | undefined
 
@@ -30,8 +27,6 @@ export default {
       // 'aside-bottom': () => h(AppMisc),
     })
   },
-
-  // this hook is called before the root Vue app is mounted to the DOM.
   enhanceApp({ app }: { app: App }) {
     // register components
     app.component('AppExemplar', AppExemplar)
