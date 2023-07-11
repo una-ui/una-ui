@@ -14,7 +14,7 @@ import SlotsTable from './components/SlotsTable.vue'
 
 // import AppMisc from './components/AppMisc.vue'
 
-import { ExampleVueIndexComponents, ExampleVueInputComponents, NVComponents, NVElements } from './imports'
+import { ExampleVueIndexComponents, ExampleVueInputComponents, NVComponents } from './imports'
 
 let nexveltUIStyle: HTMLStyleElement | undefined
 
@@ -52,11 +52,11 @@ export default {
       const name = path.match(/\/([^/]+)\.vue$/)![1]
       app.component(`NV${name}`, mod.default)
     }
-    for (const path in NVElements) {
-      const mod = NVElements[path] as any
-      const name = path.match(/\/([^/]+)\.vue$/)![1]
-      app.component(`NV${name}`, mod.default)
-    }
+    // for (const path in NVElements) {
+    //   const mod = NVElements[path] as any
+    //   const name = path.match(/\/([^/]+)\.vue$/)![1]
+    //   app.component(`NV${name}`, mod.default)
+    // }
 
     if (typeof window === 'undefined')
       return
