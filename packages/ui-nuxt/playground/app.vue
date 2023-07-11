@@ -77,7 +77,9 @@ const input = ref('')
         <NInput
           id="firstname"
           v-model="input"
-          leading="i-carbon-user-avatar-filled"
+          status="success"
+          leading="i-heroicons-archive-box-x-mark"
+          trailing="i-heroicons-adjustments-vertical-solid"
           placeholder="Firstname"
         />
       </NFormGroup>
@@ -88,9 +90,8 @@ const input = ref('')
       >
         <NInput
           id="middlename"
-          input="outline-yellow"
-          status="warning"
-          placeholder="Middlename"
+          input="outline-lime"
+          placeholder="Middlename Test"
         />
       </NFormGroup>
 
