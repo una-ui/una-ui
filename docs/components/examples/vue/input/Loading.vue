@@ -10,7 +10,7 @@
       :nv="{
         inputLoadingIcon: 'i-gg-spinner-two text-lime',
       }"
-      status="info"
+      loading
       placeholder="Custom color loading icon"
     />
 
