@@ -8,7 +8,6 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    // rootDir: resolve(__dirname, '../..'),
     output: {
       publicDir: resolve(__dirname, '../.vitepress/dist/framework/'),
     },
