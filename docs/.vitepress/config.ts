@@ -170,6 +170,7 @@ const Nav: DefaultTheme.NavItem[] = [
     ],
     activeMatch: '^/guide/',
   },
+  { text: 'Framework Docs', link: '/framework/', target: '_blank' },
   {
     text: `v${version}`,
     items: [
