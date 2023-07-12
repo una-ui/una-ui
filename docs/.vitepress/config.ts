@@ -192,7 +192,7 @@ export default defineConfig({
   lang: 'en-US',
   title: 'NexveltUI',
   description: 'The Next Level User Interface Technology',
-
+  ignoreDeadLinks: true,
   head: [
     !isDev
       ? ['script', {

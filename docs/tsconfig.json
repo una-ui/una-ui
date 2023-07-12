@@ -4,6 +4,6 @@
     "lib": ["esnext", "dom"],
     "types": ["vite/client"]
   },
-  "exclude": ["**/dist/**"],
+  "exclude": ["**/dist/**", "framework"],
   "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", ".vitepress/**/*"]
 }

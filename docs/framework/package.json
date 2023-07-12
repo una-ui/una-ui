@@ -1,0 +1,14 @@
+{
+  "name": "@nexvelt/ui-docs-framework",
+  "private": true,
+  "scripts": {
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@nuxt/content": "^2.7.0",
+    "@types/node": "^18.16.19",
+    "nuxt": "^3.6.2"
+  }
+}
