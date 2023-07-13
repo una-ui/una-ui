@@ -3,14 +3,14 @@ import { resolve } from 'node:path'
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   modules: [
-    '@nexvelt/ui-nuxt',
+    '../../packages/ui-nuxt/src/module',
   ],
 
-  // content: {
-  //   highlight: {
-  //     theme: 'one-dark-pro',
-  //   },
-  // },
+  content: {
+    highlight: {
+      theme: 'one-dark-pro',
+    },
+  },
 
   css: [
     '~/style.css',
@@ -20,9 +20,9 @@ export default defineNuxtConfig({
     baseURL: '/framework/',
   },
 
-  // nexveltUI: {
-  //   prefix: 'N',
-  // },
+  nexveltUI: {
+    prefix: 'N',
+  },
 
   nitro: {
     output: {
