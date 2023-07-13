@@ -27,7 +27,7 @@
     "stub": "nuxt-build-module --stub",
     "dev": "nuxi dev playground",
     "prepublishOnly": "npm run build",
-    "playground:build": "nuxi build playground",
+    "playground:build": "nuxi generate playground",
     "playground:preview": "nuxi preview playground"
   },
   "dependencies": {
@@ -49,7 +49,7 @@
   "devDependencies": {
     "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "^3.6.2",
-    "nuxt": "^3.6.1"
+    "nuxt": "^3.6.2"
   },
   "publishConfig": {
     "access": "public"
