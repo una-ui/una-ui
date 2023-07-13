@@ -6,11 +6,15 @@ export default defineNuxtConfig({
     '../../packages/ui-nuxt/src/module',
   ],
 
-  content: {
-    highlight: {
-      theme: 'one-dark-pro',
-    },
+  routeRules: {
+    '/': { redirect: '/guide' },
   },
+
+  // content: {
+  //   highlight: {
+  //     theme: 'one-dark-pro',
+  //   },
+  // },
 
   css: [
     '~/style.css',
@@ -18,10 +22,6 @@ export default defineNuxtConfig({
 
   app: {
     baseURL: '/framework/',
-  },
-
-  nexveltUI: {
-    prefix: 'N',
   },
 
   nitro: {

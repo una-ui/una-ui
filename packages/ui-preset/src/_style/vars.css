@@ -15,10 +15,10 @@
   --c-border-foreground: var(--c-gray-700);
 
   /* TODO will be added later */
-  /* --c-divider: var(--c-gray-300);
+  --c-divider: var(--c-gray-300);
   --c-divider-foreground: var(--c-gray-600);
 
-  --c-gutter: var(--c-gray-400);
+  /* --c-gutter: var(--c-gray-400);
   --c-gutter-foreground: var(--c-gray-500);  */
 
   --c-ring: var(--c-gray-300);

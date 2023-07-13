@@ -18,23 +18,19 @@ function onClick() {
       @click="onClick"
     >
       <ColorScheme>
-        <Icon
+        <NIcon
           v-if="colorMode.preference === 'dark'"
-          name="uil:moon"
+          name="i-heroicons-moon-20-solid"
         />
-        <Icon
+        <NIcon
           v-else-if="colorMode.preference === 'light'"
-          name="uil:sun"
+          name="i-heroicons-sun-20-solid"
         />
-        <Icon
+        <NIcon
           v-else
-          name="uil:desktop"
+          name="i-heroicons-computer-desktop-20-solid"
         />
       </ColorScheme>
-    </button>
-
-    <button btn="solid">
-      test
     </button>
   </div>
 </template>

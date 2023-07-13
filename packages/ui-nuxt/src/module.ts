@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import { addComponentsDir, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
+import { addComponentsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
 
 import { extendUnocssOptions } from './unocss'
@@ -10,7 +10,7 @@ function rPath(p: string) {
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   /**
-   * @default 'NV'
+   * @default 'N'
    */
   prefix?: string
 
@@ -44,7 +44,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: {
-    prefix: 'NV',
+    prefix: 'N',
     preset: rPath('./preset'),
     global: true,
     dev: false,
@@ -74,6 +74,17 @@ export default defineNuxtModule<ModuleOptions>({
       global: options.global,
       watch: nuxt.options.dev,
     })
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'misc'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+    })
+
+    // plugins
+    addPlugin(resolve(runtimeDir, 'plugins', 'setup-theme.client.ts'))
+    addPlugin(resolve(runtimeDir, 'plugins', 'setup-theme.server.ts'))
 
     // @ts-expect-error - module options
     nuxt.options.vueuse = nuxt.options.vueuse || {}
