@@ -1,4 +1,4 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin, useHead } from '#app'
 
 export default defineNuxtPlugin(() => {
   useHead({
