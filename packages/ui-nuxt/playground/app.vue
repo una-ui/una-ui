@@ -47,6 +47,8 @@ const input = ref('')
       >
         {{ button }}
       </NButton>
+
+      <NThemeSwitcher />
     </div>
 
     <form

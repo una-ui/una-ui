@@ -1,4 +1,7 @@
 import { useStorage } from '@vueuse/core'
+
+// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
+// @ts-ignore tsconfig
 import { defineNuxtPlugin } from '#app'
 
 let nexveltUIStyle: HTMLStyleElement | undefined

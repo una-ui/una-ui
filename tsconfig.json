@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "rootDir": ".", // Required for path aliases (nuxt module)
+    "baseUrl": ".", // Required for path aliases (nuxt module)
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export (nuxt module)
     "target": "esnext",
     "module": "esnext",
     "lib": ["esnext", "dom"],
@@ -16,13 +19,8 @@
     ],
     "noUnusedLocals": true,
     "paths": {
-      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"],
-      "@nexvelt/ui-nuxt": ["./packages/ui-nuxt/src/module.ts"]
-    },
-
-    "rootDir": ".", // Required for path aliases (nuxt module)
-    "baseUrl": ".", // Required for path aliases (nuxt module)
-    "allowSyntheticDefaultImports": true // Allow default imports from modules with no default export (nuxt module)
+      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
+    }
   },
   "exclude": [
     "**/node_modules",

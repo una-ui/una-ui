@@ -83,8 +83,8 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // plugins
-    addPlugin(resolve(runtimeDir, 'plugins', 'setup-theme.client.ts'))
-    addPlugin(resolve(runtimeDir, 'plugins', 'setup-theme.server.ts'))
+    addPlugin(resolve(runtimeDir, 'plugins', 'theme.client.ts'))
+    addPlugin(resolve(runtimeDir, 'plugins', 'theme.server.ts'))
 
     // @ts-expect-error - module options
     nuxt.options.vueuse = nuxt.options.vueuse || {}
