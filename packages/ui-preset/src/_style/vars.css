@@ -21,8 +21,8 @@
   /* --c-gutter: var(--c-gray-400);
   --c-gutter-foreground: var(--c-gray-500);  */
 
-  --c-ring: var(--c-gray-300);
-  --c-ring-foreground: var(--c-gray-600);
+  --c-ring: var(--c-gray-200);
+  --c-ring-foreground: var(--c-gray-700);
   
   /* defaults */
   --c-gray: var(--nv-gray-600);
