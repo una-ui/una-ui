@@ -4,7 +4,7 @@
 
   @media (min-width: 768px) {
     .container {
-      max-width: 85% !important;
+      max-width: 75% !important;
     }
   }
 }
