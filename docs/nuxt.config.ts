@@ -1,5 +1,3 @@
-import { resolve } from 'node:path'
-
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   modules: [
@@ -16,14 +14,4 @@ export default defineNuxtConfig({
   css: [
     '~/style.css',
   ],
-
-  app: {
-    baseURL: '/framework/',
-  },
-
-  nitro: {
-    output: {
-      publicDir: resolve(__dirname, '../.vitepress/dist/framework/'),
-    },
-  },
 })

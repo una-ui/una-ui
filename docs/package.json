@@ -1,49 +1,17 @@
 {
-  "name": "@nexvelt/ui-docs",
-  "type": "module",
-  "version": "0.0.2-beta.3",
+  "name": "@nexvelt/ui-docs-framework",
   "private": true,
-  "description": "The next level UI Library for building beautiful and accessible Web Applications.",
-  "author": "Phojie Rengel <phojrengel@gmail.com>",
-  "license": "MIT",
-  "funding": "https://github.com/sponsors/phojie",
-  "homepage": "https://ui.nexvelt.com",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nexvelt/ui.git"
-  },
-  "bugs": "https://github.com/nexvelt/ui/issues",
-  "keywords": [
-    "design-system",
-    "tailwindcss",
-    "unocss",
-    "components",
-    "ui-library",
-    "component",
-    "framework",
-    "tailwind",
-    "theming",
-    "postcss",
-    "design",
-    "css",
-    "ui"
-  ],
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview",
-    "c": "esno scripts/color-transition.ts",
-    "f": "esno scripts/file-creator.ts"
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview"
   },
   "dependencies": {
-    "fuse.js": "^6.6.2"
+    "@nexvelt/ui-nuxt": "workspace:0.0.2-beta.3"
   },
   "devDependencies": {
-    "@nexvelt/ui-preset": "workspace:^",
-    "postcss": "^8.4.25",
-    "postcss-prefix-selector": "^1.16.0",
-    "vitepress": "1.0.0-beta.4"
+    "@nuxt-themes/docus": "^1.14.3",
+    "@types/node": "^18.16.19",
+    "nuxt": "^3.6.2"
   }
 }
