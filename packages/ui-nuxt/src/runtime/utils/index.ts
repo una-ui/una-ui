@@ -1,3 +1,7 @@
+export function classNames(...classes: any[string]) {
+  return classes.filter(Boolean).join(' ')
+}
+
 // rgbToHex
 export function rgbToHex(r: number, g: number, b: number): string {
   return `#${[r, g, b].map((x) => {

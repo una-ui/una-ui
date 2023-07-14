@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { useStorage } from '@vueuse/core'
-import { grayThemesDefault, primaryThemesDefault } from '../../utils/themes'
+import { grayThemesDefault, primaryThemesDefault } from '../../composables/themes'
 
 export interface ThemeColors {
   [key: string]: string
