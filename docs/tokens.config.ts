@@ -67,8 +67,8 @@ export default defineTheme({
     loadingBar: {
       height: '3px',
       gradientColorStop1: '{color.primary.600}',
-      gradientColorStop2: '#34cdfe',
-      gradientColorStop3: '#0047e1',
+      gradientColorStop2: '{color.primary.500}',
+      gradientColorStop3: '{color.primary.400}',
     },
   },
 })
