@@ -1,6 +1,33 @@
 {
-  "name": "@nexvelt/ui-docs-framework",
+  "name": "@nexvelt/ui-monorepo",
+  "type": "module",
+  "version": "0.0.2-beta.3",
   "private": true,
+  "description": "The next level UI Library for building beautiful and accessible Web Applications.",
+  "author": "Phojie Rengel <phojrengel@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/phojie",
+  "homepage": "https://ui.nexvelt.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexvelt/ui.git"
+  },
+  "bugs": "https://github.com/nexvelt/ui/issues",
+  "keywords": [
+    "design-system",
+    "tailwindcss",
+    "unocss",
+    "components",
+    "ui-library",
+    "component",
+    "framework",
+    "tailwind",
+    "theming",
+    "postcss",
+    "design",
+    "css",
+    "ui"
+  ],
   "scripts": {
     "build": "nuxt generate",
     "dev": "nuxt dev",
