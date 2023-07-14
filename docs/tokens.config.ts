@@ -43,7 +43,7 @@ export default defineTheme({
       fontFamily: '{font.sans}',
     },
     header: {
-      height: '54px',
+      // height: '54px',
       logo: {
         height: {
           initial: '{space.6}',

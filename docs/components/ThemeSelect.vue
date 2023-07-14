@@ -32,5 +32,6 @@ function onClick() {
         />
       </ColorScheme>
     </button>
+    <NThemeSwitcher />
   </div>
 </template>

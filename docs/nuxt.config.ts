@@ -11,6 +11,14 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {
+    '/': { redirect: '/getting-started' },
+  },
+
+  generate: {
+    routes: ['/getting-started'],
+  },
+
   css: [
     '~/style.css',
   ],
