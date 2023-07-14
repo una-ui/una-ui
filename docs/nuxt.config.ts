@@ -19,10 +19,6 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    '/': { redirect: '/home' },
-  },
-
   experimental: {
     payloadExtraction: true,
   },
