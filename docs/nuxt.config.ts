@@ -23,14 +23,6 @@ export default defineNuxtConfig({
     payloadExtraction: true,
   },
 
-  routeRules: {
-    '/': { redirect: '/home' },
-  },
-
-  generate: {
-    routes: ['/home'],
-  },
-
   css: [
     '~/style.css',
   ],
