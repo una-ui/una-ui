@@ -5,7 +5,7 @@ const { config } = useDocus()
 <template>
   <NuxtLink
     class="navbar-logo"
-    to="/home"
+    to="/docs"
     :aria-label="title"
   >
     <Logo />
