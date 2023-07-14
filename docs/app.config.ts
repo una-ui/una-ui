@@ -21,7 +21,7 @@ export default defineAppConfig({
     },
     header: {
       logo: true,
-      exclude: ['/'],
+      exclude: ['/docs', '/'],
     },
     footer: {
       credits: {

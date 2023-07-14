@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { config } = useDocus()
+const title = computed(() => config.value.header?.title || config.value.title)
 </script>
 
 <template>
@@ -38,15 +39,6 @@ css({
         }
       },
     },
-
-    '.title': {
-      fontSize: '{docus.header.title.fontSize}',
-      fontWeight: '{docus.header.title.fontWeight}',
-      color: '{docus.header.title.color.static}',
-      '&:hover': {
-        color: '{docus.header.title.color.hover}',
-      }
-    }
   }
 })
 </style>
