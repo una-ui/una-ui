@@ -23,7 +23,6 @@
     }
   },
   "exclude": [
-    "docs",
     "**/node_modules",
     "**/dist",
     "**/playground"
