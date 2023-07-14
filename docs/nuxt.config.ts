@@ -1,9 +1,17 @@
+import pkg from '../package.json'
+import nexveltUI from '../packages/ui-nuxt/src/module'
+
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   modules: [
-    '@nexvelt/ui-nuxt',
-    // '../packages/ui-nuxt/src/module',
+    nexveltUI,
   ],
+
+  runtimeConfig: {
+    public: {
+      version: pkg.version,
+    },
+  },
 
   content: {
     highlight: {
@@ -12,7 +20,15 @@ export default defineNuxtConfig({
   },
 
   experimental: {
-    payloadExtraction: false,
+    payloadExtraction: true,
+  },
+
+  routeRules: {
+    '/': { redirect: '/home' },
+  },
+
+  generate: {
+    routes: ['/home'],
   },
 
   css: [
