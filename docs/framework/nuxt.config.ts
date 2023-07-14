@@ -13,8 +13,6 @@ export default defineNuxtConfig({
     },
   },
 
-  debug: true,
-
   css: [
     '~/style.css',
   ],

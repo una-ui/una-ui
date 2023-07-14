@@ -68,12 +68,12 @@ export default defineNuxtModule<ModuleOptions>({
       watch: nuxt.options.dev,
     })
 
-    // addComponentsDir({
-    //   path: resolve(runtimeDir, 'components', 'forms'),
-    //   prefix: options.prefix,
-    //   global: options.global,
-    //   watch: nuxt.options.dev,
-    // })
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'forms'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+    })
 
     addComponentsDir({
       path: resolve(runtimeDir, 'components', 'misc'),
@@ -84,7 +84,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // plugins
     addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
-    // addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
+    addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
 
     // @ts-expect-error - module options
     nuxt.options.vueuse = nuxt.options.vueuse || {}
