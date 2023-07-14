@@ -56,9 +56,9 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.unshift('@nexvelt/ui-preset/style.css')
     nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
 
-    // transpile
+    // transpile runtime
     const runtimeDir = resolve('./runtime')
-    // nuxt.options.build.transpile.push(runtimeDir) // enable this later
+    nuxt.options.build.transpile.push(runtimeDir) // enable this later
 
     // components
     addComponentsDir({

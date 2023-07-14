@@ -7,19 +7,13 @@ export default defineNuxtConfig({
     '../../packages/ui-nuxt/src/module',
   ],
 
-  routeRules: {
-    '/': { redirect: '/guide' },
-  },
-
   content: {
     highlight: {
       theme: 'one-dark-pro',
     },
   },
 
-  experimental: {
-    payloadExtraction: false,
-  },
+  debug: true,
 
   css: [
     '~/style.css',
