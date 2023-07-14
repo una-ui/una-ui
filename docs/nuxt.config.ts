@@ -1,8 +1,8 @@
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   modules: [
-    // '@nexvelt/ui-nuxt',
-    '../packages/ui-nuxt/src/module',
+    '@nexvelt/ui-nuxt',
+    // '../packages/ui-nuxt/src/module',
   ],
 
   content: {
