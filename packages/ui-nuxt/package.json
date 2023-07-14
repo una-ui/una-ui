@@ -43,7 +43,6 @@
     "@vueuse/core": "^10.2.1",
     "@vueuse/integrations": "^10.2.1",
     "@vueuse/nuxt": "^10.2.1",
-    "class-variance-authority": "^0.6.1",
     "unocss": "^0.53.4"
   },
   "devDependencies": {
