@@ -2,6 +2,28 @@
 :root {
   --elements-backdrop-background: var(--c-background) !important;
 
+  --color-primary-50: rgb(var(--nv-primary-50)) !important;
+  --color-primary-100: rgb(var(--nv-primary-100)) !important;
+  --color-primary-200: rgb(var(--nv-primary-200)) !important;
+  --color-primary-300: rgb(var(--nv-primary-300)) !important;
+  --color-primary-400: rgb(var(--nv-primary-400)) !important;
+  --color-primary-500: rgb(var(--nv-primary-500)) !important;
+  --color-primary-600: rgb(var(--nv-primary-600)) !important;
+  --color-primary-700: rgb(var(--nv-primary-700)) !important;
+  --color-primary-800: rgb(var(--nv-primary-800)) !important;
+  --color-primary-900: rgb(var(--nv-primary-900)) !important;
+
+  --color-gray-50: rgb(var(--nv-gray-50)) !important;
+  --color-gray-100: rgb(var(--nv-gray-100)) !important;
+  --color-gray-200: rgb(var(--nv-gray-200)) !important;
+  --color-gray-300: rgb(var(--nv-gray-300)) !important;
+  --color-gray-400: rgb(var(--nv-gray-400)) !important;
+  --color-gray-500: rgb(var(--nv-gray-500)) !important;
+  --color-gray-600: rgb(var(--nv-gray-600)) !important;
+  --color-gray-700: rgb(var(--nv-gray-700)) !important;
+  --color-gray-800: rgb(var(--nv-gray-800)) !important;
+  --color-gray-900: rgb(var(--nv-gray-900)) !important;
+
   @media (min-width: 768px) {
     .container {
       max-width: 75% !important;
