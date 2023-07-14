@@ -4,6 +4,10 @@ html {
   color: var(--c-foreground);
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 ::-moz-selection {
   background: var(--c-bg-selection);
 }
@@ -12,6 +16,6 @@ html {
   background: var(--c-bg-selection);
 }
 
-html.dark {
-  color-scheme: dark;
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
