@@ -5,7 +5,7 @@
       <img class="hidden -mt-0.4 dark:block" src="/logo-solid-dark.svg" alt="NexveltUI Logo">
     </span>
     <span class="font-bold text-base drop-shadow-lg">
-      Nexvelt <span class="font-extrabold text-primary">UI</span>
+      Nexvelt <span class="text-lg text-primary">UI</span>
     </span>
   </span>
 </template>
