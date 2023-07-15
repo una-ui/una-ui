@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     // Static generation
-    '/': { prerender: true },
+    '/': { prerender: false },
   },
 
   typescript: {
