@@ -13,10 +13,9 @@ export default defineNuxtConfig({
     },
   },
 
-  content: {
-    highlight: {
-      theme: 'one-dark-pro',
-    },
+  routeRules: {
+    // Static generation
+    '/': { prerender: true },
   },
 
   typescript: {
