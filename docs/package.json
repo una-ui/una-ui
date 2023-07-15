@@ -31,7 +31,9 @@
   "scripts": {
     "build": "nuxt generate",
     "dev": "nuxt dev",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "c": "esno scripts/color-transition.ts",
+    "f": "esno scripts/file-creator.ts"
   },
   "dependencies": {
     "@nexvelt/ui-nuxt": "workspace:0.0.2-beta.3"
