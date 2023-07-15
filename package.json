@@ -47,6 +47,7 @@
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
+    "cleanup": "rimraf docs/node_modules node_modules pnpm-lock.yaml packages/*/{node_modules}",
     "stub": "pnpm -r --filter=./packages/* --parallel run stub",
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\""
   },

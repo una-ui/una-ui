@@ -1,6 +1,6 @@
 /* Base */
 :root {
-  --elements-backdrop-background: var(--c-background) !important;
+  --elements-backdrop-background: rgb(var(--c-background)) !important;
 
   --color-primary-50: rgb(var(--nv-primary-50)) !important;
   --color-primary-100: rgb(var(--nv-primary-100)) !important;
@@ -26,7 +26,7 @@
 
   @media (min-width: 768px) {
     .container {
-      max-width: 75% !important;
+      max-width: 85% !important;
     }
   }
 }
