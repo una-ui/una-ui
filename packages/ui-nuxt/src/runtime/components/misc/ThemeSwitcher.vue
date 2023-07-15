@@ -56,7 +56,7 @@ function shuffleTheme() {
 <template>
   <div class="sm:ml-5">
     <Popover class="relative inline-block">
-      <PopoverButton btn="soft" class="rounded-lg text-lg">
+      <PopoverButton btn="soft sm" class="rounded-lg text-lg">
         <span i-heroicons-swatch-20-solid />
       </PopoverButton>
 
