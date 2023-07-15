@@ -10,7 +10,7 @@ const hasDialog = computed(() => navigation.value?.length > 1 || navigation.valu
 </script>
 
 <template>
-  <header class="bg-white/80 backdrop-blur-lg !dark:bg-gray-950/80" :class="{ 'has-dialog': hasDialog, 'has-doc-search': hasDocSearch }">
+  <header class="bg-white/70 !backdrop-blur-lg !dark:bg-gray-950/70" :class="{ 'has-dialog': hasDialog, 'has-doc-search': hasDocSearch }">
     <Container :fluid="config?.header?.fluid ">
       <div class="section left">
         <AppHeaderDialog v-if="hasDialog" />
