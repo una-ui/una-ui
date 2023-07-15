@@ -25,7 +25,7 @@ export default defineAppConfig({
     },
     footer: {
       credits: {
-        icon: 'IconDocus',
+        icon: '',
         text: 'Released under the MIT License. ',
         href: 'https://github.com/nexvelt/ui/blob/main/LICENSE',
       },
