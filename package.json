@@ -47,6 +47,7 @@
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
+    "cleanup": "rimraf docs/node_modules node_modules pnpm-lock.yaml packages/*/{node_modules}",
     "stub": "pnpm -r --filter=./packages/* --parallel run stub",
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\""
   },
@@ -64,6 +65,7 @@
     "@iconify-json/heroicons": "^1.1.11",
     "@iconify-json/simple-icons": "^1.1.58",
     "@nexvelt/ui-preset": "workspace:^",
+    "@nuxt/devtools": "^0.6.7",
     "@types/chroma-js": "^2.4.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.3.3",

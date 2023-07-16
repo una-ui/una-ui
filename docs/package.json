@@ -28,22 +28,19 @@
     "css",
     "ui"
   ],
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview",
+    "build": "nuxt generate",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
     "c": "esno scripts/color-transition.ts",
     "f": "esno scripts/file-creator.ts"
   },
   "dependencies": {
-    "fuse.js": "^6.6.2"
+    "@nexvelt/ui-nuxt": "workspace:0.0.2-beta.3"
   },
   "devDependencies": {
-    "@nexvelt/ui-preset": "workspace:^",
-    "postcss": "^8.4.25",
-    "postcss-prefix-selector": "^1.16.0",
-    "vitepress": "1.0.0-beta.4"
+    "@nuxt-themes/docus": "^1.14.3",
+    "@types/node": "^18.16.19",
+    "nuxt": "^3.6.2"
   }
 }

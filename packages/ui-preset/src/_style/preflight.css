@@ -4,6 +4,10 @@ html {
   color: var(--c-foreground);
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 ::-moz-selection {
   background: var(--c-bg-selection);
 }
@@ -12,21 +16,6 @@ html {
   background: var(--c-bg-selection);
 }
 
-/* Force vertical scrollbar to be always visible to avoid layout shift while loading the content */
-body {
-  overflow-y: auto; /* scroll */
-  overflow-x: hidden;
-  -webkit-tap-highlight-color: transparent;
-}
-
-html,
-body,
-#__nuxt {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-html.dark {
-  color-scheme: dark;
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

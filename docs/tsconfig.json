@@ -1,9 +1,4 @@
 {
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "lib": ["esnext", "dom"],
-    "types": ["vite/client"]
-  },
-  "exclude": ["**/dist/**"],
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", ".vitepress/**/*"]
+  // https://v3.nuxtjs.org/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json"
 }

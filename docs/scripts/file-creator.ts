@@ -1,5 +1,4 @@
 import fs from 'fs-extra'
-import type { DefaultTheme } from 'vitepress/types'
 
 // create a file with the given name and content
 function createFile(name: string, content: string) {
@@ -11,34 +10,19 @@ function createDirectory(name: string) {
 }
 
 // just copy a list sidebar items from the config file
-const listOfDirectoriesWithFiles: DefaultTheme.SidebarItem[] = [
+const directoryFolder = './content/4.components/4.layouts'
+const listOfDirectoriesWithFiles = [
   {
-    text: 'Table (WIP)',
-    link: '/data/table',
+    text: '🔴 Card',
+    link: '0.card',
   },
   {
-    text: 'Breadcrumb (WIP)',
-    link: '/navigation/breadcrumb',
+    text: '🔴 Divider',
+    link: '1.divider',
   },
   {
-    text: 'Pagination (WIP)',
-    link: '/navigation/pagination',
-  },
-  {
-    text: 'Tabs (WIP)',
-    link: '/navigation/tabs',
-  },
-  {
-    text: 'Card (WIP)',
-    link: '/layout/card',
-  },
-  {
-    text: 'Divider (WIP)',
-    link: '/layout/divider',
-  },
-  {
-    text: 'Skeleton (WIP)',
-    link: '/layout/skeleton',
+    text: '🔴 Skeleton',
+    link: '2.skeleton',
   },
 ]
 
@@ -48,12 +32,10 @@ for (const directory of listOfDirectoriesWithFiles) {
     continue
 
   // create a directory for each sidebar item
-  const directoryName = directory.link.split('/')[1]
-  if (!fs.existsSync(directoryName))
-    createDirectory(directoryName)
+  if (!fs.existsSync(directoryFolder))
+    createDirectory(directoryFolder)
 
-  const fileName = directory.link.split('/')[2]
-  const path = `./${directoryName}/${fileName}.md`
+  const path = `./${directoryFolder}/${directory.link}.md`
   const content = `---
 title: ${directory.text}
 description: 'Work in progress - this component is not yet ready for use.'
@@ -61,9 +43,9 @@ description: 'Work in progress - this component is not yet ready for use.'
 
 # ${directory.text.charAt(0).toUpperCase() + directory.text.slice(1)}
 
-:::warning
+::alert{type="warning"}
 Work in progress - this component is not yet ready for use.
-:::
+::
 `
 
   createFile(path, content)

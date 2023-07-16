@@ -1,3 +1,8 @@
-.vitepress/cache/
-.vitepress/dist/
-scripts/file-creator.ts
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+dist
