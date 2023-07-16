@@ -1,9 +1,11 @@
 import * as fs from 'node:fs'
 
+// Set your desired default prefix here 🚀
+const defaultPrefix = '@@@'
+
 export default defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook('content:file:beforeParse', (file: any) => {
     if (file._id.endsWith('.md')) {
-      const defaultPrefix = '<<<' // Set your desired default prefix here 🚀
       const snippetMatch = file.body.match(new RegExp(`^${defaultPrefix}\\s([^{\\s]+)(?:\\s(.+))?`, 'gm'))
 
       if (!snippetMatch)
@@ -22,7 +24,7 @@ export default defineNitroPlugin((nitroApp) => {
         const escapedSnippet = snippet.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
         if (!isAFile) {
-          modifiedBody = modifiedBody.replace(new RegExp(escapedSnippet, 'g'), `🔴 ${normalizedSrc} | File does not exist 🔴`)
+          modifiedBody = modifiedBody.replace(new RegExp(escapedSnippet, 'g'), `🔴 ${normalizedSrc} | Snippet does not exist 🔴`)
         }
         else {
           const content = fs.readFileSync(normalizedSrc, { encoding: 'utf-8' })
