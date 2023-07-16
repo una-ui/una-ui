@@ -4,7 +4,7 @@
 /* Base override */
 :root {
   --elements-backdrop-background: var(--c-background) !important;
-  --elements-backdrop-filter: blur(0px) !important;
+  --elements-backdrop-filter: blur(5px) !important;
 
   @media (min-width: 1400px) {
     .container {

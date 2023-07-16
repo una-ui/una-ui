@@ -21,7 +21,7 @@ const { version } = useRuntimeConfig().public
           Technology
         </div>
 
-        <div class="text-3xl font-medium text-$c-gray-500">
+        <div class="text-2xl font-medium text-$c-gray-500 lg:text-3xl">
           Presets · Components · Theming system
         </div>
       </div>
