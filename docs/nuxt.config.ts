@@ -13,11 +13,6 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    // Static generation
-    '/': { prerender: false },
-  },
-
   typescript: {
     strict: false,
     includeWorkspace: true,
