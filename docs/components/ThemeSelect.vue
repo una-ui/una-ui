@@ -10,7 +10,7 @@ function onClick() {
 </script>
 
 <template>
-  <div class="flex items-center pr-4 space-x-2 lg:pr-0">
+  <div class="flex items-center pr-4 space-x-2 xl:pr-0">
     <button
       btn="base"
       class="text-$c-gray-500 hover:text-$c-gray-700"

@@ -3,9 +3,10 @@
 
 /* Base override */
 :root {
-  --elements-backdrop-background: rgb(var(--c-background)) !important;
+  --elements-backdrop-background: var(--c-background) !important;
+  --elements-backdrop-filter: blur(0px) !important;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1400px) {
     .container {
       max-width: 80% !important;
     }

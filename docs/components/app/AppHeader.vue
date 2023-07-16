@@ -12,12 +12,11 @@ const hasDialog = computed(() => navigation.value?.length > 1 || navigation.valu
 <template>
   <header
     :class="[
-      page?._path === '/docs' ? '!border-b-0 !relative' : 'border-b-1',
+      page?._path === '/docs' ? '!border-b-0 !relative !bg-transparent' : 'border-b-1  !backdrop-blur-md bg-white/50 !dark:bg-gray-950/50',
       {
         'has-dialog': hasDialog,
         'has-doc-search': hasDocSearch,
       }]"
-    class="bg-white/50 !backdrop-blur-md !dark:bg-gray-950/50"
   >
     <Container :fluid="config?.header?.fluid ">
       <div class="section left">
@@ -30,7 +29,7 @@ const hasDialog = computed(() => navigation.value?.length > 1 || navigation.valu
         <AppHeaderNavigation />
       </div>
 
-      <div class="section right z-10">
+      <div class="section right">
         <AppSearch lg:mr-4 />
         <div class="social-icons">
           <AppSocialIcons />

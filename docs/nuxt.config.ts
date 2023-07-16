@@ -18,6 +18,12 @@ export default defineNuxtConfig({
     includeWorkspace: true,
   },
 
+  postcss: {
+    plugins: {
+      'postcss-nested': {},
+    },
+  },
+
   experimental: {
     payloadExtraction: true,
   },

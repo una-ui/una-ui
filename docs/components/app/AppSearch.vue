@@ -209,7 +209,7 @@ watch(Escape, () => {
 </script>
 
 <template>
-  <div class="flex items-center">
+  <div class="z-5 flex items-center">
     <NButton
       btn="base"
       class="hidden rounded-lg bg-base px-3 py-1.5 text-gray ring-1 ring-$c-gray-100 lg:block !text-11px hover:ring-primary"
