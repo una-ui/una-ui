@@ -86,9 +86,6 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
     addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
 
-    // @ts-expect-error - module options
-    nuxt.options.vueuse = nuxt.options.vueuse || {}
-
     if (!options.dev)
       nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
 
