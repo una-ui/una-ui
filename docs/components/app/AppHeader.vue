@@ -12,7 +12,7 @@ const hasDialog = computed(() => navigation.value?.length > 1 || navigation.valu
 <template>
   <header
     :class="[
-      page._path === '/docs' ? '!border-b-0 !relative' : 'border-b-1',
+      page?._path === '/docs' ? '!border-b-0 !relative' : 'border-b-1',
       {
         'has-dialog': hasDialog,
         'has-doc-search': hasDocSearch,
