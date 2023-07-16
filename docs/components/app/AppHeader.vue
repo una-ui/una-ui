@@ -3,14 +3,22 @@ defineProps({
   ...variants,
 })
 const { config } = useDocus()
-const { navigation } = useContent()
+const { navigation, page } = useContent()
 const { hasDocSearch } = useDocSearch()
 
 const hasDialog = computed(() => navigation.value?.length > 1 || navigation.value?.[0]?.children?.length)
 </script>
 
 <template>
-  <header class="bg-white/50 !backdrop-blur-md !dark:bg-gray-950/50" :class="{ 'has-dialog': hasDialog, 'has-doc-search': hasDocSearch }">
+  <header
+    :class="[
+      page._path === '/docs' ? '!border-b-0 !relative' : 'border-b-1',
+      {
+        'has-dialog': hasDialog,
+        'has-doc-search': hasDocSearch,
+      }]"
+    class="bg-white/50 !backdrop-blur-md !dark:bg-gray-950/50"
+  >
     <Container :fluid="config?.header?.fluid ">
       <div class="section left">
         <AppHeaderDialog v-if="hasDialog" />

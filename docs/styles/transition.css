@@ -1,0 +1,11 @@
+:root {
+  -webkit-animation: colorTransition 15s linear infinite;
+  animation: colorTransition 15s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    -webkit-animation: none !important;
+            animation: none !important;
+  }
+}

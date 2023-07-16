@@ -23,6 +23,6 @@ export default defineNuxtConfig({
   },
 
   css: [
-    '~/style.css',
+    '~/styles/index.css',
   ],
 })
