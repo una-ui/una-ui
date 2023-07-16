@@ -1,7 +1,7 @@
 {
   "name": "@nexvelt/ui-preset",
   "version": "0.0.2-beta.3",
-  "description": "The default preset for NexveltUI",
+  "description": "The default preset for @nexvelt/ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/phojie",
