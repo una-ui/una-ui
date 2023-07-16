@@ -1,0 +1,87 @@
+<script setup lang="ts">
+const { version } = useRuntimeConfig().public
+</script>
+
+<template>
+  <div grid="~ cols-1 lg:cols-5" class="my-20 lg:my-25">
+    <!-- left section -->
+    <div col="lg:span-3 span-1" space="lg:y-8 y-5" class="flex flex-col items-center lg:items-start">
+      <div>
+        <span btn="base" class="rounded-lg bg-muted text-xs font-medium ring ring-gray/10">
+          <NIcon name="i-heroicons-sparkles-solid" mr-1 text-sm text-primary />
+          v{{ version }}
+        </span>
+      </div>
+      <div flex="~ col" space-y-4 class="text-center lg:text-left">
+        <div class="text-6xl font-bold lg:text-7xl">
+          An
+          <span class="from-primary to-$nv-c-brand-next bg-gradient-to-r bg-clip-text text-transparent">
+            Atomic UI/UX
+          </span>
+          Technology
+        </div>
+
+        <div class="text-3xl font-medium text-$c-gray-500">
+          Presets · Components · Theming system
+        </div>
+      </div>
+
+      <div class="text-center text-lg text-gray lg:w-4/6 lg:text-left lg:text-xl">
+        NexveltUI is a technology that helps you build fast, modern, and accessible web applications.
+      </div>
+
+      <div grid="~ sm:cols-3 cols-2" class="gap-4">
+        <div
+          col="span-2 sm:span-1"
+          class="mx-auto"
+          grow="0"
+        >
+          <NButton
+            to="/guide"
+            btn="solid"
+            class="rounded-full px-5.5 py-3 font-bold text-white"
+            label="Getting Started"
+          />
+        </div>
+
+        <NButton
+          to="#"
+          btn="solid-gray"
+          class="rounded-full px-5.5 py-3 font-bold"
+          label="Playground"
+        />
+
+        <NButton
+          to="https://github.com/nexvelt/ui"
+          target="_blank"
+          btn="solid-gray"
+          class="rounded-full px-5.5 py-3 font-bold"
+          label="View on Github"
+        />
+      </div>
+    </div>
+
+    <!-- right section -->
+    <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-20 w-full place-items-center text-center lg:mb-0 lg:text-right">
+      <div class="image-bg absolute z-5 h-40 w-50 lg:h-85 lg:w-85" />
+      <div class="h-40 w-50 -mt-10% lg:h-85 lg:w-85 -rotate-1">
+        <img class="block -mt-0.4 dark:hidden" src="/logo-solid.svg" alt="NexveltUI Logo">
+        <img class="hidden -mt-0.4 dark:block" src="/logo-solid-dark.svg" alt="NexveltUI Logo">
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.image-container:hover {
+  .image-bg {
+    opacity: 0.1;
+  }
+}
+.image-bg {
+  opacity: .8;
+  transition: opacity 2s ease;
+  background-image: linear-gradient(-45deg, rgb(var(--c-primary)), 30%, var(--nv-c-brand-next));
+  filter: blur(120px);
+}
+</style>
