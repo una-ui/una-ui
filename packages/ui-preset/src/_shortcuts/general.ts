@@ -1,4 +1,6 @@
 export const text = {
+  'text-md': 'text-16px',
+
   'text-base': 'text-$c-foreground',
   'text-inverted': 'text-$c-background',
   'text-muted': 'text-$c-muted-foreground',
