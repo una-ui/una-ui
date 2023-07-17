@@ -1,6 +1,8 @@
 <script setup lang="ts">
+// generate top from 10 to 90
 const top = Math.floor(Math.random() * 80) + 10
-const left = Math.floor(Math.random() * 2) ? Math.floor(Math.random() * 10) + 10 : Math.floor(Math.random() * 20) + 70
+// generate left from 0 to 15 or 85 to 100
+const left = Math.floor(Math.random() * 2) * 85 + Math.floor(Math.random() * 15)
 </script>
 
 <template>
@@ -10,9 +12,9 @@ const left = Math.floor(Math.random() * 2) ? Math.floor(Math.random() * 10) + 10
     </DocsPageLayout>
 
     <Ellipsis
-      class="opacity-50"
+      class="absolute opacity-90"
       :colors="['rgba(var(--c-primary), 1)', 'rgba(var(--c-primary), 1)', 'var(--nv-c-brand-next)']"
-      height="10rem" width="10rem" :top="`${top}%`" :left="`${left}%`" blur="15rem"
+      height="15rem" width="15rem" :top="`${top}%`" :left="`${left}%`" blur="15rem"
     />
   </div>
 </template>
