@@ -1,8 +1,8 @@
 @import './color-transition.css';
 @import './transition.css';
 
-/* Base override */
 :root {
+  /* base */
   --elements-backdrop-background: var(--c-background) !important;
   --elements-backdrop-filter: blur(5px) !important;
 
