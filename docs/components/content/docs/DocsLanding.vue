@@ -15,7 +15,7 @@ const { version } = useRuntimeConfig().public
       <div flex="~ col" space-y-4 class="text-center lg:text-left">
         <div class="text-6xl font-bold lg:text-7xl">
           An
-          <span class="from-primary to-$nv-c-brand-next bg-gradient-to-r bg-clip-text text-transparent">
+          <span class="from-primary to-$nv-c-brand-next bg-gradient-to-l bg-clip-text text-transparent">
             Atomic UI/UX
           </span>
           Technology
