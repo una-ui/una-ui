@@ -6,6 +6,9 @@
   --elements-backdrop-background: var(--c-background) !important;
   --elements-backdrop-filter: blur(5px) !important;
 
+  /* typography */
+  --prose-code-inline-color: rgb(var(--c-primary)) !important;
+
   @media (min-width: 1400px) {
     .container {
       max-width: 80% !important;
