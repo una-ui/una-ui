@@ -241,10 +241,10 @@ watch(Escape, () => {
       <div
         v-if="show"
         ref="searchContentRef"
-        class="search-content"
+        class="search-content lg:-mt-15"
         @click="show = false"
       >
-        <div class="search-window p-4" @click.stop>
+        <div class="search-window p-5" @click.stop>
           <div
             class="search-input"
             input="solid"
