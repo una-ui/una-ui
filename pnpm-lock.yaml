@@ -19,7 +19,7 @@ importers:
         version: 1.0.1
       unocss:
         specifier: ^0.53.4
-        version: 0.53.4(@unocss/webpack@0.53.4)(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4)
+        version: 0.53.4(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^0.39.6
@@ -30,9 +30,6 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.1.18
         version: 1.1.18
-      '@iconify-json/gg':
-        specifier: ^1.1.5
-        version: 1.1.5
       '@iconify-json/heroicons':
         specifier: ^1.1.11
         version: 1.1.11
@@ -57,9 +54,6 @@ importers:
       '@unocss/eslint-config':
         specifier: ^0.53.4
         version: 0.53.4(eslint@8.44.0)(typescript@5.1.3)
-      '@unocss/transformer-variant-group':
-        specifier: ^0.51.13
-        version: 0.51.13
       '@vueuse/core':
         specifier: ^10.2.1
         version: 10.2.1(vue@3.3.4)
@@ -93,9 +87,6 @@ importers:
       unbuild:
         specifier: ^1.2.1
         version: 1.2.1(sass@1.63.6)
-      unplugin-auto-import:
-        specifier: ^0.16.6
-        version: 0.16.6(@vueuse/core@10.2.1)(rollup@3.26.2)
       vitest:
         specifier: ^0.32.2
         version: 0.32.2(sass@1.63.6)
@@ -1052,12 +1043,6 @@ packages:
     dependencies:
       '@iconify/types': 2.0.0
 
-  /@iconify-json/gg@1.1.5:
-    resolution: {integrity: sha512-Xn6rVvyG2uLbsg8nedDDJmJk3tgdERIKgicZzO9kFPgvTCfzwIVos5FNZ7g1BIQlDA5M0h7+7yOUjFiNePsnDw==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: true
-
   /@iconify-json/heroicons@1.1.11:
     resolution: {integrity: sha512-Autw98FvUTmBCgb4CuKZ7iQQ2633YBCmcCbAbVNU9hAo6vms9uVcbtrAQt/qlB+qzNi52PV3DWDiRtJgmPeZIw==}
     dependencies:
@@ -1680,6 +1665,7 @@ packages:
       - '@types/node'
       - eslint
       - less
+      - lightningcss
       - meow
       - optionator
       - rollup
@@ -2257,10 +2243,6 @@ packages:
       '@unocss/core': 0.53.4
       unconfig: 0.3.9
 
-  /@unocss/core@0.51.13:
-    resolution: {integrity: sha512-SclWkqY2c+p5+PiqrbQkhJNEExPdeo71/aGFye10tpBkgPJWd5xC7dhg5F8M4VPNBtuNCrvBWyqNnunMyuz/WQ==}
-    dev: true
-
   /@unocss/core@0.53.4:
     resolution: {integrity: sha512-JvmpuFOiJ8NkGzRmh0dCUmNdYjr8MmMtCX+czCmSnX2kvKyQjJIw3RIu84/DQbd/M/yxZmPjle8DrcZ1Ql86rQ==}
 
@@ -2436,12 +2418,6 @@ packages:
       '@unocss/core': 0.53.4
       css-tree: 2.3.1
     dev: false
-
-  /@unocss/transformer-variant-group@0.51.13:
-    resolution: {integrity: sha512-QT3dfnYeht9SpqPFHJrEfZjL+XeMyi0Wwc4ll4ttIQNCl1Ihiwxl4ScRs1oVXlhCAc3hCXNu9V/FWO0cYHRt/Q==}
-    dependencies:
-      '@unocss/core': 0.51.13
-    dev: true
 
   /@unocss/transformer-variant-group@0.53.4:
     resolution: {integrity: sha512-ir3FMZV1PQ1oUZU0mYTZ5kIrsn68vwUJtOiCcqq2XMSAM4NK8EBdqRqd0mg7he3AjhPzd//Rdx8XpfVFbw7EVw==}
@@ -4556,7 +4532,7 @@ packages:
     dependencies:
       debug: 3.2.7
       is-core-module: 2.12.1
-      resolve: 1.22.3
+      resolve: 1.22.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7664,6 +7640,7 @@ packages:
       - encoding
       - eslint
       - less
+      - lightningcss
       - meow
       - optionator
       - rollup
@@ -9934,30 +9911,41 @@ packages:
       - vite
     dev: false
 
-  /unplugin-auto-import@0.16.6(@vueuse/core@10.2.1)(rollup@3.26.2):
-    resolution: {integrity: sha512-M+YIITkx3C/Hg38hp8HmswP5mShUUyJOzpifv7RTlAbeFlO2Tyw0pwrogSSxnipHDPTtI8VHFBpkYkNKzYSuyA==}
+  /unocss@0.53.4(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4):
+    resolution: {integrity: sha512-UUEi+oh1rngHHP0DVESRS+ScoKMRF8q6GIQrElHb67gqG7GDEGpy3oocIA/6+1t71I4FFvnnxLMGIo9qAD0TEw==}
     engines: {node: '>=14'}
     peerDependencies:
-      '@nuxt/kit': ^3.2.2
-      '@vueuse/core': '*'
+      '@unocss/webpack': 0.53.4
     peerDependenciesMeta:
-      '@nuxt/kit':
-        optional: true
-      '@vueuse/core':
+      '@unocss/webpack':
         optional: true
     dependencies:
-      '@antfu/utils': 0.7.5
-      '@rollup/pluginutils': 5.0.2(rollup@3.26.2)
-      '@vueuse/core': 10.2.1(vue@3.3.4)
-      fast-glob: 3.3.0
-      local-pkg: 0.4.3
-      magic-string: 0.30.1
-      minimatch: 9.0.3
-      unimport: 3.0.14(rollup@3.26.2)
-      unplugin: 1.3.2
+      '@unocss/astro': 0.53.4(rollup@3.26.2)(vite@4.4.4)
+      '@unocss/cli': 0.53.4(rollup@3.26.2)
+      '@unocss/core': 0.53.4
+      '@unocss/extractor-arbitrary-variants': 0.53.4
+      '@unocss/postcss': 0.53.4(postcss@8.4.26)
+      '@unocss/preset-attributify': 0.53.4
+      '@unocss/preset-icons': 0.53.4
+      '@unocss/preset-mini': 0.53.4
+      '@unocss/preset-tagify': 0.53.4
+      '@unocss/preset-typography': 0.53.4
+      '@unocss/preset-uno': 0.53.4
+      '@unocss/preset-web-fonts': 0.53.4
+      '@unocss/preset-wind': 0.53.4
+      '@unocss/reset': 0.53.4
+      '@unocss/transformer-attributify-jsx': 0.53.4
+      '@unocss/transformer-attributify-jsx-babel': 0.53.4
+      '@unocss/transformer-compile-class': 0.53.4
+      '@unocss/transformer-directives': 0.53.4
+      '@unocss/transformer-variant-group': 0.53.4
+      '@unocss/vite': 0.53.4(rollup@3.26.2)(vite@4.4.4)
     transitivePeerDependencies:
+      - postcss
       - rollup
-    dev: true
+      - supports-color
+      - vite
+    dev: false
 
   /unplugin-vue-router@0.6.4(rollup@3.26.2)(vue-router@4.2.4)(vue@3.3.4):
     resolution: {integrity: sha512-9THVhhtbVFxbsIibjK59oPwMI1UCxRWRPX7azSkTUABsxovlOXJys5SJx0kd/0oKIqNJuYgkRfAgPuO77SqCOg==}
@@ -10199,10 +10187,11 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.3.9(@types/node@20.3.3)(sass@1.63.6)
+      vite: 4.4.4(@types/node@20.3.3)(sass@1.63.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
+      - lightningcss
       - sass
       - stylus
       - sugarss
