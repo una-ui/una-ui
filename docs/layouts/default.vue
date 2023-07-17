@@ -12,7 +12,7 @@ const left = Math.floor(Math.random() * 2) * 85 + Math.floor(Math.random() * 15)
     </DocsPageLayout>
 
     <Ellipsis
-      class="absolute opacity-90"
+      class="absolute opacity-50"
       :colors="['rgba(var(--c-primary), 1)', 'rgba(var(--c-primary), 1)', 'var(--nv-c-brand-next)']"
       height="15rem" width="15rem" :top="`${top}%`" :left="`${left}%`" blur="15rem"
     />
