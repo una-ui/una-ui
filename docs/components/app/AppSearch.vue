@@ -244,11 +244,14 @@ watch(Escape, () => {
         class="search-content"
         @click="show = false"
       >
-        <div class="search-window" @click.stop>
-          <div class="search-input">
+        <div class="search-window p-4" @click.stop>
+          <div
+            class="search-input"
+            input="solid"
+          >
             <Icon
               name="heroicons-outline:search"
-              class="search-icon"
+              class="search-icon !text-primary"
             />
             <input
               ref="searchInputRef"
@@ -270,6 +273,10 @@ watch(Escape, () => {
             </button>
           </div>
 
+          <div class="mb-2 mt-5 text-sm font-bold text-primary">
+            Recent
+          </div>
+
           <div
             v-if="results.length > 0"
             ref="resultsAreaRef"
@@ -279,7 +286,7 @@ watch(Escape, () => {
               v-for="(result, i) in results"
               :id="result.item.id"
               :key="result.item.id"
-              class="search-result"
+              class="search-result rounded-md"
               :class="{ selected: selected === i }"
               @click="go(selected)"
               @mouseenter.prevent="selected = i"
