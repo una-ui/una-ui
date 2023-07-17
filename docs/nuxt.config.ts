@@ -28,6 +28,11 @@ export default defineNuxtConfig({
     payloadExtraction: true,
   },
 
+  routeRules: {
+    'guide': { redirect: '/guide/getting-started' },
+    '/components': { redirect: '/components/elements' },
+  },
+
   css: [
     '~/styles/index.css',
   ],
