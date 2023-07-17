@@ -1,5 +1,5 @@
 <template>
-  <div grid="~ cols-2" gap-4>
+  <div grid="~ cols-1 sm:cols-2" gap-4>
     <NInput
       leading="i-heroicons-magnifying-glass-20-solid"
       placeholder="This is leading icon"
@@ -16,7 +16,7 @@
       :nv="{
         inputLeadingWrapper: 'text-yellow',
         inputTrailingWrapper: 'text-blue',
-        inputWrapper: 'col-span-2',
+        inputWrapper: 'sm:col-span-2',
       }"
       placeholder="You can also use nv to add custom class"
     />
