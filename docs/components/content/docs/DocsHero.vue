@@ -3,7 +3,7 @@ const { version } = useRuntimeConfig().public
 </script>
 
 <template>
-  <div grid="~ cols-1 lg:cols-5" class="my-20 lg:my-25">
+  <div grid="~ cols-1 lg:cols-5" class="my-15 lg:my-20">
     <!-- left section -->
     <div col="lg:span-3 span-1" space="lg:y-8 y-5" class="flex flex-col items-center lg:items-start">
       <div>
