@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// generat from 10 to 90
 const location = Math.floor(Math.random() * 80) + 10
 </script>
 
