@@ -8,7 +8,7 @@ const location = Math.floor(Math.random() * 80) + 10
     <slot />
 
     <Ellipsis
-      class="absolute opacity-50"
+      class="absolute opacity-30"
       :colors="['rgba(var(--c-primary), 1)', 'rgba(var(--c-primary), 1)', 'rgba(var(--c-primary), 1)']"
       height="15rem" width="15rem" :top="`${location}%`" :left="`${location}%`" blur="15rem"
     />
