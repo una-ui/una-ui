@@ -23,7 +23,6 @@ export interface ModuleOptions {
   /**
    * @default '@nexvelt/ui-preset'
    * @description Path to preset
-   * @example
    */
   preset?: string
 
@@ -42,7 +41,6 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt: '^3.0.0-rc.8',
     },
   },
-  // Default configuration options of the Nuxt module
   defaults: {
     prefix: 'N',
     preset: rPath('./preset'),
