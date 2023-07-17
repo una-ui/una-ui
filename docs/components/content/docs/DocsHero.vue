@@ -26,7 +26,7 @@ const { version } = useRuntimeConfig().public
         </div>
       </div>
 
-      <div class="text-center text-lg text-gray lg:w-4/6 lg:text-left lg:text-xl">
+      <div class="text-center text-lg font-medium text-$c-gray-500 lg:w-5/6 lg:text-left lg:text-xl">
         NexveltUI is a technology that helps you build fast, modern, and accessible web applications.
       </div>
 
