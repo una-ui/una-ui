@@ -1,23 +1,23 @@
 type InputPrefix = 'input'
 
 export const staticInput: Record<`${InputPrefix}-${string}`, string> = {
+  // default config
   'input-base': 'w-full input-md input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-loading-base': 'animate-spin',
-
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
-
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
+  'input-wrapper': 'relative',
+  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-$c-gray-400',
+  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-$c-gray-400',
 
+  // icons
   'input-info-icon': 'i-heroicons-information-circle-20-solid',
   'input-error-icon': 'i-heroicons-exclamation-circle-20-solid',
   'input-success-icon': 'i-heroicons-check-circle-20-solid',
   'input-warning-icon': 'i-heroicons-exclamation-triangle-20-solid',
   'input-loading-icon': 'i-gg-spinner',
 
-  'input-wrapper': 'relative',
-  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-$c-gray-400',
-  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-$c-gray-400',
-
+  // sizes
   'input-xs': 'px-2 py-0.5 text-xs',
   'input-sm': 'px-2.5 py-1 text-sm',
   'input-md': 'px-3 py-1.5 text-md',
