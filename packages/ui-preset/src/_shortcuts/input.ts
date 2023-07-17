@@ -18,7 +18,7 @@ export const staticInput = {
 
   'input-xs': 'px-2 py-0.5 text-xs',
   'input-sm': 'px-2.5 py-1 text-sm',
-  'input-md': 'px-3 py-1.5',
+  'input-md': 'px-3 py-1.5 text-md',
   'input-lg': 'px-3.5 py-2 text-lg',
   'input-xl': 'px-4 py-2.5 text-xl',
 }
