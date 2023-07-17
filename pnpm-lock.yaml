@@ -19,7 +19,7 @@ importers:
         version: 1.0.1
       unocss:
         specifier: ^0.53.4
-        version: 0.53.4(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4)
+        version: 0.53.4(@unocss/webpack@0.53.4)(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^0.39.6
@@ -27,15 +27,9 @@ importers:
       '@antfu/ni':
         specifier: ^0.21.4
         version: 0.21.4
-      '@iconify-json/carbon':
-        specifier: ^1.1.18
-        version: 1.1.18
-      '@iconify-json/heroicons':
-        specifier: ^1.1.11
-        version: 1.1.11
-      '@iconify-json/simple-icons':
-        specifier: ^1.1.58
-        version: 1.1.58
+      '@iconify/json':
+        specifier: ^2.2.91
+        version: 2.2.91
       '@nexvelt/ui-preset':
         specifier: workspace:^
         version: link:packages/ui-preset
@@ -1042,17 +1036,13 @@ packages:
     resolution: {integrity: sha512-RbKET6KS9xUMeYVq1FUH3UUA7AYNcnApkHt2AccCwTWTQQs/O58ji4Of6z6PhRajGlbfvrJzT/Uqh19OKECRvA==}
     dependencies:
       '@iconify/types': 2.0.0
+    dev: false
 
-  /@iconify-json/heroicons@1.1.11:
-    resolution: {integrity: sha512-Autw98FvUTmBCgb4CuKZ7iQQ2633YBCmcCbAbVNU9hAo6vms9uVcbtrAQt/qlB+qzNi52PV3DWDiRtJgmPeZIw==}
+  /@iconify/json@2.2.91:
+    resolution: {integrity: sha512-qsvHrC9I4KiUWcJRb3GDqYVpLaVG2Gvm+S/WMls79OaKPDQGXc5g4i5uhdEqg+qFDVOms3ItpJVU0IboAG1jeQ==}
     dependencies:
       '@iconify/types': 2.0.0
-    dev: true
-
-  /@iconify-json/simple-icons@1.1.58:
-    resolution: {integrity: sha512-W4Kj3eADpGNwOi5ICXF0CHKCeHMugNUnY3KDfz/Z8rgQzWDh3eRTIVqwmzwr0EkA3EkPAiV1XeNQbzhx98ZNJQ==}
-    dependencies:
-      '@iconify/types': 2.0.0
+      pathe: 1.1.1
     dev: true
 
   /@iconify/types@2.0.0:
@@ -9904,42 +9894,6 @@ packages:
       '@unocss/transformer-variant-group': 0.53.4
       '@unocss/vite': 0.53.4(rollup@3.26.2)(vite@4.4.4)
       '@unocss/webpack': 0.53.4(rollup@3.26.2)(webpack@5.88.1)
-    transitivePeerDependencies:
-      - postcss
-      - rollup
-      - supports-color
-      - vite
-    dev: false
-
-  /unocss@0.53.4(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4):
-    resolution: {integrity: sha512-UUEi+oh1rngHHP0DVESRS+ScoKMRF8q6GIQrElHb67gqG7GDEGpy3oocIA/6+1t71I4FFvnnxLMGIo9qAD0TEw==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      '@unocss/webpack': 0.53.4
-    peerDependenciesMeta:
-      '@unocss/webpack':
-        optional: true
-    dependencies:
-      '@unocss/astro': 0.53.4(rollup@3.26.2)(vite@4.4.4)
-      '@unocss/cli': 0.53.4(rollup@3.26.2)
-      '@unocss/core': 0.53.4
-      '@unocss/extractor-arbitrary-variants': 0.53.4
-      '@unocss/postcss': 0.53.4(postcss@8.4.26)
-      '@unocss/preset-attributify': 0.53.4
-      '@unocss/preset-icons': 0.53.4
-      '@unocss/preset-mini': 0.53.4
-      '@unocss/preset-tagify': 0.53.4
-      '@unocss/preset-typography': 0.53.4
-      '@unocss/preset-uno': 0.53.4
-      '@unocss/preset-web-fonts': 0.53.4
-      '@unocss/preset-wind': 0.53.4
-      '@unocss/reset': 0.53.4
-      '@unocss/transformer-attributify-jsx': 0.53.4
-      '@unocss/transformer-attributify-jsx-babel': 0.53.4
-      '@unocss/transformer-compile-class': 0.53.4
-      '@unocss/transformer-directives': 0.53.4
-      '@unocss/transformer-variant-group': 0.53.4
-      '@unocss/vite': 0.53.4(rollup@3.26.2)(vite@4.4.4)
     transitivePeerDependencies:
       - postcss
       - rollup
