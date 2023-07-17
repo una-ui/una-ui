@@ -30,7 +30,7 @@ const isPageLayout = computed(() => layout.value === 'page')
       </div>
 
       <div class="section center">
-        <AppHeaderLogo v-if="hasDialog && y > 100" />
+        <AppHeaderLogo v-show="hasDialog && y > 100" />
         <AppHeaderNavigation />
       </div>
 
