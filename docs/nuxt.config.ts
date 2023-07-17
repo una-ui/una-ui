@@ -13,15 +13,6 @@ export default defineNuxtConfig({
     },
   },
 
-  pinceau: {
-    studio: false,
-  },
-
-  typescript: {
-    strict: false,
-    includeWorkspace: true,
-  },
-
   postcss: {
     plugins: {
       'postcss-nested': {},
