@@ -23,6 +23,10 @@ code {
   border-radius: 7px !important;
 }
 
+.tabs-header .tabs button.active {
+  /* color: rgb(var(--c-primary-active)) !important; */
+}
+
 .card {
   background-color: var(--c-muted) !important;
   border-color: var(--c-border) !important;
