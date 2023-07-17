@@ -9,10 +9,8 @@
   --c-muted-foreground: var(--c-gray-900);
 
   --c-border: rgb(var(--nv-gray-100));
-  --c-border-foreground: rgb(var(--nv-gray-800));
 
-  --c-ring: var(--c-gray-100);
-  --c-ring-foreground: var(--c-gray-800);
+  --c-ring: var(--c-gray-300);
   
   /* defaults */
   --c-gray: var(--nv-gray-600);
@@ -52,7 +50,6 @@
   --c-gray-950: rgb(255 255 255);
 
   --c-border: rgb(var(--nv-gray-800));
-  --c-border-foreground: rgb(var(--nv-gray-100));
 
   /* defaults */
   --c-gray: var(--nv-gray-500);
