@@ -6,16 +6,18 @@ defineProps({
 })
 
 const { config } = useDocus()
-const { navigation, page } = useContent()
+const { navigation, layout } = useContent()
 const { hasDocSearch } = useDocSearch()
 const hasDialog = computed(() => navigation.value?.length > 1 || navigation.value?.[0]?.children?.length)
 const { y } = useWindowScroll()
+
+const isPageLayout = computed(() => layout.value === 'page')
 </script>
 
 <template>
   <header
     :class="[
-      page?._path === '/docs' && y < 100 ? '!border-b-0 !bg-transparent' : 'border-b-1  !backdrop-blur-md bg-white/50 !dark:bg-gray-950/50',
+      isPageLayout && y < 100 ? '!border-b-0 !bg-transparent' : 'border-b-1  !backdrop-blur-md bg-white/50 !dark:bg-gray-950/50',
       {
         'has-dialog': hasDialog,
         'has-doc-search': hasDocSearch,
