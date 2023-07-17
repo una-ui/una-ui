@@ -26,3 +26,12 @@ code {
   /* opacity: .5 !important; */
   ---y-uj-background: linear-gradient(130.62deg, rgba(var(--c-primary), 1) 24.27%, rgba(var(--c-primary), 1) 50.88%, var(--nv-c-brand-next) 78.48%) !important;
 }
+
+.card:hover {
+  border-color: rgb(var(--c-primary)) !important;
+  cursor: default;
+}
+
+.card:hover .title {
+  color: rgb(var(--c-primary)) !important;
+}
