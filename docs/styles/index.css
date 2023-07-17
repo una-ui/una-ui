@@ -15,6 +15,10 @@ html {
   font-size: 16px !important;
 }
 
+h1 {
+  color: rgb(var(--c-primary)) !important;
+}
+
 code {
   min-width: 100% !important;
 }
