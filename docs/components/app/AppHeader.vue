@@ -28,7 +28,7 @@ const { y } = useWindowScroll()
       </div>
 
       <div class="section center">
-        <AppHeaderLogo v-if="hasDialog" />
+        <AppHeaderLogo v-if="hasDialog && y > 100" />
         <AppHeaderNavigation />
       </div>
 
