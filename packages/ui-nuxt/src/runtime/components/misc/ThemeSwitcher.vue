@@ -2,7 +2,6 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { useStorage } from '@vueuse/core'
 import { computed, ref } from 'vue'
-
 import { grayThemesDefault, primaryThemesDefault } from '../../composables/themes'
 
 export interface ThemeColors {
