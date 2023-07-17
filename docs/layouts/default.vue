@@ -1,7 +1,7 @@
 <script setup lang="ts">
-// generate a random position for the ellipsis
-const top = Math.floor(Math.random() * 80)
-const left = Math.floor(Math.random() * 80)
+// generate a random position for the ellipsis between 10% and 90%
+const top = Math.floor(Math.random() * 80) + 10
+const left = Math.floor(Math.random() * 80) + 10
 </script>
 
 <template>
