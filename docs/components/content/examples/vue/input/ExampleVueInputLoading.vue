@@ -8,7 +8,7 @@
 
     <NInput
       :nv="{
-        inputLoadingIcon: 'i-eos-icons-spinner',
+        inputLoadingIcon: 'i-tabler-fidget-spinner',
         inputLoadingBase: 'text-lime',
       }"
       loading
@@ -18,8 +18,8 @@
     <NInput
       leading="i-heroicons-magnifying-glass-plus-20-solid text-blue"
       :nv="{
-        inputLoadingIcon: 'i-svg-spinners-tadpole',
-        inputLoadingBase: 'text-orange animate-none',
+        inputLoadingIcon: 'i-svg-spinners-12-dots-scale-rotate',
+        inputLoadingBase: 'text-rose animate-none',
       }"
       loading
       reverse
