@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FormGroupProps } from '../types'
+import type { FormGroupProps } from '../../types'
 
 defineOptions({
   inheritAttrs: false,

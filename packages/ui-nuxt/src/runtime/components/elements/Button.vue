@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Icon from '../elements/Icon.vue'
-import type { ButtonProps } from '../types'
+import type { ButtonProps } from '../../types'
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
