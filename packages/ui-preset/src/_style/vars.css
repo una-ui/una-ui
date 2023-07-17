@@ -8,21 +8,11 @@
   --c-muted: var(--c-gray-50);
   --c-muted-foreground: var(--c-gray-900);
 
-  --c-card: var(--c-gray-100);
-  --c-card-foreground: var(--c-gray-800);
+  --c-border: rgb(var(--nv-gray-100));
+  --c-border-foreground: rgb(var(--nv-gray-900));
 
-  --c-border: var(--c-gray-200);
-  --c-border-foreground: var(--c-gray-700);
-
-  /* TODO will be added later */
-  --c-divider: var(--c-gray-300);
-  --c-divider-foreground: var(--c-gray-600);
-
-  /* --c-gutter: var(--c-gray-400);
-  --c-gutter-foreground: var(--c-gray-500);  */
-
-  --c-ring: var(--c-gray-200);
-  --c-ring-foreground: var(--c-gray-700);
+  --c-ring: var(--c-gray-100);
+  --c-ring-foreground: var(--c-gray-800);
   
   /* defaults */
   --c-gray: var(--nv-gray-600);
@@ -60,6 +50,9 @@
   --c-gray-800: rgb(var(--nv-gray-100));
   --c-gray-900: rgb(var(--nv-gray-50));
   --c-gray-950: rgb(255 255 255);
+
+  --c-border: rgb(var(--nv-gray-900));
+  --c-border-foreground: rgb(var(--nv-gray-100));
 
   /* defaults */
   --c-gray: var(--nv-gray-500);
