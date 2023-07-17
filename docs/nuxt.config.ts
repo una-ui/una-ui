@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    'guide': { redirect: '/guide/getting-started' },
+    '/guide': { redirect: '/guide/getting-started' },
     '/components': { redirect: '/components/elements' },
   },
 
