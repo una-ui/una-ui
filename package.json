@@ -61,6 +61,7 @@
     "@antfu/eslint-config": "^0.39.8",
     "@antfu/ni": "^0.21.5",
     "@iconify/json": "^2.2.92",
+    "@nexvelt/ui-preset": "workspace:0.0.2-beta.3",
     "@nuxt/devtools": "^0.6.7",
     "@types/chroma-js": "^2.4.0",
     "@types/fs-extra": "^11.0.1",

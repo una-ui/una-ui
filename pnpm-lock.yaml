@@ -30,6 +30,9 @@ importers:
       '@iconify/json':
         specifier: ^2.2.92
         version: 2.2.92
+      '@nexvelt/ui-preset':
+        specifier: workspace:0.0.2-beta.3
+        version: link:packages/ui-preset
       '@nuxt/devtools':
         specifier: ^0.6.7
         version: 0.6.7(nuxt@3.6.3)(rollup@3.26.3)(vite@4.4.4)
@@ -4724,7 +4727,7 @@ packages:
     dependencies:
       debug: 3.2.7
       is-core-module: 2.12.1
-      resolve: 1.22.3
+      resolve: 1.22.2
     transitivePeerDependencies:
       - supports-color
     dev: true
