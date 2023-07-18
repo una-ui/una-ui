@@ -39,7 +39,7 @@ const { version } = useRuntimeConfig().public
           <NButton
             to="/guide/getting-started"
             btn="solid"
-            class="rounded-full px-5.5 py-3 font-bold text-white"
+            class="rounded-full px-5.5 py-3 font-bold"
             label="Getting Started"
           />
         </div>
