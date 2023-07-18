@@ -15,7 +15,7 @@ export const staticInput: Record<`${InputPrefix}-${string}`, string> = {
   'input-error-icon': 'i-heroicons-exclamation-circle-20-solid',
   'input-success-icon': 'i-heroicons-check-circle-20-solid',
   'input-warning-icon': 'i-heroicons-exclamation-triangle-20-solid',
-  'input-loading-icon': 'i-gg-spinner',
+  'input-loading-icon': 'i-tabler-loader-2',
 
   // sizes
   'input-xs': 'px-2 py-0.5 text-xs',

@@ -33,6 +33,7 @@
   "dependencies": {
     "@iconify-json/carbon": "^1.1.18",
     "@iconify-json/heroicons": "^1.1.11",
+    "@iconify-json/tabler": "^1.1.82",
     "@nexvelt/ui-preset": "workspace:^",
     "@nuxt/kit": "^3.6.2",
     "@nuxtjs/color-mode": "^3.3.0",
