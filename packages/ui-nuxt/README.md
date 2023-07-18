@@ -6,9 +6,8 @@
 
 - [ ] Playground
 - [ ] Docs
-- [ ] Built-in preset
+- [ ] Style Presets
 - [ ] UI-Components
-- [ ] Vue 3 / Vite plugins
 - [ ] Nuxt 3 modules
 
 <!-- [![NPM version](https://img.shields.io/npm/v/jieui?color=a1b858&label=)](https://www.npmjs.com/package/@nexvelt) -->
