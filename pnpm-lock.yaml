@@ -19,7 +19,7 @@ importers:
         version: 1.0.1
       unocss:
         specifier: ^0.53.4
-        version: 0.53.4(@unocss/webpack@0.53.4)(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4)
+        version: 0.53.4(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^0.39.6
@@ -30,9 +30,6 @@ importers:
       '@iconify/json':
         specifier: ^2.2.91
         version: 2.2.91
-      '@nexvelt/ui-preset':
-        specifier: workspace:^
-        version: link:packages/ui-preset
       '@nuxt/devtools':
         specifier: ^0.6.7
         version: 0.6.7(nuxt@3.6.2)(rollup@3.26.2)(vite@4.4.4)
@@ -9914,6 +9911,42 @@ packages:
       '@unocss/transformer-variant-group': 0.53.4
       '@unocss/vite': 0.53.4(rollup@3.26.2)(vite@4.4.4)
       '@unocss/webpack': 0.53.4(rollup@3.26.2)(webpack@5.88.1)
+    transitivePeerDependencies:
+      - postcss
+      - rollup
+      - supports-color
+      - vite
+    dev: false
+
+  /unocss@0.53.4(postcss@8.4.26)(rollup@3.26.2)(vite@4.4.4):
+    resolution: {integrity: sha512-UUEi+oh1rngHHP0DVESRS+ScoKMRF8q6GIQrElHb67gqG7GDEGpy3oocIA/6+1t71I4FFvnnxLMGIo9qAD0TEw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@unocss/webpack': 0.53.4
+    peerDependenciesMeta:
+      '@unocss/webpack':
+        optional: true
+    dependencies:
+      '@unocss/astro': 0.53.4(rollup@3.26.2)(vite@4.4.4)
+      '@unocss/cli': 0.53.4(rollup@3.26.2)
+      '@unocss/core': 0.53.4
+      '@unocss/extractor-arbitrary-variants': 0.53.4
+      '@unocss/postcss': 0.53.4(postcss@8.4.26)
+      '@unocss/preset-attributify': 0.53.4
+      '@unocss/preset-icons': 0.53.4
+      '@unocss/preset-mini': 0.53.4
+      '@unocss/preset-tagify': 0.53.4
+      '@unocss/preset-typography': 0.53.4
+      '@unocss/preset-uno': 0.53.4
+      '@unocss/preset-web-fonts': 0.53.4
+      '@unocss/preset-wind': 0.53.4
+      '@unocss/reset': 0.53.4
+      '@unocss/transformer-attributify-jsx': 0.53.4
+      '@unocss/transformer-attributify-jsx-babel': 0.53.4
+      '@unocss/transformer-compile-class': 0.53.4
+      '@unocss/transformer-directives': 0.53.4
+      '@unocss/transformer-variant-group': 0.53.4
+      '@unocss/vite': 0.53.4(rollup@3.26.2)(vite@4.4.4)
     transitivePeerDependencies:
       - postcss
       - rollup
