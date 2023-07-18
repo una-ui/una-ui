@@ -1,24 +1,17 @@
-export const miscButton = {
+export const staticButton = {
+  // default config
+  'btn-base': 'bg-transparent inline-flex justify-center items-center btn-disabled rounded btn-md text-sm font-semibold cursor-pointer',
+  'btn-disabled': '!disabled:(opacity-75 cursor-not-allowed)',
   'btn-wrapper': 'space-x-2 flex flex-row',
   'btn-block': 'w-full',
+  'btn-icon': '-ml-0.2em mr-0.2em text-1.1em',
 
-  /* btn-options */
-  'btn-disabled': '!disabled:(opacity-75 cursor-not-allowed)',
-
-  /* btn-size */
+  /* size */
   'btn-xs': 'px-1.5 py-0.5',
   'btn-sm': 'px-2 py-1',
   'btn-md': 'px-2.5 py-1.5',
   'btn-lg': 'px-3 py-2',
   'btn-xl': 'px-3.5 py-2.5',
-
-  /* btn-icon */
-  'btn-icon': '-ml-0.2em mr-0.2em text-1.1em',
-}
-
-export const staticButton = {
-  // default config
-  'btn-base': 'bg-transparent inline-flex justify-center items-center btn-disabled rounded btn-md text-sm font-semibold cursor-pointer',
 
   // variants
   'btn-solid-white': 'btn-base bg-base text-base ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-50',
@@ -46,6 +39,5 @@ export const dynamicButton = [
 
 export const button = [
   ...dynamicButton,
-  miscButton,
   staticButton,
 ]
