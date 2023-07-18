@@ -228,13 +228,14 @@ watch(Escape, () => {
       </span>
     </button>
 
-    <NButton
+    <button
+      btn="base"
       class="block text-$c-gray-500 lg:hidden hover:text-$c-gray-700"
       aria-label="Search"
       @click="show = true"
     >
       <NIcon name="i-heroicons-magnifying-glass" class="text-16px" />
-    </NButton>
+    </button>
 
     <!-- eslint-disable-next-line vue/no-multiple-template-root -->
     <teleport to="body">
