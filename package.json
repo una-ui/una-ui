@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.2-beta.3",
   "private": true,
-  "packageManager": "pnpm@8.6.0",
+  "packageManager": "pnpm@8.6.5",
   "description": "An Atomic UI/UX Technology",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
