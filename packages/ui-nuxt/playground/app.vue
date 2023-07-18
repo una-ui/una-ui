@@ -1,37 +1,4 @@
 <script setup lang="ts">
-const buttons = [
-  'btn-solid',
-  'btn-solid-indigo',
-  'btn-solid-green',
-  'btn-solid-yellow',
-  'btn-outline',
-  'btn-outline-indigo',
-  'btn-outline-green',
-  'btn-outline-yellow',
-  'btn-soft',
-  'btn-soft-indigo',
-  'btn-soft-green',
-  'btn-soft-yellow',
-  'btn-ghost',
-  'btn-ghost-indigo',
-  'btn-ghost-green',
-  'btn-ghost-yellow',
-  'btn-link',
-  'btn-link-indigo',
-  'btn-link-green',
-  'btn-link-yellow',
-
-  'btn-solid-white',
-  'btn-ghost-white',
-
-  'btn-solid-gray',
-  'btn-ghost-gray',
-  'btn-link-gray',
-
-  'btn-solid-black',
-  'btn-link-black',
-]
-
 const isLoading = ref(false)
 const input = ref('')
 </script>
@@ -41,13 +8,9 @@ const input = ref('')
     <ColorMode />
     <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
       <NButton
-        v-for="button in buttons"
-        :key="button"
-        :class="button"
-      >
-        {{ button }}
-      </NButton>
-
+        label="Button"
+        btn="outline-indigo"
+      />
       <NThemeSwitcher />
     </div>
 
