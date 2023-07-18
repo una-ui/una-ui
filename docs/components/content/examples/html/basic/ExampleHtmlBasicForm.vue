@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col justify-end gap-4 sm:flex-row">
+    <div class="flex flex-col flex-col-reverse gap-4 sm:flex-row sm:justify-end">
       <button type="button" btn="solid-white">
         Cancel
       </button>

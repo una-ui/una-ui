@@ -10,7 +10,7 @@
       </NFormGroup>
     </div>
 
-    <div class="flex flex-col justify-end gap-4 sm:flex-row">
+    <div class="flex flex-col flex-col-reverse gap-4 sm:flex-row sm:justify-end">
       <NButton label="Cancel" btn="solid-white" />
       <NButton label="Submit" btn="solid" />
     </div>
