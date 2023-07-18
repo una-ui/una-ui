@@ -9,20 +9,14 @@ function createDirectory(name: string) {
   fs.mkdirSync(name)
 }
 
-// just copy a list sidebar items from the config file
-const directoryFolder = './content/4.components/4.layouts'
+// just update the path and the list of directories with files
+const directoryFolder = './content/4.components/0.elements'
 const listOfDirectoriesWithFiles = [
   {
-    text: '🔴 Card',
-    link: '0.card',
-  },
-  {
-    text: '🔴 Divider',
-    link: '1.divider',
-  },
-  {
-    text: '🔴 Skeleton',
-    link: '2.skeleton',
+    text: '🔴 Button',
+    link: '4.button',
+    presetName: 'button.ts',
+    componentName: 'elements/button.vue',
   },
 ]
 
@@ -46,6 +40,20 @@ description: 'Work in progress - this component is not yet ready for use.'
 ::alert{type="warning"}
 Work in progress - this component is not yet ready for use.
 ::
+
+## Usage
+
+## Events
+
+## Slots
+
+## Props
+
+## Presets
+@@@ ../packages/ui-preset/src/_shortcuts/${directory.presetName}
+
+## Components
+@@@ ../packages/ui-nuxt/src/runtime/components/${directory.componentName}
 `
 
   createFile(path, content)
