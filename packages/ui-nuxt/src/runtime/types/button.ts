@@ -3,4 +3,5 @@ export interface ButtonProps {
   to?: string
   icon?: string
   label?: string
+  btn?: string
 }

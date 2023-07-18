@@ -17,8 +17,10 @@ export const miscButton = {
 }
 
 export const staticButton = {
+  // default config
   'btn-base': 'bg-transparent inline-flex justify-center items-center btn-disabled rounded btn-md text-sm font-semibold cursor-pointer',
 
+  // variants
   'btn-solid-white': 'btn-base bg-base text-base ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-50',
   'btn-ghost-white': 'btn-base text-base btn-focus-primary hover:bg-$c-gray-50',
 
@@ -31,8 +33,10 @@ export const staticButton = {
 }
 
 export const dynamicButton = [
-  // variants
+  // default config
   [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-500 dark:focus-visible:outline-${c}-400  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`],
+
+  // variants
   [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-base btn-focus-${c} text-inverted shadow-sm bg-${c}-600 hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
   [/^btn-outline(-(\S+))?$/, ([, , c = 'primary']) => `btn-base bg-transparent btn-focus-${c} text-${c}-500 dark:text-${c}-400 ring-1 ring-current hover:bg-${c}-50 dark:hover:bg-${c}-950`],
   [/^btn-soft(-(\S+))?$/, ([, , c = 'primary']) => `btn-base btn-focus-${c} text-${c}-500 dark:text-${c}-400 bg-${c}-50 dark:bg-${c}-950 hover:bg-${c}-100 dark:hover:bg-${c}-900`],
