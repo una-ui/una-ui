@@ -8,6 +8,8 @@ import { NuxtLink } from '#components'
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'button',
+  icon: false,
+  circle: false,
 })
 
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'base'] as const
@@ -18,18 +20,29 @@ const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.inc
   <Component
     :is="to ? NuxtLink : 'button'"
     :to="to"
-    v-bind="$attrs"
     :type="to ? null : type"
     :class="[
-      hasVariant ? `` : 'btn-solid',
+      !hasVariant ? `btn-solid` : '',
     ]"
     :btn="btn"
   >
-    <slot name="icon">
-      <Icon v-if="icon" :name="icon" class="btn-icon" />
+    <slot name="leading">
+      <span v-if="leading" class="btn-leading-wrapper">
+        <Icon :name="leading" class="btn-icon-base" aria-hidden="true" />
+      </span>
     </slot>
+
     <slot>
-      {{ label }}
+      <Icon v-if="label && icon" :name="label" />
+      <span v-if="!icon">
+        {{ label }}
+      </span>
+    </slot>
+
+    <slot name="trailing">
+      <span v-if="trailing" class="btn-trailing-wrapper">
+        <Icon :name="trailing" class="btn-icon-base" aria-hidden="true" />
+      </span>
     </slot>
   </Component>
 </template>
