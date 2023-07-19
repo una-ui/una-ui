@@ -14,15 +14,15 @@ export const staticButton = {
   'btn-square': 'p-0.5em',
 
   // variants
-  'btn-solid-white': 'btn-base bg-base text-base ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-50',
-  'btn-ghost-white': 'btn-base text-base btn-focus-primary hover:bg-$c-gray-50',
+  'btn-solid-white': 'bg-base text-base ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-50',
+  'btn-ghost-white': 'text-base btn-focus-primary hover:bg-$c-gray-50',
 
-  'btn-solid-gray': 'btn-base bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-100',
-  'btn-ghost-gray': 'btn-base text-$c-gray-500 btn-focus-primary hover:text-$c-gray-950 hover:bg-$c-gray-50',
-  'btn-link-gray': 'btn-base text-$c-gray-500 btn-focus-primary hover:text-$c-gray-950 hover:underline underline-offset-4',
+  'btn-solid-gray': 'bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-100',
+  'btn-ghost-gray': 'text-$c-gray-500 btn-focus-primary hover:text-$c-gray-950 hover:bg-$c-gray-50',
+  'btn-link-gray': 'text-$c-gray-500 btn-focus-primary hover:text-$c-gray-950 hover:underline underline-offset-4',
 
-  'btn-solid-black': 'btn-base bg-$c-gray-950 text-$c-gray-0 ring-1 ring-$c-gray-950 shadow-sm btn-focus-primary hover:bg-$c-gray-800',
-  'btn-link-black': 'btn-base text-$c-gray-950 btn-focus-primary hover:underline underline-offset-4',
+  'btn-solid-black': 'bg-$c-gray-950 text-$c-gray-0 ring-1 ring-$c-gray-950 shadow-sm btn-focus-primary hover:bg-$c-gray-800',
+  'btn-link-black': 'text-$c-gray-950 btn-focus-primary hover:underline underline-offset-4',
 }
 
 export const dynamicButton = [
