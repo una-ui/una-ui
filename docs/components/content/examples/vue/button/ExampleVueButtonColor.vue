@@ -1,7 +1,7 @@
 <template>
   <div flex="~ col" gap-4>
     <div flex="~ col" gap-4>
-      <div grid="~ cols-3 lg:cols-5" gap-4>
+      <div grid="~ cols-2 lg:cols-3" gap-4>
         <NButton
           label="solid-primary"
           btn="solid-primary"
@@ -24,7 +24,7 @@
         />
       </div>
 
-      <div grid="~ cols-3 lg:cols-5" gap-4>
+      <div grid="~ cols-2 lg:cols-3" gap-4>
         <NButton
           label="solid-error"
           btn="solid-error"
@@ -51,7 +51,7 @@
     <hr border="base">
 
     <div flex="~ col" gap-4>
-      <div flex gap-2>
+      <div grid="~ cols-2 lg:cols-3" gap-2>
         <NButton
           label="solid-gray"
           btn="solid-gray"
@@ -66,7 +66,7 @@
         />
       </div>
 
-      <div flex gap-2>
+      <div grid="~ cols-2 lg:cols-3" gap-2>
         <NButton
           label="solid-white"
           btn="solid-white"
@@ -77,7 +77,7 @@
         />
       </div>
 
-      <div flex gap-2>
+      <div grid="~ cols-2 lg:cols-3" gap-2>
         <NButton
           label="solid-black"
           btn="solid-black"
