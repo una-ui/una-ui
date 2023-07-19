@@ -6,6 +6,8 @@ export const staticInput: Record<`${InputPrefix}-${string}`, string> = {
   'input-loading-base': 'animate-spin',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
+
+  // wrappers
   'input-wrapper': 'relative',
   'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-$c-gray-400',
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-$c-gray-400',
@@ -17,7 +19,7 @@ export const staticInput: Record<`${InputPrefix}-${string}`, string> = {
   'input-warning-icon': 'i-heroicons-exclamation-triangle-20-solid',
   'input-loading-icon': 'i-tabler-loader-2',
 
-  // sizes
+  // sizes !TODO: remove sizes and base the size on the font-size
   'input-xs': 'px-2 py-0.5 text-xs',
   'input-sm': 'px-2.5 py-1 text-sm',
   'input-md': 'px-3 py-1.5 text-md',
