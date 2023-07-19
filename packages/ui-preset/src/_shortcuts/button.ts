@@ -1,17 +1,18 @@
 export const staticButton = {
   // default config
-  'btn-base': 'bg-transparent inline-flex justify-center items-center btn-disabled rounded btn-md text-sm font-semibold cursor-pointer',
+  'btn-base': 'btn-rectangle rounded bg-transparent inline-flex justify-center items-center btn-disabled text-sm font-semibold cursor-pointer',
   'btn-disabled': '!disabled:(opacity-75 cursor-not-allowed)',
   'btn-wrapper': 'space-x-2 flex flex-row',
   'btn-block': 'w-full',
-  'btn-icon': '-ml-0.2em mr-0.2em text-1.1em',
 
-  // sizes
-  'btn-xs': 'px-1.5 py-0.5',
-  'btn-sm': 'px-2 py-1',
-  'btn-md': 'px-2.5 py-1.5',
-  'btn-lg': 'px-3 py-2',
-  'btn-xl': 'px-3.5 py-2.5',
+  'btn-icon-base': 'text-1.1em',
+  'btn-leading-wrapper': '-ml-0.3em mr-0.3em',
+  'btn-trailing-wrapper': '-mr-0.3em ml-0.3em',
+
+  // padding
+  'btn-rectangle': 'px-1em py-0.5em',
+  'btn-square': 'p-0.5em',
+  'btn-circle': 'rounded-full btn-square',
 
   // variants
   'btn-solid-white': 'btn-base bg-base text-base ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-50',
@@ -27,7 +28,7 @@ export const staticButton = {
 
 export const dynamicButton = [
   // default config
-  [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-500 dark:focus-visible:outline-${c}-400  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`],
+  [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-500 dark:focus-visible:outline-${c}-400  focus-visible:outline !focus-visible:outline-2 focus-visible:outline-offset-2`],
 
   // variants
   [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-base btn-focus-${c} text-inverted shadow-sm bg-${c}-600 hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
