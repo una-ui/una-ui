@@ -97,5 +97,15 @@ export default function presetNexvelt(options: nexveltUIOptions = {
         },
       },
     },
+    preflights: [
+      {
+        getCSS: () => `
+        *:focus-visible {
+          outline: 2px solid rgb(var(--c-primary-active)); /* 2 */
+          border-radius: 0.25rem; /* 1 */
+          outline-offset: 0.10rem; /* 1 */
+        }`,
+      },
+    ],
   }
 }
