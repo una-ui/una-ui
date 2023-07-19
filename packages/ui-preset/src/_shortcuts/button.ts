@@ -1,18 +1,17 @@
 export const staticButton = {
   // default config
-  'btn-base': 'btn-rectangle rounded bg-transparent inline-flex justify-center items-center btn-disabled text-sm font-semibold cursor-pointer',
+  'btn-base': 'btn-rectangle rounded inline-flex justify-center items-center btn-disabled text-sm font-semibold cursor-pointer',
   'btn-disabled': '!disabled:(opacity-75 cursor-not-allowed)',
-  'btn-wrapper': 'space-x-2 flex flex-row',
   'btn-block': 'w-full',
+  'btn-icon-text-base': 'text-1.1em',
 
-  'btn-icon-base': 'text-1.1em',
+  'btn-wrapper': 'space-x-2 flex flex-row',
   'btn-leading-wrapper': '-ml-0.3em mr-0.3em',
   'btn-trailing-wrapper': '-mr-0.3em ml-0.3em',
 
   // padding
   'btn-rectangle': 'px-1em py-0.5em',
   'btn-square': 'p-0.5em',
-  'btn-circle': 'rounded-full btn-square',
 
   // variants
   'btn-solid-white': 'btn-base bg-base text-base ring-1 ring-base shadow-sm btn-focus-primary hover:bg-$c-gray-50',

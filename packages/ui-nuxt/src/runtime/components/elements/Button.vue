@@ -13,6 +13,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 })
 
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'base'] as const
+
 const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.includes(btnVariants)))
 </script>
 
@@ -27,21 +28,21 @@ const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.inc
     :btn="btn"
   >
     <slot name="leading">
-      <span v-if="leading" class="btn-leading-wrapper">
-        <Icon :name="leading" class="btn-icon-base" aria-hidden="true" />
+      <span v-if="leading" btn="leading-wrapper">
+        <Icon :name="leading" btn="icon-text-base" aria-hidden="true" />
       </span>
     </slot>
 
     <slot>
-      <Icon v-if="label && icon" :name="label" />
+      <Icon v-if="label && icon" btn="icon-text-base" :name="label" />
       <span v-if="!icon">
         {{ label }}
       </span>
     </slot>
 
     <slot name="trailing">
-      <span v-if="trailing" class="btn-trailing-wrapper">
-        <Icon :name="trailing" class="btn-icon-base" aria-hidden="true" />
+      <span v-if="trailing" btn="trailing-wrapper">
+        <Icon :name="trailing" btn="icon-text-base" aria-hidden="true" />
       </span>
     </slot>
   </Component>
