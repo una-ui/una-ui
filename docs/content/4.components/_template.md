@@ -22,5 +22,5 @@ Work in progress - this component is not yet ready for use.
 ## Presets
 @@@ ../packages/ui-preset/src/_shortcuts/button.ts
 
-## Components
+## Component
 @@@ ../packages/ui-nuxt/src/runtime/components/elements/button.vue
