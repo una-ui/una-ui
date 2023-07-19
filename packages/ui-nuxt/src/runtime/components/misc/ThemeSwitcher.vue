@@ -56,10 +56,10 @@ function shuffleTheme() {
 
 <template>
   <div class="sm:ml-5">
-    <Popover v-slot="{ open }" class="relative inline-block">
+    <Popover class="relative inline-block">
       <PopoverButton
-        btn="square" class="rounded-lg"
-        :class="open ? 'btn-soft' : 'btn-ghost'"
+        btn="~ base square soft"
+        class="rounded-lg"
       >
         <span i-heroicons-swatch-20-solid text-md />
       </PopoverButton>

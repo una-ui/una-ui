@@ -25,7 +25,7 @@ const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.inc
     :class="[
       !hasVariant ? `btn-solid` : '',
     ]"
-    :btn="btn"
+    :btn="`~ ${btn}`"
   >
     <slot name="leading">
       <span v-if="leading" btn="leading-wrapper">

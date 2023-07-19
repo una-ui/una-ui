@@ -12,7 +12,7 @@ function onClick() {
 <template>
   <div class="flex items-center pr-4 space-x-2 xl:pr-0">
     <button
-      btn="base md"
+      btn="~ base"
       class="text-$c-gray-500 hover:text-$c-gray-700"
       aria-label="Color Mode"
       @click="onClick"
