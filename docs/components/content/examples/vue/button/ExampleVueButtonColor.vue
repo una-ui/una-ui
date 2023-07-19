@@ -1,5 +1,7 @@
 <template>
   <div flex="~ col" gap-4>
+    <span class="text-sm font-medium">Dynamic colors:</span>
+
     <div flex="~ col" gap-4>
       <div flex="~ col md:row" gap-4>
         <NButton
@@ -54,9 +56,9 @@
 
       <div flex="~ col md:row" gap-2>
         <NButton
-          label="hover me"
           btn="base"
           class="from-primary to-$nv-c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
+          label="gradient color"
         />
 
         <NButton
@@ -69,7 +71,7 @@
 
     <hr border="base">
 
-    <span class="text-sm font-medium">Grey buttons:</span>
+    <span class="text-sm font-medium">Grey colors:</span>
 
     <div flex="~ col" gap-4>
       <div flex="~ col md:row" gap-2>

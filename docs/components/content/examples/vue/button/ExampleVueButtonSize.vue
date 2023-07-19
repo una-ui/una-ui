@@ -1,51 +1,52 @@
 <template>
-  <div flex="~ col sm:row" gap-4>
+  <div flex="~ col" gap-4>
     <div>
       <NButton
-        btn="xs"
-        label="xs"
+        text="xs"
+        label="button xs"
       />
     </div>
 
     <div>
       <NButton
-        btn="sm"
-        label="sm"
+        text="sm"
+        label="button sm"
       />
     </div>
 
     <div>
       <NButton
-        btn="md"
-        label="md"
+        text="md"
+        label="button default"
       />
     </div>
 
     <div>
       <NButton
-        btn="lg"
-        label="lg"
+        text="lg"
+        label="button lg"
       />
     </div>
 
     <div>
       <NButton
-        btn="xl solid-indigo"
-        label="xl"
+        text="xl"
+        label="button xl"
       />
     </div>
 
     <div>
       <NButton
-        btn="xs hover:xl"
+        text="xs hover:xl"
+        btn="solid hover:solid-indigo"
         label="hover me"
       />
     </div>
 
     <div>
       <NButton
-        class="px-8 py-10 text-2xl"
-        label="custom"
+        class="px-8 py-10 text-xs"
+        label="custom size"
       />
     </div>
   </div>
