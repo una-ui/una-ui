@@ -1,7 +1,7 @@
 <template>
   <div flex="~ col" gap-4>
     <div flex="~ col" gap-4>
-      <div grid="~ cols-2 lg:cols-3" gap-4>
+      <div flex="~ col md:row" gap-4>
         <NButton
           label="solid-primary"
           btn="solid-primary"
@@ -24,34 +24,55 @@
         />
       </div>
 
-      <div grid="~ cols-2 lg:cols-3" gap-4>
+      <hr border="base">
+
+      <span class="text-sm font-medium">Color with states:</span>
+
+      <div flex="~ col md:row" gap-4>
         <NButton
-          label="solid-error"
-          btn="solid-error"
+          btn="solid-error hover:solid-success"
+          label="hover me"
         />
         <NButton
-          label="outline-fuchsia"
-          btn="outline-fuchsia"
+          label="you can add transition too"
+          class="transition delay-300 ease-in-out"
+          btn="soft-error hover:soft-success"
         />
         <NButton
-          label="link-success"
-          btn="link-success"
+          btn="active:outline-fuchsia"
+          label="click me"
         />
         <NButton
-          label="soft-info"
-          btn="soft-info"
+          label="click me"
+          btn="outline-pink focus:outline-blue"
         />
+      </div>
+
+      <hr border="base">
+
+      <span class="text-sm font-medium">Custom colors using utilities:</span>
+
+      <div flex="~ col md:row" gap-2>
         <NButton
-          label="ghost-warning"
-          btn="ghost-warning"
+          label="hover me"
+          btn="base"
+          class="from-primary to-$nv-c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
+        />
+
+        <NButton
+          btn="base"
+          class="from-primary-500 via-primary-600 to-primary-700 bg-gradient-to-r text-white shadow-lg shadow-primary-500/50 hover:bg-gradient-to-br dark:shadow-lg dark:shadow-primary-800/80 dark:focus:ring-primary-800"
+          label="glowing effect"
         />
       </div>
     </div>
 
     <hr border="base">
 
+    <span class="text-sm font-medium">Grey buttons:</span>
+
     <div flex="~ col" gap-4>
-      <div grid="~ cols-2 lg:cols-3" gap-2>
+      <div flex="~ col md:row" gap-2>
         <NButton
           label="solid-gray"
           btn="solid-gray"
@@ -66,7 +87,7 @@
         />
       </div>
 
-      <div grid="~ cols-2 lg:cols-3" gap-2>
+      <div flex="~ col md:row" gap-2>
         <NButton
           label="solid-white"
           btn="solid-white"
@@ -77,7 +98,7 @@
         />
       </div>
 
-      <div grid="~ cols-2 lg:cols-3" gap-2>
+      <div flex="~ col md:row" gap-2>
         <NButton
           label="solid-black"
           btn="solid-black"
