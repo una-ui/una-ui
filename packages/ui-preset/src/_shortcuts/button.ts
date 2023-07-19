@@ -6,7 +6,7 @@ export const staticButton = {
   'btn-block': 'w-full',
   'btn-icon': '-ml-0.2em mr-0.2em text-1.1em',
 
-  /* size */
+  // sizes
   'btn-xs': 'px-1.5 py-0.5',
   'btn-sm': 'px-2 py-1',
   'btn-md': 'px-2.5 py-1.5',
