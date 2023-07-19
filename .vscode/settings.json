@@ -15,9 +15,9 @@
     "**/node_modules": false,
     "env*": false
   },
-  "explorerExclude.backup": {},
-  "unocss.root": [
-    "playground/**/*",
-    "packages/**/**/*"
-  ]
+  "explorerExclude.backup": {}
+  // "unocss.root": [
+  //   "playground/**/*",
+  //   "packages/**/**/*"
+  // ]
 }
