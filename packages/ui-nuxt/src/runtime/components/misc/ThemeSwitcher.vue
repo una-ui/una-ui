@@ -56,9 +56,12 @@ function shuffleTheme() {
 
 <template>
   <div class="sm:ml-5">
-    <Popover class="relative inline-block">
-      <PopoverButton btn="soft sm" class="rounded-lg text-lg">
-        <span i-heroicons-swatch-20-solid />
+    <Popover v-slot="{ open }" class="relative inline-block">
+      <PopoverButton
+        btn="square" class="rounded-lg"
+        :class="open ? 'btn-soft' : 'btn-ghost'"
+      >
+        <span i-heroicons-swatch-20-solid text-md />
       </PopoverButton>
 
       <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
