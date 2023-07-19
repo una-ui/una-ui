@@ -42,6 +42,7 @@
   ],
   "scripts": {
     "build": "unbuild",
+    "prepack": "nr build",
     "stub": "unbuild --stub"
   },
   "publishConfig": {

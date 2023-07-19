@@ -26,7 +26,7 @@
     "build": "nuxt-build-module",
     "stub": "nuxt-build-module --stub",
     "dev": "nuxi dev playground",
-    "prepublishOnly": "npm run build",
+    "prepack": "nr build",
     "playground:build": "nuxi generate playground",
     "playground:preview": "nuxi preview playground"
   },
