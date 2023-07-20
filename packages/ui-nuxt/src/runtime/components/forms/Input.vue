@@ -112,7 +112,7 @@ const reverseVariants = computed(() => {
       <Icon
         v-if="loading"
         :name="props.nv?.inputLoadingIcon ?? 'input-loading-icon'"
-        class="input-loading-base"
+        input="loading-base"
         :class="nv?.inputLoadingBase"
       />
 

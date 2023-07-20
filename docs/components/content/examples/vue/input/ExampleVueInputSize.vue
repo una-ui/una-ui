@@ -1,33 +1,43 @@
 <template>
   <div grid="~ cols-1 sm:cols-2" gap-4>
     <NInput
-      input="xs"
-      placeholder="This is the extra small size"
+      text="xs"
+      placeholder="This is extra small size"
     />
 
     <NInput
-      input="sm"
-      placeholder="This is the small size"
+      text="sm"
+      placeholder="This is small size"
     />
 
     <NInput
-      input="md"
-      placeholder="This is the medium size (default)"
+      text="md"
+      placeholder="This is medium size (default)"
     />
 
     <NInput
-      input="lg"
-      placeholder="This is the large size"
+      text="2xl"
+      placeholder="This is 2xl size"
     />
 
     <NInput
-      input="xl"
-      placeholder="This is the extra large size"
+      text="lg"
+      class="rounded-full"
+      placeholder="This is custom"
     />
 
     <NInput
-      class="px-8 py-10 text-2xl"
-      placeholder="This is the custom size"
+      text="26px"
+      placeholder="This is custom"
+      class="rounded-br-full rounded-tl-full"
+    />
+
+    <NInput
+      :nv="{
+        inputWrapper: 'sm:col-span-2',
+      }"
+      text="6rem"
+      placeholder="This is 6rem size"
     />
   </div>
 </template>
