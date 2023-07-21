@@ -79,7 +79,7 @@ const reverseVariants = computed(() => {
       v-model="inputValue"
       :type="type"
       :class="[
-        props.nv?.inputBase,
+        nv?.inputBase,
         statusVariants.input,
         reverseVariants.input,
       ]"
@@ -89,7 +89,7 @@ const reverseVariants = computed(() => {
     <div
       v-if="isLeading"
       :class="[
-        props.nv?.inputLeadingWrapper,
+        nv?.inputLeadingWrapper,
         reverseVariants.leadingWrapper,
         statusVariants.text,
       ]"
@@ -102,13 +102,13 @@ const reverseVariants = computed(() => {
     <div
       v-if="isTrailing"
       :class="[
-        props.nv?.inputTrailingWrapper,
+        nv?.inputTrailingWrapper,
         reverseVariants.trailingWrapper, statusVariants.text,
       ]"
     >
       <Icon
         v-if="loading"
-        :name="props.nv?.inputLoadingIcon ?? 'input-loading-icon'"
+        :name="nv?.inputLoadingIcon ?? 'input-loading-icon'"
         input="loading-base"
         :class="nv?.inputLoadingBase"
       />
