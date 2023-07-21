@@ -7,4 +7,9 @@ export interface ButtonProps {
   leading?: string
   trailing?: string
   circle?: boolean
+
+  nv?: {
+    buttonLeadingWrapper?: string
+    buttonTrailingWrapper?: string
+  }
 }

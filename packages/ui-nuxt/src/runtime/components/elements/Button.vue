@@ -28,7 +28,11 @@ const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.inc
     :btn="`~ ${btn}`"
   >
     <slot name="leading">
-      <span v-if="leading" btn="leading-wrapper">
+      <span
+        v-if="leading"
+        :class="nv?.buttonLeadingWrapper"
+        btn="leading-wrapper"
+      >
         <Icon :name="leading" btn="icon-text-base" aria-hidden="true" />
       </span>
     </slot>
@@ -41,7 +45,11 @@ const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.inc
     </slot>
 
     <slot name="trailing">
-      <span v-if="trailing" btn="trailing-wrapper">
+      <span
+        v-if="trailing"
+        :class="nv?.buttonTrailingWrapper"
+        btn="trailing-wrapper"
+      >
         <Icon :name="trailing" btn="icon-text-base" aria-hidden="true" />
       </span>
     </slot>

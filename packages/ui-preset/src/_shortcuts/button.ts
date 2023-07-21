@@ -10,7 +10,7 @@ export const staticButton = {
   'btn-trailing-wrapper': '-mr-0.3em ml-0.3em',
 
   // padding
-  'btn-rectangle': 'px-1em py-0.5em',
+  'btn-rectangle': 'px-.63em py-.38em',
   'btn-square': 'p-0.5em',
 
   // variants
