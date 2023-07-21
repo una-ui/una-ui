@@ -6,8 +6,8 @@ export const staticButton = {
   'btn-icon-text-base': 'text-1.1em',
 
   'btn-wrapper': 'gap-1 flex',
-  'btn-leading-wrapper': '-ml-0.3em mr-0.3em',
-  'btn-trailing-wrapper': '-mr-0.3em ml-0.3em',
+  'btn-leading-base': '-ml-0.3em mr-0.3em',
+  'btn-trailing-base': '-mr-0.3em ml-0.3em',
 
   // padding
   'btn-rectangle': 'px-.8em py-.4em',
