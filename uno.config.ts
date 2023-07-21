@@ -17,7 +17,7 @@ export default {
       scale: 1.2,
       extraProperties: {
         'display': 'inline-block',
-        'vertical-align': 'text-top',
+        'vertical-align': 'middle',
       },
     }),
     presetNexvelt(),
