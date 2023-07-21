@@ -17,7 +17,7 @@ export default {
       scale: 1.2,
       extraProperties: {
         'display': 'inline-block',
-        'vertical-align': 'middle',
+        'vertical-align': 'text-top',
       },
     }),
     presetNexvelt(),
@@ -31,6 +31,6 @@ export default {
     './packages/ui-preset/src/_shortcuts/button.ts',
     // './packages/ui-preset/src/_shortcuts/general.ts',
     // './packages/ui-preset/src/_shortcuts/index.ts',
-    // './packages/ui-nuxt/src/unocss.ts',
+    './packages/ui-nuxt/src/unocss.ts',
   ],
 }
