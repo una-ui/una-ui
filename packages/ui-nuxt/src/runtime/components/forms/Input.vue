@@ -8,16 +8,13 @@ defineOptions({
   inheritAttrs: false,
 })
 
-// props
 const props = withDefaults(defineProps<InputProps>(), {
   type: 'text',
   reverse: false,
 })
 
-// emits
 const emit = defineEmits<{ (...args: any): void }>()
 
-// slots
 const slots = defineSlots<{
   leading?: any
   trailing?: any
