@@ -5,7 +5,7 @@ export const staticButton = {
   'btn-block': 'w-full',
   'btn-icon-text-base': 'text-1.1em',
 
-  'btn-wrapper': 'flex',
+  'btn-wrapper': 'gap-1 flex',
   'btn-leading-wrapper': '-ml-0.3em mr-0.3em',
   'btn-trailing-wrapper': '-mr-0.3em ml-0.3em',
 
