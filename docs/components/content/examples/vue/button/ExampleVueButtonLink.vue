@@ -15,10 +15,12 @@
     />
 
     <NButton
-      to="/docs"
+      to="https://github.com/nexvelt/ui"
       target="_blank"
-      trailing="i-heroicons-arrow-up-right-20-solid"
-      label="Go to home page"
+      btn="outline-pink"
+      class="rounded-none text-white"
+      leading="i-heroicons-star-20-solid text-yellow text-sm"
+      label="Star us on GitHub"
     />
 
     <NButton

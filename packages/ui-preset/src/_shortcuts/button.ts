@@ -5,12 +5,12 @@ export const staticButton = {
   'btn-block': 'w-full',
   'btn-icon-text-base': 'text-1.1em',
 
-  'btn-wrapper': 'space-x-2 flex flex-row',
+  'btn-wrapper': 'flex',
   'btn-leading-wrapper': '-ml-0.3em mr-0.3em',
   'btn-trailing-wrapper': '-mr-0.3em ml-0.3em',
 
   // padding
-  'btn-rectangle': 'px-.63em py-.38em',
+  'btn-rectangle': 'px-.8em py-.4em',
   'btn-square': 'p-0.5em',
 
   // variants
