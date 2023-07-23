@@ -9,7 +9,6 @@ import { NuxtLink } from '#components'
 const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'button',
   icon: false,
-  circle: false,
 })
 
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'base'] as const
@@ -25,7 +24,7 @@ const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.inc
     :class="[
       !hasVariant ? `btn-solid` : '',
     ]"
-    :btn="`~ wrapper ${btn}`"
+    :btn="`~ wrapper ${btn ?? ''}`"
   >
     <slot name="leading">
       <Icon
@@ -39,7 +38,12 @@ const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.inc
 
     <slot>
       <Icon v-if="label && icon" btn="icon-text-base" :name="label" />
-      <span v-if="!icon">
+      <span
+        v-if="!icon"
+        :class="[
+          nv?.buttonLabelBase,
+        ]"
+      >
         {{ label }}
       </span>
     </slot>

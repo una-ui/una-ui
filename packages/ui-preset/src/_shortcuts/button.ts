@@ -2,12 +2,13 @@ export const staticButton = {
   // default config
   'btn': 'btn-rectangle rounded inline-flex justify-center items-center btn-disabled text-sm font-semibold cursor-pointer',
   'btn-disabled': '!disabled:(opacity-75 cursor-not-allowed)',
-  'btn-block': 'w-full',
   'btn-icon-text-base': 'text-1.1em',
+  'btn-block': 'w-full',
 
   'btn-wrapper': 'gap-1 flex',
-  'btn-leading-base': '-ml-0.3em mr-0.3em',
-  'btn-trailing-base': '-mr-0.3em ml-0.3em',
+  'btn-label-base': '',
+  'btn-leading-base': '-ml-0.2em mr-0.2em',
+  'btn-trailing-base': '-mr-0.2em ml-0.2em',
 
   // padding
   'btn-rectangle': 'px-.8em py-.4em',
