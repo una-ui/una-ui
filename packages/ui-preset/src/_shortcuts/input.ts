@@ -1,7 +1,7 @@
 type InputPrefix = 'input'
 
 export const staticInput: Record<`${InputPrefix}-${string}`, string> = {
-  // default config
+  // base
   'input-base': 'px-.75em py-.38em w-full input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-loading-base': 'animate-spin',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
@@ -21,7 +21,7 @@ export const staticInput: Record<`${InputPrefix}-${string}`, string> = {
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
-  // default config
+  // base
   [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400 focus:bg-base `],
   [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-400/70 dark:placeholder-${c}-300/70`],
 
