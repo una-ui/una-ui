@@ -1,15 +1,22 @@
 export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
+  loadingPlacement?: 'leading' | 'trailing' | 'label'
+
   to?: string
-  icon?: boolean
   label?: string
   btn?: string
   leading?: string
   trailing?: string
-
   nv?: {
-    buttonLabelBase?: string
-    buttonLeadingBase?: string
-    buttonTrailingBase?: string
+    btnLabelBase?: string
+    btnLeadingBase?: string
+    btnTrailingBase?: string
+    btnLoadingBase?: string
+
+    btnLoadingIcon?: string
   }
+
+  icon?: boolean
+  disabled?: boolean
+  loading?: boolean
 }
