@@ -11,6 +11,7 @@ export interface ButtonProps {
     btnLabelBase?: string
     btnLeadingBase?: string
     btnTrailingBase?: string
+    btnIconTextBase?: string
     btnLoadingBase?: string
 
     btnLoadingIcon?: string
