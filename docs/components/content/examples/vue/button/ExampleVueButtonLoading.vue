@@ -21,7 +21,7 @@ function toggleLoading() {
     <div flex="~ col sm:row" gap-4>
       <NButton
         :loading="loading"
-        :label="loading ? 'Loading...' : 'Leading'"
+        :label="loading ? 'Leading...' : 'Leading'"
         @click="toggleLoading"
       />
 
@@ -43,7 +43,7 @@ function toggleLoading() {
         :nv="{
           btnLoadingIcon: 'i-tabler-loader',
         }"
-        :label="loading ? 'Loading...' : 'Trailing'"
+        :label="loading ? 'Trailing...' : 'Trailing'"
         @click="toggleLoading"
       />
     </div>
