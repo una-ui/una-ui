@@ -1,4 +1,4 @@
-export interface ButtonProps {
+export interface NButtonProps {
   type?: 'button' | 'submit' | 'reset'
   loadingPlacement?: 'leading' | 'trailing' | 'label'
 

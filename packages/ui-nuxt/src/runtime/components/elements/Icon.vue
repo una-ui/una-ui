@@ -1,7 +1,7 @@
 <script setup lang="ts">
-defineProps<{
-  name: string
-}>()
+import type { NVIconProps } from '../../types'
+
+defineProps<NVIconProps>()
 </script>
 
 <template>

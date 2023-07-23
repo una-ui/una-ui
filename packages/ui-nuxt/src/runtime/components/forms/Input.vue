@@ -2,13 +2,13 @@
 import { useVModel } from '@vueuse/core'
 import { computed } from 'vue'
 import Icon from '../elements/Icon.vue'
-import type { InputProps } from '../../types'
+import type { NInputProps } from '../../types'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-const props = withDefaults(defineProps<InputProps>(), {
+const props = withDefaults(defineProps<NInputProps>(), {
   type: 'text',
   reverse: false,
 })

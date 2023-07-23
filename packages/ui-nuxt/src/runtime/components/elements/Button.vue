@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { createReusableTemplate } from '@vueuse/core'
 import Icon from '../elements/Icon.vue'
-import type { ButtonProps } from '../../types'
+import type { NButtonProps } from '../../types'
 
 // @ts-expect-error tsconfig
 import { NuxtLink } from '#components'
@@ -11,7 +11,7 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = withDefaults(defineProps<ButtonProps>(), {
+const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',
   icon: false,
   loading: false,

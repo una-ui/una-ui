@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { FormGroupProps } from '../../types'
+import type { NFormGroupProps } from '../../types'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-withDefaults(defineProps<FormGroupProps>(), {
+withDefaults(defineProps<NFormGroupProps>(), {
   required: false,
 })
 </script>

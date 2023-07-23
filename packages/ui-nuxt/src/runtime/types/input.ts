@@ -1,4 +1,4 @@
-export interface InputProps {
+export interface NInputProps {
   modelValue?: string | number
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
   leading?: string
