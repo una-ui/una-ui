@@ -6,7 +6,6 @@ export interface ButtonProps {
   btn?: string
   leading?: string
   trailing?: string
-  circle?: boolean
 
   nv?: {
     buttonLabelBase?: string
