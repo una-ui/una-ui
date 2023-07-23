@@ -7,6 +7,10 @@ import type { ButtonProps } from '../../types'
 // @ts-expect-error tsconfig
 import { NuxtLink } from '#components'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(defineProps<ButtonProps>(), {
   type: 'button',
   icon: false,
