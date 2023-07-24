@@ -6,6 +6,7 @@ export interface NInputProps {
   status?: 'info' | 'success' | 'warning' | 'error'
   loading?: boolean
   reverse?: boolean
+  input?: string
 
   nv?: {
     inputWrapper?: string
@@ -18,7 +19,6 @@ export interface NInputProps {
     inputInfoIcon?: string
     inputLoadingIcon?: string
 
-    inputBase?: string
     inputLoadingBase?: string
   }
 }

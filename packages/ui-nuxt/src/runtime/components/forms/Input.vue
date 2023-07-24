@@ -27,13 +27,16 @@ const isTrailing = computed(
   () => props.trailing || slots.trailing || props.status || props.loading,
 )
 
+const inputVariants = ['outline', 'solid'] as const
+const hasVariant = computed(() => inputVariants.some(inputVariants => props.input?.includes(inputVariants)))
+
 const statusVariants = computed(() => {
   const inputClass = {
     info: 'input-status-info input-solid-info input-status-ring',
     success: 'input-status-success input-solid-success input-status-ring',
     warning: 'input-status-warning input-solid-warning input-status-ring',
     error: 'input-status-error input-solid-error input-status-ring',
-    default: 'input-outline',
+    default: !hasVariant.value ? 'input-outline' : '',
   }
 
   const textClass = {
@@ -79,10 +82,10 @@ const reverseVariants = computed(() => {
       v-model="inputValue"
       :type="type"
       :class="[
-        nv?.inputBase,
         statusVariants.input,
         reverseVariants.input,
       ]"
+      :input="`~ ${input ?? ''}`"
       v-bind="$attrs"
     >
 

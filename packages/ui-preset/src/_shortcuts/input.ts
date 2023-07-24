@@ -1,8 +1,8 @@
 type InputPrefix = 'input'
 
-export const staticInput: Record<`${InputPrefix}-${string}`, string> = {
+export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, string> = {
   // base
-  'input-base': 'px-.75em py-.38em w-full input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
+  'input': 'px-.75em py-.38em w-full input-disabled ring-base sm:(text-sm leading-6) placeholder:text-gray-400 dark:placeholder:text-gray-500 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-loading-base': 'animate-spin',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
@@ -26,8 +26,8 @@ export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-400/70 dark:placeholder-${c}-300/70`],
 
   // variants
-  [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c} ring-1 ring-inset ring-base`],
-  [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => `input-base input-focus-${c} ring-1 ring-inset ring-${c}-500 dark:ring-${c}-400`],
+  [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `input-focus-${c} ring-1 ring-inset ring-base`],
+  [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => `input-focus-${c} ring-1 ring-inset ring-${c}-500 dark:ring-${c}-400`],
 ]
 
 export const input = [
