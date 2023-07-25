@@ -3,8 +3,10 @@ export interface NFormGroupProps {
   hint?: string
   name?: string
   required?: boolean
-  counterCurrent?: number
-  counterMax?: number
+  counter?: {
+    value: number
+    max: number
+  }
   description?: string
   status?: 'info' | 'success' | 'warning' | 'error'
   message?: string
@@ -25,5 +27,7 @@ export interface NFormGroupProps {
 
     formGroupMessageWrapper?: string
     formGroupMessageBase?: string
+
+    formGroupCounterWrapper?: string
   }
 }

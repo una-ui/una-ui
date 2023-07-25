@@ -16,7 +16,7 @@ const statusVariants = computed(() => {
     success: 'text-success',
     warning: 'text-warning',
     error: 'text-error',
-    default: '',
+    default: 'text-$c-gray-500',
   }
 
   return textClass[props.status ?? 'default']
@@ -28,10 +28,12 @@ const statusVariants = computed(() => {
     form-group
   >
     <div
+      v-if="label || hint || description"
       form-group="top-wrapper"
       :class="nv?.formGroupTopWrapper ?? undefined"
     >
       <div
+        v-if="label || hint"
         form-group="top-wrapper-inner"
         :class="nv?.formGroupTopWrapperInner ?? undefined"
       >
@@ -85,6 +87,7 @@ const statusVariants = computed(() => {
     </FormGroupDefaultSlot>
 
     <div
+      v-if="message || counter?.max"
       form-group="bottom-wrapper"
       :class="[
         nv?.formGroupBottomWrapper ?? undefined,
@@ -110,20 +113,25 @@ const statusVariants = computed(() => {
         </div>
       </slot>
 
-      <div
-        v-if="counterCurrent"
-        form-group="counter-wrapper"
-      >
-        <slot name="counter">
+      <slot name="counter">
+        <div
+          v-if="counter?.max"
+          form-group="counter-wrapper"
+          :class="[
+            nv?.formGroupCounterWrapper ?? undefined,
+          ]"
+        >
           <span
-            :class="`${counterCurrent >= (counterMax || 0) && counterMax
+            :class="`${counter?.value >= (counter?.max || 0) && counter?.max
               ? 'form-group-counter-error'
               : 'form-group-counter-current'}`"
-          >{{ counterCurrent }}</span>
-          <span v-if="counterMax" form-group="counter-separator">/</span>
-          <span v-if="counterMax" form-group="counter-max">{{ counterMax }}</span>
-        </slot>
-      </div>
+          >
+            {{ counter.value }}
+          </span>
+          <span v-if="counter?.max" form-group="counter-separator">/</span>
+          <span v-if="counter?.max" form-group="counter-max">{{ counter?.max }}</span>
+        </div>
+      </slot>
     </div>
   </div>
 </template>

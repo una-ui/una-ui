@@ -17,7 +17,7 @@ export const miscFormGroup = {
 
   // message
   'form-group-message-wrapper': '',
-  'form-group-message-base': 'text-sm text-$c-gray-500',
+  'form-group-message-base': 'text-sm',
 
   // counter
   'form-group-counter-wrapper': 'text-sm',
