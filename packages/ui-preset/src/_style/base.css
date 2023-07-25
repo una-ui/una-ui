@@ -16,6 +16,3 @@ html.dark {
   background: var(--c-bg-selection);
 }
 
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
