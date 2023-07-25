@@ -87,50 +87,21 @@ const statusVariants = computed(() => {
     </FormGroupDefaultSlot>
 
     <div
-      v-if="message || (counter?.value || counter?.persistent)"
+      v-if="message"
       form-group="bottom-wrapper"
       :class="[
         nv?.formGroupBottomWrapper ?? undefined,
       ]"
     >
       <slot name="message">
-        <div
-          form-group="message-wrapper"
+        <p
           :class="[
-            nv?.formGroupMessageWrapper ?? undefined,
+            nv?.formGroupMessageBase ?? undefined,
+            statusVariants,
           ]"
         >
-          <!-- TODO add transition when value CHANGE (ease-in-out) -->
-          <p
-            v-if="message" form-group="message-base"
-            :class="[
-              nv?.formGroupMessageBase ?? undefined,
-              statusVariants,
-            ]"
-          >
-            {{ message }}
-          </p>
-        </div>
-      </slot>
-
-      <slot name="counter">
-        <div
-          v-if="counter?.value || counter?.persistent"
-          form-group="counter-wrapper"
-          :class="[
-            nv?.formGroupCounterWrapper ?? undefined,
-          ]"
-        >
-          <span
-            :class="`${counter?.value >= (counter?.max || 0) && counter?.max
-              ? 'form-group-counter-error'
-              : 'form-group-counter-current'}`"
-          >
-            {{ counter.value }}
-          </span>
-          <span v-if="counter?.max" form-group="counter-separator">/</span>
-          <span v-if="counter?.max" form-group="counter-max">{{ counter?.max }}</span>
-        </div>
+          {{ message }}
+        </p>
       </slot>
     </div>
   </div>
