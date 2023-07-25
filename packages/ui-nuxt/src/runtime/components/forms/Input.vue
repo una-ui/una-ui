@@ -102,7 +102,11 @@ const reverseVariants = computed(() => {
       ]"
     >
       <slot name="leading">
-        <Icon v-if="leading" :name="leading" @click="emit('leading')" />
+        <Icon
+          v-if="leading" :name="leading"
+          :class="nv?.inputLeadingBase"
+          @click="emit('leading')"
+        />
       </slot>
     </div>
 
@@ -122,7 +126,11 @@ const reverseVariants = computed(() => {
 
       <slot v-else name="trailing">
         <Icon v-if="status" :name="statusVariants.icon" />
-        <Icon v-else-if="trailing" :name="trailing" @click="emit('trailing')" />
+        <Icon
+          v-else-if="trailing"
+          :class="nv?.inputTrailingBase"
+          :name="trailing" @click="emit('trailing')"
+        />
       </slot>
     </div>
   </div>

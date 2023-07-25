@@ -22,5 +22,7 @@ export interface NInputProps {
     inputLoadingIcon?: string
 
     inputLoadingBase?: string
+    inputTrailingBase?: string
+    inputLeadingBase?: string
   }
 }
