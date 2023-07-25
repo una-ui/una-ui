@@ -49,7 +49,7 @@
     "clear": "rimraf packages/*/{dist,es,lib}",
     "cleanup": "rimraf docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules}",
     "stub": "pnpm -r --reverse --filter=./packages/* --parallel run stub",
-    "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\""
+    "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\" && simple-git-hooks"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.14",
@@ -85,8 +85,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,vue,md}": [
-      "eslint --cache --fix"
-    ]
+    "*": "eslint --fix"
   }
 }
