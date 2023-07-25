@@ -23,3 +23,7 @@ export function hexToRgb(hex: string): [number, number, number] {
     Number.parseInt(result[3], 16),
   ]
 }
+
+export function randomId(prefix: string): string {
+  return `nv-${prefix}-${Math.random().toString(36).slice(2)}`
+}
