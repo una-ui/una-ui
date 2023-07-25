@@ -1,4 +1,6 @@
-export const miscFormGroup = {
+type FormGroupPrefix = 'form-group'
+
+export const staticFormGroup: Record<`${FormGroupPrefix}-${string}` | FormGroupPrefix, string> = {
   // base
   'form-group': 'space-y-2 flex flex-col',
   'form-group-description-base': 'text-sm leading-6 text-$c-gray-500',
@@ -15,5 +17,5 @@ export const miscFormGroup = {
 }
 
 export const formGroup = [
-  miscFormGroup,
+  staticFormGroup,
 ]
