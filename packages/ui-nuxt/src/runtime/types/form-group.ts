@@ -13,7 +13,6 @@ export interface NFormGroupProps {
     value: number
     max?: number
   }
-
   nv?: {
     formGroupTopWrapper?: string
     formGroupTopWrapperInner?: string
@@ -28,6 +27,5 @@ export interface NFormGroupProps {
     formGroupMessageBase?: string
 
     formGroupLabelRequired?: string
-
   }
 }
