@@ -1,8 +1,3 @@
-export function classNames(...classes: any[string]) {
-  return classes.filter(Boolean).join(' ')
-}
-
-// rgbToHex
 export function rgbToHex(r: number, g: number, b: number): string {
   return `#${[r, g, b].map((x) => {
     const hex = x.toString(16)
@@ -10,7 +5,6 @@ export function rgbToHex(r: number, g: number, b: number): string {
   }).join('')}`
 }
 
-// hexToRgb
 export function hexToRgb(hex: string): [number, number, number] {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
 
