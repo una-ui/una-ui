@@ -11,7 +11,7 @@ Work in progress - this component is not yet ready for use.
 
 ---
 
-## Usage
+## Basic
 
 ## Events
 

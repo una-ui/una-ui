@@ -41,7 +41,7 @@ description: 'Work in progress - this component is not yet ready for use.'
 Work in progress - this component is not yet ready for use.
 ::
 
-## Usage
+## Basic
 
 ## Events
 
