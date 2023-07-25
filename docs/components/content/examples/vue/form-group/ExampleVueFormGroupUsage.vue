@@ -1,12 +1,9 @@
 <template>
   <div flex>
     <NFormGroup
-      label="Email"
+      label="Name"
     >
-      <NInput
-        placeholder="phojrengel@gmail.com"
-        leading="i-heroicons-envelope"
-      />
+      <NInput />
     </NFormGroup>
   </div>
 </template>
