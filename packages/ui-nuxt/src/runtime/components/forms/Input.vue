@@ -11,7 +11,6 @@ defineOptions({
 
 const props = withDefaults(defineProps<NInputProps>(), {
   type: 'text',
-  id: randomId('input'),
   reverse: false,
 })
 
@@ -23,6 +22,8 @@ const slots = defineSlots<{
 }>()
 
 const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
+
+const id = computed(() => props.id ?? randomId('input'))
 
 const isLeading = computed(() => props.leading || slots.leading)
 const isTrailing = computed(
