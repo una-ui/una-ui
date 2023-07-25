@@ -1,6 +1,7 @@
 type ButtonPrefix = 'btn'
 
-export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, string> = { // base
+export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, string> = {
+  // base
   'btn': 'btn-rectangle rounded inline-flex justify-center items-center btn-disabled text-sm font-semibold cursor-pointer',
   'btn-disabled': 'disabled:opacity-75 disabled:cursor-not-allowed',
   'btn-wrapper': 'gap-1 flex',
