@@ -87,7 +87,7 @@ const statusVariants = computed(() => {
     </FormGroupDefaultSlot>
 
     <div
-      v-if="message || counter?.max"
+      v-if="message || (counter?.value || counter?.persistent)"
       form-group="bottom-wrapper"
       :class="[
         nv?.formGroupBottomWrapper ?? undefined,
@@ -115,7 +115,7 @@ const statusVariants = computed(() => {
 
       <slot name="counter">
         <div
-          v-if="counter?.max"
+          v-if="counter?.value || counter?.persistent"
           form-group="counter-wrapper"
           :class="[
             nv?.formGroupCounterWrapper ?? undefined,
