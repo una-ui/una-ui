@@ -20,13 +20,14 @@ export interface NFormGroupProps {
     formGroupBottomWrapper?: string
     formGroupCounterWrapper?: string
     formGroupMessageWrapper?: string
-
     formGroupLabelWrapper?: string
-    formGroupLabelRequired?: string
-    formGroupLabelBase?: string
 
+    formGroupLabelBase?: string
     formGroupDescriptionBase?: string
     formGroupHintBase?: string
     formGroupMessageBase?: string
+
+    formGroupLabelRequired?: string
+
   }
 }
