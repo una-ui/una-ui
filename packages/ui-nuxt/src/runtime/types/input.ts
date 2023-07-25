@@ -1,8 +1,6 @@
-import type { NFormGroupProps } from './index'
-
 export interface NInputProps {
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
-  status?: Pick<NFormGroupProps, 'status'>
+  status?: 'info' | 'success' | 'warning' | 'error'
   modelValue?: string | number
   leading?: string
   trailing?: string
