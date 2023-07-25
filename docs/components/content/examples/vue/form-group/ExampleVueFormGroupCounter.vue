@@ -22,7 +22,6 @@ const username = ref('')
       label="Username"
       :counter="{
         value: username.length,
-        persistent: true,
         max: 10,
       }"
       :status="username.length > 10 ? 'error' : undefined"
