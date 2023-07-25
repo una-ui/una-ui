@@ -1,4 +1,3 @@
-/* TODO nv props should be prefixed */
 export interface NFormGroupProps {
   label?: string
   hint?: string
