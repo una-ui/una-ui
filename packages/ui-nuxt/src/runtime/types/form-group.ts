@@ -5,7 +5,8 @@ export interface NFormGroupProps {
   required?: boolean
   counter?: {
     value: number
-    max: number
+    persistent?: boolean
+    max?: number
   }
   description?: string
   status?: 'info' | 'success' | 'warning' | 'error'
