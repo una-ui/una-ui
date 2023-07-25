@@ -1,10 +1,9 @@
 /* TODO nv props should be prefixed */
 export interface NFormGroupProps {
-  label: string
+  label?: string
   hint?: string
   name?: string
   required?: boolean
-  error?: string
   counterCurrent?: number
   counterMax?: number
   description?: string
@@ -12,22 +11,21 @@ export interface NFormGroupProps {
   message?: string
 
   nv?: {
-    wrapper?: string
+    formGroupWrapper?: string
+    formGroupTopWrapper?: string
+    formGroupTopWrapperInner?: string
 
-    topWrapper?: string
-    topWrapperInner?: string
+    formGroupDescriptionWrapper?: string
 
-    descriptionWrapper?: string
+    formGroupBottomWrapper?: string
 
-    bottomWrapper?: string
+    formGroupLabelWrapper?: string
+    formGroupLabelBase?: string
+    formGroupLabelRequired?: string
 
-    labelWrapper?: string
-    labelBase?: string
-    labelRequired?: string
+    formGroupHintBase?: string
 
-    hintBase?: string
-
-    messageWrapper?: string
-    messageBase?: string
+    formGroupMessageWrapper?: string
+    formGroupMessageBase?: string
   }
 }

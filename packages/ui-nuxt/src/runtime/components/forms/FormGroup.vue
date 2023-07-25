@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { NFormGroupProps } from '../../types'
+import FormGroupDefaultSlot from '../slots/FormGroupDefault'
+import { randomId } from '../../utils'
 
 defineOptions({
   inheritAttrs: false,
@@ -8,40 +10,42 @@ defineOptions({
 withDefaults(defineProps<NFormGroupProps>(), {
   required: false,
 })
+
+const id = randomId('form-group')
 </script>
 
 <template>
   <div
     form-group="wrapper"
     :class="[
-      nv?.wrapper ?? undefined,
+      nv?.formGroupWrapper ?? undefined,
     ]"
   >
     <div
       form-group="top-wrapper"
-      :class="nv?.topWrapper ?? undefined"
+      :class="nv?.formGroupTopWrapper ?? undefined"
     >
       <div
         form-group="top-wrapper-inner"
-        :class="nv?.topWrapperInner ?? undefined"
+        :class="nv?.formGroupTopWrapperInner ?? undefined"
       >
         <slot name="label">
           <label
             v-if="label"
+            :for="name ?? id"
             form-group="label-base"
             class="form-group-label-wrapper"
-            :class="[nv?.labelWrapper ?? undefined]"
-            :for="name ? name : label.toLowerCase()"
+            :class="[nv?.formGroupLabelWrapper ?? undefined]"
           >
             <span
-              :class="nv?.labelBase ?? undefined"
+              :class="nv?.formGroupLabelBase ?? undefined"
             >
               {{ label }}
             </span>
             <span
               v-if="required"
               form-group="label-required"
-              :class="nv?.labelRequired ?? undefined"
+              :class="nv?.formGroupLabelRequired ?? undefined"
             />
           </label>
         </slot>
@@ -49,7 +53,7 @@ withDefaults(defineProps<NFormGroupProps>(), {
         <slot name="hint">
           <span
             v-if="hint" form-group="hint-base"
-            :class="nv?.hintBase ?? undefined"
+            :class="nv?.formGroupHintBase ?? undefined"
           >
             {{ hint }}
           </span>
@@ -60,40 +64,45 @@ withDefaults(defineProps<NFormGroupProps>(), {
         <span
           v-if="description"
           form-group="description-wrapper"
-          :class="nv?.descriptionWrapper ?? undefined"
+          :class="nv?.formGroupDescriptionWrapper ?? undefined"
         >
           {{ description }}
         </span>
       </slot>
     </div>
 
-    <slot />
+    <FormGroupDefaultSlot
+      :id="name ?? id"
+      :status="status"
+    >
+      <slot />
+    </FormGroupDefaultSlot>
 
     <div
       form-group="bottom-wrapper"
       :class="[
-        nv?.bottomWrapper ?? undefined,
+        nv?.formGroupBottomWrapper ?? undefined,
       ]"
     >
-      <div
-        form-group="message-wrapper"
-        :class="[
-          nv?.messageWrapper ?? undefined,
-        ]"
-      >
-        <slot name="message">
+      <slot name="message">
+        <div
+          form-group="message-wrapper"
+          :class="[
+            nv?.formGroupMessageWrapper ?? undefined,
+          ]"
+        >
           <!-- TODO add transition when value CHANGE (ease-in-out) -->
-          <span
+          <p
             v-if="message" form-group="message-base"
             :class="[
-              nv?.messageBase ?? undefined,
+              nv?.formGroupMessageBase ?? undefined,
               status ? `text-${status}` : '',
             ]"
           >
             {{ message }}
-          </span>
-        </slot>
-      </div>
+          </p>
+        </div>
+      </slot>
 
       <div
         v-if="counterCurrent"
