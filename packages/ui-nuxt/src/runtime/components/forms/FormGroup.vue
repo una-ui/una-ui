@@ -39,11 +39,11 @@ const statusVariants = computed(() => {
           <label
             v-if="label"
             :for="name ?? id"
-            form-group="label-base"
-            class="form-group-label-wrapper"
+            form-group="label-wrapper"
             :class="[nv?.formGroupLabelWrapper ?? undefined]"
           >
             <span
+              form-group="label-base"
               :class="nv?.formGroupLabelBase ?? undefined"
             >
               {{ label }}
