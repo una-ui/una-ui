@@ -27,10 +27,11 @@ export default {
     transformerVariantGroup(),
   ],
   configDeps: [
-    './packages/ui-preset/src/_shortcuts/input.ts',
-    './packages/ui-preset/src/_shortcuts/button.ts',
+    '../packages/ui-preset/src/_shortcuts/input.ts',
+    '../packages/ui-preset/src/_shortcuts/button.ts',
+    '../packages/ui-preset/src/_shortcuts/form-group.ts',
     // './packages/ui-preset/src/_shortcuts/general.ts',
     // './packages/ui-preset/src/_shortcuts/index.ts',
-    './packages/ui-nuxt/src/unocss.ts',
+    '../packages/ui-nuxt/src/unocss.ts',
   ],
 }
