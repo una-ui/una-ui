@@ -1,12 +1,14 @@
 export interface NInputProps {
-  modelValue?: string | number
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
+  status?: 'info' | 'success' | 'warning' | 'error'
+  modelValue?: string | number
   leading?: string
   trailing?: string
-  status?: 'info' | 'success' | 'warning' | 'error'
+  input?: string
+  id?: string
+
   loading?: boolean
   reverse?: boolean
-  input?: string
 
   nv?: {
     inputWrapper?: string

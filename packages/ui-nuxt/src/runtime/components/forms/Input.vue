@@ -3,6 +3,7 @@ import { useVModel } from '@vueuse/core'
 import { computed } from 'vue'
 import Icon from '../elements/Icon.vue'
 import type { NInputProps } from '../../types'
+import { randomId } from '../../utils'
 
 defineOptions({
   inheritAttrs: false,
@@ -10,6 +11,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<NInputProps>(), {
   type: 'text',
+  id: randomId('input'),
   reverse: false,
 })
 
@@ -79,6 +81,8 @@ const reverseVariants = computed(() => {
 <template>
   <div input="wrapper" :class="nv?.inputWrapper">
     <input
+      v-bind="$attrs"
+      :id="id"
       v-model="inputValue"
       :type="type"
       :class="[
@@ -86,7 +90,6 @@ const reverseVariants = computed(() => {
         reverseVariants.input,
       ]"
       :input="`~ ${input ?? ''}`"
-      v-bind="$attrs"
     >
 
     <div
