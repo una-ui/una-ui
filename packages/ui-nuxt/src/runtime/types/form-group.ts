@@ -9,10 +9,18 @@ export interface NFormGroupProps {
   description?: string
   message?: string
 
+  counter?: {
+    value: number
+    persistent?: boolean
+    max?: number
+  }
+
   nv?: {
     formGroupTopWrapper?: string
     formGroupTopWrapperInner?: string
     formGroupBottomWrapper?: string
+    formGroupCounterWrapper?: string
+    formGroupMessageWrapper?: string
 
     formGroupLabelWrapper?: string
     formGroupLabelRequired?: string

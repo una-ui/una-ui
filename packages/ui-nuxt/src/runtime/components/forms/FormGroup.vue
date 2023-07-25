@@ -28,54 +28,63 @@ const statusVariants = computed(() => {
     form-group
   >
     <div
-      v-if="label || hint || description"
-      form-group="top-wrapper"
-      :class="nv?.formGroupTopWrapper ?? undefined"
+      form-group="message-wrapper"
+      :class="[
+        nv?.formGroupMessageWrapper ?? undefined,
+      ]"
     >
-      <div
-        v-if="label || hint"
-        form-group="top-wrapper-inner"
-        :class="nv?.formGroupTopWrapperInner ?? undefined"
-      >
-        <slot name="label">
-          <label
-            v-if="label"
-            :for="name ?? id"
-            form-group="label-wrapper"
-            :class="[nv?.formGroupLabelWrapper ?? undefined]"
-          >
-            <span
-              form-group="label-base"
-              :class="nv?.formGroupLabelBase ?? undefined"
-            >
-              {{ label }}
-            </span>
-            <span
-              v-if="required"
-              form-group="label-required"
-              :class="nv?.formGroupLabelRequired ?? undefined"
-            />
-          </label>
-        </slot>
-
-        <slot name="hint">
-          <span
-            v-if="hint" form-group="hint-base"
-            :class="nv?.formGroupHintBase ?? undefined"
-          >
-            {{ hint }}
-          </span>
-        </slot>
-      </div>
-
-      <slot name="description">
-        <span
-          v-if="description"
-          form-group="description-base"
-          :class="nv?.formGroupDescriptionBase ?? undefined"
+      <slot name="top">
+        <div
+          v-if="label || hint || description"
+          form-group="top-wrapper"
+          :class="nv?.formGroupTopWrapper ?? undefined"
         >
-          {{ description }}
-        </span>
+          <div
+            v-if="label || hint"
+            form-group="top-wrapper-inner"
+            :class="nv?.formGroupTopWrapperInner ?? undefined"
+          >
+            <slot name="label">
+              <label
+                v-if="label"
+                :for="name ?? id"
+                form-group="label-wrapper"
+                :class="[nv?.formGroupLabelWrapper ?? undefined]"
+              >
+                <span
+                  form-group="label-base"
+                  :class="nv?.formGroupLabelBase ?? undefined"
+                >
+                  {{ label }}
+                </span>
+                <span
+                  v-if="required"
+                  form-group="label-required"
+                  :class="nv?.formGroupLabelRequired ?? undefined"
+                />
+              </label>
+            </slot>
+
+            <slot name="hint">
+              <span
+                v-if="hint" form-group="hint-base"
+                :class="nv?.formGroupHintBase ?? undefined"
+              >
+                {{ hint }}
+              </span>
+            </slot>
+          </div>
+
+          <slot name="description">
+            <span
+              v-if="description"
+              form-group="description-base"
+              :class="nv?.formGroupDescriptionBase ?? undefined"
+            >
+              {{ description }}
+            </span>
+          </slot>
+        </div>
       </slot>
     </div>
 
@@ -86,23 +95,55 @@ const statusVariants = computed(() => {
       <slot />
     </FormGroupDefaultSlot>
 
-    <div
-      v-if="message"
-      form-group="bottom-wrapper"
-      :class="[
-        nv?.formGroupBottomWrapper ?? undefined,
-      ]"
-    >
-      <slot name="message">
-        <p
-          :class="[
-            nv?.formGroupMessageBase ?? undefined,
-            statusVariants,
-          ]"
-        >
-          {{ message }}
-        </p>
-      </slot>
-    </div>
+    <slot name="bottom">
+      <div
+        v-if="message || (counter?.value || counter?.persistent)"
+        form-group="bottom-wrapper"
+        :class="[
+          !message && counter ? 'justify-end' : undefined,
+          nv?.formGroupBottomWrapper ?? undefined,
+        ]"
+      >
+        <slot name="message">
+          <div
+            v-if="message"
+            form-group="message-wrapper"
+            :class="[
+              nv?.formGroupMessageWrapper ?? undefined,
+            ]"
+          >
+            <p
+              form-group="message-base"
+              :class="[
+                nv?.formGroupMessageBase ?? undefined,
+                statusVariants,
+              ]"
+            >
+              {{ message }}
+            </p>
+          </div>
+        </slot>
+
+        <slot name="counter">
+          <div
+            v-if="counter"
+            form-group="counter-wrapper"
+            :class="[
+              nv?.formGroupCounterWrapper ?? undefined,
+            ]"
+          >
+            <span
+              :class="`${counter?.value >= (counter?.max || 0) && counter?.max
+                ? 'form-group-counter-error'
+                : 'form-group-counter-current'}`"
+            >
+              {{ counter?.value }}
+            </span>
+            <span v-if="counter?.max" form-group="counter-separator">/</span>
+            <span v-if="counter?.max" form-group="counter-max">{{ counter?.max }}</span>
+          </div>
+        </slot>
+      </div>
+    </slot>
   </div>
 </template>
