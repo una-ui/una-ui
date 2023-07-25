@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ items-center" gap-4>
+  <div flex="~ items-center" space-x-4>
     <NIcon name="i-heroicons-bell-20-solid" class="text-primary" />
 
     <NIcon name="i-logos-adobe-illustrator" class="text-2xl text-primary" />
