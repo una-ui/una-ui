@@ -1,3 +1,12 @@
+<script setup lang="ts">
+const form = ref({
+  username: 'Phojie',
+  about: '',
+  email: '',
+  password: 'Password',
+})
+</script>
+
 <template>
   <div flex="~ col" gap-4>
     <NFormGroup
@@ -6,7 +15,7 @@
       status="success"
     >
       <NInput
-        value="Phojie"
+        v-model="form.username"
       />
     </NFormGroup>
 
@@ -16,18 +25,16 @@
       message="This information will be visible to other users."
     >
       <!-- TODO: change to NTextArea -->
-      <NInput />
+      <NInput v-model="form.about" />
     </NFormGroup>
 
     <NFormGroup
       label="Email"
       message="Not a valid email address."
-      value="phojrengel@"
       status="error"
     >
       <NInput
-        type="password"
-        value=""
+        v-model="form.email"
       />
     </NFormGroup>
 
@@ -37,8 +44,8 @@
       status="warning"
     >
       <NInput
+        v-model="form.password"
         type="password"
-        value="Password"
       />
     </NFormGroup>
   </div>
