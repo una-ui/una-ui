@@ -99,7 +99,7 @@ function shuffleTheme() {
             <div>
               <button
                 type="button"
-                btn="solid block"
+                btn="~ solid block"
                 class="rounded-lg"
                 @click="shuffleTheme"
               >
