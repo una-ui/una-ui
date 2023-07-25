@@ -11,13 +11,12 @@ export interface NFormGroupProps {
   message?: string
 
   nv?: {
-    formGroupWrapper?: string
     formGroupTopWrapper?: string
     formGroupTopWrapperInner?: string
 
-    formGroupDescriptionWrapper?: string
-
     formGroupBottomWrapper?: string
+
+    formGroupDescriptionBase?: string
 
     formGroupLabelWrapper?: string
     formGroupLabelBase?: string

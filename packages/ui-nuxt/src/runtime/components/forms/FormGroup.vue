@@ -1,25 +1,31 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { NFormGroupProps } from '../../types'
 import FormGroupDefaultSlot from '../slots/FormGroupDefault'
 import { randomId } from '../../utils'
 
-defineOptions({
-  inheritAttrs: false,
-})
-
-withDefaults(defineProps<NFormGroupProps>(), {
+const props = withDefaults(defineProps<NFormGroupProps>(), {
   required: false,
 })
 
 const id = randomId('form-group')
+
+const statusVariants = computed(() => {
+  const textClass = {
+    info: 'text-info',
+    success: 'text-success',
+    warning: 'text-warning',
+    error: 'text-error',
+    default: '',
+  }
+
+  return textClass[props.status ?? 'default']
+})
 </script>
 
 <template>
   <div
-    form-group="wrapper"
-    :class="[
-      nv?.formGroupWrapper ?? undefined,
-    ]"
+    form-group
   >
     <div
       form-group="top-wrapper"
@@ -63,8 +69,8 @@ const id = randomId('form-group')
       <slot name="description">
         <span
           v-if="description"
-          form-group="description-wrapper"
-          :class="nv?.formGroupDescriptionWrapper ?? undefined"
+          form-group="description-base"
+          :class="nv?.formGroupDescriptionBase ?? undefined"
         >
           {{ description }}
         </span>
@@ -96,7 +102,7 @@ const id = randomId('form-group')
             v-if="message" form-group="message-base"
             :class="[
               nv?.formGroupMessageBase ?? undefined,
-              status ? `text-${status}` : '',
+              statusVariants,
             ]"
           >
             {{ message }}
