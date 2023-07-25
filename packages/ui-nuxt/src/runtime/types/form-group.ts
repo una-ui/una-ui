@@ -22,6 +22,4 @@ export interface NFormGroupProps {
     formGroupHintBase?: string
     formGroupMessageBase?: string
   }
-
-  required?: boolean
 }
