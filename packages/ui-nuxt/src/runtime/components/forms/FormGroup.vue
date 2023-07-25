@@ -97,7 +97,7 @@ const statusVariants = computed(() => {
 
     <slot name="bottom">
       <div
-        v-if="message || (counter?.value || counter?.persistent)"
+        v-if="message || counter"
         form-group="bottom-wrapper"
         :class="[
           !message && counter ? 'justify-end' : undefined,

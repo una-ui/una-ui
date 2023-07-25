@@ -11,7 +11,6 @@ export interface NFormGroupProps {
 
   counter?: {
     value: number
-    persistent?: boolean
     max?: number
   }
 
