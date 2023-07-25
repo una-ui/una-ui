@@ -15,6 +15,7 @@
       status="info"
       message="This information will be visible to other users."
     >
+      <!-- TODO: change to NTextArea -->
       <NInput />
     </NFormGroup>
 
