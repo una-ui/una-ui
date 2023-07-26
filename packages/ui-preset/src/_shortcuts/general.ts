@@ -17,7 +17,9 @@ export const general = {
 
   // border
   'border-base': 'border-$c-border',
-  'border-inverted': 'border-$c-border-foreground',
+
+  // divide
+  'divide-base': 'divide-$c-divider',
 
   // bg
   'bg-base': 'bg-$c-background',

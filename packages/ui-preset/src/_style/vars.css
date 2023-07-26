@@ -8,7 +8,9 @@
   --c-muted: var(--c-gray-50);
   --c-muted-foreground: var(--c-gray-900);
 
-  --c-border: rgb(var(--nv-gray-100));
+  --c-border: rgba(var(--nv-gray-700), 0.29);
+  --c-divider: rgba(var(--nv-gray-700), 0.12);
+  /* --vp-c-gutter: rgba(var(--nv-gray-700), 0.12); */
 
   --c-ring: var(--c-gray-300);
   
@@ -49,7 +51,9 @@
   --c-gray-900: rgb(var(--nv-gray-50));
   --c-gray-950: rgb(255 255 255);
 
-  --c-border: rgb(var(--nv-gray-800));
+  --c-border: rgba(var(--nv-gray-700), 0.68);
+  --c-divider: rgba(var(--nv-gray-700), 0.32);
+  /* --c-gutter: rgba(var(--nv-gray-700), 1); */
 
   /* defaults */
   --c-gray: var(--nv-gray-500);
