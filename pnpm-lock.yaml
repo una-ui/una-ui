@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@headlessui/vue':
-        specifier: ^1.7.14
-        version: 1.7.14(vue@3.3.4)
       chroma-js:
         specifier: ^2.4.2
         version: 2.4.2
@@ -109,6 +106,9 @@ importers:
 
   packages/ui-nuxt:
     dependencies:
+      '@headlessui/vue':
+        specifier: ^1.7.14
+        version: 1.7.14(vue@3.3.4)
       '@iconify-json/carbon':
         specifier: ^1.1.18
         version: 1.1.18
@@ -1560,7 +1560,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/module-builder@0.4.0(@nuxt/kit@3.6.2)(nuxi@3.6.3)(sass@1.63.6):
     resolution: {integrity: sha512-B+UAYgFV1Hkc2ZcD7GaiKZ3SNHhyxFlXzZoBWTc9ulE0Z/+rq6RTa9fNm13BZyGhVhDCl5FN/wF/yYa1O/D2iw==}
@@ -1632,13 +1631,12 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/telemetry@2.3.1(rollup@3.26.3):
     resolution: {integrity: sha512-7kr2VDirYIXqyTHqaiWCrfQLgUjAa4qAHzykJOspMCFJWalHU9SVfnv+cTOKGqoXQ4TWOCd09tEd7sLlMFTEqw==}
     hasBin: true
     dependencies:
-      '@nuxt/kit': 3.6.2(rollup@3.26.3)
+      '@nuxt/kit': 3.6.5(rollup@3.26.3)
       chalk: 5.3.0
       ci-info: 3.8.0
       consola: 3.2.3
@@ -2179,6 +2177,7 @@ packages:
 
   /@types/node@18.16.19:
     resolution: {integrity: sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==}
+    dev: true
 
   /@types/node@20.4.2:
     resolution: {integrity: sha512-Dd0BYtWgnWJKwO1jkmTrzofjK2QXXcai0dmtzvIBhcA+RsG5h8R3xlyta0kGOZRNfL9GuRtb1knmPEhQrePCEw==}
@@ -2917,7 +2916,7 @@ packages:
       '@babel/core': 7.22.9
       '@babel/plugin-transform-typescript': 7.22.9(@babel/core@7.22.9)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.22.9)
-      vite: 4.3.9(@types/node@18.16.19)(sass@1.63.6)
+      vite: 4.3.9(@types/node@20.4.2)(sass@1.63.6)
       vue: 3.3.4
     transitivePeerDependencies:
       - supports-color
@@ -2929,7 +2928,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.3.9(@types/node@18.16.19)(sass@1.63.6)
+      vite: 4.3.9(@types/node@20.4.2)(sass@1.63.6)
       vue: 3.3.4
 
   /@vitest/expect@0.33.0:
@@ -10315,7 +10314,7 @@ packages:
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.1
       typescript: 5.1.6
-      vite: 4.3.9(@types/node@18.16.19)(sass@1.63.6)
+      vite: 4.3.9(@types/node@20.4.2)(sass@1.63.6)
       vscode-languageclient: 7.0.0
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.8
@@ -10392,6 +10391,7 @@ packages:
       sass: 1.63.6
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /vite@4.3.9(@types/node@20.4.2)(sass@1.63.6):
     resolution: {integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==}

@@ -31,6 +31,7 @@
     "playground:preview": "nuxi preview playground"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.14",
     "@iconify-json/carbon": "^1.1.18",
     "@iconify-json/heroicons": "^1.1.11",
     "@iconify-json/tabler": "^1.1.82",

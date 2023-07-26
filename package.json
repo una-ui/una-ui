@@ -52,7 +52,6 @@
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\" && simple-git-hooks"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.14",
     "chroma-js": "^2.4.2",
     "ignore-dependency-scripts": "^1.0.1",
     "unocss": "^0.53.5"
