@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { NFormGroupProps } from '../../types'
-import FormGroupDefaultSlot from '../slots/FormGroupDefault'
+import NFormGroupDefaultSlot from '../slots/FormGroupDefault'
 import { randomId } from '../../utils'
 
 const props = withDefaults(defineProps<NFormGroupProps>(), {
@@ -88,12 +88,12 @@ const statusVariants = computed(() => {
       </slot>
     </div>
 
-    <FormGroupDefaultSlot
+    <NFormGroupDefaultSlot
       :id="name ?? id"
       :status="status"
     >
       <slot />
-    </FormGroupDefaultSlot>
+    </NFormGroupDefaultSlot>
 
     <slot name="bottom">
       <div

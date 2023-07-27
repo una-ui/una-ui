@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { createReusableTemplate } from '@vueuse/core'
-import Icon from '../elements/Icon.vue'
+import NIcon from '../elements/Icon.vue'
 import type { NButtonProps } from '../../types'
 
 // @ts-expect-error tsconfig
@@ -27,7 +27,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 
 <template>
   <DefineTemplate v-if="loading">
-    <Icon
+    <NIcon
       :name="nv?.btnLoadingIcon ?? 'btn-loading-icon'"
       :class="nv?.btnLoadingBase"
       btn="loading-base icon-text-base"
@@ -48,7 +48,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     <slot name="leading">
       <ReuseTemplate v-if="loading && loadingPlacement === 'leading'" />
 
-      <Icon
+      <NIcon
         v-else-if="leading"
         :name="leading"
         :class="[nv?.btnLeadingBase, nv?.btnIconTextBase]"
@@ -58,7 +58,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 
     <ReuseTemplate v-if="loading && loadingPlacement === 'label'" />
     <slot v-else>
-      <Icon
+      <NIcon
         v-if="label && icon"
         :class="nv?.btnIconTextBase"
         btn="icon-text-base" :name="label"
@@ -76,7 +76,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     <slot name="trailing">
       <ReuseTemplate v-if="loading && loadingPlacement === 'trailing'" />
 
-      <Icon
+      <NIcon
         v-else-if="trailing"
         :name="trailing"
         :class="[nv?.btnLeadingBase, nv?.btnIconTextBase]"

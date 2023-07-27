@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
 import { computed } from 'vue'
-import Icon from '../elements/Icon.vue'
+import NIcon from '../elements/Icon.vue'
 import type { NInputProps } from '../../types'
 import { randomId } from '../../utils'
 
@@ -102,7 +102,7 @@ const reverseVariants = computed(() => {
       ]"
     >
       <slot name="leading">
-        <Icon
+        <NIcon
           v-if="leading" :name="leading"
           :class="nv?.inputLeadingBase"
           @click="emit('leading')"
@@ -117,7 +117,7 @@ const reverseVariants = computed(() => {
         reverseVariants.trailingWrapper, statusVariants.text,
       ]"
     >
-      <Icon
+      <NIcon
         v-if="loading"
         :name="nv?.inputLoadingIcon ?? 'input-loading-icon'"
         input="loading-base"
@@ -125,8 +125,8 @@ const reverseVariants = computed(() => {
       />
 
       <slot v-else name="trailing">
-        <Icon v-if="status" :name="statusVariants.icon" />
-        <Icon
+        <NIcon v-if="status" :name="statusVariants.icon" />
+        <NIcon
           v-else-if="trailing"
           :class="nv?.inputTrailingBase"
           :name="trailing" @click="emit('trailing')"
