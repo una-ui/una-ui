@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "@nuxtjs"
+  ],
+  "baseBranches": [
+    "main"
+  ],
+  "packageRules": [
+    {
+      "matchBaseBranches": [
+        "main"
+      ],
+      "ignoreDeps": [
+      ]
+    }
+  ]
+}
