@@ -68,20 +68,20 @@ function onLeave(element: Element, done: () => void) {
         <span class="flex items-center text-.8em">
           <NIcon
             v-if="!open"
-            name="i-heroicons-chevron-up"
+            name="i-heroicons-chevron-down"
             aria-hidden="true"
           />
           <NIcon
             v-else
-            name="i-heroicons-chevron-down"
+            name="i-heroicons-chevron-up"
             aria-hidden="true"
           />
         </span>
       </DisclosureButton>
 
       <Transition
-        enter-active-class="overflow-hidden transition-height duration-300 ease-out"
-        leave-active-class="overflow-hidden transition-height duration-300 ease-out"
+        enter-active-class="accordion-enter-active"
+        leave-active-class="accordion-leave-active"
         @enter="onEnter"
         @after-enter="onAfterEnter"
         @before-leave="onBeforeLeave"

@@ -6,6 +6,10 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-item': 'w-full',
   'accordion-button': 'text-primary w-full p-4 flex text-1em font-semibold justify-between items-center',
   'accordion-panel': 'border-t border-$c-divider shadow-inner px-4 py-6 text-1em pr-12 text-$c-gray-600',
+
+  // transition
+  'accordion-enter-active': 'overflow-hidden transition-height duration-300 ease-in-out',
+  'accordion-leave-active': 'overflow-hidden transition-height duration-300 ease-in-out',
 }
 
 export const dynamicAccordion: [RegExp, (params: RegExpExecArray) => string][] = []
