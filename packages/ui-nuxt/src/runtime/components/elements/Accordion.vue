@@ -8,6 +8,8 @@ import type { NAccordionProps } from '../../types'
 import NIcon from './Icon.vue'
 
 withDefaults(defineProps<NAccordionProps>(), {
+  openIcon: 'i-heroicons-chevron-down',
+  closeIcon: 'i-heroicons-chevron-up',
 })
 
 function onEnter(element: Element, done: () => void) {
@@ -18,15 +20,15 @@ function onEnter(element: Element, done: () => void) {
   el.addEventListener('transitionend', done, { once: true })
 }
 
+function onAfterEnter(element: Element) {
+  const el = element as HTMLElement
+  el.style.height = 'auto'
+}
+
 function onBeforeLeave(element: Element) {
   const el = element as HTMLElement
   el.style.height = `${el.scrollHeight}px`
   el.offsetHeight // eslint-disable-line no-unused-expressions
-}
-
-function onAfterEnter(element: Element) {
-  const el = element as HTMLElement
-  el.style.height = 'auto'
 }
 
 function onLeave(element: Element, done: () => void) {
@@ -65,15 +67,18 @@ function onLeave(element: Element, done: () => void) {
           />
           {{ item.label }}
         </span>
-        <span class="flex items-center text-.8em">
+        <span
+          v-if="openIcon || closeIcon"
+          class="flex items-center text-.8em"
+        >
           <NIcon
             v-if="!open"
-            name="i-heroicons-chevron-down"
+            :name="openIcon"
             aria-hidden="true"
           />
           <NIcon
-            v-else
-            name="i-heroicons-chevron-up"
+            v-else-if="open && closeIcon"
+            :name="closeIcon"
             aria-hidden="true"
           />
         </span>
