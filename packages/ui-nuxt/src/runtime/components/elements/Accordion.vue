@@ -23,6 +23,17 @@ function onEnter(element: Element, done: () => void) {
   el.addEventListener('transitionend', done, { once: true })
 }
 
+const buttonRefs = ref<(() => void)[]>([])
+
+function closeOthers(index: number) {
+  if (multiple && !items[index].closeOthers)
+    return
+
+  buttonRefs.value
+    .filter((_, i) => i !== index)
+    .forEach(close => close())
+}
+
 function onAfterEnter(element: Element) {
   const el = element as HTMLElement
   el.style.height = 'auto'
@@ -39,17 +50,6 @@ function onLeave(element: Element, done: () => void) {
   el.style.height = '0'
 
   el.addEventListener('transitionend', done, { once: true })
-}
-
-const buttonRefs = ref<(() => void)[]>([])
-
-function closeOthers(index: number) {
-  if (multiple && !items[index].closeOthers)
-    return
-
-  buttonRefs.value
-    .filter((_, i) => i !== index)
-    .forEach(close => close())
 }
 </script>
 
