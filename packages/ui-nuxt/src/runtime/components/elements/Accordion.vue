@@ -9,7 +9,6 @@ import NIcon from './Icon.vue'
 
 withDefaults(defineProps<NAccordionProps>(), {
   openIcon: 'i-heroicons-chevron-down',
-  closeIcon: 'i-heroicons-chevron-up',
 })
 
 function onEnter(element: Element, done: () => void) {
@@ -70,10 +69,11 @@ function onLeave(element: Element, done: () => void) {
         </span>
         <span
           v-if="openIcon || closeIcon"
-          class="flex items-center text-.8em"
+          class="flex transform items-center text-.8em duration-300"
+          :class="!closeIcon && open ? 'rotate-180' : undefined"
         >
           <NIcon
-            v-if="!open"
+            v-if="!open || !closeIcon"
             :name="openIcon"
             aria-hidden="true"
           />
