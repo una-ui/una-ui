@@ -26,14 +26,6 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
 
 <template>
-  <DefineTemplate v-if="loading">
-    <NIcon
-      :name="nv?.btnLoadingIcon ?? 'btn-loading-icon'"
-      :class="nv?.btnLoadingBase"
-      btn="loading-base icon-text-base"
-    />
-  </DefineTemplate>
-
   <Component
     :is="to ? NuxtLink : 'button'"
     :to="to"
@@ -45,6 +37,14 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :btn="`~ ${btn ?? ''}`"
     v-bind="$attrs"
   >
+    <DefineTemplate v-if="loading">
+      <NIcon
+        :name="nv?.btnLoadingIcon ?? 'btn-loading-icon'"
+        :class="nv?.btnLoadingBase"
+        btn="loading-base icon-text-base"
+      />
+    </DefineTemplate>
+
     <slot name="leading">
       <ReuseTemplate v-if="loading && loadingPlacement === 'leading'" />
 
