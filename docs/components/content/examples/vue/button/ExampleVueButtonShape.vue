@@ -1,5 +1,5 @@
 <template>
-  <div flex gap-4>
+  <div flex="~ col sm:row" gap-4>
     <div>
       <NButton
         label="PR"
