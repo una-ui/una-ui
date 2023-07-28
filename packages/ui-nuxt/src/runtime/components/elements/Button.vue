@@ -42,7 +42,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       !hasVariant ? `btn-solid` : null,
     ]"
     :disabled="to ? null : disabled || loading"
-    :btn="`~ wrapper ${btn ?? ''}`"
+    :btn="`~ ${btn ?? ''}`"
     v-bind="$attrs"
   >
     <slot name="leading">
