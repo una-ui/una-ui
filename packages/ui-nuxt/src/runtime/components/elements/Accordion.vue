@@ -4,11 +4,15 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from '@headlessui/vue'
+
+import { ref } from 'vue'
 import type { NAccordionProps } from '../../types'
 import NIcon from './Icon.vue'
+import NButton from './Button.vue'
 
-withDefaults(defineProps<NAccordionProps>(), {
+const { multiple, items } = withDefaults(defineProps<NAccordionProps>(), {
   openIcon: 'i-heroicons-chevron-down',
+  multiple: false,
 })
 
 function onEnter(element: Element, done: () => void) {
@@ -36,53 +40,72 @@ function onLeave(element: Element, done: () => void) {
 
   el.addEventListener('transitionend', done, { once: true })
 }
+
+const buttonRefs = ref<(() => void)[]>([])
+
+function closeOthers(index: number) {
+  if (multiple && !items[index].closeOthers)
+    return
+
+  buttonRefs.value
+    .filter((_, i) => i !== index)
+    .forEach(close => close())
+}
 </script>
 
 <template>
   <div
-    :accordion="`~ ${accordion ?? undefined}`"
+    :accordion="`~ ${accordion ?? ''}`"
   >
     <Disclosure
       v-for="(item, i) in items"
       :key="i"
-      v-slot="{ open }"
+      v-slot="{ open, close }"
       as="div"
       accordion="item"
       :default-open="item.defaultOpen ?? false"
       :class="nv?.accordionItem ?? undefined"
     >
       <DisclosureButton
-        as="button"
-        accordion="button"
-        :class="[
-          nv?.accordionButton ?? undefined,
-        ]"
+        :ref="() => (buttonRefs[i] = close)"
+        as="template"
+        @click="closeOthers(i)"
       >
-        <span class="flex items-center">
-          <NIcon
-            v-if="item.icon"
-            mr-2
-            :name="item.icon"
-            aria-hidden="true"
-          />
-          {{ item.label }}
-        </span>
-        <span
-          v-if="openIcon || closeIcon"
-          class="flex transform items-center text-.8em duration-300"
-          :class="!closeIcon && open ? 'rotate-180' : undefined"
+        <NButton
+          accordion="button"
+          btn="base block"
+          :class="nv?.accordionButton ?? undefined"
         >
-          <NIcon
-            v-if="!open || !closeIcon"
-            :name="openIcon"
-            aria-hidden="true"
-          />
-          <NIcon
-            v-else-if="open && closeIcon"
-            :name="closeIcon"
-            aria-hidden="true"
-          />
-        </span>
+          <span class="items-center" flex>
+            <NIcon
+              v-if="item.icon"
+              accordion="button-leading"
+              :name="item.icon"
+              aria-hidden="true"
+            />
+
+            {{ item.label }}
+          </span>
+
+          <template #trailing>
+            <span
+              v-if="openIcon || closeIcon"
+              accordion="button-trailing"
+              :class="!closeIcon && open ? 'rotate-180' : undefined"
+            >
+              <NIcon
+                v-if="!open || !closeIcon"
+                :name="openIcon"
+                aria-hidden="true"
+              />
+              <NIcon
+                v-else-if="open && closeIcon"
+                :name="closeIcon"
+                aria-hidden="true"
+              />
+            </span>
+          </template>
+        </NButton>
       </DisclosureButton>
 
       <Transition

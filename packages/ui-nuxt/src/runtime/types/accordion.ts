@@ -1,3 +1,5 @@
+import type { NButtonProps } from './button'
+
 export interface NAccordionProps {
   accordion?: string
   openIcon?: string
@@ -6,15 +8,14 @@ export interface NAccordionProps {
   multiple?: boolean
   collapsible?: boolean
 
-  items: {
-    label: string
+  items: (NButtonProps & {
     content: string
 
     open?: boolean
-    disabled?: boolean
     icon?: string
     defaultOpen?: boolean
-  }[]
+    closeOthers?: boolean
+  })[]
 
   nv?: {
     accordionWrapper?: string
