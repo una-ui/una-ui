@@ -38,7 +38,9 @@ function onLeave(element: Element, done: () => void) {
 </script>
 
 <template>
-  <div accordion>
+  <div
+    :accordion="`~ ${accordion ?? undefined}`"
+  >
     <Disclosure
       v-for="(item, i) in items"
       :key="i"

@@ -1,9 +1,10 @@
 export interface NAccordionProps {
-  multiple?: boolean
-  collapsible?: boolean
-
+  accordion?: string
   openIcon?: string
   closeIcon?: string
+
+  multiple?: boolean
+  collapsible?: boolean
 
   items: {
     label: string
