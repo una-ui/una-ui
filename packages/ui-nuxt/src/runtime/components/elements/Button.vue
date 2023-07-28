@@ -39,7 +39,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :to="to"
     :type="to ? null : type"
     :class="[
-      !hasVariant ? `btn-solid` : '',
+      !hasVariant ? `btn-solid` : null,
     ]"
     :disabled="to ? null : disabled || loading"
     :btn="`~ wrapper ${btn ?? ''}`"
