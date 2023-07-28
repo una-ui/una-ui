@@ -79,7 +79,7 @@ function shuffleTheme() {
               />
             </div>
 
-            <hr class="my-2 border-base">
+            <hr class="my-2 border-$c-divider">
 
             <div class="grid grid-cols-5 gap-3">
               <button
@@ -94,13 +94,13 @@ function shuffleTheme() {
               />
             </div>
 
-            <hr class="my-2 border-base">
+            <hr class="my-2 border-$c-divider">
 
             <div>
               <button
                 type="button"
                 btn="~ solid block"
-                class="rounded-lg"
+                class="rounded-lg transition"
                 @click="shuffleTheme"
               >
                 Shuffle
