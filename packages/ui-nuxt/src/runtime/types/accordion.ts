@@ -13,6 +13,7 @@ export interface NAccordionProps {
     open?: boolean
     disabled?: boolean
     icon?: string
+    defaultOpen?: boolean
   }[]
 
   nv?: {

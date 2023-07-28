@@ -49,6 +49,7 @@ function onLeave(element: Element, done: () => void) {
       v-slot="{ open }"
       as="div"
       accordion="item"
+      :default-open="item.defaultOpen ?? false"
       :class="nv?.accordionItem ?? undefined"
     >
       <DisclosureButton
