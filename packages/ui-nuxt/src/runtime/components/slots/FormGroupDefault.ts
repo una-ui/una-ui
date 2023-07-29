@@ -1,6 +1,5 @@
 import { cloneVNode, computed, defineComponent } from 'vue'
 
-// @unocss-include
 export default defineComponent({
   props: {
     id: {
