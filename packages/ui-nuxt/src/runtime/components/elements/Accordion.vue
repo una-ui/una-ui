@@ -13,8 +13,6 @@ import NButton from './Button.vue'
 
 const { multiple, items } = withDefaults(defineProps<NAccordionProps>(), {
   trailingOpen: 'i-heroicons-chevron-up',
-  multiple: false,
-  borderless: false,
 })
 
 function onEnter(element: Element, done: () => void) {
