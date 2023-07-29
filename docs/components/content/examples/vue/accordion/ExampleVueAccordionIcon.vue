@@ -36,7 +36,7 @@ const items2 = [
 <template>
   <div flex="~ col" gap-4>
     <span class="text-sm font-medium">
-      Global leading icons
+      Custom Global leading icons
     </span>
 
     <NAccordion
@@ -47,7 +47,7 @@ const items2 = [
     <hr border-base>
 
     <span class="text-sm font-medium">
-      Per item leading icon
+      Custom per item leading icon
     </span>
 
     <NAccordion
@@ -57,18 +57,22 @@ const items2 = [
     <hr border-base>
 
     <span class="text-sm font-medium">
-      Update Trailing open icon
+      Custom Trailing open icon
     </span>
 
     <NAccordion
       :items="items2"
-      trailing-open="i-tabler-arrow-badge-up"
+      trailing-open="i-heroicons-chevron-left"
+      :nv="{
+        accordionTrailingClose: '-rotate-90',
+        accordionTrailingOpen: 'rotate-0',
+      }"
     />
 
     <hr border-base>
 
     <span class="text-sm font-medium">
-      Update both Trailing open and close icons
+      Custom Trailing open and close icons
     </span>
 
     <NAccordion
