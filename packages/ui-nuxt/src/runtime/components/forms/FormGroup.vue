@@ -4,9 +4,7 @@ import type { NFormGroupProps } from '../../types'
 import NFormGroupDefaultSlot from '../slots/FormGroupDefault'
 import { randomId } from '../../utils'
 
-const { status } = withDefaults(defineProps<NFormGroupProps>(), {
-  required: false,
-})
+const props = defineProps<NFormGroupProps>()
 
 const id = randomId('form-group')
 
@@ -19,7 +17,7 @@ const statusVariants = computed(() => {
     default: 'text-$c-gray-500',
   }
 
-  return textClass[status ?? 'default']
+  return textClass[props.status ?? 'default']
 })
 </script>
 

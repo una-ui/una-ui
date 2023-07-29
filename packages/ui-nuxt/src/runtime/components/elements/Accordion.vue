@@ -11,7 +11,7 @@ import { omitProps } from '../../utils'
 import NIcon from './Icon.vue'
 import NButton from './Button.vue'
 
-const { multiple, items } = withDefaults(defineProps<NAccordionProps>(), {
+const props = withDefaults(defineProps<NAccordionProps>(), {
   trailingOpen: 'i-heroicons-chevron-up',
 })
 
@@ -26,7 +26,7 @@ function onEnter(element: Element, done: () => void) {
 const buttonRefs = ref<(() => void)[]>([])
 
 function closeOthers(index: number) {
-  if (multiple && !items[index].closeOthers)
+  if (props.multiple && !props.items[index].closeOthers)
     return
 
   buttonRefs.value

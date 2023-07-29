@@ -11,7 +11,6 @@ defineOptions({
 
 const props = withDefaults(defineProps<NInputProps>(), {
   type: 'text',
-  reverse: false,
 })
 
 const emit = defineEmits<{ (...args: any): void }>()

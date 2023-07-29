@@ -11,16 +11,13 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const { btn } = withDefaults(defineProps<NButtonProps>(), {
+const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',
-  icon: false,
-  loading: false,
-  disabled: false,
   loadingPlacement: 'leading',
 })
 
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'base'] as const
-const hasVariant = computed(() => btnVariants.some(btnVariants => btn?.includes(btnVariants)))
+const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.includes(btnVariants)))
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
