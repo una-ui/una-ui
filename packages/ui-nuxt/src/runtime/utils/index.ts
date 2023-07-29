@@ -27,3 +27,9 @@ export function omitProps<T extends Record<string, any>>(obj: T, propsToOmit: Ar
   propsToOmit.forEach(prop => delete newObj[prop])
   return newObj
 }
+
+export function pickProps<T extends Record<string, any>>(obj: T, propsToPick: Array<keyof T>): Partial<T> {
+  const newObj: Partial<T> = {}
+  propsToPick.forEach(prop => newObj[prop] = obj[prop])
+  return newObj
+}
