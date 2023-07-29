@@ -21,3 +21,9 @@ export function hexToRgb(hex: string): [number, number, number] {
 export function randomId(prefix: string): string {
   return `nv-${prefix}-${Math.random().toString(36).slice(2)}`
 }
+
+export function omitProps<T extends Record<string, any>>(obj: T, propsToOmit: Array<keyof T>): Partial<T> {
+  const newObj = { ...obj }
+  propsToOmit.forEach(prop => delete newObj[prop])
+  return newObj
+}
