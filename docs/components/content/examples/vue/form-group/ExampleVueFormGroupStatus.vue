@@ -30,8 +30,8 @@ const form = ref({
 
     <NFormGroup
       label="Email"
-      :message="form.email ? 'Your email is invalid.' : ''"
-      :status="form.email ? 'error' : undefined"
+      status="error"
+      message="Your email is invalid"
     >
       <NInput
         v-model="form.email"
