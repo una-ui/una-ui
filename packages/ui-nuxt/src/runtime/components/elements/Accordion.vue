@@ -103,12 +103,12 @@ function onLeave(element: Element, done: () => void) {
                 : nv?.accordionTrailingOpen ?? 'accordion-trailing-open'"
             >
               <NIcon
-                v-if="(!open || !trailingClose) && trailingOpen"
+                v-if="(open || !trailingClose) && trailingOpen"
                 :name="trailingOpen"
                 aria-hidden="true"
               />
               <NIcon
-                v-else-if="open && trailingClose"
+                v-else-if="!open && trailingClose"
                 :name="trailingClose"
                 aria-hidden="true"
               />
