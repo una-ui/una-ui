@@ -9,6 +9,7 @@ export interface NAccordionProps {
   multiple?: boolean
   collapsible?: boolean
   reverse?: boolean
+  variantMode?: boolean
 
   items: (NButtonProps & {
     content: string

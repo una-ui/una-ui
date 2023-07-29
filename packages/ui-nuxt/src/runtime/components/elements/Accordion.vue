@@ -14,6 +14,7 @@ import NButton from './Button.vue'
 const { multiple, items } = withDefaults(defineProps<NAccordionProps>(), {
   trailingOpen: 'i-heroicons-chevron-up',
   multiple: false,
+  borderless: false,
 })
 
 function onEnter(element: Element, done: () => void) {
@@ -57,6 +58,7 @@ function onLeave(element: Element, done: () => void) {
 <template>
   <div
     :accordion="`~ ${accordion ?? ''}`"
+    :class="variantMode ? 'space-y-3' : 'accordion-(border divider)'"
   >
     <Disclosure
       v-for="(item, i) in items"
@@ -70,6 +72,7 @@ function onLeave(element: Element, done: () => void) {
       <DisclosureButton
         :ref="() => (buttonRefs[i] = close)"
         as="template"
+        :disabled="item.disabled"
         @click="closeOthers(i)"
       >
         <NButton
@@ -92,6 +95,7 @@ function onLeave(element: Element, done: () => void) {
             {{ item.label }}
           </span>
 
+          <!-- TODO convert to trailing prop -->
           <template #trailing>
             <span
               v-if="trailingOpen || trailingClose"
@@ -127,7 +131,9 @@ function onLeave(element: Element, done: () => void) {
           <DisclosurePanel
             static
             accordion="panel"
-            :class="nv?.accordionPanel ?? undefined"
+            :class="[nv?.accordionPanel ?? undefined,
+                     { 'border-0': variantMode },
+            ]"
           >
             {{ item.content }}
           </DisclosurePanel>

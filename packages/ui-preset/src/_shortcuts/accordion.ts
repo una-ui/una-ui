@@ -2,10 +2,12 @@ type AccordionPrefix = 'accordion'
 
 export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionPrefix, string> = {
   // base
-  'accordion': 'flex flex-col text-sm relative border border-base rounded-md divide-y divide-base',
+  'accordion': 'flex flex-col text-sm relative',
+  'accordion-border': 'border border-$c-divider rounded-md border-base',
+  'accordion-divider': 'divide-y divide-base',
   'accordion-item': 'w-full',
   'accordion-button': 'p-4 text-primary text-1em justify-between items-center',
-  'accordion-panel': 'border-t border-$c-divider shadow-inner p-4 text-1em pr-12 text-$c-gray-600',
+  'accordion-panel': 'text-muted border-t border-$c-divider shadow-inner p-4 text-1em pr-12 text-$c-gray-600',
 
   // icons
   'accordion-button-leading': 'mr-2 text-1.2em',
