@@ -2,17 +2,21 @@ import type { NButtonProps } from './button'
 
 export interface NAccordionProps {
   accordion?: string
-  openIcon?: string
-  closeIcon?: string
+  leading?: string
+  trailingOpen?: string
+  trailingClose?: string
 
   multiple?: boolean
   collapsible?: boolean
+  reverse?: boolean
 
   items: (NButtonProps & {
     content: string
+    trailingOpen?: string
+    trailingClose?: string
 
     open?: boolean
-    icon?: string
+    reverse?: boolean
     defaultOpen?: boolean
     closeOthers?: boolean
   })[]
@@ -22,5 +26,9 @@ export interface NAccordionProps {
     accordionItem?: string
     accordionButton?: string
     accordionPanel?: string
+    accordionButtonLeading?: string
+
+    accordionTrailingOpen?: string
+    accordionTrailingClose?: string
   }
 }

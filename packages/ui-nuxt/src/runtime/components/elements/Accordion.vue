@@ -7,11 +7,12 @@ import {
 
 import { ref } from 'vue'
 import type { NAccordionProps } from '../../types'
+import { omitProps } from '../../utils'
 import NIcon from './Icon.vue'
 import NButton from './Button.vue'
 
 const { multiple, items } = withDefaults(defineProps<NAccordionProps>(), {
-  openIcon: 'i-heroicons-chevron-down',
+  trailingOpen: 'i-heroicons-chevron-up',
   multiple: false,
 })
 
@@ -73,34 +74,40 @@ function onLeave(element: Element, done: () => void) {
       >
         <NButton
           accordion="button"
-          btn="base block"
           :class="nv?.accordionButton ?? undefined"
+          loading-placement="trailing"
+          v-bind="omitProps(item, ['content', 'open', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
+          btn="base block"
         >
           <span class="items-center" flex>
             <NIcon
-              v-if="item.icon"
+              v-if="leading || item.leading"
               accordion="button-leading"
-              :name="item.icon"
+              :class="[
+                nv?.accordionButtonLeading ?? undefined,
+              ]"
+              :name="item.leading ? item.leading : leading ?? ''"
               aria-hidden="true"
             />
-
             {{ item.label }}
           </span>
 
           <template #trailing>
             <span
-              v-if="openIcon || closeIcon"
+              v-if="trailingOpen || trailingClose"
               accordion="button-trailing"
-              :class="!closeIcon && open ? 'rotate-180' : undefined"
+              :class="trailingClose || !trailingClose && open
+                ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
+                : nv?.accordionTrailingOpen ?? 'accordion-trailing-open'"
             >
               <NIcon
-                v-if="!open || !closeIcon"
-                :name="openIcon"
+                v-if="(!open || !trailingClose) && trailingOpen"
+                :name="trailingOpen"
                 aria-hidden="true"
               />
               <NIcon
-                v-else-if="open && closeIcon"
-                :name="closeIcon"
+                v-else-if="open && trailingClose"
+                :name="trailingClose"
                 aria-hidden="true"
               />
             </span>

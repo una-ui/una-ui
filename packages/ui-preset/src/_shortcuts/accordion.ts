@@ -7,8 +7,13 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-button': 'p-4 text-primary text-1em justify-between items-center',
   'accordion-panel': 'border-t border-$c-divider shadow-inner p-4 text-1em pr-12 text-$c-gray-600',
 
-  'accordion-button-leading': 'mr-2',
-  'accordion-button-trailing': 'flex transform items-center text-.9em duration-400',
+  // icons
+  'accordion-button-leading': 'mr-2 text-1.2em',
+  'accordion-button-trailing': 'flex transition items-center text-1em duration-300',
+
+  // trailing
+  'accordion-trailing-open': '-rotate-180',
+  'accordion-trailing-close': 'rotate-0',
 
   // transition
   'accordion-enter-active': 'overflow-hidden transition-height duration-300',

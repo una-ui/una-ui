@@ -47,10 +47,11 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 
     <ReuseTemplate v-if="loading && loadingPlacement === 'leading'" />
     <slot
-      v-else-if="leading"
+      v-else
       name="leading"
     >
       <NIcon
+        v-if="leading"
         :name="leading"
         :class="[nv?.btnLeadingBase, nv?.btnIconTextBase]"
         btn="leading-base icon-text-base"
@@ -76,10 +77,11 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 
     <ReuseTemplate v-if="loading && loadingPlacement === 'trailing'" />
     <slot
-      v-else-if="trailing"
+      v-else
       name="trailing"
     >
       <NIcon
+        v-if="trailing"
         :name="trailing"
         :class="[nv?.btnLeadingBase, nv?.btnIconTextBase]"
         btn="trailing-base icon-text-base"
