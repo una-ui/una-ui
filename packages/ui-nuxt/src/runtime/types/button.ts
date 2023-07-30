@@ -35,7 +35,7 @@ export interface NButtonProps {
   /**
    * Change the button tag to `NuxtLink` component,
    * This allows you to use `NuxtLink` available props
-   * see https://nuxt.com/docs/api/components/nuxt-link#props
+   * @see https://nuxt.com/docs/api/components/nuxt-link#props
    * @example
    * to="/"
   */
@@ -49,7 +49,7 @@ export interface NButtonProps {
   /**
    * Allows you to add `NexveltUI` preset properties to the button,
    * Think of it as a shortcut for adding classes to the button preset.
-   * see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
    * @example
    * btn="solid-green block square"
   */
@@ -70,7 +70,7 @@ export interface NButtonProps {
   trailing?: string
   /**
    * `NexveltUI` preset configuration
-   * see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
   */
   nv?: {
     btnLabelBase?: string

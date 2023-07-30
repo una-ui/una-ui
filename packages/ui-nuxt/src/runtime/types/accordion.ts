@@ -2,35 +2,61 @@ import type { NButtonProps } from './button'
 
 export interface NAccordionProps {
   /**
-   * Allows you to add `NexveltUI` preset properties to the button,
-   * Think of it as a shortcut for adding classes to the button preset.
-   * see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
+   * Add leading icon to accordion button item,
+   * Accepts icon name and utility classes
    * @example
-   * btn="solid-green block square"
+   * leading='i-heroicons-information-circle text-info'
   */
-  accordion?: string
   leading?: string
+  /**
+   * Update leading icon when accordion button item is open,
+   * Accepts icon name and utility classes
+  */
   trailingOpen?: string
+  /**
+   * Update leading icon when accordion button item is closed,
+   * Accepts icon name and utility classes
+  */
   trailingClose?: string
-
+  /**
+   * Allow multiple accordion items to be open at the same time
+   * @default false
+  */
   multiple?: boolean
+  /**
+   * Allow accordion item to be open by default
+   * @default false
+  */
   collapsible?: boolean
+  /**
+   * Swap accordion button leading and trailing icons
+   * @default false
+  */
   reverse?: boolean
+  /**
+   * Removes border and divider from accordion
+   * @default false
+  */
   variantMode?: boolean
-
+  /**
+   * List of items to be rendered,
+   * It extends the `NButtonProps` interface
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-nuxt/src/runtime/types/button.ts
+  */
   items: (NButtonProps & {
     content: string
     trailingOpen?: string
     trailingClose?: string
 
     open?: boolean
-    reverse?: boolean
     defaultOpen?: boolean
     closeOthers?: boolean
   })[]
-
+  /**
+   * `NexveltUI` preset configuration
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/accordion.ts
+  */
   nv?: {
-    accordionWrapper?: string
     accordionItem?: string
     accordionButton?: string
     accordionPanel?: string
