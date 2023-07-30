@@ -41,7 +41,7 @@ export interface NAccordionProps {
   /**
    * List of items to be rendered,
    * It extends the `NButtonProps` interface
-   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-nuxt/src/runtime/types/button.ts
+   * @see {@link https://github.com/nexvelt/ui/blob/main/packages/ui-nuxt/src/runtime/types/button.ts}
   */
   items: (NButtonProps & {
     content: string
