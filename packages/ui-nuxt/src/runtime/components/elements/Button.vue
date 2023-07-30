@@ -29,6 +29,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :type="to ? null : type"
     :class="[
       !hasVariant ? `btn-solid` : null,
+      reverse ? `btn-reverse` : null,
     ]"
     :disabled="to ? null : disabled || loading"
     :btn="`~ ${btn ?? ''}`"

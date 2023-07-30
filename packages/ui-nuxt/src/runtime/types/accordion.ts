@@ -1,6 +1,13 @@
 import type { NButtonProps } from './button'
 
 export interface NAccordionProps {
+  /**
+   * Allows you to add `NexveltUI` preset properties to the button,
+   * Think of it as a shortcut for adding classes to the button preset.
+   * see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
+   * @example
+   * btn="solid-green block square"
+  */
   accordion?: string
   leading?: string
   trailingOpen?: string

@@ -2,7 +2,7 @@ type ButtonPrefix = 'btn'
 
 export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, string> = {
   // base
-  'btn': 'gap-1 btn-rectangle rounded inline-flex justify-center items-center btn-disabled text-sm font-semibold cursor-pointer',
+  'btn': 'bg-transparent gap-1 btn-rectangle rounded inline-flex justify-center items-center btn-disabled text-sm font-semibold cursor-pointer',
   'btn-disabled': 'disabled:opacity-75 disabled:cursor-not-allowed',
   'btn-label-base': '',
   'btn-leading-base': '-ml-0.2em mr-0.2em',
@@ -11,6 +11,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
 
   // options
   'btn-block': 'w-full',
+  'btn-reverse': 'flex-row-reverse',
 
   // loading
   'btn-loading-base': 'animate-spin',

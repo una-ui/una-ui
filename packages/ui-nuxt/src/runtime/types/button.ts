@@ -23,6 +23,11 @@ export interface NButtonProps {
   */
   disabled?: boolean
   /**
+   * Swap the position of the leading and trailing icons
+   * @default false
+  */
+  reverse?: boolean
+  /**
    * Show loading state on button
    * @default false
   */

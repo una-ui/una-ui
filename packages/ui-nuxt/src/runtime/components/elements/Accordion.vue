@@ -75,12 +75,23 @@ function onLeave(element: Element, done: () => void) {
       >
         <NButton
           accordion="button"
-          :class="nv?.accordionButton ?? undefined"
+          :class="[
+            nv?.accordionButton ?? undefined,
+          ]"
+          :reverse="reverse"
           loading-placement="trailing"
           v-bind="omitProps(item, ['content', 'open', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
           btn="base block"
         >
-          <span class="items-center" flex>
+          <span
+            class="w-full items-center space-x-2"
+            :class="[
+              (reverse && item.reverse) && (item.leading || leading)
+                ? 'flex-row-reverse justify-between'
+                : 'flex-row',
+            ]"
+            flex
+          >
             <NIcon
               v-if="leading || item.leading"
               accordion="button-leading"
@@ -90,7 +101,11 @@ function onLeave(element: Element, done: () => void) {
               :name="item.leading ? item.leading : leading ?? ''"
               aria-hidden="true"
             />
-            {{ item.label }}
+
+            <span>
+              {{ item.label }}
+            </span>
+
           </span>
 
           <!-- TODO convert to trailing prop -->
@@ -129,8 +144,9 @@ function onLeave(element: Element, done: () => void) {
           <DisclosurePanel
             static
             accordion="panel"
-            :class="[nv?.accordionPanel ?? undefined,
-                     { 'border-0': variantMode },
+            :class="[
+              nv?.accordionPanel ?? undefined,
+              { 'border-0': variantMode },
             ]"
           >
             {{ item.content }}
