@@ -19,9 +19,13 @@ const items = [
 <template>
   <NAccordion
     :items="items"
-    class="bg-muted"
+    class="rounded-none bg-muted"
+    reverse
+    trailing-open="i-heroicons-chevron-right"
     :nv="{
       accordionPanel: 'bg-base',
+      accordionTrailingClose: 'rotate-90',
+      accordionTrailingOpen: 'rotate-0',
     }"
   />
 </template>

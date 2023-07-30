@@ -61,7 +61,7 @@ const items2 = [
     </span>
 
     <NAccordion
-      :items="items2"
+      :items="items1"
       trailing-open="i-heroicons-chevron-left"
       :nv="{
         accordionTrailingClose: '-rotate-90',
@@ -76,7 +76,7 @@ const items2 = [
     </span>
 
     <NAccordion
-      :items="items2"
+      :items="items1"
       trailing-open="i-twemoji-smiling-face-with-sunglasses"
       trailing-close="i-twemoji-loudly-crying-face"
     />
