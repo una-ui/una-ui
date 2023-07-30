@@ -86,7 +86,7 @@ function onLeave(element: Element, done: () => void) {
           <span
             class="w-full items-center space-x-2"
             :class="[
-              (reverse && item.reverse) && (item.leading || leading)
+              (item.reverse || (reverse && item.reverse !== false)) && (item.leading || leading)
                 ? 'flex-row-reverse justify-between'
                 : 'flex-row',
             ]"
