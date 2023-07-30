@@ -1,17 +1,18 @@
 <script setup lang="ts">
 const items = [
   {
-    label: 'How do I get started?',
+    label: 'This will be reversed',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
     defaultOpen: true,
   },
   {
-    label: 'What is your return policy?',
+    label: 'This will be reversed',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
   {
-    label: 'Can I exchange an item?',
+    label: 'This will not be reversed',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
+    reverse: false, // this is priority than global reverse
   },
 ]
 </script>
