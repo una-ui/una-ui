@@ -31,12 +31,25 @@ const items = [
 </script>
 
 <template>
-  <NAccordion
-    variant-mode
-    :items="items"
-    :nv="{
-      accordionButton: 'btn-(outline rectangle) rounded-lg',
-      accordionPanel: 'px-0',
-    }"
-  />
+  <div flex="~ col" gap-4>
+    <NAccordion
+      variant-mode
+      :items="items"
+      :nv="{
+        accordionButton: 'btn-(outline rectangle) rounded-lg',
+        accordionPanel: 'px-0',
+      }"
+    />
+
+    <hr border-base>
+
+    <NAccordion
+      variant-mode
+      :items="items"
+      :nv="{
+        accordionButton: 'btn-(soft-lime rectangle) rounded-none',
+        accordionPanel: 'px-0',
+      }"
+    />
+  </div>
 </template>

@@ -18,17 +18,17 @@ const items2 = [
   {
     label: 'How do I get started?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
-    leading: 'i-heroicons-information-circle',
+    leading: 'i-heroicons-information-circle text-info',
   },
   {
     label: 'What is your return policy?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
-    leading: 'i-heroicons-shield-check',
+    leading: 'i-heroicons-shield-check text-green-600',
   },
   {
     label: 'Can I exchange an item?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
-    leading: 'i-heroicons-shopping-cart',
+    leading: 'i-heroicons-shopping-cart text-amber',
   },
 ]
 </script>
