@@ -1,16 +1,19 @@
 export interface NButtonProps {
   /**
-   * Change the button type
+   * Change the button type.
+   *
    * @default 'button'
   */
   type?: 'button' | 'submit' | 'reset'
   /**
-   * Change the loading placement of the button
+   * Change the loading placement of the button.
+   *
    * @default 'leading'
   */
   loadingPlacement?: 'leading' | 'trailing' | 'label'
   /**
-   * Convert `label` prop to icon component
+   * Convert `label` prop to icon component.
+   *
    * @default false
    * @example
    * icon
@@ -18,12 +21,14 @@ export interface NButtonProps {
   */
   icon?: boolean
   /**
-   * Disable the button
+   * Disable the button.
+   *
    * @default false
   */
   disabled?: boolean
   /**
-   * Swap the position of the leading and trailing icons
+   * Swap the position of the leading and trailing icons.
+   *
    * @default false
   */
   reverse?: boolean
@@ -34,7 +39,8 @@ export interface NButtonProps {
   loading?: boolean
   /**
    * Change the button tag to `NuxtLink` component,
-   * This allows you to use `NuxtLink` available props
+   * This allows you to use `NuxtLink` available props.
+   *
    * @see https://nuxt.com/docs/api/components/nuxt-link#props
    * @example
    * to="/"
@@ -42,13 +48,15 @@ export interface NButtonProps {
   to?: string
   /**
    * Add a label to the button.
+   *
    * @example
    * label="Click me"
   */
   label?: string
   /**
    * Allows you to add `NexveltUI` preset properties to the button,
-   * Think of it as a shortcut for adding classes to the button preset.
+   * Think of it as a shortcut for adding options or variants to the presset if available.
+   *
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
    * @example
    * btn="solid-green block square"
@@ -57,19 +65,22 @@ export interface NButtonProps {
   /**
    * Add leading icon the button,
    * This also allows you to add utility classes to the icon.
+   *
    * @example
    * leading="i-heroicons-information-circle text-green-500 dark:text-green-400 text-2xl"
    */
   leading?: string
   /**
    * Add trailing icon the button.
-   * This also allows you to add utility classes to the icon
+   * This also allows you to add utility classes to the icon.
+   *
    * @example
    * trailing="i-heroicons-information-circle text-green-500 dark:text-green-400 text-2xl"
    */
   trailing?: string
   /**
    * `NexveltUI` preset configuration
+   *
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
   */
   nv?: {
