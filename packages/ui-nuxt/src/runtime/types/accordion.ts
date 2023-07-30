@@ -6,9 +6,7 @@ export interface NAccordionProps {
    * Think of it as a shortcut for adding options or variants to the preset if available.
    *
    * By default, we don't add any options or variants to the accordion,
-   * But you can add your own options or variants to the accordion.
-   *
-   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/accordion.ts
+   * But you can add your oww in the configuration file.
   */
   accordion?: string
   /**
