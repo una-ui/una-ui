@@ -55,7 +55,7 @@ function onLeave(element: Element, done: () => void) {
 
 <template>
   <div
-    :accordion="`~ ${accordion ?? ''}`"
+    accordion
     :class="variantMode ? 'space-y-3' : 'accordion-(border divider)'"
   >
     <Disclosure
