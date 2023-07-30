@@ -22,6 +22,7 @@ const items = [
 <template>
   <div mx-auto mt-4 container>
     <NAccordion
+      class="divide-y divide-base"
       variant-mode
       :items="items"
     />
