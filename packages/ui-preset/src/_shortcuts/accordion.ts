@@ -3,7 +3,7 @@ type AccordionPrefix = 'accordion'
 export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionPrefix, string> = {
   // base
   'accordion': 'flex flex-col text-sm relative',
-  'accordion-border': 'border border-$c-divider rounded-md border-base',
+  'accordion-border': 'border border-base rounded-md',
   'accordion-divider': 'divide-y divide-base',
   'accordion-item': 'w-full',
   'accordion-button': 'p-4 text-primary text-1em justify-start',
