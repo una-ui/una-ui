@@ -105,5 +105,7 @@ export interface NAccordionProps {
     accordionButtonLeading?: string
     accordionTrailingOpen?: string
     accordionTrailingClose?: string
+    accordionEnterActive?: string
+    accordionLeaveActive?: string
   }
 }

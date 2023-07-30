@@ -73,68 +73,61 @@ function onLeave(element: Element, done: () => void) {
         :disabled="item.disabled"
         @click="closeOthers(i)"
       >
-        <NButton
-          accordion="button"
-          :class="[
-            nv?.accordionButton ?? undefined,
-          ]"
-          :reverse="reverse"
-          loading-placement="trailing"
-          v-bind="omitProps(item, ['content', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
-          btn="base block"
-        >
-          <span
-            class="w-full items-center space-x-2"
+        <slot :item="item" :index="i" :open="open" :close="close">
+          <NButton
+            accordion="button"
             :class="[
-              (item.reverse || (reverse && item.reverse !== false)) && (item.leading || leading)
-                ? 'flex-row-reverse justify-between'
-                : 'flex-row',
+              nv?.accordionButton ?? undefined,
             ]"
-            flex
+            :reverse="(reverse && item.reverse !== false) || item.reverse"
+            loading-placement="trailing"
+            v-bind="omitProps(item, ['content', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
+            btn="base block"
+            :label="item.label"
+            :nv="{
+              btnLabelBase: 'accordion-label',
+            }"
           >
-            <NIcon
-              v-if="leading || item.leading"
-              accordion="button-leading"
-              :class="[
-                nv?.accordionButtonLeading ?? undefined,
-              ]"
-              :name="item.leading ? item.leading : leading ?? ''"
-              aria-hidden="true"
-            />
-
-            <span>
-              {{ item.label }}
-            </span>
-
-          </span>
-
-          <!-- TODO convert to trailing prop -->
-          <template #trailing>
-            <span
-              v-if="trailingOpen || trailingClose"
-              accordion="button-trailing"
-              :class="trailingClose || !trailingClose && open
-                ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
-                : nv?.accordionTrailingOpen ?? 'accordion-trailing-open'"
-            >
+            <template #leading>
               <NIcon
-                v-if="(open || !trailingClose) && trailingOpen"
-                :name="trailingOpen"
+                v-if="leading || item.leading"
+                accordion="button-leading"
+                :class="[
+                  nv?.accordionButtonLeading ?? undefined,
+                ]"
+                :name="item.leading ? item.leading : leading ?? ''"
                 aria-hidden="true"
               />
-              <NIcon
-                v-else-if="!open && trailingClose"
-                :name="trailingClose"
-                aria-hidden="true"
-              />
-            </span>
-          </template>
-        </NButton>
+            </template>
+
+            <!-- TODO convert to trailing prop -->
+            <template #trailing>
+              <span
+                v-if="trailingOpen || trailingClose"
+                accordion="button-trailing"
+                :class="trailingClose || !trailingClose && open
+                  ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
+                  : nv?.accordionTrailingOpen ?? 'accordion-trailing-open'"
+              >
+                <NIcon
+                  v-if="(open || !trailingClose) && trailingOpen"
+                  :name="trailingOpen"
+                  aria-hidden="true"
+                />
+                <NIcon
+                  v-else-if="!open && trailingClose"
+                  :name="trailingClose"
+                  aria-hidden="true"
+                />
+              </span>
+            </template>
+          </NButton>
+        </slot>
       </DisclosureButton>
 
       <Transition
-        enter-active-class="accordion-enter-active"
-        leave-active-class="accordion-leave-active"
+        :enter-active-class="nv?.accordionEnterActive ?? 'accordion-enter-active'"
+        :leave-active-class="nv?.accordionLeaveActive ?? 'accordion-leave-active'"
         @enter="onEnter"
         @after-enter="onAfterEnter"
         @before-leave="onBeforeLeave"
@@ -143,13 +136,18 @@ function onLeave(element: Element, done: () => void) {
         <div v-show="open">
           <DisclosurePanel
             static
-            accordion="panel"
-            :class="[
-              nv?.accordionPanel ?? undefined,
-              { 'border-0': variantMode },
-            ]"
           >
-            {{ item.content }}
+            <slot name="content" :item="item" :index="i" :open="open" :close="close">
+              <div
+                accordion="panel"
+                :class="[
+                  nv?.accordionPanel ?? undefined,
+                  { 'border-0': variantMode },
+                ]"
+              >
+                {{ item.content }}
+              </div>
+            </slot>
           </DisclosurePanel>
         </div>
       </Transition>
