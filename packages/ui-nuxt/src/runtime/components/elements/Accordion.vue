@@ -55,7 +55,7 @@ function onLeave(element: Element, done: () => void) {
 
 <template>
   <div
-    accordion
+    :accordion="`~ ${accordion ?? ''}`"
     :class="variantMode ? 'space-y-3' : 'accordion-(border divider)'"
   >
     <Disclosure
@@ -64,7 +64,7 @@ function onLeave(element: Element, done: () => void) {
       v-slot="{ open, close }"
       as="div"
       accordion="item"
-      :default-open="item.defaultOpen ?? false"
+      :default-open="(item.defaultOpen !== false && defaultOpen || item.defaultOpen) ?? false"
       :class="nv?.accordionItem ?? undefined"
     >
       <DisclosureButton

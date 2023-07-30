@@ -40,7 +40,7 @@ export interface NAccordionProps {
    *
    * @default false
   */
-  collapsible?: boolean
+  defaultOpen?: boolean
   /**
    * Swap accordion button leading and trailing icons
    *
@@ -81,10 +81,19 @@ export interface NAccordionProps {
      * trailingClose='i-heroicons-information-circle text-info'
     */
     trailingClose?: string
-
-    open?: boolean
+    /**
+     * Allow accordion item to be open by default
+     *
+     * @default false
+    */
     defaultOpen?: boolean
+    /**
+     * Close other accordion items when specific item is open
+     *
+     * @default false
+    */
     closeOthers?: boolean
+    open?: boolean
   })[]
 
   /**
