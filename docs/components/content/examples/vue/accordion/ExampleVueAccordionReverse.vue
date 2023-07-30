@@ -20,5 +20,6 @@ const items = [
   <NAccordion
     :items="items"
     leading="i-heroicons-question-mark-circle"
+    reverse
   />
 </template>
