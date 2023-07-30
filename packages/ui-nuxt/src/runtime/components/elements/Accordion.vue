@@ -80,7 +80,7 @@ function onLeave(element: Element, done: () => void) {
           ]"
           :reverse="reverse"
           loading-placement="trailing"
-          v-bind="omitProps(item, ['content', 'open', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
+          v-bind="omitProps(item, ['content', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
           btn="base block"
         >
           <span

@@ -93,7 +93,6 @@ export interface NAccordionProps {
      * @default false
     */
     closeOthers?: boolean
-    open?: boolean
   })[]
 
   /**
