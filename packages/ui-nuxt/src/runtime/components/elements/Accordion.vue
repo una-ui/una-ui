@@ -8,7 +8,7 @@ import { createReusableTemplate } from '@vueuse/core'
 
 import { ref } from 'vue'
 import type { NAccordionProps } from '../../types'
-import { omitProps } from '../../utils'
+import { getPriority, omitProps } from '../../utils'
 import NIcon from './Icon.vue'
 import NButton from './Button.vue'
 
@@ -67,7 +67,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       v-slot="{ open, close }"
       as="div"
       accordion="item"
-      :default-open="(item.defaultOpen !== false && defaultOpen || item.defaultOpen) ?? false"
+      :default-open="getPriority(item.defaultOpen, defaultOpen)"
       :class="nv?.accordionItem ?? undefined"
     >
       <DisclosureButton
@@ -82,7 +82,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
             :class="[
               nv?.accordionButton ?? undefined,
             ]"
-            :reverse="(reverse && item.reverse !== false) || item.reverse"
+            :reverse="getPriority(item.reverse, reverse)"
             loading-placement="trailing"
             v-bind="omitProps(item, ['content', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
             btn="base block"
@@ -92,13 +92,14 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
             }"
           >
             <template #leading>
+              <!-- TODO fix conditional statement -->
               <NIcon
                 v-if="leading || item.leading"
                 accordion="leading-base"
                 :class="[
                   nv?.accordionLeadingBase ?? undefined,
                 ]"
-                :name="item.leading ? item.leading : leading ?? ''"
+                :name="getPriority(item.leading, leading) ?? ''"
                 aria-hidden="true"
               />
             </template>
@@ -109,7 +110,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
                 v-if="trailingOpen || trailingClose"
                 accordion="trailing-base"
                 :class="[
-                  trailingClose || !trailingClose && open
+                  trailingClose || (!trailingClose && open)
                     ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
                     : nv?.accordionTrailingOpen ?? 'accordion-trailing-open',
                   nv?.accordionTrailingBase ?? undefined,
@@ -153,7 +154,9 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
         @before-leave="onBeforeLeave"
         @leave="onLeave"
       >
-        <DisclosurePanel v-if="!mounted">
+        <DisclosurePanel
+          v-if="!getPriority(item.mounted, mounted)"
+        >
           <ReuseTemplate />
         </DisclosurePanel>
         <DisclosurePanel
