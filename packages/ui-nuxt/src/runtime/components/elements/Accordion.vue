@@ -58,7 +58,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 
 <template>
   <div
-    :accordion="`~ ${accordion ?? ''}`"
+    :accordion="`~ ${getPriority(accordion, 'accordion')}`"
     :class="variantMode ? 'space-y-3' : 'accordion-(border divider)'"
   >
     <Disclosure
@@ -107,9 +107,9 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
                 accordion="trailing-base"
                 :class="[
                   trailingClose || (!trailingClose && open)
-                    ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
-                    : nv?.accordionTrailingOpen ?? 'accordion-trailing-open',
-                  nv?.accordionTrailingBase ?? undefined,
+                    ? getPriority(nv?.accordionTrailingClose, 'accordion-trailing-close')
+                    : getPriority(nv?.accordionTrailingOpen, 'accordion-trailing-open'),
+                  nv?.accordionTrailingBase,
                 ]"
               >
                 <NIcon
@@ -133,8 +133,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
           <div
             accordion="panel"
             :class="[
-              nv?.accordionPanel ?? undefined,
-              { 'border-0': variantMode },
+              nv?.accordionPanel,
+              { 'border-t-0': variantMode },
             ]"
           >
             {{ item.content }}
