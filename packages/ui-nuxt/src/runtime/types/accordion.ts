@@ -102,7 +102,7 @@ export interface NAccordionProps {
     accordionItem?: string
     accordionButton?: string
     accordionPanel?: string
-    accordionButtonLeading?: string
+    accordionLeadingBase?: string
     accordionTrailingOpen?: string
     accordionTrailingClose?: string
     accordionEnterActive?: string

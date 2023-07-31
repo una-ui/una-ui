@@ -85,15 +85,15 @@ function onLeave(element: Element, done: () => void) {
             btn="base block"
             :label="item.label"
             :nv="{
-              btnLabelBase: 'accordion-label',
+              btnLabelBase: 'accordion-label-base',
             }"
           >
             <template #leading>
               <NIcon
                 v-if="leading || item.leading"
-                accordion="leading"
+                accordion="leading-base"
                 :class="[
-                  nv?.accordionButtonLeading ?? undefined,
+                  nv?.accordionLeadingBase ?? undefined,
                 ]"
                 :name="item.leading ? item.leading : leading ?? ''"
                 aria-hidden="true"
@@ -104,7 +104,7 @@ function onLeave(element: Element, done: () => void) {
             <template #trailing>
               <span
                 v-if="trailingOpen || trailingClose"
-                accordion="trailing"
+                accordion="trailing-base"
                 :class="trailingClose || !trailingClose && open
                   ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
                   : nv?.accordionTrailingOpen ?? 'accordion-trailing-open'"

@@ -8,15 +8,11 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-item': 'w-full',
   'accordion-button': 'p-4 text-primary text-1em justify-start',
   'accordion-panel': 'text-muted border-t border-$c-divider p-4 text-1em pr-12 text-$c-gray-600',
+  'accordion-leading-base': 'text-1.2em',
+  'accordion-trailing-base': 'flex transition items-center text-1em duration-300',
+  'accordion-label-base': 'flex w-full',
 
-  // label
-  'accordion-label': 'flex w-full',
-
-  // icons
-  'accordion-leading': 'text-1.2em',
-  'accordion-trailing': 'flex transition items-center text-1em duration-300',
-
-  // trailing
+  // trailing transition
   'accordion-trailing-open': '-rotate-180',
   'accordion-trailing-close': 'rotate-0',
 
