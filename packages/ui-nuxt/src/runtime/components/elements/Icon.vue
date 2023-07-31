@@ -5,5 +5,5 @@ defineProps<NVIconProps>()
 </script>
 
 <template>
-  <span class="flex-none" :class="name" />
+  <span icon-base :class="name" />
 </template>
