@@ -16,6 +16,9 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-trailing-open': '-rotate-180',
   'accordion-trailing-close': 'rotate-0',
 
+  // icons
+  'accordion-trailing-icon': 'i-heroicons-chevron-up',
+
   // transition
   'accordion-enter-active': 'overflow-hidden transition-height duration-300',
   'accordion-leave-active': 'overflow-hidden transition-height duration-300',

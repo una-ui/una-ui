@@ -51,6 +51,14 @@ export interface NAccordionProps {
    * @default false
   */
   variantMode?: boolean
+  /**
+   * By default, the accordion is unmounted for performance reasons,
+   * This means that the accordion will not be rendered until it is opened,
+   * If you want to render the accordion when the page loads, you can use the `mounted` prop.
+   *
+   * @default false
+  */
+  mounted?: boolean
 
   /**
    * List of items to be rendered,
@@ -58,40 +66,7 @@ export interface NAccordionProps {
    *
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-nuxt/src/runtime/types/button.ts
   */
-  items: (NButtonProps & {
-    /**
-     * Accordion item content
-    */
-    content: string
-    /**
-     * Update item leading icon when accordion button item is open,
-     * Accepts icon name and utility classes
-     *
-     * @example
-     * trailingOpen='i-heroicons-information-circle text-info'
-    */
-    trailingOpen?: string
-    /**
-     * Update item leading icon when accordion button item is closed,
-     * Accepts icon name and utility classes
-     *
-     * @example
-     * trailingClose='i-heroicons-information-circle text-info'
-    */
-    trailingClose?: string
-    /**
-     * Allow accordion item to be open by default
-     *
-     * @default false
-    */
-    defaultOpen?: boolean
-    /**
-     * Close other accordion items when item is open
-     *
-     * @default false
-    */
-    closeOthers?: boolean
-  })[]
+  items: NAccordionItemProps[]
 
   /**
    * `NexveltUI` preset configuration
@@ -103,9 +78,45 @@ export interface NAccordionProps {
     accordionButton?: string
     accordionPanel?: string
     accordionLeadingBase?: string
+    accordionTrailingBase?: string
     accordionTrailingOpen?: string
     accordionTrailingClose?: string
     accordionEnterActive?: string
     accordionLeaveActive?: string
   }
+}
+
+export interface NAccordionItemProps extends NButtonProps {
+  /**
+     * Accordion item content
+    */
+  content?: string
+  /**
+   * Update item leading icon when accordion button item is open,
+   * Accepts icon name and utility classes
+   *
+   * @example
+   * trailingOpen='i-heroicons-information-circle text-info'
+  */
+  trailingOpen?: string
+  /**
+   * Update item leading icon when accordion button item is closed,
+   * Accepts icon name and utility classes
+   *
+   * @example
+   * trailingClose='i-heroicons-information-circle text-info'
+  */
+  trailingClose?: string
+  /**
+   * Allow accordion item to be open by default
+   *
+   * @default false
+  */
+  defaultOpen?: boolean
+  /**
+   * Close other accordion items when item is open
+   *
+   * @default false
+  */
+  closeOthers?: boolean
 }

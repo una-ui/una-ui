@@ -4,6 +4,7 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from '@headlessui/vue'
+import { createReusableTemplate } from '@vueuse/core'
 
 import { ref } from 'vue'
 import type { NAccordionProps } from '../../types'
@@ -12,16 +13,8 @@ import NIcon from './Icon.vue'
 import NButton from './Button.vue'
 
 const props = withDefaults(defineProps<NAccordionProps>(), {
-  trailingOpen: 'i-heroicons-chevron-up',
+  trailingOpen: 'accordion-trailing-icon',
 })
-
-function onEnter(element: Element, done: () => void) {
-  const el = element as HTMLElement
-  el.style.height = '0'
-  el.offsetHeight // eslint-disable-line no-unused-expressions
-  el.style.height = `${element.scrollHeight}px`
-  el.addEventListener('transitionend', done, { once: true })
-}
 
 const buttonRefs = ref<(() => void)[]>([])
 
@@ -32,6 +25,14 @@ function closeOthers(index: number) {
   buttonRefs.value
     .filter((_, i) => i !== index)
     .forEach(close => close())
+}
+
+function onEnter(element: Element, done: () => void) {
+  const el = element as HTMLElement
+  el.style.height = '0'
+  el.offsetHeight // eslint-disable-line no-unused-expressions
+  el.style.height = `${element.scrollHeight}px`
+  el.addEventListener('transitionend', done, { once: true })
 }
 
 function onAfterEnter(element: Element) {
@@ -51,6 +52,8 @@ function onLeave(element: Element, done: () => void) {
 
   el.addEventListener('transitionend', done, { once: true })
 }
+
+const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
 
 <template>
@@ -105,9 +108,12 @@ function onLeave(element: Element, done: () => void) {
               <span
                 v-if="trailingOpen || trailingClose"
                 accordion="trailing-base"
-                :class="trailingClose || !trailingClose && open
-                  ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
-                  : nv?.accordionTrailingOpen ?? 'accordion-trailing-open'"
+                :class="[
+                  trailingClose || !trailingClose && open
+                    ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
+                    : nv?.accordionTrailingOpen ?? 'accordion-trailing-open',
+                  nv?.accordionTrailingBase ?? undefined,
+                ]"
               >
                 <NIcon
                   v-if="(open || !trailingClose) && trailingOpen"
@@ -125,6 +131,20 @@ function onLeave(element: Element, done: () => void) {
         </slot>
       </DisclosureButton>
 
+      <DefineTemplate>
+        <slot name="content" :item="item" :index="i" :open="open" :close="close">
+          <div
+            accordion="panel"
+            :class="[
+              nv?.accordionPanel ?? undefined,
+              { 'border-0': variantMode },
+            ]"
+          >
+            {{ item.content }}
+          </div>
+        </slot>
+      </DefineTemplate>
+
       <Transition
         :enter-active-class="nv?.accordionEnterActive ?? 'accordion-enter-active'"
         :leave-active-class="nv?.accordionLeaveActive ?? 'accordion-leave-active'"
@@ -133,21 +153,16 @@ function onLeave(element: Element, done: () => void) {
         @before-leave="onBeforeLeave"
         @leave="onLeave"
       >
-        <div v-show="open">
-          <DisclosurePanel static>
-            <slot name="content" :item="item" :index="i" :open="open" :close="close">
-              <div
-                accordion="panel"
-                :class="[
-                  nv?.accordionPanel ?? undefined,
-                  { 'border-0': variantMode },
-                ]"
-              >
-                {{ item.content }}
-              </div>
-            </slot>
-          </DisclosurePanel>
-        </div>
+        <DisclosurePanel v-if="!mounted">
+          <ReuseTemplate />
+        </DisclosurePanel>
+        <DisclosurePanel
+          v-else
+          v-show="open"
+          static
+        >
+          <ReuseTemplate />
+        </DisclosurePanel>
       </Transition>
     </Disclosure>
   </div>
