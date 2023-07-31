@@ -13,8 +13,8 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-label': 'flex w-full',
 
   // icons
-  'accordion-button-leading': 'text-1.2em',
-  'accordion-button-trailing': 'flex transition items-center text-1em duration-300',
+  'accordion-leading': 'text-1.2em',
+  'accordion-trailing': 'flex transition items-center text-1em duration-300',
 
   // trailing
   'accordion-trailing-open': '-rotate-180',
