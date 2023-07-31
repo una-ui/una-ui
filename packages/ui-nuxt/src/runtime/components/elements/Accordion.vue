@@ -134,9 +134,7 @@ function onLeave(element: Element, done: () => void) {
         @leave="onLeave"
       >
         <div v-show="open">
-          <DisclosurePanel
-            static
-          >
+          <DisclosurePanel static>
             <slot name="content" :item="item" :index="i" :open="open" :close="close">
               <div
                 accordion="panel"
