@@ -35,8 +35,10 @@ export function pickProps<T extends Record<string, any>>(obj: T, propsToPick: Ar
 }
 
 /**
-  * we want to get the first non-undefined value,
-  * useful for arguments with multiple sources (local, global, default).
+  * We want to get the first non-undefined value,
+  * useful for arguments with multiple sources (local, global, default),
+  * this is basically an alternative for `local ?? global ?? default`.
+  * I prefer this approach because it's more readable and easier to extend.
   *
   * @param args - values to check
   * @example
