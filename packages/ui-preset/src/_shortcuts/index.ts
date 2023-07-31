@@ -1,4 +1,5 @@
 import type { Preset, StaticShortcutMap } from '@unocss/core'
+import { icon } from './icon'
 import { accordion } from './accordion'
 import { button } from './button'
 import { formGroup } from './form-group'
@@ -11,4 +12,5 @@ export const shortcuts = [
   ...button,
   ...formGroup,
   ...input,
+  ...icon,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
