@@ -73,7 +73,7 @@ function onLeave(element: Element, done: () => void) {
         :disabled="item.disabled"
         @click="closeOthers(i)"
       >
-        <slot :item="item" :index="i" :open="open" :close="close">
+        <slot name="label" :item="item" :index="i" :open="open" :close="close">
           <NButton
             accordion="button"
             :class="[
