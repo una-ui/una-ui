@@ -33,3 +33,23 @@ export function pickProps<T extends Record<string, any>>(obj: T, propsToPick: Ar
   propsToPick.forEach(prop => newObj[prop] = obj[prop])
   return newObj
 }
+
+/**
+  * we want to get the first non-undefined value,
+  * useful for props with multiple sources (default, global, local).
+  *
+  * @param args - values to check
+  * @example
+  * ```ts
+  * const value = getPriority(specificValue, globalValue, defaultValue)
+  * ```
+  * @returns first non-undefined value
+*/
+export function getPriority<T>(...args: (T | undefined)[]): T | undefined {
+  for (const arg of args) {
+    if (arg !== undefined)
+      return arg
+  }
+
+  return undefined
+}
