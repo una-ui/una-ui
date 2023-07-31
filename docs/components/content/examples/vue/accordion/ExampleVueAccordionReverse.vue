@@ -12,7 +12,7 @@ const items = [
   {
     label: 'This will not be reversed',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
-    reverse: false, // this is priority than global reverse
+    reverse: false,
   },
 ]
 </script>
