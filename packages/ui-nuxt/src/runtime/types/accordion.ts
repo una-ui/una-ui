@@ -119,4 +119,11 @@ export interface NAccordionItemProps extends NButtonProps {
    * @default false
   */
   closeOthers?: boolean
+  /**
+   * By default, all the accordion item is unmounted for performance reasons,
+   * You can use the `mounted` prop to render the accordion specific on item.
+   *
+   * @default false
+  */
+  mounted?: boolean
 }
