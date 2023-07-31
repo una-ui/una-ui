@@ -21,11 +21,7 @@ const items = [
 
 <template>
   <div mx-auto mt-4 container>
-    <NAccordion
-      class="divide-y divide-base"
-      variant-mode
-      :items="items"
-    />
+    <Tester />
 
     <div class="mx-auto h-screen flex flex-col items-center justify-center gap-4 container">
       <ColorMode />
