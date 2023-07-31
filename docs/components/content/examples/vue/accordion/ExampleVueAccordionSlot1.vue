@@ -20,7 +20,7 @@ const items = [
     :items="items"
     variant-mode
   >
-    <template #default="{ item, index, open }">
+    <template #label="{ item, index, open }">
       <NButton
         btn="solid-gray block"
         :class="[
