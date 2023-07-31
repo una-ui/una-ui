@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     nexveltUI,
   ],
 
+  devtools: { enabled: true },
+
   runtimeConfig: {
     public: {
       version: pkg.version,
