@@ -86,7 +86,7 @@ export interface NAccordionProps {
     */
     defaultOpen?: boolean
     /**
-     * Close other accordion items when specific item is open
+     * Close other accordion items when item is open
      *
      * @default false
     */
