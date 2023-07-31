@@ -68,7 +68,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       as="div"
       accordion="item"
       :default-open="getPriority(item.defaultOpen, defaultOpen)"
-      :class="nv?.accordionItem ?? undefined"
+      :class="nv?.accordionItem"
     >
       <DisclosureButton
         :ref="() => (buttonRefs[i] = close)"
@@ -79,9 +79,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
         <slot name="label" :item="item" :index="i" :open="open" :close="close">
           <NButton
             accordion="button"
-            :class="[
-              nv?.accordionButton ?? undefined,
-            ]"
+            :class="nv?.accordionButton"
             :reverse="getPriority(item.reverse, reverse)"
             loading-placement="trailing"
             v-bind="omitProps(item, ['content', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
@@ -96,9 +94,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
               <NIcon
                 v-if="leading || item.leading"
                 accordion="leading-base"
-                :class="[
-                  nv?.accordionLeadingBase ?? undefined,
-                ]"
+                :class="nv?.accordionLeadingBase"
                 :name="getPriority(item.leading, leading) ?? ''"
                 aria-hidden="true"
               />
@@ -147,8 +143,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       </DefineTemplate>
 
       <Transition
-        :enter-active-class="nv?.accordionEnterActive ?? 'accordion-enter-active'"
-        :leave-active-class="nv?.accordionLeaveActive ?? 'accordion-leave-active'"
+        :enter-active-class="getPriority(nv?.accordionLeaveActive, 'accordion-leave-active')"
+        :leave-active-class="getPriority(nv?.accordionEnterActive, 'accordion-enter-active')"
         @enter="onEnter"
         @after-enter="onAfterEnter"
         @before-leave="onBeforeLeave"
