@@ -100,7 +100,7 @@ function onLeave(element: Element, done: () => void) {
               />
             </template>
 
-            <!-- TODO convert to trailing prop -->
+            <!-- TODO config to prop instead of slot -->
             <template #trailing>
               <span
                 v-if="trailingOpen || trailingClose"
