@@ -39,9 +39,9 @@
     "@nexvelt/ui-nuxt": "workspace:0.0.2-beta.3"
   },
   "devDependencies": {
-    "@nuxt-themes/docus": "^1.14.3",
-    "@types/node": "^18.16.19",
-    "nuxt": "^3.6.2",
+    "@nuxt-themes/docus": "^1.14.4",
+    "@types/node": "^18.17.1",
+    "nuxt": "^3.6.5",
     "nuxt-content-snippet": "^0.0.2"
   }
 }
