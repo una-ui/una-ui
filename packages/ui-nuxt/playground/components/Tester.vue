@@ -3,6 +3,7 @@ const items = [
   {
     label: 'How do I get started?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
+    defaultOpen: true,
   },
   {
     label: 'What is your return policy?',
