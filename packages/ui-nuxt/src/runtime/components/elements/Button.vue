@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<NButtonProps>(), {
   loadingPlacement: 'leading',
 })
 
-const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'base'] as const
+const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text', '~'] as const
 const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.includes(btnVariants)))
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
