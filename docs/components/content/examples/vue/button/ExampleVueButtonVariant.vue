@@ -21,8 +21,12 @@
       btn="link"
     />
     <NButton
+      label="Button text"
+      btn="text"
+    />
+    <NButton
       label="Button Base"
-      btn="base"
+      btn="~"
     />
   </div>
 </template>
