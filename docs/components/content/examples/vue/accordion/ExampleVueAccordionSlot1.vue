@@ -47,10 +47,10 @@ const items = [
 
     <template #content="{ item, open, close }">
       <div
-        class="px-4 py-6"
+        p="x-4 y-6"
         flex="~ col"
         :class="[
-          open ? 'border border-primary border-t-0 transition delay-1000' : '',
+          open ? 'border border-primary border-t-0 transition delay-200' : '',
         ]"
       >
         <p>
