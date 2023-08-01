@@ -9,6 +9,7 @@
 
     <div>
       <NButton
+        btn="sm"
         label="button sm"
       />
     </div>
@@ -21,19 +22,35 @@
 
     <div>
       <NButton
+        btn="lg"
         label="button lg"
       />
     </div>
 
     <div>
       <NButton
+        btn="xl"
         label="button xl"
       />
     </div>
 
     <div>
       <NButton
-        btn="solid hover:solid-indigo xs hover:xl"
+        btn="3vw"
+        label="button 3vw"
+      />
+    </div>
+
+    <div>
+      <NButton
+        btn="1cm"
+        label="button 1cm"
+      />
+    </div>
+
+    <div>
+      <NButton
+        btn="solid hover:outline-lime 18px hover:40px"
         label="hover me"
       />
     </div>
