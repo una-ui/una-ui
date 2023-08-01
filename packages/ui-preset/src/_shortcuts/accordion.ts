@@ -19,7 +19,7 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   // icons
   'accordion-trailing-icon': 'i-heroicons-chevron-up',
 
-  // transition
+  // panel transition
   'accordion-enter-active': 'overflow-hidden transition-height duration-300',
   'accordion-leave-active': 'overflow-hidden transition-height duration-300',
 }
