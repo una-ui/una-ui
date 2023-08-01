@@ -2,15 +2,13 @@
 const items = [
   {
     label: 'How do I get started?',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
   {
     label: 'What is your return policy?',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
   {
     label: 'Can I exchange an item?',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
+    content: 'Antfu',
   },
 ]
 </script>
@@ -19,7 +17,6 @@ const items = [
   <NAccordion
     :items="items"
     variant-mode
-    mounted
   >
     <template #label="{ item, index, open }">
       <NButton
@@ -46,17 +43,41 @@ const items = [
       </NButton>
     </template>
 
-    <template #content="{ item, open, close }">
+    <template #0="{ index, open, close }">
       <div
-        p="x-4 y-6"
+        class="px-4 py-6"
         flex="~ col"
         :class="[
-          // border-(~ primary t-0)
-          open ? 'border border-primary border-t-0' : '',
+          open ? 'border border-primary border-t-0 transition delay-200' : '',
         ]"
       >
         <p>
-          {{ item.content }}
+          {{ index }}
+          Freddie
+        </p>
+
+        <div mt-5 text-right>
+          <NButton
+            btn="solid-gray"
+            class="mt-3"
+            label="Close"
+            @click="close"
+          />
+        </div>
+      </div>
+    </template>
+
+    <template #1="{ index, open, close }">
+      <div
+        class="px-4 py-6"
+        flex="~ col"
+        :class="[
+          open ? 'border border-primary border-t-0 transition delay-200' : '',
+        ]"
+      >
+        <p>
+          {{ index }}
+          MJ
         </p>
 
         <div mt-5 text-right>
