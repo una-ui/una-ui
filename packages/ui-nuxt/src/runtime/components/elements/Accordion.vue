@@ -7,7 +7,7 @@ import {
 import { createReusableTemplate } from '@vueuse/core'
 
 import { ref } from 'vue'
-import type { NAccordionProps } from '../../types'
+import type { NAccordionItemProps, NAccordionProps } from '../../types'
 import { getPriority, omitProps } from '../../utils'
 import NIcon from './Icon.vue'
 import NButton from './Button.vue'
@@ -30,7 +30,7 @@ function closeOthers(index: number) {
 function onEnter(element: Element, done: () => void) {
   const el = element as HTMLElement
   el.style.height = '0'
-  el.offsetHeight // eslint-disable-line no-unused-expressions
+  // el.offsetHeight // eslint-disable-line no-unused-expressions
   el.style.height = `${element.scrollHeight}px`
   el.addEventListener('transitionend', done, { once: true })
 }
@@ -43,7 +43,7 @@ function onAfterEnter(element: Element) {
 function onBeforeLeave(element: Element) {
   const el = element as HTMLElement
   el.style.height = `${el.scrollHeight}px`
-  el.offsetHeight // eslint-disable-line no-unused-expressions
+  // el.offsetHeight // eslint-disable-line no-unused-expressions
 }
 
 function onLeave(element: Element, done: () => void) {
@@ -53,7 +53,12 @@ function onLeave(element: Element, done: () => void) {
   el.addEventListener('transitionend', done, { once: true })
 }
 
-const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
+const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
+  item: NAccordionItemProps
+  i: number
+  close: () => void
+  open: boolean
+}>()
 </script>
 
 <template>
@@ -128,7 +133,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
         </slot>
       </DisclosureButton>
 
-      <DefineTemplate>
+      <DefineTemplate v-slot="{ open, i, close, item }">
         <slot name="content" :item="item" :index="i" :open="open" :close="close">
           <div
             accordion="panel"
@@ -153,14 +158,14 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
         <DisclosurePanel
           v-if="!getPriority(item.mounted, mounted)"
         >
-          <ReuseTemplate />
+          <ReuseTemplate v-bind="{ item, i, close, open }" />
         </DisclosurePanel>
         <DisclosurePanel
           v-else
           v-show="open"
           static
         >
-          <ReuseTemplate />
+          <ReuseTemplate v-bind="{ item, i, close, open }" />
         </DisclosurePanel>
       </Transition>
     </Disclosure>
