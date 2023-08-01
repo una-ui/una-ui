@@ -6,11 +6,11 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-border': 'border-(~ base) rounded-md',
   'accordion-divider': 'divide-(y base)',
   'accordion-item': 'w-full',
-  'accordion-button': 'p-(x-3 y-4) text-(primary 1em) justify-start',
+  'accordion-button': 'p-(x-3 y-4) justify-start text-primary',
   'accordion-panel': 'text-(muted 1em $c-gray-600) border-(t $c-divider) p-4',
   'accordion-leading-base': 'text-1.2em',
   'accordion-trailing-base': 'flex transition items-center text-1em duration-300',
-  'accordion-label-base': 'flex w-full',
+  'accordion-label-base': 'flex w-full text-1em',
 
   // trailing transition
   'accordion-trailing-open': '-rotate-180',
@@ -24,7 +24,9 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-leave-active': 'overflow-hidden transition-height duration-300',
 }
 
-export const dynamicAccordion: [RegExp, (params: RegExpExecArray) => string][] = []
+export const dynamicAccordion: [RegExp, (params: RegExpExecArray) => string][] = [
+  // size here
+]
 
 export const accordion = [
   ...dynamicAccordion,

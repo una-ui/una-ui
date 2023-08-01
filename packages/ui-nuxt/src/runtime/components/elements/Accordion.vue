@@ -61,7 +61,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
 
 <template>
   <div
-    :accordion="`~ ${getPriority(accordion, 'accordion')}`"
+    :accordion="`~ ${getPriority(accordion, '')}`"
     :class="variantMode ? 'space-y-3' : 'accordion-(border divider)'"
   >
     <Disclosure
@@ -81,12 +81,12 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
       >
         <slot name="label" :item="item" :index="i" :open="open" :close="close">
           <NButton
-            accordion="button"
             :class="nv?.accordionButton"
             :reverse="getPriority(item.reverse, reverse)"
             loading-placement="trailing"
             v-bind="omitProps(item, ['content', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
-            btn="base block"
+            btn="~ block"
+            accordion="button"
             :label="item.label"
             :nv="{
               btnLabelBase: 'accordion-label-base',
