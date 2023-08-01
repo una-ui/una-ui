@@ -31,8 +31,8 @@ export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-400/70 dark:placeholder-${c}-300/70`],
 
   // variants
-  [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `input-focus-${c} ring-1 ring-inset ring-base`],
-  [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => `input-focus-${c} ring-1 ring-inset ring-${c}-500 dark:ring-${c}-400`],
+  [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `input input-focus-${c} ring-1 ring-inset ring-base`],
+  [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => `input input-focus-${c} ring-1 ring-inset ring-${c}-500 dark:ring-${c}-400`],
 ]
 
 export const input = [

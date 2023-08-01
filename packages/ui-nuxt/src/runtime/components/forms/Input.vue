@@ -29,7 +29,7 @@ const isTrailing = computed(
   () => props.trailing || slots.trailing || props.status || props.loading,
 )
 
-const inputVariants = ['outline', 'solid'] as const
+const inputVariants = ['outline', 'solid', '~'] as const
 const hasVariant = computed(() => inputVariants.some(inputVariants => props.input?.includes(inputVariants)))
 
 const statusVariants = computed(() => {
@@ -89,7 +89,7 @@ const reverseVariants = computed(() => {
         statusVariants.input,
         reverseVariants.input,
       ]"
-      :input="`~ ${input ?? ''}`"
+      :input="input"
     >
 
     <div
