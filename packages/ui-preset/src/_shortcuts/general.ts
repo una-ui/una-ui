@@ -14,6 +14,8 @@ export const general = {
   // ring
   'ring-base': 'ring-$c-ring',
   'ring-inverted': 'ring-$c-ring-foreground',
+  'ring-offset-base': 'ring-offset-$c-background',
+  'ring-offset-inverted': 'ring-offset-$c-bg-foreground',
 
   // border
   'border-base': 'border-$c-border',

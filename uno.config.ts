@@ -31,8 +31,9 @@ export default {
     '../packages/ui-preset/src/_shortcuts/button.ts',
     '../packages/ui-preset/src/_shortcuts/form-group.ts',
     '../packages/ui-preset/src/_shortcuts/accordion.ts',
-    // './packages/ui-preset/src/_shortcuts/general.ts',
-    // './packages/ui-preset/src/_shortcuts/index.ts',
+    '../packages/ui-preset/src/_shortcuts/switch.ts',
+    '../packages/ui-preset/src/_shortcuts/general.ts',
+    '../packages/ui-preset/src/_shortcuts/index.ts',
     '../packages/ui-nuxt/src/unocss.ts',
   ],
 }
