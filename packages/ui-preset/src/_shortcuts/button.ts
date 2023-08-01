@@ -34,6 +34,9 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
 }
 
 export const dynamicButton: [RegExp, (params: RegExpExecArray) => string][] = [
+  // size
+  [/^btn-(\S+)?$/, ([, s]) => `text-${s}`],
+
   // base
   [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-500 dark:focus-visible:outline-${c}-400 focus-visible:outline-2 focus-visible:outline-offset-2`],
 
