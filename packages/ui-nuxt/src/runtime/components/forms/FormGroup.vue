@@ -25,13 +25,13 @@ const statusVariants = computed(() => {
   <div
     form-group
   >
-    <div
-      form-group="message-wrapper"
-      :class="[
-        nv?.formGroupMessageWrapper ?? undefined,
-      ]"
-    >
-      <slot name="top">
+    <slot name="top">
+      <div
+        form-group="message-wrapper"
+        :class="[
+          nv?.formGroupMessageWrapper ?? undefined,
+        ]"
+      >
         <div
           v-if="label || hint || description"
           form-group="top-wrapper"
@@ -83,8 +83,8 @@ const statusVariants = computed(() => {
             </span>
           </slot>
         </div>
-      </slot>
-    </div>
+      </div>
+    </slot>
 
     <NFormGroupDefaultSlot
       :id="name ?? id"
