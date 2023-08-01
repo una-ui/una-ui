@@ -30,7 +30,6 @@ function closeOthers(index: number) {
 function onEnter(element: Element, done: () => void) {
   const el = element as HTMLElement
   el.style.height = '0'
-  // el.offsetHeight // eslint-disable-line no-unused-expressions
   el.style.height = `${element.scrollHeight}px`
   el.addEventListener('transitionend', done, { once: true })
 }
@@ -43,7 +42,6 @@ function onAfterEnter(element: Element) {
 function onBeforeLeave(element: Element) {
   const el = element as HTMLElement
   el.style.height = `${el.scrollHeight}px`
-  // el.offsetHeight // eslint-disable-line no-unused-expressions
 }
 
 function onLeave(element: Element, done: () => void) {
