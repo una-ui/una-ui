@@ -1,3 +1,3 @@
-export interface NVIconProps {
+export interface NIconProps {
   name: string
 }
