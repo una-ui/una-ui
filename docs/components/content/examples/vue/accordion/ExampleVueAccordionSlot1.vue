@@ -50,7 +50,7 @@ const items = [
         p="x-4 y-6"
         flex="~ col"
         :class="[
-          open ? 'border border-primary border-t-0 transition delay-200' : '',
+          open ? 'border border-primary border-t-0 transition duration-200' : '',
         ]"
       >
         <p>
