@@ -10,13 +10,14 @@
     <div>
       <NButton
         btn="sm"
-        label="button sm"
+        label="button sm (default)"
       />
     </div>
 
     <div>
       <NButton
-        label="button default"
+        btn="md"
+        label="button md"
       />
     </div>
 
@@ -51,7 +52,7 @@
     <div>
       <NButton
         btn="solid hover:outline-lime 18px hover:40px"
-        label="hover me"
+        label="hover me 18px->40px"
       />
     </div>
 
