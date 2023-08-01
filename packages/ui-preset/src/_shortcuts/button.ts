@@ -33,7 +33,8 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   'btn-link-black': 'text-$c-gray-950 btn-focus-primary hover:underline underline-offset-4',
 }
 
-export const dynamicButton: [RegExp, (params: RegExpExecArray) => string][] = [ // default config
+export const dynamicButton: [RegExp, (params: RegExpExecArray) => string][] = [
+  // base
   [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-500 dark:focus-visible:outline-${c}-400  focus-visible:outline !focus-visible:outline-2 focus-visible:outline-offset-2`],
 
   // variants
