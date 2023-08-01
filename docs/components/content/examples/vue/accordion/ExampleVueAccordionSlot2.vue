@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const items = [
   {
-    label: 'This is slot 0',
+    label: 'This is index 0',
   },
   {
-    label: 'This is slot 1',
+    label: 'This is index 1',
   },
   {
-    label: 'This is slot 2',
+    label: 'This is index 2',
   },
   {
     label: 'This will render default content slot',
