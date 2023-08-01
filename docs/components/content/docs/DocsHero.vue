@@ -64,9 +64,8 @@ const { version } = useRuntimeConfig().public
     <!-- right section -->
     <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-20 w-full place-items-center text-center lg:mb-0 lg:text-right">
       <div class="image-bg absolute z-5 h-40 w-50 lg:h-85 lg:w-85" />
-      <div class="h-40 w-50 -mt-10% lg:h-85 lg:w-85 -rotate-1">
-        <img class="block -mt-0.4 dark:hidden" src="/logo-solid.svg" alt="NexveltUI Logo">
-        <img class="hidden -mt-0.4 dark:block" src="/logo-solid-dark.svg" alt="NexveltUI Logo">
+      <div class="h-40 w-40 -mt-10% lg:h-75 lg:w-75">
+        <img src="/una-ui.svg" alt="Una UI logo">
       </div>
     </div>
   </div>
