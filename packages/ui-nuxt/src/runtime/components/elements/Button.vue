@@ -32,7 +32,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       reverse ? `btn-reverse` : null,
     ]"
     :disabled="to ? null : disabled || loading"
-    :btn="`~ ${btn ?? ''}`"
+    :btn="btn"
     v-bind="$attrs"
   >
     <DefineTemplate v-if="loading">
