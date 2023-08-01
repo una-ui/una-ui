@@ -132,7 +132,10 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
       </DisclosureButton>
 
       <DefineTemplate v-slot="{ open, i, close, item }">
-        <slot name="content" :item="item" :index="i" :open="open" :close="close">
+        <slot
+          :name="item.content ? 'content' : i"
+          :item="item" :index="i" :open="open" :close="close"
+        >
           <div
             accordion="panel"
             :class="[
