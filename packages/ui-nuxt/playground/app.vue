@@ -5,9 +5,9 @@ const input = ref('')
 
 <template>
   <div mx-auto mt-4 container>
-    <Tester />
-
     <div class="mx-auto h-screen flex flex-col items-center justify-center gap-4 container">
+      <Tester />
+
       <ColorMode />
       <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <NButton
