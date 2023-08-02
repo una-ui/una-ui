@@ -1,33 +1,23 @@
 <template>
   <div flex gap-4>
-    <div>
-      <NSwitch
-        switch="xs"
-      />
-    </div>
+    <NSwitch
+      switch="xs"
+    />
 
-    <div>
-      <NSwitch
-        switch="xl"
-      />
-    </div>
+    <NSwitch
+      switch="xl"
+    />
 
-    <div>
-      <NSwitch
-        switch="3vw"
-      />
-    </div>
+    <NSwitch
+      switch="3vw"
+    />
 
-    <div>
-      <NSwitch
-        switch="1cm"
-      />
-    </div>
+    <NSwitch
+      switch="1cm"
+    />
 
-    <div>
-      <NSwitch
-        switch="18px hover:40px"
-      />
-    </div>
+    <NSwitch
+      switch="18px hover:40px"
+    />
   </div>
 </template>
