@@ -1,7 +1,9 @@
 <template>
   <div flex="~ col" gap-4>
     <div>
-      <NSwitch />
+      <NSwitch
+        switch="xs"
+      />
     </div>
 
     <div>
