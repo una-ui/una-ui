@@ -8,6 +8,8 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-slider-checked': 'translate-x-1.25em',
   'switch-slider-unchecked': 'translate-x-0',
 
+  'switch-disabled': 'opacity-75 cursor-not-allowed',
+
   // switch normal
   'switch-normal': 'h-1.5em w-2.75em',
 
@@ -22,7 +24,7 @@ export const dynamicSwitch: [RegExp, (params: RegExpExecArray) => string][] = [
   // base
   [/^switch-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-base focus:ring-${c}`],
 
-  // colors
+  // colors (to refactor)
   [/^switch-checked(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-600 dark:bg-${c}-500`],
   [/^switch-unchecked(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-200 dark:bg-${c}-700`],
 ]

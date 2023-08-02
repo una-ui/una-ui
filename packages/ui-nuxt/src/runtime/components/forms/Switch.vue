@@ -21,7 +21,9 @@ const _switch = computed(() => props.switch)
       checked
         ? nv?.switchChecked ?? 'switch-checked'
         : nv?.switchUnchecked ?? 'switch-unchecked',
+      { 'switch-disabled': disabled },
     ]"
+    :disabled="disabled"
   >
     <span
       aria-hidden="true"
