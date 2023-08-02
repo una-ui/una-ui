@@ -7,35 +7,35 @@
     <NSwitch
       :model-value="true"
       :nv="{
-        switchSliderChecked: 'switch-checked-error',
+        switchChecked: 'switch-checked-error',
       }"
     />
 
     <NSwitch
       :model-value="true"
       :nv="{
-        switchSliderChecked: 'switch-checked-info',
+        switchChecked: 'switch-checked-info',
       }"
     />
 
     <NSwitch
       :model-value="true"
       :nv="{
-        switchSliderChecked: 'switch-checked-pink',
+        switchChecked: 'switch-checked-pink',
       }"
     />
 
     <NSwitch
       :model-value="true"
       :nv="{
-        switchSliderChecked: 'switch-checked-red',
+        switchChecked: 'switch-checked-red',
       }"
     />
 
     <NSwitch
       :model-value="true"
       :nv="{
-        switchSliderChecked: 'switch-checked-indigo',
+        switchChecked: 'switch-checked-indigo',
       }"
     />
   </div>

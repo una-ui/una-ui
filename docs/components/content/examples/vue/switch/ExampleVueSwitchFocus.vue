@@ -9,7 +9,7 @@
       :model-value="true"
       switch="focus-error"
       :nv="{
-        switchSliderChecked: 'switch-checked-error',
+        switchChecked: 'switch-checked-error',
       }"
     />
 
@@ -17,7 +17,7 @@
       :model-value="true"
       switch="focus-info"
       :nv="{
-        switchSliderChecked: 'switch-checked-info',
+        switchChecked: 'switch-checked-info',
       }"
     />
 
@@ -25,7 +25,7 @@
       :model-value="true"
       switch="focus-pink"
       :nv="{
-        switchSliderChecked: 'switch-checked-pink',
+        switchChecked: 'switch-checked-pink',
       }"
     />
 
@@ -33,7 +33,7 @@
       :model-value="true"
       switch="focus-red"
       :nv="{
-        switchSliderChecked: 'switch-checked-red',
+        switchChecked: 'switch-checked-red',
       }"
     />
 
@@ -41,7 +41,7 @@
       :model-value="true"
       switch="focus-indigo"
       :nv="{
-        switchSliderChecked: 'switch-checked-indigo',
+        switchChecked: 'switch-checked-indigo',
       }"
     />
   </div>
