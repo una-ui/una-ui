@@ -1,9 +1,9 @@
 type SwitchPrefix = 'switch'
 
 export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, string> = {
-  // base
-  'switch': 'switch-sm relative inline-flex flex-shrink-0 cursor-pointer p-0.125em rounded-full',
-  'switch-slider': 'switch-slider-size pointer-events-none inline-block transform rounded-full bg-base shadow ring-0 transition duration-200 ease-in-out',
+  // base p-0.125em
+  'switch': 'relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-full',
+  'switch-slider': 'switch-slider-size absolute pointer-events-none inline-block transform rounded-full bg-base shadow ring-0 transition duration-200 ease-in-out',
   'switch-slider-size': 'h-1.25em w-1.25em',
   'switch-slider-checked': 'translate-x-1.25em',
   'switch-slider-unchecked': 'translate-x-0',
@@ -14,7 +14,14 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-normal': 'h-1.5em w-2.75em',
 
   // switch short
-  'switch-short': 'h-1.2em w-2.75em',
+  'switch-short': 'h-1.25em w-2.50em',
+
+  'switch-slider-bg-short': 'h-1em w-2.25em',
+  'switch-slider-bg-normal': 'h-1.5em w-2.75em',
+
+  // switch slider bg short
+  'switch-slider-bg': 'pointer-events-none absolute mx-auto rounded-full transition-colors duration-200 ease-in-out',
+
 }
 
 export const dynamicSwitch: [RegExp, (params: RegExpExecArray) => string][] = [
