@@ -7,6 +7,8 @@ export interface NSwitchProps {
   nv?: {
     switchSliderSize?: string
     switchSlider?: string
+    switchChecked?: string
+    switchUnchecked?: string
     switchSliderChecked?: string
     switchSliderUnchecked?: string
   }
