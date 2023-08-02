@@ -1,7 +1,8 @@
 <template>
-  <div flex gap-4>
+  <div flex items-center gap-4>
     <NSwitch
       :model-value="true"
+      variant="short"
     />
 
     <NSwitch
@@ -13,6 +14,7 @@
 
     <NSwitch
       :model-value="true"
+      variant="short"
       :nv="{
         switchChecked: 'switch-checked-info',
       }"
@@ -27,6 +29,7 @@
 
     <NSwitch
       :model-value="true"
+      variant="short"
       :nv="{
         switchChecked: 'switch-checked-red',
       }"

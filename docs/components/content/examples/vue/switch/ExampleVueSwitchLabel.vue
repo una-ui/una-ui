@@ -3,7 +3,7 @@ const enabled = ref(false)
 </script>
 
 <template>
-  <NFormGroup :label="enabled ? 'Enabled' : 'Disabled'">
+  <NFormGroup :label="enabled ? 'Toggled on' : 'Toggled off'">
     <NSwitch
       v-model="enabled"
     />

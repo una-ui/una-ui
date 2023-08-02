@@ -1,5 +1,5 @@
 <template>
-  <div flex gap-4>
+  <div flex items-center gap-4>
     <NSwitch
       :model-value="true"
       switch="focus"
@@ -7,6 +7,7 @@
 
     <NSwitch
       :model-value="true"
+      variant="short"
       switch="focus-error"
       :nv="{
         switchChecked: 'switch-checked-error',
@@ -23,6 +24,7 @@
 
     <NSwitch
       :model-value="true"
+      variant="short"
       switch="focus-pink"
       :nv="{
         switchChecked: 'switch-checked-pink',

@@ -1,5 +1,5 @@
 <template>
-  <div flex gap-4>
+  <div flex items-center gap-4>
     <NSwitch
       variant="normal"
     />

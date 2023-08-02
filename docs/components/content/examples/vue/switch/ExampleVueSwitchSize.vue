@@ -10,6 +10,7 @@
 
     <NSwitch
       switch="3vw"
+      variant="short"
     />
 
     <NSwitch
@@ -17,7 +18,8 @@
     />
 
     <NSwitch
-      switch="18px hover:40px"
+      switch="40px"
+      variant="short"
     />
   </div>
 </template>

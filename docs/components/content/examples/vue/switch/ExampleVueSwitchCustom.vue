@@ -23,6 +23,7 @@ const enabled = ref(false)
     <NSwitch
       v-model="enabled"
       switch="3xl"
+      variant="short"
       rotate-45 rounded-none
       :nv="{
         switchChecked: 'switch-checked-yellow',
