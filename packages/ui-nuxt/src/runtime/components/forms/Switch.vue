@@ -30,8 +30,9 @@ const _switch = computed(() => props.switch)
       switch="slider"
       :class="[
         checked
-          ? nv?.switchSliderChecked ?? 'switch-slider-checked'
-          : nv?.switchSliderUnchecked ?? 'switch-slider-unchecked',
+          ? `${nv?.switchSliderChecked} switch-slider-checked`
+          : `${nv?.switchSliderUnchecked} switch-slider-unchecked`,
+        nv?.switchSlider,
       ]"
     />
   </Switch>
