@@ -68,7 +68,7 @@ export interface NFormGroupProps {
   /**
    * `NexveltUI` preset configuration
    *
-   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/accordion.ts
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/form-group.ts
   */
   nv?: {
     formGroupTopWrapper?: string
