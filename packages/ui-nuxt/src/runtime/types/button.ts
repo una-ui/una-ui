@@ -37,6 +37,7 @@ export interface NButtonProps {
    * @default false
   */
   loading?: boolean
+
   /**
    * Change the button tag to `NuxtLink` component,
    * This allows you to use `NuxtLink` available props.
@@ -54,8 +55,8 @@ export interface NButtonProps {
   */
   label?: string
   /**
-   * Allows you to add `NexveltUI` preset properties to the button,
-   * Think of it as a shortcut for adding options or variants to the presset if available.
+   * Allows you to add `NexveltUI` button preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
    *
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
    * @example
@@ -78,6 +79,7 @@ export interface NButtonProps {
    * trailing="i-heroicons-information-circle text-green-500 dark:text-green-400 text-2xl"
    */
   trailing?: string
+
   /**
    * `NexveltUI` preset configuration
    *

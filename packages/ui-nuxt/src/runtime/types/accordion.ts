@@ -2,7 +2,7 @@ import type { NButtonProps } from './button'
 
 export interface NAccordionProps {
   /**
-   * Allows you to add `NexveltUI` preset properties to the accordion,
+   * Allows you to add `NexveltUI` accordion preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
    *
    * By default, we don't add any options or variants to the accordion,
@@ -27,6 +27,7 @@ export interface NAccordionProps {
    * Accepts icon name and utility classes
   */
   trailingClose?: string
+
   /**
    * Allow multiple accordion items to be open at the same time
    *

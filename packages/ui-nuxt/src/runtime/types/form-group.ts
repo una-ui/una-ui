@@ -13,7 +13,7 @@ export interface NFormGroupProps {
   required?: boolean
 
   /**
-   * Manually sets the name attribute for the form group label.
+   * Manually set the name attribute for the form group label.
    * Slot children will inherit the name attribute as both `id` and `name` for accessibility.
    *
    * By default, the name attribute is generated randomly.
