@@ -24,7 +24,7 @@ export const dynamicSwitch: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^switch-(\S+)?$/, ([, s]) => `text-${s}`],
 
   // base
-  [/^switch-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-base focus:ring-${c}`],
+  [/^switch-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-base focus:ring-${c}-600 dark:focus:ring-${c}-600`],
 
   // GLOBAL COLORS -> n-bg-$c-bg${c}-600 dark:bg-${c}-500 ✅
   // colors (to refactor)
