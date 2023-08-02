@@ -64,6 +64,7 @@ export interface NFormGroupProps {
     value: number
     max?: number
   }
+
   /**
    * `NexveltUI` preset configuration
    *
