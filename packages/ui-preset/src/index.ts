@@ -44,6 +44,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
           950: 'rgba(var(--nv-gray-950) / <alpha-value>)',
         },
         error: {
+          DEFAULT: '#e02424',
           50: '#fdf2f2',
           100: '#fde8e8',
           200: '#fbd5d5',
@@ -57,6 +58,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
           950: '#3f0708',
         },
         success: {
+          DEFAULT: '#65a30d',
           50: '#f7fee7',
           100: '#ecfccb',
           200: '#d9f99d',
@@ -70,6 +72,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
           950: '#1a2e05',
         },
         warning: {
+          DEFAULT: '#d97706',
           50: '#fffbeb',
           100: '#fef3c7',
           200: '#fde68a',
@@ -83,6 +86,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
           950: '#451a03',
         },
         info: {
+          DEFAULT: '#0284c7',
           50: '#f0f9ff',
           100: '#e0f2fe',
           200: '#bae6fd',
