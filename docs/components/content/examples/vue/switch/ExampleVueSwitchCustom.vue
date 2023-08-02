@@ -27,6 +27,8 @@ const enabled = ref(false)
       :nv="{
         switchChecked: 'switch-checked-yellow',
         switchSlider: 'rounded-none',
+        switchSliderChecked: 'bg-base',
+        switchSliderUnchecked: 'bg-yellow',
       }"
     />
 
