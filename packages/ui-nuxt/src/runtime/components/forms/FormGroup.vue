@@ -28,37 +28,35 @@ const statusVariants = computed(() => {
     <slot name="top">
       <div
         form-group="message-wrapper"
-        :class="[
-          nv?.formGroupMessageWrapper ?? undefined,
-        ]"
+        :class="nv?.formGroupMessageWrapper"
       >
         <div
           v-if="label || hint || description"
           form-group="top-wrapper"
-          :class="nv?.formGroupTopWrapper ?? undefined"
+          :class="nv?.formGroupTopWrapper"
         >
           <div
             v-if="label || hint"
             form-group="top-wrapper-inner"
-            :class="nv?.formGroupTopWrapperInner ?? undefined"
+            :class="nv?.formGroupTopWrapperInner"
           >
             <slot name="label">
               <label
                 v-if="label"
                 :for="name ?? id"
                 form-group="label-wrapper"
-                :class="[nv?.formGroupLabelWrapper ?? undefined]"
+                :class="nv?.formGroupLabelWrapper"
               >
                 <span
                   form-group="label-base"
-                  :class="nv?.formGroupLabelBase ?? undefined"
+                  :class="nv?.formGroupLabelBase"
                 >
                   {{ label }}
                 </span>
                 <span
                   v-if="required"
                   form-group="label-required"
-                  :class="nv?.formGroupLabelRequired ?? undefined"
+                  :class="nv?.formGroupLabelRequired"
                 />
               </label>
             </slot>
@@ -66,7 +64,7 @@ const statusVariants = computed(() => {
             <slot name="hint">
               <span
                 v-if="hint" form-group="hint-base"
-                :class="nv?.formGroupHintBase ?? undefined"
+                :class="nv?.formGroupHintBase"
               >
                 {{ hint }}
               </span>
@@ -77,7 +75,7 @@ const statusVariants = computed(() => {
             <span
               v-if="description"
               form-group="description-base"
-              :class="nv?.formGroupDescriptionBase ?? undefined"
+              :class="nv?.formGroupDescriptionBase"
             >
               {{ description }}
             </span>
@@ -98,22 +96,20 @@ const statusVariants = computed(() => {
         v-if="message || counter"
         form-group="bottom-wrapper"
         :class="[
-          !message && counter ? 'justify-end' : undefined,
-          nv?.formGroupBottomWrapper ?? undefined,
+          { 'justify-end': !message && counter },
+          nv?.formGroupBottomWrapper,
         ]"
       >
         <slot name="message">
           <div
             v-if="message"
             form-group="message-wrapper"
-            :class="[
-              nv?.formGroupMessageWrapper ?? undefined,
-            ]"
+            :class="nv?.formGroupMessageWrapper"
           >
             <p
               form-group="message-base"
               :class="[
-                nv?.formGroupMessageBase ?? undefined,
+                nv?.formGroupMessageBase,
                 statusVariants,
               ]"
             >
@@ -126,9 +122,7 @@ const statusVariants = computed(() => {
           <div
             v-if="counter"
             form-group="counter-wrapper"
-            :class="[
-              nv?.formGroupCounterWrapper ?? undefined,
-            ]"
+            :class="nv?.formGroupCounterWrapper"
           >
             <span
               :class="`${counter?.value >= (counter?.max || 0) && counter?.max
