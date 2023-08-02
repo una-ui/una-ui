@@ -58,7 +58,7 @@ function shuffleTheme() {
   <div class="sm:ml-5">
     <Popover class="relative inline-block">
       <PopoverButton
-        btn="~ base square soft"
+        btn="square soft"
         class="rounded-lg"
       >
         <span i-heroicons-swatch-20-solid text-md />
