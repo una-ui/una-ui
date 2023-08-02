@@ -17,9 +17,10 @@ const _switch = computed(() => props.switch)
   <Switch
     v-model="checked"
     :switch="`~ normal ${_switch ?? ''}`"
-    :class="[checked
-      ? nv?.switchSliderChecked ?? 'switch-checked'
-      : nv?.switchSliderUnchecked ?? 'switch-unchecked',
+    :class="[
+      checked
+        ? nv?.switchSliderChecked ?? 'switch-checked'
+        : nv?.switchSliderUnchecked ?? 'switch-unchecked',
     ]"
   >
     <span
