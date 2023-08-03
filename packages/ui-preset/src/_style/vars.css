@@ -1,4 +1,6 @@
 :root {
+  --una-c-brand: var(--nv-primary-600);
+
   /* global vars */
   --c-bg-selection: rgba(var(--nv-primary-600), 0.2);
 
@@ -37,6 +39,8 @@
 }
 
 .dark {
+  --una-c-brand: var(--nv-primary-500);
+
   /* config gray dark */
   --c-gray-0: rgb(var(--nv-gray-950));
   --c-gray-50: rgb(var(--nv-gray-900));

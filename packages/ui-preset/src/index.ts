@@ -1,8 +1,13 @@
 import type { Preset } from 'unocss'
+import type { RuleContext } from '@unocss/core'
+import { fonts } from '@unocss/preset-mini/rules'
+import { parseColor } from '@unocss/preset-mini/utils'
+import type { Theme } from '@unocss/preset-uno'
+import { theme as unoTheme } from '@unocss/preset-mini'
+import { mergeDeep } from 'unocss'
+import { colors } from '@unocss/preset-mini/colors'
 import type { nexveltUIOptions } from './types'
 import { shortcuts } from './shortcuts'
-
-// import { theme } from './theme'
 
 export default function presetNexvelt(options: nexveltUIOptions = {
 }): Preset {
@@ -10,9 +15,9 @@ export default function presetNexvelt(options: nexveltUIOptions = {
     name: '@nexvelt/ui-preset',
     options,
     shortcuts,
-    // theme,
-    theme: {
+    theme: mergeDeep<Theme>(unoTheme, {
       colors: {
+        brand: 'rgba(var(--una-c-brand),%alpha)',
         primary: {
           DEFAULT: 'rgba(var(--c-primary) / <alpha-value>)',
           active: 'rgba(var(--c-primary-active) / <alpha-value>)',
@@ -43,69 +48,36 @@ export default function presetNexvelt(options: nexveltUIOptions = {
           900: 'rgba(var(--nv-gray-900) / <alpha-value>)',
           950: 'rgba(var(--nv-gray-950) / <alpha-value>)',
         },
-        error: {
-          DEFAULT: '#e02424',
-          50: '#fdf2f2',
-          100: '#fde8e8',
-          200: '#fbd5d5',
-          300: '#f8b4b4',
-          400: '#f98080',
-          500: '#f05252',
-          600: '#e02424',
-          700: '#c81e1e',
-          800: '#9b1c1c',
-          900: '#771d1d',
-          950: '#3f0708',
-        },
-        success: {
-          DEFAULT: '#65a30d',
-          50: '#f7fee7',
-          100: '#ecfccb',
-          200: '#d9f99d',
-          300: '#bef264',
-          400: '#a3e635',
-          500: '#84cc16',
-          600: '#65a30d',
-          700: '#4d7c0f',
-          800: '#3f6212',
-          900: '#365314',
-          950: '#1a2e05',
-        },
-        warning: {
-          DEFAULT: '#d97706',
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
-          950: '#451a03',
-        },
-        info: {
-          DEFAULT: '#0284c7',
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
-        },
+        error: colors.red,
+        success: colors.lime,
+        warning: colors.amber,
+        info: colors.blue,
       },
-    },
+    }),
+    rules: [
+      [/^n-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
+        const color = parseColor(body, theme)
+        if (color?.cssColor?.type === ('rgb' || 'rgba') && color.cssColor.components) {
+          return {
+            '--una-c-brand': `${color.cssColor.components.join(',')}`,
+          }
+        }
+      }],
+      // TODO: optimize this
+      [/^switch-(.*)$/, fonts[1][1] as any],
+      [/^btn-(.*)$/, fonts[1][1] as any],
+      [/^input-(.*)$/, fonts[1][1] as any],
+      [/^n-(.*)$/, fonts[1][1] as any],
+      ['n-disabled', {
+        'opacity': 0.4,
+        'pointer-events': 'none',
+      }],
+    ],
     preflights: [
       {
         getCSS: () => `
         *:focus-visible {
-          outline: 2px solid rgb(var(--c-primary-active)); /* 2 */
+          outline: 2px solid rgb(var(--c-primary)); /* 2 */
           border-radius: 0.25rem; /* 1 */
           outline-offset: 0.10rem; /* 1 */
         }
