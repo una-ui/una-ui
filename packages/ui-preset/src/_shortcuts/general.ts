@@ -1,4 +1,4 @@
-export const general = {
+export const staticGeneral = {
   // text-size
   'text-md': 'text-16px',
 
@@ -28,3 +28,12 @@ export const general = {
   'bg-inverted': 'bg-$c-foreground',
   'bg-muted': 'bg-$c-muted',
 }
+
+export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
+  //  add your dynamic general shortcuts here
+]
+
+export const general = [
+  ...dynamicGeneral,
+  staticGeneral,
+]

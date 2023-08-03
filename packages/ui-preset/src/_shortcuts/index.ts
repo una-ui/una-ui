@@ -8,7 +8,7 @@ import { general } from './general'
 import { _switch } from './switch'
 
 export const shortcuts = [
-  general,
+  ...general,
   ...accordion,
   ...button,
   ...formGroup,
