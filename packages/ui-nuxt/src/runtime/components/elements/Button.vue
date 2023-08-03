@@ -28,8 +28,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :to="to"
     :type="to ? null : type"
     :class="[
-      !hasVariant ? `btn-solid` : null,
-      reverse ? `btn-reverse` : null,
+      { 'btn-solid': !hasVariant },
+      { 'btn-reverse': reverse },
     ]"
     :disabled="to ? null : disabled || loading"
     :btn="btn"
