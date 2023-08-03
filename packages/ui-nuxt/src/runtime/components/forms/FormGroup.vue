@@ -8,8 +8,8 @@ const props = defineProps<NFormGroupProps>()
 
 const id = randomId('form-group')
 
-const statusVariants = computed(() => {
-  const textClass = {
+const statusClassVariants = computed(() => {
+  const text = {
     info: 'text-info',
     success: 'text-success',
     warning: 'text-warning',
@@ -17,7 +17,7 @@ const statusVariants = computed(() => {
     default: 'text-$c-gray-500',
   }
 
-  return textClass[props.status ?? 'default']
+  return text[props.status ?? 'default']
 })
 </script>
 
@@ -110,7 +110,7 @@ const statusVariants = computed(() => {
               form-group="message-base"
               :class="[
                 nv?.formGroupMessageBase,
-                statusVariants,
+                statusClassVariants,
               ]"
             >
               {{ message }}
