@@ -23,7 +23,7 @@ export interface NSwitchProps {
    * Think of it as a shortcut for adding options or variants to the preset if available.
    *
    * @example
-   * switch="xl focus"
+   * switch="xl green focus"
   */
   switch?: string
 
