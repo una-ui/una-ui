@@ -1,9 +1,11 @@
 type ButtonPrefix = 'btn'
 
 export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, string> = {
+  // config
+  'btn-disabled': 'disabled:n-disabled',
+
   // base
   'btn': 'bg-transparent btn-sm gap-1 btn-rectangle rounded inline-flex justify-center items-center btn-disabled font-semibold cursor-pointer',
-  'btn-disabled': 'disabled:opacity-75 disabled:cursor-not-allowed',
   'btn-label-base': '',
   'btn-leading-base': '-ml-0.2em mr-0.2em',
   'btn-trailing-base': '-mr-0.2em ml-0.2em',
@@ -34,9 +36,6 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
 }
 
 export const dynamicButton: [RegExp, (params: RegExpExecArray) => string][] = [
-  // size
-  [/^btn-(\S+)?$/, ([, s]) => `text-${s}`],
-
   // base
   [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-500 dark:focus-visible:outline-${c}-400 focus-visible:outline-2 focus-visible:outline-offset-2`],
 

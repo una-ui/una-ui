@@ -23,9 +23,6 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
-  // size
-  [/^input-(\S+)?$/, ([, s]) => `text-${s}`],
-
   // base
   [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400 focus:bg-base`],
   [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-400/70 dark:placeholder-${c}-300/70`],
