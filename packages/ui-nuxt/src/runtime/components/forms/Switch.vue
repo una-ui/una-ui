@@ -4,6 +4,10 @@ import { computed } from 'vue'
 import { useVModel } from '@vueuse/core'
 import type { NSwitchProps } from '../../types'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = defineProps<NSwitchProps>()
 
 const emit = defineEmits<{ (...args: any): void }>()
@@ -29,21 +33,21 @@ const switchClassVariants = computed(() => {
   }
 
   return {
-    switchWrapper: switchWrapper[props.variant ?? 'normal'],
-    switchSliderBg: switchSliderBg[props.variant ?? 'normal'],
-    switchSlider: switchSlider[props.variant ?? 'normal'],
+    switchWrapper: switchWrapper[props.type ?? 'normal'],
+    switchSliderBg: switchSliderBg[props.type ?? 'normal'],
+    switchSlider: switchSlider[props.type ?? 'normal'],
   }
 })
 
 const checkedClassVariants = computed(() => {
   const switchSliderBg = {
-    true: `${props.nv?.switchChecked} switch-checked`,
-    false: `${props.nv?.switchUnchecked} switch-unchecked`,
+    true: `${props.nv?.switchSliderBgChecked ?? ''} switch-slider-bg-checked`,
+    false: `${props.nv?.switchSliderBgUnchecked ?? ''} switch-slider-bg-unchecked`,
   }
 
   const switchSlider = {
-    true: `${props.nv?.switchSliderChecked} switch-slider-checked`,
-    false: `${props.nv?.switchSliderUnchecked} switch-slider-unchecked`,
+    true: `${props.nv?.switchSliderChecked ?? ''} switch-slider-checked`,
+    false: `${props.nv?.switchSliderUnchecked ?? ''} switch-slider-unchecked`,
   }
 
   return {
@@ -56,14 +60,16 @@ const checkedClassVariants = computed(() => {
 <template>
   <Switch
     v-model="checked"
-    :switch="_switch"
     class="switch"
     :class="[
       { 'switch-disabled': disabled },
       switchClassVariants?.switchWrapper,
     ]"
+    :switch="_switch"
+    v-bind="$attrs"
     :disabled="disabled"
   >
+    <!-- slider bg -->
     <span
       aria-hidden="true"
       switch="slider-bg"
@@ -78,7 +84,6 @@ const checkedClassVariants = computed(() => {
     <span
       aria-hidden="true"
       switch="slider"
-      class="border border-base"
       :class="[
         nv?.switchSlider,
         checkedClassVariants?.switchSlider,

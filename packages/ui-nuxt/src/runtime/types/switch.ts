@@ -11,12 +11,12 @@ export interface NSwitchProps {
   disabled?: boolean
 
   /**
-   * Use the `short` variant for a smaller switch,
-   * or the `normal` variant for a normal switch.
+   * Use the `short` type for a smaller switch,
+   * or the `normal` type for a normal switch.
    *
    * @default normal
   */
-  variant?: 'normal' | 'short'
+  type?: 'normal' | 'short'
 
   /**
    * Allows you to add `NexveltUI` switch preset properties,
@@ -35,8 +35,8 @@ export interface NSwitchProps {
   nv?: {
     switchSlider?: string
     switchSliderSize?: string
-    switchChecked?: string
-    switchUnchecked?: string
+    switchSliderBgChecked?: string
+    switchSliderBgUnchecked?: string
     switchSliderChecked?: string
     switchSliderUnchecked?: string
     switchSliderBg?: string
