@@ -1,7 +1,7 @@
 <template>
   <div flex="~ col" gap-4>
     <span class="text-sm font-medium">
-      Icon buttons with and without square class
+      Icon buttons with and without square preset
     </span>
 
     <div flex="~ row" gap-2>
