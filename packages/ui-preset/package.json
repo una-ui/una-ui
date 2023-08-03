@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@unocss/core": "^0.53.4",
+    "@unocss/preset-mini": "^0.54.1",
     "unocss": "^0.53.4"
   }
 }

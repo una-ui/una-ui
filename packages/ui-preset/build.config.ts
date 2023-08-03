@@ -19,12 +19,13 @@ export default defineBuildConfig({
   },
   externals: [
     'unocss',
+    '@unocss/preset-mini',
   ],
   hooks: {
     'mkdist:done': () => {
       const compiledSass = sass.compile('./src/index.scss', { style: 'compressed', loadPaths: ['./node_modules/'] })
       writeFileSync(
-        'style.css',
+        'una.css',
         compiledSass.css,
         { encoding: 'utf-8' },
       )
