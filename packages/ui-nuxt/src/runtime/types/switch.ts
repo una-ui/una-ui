@@ -11,12 +11,11 @@ export interface NSwitchProps {
   disabled?: boolean
 
   /**
-   * Use the `short` type for a smaller switch,
-   * or the `normal` type for a normal switch.
+   * Display the slider thumb outside of the track.
    *
-   * @default normal
+   * @default false
   */
-  type?: 'normal' | 'short'
+  outset?: boolean
 
   /**
    * Allows you to add `NexveltUI` switch preset properties,
@@ -26,6 +25,22 @@ export interface NSwitchProps {
    * switch="xl green focus"
   */
   switch?: string
+  /**
+   * Allows you to display an icon when the switch is on.
+   * Accepts icon name and utility classes
+   *
+   * @example
+   * icon="i-heroicons-check-20-solid text-white"
+  */
+  onIcon?: string
+  /**
+   * Allows you to display an icon when the switch is off.
+   * Accepts icon name and utility classes
+   *
+   * @example
+   * icon="i-heroicons-x-mark-20-solid text-white"
+  */
+  offIcon?: string
 
   /**
    * `NexveltUI` preset configuration
