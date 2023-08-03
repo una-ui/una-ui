@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     nexveltUI,
   ],
 
-  devtools: { enabled: false },
+  devtools: { enabled: true },
 
   runtimeConfig: {
     public: {
