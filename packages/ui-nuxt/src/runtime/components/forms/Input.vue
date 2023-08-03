@@ -32,8 +32,8 @@ const isTrailing = computed(
 const inputVariants = ['outline', 'solid', '~'] as const
 const hasVariant = computed(() => inputVariants.some(inputVariants => props.input?.includes(inputVariants)))
 
-const statusVariants = computed(() => {
-  const inputClass = {
+const statusClassVariants = computed(() => {
+  const input = {
     info: 'input-status-info input-solid-info input-status-ring',
     success: 'input-status-success input-solid-success input-status-ring',
     warning: 'input-status-warning input-solid-warning input-status-ring',
@@ -41,7 +41,7 @@ const statusVariants = computed(() => {
     default: !hasVariant.value ? 'input-outline' : '',
   }
 
-  const textClass = {
+  const text = {
     info: 'text-info',
     success: 'text-success',
     warning: 'text-warning',
@@ -49,7 +49,7 @@ const statusVariants = computed(() => {
     default: '',
   }
 
-  const iconName = {
+  const icon = {
     info: props.nv?.inputWarningIcon ?? 'input-info-icon',
     success: props.nv?.inputSuccessIcon ?? 'input-success-icon',
     warning: props.nv?.inputWarningIcon ?? 'input-warning-icon',
@@ -58,20 +58,20 @@ const statusVariants = computed(() => {
   }
 
   return {
-    input: inputClass[props.status ?? 'default'],
-    text: textClass[props.status ?? 'default'],
-    icon: iconName[props.status ?? 'default'],
+    input: input[props.status ?? 'default'],
+    text: text[props.status ?? 'default'],
+    icon: icon[props.status ?? 'default'],
   }
 })
 
-const reverseVariants = computed(() => {
-  const inputClass = {
+const reverseClassVariants = computed(() => {
+  const input = {
     false: [isLeading.value ? 'ps-10' : '', isTrailing.value ? 'pe-10' : ''],
     true: [isLeading.value ? 'pe-10' : '', isTrailing.value ? 'ps-10' : ''],
   }
 
   return {
-    input: inputClass[props.reverse ? 'true' : 'false'],
+    input: input[props.reverse ? 'true' : 'false'],
     leadingWrapper: props.reverse ? 'input-trailing-wrapper' : 'input-leading-wrapper',
     trailingWrapper: props.reverse ? 'input-leading-wrapper' : 'input-trailing-wrapper',
   }
@@ -86,8 +86,8 @@ const reverseVariants = computed(() => {
       v-model="inputValue"
       :type="type"
       :class="[
-        statusVariants.input,
-        reverseVariants.input,
+        statusClassVariants.input,
+        reverseClassVariants.input,
       ]"
       :input="input"
     >
@@ -96,8 +96,8 @@ const reverseVariants = computed(() => {
       v-if="isLeading"
       :class="[
         nv?.inputLeadingWrapper,
-        reverseVariants.leadingWrapper,
-        statusVariants.text,
+        reverseClassVariants.leadingWrapper,
+        statusClassVariants.text,
       ]"
     >
       <slot name="leading">
@@ -113,7 +113,8 @@ const reverseVariants = computed(() => {
       v-if="isTrailing"
       :class="[
         nv?.inputTrailingWrapper,
-        reverseVariants.trailingWrapper, statusVariants.text,
+        reverseClassVariants.trailingWrapper,
+        statusClassVariants.text,
       ]"
     >
       <NIcon
@@ -124,7 +125,7 @@ const reverseVariants = computed(() => {
       />
 
       <slot v-else name="trailing">
-        <NIcon v-if="status" :name="statusVariants.icon" />
+        <NIcon v-if="status" :name="statusClassVariants.icon" />
         <NIcon
           v-else-if="trailing"
           :class="nv?.inputTrailingBase"
