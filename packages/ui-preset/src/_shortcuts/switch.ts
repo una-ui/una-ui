@@ -31,10 +31,7 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-slider-bg-short': 'h-1em w-2.25em',
 }
 
-// : [RegExp, (params: RegExpExecArray) => string][]
 export const dynamicSwitch = [
-  // [/^switch-n(-(\S+))?$/, ([, , c = 'primary']) => `n-${c}-600 dark:n-${c}-500`],
-
   [/^switch-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
     const color = parseColor(body, theme)
     if (color?.cssColor?.type === 'rgb' && color.cssColor.components)
