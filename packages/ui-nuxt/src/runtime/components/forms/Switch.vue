@@ -3,6 +3,7 @@ import { Switch } from '@headlessui/vue'
 import { computed } from 'vue'
 import { useVModel } from '@vueuse/core'
 import type { NSwitchProps } from '../../types'
+import NIcon from '../elements/Icon.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -18,24 +19,24 @@ const _switch = computed(() => props.switch)
 
 const switchClassVariants = computed(() => {
   const switchWrapper = {
-    normal: 'switch-normal',
-    short: 'switch-short',
+    false: 'switch-normal',
+    true: 'switch-short',
   }
 
   const switchSliderBg = {
-    normal: 'switch-slider-bg-normal',
-    short: 'switch-slider-bg-short',
+    false: 'switch-slider-bg-normal',
+    true: 'switch-slider-bg-short',
   }
 
   const switchSlider = {
-    normal: 'left-0.1em',
-    short: 'left-0',
+    false: 'left-0.1em',
+    true: 'left-0',
   }
 
   return {
-    switchWrapper: switchWrapper[props.type ?? 'normal'],
-    switchSliderBg: switchSliderBg[props.type ?? 'normal'],
-    switchSlider: switchSlider[props.type ?? 'normal'],
+    switchWrapper: switchWrapper[!props.outset ? 'false' : 'true'],
+    switchSliderBg: switchSliderBg[!props.outset ? 'false' : 'true'],
+    switchSlider: switchSlider[!props.outset ? 'false' : 'true'],
   }
 })
 
@@ -50,9 +51,15 @@ const checkedClassVariants = computed(() => {
     false: `${props.nv?.switchSliderUnchecked ?? ''} switch-slider-unchecked`,
   }
 
+  const switchIcon = {
+    true: `${props.iconOn ?? ''} switch-icon-on`,
+    false: `${props.iconOff ?? ''} switch-icon-off`,
+  }
+
   return {
     switchSliderBg: switchSliderBg[checked.value ? 'true' : 'false'],
     switchSlider: switchSlider[checked.value ? 'true' : 'false'],
+    switchIcon: switchIcon[checked.value ? 'true' : 'false'],
   }
 })
 </script>
@@ -89,6 +96,12 @@ const checkedClassVariants = computed(() => {
         checkedClassVariants?.switchSlider,
         switchClassVariants?.switchSlider,
       ]"
-    />
+    >
+      <span class="sr-only">Icon</span>
+      <NIcon
+        :switch="`icon ${nv?.switchIcon ?? ''}`"
+        :name="checkedClassVariants?.switchIcon"
+      />
+    </span>
   </Switch>
 </template>

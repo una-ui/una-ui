@@ -32,7 +32,7 @@ export interface NSwitchProps {
    * @example
    * icon="i-heroicons-check-20-solid text-white"
   */
-  onIcon?: string
+  iconOn?: string
   /**
    * Allows you to display an icon when the switch is off.
    * Accepts icon name and utility classes
@@ -40,7 +40,7 @@ export interface NSwitchProps {
    * @example
    * icon="i-heroicons-x-mark-20-solid text-white"
   */
-  offIcon?: string
+  iconOff?: string
 
   /**
    * `NexveltUI` preset configuration
@@ -54,5 +54,8 @@ export interface NSwitchProps {
     switchSliderChecked?: string
     switchSliderUnchecked?: string
     switchSliderBg?: string
+    switchIcon?: string
+    switchIconOn?: string
+    switchIconOff?: string
   }
 }
