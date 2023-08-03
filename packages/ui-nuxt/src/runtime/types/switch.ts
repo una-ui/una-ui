@@ -34,7 +34,6 @@ export interface NSwitchProps {
   */
   nv?: {
     switchSlider?: string
-    switchSliderSize?: string
     switchSliderBgChecked?: string
     switchSliderBgUnchecked?: string
     switchSliderChecked?: string

@@ -15,11 +15,9 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-short': 'h-1.25em w-2.50em',
 
   // slider (circle)
-  'switch-slider': 'switch-slider-size absolute border-base bg-base border pointer-events-none inline-block transform rounded-full shadow transition duration-200 ease-in-out',
+  'switch-slider': 'h-1.25em w-1.25em absolute border-base bg-base border pointer-events-none inline-block transform rounded-full shadow transition duration-200 ease-in-out',
   'switch-slider-checked': 'translate-x-1.25em',
-
   'switch-slider-unchecked': 'translate-x-0',
-  'switch-slider-size': 'h-1.25em w-1.25em',
 
   // slider bg
   'switch-slider-bg': 'pointer-events-none absolute mx-auto rounded-full transition-colors duration-200 ease-in-out',
