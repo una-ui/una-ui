@@ -33,9 +33,9 @@ for (const file of files) {
   }
 }
 
-// filter orange and zinc colors from primary and gray themes
-const filteredPrimaryThemes = primaryThemes.filter(([color]) => ['blue'].includes(color))[0][1]
-const filteredGrayThemes = grayThemes.filter(([color]) => ['gray'].includes(color))[0][1]
+// filter yellow and stone colors from primary and gray themes
+const filteredPrimaryThemes = primaryThemes.filter(([color]) => ['yellow'].includes(color))[0][1]
+const filteredGrayThemes = grayThemes.filter(([color]) => ['stone'].includes(color))[0][1]
 
 // generate default-theme.css
 await fs.writeFile('./packages/ui-preset/src/_style/default-theme.css',
