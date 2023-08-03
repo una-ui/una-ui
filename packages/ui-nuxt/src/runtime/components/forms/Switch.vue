@@ -69,7 +69,7 @@ const checkedClassVariants = computed(() => {
     v-bind="$attrs"
     :disabled="disabled"
   >
-    <span class="sr-only">background</span>
+    <span class="sr-only">Slider background</span>
     <span
       aria-hidden="true"
       switch="slider-bg"
