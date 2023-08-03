@@ -5,10 +5,12 @@
     />
 
     <NSwitch
+      :model-value="true"
       switch="xl"
     />
 
     <NSwitch
+      :model-value="true"
       switch="3vw"
       variant="short"
     />

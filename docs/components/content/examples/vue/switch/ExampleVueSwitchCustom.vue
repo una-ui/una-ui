@@ -3,19 +3,32 @@ const enabled = ref(false)
 </script>
 
 <template>
-  <div flex gap-4 py-4>
+  <div flex gap-7 py-24>
     <NSwitch
       v-model="enabled"
-      switch="xl"
+      switch="focus"
       rotate-90
     />
 
     <NSwitch
       v-model="enabled"
-      switch="2xl"
-      rotate-120 rounded-lg
+      switch="focus rose"
+      class="w-4.5em"
+      rotate-90
       :nv="{
-        switchUnchecked: 'switch-unchecked-indigo',
+        switchSliderBg: 'w-full',
+        switchSliderChecked: 'translate-x-3em',
+        switchSliderUnchecked: 'translate-x-0',
+      }"
+    />
+
+    <NSwitch
+      v-model="enabled"
+      switch="focus indigo 1cm"
+      rotate-120
+      rounded-lg
+      :nv="{
+        switchSliderBg: 'rounded-lg',
         switchSlider: 'bg-inverted',
       }"
     />
@@ -23,13 +36,14 @@ const enabled = ref(false)
     <NSwitch
       v-model="enabled"
       switch="3xl"
-      variant="short"
-      rotate-45 rounded-none
+      type="short"
+      rotate-45
+      rounded-none
       :nv="{
-        switchChecked: 'switch-checked-yellow',
-        switchSlider: 'rounded-none',
-        switchSliderChecked: 'bg-base',
-        switchSliderUnchecked: 'bg-yellow',
+        switchSlider: 'rounded-none h-2em w-2em',
+        switchSliderBg: 'rounded-none',
+        switchSliderChecked: 'bg-success',
+        switchSliderUnchecked: 'bg-error',
       }"
     />
 
@@ -37,8 +51,8 @@ const enabled = ref(false)
       v-model="enabled"
       switch="4xl"
       :nv="{
-        switchChecked: 'switch-checked-lime',
-        switchUnchecked: 'switch-unchecked-red',
+        switchSliderBgChecked: 'bg-yellow',
+        switchSliderBgUnchecked: 'bg-blue',
         switchSliderChecked: 'rounded-l-lg',
         switchSliderUnchecked: 'rounded-r-lg',
       }"

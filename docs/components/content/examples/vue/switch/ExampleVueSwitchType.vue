@@ -1,10 +1,10 @@
 <template>
   <div flex items-center gap-4>
     <NSwitch
-      variant="normal"
+      type="normal"
     />
     <NSwitch
-      variant="short"
+      type="short"
     />
   </div>
 </template>
