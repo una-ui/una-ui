@@ -2,44 +2,35 @@
   <div flex items-center gap-4>
     <NSwitch
       :model-value="true"
-      variant="short"
+      type="short"
+      switch="primary"
     />
 
     <NSwitch
       :model-value="true"
-      :nv="{
-        switchChecked: 'switch-checked-error',
-      }"
+      switch="green"
     />
 
     <NSwitch
       :model-value="true"
-      variant="short"
-      :nv="{
-        switchChecked: 'switch-checked-info',
-      }"
+      type="short"
+      switch="info"
     />
 
     <NSwitch
       :model-value="true"
-      :nv="{
-        switchChecked: 'switch-checked-pink',
-      }"
+      switch="pink"
     />
 
     <NSwitch
       :model-value="true"
-      variant="short"
-      :nv="{
-        switchChecked: 'switch-checked-red',
-      }"
+      type="short"
+      switch="purple"
     />
 
     <NSwitch
       :model-value="true"
-      :nv="{
-        switchChecked: 'switch-checked-indigo',
-      }"
+      switch="warning"
     />
   </div>
 </template>
