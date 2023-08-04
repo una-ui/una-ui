@@ -60,7 +60,7 @@ const statusClassVariants = computed(() => {
   return {
     input: input[props.status ?? 'default'],
     text: text[props.status ?? 'default'],
-    icon: icon[props.status ?? 'default'],
+    icon: `${icon[props.status ?? 'default']} input-icon`,
   }
 })
 
@@ -106,9 +106,10 @@ const reverseClassVariants = computed(() => {
     >
       <slot name="leading">
         <NIcon
-          v-if="leading" :name="leading"
-          input="leading-base"
-          :class="nv?.inputLeadingBase"
+          v-if="leading"
+          :name="leading"
+          input="leading"
+          :class="nv?.inputLeading"
           @click="emit('leading')"
         />
       </slot>
@@ -124,18 +125,19 @@ const reverseClassVariants = computed(() => {
     >
       <NIcon
         v-if="loading"
+        input="loading"
         :name="nv?.inputLoadingIcon ?? 'input-loading-icon'"
-        input="loading-base"
-        :class="nv?.inputLoadingBase"
+        :class="nv?.inputLoading"
       />
 
       <slot v-else name="trailing">
         <NIcon v-if="status" :name="statusClassVariants.icon" />
         <NIcon
           v-else-if="trailing"
-          input="trailing-base"
-          :class="nv?.inputTrailingBase"
-          :name="trailing" @click="emit('trailing')"
+          input="trailing"
+          :class="nv?.inputTrailing"
+          :name="trailing"
+          @click="emit('trailing')"
         />
       </slot>
     </div>

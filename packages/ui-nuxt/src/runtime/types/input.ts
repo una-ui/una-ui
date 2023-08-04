@@ -79,18 +79,21 @@ export interface NInputProps {
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/input.ts
   */
   nv?: {
+    // wrappers
     inputWrapper?: string
     inputLeadingWrapper?: string
     inputTrailingWrapper?: string
 
+    // icons
     inputWarningIcon?: string
     inputErrorIcon?: string
     inputSuccessIcon?: string
     inputInfoIcon?: string
     inputLoadingIcon?: string
 
-    inputLoadingBase?: string
-    inputTrailingBase?: string
-    inputLeadingBase?: string
+    // base
+    inputLoading?: string
+    inputTrailing?: string
+    inputLeading?: string
   }
 }
