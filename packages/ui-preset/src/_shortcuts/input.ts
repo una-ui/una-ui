@@ -2,7 +2,7 @@ type InputPrefix = 'input'
 
 export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, string> = {
   // base
-  'input': 'text-0.875em leading-1.5em px-.75em py-0.45em w-full input-disabled ring-base placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
+  'input': 'text-0.875em leading-1.5em px-.8em py-0.45em w-full input-disabled ring-base placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
   'input-disabled': '!disabled:(cursor-not-allowed pointer-events-none bg-muted text-muted opacity-75)',
   'input-loading-base': 'animate-spin',
