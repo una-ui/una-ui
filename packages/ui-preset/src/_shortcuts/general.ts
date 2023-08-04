@@ -30,7 +30,7 @@ export const staticGeneral = {
   'bg-muted': 'bg-$c-muted',
 
   // icon
-  'loading-icon': 'i-tabler-loader-2 animate-spin',
+  'loading-icon': 'i-tabler-loader-2',
 }
 
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
