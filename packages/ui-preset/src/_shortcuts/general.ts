@@ -28,6 +28,9 @@ export const staticGeneral = {
   'bg-base': 'bg-$c-background',
   'bg-inverted': 'bg-$c-foreground',
   'bg-muted': 'bg-$c-muted',
+
+  // icon
+  'loading-icon': 'i-tabler-loader-2 animate-spin',
 }
 
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
