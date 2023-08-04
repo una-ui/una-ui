@@ -10,7 +10,7 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-disabled': 'opacity-75 cursor-not-allowed',
   'switch-focus': 'focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-base focus:ring-brand',
 
-  // variants
+  // mode
   'switch-inset': 'h-1.5em w-2.75em',
   'switch-outset': 'h-1.25em w-2.50em',
   'switch-track-inset': 'h-1.5em w-2.75em',
