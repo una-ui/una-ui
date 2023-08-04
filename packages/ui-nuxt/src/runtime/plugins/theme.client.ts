@@ -14,7 +14,8 @@ export default defineNuxtPlugin(() => {
   const settings = useStorage('nv-settings', {
     primaryColors: undefined as ThemeColors | undefined,
     grayColors: undefined as ThemeColors | undefined,
-    fontSize: 15,
+    // fontSize: 16, TODO: add font size
+    // --font-size: ${settings.value.fontSize}px; TODO: add font size
   })
 
   nexveltUIStyle = document.createElement('style')
@@ -30,7 +31,6 @@ export default defineNuxtPlugin(() => {
     if (styleTag) {
       styleTag.innerHTML = `
     :root {
-        --font-size: ${settings.value.fontSize}px;
         ${Object.entries(settings.value.primaryColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
         ${Object.entries(settings.value.grayColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
     }
