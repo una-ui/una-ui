@@ -56,13 +56,13 @@
 
       <div flex="~ col md:row" gap-2>
         <NButton
-          btn="base"
+          btn="~"
           class="from-primary to-$nv-c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
           label="gradient color"
         />
 
         <NButton
-          btn="base"
+          btn="~"
           class="from-primary-500 via-primary-600 to-primary-700 bg-gradient-to-r text-white shadow-lg shadow-primary-500/50 hover:bg-gradient-to-br dark:shadow-lg dark:shadow-primary-800/80 dark:focus:ring-primary-800"
           label="glowing effect"
         />
