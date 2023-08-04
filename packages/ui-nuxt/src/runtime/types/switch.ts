@@ -48,12 +48,14 @@ export interface NSwitchProps {
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/switch.ts
   */
   nv?: {
-    switchSlider?: string
-    switchSliderBgChecked?: string
-    switchSliderBgUnchecked?: string
-    switchSliderChecked?: string
-    switchSliderUnchecked?: string
-    switchSliderBg?: string
+    switchThumb?: string
+    switchThumbOn?: string
+    switchThumbOff?: string
+
+    switchTrack?: string
+    switchTrackOn?: string
+    switchTrackOff?: string
+
     switchIcon?: string
     switchIconOn?: string
     switchIconOff?: string

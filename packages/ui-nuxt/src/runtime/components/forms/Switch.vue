@@ -13,42 +13,42 @@ const props = defineProps<NSwitchProps>()
 
 const emit = defineEmits<{ (...args: any): void }>()
 
-const checked = useVModel(props, 'modelValue', emit, { passive: true })
+const on = useVModel(props, 'modelValue', emit, { passive: true })
 
 const _switch = computed(() => props.switch)
 
 const switchClassVariants = computed(() => {
   const switchWrapper = {
-    false: 'switch-normal',
-    true: 'switch-short',
+    false: 'switch-inset',
+    true: 'switch-outset',
   }
 
-  const switchSliderBg = {
-    false: 'switch-slider-bg-normal',
-    true: 'switch-slider-bg-short',
+  const switchTrack = {
+    false: 'switch-track-inset',
+    true: 'switch-track-outset',
   }
 
-  const switchSlider = {
+  const switchThumb = {
     false: 'left-0.1em',
     true: 'left-0',
   }
 
   return {
     switchWrapper: switchWrapper[!props.outset ? 'false' : 'true'],
-    switchSliderBg: switchSliderBg[!props.outset ? 'false' : 'true'],
-    switchSlider: switchSlider[!props.outset ? 'false' : 'true'],
+    switchTrack: switchTrack[!props.outset ? 'false' : 'true'],
+    switchThumb: switchThumb[!props.outset ? 'false' : 'true'],
   }
 })
 
 const checkedClassVariants = computed(() => {
-  const switchSliderBg = {
-    true: `${props.nv?.switchSliderBgChecked ?? ''} switch-slider-bg-checked`,
-    false: `${props.nv?.switchSliderBgUnchecked ?? ''} switch-slider-bg-unchecked`,
+  const switchTrack = {
+    true: `${props.nv?.switchTrackOn ?? ''} switch-track-on`,
+    false: `${props.nv?.switchTrackOff ?? ''} switch-track-off`,
   }
 
-  const switchSlider = {
-    true: `${props.nv?.switchSliderChecked ?? ''} switch-slider-checked`,
-    false: `${props.nv?.switchSliderUnchecked ?? ''} switch-slider-unchecked`,
+  const switchThumb = {
+    true: `${props.nv?.switchThumbOn ?? ''} switch-thumb-on`,
+    false: `${props.nv?.switchThumbOff ?? ''} switch-thumb-off`,
   }
 
   const switchIcon = {
@@ -57,16 +57,16 @@ const checkedClassVariants = computed(() => {
   }
 
   return {
-    switchSliderBg: switchSliderBg[checked.value ? 'true' : 'false'],
-    switchSlider: switchSlider[checked.value ? 'true' : 'false'],
-    switchIcon: switchIcon[checked.value ? 'true' : 'false'],
+    switchTrack: switchTrack[on.value ? 'true' : 'false'],
+    switchThumb: switchThumb[on.value ? 'true' : 'false'],
+    switchIcon: switchIcon[on.value ? 'true' : 'false'],
   }
 })
 </script>
 
 <template>
   <Switch
-    v-model="checked"
+    v-model="on"
     class="switch"
     :class="[
       { 'switch-disabled': disabled },
@@ -76,25 +76,25 @@ const checkedClassVariants = computed(() => {
     v-bind="$attrs"
     :disabled="disabled"
   >
-    <span class="sr-only">Slider background</span>
+    <span class="sr-only">Thumb background</span>
     <span
       aria-hidden="true"
-      switch="slider-bg"
+      switch="track"
       :class="[
-        nv?.switchSliderBg,
-        checkedClassVariants?.switchSliderBg,
-        switchClassVariants?.switchSliderBg,
+        nv?.switchTrack,
+        checkedClassVariants?.switchTrack,
+        switchClassVariants?.switchTrack,
       ]"
     />
 
-    <span class="sr-only">Slider</span>
+    <span class="sr-only">Thumb</span>
     <span
       aria-hidden="true"
-      switch="slider"
+      switch="thumb"
       :class="[
-        nv?.switchSlider,
-        checkedClassVariants?.switchSlider,
-        switchClassVariants?.switchSlider,
+        nv?.switchThumb,
+        checkedClassVariants?.switchThumb,
+        switchClassVariants?.switchThumb,
       ]"
     >
       <span class="sr-only">Icon</span>
