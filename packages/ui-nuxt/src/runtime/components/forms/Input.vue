@@ -66,8 +66,8 @@ const statusClassVariants = computed(() => {
 
 const reverseClassVariants = computed(() => {
   const input = {
-    false: [isLeading.value ? 'ps-10' : '', isTrailing.value ? 'pe-10' : ''],
-    true: [isLeading.value ? 'pe-10' : '', isTrailing.value ? 'ps-10' : ''],
+    false: [{ 'ps-2.5em': isLeading.value }, { 'pe-2.5em': isTrailing.value }],
+    true: [{ 'pe-2.5em': isLeading.value }, { 'ps-2.5em': isTrailing.value }],
   }
 
   return {
@@ -79,7 +79,11 @@ const reverseClassVariants = computed(() => {
 </script>
 
 <template>
-  <div input="wrapper" :class="nv?.inputWrapper">
+  <div
+    input="wrapper"
+    :size="size"
+    :class="nv?.inputWrapper"
+  >
     <input
       v-bind="$attrs"
       :id="id"
@@ -103,6 +107,7 @@ const reverseClassVariants = computed(() => {
       <slot name="leading">
         <NIcon
           v-if="leading" :name="leading"
+          input="leading-base"
           :class="nv?.inputLeadingBase"
           @click="emit('leading')"
         />
@@ -128,6 +133,7 @@ const reverseClassVariants = computed(() => {
         <NIcon v-if="status" :name="statusClassVariants.icon" />
         <NIcon
           v-else-if="trailing"
+          input="trailing-base"
           :class="nv?.inputTrailingBase"
           :name="trailing" @click="emit('trailing')"
         />

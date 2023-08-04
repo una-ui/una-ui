@@ -52,6 +52,15 @@ export interface NInputProps {
    * input="solid-green"
   */
   input?: string
+  /**
+   * Allows you to change the size of the input.
+   *
+   * @default size="sm"
+   *
+   * @example
+   * size="sm" | size="2cm" | size="2rem" | size="2px
+  */
+  size?: string
 
   /**
    * Manually set the id attribute.
