@@ -69,7 +69,7 @@ const onClassVariants = computed(() => {
     v-model="on"
     class="switch"
     :class="[
-      { 'switch-disabled': disabled },
+      { 'switch-disabled': disabled || loading },
       switchClassVariants?.switchWrapper,
     ]"
     :switch="_switch"
@@ -99,8 +99,15 @@ const onClassVariants = computed(() => {
     >
       <span class="sr-only">Icon</span>
       <NIcon
-        :switch="`icon ${nv?.switchIcon ?? ''}`"
+        v-if="!loading"
+        switch="icon"
         :name="onClassVariants?.switchIcon"
+        :class="nv?.switchIcon"
+      />
+      <NIcon
+        v-else
+        switch="icon"
+        name="switch-loading"
       />
     </span>
   </Switch>

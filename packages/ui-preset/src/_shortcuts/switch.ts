@@ -34,7 +34,7 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-icon-on': 'text-brand',
 
   // loading
-  'switch-loading': 'loading-icon',
+  'switch-loading': 'loading-icon text-brand animate-spin',
 }
 
 export const dynamicSwitch = [

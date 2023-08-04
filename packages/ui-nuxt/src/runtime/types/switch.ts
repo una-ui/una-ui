@@ -6,10 +6,18 @@ export interface NSwitchProps {
   */
   modelValue?: boolean
   /**
-   * Add disabled state to the input.
+   * Disable the switch from being clicked.
+   *
+   * @default false
   */
   disabled?: boolean
-
+  /**
+   * Add a loading indicator to the switch.
+   * This will also disable the switch.
+   *
+   * @default false
+  */
+  loading?: boolean
   /**
    * Display the slider thumb outside of the track.
    *
