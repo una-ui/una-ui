@@ -66,7 +66,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
       // TODO: optimize this
       [/^switch-(.*)$/, fonts[1][1] as any],
       [/^btn-(.*)$/, fonts[1][1] as any],
-      [/^input-(.*)$/, fonts[1][1] as any],
+      [/^size-(.*)$/, fonts[1][1] as any],
       [/^n-(.*)$/, fonts[1][1] as any],
       ['n-disabled', {
         'opacity': 0.4,
