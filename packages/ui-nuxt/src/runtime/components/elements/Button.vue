@@ -36,11 +36,13 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     v-bind="$attrs"
   >
     <DefineTemplate v-if="loading">
-      <NIcon
-        :name="nv?.btnLoadingIcon ?? 'btn-loading-icon'"
-        :class="nv?.btnLoadingBase"
-        btn="loading-base icon-text-base"
-      />
+      <slot name="loading">
+        <NIcon
+          :name="nv?.btnLoadingIcon ?? 'btn-loading-icon'"
+          :class="nv?.btnLoadingBase"
+          btn="loading-base icon-text-base"
+        />
+      </slot>
     </DefineTemplate>
 
     <ReuseTemplate v-if="loading && loadingPlacement === 'leading'" />
