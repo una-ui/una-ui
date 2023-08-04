@@ -25,7 +25,8 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-track': 'pointer-events-none absolute mx-auto rounded-full transition-colors duration-200 ease-in-out',
   'switch-track-on': 'bg-brand',
   'switch-track-off': 'bg-$c-gray-200',
-  // icons
+
+  // icon
   'switch-icon': 'text-.8em',
   'switch-icon-off': 'text-muted',
   'switch-icon-on': 'text-brand',
