@@ -69,7 +69,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
       [/^size-(.*)$/, fonts[1][1] as any],
       [/^n-(.*)$/, fonts[1][1] as any],
       ['n-disabled', {
-        'opacity': 0.4,
+        'opacity': 0.7,
         'pointer-events': 'none',
       }],
     ],
