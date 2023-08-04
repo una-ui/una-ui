@@ -2,7 +2,7 @@
   <div flex items-center gap-4>
     <NSwitch
       :model-value="true"
-      type="short"
+      outset
       switch="primary focus"
     />
 
@@ -13,7 +13,7 @@
 
     <NSwitch
       :model-value="true"
-      type="short"
+      outset
       switch="info focus"
     />
 
@@ -24,7 +24,7 @@
 
     <NSwitch
       :model-value="true"
-      type="short"
+      outset
       switch="purple focus"
     />
 

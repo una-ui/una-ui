@@ -13,37 +13,34 @@ const enabled = ref(false)
     <NSwitch
       v-model="enabled"
       switch="focus rose"
-      class="w-4.5em"
-      rotate-90
+      class="w-4.5em rotate-90"
       :nv="{
-        switchSliderBg: 'w-full',
-        switchSliderChecked: 'translate-x-3em',
-        switchSliderUnchecked: 'translate-x-0',
+        switchTrack: 'w-full',
+        switchThumbOn: 'translate-x-3em',
+        switchThumbOff: 'translate-x-0',
       }"
     />
 
     <NSwitch
       v-model="enabled"
       switch="focus indigo 1cm"
-      rotate-120
-      rounded-lg
+      class="rotate-120 rounded-lg"
       :nv="{
-        switchSliderBg: 'rounded-lg',
-        switchSlider: 'bg-inverted',
+        switchTrack: 'rounded-lg',
+        switchThumb: 'bg-inverted',
       }"
     />
 
     <NSwitch
       v-model="enabled"
       switch="3xl"
-      type="short"
-      rotate-45
-      rounded-none
+      outset
+      class="rounded-non rotate-90"
       :nv="{
-        switchSlider: 'rounded-none h-2em w-2em',
-        switchSliderBg: 'rounded-none',
-        switchSliderChecked: 'bg-success',
-        switchSliderUnchecked: 'bg-error',
+        switchThumb: 'rounded-none h-2em w-2em',
+        switchTrack: 'rounded-none',
+        switchThumbOn: 'bg-success',
+        switchThumbOff: 'bg-error',
       }"
     />
 
@@ -51,10 +48,10 @@ const enabled = ref(false)
       v-model="enabled"
       switch="4xl"
       :nv="{
-        switchSliderBgChecked: 'bg-yellow',
-        switchSliderBgUnchecked: 'bg-blue',
-        switchSliderChecked: 'rounded-l-lg',
-        switchSliderUnchecked: 'rounded-r-lg',
+        switchTrackOn: 'bg-yellow',
+        switchTrackOff: 'bg-blue',
+        switchThumbOn: 'rounded-l-lg',
+        switchThumbOff: 'rounded-r-lg',
       }"
     />
   </div>
