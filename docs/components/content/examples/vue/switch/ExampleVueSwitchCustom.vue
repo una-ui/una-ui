@@ -15,7 +15,7 @@ const enabled = ref(false)
       switch="focus rose"
       class="w-4.5em rotate-90"
       :nv="{
-        switchTrack: 'w-full',
+        switchTrack: 'w-4.5em',
         switchThumbOn: 'translate-x-3em',
         switchThumbOff: 'translate-x-0',
       }"
