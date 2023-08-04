@@ -16,12 +16,12 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-track-inset': 'h-1.5em w-2.75em',
   'switch-track-outset': 'h-1em w-2.25em',
 
-  // thumb (circle)
+  // thumb
   'switch-thumb': 'flex items-center justify-center h-1.25em w-1.25em absolute border-base bg-base border pointer-events-none inline-block transform rounded-full shadow transition duration-200 ease-in-out',
   'switch-thumb-on': 'translate-x-1.25em',
   'switch-thumb-off': 'translate-x-0',
 
-  // thumb track
+  // track
   'switch-track': 'pointer-events-none absolute mx-auto rounded-full transition-colors duration-200 ease-in-out',
   'switch-track-on': 'bg-brand',
   'switch-track-off': 'bg-$c-gray-200',
