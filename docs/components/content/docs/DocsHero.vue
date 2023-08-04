@@ -7,7 +7,7 @@ const { version } = useRuntimeConfig().public
     <!-- left section -->
     <div col="lg:span-3 span-1" space="y-8" class="flex flex-col items-center lg:items-start">
       <div>
-        <span btn="~ base" class="rounded-lg bg-muted text-xs font-medium ring ring-gray/10">
+        <span btn="~" class="rounded-lg bg-muted text-xs font-medium ring ring-gray/10">
           <NIcon name="i-heroicons-sparkles-solid" mr-1 text-sm text-primary />
           v{{ version }}
         </span>
