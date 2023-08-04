@@ -20,6 +20,8 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-success-icon': 'i-heroicons-check-circle-20-solid',
   'input-warning-icon': 'i-heroicons-exclamation-triangle-20-solid',
   'input-loading-icon': 'i-tabler-loader-2',
+
+  // TODO: add input-solid|outline-gray variant
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
