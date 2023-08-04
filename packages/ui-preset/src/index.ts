@@ -57,7 +57,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
     rules: [
       [/^n-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
         const color = parseColor(body, theme)
-        if (color?.cssColor?.type === ('rgb' || 'rgba') && color.cssColor.components) {
+        if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components) {
           return {
             '--una-c-brand': `${color.cssColor.components.join(',')}`,
           }
