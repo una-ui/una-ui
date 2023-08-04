@@ -40,7 +40,7 @@ const switchClassVariants = computed(() => {
   }
 })
 
-const checkedClassVariants = computed(() => {
+const onClassVariants = computed(() => {
   const switchTrack = {
     true: `${props.nv?.switchTrackOn ?? ''} switch-track-on`,
     false: `${props.nv?.switchTrackOff ?? ''} switch-track-off`,
@@ -82,7 +82,7 @@ const checkedClassVariants = computed(() => {
       switch="track"
       :class="[
         nv?.switchTrack,
-        checkedClassVariants?.switchTrack,
+        onClassVariants?.switchTrack,
         switchClassVariants?.switchTrack,
       ]"
     />
@@ -93,14 +93,14 @@ const checkedClassVariants = computed(() => {
       switch="thumb"
       :class="[
         nv?.switchThumb,
-        checkedClassVariants?.switchThumb,
+        onClassVariants?.switchThumb,
         switchClassVariants?.switchThumb,
       ]"
     >
       <span class="sr-only">Icon</span>
       <NIcon
         :switch="`icon ${nv?.switchIcon ?? ''}`"
-        :name="checkedClassVariants?.switchIcon"
+        :name="onClassVariants?.switchIcon"
       />
     </span>
   </Switch>
