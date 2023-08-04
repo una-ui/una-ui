@@ -3,10 +3,7 @@ const value = ref('')
 </script>
 
 <template>
-  <div grid="~ cols-1 sm:cols-2" gap-4>
-    <NInput
-      v-model="value"
-    />
+  <div class="flex">
     <NInput
       v-model="value"
       type="text"

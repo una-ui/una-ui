@@ -15,15 +15,15 @@
       />
     </div>
 
-    <div>
+    <div col-span-2>
       <NInput
         input="outline-purple"
+        size="1.1rem"
         leading="i-heroicons-paper-clip-20-solid"
         trailing="i-heroicons-chat-bubble-left-ellipsis-20-solid"
         :nv="{
           inputLeadingWrapper: 'text-yellow',
           inputTrailingWrapper: 'text-blue',
-          inputWrapper: 'sm:col-span-2',
         }"
         placeholder="You can also use nv to add custom class"
       />

@@ -1,42 +1,42 @@
 <template>
   <div grid="~ cols-1 sm:cols-2" gap-4>
     <NInput
-      input="xs"
+      size="xs"
       placeholder="This is extra small size"
     />
 
     <NInput
-      input="sm"
-      placeholder="This is small size (default)"
+      size="sm"
+      placeholder="This is small size"
     />
 
     <NInput
-      input="md"
-      placeholder="This is medium size"
+      size="base"
+      placeholder="This is base size (default)"
     />
 
     <NInput
-      input="2xl"
+      size="2xl"
       placeholder="This is 2xl size"
     />
 
     <NInput
-      input="lg"
+      size="lg"
       class="rounded-full"
       placeholder="This is custom"
     />
 
     <NInput
-      input="26px"
+      size="26px"
       placeholder="This is custom"
-      class="rounded-br-full rounded-tl-full"
+      class="rounded-none"
     />
 
     <NInput
       :nv="{
         inputWrapper: 'sm:col-span-2',
       }"
-      input="6rem"
+      size="6rem"
       placeholder="This is 6rem size"
     />
   </div>
