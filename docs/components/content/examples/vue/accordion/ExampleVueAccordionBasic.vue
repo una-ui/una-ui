@@ -16,9 +16,7 @@ const items = [
 </script>
 
 <template>
-  <div>
-    <NAccordion
-      :items="items"
-    />
-  </div>
+  <NAccordion
+    :items="items"
+  />
 </template>
