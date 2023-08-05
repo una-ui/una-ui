@@ -12,7 +12,7 @@
 
     <NInput
       input="~"
-      placeholder="This is the unstyle input"
+      placeholder="This is the base input"
     />
   </div>
 </template>
