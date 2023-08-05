@@ -98,18 +98,20 @@ const onClassVariants = computed(() => {
       ]"
     >
       <span class="sr-only">Icon</span>
-      <NIcon
-        v-if="!loading"
-        switch="icon"
-        :name="onClassVariants?.switchIcon"
-        :class="nv?.switchIcon"
-      />
-      <NIcon
-        v-else
-        switch="loading"
-        :class="nv?.switchLoading"
-        :name="nv?.switchloadingicon ?? 'switch-loading-icon'"
-      />
+      <slot v-if="!loading" name="icon" :on="on">
+        <NIcon
+          switch="icon"
+          :name="onClassVariants?.switchIcon"
+          :class="nv?.switchIcon"
+        />
+      </slot>
+      <slot v-else name="loading-icon" :on="on">
+        <NIcon
+          switch="loading"
+          :class="nv?.switchLoading"
+          :name="nv?.switchloadingicon ?? 'switch-loading-icon'"
+        />
+      </slot>
     </span>
   </Switch>
 </template>
