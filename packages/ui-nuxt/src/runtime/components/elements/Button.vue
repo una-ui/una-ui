@@ -39,8 +39,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       <slot name="loading">
         <NIcon
           :name="nv?.btnLoadingIcon ?? 'btn-loading-icon'"
-          :class="nv?.btnLoadingBase"
-          btn="loading-base icon-text-base"
+          :class="nv?.btnLoading"
+          btn="loading icon-text"
         />
       </slot>
     </DefineTemplate>
@@ -53,8 +53,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       <NIcon
         v-if="leading"
         :name="leading"
-        :class="[nv?.btnLeadingBase, nv?.btnIconTextBase]"
-        btn="leading-base icon-text-base"
+        :class="[nv?.btnLeading, nv?.btnIconText]"
+        btn="leading icon-text"
       />
     </slot>
 
@@ -62,14 +62,11 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     <slot v-else>
       <NIcon
         v-if="label && icon"
-        :class="nv?.btnIconTextBase"
-        btn="icon-text-base" :name="label"
+        :class="nv?.btnIconText"
+        btn="icon-text" :name="label"
       />
       <span
         v-if="!icon"
-        :class="[
-          nv?.btnLabelBase,
-        ]"
       >
         {{ label }}
       </span>
@@ -83,8 +80,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       <NIcon
         v-if="trailing"
         :name="trailing"
-        :class="[nv?.btnLeadingBase, nv?.btnIconTextBase]"
-        btn="trailing-base icon-text-base"
+        :class="[nv?.btnLeading, nv?.btnIconText]"
+        btn="trailing icon-text"
       />
     </slot>
   </Component>

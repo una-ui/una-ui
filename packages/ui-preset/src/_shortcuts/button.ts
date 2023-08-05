@@ -1,23 +1,20 @@
 type ButtonPrefix = 'btn'
 
 export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, string> = {
-  // config
-  'btn-disabled': 'disabled:n-disabled',
-
   // base
-  'btn': 'bg-transparent btn-sm gap-1 btn-rectangle rounded inline-flex justify-center items-center btn-disabled font-semibold cursor-pointer',
-  'btn-label-base': '',
-  'btn-leading-base': '-ml-0.2em mr-0.2em',
-  'btn-trailing-base': '-mr-0.2em ml-0.2em',
-  'btn-icon-text-base': 'text-1.1em',
+  'btn': 'bg-transparent size-sm gap-1 btn-rectangle rounded inline-flex justify-center items-center btn-disabled font-semibold cursor-pointer',
+  'btn-disabled': 'disabled:n-disabled',
+  'btn-leading': '-ml-0.2em mr-0.2em',
+  'btn-trailing': '-mr-0.2em ml-0.2em',
+  'btn-icon-text': 'text-1.1em',
+  'btn-loading': 'animate-spin',
 
   // options
   'btn-block': 'w-full',
   'btn-reverse': 'flex-row-reverse',
 
-  // loading
-  'btn-loading-base': 'animate-spin',
-  'btn-loading-icon': 'i-tabler-loader-2',
+  // icons
+  'btn-loading-icon': 'loading-icon',
 
   // padding
   'btn-rectangle': 'px-.8em py-.4em',
