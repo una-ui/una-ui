@@ -76,7 +76,7 @@ const onClassVariants = computed(() => {
     v-bind="$attrs"
     :disabled="disabled"
   >
-    <span class="sr-only">Thumb background</span>
+    <span class="sr-only">Track</span>
     <span
       aria-hidden="true"
       switch="track"
