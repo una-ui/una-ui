@@ -89,7 +89,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
             accordion="button"
             :label="item.label"
             :nv="{
-              btnLabelBase: 'accordion-label-base',
+              btnLabel: 'accordion-label-base',
             }"
           >
             <template #leading>

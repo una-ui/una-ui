@@ -4,6 +4,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   // base
   'btn': 'bg-transparent size-sm gap-1 btn-rectangle rounded inline-flex justify-center items-center btn-disabled font-semibold cursor-pointer',
   'btn-disabled': 'disabled:n-disabled',
+  'btn-label': 'w-auto',
   'btn-leading': '-ml-0.2em mr-0.2em',
   'btn-trailing': '-mr-0.2em ml-0.2em',
   'btn-icon-text': 'text-1.1em',

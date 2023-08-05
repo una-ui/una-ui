@@ -67,6 +67,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       />
       <span
         v-if="!icon"
+        input="label"
+        :class="nv?.btnLabel"
       >
         {{ label }}
       </span>

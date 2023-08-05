@@ -86,6 +86,7 @@ export interface NButtonProps {
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/button.ts
   */
   nv?: {
+    btnLabel?: string
     btnLeading?: string
     btnTrailing?: string
     btnIconText?: string
