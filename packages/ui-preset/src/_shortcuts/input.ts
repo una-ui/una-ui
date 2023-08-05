@@ -23,8 +23,8 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-warning-icon': 'i-heroicons-exclamation-triangle-20-solid',
   'input-loading-icon': 'loading-icon',
 
-  // overrides
-  'input-outline-gray': 'focus:ring-2 focus:bg-base ring-1 ring-inset ring-base',
+  // override
+  'input-outline-gray': 'input focus:ring-2 focus:bg-base ring-1 ring-inset ring-base',
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
