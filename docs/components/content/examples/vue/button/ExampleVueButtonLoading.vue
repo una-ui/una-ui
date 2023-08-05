@@ -52,7 +52,8 @@ function toggleLoading() {
 
     <div flex="~ col sm:row" gap-4>
       <NButton
-        btn="solid-yellow"
+        btn="soft-yellow"
+        class="animate-pulse"
         :loading="loading"
         :label="loading ? 'Downloading...' : 'Download'"
         leading="i-heroicons-cloud-arrow-down-20-solid"
