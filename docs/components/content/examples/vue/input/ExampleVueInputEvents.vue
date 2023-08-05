@@ -13,9 +13,9 @@ const isPasswordVisible = ref(false)
       :type="isPasswordVisible ? 'text' : 'password'"
       :trailing="isPasswordVisible ? 'i-heroicons-eye-20-solid' : 'i-heroicons-eye-slash-20-solid'"
       :nv="{
-        inputTrailingBase: 'pointer-events-auto cursor-pointer',
+        inputTrailing: 'pointer-events-auto cursor-pointer',
       }"
-      value="Password"
+      model-value="Password"
       @trailing="isPasswordVisible = !isPasswordVisible"
     />
 
@@ -24,8 +24,8 @@ const isPasswordVisible = ref(false)
       leading="i-heroicons-hand-thumb-up-20-solid"
       trailing="i-heroicons-arrow-down-tray-20-solid "
       :nv="{
-        inputLeadingBase: 'active:scale-120 text-blue pointer-events-auto cursor-pointer active:text-green',
-        inputTrailingBase: 'active:scale-90 text-yellow pointer-events-auto cursor-pointer active:text-lime',
+        inputLeading: 'active:scale-120 text-blue pointer-events-auto cursor-pointer active:text-green',
+        inputTrailing: 'active:scale-90 text-yellow pointer-events-auto cursor-pointer active:text-lime',
       }"
       placeholder="Leading and trailing icons are clickable"
       @leading="click('leading icon is clicked')"

@@ -2,9 +2,7 @@
   <NInput
     leading="i-heroicons-currency-dollar-20-solid"
     placeholder="Search"
-    :nv="{
-      inputBase: 'pe-12',
-    }"
+    class="pe-3em"
   >
     <template #trailing>
       <span class="text-xs font-bold">
