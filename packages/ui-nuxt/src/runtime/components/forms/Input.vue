@@ -25,9 +25,7 @@ const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
 const id = computed(() => props.id ?? randomId('input'))
 
 const isLeading = computed(() => props.leading || slots.leading)
-const isTrailing = computed(
-  () => props.trailing || slots.trailing || props.status || props.loading,
-)
+const isTrailing = computed(() => props.trailing || slots.trailing || props.status || props.loading)
 
 const inputVariants = ['outline', 'solid', '~'] as const
 const hasVariant = computed(() => inputVariants.some(inputVariants => props.input?.includes(inputVariants)))
@@ -60,7 +58,7 @@ const statusClassVariants = computed(() => {
   return {
     input: input[props.status ?? 'default'],
     text: text[props.status ?? 'default'],
-    icon: `${icon[props.status ?? 'default']} input-icon`,
+    icon: icon[props.status ?? 'default'],
   }
 })
 
@@ -131,7 +129,11 @@ const reverseClassVariants = computed(() => {
       />
 
       <slot v-else name="trailing">
-        <NIcon v-if="status" :name="statusClassVariants.icon" />
+        <NIcon
+          v-if="status"
+          input="status-icon"
+          :name="statusClassVariants.icon"
+        />
         <NIcon
           v-else-if="trailing"
           input="trailing"
