@@ -6,6 +6,7 @@ import { formGroup } from './form-group'
 import { input } from './input'
 import { general } from './general'
 import { _switch } from './switch'
+import { alert } from './alert'
 
 export const shortcuts = [
   ...general,
@@ -15,4 +16,5 @@ export const shortcuts = [
   ...input,
   ...icon,
   ..._switch,
+  ...alert,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
