@@ -19,7 +19,7 @@ export interface NInputProps {
   */
   loading?: boolean
   /**
-   * Add disabled state to the input.
+   * Swap the position of the leading and trailing icons.
    *
    * @default false
   */
@@ -58,7 +58,7 @@ export interface NInputProps {
    * @default size="sm"
    *
    * @example
-   * size="sm" | size="2cm" | size="2rem" | size="2px
+   * size="sm" | size="2cm" | size="2rem" | size="2px"
   */
   size?: string
 
