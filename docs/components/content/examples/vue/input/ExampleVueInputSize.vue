@@ -7,12 +7,12 @@
 
     <NInput
       size="sm"
-      placeholder="This is small size"
+      placeholder="This is small size (default)"
     />
 
     <NInput
-      size="base"
-      placeholder="This is base size (default)"
+      size="md"
+      placeholder="This is base or md size"
     />
 
     <NInput
