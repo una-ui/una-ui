@@ -8,9 +8,9 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-item': 'w-full',
   'accordion-button': 'p-(x-3 y-4) justify-start text-primary',
   'accordion-panel': 'text-(muted 1em $c-gray-600) border-(t $c-divider) p-4',
-  'accordion-leading-base': 'text-1.2em',
-  'accordion-trailing-base': 'flex transition items-center text-1em duration-300',
-  'accordion-label-base': 'flex w-full text-1em',
+  'accordion-leading': 'text-1.2em',
+  'accordion-trailing': 'flex transition items-center text-1em duration-300',
+  'accordion-label': 'flex w-full text-1em',
 
   // trailing transition
   'accordion-trailing-open': '-rotate-180',

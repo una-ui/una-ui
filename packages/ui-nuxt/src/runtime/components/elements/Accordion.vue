@@ -89,15 +89,15 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
             accordion="button"
             :label="item.label"
             :nv="{
-              btnLabel: 'accordion-label-base',
+              btnLabel: 'accordion-label',
             }"
           >
             <template #leading>
               <!-- TODO fix conditional statement -->
               <NIcon
                 v-if="leading || item.leading"
-                accordion="leading-base"
-                :class="nv?.accordionLeadingBase"
+                accordion="leading"
+                :class="nv?.accordionLeading"
                 :name="getPriority(item.leading, leading) ?? ''"
                 aria-hidden="true"
               />
@@ -107,12 +107,12 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
             <template #trailing>
               <span
                 v-if="trailingOpen || trailingClose"
-                accordion="trailing-base"
+                accordion="trailing"
                 :class="[
                   trailingClose || (!trailingClose && open)
                     ? getPriority(nv?.accordionTrailingClose, 'accordion-trailing-close')
                     : getPriority(nv?.accordionTrailingOpen, 'accordion-trailing-open'),
-                  nv?.accordionTrailingBase,
+                  nv?.accordionTrailing,
                 ]"
               >
                 <NIcon
