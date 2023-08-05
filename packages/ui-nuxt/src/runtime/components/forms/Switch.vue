@@ -106,8 +106,9 @@ const onClassVariants = computed(() => {
       />
       <NIcon
         v-else
-        switch="icon"
-        name="switch-loading"
+        switch="loading"
+        :class="nv?.switchLoading"
+        :name="nv?.switchloadingicon ?? 'switch-loading-icon'"
       />
     </span>
   </Switch>
