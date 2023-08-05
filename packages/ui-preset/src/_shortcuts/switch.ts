@@ -41,7 +41,7 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
 export const dynamicSwitch = [
   [/^switch-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
     const color = parseColor(body, theme)
-    if (color?.cssColor?.type === 'rgb' && color.cssColor.components)
+    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
       return `n-${body}-600 dark:n-${body}-500`
   }],
 ]
