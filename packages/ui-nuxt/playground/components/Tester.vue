@@ -1,56 +1,27 @@
 <script setup lang="ts">
-const enabled = ref(false)
+function click(description: string) {
+  // eslint-disable-next-line no-alert
+  alert(description)
+}
+
+const isPasswordVisible = ref(false)
 </script>
 
 <template>
-  <div grid="~ cols-2 sm:cols-3" gap-4>
-    <NButton
-      label="Button Solid"
-      btn="solid"
-    />
+  <div flex gap-4>
+    <div>
+      <NInput
+        leading="i-heroicons-envelope-20-solid"
+        loading
+        placeholder="Leading and trailing icons are clickable"
+      />
+    </div>
 
-    <NButton
-      label="Button Solid"
-    />
-
-    <NButton
-      label="Button Outline"
-      btn="outline"
-    />
-
-    <NButton
-      label="Button Soft"
-      btn="soft"
-    />
-
-    <NButton
-      label="Button Ghost"
-      btn="ghost"
-    />
-
-    <NButton
-      label="Button Link"
-      btn="link"
-    />
-
-    <NButton
-      label="Button text"
-      btn="text"
-    />
-
-    <NButton
-      label="Button Base"
-      btn="soft"
-    />
-
-    <NSwitch
-      v-model="enabled"
-      type="short"
-      switch="orange focus"
-    />
-
-    <NSwitch
-      v-model="enabled"
-    />
+    <div class="relative rounded-md text-sm shadow-sm">
+      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+        <span i-heroicons-hand-thumb-up-20-solid class="h-5 w-5 text-gray-400" aria-hidden="true" />
+      </div>
+      <input type="text" input="outline" size="sm" class="pl-10">
+    </div>
   </div>
 </template>
