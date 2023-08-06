@@ -1,9 +1,7 @@
 <template>
-  <div flex items-center gap-4>
+  <div flex items-center space-x-4>
     <NSwitch />
 
-    <NSwitch
-      outset
-    />
+    <NSwitch outset />
   </div>
 </template>
