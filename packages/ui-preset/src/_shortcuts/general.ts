@@ -30,7 +30,11 @@ export const staticGeneral = {
   'bg-muted': 'bg-$c-muted',
 
   // icon
-  'loading-icon': 'i-heroicons-arrow-path-20-solid',
+  'icon-loading': 'i-heroicons-arrow-path-20-solid',
+  'icon-warning': 'i-heroicons-exclamation-triangle-20-solid',
+  'icon-error': 'i-heroicons-exclamation-circle-20-solid',
+  'icon-success': 'i-heroicons-check-circle-20-solid',
+  'icon-info': 'i-heroicons-information-circle-20-solid',
 }
 
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
