@@ -23,6 +23,7 @@ const alertClassVariants = computed(() => {
     default: '',
   }
 
+  // TODO: simplify and optimize this
   const alertType = props.alert ? (props.alert.includes('info') ? 'info' : (props.alert.includes('success') ? 'success' : (props.alert.includes('warning') ? 'warning' : (props.alert.includes('error') ? 'error' : 'default')))) : 'default'
 
   return {
