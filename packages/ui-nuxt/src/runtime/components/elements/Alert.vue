@@ -49,8 +49,8 @@ const icon = computed(() => {
         v-if="props.icon !== false"
         alert="icon"
         :name="icon"
+        aria-hidden="true"
       />
-
       <div>
         <h3 v-if="title" alert="title">
           {{ title }}
