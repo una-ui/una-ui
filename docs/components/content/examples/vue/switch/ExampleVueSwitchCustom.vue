@@ -23,7 +23,8 @@ const enabled = ref(false)
 
     <NSwitch
       v-model="enabled"
-      switch="focus indigo 1cm"
+      switch="focus indigo"
+      size="1cm"
       class="rotate-120 rounded-lg"
       :nv="{
         switchTrack: 'rounded-lg',
@@ -33,7 +34,7 @@ const enabled = ref(false)
 
     <NSwitch
       v-model="enabled"
-      switch="3xl"
+      size="3xl"
       outset
       class="rounded-non rotate-90"
       :nv="{
@@ -46,7 +47,7 @@ const enabled = ref(false)
 
     <NSwitch
       v-model="enabled"
-      switch="4xl"
+      size="4xl"
       :nv="{
         switchTrackOn: 'bg-yellow',
         switchTrackOff: 'bg-blue',
