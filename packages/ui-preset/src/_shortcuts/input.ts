@@ -12,7 +12,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-loading': 'animate-spin input-icon',
 
   // wrappers
-  'input-wrapper': 'relative flex items-center size-sm',
+  'input-wrapper': 'relative flex items-center sm:size-sm',
   'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-$c-gray-400',
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
 
