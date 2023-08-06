@@ -30,7 +30,7 @@ export const staticGeneral = {
   'bg-muted': 'bg-$c-muted',
 
   // icon
-  'icon-loading': 'i-heroicons-arrow-path-20-solid',
+  'i-loading': 'i-heroicons-arrow-path-20-solid',
   'i-warning': 'i-heroicons-exclamation-triangle-20-solid',
   'i-error': 'i-heroicons-exclamation-circle-20-solid',
   'i-success': 'i-heroicons-check-circle-20-solid',

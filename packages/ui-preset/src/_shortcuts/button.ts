@@ -15,7 +15,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   'btn-reverse': 'flex-row-reverse',
 
   // icons
-  'btn-loading-icon': 'icon-loading',
+  'btn-loading-icon': 'i-loading',
 
   // padding
   'btn-rectangle': 'px-.8em py-.4em',

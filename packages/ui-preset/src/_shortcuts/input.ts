@@ -17,7 +17,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
 
   // icons
-  'input-loading-icon': 'icon-loading',
+  'input-loading-icon': 'i-loading',
   'input-info-icon': 'i-info',
   'input-error-icon': 'i-error',
   'input-success-icon': 'i-success',
