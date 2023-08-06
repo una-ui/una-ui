@@ -17,11 +17,11 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
 
   // icons
-  'input-info-icon': 'i-heroicons-information-circle-20-solid',
-  'input-error-icon': 'i-heroicons-exclamation-circle-20-solid',
-  'input-success-icon': 'i-heroicons-check-circle-20-solid',
-  'input-warning-icon': 'i-heroicons-exclamation-triangle-20-solid',
   'input-loading-icon': 'loading-icon',
+  'input-info-icon': 'icon-info',
+  'input-error-icon': 'icon-error',
+  'input-success-icon': 'icon-success',
+  'input-warning-icon': 'icon-warning',
 
   // override
   'input-outline-gray': 'input focus:ring-2 focus:bg-base ring-1 ring-inset ring-base',
