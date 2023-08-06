@@ -49,7 +49,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
           950: 'rgba(var(--nv-gray-950) / <alpha-value>)',
         },
         error: colors.red,
-        success: colors.lime,
+        success: colors.green,
         warning: colors.amber,
         info: colors.blue,
       },
