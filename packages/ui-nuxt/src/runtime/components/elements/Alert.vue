@@ -46,12 +46,16 @@ const icon = computed(() => {
     :class="{ 'alert-default-variant': !hasVariant }"
   >
     <div alert="inner-wrapper">
-      <NIcon
+      <div
         v-if="props.icon !== false"
-        alert="icon"
-        :name="icon"
-        aria-hidden="true"
-      />
+        alert="icon-wrapper"
+      >
+        <NIcon
+          alert="icon"
+          :name="icon"
+          aria-hidden="true"
+        />
+      </div>
       <div>
         <h3 v-if="title" alert="title">
           {{ title }}
