@@ -4,7 +4,6 @@
       :model-value="true"
       outset
       loading
-      switch="primary"
     />
 
     <NSwitch
