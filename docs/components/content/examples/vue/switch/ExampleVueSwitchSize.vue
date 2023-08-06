@@ -1,7 +1,7 @@
 <template>
   <div flex gap-4>
     <NSwitch
-      switch="xs"
+      size="xs"
     />
 
     <NSwitch
@@ -11,16 +11,16 @@
 
     <NSwitch
       :model-value="true"
-      switch="3vw"
+      size="3vw"
       variant="short"
     />
 
     <NSwitch
-      switch="1cm"
+      size="1cm"
     />
 
     <NSwitch
-      switch="40px"
+      size="40px"
       variant="short"
     />
   </div>
