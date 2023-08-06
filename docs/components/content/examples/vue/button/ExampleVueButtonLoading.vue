@@ -66,7 +66,7 @@ function toggleLoading() {
         :loading="loading"
         :nv="{
           btnLoadingIcon: 'i-heroicons-cloud-arrow-down-20-solid',
-          btnLoadingBase: 'animate-pulse',
+          btnLoading: 'animate-pulse',
         }"
         icon
         label="i-tabler-download"
