@@ -32,7 +32,7 @@ const alertClassVariants = computed(() => {
 })
 
 const icon = computed(() => {
-  if (props.icon === '' || props.icon === undefined)
+  if (props.icon === '' || props.icon === undefined || props.icon === true)
     return alertClassVariants.value.icon
 
   return props.icon.toString()
