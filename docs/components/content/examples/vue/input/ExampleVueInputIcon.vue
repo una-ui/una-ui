@@ -1,13 +1,13 @@
 <template>
   <div grid="~ cols-1 sm:cols-2" gap-4>
-    <div>
+    <div col-span-1>
       <NInput
         leading="i-heroicons-magnifying-glass-20-solid"
         placeholder="This is leading icon"
       />
     </div>
 
-    <div>
+    <div col-span-1>
       <NInput
         trailing="i-heroicons-question-mark-circle-20-solid text-primary"
         placeholder="This is trailing icon with custom class"
