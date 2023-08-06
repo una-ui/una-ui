@@ -18,10 +18,10 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
 
   // icons
   'input-loading-icon': 'icon-loading',
-  'input-info-icon': 'icon-info',
-  'input-error-icon': 'icon-error',
-  'input-success-icon': 'icon-success',
-  'input-warning-icon': 'icon-warning',
+  'input-info-icon': 'i-info',
+  'input-error-icon': 'i-error',
+  'input-success-icon': 'i-success',
+  'input-warning-icon': 'i-warning',
 
   // override
   'input-outline-gray': 'input focus:ring-2 focus:bg-base ring-1 ring-inset ring-base',
