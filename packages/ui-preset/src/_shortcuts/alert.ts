@@ -2,7 +2,7 @@ type AlertPrefix = 'alert'
 
 export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, string> = {
   // base
-  'alert': 'rounded-md p-4',
+  'alert': 'p-4',
   'alert-title': 'text-sm font-medium text-brand',
   'alert-description': 'mt-2 text-sm text-brand/90',
   'alert-icon': 'h-5 w-5',
@@ -20,8 +20,9 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
 
 export const dynamicAlert: [RegExp, (params: RegExpExecArray) => string][] = [
   // variants
-  [/^alert-soft(-(\S+))?$/, ([, , c = 'primary']) => `alert border border-${c}-600/5 bg-${c}-50 text-${c}-400 dark:text-${c}-300 dark:bg-${c}-950 n-${c}-800 dark:n-${c}-100`],
-  [/^alert-outline(-(\S+))?$/, ([, , c = 'primary']) => `alert border border-${c}-600 text-brand dark:border-${c}-500 n-${c}-600 dark:n-${c}-500`],
+  [/^alert-soft(-(\S+))?$/, ([, , c = 'primary']) => `alert rounded-md border border-${c}-600/5 bg-${c}-50 text-${c}-400 dark:text-${c}-300 dark:bg-${c}-950 n-${c}-800 dark:n-${c}-100`],
+  [/^alert-outline(-(\S+))?$/, ([, , c = 'primary']) => `alert rounded-md border border-${c}-600 text-brand dark:border-${c}-500 n-${c}-600 dark:n-${c}-500`],
+  [/^alert-border(-(\S+))?$/, ([, , c = 'primary']) => `alert border-l-4 border-${c}-400 dark:border-${c}-500 bg-${c}-50 dark:bg-${c}-950 text-${c}-400 dark:text-${c}-300 n-${c}-800 dark:n-${c}-100`],
 ]
 
 export const alert = [

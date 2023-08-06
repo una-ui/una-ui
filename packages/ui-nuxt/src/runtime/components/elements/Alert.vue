@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<NAlertProps>(), {
   icon: false,
 })
 
-const alertVariants = ['soft', 'outline', '~'] as const
+const alertVariants = ['soft', 'outline', 'border', '~'] as const
 const hasVariant = computed(() => alertVariants.some(alertVariants => props.alert?.includes(alertVariants)))
 
 const alertClassVariants = computed(() => {
