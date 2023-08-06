@@ -1,5 +1,5 @@
 <template>
-  <div flex gap-4>
+  <div flex items-center gap-4>
     <NSwitch
       size="xs"
     />
@@ -12,7 +12,7 @@
     <NSwitch
       :model-value="true"
       size="3vw"
-      variant="short"
+      outset
     />
 
     <NSwitch
@@ -20,8 +20,8 @@
     />
 
     <NSwitch
-      size="40px"
-      variant="short"
+      size="45px"
+      outset
     />
   </div>
 </template>
