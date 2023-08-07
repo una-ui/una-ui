@@ -7,8 +7,8 @@
             Discover the latest software update: version 0.1.0-beta, packed with exciting new features and improvements.
           </p>
           <NButton btn="text-info" to="#" class="p-0 md:ml-2">
-            See what's new
-            <span aria-hidden="true"> &rarr;</span>
+            Details
+            <span aria-hidden="true" class="animate-pulse hover:animate-none"> &rarr;</span>
           </NButton>
         </div>
       </template>
