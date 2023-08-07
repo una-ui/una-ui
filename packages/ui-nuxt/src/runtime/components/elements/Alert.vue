@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import type { NAlertProps } from '../../types'
 import NIcon from '../elements/Icon.vue'
-import NButton from '../elements/Button.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -54,7 +53,7 @@ const icon = computed(() => {
         alert="icon-wrapper"
       >
         <NIcon
-          alert="icon"
+          alert="icon-base"
           :name="icon"
           aria-hidden="true"
         />
@@ -74,13 +73,18 @@ const icon = computed(() => {
         v-if="closable"
         alert="close-wrapper"
       >
-        <NButton
-          alert="close"
-          btn="~ square"
-          label="alert-close-icon"
-          icon
-          @click="emit('close')"
-        />
+        <div alert="close-inner-wrapper">
+          <NButton
+            alert="close"
+            btn="~ square"
+            label="alert-close-icon"
+            icon
+            :nv="{
+              btnIcon: 'alert-close-icon-base',
+            }"
+            @click="emit('close')"
+          />
+        </div>
       </div>
     </div>
   </div>
