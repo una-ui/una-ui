@@ -2,6 +2,7 @@ type ButtonPrefix = 'btn'
 
 export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, string> = {
   // config
+  'btn-default-variant': 'btn-solid',
   'btn-loading-icon': 'i-loading',
 
   // base
