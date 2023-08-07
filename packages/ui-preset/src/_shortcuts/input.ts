@@ -12,11 +12,10 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input': 'px-0.75em py-0.5em w-full input-disabled ring-base placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-disabled': 'disabled:(n-disabled)',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
-  'input-icon': 'h-1.375em w-1.375em',
-  'input-status-icon': 'input-icon',
-  'input-leading': 'input-icon',
-  'input-trailing': 'input-icon',
-  'input-loading': 'animate-spin input-icon',
+  'input-status-icon-base': 'h-1.375em w-1.375em',
+  'input-leading': 'h-1.375em w-1.375em',
+  'input-trailing': 'h-1.375em w-1.375em',
+  'input-loading': 'animate-spin h-1.375em w-1.375em',
 
   // wrappers
   'input-wrapper': 'relative flex items-center size-md sm:size-sm',

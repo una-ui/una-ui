@@ -131,7 +131,7 @@ const reverseClassVariants = computed(() => {
       <slot v-else name="trailing">
         <NIcon
           v-if="status"
-          input="status-icon"
+          input="status-icon-base"
           :name="statusClassVariants.icon"
         />
         <NIcon
