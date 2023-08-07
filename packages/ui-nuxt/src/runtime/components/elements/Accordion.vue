@@ -93,7 +93,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
             }"
           >
             <template #leading>
-              <!-- TODO fix conditional statement -->
+              <!-- TODO: fix conditional statement -->
               <NIcon
                 v-if="leading || item.leading"
                 accordion="leading"
@@ -103,7 +103,6 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
               />
             </template>
 
-            <!-- TODO config to prop instead of slot -->
             <template #trailing>
               <span
                 v-if="trailingOpen || trailingClose"
