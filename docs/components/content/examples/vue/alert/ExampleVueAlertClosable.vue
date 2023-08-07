@@ -2,7 +2,7 @@
 const close1 = ref(false)
 const close2 = ref(false)
 
-// if close1 and close2 are true, reset them to false after 1 second
+// auto reset all state are true after 1 second
 watch([close1, close2], () => {
   if (close1.value && close2.value) {
     setTimeout(() => {
