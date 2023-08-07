@@ -67,31 +67,36 @@ const icon = computed(() => {
 
       <slot>
         <div
-          v-if="title || description"
           alert="content-wrapper"
           :class="nv?.alertContentWrapper"
         >
-          <slot v-if="title" name="title">
-            <h3
-              alert="title"
-              :class="nv?.alertTitle"
-            >
-              {{ title }}
-            </h3>
-          </slot>
-          <slot v-if="description" name="description">
-            <div
-              alert="description"
-              :class="nv?.alertDescription"
-            >
-              <p>{{ description }}</p>
-            </div>
-          </slot>
+          <div
+            v-if="slots.title || title"
+            alert="title"
+            :class="nv?.alertTitle"
+          >
+            <slot name="title">
+              <h3>
+                {{ title }}
+              </h3>
+            </slot>
+          </div>
+          <div
+            v-if="slots.description || description"
+            alert="description"
+            :class="nv?.alertDescription"
+          >
+            <slot name="description">
+              <p>
+                {{ description }}
+              </p>
+            </slot>
+          </div>
         </div>
       </slot>
 
       <div
-        v-if="closable"
+        v-if="slots.closeIcon || closable"
         alert="close-wrapper"
         :class="nv?.alertCloseWrapper"
       >
