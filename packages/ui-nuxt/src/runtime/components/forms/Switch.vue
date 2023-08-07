@@ -102,7 +102,7 @@ const onClassVariants = computed(() => {
         <NIcon
           switch="icon-base"
           :name="onClassVariants?.switchIcon"
-          :class="nv?.switchIcon"
+          :class="nv?.switchIconBase"
         />
       </slot>
       <slot v-else name="loading-icon" :on="on">
