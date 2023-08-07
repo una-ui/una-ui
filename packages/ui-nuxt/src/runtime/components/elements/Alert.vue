@@ -18,10 +18,10 @@ const hasVariant = computed(() => alertVariants.some(alertVariants => props.aler
 
 const alertClassVariants = computed(() => {
   const icon = {
-    info: 'alert-info-icon',
-    success: 'alert-success-icon',
-    warning: 'alert-warning-icon',
-    error: 'alert-error-icon',
+    info: props.nv?.alertInfoIcon ?? 'alert-info-icon',
+    success: props.nv?.alertSuccessIcon ?? 'alert-success-icon',
+    warning: props.nv?.alertWarningIcon ?? 'alert-warning-icon',
+    error: props.nv?.alertErrorIcon ?? 'alert-error-icon',
     default: '',
   }
 
@@ -47,10 +47,14 @@ const icon = computed(() => {
     :alert="alert"
     :class="{ 'alert-default-variant': !hasVariant }"
   >
-    <div alert="inner-wrapper">
+    <div
+      alert="inner-wrapper"
+      :class="nv?.alertInnerWrapper"
+    >
       <div
         v-if="props.icon !== false"
         alert="icon-wrapper"
+        :class="nv?.alertIconWrapper"
       >
         <NIcon
           alert="icon-base"
@@ -61,26 +65,40 @@ const icon = computed(() => {
       <div
         v-if="title || description"
         alert="content-wrapper"
+        :class="nv?.alertContentWrapper"
       >
-        <h3 v-if="title" alert="title">
+        <h3
+          v-if="title"
+          alert="title"
+          :class="nv?.alertTitle"
+        >
           {{ title }}
         </h3>
-        <div v-if="description" alert="description">
+        <div
+          v-if="description"
+          alert="description"
+          :class="nv?.alertDescription"
+        >
           <p>{{ description }}</p>
         </div>
       </div>
       <div
         v-if="closable"
         alert="close-wrapper"
+        :class="nv?.alertCloseWrapper"
       >
-        <div alert="close-inner-wrapper">
+        <div
+          alert="close-inner-wrapper"
+          :class="nv?.alertCloseInnerWrapper"
+        >
           <NButton
             alert="close"
+            :class="nv?.alertClose"
             btn="~ square"
-            label="alert-close-icon"
+            :label="nv?.alertCloseIcon ?? 'alert-close-icon'"
             icon
             :nv="{
-              btnIcon: 'alert-close-icon-base',
+              btnIcon: `${nv?.alertCloseIconBase} alert-close-icon-base`,
             }"
             @click="emit('close')"
           />
