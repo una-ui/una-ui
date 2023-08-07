@@ -9,9 +9,10 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vel optio aliquam autem dolorem enim! Quo, nesciunt deleniti. Natus quisquam quae quis quam ipsa reiciendis at alias molestiae voluptate repudiandae.
         </p>
         <NButton
-          btn="text-info" icon
+          btn="text-info"
           to="#"
           label="i-heroicons-chevron-double-right"
+          icon
           class="animate-pulse p-0 md:ml-4"
         />
       </div>
