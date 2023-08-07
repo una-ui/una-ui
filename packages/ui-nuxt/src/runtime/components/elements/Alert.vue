@@ -13,6 +13,14 @@ const props = withDefaults(defineProps<NAlertProps>(), {
 
 const emit = defineEmits<{ (...args: any): void }>()
 
+const slots = defineSlots<{
+  default?: any
+  title?: any
+  description?: any
+  icon?: any
+  closeIcon?: any
+}>()
+
 const alertVariants = ['soft', 'outline', 'border', '~'] as const
 const hasVariant = computed(() => alertVariants.some(alertVariants => props.alert?.includes(alertVariants)))
 
@@ -110,9 +118,8 @@ const icon = computed(() => {
             btn="~ square"
             @click="emit('close')"
           >
-            <slot name="close-icon">
+            <slot name="closeIcon">
               <NIcon
-                alert="close-icon"
                 :class="`${nv?.alertCloseIconBase} alert-close-icon-base`"
                 :name="nv?.alertCloseIcon ?? 'alert-close-icon'"
                 aria-hidden="true"
