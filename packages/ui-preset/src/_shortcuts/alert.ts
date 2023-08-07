@@ -13,15 +13,15 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert': 'p-1em size-md',
   'alert-title': 'text-0.875em font-medium text-brand',
   'alert-description': 'text-0.875em text-brand/90',
-  'alert-icon-base': 'h-1.25em w-1.25em -mt-0.5em',
+  'alert-icon-base': 'h-1.25em w-1.25em',
   'alert-close': 'p-0.5em rounded-full hover:bg-brand/10 active:bg-brand/20 transition-colors duration-200',
   'alert-close-icon-base': 'h-1.2em w-1.2em',
 
   // wrappers
   'alert-inner-wrapper': 'gap-0.75em flex',
   'alert-content-wrapper': 'flex flex-col space-y-0.5em',
-  'alert-icon-wrapper': 'flex-shrink-0',
-  'alert-close-wrapper': 'ml-auto pl-0.5em',
+  'alert-icon-wrapper': '-mt-0.2em',
+  'alert-close-wrapper': 'ml-auto pl-0.2em',
   'alert-close-inner-wrapper': '-mx-1.5 -my-1.5',
 }
 
