@@ -19,7 +19,7 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
 
   // wrappers
   'alert-inner-wrapper': 'gap-0.75em flex',
-  'alert-content-wrapper': 'flex flex-col space-y-0.5em',
+  'alert-content-wrapper': 'flex flex-col w-full space-y-0.5em',
   'alert-icon-wrapper': '-mt-0.2em',
   'alert-close-wrapper': 'ml-auto pl-0.2em',
   'alert-close-inner-wrapper': '-mx-1.1 -my-1.1',
