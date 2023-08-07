@@ -48,8 +48,8 @@ const statusClassVariants = computed(() => {
                 :class="nv?.formGroupLabelWrapper"
               >
                 <span
-                  form-group="label-base"
-                  :class="nv?.formGroupLabelBase"
+                  form-group="label"
+                  :class="nv?.formGroupLabel"
                 >
                   {{ label }}
                 </span>
@@ -63,8 +63,8 @@ const statusClassVariants = computed(() => {
 
             <slot name="hint">
               <span
-                v-if="hint" form-group="hint-base"
-                :class="nv?.formGroupHintBase"
+                v-if="hint" form-group="hint"
+                :class="nv?.formGroupHint"
               >
                 {{ hint }}
               </span>
@@ -74,8 +74,8 @@ const statusClassVariants = computed(() => {
           <slot name="description">
             <span
               v-if="description"
-              form-group="description-base"
-              :class="nv?.formGroupDescriptionBase"
+              form-group="description"
+              :class="nv?.formGroupDescription"
             >
               {{ description }}
             </span>
@@ -107,9 +107,9 @@ const statusClassVariants = computed(() => {
             :class="nv?.formGroupMessageWrapper"
           >
             <p
-              form-group="message-base"
+              form-group="message"
               :class="[
-                nv?.formGroupMessageBase,
+                nv?.formGroupMessage,
                 statusClassVariants,
               ]"
             >

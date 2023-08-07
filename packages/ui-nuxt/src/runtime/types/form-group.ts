@@ -78,10 +78,10 @@ export interface NFormGroupProps {
     formGroupMessageWrapper?: string
     formGroupLabelWrapper?: string
 
-    formGroupLabelBase?: string
-    formGroupDescriptionBase?: string
-    formGroupHintBase?: string
-    formGroupMessageBase?: string
+    formGroupLabel?: string
+    formGroupDescription?: string
+    formGroupHint?: string
+    formGroupMessage?: string
 
     formGroupLabelRequired?: string
   }
