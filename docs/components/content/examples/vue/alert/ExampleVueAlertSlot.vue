@@ -6,7 +6,7 @@
           <p class="text-brand">
             Discover the latest software update: version 0.1.0-beta, packed with exciting new features and improvements.
           </p>
-          <NButton ml-2 p-0 btn="text-info" to="#">
+          <NButton btn="text-info" to="#" class="ml-2 animate-pulse p-0 hover:animate-none">
             See what's new
             <span aria-hidden="true"> &rarr;</span>
           </NButton>
@@ -16,7 +16,7 @@
 
     <NAlert alert="soft-error" icon>
       <template #title>
-        There were 2 errors with your submission
+        There were some errors with your submission
       </template>
       <template #description>
         <ul role="list" class="list-disc pl-5 space-y-1">
