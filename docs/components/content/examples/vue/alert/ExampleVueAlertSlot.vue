@@ -1,6 +1,6 @@
 <template>
   <div flex="~ col" space-y-4>
-    <NAlert alert="soft-info" icon>
+    <NAlert alert="outline-info" icon>
       <template #title>
         <div class="flex-1 md:flex md:justify-between space-y-3 md:space-y-0">
           <p class="text-brand">
@@ -14,7 +14,7 @@
       </template>
     </NAlert>
 
-    <NAlert alert="outline-error" icon>
+    <NAlert alert="soft-error" icon>
       <template #title>
         There were 2 errors with your submission
       </template>
@@ -35,7 +35,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</p>
         </div>
         <div class="mt-4">
-          <div class="flex -mx-2 -my-1.5">
+          <div class="flex -mx-2.5 -my-1.5">
             <NButton leading="i-heroicons-document-text-20-solid" btn="ghost-success" class="text-success-800 dark:text-success-100">
               View receipt
             </NButton>
