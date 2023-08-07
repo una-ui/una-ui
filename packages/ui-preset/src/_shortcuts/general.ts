@@ -38,7 +38,8 @@ export const staticGeneral = {
 }
 
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
-  //  add your dynamic general shortcuts here
+  // TODO: n-text-<color><-number><-number>
+  // [/^n-text(-(\S+))?$/, ([, , c = 'primary']) => `text-${c}-700 dark:text-${c}-400`],
 ]
 
 export const general = [
