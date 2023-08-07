@@ -4,7 +4,7 @@ export interface NAlertProps {
   closable?: boolean
   title?: string
   description?: string
-  nv: {
+  nv?: {
     // base
     alertTitle?: string
     alertDescription?: string
