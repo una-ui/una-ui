@@ -10,7 +10,7 @@
             Details
 
             <template #trailing>
-              <NIcon name="i-heroicons-arrow-right-20-solid" aria-hidden="true" class="animate-pulse hover:animate-none" />
+              <NIcon name="i-heroicons-arrow-right-20-solid" size="sm" aria-hidden="true" class="animate-pulse hover:animate-none" />
             </template>
           </NButton>
         </div>
