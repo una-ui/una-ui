@@ -5,6 +5,9 @@ import type { RuleContext } from '@unocss/core'
 type AccordionPrefix = 'accordion'
 
 export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionPrefix, string> = {
+  // config
+  'accordion-trailing-icon': 'i-heroicons-chevron-up',
+
   // base
   'accordion': 'flex-(~ col) text-sm relative w-full',
   'accordion-border': 'border-(~ base) rounded-md',
@@ -19,9 +22,6 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   // trailing transition
   'accordion-trailing-open': '-rotate-180',
   'accordion-trailing-close': 'rotate-0',
-
-  // icons
-  'accordion-trailing-icon': 'i-heroicons-chevron-up',
 
   // panel transition
   'accordion-enter-active': 'overflow-hidden transition-height duration-300',

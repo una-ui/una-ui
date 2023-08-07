@@ -1,6 +1,13 @@
 type InputPrefix = 'input'
 
 export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, string> = {
+  // config
+  'input-loading-icon': 'i-loading',
+  'input-info-icon': 'i-info',
+  'input-error-icon': 'i-error',
+  'input-success-icon': 'i-success',
+  'input-warning-icon': 'i-warning',
+
   // base
   'input': 'px-0.75em py-0.5em w-full input-disabled ring-base placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-disabled': 'disabled:(n-disabled)',
@@ -15,13 +22,6 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-wrapper': 'relative flex items-center size-md sm:size-sm',
   'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-$c-gray-400',
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
-
-  // icons
-  'input-loading-icon': 'i-loading',
-  'input-info-icon': 'i-info',
-  'input-error-icon': 'i-error',
-  'input-success-icon': 'i-success',
-  'input-warning-icon': 'i-warning',
 
   // override
   'input-outline-gray': 'input focus:ring-2 focus:bg-base ring-1 ring-inset ring-base',
