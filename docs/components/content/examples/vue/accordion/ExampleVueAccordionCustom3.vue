@@ -26,6 +26,7 @@ const items = [
     :nv="{
       accordionButton: 'px-0 text-base',
       accordionPanel: 'px-0 py-2',
+      accordionTrailing: 'text-md',
     }"
   />
 </template>

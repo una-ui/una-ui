@@ -26,6 +26,7 @@ const items = [
       accordionButton: 'px-0',
       accordionPanel: 'bg-muted rounded-lg',
       accordionTrailingClose: '-rotate-45',
+      accordionTrailing: 'text-md',
     }"
   />
 </template>
