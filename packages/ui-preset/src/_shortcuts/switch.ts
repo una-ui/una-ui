@@ -29,7 +29,7 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-track-off': 'bg-$c-gray-200',
 
   // icon
-  'switch-icon': 'text-.8em',
+  'switch-icon-base': 'text-.8em',
   'switch-icon-off': 'text-muted',
   'switch-icon-on': 'text-brand',
 

@@ -64,7 +64,7 @@ export interface NSwitchProps {
     switchTrackOn?: string
     switchTrackOff?: string
 
-    switchIcon?: string
+    switchIconBase?: string
     switchIconOn?: string
     switchIconOff?: string
 

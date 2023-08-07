@@ -100,7 +100,7 @@ const onClassVariants = computed(() => {
       <span class="sr-only">Icon</span>
       <slot v-if="!loading" name="icon" :on="on">
         <NIcon
-          switch="icon"
+          switch="icon-base"
           :name="onClassVariants?.switchIcon"
           :class="nv?.switchIcon"
         />
