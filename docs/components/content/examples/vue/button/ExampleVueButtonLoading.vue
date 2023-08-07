@@ -11,7 +11,7 @@ function toggleLoading() {
     <div>
       <NButton
         btn="solid-gray"
-        :label="`Turn loading${loading ? ' off' : ' on'}`"
+        :label="`Turn ${loading ? 'off' : 'on'} loading`"
         @click="toggleLoading"
       />
     </div>
