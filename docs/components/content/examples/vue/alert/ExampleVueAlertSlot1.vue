@@ -2,24 +2,18 @@
   <NAlert
     alert="outline-info"
     icon
-    :nv="{
-      alertInnerWrapper: 'items-center',
-    }"
   >
     <template #title>
-      <div class="flex-1 items-center md:flex md:justify-between space-y-3 md:space-y-0">
+      <div class="flex-1 md:flex md:justify-between space-y-3 md:space-y-0">
         <p class="text-brand">
-          Notification settings off. Stay informed with important updates.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vel optio aliquam autem dolorem enim! Quo, nesciunt deleniti. Natus quisquam quae quis quam ipsa reiciendis at alias molestiae voluptate repudiandae.
         </p>
         <NButton
-          btn="soft-info"
+          btn="text-info" icon
           to="#"
-          size="xs"
-          class="md:ml-4"
-          leading="i-heroicons-bell-alert-20-solid"
-        >
-          Turn on
-        </NButton>
+          label="i-heroicons-chevron-double-right"
+          class="animate-pulse p-0 md:ml-4"
+        />
       </div>
     </template>
   </NAlert>
