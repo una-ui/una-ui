@@ -4,5 +4,4 @@ export interface NAlertProps {
   closable?: boolean
   title?: string
   description?: string
-  onClose?: () => void
 }

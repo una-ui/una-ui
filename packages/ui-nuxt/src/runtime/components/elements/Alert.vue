@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import type { NAlertProps } from '../../types'
 import NIcon from '../elements/Icon.vue'
+import NButton from '../elements/Button.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -10,6 +11,8 @@ defineOptions({
 const props = withDefaults(defineProps<NAlertProps>(), {
   icon: false,
 })
+
+const emit = defineEmits<{ (...args: any): void }>()
 
 const alertVariants = ['soft', 'outline', 'border', '~'] as const
 const hasVariant = computed(() => alertVariants.some(alertVariants => props.alert?.includes(alertVariants)))
@@ -56,13 +59,28 @@ const icon = computed(() => {
           aria-hidden="true"
         />
       </div>
-      <div>
+      <div
+        v-if="title || description"
+        alert="content-wrapper"
+      >
         <h3 v-if="title" alert="title">
           {{ title }}
         </h3>
         <div v-if="description" alert="description">
           <p>{{ description }}</p>
         </div>
+      </div>
+      <div
+        v-if="closeable"
+        alert="close-wrapper"
+      >
+        <NButton
+          alert="close"
+          btn="~ square"
+          label="alert-close-icon"
+          icon
+          @click="emit('close')"
+        />
       </div>
     </div>
   </div>

@@ -4,19 +4,23 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   // base
   'alert': 'p-1em size-md',
   'alert-title': 'text-0.875em font-medium text-brand',
-  'alert-description': 'mt-2 text-0.875em text-brand/90',
+  'alert-description': 'text-0.875em text-brand/90',
   'alert-icon': 'h-1.25em w-1.25em -mt-1.2',
   'alert-default-variant': 'alert-outline',
+  'alert-close': 'p-0.5em rounded-full hover:bg-brand/10 active:bg-brand/20 transition-colors duration-200',
 
   // wrappers
   'alert-inner-wrapper': 'gap-0.75em flex items-start',
+  'alert-content-wrapper': 'flex-grow flex flex-col space-y-0.5em',
   'alert-icon-wrapper': 'flex-shrink-0',
+  'alert-close-wrapper': 'flex-shrink-0 ml-auto',
 
   // icons
   'alert-info-icon': 'i-info',
   'alert-error-icon': 'i-error',
   'alert-success-icon': 'i-success',
   'alert-warning-icon': 'i-warning',
+  'alert-close-icon': 'i-heroicons-x-mark-20-solid',
 }
 
 export const dynamicAlert: [RegExp, (params: RegExpExecArray) => string][] = [
