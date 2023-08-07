@@ -18,10 +18,10 @@ const hasVariant = computed(() => alertVariants.some(alertVariants => props.aler
 
 const alertClassVariants = computed(() => {
   const icon = {
-    info: props.nv?.alertInfoIcon ?? 'alert-info-icon',
-    success: props.nv?.alertSuccessIcon ?? 'alert-success-icon',
-    warning: props.nv?.alertWarningIcon ?? 'alert-warning-icon',
-    error: props.nv?.alertErrorIcon ?? 'alert-error-icon',
+    info: 'alert-info-icon',
+    success: 'alert-success-icon',
+    warning: 'alert-warning-icon',
+    error: 'alert-error-icon',
     default: '',
   }
 

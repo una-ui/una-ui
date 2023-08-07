@@ -55,10 +55,6 @@ export interface NAlertProps {
     alertCloseInnerWrapper?: string
 
     // icons
-    alertInfoIcon?: string
-    alertErrorIcon?: string
-    alertSuccessIcon?: string
-    alertWarningIcon?: string
     alertCloseIcon?: string
   }
 }
