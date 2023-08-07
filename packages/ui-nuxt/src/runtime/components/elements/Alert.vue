@@ -71,7 +71,7 @@ const icon = computed(() => {
         </div>
       </div>
       <div
-        v-if="closeable"
+        v-if="closable"
         alert="close-wrapper"
       >
         <NButton
