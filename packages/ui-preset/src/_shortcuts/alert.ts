@@ -3,6 +3,11 @@ type AlertPrefix = 'alert'
 export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, string> = {
   // config
   'alert-default-variant': 'alert-outline',
+  'alert-info-icon': 'i-info',
+  'alert-error-icon': 'i-error',
+  'alert-success-icon': 'i-success',
+  'alert-warning-icon': 'i-warning',
+  'alert-close-icon': 'i-heroicons-x-mark-20-solid',
 
   // base
   'alert': 'p-1em size-md',
@@ -18,13 +23,6 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert-icon-wrapper': 'flex-shrink-0',
   'alert-close-wrapper': 'ml-auto pl-0.5em',
   'alert-close-inner-wrapper': '-mx-1.5 -my-1.5',
-
-  // icons
-  'alert-info-icon': 'i-info',
-  'alert-error-icon': 'i-error',
-  'alert-success-icon': 'i-success',
-  'alert-warning-icon': 'i-warning',
-  'alert-close-icon': 'i-heroicons-x-mark-20-solid',
 }
 
 export const dynamicAlert: [RegExp, (params: RegExpExecArray) => string][] = [
