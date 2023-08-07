@@ -56,32 +56,40 @@ const icon = computed(() => {
         alert="icon-wrapper"
         :class="nv?.alertIconWrapper"
       >
-        <NIcon
-          alert="icon-base"
-          :name="icon"
-          aria-hidden="true"
-        />
+        <slot name="icon">
+          <NIcon
+            alert="icon-base"
+            :name="icon"
+            aria-hidden="true"
+          />
+        </slot>
       </div>
-      <div
-        v-if="title || description"
-        alert="content-wrapper"
-        :class="nv?.alertContentWrapper"
-      >
-        <h3
-          v-if="title"
-          alert="title"
-          :class="nv?.alertTitle"
-        >
-          {{ title }}
-        </h3>
+
+      <slot>
         <div
-          v-if="description"
-          alert="description"
-          :class="nv?.alertDescription"
+          v-if="title || description"
+          alert="content-wrapper"
+          :class="nv?.alertContentWrapper"
         >
-          <p>{{ description }}</p>
+          <slot v-if="title" name="title">
+            <h3
+              alert="title"
+              :class="nv?.alertTitle"
+            >
+              {{ title }}
+            </h3>
+          </slot>
+          <slot v-if="description" name="description">
+            <div
+              alert="description"
+              :class="nv?.alertDescription"
+            >
+              <p>{{ description }}</p>
+            </div>
+          </slot>
         </div>
-      </div>
+      </slot>
+
       <div
         v-if="closable"
         alert="close-wrapper"
@@ -95,13 +103,17 @@ const icon = computed(() => {
             alert="close"
             :class="nv?.alertClose"
             btn="~ square"
-            :label="nv?.alertCloseIcon ?? 'alert-close-icon'"
-            icon
-            :nv="{
-              btnIcon: `${nv?.alertCloseIconBase} alert-close-icon-base`,
-            }"
             @click="emit('close')"
-          />
+          >
+            <slot name="close-icon">
+              <NIcon
+                alert="close-icon"
+                :class="`${nv?.alertCloseIconBase} alert-close-icon-base`"
+                :name="nv?.alertCloseIcon ?? 'alert-close-icon'"
+                aria-hidden="true"
+              />
+            </slot>
+          </NButton>
         </div>
       </div>
     </div>
