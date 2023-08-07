@@ -27,6 +27,7 @@ export default {
     transformerVariantGroup(),
   ],
   configDeps: [
+    '../packages/ui-preset/src/_shortcuts/badge.ts',
     '../packages/ui-preset/src/_shortcuts/alert.ts',
     '../packages/ui-preset/src/_shortcuts/input.ts',
     '../packages/ui-preset/src/_shortcuts/button.ts',

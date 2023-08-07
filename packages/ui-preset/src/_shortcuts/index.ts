@@ -7,6 +7,7 @@ import { input } from './input'
 import { general } from './general'
 import { _switch } from './switch'
 import { alert } from './alert'
+import { badge } from './badge'
 
 export const shortcuts = [
   ...general,
@@ -17,4 +18,5 @@ export const shortcuts = [
   ...icon,
   ..._switch,
   ...alert,
+  ...badge,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
