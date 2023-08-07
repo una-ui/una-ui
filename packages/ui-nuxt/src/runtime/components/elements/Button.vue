@@ -62,7 +62,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     <slot v-else>
       <NIcon
         v-if="label && icon"
-        :class="nv?.btnIcon"
+        :class="nv?.btnIconBase"
         btn="icon"
         :name="label"
       />
