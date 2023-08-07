@@ -2,7 +2,7 @@ type AlertPrefix = 'alert'
 
 export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, string> = {
   // base
-  'alert': 'p-1em',
+  'alert': 'p-1em size-md',
   'alert-title': 'text-0.875em font-medium text-brand',
   'alert-description': 'mt-2 text-0.875em text-brand/90',
   'alert-icon': 'h-1.25em w-1.25em -mt-1.2',
