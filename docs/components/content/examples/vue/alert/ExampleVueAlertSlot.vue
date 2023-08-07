@@ -6,9 +6,12 @@
           <p class="text-brand">
             Discover the latest software update: version 0.1.0-beta, packed with exciting new features and improvements.
           </p>
-          <NButton btn="text-info" to="#" class="p-0 md:ml-2">
+          <NButton btn="text-info" to="#" class="p-0 md:ml-4">
             Details
-            <span aria-hidden="true" class="animate-pulse hover:animate-none"> &rarr;</span>
+
+            <template #trailing>
+              <NIcon name="i-heroicons-arrow-right-20-solid" aria-hidden="true" class="animate-pulse hover:animate-none" />
+            </template>
           </NButton>
         </div>
       </template>
