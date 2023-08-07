@@ -1,6 +1,20 @@
 <template>
   <div flex="~ col" space-y-4>
-    <NAlert alert="border-error" icon>
+    <NAlert alert="soft-info" icon>
+      <template #title>
+        <div class="flex-1 md:flex md:justify-between space-y-3 md:space-y-0">
+          <p class="text-brand">
+            Discover the latest software update: version 0.1.0-beta, packed with exciting new features and improvements.
+          </p>
+          <NButton ml-2 p-0 btn="text-info" to="#">
+            Details
+            <span aria-hidden="true"> &rarr;</span>
+          </NButton>
+        </div>
+      </template>
+    </NAlert>
+
+    <NAlert alert="outline-error" icon>
       <template #title>
         There were 2 errors with your submission
       </template>
@@ -12,7 +26,7 @@
       </template>
     </NAlert>
 
-    <NAlert alert="soft-success" icon>
+    <NAlert alert="border-success" icon>
       <template #title>
         Payment completed
       </template>
