@@ -88,7 +88,7 @@ export interface NButtonProps {
   nv?: {
     // base
     btnLabel?: string
-    btnIconBase?: string
+    btnIconLabel?: string
     btnLoading?: string
 
     // icons
