@@ -8,7 +8,8 @@
 
     <NInput
       :nv="{
-        inputLoading: 'i-tabler-fidget-spinner text-lime',
+        inputLoading: 'text-lime',
+        inputLoadingIcon: 'i-tabler-fidget-spinner',
       }"
       loading
       placeholder="Custom color loading icon"
