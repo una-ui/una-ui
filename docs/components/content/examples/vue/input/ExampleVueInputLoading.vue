@@ -16,7 +16,6 @@
     />
 
     <NInput
-      leading="i-heroicons-magnifying-glass-plus-20-solid text-blue"
       :nv="{
         inputLoading: 'text-rose animate-none',
         inputLoadingIcon: 'i-svg-spinners-blocks-shuffle-3',
