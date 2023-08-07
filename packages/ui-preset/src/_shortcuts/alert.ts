@@ -5,7 +5,7 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert': 'p-1em size-md',
   'alert-title': 'text-0.875em font-medium text-brand',
   'alert-description': 'text-0.875em text-brand/90',
-  'alert-icon': 'h-1.25em w-1.25em -mt-1.2',
+  'alert-icon': 'h-1.25em w-1.25em -mt-0.5em',
   'alert-default-variant': 'alert-outline',
   'alert-close': 'p-0.5em rounded-full hover:bg-brand/10 active:bg-brand/20 transition-colors duration-200',
 
