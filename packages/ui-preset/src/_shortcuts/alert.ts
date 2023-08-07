@@ -14,7 +14,7 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert-title': 'text-0.875em font-medium text-brand',
   'alert-description': 'text-0.875em leading-1.625em text-brand/90',
   'alert-icon-base': 'h-1.25em w-1.25em',
-  'alert-close': 'p-0.5em rounded-full hover:bg-brand/10 active:bg-brand/20 transition-colors duration-200',
+  'alert-close': 'p-0.5em rounded-md hover:bg-brand/10 active:bg-brand/20 transition-colors duration-200',
   'alert-close-icon-base': 'h-1.2em w-1.2em',
 
   // wrappers
@@ -22,7 +22,7 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert-content-wrapper': 'flex flex-col space-y-0.5em',
   'alert-icon-wrapper': '-mt-0.2em',
   'alert-close-wrapper': 'ml-auto pl-0.2em',
-  'alert-close-inner-wrapper': '-mx-1.5 -my-1.5',
+  'alert-close-inner-wrapper': '-mx-1.1 -my-1.1',
 }
 
 export const dynamicAlert: [RegExp, (params: RegExpExecArray) => string][] = [
