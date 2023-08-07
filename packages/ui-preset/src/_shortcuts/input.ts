@@ -2,6 +2,7 @@ type InputPrefix = 'input'
 
 export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, string> = {
   // config
+  'input-default-variant': 'input-outline',
   'input-loading-icon': 'i-loading',
   'input-info-icon': 'i-info',
   'input-error-icon': 'i-error',

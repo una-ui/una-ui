@@ -36,7 +36,7 @@ const statusClassVariants = computed(() => {
     success: 'input-status-success input-solid-success input-status-ring',
     warning: 'input-status-warning input-solid-warning input-status-ring',
     error: 'input-status-error input-solid-error input-status-ring',
-    default: !hasVariant.value ? 'input-outline' : '',
+    default: !hasVariant.value ? 'input-default-variant' : '',
   }
 
   const text = {
