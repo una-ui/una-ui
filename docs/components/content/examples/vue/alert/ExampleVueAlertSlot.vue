@@ -7,7 +7,7 @@
             Discover the latest software update: version 0.1.0-beta, packed with exciting new features and improvements.
           </p>
           <NButton ml-2 p-0 btn="text-info" to="#">
-            Details
+            See what's new
             <span aria-hidden="true"> &rarr;</span>
           </NButton>
         </div>
