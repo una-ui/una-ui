@@ -17,9 +17,9 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
 
 export const dynamicBadge: [RegExp, (params: RegExpExecArray) => string][] = [
   // variants
-  [/^badge-solid(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-${c}-100 dark:bg-${c}-800  n-${c}-700 dark:n-${c}-200`],
-  [/^badge-soft(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-${c}-50 text-${c}-700 ring-1 ring-${c}-700/10 ring-inset dark:bg-${c}-400/10 dark:text-${c}-400 dark:ring-${c}-400/30`],
-  [/^badge-outline(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-transparent text-${c}-700 dark:text-${c}-400 ring-1 ring-${c}-700/10 dark:ring-${c}-400/30`],
+  [/^badge-solid(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-${c}-100 dark:bg-${c}-800 n-${c}-700 dark:n-${c}-200`],
+  [/^badge-soft(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-${c}-50 n-${c}-700 dark:n-${c}-400 ring-1 ring-${c}-700/10 ring-inset dark:bg-${c}-400/10 dark:ring-${c}-400/30`],
+  [/^badge-outline(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-transparent n-${c}-700 dark:n-${c}-400 ring-1 ring-${c}-700/10 dark:ring-${c}-400/30`],
 ]
 
 export const badge = [
