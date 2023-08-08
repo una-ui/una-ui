@@ -11,8 +11,8 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
   'badge-close-icon-base': 'text-brand/50 group-hover:text-brand/75',
 
   // variants
-  'badge-solid-black': 'badge bg-inverted text-inverted',
-  'badge-outline-white': 'badge bg-base text-base ring-1 ring-base',
+  'badge-solid-black': 'badge bg-inverted text-inverted n-gray-950 dark:n-gray-50',
+  'badge-outline-white': 'badge bg-base text-base ring-1 ring-base n-gray-50 dark:n-gray-950',
 }
 
 export const dynamicBadge: [RegExp, (params: RegExpExecArray) => string][] = [
