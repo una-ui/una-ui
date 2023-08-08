@@ -1,5 +1,5 @@
 <template>
-  <div grid="~ cols-2 sm:cols-3" gap-4>
+  <div flex="~ wrap" gap-4>
     <NButton
       label="Button Solid"
       btn="solid"

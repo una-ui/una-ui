@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col sm:row" gap-4 overflow-x-auto px-2 py-4>
+  <div flex="~ wrap" gap-4>
     <NButton
       disabled
       label="Disabled"
@@ -25,6 +25,12 @@
 
     <NButton
       btn="soft"
+      disabled
+      label="Disabled"
+    />
+
+    <NButton
+      btn="text"
       disabled
       label="Disabled"
     />

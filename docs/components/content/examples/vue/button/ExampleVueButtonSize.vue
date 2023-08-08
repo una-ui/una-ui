@@ -1,67 +1,49 @@
 <template>
-  <div flex="~ col" gap-4>
-    <div>
-      <NButton
-        size="xs"
-        label="button xs"
-      />
-    </div>
+  <div flex="~ wrap" gap-4>
+    <NButton
+      size="xs"
+      label="button xs"
+    />
 
-    <div>
-      <NButton
-        size="sm"
-        label="button sm (default)"
-      />
-    </div>
+    <NButton
+      size="sm"
+      label="button sm (default)"
+    />
 
-    <div>
-      <NButton
-        size="md"
-        label="button md"
-      />
-    </div>
+    <NButton
+      size="md"
+      label="button md"
+    />
 
-    <div>
-      <NButton
-        size="lg"
-        label="button lg"
-      />
-    </div>
+    <NButton
+      size="lg"
+      label="button lg"
+    />
 
-    <div>
-      <NButton
-        size="xl"
-        label="button xl"
-      />
-    </div>
+    <NButton
+      size="xl"
+      label="button xl"
+    />
 
-    <div>
-      <NButton
-        size="3vw"
-        label="button 3vw"
-      />
-    </div>
+    <NButton
+      size="3vw"
+      label="button 3vw"
+    />
 
-    <div>
-      <NButton
-        size="1cm"
-        label="button 1cm"
-      />
-    </div>
+    <NButton
+      size="1cm"
+      label="button 1cm"
+    />
 
-    <div>
-      <NButton
-        size="18px hover:40px"
-        btn="solid hover:outline-lime"
-        label="hover me 18px->40px"
-      />
-    </div>
+    <NButton
+      size="18px hover:40px"
+      btn="solid hover:outline-lime"
+      label="hover me 18px->40px"
+    />
 
-    <div>
-      <NButton
-        class="px-8 py-10 text-xs"
-        label="custom size"
-      />
-    </div>
+    <NButton
+      class="px-8 py-10 text-xs"
+      label="custom size"
+    />
   </div>
 </template>
