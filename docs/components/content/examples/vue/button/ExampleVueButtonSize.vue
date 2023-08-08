@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ wrap" gap-4>
+  <div flex="1" space-x-4>
     <NButton
       size="xs"
       label="button xs"
