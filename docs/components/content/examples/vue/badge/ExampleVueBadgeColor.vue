@@ -5,11 +5,11 @@
     <div flex flex-wrap gap-2>
       <NBadge badge="soft-primary" label="soft-primary (default)" />
 
-      <NBadge badge="solid-pink" label="solid-lime" />
+      <NBadge badge="solid-pink" label="solid-pink" />
 
       <NBadge badge="outline-info" label="outline-info" />
 
-      <NBadge badge="soft-success" label="soft-pink" />
+      <NBadge badge="soft-success" label="soft-success" />
 
       <NBadge badge="solid-yellow" label="outline-yellow" />
 
