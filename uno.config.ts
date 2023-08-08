@@ -11,7 +11,9 @@ import presetNexvelt from './packages/ui-preset/src/index'
 export default {
   preflight: false,
   presets: [
-    presetUno(),
+    presetUno({
+      attributifyPseudo: true,
+    }),
     presetAttributify(),
     presetIcons({
       scale: 1.2,
