@@ -3,9 +3,7 @@ import { computed } from 'vue'
 import type { NBadgeProps } from '../../types'
 import NIcon from './Icon.vue'
 
-const props = withDefaults(defineProps<NBadgeProps>(), {
-  icon: false,
-})
+const props = defineProps<NBadgeProps>()
 
 const emit = defineEmits<{ (...args: any): void }>()
 
@@ -18,12 +16,13 @@ const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badg
     :badge="badge"
     :class="{ 'badge-default-variant': !hasVariant }"
   >
-    <NIcon
-      v-if="props.icon !== false"
-      size="1.5"
-      name="i-tabler-circle-filled"
-    />
-
+    <slot name="icon">
+      <NIcon
+        v-if="icon"
+        badge="icon-base"
+        :name="icon"
+      />
+    </slot>
     <slot>
       {{ label }}
     </slot>
