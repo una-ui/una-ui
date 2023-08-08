@@ -10,7 +10,7 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert-close-icon': 'i-close',
 
   // base
-  'alert': 'p-1em size-md',
+  'alert': 'p-1em text-md',
   'alert-title': 'text-0.875em font-medium text-brand',
   'alert-description': 'text-0.875em leading-1.625em text-brand/90',
   'alert-icon-base': 'h-1.25em w-1.25em',
