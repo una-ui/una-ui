@@ -1,5 +1,5 @@
 <template>
-  <div flex gap-4>
+  <div flex space-x-4>
     <!-- label syntax -->
     <NButton label="Label Button " />
 
