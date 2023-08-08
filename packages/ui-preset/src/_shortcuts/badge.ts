@@ -6,12 +6,13 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
   'badge-close-icon': 'i-close',
 
   // base
-  'badge': 'badge-rectangle py-1 px-2 gap-x-1.5 inline-flex items-center rounded-md text-xs font-medium text-brand',
+  'badge': 'py-1 px-2 gap-x-1.5 inline-flex items-center rounded-md text-xs font-medium text-brand',
   'badge-close': 'relative rounded-sm flex -mr-.5 hover:bg-brand/20',
   'badge-close-icon-base': 'text-brand/50 group-hover:text-brand/75',
 
   // variants
-  // 'badge-solid-gray': 'badge bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200',
+  'badge-solid-black': 'badge bg-inverted text-inverted',
+  'badge-outline-white': 'badge bg-base text-base ring-1 ring-base',
 }
 
 export const dynamicBadge: [RegExp, (params: RegExpExecArray) => string][] = [
