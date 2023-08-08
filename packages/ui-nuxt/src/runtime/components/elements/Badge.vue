@@ -16,13 +16,12 @@ const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badg
     :badge="badge"
     :class="{ 'badge-default-variant': !hasVariant }"
   >
-    <slot name="icon">
-      <NIcon
-        v-if="icon"
-        badge="icon-base"
-        :name="icon"
-      />
-    </slot>
+    <NIcon
+      v-if="icon"
+      badge="icon-base"
+      :name="icon"
+    />
+
     <slot>
       {{ label }}
     </slot>
