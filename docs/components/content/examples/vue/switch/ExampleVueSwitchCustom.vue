@@ -3,7 +3,7 @@ const enabled = ref(false)
 </script>
 
 <template>
-  <div flex gap-7 py-24>
+  <div flex="~ wrap" gap-7 py-24>
     <NSwitch
       v-model="enabled"
       switch="focus"
