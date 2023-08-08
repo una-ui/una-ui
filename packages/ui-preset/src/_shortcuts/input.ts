@@ -23,12 +23,12 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-$c-gray-400',
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
 
-  // override
+  // variants
   'input-outline-gray': 'input focus:ring-2 focus:bg-base ring-1 ring-inset ring-base',
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
-  // base
+  // config
   [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400 focus:bg-base`],
   [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-400/70 dark:placeholder-${c}-300/70`],
 
