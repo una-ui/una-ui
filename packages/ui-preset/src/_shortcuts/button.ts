@@ -21,12 +21,12 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   'btn-square': 'p-0.5em',
 
   // variants
-  'btn-solid-white': 'btn bg-base text-base ring-1 ring-base shadow-sm btn-focus hover:bg-$c-gray-50',
+  'btn-solid-white': 'btn bg-base text-base ring-1 ring-base shadow-sm btn-focus hover:bg-muted',
   'btn-ghost-white': 'btn text-base btn-focus hover:bg-$c-gray-50',
   'btn-solid-gray': 'btn bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base shadow-sm btn-focus hover:bg-$c-gray-100',
   'btn-ghost-gray': 'btn text-$c-gray-500 btn-focus hover:text-$c-gray-950 hover:bg-$c-gray-50',
   'btn-link-gray': 'btn text-$c-gray-500 btn-focus hover:text-$c-gray-950 hover:underline underline-offset-4',
-  'btn-solid-black': 'btn bg-$c-gray-950 text-$c-gray-0 ring-1 ring-$c-gray-950 shadow-sm btn-focus hover:bg-$c-gray-800',
+  'btn-solid-black': 'btn bg-inverted text-inverted ring-1 ring-$c-gray-950 shadow-sm btn-focus hover:bg-$c-gray-800',
   'btn-link-black': 'btn text-$c-gray-950 btn-focus hover:underline underline-offset-4',
 }
 
