@@ -29,7 +29,6 @@ const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badg
     <button
       v-if="closable"
       badge="close"
-      size="xs"
       group
       @click="emit('close')"
     >
