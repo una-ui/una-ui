@@ -7,7 +7,7 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert-error-icon': 'i-error',
   'alert-success-icon': 'i-success',
   'alert-warning-icon': 'i-warning',
-  'alert-close-icon': 'i-heroicons-x-mark-20-solid',
+  'alert-close-icon': 'i-close',
 
   // base
   'alert': 'p-1em size-md',
