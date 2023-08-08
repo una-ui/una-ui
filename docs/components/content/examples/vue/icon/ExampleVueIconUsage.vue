@@ -1,6 +1,6 @@
 <template>
-  <div flex="~ items-center" space-x-4>
-    <NIcon name="i-heroicons-bell-20-solid" class="text-primary" />
+  <div flex="~ wrap items-center" gap-4>
+    <NIcon name="i-heroicons-bell" />
 
     <NIcon
       name="i-logos-adobe-illustrator"
