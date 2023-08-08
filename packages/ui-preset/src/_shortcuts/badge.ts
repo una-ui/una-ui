@@ -6,10 +6,10 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
   'badge-close-icon': 'i-close',
 
   // base
-  'badge': 'py-1 px-2 gap-x-1.5 inline-flex items-center rounded-md text-xs font-medium text-brand',
-  'badge-icon-base': 'text-xs',
-  'badge-close': 'relative rounded-sm flex -mr-.5 hover:bg-brand/20',
-  'badge-close-icon-base': 'text-brand/50 group-hover:text-brand/75 text-xs',
+  'badge': 'text-xs py-0.375em px-0.625em gap-x-0.25em inline-flex items-center rounded-md font-medium text-brand',
+  'badge-icon-base': 'text-1em',
+  'badge-close': 'relative rounded-sm flex -mr-0.375em hover:bg-brand/20',
+  'badge-close-icon-base': 'text-brand/50 group-hover:text-brand/75 text-1em',
 
   // variants
   'badge-soft-gray': 'badge bg-muted text-muted n-gray-900 dark:n-gray-50 ring-1 ring-gray-700/10 dark:ring-gray-400/30',
