@@ -41,7 +41,7 @@ const openSourser = [
     >
       <!-- TODO convert to NAvatar soon -->
       <img
-        class="h-5 rounded-full bg-base"
+        class="h-5 rounded-full bg-base p-0.5px"
         :src="avatar"
       >
 
