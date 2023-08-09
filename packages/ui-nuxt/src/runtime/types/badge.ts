@@ -1,5 +1,16 @@
 export interface NBadgeProps {
+  /**
+   * Allows you to add `NexveltUI` badge preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
+   *
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/badge.ts
+   * @example
+   * badge="solid-yellow"
+  */
   badge?: string
+  /**
+   * Add a label to the badge.
+  */
   label?: string
   /**
    * Display an icon on the left side of the badge,
@@ -10,9 +21,25 @@ export interface NBadgeProps {
    */
   icon?: string
 
+  /**
+   * Display `close` icon on the right side of the badge,
+   *
+   * @default false
+  */
   closable?: boolean
 
+  /**
+   * `NexveltUI` preset configuration
+   *
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/badge.ts
+  */
   nv?: {
-    baseIconBase?: string
+    // base
+    badgeIconBase?: string
+    badgeClose?: string
+    badgeCloseIconBase?: string
+
+    // icons
+    badgeCloseIcon?: string
   }
 }

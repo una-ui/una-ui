@@ -19,6 +19,7 @@ const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badg
     <NIcon
       v-if="icon"
       badge="icon-base"
+      :class="nv?.badgeIconBase"
       :name="icon"
     />
 
@@ -29,11 +30,13 @@ const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badg
     <button
       v-if="closable"
       badge="close"
+      :class="nv?.badgeClose"
       group
       @click="emit('close')"
     >
       <NIcon
-        name="badge-close-icon"
+        :name="nv?.badgeCloseIcon ?? 'badge-close-icon'"
+        :class="nv?.badgeCloseIconBase"
         class="close-icon-base"
       />
     </button>
