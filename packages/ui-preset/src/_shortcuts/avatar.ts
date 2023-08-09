@@ -2,7 +2,7 @@ type AvatarPrefix = 'avatar'
 
 export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, string> = {
   // config
-  'avatar-default-variant': 'avatar-solid-gray',
+  'avatar-default-variant': 'avatar-solid',
 
   // base
   'avatar': 'relative font-medium leading-none h-2.5em w-2.5em text-brand inline-flex items-center justify-center rounded-full overflow-hidden',
