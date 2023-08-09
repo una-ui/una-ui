@@ -5,5 +5,7 @@
     <NBadge badge="solid" label="Solid Badge" />
 
     <NBadge badge="outline" label="Outline Badge" />
+
+    <NBadge badge="~" label="Base Badge" />
   </div>
 </template>
