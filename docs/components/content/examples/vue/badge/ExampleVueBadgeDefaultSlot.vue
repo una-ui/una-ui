@@ -31,10 +31,7 @@ const openSourser = [
 ]
 
 function close(name: string) {
-  openSourser.splice(
-    openSourser.findIndex(item => item.name === name),
-    1,
-  )
+  alert(name)
 }
 </script>
 
