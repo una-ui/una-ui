@@ -11,9 +11,9 @@
 
       <NBadge badge="soft-success" label="soft-success" />
 
-      <NBadge badge="solid-yellow" label="outline-yellow" />
+      <NBadge badge="outline-yellow" label="outline-yellow" />
 
-      <NBadge badge="outline-error" label="outline-error" />
+      <NBadge badge="solid-error" label="solid-error" />
 
       <NBadge badge="soft-indigo" label="outline-indigo" />
     </div>
