@@ -1,5 +1,7 @@
 <template>
   <div flex="~ col" gap-4>
+    <span class="text-sm font-medium">Dynamic colors:</span>
+
     <div grid="~ sm:cols-2" gap-4>
       <NInput
         input="outline-primary"
@@ -21,7 +23,7 @@
 
     <hr border="base">
 
-    <span class="text-sm font-medium">Grey color:</span>
+    <span class="text-sm font-medium">Static color:</span>
 
     <div>
       <NInput

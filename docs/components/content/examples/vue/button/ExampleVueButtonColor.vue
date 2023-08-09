@@ -71,7 +71,7 @@
 
     <hr border="base">
 
-    <span class="text-sm font-medium">Grey colors:</span>
+    <span class="text-sm font-medium">Static colors:</span>
 
     <div flex="~ col" gap-4>
       <div flex="~ col md:row" gap-2>

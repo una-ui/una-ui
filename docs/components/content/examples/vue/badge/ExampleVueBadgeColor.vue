@@ -20,7 +20,7 @@
 
     <hr border="base">
 
-    <span class="text-sm font-medium">Grey colors:</span>
+    <span class="text-sm font-medium">Static colors:</span>
 
     <div flex flex-wrap gap-2>
       <NBadge badge="soft-gray" label="soft-gray" />
