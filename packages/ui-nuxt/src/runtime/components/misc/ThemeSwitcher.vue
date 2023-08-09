@@ -72,9 +72,8 @@ function shuffleTheme() {
                 v-for="[key, theme] in primaryThemesDefault"
                 :key="key"
                 :style="{ background: theme['--nv-primary-hex'] }"
-                type="button"
-                class="h-7 w-7 rounded-full transition-all" :class="[currentPrimaryThemeName === key ? 'ring-3' : 'scale-93']"
-                ring="primary offset-2 offset-base"
+                class="h-6 w-6 rounded-full transition-all" :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
+                ring="primary offset-4 offset-base"
                 @click="updatePrimaryTheme(theme)"
               />
             </div>
@@ -86,10 +85,9 @@ function shuffleTheme() {
                 v-for="[key, theme] in grayThemesDefault"
                 :key="key"
                 :style="{ background: theme['--nv-gray-hex'] }"
-                type="button"
-                :class="currentGrayThemeName === key ? 'ring-3' : 'scale-93'"
-                class="h-7 w-7 rounded-full transition-all"
-                ring="gray offset-2 offset-base"
+                :class="currentGrayThemeName === key ? 'ring-2' : 'scale-93'"
+                class="h-6 w-6 rounded-full transition-all"
+                ring="gray offset-4 offset-base"
                 @click="updateGrayTheme(theme)"
               />
             </div>
@@ -98,8 +96,7 @@ function shuffleTheme() {
 
             <div>
               <button
-                type="button"
-                btn="~ solid block"
+                btn="solid block"
                 class="rounded-lg transition"
                 @click="shuffleTheme"
               >
