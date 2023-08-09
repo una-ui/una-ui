@@ -39,6 +39,7 @@ const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badg
         :class="nv?.badgeCloseIconBase"
         class="close-icon-base"
       />
+      <span class="absolute -inset-0.25em" />
     </button>
   </span>
 </template>
