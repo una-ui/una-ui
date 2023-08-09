@@ -12,7 +12,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   'btn-icon-label': 'text-1.1em',
   'btn-leading': '-ml-0.2em mr-0.2em text-1.1em',
   'btn-trailing': '-mr-0.2em ml-0.2em text-1.1em',
-  'btn-loading': 'animate-spin text-1.1em',
+  'btn-loading': 'animate-spin text-1em',
 
   // options
   'btn-block': 'w-full',
