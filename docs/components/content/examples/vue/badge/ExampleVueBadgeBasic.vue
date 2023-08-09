@@ -3,7 +3,7 @@
     <NBadge label="Badge" />
 
     <NBadge class="rounded-full">
-      2
+      4
     </NBadge>
   </div>
 </template>
