@@ -6,7 +6,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   'btn-loading-icon': 'i-loading',
 
   // base
-  'btn': 'bg-transparent text-sm gap-1 btn-rectangle rounded inline-flex justify-center items-center btn-disabled font-semibold cursor-pointer',
+  'btn': 'bg-transparent size-sm leading-tight gap-1 btn-rectangle rounded-md inline-flex justify-center items-center btn-disabled font-semibold cursor-pointer',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
   'btn-icon-label': 'text-1.1em',
@@ -17,7 +17,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   // options
   'btn-block': 'w-full',
   'btn-reverse': 'flex-row-reverse',
-  'btn-rectangle': 'px-.8em py-.4em',
+  'btn-rectangle': 'px-0.75em py-0.5em',
   'btn-square': 'p-0.5em',
 
   // variants
