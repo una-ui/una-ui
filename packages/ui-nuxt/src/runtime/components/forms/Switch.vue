@@ -17,7 +17,7 @@ const on = useVModel(props, 'modelValue', emit, { passive: true })
 
 const _switch = computed(() => props.switch)
 
-const switchClassVariants = computed(() => {
+const outsetClassVariants = computed(() => {
   const switchWrapper = {
     false: 'switch-inset',
     true: 'switch-outset',
@@ -30,7 +30,7 @@ const switchClassVariants = computed(() => {
 
   const switchThumb = {
     false: 'left-0.1em',
-    true: 'left-0',
+    true: 'left-0 border-base border',
   }
 
   return {
@@ -70,7 +70,7 @@ const onClassVariants = computed(() => {
     class="switch"
     :class="[
       { 'switch-disabled': disabled || loading },
-      switchClassVariants?.switchWrapper,
+      outsetClassVariants?.switchWrapper,
     ]"
     :switch="_switch"
     v-bind="$attrs"
@@ -83,7 +83,7 @@ const onClassVariants = computed(() => {
       :class="[
         nv?.switchTrack,
         onClassVariants?.switchTrack,
-        switchClassVariants?.switchTrack,
+        outsetClassVariants?.switchTrack,
       ]"
     />
 
@@ -94,7 +94,7 @@ const onClassVariants = computed(() => {
       :class="[
         nv?.switchThumb,
         onClassVariants?.switchThumb,
-        switchClassVariants?.switchThumb,
+        outsetClassVariants?.switchThumb,
       ]"
     >
       <span class="sr-only">Icon</span>

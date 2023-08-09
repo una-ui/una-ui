@@ -6,7 +6,7 @@ type SwitchPrefix = 'switch'
 
 export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, string> = {
   // base
-  'switch': 'text-sm switch-primary bg-transparent relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-full',
+  'switch': 'switch-primary bg-transparent relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-full',
   'switch-disabled': 'n-disabled',
   'switch-focus': 'focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-base focus:ring-brand',
 
@@ -19,7 +19,7 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-track-outset': 'h-1em w-2.25em',
 
   // thumb
-  'switch-thumb': 'flex items-center justify-center h-1.25em w-1.25em absolute border-base bg-base border pointer-events-none inline-block transform rounded-full shadow transition duration-200 ease-in-out',
+  'switch-thumb': 'flex items-center justify-center h-1.25em w-1.25em absolute bg-base pointer-events-none inline-block transform rounded-full shadow transition duration-200 ease-in-out',
   'switch-thumb-on': 'translate-x-1.25em',
   'switch-thumb-off': 'translate-x-0',
 
