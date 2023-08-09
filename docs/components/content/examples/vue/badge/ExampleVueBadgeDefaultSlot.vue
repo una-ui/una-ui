@@ -38,6 +38,7 @@ const openSourser = [
       :key="name"
       badge="solid-black"
       closable
+      @close="openSourser.splice(index, 1)"
     >
       <!-- TODO convert to NAvatar soon -->
       <img
