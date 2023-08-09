@@ -29,6 +29,13 @@ const openSourser = [
     avatar: 'https://avatars.githubusercontent.com/u/2798204?v=4',
   },
 ]
+
+function close(name: string) {
+  openSourser.splice(
+    openSourser.findIndex(item => item.name === name),
+    1,
+  )
+}
 </script>
 
 <template>
@@ -38,7 +45,7 @@ const openSourser = [
       :key="name"
       badge="solid-black"
       closable
-      @close="openSourser.splice(index, 1)"
+      @close="close(name)"
     >
       <!-- TODO convert to NAvatar soon -->
       <img
