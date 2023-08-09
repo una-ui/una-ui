@@ -94,19 +94,17 @@ function shuffleTheme() {
 
             <hr class="my-2 border-$c-divider">
 
-            <div>
-              <button
-                btn="solid block"
-                class="rounded-lg transition"
-                @click="shuffleTheme"
-              >
-                Shuffle
-                <span
-                  i-heroicons-adjustments-horizontal-20-solid ml-2
-                  :class="trigger ? 'rotate-180 transform' : 'rotate-0'"
-                />
-              </button>
-            </div>
+            <button
+              btn="solid block"
+              class="rounded-lg transition"
+              @click="shuffleTheme"
+            >
+              Shuffle
+              <span
+                i-heroicons-adjustments-horizontal-20-solid ml-2
+                :class="trigger ? 'rotate-180 transform' : 'rotate-0'"
+              />
+            </button>
           </div>
         </PopoverPanel>
       </transition>
