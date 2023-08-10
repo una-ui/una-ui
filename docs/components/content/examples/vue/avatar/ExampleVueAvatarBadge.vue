@@ -2,9 +2,7 @@
   <div flex="~ items-center" gap-4>
     <div class="relative">
       <NBadge badge="solid-red" label="1" size="11px" class="absolute z-1 rounded-full -right-1 -top-1" />
-      <NAvatar>
-        PR
-      </NAvatar>
+      <NAvatar label="PR" />
     </div>
 
     <div class="relative">

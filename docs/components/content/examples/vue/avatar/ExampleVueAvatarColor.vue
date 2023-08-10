@@ -2,29 +2,17 @@
   <div flex="~ col" gap-4>
     <span class="text-sm font-medium">Dynamic colors:</span>
     <div flex="~ items-center" gap-4>
-      <NAvatar avatar="solid-gray">
-        PR
-      </NAvatar>
+      <NAvatar avatar="solid-gray" label="PR" />
 
-      <NAvatar avatar="solid-primary">
-        PR
-      </NAvatar>
+      <NAvatar avatar="solid-primary" label="PR" />
 
-      <NAvatar avatar="soft-error">
-        PR
-      </NAvatar>
+      <NAvatar avatar="soft-error" label="PR" />
 
-      <NAvatar avatar="soft-info">
-        PR
-      </NAvatar>
+      <NAvatar avatar="soft-info" label="PR" />
 
-      <NAvatar avatar="outline-purple">
-        PR
-      </NAvatar>
+      <NAvatar avatar="outline-purple" label="PR" />
 
-      <NAvatar avatar="outline-pink">
-        PR
-      </NAvatar>
+      <NAvatar avatar="outline-pink" label="PR" />
     </div>
 
     <hr border="base">
@@ -32,13 +20,9 @@
     <span class="text-sm font-medium">Static colors:</span>
 
     <div flex="~ items-center" gap-4>
-      <NAvatar avatar="solid-black">
-        PR
-      </NAvatar>
+      <NAvatar avatar="solid-black" label="PR" />
 
-      <NAvatar avatar="solid-white">
-        PR
-      </NAvatar>
+      <NAvatar avatar="solid-white" label="PR" />
     </div>
   </div>
 </template>

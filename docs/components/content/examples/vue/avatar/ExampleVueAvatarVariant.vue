@@ -1,19 +1,11 @@
 <template>
   <div flex="~ items-center" gap-4>
-    <NAvatar avatar="solid">
-      PR
-    </NAvatar>
+    <NAvatar avatar="solid" label="PR" />
 
-    <NAvatar avatar="soft">
-      PR
-    </NAvatar>
+    <NAvatar avatar="soft" label="PR" />
 
-    <NAvatar avatar="outline">
-      PR
-    </NAvatar>
+    <NAvatar avatar="outline" label="PR" />
 
-    <NAvatar avatar="~">
-      PR
-    </NAvatar>
+    <NAvatar avatar="~" label="PR" />
   </div>
 </template>
