@@ -33,20 +33,21 @@ const placeholder = computed(() => {
         v-if="error || !isReady || isLoading"
         name="fallback"
       >
+
+        <!-- img fallback -->
+        <img
+          v-if="fallback"
+          avatar="src"
+          :src="fallback"
+        >
+
         <!-- placeholder fallback -->
         <span
-          v-if="placeholder"
+          v-else-if="placeholder"
           avatar="fallback"
         >
           {{ placeholder }}
         </span>
-
-        <!-- img fallback -->
-        <img
-          v-else-if="fallback"
-          avatar="src"
-          :src="fallback"
-        >
 
         <NIcon
           v-else
