@@ -14,8 +14,8 @@ const hasVariant = computed(() => avatarVariants.some(avatarVariants => props.av
 const isBaseVariant = computed(() => props.avatar?.includes('~'))
 
 const placeholder = computed(() => {
-  if (props.fallback)
-    return props.fallback
+  if (props.label)
+    return props.label
 
   return props.alt?.split(' ').map(word => word[0]).join('').slice(0, 2)
 })
@@ -30,14 +30,29 @@ const placeholder = computed(() => {
     <slot v-bind="{ isLoading, error, isReady }">
       <!-- fallback -->
       <slot
-        v-if="error || !isReady || isLoading && !placeholder"
+        v-if="error || !isReady || isLoading"
         name="fallback"
       >
+        <!-- placeholder fallback -->
         <span
+          v-if="placeholder"
           avatar="fallback"
         >
           {{ placeholder }}
         </span>
+
+        <!-- img fallback -->
+        <img
+          v-else-if="fallback"
+          avatar="src"
+          :src="fallback"
+        >
+
+        <NIcon
+          v-else
+          size="1.5em"
+          name="i-heroicons-user-20-solid"
+        />
       </slot>
 
       <!-- image -->
@@ -46,7 +61,6 @@ const placeholder = computed(() => {
         avatar="src"
         :src="src"
         :alt="alt"
-        loading="lazy"
       >
     </slot>
   </span>
