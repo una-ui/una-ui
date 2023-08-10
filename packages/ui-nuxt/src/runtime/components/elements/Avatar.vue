@@ -44,15 +44,15 @@ const placeholder = computed(() => {
         <!-- placeholder fallback -->
         <span
           v-else-if="placeholder"
-          avatar="fallback"
+          avatar="label"
         >
           {{ placeholder }}
         </span>
 
         <NIcon
           v-else
-          size="1.5em"
-          name="i-heroicons-user-20-solid"
+          avatar="icon-base"
+          name="avatar-icon"
         />
       </slot>
 
