@@ -9,8 +9,9 @@ const props = withDefaults(defineProps<NAvatarProps>(), {
 
 const { isLoading, error, isReady } = useImage({ src: props?.src ?? '' }, { delay: props.delay })
 
-const avatarVariants = ['solid', 'soft', 'outline', '~'] as const
+const avatarVariants = ['solid', 'soft', 'outline'] as const
 const hasVariant = computed(() => avatarVariants.some(avatarVariants => props.avatar?.includes(avatarVariants)))
+const isBaseVariant = computed(() => props.avatar?.includes('~'))
 
 const placeholder = computed(() => {
   if (props.fallback)
@@ -23,7 +24,8 @@ const placeholder = computed(() => {
 <template>
   <span
     :avatar="avatar"
-    :class="{ 'avatar-default-variant': !hasVariant }"
+    class="avatar"
+    :class="{ 'avatar-default-variant': !hasVariant && !isBaseVariant }"
   >
     <slot v-bind="{ isLoading, error, isReady }">
       <!-- fallback -->
