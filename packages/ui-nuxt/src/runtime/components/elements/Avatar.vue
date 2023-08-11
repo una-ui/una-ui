@@ -27,36 +27,48 @@ const placeholder = computed(() => {
     class="avatar"
     :class="[
       { 'avatar-default-variant': !hasVariant && !isBaseVariant },
-      { 'animate-pulse': isLoading && skeleton && src },
+      { 'avatar-skeleton': isLoading && skeleton && src },
     ]"
   >
-    <slot v-bind="{ isLoading, error, isReady, ...props }">
-      <img
-        v-if="isReady && !error"
-        avatar="src"
-        :src="src"
-        :alt="alt"
+    <template v-if="!icon">
+      <slot
+        v-if="!skeleton"
+        v-bind="{ isLoading, error, isReady, ...props }"
       >
+        <img
+          v-if="isReady && !error"
+          avatar="src"
+          :src="src"
+          :alt="alt"
+        >
 
-      <img
-        v-else-if="fallback"
-        avatar="src"
-        :src="fallback"
-        :alt="alt ?? 'avatar'"
-      >
+        <img
+          v-else-if="fallback"
+          avatar="src"
+          :src="fallback"
+          :alt="alt ?? 'avatar'"
+        >
 
-      <span
-        v-else-if="placeholder"
-        avatar="label"
-      >
-        {{ placeholder }}
-      </span>
+        <span
+          v-else-if="placeholder"
+          avatar="label"
+        >
+          {{ placeholder }}
+        </span>
 
+        <NIcon
+          v-else
+          avatar="fallback-icon-base"
+          name="avatar-fallback-icon"
+        />
+      </slot>
+    </template>
+
+    <template v-else>
       <NIcon
-        v-else
         avatar="icon-base"
-        name="avatar-icon"
+        :name="icon"
       />
-    </slot>
+    </template>
   </span>
 </template>

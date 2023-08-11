@@ -3,13 +3,15 @@ type AvatarPrefix = 'avatar'
 export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, string> = {
   // config
   'avatar-default-variant': 'avatar-solid',
-  'avatar-icon': 'i-heroicons-user-20-solid',
+  'avatar-fallback-icon': 'i-heroicons-user-20-solid',
+  'avatar-skeleton': 'animate-pulse',
 
   // base
   'avatar': 'relative font-medium leading-none h-2.5em w-2.5em inline-flex items-center justify-center rounded-full overflow-hidden',
   'avatar-label': '',
-  'avatar-icon-base': 'text-1.5em',
+  'avatar-fallback-icon-base': 'text-1.5em',
   'avatar-src': 'w-full h-full',
+  'avatar-icon-base': 'text-1.2em',
 
   // variants
   'avatar-solid-white': 'avatar bg-base text-base ring-1 ring-base',
