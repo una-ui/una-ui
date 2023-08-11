@@ -1,3 +1,4 @@
+import type { VNode } from 'vue'
 import { cloneVNode, computed, defineComponent } from 'vue'
 
 export default defineComponent({
@@ -13,13 +14,11 @@ export default defineComponent({
     },
   },
   setup(props, { slots }) {
-    const children = computed(() => slots.default?.()[0].children)
+    const children = computed(() => slots.default?.()[0].children as VNode[])
 
     if (!children.value)
       return () => null
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     const clones = computed(() => children.value?.map((node: any) => {
       return cloneVNode(node, { id: props.id, name: props.id, status: props.status })
     }))
