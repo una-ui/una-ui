@@ -54,3 +54,7 @@ coverage
 Network Trash Folder
 Temporary Items
 .apdisk
+
+## Drafts
+
+src/runtime/drafts/*
