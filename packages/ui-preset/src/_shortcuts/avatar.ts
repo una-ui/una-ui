@@ -21,7 +21,7 @@ export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, st
 export const dynamicAvatar: [RegExp, (params: RegExpExecArray) => string][] = [
   // variants
   [/^avatar-solid(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-600 dark:bg-${c}-500 text-inverted`],
-  [/^avatar-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 text-${c}-700 dark:text-${c}-400 ring-1 ring-${c}-700/10 dark:bg-${c}-400/10 dark:ring-${c}-400/30`],
+  [/^avatar-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 text-${c}-700 dark:text-${c}-400 dark:bg-${c}-900`], // ring-1 ring-${c}-700/10 dark:ring-${c}-400/30 dark:bg-${c}-400/10
   [/^avatar-outline(-(\S+))?$/, ([, , c = 'gray']) => `bg-transparent text-${c}-500 dark:text-${c}-400 ring-1 ring-current`],
 ]
 
