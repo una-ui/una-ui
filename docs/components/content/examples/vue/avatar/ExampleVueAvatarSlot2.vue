@@ -8,10 +8,14 @@
 
     <NAvatar src="/images/avatar.png" alt="Phojie Rengel">
       <template #default="slot">
-        <img :src="slot.src" :alt="slot.alt">
+        <!-- if ready -->
+        <img v-if="isReady && !error" :src="slot.src" :alt="slot.alt">
+
+        <!-- if loading -->
+        <span v-else-if="slot.isLoading">loading</span>
 
         <!-- fallbacks -->
-        <span v-if="slot.error">error</span>
+        <span v-else-if="slot.error">error</span>
       </template>
     </NAvatar>
   </div>
