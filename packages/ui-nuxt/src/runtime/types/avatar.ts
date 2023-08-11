@@ -5,4 +5,5 @@ export interface NAvatarProps {
   alt?: string
   fallback?: string
   delay?: number
+  skeleton?: boolean
 }
