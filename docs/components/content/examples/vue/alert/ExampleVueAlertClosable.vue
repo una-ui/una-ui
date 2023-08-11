@@ -2,7 +2,7 @@
 const close1 = ref(false)
 const close2 = ref(false)
 
-// auto reset all state are true after 1 second
+// auto reset if all alerts are closed
 watch([close1, close2], () => {
   if (close1.value && close2.value) {
     setTimeout(() => {
