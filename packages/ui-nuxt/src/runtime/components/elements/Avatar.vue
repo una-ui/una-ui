@@ -31,7 +31,6 @@ const placeholder = computed(() => {
     ]"
   >
     <slot v-bind="{ isLoading, error, isReady, ...props }">
-      <!-- image -->
       <img
         v-if="isReady && !error"
         avatar="src"
@@ -39,7 +38,6 @@ const placeholder = computed(() => {
         :alt="alt"
       >
 
-      <!-- img fallback -->
       <img
         v-else-if="fallback"
         avatar="src"
@@ -47,7 +45,6 @@ const placeholder = computed(() => {
         :alt="alt ?? 'avatar'"
       >
 
-      <!-- placeholder fallback -->
       <span
         v-else-if="placeholder"
         avatar="label"
@@ -55,7 +52,6 @@ const placeholder = computed(() => {
         {{ placeholder }}
       </span>
 
-      <!-- icon fallback -->
       <NIcon
         v-else
         avatar="icon-base"
