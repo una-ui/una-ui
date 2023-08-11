@@ -9,6 +9,7 @@ import { _switch } from './switch'
 import { alert } from './alert'
 import { badge } from './badge'
 import { avatar } from './avatar'
+import { avatarGroup } from './avatar-group'
 
 export const shortcuts = [
   ...general,
@@ -21,4 +22,5 @@ export const shortcuts = [
   ...alert,
   ...badge,
   ...avatar,
+  ...avatarGroup,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
