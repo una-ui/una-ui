@@ -28,6 +28,7 @@ const placeholder = computed(() => {
     :class="[
       { 'avatar-default-variant': !hasVariant && !isBaseVariant },
       { 'avatar-skeleton': isLoading && skeleton && src },
+      nv?.avatar,
     ]"
   >
     <template v-if="!icon">
@@ -40,6 +41,7 @@ const placeholder = computed(() => {
           avatar="src"
           :src="src"
           :alt="alt"
+          :class="nv?.avatarSrc"
         >
 
         <img
@@ -47,11 +49,13 @@ const placeholder = computed(() => {
           avatar="src"
           :src="fallback"
           :alt="alt ?? 'avatar'"
+          :class="nv?.avatarFallback"
         >
 
         <span
           v-else-if="placeholder"
           avatar="label"
+          :class="nv?.avatarLabel"
         >
           {{ placeholder }}
         </span>
@@ -59,7 +63,8 @@ const placeholder = computed(() => {
         <NIcon
           v-else
           avatar="fallback-icon-base"
-          name="avatar-fallback-icon"
+          :name="nv?.avatarFallbackIcon ?? 'avatar-fallback-icon'"
+          :class="nv?.avatarFallbackIcon"
         />
       </slot>
     </template>
@@ -67,6 +72,7 @@ const placeholder = computed(() => {
     <template v-else>
       <NIcon
         avatar="icon-base"
+        :class="nv?.avatarIconBase"
         :name="icon"
       />
     </template>

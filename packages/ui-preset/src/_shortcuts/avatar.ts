@@ -9,6 +9,7 @@ export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, st
   // base
   'avatar': 'relative font-medium leading-none h-2.5em w-2.5em inline-flex items-center justify-center rounded-full overflow-hidden',
   'avatar-label': '',
+  'avatar-fallback': '',
   'avatar-fallback-icon-base': 'text-1.5em',
   'avatar-src': 'w-full h-full',
   'avatar-icon-base': 'text-1.2em',

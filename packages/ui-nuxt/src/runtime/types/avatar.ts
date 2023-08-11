@@ -11,6 +11,14 @@ export interface NAvatarProps {
   skeleton?: boolean
 
   nv?: {
+    // base
+    avatar?: string
     avatarLabel?: string
+    avatarSrc?: string
+    avatarFallback?: string
+    avatarIconBase?: string
+
+    // icons
+    avatarFallbackIcon?: string
   }
 }
