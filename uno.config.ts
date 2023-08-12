@@ -29,6 +29,7 @@ export default {
     transformerVariantGroup(),
   ],
   configDeps: [
+    '../packages/ui-preset/src/_shortcuts/indicator.ts',
     '../packages/ui-preset/src/_shortcuts/avatar-group.ts',
     '../packages/ui-preset/src/_shortcuts/avatar.ts',
     '../packages/ui-preset/src/_shortcuts/badge.ts',

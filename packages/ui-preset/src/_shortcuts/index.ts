@@ -10,6 +10,7 @@ import { alert } from './alert'
 import { badge } from './badge'
 import { avatar } from './avatar'
 import { avatarGroup } from './avatar-group'
+import { indicator } from './indicator'
 
 export const shortcuts = [
   ...general,
@@ -23,4 +24,5 @@ export const shortcuts = [
   ...badge,
   ...avatar,
   ...avatarGroup,
+  ...indicator,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
