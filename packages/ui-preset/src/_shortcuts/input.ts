@@ -25,7 +25,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
 
   // variants
   'input-outline-gray': 'input focus:ring-2 focus:bg-base ring-1 ring-inset ring-base',
-  'input-outline-black': 'input focus:bg-base ring-1 ring-inset ring-base focus:ring-$c-foreground',
+  'input-outline-black': 'input focus:bg-base ring-1 ring-inset focus:ring-$c-foreground',
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
