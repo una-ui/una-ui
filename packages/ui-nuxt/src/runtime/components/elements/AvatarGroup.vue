@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { NAvatarGroupProps } from '../../types'
 import NAvatarGroupDefaultSlot from '../slots/AvatarGroupDefault'
-import { omitProps } from '../../utils'
 
 defineOptions({
   inheritAttrs: false,
@@ -17,7 +16,7 @@ const props = defineProps<NAvatarGroupProps>()
   >
     <NAvatarGroupDefaultSlot
       :max="max"
-      :avatar="omitProps(props, ['max'])"
+      :avatar="props"
     >
       <slot />
     </NAvatarGroupDefaultSlot>
