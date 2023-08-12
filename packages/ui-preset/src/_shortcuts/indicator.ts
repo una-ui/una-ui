@@ -14,7 +14,6 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
 
   // placements
   'indicator-top-left': 'top-0 left-0 -mt-1 -ml-1',
-  //   'indicator-top-right': 'top-0 right-0 -translate-y-1 translate-x-1',
   'indicator-top-right': 'top-0 -ml-0.8125em -mt-0.25em',
   'indicator-bottom-left': 'bottom-0 left-0 -mb-1 -ml-1',
   'indicator-bottom-right': 'bottom-0 -ml-0.8125em -mb-0.25em',
@@ -22,6 +21,7 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
 
 export const dynamicIndicator: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^indicator-solid(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-600 text-white`],
+  [/^indicator-soft(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-100 text-${c}-800 dark:bg-${c}-800 dark:text-${c}-100`],
 ]
 
 export const indicator = [
