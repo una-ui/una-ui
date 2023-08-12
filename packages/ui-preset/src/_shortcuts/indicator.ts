@@ -1,13 +1,16 @@
+import { parseColor } from '@unocss/preset-mini/utils'
+import type { Theme } from '@unocss/preset-uno'
+import type { RuleContext } from '@unocss/core'
+
 type IndicatorPrefix = 'indicator'
 
 export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorPrefix, string> = {
   // config
-  'indicator-default-variant': 'indicator-solid-error',
   'indicator-default-placement': 'indicator-top-right',
 
   // base
-  'indicator': 'z-100 absolute min-h-1.15em min-w-1.15em inline-flex items-center justify-center rounded-full p-0.2em leading-none ring-2 ring-$c-background',
-  'indicator-label': 'text-0.7em leading-none font-semibold',
+  'indicator': 'bg-red-600 text-white z-100 absolute min-h-1.15em min-w-1.15em inline-flex items-center justify-center rounded-full p-0.2em leading-none ring-2 ring-$c-background',
+  'indicator-label': 'text-0.75em leading-none',
 
   // wrapper
   'indicator-wrapper': 'relative inline-block',
@@ -19,9 +22,12 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
   'indicator-bottom-right': 'bottom-0 -ml-0.8125em -mb-0.25em',
 }
 
-export const dynamicIndicator: [RegExp, (params: RegExpExecArray) => string][] = [
-  [/^indicator-solid(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-600 text-white`],
-  [/^indicator-soft(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-100 text-${c}-800 dark:bg-${c}-800 dark:text-${c}-100`],
+export const dynamicIndicator = [
+  [/^indicator-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
+    const color = parseColor(body, theme)
+    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
+      return `bg-${body}-600`
+  }],
 ]
 
 export const indicator = [
