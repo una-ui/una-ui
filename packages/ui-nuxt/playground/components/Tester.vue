@@ -8,20 +8,24 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
-  <div flex gap-4>
-    <div>
+  <div flex="~ col" w-80 gap-4>
+    <NFormGroup label="Email">
       <NInput
-        leading="i-heroicons-envelope-20-solid"
-        loading
-        placeholder="Leading and trailing icons are clickable"
+        placeholder="Enter your email"
+        type="email"
+        input="outline-black"
       />
-    </div>
+    </NFormGroup>
 
-    <div class="relative rounded-md text-sm shadow-sm">
-      <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-        <span i-heroicons-hand-thumb-up-20-solid class="h-5 w-5 text-gray-400" aria-hidden="true" />
-      </div>
-      <input type="text" input="outline" size="sm" class="pl-10">
-    </div>
+    <NFormGroup label="Password">
+      <NInput
+        type="password"
+        input="outline-black"
+      />
+    </NFormGroup>
+
+    <NButton btn="solid-black block">
+      Create account
+    </NButton>
   </div>
 </template>
