@@ -19,12 +19,13 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-loading': 'animate-spin h-1.375em w-1.375em',
 
   // wrappers
-  'input-wrapper': 'relative flex items-center text-md sm:text-sm sm:leading-6',
+  'input-wrapper': 'relative flex items-center text-sm leading-6',
   'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-$c-gray-400',
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
 
   // variants
   'input-outline-gray': 'input focus:ring-2 focus:bg-base ring-1 ring-inset ring-base',
+  'input-outline-black': 'input focus:bg-base ring-1 ring-inset ring-base focus:ring-$c-foreground',
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
