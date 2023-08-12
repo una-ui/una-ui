@@ -1,6 +1,6 @@
 <template>
   <NAvatarGroup
-    size="xl"
+    size="xs"
     :max="3"
   >
     <NAvatar src="https://avatars.githubusercontent.com/u/11247099?v=4" alt="Anthony Fu" />
