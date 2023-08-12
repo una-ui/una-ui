@@ -7,7 +7,7 @@ import {
 import { createReusableTemplate } from '@vueuse/core'
 
 import { ref } from 'vue'
-import type { NAccordionItemProps, NAccordionProps } from '../../types'
+import type { NAccordionProps } from '../../types'
 import { getPriority, omitProps } from '../../utils'
 import NIcon from './Icon.vue'
 import NButton from './Button.vue'
@@ -51,12 +51,7 @@ function onLeave(element: Element, done: () => void) {
   el.addEventListener('transitionend', done, { once: true })
 }
 
-const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
-  item: NAccordionItemProps
-  i: number
-  close: () => void
-  open: boolean
-}>()
+const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
 
 <template>
@@ -130,7 +125,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
         </slot>
       </DisclosureButton>
 
-      <DefineTemplate v-slot="{ open, i, close, item }">
+      <DefineTemplate>
         <slot
           :name="item.content ? 'content' : i"
           :item="item" :index="i" :open="open" :close="close"
@@ -158,14 +153,14 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
         <DisclosurePanel
           v-if="!getPriority(item.mounted, mounted)"
         >
-          <ReuseTemplate v-bind="{ item, i, close, open }" />
+          <ReuseTemplate />
         </DisclosurePanel>
         <DisclosurePanel
           v-else
           v-show="open"
           static
         >
-          <ReuseTemplate v-bind="{ item, i, close, open }" />
+          <ReuseTemplate />
         </DisclosurePanel>
       </Transition>
     </Disclosure>
