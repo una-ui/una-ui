@@ -1,5 +1,10 @@
 import type { NAvatarProps } from './avatar'
 
+/**
+ * This extends the `NAvatarProps` interface.
+ *
+ * @see https://github.com/nexvelt/ui/blob/main/packages/ui-nuxt/src/runtime/types/avatar.ts
+*/
 export interface NAvatarGroupProps extends Omit<NAvatarProps, 'nv'> {
   /**
    * Set the maximum number of avatars to show.
@@ -8,6 +13,12 @@ export interface NAvatarGroupProps extends Omit<NAvatarProps, 'nv'> {
   */
   max: number
 
+  /**
+   * `NexveltUI` preset configuration
+   *
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/avatar-group.ts
+   * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/avatar.ts
+  */
   nv?: {
     avatarGroupChild?: string
     avatarGroupMargin?: string
