@@ -1,10 +1,10 @@
 <template>
   <div flex="~ items-center" gap-4>
-    <NIndicator indicator="solid-green" dot>
+    <NIndicator indicator="solid-green">
       <NAvatar src="/images/avatar.png" alt="Phojie Rengel" />
     </NIndicator>
 
-    <NIndicator indicator="solid-gray bottom-right" dot>
+    <NIndicator indicator="solid-gray bottom-right">
       <NAvatar src="/images/avatar.png" alt="Phojie Rengel" />
     </NIndicator>
 
