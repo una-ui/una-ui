@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { createReusableTemplate } from '@vueuse/core'
 import type { NIndicatorProps } from '../../types'
-import NBadge from './Badge.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -30,16 +29,15 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
     <span :size="size">
       <slot name="badge">
         <DefineTemplate v-slot="{ ping }">
-          <NBadge
+          <span
             v-bind="$attrs"
             :indicator="indicator"
-            class="!indicator"
+            class="indicator whitespace-nowrap"
             :class="[
               { 'indicator-default-placement': !hasPlacement },
               { 'indicator-default-variant': !hasVariant && !isBaseVariant },
               { '!animate-ping !ring-none': ping },
             ]"
-            badge="~"
             :size="!label ? '0.45em' : '0.75em'"
           >
             <slot name="label">
@@ -47,7 +45,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
                 {{ label }}
               </span>
             </slot>
-          </NBadge>
+          </span>
         </DefineTemplate>
       </slot>
 
