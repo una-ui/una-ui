@@ -6,7 +6,9 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NAvatarGroupProps>()
+const props = withDefaults(defineProps<NAvatarGroupProps>(), {
+  max: 3,
+})
 </script>
 
 <template>
