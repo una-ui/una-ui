@@ -6,11 +6,8 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
   'indicator-default-placement': 'indicator-top-right',
 
   // base
-  'indicator': 'z-100 absolute min-h-1.55em min-w-1.55em inline-flex items-center justify-center rounded-full py-none px-0.2em ring-2 ring-$c-background',
+  'indicator': 'z-10 absolute min-h-1.55em min-w-1.55em inline-flex items-center justify-center rounded-full py-none px-0.2em ring-2 ring-$c-background',
   'indicator-label': '',
-
-  // options
-  'indicator-dot': 'min-w-0.5em min-h-0.5em',
 
   // wrapper
   'indicator-wrapper': 'relative inline-flex',
