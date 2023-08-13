@@ -13,8 +13,9 @@ const props = withDefaults(defineProps<NAvatarGroupProps>(), {
 
 <template>
   <div
-    avatar-group
+    class="avatar-group"
     v-bind="$attrs"
+    :avatarGroup="nv?.avatarGroup"
   >
     <NAvatarGroupDefaultSlot
       :max="max"

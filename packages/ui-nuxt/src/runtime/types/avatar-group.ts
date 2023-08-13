@@ -20,6 +20,7 @@ export interface NAvatarGroupProps extends Omit<NAvatarProps, 'nv'> {
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/avatar.ts
   */
   nv?: {
+    avatarGroup?: string
     avatarGroupChild?: string
     avatarGroupMargin?: string
     avatarGroupLabel?: string
