@@ -27,8 +27,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
     <slot />
 
     <span :size="size">
-      <slot name="indicator">
-        <DefineTemplate v-slot="{ ping }">
+      <DefineTemplate v-slot="{ ping }">
+        <slot name="indicator">
           <span
             v-bind="$attrs"
             :indicator="indicator"
@@ -44,8 +44,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
               {{ label }}
             </slot>
           </span>
-        </DefineTemplate>
-      </slot>
+        </slot>
+      </DefineTemplate>
 
       <ReuseTemplate :ping="ping" />
       <ReuseTemplate />
