@@ -6,16 +6,15 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
   'indicator-default-placement': 'indicator-top-right',
 
   // base
-  'indicator': 'absolute min-h-1.55em min-w-1.55em inline-flex items-center justify-center rounded-full py-none px-0.2em ring-2 ring-$c-background',
+  'indicator': 'absolute min-h-1.35em min-w-1.35em inline-flex items-center justify-center rounded-full py-none px-0.2em ring-2 ring-$c-background',
   'indicator-label': '',
 
   // wrapper
   'indicator-wrapper': 'relative inline-flex',
 
   // placements
-  // 'indicator-top-right': 'top-0 -ml-1.3em',
-  'indicator-top-right': 'top-0 -ml-1em -mt-0.2em',
-  'indicator-bottom-right': 'bottom-0 -ml-1.1em -mb-0.2em',
+  'indicator-top-right': 'top-0 -ml-1.3em -mt-0.1em',
+  'indicator-bottom-right': 'bottom-0 -ml-1.3em -mb-0.1em',
   // 'indicator-top-left': 'top-0 left-0 -mt-1 -ml-1',
   // 'indicator-bottom-left': 'bottom-0 left-0 -mb-1 -ml-1',
 }

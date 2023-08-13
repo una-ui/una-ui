@@ -12,7 +12,7 @@ export default {
   preflight: false,
   presets: [
     presetUno({
-      attributifyPseudo: true,
+      // attributifyPseudo: true,
     }),
     presetAttributify(),
     presetIcons({

@@ -15,7 +15,7 @@ export function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOpt
     preflight: false,
     presets: [
       presetUno({
-        attributifyPseudo: true,
+        // attributifyPseudo: true,
       }),
       presetAttributify(),
       presetIcons({

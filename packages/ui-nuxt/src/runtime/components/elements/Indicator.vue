@@ -28,29 +28,31 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
     <slot />
 
     <span :size="size">
-      <DefineTemplate v-slot="{ ping }">
-        <NBadge
-          v-bind="$attrs"
-          :indicator="indicator"
-          class="!indicator"
-          :class="[
-            { 'indicator-default-placement': !hasPlacement },
-            { 'indicator-default-variant': !hasVariant && !isBaseVariant },
-            { '!animate-ping !ring-none': ping },
-          ]"
-          badge="~"
-          :size="!label ? '0.45em' : '0.75em'"
-        >
-          <span indicator="label">
-            {{ label }}
-          </span>
-        </NBadge>
-      </DefineTemplate>
+      <slot name="badge">
+        <DefineTemplate v-slot="{ ping }">
+          <NBadge
+            v-bind="$attrs"
+            :indicator="indicator"
+            class="!indicator"
+            :class="[
+              { 'indicator-default-placement': !hasPlacement },
+              { 'indicator-default-variant': !hasVariant && !isBaseVariant },
+              { '!animate-ping !ring-none': ping },
+            ]"
+            badge="~"
+            :size="!label ? '0.45em' : '0.75em'"
+          >
+            <slot name="label">
+              <span v-if="label" indicator="label">
+                {{ label }}
+              </span>
+            </slot>
+          </NBadge>
+        </DefineTemplate>
+      </slot>
 
       <ReuseTemplate :ping="ping" />
-      <slot name="badge">
-        <ReuseTemplate />
-      </slot>
+      <ReuseTemplate />
     </span>
   </div>
 </template>

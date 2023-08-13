@@ -4,7 +4,7 @@
       <NAvatar src="/images/avatar.png" alt="Phojie Rengel" rounded-md />
     </NIndicator>
 
-    <NIndicator indicator="solid-error" ping>
+    <NIndicator indicator="solid-error">
       <NAvatar src="/images/avatar.png" alt="Phojie Rengel" />
     </NIndicator>
 
