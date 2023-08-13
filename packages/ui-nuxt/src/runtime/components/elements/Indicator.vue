@@ -39,7 +39,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
             { '!animate-ping !ring-none': ping },
           ]"
           badge="~"
-          :size="dot ? '0.45em' : '0.75em'"
+          :size="!label ? '0.45em' : '0.75em'"
         >
           <span indicator="label">
             {{ label }}

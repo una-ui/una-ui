@@ -3,6 +3,5 @@ export interface NIndicatorProps {
   indicator?: string
   label?: string
 
-  dot?: boolean
   ping?: boolean
 }
