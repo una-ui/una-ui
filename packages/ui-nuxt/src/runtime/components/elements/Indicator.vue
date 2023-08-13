@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { createReusableTemplate } from '@vueuse/core'
 import type { NIndicatorProps } from '../../types'
 import NBadge from './Badge.vue'
 
@@ -16,13 +17,18 @@ const indicatorVariants = ['solid'] as const
 const hasVariant = computed(() => indicatorVariants.some(indicatorVariants => props.indicator?.includes(indicatorVariants)))
 
 const isBaseVariant = computed(() => props.indicator?.includes('~'))
+
+const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
+  ping?: boolean
+}>()
 </script>
 
 <template>
   <div indicator="wrapper">
     <slot />
+
     <span :size="size">
-      <slot name="badge">
+      <DefineTemplate v-slot="{ ping }">
         <NBadge
           v-bind="$attrs"
           :indicator="indicator"
@@ -30,6 +36,7 @@ const isBaseVariant = computed(() => props.indicator?.includes('~'))
           :class="[
             { 'indicator-default-placement': !hasPlacement },
             { 'indicator-default-variant': !hasVariant && !isBaseVariant },
+            { '!animate-ping !ring-none': ping },
           ]"
           badge="~"
           :size="dot ? '0.45em' : '0.75em'"
@@ -38,6 +45,11 @@ const isBaseVariant = computed(() => props.indicator?.includes('~'))
             {{ label }}
           </span>
         </NBadge>
+      </DefineTemplate>
+
+      <ReuseTemplate :ping="ping" />
+      <slot name="badge">
+        <ReuseTemplate />
       </slot>
     </span>
   </div>
