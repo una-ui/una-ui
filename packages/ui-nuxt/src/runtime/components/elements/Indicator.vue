@@ -23,7 +23,10 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
 </script>
 
 <template>
-  <div indicator="wrapper">
+  <div
+    indicator="wrapper"
+    :class="nv?.indicatorWrapper"
+  >
     <slot />
 
     <span :size="size">
@@ -38,6 +41,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
               { 'indicator-default-variant': !hasVariant && !isBaseVariant },
               { '!animate-ping !ring-none': ping },
               !label ? 'indicator-dot' : 'indicator-label',
+              nv?.indicator,
             ]"
           >
             <slot name="label">
