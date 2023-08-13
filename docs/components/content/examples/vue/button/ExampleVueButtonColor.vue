@@ -80,6 +80,10 @@
           btn="solid-gray"
         />
         <NButton
+          label="soft-gray"
+          btn="soft-gray"
+        />
+        <NButton
           label="ghost-gray"
           btn="ghost-gray"
         />
