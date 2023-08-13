@@ -27,7 +27,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
     <slot />
 
     <span :size="size">
-      <slot name="badge">
+      <slot name="indicator">
         <DefineTemplate v-slot="{ ping }">
           <span
             v-bind="$attrs"
@@ -37,13 +37,11 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
               { 'indicator-default-placement': !hasPlacement },
               { 'indicator-default-variant': !hasVariant && !isBaseVariant },
               { '!animate-ping !ring-none': ping },
+              !label ? 'indicator-dot' : 'indicator-label',
             ]"
-            :size="!label ? '0.45em' : '0.75em'"
           >
             <slot name="label">
-              <span v-if="label" indicator="label">
-                {{ label }}
-              </span>
+              {{ label }}
             </slot>
           </span>
         </DefineTemplate>
