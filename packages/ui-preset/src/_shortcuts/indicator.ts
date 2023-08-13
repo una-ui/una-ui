@@ -16,8 +16,9 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
   'indicator-wrapper': 'relative inline-flex',
 
   // placements
-  'indicator-top-right': 'top-0 -ml-1.3em',
-  'indicator-bottom-right': 'bottom-0 -ml-1.3em',
+  // 'indicator-top-right': 'top-0 -ml-1.3em',
+  'indicator-top-right': 'top-0 -ml-1em -mt-0.2em',
+  'indicator-bottom-right': 'bottom-0 -ml-1.1em -mb-0.2em',
   // 'indicator-top-left': 'top-0 left-0 -mt-1 -ml-1',
   // 'indicator-bottom-left': 'bottom-0 left-0 -mb-1 -ml-1',
 }
