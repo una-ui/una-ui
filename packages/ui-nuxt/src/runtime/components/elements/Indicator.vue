@@ -7,7 +7,9 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NIndicatorProps>()
+const props = withDefaults(defineProps<NIndicatorProps>(), {
+  visible: true,
+})
 
 const indicatorPlacements = ['top-left', 'top-right', 'bottom-left', 'bottom-right'] as const
 const hasPlacement = computed(() => indicatorPlacements.some(indicatorPlacements => props.indicator?.includes(indicatorPlacements)))
@@ -29,7 +31,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
   >
     <slot />
 
-    <span :size="size">
+    <span v-if="visible" :size="size">
       <DefineTemplate v-slot="{ ping }">
         <slot name="indicator">
           <span

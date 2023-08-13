@@ -28,6 +28,12 @@ export interface NIndicatorProps {
    * @default false
   */
   ping?: boolean
+  /**
+   * Set visibility of the indicator.
+   *
+   * @default true
+  */
+  visible?: boolean
 
   /**
  * `NexveltUI` preset configuration
