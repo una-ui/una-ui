@@ -1,5 +1,5 @@
 <template>
-  <NIndicator indicator="solid-success">
+  <NIndicator>
     <NAvatar label="PR" />
   </NIndicator>
 </template>

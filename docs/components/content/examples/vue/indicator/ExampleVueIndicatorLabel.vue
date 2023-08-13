@@ -4,8 +4,8 @@
       <NButton label="i-heroicons-bell group-active:i-heroicons-bell-solid" size="lg" icon btn="soft-gray square" class="group rounded-full" />
     </NIndicator>
 
-    <NIndicator indicator="solid-warning" label="Draft">
-      <NButton label="i-heroicons-envelope group-active:i-heroicons-envelope-solid" size="lg" icon btn="soft-gray square" group class="group rounded-full" />
+    <NIndicator indicator="solid-primary" label="New">
+      <NButton label="i-heroicons-envelope group-active:i-heroicons-envelope-solid" size="xl" icon btn="text-gray" group class="group rounded-full p-1.5" />
     </NIndicator>
 
     <NIndicator indicator="solid-info" label="1 message">

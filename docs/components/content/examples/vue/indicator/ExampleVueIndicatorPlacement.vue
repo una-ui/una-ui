@@ -1,36 +1,19 @@
 <template>
   <div flex="~ items-center" gap-4>
-    <NIndicator indicator="solid-success">
-      <NAvatar src="/images/avatar.png" alt="Phojie Rengel" rounded-md />
+    <NIndicator indicator="top-right solid-error" ping>
+      <NAvatar label="TR" />
     </NIndicator>
 
-    <NIndicator indicator="solid-error">
-      <NAvatar src="/images/avatar.png" alt="Phojie Rengel" />
+    <NIndicator indicator="bottom-right solid-info" ping>
+      <NAvatar label="BR" />
     </NIndicator>
 
-    <NIndicator indicator="solid-error bottom-right">
-      <NAvatar src="/images/avatar.png" />
+    <NIndicator indicator="top-left solid-warning" ping>
+      <NAvatar label="TL" />
     </NIndicator>
 
-    <NIndicator indicator="solid-error top-right">
-      <!-- <img h-5 w-5 src="https://avatars.githubusercontent.com/u/11247099?v=4"> -->
-      <NAvatar src="https://avatars.githubusercontent.com/u/11247099?v=4" alt="Phojie Rengel" />
-    </NIndicator>
-
-    <NIndicator indicator="solid-error bottom-right">
-      <NAvatar src="https://avatars.githubusercontent.com/u/33350692?v=4" alt="Phojie Rengel" />
-    </NIndicator>
-
-    <NIndicator size="xl" indicator="solid-red top-right" label="1">
-      <NAvatar size="1.4em" src="https://avatars.githubusercontent.com/u/33350692?v=4" alt="Phojie Rengel" />
-    </NIndicator>
-
-    <NIndicator indicator="solid-warning" label="Draft">
-      <NAvatar src="https://avatars.githubusercontent.com/u/33350692?v=4" alt="Phojie Rengel" />
-    </NIndicator>
-
-    <NIndicator>
-      <NAvatar src="https://avatars.githubusercontent.com/u/33350692?v=4" alt="Phojie Rengel" />
+    <NIndicator indicator="bottom-left solid-success" ping>
+      <NAvatar label="BL" />
     </NIndicator>
   </div>
 </template>
