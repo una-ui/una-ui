@@ -65,8 +65,8 @@ const statusClassVariants = computed(() => {
 
 const reverseClassVariants = computed(() => {
   const input = {
-    false: [{ 'ps-2.7em': isLeading.value }, { 'pe-2.7em': isTrailing.value }],
-    true: [{ 'pe-2.7em': isLeading.value }, { 'ps-2.7em': isTrailing.value }],
+    false: [{ 'input-leading-padding': isLeading.value }, { 'input-trailing-padding': isTrailing.value }],
+    true: [{ 'input-trailing-padding': isLeading.value }, { 'input-leading-padding': isTrailing.value }],
   }
 
   return {
@@ -83,20 +83,6 @@ const reverseClassVariants = computed(() => {
     :size="size"
     :class="nv?.inputWrapper"
   >
-    <input
-      v-bind="$attrs"
-      :id="id"
-      v-model="inputValue"
-      :type="type"
-      class="input"
-      :class="[
-        statusClassVariants.input,
-        reverseClassVariants.input,
-        nv?.input,
-      ]"
-      :input="input"
-    >
-
     <div
       v-if="isLeading"
       :class="[
@@ -116,6 +102,20 @@ const reverseClassVariants = computed(() => {
       </slot>
     </div>
 
+    <input
+      :id="id"
+      v-model="inputValue"
+      :type="type"
+      class="input"
+      :class="[
+        statusClassVariants.input,
+        reverseClassVariants.input,
+        nv?.input,
+      ]"
+      :input="input"
+      v-bind="$attrs"
+    >
+
     <div
       v-if="isTrailing"
       :class="[
@@ -131,14 +131,15 @@ const reverseClassVariants = computed(() => {
         :class="nv?.inputLoading"
       />
 
+      <NIcon
+        v-if="status"
+        input="status-icon-base"
+        :name="statusClassVariants.icon"
+      />
+
       <slot v-else name="trailing">
         <NIcon
-          v-if="status"
-          input="status-icon-base"
-          :name="statusClassVariants.icon"
-        />
-        <NIcon
-          v-else-if="trailing"
+          v-if="trailing"
           input="trailing"
           :class="nv?.inputTrailing"
           :name="trailing"

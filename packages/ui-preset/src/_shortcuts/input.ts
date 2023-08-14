@@ -8,20 +8,23 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-error-icon': 'i-error',
   'input-success-icon': 'i-success',
   'input-warning-icon': 'i-warning',
+  'input-icon-size': 'h-1.25em w-1.25em',
+  'input-leading-padding': 'pl-2.9em',
+  'input-trailing-padding': 'pr-2.9em',
 
   // base
-  'input': 'text-0.875em leading-6 px-1em py-0.5em w-full input-disabled ring-base ring-inset placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
+  'input': 'text-0.875em leading-6 px-0.8571428571428571em py-0.42857142857142855em w-full input-disabled ring-base ring-inset placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-disabled': 'disabled:(n-disabled)',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
-  'input-status-icon-base': 'h-1.25em w-1.25em',
-  'input-leading': 'h-1.25em w-1.25em',
-  'input-trailing': 'h-1.25em w-1.25em',
-  'input-loading': 'animate-spin h-1.25em w-1.25em',
+  'input-status-icon-base': 'input-icon-size',
+  'input-leading': 'input-icon-size',
+  'input-trailing': 'input-icon-size',
+  'input-loading': 'animate-spin input-icon-size',
 
   // wrappers
   'input-wrapper': 'relative flex items-center',
-  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.625em text-$c-gray-400',
-  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.625em text-$c-gray-400',
+  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-$c-gray-400',
+  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
 
   // variants
   'input-outline-gray': 'focus:ring-2 focus:bg-base ring-1',
