@@ -27,8 +27,9 @@ const id = computed(() => props.id ?? randomId('input'))
 const isLeading = computed(() => props.leading || slots.leading)
 const isTrailing = computed(() => props.trailing || slots.trailing || props.status || props.loading)
 
-const inputVariants = ['outline', 'solid', '~'] as const
+const inputVariants = ['outline', 'solid'] as const
 const hasVariant = computed(() => inputVariants.some(inputVariants => props.input?.includes(inputVariants)))
+const isBaseVariant = computed(() => props.input?.includes('~'))
 
 const statusClassVariants = computed(() => {
   const input = {
@@ -36,7 +37,7 @@ const statusClassVariants = computed(() => {
     success: 'input-status-success input-solid-success input-status-ring',
     warning: 'input-status-warning input-solid-warning input-status-ring',
     error: 'input-status-error input-solid-error input-status-ring',
-    default: !hasVariant.value ? 'input-default-variant' : '',
+    default: !hasVariant.value && !isBaseVariant.value ? 'input-default-variant' : '',
   }
 
   const text = {
@@ -87,9 +88,11 @@ const reverseClassVariants = computed(() => {
       :id="id"
       v-model="inputValue"
       :type="type"
+      class="input"
       :class="[
         statusClassVariants.input,
         reverseClassVariants.input,
+        nv?.input,
       ]"
       :input="input"
     >
