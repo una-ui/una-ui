@@ -6,7 +6,7 @@ type SwitchPrefix = 'switch'
 
 export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, string> = {
   // base
-  'switch': ' switch-primary bg-transparent relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-full',
+  'switch': 'switch-primary bg-transparent relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-full',
   'switch-disabled': 'n-disabled',
   'switch-focus': 'focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-base focus:ring-brand',
 
