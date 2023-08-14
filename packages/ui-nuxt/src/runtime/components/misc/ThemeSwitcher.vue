@@ -58,7 +58,7 @@ function shuffleTheme() {
   <div class="sm:ml-5">
     <Popover class="relative inline-block">
       <PopoverButton
-        btn="square soft"
+        btn="~ square soft"
         class="rounded-lg"
       >
         <span i-heroicons-swatch-20-solid text-md />
@@ -95,7 +95,7 @@ function shuffleTheme() {
             <hr class="my-2 border-$c-divider">
 
             <button
-              btn="solid block"
+              btn="~ solid block"
               class="rounded-lg transition"
               @click="shuffleTheme"
             >
