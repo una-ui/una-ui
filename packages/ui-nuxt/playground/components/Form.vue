@@ -20,8 +20,7 @@ const loading = ref(false)
       <NInput type="password" />
     </NFormGroup>
 
-    <NButton type="submit" label="Submit" :loading="loading" />
-
+    <NButton type="submit" mt-4 label="Submit" :loading="loading" />
     <NButton btn="solid-gray" label="Cancel" @click="loading = false" />
   </form>
 </template>
