@@ -10,18 +10,18 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-warning-icon': 'i-warning',
 
   // base
-  'input': 'px-0.8em py-0.4em w-full input-disabled ring-base ring-inset placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
+  'input': 'text-0.875em leading-6 px-1em py-0.5em w-full input-disabled ring-base ring-inset placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-disabled': 'disabled:(n-disabled)',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
-  'input-status-icon-base': 'h-1.375em w-1.375em',
-  'input-leading': 'h-1.375em w-1.375em',
-  'input-trailing': 'h-1.375em w-1.375em',
-  'input-loading': 'animate-spin h-1.375em w-1.375em',
+  'input-status-icon-base': 'h-1.25em w-1.25em',
+  'input-leading': 'h-1.25em w-1.25em',
+  'input-trailing': 'h-1.25em w-1.25em',
+  'input-loading': 'animate-spin h-1.25em w-1.25em',
 
   // wrappers
-  'input-wrapper': 'relative flex items-center size-sm leading-6',
-  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-$c-gray-400',
-  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
+  'input-wrapper': 'relative flex items-center',
+  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.625em text-$c-gray-400',
+  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.625em text-$c-gray-400',
 
   // variants
   'input-outline-gray': 'focus:ring-2 focus:bg-base ring-1',
