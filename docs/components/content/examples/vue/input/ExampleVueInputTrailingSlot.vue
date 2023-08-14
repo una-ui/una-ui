@@ -3,10 +3,10 @@
     <NInput
       leading="i-heroicons-currency-dollar-20-solid"
       placeholder="Search"
-      class="pe-3em"
+      class="pr-12"
     >
       <template #trailing>
-        <span class="text-xs font-semibold">
+        <span class="text-sm">
           USD
         </span>
       </template>
