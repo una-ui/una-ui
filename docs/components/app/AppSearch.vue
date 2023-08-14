@@ -211,7 +211,7 @@ watch(Escape, () => {
 <template>
   <div class="z-5 flex items-center">
     <button
-      btn="~ base"
+      btn
       class="hidden rounded-lg bg-base px-3 py-1.5 text-gray ring-1 ring-$c-gray-100 lg:block !text-11px hover:ring-primary"
       aria-label="Search"
       @click="show = true"
@@ -229,7 +229,7 @@ watch(Escape, () => {
     </button>
 
     <button
-      btn="~ base"
+      btn
       class="block text-$c-gray-500 lg:hidden hover:text-$c-gray-700"
       aria-label="Search"
       @click="show = true"
