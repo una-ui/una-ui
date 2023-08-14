@@ -65,8 +65,8 @@ const statusClassVariants = computed(() => {
 
 const reverseClassVariants = computed(() => {
   const input = {
-    false: [{ 'ps-2.6em': isLeading.value }, { 'pe-2.6em': isTrailing.value }],
-    true: [{ 'pe-2.6em': isLeading.value }, { 'ps-2.6em': isTrailing.value }],
+    false: [{ 'ps-2.7em': isLeading.value }, { 'pe-2.7em': isTrailing.value }],
+    true: [{ 'pe-2.7em': isLeading.value }, { 'ps-2.7em': isTrailing.value }],
   }
 
   return {
