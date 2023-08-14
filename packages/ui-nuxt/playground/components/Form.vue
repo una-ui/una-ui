@@ -3,8 +3,8 @@ const loading = ref(false)
 </script>
 
 <template>
-  <form flex="~ col" w-90 gap-4 @submit.prevent="loading = true">
-    <NFormGroup label="Name">
+  <form flex="~ col" border="~ base" w-100 gap-4 rounded-md p-8 @submit.prevent="loading = true">
+    <NFormGroup label="Name" status="error" message="Required" required>
       <NInput placeholder="John Doe" />
     </NFormGroup>
 
@@ -21,6 +21,6 @@ const loading = ref(false)
     </NFormGroup>
 
     <NButton type="submit" mt-4 label="Submit" :loading="loading" />
-    <NButton btn="solid-gray" label="Cancel" @click="loading = false" />
+    <NButton btn="solid-white" label="Cancel" @click="loading = false" />
   </form>
 </template>
