@@ -6,7 +6,7 @@ type SwitchPrefix = 'switch'
 
 export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, string> = {
   // base
-  'switch': 'text-sm switch-primary bg-transparent relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-full',
+  'switch': ' switch-primary bg-transparent relative inline-flex items-center justify-center flex-shrink-0 cursor-pointer rounded-full',
   'switch-disabled': 'n-disabled',
   'switch-focus': 'focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-base focus:ring-brand',
 
@@ -15,7 +15,7 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-track-inset': 'h-1.5em w-2.75em',
 
   // outset
-  'switch-outset': 'h-1.25em w-2.50em',
+  'switch-outset': 'h-1.25em w-2.5em',
   'switch-track-outset': 'h-1em w-2.25em',
 
   // thumb
@@ -29,13 +29,13 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-track-off': 'bg-$c-gray-200',
 
   // icon
-  'switch-icon-base': 'text-.8em',
+  'switch-icon-base': 'text-0.8em',
   'switch-icon-off': 'text-muted',
-  'switch-icon-on': 'text-brand',
+  'switch-icon-on': 'text-muted',
 
   // loading
   'switch-loading-icon': 'i-loading',
-  'switch-loading': 'text-brand animate-spin text-.8em',
+  'switch-loading': 'text-gray animate-spin text-0.8em',
 }
 
 export const dynamicSwitch = [
