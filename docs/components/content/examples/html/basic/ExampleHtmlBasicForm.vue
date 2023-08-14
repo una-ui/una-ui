@@ -3,12 +3,12 @@
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div form-group>
         <label for="firstname" form-group="label">Firstname </label>
-        <input id="firstname" input="~ outline" placeholder="Firstname">
+        <input id="firstname" class="text-sm leading-6" input="~ outline" placeholder="Firstname">
       </div>
 
       <div form-group>
         <label for="lastname" form-group="label">Lastname </label>
-        <input id="lastname" input="~ outline" placeholder="Lastname">
+        <input id="lastname" class="text-sm leading-6" input="~ outline" placeholder="Lastname">
       </div>
     </div>
 
