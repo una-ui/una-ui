@@ -12,16 +12,16 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
   'badge-close-icon-base': 'text-brand/50 group-hover:text-brand/75',
 
   // variants
-  'badge-soft-gray': 'badge bg-muted text-muted n-gray-900 dark:n-gray-50 ring-1 ring-gray-700/10 dark:ring-gray-400/30',
-  'badge-solid-black': 'badge bg-inverted text-inverted n-gray-300 dark:n-gray-600',
-  'badge-outline-white': 'badge bg-base text-base ring-1 ring-base n-gray-600 dark:n-gray-300',
+  'badge-soft-gray': 'bg-muted text-muted n-gray-900 dark:n-gray-50 ring-1 ring-gray-700/10 dark:ring-gray-400/30',
+  'badge-solid-black': 'bg-inverted text-inverted n-gray-300 dark:n-gray-600',
+  'badge-outline-white': 'bg-base text-base ring-1 ring-base n-gray-600 dark:n-gray-300',
 }
 
 export const dynamicBadge: [RegExp, (params: RegExpExecArray) => string][] = [
   // variants
-  [/^badge-solid(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-${c}-100 dark:bg-${c}-800 n-${c}-700 dark:n-${c}-200`],
-  [/^badge-soft(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-${c}-50 n-${c}-700 dark:n-${c}-400 ring-1 ring-${c}-700/10 dark:bg-${c}-400/10 dark:ring-${c}-400/30`],
-  [/^badge-outline(-(\S+))?$/, ([, , c = 'primary']) => `badge bg-transparent n-${c}-700 dark:n-${c}-400 ring-1 ring-${c}-700/10 dark:ring-${c}-400/30`],
+  [/^badge-solid(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-100 dark:bg-${c}-800 n-${c}-700 dark:n-${c}-200`],
+  [/^badge-soft(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-50 n-${c}-700 dark:n-${c}-400 ring-1 ring-${c}-700/10 dark:bg-${c}-400/10 dark:ring-${c}-400/30`],
+  [/^badge-outline(-(\S+))?$/, ([, , c = 'primary']) => `bg-transparent n-${c}-700 dark:n-${c}-400 ring-1 ring-${c}-700/10 dark:ring-${c}-400/30`],
 ]
 
 export const badge = [

@@ -35,6 +35,7 @@ export interface NBadgeProps {
   */
   nv?: {
     // base
+    badge?: string
     badgeIconBase?: string
     badgeClose?: string
     badgeCloseIconBase?: string

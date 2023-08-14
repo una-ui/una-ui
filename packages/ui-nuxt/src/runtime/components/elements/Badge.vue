@@ -7,14 +7,19 @@ const props = defineProps<NBadgeProps>()
 
 const emit = defineEmits<{ (...args: any): void }>()
 
-const badgeVariants = ['solid', 'soft', 'outline', '~'] as const
+const badgeVariants = ['solid', 'soft', 'outline'] as const
 const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badge?.includes(badgeVariants)))
+const isBaseVariant = computed(() => props.badge?.includes('~'))
 </script>
 
 <template>
   <span
     :badge="badge"
-    :class="{ 'badge-default-variant': !hasVariant }"
+    class="badge"
+    :class="[
+      { 'badge-default-variant': !hasVariant && !isBaseVariant },
+      nv?.badge,
+    ]"
   >
     <NIcon
       v-if="icon"
