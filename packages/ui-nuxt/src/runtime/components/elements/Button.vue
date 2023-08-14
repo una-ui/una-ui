@@ -16,8 +16,9 @@ const props = withDefaults(defineProps<NButtonProps>(), {
   loadingPlacement: 'leading',
 })
 
-const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text', '~'] as const
+const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text'] as const
 const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.includes(btnVariants)))
+const isBaseVariant = computed(() => props.btn?.includes('~'))
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
@@ -27,9 +28,11 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :is="to ? NuxtLink : 'button'"
     :to="to"
     :type="to ? null : type"
+    class="btn"
     :class="[
-      { 'btn-default-variant': !hasVariant },
+      { 'btn-default-variant': !hasVariant && !isBaseVariant },
       { 'btn-reverse': reverse },
+      nv?.btn,
     ]"
     :disabled="to ? null : disabled || loading"
     :btn="btn"
