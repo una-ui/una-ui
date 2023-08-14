@@ -41,6 +41,7 @@ export interface NAlertProps {
   */
   nv?: {
     // base
+    alert?: string
     alertTitle?: string
     alertDescription?: string
     alertIconBase?: string

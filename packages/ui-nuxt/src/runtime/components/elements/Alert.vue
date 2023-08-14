@@ -21,8 +21,9 @@ const slots = defineSlots<{
   closeIcon?: any
 }>()
 
-const alertVariants = ['soft', 'outline', 'border', '~'] as const
+const alertVariants = ['soft', 'outline', 'border'] as const
 const hasVariant = computed(() => alertVariants.some(alertVariants => props.alert?.includes(alertVariants)))
+const isBaseVariant = computed(() => props.alert?.includes('~'))
 
 const alertClassVariants = computed(() => {
   const icon = {
@@ -53,7 +54,11 @@ const icon = computed(() => {
   <div
     v-bind="$attrs"
     :alert="alert"
-    :class="{ 'alert-default-variant': !hasVariant }"
+    class="alert"
+    :class="[
+      { 'alert-default-variant': !hasVariant && !isBaseVariant },
+      nv?.alert,
+    ]"
   >
     <div
       alert="inner-wrapper"
