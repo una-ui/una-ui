@@ -14,7 +14,8 @@
   --c-divider: rgba(var(--nv-gray-700), 0.12);
   /* --vp-c-gutter: rgba(var(--nv-gray-700), 0.12); */
 
-  --c-ring: var(--c-gray-300);
+  /* --c-ring:  rgba(var(--nv-gray-700), 0.12); */
+  /* var(--c-gray-300); */
   
   /* defaults */
   --c-gray: var(--nv-gray-600);

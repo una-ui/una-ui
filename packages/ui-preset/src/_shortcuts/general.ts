@@ -13,7 +13,7 @@ export const staticGeneral = {
   'text-warning': 'text-warning-500 dark:text-warning-400',
 
   // ring
-  'ring-base': 'ring-$c-ring',
+  'ring-base': 'ring-$c-border',
   'ring-inverted': 'ring-$c-ring-foreground',
   'ring-offset-base': 'ring-offset-$c-background',
   'ring-offset-inverted': 'ring-offset-$c-bg-foreground',
