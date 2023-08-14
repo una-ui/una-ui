@@ -29,7 +29,7 @@ const outsetClassVariants = computed(() => {
   }
 
   const switchThumb = {
-    false: 'left-0.1em',
+    false: 'left-0.125em',
     true: 'left-0 border-base border',
   }
 
