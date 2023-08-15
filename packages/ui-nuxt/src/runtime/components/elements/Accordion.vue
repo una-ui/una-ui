@@ -56,8 +56,12 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 
 <template>
   <div
-    :accordion="`~ ${getPriority(accordion, '')}`"
-    :class="variantMode ? 'space-y-3' : 'accordion-(border divider)'"
+    :accordion="accordion"
+    class="accordion"
+    :class="[
+      variantMode ? 'space-y-3' : 'accordion-(border divider)',
+      nv?.accordion,
+    ]"
   >
     <Disclosure
       v-for="(item, i) in items"

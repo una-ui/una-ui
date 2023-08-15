@@ -75,6 +75,7 @@ export interface NAccordionProps {
    * @see https://github.com/nexvelt/ui/blob/main/packages/ui-preset/src/_shortcuts/accordion.ts
   */
   nv?: {
+    accordion?: string
     accordionItem?: string
     accordionButton?: string
     accordionPanel?: string
