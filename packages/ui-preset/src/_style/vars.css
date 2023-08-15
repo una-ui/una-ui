@@ -26,6 +26,7 @@
   --c-gray-700: rgb(var(--nv-gray-700));
   --c-gray-800: rgb(var(--nv-gray-800));
   --c-gray-900: rgb(var(--nv-gray-900));
+  --c-gray-950: rgb(var(--nv-gray-950));
 }
 
 .dark {
