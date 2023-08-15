@@ -42,7 +42,7 @@ const isBaseVariant = computed(() => props.badge?.includes('~'))
       <NIcon
         :name="nv?.badgeCloseIcon ?? 'badge-close-icon'"
         :class="nv?.badgeCloseIconBase"
-        class="close-icon-base"
+        badge="close-icon-base"
       />
       <span class="absolute -inset-0.25em" />
     </button>

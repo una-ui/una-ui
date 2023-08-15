@@ -9,7 +9,7 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
   'badge': 'text-xs leading-tight py-0.3333333333333333em px-0.6666666666666666em gap-x-0.25em inline-flex items-center rounded-md font-medium text-brand',
   'badge-icon-base': 'text-1em',
   'badge-close': 'relative rounded-sm h-1.16em w-1.16em grid place-items-center -mr-0.375em hover:bg-brand/20',
-  'badge-close-icon-base': 'text-brand/50 group-hover:text-brand/75',
+  'badge-close-icon-base': 'text-brand/75 group-hover:text-brand/90',
 
   // variants
   'badge-soft-gray': 'bg-muted text-muted n-gray-900 dark:n-gray-50 ring-1 ring-gray-700/10 dark:ring-gray-400/30',

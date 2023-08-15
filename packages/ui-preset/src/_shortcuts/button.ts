@@ -27,9 +27,9 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   'btn-ghost-gray': 'text-$c-gray-500 btn-focus hover:text-$c-gray-950 hover:bg-$c-gray-50',
   'btn-soft-gray': 'text-$c-gray-500 bg-$c-gray-50 ring-1 ring-inset ring-$c-gray-50 btn-focus hover:bg-$c-gray-100',
   'btn-link-gray': 'text-$c-gray-500 btn-focus hover:text-$c-gray-950 hover:underline underline-offset-4',
-  'btn-solid-black': 'bg-inverted text-inverted ring-1 ring-inset ring-$c-gray-950 shadow-sm btn-focus hover:bg-$c-gray-800',
+  'btn-solid-black': 'bg-inverted text-inverted shadow-sm btn-focus hover:bg-$c-gray-800',
   'btn-link-black': 'text-$c-gray-950 btn-focus hover:underline underline-offset-4',
-}
+} // n-gray-950|n-gray-50
 
 export const dynamicButton: [RegExp, (params: RegExpExecArray) => string][] = [
   // base
