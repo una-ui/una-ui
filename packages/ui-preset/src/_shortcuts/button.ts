@@ -4,21 +4,20 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   // config
   'btn-default-variant': 'btn-solid',
   'btn-loading-icon': 'i-loading',
-  'btn-rectangle': 'px-0.7142857142857143em py-0.42857142857142855em',
-  'btn-icon-size': 'h-1.4285714285714286em w-1.4285714285714286em',
 
   // base
   'btn': 'bg-transparent text-0.875em leading-5 gap-0.42857142857142855em btn-rectangle rounded-md inline-flex justify-center items-center btn-disabled font-semibold cursor-pointer',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
-  'btn-icon-label': 'btn-icon-size',
-  'btn-leading': '-ml-0.14285714285714285em btn-icon-size',
-  'btn-trailing': '-mr-0.14285714285714285em btn-icon-size',
-  'btn-loading': 'animate-spin btn-icon-size',
+  'btn-icon-label': 'text-1.191em',
+  'btn-leading': '-ml-0.14285714285714285em text-1.191em',
+  'btn-trailing': '-mr-0.14285714285714285em text-1.191em',
+  'btn-loading': 'animate-spin text-1.191em',
 
   // options
   'btn-block': 'w-full',
   'btn-reverse': 'flex-row-reverse',
+  'btn-rectangle': 'px-0.7142857142857143em py-0.42857142857142855em',
   'btn-square': 'p-0.42857142857142855em',
 
   // variants

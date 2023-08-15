@@ -8,7 +8,6 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-error-icon': 'i-error',
   'input-success-icon': 'i-success',
   'input-warning-icon': 'i-warning',
-  'input-icon-size': 'h-1.25em w-1.25em',
   'input-leading-padding': 'pl-2.9em',
   'input-trailing-padding': 'pr-2.9em',
 
@@ -16,10 +15,10 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input': 'text-0.875em leading-6 px-0.8571428571428571em py-0.42857142857142855em w-full input-disabled ring-base ring-inset placeholder:text-$c-gray-400 block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-disabled': 'disabled:(n-disabled)',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
-  'input-status-icon-base': 'input-icon-size',
-  'input-leading': 'input-icon-size',
-  'input-trailing': 'input-icon-size',
-  'input-loading': 'animate-spin input-icon-size',
+  'input-status-icon-base': 'text-1.042em',
+  'input-leading': 'text-1.042em',
+  'input-trailing': 'text-1.042em',
+  'input-loading': 'animate-spin text-1.042em',
 
   // wrappers
   'input-wrapper': 'relative flex items-center',
