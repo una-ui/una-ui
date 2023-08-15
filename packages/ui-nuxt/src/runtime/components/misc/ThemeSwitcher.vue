@@ -72,7 +72,7 @@ function shuffleTheme() {
                 v-for="[key, theme] in primaryThemesDefault"
                 :key="key"
                 :style="{ background: theme['--nv-primary-hex'] }"
-                class="h-6 w-6 rounded-full transition-all" :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
+                class="h-6.5 w-6.5 rounded-full transition-all" :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
                 ring="primary offset-4 offset-base"
                 @click="updatePrimaryTheme(theme)"
               />
@@ -86,7 +86,7 @@ function shuffleTheme() {
                 :key="key"
                 :style="{ background: theme['--nv-gray-hex'] }"
                 :class="currentGrayThemeName === key ? 'ring-2' : 'scale-93'"
-                class="h-6 w-6 rounded-full transition-all"
+                class="h-6.5 w-6.5 rounded-full transition-all"
                 ring="gray offset-4 offset-base"
                 @click="updateGrayTheme(theme)"
               />
