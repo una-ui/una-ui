@@ -1,10 +1,10 @@
 :root {
+  --nv-brand: var(--nv-primary-600);
   --nv-primary: var(--nv-primary-600);
   --nv-primary-active: var(--nv-primary-500);
   --nv-gray: var(--nv-gray-600);
   --nv-gray-active: var(--nv-gray-500);
 
-  --c-brand: var(--nv-primary-600);
   --c-background: var(--c-gray-0); 
   --c-foreground: var(--c-gray-950);
   --c-muted: var(--c-gray-50);
@@ -29,13 +29,12 @@
 }
 
 .dark {
+  --nv-brand: var(--nv-primary-500);
   --nv-primary: var(--nv-primary-500);
   --nv-primary-active: var(--nv-primary-400);
   --nv-gray: var(--nv-gray-500);
   --nv-gray-active: var(--nv-gray-400);
   
-  --c-brand: var(--nv-primary-500);
-
   --c-border: rgba(var(--nv-gray-700), .68);
   --c-ring: rgba(var(--nv-gray-700), .68);
   --c-divider: rgba(var(--nv-gray-700), .68);

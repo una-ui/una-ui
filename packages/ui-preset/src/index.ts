@@ -18,7 +18,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
     shortcuts,
     theme: mergeDeep<Theme>(unoTheme, {
       colors: {
-        brand: 'rgba(var(--c-brand) / <alpha-value>)',
+        brand: 'rgba(var(--nv-brand) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgba(var(--nv-primary) / <alpha-value>)',
           active: 'rgba(var(--nv-primary-active) / <alpha-value>)',
@@ -60,7 +60,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
         const color = parseColor(body, theme)
         if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components) {
           return {
-            '--nv-primary': `${color.cssColor.components.join(',')}`,
+            '--nv-brand': `${color.cssColor.components.join(',')}`,
           }
         }
       }],
