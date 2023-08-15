@@ -27,7 +27,7 @@ const placeholder = computed(() => {
     class="avatar"
     :class="[
       { 'avatar-default-variant': !hasVariant && !isBaseVariant },
-      { 'avatar-skeleton': isLoading && skeleton && src },
+      { 'n-skeleton': isLoading && skeleton && src },
       nv?.avatar,
     ]"
   >

@@ -14,6 +14,7 @@ import { indicator } from './indicator'
 
 export const shortcuts = [
   ...general,
+  ...avatar,
   ...accordion,
   ...button,
   ...formGroup,
@@ -22,7 +23,6 @@ export const shortcuts = [
   ..._switch,
   ...alert,
   ...badge,
-  ...avatar,
   ...avatarGroup,
   ...indicator,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
