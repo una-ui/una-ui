@@ -22,13 +22,13 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./shortcuts": {
       "types": "./dist/shortcuts.d.ts",
-      "require": "./dist/shortcuts.cjs",
-      "import": "./dist/shortcuts.mjs"
+      "import": "./dist/shortcuts.mjs",
+      "require": "./dist/shortcuts.cjs"
     },
     "./*": "./*"
   },
@@ -49,8 +49,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@unocss/core": "^0.53.4",
-    "@unocss/preset-mini": "^0.54.1",
-    "unocss": "^0.53.4"
+    "@unocss/core": "^0.55.0",
+    "@unocss/preset-mini": "^0.55.0",
+    "unocss": "^0.55.0"
   }
 }
