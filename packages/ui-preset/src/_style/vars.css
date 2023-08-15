@@ -5,14 +5,15 @@
   --nv-gray-active: var(--nv-gray-500);
 
   --c-brand: var(--nv-primary-600);
-  --c-bg-selection: rgba(var(--nv-primary-600), 0.2);
   --c-background: var(--c-gray-0); 
   --c-foreground: var(--c-gray-950);
   --c-muted: var(--c-gray-50);
   --c-muted-foreground: var(--c-gray-900);
-  --c-border: var(--c-gray-200);
-  --c-divider: var(--c-gray-300);
-  --c-ring: var(--c-gray-300);
+  --c-bg-selection: rgba(var(--nv-primary-600), 0.2);
+
+  --c-border: rgb(var(--nv-gray-200));
+  --c-ring: rgb(var(--nv-gray-200));
+  --c-divider: rgb(var(--nv-gray-200));
 
   --c-gray-0: rgb(255 255 255);
   --c-gray-50: rgb(var(--nv-gray-50));
@@ -34,6 +35,10 @@
   --nv-gray-active: var(--nv-gray-400);
   
   --c-brand: var(--nv-primary-500);
+
+  --c-border: rgba(var(--nv-gray-700), .68);
+  --c-ring: rgba(var(--nv-gray-700), .68);
+  --c-divider: rgba(var(--nv-gray-700), .68);
 
   --c-gray-0: rgb(var(--nv-gray-950));
   --c-gray-50: rgb(var(--nv-gray-900));
