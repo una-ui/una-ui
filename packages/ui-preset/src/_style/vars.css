@@ -1,30 +1,19 @@
 :root {
-  --una-c-brand: var(--nv-primary-600);
+  --nv-primary: var(--nv-primary-600);
+  --nv-primary-active: var(--nv-primary-500);
+  --nv-gray: var(--nv-gray-600);
+  --nv-gray-active: var(--nv-gray-500);
 
-  /* global vars */
+  --c-brand: var(--nv-primary-600);
   --c-bg-selection: rgba(var(--nv-primary-600), 0.2);
-
   --c-background: var(--c-gray-0); 
   --c-foreground: var(--c-gray-950);
-
   --c-muted: var(--c-gray-50);
   --c-muted-foreground: var(--c-gray-900);
+  --c-border: var(--c-gray-200);
+  --c-divider: var(--c-gray-300);
+  --c-ring: var(--c-gray-300);
 
-  --c-border: rgba(var(--nv-gray-700), 0.29);
-  --c-divider: rgba(var(--nv-gray-700), 0.12);
-  /* --vp-c-gutter: rgba(var(--nv-gray-700), 0.12); */
-
-  /* --c-ring:  rgba(var(--nv-gray-700), 0.12); */
-  /* var(--c-gray-300); */
-  
-  /* defaults */
-  --c-gray: var(--nv-gray-600);
-  --c-gray-active: var(--nv-gray-500);
-
-  --c-primary: var(--nv-primary-600);
-  --c-primary-active: var(--nv-primary-500);
-
-  /* config gray light */
   --c-gray-0: rgb(255 255 255);
   --c-gray-50: rgb(var(--nv-gray-50));
   --c-gray-100: rgb(var(--nv-gray-100));
@@ -36,13 +25,16 @@
   --c-gray-700: rgb(var(--nv-gray-700));
   --c-gray-800: rgb(var(--nv-gray-800));
   --c-gray-900: rgb(var(--nv-gray-900));
-  --c-gray-950: rgb(var(--nv-gray-950));
 }
 
 .dark {
-  --una-c-brand: var(--nv-primary-500);
+  --nv-primary: var(--nv-primary-500);
+  --nv-primary-active: var(--nv-primary-400);
+  --nv-gray: var(--nv-gray-500);
+  --nv-gray-active: var(--nv-gray-400);
+  
+  --c-brand: var(--nv-primary-500);
 
-  /* config gray dark */
   --c-gray-0: rgb(var(--nv-gray-950));
   --c-gray-50: rgb(var(--nv-gray-900));
   --c-gray-100: rgb(var(--nv-gray-800));
@@ -55,15 +47,4 @@
   --c-gray-800: rgb(var(--nv-gray-100));
   --c-gray-900: rgb(var(--nv-gray-50));
   --c-gray-950: rgb(255 255 255);
-
-  --c-border: rgba(var(--nv-gray-700), 0.68);
-  --c-divider: rgba(var(--nv-gray-700), 0.32);
-  /* --c-gutter: rgba(var(--nv-gray-700), 1); */
-
-  /* defaults */
-  --c-gray: var(--nv-gray-500);
-  --c-gray-active: var(--nv-gray-400);
-
-  --c-primary: var(--nv-primary-500);
-  --c-primary-active: var(--nv-primary-400);
 }
