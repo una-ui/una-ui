@@ -15,8 +15,8 @@ export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, st
   'avatar-icon-base': 'text-1.2em',
 
   // variants
-  'avatar-solid-white': 'avatar bg-base text-base ring-1 ring-base',
-  'avatar-solid-black': 'avatar bg-inverted text-inverted',
+  'avatar-solid-white': 'bg-base text-base ring-1 ring-base',
+  'avatar-solid-black': 'bg-inverted text-inverted',
 }
 
 export const dynamicAvatar: [RegExp, (params: RegExpExecArray) => string][] = [
