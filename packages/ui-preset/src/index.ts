@@ -8,6 +8,7 @@ import { mergeDeep } from 'unocss'
 import { colors } from '@unocss/preset-mini/colors'
 import type { nexveltUIOptions } from './types'
 import { shortcuts } from './shortcuts'
+import preflights from './preflights'
 
 export default function presetNexvelt(options: nexveltUIOptions = {
 }): Preset {
@@ -17,10 +18,10 @@ export default function presetNexvelt(options: nexveltUIOptions = {
     shortcuts,
     theme: mergeDeep<Theme>(unoTheme, {
       colors: {
-        brand: 'rgba(var(--una-c-brand),%alpha)',
+        brand: 'rgba(var(--c-brand) / <alpha-value>)',
         primary: {
-          DEFAULT: 'rgba(var(--c-primary) / <alpha-value>)',
-          active: 'rgba(var(--c-primary-active) / <alpha-value>)',
+          DEFAULT: 'rgba(var(--nv-primary) / <alpha-value>)',
+          active: 'rgba(var(--nv-primary-active) / <alpha-value>)',
           50: 'rgba(var(--nv-primary-50) / <alpha-value>)',
           100: 'rgba(var(--nv-primary-100) / <alpha-value>)',
           200: 'rgba(var(--nv-primary-200) / <alpha-value>)',
@@ -34,8 +35,8 @@ export default function presetNexvelt(options: nexveltUIOptions = {
           950: 'rgba(var(--nv-primary-950) / <alpha-value>)',
         },
         gray: {
-          DEFAULT: 'rgba(var(--c-gray) / <alpha-value>)',
-          active: 'rgba(var(--c-gray-active) / <alpha-value>)',
+          DEFAULT: 'rgba(var(--nv-gray) / <alpha-value>)',
+          active: 'rgba(var(--nv-gray-active) / <alpha-value>)',
           50: 'rgba(var(--nv-gray-50) / <alpha-value>)',
           100: 'rgba(var(--nv-gray-100) / <alpha-value>)',
           200: 'rgba(var(--nv-gray-200) / <alpha-value>)',
@@ -59,7 +60,7 @@ export default function presetNexvelt(options: nexveltUIOptions = {
         const color = parseColor(body, theme)
         if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components) {
           return {
-            '--una-c-brand': `${color.cssColor.components.join(',')}`,
+            '--nv-primary': `${color.cssColor.components.join(',')}`,
           }
         }
       }],
@@ -69,20 +70,6 @@ export default function presetNexvelt(options: nexveltUIOptions = {
         'pointer-events': 'none',
       }],
     ],
-    preflights: [
-      {
-        getCSS: () => `
-        *:focus-visible {
-          outline: 2px solid rgb(var(--c-primary)); /* 2 */
-          border-radius: 0.25rem; /* 1 */
-          outline-offset: 0.10rem; /* 1 */
-        }
-
-        * {
-          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        }
-        `,
-      },
-    ],
+    preflights,
   }
 }
