@@ -4,7 +4,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   // config
   'btn-default-variant': 'btn-solid',
   'btn-loading-icon': 'i-loading',
-  'btn-rectangle': 'px-0.8571428571428571em py-0.5714285714285714em',
+  'btn-rectangle': 'px-0.7142857142857143em py-0.42857142857142855em',
   'btn-icon-size': 'h-1.4285714285714286em w-1.4285714285714286em',
 
   // base
@@ -19,7 +19,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   // options
   'btn-block': 'w-full',
   'btn-reverse': 'flex-row-reverse',
-  'btn-square': 'p-0.5714285714285714em',
+  'btn-square': 'p-0.42857142857142855em',
 
   // variants
   'btn-solid-white': 'bg-base text-base ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-muted',
