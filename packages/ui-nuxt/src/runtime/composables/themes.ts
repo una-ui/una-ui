@@ -143,22 +143,22 @@ export function getColors(color: string, prefix: string): Colors {
   return colors
 }
 
-export const primaryThemes = Object.entries({ ...filteredPrimaryColors, ...filteredGrayColors }).map(([color]) => [
+// export const primaryThemes = Object.entries({ ...filteredPrimaryColors, ...filteredGrayColors }).map(([color]) => [
+//   color,
+//   getColors(color, 'primary'),
+// ]) as [string, Colors][]
+
+// export const grayThemes = Object.entries({ ...filteredPrimaryColors, ...filteredGrayColors }).map(([color]) => [
+//   color,
+//   getColors(color, 'gray'),
+// ]) as [string, Colors][]
+
+export const primaryThemes = Object.entries(filteredPrimaryColors).map(([color]) => [
   color,
   getColors(color, 'primary'),
 ]) as [string, Colors][]
 
-export const grayThemes = Object.entries({ ...filteredPrimaryColors, ...filteredGrayColors }).map(([color]) => [
-  color,
-  getColors(color, 'gray'),
-]) as [string, Colors][]
-
-export const primaryThemesDefault = Object.entries(filteredPrimaryColors).map(([color]) => [
-  color,
-  getColors(color, 'primary'),
-]) as [string, Colors][]
-
-export const grayThemesDefault = Object.entries(filteredGrayColors).map(([color]) => [
+export const grayThemes = Object.entries(filteredGrayColors).map(([color]) => [
   color,
   getColors(color, 'gray'),
 ]) as [string, Colors][]
