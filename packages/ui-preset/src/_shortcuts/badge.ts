@@ -6,7 +6,7 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
   'badge-close-icon': 'i-close',
 
   // base
-  'badge': 'size-xs leading-tight py-0.4em px-0.66em gap-x-0.25em inline-flex items-center rounded-md font-medium text-brand',
+  'badge': 'text-0.75em leading-tight py-0.3333333333333333em px-0.6666666666666666em gap-x-0.25em inline-flex items-center rounded-md font-medium text-brand',
   'badge-icon-base': 'text-1em',
   'badge-close': 'relative rounded-sm h-1.16em w-1.16em grid place-items-center -mr-0.375em hover:bg-brand/20',
   'badge-close-icon-base': 'text-brand/50 group-hover:text-brand/75',
