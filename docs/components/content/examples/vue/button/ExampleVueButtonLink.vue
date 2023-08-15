@@ -18,7 +18,7 @@
       to="https://github.com/nexvelt/ui"
       target="_blank"
       btn="outline-pink"
-      class="rounded-none text-white"
+      class="rounded-none"
       leading="i-heroicons-star-20-solid text-yellow text-sm"
       label="Star us on GitHub"
     />
