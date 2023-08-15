@@ -6,7 +6,7 @@ function generateCSSTransition() {
   for (let i = 0; i <= 100; i += 1.25) {
     const light = (i * 3.6) % 360
     const next = ((i + 1.25) * 3.6) % 360
-    const keyframe = `${i}% {--nv-c-brand-light: hsl(${light}, 100%, 50%);--nv-c-brand-next: hsl(${next}, 100%, 50%);}`
+    const keyframe = `${i}% {--c-brand-light: hsl(${light}, 100%, 50%);--c-brand-next: hsl(${next}, 100%, 50%);}`
     keyframes.push(keyframe)
   }
 

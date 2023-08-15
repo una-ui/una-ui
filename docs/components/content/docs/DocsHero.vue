@@ -15,7 +15,7 @@ const { version } = useRuntimeConfig().public
       <div flex="~ col" space-y-4 class="text-center lg:text-left">
         <div class="text-6xl font-bold lg:text-7xl">
           An
-          <span class="from-primary to-$nv-c-brand-next bg-gradient-to-l bg-clip-text text-transparent">
+          <span class="from-primary to-$c-brand-next bg-gradient-to-l bg-clip-text text-transparent">
             Atomic UI/UX
           </span>
           Technology
@@ -81,7 +81,7 @@ const { version } = useRuntimeConfig().public
 .image-bg {
   opacity: .8;
   transition: opacity 2s ease;
-  background-image: linear-gradient(-45deg, rgb(var(--c-primary)), 30%, var(--nv-c-brand-next));
+  background-image: linear-gradient(-45deg, rgb(var(--nv-primary)), var(--c-brand-next));
   filter: blur(120px);
 }
 </style>

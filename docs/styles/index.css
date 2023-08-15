@@ -7,7 +7,7 @@
   --elements-backdrop-filter: blur(5px) !important;
 
   /* typography */
-  --prose-code-inline-color: rgb(var(--c-primary)) !important;
+  --prose-code-inline-color: rgb(var(--nv-primary)) !important;
 }
 
 /* override */
@@ -16,7 +16,7 @@ html {
 }
 
 h1 {
-  color: rgb(var(--c-primary)) !important;
+  color: rgb(var(--nv-primary)) !important;
 }
 
 code {
@@ -28,7 +28,7 @@ code {
 }
 
 .tabs-header .tabs button.active {
-  /* color: rgb(var(--c-primary-active)) !important; */
+  /* color: rgb(var(--nv-primary-active)) !important; */
 }
 
 .card {
@@ -42,13 +42,13 @@ code {
 }
 
 .card:hover {
-  border-color: rgb(var(--c-primary)) !important;
+  border-color: rgb(var(--nv-primary)) !important;
   background-color: rgb(var(--c-background)) !important;
   cursor: default;
 }
 
 .card:hover .title {
-  color: rgb(var(--c-primary-active)) !important;
+  color: rgb(var(--nv-primary-active)) !important;
 }
 
 @media (min-width: 1400px) {
