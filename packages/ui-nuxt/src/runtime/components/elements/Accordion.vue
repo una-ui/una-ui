@@ -5,15 +5,16 @@ import {
   DisclosurePanel,
 } from '@headlessui/vue'
 import { createReusableTemplate } from '@vueuse/core'
+import { computed, ref } from 'vue'
 
-import { ref } from 'vue'
-import type { NAccordionProps } from '../../types'
-import { getPriority, omitProps } from '../../utils'
+import type { NAccordionItemProps, NAccordionProps } from '../../types'
+import { pickProps } from '../../utils'
 import NIcon from './Icon.vue'
 import NButton from './Button.vue'
 
 const props = withDefaults(defineProps<NAccordionProps>(), {
   trailingOpen: 'accordion-trailing-icon',
+  leadingPlacement: 'leading',
 })
 
 const buttonRefs = ref<(() => void)[]>([])
@@ -52,6 +53,14 @@ function onLeave(element: Element, done: () => void) {
 }
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
+
+function mergedProps(itemProps: NAccordionItemProps) {
+  return Object.assign(pickProps(props, ['reverse', 'icon', 'btn', 'label', 'leading', 'loading', 'loadingPlacement', 'nv', 'trailing', 'leading', 'to', 'type', 'disabled']), itemProps)
+}
+
+const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text'] as const
+const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.includes(btnVariants)))
+const isBaseVariant = computed(() => props.btn?.includes('~'))
 </script>
 
 <template>
@@ -69,7 +78,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       v-slot="{ open, close }"
       as="div"
       accordion="item"
-      :default-open="getPriority(item.defaultOpen, defaultOpen)"
+      :default-open="item.defaultOpen ?? defaultOpen"
       :class="nv?.accordionItem"
     >
       <DisclosureButton
@@ -80,13 +89,10 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       >
         <slot name="label" :item="item" :index="i" :open="open" :close="close">
           <NButton
-            :class="nv?.accordionButton"
-            :reverse="getPriority(item.reverse, reverse)"
-            loading-placement="trailing"
-            v-bind="omitProps(item, ['content', 'defaultOpen', 'closeOthers', 'trailing', 'leading', 'btn', 'label'])"
-            btn="~ block"
+            v-bind="mergedProps(item)"
+            :btn="`~ block ${btn ?? ''}`"
+            :class="[{ 'btn-text': !hasVariant && !isBaseVariant }, nv?.accordionButton]"
             accordion="button"
-            :label="item.label"
             :nv="{
               btnLabel: 'accordion-label',
             }"
@@ -97,7 +103,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
                 v-if="leading || item.leading"
                 accordion="leading"
                 :class="nv?.accordionLeading"
-                :name="getPriority(item.leading, leading) ?? ''"
+                :name="item.leading ?? leading ?? ''"
                 aria-hidden="true"
               />
             </template>
@@ -108,8 +114,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
                 accordion="trailing"
                 :class="[
                   trailingClose || (!trailingClose && open)
-                    ? getPriority(nv?.accordionTrailingClose, 'accordion-trailing-close')
-                    : getPriority(nv?.accordionTrailingOpen, 'accordion-trailing-open'),
+                    ? nv?.accordionTrailingClose ?? 'accordion-trailing-close'
+                    : nv?.accordionTrailingOpen ?? 'accordion-trailing-open',
                   nv?.accordionTrailing,
                 ]"
               >
@@ -147,17 +153,16 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       </DefineTemplate>
 
       <Transition
-        :enter-active-class="getPriority(nv?.accordionLeaveActive, 'accordion-leave-active')"
-        :leave-active-class="getPriority(nv?.accordionEnterActive, 'accordion-enter-active')"
+        :enter-active-class="nv?.accordionLeaveActive ?? 'accordion-leave-active'"
+        :leave-active-class="nv?.accordionEnterActive ?? 'accordion-enter-active'"
         @enter="onEnter"
         @after-enter="onAfterEnter"
         @before-leave="onBeforeLeave"
         @leave="onLeave"
       >
-        <DisclosurePanel
-          v-if="!getPriority(item.mounted, mounted)"
-        >
+        <DisclosurePanel v-if="!item.mounted ?? !mounted">
           <ReuseTemplate />
+          {{ mergedProps(item) }}
         </DisclosurePanel>
         <DisclosurePanel
           v-else

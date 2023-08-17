@@ -1,6 +1,6 @@
 import type { NButtonProps } from './button'
 
-export interface NAccordionProps {
+export interface NAccordionProps extends Omit<NButtonProps, 'nv'> {
   /**
    * Allows you to add `NexveltUI` accordion preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -9,14 +9,6 @@ export interface NAccordionProps {
    * But you can add your own in the configuration file.
   */
   accordion?: string
-  /**
-   * Add leading icon to accordion button item,
-   * Accepts icon name and utility classes
-   *
-   * @example
-   * leading='i-heroicons-information-circle text-info'
-  */
-  leading?: string
   /**
    * Update leading icon when accordion button item is open,
    * Accepts icon name and utility classes
@@ -40,12 +32,6 @@ export interface NAccordionProps {
    * @default false
   */
   defaultOpen?: boolean
-  /**
-   * Swap accordion button leading and trailing icons
-   *
-   * @default false
-  */
-  reverse?: boolean
   /**
    * Removes border and divider from accordion
    *
@@ -85,7 +71,7 @@ export interface NAccordionProps {
     accordionTrailingClose?: string
     accordionEnterActive?: string
     accordionLeaveActive?: string
-  }
+  } & NButtonProps['nv']
 }
 
 export interface NAccordionItemProps extends NButtonProps {

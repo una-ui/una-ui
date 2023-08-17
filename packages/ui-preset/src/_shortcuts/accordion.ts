@@ -1,7 +1,3 @@
-import { parseColor } from '@unocss/preset-mini/utils'
-import type { Theme } from '@unocss/preset-uno'
-import type { RuleContext } from '@unocss/core'
-
 type AccordionPrefix = 'accordion'
 
 export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionPrefix, string> = {
@@ -13,7 +9,7 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-border': 'border-(~ base) rounded-md',
   'accordion-divider': 'divide-(y base)',
   'accordion-item': 'w-full',
-  'accordion-button': 'p-(x-3 y-4) justify-start text-brand',
+  'accordion-button': 'p-(x-3 y-4) justify-start',
   'accordion-panel': 'text-(muted 0.875em) border-(t $c-divider) p-4',
   'accordion-leading': 'text-1.2em',
   'accordion-trailing': 'flex transition items-center text-1em duration-300',
@@ -29,11 +25,6 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
 }
 
 export const dynamicAccordion = [
-  [/^accordion-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
-    const color = parseColor(body, theme)
-    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
-      return `n-${body}-600 dark:n-${body}-500`
-  }],
 ]
 
 export const accordion = [
