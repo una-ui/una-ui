@@ -19,21 +19,21 @@ const items = [
   <div flex="~ col" space-y-4>
     <NAccordion
       :items="items"
-      accordion="gray"
+      btn="text-gray"
     />
 
     <hr border="base">
 
     <NAccordion
       :items="items"
-      accordion="blue"
+      btn="text-orange"
     />
 
     <hr border="base">
 
     <NAccordion
       :items="items"
-      accordion="orange"
+      btn="text-indigo"
     />
   </div>
 </template>

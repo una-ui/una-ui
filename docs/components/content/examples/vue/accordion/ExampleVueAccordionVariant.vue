@@ -35,10 +35,7 @@ const items = [
     <NAccordion
       variant-mode
       :items="items"
-      :nv="{
-        accordionButton: 'btn-(outline rectangle) rounded-lg',
-        accordionPanel: 'px-0',
-      }"
+      btn="ghost-lime rectangle"
     />
 
     <hr border-base>
@@ -46,8 +43,9 @@ const items = [
     <NAccordion
       variant-mode
       :items="items"
+      btn="solid-orange rectangle"
       :nv="{
-        accordionButton: 'btn-(soft-lime rectangle) rounded-none',
+        accordionButton: 'rounded-none',
         accordionPanel: 'px-0',
       }"
     />
