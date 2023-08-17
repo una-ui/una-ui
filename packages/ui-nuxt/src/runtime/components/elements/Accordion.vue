@@ -54,6 +54,7 @@ function onLeave(element: Element, done: () => void) {
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 
+// TODO: optimized this one
 function mergedProps(itemProps: NAccordionItemProps) {
   return Object.assign(pickProps(props, ['reverse', 'icon', 'btn', 'label', 'leading', 'loading', 'loadingPlacement', 'nv', 'trailing', 'leading', 'to', 'type', 'disabled']), itemProps)
 }
@@ -162,7 +163,6 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
       >
         <DisclosurePanel v-if="!item.mounted ?? !mounted">
           <ReuseTemplate />
-          {{ mergedProps(item) }}
         </DisclosurePanel>
         <DisclosurePanel
           v-else
