@@ -42,7 +42,7 @@ const items = [
     <NAccordion
       unstyle
       :items="items"
-      btn="ghost-lime rectangle"
+      btn="ghost-lime"
     />
 
     <hr border-base>
@@ -50,7 +50,7 @@ const items = [
     <NAccordion
       unstyle
       :items="items"
-      btn="solid-orange rectangle"
+      btn="solid-orange"
       :nv="{
         accordionButton: 'rounded-none',
         accordionPanel: 'px-0',
