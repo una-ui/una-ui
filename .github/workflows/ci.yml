@@ -28,7 +28,7 @@ jobs:
         if: |
           github.event_name == 'push' &&
           !contains(github.event.head_commit.message, '[skip-release]')
-        run: git update-index --chmod=+x ./scripts/release-edge.sh && ./scripts/release-edge.sh
+        run: ./scripts/release-edge.sh
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
