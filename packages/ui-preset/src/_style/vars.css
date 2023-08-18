@@ -5,10 +5,10 @@
   --nv-gray-active: var(--nv-gray-500);
 
   --c-brand: rgb(var(--nv-primary-600));
-  --c-background: var(--c-gray-50); 
-  --c-foreground: var(--c-gray-900);
-  --c-muted: var(--c-gray-100);
-  --c-muted-foreground: var(--c-gray-800);
+  --c-background: var(--c-gray-0); 
+  --c-foreground: var(--c-gray-950);
+  --c-muted: var(--c-gray-50);
+  --c-muted-foreground: var(--c-gray-900);
   --c-bg-selection: rgba(var(--nv-primary-600), 0.2);
 
   --c-border: rgb(var(--nv-gray-200));
