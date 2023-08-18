@@ -5,7 +5,7 @@ const enabled = ref(false)
 <template>
   <NSwitch
     v-model="enabled"
-    icon-off="i-heroicons-sun-20-solid"
-    icon-on="i-heroicons-moon-20-solid"
+    off-icon="i-heroicons-sun-20-solid"
+    on-icon="i-heroicons-moon-20-solid"
   />
 </template>
