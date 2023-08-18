@@ -5,6 +5,7 @@ export default [
           font-size: var(--font-size, 16px);
           background-color: var(--c-background);
           color: var(--c-foreground);
+          height: 100dvh;
         }
 
         html.dark {
