@@ -57,7 +57,7 @@
       <div flex="~ col md:row" gap-2>
         <NButton
           btn="~"
-          class="from-primary to-$nv-c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
+          class="from-primary to-$c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
           label="gradient color"
         />
 
