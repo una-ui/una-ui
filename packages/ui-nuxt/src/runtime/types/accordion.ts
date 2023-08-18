@@ -37,7 +37,7 @@ export interface NAccordionProps extends Omit<NButtonProps, 'nv'> {
    *
    * @default false
   */
-  variantMode?: boolean
+  unstyle?: boolean
   /**
    * By default, the accordion is unmounted for performance reasons,
    * This means that the accordion will not be rendered until it is opened,

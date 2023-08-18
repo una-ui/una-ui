@@ -69,7 +69,7 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
     :accordion="accordion"
     class="accordion"
     :class="[
-      variantMode ? 'space-y-3' : 'accordion-(border divider)',
+      unstyle ? 'space-y-3' : 'accordion-(border divider)',
       nv?.accordion,
     ]"
   >
@@ -145,7 +145,7 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
             accordion="panel"
             :class="[
               nv?.accordionPanel,
-              { 'border-t-0': variantMode },
+              { 'border-t-0': unstyle },
             ]"
           >
             {{ item.content }}
