@@ -63,7 +63,7 @@ function shuffleTheme() {
       </PopoverButton>
 
       <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-        <PopoverPanel class="absolute right-0 mt-2 w-54 border-1 border-base rounded-xl bg-muted px-4 py-5 shadow-lg">
+        <PopoverPanel class="absolute right-0 z-100 mt-2 w-54 border-1 border-base rounded-xl bg-muted px-4 py-5 shadow-lg">
           <div class="flex flex-col space-y-5">
             <div class="grid grid-cols-5 gap-3">
               <button
