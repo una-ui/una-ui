@@ -1,36 +1,121 @@
 <template>
-  <div flex="~ items-center" gap-4>
-    <NIndicator indicator="solid-success">
-      <NAvatar src="/images/avatar.png" alt="Phojie Rengel" rounded-md />
-    </NIndicator>
+  <div flex="~ col" gap-4>
+    <span class="text-sm font-medium">Dynamic colors:</span>
 
-    <NIndicator indicator="solid-error" ping>
-      <NAvatar src="/images/avatar.png" alt="Phojie Rengel" />
-    </NIndicator>
+    <div flex="~ col" gap-4>
+      <div flex="~ col md:row" gap-4>
+        <NButton
+          label="solid-primary"
+          btn="solid-green"
+        />
 
-    <NIndicator indicator="solid-error bottom-right">
-      <NAvatar src="/images/avatar.png" />
-    </NIndicator>
+        <NButton
+          label="outline-lime"
+          btn="solid-gray"
+        />
 
-    <NIndicator indicator="solid-error top-right">
-      <!-- <img h-5 w-5 src="https://avatars.githubusercontent.com/u/11247099?v=4"> -->
-      <NAvatar src="https://avatars.githubusercontent.com/u/11247099?v=4" alt="Phojie Rengel" />
-    </NIndicator>
+        <NButton
+          label="link-yellow"
+          btn="link-yellow"
+        />
+        <NButton
+          label="soft-red"
+          btn="soft-red"
+        />
+        <NButton
+          label="ghost-orange"
+          btn="ghost-orange"
+        />
+      </div>
 
-    <NIndicator indicator="solid-error bottom-right">
-      <NAvatar src="https://avatars.githubusercontent.com/u/33350692?v=4" alt="Phojie Rengel" />
-    </NIndicator>
+      <hr border="base">
 
-    <NIndicator size="xl" indicator="solid-red top-right" label="1">
-      <NAvatar size="1.4em" src="https://avatars.githubusercontent.com/u/33350692?v=4" alt="Phojie Rengel" />
-    </NIndicator>
+      <span class="text-sm font-medium">Color with states:</span>
 
-    <NIndicator indicator="solid-warning" label="Draft">
-      <NAvatar src="https://avatars.githubusercontent.com/u/33350692?v=4" alt="Phojie Rengel" />
-    </NIndicator>
+      <div flex="~ col md:row" gap-4>
+        <NButton
+          btn="solid-error hover:solid-success"
+          label="hover me"
+        />
+        <NButton
+          label="you can add transition too"
+          class="transition delay-300 ease-in-out"
+          btn="soft-error hover:soft-success"
+        />
+        <NButton
+          btn="active:outline-fuchsia"
+          label="click me"
+        />
+        <NButton
+          label="click me"
+          btn="outline-pink focus:outline-blue"
+        />
+      </div>
 
-    <NIndicator>
-      <NAvatar src="https://avatars.githubusercontent.com/u/33350692?v=4" alt="Phojie Rengel" />
-    </NIndicator>
+      <hr border="base">
+
+      <span class="text-sm font-medium">Custom colors using utilities:</span>
+
+      <div flex="~ col md:row" gap-2>
+        <NButton
+          btn="~"
+          class="from-primary to-$nv-c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
+          label="gradient color"
+        />
+
+        <NButton
+          btn="~"
+          class="from-primary-500 via-primary-600 to-primary-700 bg-gradient-to-r text-white shadow-lg shadow-primary-500/50 hover:bg-gradient-to-br dark:shadow-lg dark:shadow-primary-800/80 dark:focus:ring-primary-800"
+          label="glowing effect"
+        />
+      </div>
+    </div>
+
+    <hr border="base">
+
+    <span class="text-sm font-medium">Static colors:</span>
+
+    <div flex="~ col" gap-4>
+      <div flex="~ col md:row" gap-2>
+        <NButton
+          label="solid-gray"
+          btn="solid-gray"
+        />
+        <NButton
+          label="soft-gray"
+          btn="soft-gray"
+        />
+        <NButton
+          label="ghost-gray"
+          btn="ghost-gray"
+        />
+        <NButton
+          label="link-gray"
+          btn="link-gray"
+        />
+      </div>
+
+      <div flex="~ col md:row" gap-2>
+        <NButton
+          label="solid-white"
+          btn="solid-white"
+        />
+        <NButton
+          label="ghost-white"
+          btn="ghost-white"
+        />
+      </div>
+
+      <div flex="~ col md:row" gap-2>
+        <NButton
+          label="solid-black"
+          btn="solid-black"
+        />
+        <NButton
+          label="link-black"
+          btn="link-black"
+        />
+      </div>
+    </div>
   </div>
 </template>
