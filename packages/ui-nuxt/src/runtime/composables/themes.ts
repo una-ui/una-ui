@@ -1,5 +1,5 @@
 import { colors } from '@unocss/preset-mini/colors'
-import chroma from 'chroma-js'
+import { hexToRgb } from '../utils'
 
 interface Colors {
   [key: string]: string
@@ -135,10 +135,8 @@ export function getColors(color: string, prefix: string): Colors {
   colors[`--nv-${prefix}-hex`] = colorPalette[600] as string // Assign the primary color hex code to the corresponding theme variable
 
   // Iterate over each shade in the color palette and assign it to the corresponding theme variable
-  for (const shade of Object.keys(colorPalette) as unknown as Shade[]) {
-    const c = chroma(colorPalette[shade])
-    colors[`--nv-${prefix}-${shade}`] = c.rgb().join(', ') // RGB
-  }
+  for (const shade of Object.keys(colorPalette) as unknown as Shade[])
+    colors[`--nv-${prefix}-${shade}`] = hexToRgb(colorPalette[shade]).join(', ')
 
   return colors
 }
