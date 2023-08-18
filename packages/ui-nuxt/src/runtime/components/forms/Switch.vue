@@ -52,8 +52,8 @@ const onClassVariants = computed(() => {
   }
 
   const switchIcon = {
-    true: `${props.iconOn ?? ''} switch-icon-on`,
-    false: `${props.iconOff ?? ''} switch-icon-off`,
+    true: `${props.onIcon ?? ''} switch-icon-on`,
+    false: `${props.offIcon ?? ''} switch-icon-off`,
   }
 
   return {
