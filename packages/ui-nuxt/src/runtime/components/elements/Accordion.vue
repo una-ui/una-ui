@@ -14,7 +14,7 @@ import NButton from './Button.vue'
 
 const props = withDefaults(defineProps<NAccordionProps>(), {
   trailingOpen: 'accordion-trailing-icon',
-  leadingPlacement: 'leading',
+  loadingPlacement: 'trailing',
 })
 
 const buttonRefs = ref<(() => void)[]>([])
@@ -85,7 +85,7 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
       <DisclosureButton
         :ref="() => (buttonRefs[i] = close)"
         as="template"
-        :disabled="item.disabled"
+        :disabled="item.disabled ?? disabled"
         @click="closeOthers(i)"
       >
         <slot name="label" :item="item" :index="i" :open="open" :close="close">
