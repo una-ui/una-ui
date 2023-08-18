@@ -8,7 +8,6 @@ import { mergeDeep } from 'unocss'
 import { colors } from '@unocss/preset-mini/colors'
 import type { nexveltUIOptions } from './types'
 import { shortcuts } from './shortcuts'
-import preflights from './preflights'
 
 export default function presetNexvelt(options: nexveltUIOptions = {
   // TODO: add options
@@ -71,6 +70,5 @@ export default function presetNexvelt(options: nexveltUIOptions = {
         'pointer-events': 'none',
       }],
     ],
-    preflights,
   }
 }
