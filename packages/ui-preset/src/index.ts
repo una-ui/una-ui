@@ -11,6 +11,7 @@ import { shortcuts } from './shortcuts'
 import preflights from './preflights'
 
 export default function presetNexvelt(options: nexveltUIOptions = {
+  // TODO: add options
 }): Preset {
   return {
     name: '@nexvelt/ui-preset',
