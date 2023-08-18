@@ -154,12 +154,13 @@ export const grayThemes = Object.entries({ ...filteredPrimaryColors, ...filtered
   getColors(color, 'gray'),
 ]) as [string, Colors][]
 
-export const primaryThemesDefault = Object.entries(filteredPrimaryColors).map(([color]) => [
-  color,
-  getColors(color, 'primary'),
-]) as [string, Colors][]
+// TODO: remove
+// export const primaryThemesDefault = Object.entries(filteredPrimaryColors).map(([color]) => [
+//   color,
+//   getColors(color, 'primary'),
+// ]) as [string, Colors][]
 
-export const grayThemesDefault = Object.entries(filteredGrayColors).map(([color]) => [
-  color,
-  getColors(color, 'gray'),
-]) as [string, Colors][]
+// export const grayThemesDefault = Object.entries(filteredGrayColors).map(([color]) => [
+//   color,
+//   getColors(color, 'gray'),
+// ]) as [string, Colors][]
