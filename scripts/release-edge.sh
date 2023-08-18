@@ -8,8 +8,6 @@ git restore -s@ -SW  -- packages
 # Bump versions to edge
 pnpm jiti ./scripts/bump-edge
 
-echo "Bumping versions to edge"
-
 # Update token
 if [[ ! -z ${NODE_AUTH_TOKEN} ]] ; then
   echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc

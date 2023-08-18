@@ -105,3 +105,5 @@ main().catch((err) => {
   console.error(err)
   process.exit(1)
 })
+
+console.info('Bumped edge versions')
