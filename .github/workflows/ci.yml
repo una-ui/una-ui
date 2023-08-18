@@ -9,89 +9,15 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+
 jobs:
-  lint:
+  ci:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Set node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: pnpm
-
-      - name: Setup
-        run: npm i -g @antfu/ni
-
-      - name: Install
-        run: nci
-
-      - name: Lint
-        run: nr lint
-
-  typecheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Set node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-          cache: pnpm
-
-      - name: Setup
-        run: npm i -g @antfu/ni
-
-      - name: Install
-        run: nci
-
-      - name: Typecheck
-        run: nr typecheck
-
-  test:
-    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: [16.x, 18.x]
-        os: [ubuntu-latest, macos-latest] # windows-latest,
-      fail-fast: false
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Set node ${{ matrix.node }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-          cache: pnpm
-
-      - name: Setup
-        run: npm i -g @antfu/ni
-
-      - name: Install
-        run: nci
-
-      - name: Build
-        run: nr build
-
-      - name: Test
-        run: nr test
-
-  edge:
-    permissions:
-      id-token: write
-    runs-on: ubuntu-latest
+        node: [16, 18, 20]
     steps:
       - uses: actions/checkout@v3
       - run: corepack enable
@@ -103,7 +29,7 @@ jobs:
       - run: pnpm lint
       - run: pnpm build
       - run: pnpm typecheck
-      - name: Release Edge
+      - name: nightly release
         if: |
           github.event_name == 'push' &&
           !contains(github.event.head_commit.message, '[skip-release]')
