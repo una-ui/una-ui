@@ -9,7 +9,7 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-border': 'border-(~ base) rounded-md',
   'accordion-divider': 'divide-(y base)',
   'accordion-item': 'w-full',
-  'accordion-button': 'p-(x-3 y-4) justify-start',
+  'accordion-button': 'justify-start',
   'accordion-panel': 'text-(muted 0.875em) border-(t $c-divider) p-4',
   'accordion-leading': 'text-1.2em',
   'accordion-trailing': 'flex transition items-center text-1em duration-300',

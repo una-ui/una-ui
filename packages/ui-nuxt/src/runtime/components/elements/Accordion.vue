@@ -64,7 +64,7 @@ function mergedProps(itemProps: NAccordionItemProps) {
   return Object.assign(pickProps(props, ['reverse', 'icon', 'btn', 'label', 'leading', 'loading', 'loadingPlacement', 'nv', 'trailing', 'leading', 'to', 'type', 'disabled']), itemProps)
 }
 
-// TODO: refactor this one to sync with NButton variants
+// TODO: refactor this to sync with NButton variants
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text'] as const
 const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.includes(btnVariants)))
 const isBaseVariant = computed(() => props.btn?.includes('~'))
@@ -115,7 +115,11 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
           <NButton
             v-bind="mergedProps(item)"
             :btn="`~ block ${btn ?? ''}`"
-            :class="[{ 'btn-text': !hasVariant && !isBaseVariant }, nv?.accordionButton]"
+            :class="[
+              { 'btn-text': !hasVariant && !isBaseVariant },
+              { 'p-(x-3 y-4)': !unstyle },
+              nv?.accordionButton,
+            ]"
             accordion="button"
             :nv="{
               btnLabel: 'accordion-label',
