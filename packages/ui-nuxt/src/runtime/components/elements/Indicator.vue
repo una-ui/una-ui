@@ -41,7 +41,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
             :class="[
               { 'indicator-default-placement': !hasPlacement },
               { 'indicator-default-variant': !hasVariant && !isBaseVariant },
-              { '!animate-ping !ring-none': ping },
+              { 'animate-ping ring-none': ping },
               !label ? 'indicator-dot' : 'indicator-label',
               nv?.indicator,
             ]"
