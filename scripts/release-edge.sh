@@ -5,6 +5,8 @@ set -xe
 # Restore all git changes
 git restore -s@ -SW  -- packages
 
+echo "Bumping versions to edge"
+
 # Bump versions to edge
 pnpm jiti ./scripts/bump-edge
 
