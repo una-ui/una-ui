@@ -16,6 +16,13 @@ export interface ModuleOptions {
 
   /**
    * @default true
+   * @description Enable themeable ui
+   *
+  */
+  themeable?: boolean
+
+  /**
+   * @default true
    * @description Register components globally
    */
   global?: boolean
@@ -43,6 +50,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {
     prefix: 'N',
+    themeable: true,
     preset: rPath('./preset'),
     global: true,
     dev: false,
@@ -82,8 +90,10 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     // plugins
-    addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
-    addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
+    if (options.themeable) {
+      addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
+      addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
+    }
 
     if (!options.dev)
       nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
