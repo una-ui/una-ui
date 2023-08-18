@@ -58,7 +58,6 @@ jobs:
 
   test:
     runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
         node: [16.x, 18.x]
@@ -88,3 +87,27 @@ jobs:
 
       - name: Test
         run: nr test
+
+  Edge:
+    permissions:
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: corepack enable
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm lint
+      - run: pnpm build
+      - run: pnpm typecheck
+      - name: Release Edge
+        if: |
+          github.event_name == 'push' &&
+          !contains(github.event.head_commit.message, '[skip-release]')
+        run: ./scripts/release-edge.sh
+        env:
+          NPM_CONFIG_PROVENANCE: true
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}

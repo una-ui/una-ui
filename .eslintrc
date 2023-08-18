@@ -3,5 +3,8 @@
   "extends": [
     "@antfu",
     "@unocss"
-  ]
+  ],
+  "rules": {
+    "n/prefer-global/process": "off"
+  }
 }
