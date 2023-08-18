@@ -33,7 +33,7 @@ const items = [
 <template>
   <div flex="~ col" gap-4>
     <NAccordion
-      variant-mode
+      unstyle
       :items="items"
       btn="ghost-lime rectangle"
     />
@@ -41,7 +41,7 @@ const items = [
     <hr border-base>
 
     <NAccordion
-      variant-mode
+      unstyle
       :items="items"
       btn="solid-orange rectangle"
       :nv="{
