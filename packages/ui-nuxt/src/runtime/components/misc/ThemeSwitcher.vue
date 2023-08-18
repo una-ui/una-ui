@@ -9,6 +9,7 @@ export interface ThemeColors {
   [key: string]: string
 }
 
+// TODO: confingurable in the app.config
 const defaultSettings = {
   primaryColors: primaryThemes.filter(([colorName, _]) => colorName === 'yellow')[0][1],
   grayColors: grayThemes.filter(([colorName, _]) => colorName === 'stone')[0][1],
