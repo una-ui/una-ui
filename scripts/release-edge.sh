@@ -17,9 +17,10 @@ if [[ ! -z ${NODE_AUTH_TOKEN} ]] ; then
 fi
 
 # Release packages
-for p in packages/* ; do
-  pushd $p
-  echo "Publishing $p"
+packages=(/packages*)
+for ((i=${#files[@]}-1; i>=0; i--)); do
+  pushd ${files[$i]}
+  echo "Publishing ${files[$i]}"
   cp ../../LICENSE .
   cp ../../README.md .
   pnpm publish --access public --no-git-checks
