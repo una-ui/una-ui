@@ -19,7 +19,7 @@ const items = [
 <template>
   <NAccordion
     :items="items"
-    variant-mode
+    unstyle
     class="divide-y divide-base"
     trailing-close="i-heroicons-plus"
     trailing-open="i-heroicons-minus"

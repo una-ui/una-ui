@@ -18,7 +18,7 @@ const items = [
 <template>
   <NAccordion
     :items="items"
-    variant-mode
+    unstyle
   >
     <template #label="{ item, index, open }">
       <NButton
