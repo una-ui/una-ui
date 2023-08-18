@@ -50,7 +50,8 @@
     "clear": "rimraf packages/*/{dist,es,lib}",
     "cleanup": "rimraf docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules}",
     "stub": "pnpm -r --reverse --filter=./packages/* --parallel run stub",
-    "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\" && simple-git-hooks"
+    "postinstall": "npx simple-git-hooks",
+    "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\""
   },
   "dependencies": {
     "chroma-js": "^2.4.2",
