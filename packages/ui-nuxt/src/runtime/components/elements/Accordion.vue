@@ -52,13 +52,19 @@ function onLeave(element: Element, done: () => void) {
   el.addEventListener('transitionend', done, { once: true })
 }
 
-const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
+const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
+  item: NAccordionItemProps
+  index: number
+  open: boolean
+  close: () => void
+}>()
 
 // TODO: optimized this one
 function mergedProps(itemProps: NAccordionItemProps) {
   return Object.assign(pickProps(props, ['reverse', 'icon', 'btn', 'label', 'leading', 'loading', 'loadingPlacement', 'nv', 'trailing', 'leading', 'to', 'type', 'disabled']), itemProps)
 }
 
+// TODO: refactor this one to sync with NButton variants
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text'] as const
 const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.includes(btnVariants)))
 const isBaseVariant = computed(() => props.btn?.includes('~'))
@@ -73,6 +79,23 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
       nv?.accordion,
     ]"
   >
+    <DefineTemplate v-slot="{ item, close, index, open }">
+      <slot
+        :name="item.content ? 'content' : index"
+        :item="item" :index="index" :open="open" :close="close"
+      >
+        <div
+          accordion="panel"
+          :class="[
+            nv?.accordionPanel,
+            { 'border-t-0': unstyle },
+          ]"
+        >
+          {{ item.content }}
+        </div>
+      </slot>
+    </DefineTemplate>
+
     <Disclosure
       v-for="(item, i) in items"
       :key="i"
@@ -136,23 +159,6 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
         </slot>
       </DisclosureButton>
 
-      <DefineTemplate>
-        <slot
-          :name="item.content ? 'content' : i"
-          :item="item" :index="i" :open="open" :close="close"
-        >
-          <div
-            accordion="panel"
-            :class="[
-              nv?.accordionPanel,
-              { 'border-t-0': unstyle },
-            ]"
-          >
-            {{ item.content }}
-          </div>
-        </slot>
-      </DefineTemplate>
-
       <Transition
         :enter-active-class="nv?.accordionLeaveActive ?? 'accordion-leave-active'"
         :leave-active-class="nv?.accordionEnterActive ?? 'accordion-enter-active'"
@@ -162,14 +168,28 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
         @leave="onLeave"
       >
         <DisclosurePanel v-if="!item.mounted ?? !mounted">
-          <ReuseTemplate />
+          <ReuseTemplate
+            v-bind="{
+              item,
+              index: i,
+              open,
+              close,
+            }"
+          />
         </DisclosurePanel>
         <DisclosurePanel
           v-else
           v-show="open"
           static
         >
-          <ReuseTemplate />
+          <ReuseTemplate
+            v-bind="{
+              item,
+              index: i,
+              open,
+              close,
+            }"
+          />
         </DisclosurePanel>
       </Transition>
     </Disclosure>
