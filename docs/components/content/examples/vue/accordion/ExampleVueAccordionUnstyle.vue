@@ -35,6 +35,13 @@ const items = [
     <NAccordion
       unstyle
       :items="items"
+    />
+
+    <hr border-base>
+
+    <NAccordion
+      unstyle
+      :items="items"
       btn="ghost-lime rectangle"
     />
 
