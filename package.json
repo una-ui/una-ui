@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.2-beta.3",
   "private": true,
-  "packageManager": "pnpm@8.6.5",
+  "packageManager": "pnpm@8.6.12",
   "description": "An Atomic UI/UX Technology",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -54,18 +54,18 @@
   "dependencies": {
     "chroma-js": "^2.4.2",
     "ignore-dependency-scripts": "^1.0.1",
-    "unocss": "^0.55.0"
+    "unocss": "^0.55.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.40.2",
     "@antfu/ni": "^0.21.5",
-    "@iconify/json": "^2.2.102",
+    "@iconify/json": "^2.2.103",
     "@nexvelt/ui-preset": "workspace:0.0.2-beta.3",
     "@nuxt/devtools": "^0.8.0",
     "@types/chroma-js": "^2.4.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.5.0",
-    "@unocss/eslint-config": "^0.55.0",
+    "@unocss/eslint-config": "^0.55.1",
     "@vueuse/core": "^10.3.0",
     "bumpp": "^9.1.1",
     "eslint": "^8.47.0",
@@ -73,11 +73,11 @@
     "fs-extra": "^11.1.1",
     "lint-staged": "^14.0.0",
     "rimraf": "^5.0.1",
-    "sass": "^1.65.1",
+    "sass": "^1.66.0",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1",
-    "vitest": "^0.34.1",
+    "vitest": "^0.34.2",
     "vue-tsc": "^1.8.8"
   },
   "simple-git-hooks": {
