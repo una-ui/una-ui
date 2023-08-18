@@ -10,27 +10,23 @@ export interface ThemeColors {
 }
 
 const defaultSettings = {
-  primaryColors: primaryThemes[0][1],
-  grayColors: grayThemes[0][1],
+  primaryColors: primaryThemes.filter(([colorName, _]) => colorName === 'yellow')[0][1],
+  grayColors: grayThemes.filter(([colorName, _]) => colorName === 'stone')[0][1],
   fontSize: 16,
 }
 
 const settings = useStorage('nv-settings', defaultSettings)
 
-// use orange primary theme as default
-const defaultPrimaryTheme = primaryThemes[0][1]['--nv-primary-hex']
-// check storage for theme or use default (orange)
-const currentPrimaryTheme = computed(() => settings.value.primaryColors?.['--nv-primary-hex'] || defaultPrimaryTheme)
+// use yellow primary theme as default
+const currentPrimaryTheme = computed(() => settings.value.primaryColors?.['--nv-primary-hex'])
 // get current theme name
 const currentPrimaryThemeName = computed(() => {
   const theme = primaryThemes.find(([, theme]) => theme['--nv-primary-hex'] === currentPrimaryTheme.value)
   return theme ? theme[0] : ''
 })
 
-// use gray primary theme as default
-const defaultGrayTheme = grayThemes[0][1]['--nv-gray-hex']
-// check storage for theme or use default (gray)
-const currentGrayTheme = computed(() => settings.value.grayColors?.['--nv-gray-hex'] || defaultGrayTheme)
+// use stone primary theme as default
+const currentGrayTheme = computed(() => settings.value.grayColors?.['--nv-gray-hex'])
 // get current theme name
 const currentGrayThemeName = computed(() => {
   const theme = grayThemes.find(([, theme]) => theme['--nv-gray-hex'] === currentGrayTheme.value)
