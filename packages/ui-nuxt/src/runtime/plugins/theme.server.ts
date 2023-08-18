@@ -1,4 +1,3 @@
-/* eslint-disable n/prefer-global/process */
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
 import { defineNuxtPlugin, useHead } from '#app'
