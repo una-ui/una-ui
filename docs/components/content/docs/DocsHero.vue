@@ -25,26 +25,20 @@ const { version } = useRuntimeConfig().public
         </p>
       </div>
 
-      <div grid="~ sm:cols-3 cols-2" class="gap-4">
-        <div
-          col="span-2 sm:span-1"
-          class="mx-auto"
-          grow="0"
-        >
-          <NButton
-            to="/guide/getting-started"
-            btn="solid"
-            class="rounded-full px-5.5 py-3 font-bold"
-            label="Getting Started"
-          />
-        </div>
-
+      <div flex class="gap-4">
         <NButton
+          to="/guide/getting-started"
+          btn="solid"
+          class="rounded-full px-5.5 py-3 font-bold"
+          label="Getting Started"
+        />
+
+        <!-- <NButton
           to="#"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
           label="Playground"
-        />
+        /> -->
 
         <NButton
           to="https://github.com/una-ui/una-ui"
