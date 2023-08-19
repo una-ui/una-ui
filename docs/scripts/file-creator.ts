@@ -50,10 +50,10 @@ Work in progress - this component is not yet ready for use.
 ## Props
 
 ## Presets
-@@@ ../packages/ui-preset/src/_shortcuts/${directory.presetName}
+@@@ ../packages/preset/src/_shortcuts/${directory.presetName}
 
 ## Components
-@@@ ../packages/ui-nuxt/src/runtime/components/${directory.componentName}
+@@@ ../packages/nuxt/src/runtime/components/${directory.componentName}
 `
 
   createFile(path, content)

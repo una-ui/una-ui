@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const items = [
   {
-    label: 'Why NexveltUI',
+    label: 'Why Una',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
     leading: 'i-heroicons-book-open',
   },
@@ -51,7 +51,7 @@ const items = [
       unstyle
       :items="items"
       btn="solid-orange"
-      :nv="{
+      :una="{
         accordionButton: 'rounded-none',
         accordionPanel: 'px-0',
       }"

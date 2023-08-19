@@ -20,11 +20,11 @@
         size="1.3rem"
         leading="i-heroicons-paper-clip-20-solid"
         trailing="i-heroicons-chat-bubble-left-ellipsis-20-solid"
-        :nv="{
+        :una="{
           inputLeading: 'text-yellow',
           inputTrailing: 'text-blue',
         }"
-        placeholder="You can also use nv to add custom class"
+        placeholder="You can also use una to add custom class"
       />
     </div>
   </div>

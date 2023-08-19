@@ -1,5 +1,5 @@
 {
-  "name": "@nexvelt/ui-docs",
+  "name": "@una-ui/docs",
   "type": "module",
   "version": "0.0.2-beta.3",
   "private": true,
@@ -7,12 +7,12 @@
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/phojie",
-  "homepage": "https://ui.nexvelt.com",
+  "homepage": "https://unaui.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nexvelt/ui.git"
+    "url": "git+https://github.com/una-ui/una-ui.git"
   },
-  "bugs": "https://github.com/nexvelt/ui/issues",
+  "bugs": "https://github.com/una-ui/una-ui/issues",
   "keywords": [
     "design-system",
     "tailwindcss",
@@ -36,7 +36,7 @@
     "f": "esno scripts/file-creator.ts"
   },
   "dependencies": {
-    "@nexvelt/ui-nuxt": "workspace:0.0.2-beta.3"
+    "@una-ui/nuxt": "workspace:0.0.2-beta.3"
   },
   "devDependencies": {
     "@nuxt-themes/docus": "^1.14.6",

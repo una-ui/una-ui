@@ -19,7 +19,7 @@
     ],
     "noUnusedLocals": true,
     "paths": {
-      "@nexvelt/ui-preset": ["./packages/ui-preset/src/index.ts"]
+      "@una-ui/preset": ["./packages/preset/src/index.ts"]
     }
   },
   "exclude": [

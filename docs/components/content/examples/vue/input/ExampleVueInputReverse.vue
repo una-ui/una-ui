@@ -4,7 +4,7 @@
       input="outline-purple"
       leading="i-heroicons-paper-clip-20-solid"
       trailing="i-heroicons-chat-bubble-left-ellipsis-20-solid"
-      :nv="{
+      :una="{
         inputLeadingWrapper: 'text-yellow',
         inputTrailingWrapper: 'text-blue',
         inputWrapper: 'col-span-2',

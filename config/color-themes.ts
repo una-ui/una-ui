@@ -132,13 +132,13 @@ export function getColors(color: string, prefix: string): Colors {
 
   const colors = {} as Required<Colors> // Initialize an empty object to store the theme colors
 
-  colors[`--nv-${prefix}-hex`] = colorPalette[600] as string // Assign the primary color hex code to the corresponding theme variable
+  colors[`--una-${prefix}-hex`] = colorPalette[600] as string // Assign the primary color hex code to the corresponding theme variable
 
   // Iterate over each shade in the color palette and assign it to the corresponding theme variable
   for (const shade of Object.keys(colorPalette) as unknown as Shade[]) {
     const c = chroma(colorPalette[shade])
-    colors[`--nv-${prefix}-${shade}`] = c.rgb().join(', ') // RGB
-    // Colors[`--nv-${prefix}-${shade}`] = c.hsl().join(' ') // HSL
+    colors[`--una-${prefix}-${shade}`] = c.rgb().join(', ') // RGB
+    // Colors[`--una-${prefix}-${shade}`] = c.hsl().join(' ') // HSL
   }
 
   return colors

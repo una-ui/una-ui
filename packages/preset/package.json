@@ -1,0 +1,56 @@
+{
+  "name": "@una-ui/preset",
+  "version": "0.0.2-beta.3",
+  "description": "The default preset for @una-ui",
+  "author": "Phojie Rengel <phojrengel@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/phojie",
+  "homepage": "https://github.com/una-ui/una-ui/tree/main/packages/preset#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/una-ui/una-ui",
+    "directory": "packages/preset"
+  },
+  "bugs": {
+    "url": "https://github.com/una-ui/una-ui/issues"
+  },
+  "keywords": [
+    "una-ui/preset",
+    "unocss"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./shortcuts": {
+      "types": "./dist/shortcuts.d.ts",
+      "import": "./dist/shortcuts.mjs",
+      "require": "./dist/shortcuts.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.d.ts",
+    "*.css"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "prepack": "nr build",
+    "stub": "unbuild --stub"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@unocss/core": "^0.55.1",
+    "@unocss/preset-mini": "^0.55.1",
+    "unocss": "^0.55.1"
+  }
+}

@@ -14,7 +14,7 @@ const enabled = ref(false)
       v-model="enabled"
       switch="focus rose"
       class="w-4.5em rotate-90"
-      :nv="{
+      :una="{
         switchTrack: 'w-4.5em',
         switchThumbOn: 'translate-x-3em',
         switchThumbOff: 'translate-x-0',
@@ -26,7 +26,7 @@ const enabled = ref(false)
       switch="focus indigo"
       size="1cm"
       class="rotate-120 rounded-lg"
-      :nv="{
+      :una="{
         switchTrack: 'rounded-lg',
         switchThumb: 'bg-inverted',
       }"
@@ -37,7 +37,7 @@ const enabled = ref(false)
       size="3xl"
       outset
       class="rounded-non rotate-90"
-      :nv="{
+      :una="{
         switchThumb: 'rounded-none h-2em w-2em',
         switchTrack: 'rounded-none',
         switchThumbOn: 'bg-success',
@@ -48,7 +48,7 @@ const enabled = ref(false)
     <NSwitch
       v-model="enabled"
       size="4xl"
-      :nv="{
+      :una="{
         switchTrackOn: 'bg-yellow',
         switchTrackOff: 'bg-blue',
         switchThumbOn: 'rounded-l-lg',

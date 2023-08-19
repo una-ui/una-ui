@@ -12,7 +12,7 @@ const isPasswordVisible = ref(false)
     <NInput
       :type="isPasswordVisible ? 'text' : 'password'"
       :trailing="isPasswordVisible ? 'i-heroicons-eye-20-solid' : 'i-heroicons-eye-slash-20-solid'"
-      :nv="{
+      :una="{
         inputTrailing: 'pointer-events-auto cursor-pointer',
       }"
       model-value="Password"
@@ -23,7 +23,7 @@ const isPasswordVisible = ref(false)
       input="outline-purple"
       leading="i-heroicons-hand-thumb-up-20-solid"
       trailing="i-heroicons-arrow-down-tray-20-solid "
-      :nv="{
+      :una="{
         inputLeading: 'active:scale-120 text-blue pointer-events-auto cursor-pointer active:text-green',
         inputTrailing: 'active:scale-90 text-yellow pointer-events-auto cursor-pointer active:text-lime',
       }"

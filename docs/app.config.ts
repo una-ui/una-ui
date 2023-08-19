@@ -1,17 +1,17 @@
 export default defineAppConfig({
   docus: {
-    title: 'NexveltUI',
+    title: 'UnaUI',
     description: 'An Atomic UI/UX Technology',
     image: '',
     socials: {
       twitter: 'phojiee',
-      github: 'nexvelt/ui',
+      github: 'una-ui/una-ui',
     },
     github: {
       dir: 'docs/content',
       branch: 'main',
       repo: 'ui',
-      owner: 'nexvelt',
+      owner: 'una-ui',
       edit: true,
     },
     aside: {
@@ -27,7 +27,7 @@ export default defineAppConfig({
       credits: {
         icon: '',
         text: 'Released under the MIT License. ',
-        href: 'https://github.com/nexvelt/ui/blob/main/LICENSE',
+        href: 'https://github.com/una-ui/una-ui/blob/main/LICENSE',
       },
       textLinks: [
         {
