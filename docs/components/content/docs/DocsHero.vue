@@ -3,31 +3,26 @@ const { version } = useRuntimeConfig().public
 </script>
 
 <template>
-  <div grid="~ cols-1 lg:cols-5" class="my-15 gap-10 lg:my-20">
+  <div grid="~ cols-1 lg:cols-5" class="my-20 gap-10 lg:my-35">
     <!-- left section -->
-    <div col="lg:span-3 span-1" space="y-8" class="flex flex-col items-center lg:items-start">
-      <div>
-        <span btn="~" class="rounded-lg bg-muted text-xs font-medium ring ring-gray/10">
-          <NIcon name="i-heroicons-sparkles-solid" mr-1 text-sm text-primary />
-          v{{ version }}
-        </span>
-      </div>
-      <div flex="~ col" space-y-4 class="text-center lg:text-left">
-        <div class="text-6xl font-bold lg:text-7xl">
+    <div col="lg:span-3 span-1" class="flex flex-col items-center lg:items-start">
+      <NBadge badge="solid-gray">
+        <NIcon name="i-heroicons-sparkles-solid" mr-1 text-sm text-primary />
+        v{{ version }}
+      </NBadge>
+
+      <div flex="~ col" class="mb-12 mt-10 text-center space-y-3 lg:text-left">
+        <h1 class="text-5xl font-bold lg:text-7xl">
           An
           <span class="from-primary to-$c-brand-next bg-gradient-to-l bg-clip-text text-transparent">
             Atomic UI/UX
           </span>
           Technology
-        </div>
+        </h1>
 
-        <div class="text-2xl font-medium text-$c-gray-500 lg:text-3xl">
-          Presets · Components · Theming system
-        </div>
-      </div>
-
-      <div class="text-center text-lg font-medium text-$c-gray-500 lg:w-5/6 lg:text-left lg:text-xl">
-        UnaUI is a technology that helps you build fast, modern, and accessible web applications.
+        <p class="text-2xl text-muted">
+          A technology that helps you build fast, modern, and accessible web applications with the power of Unocss Engine.
+        </p>
       </div>
 
       <div grid="~ sm:cols-3 cols-2" class="gap-4">
@@ -62,7 +57,7 @@ const { version } = useRuntimeConfig().public
     </div>
 
     <!-- right section -->
-    <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-20 w-full place-items-center text-center lg:mb-0 lg:text-right">
+    <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-10 w-full place-items-center text-center lg:mb-0 lg:text-right">
       <div class="image-bg absolute z-5 h-40 w-50 lg:h-85 lg:w-85" />
       <div class="h-40 w-40 -mt-10% lg:h-75 lg:w-75">
         <LogoSvg />
@@ -78,7 +73,7 @@ const { version } = useRuntimeConfig().public
   }
 }
 .image-bg {
-  opacity: .5;
+  opacity: .8;
   transition: opacity 2s ease;
   background-image: linear-gradient(-60deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
   filter: blur(120px);
