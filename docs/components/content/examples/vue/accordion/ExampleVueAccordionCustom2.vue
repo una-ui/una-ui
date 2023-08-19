@@ -20,11 +20,10 @@ const items = [
   <NAccordion
     :items="items"
     unstyle
-    class="bg-base divide-y divide-base"
     trailing-open="i-heroicons-plus"
     :una="{
       accordionButton: 'px-0',
-      accordionPanel: 'bg-muted rounded-lg',
+      accordionPanel: 'bg-muted rounded-none mt-2',
       accordionTrailingClose: '-rotate-45',
       accordionTrailing: 'text-md',
     }"
