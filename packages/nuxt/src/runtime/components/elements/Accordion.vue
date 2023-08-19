@@ -116,8 +116,8 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
             v-bind="mergedProps(item)"
             :btn="`~ block ${btn ?? ''}`"
             :class="[
-              { 'btn-text': !hasVariant && !isBaseVariant },
-              { 'p-(x-3 y-4)': !unstyle },
+              { 'accordion-button-default-variant': !hasVariant && !isBaseVariant },
+              { 'accordion-button-padding': !unstyle },
               una?.accordionButton,
             ]"
             accordion="button"
