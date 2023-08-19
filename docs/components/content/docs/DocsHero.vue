@@ -33,13 +33,6 @@ const { version } = useRuntimeConfig().public
           label="Getting Started"
         />
 
-        <!-- <NButton
-          to="#"
-          btn="solid-gray"
-          class="rounded-full px-5.5 py-3 font-bold"
-          label="Playground"
-        /> -->
-
         <NButton
           to="https://github.com/una-ui/una-ui"
           target="_blank"
@@ -52,7 +45,7 @@ const { version } = useRuntimeConfig().public
 
     <!-- right section -->
     <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-10 w-full place-items-center text-center lg:mb-0 lg:text-right">
-      <div class="image-bg absolute z-5 h-40 w-50 lg:h-85 lg:w-85" />
+      <div class="image-bg absolute z-5 h-40 w-40 lg:h-85 lg:w-85" />
       <div class="h-40 w-40 -mt-10% lg:h-75 lg:w-75">
         <LogoSvg />
       </div>
@@ -67,7 +60,7 @@ const { version } = useRuntimeConfig().public
   }
 }
 .image-bg {
-  opacity: .8;
+  opacity: .7;
   transition: opacity 2s ease;
   background-image: linear-gradient(-60deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
   filter: blur(120px);

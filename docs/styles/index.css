@@ -34,22 +34,11 @@ code {
 .card {
   background-color: var(--c-muted) !important;
   border-color: var(--c-border) !important;
-  transition: border-color .25s,background-color .25s;
 }
 
 .card .icon {
   font-size: 1.5rem !important;
 }
-
-/* .card:hover {
-  border-color: rgb(var(--una-primary)) !important;
-  background-color: rgb(var(--c-background)) !important;
-  cursor: default;
-}
-
-.card:hover .title {
-  color: rgb(var(--una-primary-active)) !important;
-} */
 
 @media (min-width: 1400px) {
   .container {
