@@ -8,7 +8,7 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-divider': 'divide-(y base)',
   'accordion-border': 'border-(~ base) rounded-md',
 
-  // baseion
+  // base
   'accordion': 'flex-(~ col) relative w-full',
   'accordion-item': 'w-full',
   'accordion-button': 'justify-start',
