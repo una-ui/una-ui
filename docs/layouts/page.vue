@@ -5,8 +5,8 @@
     </article>
 
     <Ellipsis
-      :colors="['rgba(var(--una-primary), 1)', 'rgba(var(--una-primary), 1)', 'var(--c-brand-next)']"
-      height="15rem" width="15rem" top="60rem" left="-10rem" blur="15rem"
+      :colors="['rgba(var(--una-primary))', 'rgba(var(--una-primary), 0.5)', 'rgba(var(--una-primary), 0.7)']"
+      height="15rem" width="15rem" top="60rem" left="-20rem" blur="15rem"
     />
   </div>
 </template>
