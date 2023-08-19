@@ -70,5 +70,16 @@ export default function presetUna(options: unaUIOptions = {
         'pointer-events': 'none',
       }],
     ],
+    preflights: [
+      {
+        getCSS: () => `
+          *:focus-visible {
+            outline: 2px solid rgb(var(--una-primary)); /* 2 */
+            border-radius: 0.25rem; /* 1 */
+            outline-offset: 0.10rem; /* 1 */
+          }
+        `,
+      },
+    ],
   }
 }
