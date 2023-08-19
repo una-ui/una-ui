@@ -41,6 +41,8 @@ export default {
     '../packages/preset/src/_shortcuts/switch.ts',
     '../packages/preset/src/_shortcuts/general.ts',
     '../packages/preset/src/_shortcuts/index.ts',
+
+    '../packages/preset/src/index.ts',
     '../packages/nuxt/src/unocss.ts',
   ],
 }
