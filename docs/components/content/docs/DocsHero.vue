@@ -65,7 +65,7 @@ const { version } = useRuntimeConfig().public
     <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-20 w-full place-items-center text-center lg:mb-0 lg:text-right">
       <div class="image-bg absolute z-5 h-40 w-50 lg:h-85 lg:w-85" />
       <div class="h-40 w-40 -mt-10% lg:h-75 lg:w-75">
-        <img src="/una-ui.svg" alt="Una UI logo">
+        <LogoSvg />
       </div>
     </div>
   </div>
@@ -78,7 +78,7 @@ const { version } = useRuntimeConfig().public
   }
 }
 .image-bg {
-  opacity: .8;
+  opacity: .5;
   transition: opacity 2s ease;
   background-image: linear-gradient(-45deg, rgb(var(--una-primary)), var(--c-brand-next));
   filter: blur(120px);
