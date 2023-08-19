@@ -42,7 +42,7 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name,
-    configKey: 'unaUI',
+    configKey: 'una',
     version,
     compatibility: {
       nuxt: '^3.0.0-rc.8',
