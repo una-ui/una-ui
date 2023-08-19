@@ -12,7 +12,7 @@ const { version } = useRuntimeConfig().public
       </NBadge>
 
       <div flex="~ col" class="mb-12 mt-10 text-center space-y-3 lg:text-left">
-        <h1 class="text-5xl font-bold lg:text-7xl">
+        <h1 class="text-5xl font-bold !text-muted lg:text-7xl">
           An
           <span class="from-primary to-$c-brand-next bg-gradient-to-l bg-clip-text text-transparent">
             Atomic UI/UX
@@ -20,7 +20,7 @@ const { version } = useRuntimeConfig().public
           Technology
         </h1>
 
-        <p class="text-2xl text-muted">
+        <p class="text-xl text-$c-gray-500 lg:text-2xl">
           A technology that helps you build fast, modern, and accessible web applications with the power of Unocss Engine.
         </p>
       </div>

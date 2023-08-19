@@ -41,7 +41,7 @@ code {
   font-size: 1.5rem !important;
 }
 
-.card:hover {
+/* .card:hover {
   border-color: rgb(var(--una-primary)) !important;
   background-color: rgb(var(--c-background)) !important;
   cursor: default;
@@ -49,7 +49,7 @@ code {
 
 .card:hover .title {
   color: rgb(var(--una-primary-active)) !important;
-}
+} */
 
 @media (min-width: 1400px) {
   .container {
