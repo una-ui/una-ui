@@ -10,7 +10,7 @@ export default defineAppConfig({
     github: {
       dir: 'docs/content',
       branch: 'main',
-      repo: 'ui',
+      repo: 'una-ui',
       owner: 'una-ui',
       edit: true,
     },
