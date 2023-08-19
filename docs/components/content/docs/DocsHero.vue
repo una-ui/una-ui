@@ -5,13 +5,13 @@ const { version } = useRuntimeConfig().public
 <template>
   <div grid="~ cols-1 lg:cols-5" class="my-20 gap-10 lg:my-35">
     <!-- left section -->
-    <div col="lg:span-3 span-1" class="flex flex-col items-center lg:items-start">
+    <div col="lg:span-3 span-1" class="flex flex-col items-center lg:items-start space-y-10">
       <NBadge badge="solid-gray">
         <NIcon name="i-heroicons-sparkles-solid" mr-1 text-sm text-primary />
         v{{ version }}
       </NBadge>
 
-      <div flex="~ col" class="mb-12 mt-10 text-center space-y-3 lg:text-left">
+      <div flex="~ col" class="text-center space-y-5 lg:text-left">
         <h1 class="text-5xl font-bold !text-muted lg:text-7xl">
           An
           <span class="from-primary to-$c-brand-next bg-gradient-to-l bg-clip-text text-transparent">
