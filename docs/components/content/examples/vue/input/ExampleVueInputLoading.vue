@@ -7,7 +7,7 @@
     />
 
     <NInput
-      :nv="{
+      :una="{
         inputLoading: 'text-lime',
         inputLoadingIcon: 'i-tabler-fidget-spinner',
       }"
@@ -16,7 +16,7 @@
     />
 
     <NInput
-      :nv="{
+      :una="{
         inputLoading: 'text-rose animate-none',
         inputLoadingIcon: 'i-svg-spinners-blocks-shuffle-3',
       }"
@@ -26,7 +26,7 @@
     />
 
     <NInput
-      :nv="{
+      :una="{
         inputLoading: 'animate-pulse text-yellow',
         inputLoadingIcon: 'i-heroicons-ellipsis-horizontal-20-solid',
       }"

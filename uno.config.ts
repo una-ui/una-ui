@@ -6,7 +6,7 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
-import presetNexvelt from './packages/ui-preset/src/index'
+import presetUna from './packages/preset/src/index'
 
 export default {
   preflight: false,
@@ -22,25 +22,25 @@ export default {
         'vertical-align': 'middle',
       },
     }),
-    presetNexvelt(),
+    presetUna(),
   ],
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
   ],
   configDeps: [
-    '../packages/ui-preset/src/_shortcuts/indicator.ts',
-    '../packages/ui-preset/src/_shortcuts/avatar-group.ts',
-    '../packages/ui-preset/src/_shortcuts/avatar.ts',
-    '../packages/ui-preset/src/_shortcuts/badge.ts',
-    '../packages/ui-preset/src/_shortcuts/alert.ts',
-    '../packages/ui-preset/src/_shortcuts/input.ts',
-    '../packages/ui-preset/src/_shortcuts/button.ts',
-    '../packages/ui-preset/src/_shortcuts/form-group.ts',
-    '../packages/ui-preset/src/_shortcuts/accordion.ts',
-    '../packages/ui-preset/src/_shortcuts/switch.ts',
-    '../packages/ui-preset/src/_shortcuts/general.ts',
-    '../packages/ui-preset/src/_shortcuts/index.ts',
-    '../packages/ui-nuxt/src/unocss.ts',
+    '../packages/preset/src/_shortcuts/indicator.ts',
+    '../packages/preset/src/_shortcuts/avatar-group.ts',
+    '../packages/preset/src/_shortcuts/avatar.ts',
+    '../packages/preset/src/_shortcuts/badge.ts',
+    '../packages/preset/src/_shortcuts/alert.ts',
+    '../packages/preset/src/_shortcuts/input.ts',
+    '../packages/preset/src/_shortcuts/button.ts',
+    '../packages/preset/src/_shortcuts/form-group.ts',
+    '../packages/preset/src/_shortcuts/accordion.ts',
+    '../packages/preset/src/_shortcuts/switch.ts',
+    '../packages/preset/src/_shortcuts/general.ts',
+    '../packages/preset/src/_shortcuts/index.ts',
+    '../packages/nuxt/src/unocss.ts',
   ],
 }

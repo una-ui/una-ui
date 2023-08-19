@@ -2,7 +2,7 @@
   <NAvatarGroup
     :max="2"
     avatar="solid-info"
-    :nv="{
+    :una="{
       avatar: 'text-white',
     }"
   >

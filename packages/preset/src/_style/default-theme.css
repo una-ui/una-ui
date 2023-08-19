@@ -1,0 +1,27 @@
+:root {
+  --una-primary-hex: #ca8a04;
+  --una-primary-50: 254, 252, 232;
+  --una-primary-100: 254, 249, 195;
+  --una-primary-200: 254, 240, 138;
+  --una-primary-300: 253, 224, 71;
+  --una-primary-400: 250, 204, 21;
+  --una-primary-500: 234, 179, 8;
+  --una-primary-600: 202, 138, 4;
+  --una-primary-700: 161, 98, 7;
+  --una-primary-800: 133, 77, 14;
+  --una-primary-900: 113, 63, 18;
+  --una-primary-950: 66, 32, 6;
+      
+  --una-gray-hex: #57534e;
+  --una-gray-50: 250, 250, 249;
+  --una-gray-100: 245, 245, 244;
+  --una-gray-200: 231, 229, 228;
+  --una-gray-300: 214, 211, 209;
+  --una-gray-400: 168, 162, 158;
+  --una-gray-500: 120, 113, 108;
+  --una-gray-600: 87, 83, 78;
+  --una-gray-700: 68, 64, 60;
+  --una-gray-800: 41, 37, 36;
+  --una-gray-900: 28, 25, 23;
+  --una-gray-950: 12, 10, 9;
+}

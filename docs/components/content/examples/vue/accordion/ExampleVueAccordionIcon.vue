@@ -63,7 +63,7 @@ const items2 = [
     <NAccordion
       :items="items1"
       trailing-open="i-heroicons-chevron-left"
-      :nv="{
+      :una="{
         accordionTrailingClose: '-rotate-90',
         accordionTrailingOpen: 'rotate-0',
       }"

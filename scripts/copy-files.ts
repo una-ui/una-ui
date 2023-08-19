@@ -6,8 +6,8 @@ const _filename = fileURLToPath(import.meta.url)
 
 // relative to scripts directory
 const destinations = [
-  ['../README.md', '../packages/ui-nuxt/README.md'],
-  ['../README.md', '../packages/ui-preset/README.md'],
+  ['../README.md', '../packages/nuxt/README.md'],
+  ['../README.md', '../packages/preset/README.md'],
 ]
 
 destinations.forEach(([src, dest]) => {

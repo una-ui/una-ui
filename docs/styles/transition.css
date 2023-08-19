@@ -2,8 +2,8 @@
   -webkit-animation: colorTransition 15s linear infinite;
   animation: colorTransition 15s linear infinite;
 
-  --c-brand-next: rgb(var(--nv-primary));
-  --c-brand-light: rgb(var(--nv-primary-active));
+  --c-brand-next: rgb(var(--una-primary));
+  --c-brand-light: rgb(var(--una-primary-active));
 }
 
 @media (prefers-reduced-motion: reduce) {

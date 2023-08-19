@@ -1,11 +1,11 @@
 import pkg from '../package.json'
-import nexveltUI from '../packages/ui-nuxt/src/module'
+import unaUI from '../packages/nuxt/src/module'
 
 export default defineNuxtConfig({
   extends: '@nuxt-themes/docus',
   modules: [
     'nuxt-content-snippet',
-    nexveltUI,
+    unaUI,
   ],
 
   devtools: { enabled: true },

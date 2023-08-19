@@ -23,7 +23,7 @@ const items = [
     class="divide-y divide-base"
     trailing-close="i-heroicons-plus"
     trailing-open="i-heroicons-minus"
-    :nv="{
+    :una="{
       accordionButton: 'px-0 text-base',
       accordionPanel: 'px-0 py-2',
       accordionTrailing: 'text-md',

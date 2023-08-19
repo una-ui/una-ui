@@ -22,7 +22,7 @@ const items = [
     class="rounded-none bg-muted"
     reverse
     trailing-open="i-heroicons-chevron-right"
-    :nv="{
+    :una="{
       accordionPanel: 'bg-base',
       accordionTrailingClose: 'rotate-90',
       accordionTrailingOpen: 'rotate-0',

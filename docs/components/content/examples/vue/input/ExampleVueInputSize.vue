@@ -33,7 +33,7 @@
     />
 
     <NInput
-      :nv="{
+      :una="{
         inputWrapper: 'sm:col-span-2',
       }"
       size="6rem"

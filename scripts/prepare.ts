@@ -38,7 +38,7 @@ const filteredPrimaryThemes = primaryThemes.filter(([color]) => ['yellow'].inclu
 const filteredGrayThemes = grayThemes.filter(([color]) => ['stone'].includes(color))[0][1]
 
 // generate default-theme.css
-await fs.writeFile('./packages/ui-preset/src/_style/default-theme.css',
+await fs.writeFile('./packages/preset/src/_style/default-theme.css',
   `:root {\n${Object.entries(filteredPrimaryThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}
       \n${Object.entries(filteredGrayThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}`,
   { encoding: 'utf-8' })

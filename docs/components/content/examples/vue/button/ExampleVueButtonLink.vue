@@ -15,7 +15,7 @@
     />
 
     <NButton
-      to="https://github.com/nexvelt/ui"
+      to="https://github.com/una-ui/una-ui"
       target="_blank"
       btn="outline-pink"
       class="rounded-none"

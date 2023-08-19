@@ -29,7 +29,7 @@ function toggleLoading() {
         btn="soft-green"
         loading-placement="label"
         :loading="loading"
-        :nv="{
+        :una="{
           btnLoadingIcon: 'i-tabler-loader-3',
         }"
         label="Label Loading"
@@ -40,7 +40,7 @@ function toggleLoading() {
         btn="solid-black"
         loading-placement="trailing"
         :loading="loading"
-        :nv="{
+        :una="{
           btnLoadingIcon: 'i-tabler-loader',
         }"
         :label="loading ? 'Trailing...' : 'Trailing'"
@@ -64,7 +64,7 @@ function toggleLoading() {
         btn="link-orange"
         loading-placement="label"
         :loading="loading"
-        :nv="{
+        :una="{
           btnLoadingIcon: 'i-heroicons-cloud-arrow-down-20-solid',
           btnLoading: 'animate-pulse',
         }"
@@ -77,7 +77,7 @@ function toggleLoading() {
         btn="solid-white"
         loading-placement="label"
         :loading="loading"
-        :nv="{
+        :una="{
           btnLoadingIcon: 'i-tabler-reload',
         }"
         label="Refresh"

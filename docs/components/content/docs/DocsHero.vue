@@ -27,7 +27,7 @@ const { version } = useRuntimeConfig().public
       </div>
 
       <div class="text-center text-lg font-medium text-$c-gray-500 lg:w-5/6 lg:text-left lg:text-xl">
-        NexveltUI is a technology that helps you build fast, modern, and accessible web applications.
+        UnaUI is a technology that helps you build fast, modern, and accessible web applications.
       </div>
 
       <div grid="~ sm:cols-3 cols-2" class="gap-4">
@@ -52,7 +52,7 @@ const { version } = useRuntimeConfig().public
         />
 
         <NButton
-          to="https://github.com/nexvelt/ui"
+          to="https://github.com/una-ui/una-ui"
           target="_blank"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
@@ -64,9 +64,8 @@ const { version } = useRuntimeConfig().public
     <!-- right section -->
     <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-20 w-full place-items-center text-center lg:mb-0 lg:text-right">
       <div class="image-bg absolute z-5 h-40 w-50 lg:h-85 lg:w-85" />
-      <div class="h-40 w-50 -mt-10% lg:h-85 lg:w-85 -rotate-1">
-        <img class="block -mt-0.4 dark:hidden" src="/logo-solid.svg" alt="NexveltUI Logo">
-        <img class="hidden -mt-0.4 dark:block" src="/logo-solid-dark.svg" alt="NexveltUI Logo">
+      <div class="h-40 w-40 -mt-10% lg:h-75 lg:w-75">
+        <LogoSvg />
       </div>
     </div>
   </div>
@@ -79,9 +78,9 @@ const { version } = useRuntimeConfig().public
   }
 }
 .image-bg {
-  opacity: .8;
+  opacity: .5;
   transition: opacity 2s ease;
-  background-image: linear-gradient(-45deg, rgb(var(--nv-primary)), var(--c-brand-next));
+  background-image: linear-gradient(-60deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
   filter: blur(120px);
 }
 </style>
