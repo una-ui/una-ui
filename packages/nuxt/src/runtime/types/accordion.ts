@@ -76,8 +76,8 @@ export interface NAccordionProps extends Omit<NButtonProps, 'una'> {
 
 export interface NAccordionItemProps extends NButtonProps {
   /**
-     * Accordion item content
-    */
+   * Accordion item content
+  */
   content?: string
   /**
    * Update item leading icon when accordion button item is open,
