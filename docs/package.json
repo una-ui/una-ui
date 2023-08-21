@@ -35,9 +35,6 @@
     "c": "esno scripts/color-transition.ts",
     "f": "esno scripts/file-creator.ts"
   },
-  "dependencies": {
-    "@una-ui/nuxt": "workspace:0.0.2-beta.3"
-  },
   "devDependencies": {
     "@nuxt-themes/docus": "^1.14.6",
     "@types/node": "^18.17.5",
