@@ -5,6 +5,7 @@ const { navigation } = useContent()
 const { config } = useDocus()
 
 const hasNavigation = computed(() => !!config.value.aside?.level)
+const hasDialog = computed(() => navigation.value?.length > 1 || navigation.value?.[0]?.children?.length)
 
 const filtered = computed(() => config.value.header?.exclude || [])
 
@@ -20,8 +21,8 @@ const isActive = (link: any) => (link.exact ? route.fullPath === link._path : ro
 </script>
 
 <template>
-  <nav v-if="hasNavigation">
-    <ul class="mr-4 inline-flex space-x-4">
+  <nav v-if="hasNavigation" class="hidden lg:block">
+    <ul class="mr-2 inline-flex items-center space-x-6">
       <li
         v-for="link in tree"
         :key="link._path"
@@ -29,7 +30,7 @@ const isActive = (link: any) => (link.exact ? route.fullPath === link._path : ro
         <NButton
           :to="link.redirect ? link.redirect : navBottomLink(link)"
           :btn="isActive(link) ? 'text' : '~'"
-          class="px-0 py-1"
+          class="p-1"
           :class="{
             'text-$c-gray-500 hover:text-$c-gray-700': !isActive(link),
           }"

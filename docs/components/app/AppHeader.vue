@@ -34,8 +34,10 @@ const isPageLayout = computed(() => layout.value === 'page')
         <AppHeaderLogo v-show="hasDialog && (y > 100 && isPageLayout) || hasDialog && !isPageLayout" />
       </div>
 
-      <div class="section right">
-        <AppHeaderNavigation v-if="!hasDialog" />
+      <div class="section right space-x-4">
+        <AppHeaderNavigation />
+
+        <div h-5.5 border border-base class="hidden lg:block" />
 
         <div class="social-icons">
           <AppSocialIcons />
