@@ -1,4 +1,4 @@
-# ✨ Una-UI
+# ✨ Una UI
 
 > **Warning**: This project is heavily working in progress.
 
