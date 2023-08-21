@@ -5,7 +5,6 @@ const { navigation } = useContent()
 const { config } = useDocus()
 
 const hasNavigation = computed(() => !!config.value.aside?.level)
-const hasDialog = computed(() => navigation.value?.length > 1 || navigation.value?.[0]?.children?.length)
 
 const filtered = computed(() => config.value.header?.exclude || [])
 
