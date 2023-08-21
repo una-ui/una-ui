@@ -209,10 +209,12 @@ watch(Escape, () => {
 </script>
 
 <template>
+  <!-- class="hidden rounded-lg bg-base px-3 py-1.5 text-gray ring-1 ring-$c-gray-100 lg:block !text-11px hover:ring-primary" -->
+
   <div class="z-5 flex items-center">
-    <button
-      btn
-      class="hidden rounded-lg bg-base px-3 py-1.5 text-gray ring-1 ring-$c-gray-100 lg:block !text-11px hover:ring-primary"
+    <NButton
+      btn="soft-gray"
+      class="hidden rounded-lg px-3 font-normal lg:block"
       aria-label="Search"
       @click="show = true"
     >
@@ -220,13 +222,13 @@ watch(Escape, () => {
         <NIcon name="i-heroicons-magnifying-glass" mr-3 />
         <span class="flex items-center">
           <span mr-5>Search</span>
-          <span class="rounded bg-muted px-2">
-            <kbd class="mr-2">⌘</kbd>
-            <kbd>K</kbd>
+          <span class="inline-flex items-center border border-base rounded px-1.5">
+            <kbd class="mr-1.5" text-md>⌘</kbd>
+            <kbd text-xs>K</kbd>
           </span>
         </span>
       </span>
-    </button>
+    </NButton>
 
     <button
       btn

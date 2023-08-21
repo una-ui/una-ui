@@ -27,15 +27,16 @@ const isPageLayout = computed(() => layout.value === 'page')
       <div class="section left">
         <AppHeaderDialog v-if="hasDialog" />
         <AppHeaderLogo />
+        <AppSearch lg:ml-8 />
       </div>
 
       <div class="section center">
         <AppHeaderLogo v-show="hasDialog && (y > 100 && isPageLayout) || hasDialog && !isPageLayout" />
-        <AppHeaderNavigation />
       </div>
 
       <div class="section right">
-        <AppSearch lg:mr-4 />
+        <AppHeaderNavigation v-if="!hasDialog" />
+
         <div class="social-icons">
           <AppSocialIcons />
         </div>

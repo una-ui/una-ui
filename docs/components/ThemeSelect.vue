@@ -10,10 +10,10 @@ function onClick() {
 </script>
 
 <template>
-  <div class="flex items-center pr-4 space-x-2 xl:pr-0">
+  <div class="mx-4 flex items-center pr-4 space-x-4 xl:pr-0">
     <button
       btn="~ base"
-      class="text-$c-gray-500 hover:text-$c-gray-700"
+      class="mr-2 px-0 text-$c-gray-500 hover:text-$c-gray-700"
       aria-label="Color Mode"
       @click="onClick"
     >

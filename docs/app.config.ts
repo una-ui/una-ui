@@ -17,11 +17,11 @@ export default defineAppConfig({
     aside: {
       level: 1,
       collapsed: false,
-      exclude: ['/', '/docs/guide'],
+      exclude: ['/', '/docs'],
     },
     header: {
       logo: true,
-      exclude: ['/docs', '/'],
+      exclude: ['/', '/docs'],
     },
     footer: {
       credits: {
