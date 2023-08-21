@@ -27,7 +27,6 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { redirect: '/docs', prerender: false },
     '/guide': { redirect: '/guide/getting-started' },
     '/components': { redirect: '/components/elements' },
   },
