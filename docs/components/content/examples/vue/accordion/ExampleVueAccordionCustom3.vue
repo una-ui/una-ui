@@ -20,7 +20,7 @@ const items = [
   <NAccordion
     :items="items"
     unstyle
-    btn="text-white"
+    btn="text-black"
     trailing-close="i-heroicons-plus"
     trailing-open="i-heroicons-minus"
     :una="{
