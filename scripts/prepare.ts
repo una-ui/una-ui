@@ -40,7 +40,7 @@ const filteredGrayThemes = grayThemes.filter(([color]) => ['stone'].includes(col
 // generate default-theme.css
 await fs.writeFile('./packages/preset/src/_style/default-theme.css',
   `:root {\n${Object.entries(filteredPrimaryThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}
-      \n${Object.entries(filteredGrayThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}}`,
+      \n${Object.entries(filteredGrayThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}\n`,
   { encoding: 'utf-8' })
 
 // copy color-themes.ts
