@@ -28,29 +28,29 @@ function closeOthers(index: number) {
     .forEach(close => close())
 }
 
-function onEnter(element: Element, done: () => void) {
-  const el = element as HTMLElement
-  el.style.height = '0'
-  el.style.height = `${element.scrollHeight}px`
-  el.addEventListener('transitionend', done, { once: true })
-}
+// function onEnter(element: Element, done: () => void) {
+//   const el = element as HTMLElement
+//   el.style.height = '0'
+//   el.style.height = `${element.scrollHeight}px`
+//   el.addEventListener('transitionend', done, { once: true })
+// }
 
-function onAfterEnter(element: Element) {
-  const el = element as HTMLElement
-  el.style.height = 'auto'
-}
+// function onAfterEnter(element: Element) {
+//   const el = element as HTMLElement
+//   el.style.height = 'auto'
+// }
 
-function onBeforeLeave(element: Element) {
-  const el = element as HTMLElement
-  el.style.height = `${el.scrollHeight}px`
-}
+// function onBeforeLeave(element: Element) {
+//   const el = element as HTMLElement
+//   el.style.height = `${el.scrollHeight}px`
+// }
 
-function onLeave(element: Element, done: () => void) {
-  const el = element as HTMLElement
-  el.style.height = '0'
+// function onLeave(element: Element, done: () => void) {
+//   const el = element as HTMLElement
+//   el.style.height = '0'
 
-  el.addEventListener('transitionend', done, { once: true })
-}
+//   el.addEventListener('transitionend', done, { once: true })
+// }
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
   item: NAccordionItemProps
@@ -163,13 +163,14 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
         </slot>
       </DisclosureButton>
 
+      <!-- @enter="onEnter"
+        @after-enter="onAfterEnter"
+        @before-leave="onBeforeLeave"
+        @leave="onLeave" -->
+
       <Transition
         :enter-active-class="una?.accordionLeaveActive ?? 'accordion-leave-active'"
         :leave-active-class="una?.accordionEnterActive ?? 'accordion-enter-active'"
-        @enter="onEnter"
-        @after-enter="onAfterEnter"
-        @before-leave="onBeforeLeave"
-        @leave="onLeave"
       >
         <DisclosurePanel v-if="!item.mounted ?? !mounted">
           <ReuseTemplate

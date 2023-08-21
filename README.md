@@ -11,7 +11,7 @@
 
 ## 📙 Documentation
 
-Visit the [Una-UI documentation](https://unaui.com/) website for more information.
+Visit https://www.unaui.com for full documentation.
 
 ## 🏛️ License
 
