@@ -31,7 +31,7 @@ const isActive = (link: any) => (link.exact ? route.fullPath === link._path : ro
           :btn="isActive(link) ? 'text' : '~'"
           class="p-1 font-medium"
           :class="{
-            'text-$c-gray-500 hover:text-$c-gray-700': !isActive(link),
+            'text-gray-500 dark:text-gray-400 hover:text-$c-gray-700': !isActive(link),
           }"
         >
           <Icon
