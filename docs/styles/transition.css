@@ -1,6 +1,6 @@
 :root {
-  -webkit-animation: colorTransition 15s linear infinite;
-  animation: colorTransition 15s linear infinite;
+  -webkit-animation: colorTransition 10s linear infinite;
+  animation: colorTransition 10s linear infinite;
 
   --c-brand-next: rgb(var(--una-primary));
   --c-brand-light: rgb(var(--una-primary-active));

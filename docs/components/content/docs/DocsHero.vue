@@ -62,7 +62,7 @@ const { version } = useRuntimeConfig().public
 .image-bg {
   opacity: .7;
   transition: opacity 2s ease;
-  background-image: linear-gradient(-60deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
+  background-image: linear-gradient(-60deg, rgb(var(--una-primary)) 40%, var(--c-brand-next), var(--c-brand-light));
   filter: blur(120px);
 }
 </style>
