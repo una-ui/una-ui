@@ -29,7 +29,7 @@ const isActive = (link: any) => (link.exact ? route.fullPath === link._path : ro
         <NButton
           :to="link.redirect ? link.redirect : navBottomLink(link)"
           :btn="isActive(link) ? 'text' : '~'"
-          class="p-1"
+          class="p-1 font-medium"
           :class="{
             'text-$c-gray-500 hover:text-$c-gray-700': !isActive(link),
           }"
