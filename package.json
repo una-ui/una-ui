@@ -44,7 +44,7 @@
     "docs": "nr --filter @una-ui/docs",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "release": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish",
+    "release": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release.ts",
     "start": "echo 'No start script defined'",
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
@@ -59,6 +59,7 @@
     "@una-ui/preset": "workspace:^",
     "chroma-js": "^2.4.2",
     "ignore-dependency-scripts": "^1.0.1",
+    "simple-git": "^3.19.1",
     "unocss": "^0.55.2"
   },
   "devDependencies": {
