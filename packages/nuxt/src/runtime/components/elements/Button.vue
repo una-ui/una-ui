@@ -36,6 +36,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     ]"
     :disabled="to ? null : disabled || loading"
     :btn="btn"
+    :aria-label="icon ? label : null"
     v-bind="$attrs"
   >
     <DefineTemplate v-if="loading">
