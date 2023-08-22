@@ -36,14 +36,14 @@
     />
 
     <NButton
-      size="18px hover:40px"
-      btn="solid hover:outline-lime"
-      label="hover me 18px->40px"
+      class="px-8 py-10 text-xs"
+      label="custom size"
     />
 
     <NButton
-      class="px-8 py-10 text-xs"
-      label="custom size"
+      size="18px hover:40px"
+      btn="solid hover:outline-lime"
+      label="hover me 18px->40px"
     />
   </div>
 </template>
