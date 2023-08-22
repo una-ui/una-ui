@@ -1,36 +1,21 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
-function onClick() {
-  const values = ['system', 'light', 'dark']
-  const index = values.indexOf(colorMode.preference)
-  const next = (index + 1) % values.length
-
-  colorMode.preference = values[next]
+function toggleDark() {
+  colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
 }
 </script>
 
 <template>
-  <div class="mx-4 flex items-center pr-4 space-x-4 xl:pr-0">
+  <div class="flex items-center pr-4 xl:pr-0">
     <button
       btn="~ base"
-      class="mr-2 px-0 text-$c-gray-500 hover:text-$c-gray-700"
+      class="mr-3 px-0 text-$c-gray-500 hover:text-$c-gray-700"
       aria-label="Color Mode"
-      @click="onClick"
+      @click="toggleDark"
     >
-      <ColorScheme>
-        <NIcon
-          v-if="colorMode.preference === 'dark'"
-          name="i-heroicons-moon-20-solid"
-        />
-        <NIcon
-          v-else-if="colorMode.preference === 'light'"
-          name="i-heroicons-sun-20-solid"
-        />
-        <NIcon
-          v-else
-          name="i-heroicons-computer-desktop-20-solid"
-        />
-      </ColorScheme>
+      <NIcon
+        name="i-heroicons-sun-20-solid dark:i-heroicons-moon-20-solid"
+      />
     </button>
     <NThemeSwitcher />
   </div>
