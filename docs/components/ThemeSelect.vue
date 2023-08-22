@@ -6,10 +6,10 @@ function toggleDark() {
 </script>
 
 <template>
-  <div class="flex items-center pr-4 xl:pr-0">
+  <div class="inline-flex pr-4 space-x-6 xl:pr-0">
     <button
-      btn="~ base"
-      class="mr-3 px-0 text-$c-gray-500 hover:text-$c-gray-700"
+      btn
+      class="px-0 text-$c-gray-500 hover:text-$c-gray-700"
       aria-label="Color Mode"
       @click="toggleDark"
     >

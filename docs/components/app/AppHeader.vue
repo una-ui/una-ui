@@ -34,7 +34,7 @@ const isPageLayout = computed(() => layout.value === 'page')
         <AppHeaderLogo v-show="hasDialog && (y > 100 && isPageLayout) || hasDialog && !isPageLayout" />
       </div>
 
-      <div class="section right space-x-4">
+      <div class="section right space-x-3">
         <AppHeaderNavigation />
 
         <div h-5.5 border border-base class="hidden lg:block" />
