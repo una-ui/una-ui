@@ -3,7 +3,7 @@ const close1 = ref(false)
 const close2 = ref(false)
 
 // auto reset if all alerts are closed
-watch([close1, close2], () => {
+watchEffect(() => {
   if (close1.value && close2.value) {
     setTimeout(() => {
       close1.value = false
