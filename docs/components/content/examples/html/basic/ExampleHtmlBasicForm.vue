@@ -13,7 +13,7 @@
     </div>
 
     <div class="flex flex-col flex-col-reverse gap-4 sm:flex-row sm:justify-end">
-      <button type="button" btn="~ solid-gray">
+      <button type="button" btn="~ solid-white">
         Cancel
       </button>
       <button type="button" btn="~ solid">
