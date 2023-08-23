@@ -1,8 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-  - name: NexveltUI Community Discord server
-    url: https://discord.gg/9h4AZR9T
-    about: Ask questions and discuss with other users in real time.
-  - name: Questions & Discussions
-    url: https://github.com/nexvelt/ui/discussions
-    about: Use GitHub discussions for message-board style questions and discussions.
