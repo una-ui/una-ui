@@ -87,7 +87,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       <NIcon
         v-if="trailing"
         :name="trailing"
-        :class="una?.btnLeading"
+        :class="una?.btnTrailing"
         btn="trailing"
       />
     </slot>
