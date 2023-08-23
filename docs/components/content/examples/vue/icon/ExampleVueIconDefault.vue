@@ -9,5 +9,7 @@
     <NIcon name="i-error" text-error />
 
     <NIcon name="i-loading" animate-spin />
+
+    <NIcon name="i-close" />
   </div>
 </template>
