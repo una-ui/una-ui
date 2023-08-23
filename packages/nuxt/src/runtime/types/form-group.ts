@@ -13,16 +13,15 @@ export interface NFormGroupProps {
   required?: boolean
 
   /**
-   * Manually set the name attribute for the form group label.
-   * Slot children will inherit the name attribute as both `id` and `name` for accessibility.
+   * Manually set the id attribute.
    *
-   * By default, the name attribute is generated randomly.
+   * By default, the id attribute is generated randomly for accessibility reasons.
    *
    * @default randomId
    * @example
-   * name="email"
+   * id="email"
   */
-  name?: string
+  id?: string
   /**
    * Label for the form group.
    *
