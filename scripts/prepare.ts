@@ -37,8 +37,8 @@ for (const file of files) {
 const filteredPrimaryThemes = primaryThemes.filter(([color]) => ['yellow'].includes(color))[0][1]
 const filteredGrayThemes = grayThemes.filter(([color]) => ['stone'].includes(color))[0][1]
 
-// generate default-theme.css
-await fs.writeFile('./packages/preset/src/_style/default-theme.css',
+// generate default theme
+await fs.writeFile('./packages/preset/src/_style/theme.css',
   `:root {\n${Object.entries(filteredPrimaryThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}
       \n${Object.entries(filteredGrayThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}\n`,
   { encoding: 'utf-8' })
