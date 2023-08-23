@@ -59,7 +59,6 @@ export default defineNuxtModule<ModuleOptions>({
     const { resolve } = createResolver(import.meta.url)
 
     // css
-    nuxt.options.css.unshift('@unocss/reset/tailwind-compat.css')
     nuxt.options.css.unshift('@una-ui/preset/una.css')
 
     // transpile runtime
