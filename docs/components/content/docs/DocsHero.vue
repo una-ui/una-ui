@@ -13,11 +13,11 @@ const { version } = useRuntimeConfig().public
 
       <div flex="~ col" class="text-center space-y-5 lg:text-left">
         <h1 class="text-5xl font-bold !text-muted lg:text-7xl">
-          An
+          The
           <span class="from-primary to-$c-brand-next bg-gradient-to-l bg-clip-text text-transparent">
-            Atomic UI/UX
+            Atomic UI
           </span>
-          Technology
+          Framework
         </h1>
 
         <p class="text-xl text-$c-gray-500 lg:text-2xl">

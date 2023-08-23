@@ -1,7 +1,7 @@
 export default defineAppConfig({
   docus: {
     title: 'Una UI',
-    description: 'An Atomic UI/UX Technology',
+    description: 'The Atomic UI Framework',
     url: 'https://unaui.com',
     socials: {
       twitter: 'phojiee',
