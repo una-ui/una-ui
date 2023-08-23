@@ -6,7 +6,7 @@ import { randomId } from '../../utils'
 
 const props = defineProps<NFormGroupProps>()
 
-const id = computed(() => props.id ?? randomId('form-group'))
+const id = computed(() => props.for ?? props.id ?? randomId('form-group'))
 
 const statusClassVariants = computed(() => {
   const text = {

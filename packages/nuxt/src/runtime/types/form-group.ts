@@ -13,6 +13,16 @@ export interface NFormGroupProps {
   required?: boolean
 
   /**
+   * Manually set the for attribute.
+   *
+   * By default, the for attribute is synced with the id attribute for accessibility reasons.
+   *
+   * @default randomId
+   * @example
+   * for="email"
+  */
+  for?: string
+  /**
    * Manually set the id attribute.
    *
    * By default, the id attribute is generated randomly for accessibility reasons.
