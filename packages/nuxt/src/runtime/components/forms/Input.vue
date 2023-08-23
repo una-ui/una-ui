@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import NIcon from '../elements/Icon.vue'
 import type { NInputProps } from '../../types'
 import { randomId } from '../../utils'
@@ -75,6 +75,11 @@ const reverseClassVariants = computed(() => {
     trailingWrapper: props.reverse ? 'input-leading-wrapper' : 'input-trailing-wrapper',
   }
 })
+
+const input = ref<HTMLInputElement | null>(null)
+defineExpose({
+  input,
+})
 </script>
 
 <template>
@@ -104,6 +109,7 @@ const reverseClassVariants = computed(() => {
 
     <input
       :id="id"
+      ref="input"
       v-model="inputValue"
       :type="type"
       class="input"
