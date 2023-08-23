@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { useClipboard } from '@vueuse/core'
+
 const { version } = useRuntimeConfig().public
+
+const source = ref('npm i @una-ui/nuxt')
+const { copy, copied } = useClipboard({ source })
 </script>
 
 <template>
-  <div grid="~ cols-1 lg:cols-5" class="my-20 gap-10 lg:my-35">
+  <div grid="~ cols-1 lg:cols-5" class="my-20 gap-x-30 gap-y-10 lg:my-35">
     <!-- left section -->
     <div col="lg:span-3 span-1" class="flex flex-col items-center lg:items-start space-y-10">
       <NBadge badge="solid-gray">
@@ -11,17 +16,17 @@ const { version } = useRuntimeConfig().public
         v{{ version }}
       </NBadge>
 
-      <div flex="~ col" class="text-center space-y-5 lg:text-left">
-        <h1 class="text-5xl font-bold !text-muted lg:text-7xl">
-          The
-          <span class="from-primary to-$c-brand-next bg-gradient-to-l bg-clip-text text-transparent">
-            Atomic UI
+      <div flex="~ col" class="text-center space-y-2 lg:text-left">
+        <h1 class="text-6xl font-bold lg:text-7xl">
+          <span class="from-$c-brand-next to-primary bg-gradient-to-r bg-clip-text text-transparent">
+            Una UI
           </span>
-          Framework
         </h1>
-
-        <p class="text-xl text-$c-gray-500 lg:text-2xl">
-          Una UI is a technology that helps you build fast, modern, and lightweight web applications with the power of Unocss Engine.
+        <h2 class="text-6xl font-bold text-muted lg:text-7xl">
+          The Atomic UI Framework for Nuxt
+        </h2>
+        <p class="pt-5 text-xl text-$c-gray-500 lg:text-2xl">
+          A technology that helps you build fast, modern, and lightweight web applications with the power of Unocss Engine.
         </p>
       </div>
 
@@ -32,13 +37,20 @@ const { version } = useRuntimeConfig().public
           class="rounded-full px-5.5 py-3 font-bold"
           label="Getting Started"
         />
-
         <NButton
           to="https://github.com/una-ui/una-ui"
           target="_blank"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
           label="View on Github"
+        />
+        <NButton
+          btn="solid-gray"
+          class="rounded-full px-5.5 py-3 font-bold"
+          :class="{ 'text-primary-active': copied }"
+          :label="source"
+          :trailing="!copied ? 'i-heroicons-clipboard-document' : 'i-heroicons-check'"
+          @click="copy(source)"
         />
       </div>
     </div>
@@ -62,7 +74,7 @@ const { version } = useRuntimeConfig().public
 .image-bg {
   opacity: .7;
   transition: opacity 2s ease;
-  background-image: linear-gradient(-60deg, rgb(var(--una-primary)) 40%, var(--c-brand-next), var(--c-brand-light));
+  background-image: linear-gradient(-80deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
   filter: blur(120px);
 }
 </style>
