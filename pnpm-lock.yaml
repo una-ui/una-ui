@@ -14,6 +14,9 @@ importers:
       '@una-ui/preset':
         specifier: workspace:^
         version: link:packages/preset
+      '@vercel/analytics':
+        specifier: ^1.0.2
+        version: 1.0.2
       chroma-js:
         specifier: ^2.4.2
         version: 2.4.2
@@ -2716,6 +2719,10 @@ packages:
       webpack-sources: 3.2.3
     transitivePeerDependencies:
       - rollup
+    dev: false
+
+  /@vercel/analytics@1.0.2:
+    resolution: {integrity: sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg==}
     dev: false
 
   /@vercel/nft@0.22.6:
