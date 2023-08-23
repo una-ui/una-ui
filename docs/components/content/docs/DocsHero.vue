@@ -21,7 +21,7 @@ const { version } = useRuntimeConfig().public
         </h1>
 
         <p class="text-xl text-$c-gray-500 lg:text-2xl">
-          A technology that helps you build fast, modern, and accessible web applications with the power of Unocss Engine.
+          Una UI is a technology that helps you build fast, modern, and lightweight web applications with the power of Unocss Engine.
         </p>
       </div>
 
