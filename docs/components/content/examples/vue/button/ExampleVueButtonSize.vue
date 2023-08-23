@@ -7,12 +7,12 @@
 
     <NButton
       size="sm"
-      label="button sm (default)"
+      label="button sm"
     />
 
     <NButton
       size="md"
-      label="button md"
+      label="button md (default / base)"
     />
 
     <NButton
