@@ -26,13 +26,13 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-$c-gray-400',
 
   // variants
-  'input-outline-gray': 'focus:ring-2 focus:bg-base ring-1',
-  'input-outline-black': 'focus:bg-base ring-1 focus:ring-$c-foreground',
+  'input-outline-gray': 'focus:ring-2 ring-1',
+  'input-outline-black': 'ring-1 focus:ring-$c-foreground',
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
   // config
-  [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400 focus:bg-base`],
+  [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400`],
   [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-400/70 dark:placeholder-${c}-300/70`],
 
   // variants
