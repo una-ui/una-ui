@@ -20,7 +20,8 @@ export default defineComponent({
       return () => null
 
     const clones = computed(() => children.value?.map((node: any) => {
-      return cloneVNode(node, { id: props.id, name: props.id, status: props.status })
+      const mergeProps = { ...props, ...node.props }
+      return cloneVNode(node, mergeProps)
     }))
 
     return () => clones.value

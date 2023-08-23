@@ -6,7 +6,7 @@ import { randomId } from '../../utils'
 
 const props = defineProps<NFormGroupProps>()
 
-const id = randomId('form-group')
+const id = computed(() => props.id ?? randomId('form-group'))
 
 const statusClassVariants = computed(() => {
   const text = {
@@ -43,7 +43,7 @@ const statusClassVariants = computed(() => {
             <slot name="label">
               <label
                 v-if="label"
-                :for="name ?? id"
+                :for="id"
                 form-group="label-wrapper"
                 :class="una?.formGroupLabelWrapper"
               >
@@ -85,7 +85,7 @@ const statusClassVariants = computed(() => {
     </slot>
 
     <NFormGroupDefaultSlot
-      :id="name ?? id"
+      :id="id"
       :status="status"
     >
       <slot />
