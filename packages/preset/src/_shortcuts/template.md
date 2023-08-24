@@ -9,8 +9,7 @@ export const staticKbd: Record<`${KbdPrefix}-${string}` | KbdPrefix, string> = {
 }
 
 export const dynamicKbd: [RegExp, (params: RegExpExecArray) => string][] = [
-  // dynamic base
-  [/^kbd$/, () => ''],
+  // dynamic preset 
 ]
 
 export const kbd = [
