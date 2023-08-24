@@ -8,13 +8,19 @@ const { copy, copied } = useClipboard({ source })
 </script>
 
 <template>
-  <div grid="~ cols-1 lg:cols-5" class="my-20 gap-x-30 gap-y-10 lg:my-35">
+  <div grid="~ cols-1 lg:cols-5" class="my-10 gap-x-30 gap-y-5 lg:my-35 md:my-20 sm:my-15">
     <!-- left section -->
-    <div col="lg:span-3 span-1" class="flex flex-col items-center lg:items-start space-y-10">
-      <NBadge badge="solid-gray">
+    <div col="lg:span-3 span-1" class="flex flex-col items-center lg:items-start space-y-10 lg:px-0 sm:px-25">
+      <NButton
+        to="https://github.com/una-ui/una-ui/releases"
+        target="blank"
+        btn="soft-gray"
+        size="xs"
+        rounded-lg
+      >
         <NIcon name="i-heroicons-sparkles-solid" mr-1 text-sm text-primary />
         v{{ version }}
-      </NBadge>
+      </NButton>
 
       <div flex="~ col" class="text-center space-y-2 lg:text-left">
         <h1 class="text-6xl font-bold lg:text-7xl">
@@ -22,7 +28,7 @@ const { copy, copied } = useClipboard({ source })
             Una UI
           </span>
         </h1>
-        <h2 class="text-6xl font-bold text-muted lg:text-7xl">
+        <h2 class="text-5xl font-bold text-muted lg:text-6xl">
           The Atomic UI Framework for Nuxt
         </h2>
         <p class="pt-5 text-xl text-$c-gray-500 lg:text-2xl">
@@ -30,7 +36,7 @@ const { copy, copied } = useClipboard({ source })
         </p>
       </div>
 
-      <div flex class="gap-4">
+      <div flex="~ wrap" class="justify-center gap-4">
         <NButton
           to="/guide/getting-started"
           btn="solid"
@@ -57,8 +63,8 @@ const { copy, copied } = useClipboard({ source })
 
     <!-- right section -->
     <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-10 w-full place-items-center text-center lg:mb-0 lg:text-right">
-      <div class="image-bg absolute z-5 h-40 w-40 lg:h-85 lg:w-85" />
-      <div class="h-40 w-40 -mt-10% lg:h-75 lg:w-75">
+      <div class="image-bg absolute z-5 h-50 w-50 lg:h-85 lg:w-85" />
+      <div class="h-50 w-50 -mt-10% lg:h-85 lg:w-85">
         <LogoSvg />
       </div>
     </div>
