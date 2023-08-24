@@ -8,7 +8,7 @@
     >
       <template #trailing>
         <span class="ml-3 inline-flex items-center space-x-0.5" size="md">
-          <NKbd kbd="outline" label="Cmd" />
+          <NKbd label="Cmd" />
           <NKbd label="K" />
         </span>
       </template>
@@ -22,7 +22,7 @@
     >
       <template #trailing>
         <span class="ml-3 inline-flex items-center space-x-0.5" size="md">
-          <NKbd kbd="outline-primary" label="Cmd" />
+          <NKbd kbd="solid-primary" label="Cmd" />
           <NKbd kbd="solid-primary" label="K" />
         </span>
       </template>
