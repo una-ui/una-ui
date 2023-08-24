@@ -56,7 +56,7 @@ export interface NAccordionProps extends Omit<NButtonProps, 'una'> {
   items: NAccordionItemProps[]
 
   /**
-   * `Unaonfiguration
+   * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/accordion.ts
   */
