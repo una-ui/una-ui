@@ -29,6 +29,7 @@ export default {
     transformerVariantGroup(),
   ],
   configDeps: [
+    '../packages/preset/src/_shortcuts/kbd.ts',
     '../packages/preset/src/_shortcuts/indicator.ts',
     '../packages/preset/src/_shortcuts/avatar-group.ts',
     '../packages/preset/src/_shortcuts/avatar.ts',
