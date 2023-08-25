@@ -44,11 +44,10 @@ const { copy, copied } = useClipboard({ source })
           label="Getting Started"
         />
         <NButton
-          to="https://github.com/una-ui/una-ui"
-          target="_blank"
+          to="/components/elements"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
-          label="View on Github"
+          label="View Components"
         />
         <NButton
           btn="solid-gray"
