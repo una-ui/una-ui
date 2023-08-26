@@ -114,6 +114,17 @@
           btn="link-black"
         />
       </div>
+
+      <div flex="~ col md:row" gap-2>
+        <NButton
+          label="text-black"
+          btn="text-black"
+        />
+        <NButton
+          label="text-gray"
+          btn="text-gray"
+        />
+      </div>
     </div>
   </div>
 </template>
