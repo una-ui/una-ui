@@ -59,7 +59,7 @@ export interface NAvatarProps {
   skeleton?: boolean
 
   /**
-   * `Unaet configuration
+   * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/avatar.ts
   */

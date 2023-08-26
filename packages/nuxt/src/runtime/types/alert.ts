@@ -35,7 +35,7 @@ export interface NAlertProps {
   description?: string
 
   /**
-   * `Unaguration
+   * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/alert.ts
   */
