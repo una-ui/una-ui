@@ -4,14 +4,14 @@
       btn="solid-black"
       label="Previous page"
       leading="i-heroicons-arrow-small-left-20-solid"
-      to="/components/elements/badge"
+      to="/elements/badge"
     />
 
     <NButton
       btn="solid-black"
       label="Next page"
       trailing="i-heroicons-arrow-small-right-20-solid"
-      to="/components/elements/dropdown"
+      to="/elements/dropdown"
     />
 
     <NButton

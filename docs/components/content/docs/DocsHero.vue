@@ -38,13 +38,13 @@ const { copy, copied } = useClipboard({ source })
 
       <div flex="~ wrap" class="justify-center gap-4">
         <NButton
-          to="/guide/getting-started"
+          to="/getting-started"
           btn="solid"
           class="rounded-full px-5.5 py-3 font-bold"
           label="Getting Started"
         />
         <NButton
-          to="/components/elements"
+          to="/elements"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
           label="View Components"
