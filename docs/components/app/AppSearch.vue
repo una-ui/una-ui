@@ -209,11 +209,9 @@ watch(Escape, () => {
 </script>
 
 <template>
-  <!-- class="hidden rounded-lg bg-base px-3 py-1.5 text-gray ring-1 ring-$c-gray-100 lg:block !text-11px hover:ring-primary" -->
-
   <div class="z-5 flex items-center">
     <NButton
-      btn="solid-gray block"
+      btn="soft-gray block"
       class="justify-between rounded-lg px-3 font-normal"
       aria-label="Search"
       @click="show = true"
@@ -222,12 +220,11 @@ watch(Escape, () => {
         <NIcon name="i-heroicons-magnifying-glass" mr-3 />
         <span class="flex items-center">
           <span>Search</span>
-
         </span>
       </span>
 
       <template #trailing>
-        <NKbd kbd="outline" size="12px" text-nowrap>
+        <NKbd kbd="outline" ml-3 size="12px" text-nowrap>
           ⌘ K
         </NKbd>
       </template>

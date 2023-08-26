@@ -23,15 +23,15 @@ const isPageLayout = computed(() => layout.value === 'page')
       }]"
   >
     <Container grid="~ cols-12" items-center gap-3>
-      <div col-span="2 lg:4">
+      <div
+        col-span="8 lg:4"
+        class="flex items-center"
+      >
         <AppHeaderLogo />
+        <AppSearch ml-6 sm:ml-10 :class="{ 'w-full': !isPageLayout }" />
       </div>
 
-      <div col-span="5 lg:4">
-        <!-- <AppHeaderLogo v-show="hasDialog && (y > 100 && isPageLayout) || hasDialog && !isPageLayout" /> -->
-        <AppSearch v-show="!isPageLayout" />
-      </div>
-      <div col-span="5 lg:4" class="flex items-center justify-end sm:space-x-3">
+      <div col-span="4 lg:8" class="flex items-center justify-end sm:space-x-3">
         <AppHeaderNavigation />
 
         <div h-5 border border-base class="hidden lg:block" />
