@@ -20,8 +20,8 @@ const isActive = (link: any) => (link.exact ? route.fullPath === link._path : ro
 </script>
 
 <template>
-  <nav v-if="hasNavigation" class="hidden lg:block">
-    <ul class="mr-2 inline-flex items-center space-x-6">
+  <nav class="hidden lg:block">
+    <ul v-if="hasNavigation" class="mr-2 inline-flex items-center space-x-6">
       <li
         v-for="link in tree"
         :key="link._path"
@@ -42,5 +42,7 @@ const isActive = (link: any) => (link.exact ? route.fullPath === link._path : ro
         </NButton>
       </li>
     </ul>
+
+    <AppPackageNavigation />
   </nav>
 </template>

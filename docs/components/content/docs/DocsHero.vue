@@ -8,7 +8,7 @@ const { copy, copied } = useClipboard({ source })
 </script>
 
 <template>
-  <div grid="~ cols-1 lg:cols-5" class="my-10 gap-x-30 gap-y-5 lg:my-35 md:my-20 sm:my-15">
+  <div grid="~ cols-1 lg:cols-5" class="my-15 gap-x-30 gap-y-5 lg:my-35 md:my-20 sm:my-15">
     <!-- left section -->
     <div col="lg:span-3 span-1" class="flex flex-col items-center lg:items-start space-y-10 lg:px-0 sm:px-25">
       <NButton
@@ -36,15 +36,15 @@ const { copy, copied } = useClipboard({ source })
         </p>
       </div>
 
-      <div flex="~ wrap" class="justify-center gap-4">
+      <div flex="~ wrap" class="justify-center gap-4 lg:justify-start">
         <NButton
-          to="/guide/getting-started"
+          to="/getting-started"
           btn="solid"
           class="rounded-full px-5.5 py-3 font-bold"
           label="Getting Started"
         />
         <NButton
-          to="/components/elements"
+          to="/elements"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
           label="View Components"

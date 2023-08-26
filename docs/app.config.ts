@@ -15,13 +15,12 @@ export default defineAppConfig({
       edit: true,
     },
     aside: {
-      level: 1,
+      level: 0,
       collapsed: false,
       exclude: ['/', '/docs'],
     },
     header: {
       logo: true,
-      exclude: ['/', '/docs'],
     },
     footer: {
       credits: {

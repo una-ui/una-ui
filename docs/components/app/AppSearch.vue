@@ -209,35 +209,26 @@ watch(Escape, () => {
 </script>
 
 <template>
-  <!-- class="hidden rounded-lg bg-base px-3 py-1.5 text-gray ring-1 ring-$c-gray-100 lg:block !text-11px hover:ring-primary" -->
-
   <div class="z-5 flex items-center">
     <NButton
-      btn="soft-gray"
-      class="hidden rounded-lg px-3 font-normal lg:block"
+      btn="soft-gray block"
+      class="justify-between rounded-lg px-3 font-normal"
       aria-label="Search"
       @click="show = true"
     >
       <span class="flex items-center">
         <NIcon name="i-heroicons-magnifying-glass" mr-3 />
         <span class="flex items-center">
-          <span mr-5>Search</span>
-          <span class="inline-flex items-center border border-base rounded px-1.5">
-            <kbd class="mr-1.5" text-md>⌘</kbd>
-            <kbd text-xs>K</kbd>
-          </span>
+          <span>Search</span>
         </span>
       </span>
-    </NButton>
 
-    <button
-      btn
-      class="block text-$c-gray-500 lg:hidden hover:text-$c-gray-700"
-      aria-label="Search"
-      @click="show = true"
-    >
-      <NIcon name="i-heroicons-magnifying-glass" class="text-16px" />
-    </button>
+      <template #trailing>
+        <NKbd kbd="outline" ml-5 size="12px" text-nowrap>
+          ⌘ K
+        </NKbd>
+      </template>
+    </NButton>
 
     <!-- eslint-disable-next-line vue/no-multiple-template-root -->
     <teleport to="body">
@@ -294,7 +285,7 @@ watch(Escape, () => {
               @click="go(selected)"
               @mouseenter.prevent="selected = i"
             >
-              <div class="search-result-content-wrapper">
+              <div v-if="result.item.path !== '/'" class="search-result-content-wrapper">
                 <div class="search-result-content-head">
                   <Icon
                     v-if="getNavItemMeta(result?.item?.path)?.directoryIcon"
@@ -355,7 +346,6 @@ css({
     inset: '0 0 0 0',
     zIndex: '50',
     display: 'flex',
-    // alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
     backdropFilter: '{elements.backdrop.filter}',

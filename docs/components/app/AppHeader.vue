@@ -4,7 +4,6 @@ import { useWindowScroll } from '@vueuse/core'
 defineProps({
   ...variants,
 })
-
 const { config } = useDocus()
 const { navigation, layout } = useContent()
 const { hasDocSearch } = useDocSearch()
@@ -23,26 +22,27 @@ const isPageLayout = computed(() => layout.value === 'page')
         'has-doc-search': hasDocSearch,
       }]"
   >
-    <Container :fluid="config?.header?.fluid ">
-      <div class="section left">
-        <AppHeaderDialog v-if="hasDialog" />
+    <Container grid="~ cols-12" items-center gap-3>
+      <div
+        col-span="8 lg:4"
+        class="flex items-center"
+      >
         <AppHeaderLogo />
-        <AppSearch lg:ml-8 />
+        <AppSearch ml-7 md:ml-8 :class="{ 'w-full sm:w-auto': !isPageLayout }" />
       </div>
 
-      <div class="section center">
-        <AppHeaderLogo v-show="hasDialog && (y > 100 && isPageLayout) || hasDialog && !isPageLayout" />
-      </div>
-
-      <div class="section right space-x-3">
+      <div col-span="4 lg:8" class="flex items-center justify-end sm:space-x-3">
         <AppHeaderNavigation />
 
-        <div h-5.5 border border-base class="hidden lg:block" />
+        <div h-5 border border-base class="hidden lg:block" />
 
-        <div class="social-icons">
+        <div class="hidden md:flex">
           <AppSocialIcons />
         </div>
+
         <ThemeSelect />
+
+        <AppHeaderDialog v-if="hasDialog" />
       </div>
     </Container>
   </header>
