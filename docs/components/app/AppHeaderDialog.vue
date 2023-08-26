@@ -20,17 +20,14 @@ watch(show, v => (v ? open() : close()))
 </script>
 
 <template>
-  <button
-    aria-label="Menu"
+  <NButton
+    icon
+    class="sm:hidden"
+    label="i-heroicons-outline-menu"
+    btn="ghost-gray square"
     @click="show = true"
-  >
-    <Icon
-      name="heroicons-outline:menu"
-      aria-hidden="”true”"
-    />
-  </button>
+  />
 
-  <!-- eslint-disable-next-line vue/no-multiple-template-root -->
   <teleport to="body">
     <nav
       v-if="show"
@@ -38,22 +35,19 @@ watch(show, v => (v ? open() : close()))
       @click="show = false"
     >
       <div @click.stop>
-        <div class="wrapper">
-          <button
-            aria-label="Menu"
-            @click="show = false"
-          >
-            <Icon
-              name="heroicons-outline:x"
-              aria-hidden="”true”"
-            />
-          </button>
-
-          <AppPackageNavigation z-20 />
+        <div>
+          <AppPackageNavigation class="z-20 -ml-2" />
 
           <div class="icons">
             <AppSocialIcons />
           </div>
+
+          <NButton
+            icon
+            label="i-close"
+            btn="soft-gray square"
+            @click="show = false"
+          />
         </div>
 
         <DocsAsideTree :links="links" />
@@ -64,31 +58,13 @@ watch(show, v => (v ? open() : close()))
 
 <style scoped lang="ts">
 css({
-  button: {
-    position: 'relative',
-    zIndex: '10',
-    display: 'flex',
-    padding: '{space.4} {space.4} {space.4} 0',
-    '@lg': {
-      display: 'none'
-    },
-    color: '{color.gray.500}',
-    '@dark': {
-      color: '{color.gray.400}',
-    },
-    '&:hover': {
-      color: '{color.gray.700}',
-      '@dark': {
-        color: '{color.gray.200}',
-      }
-    },
-  },
   '.dialog': {
     position: 'fixed',
     inset: '0 0 0 0',
     zIndex: '50',
     display: 'flex',
     alignItems: 'flex-start',
+    justifyContent: 'flex-end',
     overflowY: 'auto',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
     backdropFilter: '{elements.backdrop.filter}',

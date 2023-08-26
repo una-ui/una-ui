@@ -7,7 +7,7 @@ const { version } = useRuntimeConfig().public
 <template>
   <Menu as="div" class="relative inline-block text-left">
     <MenuButton as="template">
-      <NButton btn="~" trailing="i-heroicons-chevron-down-20-solid">
+      <NButton btn="~" class="text-$c-gray-600 hover:text-$c-gray-900" trailing="i-heroicons-chevron-down-20-solid" text-nowrap>
         v{{ version }}
       </NButton>
     </MenuButton>
