@@ -36,7 +36,7 @@ const { copy, copied } = useClipboard({ source })
         </p>
       </div>
 
-      <div flex="~ wrap" class="justify-center gap-4">
+      <div flex="~ wrap" class="justify-center gap-4 lg:justify-start">
         <NButton
           to="/getting-started"
           btn="solid"
