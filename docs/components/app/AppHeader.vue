@@ -4,7 +4,6 @@ import { useWindowScroll } from '@vueuse/core'
 defineProps({
   ...variants,
 })
-const { config } = useDocus()
 const { navigation, layout } = useContent()
 const { hasDocSearch } = useDocSearch()
 const hasDialog = computed(() => navigation.value?.length > 1 || navigation.value?.[0]?.children?.length)

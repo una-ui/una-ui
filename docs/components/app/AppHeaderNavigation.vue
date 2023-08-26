@@ -2,6 +2,7 @@
 const route = useRoute()
 const { navBottomLink } = useContentHelpers()
 const { navigation } = useContent()
+const { config } = useDocus()
 
 const hasNavigation = computed(() => !!config.value.aside?.level)
 
