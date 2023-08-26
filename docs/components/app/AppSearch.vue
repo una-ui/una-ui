@@ -346,7 +346,6 @@ css({
     inset: '0 0 0 0',
     zIndex: '50',
     display: 'flex',
-    // alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
     backdropFilter: '{elements.backdrop.filter}',
