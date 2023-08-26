@@ -28,7 +28,7 @@ const isPageLayout = computed(() => layout.value === 'page')
         class="flex items-center"
       >
         <AppHeaderLogo />
-        <AppSearch ml-6 max-w-sm sm:ml-10 :class="{ 'w-full': !isPageLayout }" />
+        <AppSearch ml-7 md:ml-8 :class="{ 'w-full sm:w-auto': !isPageLayout }" />
       </div>
 
       <div col-span="4 lg:8" class="flex items-center justify-end sm:space-x-3">

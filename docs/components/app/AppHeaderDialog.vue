@@ -22,7 +22,7 @@ watch(show, v => (v ? open() : close()))
 <template>
   <NButton
     icon
-    class="sm:hidden"
+    class="lg:hidden"
     label="i-heroicons-outline-menu"
     btn="ghost-gray square"
     @click="show = true"

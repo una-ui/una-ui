@@ -224,7 +224,7 @@ watch(Escape, () => {
       </span>
 
       <template #trailing>
-        <NKbd kbd="outline" ml-3 size="12px" text-nowrap>
+        <NKbd kbd="outline" ml-5 size="12px" text-nowrap>
           ⌘ K
         </NKbd>
       </template>
