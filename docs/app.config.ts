@@ -17,6 +17,7 @@ export default defineAppConfig({
     aside: {
       level: 0,
       collapsed: false,
+      exclude: ['/', '/docs'],
     },
     header: {
       logo: true,

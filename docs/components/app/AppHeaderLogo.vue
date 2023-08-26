@@ -6,7 +6,7 @@ const title = computed(() => config.value.header?.title || config.value.title)
 <template>
   <NuxtLink
     class="navbar-logo"
-    to="/"
+    to="/docs"
     :aria-label="title"
   >
     <Logo />
