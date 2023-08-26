@@ -4,7 +4,6 @@ import { useWindowScroll } from '@vueuse/core'
 defineProps({
   ...variants,
 })
-
 const { config } = useDocus()
 const { navigation, layout } = useContent()
 const { hasDocSearch } = useDocSearch()
@@ -27,7 +26,7 @@ const isPageLayout = computed(() => layout.value === 'page')
       <div class="section left">
         <AppHeaderDialog v-if="hasDialog" />
         <AppHeaderLogo />
-        <AppSearch lg:ml-8 />
+        <AppSearch v-if="hasDialog" lg:ml-8 />
       </div>
 
       <div class="section center">
