@@ -294,7 +294,7 @@ watch(Escape, () => {
               @click="go(selected)"
               @mouseenter.prevent="selected = i"
             >
-              <div class="search-result-content-wrapper">
+              <div v-if="result.item.path !== '/'" class="search-result-content-wrapper">
                 <div class="search-result-content-head">
                   <Icon
                     v-if="getNavItemMeta(result?.item?.path)?.directoryIcon"

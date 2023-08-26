@@ -26,6 +26,10 @@ export default defineNuxtConfig({
     payloadExtraction: true,
   },
 
+  routeRules: {
+    '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined },
+  },
+
   css: [
     '~/styles/index.css',
   ],
