@@ -26,12 +26,6 @@ export default defineNuxtConfig({
     payloadExtraction: true,
   },
 
-  routeRules: {
-    '': { redirect: '/getting-started' },
-    '/components': { redirect: '/components/elements' },
-    '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined },
-  },
-
   css: [
     '~/styles/index.css',
   ],
