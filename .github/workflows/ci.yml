@@ -27,7 +27,7 @@ jobs:
       - name: Release Edge
         if: |
           github.event_name == 'push' &&
-          !contains(github.event.head_commit.message, '[skip-release]')
+          !contains(github.event.head_commit.message, '[skip]')
         run: ./scripts/release-edge.sh
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
