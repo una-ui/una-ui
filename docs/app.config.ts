@@ -3,6 +3,7 @@ export default defineAppConfig({
     title: 'Una UI',
     description: 'The Atomic UI Framework',
     url: 'https://unaui.com',
+    image: '/logo.png', // initial og:image
     socials: {
       twitter: 'phojiee',
       github: 'una-ui/una-ui',
