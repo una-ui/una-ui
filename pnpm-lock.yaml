@@ -120,9 +120,6 @@ importers:
       '@headlessui/vue':
         specifier: ^1.7.16
         version: 1.7.16(vue@3.3.4)
-      '@iconify-json/carbon':
-        specifier: ^1.1.19
-        version: 1.1.20
       '@iconify-json/heroicons':
         specifier: ^1.1.12
         version: 1.1.12
@@ -148,9 +145,6 @@ importers:
         specifier: ^0.55.1
         version: 0.55.2
       '@unocss/preset-icons':
-        specifier: ^0.55.1
-        version: 0.55.2
-      '@unocss/reset':
         specifier: ^0.55.1
         version: 0.55.2
       '@vueuse/core':
@@ -1057,12 +1051,6 @@ packages:
     resolution: {integrity: sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==}
     engines: {node: '>=6.9.0'}
     dev: true
-
-  /@iconify-json/carbon@1.1.20:
-    resolution: {integrity: sha512-ed/3FDCjicQARWaSGIDZpaF+rWmxoSqrmHYZV2aEicufp0yciG44y9OEmArxxr/0U6bEC3zJbKMSOSw4CKeBJg==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: false
 
   /@iconify-json/heroicons@1.1.12:
     resolution: {integrity: sha512-9tsn/xUU+HX56OngEDRTej4LzVm2qcMVLvEJ+q+1ZJBO4sjMDxycmbHq16HGl1LOeVG21fq4jNZHslVveVCwSQ==}
