@@ -64,7 +64,7 @@ css({
     zIndex: '50',
     display: 'flex',
     alignItems: 'flex-start',
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     overflowY: 'auto',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
     backdropFilter: '{elements.backdrop.filter}',
