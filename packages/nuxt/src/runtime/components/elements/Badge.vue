@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+
 import type { NBadgeProps } from '../../types'
 import NIcon from './Icon.vue'
 
-const props = defineProps<NBadgeProps>()
+const props = withDefaults(defineProps<NBadgeProps>(), {
+  una: () => ({
+    badgeDefaultVariant: 'badge-default-variant',
+  }),
+})
 
 const emit = defineEmits<{ (...args: any): void }>()
 
@@ -17,7 +22,7 @@ const isBaseVariant = computed(() => props.badge?.includes('~'))
     :badge="badge"
     class="badge"
     :class="[
-      { 'badge-default-variant': !hasVariant && !isBaseVariant },
+      !hasVariant && !isBaseVariant ? una?.badgeDefaultVariant : '',
       una?.badge,
     ]"
   >

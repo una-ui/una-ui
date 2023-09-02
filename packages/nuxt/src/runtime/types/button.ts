@@ -87,6 +87,7 @@ export interface NButtonProps {
   */
   una?: {
     // base
+    btnDefaultVariant?: string
     btn?: string
     btnLabel?: string
     btnIconLabel?: string

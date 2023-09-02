@@ -3,17 +3,17 @@ import { computed } from 'vue'
 import { createReusableTemplate } from '@vueuse/core'
 import NIcon from '../elements/Icon.vue'
 import type { NButtonProps } from '../../types'
-
-// @ts-expect-error tsconfig
-import { NuxtLink } from '#components'
+import NLink from '../elements/Link.vue'
 
 defineOptions({
   inheritAttrs: false,
 })
 
 const props = withDefaults(defineProps<NButtonProps>(), {
-  type: 'button',
   loadingPlacement: 'leading',
+  una: () => ({
+    btnDefaultVariant: 'btn-outline-primary',
+  }),
 })
 
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text'] as const
@@ -24,13 +24,12 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
 
 <template>
-  <Component
-    :is="to ? NuxtLink : 'button'"
+  <NLink
     :to="to"
     :type="to ? null : type"
     class="btn"
     :class="[
-      { 'btn-default-variant': !hasVariant && !isBaseVariant },
+      { btnDefaultVariant: !hasVariant && !isBaseVariant },
       { 'btn-reverse': reverse },
       una?.btn,
     ]"
@@ -63,6 +62,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     </slot>
 
     <ReuseTemplate v-if="loading && loadingPlacement === 'label'" />
+
     <slot v-else>
       <NIcon
         v-if="label && icon"
@@ -91,5 +91,5 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
         btn="trailing"
       />
     </slot>
-  </Component>
+  </NLink>
 </template>
