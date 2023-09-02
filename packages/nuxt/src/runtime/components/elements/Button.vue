@@ -12,7 +12,7 @@ defineOptions({
 const props = withDefaults(defineProps<NButtonProps>(), {
   loadingPlacement: 'leading',
   una: () => ({
-    btnDefaultVariant: 'btn-outline-primary',
+    btnDefaultVariant: 'btn-default-variant',
   }),
 })
 
@@ -29,7 +29,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :type="to ? null : type"
     class="btn"
     :class="[
-      { btnDefaultVariant: !hasVariant && !isBaseVariant },
+      !hasVariant && !isBaseVariant ? una.btnDefaultVariant : '',
       { 'btn-reverse': reverse },
       una?.btn,
     ]"
