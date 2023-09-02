@@ -35,6 +35,7 @@ export interface NBadgeProps {
   */
   una?: {
     // base
+    badgeDefaultVariant?: string
     badge?: string
     badgeIconBase?: string
     badgeClose?: string
