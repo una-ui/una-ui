@@ -10,6 +10,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NButtonProps>(), {
+  type: 'button',
   loadingPlacement: 'leading',
   una: () => ({
     btnDefaultVariant: 'btn-default-variant',
@@ -24,12 +25,13 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
 
 <template>
-  <NLink
+  <Component
+    :is="to ? NLink : 'button'"
     :to="to"
     :type="to ? null : type"
     class="btn"
     :class="[
-      !hasVariant && !isBaseVariant ? una.btnDefaultVariant : '',
+      !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
       { 'btn-reverse': reverse },
       una?.btn,
     ]"
@@ -91,5 +93,5 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
         btn="trailing"
       />
     </slot>
-  </NLink>
+  </Component>
 </template>

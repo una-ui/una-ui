@@ -9,17 +9,9 @@ export default defineComponent({
   inheritAttrs: false,
   props: {
     ...NuxtLink.props,
-    type: {
-      type: String,
-      default: 'button',
-    },
     inactiveClass: {
       type: String,
       default: undefined,
-    },
-    disabled: {
-      type: Boolean,
-      default: null,
     },
     exact: {
       type: Boolean,
@@ -59,20 +51,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <button v-if="!to" v-bind="$attrs" :class="inactiveClass">
-    <slot />
-  </button>
   <NuxtLink
-    v-else
     v-slot="{ route, href, target, rel, navigate, isActive, isExactActive, isExternal }"
     v-bind="$props"
     custom
   >
     <a
       v-bind="$attrs"
-      :href="!disabled ? href : undefined"
-      :aria-disabled="disabled ? 'true' : undefined"
-      :role="disabled ? 'link' : undefined"
+      :href="href"
       :rel="rel"
       :target="target"
       :class="resolveLinkClass(route, $route, { isActive, isExactActive })"
