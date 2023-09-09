@@ -1,17 +1,9 @@
 <script setup lang="ts">
-// import type { NLinkProps } from '../../types'
+import type { NLinkProps } from '../../types'
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
 import { NuxtLink } from '#components'
-
-interface NLinkProps {
-  exact?: boolean
-  exactQuery?: boolean
-  exactHash?: boolean
-  activeClass?: string
-  inactiveClass?: string
-}
 
 const props = withDefaults(defineProps<NLinkProps>(), {
   ...NuxtLink.props,

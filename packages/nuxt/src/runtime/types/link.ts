@@ -1,8 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
-// @ts-ignore tsconfig
-import type { NuxtLinkProps } from '@nuxt/types/app'
-
-export interface NLinkProps extends NuxtLinkProps {
+export interface NLinkProps {
   inactiveClass?: string
   exact?: boolean
   exactQuery?: boolean
