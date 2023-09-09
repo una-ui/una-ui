@@ -1,22 +1,13 @@
 <script setup lang="ts">
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-import type { NNavLinkProps } from '../../types'
+import type { NVerticalNav } from '../../types'
 import NNavLink from './NavLink.vue'
-
-interface NNavLinkGroupLink extends NNavLinkProps {
-  children?: NNavLinkProps[]
-  defaultOpen?: boolean
-}
-
-interface NVerticalNav {
-  links: NNavLinkGroupLink[]
-}
 
 const props = defineProps<NVerticalNav>()
 </script>
 
 <template>
-  <div class="w-60 flex flex-col border-2 border-base rounded-md border-dashed p-2 space-y-1">
+  <div class="nav-link-group">
     <template
       v-for="link in props.links"
       :key="link.label"
@@ -32,10 +23,12 @@ const props = defineProps<NVerticalNav>()
       >
         <DisclosureButton
           as="div"
+          :disabled="link.disabled"
         >
           <NNavLink
             :una="{
               btnTrailing: `h-5 w-5 ${open ? 'rotate-90' : ''}`,
+              btn: 'w-full',
             }"
             trailing="i-heroicons-chevron-right-20-solid"
             v-bind="link"
@@ -45,15 +38,15 @@ const props = defineProps<NVerticalNav>()
         <div v-show="open">
           <DisclosurePanel
             as="ul"
-            class="mt-1 px-2 space-y-1"
+            nav-link-group="panel"
             static
           >
             <li v-for="subLink in link.children" :key="subLink.label">
               <NNavLink
                 v-bind="subLink"
-                class="pl-8"
                 :una="{
                   btnLabel: 'font-normal',
+                  btn: 'w-full pl-8',
                 }"
               />
             </li>
