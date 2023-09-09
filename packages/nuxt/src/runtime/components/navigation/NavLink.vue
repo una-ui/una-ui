@@ -3,15 +3,18 @@ import { omitProps } from '../../utils'
 
 import type { NNavLinkProps } from '../../types'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = defineProps<NNavLinkProps>()
 </script>
 
 <template>
   <NButton
-    nav-link="~ text"
-    active-class="nav-link-active-text"
-    inactive-class="nav-link-inactive-text"
-    class="w-full justify-start gap-x-3 rounded-md"
+    nav-link="~ variant"
+    active-class="nav-link-active"
+    inactive-class="nav-link-inactive"
     :una="{
       btnDefaultVariant: '~',
       ...props.una,
@@ -38,12 +41,14 @@ const props = defineProps<NNavLinkProps>()
     </template>
 
     <template v-if="badge" #trailing>
+      <!-- TODO: move to una preset -->
       <NBadge
         v-bind="badge"
         :una="{
           badgeDefaultVariant: 'badge-outline-white',
+          ...props.badge?.una,
         }"
-        class="min-w-max whitespace-nowrap rounded-full px-2.5 py-.5 leading-5"
+        class="min-w-max whitespace-nowrap rounded-full px-2.5 py-0.5 leading-5"
       />
     </template>
   </NButton>
