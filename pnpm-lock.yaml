@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  unist-util-stringify-position: 4.0.0
+  mdast-util-to-string: 4.0.0
+
 importers:
 
   .:
@@ -64,7 +68,7 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       eslint:
-        specifier: ^8.48.0
+        specifier: ^8.49.0
         version: 8.49.0
       esno:
         specifier: ^0.17.0
@@ -114,6 +118,9 @@ importers:
       nuxt-content-snippet:
         specifier: ^0.0.2
         version: 0.0.2(rollup@3.29.1)
+      vue:
+        specifier: ^3.3.4
+        version: 3.3.4
 
   packages/nuxt:
     dependencies:
@@ -2732,38 +2739,38 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@unhead/dom@1.6.1:
-    resolution: {integrity: sha512-K2uvMfEaICy/PilfHr9hCXQGEqMlIVubkhTv/sW+NZiVrivWmKd087gJ+4prmVCEoh4U7r3jzGL/qCrYjH0TsQ==}
+  /@unhead/dom@1.6.2:
+    resolution: {integrity: sha512-xOFZx0kAYdgXn17G1eNpGXPbClKGuzeFP40LHZG9PDxe8W2OVTAVlhPnamaPumwSYPcif0au6libawtp1bTvxA==}
     dependencies:
-      '@unhead/schema': 1.6.1
-      '@unhead/shared': 1.6.1
+      '@unhead/schema': 1.6.2
+      '@unhead/shared': 1.6.2
 
-  /@unhead/schema@1.6.1:
-    resolution: {integrity: sha512-03lw5Zum3soHHbhwE/mMuG3z9LHX6DDMjrVjLBCQ0qtUh1HoIN1/JdqXKIwfXYQlZSQhdBUx+jjpQMi1sihg8w==}
+  /@unhead/schema@1.6.2:
+    resolution: {integrity: sha512-yOjL4i1nm7xQ8XWOhRnO/Uf66lIJP48D4lT+Fl1tPTw3isYzopKGqkyHRrVL5PqunC37jQnwBb/ZRqZr5uGLAg==}
     dependencies:
       hookable: 5.5.3
       zhead: 2.1.1
 
-  /@unhead/shared@1.6.1:
-    resolution: {integrity: sha512-mOW75xFChDKW8GK4EIqVO3klzroFwxq9nX95d4N99DAETaydBCNayI1P2CL6EWUdykidxp2opaYfBf94PES+Dw==}
+  /@unhead/shared@1.6.2:
+    resolution: {integrity: sha512-4+tvNwulccD1f4NOOU1SEpfJ1YepOsetaogZzPhwdHiUud/LV7YI37FAUx4dKfr3pn1/BeFzj4BH/aPOABRdyg==}
     dependencies:
-      '@unhead/schema': 1.6.1
+      '@unhead/schema': 1.6.2
 
-  /@unhead/ssr@1.6.1:
-    resolution: {integrity: sha512-qhGOnGK3DrSAd2EPdJA+fuy+/MEm0QZuP/iE0OU5BOpzYr+QOB8u+hYoodZYETOeVqiCLK0qGuvEykt511J9wA==}
+  /@unhead/ssr@1.6.2:
+    resolution: {integrity: sha512-LDdYpHADtjdUQpuBZ8rDoLunhqmQupv8CdDV9ibyz+axmSdNp42IhzL6BHw4Oi0j++PhCoZIbpVu425aMQ14pA==}
     dependencies:
-      '@unhead/schema': 1.6.1
-      '@unhead/shared': 1.6.1
+      '@unhead/schema': 1.6.2
+      '@unhead/shared': 1.6.2
 
-  /@unhead/vue@1.6.1(vue@3.3.4):
-    resolution: {integrity: sha512-CacOBHF5H61lFE6hUmabqHm/kg1Yj+qMPPG81YaATP4rqWGHnKUmib6vn31//Fe24IOLTadtPXRmp+58o22lIg==}
+  /@unhead/vue@1.6.2(vue@3.3.4):
+    resolution: {integrity: sha512-EpcwH+90rLUfYudKYBOphfGoVSzPa2513+I5pAl+OYhZpzSkcvyLUonw+iN0KAKxbl9ELuK0Yu/MAaeOeD2C7g==}
     peerDependencies:
       vue: '>=2.7 || >=3'
     dependencies:
-      '@unhead/schema': 1.6.1
-      '@unhead/shared': 1.6.1
+      '@unhead/schema': 1.6.2
+      '@unhead/shared': 1.6.2
       hookable: 5.5.3
-      unhead: 1.6.1
+      unhead: 1.6.2
       vue: 3.3.4
 
   /@unocss/astro@0.55.7(rollup@3.29.1)(vite@4.4.9):
@@ -3330,10 +3337,10 @@ packages:
     peerDependencies:
       vue: '>=2.7 || >=3'
     dependencies:
-      '@unhead/dom': 1.6.1
-      '@unhead/schema': 1.6.1
-      '@unhead/ssr': 1.6.1
-      '@unhead/vue': 1.6.1(vue@3.3.4)
+      '@unhead/dom': 1.6.2
+      '@unhead/schema': 1.6.2
+      '@unhead/ssr': 1.6.2
+      '@unhead/vue': 1.6.2(vue@3.3.4)
       vue: 3.3.4
     dev: true
 
@@ -7051,10 +7058,10 @@ packages:
     resolution: {integrity: sha512-2hkTXtYYnr+NubD/g6KGBS/0mFmBcifAsI0yIWRiRo0PjVs6SSOSOdtzbp6kSGnShDN6G5aWZpKQ2lWRy27mWQ==}
     dependencies:
       '@types/mdast': 3.0.12
-      mdast-util-to-string: 2.0.0
+      mdast-util-to-string: 4.0.0
       micromark: 2.11.4
       parse-entities: 2.0.0
-      unist-util-stringify-position: 2.0.3
+      unist-util-stringify-position: 4.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7065,14 +7072,14 @@ packages:
       '@types/mdast': 3.0.12
       '@types/unist': 2.0.8
       decode-named-character-reference: 1.0.2
-      mdast-util-to-string: 3.2.0
+      mdast-util-to-string: 4.0.0
       micromark: 3.2.0
       micromark-util-decode-numeric-character-reference: 1.1.0
       micromark-util-decode-string: 1.1.0
       micromark-util-normalize-identifier: 1.1.0
       micromark-util-symbol: 1.1.0
       micromark-util-types: 1.1.0
-      unist-util-stringify-position: 3.0.3
+      unist-util-stringify-position: 4.0.0
       uvu: 0.5.6
     transitivePeerDependencies:
       - supports-color
@@ -7200,7 +7207,7 @@ packages:
       '@types/unist': 2.0.8
       longest-streak: 3.1.0
       mdast-util-phrasing: 3.0.1
-      mdast-util-to-string: 3.2.0
+      mdast-util-to-string: 4.0.0
       micromark-util-decode-string: 1.1.0
       unist-util-visit: 4.1.2
       zwitch: 2.0.4
@@ -7217,16 +7224,6 @@ packages:
       micromark-util-decode-string: 2.0.0
       unist-util-visit: 5.0.0
       zwitch: 2.0.4
-    dev: true
-
-  /mdast-util-to-string@2.0.0:
-    resolution: {integrity: sha512-AW4DRS3QbBayY/jJmD8437V1Gombjf8RSOUCMFBuo5iHi58AGEgVCKQ+ezHkZZDpAQS75hcBMpLqjpJTjtUL7w==}
-    dev: true
-
-  /mdast-util-to-string@3.2.0:
-    resolution: {integrity: sha512-V4Zn/ncyN1QNSqSBxTrMOLpjr+IKdHl2v3KVLoWmDPscP4r9GcCi71gjgvUV1SFSKh92AjAG4peFuBl2/YgCJg==}
-    dependencies:
-      '@types/mdast': 3.0.12
     dev: true
 
   /mdast-util-to-string@4.0.0:
@@ -8328,9 +8325,9 @@ packages:
       '@nuxt/ui-templates': 1.3.1
       '@nuxt/vite-builder': 3.7.1(@types/node@18.17.15)(eslint@8.49.0)(rollup@3.29.1)(sass@1.66.1)(typescript@5.2.2)(vue-tsc@1.8.10)(vue@3.3.4)
       '@types/node': 18.17.15
-      '@unhead/dom': 1.6.1
-      '@unhead/ssr': 1.6.1
-      '@unhead/vue': 1.6.1(vue@3.3.4)
+      '@unhead/dom': 1.6.2
+      '@unhead/ssr': 1.6.2
+      '@unhead/vue': 1.6.2(vue@3.3.4)
       '@vue/shared': 3.3.4
       acorn: 8.10.0
       c12: 1.4.2
@@ -8428,9 +8425,9 @@ packages:
       '@nuxt/ui-templates': 1.3.1
       '@nuxt/vite-builder': 3.7.1(@types/node@20.6.0)(eslint@8.49.0)(rollup@3.29.1)(sass@1.66.1)(typescript@5.2.2)(vue-tsc@1.8.10)(vue@3.3.4)
       '@types/node': 20.6.0
-      '@unhead/dom': 1.6.1
-      '@unhead/ssr': 1.6.1
-      '@unhead/vue': 1.6.1(vue@3.3.4)
+      '@unhead/dom': 1.6.2
+      '@unhead/ssr': 1.6.2
+      '@unhead/vue': 1.6.2(vue@3.3.4)
       '@vue/shared': 3.3.4
       acorn: 8.10.0
       c12: 1.4.2
@@ -10585,12 +10582,12 @@ packages:
       node-fetch-native: 1.4.0
       pathe: 1.1.1
 
-  /unhead@1.6.1:
-    resolution: {integrity: sha512-yetfSuMXx8Yt7iANEm8m0utQ6u878DyfXjvFtmr7WRF2xlJFB5F0TEVpg+zxTW9NVmJBbrL/GmCoOOqk+DUxMg==}
+  /unhead@1.6.2:
+    resolution: {integrity: sha512-vAkjsjs6SPq/LHzuxOgyNvR4LsGau3CRKke9A6ErQEFm8mNKf50WIyd//ZNEBx8Zg+Iyn7FHyYZdgzpdPwC+Mw==}
     dependencies:
-      '@unhead/dom': 1.6.1
-      '@unhead/schema': 1.6.1
-      '@unhead/shared': 1.6.1
+      '@unhead/dom': 1.6.2
+      '@unhead/schema': 1.6.2
+      '@unhead/shared': 1.6.2
       hookable: 5.5.3
 
   /unicode-emoji-modifier-base@1.0.0:
@@ -10685,18 +10682,6 @@ packages:
     resolution: {integrity: sha512-fucsC7HjXvkB5R3kTCO7kUjRdrS0BJt3M/FPxmHMBOm8JQi2BsHAHFsy27E0EolP8rp0NzXsJ+jNPyDWvOJZPA==}
     dependencies:
       '@types/unist': 3.0.0
-    dev: true
-
-  /unist-util-stringify-position@2.0.3:
-    resolution: {integrity: sha512-3faScn5I+hy9VleOq/qNbAd6pAx7iH5jYBMS9I1HgQVijz/4mv5Bvw5iw1sC/90CODiKo81G/ps8AJrISn687g==}
-    dependencies:
-      '@types/unist': 2.0.8
-    dev: true
-
-  /unist-util-stringify-position@3.0.3:
-    resolution: {integrity: sha512-k5GzIBZ/QatR8N5X2y+drfpWG8IDBzdnVj6OInRNWm1oXrzydiaAT2OQiA8DPRRZyAKb9b6I2a6PxYklZD0gKg==}
-    dependencies:
-      '@types/unist': 2.0.8
     dev: true
 
   /unist-util-stringify-position@4.0.0:
@@ -10980,7 +10965,7 @@ packages:
     resolution: {integrity: sha512-fa0Z6P8HUrQN4BZaX05SIVXic+7kE3b05PWAtPuYP9QLHsLKYR7/AlLW3NtOrpXRLeawpDLMsVkmk5DG0NXgWw==}
     dependencies:
       '@types/unist': 2.0.8
-      unist-util-stringify-position: 3.0.3
+      unist-util-stringify-position: 4.0.0
     dev: true
 
   /vfile-message@4.0.2:
@@ -10995,7 +10980,7 @@ packages:
     dependencies:
       '@types/unist': 2.0.8
       is-buffer: 2.0.5
-      unist-util-stringify-position: 3.0.3
+      unist-util-stringify-position: 4.0.0
       vfile-message: 3.1.4
     dev: true
 

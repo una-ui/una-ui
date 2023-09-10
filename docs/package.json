@@ -39,6 +39,7 @@
     "@nuxt-themes/docus": "^1.14.6",
     "@types/node": "^18.17.15",
     "nuxt": "^3.7.1",
-    "nuxt-content-snippet": "^0.0.2"
+    "nuxt-content-snippet": "^0.0.2",
+    "vue": "^3.3.4"
   }
 }

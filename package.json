@@ -49,7 +49,7 @@
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
-    "cleanup": "rimraf docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules}",
+    "cleanup": "rimraf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules}",
     "stub": "pnpm -r --filter=./packages/* run stub",
     "postinstall": "npx simple-git-hooks",
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\" && pnpm -r --filter=./packages/* run stub"
@@ -75,7 +75,7 @@
     "@vueuse/core": "^10.4.1",
     "bumpp": "^9.2.0",
     "conventional-changelog-cli": "^3.0.0",
-    "eslint": "^8.48.0",
+    "eslint": "^8.49.0",
     "esno": "^0.17.0",
     "fs-extra": "^11.1.1",
     "lint-staged": "^14.0.1",
@@ -93,5 +93,9 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "resolutions": {
+    "unist-util-stringify-position": "4.0.0",
+    "mdast-util-to-string": "4.0.0"
   }
 }
