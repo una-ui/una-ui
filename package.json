@@ -95,7 +95,7 @@
     "*": "eslint --fix"
   },
   "resolutions": {
-    "unist-util-stringify-position": "4.0.0",
-    "mdast-util-to-string": "4.0.0"
+    "unist-util-stringify-position": "3.0.0",
+    "mdast-util-to-string": "3.0.0"
   }
 }
