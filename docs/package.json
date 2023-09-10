@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "@nuxt-themes/docus": "^1.14.6",
-    "@types/node": "^18.17.5",
-    "nuxt": "^3.6.5",
+    "@types/node": "^18.17.15",
+    "nuxt": "^3.7.1",
     "nuxt-content-snippet": "^0.0.2"
   }
 }
