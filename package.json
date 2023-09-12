@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.1-beta.1",
   "private": true,
-  "packageManager": "pnpm@8.7.4",
+  "packageManager": "pnpm@8.7.5",
   "description": "The Atomic UI Framework",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -64,18 +64,19 @@
     "unocss": "^0.55.7"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.41.0",
+    "@antfu/eslint-config": "^0.39.8",
     "@antfu/ni": "^0.21.8",
-    "@iconify/json": "^2.2.113",
+    "@iconify/json": "^2.2.114",
     "@nuxt/devtools": "^0.8.3",
     "@types/chroma-js": "^2.4.1",
     "@types/fs-extra": "^11.0.1",
-    "@types/node": "^20.6.0",
+    "@types/markdown-it": "^13.0.1",
+    "@types/node": "^20.5.9",
     "@unocss/eslint-config": "^0.55.7",
     "@vueuse/core": "^10.4.1",
     "bumpp": "^9.2.0",
     "conventional-changelog-cli": "^3.0.0",
-    "eslint": "^8.48.0",
+    "eslint": "^8.49.0",
     "esno": "^0.17.0",
     "fs-extra": "^11.1.1",
     "lint-staged": "^14.0.1",
@@ -87,6 +88,13 @@
     "unbuild": "^1.2.1",
     "vitest": "^0.34.4",
     "vue-tsc": "^1.8.10"
+  },
+  "pnpm": {
+    "overrides": {
+      "vue": "3.3.4",
+      "@vue/runtime-core": "3.3.4",
+      "node-fetch-native": "1.4.0"
+    }
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

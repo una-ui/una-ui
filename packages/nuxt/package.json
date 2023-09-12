@@ -13,8 +13,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "require": "./dist/module.cjs",
+      "import": "./dist/module.mjs"
     }
   },
   "main": "./dist/module.cjs",
@@ -49,7 +49,7 @@
   "devDependencies": {
     "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "^3.7.1",
-    "nuxt": "^3.7.1"
+    "nuxt": "3.7.1"
   },
   "publishConfig": {
     "access": "public"

@@ -36,8 +36,7 @@
   },
   "devDependencies": {
     "@nuxt-themes/docus": "^1.14.6",
-    "nuxt": "^3.6.5",
-    "nuxt-content-snippet": "^0.0.2",
-    "vue": "^3.3.4"
+    "nuxt": "npm:nuxt3@3.7.2-28240949.574102c5",
+    "nuxt-content-snippet": "^0.0.2"
   }
 }
