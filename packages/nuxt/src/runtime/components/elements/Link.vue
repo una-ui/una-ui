@@ -1,35 +1,61 @@
-<script setup lang="ts">
+<script lang="ts">
+import type { PropType } from 'vue'
+import { defineComponent } from 'vue'
 import type { NLinkProps } from '../../types'
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
 import { NuxtLink } from '#components'
 
-const props = withDefaults(defineProps<NLinkProps>(), {
-  ...NuxtLink.props,
+export default defineComponent({
+  inheritAttrs: false,
+  props: {
+    ...NuxtLink.props,
+    exact: {
+      type: Boolean as PropType<NLinkProps['exact']>,
+      default: false,
+    },
+    exactQuery: {
+      type: Boolean as PropType<NLinkProps['exactQuery']>,
+      default: false,
+    },
+    exactHash: {
+      type: Boolean as PropType<NLinkProps['exactHash']>,
+      default: false,
+    },
+    inactiveClass: {
+      type: String as PropType<NLinkProps['inactiveClass']>,
+      default: undefined,
+    },
+  },
+  setup(props) {
+    function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
+      if (props.exactQuery && route.query.toLowerCase() !== $route.query.toLowerCase())
+        return props.inactiveClass
+
+      if (props.exactHash && route.hash !== $route.hash)
+        return props.inactiveClass
+
+      if (props.exact && isExactActive)
+        return props.activeClass
+
+      if (!props.exact && isActive)
+        return props.activeClass
+
+      return props.inactiveClass
+    }
+
+    return {
+      resolveLinkClass,
+    }
+  },
 })
-
-function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
-  if (props.exactQuery && route.query.toLowerCase() !== $route.query.toLowerCase())
-    return props.inactiveClass
-
-  if (props.exactHash && route.hash !== $route.hash)
-    return props.inactiveClass
-
-  if (props.exact && isExactActive)
-    return props.activeClass
-
-  if (!props.exact && isActive)
-    return props.activeClass
-
-  return props.inactiveClass
-}
 </script>
 
 <template>
   <NuxtLink
     v-slot="{ route, href, target, rel, navigate, isActive, isExactActive, isExternal }"
-    v-bind="props"
+    v-bind="$props"
     class="link"
     custom
   >
