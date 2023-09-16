@@ -11,8 +11,8 @@ export interface ThemeColors {
 
 // TODO: confingurable in the app.config
 const defaultSettings = {
-  primaryColors: primaryThemes.filter(([colorName, _]) => colorName === 'yellow')[0][1],
-  grayColors: grayThemes.filter(([colorName, _]) => colorName === 'stone')[0][1],
+  primaryColors: primaryThemes.filter(([colorName, _]) => colorName === 'blue')[0][1],
+  grayColors: grayThemes.filter(([colorName, _]) => colorName === 'slate')[0][1],
   fontSize: 16,
 }
 
