@@ -34,8 +34,8 @@ for (const file of files) {
 }
 
 // filter yellow and stone colors from primary and gray themes
-const filteredPrimaryThemes = primaryThemes.filter(([color]) => ['yellow'].includes(color))[0][1]
-const filteredGrayThemes = grayThemes.filter(([color]) => ['stone'].includes(color))[0][1]
+const filteredPrimaryThemes = primaryThemes.filter(([color]) => ['blue'].includes(color))[0][1]
+const filteredGrayThemes = grayThemes.filter(([color]) => ['slate'].includes(color))[0][1]
 
 // generate default theme
 await fs.writeFile('./packages/preset/src/_style/theme.css',
