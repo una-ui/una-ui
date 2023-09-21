@@ -29,9 +29,6 @@
     "css",
     "ui"
   ],
-  "engines": {
-    "node": ">=v16.14.0"
-  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "rimraf packages/*/dist && ignore-dependency-scripts \"esno scripts/copy-files.ts\" && pnpm -r --filter=./packages/* run build && pnpm -r run build-post",
