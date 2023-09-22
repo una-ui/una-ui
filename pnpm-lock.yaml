@@ -111,6 +111,9 @@ importers:
       '@nuxt-themes/docus':
         specifier: ^1.14.6
         version: 1.14.6(nuxt@3.7.3)(postcss@8.4.30)(rollup@3.29.2)(sass@1.68.0)(vue@3.3.4)
+      nuxt:
+        specifier: ^3.6.5
+        version: 3.7.3(@types/node@20.6.3)(eslint@8.49.0)(rollup@3.29.2)(sass@1.68.0)(typescript@5.2.2)(vue-tsc@1.8.13)
       nuxt-content-snippet:
         specifier: ^0.0.2
         version: 0.0.2(rollup@3.29.2)
