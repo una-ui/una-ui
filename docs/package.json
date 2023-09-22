@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@nuxt-themes/docus": "^1.14.6",
-    "nuxt": "^3.6.5",
+    "nuxt": "3.6.5",
     "nuxt-content-snippet": "^0.0.2"
   }
 }
