@@ -8,8 +8,6 @@ export default defineNuxtConfig({
     unaUI,
   ],
 
-  devtools: { enabled: true },
-
   runtimeConfig: {
     public: {
       version: pkg.version,
