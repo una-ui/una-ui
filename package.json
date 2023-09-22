@@ -38,7 +38,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "preset": "nr --filter @una-ui/preset",
     "nuxt": "nr --filter @una-ui/nuxt",
-    "docs": "nr --filter @una-ui/docs",
+    "docs": "nuxi dev docs",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "release": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release.ts",
