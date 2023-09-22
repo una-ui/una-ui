@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "rimraf packages/*/dist && ignore-dependency-scripts \"esno scripts/copy-files.ts\" && pnpm -r --filter=./packages/* run build && pnpm -r run build-post",
+    "build": "rimraf packages/*/dist && ignore-dependency-scripts \"esno scripts/copy-files.ts\" && pnpm -r --filter=./packages/* run build",
     "build:packages": "nr --r prepack",
     "deploy": "nr build && nr docs build",
     "dev": "nr stub && nr -r dev",
@@ -46,7 +46,7 @@
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
-    "cleanup": "rimraf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules}",
+    "reset": "rimraf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules} && pnpm i",
     "stub": "pnpm -r --filter=./packages/* run stub",
     "postinstall": "npx simple-git-hooks",
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\" && pnpm -r --filter=./packages/* run stub"
