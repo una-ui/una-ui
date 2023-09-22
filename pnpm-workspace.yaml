@@ -1,4 +1,4 @@
 packages:
-  - docs
+  # - docs(⚠️ theres a bug with deployment, for now will exclude docs)
   - 'packages/**'
   - 'playground/**'
