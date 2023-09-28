@@ -46,7 +46,7 @@
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
-    "reset": "rimraf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules} && pnpm i",
+    "reset": "pnpm store prune && rimraf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules} && ni",
     "stub": "pnpm -r --filter=./packages/* run stub",
     "postinstall": "npx simple-git-hooks",
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\" && pnpm -r --filter=./packages/* run stub"
@@ -76,16 +76,19 @@
     "fast-glob": "^3.3.1",
     "fs-extra": "^11.1.1",
     "lint-staged": "^14.0.1",
-    "mdast-util-to-string": "^4.0.0",
     "pathe": "^1.1.1",
     "rimraf": "^5.0.1",
     "sass": "^1.68.0",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2",
     "unbuild": "^1.2.1",
-    "unist-util-stringify-position": "^4.0.0",
     "vitest": "^0.34.4",
     "vue-tsc": "^1.8.13"
+  },
+  "pnpm": {
+    "overrides": {
+      "@nuxt/content": "2.7.2"
+    }
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
