@@ -37,17 +37,19 @@ const { copy, copied } = useClipboard({ source })
       </div>
 
       <div flex="~ wrap" class="justify-center gap-4 lg:justify-start">
+        <!-- TODO: change to 'to' attr, when nuxt-content bug fixed -->
         <NButton
-          to="/getting-started"
           btn="solid"
           class="rounded-full px-5.5 py-3 font-bold"
           label="Getting Started"
+          @click="$router.push('/getting-started')"
         />
         <NButton
           to="/elements"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
           label="View Components"
+          @click="$router.push('/elements')"
         />
         <NButton
           btn="solid-gray"
