@@ -45,7 +45,6 @@ const { copy, copied } = useClipboard({ source })
           @click="$router.push('/getting-started')"
         />
         <NButton
-          to="/elements"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
           label="View Components"
