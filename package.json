@@ -52,6 +52,7 @@
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\" && pnpm -r --filter=./packages/* run stub"
   },
   "dependencies": {
+    "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/nuxt": "workspace:^",
     "@una-ui/preset": "workspace:^",
     "@vercel/analytics": "^1.0.2",

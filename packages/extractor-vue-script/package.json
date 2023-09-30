@@ -1,0 +1,43 @@
+{
+  "name": "@una-ui/extractor-vue-script",
+  "version": "0.1.1-beta.1",
+  "description": "Unocss extractor for Vue script",
+  "author": "Phojie Rengel <phojrengel@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/phojie",
+  "homepage": "https://github.com/una-ui/una-ui/tree/main/packages/extractor-vue-script#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/una-ui/una-ui",
+    "directory": "packages/extractor-vue-script"
+  },
+  "bugs": {
+    "url": "https://github.com/una-ui/una-ui/issues"
+  },
+  "keywords": [
+    "unocss",
+    "unocss-extractor",
+    "una-ui-extractor"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  },
+  "devDependencies": {
+    "@unocss/core": "^0.55.7"
+  }
+}

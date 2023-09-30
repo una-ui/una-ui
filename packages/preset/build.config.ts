@@ -6,6 +6,7 @@ export default defineBuildConfig({
   entries: [
     'src/index',
     'src/shortcuts',
+    'src/prefixes',
     // 'src/theme',
     // 'src/utils',
     // 'src/rules',
