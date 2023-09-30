@@ -11,9 +11,7 @@ import presetUna from './packages/preset/src/index'
 export default {
   preflight: false,
   presets: [
-    presetUno({
-      // attributifyPseudo: true,
-    }),
+    presetUno(),
     presetAttributify(),
     presetIcons({
       scale: 1.2,
