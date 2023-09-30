@@ -31,4 +31,15 @@ export default defineNuxtConfig({
   css: [
     '~/styles/index.css',
   ],
+
+  hooks: {
+    // Related to https://github.com/nuxt/nuxt/pull/22558
+    // To avoid lagging during page navigation on client-side
+    'components:extend': function (components) {
+      for (const comp of components) {
+        if (comp.global)
+          comp.global = 'sync'
+      }
+    },
+  },
 })
