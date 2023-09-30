@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { omitProps } from '../../utils'
-
 import type { NNavLinkProps } from '../../types'
+import { omitProps } from '../../utils'
 
 defineOptions({
   inheritAttrs: false,
@@ -19,7 +18,7 @@ const props = defineProps<NNavLinkProps>()
       btnDefaultVariant: '~',
       ...props.una,
     }"
-    v-bind="omitProps(props, ['badge', 'una'])"
+    v-bind="{ ...omitProps(props, ['badge', 'una']), ...$attrs }"
   >
     <template #leading>
       <NIcon
