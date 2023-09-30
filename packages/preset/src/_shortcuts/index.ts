@@ -4,7 +4,7 @@ import { navLinkGroup } from './nav-link-group'
 import { navLink } from './nav-link'
 import { icon } from './icon'
 import { accordion } from './accordion'
-import { button } from './button'
+import { btn } from './btn'
 import { formGroup } from './form-group'
 import { input } from './input'
 import { general } from './general'
@@ -19,7 +19,7 @@ import { kbd } from './kbd'
 export const shortcuts = [
   ...general,
   ...accordion,
-  ...button,
+  ...btn,
   ...formGroup,
   ...input,
   ...icon,

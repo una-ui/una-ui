@@ -7,6 +7,8 @@ import {
 } from 'unocss'
 
 import presetUna from './packages/preset/src/index'
+import prefixes from './packages/preset/src/prefixes'
+import extratorUna from './packages/extractor-vue-script/src/index'
 
 export default {
   preflight: false,
@@ -25,6 +27,11 @@ export default {
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
+  ],
+  extractors: [
+    extratorUna({
+      prefixes,
+    }),
   ],
   configDeps: [
     '../packages/preset/src/_shortcuts/link.ts',

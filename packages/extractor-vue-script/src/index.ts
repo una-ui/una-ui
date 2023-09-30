@@ -1,7 +1,6 @@
-import type { Extractor } from '@unocss/core'
 import { defaultSplitRE } from '@unocss/core'
-
-const prefixes = ['badge', 'size', 'btn']
+import type { Extractor } from '@unocss/core'
+import type { ExtractorVueScriptOptions } from './types'
 
 function generateSelectors(prefix: string, values: string[]): string[] {
   return values
@@ -9,7 +8,7 @@ function generateSelectors(prefix: string, values: string[]): string[] {
     .map(v => `[${prefix}~="${v}"]`)
 }
 
-export function splitCodeWithArbitraryVariants(code: string): string[] {
+export function splitCodeWithArbitraryVariants(code: string, prefixes: string[]): string[] {
   const result: string[] = []
 
   for (const prefix of prefixes) {
@@ -30,12 +29,14 @@ export function splitCodeWithArbitraryVariants(code: string): string[] {
   return result
 }
 
-export const myExtractors: Extractor = {
-  name: 'my-extractors',
-  order: 0,
-  extract({ code }) {
-    return splitCodeWithArbitraryVariants(code)
-  },
+export function extractor(options?: ExtractorVueScriptOptions): Extractor {
+  return {
+    name: '@una-ui/extractor-vue-script',
+    order: 0,
+    async extract({ code }) {
+      return splitCodeWithArbitraryVariants(code, options?.prefixes ?? [])
+    },
+  }
 }
 
-export default myExtractors
+export default extractor

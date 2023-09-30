@@ -1,6 +1,6 @@
-type ButtonPrefix = 'btn'
+type BtnPrefix = 'btn'
 
-export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, string> = {
+export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   // config
   'btn-default-variant': 'btn-solid',
   'btn-loading-icon': 'i-loading',
@@ -33,7 +33,7 @@ export const staticButton: Record<`${ButtonPrefix}-${string}` | ButtonPrefix, st
   'btn-text-gray': 'text-$c-gray-600 btn-focus hover:text-$c-gray-900',
 }
 
-export const dynamicButton: [RegExp, (params: RegExpExecArray) => string][] = [
+export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
   // base
   [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-600 dark:focus-visible:outline-${c}-500 focus-visible:outline-2 focus-visible:outline-offset-2`],
 
@@ -46,7 +46,7 @@ export const dynamicButton: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^btn-link(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-500 dark:text-${c}-400 hover:underline underline-offset-4`],
 ]
 
-export const button = [
-  ...dynamicButton,
-  staticButton,
+export const btn = [
+  ...dynamicBtn,
+  staticBtn,
 ]
