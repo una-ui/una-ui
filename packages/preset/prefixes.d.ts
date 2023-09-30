@@ -1,1 +1,1 @@
-export * from './dist/prefixes'
+export { default } from './dist/prefixes';

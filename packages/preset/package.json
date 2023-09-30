@@ -30,6 +30,11 @@
       "require": "./dist/shortcuts.cjs",
       "import": "./dist/shortcuts.mjs"
     },
+    "./prefixes": {
+      "types": "./dist/prefixes.d.ts",
+      "require": "./dist/prefixes.cjs",
+      "import": "./dist/prefixes.mjs"
+    },
     "./*": "./*"
   },
   "main": "dist/index.cjs",

@@ -47,15 +47,11 @@ await fs.writeFile('./packages/preset/src/_style/theme.css',
 // const _filename = fileURLToPath(import.meta.url)
 // copyFileSync(resolve(_filename, '..', '../config/color-themes.ts'), resolve(_filename, '..', '../packages/preset/src/_theme/color-themes.ts'))
 
-// get all prefixes from shortcuts filenames without extension
+// generate all prefixes from shortcuts filenames without extension
 const prefixFiles = await fg('packages/preset/src/_shortcuts/*.ts', {
-  ignore: [
-    '**/node_modules/**',
-    'index.ts',
-  ],
   absolute: true,
 })
 
-const prefixes = prefixFiles.map(i => basename(i, extname(i)))
+const prefixes = prefixFiles.map(i => basename(i, extname(i))).filter(i => i !== 'index')
 const formattedPrefixes = `export default [${prefixes.map(p => `'${p}'`).join(', ')}]\n`
 await fs.writeFile('./packages/preset/src/prefixes.ts', formattedPrefixes, { encoding: 'utf-8' })

@@ -144,6 +144,9 @@ importers:
       '@nuxtjs/color-mode':
         specifier: ^3.3.0
         version: 3.3.0(rollup@3.29.4)
+      '@una-ui/extractor-vue-script':
+        specifier: workspace:0.1.1-beta.1
+        version: link:../extractor-vue-script
       '@una-ui/preset':
         specifier: workspace:^
         version: link:../preset
