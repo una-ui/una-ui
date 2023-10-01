@@ -34,6 +34,7 @@ export default {
     }),
   ],
   configDeps: [
+    '../packages/preset/src/_shortcuts/radio.ts',
     '../packages/preset/src/_shortcuts/link.ts',
     '../packages/preset/src/_shortcuts/nav-link-group.ts',
     '../packages/preset/src/_shortcuts/nav-link.ts',
