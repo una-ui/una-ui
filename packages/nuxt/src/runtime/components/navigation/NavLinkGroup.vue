@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import type { NVerticalNav } from '../../types'
+import { omitProps } from '../../utils'
 import NNavLink from './NavLink.vue'
 
 const props = defineProps<NVerticalNav>()
@@ -19,7 +20,9 @@ const props = defineProps<NVerticalNav>()
 
       <Disclosure
         v-else
-        v-slot="{ open }" :default-open="link.defaultOpen" as="div"
+        v-slot="{ open }"
+        :default-open="link.defaultOpen"
+        as="div"
       >
         <DisclosureButton
           as="div"
@@ -31,7 +34,7 @@ const props = defineProps<NVerticalNav>()
               btn: 'w-full',
             }"
             trailing="i-heroicons-chevron-right-20-solid"
-            v-bind="link"
+            v-bind="omitProps(link, ['children'])"
           />
         </DisclosureButton>
 
