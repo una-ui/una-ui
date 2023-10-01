@@ -9,6 +9,7 @@ const props = withDefaults(defineProps<NAvatarProps>(), {
 
 const { isLoading, error, isReady } = useImage({ src: props?.src ?? '' }, { delay: props.delay })
 
+// TODO: sync with NAvatarProps
 const avatarVariants = ['solid', 'soft', 'outline'] as const
 const hasVariant = computed(() => avatarVariants.some(avatarVariants => props.avatar?.includes(avatarVariants)))
 const isBaseVariant = computed(() => props.avatar?.includes('~'))
