@@ -23,10 +23,6 @@ code {
   min-width: 100% !important;
 }
 
-.code-group .prose-code {
-  border-radius: 7px !important;
-}
-
 .tabs-header .tabs button.active {
   /* color: rgb(var(--una-primary-active)) !important; */
 }
