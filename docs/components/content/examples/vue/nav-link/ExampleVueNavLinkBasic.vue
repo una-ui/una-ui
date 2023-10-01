@@ -4,6 +4,9 @@
 
     <NNavLink label="Profile" to="/navigation/nav-link-group" />
 
-    <NNavLink label="Settings" to="/navigation/pagination" />
+    <NNavLink
+      label="Settings"
+      to="/navigation/pagination"
+    />
   </div>
 </template>
