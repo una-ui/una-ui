@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
+import { isEqual } from 'ohash'
 import type { NLinkProps } from '../../types'
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
@@ -11,6 +12,7 @@ export default defineComponent({
   inheritAttrs: false,
   props: {
     ...NuxtLink.props,
+    // config
     exact: {
       type: Boolean as PropType<NLinkProps['exact']>,
       default: false,
@@ -23,6 +25,8 @@ export default defineComponent({
       type: Boolean as PropType<NLinkProps['exactHash']>,
       default: false,
     },
+
+    // styling
     inactiveClass: {
       type: String as PropType<NLinkProps['inactiveClass']>,
       default: undefined,
@@ -30,14 +34,14 @@ export default defineComponent({
   },
   setup(props) {
     function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
-      if (props.exactQuery && route.query.toLowerCase() !== $route.query.toLowerCase())
+      if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.inactiveClass
 
-      if (props.exactHash && route.hash !== $route.hash)
+      if (props.exactHash && !isEqual(route.hash, $route.hash))
         return props.inactiveClass
 
       if (props.exact && isExactActive)
-        return props.activeClass
+        return props.exactActiveClass
 
       if (!props.exact && isActive)
         return props.activeClass
