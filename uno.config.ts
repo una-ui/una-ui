@@ -12,6 +12,7 @@ import extratorUna from './packages/extractor-vue-script/src/index'
 
 export default {
   preflight: false,
+
   presets: [
     presetUno(),
     presetAttributify(),
