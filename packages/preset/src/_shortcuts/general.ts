@@ -36,6 +36,9 @@ export const staticGeneral = {
   'i-success': 'i-heroicons-check-circle-20-solid',
   'i-info': 'i-heroicons-information-circle-20-solid',
   'i-close': 'i-heroicons-x-mark-20-solid',
+
+  // transition
+  'transition-base': 'transition-all duration-300 ease-in-out',
 }
 
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [

@@ -1,12 +1,62 @@
+<script setup lang="ts">
+import { useVModel } from '@vueuse/core'
+
+const props = withDefaults(
+  defineProps<{
+    modelValue?: string
+    disabled?: boolean
+    name?: string
+    value?: string
+    radio?: string
+    size?: string
+    una?: {
+      radioDefaultColor?: string
+      radioLabel?: string
+      radioPeerFocus?: string
+      radioInner?: string
+    }
+  }>(),
+  {
+    modelValue: '',
+    disabled: false,
+    una: () => ({
+      radioDefaultColor: 'radio-default-color',
+    }),
+  },
+)
+const emit = defineEmits<{ (...args: any): void }>()
+const model = useVModel(props, 'modelValue', emit, { passive: true })
+</script>
+
 <template>
-  <div>
+  <div
+    radio="wrapper"
+    :checked="model === value || null"
+    :disabled="disabled || null"
+  >
     <input
-      id="radio"
-      aria-describedby="description"
-      name="radio"
+      v-model="model"
       type="radio"
-      checked
-      class="h-4 w-4 border-gray-300 text-primary-600 focus:ring-primary-600"
+      class="peer absolute w-full opacity-0"
+      :disabled="disabled"
+      :name="name"
+      :value="value"
+      @keypress.enter="model = value!"
     >
+    <div
+      :radio="radio"
+      :class="una?.radioDefaultColor"
+      class="radio radio-(peer-focus)"
+    >
+      <div
+        radio="inner"
+        :size="size"
+      />
+    </div>
+    <label radio="label">
+      <slot>
+        Label
+      </slot>
+    </label>
   </div>
 </template>
