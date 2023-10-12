@@ -10,3 +10,7 @@ logs
 node_modules
 temp
 .eslintcache
+
+# OS generated files #
+node-jiti
+tsx
