@@ -45,6 +45,7 @@ const statusClassVariants = computed(() => {
           >
             <slot name="label">
               <FormGroupLabel
+                :id="id"
                 :for="props.for"
                 form-group="label-wrapper"
                 :class="una?.formGroupLabelWrapper"
