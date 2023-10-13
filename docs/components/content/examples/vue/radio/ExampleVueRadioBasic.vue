@@ -9,11 +9,19 @@ const radio = ref('a')
     <NRadio
       v-model="radio"
       value="a"
+      label="Radio A"
+    />
+
+    <NRadio
+      v-model="radio"
+      value="b"
+      label="Radio B"
     />
 
     <NRadio
       v-model="radio"
       value="c"
+      label="Radio C"
     />
   </div>
 </template>
