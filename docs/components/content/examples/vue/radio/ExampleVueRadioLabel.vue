@@ -1,7 +1,5 @@
 <template>
-  <NFormGroup
-    label="Label"
-  >
+  <NFormGroup label="Label">
     <NRadio />
   </NFormGroup>
 </template>
