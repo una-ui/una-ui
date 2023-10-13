@@ -3,19 +3,18 @@
   "prettier.enable": false,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": false,
-    "source.fixAll": true,
-    "source.fixAll.eslint": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "never"
   },
   "files.exclude": {
     "**/.git": true,
-    "**/.svn": false,
-    "**/.hg": false,
-    "**/CVS": false,
-    "**/.DS_Store": false,
-    "**/Thumbs.db": false,
-    "**/node_modules": false,
-    "env*": false
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "env*": true
   },
   "eslint.validate": [
     "javascript",
@@ -28,5 +27,6 @@
     "json",
     "jsonc",
     "yaml"
-  ]
+  ],
+  "explorerExclude.backup": {}
 }
