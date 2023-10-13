@@ -6,7 +6,8 @@ import { randomId } from '../../utils'
 
 const props = defineProps<NFormGroupProps>()
 
-const id = computed(() => props.for ?? props.id ?? randomId('form-group'))
+const id = computed(() => props.id ?? randomId('form-group'))
+const unLabelled = computed(() => props.for === false)
 
 const statusClassVariants = computed(() => {
   const text = {
@@ -41,9 +42,10 @@ const statusClassVariants = computed(() => {
             :class="una?.formGroupTopWrapperInner"
           >
             <slot name="label">
-              <label
+              <component
+                :is="unLabelled ? 'div' : 'label'"
                 v-if="label"
-                :for="id"
+                :for="unLabelled ? id : undefined"
                 form-group="label-wrapper"
                 :class="una?.formGroupLabelWrapper"
               >
@@ -58,12 +60,13 @@ const statusClassVariants = computed(() => {
                   form-group="label-required"
                   :class="una?.formGroupLabelRequired"
                 />
-              </label>
+              </component>
             </slot>
 
             <slot name="hint">
               <span
-                v-if="hint" form-group="hint"
+                v-if="hint"
+                form-group="hint"
                 :class="una?.formGroupHint"
               >
                 {{ hint }}
