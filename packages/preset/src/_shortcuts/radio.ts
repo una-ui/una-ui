@@ -5,11 +5,8 @@ import type { RuleContext } from '@unocss/core'
 type RadioPrefix = 'radio'
 
 export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, string> = {
-  // config
-  'radio-default-color': 'radio-primary',
-
   // base
-  'radio': 'transition-base border border-$c-ring rounded-full p-0.25em n-checked:border-brand n-checked:bg-brand',
+  'radio': 'radio-primary transition-base border border-$c-ring rounded-full p-0.25em n-checked:border-brand n-checked:bg-brand',
   'radio-inner': 'transition-base m-auto h-0.4em w-0.4em rounded-full n-checked:bg-base',
   'radio-label': 'ml-3 block text-sm font-medium leading-6',
   'radio-peer-focus': 'peer-focus-(ring-2 ring-brand ring-offset-2 ring-offset-base)',

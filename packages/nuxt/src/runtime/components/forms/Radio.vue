@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
+import { computed } from 'vue'
+import { randomId } from '../../utils'
 
 const props = withDefaults(
   defineProps<{
     modelValue?: string
     disabled?: boolean
     name?: string
+    id?: string
     value?: string
     radio?: string
+    label?: string
     size?: string
     una?: {
       radioDefaultColor?: string
@@ -20,11 +24,18 @@ const props = withDefaults(
     modelValue: '',
     disabled: false,
     una: () => ({
-      radioDefaultColor: 'radio-default-color',
     }),
   },
 )
+
 const emit = defineEmits<{ (...args: any): void }>()
+
+const slots = defineSlots<{
+  default?: void
+}>()
+
+const id = computed(() => props.id ?? randomId('input'))
+
 const model = useVModel(props, 'modelValue', emit, { passive: true })
 </script>
 
@@ -35,6 +46,7 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
     :disabled="disabled || null"
   >
     <input
+      :id="id"
       v-model="model"
       type="radio"
       class="peer absolute w-full opacity-0"
@@ -53,10 +65,10 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
         :size="size"
       />
     </div>
-    <label radio="label">
+    <span v-if="slots.default || label" radio="label">
       <slot>
-        Label
+        {{ label }}
       </slot>
-    </label>
+    </span>
   </div>
 </template>

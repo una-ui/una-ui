@@ -2,12 +2,14 @@
 import { computed } from 'vue'
 import type { NFormGroupProps } from '../../types'
 import NFormGroupDefaultSlot from '../slots/FormGroupDefault'
+import FormGroupLabel from '../slots/FormGroupLabel'
 import { randomId } from '../../utils'
 
-const props = defineProps<NFormGroupProps>()
+const props = withDefaults(defineProps<NFormGroupProps>(), {
+  for: undefined,
+})
 
 const id = computed(() => props.id ?? randomId('form-group'))
-const unLabelled = computed(() => props.for === false)
 
 const statusClassVariants = computed(() => {
   const text = {
@@ -42,10 +44,8 @@ const statusClassVariants = computed(() => {
             :class="una?.formGroupTopWrapperInner"
           >
             <slot name="label">
-              <component
-                :is="unLabelled ? 'div' : 'label'"
-                v-if="label"
-                :for="unLabelled ? id : undefined"
+              <FormGroupLabel
+                :for="props.for"
                 form-group="label-wrapper"
                 :class="una?.formGroupLabelWrapper"
               >
@@ -60,7 +60,7 @@ const statusClassVariants = computed(() => {
                   form-group="label-required"
                   :class="una?.formGroupLabelRequired"
                 />
-              </component>
+              </FormGroupLabel>
             </slot>
 
             <slot name="hint">

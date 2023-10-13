@@ -12,12 +12,21 @@ export default defineComponent({
   setup(props, { slots }) {
     const unLabelled = computed(() => props.for === false || props.for !== undefined)
 
-    // const tag = computed(() => unLabelled.value ? 'div' : 'label')
+    const tag = computed(() => !unLabelled.value ? 'div' : 'label')
 
     return () => {
-      h('span', {
-        for: unLabelled.value ? undefined : props.for,
-      }, 'test')
+      const children = slots.default?.()
+
+      if (!children)
+        return
+
+      return h(
+        tag.value,
+        {
+          for: props.for === false ? undefined : props.for,
+        },
+        children,
+      )
     }
   },
 })
