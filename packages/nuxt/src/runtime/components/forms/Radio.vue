@@ -24,6 +24,7 @@ const props = withDefaults(
     modelValue: '',
     disabled: false,
     una: () => ({
+      //
     }),
   },
 )
@@ -34,7 +35,7 @@ const slots = defineSlots<{
   default?: void
 }>()
 
-const id = computed(() => props.id ?? randomId('input'))
+const id = computed(() => props.id ?? randomId('radio'))
 
 const model = useVModel(props, 'modelValue', emit, { passive: true })
 </script>
@@ -65,10 +66,10 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
         :size="size"
       />
     </div>
-    <span v-if="slots.default || label" radio="label">
-      <slot>
+    <slot>
+      <span v-if="slots.default || label" radio="label">
         {{ label }}
-      </slot>
-    </span>
+      </span>
+    </slot>
   </div>
 </template>

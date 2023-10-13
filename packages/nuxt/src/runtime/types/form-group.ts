@@ -22,7 +22,7 @@ export interface NFormGroupProps {
    * @example
    * for="email"
   */
-  for?: string | false
+  for?: string | boolean
   /**
    * Manually set the id attribute.
    *
