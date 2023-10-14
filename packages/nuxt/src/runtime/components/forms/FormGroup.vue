@@ -25,9 +25,7 @@ const statusClassVariants = computed(() => {
 </script>
 
 <template>
-  <div
-    form-group
-  >
+  <div form-group>
     <slot name="top">
       <div
         form-group="message-wrapper"
