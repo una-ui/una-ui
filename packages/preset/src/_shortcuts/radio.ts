@@ -14,7 +14,7 @@ export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, strin
   'radio-reverse': 'flex-row-reverse',
 
   // wrappers
-  'radio-wrapper': 'space-x-3 relative rounded-full inline-flex items-center hover:cursor-pointer',
+  'radio-wrapper': 'gap-x-3 relative rounded-full inline-flex items-center hover:cursor-pointer',
 }
 
 export const dynamicRadio = [
