@@ -3,7 +3,7 @@ const radio = ref('')
 
 const colors = [
   {
-    radio: 'primary',
+    radio: 'red sm:primary',
   },
   {
     radio: 'info',
