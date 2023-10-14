@@ -26,8 +26,7 @@ export interface NRadioProps {
    *
    * @default null
   */
-  modelValue?: string
-
+  modelValue?: string | number | boolean | Record<string, any>
   /**
    * Add name attribute to the radio.
    *
