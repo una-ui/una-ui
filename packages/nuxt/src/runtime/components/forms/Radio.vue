@@ -1,31 +1,14 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
 import { computed } from 'vue'
+import type { NRadioProps } from '../../types'
 import { randomId } from '../../utils'
 
 const props = withDefaults(
-  defineProps<{
-    modelValue?: string
-    disabled?: boolean
-    name?: string
-    id?: string
-    value?: string
-    radio?: string
-    label?: string
-    size?: string
-    una?: {
-      radioDefaultColor?: string
-      radioLabel?: string
-      radioPeerFocus?: string
-      radioInner?: string
-    }
-  }>(),
+  defineProps<NRadioProps>(),
   {
     modelValue: '',
     disabled: false,
-    una: () => ({
-      //
-    }),
   },
 )
 
@@ -43,6 +26,12 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
 <template>
   <div
     radio="wrapper"
+    :class="[
+      una?.radioWrapper,
+      {
+        'radio-reverse': reverse,
+      },
+    ]"
     :checked="model === value || null"
     :disabled="disabled || null"
   >
@@ -50,7 +39,8 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
       :id="id"
       v-model="model"
       type="radio"
-      class="peer absolute w-full opacity-0"
+      class="peer"
+      radio="input"
       :disabled="disabled"
       :name="name"
       :value="value"
@@ -58,18 +48,17 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
     >
     <div
       :radio="radio"
-      :class="una?.radioDefaultColor"
+      :size="size"
       class="radio radio-(peer-focus)"
     >
       <div
         radio="inner"
-        :size="size"
       />
     </div>
-    <slot>
-      <span v-if="slots.default || label" radio="label">
+    <span v-if="slots.default || label" radio="label">
+      <slot>
         {{ label }}
-      </span>
-    </slot>
+      </slot>
+    </span>
   </div>
 </template>
