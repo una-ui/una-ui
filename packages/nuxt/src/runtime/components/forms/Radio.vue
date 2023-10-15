@@ -51,7 +51,7 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
       class="peer"
       radio="input"
       :disabled="disabled"
-      :name="name ?? id"
+      :name="name"
       :value="value"
       @keypress.enter="model = value!"
     >
