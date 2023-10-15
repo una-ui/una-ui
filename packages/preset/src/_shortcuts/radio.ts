@@ -19,7 +19,7 @@ export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, strin
   // icon
   'radio-icon-base': 'text-transparent w-full h-full transition-base',
   'radio-icon': 'i-dot', // refer to general.ts
-  'radio-icon-checked': 'n-checked:text-inverted',
+  'radio-icon-checked': 'n-checked:text-inverted n-checked:w-full n-checked:h-full',
 }
 
 export const dynamicRadio = [
