@@ -53,5 +53,7 @@ const prefixFiles = await fg('packages/preset/src/_shortcuts/*.ts', {
 })
 
 const prefixes = prefixFiles.map(i => basename(i, extname(i))).filter(i => i !== 'index')
+const global = ['size']
+prefixes.push(...global)
 const formattedPrefixes = `export default [${prefixes.map(p => `'${p}'`).join(', ')}]\n`
 await fs.writeFile('./packages/preset/src/prefixes.ts', formattedPrefixes, { encoding: 'utf-8' })
