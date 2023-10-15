@@ -33,7 +33,7 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
 </script>
 
 <template>
-  <div
+  <label
     radio="wrapper"
     :class="[
       una?.radioWrapper,
@@ -59,19 +59,21 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
       :radio="radio"
       :size="size"
       class="radio radio-(peer-focus)"
+      :class="[
+        una?.radioPeerFocus,
+      ]"
       v-bind="$attrs"
-      @click="model = value!"
     >
       <div radio="icon-wrapper">
         <NIcon
-          radio="icon-base"
-          class="n-checked:radio-icon-checked"
+          radio="icon-base icon-checked"
           :name="una.radioIcon!"
         />
       </div>
     </div>
-    <label
+    <div
       v-if="slots.default || label"
+      :id="id"
       radio="label"
       :for="props.for ?? id"
       :class="una?.radioLabel"
@@ -79,6 +81,6 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
       <slot>
         {{ label }}
       </slot>
-    </label>
-  </div>
+    </div>
+  </label>
 </template>
