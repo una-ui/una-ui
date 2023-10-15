@@ -34,7 +34,9 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
 
 <template>
   <label
+    :id="id"
     radio="wrapper"
+    :for="props.for ?? id"
     :class="[
       una?.radioWrapper,
       {
@@ -73,9 +75,7 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
     </div>
     <div
       v-if="slots.default || label"
-      :id="id"
       radio="label"
-      :for="props.for ?? id"
       :class="una?.radioLabel"
     >
       <slot>
