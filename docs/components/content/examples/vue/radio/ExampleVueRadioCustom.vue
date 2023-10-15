@@ -23,7 +23,7 @@ const options = [
     class: 'n-checked:bg-red-500/30 n-checked:border-red-500',
     radio: 'red',
     una: {
-      radioIcon: 'n-checked:i-logos-angular-icon n-checked:scale-200 transition-transform duration-1000',
+      radioIcon: 'i-logos-angular-icon n-checked:scale-200 transition-transform duration-1000',
     },
   },
 ]
