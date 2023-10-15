@@ -22,7 +22,7 @@ export interface NRadioProps {
   */
   radio?: string
   /**
-   * v-model binding value.
+   * v-model binding value if the radio is checked.
    *
    * @default null
   */
