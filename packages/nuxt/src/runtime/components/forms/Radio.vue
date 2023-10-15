@@ -34,7 +34,6 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
 
 <template>
   <label
-    :id="id"
     radio="wrapper"
     :for="props.for ?? id"
     :class="[
