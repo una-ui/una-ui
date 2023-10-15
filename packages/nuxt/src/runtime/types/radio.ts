@@ -40,9 +40,19 @@ export interface NRadioProps {
    *
    * @default randomId
    * @example
-   * id="email"
+   * id="options"
   */
   id?: string
+  /**
+   * Manually set the for attribute.
+   *
+   * By default, the for attribute is synced with the id attribute for accessibility reasons.
+   *
+   * @default randomId
+   * @example
+   * for="options"
+  */
+  for?: string
   /**
    * Value of the radio.
    *

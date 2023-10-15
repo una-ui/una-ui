@@ -73,6 +73,7 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
     <label
       v-if="slots.default || label"
       radio="label"
+      :for="props.for ?? id"
       :class="una?.radioLabel"
     >
       <slot>
