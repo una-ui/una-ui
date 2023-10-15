@@ -70,6 +70,26 @@ export default function presetUna(options: unaUIOptions = {
         'pointer-events': 'none',
       }],
     ],
+    variants: [
+      (input: string) => {
+        const prefix = 'n-disabled:'
+        if (input.startsWith(prefix)) {
+          return {
+            matcher: input.slice(prefix.length),
+            selector: input => `[disabled] ${input}, ${input}[disabled]`,
+          }
+        }
+      },
+      (input: string) => {
+        const prefix = 'n-checked:'
+        if (input.startsWith(prefix)) {
+          return {
+            matcher: input.slice(prefix.length),
+            selector: input => `[checked] ${input}, ${input}[checked]`,
+          }
+        }
+      },
+    ],
     preflights: [
       {
         getCSS: () => `

@@ -16,12 +16,13 @@ export interface NFormGroupProps {
    * Manually set the for attribute.
    *
    * By default, the for attribute is synced with the id attribute for accessibility reasons.
+   * You can disable this behavior by setting `for` to `false`.
    *
    * @default randomId
    * @example
    * for="email"
   */
-  for?: string
+  for?: string | boolean
   /**
    * Manually set the id attribute.
    *
