@@ -51,7 +51,6 @@ await fs.writeFile('./packages/preset/src/_style/theme.css',
 const prefixFiles = await fg('packages/preset/src/_shortcuts/*.ts', {
   absolute: true,
 })
-
 const prefixes = prefixFiles.map(i => basename(i, extname(i))).filter(i => i !== 'index')
 const global = ['size']
 prefixes.push(...global)
