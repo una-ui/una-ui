@@ -55,10 +55,10 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
         radio="inner"
       />
     </div>
-    <span v-if="slots.default || label" radio="label">
+    <div v-if="slots.default || label" radio="label">
       <slot>
         {{ label }}
       </slot>
-    </span>
+    </div>
   </div>
 </template>
