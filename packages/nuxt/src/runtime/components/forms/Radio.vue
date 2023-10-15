@@ -66,10 +66,15 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
       v-bind="$attrs"
     >
       <div radio="icon-wrapper">
-        <NIcon
-          radio="icon-base icon-checked"
-          :name="una.radioIcon!"
-        />
+        <slot name="icon">
+          <NIcon
+            :class="[
+              una.radioIconBase,
+            ]"
+            radio="icon-base icon-checked"
+            :name="una.radioIcon!"
+          />
+        </slot>
       </div>
     </div>
     <div
