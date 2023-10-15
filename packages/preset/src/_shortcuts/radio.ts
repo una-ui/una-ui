@@ -10,6 +10,7 @@ export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, strin
   'radio-label': 'block text-sm font-medium leading-6',
   'radio-input': 'absolute w-full opacity-0',
   'radio-reverse': 'flex-row-reverse',
+  'radio-peer-focus': 'peer-focus-(ring-2 ring-brand ring-offset-2 ring-offset-base)',
 
   // wrappers
   'radio-wrapper': 'gap-x-3 relative inline-flex items-center hover:cursor-pointer',
@@ -19,8 +20,6 @@ export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, strin
   'radio-icon-base': 'text-transparent w-full h-full transition-base',
   'radio-icon': 'i-dot', // refer to general.ts
   'radio-icon-checked': 'n-checked:text-inverted',
-
-  'radio-peer-focus': 'peer-focus-(ring-2 ring-brand ring-offset-2 ring-offset-base)',
 }
 
 export const dynamicRadio = [
