@@ -32,7 +32,6 @@ const options = [
       :for="false"
       label="Service Provider"
       description="Please select your service provider"
-      required
     >
       <NRadio v-for="option in options" :key="option.value" v-model="gender" v-bind="option" />
     </NFormGroup>
@@ -45,6 +44,8 @@ const options = [
       label="Service Provider"
       description="Please select your service provider"
       required
+      status="error"
+      message="Service provider is required"
     >
       <div class="flex flex-wrap gap-8">
         <NRadio v-for="option in options" :key="option.value" v-model="gender" v-bind="option" />
