@@ -1,3 +1,7 @@
+# [0.2.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.2.0-beta.0...v0.2.0-beta.1) (2023-10-19)
+
+
+
 # [0.2.0-beta.0](https://github.com/una-ui/una-ui/compare/v0.1.1-beta.1...v0.2.0-beta.0) (2023-10-19)
 
 
