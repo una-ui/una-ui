@@ -38,7 +38,8 @@
     "stub": "unbuild --stub"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
     "@unocss/core": "^0.55.7"
