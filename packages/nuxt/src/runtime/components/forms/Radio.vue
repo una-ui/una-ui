@@ -40,6 +40,7 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
       una?.radioWrapper,
       {
         'radio-reverse': reverse,
+        'radio-disabled': disabled,
       },
     ]"
     :checked="model === value || null"

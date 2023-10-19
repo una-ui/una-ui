@@ -1,3 +1,40 @@
+# [0.2.0-beta.0](https://github.com/una-ui/una-ui/compare/v0.1.1-beta.1...v0.2.0-beta.0) (2023-10-19)
+
+
+### Bug Fixes
+
+* avoid lagging during page navigation ([5d175c5](https://github.com/una-ui/una-ui/commit/5d175c52274116c4e47a017cc4e47786a583b2ac))
+* lint [skip-release] ([02d7501](https://github.com/una-ui/una-ui/commit/02d7501e36c66e443e62b1954c4426d9de7c9197))
+* **n-button:** reconfigure the component with n-link ([b9f82c4](https://github.com/una-ui/una-ui/commit/b9f82c4fad0633b7e30ba981ca44ba99f0b0ec74))
+* **NButton:** config default-variant-prop ([2c432ed](https://github.com/una-ui/una-ui/commit/2c432edbcab28ec8749af71b3a01ef44e7bce241))
+* **NButton:** set btnTrailing prop properly ([80ac6e0](https://github.com/una-ui/una-ui/commit/80ac6e0109a891ea8a5687298199fdfdc300b43b))
+* **NLink:** add missing types ([e24e06d](https://github.com/una-ui/una-ui/commit/e24e06dcf923bf4af6766758ad5928e353bb1229))
+* **NNavLinkGroup:** exclude children to bind to component ([d3ecf7c](https://github.com/una-ui/una-ui/commit/d3ecf7cda8ca39d3f0d1cd5c5616e6e66306d655))
+* **NNavLink:** pass attributes to wrapper ([9c1ecb9](https://github.com/una-ui/una-ui/commit/9c1ecb910b19352e0dadc72c7284c4288276a662))
+* prevent avatar skeleton example from pre-rendering ([8b9334e](https://github.com/una-ui/una-ui/commit/8b9334eef54fc816f4ea83df28f400c288641bd5))
+* update nav link ftm ([f853bbe](https://github.com/una-ui/una-ui/commit/f853bbee81d5bc0e6601c1032e4307752a903920))
+* use router push instead ([18481b1](https://github.com/una-ui/una-ui/commit/18481b13dd34fcd324a17308998a2def62a11e88))
+
+
+### Features
+
+* **button:** add text-black and text-gray static variant ([319ae3e](https://github.com/una-ui/una-ui/commit/319ae3e3a439598c8b3c2d66b1c5f94c9793b918))
+* **NButton:** improve accessibility ([200fe5b](https://github.com/una-ui/una-ui/commit/200fe5b9192a58978126c80b0a53b8e0c9d13aef))
+* **NKbd:** new component and preset, close [#43](https://github.com/una-ui/una-ui/issues/43) ([6962a36](https://github.com/una-ui/una-ui/commit/6962a362cbb356c5a21b49241e957ea6662e561e))
+* **NLink:** new component and preset ([ebfd0ca](https://github.com/una-ui/una-ui/commit/ebfd0ca4ba7ef042bac33c4a2f94224e96fe67aa))
+* **NNavLink, wip:** update initial component and preset ([bc564d0](https://github.com/una-ui/una-ui/commit/bc564d0209915df541187c10bdc187a639da8737))
+* **NNavLinkGroup, wip:** update initial component and preset ([96ae571](https://github.com/una-ui/una-ui/commit/96ae5718e0d5aad909c45d4c0d5516e7f61d8758))
+* **NNavLink:** partial component and preset ([#92](https://github.com/una-ui/una-ui/issues/92)) ([eaf3dac](https://github.com/una-ui/una-ui/commit/eaf3dac6608dd2a6097bb8e3de5c1a26cb5d0432))
+* **NRadio:** new component and preset ([#100](https://github.com/una-ui/una-ui/issues/100)) ([e83c812](https://github.com/una-ui/una-ui/commit/e83c812c30d2f5a5f9039208746526976b43699b))
+* **package:** add vue-script extractor, close [#91](https://github.com/una-ui/una-ui/issues/91) ([#95](https://github.com/una-ui/una-ui/issues/95)) ([8b07fe4](https://github.com/una-ui/una-ui/commit/8b07fe40bd9319c51103a2c50f69594b315f6764))
+
+
+### Performance Improvements
+
+* set css reset file as default in the preset ([6049cee](https://github.com/una-ui/una-ui/commit/6049cee3e0b13d10d11b7e92eb60ee786eb4d77c))
+
+
+
 ## [0.1.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.1.1-beta.0...v0.1.1-beta.1) (2023-08-21)
 
 
