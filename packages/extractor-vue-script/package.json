@@ -37,6 +37,9 @@
     "build": "unbuild",
     "stub": "unbuild --stub"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@unocss/core": "^0.55.7"
   }
