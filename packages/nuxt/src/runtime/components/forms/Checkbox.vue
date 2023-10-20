@@ -1,18 +1,12 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
+import { computed } from 'vue'
 import NIcon from '../elements/Icon.vue'
+import { randomId } from '../../utils'
+import type { NCheckboxProps } from '../../types/checkbox'
 
 const props = withDefaults(
-  defineProps<{
-    modelValue?: boolean | null
-    disabled?: boolean
-    label?: string
-    checkbox?: string
-    size?: string
-    una?: {
-      checkboxIcon?: string
-    }
-  }>(),
+  defineProps<NCheckboxProps>(),
   {
     modelValue: false,
     disabled: false,
@@ -28,6 +22,8 @@ const slots = defineSlots<{
   icon?: any
 }>()
 
+const id = computed(() => props.id ?? randomId('radio'))
+
 const checked = useVModel(props, 'modelValue', emit, { passive: true })
 </script>
 
@@ -39,11 +35,13 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
     :disabled="disabled || null"
   >
     <input
+      :id="id"
       v-model="checked"
       type="checkbox"
-      checkbox="input"
       class="peer"
+      checkbox="input"
       :disabled="disabled"
+      :name="name"
       @keypress.enter="checked = !checked"
     >
     <!-- class="n-checkbox-box n-checked:n-checkbox-box-checked peer-active:n-active-base peer-focus-visible:n-focus-base n-transition" -->

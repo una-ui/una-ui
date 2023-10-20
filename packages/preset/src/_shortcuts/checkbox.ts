@@ -14,14 +14,13 @@ export const staticCheckbox: Record<`${CheckboxPrefix}-${string}` | CheckboxPref
   'checkbox-peer-focus': 'peer-focus-(ring-2 ring-brand ring-offset-2 ring-offset-base)',
 
   // wrappers
-  // 'checkbox-wrapper': 'flex flex-none items-center overflow-visible',
   'checkbox-wrapper': 'gap-x-3 relative inline-flex items-center hover:cursor-pointer',
   'checkbox-icon-wrapper': 'grid place-items-center w-1em h-1em',
 
   // icon
-  'checkbox-icon-base': 'text-transparent w-full h-full transition-base',
+  'checkbox-icon-base': 'opacity-0 w-full h-full transition-base',
   'checkbox-icon': 'i-check', // refer to general.ts
-  'checkbox-icon-checked': 'n-checked:text-inverted n-checked:w-full n-checked:h-full',
+  'checkbox-icon-checked': 'n-checked:opacity-100 text-inverted n-checked:w-full n-checked:h-full',
 }
 
 export const dynamicCheckbox = [
