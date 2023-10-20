@@ -37,6 +37,7 @@ export const staticGeneral = {
   'i-info': 'i-heroicons-information-circle-20-solid',
   'i-close': 'i-heroicons-x-mark-20-solid',
   'i-dot': 'i-tabler-circle-filled',
+  'i-check': 'i-heroicons-check-20-solid',
 
   // transition
   'transition-base': 'transition-all duration-300 ease-in-out',

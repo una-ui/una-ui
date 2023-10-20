@@ -16,6 +16,7 @@ import { avatarGroup } from './avatar-group'
 import { indicator } from './indicator'
 import { kbd } from './kbd'
 import { radio } from './radio'
+import { checkbox } from './checkbox'
 
 export const shortcuts = [
   ...general,
@@ -35,4 +36,5 @@ export const shortcuts = [
   ...navLinkGroup,
   ...link,
   ...radio,
+  ...checkbox,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
