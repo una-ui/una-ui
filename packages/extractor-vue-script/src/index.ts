@@ -29,7 +29,7 @@ export function splitCodeWithArbitraryVariants(code: string, prefixes: string[])
   return result
 }
 
-export function extractor(options?: ExtractorVueScriptOptions): Extractor {
+export default function extractor(options?: ExtractorVueScriptOptions): Extractor {
   return {
     name: '@una-ui/extractor-vue-script',
     order: 0,
@@ -38,5 +38,3 @@ export function extractor(options?: ExtractorVueScriptOptions): Extractor {
     },
   }
 }
-
-export default extractor
