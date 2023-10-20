@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const checkbox = ref(true)
-
 const colors = [
   {
     checkbox: 'red sm:primary',
@@ -40,7 +38,7 @@ const colors = [
     <NCheckbox
       v-for="color in colors"
       :key="color.checkbox"
-      v-model="checkbox"
+      :model-value="true"
       :label="color.checkbox"
       :checkbox="color.checkbox"
     />
