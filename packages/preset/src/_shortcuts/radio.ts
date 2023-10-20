@@ -18,9 +18,9 @@ export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, strin
   'radio-icon-wrapper': 'grid place-items-center w-0.5em h-0.5em',
 
   // icon
-  'radio-icon-base': 'text-transparent w-full h-full transition-base',
+  'radio-icon-base': 'opacity-0 text-inverted w-full h-full transition-base',
   'radio-icon': 'i-dot', // refer to general.ts
-  'radio-icon-checked': 'n-checked:text-inverted n-checked:w-full n-checked:h-full',
+  'radio-icon-checked': 'n-checked:opacity-100 n-checked:w-full n-checked:h-full',
 }
 
 export const dynamicRadio = [
