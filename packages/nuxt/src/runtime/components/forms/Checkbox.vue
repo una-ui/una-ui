@@ -5,6 +5,10 @@ import NIcon from '../elements/Icon.vue'
 import { randomId } from '../../utils'
 import type { NCheckboxProps } from '../../types/checkbox'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(
   defineProps<NCheckboxProps>(),
   {
@@ -22,7 +26,7 @@ const slots = defineSlots<{
   icon?: any
 }>()
 
-const id = computed(() => props.id ?? randomId('radio'))
+const id = computed(() => props.id ?? randomId('checkbox'))
 
 const checked = useVModel(props, 'modelValue', emit, { passive: true })
 </script>
@@ -30,6 +34,14 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
 <template>
   <label
     checkbox="wrapper"
+    :for="props.for ?? id"
+    :class="[
+      una?.checkboxWrapper,
+      {
+        'checkbox-reverse': reverse,
+        'checkbox-disabled': disabled,
+      },
+    ]"
     :checked="checked || null"
     :disabled="disabled || null"
   >
@@ -47,12 +59,19 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
       :checkbox="checkbox"
       :size="size"
       class="checkbox checkbox-peer-focus"
+      :class="[
+        una?.checkboxPeerFocus,
+      ]"
+      v-bind="$attrs"
     >
       <div checkbox="icon-wrapper">
         <slot name="icon">
           <NIcon
             checkbox="icon-base icon-checked"
             :name="una.checkboxIcon!"
+            :class="[
+              una.checkboxIconBase,
+            ]"
           />
         </slot>
       </div>
@@ -60,6 +79,7 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
     <div
       v-if="slots.default || label"
       checkbox="label"
+      :class="una?.checkboxLabel"
     >
       <slot>
         {{ label }}
