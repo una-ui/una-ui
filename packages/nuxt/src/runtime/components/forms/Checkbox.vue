@@ -28,7 +28,6 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
 </script>
 
 <template>
-  <!-- class="n-checkbox hover:n-checkbox-hover select-none items-center n-disabled:n-disabled" -->
   <label
     checkbox="wrapper"
     :checked="checked || null"
@@ -44,14 +43,12 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
       :name="name"
       @keypress.enter="checked = !checked"
     >
-    <!-- class="n-checkbox-box n-checked:n-checkbox-box-checked peer-active:n-active-base peer-focus-visible:n-focus-base n-transition" -->
     <div
       :checkbox="checkbox"
       :size="size"
       class="checkbox checkbox-peer-focus"
     >
       <div checkbox="icon-wrapper">
-        <!-- class="n-transition scale-0 transform op0 n-checked:scale-100 n-checked:op100" -->
         <slot name="icon">
           <NIcon
             checkbox="icon-base icon-checked"
