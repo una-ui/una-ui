@@ -19,12 +19,12 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-track-outset': 'h-1em w-2.25em',
 
   // thumb
-  'switch-thumb': 'flex items-center justify-center h-1.25em w-1.25em absolute bg-base pointer-events-none inline-block transform rounded-full shadow transition duration-200 ease-in-out',
+  'switch-thumb': 'flex items-center justify-center h-1.25em w-1.25em absolute bg-base pointer-events-none inline-block transform rounded-full shadow transition-base',
   'switch-thumb-on': 'translate-x-1.25em',
   'switch-thumb-off': 'translate-x-0',
 
   // track
-  'switch-track': 'pointer-events-none absolute mx-auto rounded-full transition-colors duration-200 ease-in-out',
+  'switch-track': 'pointer-events-none absolute mx-auto rounded-full transition-base',
   'switch-track-on': 'bg-brand',
   'switch-track-off': 'bg-$c-gray-200',
 

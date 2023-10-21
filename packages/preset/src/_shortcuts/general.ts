@@ -40,7 +40,7 @@ export const staticGeneral = {
   'i-check': 'i-tabler-check',
 
   // transition
-  'transition-base': 'transition-all duration-300 ease-in-out',
+  'transition-base': 'transition-all duration-100 ease-out',
 }
 
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
