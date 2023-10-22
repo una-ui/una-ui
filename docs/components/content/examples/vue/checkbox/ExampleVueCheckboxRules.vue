@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const options = [
   {
-    value: false,
+    value: true,
     radio: 'green',
   },
   {
