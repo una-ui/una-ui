@@ -55,7 +55,7 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
       :name="name"
       @keypress.enter="checked = !checked"
     >
-    <div
+    <span
       :checkbox="checkbox"
       :size="size"
       class="checkbox checkbox-peer-focus"
@@ -64,18 +64,16 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
       ]"
       v-bind="$attrs"
     >
-      <div checkbox="icon-wrapper">
-        <slot name="icon">
-          <NIcon
-            checkbox="icon-base icon-checked"
-            :name="una.checkboxIcon!"
-            :class="[
-              una.checkboxIconBase,
-            ]"
-          />
-        </slot>
-      </div>
-    </div>
+      <slot name="icon">
+        <NIcon
+          checkbox="icon-base icon-checked"
+          :name="una.checkboxIcon!"
+          :class="[
+            una.checkboxIconBase,
+          ]"
+        />
+      </slot>
+    </span>
     <div
       v-if="slots.default || label"
       checkbox="label"
