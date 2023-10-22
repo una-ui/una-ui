@@ -61,9 +61,6 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
       :radio="radio"
       :size="size"
       class="radio radio-peer-focus"
-      :class="[
-        una?.radioPeerFocus,
-      ]"
       v-bind="$attrs"
     >
       <slot name="icon">

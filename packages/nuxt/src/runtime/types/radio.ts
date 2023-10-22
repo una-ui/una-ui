@@ -85,7 +85,6 @@ export interface NRadioProps {
     radio?: string
     radioWrapper?: string
     radioLabel?: string
-    radioPeerFocus?: string
     radioIconBase?: string
     radioIcon?: string
   }
