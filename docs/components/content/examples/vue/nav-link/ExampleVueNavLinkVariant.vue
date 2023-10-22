@@ -19,8 +19,10 @@ const links = [
   <div class="flex flex-wrap gap-4">
     <NNavLink
       v-for="(link, i) in links"
-      :key="i"
-      v-bind="link"
+      :key="i" v-bind="link"
+      nav-link="text-gray"
+      nav-link-active="text-gray"
+      nav-link-inactive="text-gray"
     />
   </div>
 </template>
