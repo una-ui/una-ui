@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const options = ref([
   {
-    value: false,
+    value: true,
     label: '1',
     checkbox: 'green',
     una: {
@@ -9,7 +9,7 @@ const options = ref([
     },
   },
   {
-    value: false,
+    value: true,
     label: '2',
     checkbox: 'react',
     una: {
@@ -17,7 +17,7 @@ const options = ref([
     },
   },
   {
-    value: false,
+    value: true,
     label: '3',
     checkbox: 'angular',
     una: {

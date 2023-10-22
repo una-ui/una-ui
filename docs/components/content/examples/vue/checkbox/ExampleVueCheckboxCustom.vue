@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const options = ref([
   {
-    value: false,
+    value: true,
     label: 'Vue',
     class: 'n-checked:bg-green-500/30 n-checked:border-green-500',
     checkbox: 'green',
