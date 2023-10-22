@@ -1,3 +1,17 @@
+# [0.3.0-beta.0](https://github.com/una-ui/una-ui/compare/v0.2.0-beta.6...v0.3.0-beta.0) (2023-10-22)
+
+
+### Bug Fixes
+
+* **NRadio:** use opacity to control visibility, close [#101](https://github.com/una-ui/una-ui/issues/101) ([7edbc82](https://github.com/una-ui/una-ui/commit/7edbc8206e025c9c0b60012988bc2294113cf6c6))
+
+
+### Features
+
+* **NCheckbox:** add new component and preset ([#103](https://github.com/una-ui/una-ui/issues/103)) ([f96cdfb](https://github.com/una-ui/una-ui/commit/f96cdfb20e490e2c91dffa3ae8e9112b12041fd6))
+
+
+
 # [0.2.0-beta.6](https://github.com/una-ui/una-ui/compare/v0.2.0-beta.5...v0.2.0-beta.6) (2023-10-19)
 
 
