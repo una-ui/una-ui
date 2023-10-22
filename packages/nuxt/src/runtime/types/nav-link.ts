@@ -3,6 +3,8 @@ import type { NButtonProps } from './button'
 
 export interface NNavLinkProps extends Omit<NButtonProps, 'una'> {
   navLink?: string
+  navLinkInactive?: string
+  navLinkActive?: string
   badge?: NBadgeProps
 
   una?: {

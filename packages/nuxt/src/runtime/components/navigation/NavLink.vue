@@ -10,6 +10,8 @@ defineOptions({
 const props = withDefaults(
   defineProps<NNavLinkProps>(),
   {
+    navLinkActive: 'text-primary',
+    navLinkInactive: 'text-gray',
     una: () => ({
       btnDefaultVariant: '~',
       navLinkDefaultVariant: 'nav-link-default-variant',
@@ -32,8 +34,8 @@ const isBaseVariant = computed(() => props.navLink?.includes('~') || props.una.n
 <template>
   <NButton
     :nav-link="navLink"
-    nav-link-active="text-primary"
-    nav-link-inactive="text-gray"
+    :nav-link-active="props.navLinkActive"
+    :nav-link-inactive="props.navLinkInactive"
     :una="btnProps"
     class="nav-link"
     :class="[

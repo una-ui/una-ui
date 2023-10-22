@@ -54,13 +54,13 @@ export default defineComponent({
     function resolveNavLinkActive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
       if (!props.exact && isActive)
         return props.navLinkActive
+
+      return props.navLinkInactive
     }
 
     function resolveNavLinkInactive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.inactiveClass
-
-      return props.inactiveClass
     }
 
     return {
