@@ -57,27 +57,25 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
       :value="value"
       @keypress.enter="model = value!"
     >
-    <div
+    <span
       :radio="radio"
       :size="size"
-      class="radio radio-(peer-focus)"
+      class="radio radio-peer-focus"
       :class="[
         una?.radioPeerFocus,
       ]"
       v-bind="$attrs"
     >
-      <div radio="icon-wrapper">
-        <slot name="icon">
-          <NIcon
-            :class="[
-              una.radioIconBase,
-            ]"
-            radio="icon-base icon-checked"
-            :name="una.radioIcon!"
-          />
-        </slot>
-      </div>
-    </div>
+      <slot name="icon">
+        <NIcon
+          :class="[
+            una.radioIconBase,
+          ]"
+          radio="icon-base icon-checked"
+          :name="una.radioIcon!"
+        />
+      </slot>
+    </span>
     <div
       v-if="slots.default || label"
       radio="label"

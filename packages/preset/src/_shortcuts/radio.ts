@@ -6,7 +6,7 @@ type RadioPrefix = 'radio'
 
 export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, string> = {
   // base
-  'radio': 'radio-primary transition-base border border-$c-ring rounded-full p-0.19em n-checked:border-brand n-checked:bg-brand',
+  'radio': 'radio-primary flex items-center transition-base border border-$c-ring rounded-full p-0.12em h-1em w-1em n-checked:border-brand n-checked:bg-brand',
   'radio-disabled': 'n-disabled',
   'radio-label': 'block text-sm font-medium leading-6',
   'radio-input': 'absolute w-full opacity-0',
@@ -15,12 +15,10 @@ export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, strin
 
   // wrappers
   'radio-wrapper': 'gap-x-3 relative inline-flex items-center hover:cursor-pointer',
-  'radio-icon-wrapper': 'grid place-items-center w-0.5em h-0.5em',
 
   // icon
-  'radio-icon-base': 'opacity-0 text-inverted w-full h-full transition-base',
+  'radio-icon-base': 'm-auto opacity-0 text-inverted w-full h-full transition-base n-checked:opacity-100',
   'radio-icon': 'i-dot', // refer to general.ts
-  'radio-icon-checked': 'n-checked:opacity-100 n-checked:w-full n-checked:h-full',
 }
 
 export const dynamicRadio = [
