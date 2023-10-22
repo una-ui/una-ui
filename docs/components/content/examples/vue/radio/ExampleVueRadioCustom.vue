@@ -7,7 +7,7 @@ const options = [
     class: 'n-checked:bg-green-500/30 n-checked:border-green-500',
     radio: 'green',
     una: {
-      radioIcon: 'i-logos-vue n-checked:scale-300 transition-transform duration-1000',
+      radioIcon: 'i-logos-vue n-checked:scale-200 transition-transform duration-1000',
     },
   },
   {
@@ -23,7 +23,7 @@ const options = [
     class: 'n-checked:bg-red-500/30 n-checked:border-red-500',
     radio: 'red',
     una: {
-      radioIcon: 'i-logos-angular-icon n-checked:scale-200 transition-transform duration-1000',
+      radioIcon: 'i-logos-angular-icon n-checked:scale-150 transition-transform duration-1000',
     },
   },
 ]
