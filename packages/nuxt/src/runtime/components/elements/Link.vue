@@ -31,17 +31,19 @@ export default defineComponent({
       type: String as PropType<NLinkProps['inactiveClass']>,
       default: undefined,
     },
+    navLinkActive: {
+      type: String as PropType<NLinkProps['navLinkActive']>,
+      default: undefined,
+    },
+    navLinkInactive: {
+      type: String as PropType<NLinkProps['navLinkInactive']>,
+      default: undefined,
+    },
   },
   setup(props) {
     function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.inactiveClass
-
-      if (props.exactHash && !isEqual(route.hash, $route.hash))
-        return props.inactiveClass
-
-      if (props.exact && isExactActive)
-        return props.exactActiveClass
 
       if (!props.exact && isActive)
         return props.activeClass
@@ -49,8 +51,22 @@ export default defineComponent({
       return props.inactiveClass
     }
 
+    function resolveNavLinkActive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
+      if (!props.exact && isActive)
+        return props.navLinkActive
+    }
+
+    function resolveNavLinkInactive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
+      if (props.exactQuery && !isEqual(route.query, $route.query))
+        return props.inactiveClass
+
+      return props.inactiveClass
+    }
+
     return {
       resolveLinkClass,
+      resolveNavLinkActive,
+      resolveNavLinkInactive,
     }
   },
 })
@@ -70,6 +86,8 @@ export default defineComponent({
       class="link"
       :target="target"
       :class="resolveLinkClass(route, $route, { isActive, isExactActive })"
+      :nav-link-active="resolveNavLinkActive(route, $route, { isActive, isExactActive })"
+      :nav-link-inactive="resolveNavLinkInactive(route, $route, { isActive, isExactActive })"
       @click="(e) => !isExternal && navigate(e)"
     >
       <slot v-bind="{ isActive: exact ? isExactActive : isActive }" />
