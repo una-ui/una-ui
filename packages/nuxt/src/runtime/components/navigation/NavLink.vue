@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { NNavLinkProps } from '../../types'
 import { omitProps } from '../../utils'
 
@@ -6,19 +7,44 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NNavLinkProps>()
+const props = withDefaults(
+  defineProps<NNavLinkProps>(),
+  {
+    una: () => ({
+      btnDefaultVariant: '~',
+      navLinkDefaultVariant: 'nav-link-default-variant',
+    }),
+  },
+)
+
+const btnProps = omitProps(props.una, [
+  'navLink',
+  'btnDefaultVariant',
+  'navLinkActive',
+  'navLinkInactive',
+])
+
+const navLinkVariants = ['text'] as const
+const hasVariant = computed(() => navLinkVariants.some(navLinkVariants => props.navLink?.includes(navLinkVariants)))
+const isBaseVariant = computed(() => props.navLink?.includes('~') || props.una.navLink?.includes('~'))
 </script>
 
 <template>
   <NButton
-    nav-link="~ variant"
-    active-class="nav-link-active"
-    inactive-class="nav-link-inactive"
-    :una="{
-      btnDefaultVariant: '~',
-      ...props.una,
+    :nav-link="navLink"
+    nav-link-active="text-primary"
+    nav-link-inactive="text-gray"
+    :una="btnProps"
+    class="nav-link"
+    :class="[
+      !hasVariant && !isBaseVariant ? una?.navLinkDefaultVariant : null,
+      { 'btn-reverse': reverse },
+      una?.btn,
+    ]"
+    v-bind="{
+      ...omitProps(props, ['badge', 'una']),
+      ...$attrs,
     }"
-    v-bind="{ ...omitProps(props, ['badge', 'una']), ...$attrs }"
   >
     <template #leading>
       <NIcon

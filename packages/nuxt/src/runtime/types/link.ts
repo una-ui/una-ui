@@ -24,4 +24,15 @@ export interface NLinkProps {
    * @example 'text-primary'
   */
   inactiveClass?: string
+
+  /**
+   * Useful in combination with `NavLink` to apply the active class to the parent element
+   *
+  */
+  navLinkActive?: string
+
+  /**
+   * Useful in combination with `NavLink` to apply the inactive class to the parent element
+  */
+  navLinkInactive?: string
 }

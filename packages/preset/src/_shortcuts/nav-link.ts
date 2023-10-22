@@ -2,7 +2,7 @@ type NavLinkPrefix = 'nav-link'
 
 export const staticNavLink: Record<`${NavLinkPrefix}-${string}` | NavLinkPrefix, string> = {
   // config
-  'nav-link-variant': 'nav-link-text-primary',
+  'nav-link-default-variant': 'nav-link-text-primary',
   'nav-link-active': 'nav-link-active-text-primary',
   'nav-link-inactive': 'nav-link-inactive-text-gray',
 
@@ -18,6 +18,8 @@ export const dynamicNavLink: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^nav-link-active-text(-(\S+))?$/, ([, , c = 'primary']) => `bg-muted text-${c}-600 dark:text-${c}-500`],
   [/^nav-link-inactive-text(-(\S+))?$/, ([, , c = 'primary']) => `text-${c}-800 dark:text-${c}-100`],
   [/^nav-link-text(-(\S+))?$/, ([, , c = 'primary']) => `hover:bg-muted hover:text-${c}-600 dark:hover:text-${c}-500`],
+
+  // unknown-variant
 ]
 
 export const navLink = [
