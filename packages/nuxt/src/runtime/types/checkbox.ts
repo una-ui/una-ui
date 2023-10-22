@@ -64,7 +64,6 @@ export interface NCheckboxProps {
     checkbox?: string
     checkboxWrapper?: string
     checkboxLabel?: string
-    checkboxPeerFocus?: string
     checkboxIconBase?: string
     checkboxIcon?: string
   }

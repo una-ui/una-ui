@@ -59,9 +59,6 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
       :checkbox="checkbox"
       :size="size"
       class="checkbox checkbox-peer-focus"
-      :class="[
-        una?.checkboxPeerFocus,
-      ]"
       v-bind="$attrs"
     >
       <slot name="icon">
