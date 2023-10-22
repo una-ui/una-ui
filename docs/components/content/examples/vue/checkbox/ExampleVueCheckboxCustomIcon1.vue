@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const options = ref([
   {
-    value: false,
+    value: true,
     label: '1',
   },
   {
-    value: false,
+    value: true,
     label: '2',
   },
   {

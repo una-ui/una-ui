@@ -11,7 +11,7 @@ const options = ref([
   {
     value: true,
     label: '2',
-    checkbox: 'react',
+    checkbox: 'blue',
     una: {
       checkboxIcon: 'i-tabler-circle-2-filled',
     },
@@ -19,7 +19,7 @@ const options = ref([
   {
     value: true,
     label: '3',
-    checkbox: 'angular',
+    checkbox: 'red',
     una: {
       checkboxIcon: 'i-tabler-circle-3-filled',
     },

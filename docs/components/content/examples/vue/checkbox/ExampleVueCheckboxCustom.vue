@@ -24,7 +24,7 @@ const options = ref([
     class: 'n-checked:bg-red-500/30 n-checked:border-red-500',
     checkbox: 'red',
     una: {
-      checkboxIcon: 'i-logos-angular-icon n-checked:scale-150 transition-transform duration-1000',
+      checkboxIcon: 'i-logos-angular-icon n-checked:scale-120 transition-transform duration-1000',
     },
   },
 ])
