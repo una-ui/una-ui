@@ -34,8 +34,8 @@ const isBaseVariant = computed(() => props.navLink?.includes('~') || props.una.n
 <template>
   <NButton
     :nav-link="navLink"
-    :nav-link-active="props.navLinkActive"
-    :nav-link-inactive="props.navLinkInactive"
+    :nav-link-active="navLinkActive"
+    :nav-link-inactive="navLinkInactive"
     :una="btnProps"
     class="nav-link"
     :class="[

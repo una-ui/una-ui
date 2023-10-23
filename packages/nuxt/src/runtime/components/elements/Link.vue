@@ -31,6 +31,8 @@ export default defineComponent({
       type: String as PropType<NLinkProps['inactiveClass']>,
       default: undefined,
     },
+
+    // preset
     navLinkActive: {
       type: String as PropType<NLinkProps['navLinkActive']>,
       default: undefined,
@@ -45,6 +47,12 @@ export default defineComponent({
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.inactiveClass
 
+      if (props.exactHash && !isEqual(route.hash, $route.hash))
+        return props.inactiveClass
+
+      if (props.exact && isExactActive)
+        return props.exactActiveClass
+
       if (!props.exact && isActive)
         return props.activeClass
 
@@ -52,15 +60,32 @@ export default defineComponent({
     }
 
     function resolveNavLinkActive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
+      if (props.exactQuery && !isEqual(route.query, $route.query))
+        return null
+
+      if (props.exactHash && !isEqual(route.hash, $route.hash))
+        return null
+
+      if (props.exact && isExactActive)
+        return props.navLinkActive
+
       if (!props.exact && isActive)
         return props.navLinkActive
 
-      return props.navLinkInactive
+      return null
     }
 
     function resolveNavLinkInactive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean; isExactActive: boolean }) {
       if (props.exactQuery && !isEqual(route.query, $route.query))
-        return props.inactiveClass
+        return props.navLinkInactive
+
+      if (props.exactHash && !isEqual(route.hash, $route.hash))
+        return props.navLinkInactive
+
+      if ((!props.exact && isActive) || (props.exact && isExactActive))
+        return null
+
+      return props.navLinkInactive
     }
 
     return {
@@ -76,14 +101,12 @@ export default defineComponent({
   <NuxtLink
     v-slot="{ route, href, target, rel, navigate, isActive, isExactActive, isExternal }"
     v-bind="$props"
-    class="link"
     custom
   >
     <a
       v-bind="$attrs"
       :href="href"
       :rel="rel"
-      class="link"
       :target="target"
       :class="resolveLinkClass(route, $route, { isActive, isExactActive })"
       :nav-link-active="resolveNavLinkActive(route, $route, { isActive, isExactActive })"
