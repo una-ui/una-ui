@@ -3,8 +3,6 @@ type NavLinkPrefix = 'nav-link'
 export const staticNavLink: Record<`${NavLinkPrefix}-${string}` | NavLinkPrefix, string> = {
   // config
   'nav-link-default-variant': 'nav-link-text-primary',
-  'nav-link-active': 'nav-link-active-text-primary',
-  'nav-link-inactive': 'nav-link-inactive-text-gray',
 
   // base
   'nav-link': 'transition-base leading-6 justify-start gap-x-3 rounded-md',
