@@ -20,9 +20,8 @@ const links = [
     <NNavLink
       v-for="(link, i) in links"
       :key="i" v-bind="link"
-      nav-link="text-gray"
-      nav-link-active="text-gray"
-      nav-link-inactive="text-gray"
+      nav-link="text-orange"
+      nav-link-active="text-orange"
     />
   </div>
 </template>
