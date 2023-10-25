@@ -1,0 +1,29 @@
+:root {
+  --c-gray-0: rgb(255 255 255);
+  --c-gray-50: rgb(var(--una-gray-50));
+  --c-gray-100: rgb(var(--una-gray-100));
+  --c-gray-200: rgb(var(--una-gray-200));
+  --c-gray-300: rgb(var(--una-gray-300));
+  --c-gray-400: rgb(var(--una-gray-400));
+  --c-gray-500: rgb(var(--una-gray-500));
+  --c-gray-600: rgb(var(--una-gray-600));
+  --c-gray-700: rgb(var(--una-gray-700));
+  --c-gray-800: rgb(var(--una-gray-800));
+  --c-gray-900: rgb(var(--una-gray-900));
+  --c-gray-950: rgb(var(--una-gray-950));
+}
+
+.dark {
+  --c-gray-0: rgb(var(--una-gray-950));
+  --c-gray-50: rgb(var(--una-gray-900));
+  --c-gray-100: rgb(var(--una-gray-800));
+  --c-gray-200: rgb(var(--una-gray-700));
+  --c-gray-300: rgb(var(--una-gray-600));
+  --c-gray-400: rgb(var(--una-gray-500));
+  --c-gray-500: rgb(var(--una-gray-400));
+  --c-gray-600: rgb(var(--una-gray-300));
+  --c-gray-700: rgb(var(--una-gray-200));
+  --c-gray-800: rgb(var(--una-gray-100));
+  --c-gray-900: rgb(var(--una-gray-50));
+  --c-gray-950: rgb(255 255 255);
+}
