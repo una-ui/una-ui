@@ -10,7 +10,7 @@ const links = [
   },
   {
     label: 'Settings',
-    to: '/navigation/pagination',
+    to: '/navigation/breadcrumb',
   },
 ]
 </script>
@@ -21,6 +21,8 @@ const links = [
       v-for="(link, i) in links"
       :key="i"
       v-bind="link"
-    />
+    >
+      <template />
+    </NNavLink>
   </div>
 </template>
