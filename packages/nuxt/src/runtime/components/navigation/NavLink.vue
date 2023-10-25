@@ -10,8 +10,8 @@ defineOptions({
 const props = withDefaults(
   defineProps<NNavLinkProps>(),
   {
-    navLinkActive: 'text',
-    navLinkInactive: 'text',
+    navLinkActive: 'text-primary',
+    navLinkInactive: 'text-primary',
     una: () => ({
       btnDefaultVariant: '~',
       navLinkDefaultVariant: 'nav-link-default-variant',
@@ -26,7 +26,7 @@ const btnProps = omitProps(props.una, [
   'navLinkInactive',
 ])
 
-const navLinkVariants = ['text', 'solid'] as const
+const navLinkVariants = ['text'] as const
 const hasVariant = computed(() => navLinkVariants.some(navLinkVariants => props.navLink?.includes(navLinkVariants)))
 const isBaseVariant = computed(() => props.navLink?.includes('~') || props.una.navLink?.includes('~'))
 </script>
