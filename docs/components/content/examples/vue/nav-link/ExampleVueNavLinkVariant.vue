@@ -16,12 +16,14 @@ const links = [
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
-    <div class="flex flex-wrap gap-4 rounded">
+  <div class="dark flex flex-col gap-2">
+    <div class="flex flex-wrap gap-4 rounded bg-muted p-3">
       <NNavLink
         v-for="(link, i) in links"
         :key="i" v-bind="link"
-        nav-link="text-red"
+        nav-link="text-gray"
+        nav-link-active="text-gray"
+        nav-link-inactive="text-gray"
       />
     </div>
 
@@ -31,7 +33,7 @@ const links = [
       <NNavLink
         v-for="(link, i) in links"
         :key="i" v-bind="link"
-        nav-link="solid-primary"
+        nav-link="solid"
         nav-link-active="solid"
         nav-link-inactive="solid"
       />
