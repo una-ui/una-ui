@@ -13,7 +13,7 @@
   --c-gray-950: rgb(var(--una-gray-950));
 }
 
-.dark:root {
+.dark {
   --c-gray-0: rgb(var(--una-gray-950));
   --c-gray-50: rgb(var(--una-gray-900));
   --c-gray-100: rgb(var(--una-gray-800));
