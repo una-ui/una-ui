@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import type { NNavLinkProps } from '../../types'
 import { omitProps } from '../../utils'
+import NButton from '../elements/Button.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -26,7 +27,7 @@ const btnProps = omitProps(props.una, [
   'navLinkInactive',
 ])
 
-const navLinkVariants = ['text'] as const
+const navLinkVariants = ['text', 'solid'] as const
 const hasVariant = computed(() => navLinkVariants.some(navLinkVariants => props.navLink?.includes(navLinkVariants)))
 const isBaseVariant = computed(() => props.navLink?.includes('~') || props.una.navLink?.includes('~'))
 </script>
@@ -41,7 +42,6 @@ const isBaseVariant = computed(() => props.navLink?.includes('~') || props.una.n
     :class="[
       !hasVariant && !isBaseVariant ? una?.navLinkDefaultVariant : null,
       { 'btn-reverse': reverse },
-      una?.btn,
     ]"
     v-bind="{
       ...omitProps(props, ['badge', 'una']),

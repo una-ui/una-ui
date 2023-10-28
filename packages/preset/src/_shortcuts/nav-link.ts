@@ -22,9 +22,9 @@ export const dynamicNavLink: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^nav-link-inactive-text(-(\S+))?$/, ([, , c = 'gray']) => `text-${c}-800 dark:text-${c}-100`],
   [/^nav-link-text(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} hover:nav-link-active-text-${c}`],
 
-  // unknown-variant
-  [/^nav-link-active-solid(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-700 dark:bg-${c}-400 text-$c-gray-0`],
-  [/^nav-link-inactive-solid(-(\S+))?$/, ([, , c = 'primary']) => `text-${c}-100 dark:text-${c}-800`],
+  // solid-variant
+  [/^nav-link-active-solid(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-700 dark:bg-${c}-400 text-white dark:text-${c}-950`],
+  [/^nav-link-inactive-solid(-(\S+))?$/, ([, , c = 'primary']) => `text-white dark:text-${c}-950`],
   [/^nav-link-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} hover:nav-link-active-solid-${c}`],
 ]
 
