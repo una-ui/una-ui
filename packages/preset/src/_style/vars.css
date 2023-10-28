@@ -16,7 +16,7 @@
   --c-divider: rgb(var(--una-gray-200));
 }
 
-.dark {
+.dark:root {
   --una-primary: var(--una-primary-500);
   --una-primary-active: var(--una-primary-400);
   --una-gray: var(--una-gray-500);
