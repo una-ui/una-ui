@@ -16,8 +16,9 @@ const links = [
 </script>
 
 <template>
-  <div class="dark flex flex-col gap-2">
-    <div class="flex flex-wrap gap-4 rounded bg-muted p-3">
+  <div class="flex flex-col gap-2">
+    <!-- force dark mode always using `.dark` -->
+    <div class="dark flex flex-wrap gap-4 rounded bg-muted p-3">
       <NNavLink
         v-for="(link, i) in links"
         :key="i" v-bind="link"
