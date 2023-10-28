@@ -1,12 +1,28 @@
+<script setup lang="ts">
+const links = [
+  {
+    label: 'Dashboard',
+    to: '/navigation/nav-link',
+  },
+  {
+    label: 'Profile',
+    to: '/navigation/nav-link-group',
+  },
+  {
+    label: 'Settings',
+    to: '/navigation/breadcrumb',
+  },
+]
+</script>
+
 <template>
-  <div flex="~ wrap" gap-4>
-    <NNavLink label="Dashboard" to="/navigation/nav-link" />
-
-    <NNavLink label="Profile" to="/navigation/nav-link-group" />
-
+  <div class="flex flex-wrap gap-4">
     <NNavLink
-      label="Settings"
-      to="/navigation/pagination"
-    />
+      v-for="(link, i) in links"
+      :key="i"
+      v-bind="link"
+    >
+      <template />
+    </NNavLink>
   </div>
 </template>
