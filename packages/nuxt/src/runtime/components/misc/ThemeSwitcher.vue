@@ -53,7 +53,7 @@ function shuffleTheme() {
 </script>
 
 <template>
-  <div class="sm:ml-5">
+  <div>
     <Popover class="relative inline-block">
       <PopoverButton
         btn="~ square soft"
