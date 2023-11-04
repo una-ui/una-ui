@@ -7,10 +7,6 @@ import { defineNuxtPlugin } from '#app'
 
 let unaUIStyle: HTMLStyleElement
 
-export interface ThemeColors {
-  [key: string]: string
-}
-
 export default defineNuxtPlugin(() => {
   const { settings } = useUnaSettings()
 
