@@ -7,14 +7,14 @@ import useUnaThemes from '../composables/una-themes'
 import { useAppConfig } from '#imports'
 
 export default function useUnaSettings() {
-  const { ui } = useAppConfig()
+  const { una } = useAppConfig()
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 
   const defaultSettings = {
-    primaryColors: getPrimaryColors(ui.primary),
-    grayColors: getGrayColors(ui.gray),
-    primary: ui.primary,
-    gray: ui.gray,
+    primaryColors: getPrimaryColors(una.primary),
+    grayColors: getGrayColors(una.gray),
+    primary: una.primary,
+    gray: una.gray,
     fontSize: 16,
   }
 
