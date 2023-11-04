@@ -1,23 +1,6 @@
 import { colors } from '@unocss/preset-mini/colors'
 import { hexToRgb } from '../utils'
-
-interface Colors {
-  [key: string]: string
-}
-
-interface ColorPalette {
-  50: string
-  100: string
-  200: string
-  300: string
-  400: string
-  500: string
-  600: string
-  700: string
-  800: string
-  900: string
-  950: string
-}
+import type { ColorPalette, Colors } from '../types'
 
 type Shade = keyof ColorPalette
 
@@ -124,39 +107,44 @@ const filteredColors = {
   ...filteredGrayColors,
 } as Record<string, ColorPalette>
 
-export function getColors(color: string, prefix: string): Colors {
-  const colorPalette: ColorPalette = filteredColors[color]
+export default function useUnaThemes() {
+  // transfer to utils
+  function getColors(color: string, prefix: string): Colors {
+    const colorPalette: ColorPalette = filteredColors[color]
 
-  if (!colorPalette)
-    throw new Error(`Invalid primary color: ${color}`)
+    if (!colorPalette)
+      throw new Error(`Invalid primary color: ${color}`)
 
-  const colors = {} as Required<Colors> // Initialize an empty object to store the theme colors
+    const colors = {} as Required<Colors> // Initialize an empty object to store the theme colors
 
-  colors[`--una-${prefix}-hex`] = colorPalette[600] as string // Assign the primary color hex code to the corresponding theme variable
+    colors[`--una-${prefix}-hex`] = colorPalette[600] as string // Assign the primary color hex code to the corresponding theme variable
 
-  // Iterate over each shade in the color palette and assign it to the corresponding theme variable
-  for (const shade of Object.keys(colorPalette) as unknown as Shade[])
-    colors[`--una-${prefix}-${shade}`] = hexToRgb(colorPalette[shade]).join(', ')
+    // Iterate over each shade in the color palette and assign it to the corresponding theme variable
+    for (const shade of Object.keys(colorPalette) as unknown as Shade[])
+      colors[`--una-${prefix}-${shade}`] = hexToRgb(colorPalette[shade]).join(', ')
 
-  return colors
+    return colors
+  }
+
+  const primaryThemes = Object.entries(filteredPrimaryColors).map(([color]) => [
+    color,
+    getColors(color, 'primary'),
+  ]) as [string, Colors][]
+
+  const grayThemes = Object.entries(filteredGrayColors).map(([color]) => [
+    color,
+    getColors(color, 'gray'),
+  ]) as [string, Colors][]
+
+  const getPrimaryColors = (color: string) => {
+    return primaryThemes.filter(([colorName, _]) => colorName === color)[0][1]
+  }
+
+  const getGrayColors = (color: string) => {
+    return grayThemes.filter(([colorName, _]) => colorName === color)[0][1]
+  }
+
+  return {
+    primaryThemes, grayThemes, getPrimaryColors, getGrayColors,
+  }
 }
-
-// export const primaryThemes = Object.entries({ ...filteredPrimaryColors, ...filteredGrayColors }).map(([color]) => [
-//   color,
-//   getColors(color, 'primary'),
-// ]) as [string, Colors][]
-
-// export const grayThemes = Object.entries({ ...filteredPrimaryColors, ...filteredGrayColors }).map(([color]) => [
-//   color,
-//   getColors(color, 'gray'),
-// ]) as [string, Colors][]
-
-export const primaryThemes = Object.entries(filteredPrimaryColors).map(([color]) => [
-  color,
-  getColors(color, 'primary'),
-]) as [string, Colors][]
-
-export const grayThemes = Object.entries(filteredGrayColors).map(([color]) => [
-  color,
-  getColors(color, 'gray'),
-]) as [string, Colors][]

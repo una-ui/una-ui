@@ -1,51 +1,41 @@
 <script setup lang="ts">
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { useStorage, useToggle } from '@vueuse/core'
+import { useToggle } from '@vueuse/core'
 import { computed } from 'vue'
-import { grayThemes, primaryThemes } from '../../composables/themes'
+import useUnaThemes from '../../composables/una-themes'
+import useUnaSettings from '../../composables/una-settings'
 
-// TODO: globalize
-export interface ThemeColors {
-  [key: string]: string
-}
+const { primaryThemes, grayThemes } = useUnaThemes()
 
-// TODO: confingurable in the app.config
-const defaultSettings = {
-  primaryColors: primaryThemes.filter(([colorName, _]) => colorName === 'yellow')[0][1],
-  grayColors: grayThemes.filter(([colorName, _]) => colorName === 'stone')[0][1],
-  fontSize: 16,
-}
+const { settings } = useUnaSettings()
 
-const settings = useStorage('una-settings', defaultSettings)
+const currentPrimaryThemeHex = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
 
-// use yellow primary theme as default
-const currentPrimaryTheme = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
-// get current theme name
 const currentPrimaryThemeName = computed(() => {
-  const theme = primaryThemes.find(([, theme]) => theme['--una-primary-hex'] === currentPrimaryTheme.value)
+  const theme = primaryThemes.find(([, theme]) => theme['--una-primary-hex'] === currentPrimaryThemeHex.value)
   return theme ? theme[0] : ''
 })
 
-// use stone primary theme as default
-const currentGrayTheme = computed(() => settings.value.grayColors?.['--una-gray-hex'])
-// get current theme name
+const currentGrayThemeHex = computed(() => settings.value.grayColors?.['--una-gray-hex'])
+
 const currentGrayThemeName = computed(() => {
-  const theme = grayThemes.find(([, theme]) => theme['--una-gray-hex'] === currentGrayTheme.value)
+  const theme = grayThemes.find(([, theme]) => theme['--una-gray-hex'] === currentGrayThemeHex.value)
   return theme ? theme[0] : ''
 })
 
 // update theme in storage
-function updatePrimaryTheme(theme: ThemeColors) {
-  settings.value.primaryColors = theme
+function updatePrimaryTheme(theme: string) {
+  settings.value.primary = theme
 }
-function updateGrayTheme(theme: ThemeColors) {
-  settings.value.grayColors = theme
+
+function updateGrayTheme(theme: string) {
+  settings.value.gray = theme
 }
 
 const [value, toggle] = useToggle()
 function shuffleTheme() {
-  const randomPrimaryTheme = primaryThemes[Math.floor(Math.random() * primaryThemes.length)][1]
-  const randomGrayTheme = grayThemes[Math.floor(Math.random() * grayThemes.length)][1]
+  const randomPrimaryTheme = primaryThemes[Math.floor(Math.random() * primaryThemes.length)][0]
+  const randomGrayTheme = grayThemes[Math.floor(Math.random() * grayThemes.length)][0]
   updatePrimaryTheme(randomPrimaryTheme)
   updateGrayTheme(randomGrayTheme)
   toggle()
@@ -53,7 +43,7 @@ function shuffleTheme() {
 </script>
 
 <template>
-  <div class="sm:ml-5">
+  <div>
     <Popover class="relative inline-block">
       <PopoverButton
         btn="~ square soft"
@@ -72,7 +62,7 @@ function shuffleTheme() {
                 :style="{ background: theme['--una-primary-hex'] }"
                 class="h-6.5 w-6.5 rounded-full transition-all" :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
                 ring="primary offset-4 offset-base"
-                @click="updatePrimaryTheme(theme)"
+                @click="updatePrimaryTheme(key)"
               />
             </div>
 
@@ -86,7 +76,7 @@ function shuffleTheme() {
                 :class="currentGrayThemeName === key ? 'ring-2' : 'scale-93'"
                 class="h-6.5 w-6.5 rounded-full transition-all"
                 ring="gray offset-4 offset-base"
-                @click="updateGrayTheme(theme)"
+                @click="updateGrayTheme(key)"
               />
             </div>
 

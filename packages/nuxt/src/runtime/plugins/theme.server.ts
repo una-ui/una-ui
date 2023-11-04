@@ -1,15 +1,21 @@
+import unaSettings from '../composables/una-settings'
+
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
 import { defineNuxtPlugin, useHead } from '#app'
 
 export default defineNuxtPlugin(() => {
+  const { defaultSettings } = unaSettings()
   useHead({
     script: [
       {
         innerHTML: `
         ;(function() {
           const settings = JSON.parse(localStorage.getItem('una-settings'))
-          if (!settings) { return }
+
+          if (!settings) {
+            settings = ${JSON.stringify(defaultSettings)}
+          }
 
           const html = document.documentElement
           ${process.dev ? 'console.log({ settings })' : ''}

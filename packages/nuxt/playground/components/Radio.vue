@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const radio = ref('a')
 </script>
 
@@ -9,6 +11,7 @@ const radio = ref('a')
       value="a"
       radio="red"
     />
+
     <NRadio
       v-model="radio"
       value="c"
