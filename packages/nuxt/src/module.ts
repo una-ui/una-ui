@@ -9,8 +9,8 @@ function rPath(p: string) {
 }
 
 interface UnaOptions {
-  primary: string
-  gray: string
+  primary?: string
+  gray?: string
 }
 
 declare module '@nuxt/schema' {
