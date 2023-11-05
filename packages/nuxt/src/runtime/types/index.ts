@@ -33,3 +33,11 @@ export interface ColorPalette {
   900: string
   950: string
 }
+
+export interface UnaSettings {
+  primaryColors: Colors
+  grayColors: Colors
+  primary: string
+  gray: string
+  fontSize: number
+}

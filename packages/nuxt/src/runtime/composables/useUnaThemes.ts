@@ -108,6 +108,16 @@ const filteredColors = {
 } as Record<string, ColorPalette>
 
 export function useUnaThemes() {
+  const primaryThemes = Object.entries(filteredPrimaryColors).map(([color]) => [
+    color,
+    getColors(color, 'primary'),
+  ]) as [string, Colors][]
+
+  const grayThemes = Object.entries(filteredGrayColors).map(([color]) => [
+    color,
+    getColors(color, 'gray'),
+  ]) as [string, Colors][]
+
   // transfer to utils
   function getColors(color: string, prefix: string): Colors {
     const colorPalette: ColorPalette = filteredColors[color]
@@ -125,26 +135,18 @@ export function useUnaThemes() {
 
     return colors
   }
-
-  const primaryThemes = Object.entries(filteredPrimaryColors).map(([color]) => [
-    color,
-    getColors(color, 'primary'),
-  ]) as [string, Colors][]
-
-  const grayThemes = Object.entries(filteredGrayColors).map(([color]) => [
-    color,
-    getColors(color, 'gray'),
-  ]) as [string, Colors][]
-
-  const getPrimaryColors = (color: string) => {
+  function getPrimaryColors(color: string) {
     return primaryThemes.filter(([colorName, _]) => colorName === color)[0][1]
   }
 
-  const getGrayColors = (color: string) => {
+  function getGrayColors(color: string) {
     return grayThemes.filter(([colorName, _]) => colorName === color)[0][1]
   }
 
   return {
-    primaryThemes, grayThemes, getPrimaryColors, getGrayColors,
+    primaryThemes,
+    grayThemes,
+    getPrimaryColors,
+    getGrayColors,
   }
 }
