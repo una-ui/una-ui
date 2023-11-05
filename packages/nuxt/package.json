@@ -33,7 +33,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.16",
     "@iconify-json/heroicons": "^1.1.13",
-    "@iconify-json/tabler": "^1.1.95",
+    "@iconify-json/tabler": "^1.1.96",
     "@nuxt/kit": "^3.8.0",
     "@nuxtjs/color-mode": "^3.3.0",
     "@una-ui/extractor-vue-script": "workspace:^",
