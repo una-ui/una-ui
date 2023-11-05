@@ -2,8 +2,8 @@
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { useToggle } from '@vueuse/core'
 import { computed } from 'vue'
-import { useUnaThemes } from '../../composables/una-themes'
-import { useUnaSettings } from '../../composables/una-settings'
+import { useUnaThemes } from '../../composables/useUnaThemes'
+import { useUnaSettings } from '../../composables/useUnaSettings'
 
 const { primaryThemes, grayThemes } = useUnaThemes()
 

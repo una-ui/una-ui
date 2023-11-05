@@ -1,4 +1,4 @@
-import { useUnaSettings } from '../composables/una-settings'
+import { useUnaSettings } from '../composables/useUnaSettings'
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
