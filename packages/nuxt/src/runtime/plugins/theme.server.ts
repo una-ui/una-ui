@@ -1,11 +1,11 @@
-import unaSettings from '../composables/una-settings'
+import { useUnaSettings } from '../composables/una-settings'
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
 import { defineNuxtPlugin, useHead } from '#app'
 
 export default defineNuxtPlugin(() => {
-  const { defaultSettings } = unaSettings()
+  const { defaultSettings } = useUnaSettings()
   useHead({
     script: [
       {

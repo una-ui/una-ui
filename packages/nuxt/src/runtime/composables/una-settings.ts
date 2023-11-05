@@ -1,12 +1,12 @@
 import { useStorage } from '@vueuse/core'
 import { watchEffect } from 'vue'
-import useUnaThemes from './una-themes'
+import { useUnaThemes } from './una-themes'
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore tsconfig
 import { useAppConfig } from '#imports'
 
-export default function useUnaSettings() {
+export function useUnaSettings() {
   const { una } = useAppConfig()
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 

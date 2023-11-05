@@ -107,7 +107,7 @@ const filteredColors = {
   ...filteredGrayColors,
 } as Record<string, ColorPalette>
 
-export default function useUnaThemes() {
+export function useUnaThemes() {
   // transfer to utils
   function getColors(color: string, prefix: string): Colors {
     const colorPalette: ColorPalette = filteredColors[color]
