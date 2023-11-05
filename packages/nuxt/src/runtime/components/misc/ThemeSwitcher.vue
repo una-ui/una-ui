@@ -7,7 +7,7 @@ import { useUnaSettings } from '../../composables/useUnaSettings'
 
 const { primaryThemes, grayThemes } = useUnaThemes()
 
-const { settings } = useUnaSettings()
+const { settings, reset } = useUnaSettings()
 
 const currentPrimaryThemeHex = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
 
@@ -91,6 +91,17 @@ function shuffleTheme() {
               <span
                 i-heroicons-adjustments-horizontal-20-solid ml-2
                 :class="value ? 'rotate-180 transform' : 'rotate-0'"
+              />
+            </button>
+
+            <button
+              btn="~ solid-gray block"
+              class="rounded-lg transition"
+              @click="reset"
+            >
+              Reset
+              <span
+                i-heroicons-arrow-uturn-left-20-solid ml-2
               />
             </button>
           </div>
