@@ -51,7 +51,7 @@
   "devDependencies": {
     "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "^3.8.0",
-    "nuxt": "3.7.3"
+    "nuxt": "^3.8.0"
   },
   "publishConfig": {
     "access": "public"
