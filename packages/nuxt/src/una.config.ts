@@ -11,7 +11,7 @@ import presetUna from '@una-ui/preset'
 import prefixes from '@una-ui/preset/prefixes'
 import extratorUna from '@una-ui/extractor-vue-script'
 
-export function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
+function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
   return {
     ...user,
     preflight: false,
@@ -40,4 +40,4 @@ export function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOpt
   }
 }
 
-export default extendUnocssOptions()
+export default extendUnocssOptions
