@@ -11,7 +11,7 @@ function generateSelectors(prefix: string, values: string[]): string[] {
     .map(v => `[${prefix}~="${v}"]`)
 }
 
-export function splitCodeWithArbitraryVariants(code: string, prefixes: string[]): string[] {
+function splitCodeWithArbitraryVariants(code: string, prefixes: string[]): string[] {
   const result: string[] = []
   const camelCasePrefixes = prefixes.map(prefix => prefix.replace(/-([a-z])/g, (_, c) => c.toUpperCase()))
 
@@ -35,7 +35,7 @@ export function splitCodeWithArbitraryVariants(code: string, prefixes: string[])
   return result
 }
 
-export default function extractor(options?: ExtractorVueScriptOptions): Extractor {
+function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
   return {
     name: '@una-ui/extractor-vue-script',
     order: 0,
@@ -44,3 +44,5 @@ export default function extractor(options?: ExtractorVueScriptOptions): Extracto
     },
   }
 }
+
+export default extractorVueScript
