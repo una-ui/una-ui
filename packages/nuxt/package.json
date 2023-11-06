@@ -23,8 +23,7 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "dist",
-    "*.d.ts"
+    "dist"
   ],
   "scripts": {
     "build": "nuxt-build-module",
