@@ -62,7 +62,8 @@ const { copy, copied } = useClipboard({ source })
 
     <!-- right section -->
     <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-10 w-full place-items-center text-center lg:mb-0 lg:text-right">
-      <div class="image-bg absolute z-5 h-50 w-50 lg:h-85 lg:w-85" />
+      <div class="image-bg absolute z-5 h-50 w-50 rotate-0 lg:h-85 lg:w-85" />
+      <div class="image-bg absolute z-5 h-50 w-50 rotate-45 lg:h-85 lg:w-85" />
       <div class="h-50 w-50 -mt-10% lg:h-85 lg:w-85">
         <LogoSvg />
       </div>
@@ -77,7 +78,7 @@ const { copy, copied } = useClipboard({ source })
   }
 }
 .image-bg {
-  opacity: .7;
+  opacity: .5;
   transition: opacity 2s ease;
   background-image: linear-gradient(-80deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
   filter: blur(120px);
