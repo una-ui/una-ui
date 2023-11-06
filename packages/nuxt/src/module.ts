@@ -2,7 +2,7 @@ import { fileURLToPath } from 'node:url'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
 
-import { extendUnocssOptions } from './unocss'
+import { extendUnocssOptions } from './una.config'
 
 function rPath(p: string) {
   return fileURLToPath(new URL(p, import.meta.url).toString())

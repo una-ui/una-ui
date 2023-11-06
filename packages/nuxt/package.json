@@ -15,12 +15,16 @@
     ".": {
       "require": "./dist/module.cjs",
       "import": "./dist/module.mjs"
+    },
+    "./una.config": {
+      "import": "./dist/una.config.mjs"
     }
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "scripts": {
     "build": "nuxt-build-module",

@@ -39,3 +39,5 @@ export function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOpt
     ],
   }
 }
+
+export default extendUnocssOptions()
