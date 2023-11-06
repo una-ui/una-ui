@@ -1,1 +1,1 @@
-export * from './dist/una.config'
+export { default } from './dist/una.config'
