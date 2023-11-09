@@ -1,7 +1,11 @@
-import config from './packages/nuxt/src/una.config'
+import {
+  defineConfig,
+} from 'unocss'
 
-export default {
-  ...config,
+import una from './packages/nuxt/src/una.config'
+
+export default defineConfig({
+  ...una(),
   configDeps: [
     '../packages/preset/src/_shortcuts/checkbox.ts',
     '../packages/preset/src/_shortcuts/radio.ts',
@@ -25,4 +29,4 @@ export default {
     '../packages/preset/src/index.ts',
     '../packages/nuxt/src/unocss.ts',
   ],
-}
+})
