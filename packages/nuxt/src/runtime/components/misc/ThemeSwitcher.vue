@@ -4,6 +4,7 @@ import { useToggle } from '@vueuse/core'
 import { computed } from 'vue'
 import { useUnaThemes } from '../../composables/useUnaThemes'
 import { useUnaSettings } from '../../composables/useUnaSettings'
+import NButton from '../elements/Button.vue'
 
 const { primaryThemes, grayThemes } = useUnaThemes()
 
@@ -82,28 +83,26 @@ function shuffleTheme() {
 
             <hr class="my-2 border-$c-divider">
 
-            <button
-              btn="~ solid block"
-              class="rounded-lg transition"
-              @click="shuffleTheme"
-            >
-              Shuffle
-              <span
-                i-heroicons-adjustments-horizontal-20-solid ml-2
-                :class="value ? 'rotate-180 transform' : 'rotate-0'"
+            <div class="flex space-x-3">
+              <NButton
+                btn="~ solid block"
+                class="transition"
+                label="Shuffle"
+                leading="i-heroicons-adjustments-horizontal-solid"
+                :una="{
+                  btnLeading: value ? 'rotate-180 transform' : 'rotate-0',
+                }"
+                @click="shuffleTheme"
               />
-            </button>
 
-            <button
-              btn="~ solid-gray block"
-              class="rounded-lg transition"
-              @click="reset"
-            >
-              Reset
-              <span
-                i-heroicons-arrow-uturn-left-20-solid ml-2
+              <NButton
+                btn="~ solid-gray"
+                size="xs"
+                icon
+                label="i-heroicons-arrow-uturn-left"
+                @click="reset"
               />
-            </button>
+            </div>
           </div>
         </PopoverPanel>
       </transition>
