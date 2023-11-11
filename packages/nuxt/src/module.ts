@@ -1,12 +1,7 @@
-import { fileURLToPath } from 'node:url'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
 
 import extendUnocssOptions from './una.config'
-
-function rPath(p: string) {
-  return fileURLToPath(new URL(p, import.meta.url).toString())
-}
 
 interface UnaOptions {
   primary?: string
@@ -40,12 +35,6 @@ export interface ModuleOptions {
   global?: boolean
 
   /**
-   * @default '@una-ui/preset'
-   * @description Path to preset
-   */
-  preset?: string
-
-  /**
    * @default false
    */
   dev: boolean
@@ -63,7 +52,6 @@ export default defineNuxtModule<ModuleOptions>({
   defaults: {
     prefix: 'N',
     themeable: true,
-    preset: rPath('./preset'),
     global: true,
     dev: false,
   },
