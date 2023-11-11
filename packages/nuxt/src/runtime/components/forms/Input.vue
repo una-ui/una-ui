@@ -102,10 +102,11 @@ const reverseClassVariants = computed(() => {
       </slot>
     </div>
 
-    <input
+    <Component
+      :is="type === 'textarea' ? 'textarea' : 'input'"
       :id="id"
       v-model="inputValue"
-      :type="type"
+      :type="type === 'textarea' ? undefined : type"
       class="input"
       :class="[
         statusClassVariants.input,
@@ -114,7 +115,7 @@ const reverseClassVariants = computed(() => {
       ]"
       :input="input"
       v-bind="$attrs"
-    >
+    />
 
     <div
       v-if="isTrailing"
