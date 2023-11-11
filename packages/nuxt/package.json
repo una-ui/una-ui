@@ -13,8 +13,8 @@
   },
   "exports": {
     ".": {
-      "require": "./dist/module.cjs",
-      "import": "./dist/module.mjs"
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
     },
     "./una.config": {
       "import": "./dist/una.config.mjs"
@@ -23,8 +23,8 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "dist",
-    "**/*.d.ts"
+    "**/*.d.ts",
+    "dist"
   ],
   "scripts": {
     "build": "nuxt-build-module",
@@ -38,24 +38,24 @@
     "@headlessui/vue": "^1.7.16",
     "@iconify-json/heroicons": "^1.1.13",
     "@iconify-json/tabler": "^1.1.96",
-    "@nuxt/kit": "^3.8.0",
+    "@nuxt/kit": "^3.8.1",
     "@nuxtjs/color-mode": "^3.3.0",
     "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/preset": "workspace:^",
-    "@unocss/core": "^0.55.7",
-    "@unocss/nuxt": "^0.55.7",
-    "@unocss/preset-attributify": "^0.55.7",
-    "@unocss/preset-icons": "^0.55.7",
-    "@vueuse/core": "^10.5.0",
-    "@vueuse/integrations": "^10.5.0",
-    "@vueuse/nuxt": "^10.5.0",
+    "@unocss/core": "^0.57.3",
+    "@unocss/nuxt": "^0.57.3",
+    "@unocss/preset-attributify": "^0.57.3",
+    "@unocss/preset-icons": "^0.57.3",
+    "@vueuse/core": "^10.6.0",
+    "@vueuse/integrations": "^10.6.0",
+    "@vueuse/nuxt": "^10.6.0",
     "ohash": "^1.1.3",
-    "unocss": "^0.55.7"
+    "unocss": "^0.57.3"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.5.2",
-    "@nuxt/schema": "^3.8.0",
-    "nuxt": "^3.8.0"
+    "@nuxt/module-builder": "^0.5.4",
+    "@nuxt/schema": "^3.8.1",
+    "nuxt": "^3.8.1"
   },
   "publishConfig": {
     "access": "public"

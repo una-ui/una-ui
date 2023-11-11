@@ -22,18 +22,18 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
     "./shortcuts": {
       "types": "./dist/shortcuts.d.ts",
-      "require": "./dist/shortcuts.cjs",
-      "import": "./dist/shortcuts.mjs"
+      "import": "./dist/shortcuts.mjs",
+      "require": "./dist/shortcuts.cjs"
     },
     "./prefixes": {
       "types": "./dist/prefixes.d.ts",
-      "require": "./dist/prefixes.cjs",
-      "import": "./dist/prefixes.mjs"
+      "import": "./dist/prefixes.mjs",
+      "require": "./dist/prefixes.cjs"
     },
     "./*": "./*"
   },
@@ -41,9 +41,9 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
+    "*.css",
     "*.d.ts",
-    "*.css"
+    "dist"
   ],
   "scripts": {
     "build": "unbuild",
@@ -54,8 +54,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@unocss/core": "^0.55.7",
-    "@unocss/preset-mini": "^0.55.7",
-    "unocss": "^0.55.7"
+    "@unocss/core": "^0.57.3",
+    "@unocss/preset-mini": "^0.57.3",
+    "unocss": "^0.57.3"
   }
 }

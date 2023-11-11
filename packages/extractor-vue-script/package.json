@@ -23,8 +23,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     }
   },
   "main": "./dist/index.cjs",
@@ -42,6 +42,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@unocss/core": "^0.55.7"
+    "@unocss/core": "^0.57.3"
   }
 }
