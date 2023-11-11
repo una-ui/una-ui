@@ -6,7 +6,7 @@ export interface NAlertProps {
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/alert.ts
    * @example
    * alert="outline-pink"
-  */
+   */
   alert?: string
   /**
    * Add icon to the alert,
@@ -17,28 +17,28 @@ export interface NAlertProps {
    *
    * @example
    * icon="i-heroicons-information-circle"
-  */
+   */
   icon?: string | boolean
   /**
    * Add a close button to the alert.
    *
    * @default false
-  */
+   */
   closable?: boolean
   /**
    * Add a title to the alert.
-  */
+   */
   title?: string
   /**
    * Add a description to the alert.
-  */
+   */
   description?: string
 
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/alert.ts
-  */
+   */
   una?: {
     // base
     alert?: string

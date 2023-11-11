@@ -4,6 +4,6 @@ export interface NIconProps {
    *
    * @example
    * 'i-heroicons-chevron-up'
-  */
+   */
   name: string
 }

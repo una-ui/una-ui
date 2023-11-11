@@ -2,46 +2,46 @@ export interface NInputProps {
   /**
    *
    * @default null
-  */
+   */
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
   /**
    * Update the input status.
    * Useful for validations.
    *
    * @default null
-  */
+   */
   status?: 'info' | 'success' | 'warning' | 'error'
 
   /**
    * Add loading state to the input.
    *
    * @default false
-  */
+   */
   loading?: boolean
   /**
    * Swap the position of the leading and trailing icons.
    *
    * @default false
-  */
+   */
   reverse?: boolean
 
   /**
    * Value of the input.
    *
    * @default null
-  */
+   */
   modelValue?: string | number
   /**
    * Display leading icon.
    *
    * @default null
-  */
+   */
   leading?: string
   /**
    * Display trailing icon.
    *
    * @default null
-  */
+   */
   trailing?: string
   /**
    * Allows you to add `UnaUI` input preset properties,
@@ -50,7 +50,7 @@ export interface NInputProps {
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/input.ts
    * @example
    * input="solid-green"
-  */
+   */
   input?: string
   /**
    * Allows you to change the size of the input.
@@ -59,7 +59,7 @@ export interface NInputProps {
    *
    * @example
    * size="sm" | size="2cm" | size="2rem" | size="2px"
-  */
+   */
   size?: string
 
   /**
@@ -70,14 +70,14 @@ export interface NInputProps {
    * @default randomId
    * @example
    * id="email"
-  */
+   */
   id?: string
 
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/input.ts
-  */
+   */
   una?: {
     // base
     input?: string

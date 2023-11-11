@@ -3,13 +3,13 @@ export interface NFormGroupProps {
    * Update the form group status.
    *
    * @default null
-  */
+   */
   status?: 'info' | 'success' | 'warning' | 'error'
   /**
    * Add a required indicator to the form group.
    *
    * @default false
-  */
+   */
   required?: boolean
 
   /**
@@ -21,7 +21,7 @@ export interface NFormGroupProps {
    * @default randomId
    * @example
    * for="email"
-  */
+   */
   for?: string | boolean
   /**
    * Manually set the id attribute.
@@ -31,28 +31,28 @@ export interface NFormGroupProps {
    * @default randomId
    * @example
    * id="email"
-  */
+   */
   id?: string
   /**
    * Label for the form group.
    *
    * @example
    * label="Email"
-  */
+   */
   label?: string
   /**
    * Display `hint` message for the form group.
    *
    * @example
    * hint="Enter your email address"
-  */
+   */
   hint?: string
   /**
    * Display `Description` message for the form group.
    *
    * @example
    * description="We will never share your email with anyone else."
-  */
+   */
   description?: string
   /**
    * Display `Message` for the form group.
@@ -60,7 +60,7 @@ export interface NFormGroupProps {
    *
    * @example
    * message="Email is required"
-  */
+   */
   message?: string
 
   /**
@@ -69,7 +69,7 @@ export interface NFormGroupProps {
    *
    * @example
    * counter="{ value: 0, max: 100 }"
-  */
+   */
   counter?: {
     value: number
     max?: number
@@ -79,7 +79,7 @@ export interface NFormGroupProps {
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/form-group.ts
-  */
+   */
   una?: {
     formGroupTopWrapper?: string
     formGroupTopWrapperInner?: string

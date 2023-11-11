@@ -25,7 +25,7 @@ export interface ModuleOptions {
    * @default true
    * @description Enable themeable ui
    *
-  */
+   */
   themeable?: boolean
 
   /**

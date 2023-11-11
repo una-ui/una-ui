@@ -25,11 +25,25 @@ type Shade = keyof ColorPalette
 const filteredPrimaryColors = Object.fromEntries(
   Object.entries(colors)
     .filter(([key]) => [
-      'blue', 'cyan', 'sky', 'amber',
-      'yellow', 'emerald', 'lime', 'orange',
-      'purple', 'indigo', 'pink', 'tomato',
-      'green', 'fuchsia', 'violet', 'rose',
-      'amber', 'red', 'teal',
+      'blue',
+      'cyan',
+      'sky',
+      'amber',
+      'yellow',
+      'emerald',
+      'lime',
+      'orange',
+      'purple',
+      'indigo',
+      'pink',
+      'tomato',
+      'green',
+      'fuchsia',
+      'violet',
+      'rose',
+      'amber',
+      'red',
+      'teal',
     ].includes(key))
     .map(([key, value]) => [key, Object.fromEntries(
       Object.entries(value)

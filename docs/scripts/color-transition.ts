@@ -18,6 +18,4 @@ function generateCSSTransition() {
 // Generate and output the CSS transition
 const cssTransition = generateCSSTransition()
 
-fs.writeFileSync('./styles/color-transition.css',
-  cssTransition,
-  { encoding: 'utf-8' })
+fs.writeFileSync('./styles/color-transition.css', cssTransition, { encoding: 'utf-8' })

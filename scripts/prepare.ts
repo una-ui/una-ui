@@ -38,10 +38,8 @@ const filteredPrimaryThemes = primaryThemes.filter(([color]) => ['yellow'].inclu
 const filteredGrayThemes = grayThemes.filter(([color]) => ['stone'].includes(color))[0][1]
 
 // generate default theme
-await fs.writeFile('./packages/preset/src/_style/theme.css',
-  `:root {\n${Object.entries(filteredPrimaryThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}
-      \n${Object.entries(filteredGrayThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}\n`,
-  { encoding: 'utf-8' })
+await fs.writeFile('./packages/preset/src/_style/theme.css', `:root {\n${Object.entries(filteredPrimaryThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}
+      \n${Object.entries(filteredGrayThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}\n`, { encoding: 'utf-8' })
 
 // copy color-themes.ts
 // const _filename = fileURLToPath(import.meta.url)

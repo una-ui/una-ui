@@ -6,21 +6,21 @@ export interface NKbdProps {
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/kbd.ts
    * @example
    * kbd="solid-error"
-  */
+   */
   kbd?: string
   /**
    * Add a label to the kbd.
    *
    * @example
    * label="Ctrl"
-  */
+   */
   label?: string
 
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/kbd.ts
-  */
+   */
   una?: {
     kbd?: string
   }

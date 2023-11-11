@@ -1,34 +1,34 @@
 export interface NCheckboxProps {
   /**
    * v-model binding value if the checkbox is checked.
-  */
+   */
   modelValue?: boolean | null
   /**
    * Disable the checkbox.
-  */
+   */
   disabled?: boolean
   /**
    * Switch the position of label and checkbox.
-  */
+   */
   reverse?: boolean
 
   /**
    * Allows you to add `UnaUI` checkbox preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
-  */
+   */
   checkbox?: string
   /**
    * Add name attribute to the checkbox.
    *
    * @default null
-  */
+   */
   name?: string
   /**
    * Manually set the id attribute.
    * By default, the id attribute is generated randomly for accessibility reasons.
    *
    * @default randomId
-  */
+   */
   id?: string
   /**
    * Manually set the for attribute.
@@ -38,13 +38,13 @@ export interface NCheckboxProps {
    * @default randomId
    * @example
    * for="options"
-  */
+   */
   for?: string
   /**
    * Display label text.
    *
    * @default null
-  */
+   */
   label?: string
   /**
    * Allows you to change the size of the checkbox.
@@ -53,7 +53,7 @@ export interface NCheckboxProps {
    *
    * @example
    * size="sm" | size="2cm" | size="2rem" | size="2px"
-  */
+   */
   size?: string
   /**
    * `UnaUI` preset configuration
