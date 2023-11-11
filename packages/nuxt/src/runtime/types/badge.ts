@@ -6,11 +6,11 @@ export interface NBadgeProps {
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/badge.ts
    * @example
    * badge="solid-yellow"
-  */
+   */
   badge?: string
   /**
    * Add a label to the badge.
-  */
+   */
   label?: string
   /**
    * Display an icon on the left side of the badge,
@@ -25,14 +25,14 @@ export interface NBadgeProps {
    * Display `close` icon on the right side of the badge,
    *
    * @default false
-  */
+   */
   closable?: boolean
 
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/badge.ts
-  */
+   */
   una?: {
     // base
     badgeDefaultVariant?: string

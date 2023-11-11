@@ -4,8 +4,7 @@ import { defineComponent } from 'vue'
 import { isEqual } from 'ohash'
 import type { NLinkProps } from '../../types'
 
-// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
-// @ts-ignore tsconfig
+// @ts-expect-error tsconfig
 import { NuxtLink } from '#components'
 
 export default defineComponent({

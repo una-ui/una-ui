@@ -10,8 +10,8 @@ export default defineNuxtConfig({
   ],
 
   alias: {
-    "micromark/lib/preprocess.js": "micromark",
-    "micromark/lib/postprocess.js": "micromark",
+    'micromark/lib/preprocess.js': 'micromark',
+    'micromark/lib/postprocess.js': 'micromark',
   },
 
   runtimeConfig: {

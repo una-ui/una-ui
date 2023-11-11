@@ -4,6 +4,7 @@ export interface NInputProps {
    * @default null
    */
   type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' | 'textarea' | ''
+
   /**
    * Update the input status.
    * Useful for validations.

@@ -3,13 +3,13 @@ export interface NButtonProps {
    * Change the button type.
    *
    * @default 'button'
-  */
+   */
   type?: 'button' | 'submit' | 'reset'
   /**
    * Change the loading placement of the button.
    *
    * @default 'leading'
-  */
+   */
   loadingPlacement?: 'leading' | 'trailing' | 'label'
   /**
    * Convert `label` prop to icon component.
@@ -18,24 +18,24 @@ export interface NButtonProps {
    * @example
    * icon
    * label="i-heroicons-information-circle"
-  */
+   */
   icon?: boolean
   /**
    * Disable the button.
    *
    * @default false
-  */
+   */
   disabled?: boolean
   /**
    * Swap the position of the leading and trailing icons.
    *
    * @default false
-  */
+   */
   reverse?: boolean
   /**
    * Show loading state on button
    * @default false
-  */
+   */
   loading?: boolean
 
   /**
@@ -45,14 +45,14 @@ export interface NButtonProps {
    * @see https://nuxt.com/docs/api/components/nuxt-link#props
    * @example
    * to="/"
-  */
+   */
   to?: string
   /**
    * Add a label to the button.
    *
    * @example
    * label="Click me"
-  */
+   */
   label?: string
   /**
    * Allows you to add `UnaUI` button preset properties,
@@ -61,7 +61,7 @@ export interface NButtonProps {
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/button.ts
    * @example
    * btn="solid-green block square"
-  */
+   */
   btn?: string
   /**
    * Add leading icon the button,
@@ -84,7 +84,7 @@ export interface NButtonProps {
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/button.ts
-  */
+   */
   una?: {
     // base
     btnDefaultVariant?: string

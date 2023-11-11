@@ -1,26 +1,26 @@
 {
-  "compilerOptions": {
-    "rootDir": ".", // Required for path aliases (nuxt module)
-    "baseUrl": ".", // Required for path aliases (nuxt module)
-    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export (nuxt module)
+  "compilerOptions": { // Allow default imports from modules with no default export (nuxt module)
     "target": "esnext",
-    "module": "esnext",
-    "lib": ["esnext", "dom"],
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
     "jsx": "preserve",
+    "lib": ["esnext", "dom"], // Required for path aliases (nuxt module)
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "paths": {
+      "@una-ui/preset": ["./packages/preset/src/index.ts"]
+    },
+    "resolveJsonModule": true,
     "types": [
       "node"
     ],
-    "noUnusedLocals": true,
-    "paths": {
-      "@una-ui/preset": ["./packages/preset/src/index.ts"]
-    }
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true, // Required for path aliases (nuxt module)
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
   },
   "exclude": [
     "**/docs",

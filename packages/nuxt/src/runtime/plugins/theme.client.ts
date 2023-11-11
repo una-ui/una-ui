@@ -1,8 +1,7 @@
 import { watchEffect } from 'vue'
 import { useUnaSettings } from '../composables/useUnaSettings'
 
-// eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
-// @ts-ignore tsconfig
+// @ts-expect-error tsconfig
 import { defineNuxtPlugin } from '#app'
 
 let unaUIStyle: HTMLStyleElement
