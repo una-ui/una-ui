@@ -1,11 +1,38 @@
 import {
   defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  transformerDirectives,
+  transformerVariantGroup,
 } from 'unocss'
 
-import una from './packages/nuxt/src/una.config'
+import presetUna from './packages/preset/src/index'
+import prefixes from './packages/preset/src/prefixes'
+import extratorUna from './packages/extractor-vue-script/src/index'
 
 export default defineConfig({
-  ...una(),
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons({
+      scale: 1.2,
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+    }),
+    presetUna(),
+  ],
+  transformers: [
+    transformerDirectives(),
+    transformerVariantGroup(),
+  ],
+  extractors: [
+    extratorUna({
+      prefixes,
+    }),
+  ],
   configDeps: [
     '../packages/preset/src/_shortcuts/checkbox.ts',
     '../packages/preset/src/_shortcuts/radio.ts',
@@ -27,6 +54,5 @@ export default defineConfig({
     '../packages/preset/src/_shortcuts/index.ts',
 
     '../packages/preset/src/index.ts',
-    '../packages/nuxt/src/unocss.ts',
   ],
 })
