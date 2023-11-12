@@ -9,11 +9,6 @@ export default defineNuxtConfig({
     unaUI,
   ],
 
-  alias: {
-    'micromark/lib/preprocess.js': 'micromark',
-    'micromark/lib/postprocess.js': 'micromark',
-  },
-
   runtimeConfig: {
     public: {
       version: pkg.version,
