@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useVModel } from '@vueuse/core'
+// import { useVModel } from '@vueuse/core'
 import { computed } from 'vue'
 import NIcon from '../elements/Icon.vue'
 import type { NInputProps } from '../../types'
@@ -21,7 +21,7 @@ const slots = defineSlots<{
   trailing?: any
 }>()
 
-const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
+// const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
 
 const id = computed(() => props.id ?? randomId('input'))
 
@@ -104,9 +104,9 @@ const reverseClassVariants = computed(() => {
     </div>
 
     <Component
-      :is="type === 'textarea' ? 'textarea' : 'input'"
+      :is="type !== 'textarea' ? 'input' : 'textarea'"
       :id="id"
-      v-model="inputValue"
+      :value="modelValue"
       :type="type !== 'textarea' ? type : undefined"
       class="input"
       :class="[
@@ -118,6 +118,7 @@ const reverseClassVariants = computed(() => {
       :resize="type === 'textarea' ? resize : undefined"
       :autoresize="type === 'textarea' ? autoresize : undefined"
       v-bind="$attrs"
+      @input="emit('update:modelValue', $event.target.value)"
     />
 
     <div
