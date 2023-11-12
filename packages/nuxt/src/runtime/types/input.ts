@@ -80,7 +80,7 @@ export interface NInputProps {
    *
    * @default false
    */
-  autoresize?: boolean
+  autoresize?: boolean | number
 
   /**
    * This property only works with the `textarea` type.
@@ -92,6 +92,20 @@ export interface NInputProps {
    * resize="x" | resize="y" | resize="none" | null
    */
   resize?: string | null
+
+  /**
+   * This property only works with the `textarea` type.
+   *
+   * @default 3
+   */
+  rows?: number
+
+  /**
+   * This property only works with the `textarea` type.
+   *
+   * @default 3
+   */
+  cols?: number
 
   /**
    * `UnaUI` preset configuration
