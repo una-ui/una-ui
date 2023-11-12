@@ -56,7 +56,7 @@ export interface NInputProps {
   /**
    * Allows you to change the size of the input.
    *
-   * @default size="sm"
+   * @default 'sm'
    *
    * @example
    * size="sm" | size="2cm" | size="2rem" | size="2px"
