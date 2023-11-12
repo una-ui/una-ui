@@ -11,6 +11,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<NInputProps>(), {
   type: 'text',
+  resize: 'none',
 })
 
 const emit = defineEmits<{ (...args: any): void }>()
@@ -106,7 +107,7 @@ const reverseClassVariants = computed(() => {
       :is="type === 'textarea' ? 'textarea' : 'input'"
       :id="id"
       v-model="inputValue"
-      :type="type === 'textarea' ? undefined : type"
+      :type="type !== 'textarea' ? type : undefined"
       class="input"
       :class="[
         statusClassVariants.input,
@@ -114,6 +115,8 @@ const reverseClassVariants = computed(() => {
         una?.input,
       ]"
       :input="input"
+      :resize="type === 'textarea' ? resize : undefined"
+      :autoresize="type === 'textarea' ? autoresize : undefined"
       v-bind="$attrs"
     />
 

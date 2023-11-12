@@ -75,6 +75,27 @@ export interface NInputProps {
   id?: string
 
   /**
+   * Automatically resize the textarea to fit the content.
+   * This property only works with the `textarea` type.
+   *
+   * @default false
+   */
+  autoresize?: boolean
+
+  /**
+   * This property only works with the `textarea` type.
+   * You can add your own resize preset or use the default one.
+   *
+   * @default 'none'
+   *
+   * @example
+   * resize="x" | resize="y" | resize="none" | resize
+   *
+   * @see https://tailwindcss.com/docs/resize
+   */
+  resize?: string
+
+  /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/input.ts
