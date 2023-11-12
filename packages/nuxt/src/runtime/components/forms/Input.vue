@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import { useVModel } from '@vueuse/core'
 import { computed } from 'vue'
 import NIcon from '../elements/Icon.vue'
 import type { NInputProps } from '../../types'
@@ -20,8 +19,6 @@ const slots = defineSlots<{
   leading?: any
   trailing?: any
 }>()
-
-// const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
 
 const id = computed(() => props.id ?? randomId('input'))
 
