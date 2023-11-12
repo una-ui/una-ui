@@ -89,11 +89,9 @@ export interface NInputProps {
    * @default 'none'
    *
    * @example
-   * resize="x" | resize="y" | resize="none" | resize
-   *
-   * @see https://tailwindcss.com/docs/resize
+   * resize="x" | resize="y" | resize="none" | null
    */
-  resize?: string
+  resize?: string | null
 
   /**
    * `UnaUI` preset configuration
