@@ -172,7 +172,7 @@ onMounted(() => {
       />
 
       <NIcon
-        v-if="status"
+        v-else-if="status"
         input="status-icon-base"
         :name="statusClassVariants.icon"
       />
