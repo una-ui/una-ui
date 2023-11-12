@@ -3,7 +3,8 @@ export interface NInputProps {
    *
    * @default null
    */
-  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
+  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' | 'textarea' | ''
+
   /**
    * Update the input status.
    * Useful for validations.
@@ -55,7 +56,7 @@ export interface NInputProps {
   /**
    * Allows you to change the size of the input.
    *
-   * @default size="sm"
+   * @default sm
    *
    * @example
    * size="sm" | size="2cm" | size="2rem" | size="2px"
@@ -72,6 +73,39 @@ export interface NInputProps {
    * id="email"
    */
   id?: string
+
+  /**
+   * Automatically resize the textarea to fit the content.
+   * This property only works with the `textarea` type.
+   *
+   * @default false
+   */
+  autoresize?: boolean | number
+
+  /**
+   * This property only works with the `textarea` type.
+   * You can add your own resize preset or use the default one.
+   *
+   * @default none
+   *
+   * @example
+   * resize="x" | resize="y" | resize="none" | null
+   */
+  resize?: string | null
+
+  /**
+   * This property only works with the `textarea` type.
+   *
+   * @default 3
+   */
+  rows?: number
+
+  /**
+   * This property only works with the `textarea` type.
+   *
+   * @default 3
+   */
+  cols?: number
 
   /**
    * `UnaUI` preset configuration

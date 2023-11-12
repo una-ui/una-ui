@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useVModel } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import NIcon from '../elements/Icon.vue'
 import type { NInputProps } from '../../types'
 import { randomId } from '../../utils'
@@ -11,6 +10,8 @@ defineOptions({
 
 const props = withDefaults(defineProps<NInputProps>(), {
   type: 'text',
+  resize: 'none',
+  rows: 3,
 })
 
 const emit = defineEmits<{ (...args: any): void }>()
@@ -19,8 +20,6 @@ const slots = defineSlots<{
   leading?: any
   trailing?: any
 }>()
-
-const inputValue = useVModel(props, 'modelValue', emit, { passive: true })
 
 const id = computed(() => props.id ?? randomId('input'))
 
@@ -75,6 +74,41 @@ const reverseClassVariants = computed(() => {
     trailingWrapper: props.reverse ? 'input-leading-wrapper' : 'input-trailing-wrapper',
   }
 })
+
+// html refs
+const textarea = ref<HTMLTextAreaElement | null>(null)
+
+function resizeTextarea() {
+  if (!(props.type === 'textarea' && props.autoresize) || !textarea.value)
+    return
+
+  textarea.value.rows = props.rows
+
+  const styles = window.getComputedStyle(textarea.value)
+  const paddingTop = Number.parseInt(styles.paddingTop)
+  const paddingBottom = Number.parseInt(styles.paddingBottom)
+  const padding = paddingTop + paddingBottom
+  const lineHeight = Number.parseInt(styles.lineHeight)
+  const { scrollHeight } = textarea.value
+  const newRows = (scrollHeight - padding) / lineHeight
+
+  if (newRows > props.rows)
+    textarea.value.rows = newRows
+
+  const maxAutoresizeRows = typeof props.autoresize === 'number' ? props.autoresize : Number.POSITIVE_INFINITY
+  if (textarea.value.rows > maxAutoresizeRows)
+    textarea.value.rows = maxAutoresizeRows
+}
+
+function onInput(event: Event) {
+  emit('update:modelValue', (event.target as HTMLInputElement).value)
+
+  resizeTextarea()
+}
+
+onMounted(() => {
+  resizeTextarea()
+})
 </script>
 
 <template>
@@ -102,10 +136,12 @@ const reverseClassVariants = computed(() => {
       </slot>
     </div>
 
-    <input
+    <Component
+      :is="type !== 'textarea' ? 'input' : 'textarea'"
       :id="id"
-      v-model="inputValue"
-      :type="type"
+      :ref="type === 'textarea' ? 'textarea' : undefined"
+      :value="modelValue"
+      :type="type !== 'textarea' ? type : undefined"
       class="input"
       :class="[
         statusClassVariants.input,
@@ -113,8 +149,12 @@ const reverseClassVariants = computed(() => {
         una?.input,
       ]"
       :input="input"
+      :resize="type === 'textarea' ? resize : undefined"
+      :rows="type === 'textarea' ? rows : undefined"
+      :cols="type === 'textarea' ? cols : undefined"
       v-bind="$attrs"
-    >
+      @input="onInput"
+    />
 
     <div
       v-if="isTrailing"
