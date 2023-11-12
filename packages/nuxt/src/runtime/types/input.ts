@@ -56,7 +56,7 @@ export interface NInputProps {
   /**
    * Allows you to change the size of the input.
    *
-   * @default 'sm'
+   * @default sm
    *
    * @example
    * size="sm" | size="2cm" | size="2rem" | size="2px"
@@ -86,7 +86,7 @@ export interface NInputProps {
    * This property only works with the `textarea` type.
    * You can add your own resize preset or use the default one.
    *
-   * @default 'none'
+   * @default none
    *
    * @example
    * resize="x" | resize="y" | resize="none" | null
