@@ -76,7 +76,7 @@ const reverseClassVariants = computed(() => {
 })
 
 // html refs
-const textarea = ref<HTMLTextAreaElement | null>(null)
+const textarea = ref<HTMLTextAreaElement>()
 
 function resizeTextarea() {
   if (!(props.type === 'textarea' && props.autoresize) || !textarea.value)
@@ -137,11 +137,11 @@ onMounted(() => {
     </div>
 
     <Component
-      :is="type !== 'textarea' ? 'input' : 'textarea'"
+      :is="props.type !== 'textarea' ? 'input' : 'textarea'"
       :id="id"
-      :ref="type === 'textarea' ? 'textarea' : undefined"
+      ref="textarea"
       :value="modelValue"
-      :type="type !== 'textarea' ? type : undefined"
+      :type="props.type !== 'textarea' ? props.type : undefined"
       class="input"
       :class="[
         statusClassVariants.input,
