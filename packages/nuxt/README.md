@@ -1,6 +1,7 @@
 # ✨ Una UI
 
-> **Warning**: This project is heavily working in progress.
+> [!WARNING]  
+> This project is heavily working in progress.
 
 ## 🏗️ Release Status
 
