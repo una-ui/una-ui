@@ -49,6 +49,7 @@ function shuffleTheme() {
       <PopoverButton
         btn="~ square soft"
         class="rounded-lg"
+        aria-label="Theme"
       >
         <span i-heroicons-swatch-20-solid text-md />
       </PopoverButton>
@@ -63,6 +64,7 @@ function shuffleTheme() {
                 :style="{ background: theme['--una-primary-hex'] }"
                 class="h-6.5 w-6.5 rounded-full transition-all" :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
                 ring="primary offset-4 offset-base"
+                aria-label="Primary Color"
                 @click="updatePrimaryTheme(key)"
               />
             </div>
@@ -76,6 +78,7 @@ function shuffleTheme() {
                 :style="{ background: theme['--una-gray-hex'] }"
                 :class="currentGrayThemeName === key ? 'ring-2' : 'scale-93'"
                 class="h-6.5 w-6.5 rounded-full transition-all"
+                aria-label="Gray Color"
                 ring="gray offset-4 offset-base"
                 @click="updateGrayTheme(key)"
               />
