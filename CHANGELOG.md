@@ -1,3 +1,26 @@
+# [0.4.0-beta.0](https://github.com/una-ui/una-ui/compare/v0.3.0-beta.1...v0.4.0-beta.0) (2023-11-28)
+
+
+### Bug Fixes
+
+* **NInput:** set fix ref value to textarea ([63490bc](https://github.com/una-ui/una-ui/commit/63490bc76a53156da430dd500f05f5e0b252f90a))
+* **NInput:** show only 1 icon in trailing area ([d5e039c](https://github.com/una-ui/una-ui/commit/d5e039c6e6d3fe066cf1efc9258b30fbd75ee56e))
+
+
+### Features
+
+* **extractor-vue-script:** add ability to extract `camelCase` prefixes ([9f93af1](https://github.com/una-ui/una-ui/commit/9f93af104a8299c0a641c11c9f9857913ff477a1))
+* **NInput:** add `textarea` to configuration ([#116](https://github.com/una-ui/una-ui/issues/116)) ([506af8d](https://github.com/una-ui/una-ui/commit/506af8d5cf301766c50904ebcad52b85112fc90d))
+* **NThemeSwitcher:** add reset button) ([7879afb](https://github.com/una-ui/una-ui/commit/7879afb0304f489392a789bb5424e57803c3b57b))
+* **nuxt:** add ability to configure default themes ([#110](https://github.com/una-ui/una-ui/issues/110)) ([bdab305](https://github.com/una-ui/una-ui/commit/bdab3059736e769b798d9a1536421e2a9a4ecd05))
+
+
+### Performance Improvements
+
+* **NThemeSwitcher:** improve accessibility ([a81d8b1](https://github.com/una-ui/una-ui/commit/a81d8b149c9249a41b029809f0efb93b40340f5b))
+
+
+
 # [0.3.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.2.0-beta.6...v0.3.0-beta.1) (2023-10-22)
 
 
