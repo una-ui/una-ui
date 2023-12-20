@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import type { NAlertProps } from '../../types'
 import NIcon from '../elements/Icon.vue'
+import NButton from '../elements/Button.vue'
 
 defineOptions({
   inheritAttrs: false,
