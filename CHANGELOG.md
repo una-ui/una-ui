@@ -1,3 +1,13 @@
+# [0.4.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.4.0-beta.0...v0.4.0-beta.1) (2024-01-29)
+
+
+### Bug Fixes
+
+* **NAlert:** add missing import ([138406d](https://github.com/una-ui/una-ui/commit/138406d2950ada193905554a28335784c66e33d4))
+* **NAlert:** use div tag in title instead of heading ([1ab68cc](https://github.com/una-ui/una-ui/commit/1ab68cc244918603ddabf23585b9fdcb9140b402))
+
+
+
 # [0.4.0-beta.0](https://github.com/una-ui/una-ui/compare/v0.3.0-beta.1...v0.4.0-beta.0) (2023-11-28)
 
 
