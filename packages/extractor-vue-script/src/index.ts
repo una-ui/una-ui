@@ -1,6 +1,13 @@
 import { defaultSplitRE } from '@unocss/core'
 import type { Extractor } from '@unocss/core'
-import type { ExtractorVueScriptOptions } from './types'
+
+interface ExtractorVueScriptOptions {
+  /**
+   * @default []
+   * @description List of prefixes to extract from the vue-script code.
+   */
+  prefixes?: string[]
+}
 
 function generateSelectors(prefix: string, values: string[]): string[] {
   // eg convert prefix to kebab-case
