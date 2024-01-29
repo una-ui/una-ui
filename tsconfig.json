@@ -17,6 +17,7 @@
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true, // Required for path aliases (nuxt module)
+    "declaration": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipDefaultLibCheck": true,

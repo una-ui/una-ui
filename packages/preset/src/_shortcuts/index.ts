@@ -1,3 +1,4 @@
+import type { Preset, StaticShortcutMap } from '@unocss/core'
 import { link } from './link'
 import { navLinkGroup } from './nav-link-group'
 import { navLink } from './nav-link'
@@ -36,4 +37,4 @@ export const shortcuts = [
   ...link,
   ...radio,
   ...checkbox,
-]
+] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
