@@ -90,9 +90,9 @@ const icon = computed(() => {
             :class="una?.alertTitle"
           >
             <slot name="title">
-              <h3>
+              <div>
                 {{ title }}
-              </h3>
+              </div>
             </slot>
           </div>
           <div
