@@ -2,6 +2,7 @@
 import { useImage } from '@vueuse/core'
 import { computed } from 'vue'
 import type { NAvatarProps } from '../../types'
+import NIcon from './Icon.vue'
 
 const props = withDefaults(defineProps<NAvatarProps>(), {
   delay: 0,
