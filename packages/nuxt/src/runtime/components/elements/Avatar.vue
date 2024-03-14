@@ -26,6 +26,7 @@ const placeholder = computed(() => {
 <template>
   <span
     :avatar="avatar"
+    :size="size"
     class="avatar"
     :class="[
       { 'avatar-default-variant': !hasVariant && !isBaseVariant },
