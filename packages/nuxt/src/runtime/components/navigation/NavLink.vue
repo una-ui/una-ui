@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import type { NNavLinkProps } from '../../types'
 import { omitProps } from '../../utils'
 import NButton from '../elements/Button.vue'
+import NBadge from '../elements/Badge.vue'
 import NIcon from '../elements/Icon.vue'
 
 defineOptions({
