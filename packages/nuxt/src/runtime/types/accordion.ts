@@ -78,7 +78,7 @@ export interface NAccordionItemProps extends NButtonProps {
   /**
    * Accordion item content
    */
-  content?: string | object
+  content?: string
   /**
    * Update item leading icon when accordion button item is open,
    * Accepts icon name and utility classes
