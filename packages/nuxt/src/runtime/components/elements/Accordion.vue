@@ -53,15 +53,16 @@ function onLeave(element: Element, done: () => void) {
 }
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
-  item: NAccordionItemProps
+  item: NAccordionItemProps & any
   index: number
   open: boolean
   close: () => void
 }>()
 
-// TODO: optimized this one
+const pickedProps = pickProps(props, ['reverse', 'icon', 'btn', 'label', 'leading', 'loading', 'loadingPlacement', 'una', 'trailing', 'leading', 'to', 'type', 'disabled'])
+
 function mergedProps(itemProps: NAccordionItemProps) {
-  return Object.assign(pickProps(props, ['reverse', 'icon', 'btn', 'label', 'leading', 'loading', 'loadingPlacement', 'una', 'trailing', 'leading', 'to', 'type', 'disabled']), itemProps)
+  return Object.assign(pickedProps, itemProps)
 }
 
 // TODO: refactor this to sync with NButton variants

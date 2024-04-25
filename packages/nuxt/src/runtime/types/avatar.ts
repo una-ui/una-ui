@@ -23,6 +23,10 @@ export interface NAvatarProps {
    */
   label?: string
   /**
+   * Set the size of the avatar.
+   */
+  size?: string
+  /**
    * Add src of the image.
    *
    * @example

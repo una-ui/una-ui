@@ -1,7 +1,7 @@
 export const staticGeneral = {
   // text-size
-  'text-md': 'text-16px',
-  'size-md': 'text-16px',
+  'text-md': 'text-1rem leading-1.5rem',
+  'size-md': 'text-md',
 
   // text color
   'text-base': 'text-$c-foreground',

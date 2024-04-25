@@ -66,7 +66,7 @@ export default function presetUna(options: unaUIOptions = {
       }],
       [/^size-(.*)$/, fonts[1][1] as any],
       ['n-disabled', {
-        'opacity': 0.7,
+        'opacity': 0.5,
         'pointer-events': 'none',
       }],
     ],
