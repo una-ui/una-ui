@@ -114,4 +114,9 @@ export interface NAccordionItemProps extends NButtonProps {
    * @default false
    */
   mounted?: boolean
+  /**
+   * Allow dynamic attributes to be added to the accordion item,
+   *
+   */
+  [key: string]: any
 }

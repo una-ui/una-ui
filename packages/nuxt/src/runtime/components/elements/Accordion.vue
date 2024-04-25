@@ -53,7 +53,7 @@ function onLeave(element: Element, done: () => void) {
 }
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
-  item: NAccordionItemProps & any
+  item: NAccordionItemProps
   index: number
   open: boolean
   close: () => void
