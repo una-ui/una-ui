@@ -4,6 +4,8 @@
 
     <ColorMode />
 
+    <Slider />
+
     <NThemeSwitcher />
   </div>
 </template>
