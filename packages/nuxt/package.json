@@ -42,10 +42,10 @@
     "@nuxtjs/color-mode": "^3.4.2",
     "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/preset": "workspace:^",
-    "@unocss/core": "^0.57.7",
-    "@unocss/nuxt": "^0.57.7",
-    "@unocss/preset-attributify": "^0.57.7",
-    "@unocss/preset-icons": "^0.57.7",
+    "@unocss/core": "^0.61.5",
+    "@unocss/nuxt": "^0.61.5",
+    "@unocss/preset-attributify": "^0.61.5",
+    "@unocss/preset-icons": "^0.61.5",
     "@vueuse/core": "^10.11.0",
     "@vueuse/integrations": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
@@ -54,7 +54,7 @@
     "radix-vue": "^1.9.1",
     "tailwind-merge": "^2.4.0",
     "typescript": "^5.5.3",
-    "unocss": "^0.57.7"
+    "unocss": "^0.61.5"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.5.5",

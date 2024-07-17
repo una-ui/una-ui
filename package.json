@@ -62,7 +62,7 @@
     "chroma-js": "^2.4.2",
     "ignore-dependency-scripts": "^1.0.1",
     "simple-git": "^3.25.0",
-    "unocss": "^0.57.7"
+    "unocss": "^0.61.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^1.2.1",
@@ -72,7 +72,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^13.0.8",
     "@types/node": "^20.14.11",
-    "@unocss/eslint-config": "^0.57.7",
+    "@unocss/eslint-config": "^0.61.5",
     "bumpp": "^9.4.1",
     "conventional-changelog-cli": "^4.1.0",
     "eslint": "^8.57.0",
