@@ -46,14 +46,14 @@ export interface NFormGroupProps {
    * @example
    * hint="Enter your email address"
    */
-  hint?: string
+  hint?: any
   /**
    * Display `Description` message for the form group.
    *
    * @example
    * description="We will never share your email with anyone else."
    */
-  description?: string
+  description?: any
   /**
    * Display `Message` for the form group.
    * Useful for displaying validation errors.
@@ -61,7 +61,7 @@ export interface NFormGroupProps {
    * @example
    * message="Email is required"
    */
-  message?: string
+  message?: any
 
   /**
    * Display `counter` for the form group.
