@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<NBadgeProps>(), {
   }),
 })
 
-const emit = defineEmits<{ (...args: any): void }>()
+const emit = defineEmits(['close'])
 
 const badgeVariants = ['solid', 'soft', 'outline'] as const
 const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badge?.includes(badgeVariants)))

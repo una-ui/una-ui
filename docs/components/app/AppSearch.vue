@@ -93,7 +93,7 @@ function highlight(
   text: string,
   result: any,
 ): string {
-  const { indices, value }: { indices: number[][]; value: string } = result || { indices: [], value: '' }
+  const { indices, value }: { indices: number[][], value: string } = result || { indices: [], value: '' }
 
   if (text === value)
     return ''
