@@ -13,12 +13,15 @@ const delegatedProps = computed(() => {
   return delegated
 })
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const isVertical = computed(() => props.orientation === 'vertical')
 </script>
 
 <template>
   <SliderRoot
     :class="cn(
-      'slider-root slider-primary',
+      'slider-root',
+      isVertical && 'slider-root-vertical',
+      props.size,
       props.class,
       props.una?.sliderRoot,
       disabled && 'slider-disabled',
@@ -29,6 +32,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       <SliderTrack
         :class="cn(
           'slider-track',
+          isVertical && 'slider-track-vertical',
           props.una?.sliderTrack,
         )"
       >
@@ -36,6 +40,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           <SliderRange
             :class="cn(
               'slider-range',
+              isVertical && 'slider-range-vertical',
               props.una?.sliderRange,
             )"
           />
@@ -49,6 +54,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         :key="key"
         :class="cn(
           'slider-thumb',
+          isVertical && 'slider-thumb-vertical',
           props.una?.sliderThumb,
         )"
       />

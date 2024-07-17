@@ -6,8 +6,12 @@ type SliderPrefix = 'slider'
 
 export const staticSlider: Record<`${SliderPrefix}-${string}` | SliderPrefix, string> = {
   // configurations
-  'slider': 'slider-primary',
+  'slider': 'slider-primary size-base',
   'slider-disabled': 'n-disabled',
+  'slider-root-vertical': 'flex-col w-1em h-full',
+  'slider-track-vertical': 'w-0.5em h-full',
+  'slider-range-vertical': 'w-full',
+  'slider-thumb-vertical': 'w-1.25em h-1.25em',
 
   // components
   'slider-root': 'slider relative flex w-full touch-none select-none items-center',
