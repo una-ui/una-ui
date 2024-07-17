@@ -34,6 +34,7 @@ export default defineConfig({
     }),
   ],
   configDeps: [
+    '../packages/preset/src/_shortcuts/slider.ts',
     '../packages/preset/src/_shortcuts/checkbox.ts',
     '../packages/preset/src/_shortcuts/radio.ts',
     '../packages/preset/src/_shortcuts/link.ts',
