@@ -35,27 +35,30 @@
     "playground:preview": "nuxi preview playground"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.16",
-    "@iconify-json/heroicons": "^1.1.13",
-    "@iconify-json/tabler": "^1.1.96",
-    "@nuxt/kit": "^3.8.1",
-    "@nuxtjs/color-mode": "^3.3.0",
+    "@headlessui/vue": "^1.7.22",
+    "@iconify-json/heroicons": "^1.1.22",
+    "@iconify-json/tabler": "^1.1.117",
+    "@nuxt/kit": "^3.12.3",
+    "@nuxtjs/color-mode": "^3.4.2",
     "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/preset": "workspace:^",
-    "@unocss/core": "^0.57.3",
-    "@unocss/nuxt": "^0.57.3",
-    "@unocss/preset-attributify": "^0.57.3",
-    "@unocss/preset-icons": "^0.57.3",
-    "@vueuse/core": "^10.6.0",
-    "@vueuse/integrations": "^10.6.0",
-    "@vueuse/nuxt": "^10.6.0",
+    "@unocss/core": "^0.57.7",
+    "@unocss/nuxt": "^0.57.7",
+    "@unocss/preset-attributify": "^0.57.7",
+    "@unocss/preset-icons": "^0.57.7",
+    "@vueuse/core": "^10.11.0",
+    "@vueuse/integrations": "^10.11.0",
+    "@vueuse/nuxt": "^10.11.0",
+    "clsx": "^2.1.1",
     "ohash": "^1.1.3",
-    "unocss": "^0.57.3"
+    "radix-vue": "^1.9.1",
+    "tailwind-merge": "^2.4.0",
+    "unocss": "^0.57.7"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.5.4",
-    "@nuxt/schema": "^3.8.1",
-    "nuxt": "^3.8.1"
+    "@nuxt/module-builder": "^0.5.5",
+    "@nuxt/schema": "^3.12.3",
+    "nuxt": "^3.12.3"
   },
   "publishConfig": {
     "access": "public"
