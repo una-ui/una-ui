@@ -93,7 +93,7 @@ function highlight(
   text: string,
   result: any,
 ): string {
-  const { indices, value }: { indices: number[][]; value: string } = result || { indices: [], value: '' }
+  const { indices, value }: { indices: number[][], value: string } = result || { indices: [], value: '' }
 
   if (text === value)
     return ''
@@ -267,7 +267,7 @@ watch(Escape, () => {
             </button>
           </div>
 
-          <div class="mb-2 mt-5 text-sm font-bold text-primary">
+          <div class="mb-2 mt-5 text-sm text-primary font-bold">
             Recent
           </div>
 

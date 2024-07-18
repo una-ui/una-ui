@@ -1,7 +1,7 @@
 <template>
   <div flex="~ items-center" gap-4>
     <NAvatar avatar="solid-primary" class="rounded-md">
-      <span class="font-extrabold text-white">PR</span>
+      <span class="text-white font-extrabold">PR</span>
     </NAvatar>
 
     <NAvatar avatar="soft-primary">

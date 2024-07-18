@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<NAlertProps>(), {
   icon: false,
 })
 
-const emit = defineEmits<{ (...args: any): void }>()
+const emit = defineEmits(['close'])
 
 const slots = defineSlots<{
   default?: any

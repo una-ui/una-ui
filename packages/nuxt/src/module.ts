@@ -110,6 +110,7 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
 
     // modules
+    await installModule('radix-vue/nuxt')
     await installModule('@unocss/nuxt')
     await installModule('@nuxtjs/color-mode', {
       classSuffix: '',

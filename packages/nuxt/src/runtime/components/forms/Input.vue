@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<NInputProps>(), {
   rows: 3,
 })
 
-const emit = defineEmits<{ (...args: any): void }>()
+const emit = defineEmits(['leading', 'trailing', 'update:modelValue'])
 
 const slots = defineSlots<{
   leading?: any
