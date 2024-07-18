@@ -57,7 +57,7 @@
     "unocss": "^0.61.5"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.5.5",
+    "@nuxt/module-builder": "^0.8.1",
     "@nuxt/schema": "^3.12.3",
     "nuxt": "^3.12.3"
   },
