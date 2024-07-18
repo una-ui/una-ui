@@ -1,3 +1,22 @@
+# [0.5.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.4.0-beta.5...v0.5.0-beta.1) (2024-07-18)
+
+
+### Bug Fixes
+
+* add missing imported icons ([f7a91a5](https://github.com/una-ui/una-ui/commit/f7a91a5bf58f49c0568f17fd2bfc92704186f229))
+* **NAccordion:** update item attributes types configuration ([e4b196d](https://github.com/una-ui/una-ui/commit/e4b196d40d6905709d1a7739785f4e6862f49a11))
+* **NAvatar:** add missing import ([56ea17f](https://github.com/una-ui/una-ui/commit/56ea17f619b0dff8651b47b609fd62cc8eed5837))
+* **NNavlink:** add missing imported components ([#127](https://github.com/una-ui/una-ui/issues/127)) ([cbda216](https://github.com/una-ui/una-ui/commit/cbda21693e9bad6d5a673b463a99a952e5c5f117))
+* **preset:** update `text-md` preset configuration ([5cb67da](https://github.com/una-ui/una-ui/commit/5cb67dae5ddb675b48f3296f180b7cba2798f78d))
+
+
+### Features
+
+* **NAvatar:** add `size` prop to props configuration ([1b283e8](https://github.com/una-ui/una-ui/commit/1b283e84eb0c05c73ff378b3121dd37e965819e0))
+* **NSlider:** add new component and preset ([#132](https://github.com/una-ui/una-ui/issues/132)) ([686910f](https://github.com/una-ui/una-ui/commit/686910fdec99f9fdaaf071afa7a3bd58f239b850))
+
+
+
 # [0.4.0-beta.5](https://github.com/una-ui/una-ui/compare/v0.4.0-beta.4...v0.4.0-beta.5) (2024-01-29)
 
 
