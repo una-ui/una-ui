@@ -28,7 +28,7 @@ const { copy, copied } = useClipboard({ source })
             Una UI
           </span>
         </h1>
-        <h2 class="text-5xl font-bold text-muted lg:text-6xl">
+        <h2 class="text-5xl text-muted font-bold lg:text-6xl">
           The Atomic UI Framework for Nuxt
         </h2>
         <p class="pt-5 text-xl text-$c-gray-500 lg:text-2xl">
