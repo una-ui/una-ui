@@ -44,7 +44,7 @@ const { copy, copied } = useClipboard({ source })
           label="Getting Started"
         />
         <NButton
-          to="/elements"
+          to="/components/accordion"
           btn="solid-gray"
           class="rounded-full px-5.5 py-3 font-bold"
           label="View Components"

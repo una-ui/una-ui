@@ -49,7 +49,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 You can use the `NFormGroup` component to create a checkbox group for the checkbox,
 
-> Read more about the `NFormGroup` component [here](/form-group).
+> Read more about the `NFormGroup` component [here](form-group).
 
 ::alert{type="warning"}
   Remember to set `for` to false to disable `for` behavior on the label since we have a custom implementation for the checkbox input.

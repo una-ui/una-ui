@@ -11,7 +11,7 @@ description: 'NAccordion component - used to display collapsible content.'
 `NAccordion` is a component that allows you to display collapsible content.
 
 ::alert{type="info"}
-`NAccordion` label is wrapped around the [NButton](elements/button) component, which means that all the props and slots of NButton are available to use.
+`NAccordion` label is wrapped around the [NButton](button) component, which means that all the props and slots of NButton are available to use.
 ::
 
 :::CodeGroup
@@ -78,10 +78,10 @@ Use `multiple` prop when using `default-open` to open multiple items by default.
 
 ## Color
 
-Since we use the [NButton](elements/button) component for the accordion label, you can use the `btn` prop to change the color of the label. See [NButton](elements/button) for more information.
+Since we use the [NButton](button) component for the accordion label, you can use the `btn` prop to change the color of the label. See [NButton](button) for more information.
 
 ::alert{type="info"}
-`btn="text-{color}"` prop is basically from [NButton](elements/button) component. You can use it to change the color of the label.
+`btn="text-{color}"` prop is basically from [NButton](button) component. You can use it to change the color of the label.
 ::
 
 :::CodeGroup
@@ -128,7 +128,7 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 `item.reverse` - allows you to switch the position of the trailing and leading icons of a specific item.
 
 ::alert{type="info"}
-`reverse` prop is basically from [NButton](elements/button) component. You can use it to switch the position of the trailing and leading icons.
+`reverse` prop is basically from [NButton](button) component. You can use it to switch the position of the trailing and leading icons.
 ::
 
 :::CodeGroup

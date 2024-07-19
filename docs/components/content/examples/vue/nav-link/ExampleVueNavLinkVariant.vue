@@ -2,15 +2,15 @@
 const links = [
   {
     label: 'Dashboard',
-    to: '/navigation/nav-link',
+    to: '/components/nav-link',
   },
   {
     label: 'Profile',
-    to: '/navigation/nav-link-group',
+    to: '/components/nav-link-group',
   },
   {
     label: 'Settings',
-    to: '/navigation/breadcrumb',
+    to: '/components/breadcrumb',
   },
 ]
 </script>

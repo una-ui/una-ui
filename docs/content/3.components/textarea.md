@@ -8,10 +8,10 @@ description: 'NTextarea component - used to collect data from the user.'
 
 ## Basic
 
-You can use [NInput](/forms/input) with the `textarea"` type to create a basic textarea.
+You can use [NInput](input) with the `textarea"` type to create a basic textarea.
 
 ::alert{type=info}
-This component shares the same API as the [NInput](/forms/input) component. So you can use all the same props, variants, slots, events, etc. as the input component.
+This component shares the same API as the [NInput](input) component. So you can use all the same props, variants, slots, events, etc. as the input component.
 ::
 
 :::CodeGroup
@@ -69,7 +69,7 @@ This component shares the same API as the [NInput](/forms/input) component. So y
 | `x`    | The textarea will be resizable horizontally.                |
 
 ::alert{type=info}
-The examples below utilize `NFormGroup`. Refer to the [FormGroup](/forms/form-group) section for more details.
+The examples below utilize `NFormGroup`. Refer to the [FormGroup](form-group) section for more details.
 ::
 
 :::CodeGroup

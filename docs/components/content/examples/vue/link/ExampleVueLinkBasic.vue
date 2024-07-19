@@ -1,14 +1,14 @@
 <template>
   <div class="flex gap-4">
     <NLink
-      to="/elements/link"
+      to="/components/link"
       active-class="text-success"
     >
       Active Link
     </NLink>
 
     <NLink
-      to="/elements/link/"
+      to="/components/link/"
       exact-active-class="text-lime"
       exact
     >
@@ -24,7 +24,7 @@
     </NLink>
 
     <NLink
-      to="/elements/link?search=something"
+      to="/components/link?search=something"
       active-class="text-warning"
       exact-query
     >
@@ -32,7 +32,7 @@
     </NLink>
 
     <NLink
-      to="/elements/link#something"
+      to="/components/link#something"
       active-class="text-pink"
       exact-hash
     >
