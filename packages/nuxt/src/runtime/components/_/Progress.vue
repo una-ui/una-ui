@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { computed } from 'vue'
 import {
   ProgressIndicator,
   ProgressRoot,
-  type ProgressRootProps,
 } from 'radix-vue'
 import { cn } from '../../utils'
+import type { NProgressProps } from '../../types'
 
 const props = withDefaults(
-  defineProps<ProgressRootProps & { class?: HTMLAttributes['class'] }>(),
+  defineProps<NProgressProps>(),
   {
     modelValue: 0,
   },
@@ -27,13 +27,19 @@ const delegatedProps = computed(() => {
     :class="
       cn(
         'progress-root',
+        props.una?.progressRoot,
         props.class,
       )
     "
   >
-    <ProgressIndicator
-      :class="cn('progress-indicator')"
-      :style="`transform: translateX(-${100 - (props.modelValue ?? 0)}%);`"
-    />
+    <slot name="progress-indicator">
+      <ProgressIndicator
+        :class="cn(
+          'progress-indicator',
+          props.una?.progressIndicator,
+        )"
+        :style="`transform: translateX(-${100 - (props.modelValue ?? 0)}%);`"
+      />
+    </slot>
   </ProgressRoot>
 </template>

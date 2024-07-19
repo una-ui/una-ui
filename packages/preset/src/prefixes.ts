@@ -1,1 +1,1 @@
-export default ['accordion', 'alert', 'avatar-group', 'avatar', 'badge', 'btn', 'checkbox', 'form-group', 'general', 'icon', 'indicator', 'input', 'kbd', 'link', 'nav-link-group', 'nav-link', 'radio', 'slider', 'switch', 'resize', 'size', 'nav-link-active', 'nav-link-inactive']
+export default ['accordion', 'alert', 'avatar-group', 'avatar', 'badge', 'btn', 'checkbox', 'form-group', 'general', 'icon', 'indicator', 'input', 'kbd', 'link', 'nav-link-group', 'nav-link', 'progress', 'radio', 'slider', 'switch', 'resize', 'size', 'nav-link-active', 'nav-link-inactive']
