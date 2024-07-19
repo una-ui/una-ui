@@ -89,7 +89,7 @@ The `skeleton` prop is only available when using the `src` prop.
 
 ## With Indicator
 
-Refer to the [Indicator](/elements/indicator) component for more details.
+Refer to the [Indicator](indicator) component for more details.
 
 :::CodeGroup
 ::code-block{label="Preview" preview}

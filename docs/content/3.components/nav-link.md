@@ -15,7 +15,7 @@ Work in progress - this component is not yet ready for use.
 
 `NNavLink` is a component that renders a link to a page in your application. It is a wrapper around the `NButton` and `NuxtLink` component that adds some additional functionality. 
 
-> refer to the [NButton](/elements/button) and [NuxtLink](/elements/link) documentation for more information on the props that can be passed to those components.
+> refer to the [NButton](button) and [NuxtLink](link) documentation for more information on the props that can be passed to those components.
 
 :::CodeGroup
 ::code-block{label="Preview" preview}

@@ -72,7 +72,7 @@ To avoid the thumb from overlapping, you can set the `min-steps-between-thumbs` 
 > You can use the `NFormGroup` component to create a label for the slider.
 
 ::alert{type="info"}
-  Read more about the `NFormGroup` component [here](/forms/form-group).
+  Read more about the `NFormGroup` component [here](form-group).
 ::
 
 :::CodeGroup
