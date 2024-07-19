@@ -20,8 +20,8 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined, prerender: true },
-    '/docs': { prerender: true },
+    // '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined, prerender: true },
+    '/': { prerender: true },
   },
 
   css: [
