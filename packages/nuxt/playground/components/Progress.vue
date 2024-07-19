@@ -26,6 +26,7 @@ watchEffect((cleanupFn) => {
 
 <template>
   <NProgress
+    v-model="progress"
     size="xs"
     class="w-3/5"
   />
