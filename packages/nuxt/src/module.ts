@@ -100,14 +100,6 @@ export default defineNuxtModule<ModuleOptions>({
       watch: nuxt.options.dev,
     })
 
-    // Global components
-    addComponentsDir({
-      path: resolve(runtimeDir, 'components', '_'),
-      prefix: options.prefix,
-      global: options.global,
-      watch: nuxt.options.dev,
-    })
-
     // plugins
     if (options.themeable) {
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
