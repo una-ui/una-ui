@@ -7,21 +7,21 @@ const links = [
     children: [
       {
         label: 'Team Members 1',
-        to: '/navigation/nav-link',
+        to: '/components/nav-link',
       },
       {
         label: 'Team Members 2',
-        to: '/navigation/nav-link-group',
+        to: '/components/nav-link-group',
       },
       {
         label: 'Team Members 3',
-        to: '/navigation/breadcrumb',
+        to: '/components/breadcrumb',
       },
     ],
   },
   {
     leading: 'i-heroicons-user',
-    to: '/navigation/nav-link',
+    to: '/components/nav-link',
     label: 'Users',
     badge: {
       label: '20+',
@@ -29,18 +29,18 @@ const links = [
   },
   {
     leading: 'i-heroicons-cog',
-    to: '/navigation/',
+    to: '/components/',
     label: 'Settings',
   },
   {
     leading: 'i-heroicons-document-text',
-    to: '/navigation/',
+    to: '/components/',
     label: 'Documentation',
 
   },
   {
     leading: 'i-heroicons-question-mark-circle',
-    to: '/navigation/',
+    to: '/components/',
     label: 'Help',
   },
 ]
