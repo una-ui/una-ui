@@ -132,6 +132,12 @@ importers:
       '@iconify-json/heroicons':
         specifier: ^1.1.22
         version: 1.1.22
+      '@iconify-json/lucide':
+        specifier: ^1.1.200
+        version: 1.1.200
+      '@iconify-json/radix-icons':
+        specifier: ^1.1.14
+        version: 1.1.14
       '@iconify-json/tabler':
         specifier: ^1.1.117
         version: 1.1.117
@@ -1198,6 +1204,12 @@ packages:
 
   '@iconify-json/heroicons@1.1.22':
     resolution: {integrity: sha512-UNfSBdD/JBYBvFFhce6e3FsmeqshGz8u964R36npJvIzuORhIHUXrFerulBWFmbG0V1xvMqLZVZc4bPyjP5p7A==}
+
+  '@iconify-json/lucide@1.1.200':
+    resolution: {integrity: sha512-imZeWdgMcJ6xZ15U0h35kehDcrVShvrTui3RvuY/ZUxFGC23wxPt1OQXiu+KQ/GEiujGEeOtQ1BL3Jf+7dQiqw==}
+
+  '@iconify-json/radix-icons@1.1.14':
+    resolution: {integrity: sha512-AYBOyhnJ2hXlg3aIn8Ekphrr7zHRyz1l8x6bidM3PDUuTL+aRt8r6cpCvN3GeuTHy2JOhmihbVJRF0bt2FF7Ag==}
 
   '@iconify-json/tabler@1.1.117':
     resolution: {integrity: sha512-RiFbco9Qo0X7jlRFlD2sq9kwLZZ5JFOyacGKi9nzdnao9tV/qFFh1930JDXFay/CTs/jr7+RYPsI+wGFg0jfsA==}
@@ -6988,6 +7000,14 @@ snapshots:
   '@hutson/parse-repository-url@5.0.0': {}
 
   '@iconify-json/heroicons@1.1.22':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/lucide@1.1.200':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/radix-icons@1.1.14':
     dependencies:
       '@iconify/types': 2.0.0
 

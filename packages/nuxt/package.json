@@ -37,6 +37,8 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.22",
     "@iconify-json/heroicons": "^1.1.22",
+    "@iconify-json/lucide": "^1.1.200",
+    "@iconify-json/radix-icons": "^1.1.14",
     "@iconify-json/tabler": "^1.1.117",
     "@nuxt/kit": "^3.12.3",
     "@nuxtjs/color-mode": "^3.4.2",
