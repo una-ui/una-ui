@@ -22,8 +22,8 @@ watch(show, v => (v ? open() : close()))
 <template>
   <NButton
     icon
-    class="lg:hidden"
-    label="i-heroicons-outline-menu"
+    class="ml-1 lg:hidden"
+    label="i-radix-icons-hamburger-menu"
     btn="ghost-gray square"
     @click="show = true"
   />
@@ -38,7 +38,7 @@ watch(show, v => (v ? open() : close()))
         <div>
           <AppPackageNavigation class="z-20 -ml-2" />
 
-          <div class="icons">
+          <div class="icons ml-auto">
             <AppSocialIcons />
           </div>
 

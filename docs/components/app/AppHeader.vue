@@ -23,17 +23,15 @@ const isPageLayout = computed(() => layout.value === 'page')
   >
     <Container grid="~ cols-12" items-center gap-3>
       <div
-        col-span="8 lg:4"
+        col-span="1 lg:4"
         class="flex items-center"
       >
         <AppHeaderLogo />
-        <AppSearch ml-7 md:ml-8 />
+        <AppHeaderNavigation />
       </div>
 
-      <div col-span="4 lg:8" class="flex items-center justify-end sm:space-x-3">
-        <AppHeaderNavigation />
-
-        <div h-5 border border-base class="hidden lg:block" />
+      <div col-span="11 lg:8" class="flex items-center justify-end gap-x-2">
+        <AppSearch class="ml-2 mr-auto sm:mr-0" />
 
         <div class="hidden md:flex">
           <AppSocialIcons />

@@ -51,7 +51,7 @@ export default defineTheme({
         },
       },
       title: {
-        fontSize: '{fontSize.2xl}',
+        fontSize: '{fontSize.9xl}',
         fontWeight: '{fontWeight.bold}',
         color: {
           static: {

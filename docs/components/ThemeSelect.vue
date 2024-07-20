@@ -6,17 +6,17 @@ function toggleDark() {
 </script>
 
 <template>
-  <div class="inline-flex pr-4 space-x-6 xl:pr-0">
-    <button
-      btn
-      class="px-0 text-$c-gray-500 hover:text-$c-gray-700"
+  <div class="flex items-center space-x-3 md:space-x-3.5">
+    <NButton
+      btn="text-gray"
+      class="p-0 text-lg"
       aria-label="Color Mode"
       @click="toggleDark"
     >
       <NIcon
-        name="i-heroicons-sun-20-solid dark:i-heroicons-moon-20-solid"
+        name="i-radix-icons-sun dark:i-radix-icons-moon"
       />
-    </button>
+    </NButton>
     <NThemeSwitcher />
   </div>
 </template>
