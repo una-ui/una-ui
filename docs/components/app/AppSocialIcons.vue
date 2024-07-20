@@ -9,15 +9,11 @@ const icons = computed<any>(() => {
         return value
       }
       else if (typeof value === 'string' && value && socials.includes(key)) {
-        if (key === 'github')
-          key = 'github-logo'
-
-        else if (key === 'twitter')
-          key = 'twitter-logo'
+        const icon = key === 'github' ? 'github-logo' : key === 'twitter' ? 'twitter-logo' : key
 
         return {
           href: /^https?:\/\//.test(value) ? value : `https://${key}.com/${value}`,
-          icon: `radix-icons:${key}`,
+          icon: `radix-icons:${icon}`,
           label: value,
           rel: 'noopener noreferrer',
         }
