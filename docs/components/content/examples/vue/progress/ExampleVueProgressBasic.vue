@@ -1,19 +1,18 @@
 <script setup lang="ts">
-const value = ref(30)
+const progress = ref(0)
 
-watchEffect((cleanupFn) => {
-  const timer = setTimeout(() => value.value = 60, 500)
-  cleanupFn(() => clearTimeout(timer))
+const { pause } = useTimeoutPoll(fetchData, 100, { immediate: true })
 
-  const timer2 = setTimeout(() => value.value = 90, 1000)
-  cleanupFn(() => clearTimeout(timer2))
-})
+async function fetchData() {
+  if (progress.value === 100)
+    return pause()
+
+  progress.value++
+}
 </script>
 
 <template>
-  <div>
-    <NProgress
-      v-model="value"
-    />
-  </div>
+  <NProgress
+    v-model="progress"
+  />
 </template>
