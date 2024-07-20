@@ -51,7 +51,7 @@ function shuffleTheme() {
         class="rounded-lg"
         aria-label="Theme"
       >
-        <span i-heroicons-swatch-20-solid text-md />
+        <span i-lucide-paintbrush text-md />
       </PopoverButton>
 
       <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
@@ -91,7 +91,7 @@ function shuffleTheme() {
                 btn="~ solid block"
                 class="transition"
                 label="Shuffle"
-                leading="i-heroicons-adjustments-horizontal-solid"
+                leading="i-lucide-paintbrush-vertical"
                 :una="{
                   btnLeading: value ? 'rotate-180 transform' : 'rotate-0',
                 }"
@@ -102,7 +102,7 @@ function shuffleTheme() {
                 btn="~ solid-gray"
                 size="xs"
                 icon
-                label="i-heroicons-arrow-uturn-left"
+                label="i-lucide-delete"
                 @click="reset"
               />
             </div>
