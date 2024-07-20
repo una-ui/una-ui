@@ -14,6 +14,10 @@ watchEffect((cleanupFn) => {
   <div>
     <NProgress
       v-model="value"
+      :una="{
+        progressRoot: 'bg-gray-200 rounded-none h-3',
+        progressIndicator: 'bg-blue-500 animate-pulse',
+      }"
     />
   </div>
 </template>

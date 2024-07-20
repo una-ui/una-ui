@@ -32,7 +32,7 @@ const delegatedProps = computed(() => {
       )
     "
   >
-    <slot name="progress-indicator">
+    <slot>
       <ProgressIndicator
         :class="cn(
           'progress-indicator',

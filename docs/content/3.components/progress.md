@@ -62,6 +62,32 @@ The `height` and `width` of the progress scale depends on the `progress-size`. I
 ::
 :::
 
+## Customization
+
+> You can customize the progress using the `una` prop and utility classes.
+
+::alert{type="info"}
+  You can also globally customize the progress preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
+::
+
+:::CodeGroup
+  ::code-block{label="Preview" preview}
+    :ExampleVueProgressCustom
+  ::
+  ::code-block{label="Code"}
+@@@ ./components/content/examples/vue/progress/ExampleVueProgressCustom.vue
+  ::
+:::
+
+## Slots
+
+> You can use the following slots to customize the progress.
+
+| Name           | Description                  | Props |
+| -------------- | ---------------------------- | ----- |
+| `default`      | The progress indicator.      | -     |
+
+
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/progress.ts
 
