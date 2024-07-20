@@ -18,6 +18,7 @@ import { kbd } from './kbd'
 import { radio } from './radio'
 import { checkbox } from './checkbox'
 import { slider } from './slider'
+import { progress } from './progress'
 
 export const shortcuts = [
   ...general,
@@ -39,4 +40,5 @@ export const shortcuts = [
   ...radio,
   ...checkbox,
   ...slider,
+  ...progress,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

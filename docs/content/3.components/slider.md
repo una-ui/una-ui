@@ -7,13 +7,13 @@ description: 'NSlider component - used to create a range input.'
 ## Features
 
 ::list{type="primary"}
-- **Can be controlled or uncontrolled.**
-- **Supports multiple thumbs.**
-- **Supports a minimum value between thumbs.**
-- **Supports touch or click on track to update value.**
-- **Supports Right to Left direction.**
-- **Full keyboard navigation.**
-- **Customizable.**
+- Can be controlled or uncontrolled.
+- Supports multiple thumbs.
+- Supports a minimum value between thumbs.
+- Supports touch or click on track to update value.
+- Supports Right to Left direction.
+- Full keyboard navigation.
+- Customizable.
 ::
 
 ---
