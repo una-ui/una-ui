@@ -1,3 +1,13 @@
+# [0.6.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.5.0-beta.1...v0.6.0-beta.1) (2024-07-20)
+
+
+### Features
+
+* add new built-in icons and update theme-switcher component ([#139](https://github.com/una-ui/una-ui/issues/139)) ([859984c](https://github.com/una-ui/una-ui/commit/859984c80089486f56be52a64aab337b137ccb37))
+* **NProgress:** add new component and preset ([#138](https://github.com/una-ui/una-ui/issues/138)) ([871e30c](https://github.com/una-ui/una-ui/commit/871e30c75a93ea57517e4e97a7614fa0a77eb643))
+
+
+
 # [0.5.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.4.0-beta.5...v0.5.0-beta.1) (2024-07-18)
 
 
