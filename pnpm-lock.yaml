@@ -147,6 +147,9 @@ importers:
       '@nuxtjs/color-mode':
         specifier: ^3.4.2
         version: 3.4.2(magicast@0.3.4)(rollup@4.18.1)
+      '@tanstack/vue-table':
+        specifier: ^8.19.3
+        version: 8.19.3(vue@3.4.32(typescript@5.5.3))
       '@una-ui/extractor-vue-script':
         specifier: workspace:^
         version: link:../extractor-vue-script
@@ -1681,8 +1684,18 @@ packages:
   '@swc/helpers@0.5.12':
     resolution: {integrity: sha512-KMZNXiGibsW9kvZAO1Pam2JPTDBm+KSHMMHWdsyI/1DbIZjT2A6Gy3hblVXUMEDvUAKq+e0vL0X0o54owWji7g==}
 
+  '@tanstack/table-core@8.19.3':
+    resolution: {integrity: sha512-IqREj9ADoml9zCAouIG/5kCGoyIxPFdqdyoxis9FisXFi5vT+iYfEfLosq4xkU/iDbMcEuAj+X8dWRLvKYDNoQ==}
+    engines: {node: '>=12'}
+
   '@tanstack/virtual-core@3.8.3':
     resolution: {integrity: sha512-vd2A2TnM5lbnWZnHi9B+L2gPtkSeOtJOAw358JqokIH1+v2J7vUAzFVPwB/wrye12RFOurffXu33plm4uQ+JBQ==}
+
+  '@tanstack/vue-table@8.19.3':
+    resolution: {integrity: sha512-vSgrV1HikfenUDyCWbsA8Mw6+Zr3OhTFi6D6Ictj4hrPLc/UeixjaEU6ccNw59zomyNIT+qBSP+/5iCE10oC6A==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: '>=3.2'
 
   '@tanstack/vue-virtual@3.8.3':
     resolution: {integrity: sha512-xrFLkOiqLoGwohgr1+Q880hkNdQWqwi19EXzx38iAjVEm1Db3KIAV0aVP57/dnNXU3NO1Vx8wnIHII5J4n1LyA==}
@@ -8080,7 +8093,14 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
+  '@tanstack/table-core@8.19.3': {}
+
   '@tanstack/virtual-core@3.8.3': {}
+
+  '@tanstack/vue-table@8.19.3(vue@3.4.32(typescript@5.5.3))':
+    dependencies:
+      '@tanstack/table-core': 8.19.3
+      vue: 3.4.32(typescript@5.5.3)
 
   '@tanstack/vue-virtual@3.8.3(vue@3.4.32(typescript@5.5.3))':
     dependencies:

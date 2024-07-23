@@ -1,0 +1,17 @@
+<script setup lang="ts">
+import type { HTMLAttributes } from 'vue'
+import { cn } from '../../utils'
+
+const props = defineProps<{
+  class?: HTMLAttributes['class']
+}>()
+</script>
+
+<template>
+  <tbody
+    :class="cn('[&_tr:last-child]:border-0 border-base', props.class)"
+    v-bind="$attrs"
+  >
+    <slot />
+  </tbody>
+</template>
