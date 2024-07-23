@@ -54,6 +54,7 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
       :disabled="disabled"
       :name="name"
       @keypress.enter="checked = !checked"
+      @change="emit('change', checked)"
     >
     <span
       :checkbox="checkbox"
