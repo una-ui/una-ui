@@ -2,19 +2,21 @@
 import type { NSkeletonProps } from '../../types'
 import { cn } from '../../utils'
 
-withDefaults(defineProps<NSkeletonProps>(), {
-  shape: 'rectangle',
-})
+const props = defineProps<NSkeletonProps>()
 </script>
 
 <template>
   <div
-    class="skeleton"
     :class="
       cn(
-        [shape === 'circle' ? 'skeleton-circle' : 'skeleton-rectangle'],
-        'skeleton-default-variant',
+        'skeleton',
+        props.class,
+        props.una?.skeleton,
       )
     "
-  />
+    :skeleton="props.skeleton"
+    :size="props.size"
+  >
+    <slot />
+  </div>
 </template>
