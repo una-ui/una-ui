@@ -17,6 +17,7 @@ export * from './radio'
 export * from './checkbox'
 export * from './slider'
 export * from './progress'
+export * from './skeleton'
 
 export interface Colors {
   [key: string]: string
