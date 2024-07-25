@@ -14,6 +14,8 @@ const props = defineProps<NSkeletonProps>()
         props.una?.skeleton,
       )
     "
+    :skeleton="props.skeleton"
+    :size="props.size"
   >
     <slot />
   </div>

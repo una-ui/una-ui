@@ -1,13 +1,19 @@
+import { parseColor } from '@unocss/preset-mini/utils'
+import type { Theme } from '@unocss/preset-uno'
+import type { RuleContext } from '@unocss/core'
+
 type SkeletonPrefix = 'skeleton'
 
 export const staticSkeleton: Record<`${SkeletonPrefix}-${string}` | SkeletonPrefix, string> = {
   // base
-  skeleton: 'skeleton-gray animate-pulse rounded-md w-full h-0.5em',
+  skeleton: 'skeleton-gray text-md animate-pulse rounded-md w-full h-0.5em bg-brand',
 }
 
-export const dynamicSkeleton: [RegExp, (params: RegExpExecArray) => string][] = [
-  [/^skeleton(-(\S+))?(-(\S+))?$/, ([, , c = 'gray']) => {
-    return `bg-${c}-100 dark:bg-${c}-800`
+export const dynamicSkeleton = [
+  [/^skeleton-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
+    const color = parseColor(body, theme)
+    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
+      return `n-${body}-100 dark:n-${body}-800`
   }],
 ]
 
