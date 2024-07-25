@@ -1,3 +1,17 @@
+# [0.7.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.6.1-beta.1...v0.7.0-beta.1) (2024-07-25)
+
+
+### Bug Fixes
+
+* **checkbox:** add default base size to the preset ([6f8dc78](https://github.com/una-ui/una-ui/commit/6f8dc78b52b119f0c1b7fccf6deeafe53cc820d3))
+
+
+### Features
+
+* **NSkeleton:** add new component and preset ([#143](https://github.com/una-ui/una-ui/issues/143)) ([dbbd2c4](https://github.com/una-ui/una-ui/commit/dbbd2c4377db3dee8bc0faaf1a06a2896224af68))
+
+
+
 ## [0.6.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.6.0-beta.2...v0.6.1-beta.1) (2024-07-23)
 
 
