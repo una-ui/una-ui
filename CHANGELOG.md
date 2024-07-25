@@ -1,3 +1,13 @@
+# [0.7.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.7.0-beta.1...v0.7.0-beta.2) (2024-07-25)
+
+
+### Bug Fixes
+
+* **Skeleton:** add missing default preset and component configuration ([c120862](https://github.com/una-ui/una-ui/commit/c1208621691861be14f79f7defbe1782007c6da2))
+* **Skeleton:** prevent utility warning of props preset ([1377b4d](https://github.com/una-ui/una-ui/commit/1377b4d63081591bbb91c96b2b259489370df8e1))
+
+
+
 # [0.7.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.6.1-beta.1...v0.7.0-beta.1) (2024-07-25)
 
 
