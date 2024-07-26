@@ -20,7 +20,7 @@ import {
 
 const fruit = ref()
 
-const options = ['Apple', 'Banana', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple', 'Blueberry', 'Grapes', 'Pineapple']
+const options = ['Apple', 'Banana', 'Blueberry', 'Grapes', 'Pineapple']
 const vegetables = ['Aubergine', 'Broccoli', 'Carrot', 'Courgette', 'Leek']
 </script>
 
