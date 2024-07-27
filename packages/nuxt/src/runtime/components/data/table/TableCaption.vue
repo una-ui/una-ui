@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
-import { cn } from '../../utils'
+import { cn } from '../../../utils'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
@@ -8,7 +8,10 @@ const props = defineProps<{
 </script>
 
 <template>
-  <tfoot :class="cn('border-t border-base bg-muted font-medium [&>tr]:last:border-b-0', props.class)">
+  <caption
+    :class="cn('mt-4 text-sm text-muted', props.class)"
+    v-bind="$attrs"
+  >
     <slot />
-  </tfoot>
+  </caption>
 </template>

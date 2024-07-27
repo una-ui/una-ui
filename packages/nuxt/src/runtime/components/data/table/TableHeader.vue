@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
-import { cn } from '../../utils'
+import { cn } from '../../../utils'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
@@ -8,10 +8,10 @@ const props = defineProps<{
 </script>
 
 <template>
-  <tbody
-    :class="cn('[&_tr:last-child]:border-0 border-base', props.class)"
+  <thead
+    :class="cn('[&_tr]:border-b border-base', props.class)"
     v-bind="$attrs"
   >
     <slot />
-  </tbody>
+  </thead>
 </template>

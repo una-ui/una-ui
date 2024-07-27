@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { computed, watch } from 'vue'
 import { useVModel } from '@vueuse/core'
-import { computed } from 'vue'
 import NIcon from '../elements/Icon.vue'
 import { randomId } from '../../utils'
 import type { NCheckboxProps } from '../../types/checkbox'
@@ -14,11 +14,9 @@ const props = withDefaults(
   {
     modelValue: false,
     disabled: false,
-    una: () => ({
-      checkboxIcon: 'checkbox-icon',
-    }),
   },
 )
+
 const emit = defineEmits<{ (...args: any): void }>()
 
 const slots = defineSlots<{
@@ -27,13 +25,17 @@ const slots = defineSlots<{
 }>()
 
 const id = computed(() => props.id ?? randomId('checkbox'))
-
 const checked = useVModel(props, 'modelValue', emit, { passive: true })
+
+watch(checked, (value) => {
+  emit('onUpdate', value)
+})
 </script>
 
 <template>
   <label
     checkbox="wrapper"
+    role="checkbox"
     :for="props.for ?? id"
     :class="[
       una?.checkboxWrapper,
@@ -47,14 +49,15 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
   >
     <input
       :id="id"
-      v-model="checked"
+      :value="checked"
+      :checked="!!checked"
       type="checkbox"
       class="peer"
       checkbox="input"
       :disabled="disabled"
       :name="name"
       @keypress.enter="checked = !checked"
-      @change="emit('change', checked)"
+      @click="checked = !checked"
     >
     <span
       :checkbox="checkbox"
@@ -65,10 +68,8 @@ const checked = useVModel(props, 'modelValue', emit, { passive: true })
       <slot name="icon">
         <NIcon
           checkbox="icon-base icon-checked"
-          :name="una.checkboxIcon!"
-          :class="[
-            una.checkboxIconBase,
-          ]"
+          :name="una?.checkboxIcon ?? 'checkbox-icon'"
+          :class="una?.checkboxIconBase"
         />
       </slot>
     </span>

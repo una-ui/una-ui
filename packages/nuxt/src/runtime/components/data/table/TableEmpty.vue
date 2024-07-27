@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
-import { cn } from '../../utils'
+import { cn } from '../../../utils'
 import TableRow from './TableRow.vue'
 import TableCell from './TableCell.vue'
 
@@ -23,7 +23,7 @@ const delegatedProps = computed(() => {
     <TableCell
       :class="
         cn(
-          'p-4 whitespace-nowrap align-middle text-sm text-muted',
+          'p-4 whitespace-nowrap align-middle text-sm text-muted hover:bg-base',
           props.class,
         )
       "

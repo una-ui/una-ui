@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
-import { cn } from '../../utils'
+import { cn } from '../../../utils'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
@@ -9,7 +9,7 @@ const props = defineProps<{
 
 <template>
   <tr
-    :class="cn('border-b border-base transition-colors hover:bg-muted data-[state=selected]:bg-muted', props.class)"
+    :class="cn('border-b border-base hover:bg-muted data-[state=selected]:bg-muted', props.class)"
     v-bind="$attrs"
   >
     <slot />
