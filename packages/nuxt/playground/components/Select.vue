@@ -15,8 +15,12 @@
  * - [] Add select markdown
  * - [] Add select examples
  */
+const items = ref(['Banana', 'Rambutan', 'Apple', 'Papaya'])
+const item = ref()
+const toggleDisable = ref(false)
 </script>
 
 <template>
-  <NSelect />
+  <NCheckbox v-model="toggleDisable" label="disable" />
+  <NSelect v-model="item" :options="items" :disabled="toggleDisable" placeholder="wow" />
 </template>

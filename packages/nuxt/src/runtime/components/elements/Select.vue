@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-import { ref } from 'vue'
+import { computed } from 'vue'
+import type { SelectRootEmits } from 'radix-vue'
 import {
   SelectContent,
   SelectGroup,
@@ -16,16 +17,36 @@ import {
   SelectTrigger,
   SelectValue,
   SelectViewport,
+  useForwardPropsEmits,
 } from 'radix-vue'
+import type { NSelectProps } from '../../types'
+import { cn } from '../../utils'
 
-const fruit = ref()
+const props = defineProps<NSelectProps>()
+const emits = defineEmits<SelectRootEmits>()
+const delegatedProps = computed(() => {
+  const { class: _, ...delegated } = props
 
-const options = ['Apple', 'Banana', 'Blueberry', 'Grapes', 'Pineapple']
-const vegetables = ['Aubergine', 'Broccoli', 'Carrot', 'Courgette', 'Leek']
+  return delegated
+})
+const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
-  <SelectRoot v-model="fruit">
+  {{ props.options }}
+  <SelectRoot
+    :class="cn(
+      'select-root',
+      props.size,
+      props.class,
+      props.defaultOpen,
+      props.dir,
+      props.required,
+      props.una?.selectRoot,
+      disabled && 'select-disabled',
+    )"
+    v-bind="forwarded"
+  >
     <SelectTrigger
       class="h-[35px] min-w-[160px] inline-flex items-center justify-between gap-[5px] rounded bg-gray px-[15px] text-[13px] text-primary leading-none shadow-[0_2px_10px] shadow-black/10 outline-none hover:bg-gray data-[placeholder]:text-primary focus:shadow-[0_0_0_2px] focus:shadow-black"
       aria-label="Customize options"
@@ -47,12 +68,12 @@ const vegetables = ['Aubergine', 'Broccoli', 'Carrot', 'Courgette', 'Leek']
         </SelectScrollUpButton>
 
         <SelectViewport class="p-[5px]">
-          <SelectLabel class="px-[25px] text-xs text-gray leading-[25px]">
+          <SelectLabel class="px-[25px] text-xs leading-[25px] text-success">
             Fruits
           </SelectLabel>
           <SelectGroup>
             <SelectItem
-              v-for="(option, index) in options"
+              v-for="(option, index) in props.options"
               :key="index"
               class="relative h-[25px] flex select-none items-center rounded-[3px] pl-[25px] pr-[35px] text-[13px] text-primary leading-none data-[disabled]:pointer-events-none data-[highlighted]:bg-primary data-[disabled]:text-gray data-[highlighted]:text-primary data-[highlighted]:outline-none"
               :value="option"
@@ -71,7 +92,7 @@ const vegetables = ['Aubergine', 'Broccoli', 'Carrot', 'Courgette', 'Leek']
           </SelectLabel>
           <SelectGroup>
             <SelectItem
-              v-for="(option, index) in vegetables"
+              v-for="(option, index) in options"
               :key="index"
               class="relative h-[25px] flex select-none items-center rounded-[3px] pl-[25px] pr-[35px] text-[13px] text-primary leading-none data-[disabled]:pointer-events-none data-[highlighted]:bg-primary data-[disabled]:text-gray data-[highlighted]:text-primary data-[highlighted]:outline-none"
               :value="option"

@@ -20,9 +20,19 @@ export interface NSelectProps extends Extensions {
    */
   size?: string
   /**
+   * List of any group or collection
+   *
+   * @example
+   * ['banana', 'apple', 'orange']
+   * [{name: Mekan, age: 29}, {name: Phojie, age: 28}]
+   */
+  options?: any
+  /**
    * Preset configuration
    */
-  una: {
+  una?: {
     selectRoot?: HTMLAttributes['class']
+    selectValue?: HTMLAttributes['class']
+    selectItem?: HTMLAttributes['class']
   }
 }
