@@ -26,7 +26,14 @@ import { cn, valueUpdater } from '../../../utils'
 import Checkbox from '../../forms/Checkbox.vue'
 import Button from '../../elements/Button.vue'
 import Input from '../../forms/Input.vue'
-import { TableBody, TableCell, TableEmpty, TableFooter, TableHead, TableHeader, TableRoot, TableRow } from '.'
+import TableBody from './TableBody.vue'
+import TableCell from './TableCell.vue'
+import TableEmpty from './TableEmpty.vue'
+import TableFooter from './TableFooter.vue'
+import TableHead from './TableHead.vue'
+import TableHeader from './TableHeader.vue'
+import TableRoot from './TableRoot.vue'
+import TableRow from './TableRow.vue'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
@@ -293,4 +300,4 @@ defineExpose({
       </template>
     </TableFooter>
   </TableRoot>
-</template>
+</template>.
