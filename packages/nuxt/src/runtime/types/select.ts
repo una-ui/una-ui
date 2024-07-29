@@ -19,47 +19,47 @@ export interface NSelectProps extends Extensions {
   /**
    *
    */
-  selectRoot: NSelectRootProps
+  selectRoot?: NSelectRootProps
   /**
    *
    */
-  selectTrigger: NSelectTriggerProps
+  selectTrigger?: NSelectTriggerProps
   /**
    *
    */
-  selectValue: NSelectValueProps
+  selectValue?: NSelectValueProps
   /**
    *
    */
-  selectScrollDownButton: NSelectScrollDownButtonProps
+  selectScrollDownButton?: NSelectScrollDownButtonProps
   /**
    *
    */
-  selectScrollUpButton: NSelectScrollUpButtonProps
+  selectScrollUpButton?: NSelectScrollUpButtonProps
   /**
    *
    */
-  selectContent: NSelectContentProps
+  selectContent?: NSelectContentProps
   /**
    *
    */
-  selectItem: NSelectItemProps
+  selectItem?: NSelectItemProps
   /**
    *
    */
-  selectItemText: NSelectItemTextProps
+  selectItemText?: NSelectItemTextProps
   /**
    *
    */
-  selectGroup: NSelectGroupProps
+  selectGroup?: NSelectGroupProps
   /**
    *
    */
-  selectLabel: NSelectLabel
+  selectLabel?: NSelectLabel
   /**
    *
    */
-  selectSeparator: NSelectSeparator
+  selectSeparator?: NSelectSeparator
   /**
    * select preset variants
    * @example

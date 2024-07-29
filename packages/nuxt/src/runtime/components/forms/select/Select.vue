@@ -7,9 +7,10 @@ import {
 import type { NSelectProps } from '../../../types'
 import SelectRoot from './SelectRoot.vue'
 import SelectTrigger from './SelectTrigger.vue'
-
-// import SelectGroup './SelectGroup.vue'
+import SelectValue from './SelectValue.vue'
+import SelectGroup from './SelectGroup.vue'
 import SelectItem from './SelectItem.vue'
+import SelectLabel from './SelectLabel.vue'
 
 const props = defineProps<NSelectProps>()
 const emits = defineEmits<SelectRootEmits>()
