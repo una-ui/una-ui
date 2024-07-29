@@ -4,10 +4,8 @@ import columns from './columns'
 </script>
 
 <template>
-  <div class="border border-base rounded-md">
-    <NTable
-      :columns
-      :rows
-    />
-  </div>
+  <NTable
+    :columns
+    :rows
+  />
 </template>
