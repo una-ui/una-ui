@@ -7,6 +7,12 @@ export const staticGeneral = {
   'text-base': 'text-$c-foreground',
   'text-inverted': 'text-$c-background',
   'text-muted': 'text-$c-muted-foreground',
+
+  'text-accent': 'text-$c-accent-foreground',
+  'text-accent-forground': 'text-$c-accent',
+  'text-popover': 'text-$c-popover-foreground',
+  'text-popover-foreground': 'text-$c-popover',
+
   'text-info': 'text-info-500 dark:text-info-400',
   'text-error': 'text-error-500 dark:text-error-400',
   'text-success': 'text-success-500 dark:text-success-400',
