@@ -29,6 +29,12 @@ export const staticGeneral = {
   'bg-inverted': 'bg-$c-foreground',
   'bg-muted': 'bg-$c-muted',
 
+  'bg-accent': 'bg-$c-accent',
+  'bg-accent-foreground': 'bg-$c-accent-foreground',
+
+  'bg-popover': 'bg-$c-popover',
+  'bg-popover-foreground': 'bg-$c-popover-foreground',
+
   // icon
   'i-loading': 'i-tabler-loader-2',
   'i-warning': 'i-heroicons-exclamation-triangle-20-solid',

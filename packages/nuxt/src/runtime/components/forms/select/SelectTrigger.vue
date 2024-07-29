@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { SelectIcon, SelectTrigger, useForwardProps } from 'radix-vue'
+import { SelectTrigger, useForwardProps } from 'radix-vue'
 import { cn } from '../../../utils'
-import Icon from '../../elements/Icon.vue'
 import type { NSelectTriggerProps } from '../../../types'
+import Button from '../../elements/Button.vue'
 
 const props = defineProps<NSelectTriggerProps>()
 
@@ -19,16 +19,17 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <SelectTrigger
     v-bind="forwardedProps"
+    :as="Button"
+    btn="outline-white"
     :class="cn(
-      'flex h-10 w-full items-center justify-between rounded-md border border-base bg-base px-3 py-2 text-sm ring-offset-base placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-base focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+      'px-3 flex h-2.6em w-full font-normal justify-between [&>span]:line-clamp-1',
       props.class,
     )"
+    trailing="i-lucide-chevrons-up-down"
+    :una="{
+      btnTrailing: 'text-xs text-muted',
+    }"
   >
     <slot />
-    <SelectIcon as-child>
-      <Icon
-        name="i-lucide-chevron-down"
-      />
-    </SelectIcon>
   </SelectTrigger>
 </template>

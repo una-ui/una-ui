@@ -25,7 +25,9 @@ import SelectContent from './SelectContent.vue'
 
 <template>
   <SelectRoot>
-    <SelectTrigger class="w-[180px]">
+    <SelectTrigger
+      class="w-[180px]"
+    >
       <SelectValue placeholder="Select a fruit" />
     </SelectTrigger>
     <SelectContent>
