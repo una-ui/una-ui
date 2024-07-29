@@ -22,5 +22,5 @@ const toggleDisable = ref(false)
 
 <template>
   <NCheckbox v-model="toggleDisable" label="disable" />
-  <NSelect v-model="item" :options="items" :disabled="toggleDisable" placeholder="wow" />
+  <NSelect v-model="item" :options="items" :disabled="toggleDisable" placeholder="sample" />
 </template>

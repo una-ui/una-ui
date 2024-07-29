@@ -9,6 +9,10 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select': 'select-primary',
   'select-disabled': 'n-disabled',
 
+  // components
+  'select-root': '',
+  'select-trigger': '',
+  'select-value': '',
 }
 
 export const dynamicSelect = [
