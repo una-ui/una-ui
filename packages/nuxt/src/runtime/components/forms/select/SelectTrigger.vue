@@ -5,7 +5,11 @@ import { cn } from '../../../utils'
 import type { NSelectTriggerProps } from '../../../types'
 import Button from '../../elements/Button.vue'
 
-const props = defineProps<NSelectTriggerProps>()
+const props = withDefaults(defineProps<NSelectTriggerProps>(), {
+  as: Button,
+  trailing: 'i-lucide-chevrons-up-down',
+  btn: 'outline-white',
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -19,13 +23,10 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <SelectTrigger
     v-bind="forwardedProps"
-    :as="Button"
-    btn="outline-white"
     :class="cn(
       'px-3 flex h-2.6em w-full font-normal justify-between [&>span]:line-clamp-1',
       props.class,
     )"
-    trailing="i-lucide-chevrons-up-down"
     :una="{
       btnTrailing: 'text-xs text-muted',
     }"

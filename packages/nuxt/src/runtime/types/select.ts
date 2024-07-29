@@ -1,8 +1,9 @@
 import type { SelectContentProps, SelectGroupProps, SelectItemProps, SelectItemTextProps, SelectLabelProps, SelectRootProps, SelectScrollDownButtonProps, SelectScrollUpButtonProps, SelectSeparatorProps, SelectTriggerProps, SelectValueProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
+import type { NButtonProps } from './button'
 
 type RootExtensions = SelectRootProps & { class?: HTMLAttributes['class'] }
-type TriggerExtensions = SelectTriggerProps & { class?: HTMLAttributes['class'] }
+type TriggerExtensions = SelectTriggerProps & NButtonProps & { class?: HTMLAttributes['class'] }
 type ValueExtensions = SelectValueProps & { class?: HTMLAttributes['class'] }
 type ScrollDownButtonExtensions = SelectScrollDownButtonProps & { class?: HTMLAttributes['class'] }
 type ScrollUpButtonExtensions = SelectScrollUpButtonProps & { class?: HTMLAttributes['class'] }
@@ -13,83 +14,25 @@ type GroupExtensions = SelectGroupProps & { class?: HTMLAttributes['class'] }
 type LabelExtensions = SelectLabelProps & { class?: HTMLAttributes['class'] }
 type SeparatorExtensions = SelectSeparatorProps & { class?: HTMLAttributes['class'] }
 
-interface Extensions { class?: HTMLAttributes['class'] }
+type Extensions = NSelectRootProps & { class?: HTMLAttributes['class'] }
 
 export interface NSelectProps extends Extensions {
-  /**
-   *
-   */
-  selectRoot?: NSelectRootProps
-  /**
-   *
-   */
   selectTrigger?: NSelectTriggerProps
-  /**
-   *
-   */
   selectValue?: NSelectValueProps
-  /**
-   *
-   */
   selectScrollDownButton?: NSelectScrollDownButtonProps
-  /**
-   *
-   */
   selectScrollUpButton?: NSelectScrollUpButtonProps
-  /**
-   *
-   */
   selectContent?: NSelectContentProps
-  /**
-   *
-   */
   selectItem?: NSelectItemProps
-  /**
-   *
-   */
   selectItemText?: NSelectItemTextProps
-  /**
-   *
-   */
   selectGroup?: NSelectGroupProps
-  /**
-   *
-   */
-  selectLabel: NSelectLabelProps
-  /**
-   *
-   */
+  selectLabel?: NSelectLabelProps
   selectSeparator?: NSelectSeparator
-  /**
-   * select preset variants
-   * @example
-   * select="green"
-   */
-  select?: string
-  /**
-   * Place holder
-   */
+
+  multipleGroup?: boolean
   placeholder?: string
-  /**
-   * Allows you to change the size of the select.
-   *
-   * @default base|md
-   *
-   * @example
-   * size="sm" | size="2cm" | size="2rem" | size="2px"
-   */
+  label?: string
+  items: any[]
   size?: string
-  /**
-   * List of any group or collection
-   *
-   * @example
-   * ['banana', 'apple', 'orange']
-   * [{name: Mekan, age: 29}, {name: Phojie, age: 28}]
-   */
-  options?: any
-  /**
-   * Preset configuration
-   */
 }
 
 export interface NSelectRootProps extends RootExtensions {
@@ -99,9 +42,6 @@ export interface NSelectRootProps extends RootExtensions {
 }
 
 export interface NSelectTriggerProps extends TriggerExtensions {
-  una?: {
-    selectTrigger?: HTMLAttributes['class']
-  }
 }
 
 export interface NSelectValueProps extends ValueExtensions {
