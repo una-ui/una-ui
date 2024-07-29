@@ -21,7 +21,6 @@ const isVertical = computed(() => props.orientation === 'vertical')
     :class="cn(
       'slider-root',
       isVertical && 'slider-root-vertical',
-      props.size,
       props.class,
       props.una?.sliderRoot,
       disabled && 'slider-disabled',
