@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
-import { SelectScrollUpButton, type SelectScrollUpButtonProps, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
+import { SelectScrollUpButton, useForwardProps } from 'radix-vue'
 import Icon from '../../elements/Icon.vue'
 import { cn } from '../../../utils'
+import type { NSelectScrollUpButtonProps } from '../../../types'
 
-const props = defineProps<SelectScrollUpButtonProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NSelectScrollUpButtonProps>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

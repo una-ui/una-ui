@@ -55,7 +55,7 @@ export interface NSelectProps extends Extensions {
   /**
    *
    */
-  selectLabel?: NSelectLabel
+  selectLabel: NSelectLabelProps
   /**
    *
    */
@@ -146,7 +146,7 @@ export interface NSelectGroupProps extends GroupExtensions {
   }
 }
 
-export interface NSelectLabel extends LabelExtensions {
+export interface NSelectLabelProps extends LabelExtensions {
   una?: {
     selectLabel?: HTMLAttributes['class']
   }

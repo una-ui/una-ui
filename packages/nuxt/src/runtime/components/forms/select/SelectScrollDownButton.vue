@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
-import { SelectScrollDownButton, type SelectScrollDownButtonProps, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
+import { SelectScrollDownButton, useForwardProps } from 'radix-vue'
 import Icon from '../../elements/Icon.vue'
 import { cn } from '../../../utils'
+import type { NSelectScrollDownButtonProps } from '../../../types'
 
-const props = defineProps<SelectScrollDownButtonProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NSelectScrollDownButtonProps>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

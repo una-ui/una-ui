@@ -7,10 +7,11 @@
 // import type { NSelectProps } from '../../../types'
 import SelectRoot from './SelectRoot.vue'
 import SelectTrigger from './SelectTrigger.vue'
-import SelectValue from './SelectValue.vue'
 import SelectGroup from './SelectGroup.vue'
 import SelectItem from './SelectItem.vue'
 import SelectLabel from './SelectLabel.vue'
+import SelectValue from './SelectValue.vue'
+import SelectContent from './SelectContent.vue'
 
 // const props = defineProps<NSelectProps>()
 // const emits = defineEmits<SelectRootEmits>()
@@ -27,7 +28,7 @@ import SelectLabel from './SelectLabel.vue'
     <SelectTrigger class="w-[180px]">
       <SelectValue placeholder="Select a fruit" />
     </SelectTrigger>
-    <selectContent>
+    <SelectContent>
       <SelectGroup>
         <SelectLabel>Fruits</SelectLabel>
         <SelectItem value="apple">
@@ -46,6 +47,6 @@ import SelectLabel from './SelectLabel.vue'
           Pineapple
         </SelectItem>
       </SelectGroup>
-    </selectContent>
+    </SelectContent>
   </SelectRoot>
 </template>
