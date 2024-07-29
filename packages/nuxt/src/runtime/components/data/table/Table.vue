@@ -6,6 +6,7 @@ import type {
   ColumnFiltersState,
   ColumnPinningState,
   GroupColumnDef,
+  Header,
   PaginationState,
   SortingState,
   VisibilityState,
@@ -25,27 +26,25 @@ import { cn, valueUpdater } from '../../../utils'
 import Checkbox from '../../forms/Checkbox.vue'
 import Button from '../../elements/Button.vue'
 import Input from '../../forms/Input.vue'
-import TableBody from './TableBody.vue'
-import TableCell from './TableCell.vue'
-import TableEmpty from './TableEmpty.vue'
-import TableFooter from './TableFooter.vue'
-import TableHead from './TableHead.vue'
-import TableHeader from './TableHeader.vue'
-import TableRoot from './TableRoot.vue'
-import TableRow from './TableRow.vue'
+import { TableBody, TableCell, TableEmpty, TableFooter, TableHead, TableHeader, TableRoot, TableRow } from '.'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
   rows: any[] | null
-  columns: ColumnDef<[], any>[] | GroupColumnDef<[], unknown>[]
+  columns: ColumnDef<any, unknown>[] | GroupColumnDef<any, unknown>[]
   autoResetAll?: boolean
   enableRowSelection?: boolean
   enableColumnFilters?: boolean
+  enableSorting?: boolean
   columnPinning?: ColumnPinningState
   manualPagination?: boolean
   manualSorting?: boolean
   pageCount?: number
   rowCount?: number
+  una?: {
+    tableRoot?: string
+    tableRootWrapper?: string
+  }
 }>()
 
 const emit = defineEmits(['select', 'selectAll'])
@@ -55,7 +54,12 @@ const sorting = defineModel<SortingState>('sorting')
 const columnVisibility = defineModel<VisibilityState>('columnVisibility')
 const columnFilters = defineModel<ColumnFiltersState>('columnFilters')
 const globalFilter = defineModel<string>('globalFilter')
-const pagination = defineModel<PaginationState>('pagination')
+const pagination = defineModel<PaginationState>('pagination', {
+  default: () => ({
+    pageIndex: 0,
+    pageSize: 10,
+  }),
+})
 
 const columns = computed(() => {
   return props.enableRowSelection
@@ -92,6 +96,7 @@ const table = computed(() => {
     get data() {
       return props.rows ?? []
     },
+
     columns: columns.value,
     autoResetAll: props.autoResetAll,
     enableRowSelection: props.enableRowSelection,
@@ -100,10 +105,13 @@ const table = computed(() => {
     manualSorting: props.manualSorting,
     pageCount: props.pageCount,
     rowCount: props.rowCount,
+    enableSorting: props.enableSorting,
+
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+
     onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
     onRowSelectionChange: updaterOrValue => valueUpdater(updaterOrValue, rowSelection),
     onColumnVisibilityChange: updaterOrValue => valueUpdater(updaterOrValue, columnVisibility),
@@ -123,13 +131,25 @@ const table = computed(() => {
   })
 }) as Ref<ReturnType<typeof useVueTable>>
 
+function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]) {
+  let count = 0
+  headers.forEach((header) => {
+    if (header.column.columnDef.enableColumnFilter)
+      count++
+  })
+
+  return count
+}
+
 defineExpose({
-  table,
+  ...table.value,
 })
 </script>
 
 <template>
-  <TableRoot>
+  <TableRoot
+    :una
+  >
     <!-- header -->
     <TableHeader>
       <TableRow
@@ -148,10 +168,13 @@ defineExpose({
           )"
         >
           <Button
-            v-if="header.column.columnDef.enableSorting"
+            v-if="header.column.columnDef.enableSorting !== false && enableSorting"
             btn="ghost-gray"
             size="sm"
-            class="font-normal -ml-0.5em"
+            class="font-normal -ml-0.7em"
+            :una="{
+              btnTrailing: 'text-sm',
+            }"
             :trailing="header.column.getIsSorted() === 'asc'
               ? 'i-lucide-arrow-up-wide-narrow' : header.column.getIsSorted() === 'desc'
                 ? 'i-lucide-arrow-down-narrow-wide' : 'i-lucide-arrow-up-down'"
@@ -163,51 +186,50 @@ defineExpose({
               :props="header.getContext()"
             />
           </Button>
-          <Button
+          <component
+            :is="header.id === 'selection' ? 'div' : 'span'"
             v-else
-            btn="~"
-            size="sm"
-            class="px-0 text-$c-gray-600 font-normal"
-            role="checkbox"
+            class="text-sm text-muted"
           >
             <FlexRender
               v-if="!header.isPlaceholder"
               :render="header.column.columnDef.header"
               :props="header.getContext()"
             />
-          </Button>
+          </component>
         </TableHead>
       </TableRow>
-
-      <TableRow
+      <template
         v-for="headerGroup in table.getHeaderGroups()"
         :key="headerGroup.id"
-        class="hover:bg-base"
       >
-        <template
-          v-for="header in headerGroup.headers"
-          :key="header.id"
+        <TableRow
+          v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0"
+          class="hover:bg-base"
         >
-          <TableHead
-            :colspan="header.colSpan"
-            :data-pinned="header.column.getIsPinned()"
-            :class="cn(
-              { 'sticky bg-base': header.column.getIsPinned() },
-              header.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
-            )"
+          <template
+            v-for="header in headerGroup.headers"
+            :key="header.id"
           >
-            <!-- || (header.column.columnDef.enableColumnFilter !== false && enableColumnFilters)) -->
-            <Input
-              v-if="header.id !== 'selection'
-                && (header.column.columnDef.enableColumnFilter)"
-              class="w-auto"
-              :model-value="table.getColumn(header.id)?.getFilterValue() as string"
-              :placeholder="header.column.columnDef.header as string"
-              @update:model-value="table.getColumn(header.id)?.setFilterValue($event)"
-            />
-          </TableHead>
-        </template>
-      </TableRow>
+            <TableHead
+              :colspan="header.colSpan"
+              :data-pinned="header.column.getIsPinned()"
+              :class="cn(
+                { 'sticky bg-base': header.column.getIsPinned() },
+                header.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
+              )"
+            >
+              <Input
+                v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
+                class="w-auto"
+                :model-value="table.getColumn(header.id)?.getFilterValue() as string"
+                :placeholder="header.column.columnDef.header as string"
+                @update:model-value="table.getColumn(header.id)?.setFilterValue($event)"
+              />
+            </TableHead>
+          </template>
+        </TableRow>
+      </template>
     </TableHeader>
 
     <!-- body -->

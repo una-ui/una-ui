@@ -1,235 +1,157 @@
 <script setup lang="ts">
-import {
-  FlexRender,
-  getCoreRowModel,
-  useVueTable,
-} from '@tanstack/vue-table'
+import type Table from '../../src/runtime/components/data/Table/Table.vue'
 
-const autoReset = ref(true)
-
+const autoReset = ref(false)
 const select = ref()
 const sorting = ref()
-
-interface Person {
-  firstName: string
-  lastName: string
-  age: number
-  visits: number
-  status: string
-  progress: number
-}
-
-const defaultData: Person[] = [
-  {
-    firstName: 'tanner',
-    lastName: 'linsley',
-    age: 24,
-    visits: 100,
-    status: 'In Relationship',
-    progress: 50,
-  },
-  {
-    firstName: 'tandy',
-    lastName: 'miller',
-    age: 40,
-    visits: 40,
-    status: 'Single',
-    progress: 80,
-  },
-  {
-    firstName: 'joe',
-    lastName: 'dirte',
-    age: 45,
-    visits: 20,
-    status: 'Complicated',
-    progress: 10,
-  },
-]
-
-// const columnHelper = createColumnHelper<Person>()
+const visibleColumns = ref({
+  selection: true,
+  age: true,
+  lastName: true,
+  firstName: true,
+})
+const filter = ref()
+const columnFilters = ref()
+const pagination = ref({
+  pageIndex: 0,
+  pageSize: 5,
+})
+const tableRef = ref<typeof Table | null>(null)
 
 const columns = [
-  // columnHelper.group({
-  //   header: 'Name',
-  //   footer: props => props.column.id,
-  //   columns: [
-  //     columnHelper.accessor('firstName', {
-  //       cell: info => info.getValue(),
-  //       footer: props => props.column.id,
-  //     }),
-  //     columnHelper.accessor(row => row.lastName, {
-  //       id: 'lastName',
-  //       cell: info => info.getValue(),
-  //       header: () => 'Last Name',
-  //       footer: props => props.column.id,
-  //     }),
-  //   ],
-  // }),
-  // columnHelper.group({
-  //   header: 'Info',
-  //   footer: props => props.column.id,
-  //   columns: [
-  //     columnHelper.accessor('age', {
-  //       header: () => 'Age',
-  //       footer: props => props.column.id,
-  //     }),
-  //     columnHelper.group({
-  //       header: 'More Info',
-  //       columns: [
-  //         columnHelper.accessor('visits', {
-  //           header: () => 'Visits',
-  //           footer: props => props.column.id,
-  //         }),
-  //         columnHelper.accessor('status', {
-  //           header: 'Status',
-  //           footer: props => props.column.id,
-  //         }),
-  //         columnHelper.accessor('progress', {
-  //           header: 'Profile Progress',
-  //           footer: props => props.column.id,
-  //         }),
-  //       ],
-  //     }),
-  //   ],
-  // }),
-  // {
-  //   accessorKey: 'select',
-  //   header: Checkbox,
-  //   cell: Checkbox,
-  // },
+  // Types issue
   {
-    header: 'First Name',
-    accessorKey: 'firstName',
-  },
-  {
-    accessorKey: 'lastName',
-    header: 'Last Name',
+    accessorKey: 'name',
+    header: 'Name',
+    enableMultiSort: true,
     enableSorting: true,
   },
   {
-    header: 'Age',
-    accessorKey: 'age',
+    accessorKey: 'url',
+    header: 'Url',
+    enableMultiSort: true,
     enableSorting: true,
   },
 ]
 
-const data = ref(defaultData)
+/**
+ * @name NTable
+ *
+ * @todo
+ * - [x] Add basic table
+ * - [x] Add row selection
+ * - [x] Add sortable
+ * - [x] Add pinning
+ * - [x] Add column visibility
+ * - [x] Add select emit
+ * - [x] Add filterable
+ * - [x] Add column filters for each column
+ * - [ ] Add custom function filters
+ * - [ ] Add custom function column filters
+ * - [x] Add manual pagination
+ * - [x] Add automatic pagination
+ * - [x] Add manual pagination
+ * - [ ] Add expandable rows
+ * - [ ] Add table presets
+ * - [ ] Add dynamic sizes
+ * - [ ] Add table slots
+ * - [ ] Add table props
+ * - [ ] Add table documentation
+ *     - [ ] Add table markdown
+ *     - [ ] Add t  able examples
+ */
 
-function rerender() {
-  data.value = defaultData
+interface ResourceMeta {
+  count: number
+  next: string
+  previous: string
+  results: {
+    name: string
+    url: string
+  }[]
 }
 
-const table = useVueTable({
-  get data() {
-    return data.value
+const currentQuery = ref('https://pokeapi.co/api/v2/pokemon?limit=100000')
+
+const { data, status } = await useFetch<ResourceMeta>(currentQuery, {
+  transform: (data) => {
+    // const next = data.next?.split('?')[1] ?? null
+    // const previous = data.previous?.split('?')[1] ?? null
+    return {
+      ...data,
+      // next,
+      // previous,
+    }
   },
-  columns,
-  getCoreRowModel: getCoreRowModel(),
 })
+
+const pokemon = computed(() => data.value?.results ?? [])
 </script>
 
 <template>
-  <div class="h-full w-8/12 overflow-auto">
-    <pre>
-    {{ columns }}
-  </pre>
-
+  <div class="w-9/12">
     {{ sorting }}
-    {{ select }}
-    <h1>Stack</h1>
-    <div v-if="false" class="p-2">
-      <table>
-        <thead>
-          <tr
-            v-for="headerGroup in table.getHeaderGroups()"
-            :key="headerGroup.id"
-          >
-            <th
-              v-for="header in headerGroup.headers"
-              :key="header.id"
-              :colspan="header.colSpan"
-            >
-              <FlexRender
-                v-if="!header.isPlaceholder"
-                :render="header.column.columnDef.header"
-                :props="header.getContext()"
-              />
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="row in table.getRowModel().rows" :key="row.id">
-            <td v-for="cell in row.getVisibleCells()" :key="cell.id">
-              <FlexRender
-                :render="cell.column.columnDef.cell"
-                :props="cell.getContext()"
-              />
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr
-            v-for="footerGroup in table.getFooterGroups()"
-            :key="footerGroup.id"
-          >
-            <th
-              v-for="header in footerGroup.headers"
-              :key="header.id"
-              :colSpan="header.colSpan"
-            >
-              <FlexRender
-                v-if="!header.isPlaceholder"
-                :render="header.column.columnDef.footer"
-                :props="header.getContext()"
-              />
-            </th>
-          </tr>
-        </tfoot>
-      </table>
-      <div class="h-4" />
-      <button class="border p-2" @click="rerender">
-        Rerender
-      </button>
-    </div>
+    {{ status }}
+    {{ pagination }}
 
-    <h1>Una</h1>
-
+    <NInput
+      id="test"
+      v-model="filter"
+      placeholder="Search..."
+    />
     <NTable
-      v-model="data"
-      v-model:row-selection="select"
+      ref="tableRef"
+      v-model="select"
       v-model:sorting="sorting"
+      v-model:columnVisibility="visibleColumns"
+      v-model:columnFilters="columnFilters"
+      v-model:globalFilter="filter"
+      v-model:pagination="pagination"
       :auto-reset-all="autoReset"
+      :rows="pokemon"
       :columns="columns"
+      :enable-column-filters="false"
+      :row-count="data?.results.length"
+      :page-count="data?.count"
       enable-row-selection
     />
+    <!-- @select="console.log('select', $event)" -->
+    <!-- @select-all="console.log('selectAll', $event)" -->
+
+    <div class="flex items-center justify-end py-4 space-x-2">
+      <!-- <NButton
+        btn="outline"
+        size="sm"
+        :disabled="!data?.previous"
+        @click=" currentQuery = data?.previous ?? ''"
+      >
+        Previous
+      </NButton>
+      <NButton
+        btn="outline"
+        size="sm"
+        :disabled="!data?.next"
+        @click=" currentQuery = data?.next ?? ''"
+      >
+        Next
+      </NButton> -->
+
+      <NButton
+        btn="outline"
+        size="sm"
+        :disabled="!tableRef?.table.getCanPreviousPage()"
+        @click="tableRef?.table.previousPage()"
+      >
+        Previous
+      </NButton>
+      <NButton
+        btn="outline"
+        size="sm"
+        :disabled="!tableRef?.table.getCanNextPage()"
+        @click="tableRef?.table.nextPage()"
+      >
+        Next
+      </NButton>
+    </div>
   </div>
-</template>
-
-<!-- <style>
-html {
-  font-family: sans-serif;
-  font-size: 14px;
-}
-
-table {
-  border: 1px solid lightgray;
-}
-
-tbody {
-  border-bottom: 1px solid lightgray;
-}
-
-th {
-  border-bottom: 1px solid lightgray;
-  border-right: 1px solid lightgray;
-  padding: 2px 4px;
-}
-
-tfoot {
-  color: gray;
-}
-
-tfoot th {
-  font-weight: normal;
-}
-</style> -->
+</template>../../src/runtime/components/data/table/TableMain.vue../../src/runtime/components/data/table/Table.vue
