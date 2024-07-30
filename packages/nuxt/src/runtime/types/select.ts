@@ -29,6 +29,7 @@ export interface NSelectProps extends Extensions {
   selectSeparator?: NSelectSeparator
 
   multipleGroup?: boolean
+  itemAttribute?: string | number
   placeholder?: string
   label?: string
   items: any[]

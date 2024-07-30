@@ -105,7 +105,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
                   v-bind="{ ...forwarded.selectItem, ...groupItems.selectItem }"
                 >
                   <slot name="selectItem" :item="groupItem">
-                    {{ groupItem }}
+                    {{ props.itemAttribute && typeof groupItem === 'object' ? groupItem[props.itemAttribute] : groupItem }}
                   </slot>
                 </SelectItem>
               </template>

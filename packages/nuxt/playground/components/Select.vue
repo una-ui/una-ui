@@ -16,9 +16,20 @@
  * - [] Add select examples
  */
 
-const options = ['Apple', 'Banana', 'Blueberry', 'Grapes', 'Pineapple']
-const vegetables = ['Aubergine', 'Broccoli', 'Carrot', 'Courgette', 'Leek']
-
+const options = [
+  { fruit: 'Apple', price: '$1.00' },
+  { fruit: 'Banana', price: '$2.00' },
+  { fruit: 'Blueberry', price: '$3.00' },
+  { fruit: 'Grapes', price: '$4.00' },
+  { fruit: 'Pineapple', price: '$5.00' },
+]
+const vegetables = [
+  { fruit: 'Aubergine', price: '$1.50' },
+  { fruit: 'Broccoli', price: '$2.30' },
+  { fruit: 'Carrot', price: '$0.75' },
+  { fruit: 'Courgette', price: '$1.80' },
+  { fruit: 'Leek', price: '$1.20' },
+]
 const items = [
   {
     label: 'Fruits',
@@ -44,19 +55,22 @@ const toggleDisable = ref(false)
 
 <template>
   <div class="flex gap-4">
-    <NCheckbox v-model="toggleDisable" label="disable" />
-    <NInput />
-    <div class="w-50">
-      <NSelect
-        v-model="item"
-        :items
-        placeholder="Select an item"
-        label="Items Available"
-        multiple-group
-        :disabled="toggleDisable"
-      />
-    </div>
-
-    <NButton label="Submit" />
+    <NFormGroup>
+      <NCheckbox v-model="toggleDisable" label="disable" />
+      <NInput />
+      <div class="w-50">
+        {{ item }}
+        <NSelect
+          v-model="item"
+          :items
+          placeholder="Select an item"
+          label="Items Available"
+          multiple-group
+          :disabled="toggleDisable"
+          item-attribute="price"
+        />
+      </div>
+      <NButton label="Submit" type="submit" />
+    </NFormGroup>
   </div>
 </template>
