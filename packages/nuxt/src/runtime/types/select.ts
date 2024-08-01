@@ -1,4 +1,4 @@
-import type { SelectContentProps, SelectGroupProps, SelectItemProps, SelectItemTextProps, SelectLabelProps, SelectRootProps, SelectScrollDownButtonProps, SelectScrollUpButtonProps, SelectSeparatorProps, SelectTriggerProps, SelectValueProps } from 'radix-vue'
+import type { SelectContentProps, SelectGroupProps, SelectItemIndicatorProps, SelectItemProps, SelectItemTextProps, SelectLabelProps, SelectRootProps, SelectScrollDownButtonProps, SelectScrollUpButtonProps, SelectSeparatorProps, SelectTriggerProps, SelectValueProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
@@ -14,26 +14,28 @@ type GroupExtensions = SelectGroupProps & { class?: HTMLAttributes['class'] }
 type LabelExtensions = SelectLabelProps & { class?: HTMLAttributes['class'] }
 type SeparatorExtensions = SelectSeparatorProps & { class?: HTMLAttributes['class'] }
 
-type Extensions = NSelectRootProps & { class?: HTMLAttributes['class'] }
+type Extensions = NSelectRootProps
+  & { class?: HTMLAttributes['class'] }
+  & Pick<NSelectItemProps, 'selectItem'>
 
 export interface NSelectProps extends Extensions {
-  selectTrigger?: NSelectTriggerProps
-  selectValue?: NSelectValueProps
-  selectScrollDownButton?: NSelectScrollDownButtonProps
-  selectScrollUpButton?: NSelectScrollUpButtonProps
-  selectContent?: NSelectContentProps
-  selectItem?: NSelectItemProps
-  selectItemText?: NSelectItemTextProps
-  selectGroup?: NSelectGroupProps
-  selectLabel?: NSelectLabelProps
-  selectSeparator?: NSelectSeparator
-
   multipleGroup?: boolean
   itemAttribute?: string | number
   placeholder?: string
   label?: string
   items: any[]
-  size?: string
+
+  // sub-components
+  _selectScrollUpButton?: Partial<NSelectScrollUpButtonProps>
+  _selectItemText?: Partial<NSelectItemTextProps>
+  _selectScrollDownButton?: Partial<NSelectScrollDownButtonProps>
+  _selectSeparator?: Partial<NSelectSeparator>
+  _selectGroup?: Partial<NSelectGroupProps>
+  _selectContent?: Partial<NSelectContentProps>
+  _selectValue?: Partial<NSelectValueProps>
+  _selectTrigger?: Partial<NSelectTriggerProps>
+  _selectItem?: Partial<NSelectItemProps>
+  _selectLabel?: Partial<NSelectLabelProps>
 }
 
 export interface NSelectRootProps extends RootExtensions {
@@ -54,24 +56,37 @@ export interface NSelectValueProps extends ValueExtensions {
 export interface NSelectScrollDownButtonProps extends ScrollDownButtonExtensions {
   una?: {
     selectScrollDownButton?: HTMLAttributes['class']
+    selectScrollDownButtonIcon?: HTMLAttributes['class']
+    selectScrollDownButtonIconName?: HTMLAttributes['class']
   }
 }
 
 export interface NSelectScrollUpButtonProps extends ScrollUpButtonExtensions {
   una?: {
     selectScrollUpButton?: HTMLAttributes['class']
+    selectScrollUpButtonIcon?: HTMLAttributes['class']
+    selectScrollUpButtonIconName?: HTMLAttributes['class']
   }
 }
 
 export interface NSelectContentProps extends ContentExtensions {
+  _selectScrollDownButton?: NSelectScrollDownButtonProps
+  _selectScrollUpButton?: NSelectScrollUpButtonProps
+  _selectSeparator?: NSelectSeparator
+
   una?: {
     selectContent?: HTMLAttributes['class']
   }
 }
 
 export interface NSelectItemProps extends ItemExtensions {
+  _selectItemIndicator?: SelectItemIndicatorProps
+  selectItem?: HTMLAttributes['class']
   una?: {
     selectItem?: HTMLAttributes['class']
+
+    selectItemIndicatorIcon?: HTMLAttributes['class']
+    selectItemIndicatorIconName?: HTMLAttributes['class']
   }
 }
 

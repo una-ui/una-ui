@@ -10,7 +10,7 @@ import { cn } from '../../../utils'
 import type { NSelectItemProps } from '../../../types'
 import SelectItemText from './SelectItemText.vue'
 
-const props = defineProps<NSelectItemProps>()
+const props = withDefaults(defineProps<NSelectItemProps>(), {})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -26,15 +26,21 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :class="
       cn(
-        'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
+        'select-item',
         props.class,
+        props.una?.selectItem,
       )
     "
+    :select-item="selectItem"
   >
     <span class="absolute left-2 h-3.5 w-3.5 flex items-center justify-center">
-      <SelectItemIndicator>
-        <Icon name="i-check" />
-      </SelectItemIndicator>
+      <slot name="item-indicator">
+        <SelectItemIndicator
+          v-bind="forwardedProps._selectItemIndicator"
+        >
+          <Icon :name="forwardedProps?.una?.selectItemIndicatorIconName ?? 'select-item-indicator-icon'" :class="forwardedProps?.una?.selectItemIndicatorIcon" />
+        </SelectItemIndicator>
+      </slot>
     </span>
 
     <SelectItemText>

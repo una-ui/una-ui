@@ -1,4 +1,8 @@
-export interface NButtonProps {
+import type { HTMLAttributes } from 'vue'
+
+interface Extensions { class?: HTMLAttributes['class'] }
+
+export interface NButtonProps extends Extensions {
   /**
    * Change the button type.
    *

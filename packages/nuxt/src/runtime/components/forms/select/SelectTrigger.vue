@@ -6,9 +6,7 @@ import type { NSelectTriggerProps } from '../../../types'
 import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NSelectTriggerProps>(), {
-  as: Button,
   trailing: 'i-lucide-chevrons-up-down',
-  btn: 'outline-white',
 })
 
 const delegatedProps = computed(() => {
@@ -24,12 +22,21 @@ const forwardedProps = useForwardProps(delegatedProps)
   <SelectTrigger
     v-bind="forwardedProps"
     :class="cn(
-      'px-3 flex h-2.6em w-full font-normal justify-between [&>span]:line-clamp-1',
+      'select-trigger justify-between',
       props.class,
     )"
+    :btn="btn"
     :una="{
-      btnTrailing: 'text-xs text-muted',
+      ...props.una,
+      ...{
+        btnTrailing: cn(
+          'text-xs text-muted',
+          props.una?.btnTrailing,
+        ),
+        btnDefaultVariant: props.una?.btnDefaultVariant ?? 'btn-outline-white',
+      },
     }"
+    :as="Button"
   >
     <slot />
   </SelectTrigger>

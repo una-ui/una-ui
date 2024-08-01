@@ -5,6 +5,7 @@ import {
   useForwardPropsEmits,
 } from 'radix-vue'
 import type { NSelectProps } from '../../../types'
+import { omitProps } from '../../../utils'
 import SelectRoot from './SelectRoot.vue'
 import SelectTrigger from './SelectTrigger.vue'
 import SelectGroup from './SelectGroup.vue'
@@ -26,52 +27,51 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <SelectRoot
-    v-bind="forwarded"
+    v-bind="omitProps(forwarded, ['items', 'multipleGroup', 'itemAttribute', 'placeholder', 'label'])"
   >
     <SelectTrigger
-      v-bind="forwarded.selectTrigger"
+      v-bind="forwarded._selectTrigger"
     >
-      <slot name="selectTrigger">
+      <slot name="trigger">
         <SelectValue
-          v-bind="forwarded.selectValue"
-          :placeholder="forwarded.selectValue?.placeholder || forwarded.placeholder"
+          v-bind="forwarded._selectValue"
+          :placeholder="forwarded._selectValue?.placeholder || forwarded.placeholder"
         />
       </slot>
     </SelectTrigger>
 
     <SelectContent
-      v-bind="forwarded.selectContent"
+      v-bind="{
+        ...forwarded._selectContent,
+        _selectScrollDownButton: forwarded._selectScrollDownButton,
+        _selectScrollUpButton: forwarded._selectScrollUpButton,
+        _selectViewport: forwarded._selectViewport,
+      }"
     >
-      <slot name="selectContent">
-        <template v-if="!multipleGroup">
-          <SelectGroup
-            v-bind="forwarded.selectGroup"
+      <slot name="content" :items="forwarded.items">
+        <template v-if="!forwarded.multipleGroup">
+          <SelectLabel
+            v-if="forwarded.label"
+            v-bind="forwarded._selectLabel"
           >
-            <slot name="selectGroup" :items="items">
-              <SelectLabel
-                v-if="forwarded.label"
-                v-bind="forwarded.selectLabel"
-              >
-                <slot name="selectLabel" :label="forwarded.label">
-                  {{ forwarded.label }}
-                </slot>
-              </SelectLabel>
-
-              <template
-                v-for="item in items"
-                :key="item"
-              >
-                <SelectItem
-                  :value="item"
-                  v-bind="forwarded.selectItem"
-                >
-                  <slot name="selectItem" :item="item">
-                    {{ item }}
-                  </slot>
-                </SelectItem>
-              </template>
+            <slot name="label" :label="forwarded.label">
+              {{ forwarded.label }}
             </slot>
-          </SelectGroup>
+          </SelectLabel>
+
+          <template
+            v-for="item in items"
+            :key="item"
+          >
+            <SelectItem
+              :value="props.itemAttribute ? item[props.itemAttribute] : item"
+              v-bind="forwarded._selectItem"
+            >
+              <slot name="item" :item="item">
+                {{ props.itemAttribute ? item[props.itemAttribute] : item }}
+              </slot>
+            </SelectItem>
+          </template>
         </template>
 
         <template
@@ -80,18 +80,19 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           <SelectGroup
             v-for="(groupItems, i) in items"
             :key="i"
-            v-bind="forwarded.selectGroup"
+            v-bind="forwarded._selectGroup"
           >
             <SelectSeparator
               v-if="i > 0"
+              v-bind="forwarded._selectSeparator"
             />
 
-            <slot name="selectGroup" :items="groupItems">
+            <slot name="group" :items="groupItems">
               <SelectLabel
                 v-if="groupItems.label"
-                v-bind="{ ...forwarded.selectLabel, ...groupItems.selectLabel }"
+                v-bind="{ ...forwarded._selectLabel, ...groupItems._selectLabel }"
               >
-                <slot name="selectLabel" :label="groupItems.label">
+                <slot name="label" :label="groupItems.label">
                   {{ groupItems.label }}
                 </slot>
               </SelectLabel>
@@ -101,18 +102,17 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
                 :key="groupItem"
               >
                 <SelectItem
-                  :value="groupItem"
-                  v-bind="{ ...forwarded.selectItem, ...groupItems.selectItem }"
+                  :value="props.itemAttribute ? groupItem[props.itemAttribute] : groupItem "
+                  v-bind="{ ...forwarded._selectItem, ...groupItems?._selectItem, ...groupItem._selectItem }"
                 >
-                  <slot name="selectItem" :item="groupItem">
-                    {{ props.itemAttribute && typeof groupItem === 'object' ? groupItem[props.itemAttribute] : groupItem }}
+                  <slot name="item" :item="groupItem">
+                    {{ props.itemAttribute ? groupItem[props.itemAttribute] : groupItem }}
                   </slot>
                 </SelectItem>
               </template>
             </slot>
           </SelectGroup>
         </template>
-
         <slot />
       </slot>
     </SelectContent>

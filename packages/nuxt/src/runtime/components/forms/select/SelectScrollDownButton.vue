@@ -17,10 +17,11 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <SelectScrollDownButton v-bind="forwardedProps" :class="cn('flex cursor-default items-center justify-center py-1', props.class)">
+  <SelectScrollDownButton v-bind="forwardedProps" :class="cn('select-scroll-down-button', props.class)">
     <slot>
       <Icon
-        name="i-lucide-chevron-down"
+        :name="forwardedProps?.una?.selectScrollDownButtonIconName || 'select-scroll-down-button-icon'"
+        :class="forwardedProps?.una?.selectScrollDownButtonIcon"
       />
     </slot>
   </SelectScrollDownButton>
