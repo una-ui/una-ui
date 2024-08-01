@@ -192,6 +192,9 @@ importers:
       unocss:
         specifier: ^0.61.5
         version: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
+      unocss-preset-animations:
+        specifier: ^1.1.0
+        version: 1.1.0(@unocss/preset-wind@0.61.5)(unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3)))
     devDependencies:
       '@nuxt/module-builder':
         specifier: ^0.8.1
@@ -5776,6 +5779,12 @@ packages:
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
+
+  unocss-preset-animations@1.1.0:
+    resolution: {integrity: sha512-wCcVnu1IvQmzKK9dZpeZbPPuXO5sKmYGe5VaASjH8st6G3wgw4tw7HsVRP0bXHRhO0PXGtC5Kw9IRKh6dPGPtA==}
+    peerDependencies:
+      '@unocss/preset-wind': '>= 0.56.0 < 1'
+      unocss: '>= 0.56.0 < 1'
 
   unocss@0.61.5:
     resolution: {integrity: sha512-BScwlqXW9KHQLKIKtXmwWmMb4Ihoryb7uIgmS+HSqmCN58eqNA73vAo3cZ97xtO+RFdauqgGKP5wD6ShQUvqnQ==}
@@ -13465,6 +13474,11 @@ snapshots:
       unist-util-visit-parents: 6.0.1
 
   universalify@2.0.1: {}
+
+  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.61.5)(unocss@0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))):
+    dependencies:
+      '@unocss/preset-wind': 0.61.5
+      unocss: 0.61.5(@unocss/webpack@0.61.5(rollup@4.18.1)(webpack@5.93.0))(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3))
 
   unocss@0.61.5(@unocss/webpack@0.61.5(rollup@3.29.4))(postcss@8.4.39)(rollup@3.29.4)(vite@5.3.4(@types/node@20.14.11)(sass@1.77.8)(terser@5.31.3)):
     dependencies:
