@@ -34,13 +34,13 @@ const forwardedProps = useForwardProps(delegatedProps)
     :select-item="selectItem"
   >
     <span class="absolute left-2 h-3.5 w-3.5 flex items-center justify-center">
-      <slot name="item-indicator">
-        <SelectItemIndicator
-          v-bind="forwardedProps._selectItemIndicator"
-        >
+      <SelectItemIndicator
+        v-bind="forwardedProps._selectItemIndicator"
+      >
+        <slot name="item-indicator">
           <Icon :name="forwardedProps?.una?.selectItemIndicatorIconName ?? 'select-item-indicator-icon'" :class="forwardedProps?.una?.selectItemIndicatorIcon" />
-        </SelectItemIndicator>
-      </slot>
+        </slot>
+      </SelectItemIndicator>
     </span>
 
     <SelectItemText>

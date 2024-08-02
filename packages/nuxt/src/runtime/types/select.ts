@@ -29,7 +29,6 @@ export interface NSelectProps extends Extensions {
   _selectScrollUpButton?: Partial<NSelectScrollUpButtonProps>
   _selectItemText?: Partial<NSelectItemTextProps>
   _selectScrollDownButton?: Partial<NSelectScrollDownButtonProps>
-  _selectSeparator?: Partial<NSelectSeparator>
   _selectGroup?: Partial<NSelectGroupProps>
   _selectContent?: Partial<NSelectContentProps>
   _selectValue?: Partial<NSelectValueProps>

@@ -38,7 +38,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     class="select-portal"
   >
     <SelectContent
-      v-bind="{ ...forwarded, ...$attrs }" :class="cn(
+      v-bind="{ ...forwarded, ...$attrs }"
+      :class="cn(
         'select-content',
         position === 'popper'
           && 'select-content-popper',
@@ -50,7 +51,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         v-bind="forwarded._selectScrollUpButton"
       />
       <SelectViewport
-        :class="cn('select-viewport', position === 'popper' && 'select-viewport-popper')"
+        :class="cn(
+          'select-viewport',
+          position === 'popper' && 'select-viewport-popper')"
         v-bind="forwarded._selectViewport"
       >
         <slot />
