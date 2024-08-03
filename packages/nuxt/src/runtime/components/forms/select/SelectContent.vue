@@ -34,9 +34,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
-  <SelectPortal
-    class="select-portal"
-  >
+  <SelectPortal>
     <SelectContent
       v-bind="{ ...forwarded, ...$attrs }"
       :class="cn(

@@ -27,8 +27,6 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-viewport': 'p-1',
   'select-viewport-popper': 'h-[--radix-select-trigger-height] w-full min-w-[--radix-select-trigger-width]',
 
-  'select-portal': '',
-
   'select-scroll-up-button': 'select-scroll',
   'select-scroll-down-button': 'select-scroll',
   'select-scroll-up-button-icon': 'i-lucide-chevron-up',
