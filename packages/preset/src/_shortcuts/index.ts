@@ -20,6 +20,7 @@ import { checkbox } from './checkbox'
 import { slider } from './slider'
 import { progress } from './progress'
 import { skeleton } from './skeleton'
+import { tabs } from './tabs'
 
 export const shortcuts = [
   ...general,
@@ -43,4 +44,5 @@ export const shortcuts = [
   ...slider,
   ...progress,
   ...skeleton,
+  ...tabs,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

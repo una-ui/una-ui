@@ -18,6 +18,7 @@ export * from './checkbox'
 export * from './slider'
 export * from './progress'
 export * from './skeleton'
+export * from './tabs'
 
 export interface Colors {
   [key: string]: string

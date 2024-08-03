@@ -34,6 +34,7 @@ export default defineConfig({
     }),
   ],
   configDeps: [
+    '../packages/preset/src/_shortcuts/tabs.ts',
     '../packages/preset/src/_shortcuts/skeleton.ts',
     '../packages/preset/src/_shortcuts/progress.ts',
     '../packages/preset/src/_shortcuts/slider.ts',
