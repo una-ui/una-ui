@@ -56,7 +56,6 @@ export interface NSelectScrollDownButtonProps extends ScrollDownButtonExtensions
   una?: {
     selectScrollDownButton?: HTMLAttributes['class']
     selectScrollDownButtonIcon?: HTMLAttributes['class']
-    selectScrollDownButtonIconName?: HTMLAttributes['class']
   }
 }
 
@@ -64,7 +63,6 @@ export interface NSelectScrollUpButtonProps extends ScrollUpButtonExtensions {
   una?: {
     selectScrollUpButton?: HTMLAttributes['class']
     selectScrollUpButtonIcon?: HTMLAttributes['class']
-    selectScrollUpButtonIconName?: HTMLAttributes['class']
   }
 }
 
@@ -84,8 +82,8 @@ export interface NSelectItemProps extends ItemExtensions {
   una?: {
     selectItem?: HTMLAttributes['class']
 
+    selectItemIndicatorWrapper?: HTMLAttributes['class']
     selectItemIndicatorIcon?: HTMLAttributes['class']
-    selectItemIndicatorIconName?: HTMLAttributes['class']
   }
 }
 

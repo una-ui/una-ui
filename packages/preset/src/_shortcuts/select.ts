@@ -22,6 +22,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-separator': '-mx-1 my-1 h-px bg-muted',
 
   'select-item': 'select-item-gray relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
+  'select-item-indicator-wrapper': 'absolute left-2 h-3.5 w-3.5 flex items-center justify-center',
   'select-item-indicator-icon': 'i-check',
 
   'select-viewport': 'p-1',
