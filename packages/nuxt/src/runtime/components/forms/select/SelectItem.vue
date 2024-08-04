@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, inject } from 'vue'
 import {
   SelectItem,
-  SelectItemIndicator,
   useForwardProps,
 } from 'radix-vue'
-import Icon from '../../elements/Icon.vue'
 import { cn } from '../../../utils'
-import type { NSelectItemProps } from '../../../types'
+import type { NSelectItemProps, NSelectProps } from '../../../types'
 import SelectItemText from './SelectItemText.vue'
+import SelectItemIndicator from './SelectItemIndicator.vue'
 
 const props = withDefaults(defineProps<NSelectItemProps>(), {})
 
@@ -19,6 +18,11 @@ const delegatedProps = computed(() => {
 })
 
 const forwardedProps = useForwardProps(delegatedProps)
+const modelValue = inject<NSelectProps>('selectModelValue')
+
+const isSelected = computed(() => {
+  return props.isSelected || modelValue === props.value
+})
 </script>
 
 <template>
@@ -32,21 +36,21 @@ const forwardedProps = useForwardProps(delegatedProps)
       )
     "
     :select-item="selectItem"
+    :aria-selected="isSelected"
+    :aria-checked="isSelected"
+    :is-selected="isSelected"
+    :data-state="true ? 'checked' : 'unchecked'"
   >
-    <span
-      class="select-item-indicator-wrapper"
-      :class="props.una?.selectItemIndicatorWrapper"
+    <SelectItemIndicator
+      v-if="isSelected"
+      v-bind="forwardedProps._selectItemIndicator"
     >
-      <SelectItemIndicator
-        v-bind="forwardedProps._selectItemIndicator"
-      >
-        <slot name="item-indicator">
-          <Icon :name="forwardedProps?.una?.selectItemIndicatorIcon ?? 'select-item-indicator-icon'" />
-        </slot>
-      </SelectItemIndicator>
-    </span>
+      <slot name="item-indicator" />
+    </SelectItemIndicator>
 
-    <SelectItemText>
+    <SelectItemText
+      v-bind="forwardedProps._selectItemText"
+    >
       <slot />
     </SelectItemText>
   </SelectItem>

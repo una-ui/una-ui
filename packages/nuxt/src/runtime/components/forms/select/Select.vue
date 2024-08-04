@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, provide } from 'vue'
 import type { SelectRootEmits } from 'radix-vue'
 import {
   useForwardPropsEmits,
 } from 'radix-vue'
 import type { NSelectProps } from '../../../types'
-import { omitProps } from '../../../utils'
+import { isEqualObject, omitProps } from '../../../utils'
 import SelectRoot from './SelectRoot.vue'
 import SelectTrigger from './SelectTrigger.vue'
 import SelectGroup from './SelectGroup.vue'
@@ -17,26 +17,46 @@ import SelectSeparator from './SelectSeparator.vue'
 
 const props = defineProps<NSelectProps>()
 const emits = defineEmits<SelectRootEmits>()
+
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
 
   return delegated
 })
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
+
+const transformerValue = computed(() => {
+  if (typeof forwarded.value.modelValue === 'object') {
+    if (forwarded.value.valueAttribute)
+      return forwarded.value.modelValue[forwarded.value.valueAttribute]
+
+    if (forwarded.value.itemAttribute)
+      return forwarded.value.modelValue[forwarded.value.itemAttribute]
+  }
+
+  return forwarded.value.modelValue
+})
+
+provide('selectModelValue', forwarded.value.modelValue)
 </script>
 
 <template>
   <SelectRoot
-    v-bind="omitProps(forwarded, ['items', 'multipleGroup', 'itemAttribute', 'placeholder', 'label'])"
+    v-bind="omitProps(forwarded, ['items', 'multipleGroup', 'itemAttribute', 'placeholder', 'label', 'id'])"
   >
     <SelectTrigger
+      :id="forwarded.id"
       v-bind="forwarded._selectTrigger"
     >
-      <slot name="trigger">
+      <slot name="trigger" :value="forwarded.modelValue">
         <SelectValue
           v-bind="forwarded._selectValue"
           :placeholder="forwarded._selectValue?.placeholder || forwarded.placeholder"
-        />
+        >
+          <slot :value="forwarded.modelValue">
+            {{ transformerValue }}
+          </slot>
+        </SelectValue>
       </slot>
     </SelectTrigger>
 
@@ -49,6 +69,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       }"
     >
       <slot name="content" :items="forwarded.items">
+        <!--  single-group -->
         <template v-if="!forwarded.multipleGroup">
           <SelectLabel
             v-if="forwarded.label"
@@ -64,8 +85,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
             :key="item"
           >
             <SelectItem
-              :value="props.itemAttribute ? item[props.itemAttribute] : item"
+              :value="item"
               v-bind="forwarded._selectItem"
+              :is-selected="isEqualObject(item, forwarded.modelValue)"
             >
               <slot name="item" :item="item">
                 {{ props.itemAttribute ? item[props.itemAttribute] : item }}
@@ -74,6 +96,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           </template>
         </template>
 
+        <!-- multiple-group -->
         <template
           v-else
         >
@@ -102,8 +125,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
                 :key="groupItem"
               >
                 <SelectItem
-                  :value="props.itemAttribute ? groupItem[props.itemAttribute] : groupItem "
+                  :value="groupItem "
                   v-bind="{ ...forwarded._selectItem, ...groupItems?._selectItem, ...groupItem._selectItem }"
+                  :is-selected="groupItem === transformerValue"
                 >
                   <slot name="item" :item="groupItem">
                     {{ props.itemAttribute ? groupItem[props.itemAttribute] : groupItem }}

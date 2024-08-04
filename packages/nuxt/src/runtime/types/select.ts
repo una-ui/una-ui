@@ -2,13 +2,13 @@ import type { SelectContentProps, SelectGroupProps, SelectItemIndicatorProps, Se
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-type RootExtensions = SelectRootProps & { class?: HTMLAttributes['class'] }
+type RootExtensions = Omit<SelectRootProps, 'modelValue' > & { class?: HTMLAttributes['class'] }
 type TriggerExtensions = SelectTriggerProps & NButtonProps & { class?: HTMLAttributes['class'] }
 type ValueExtensions = SelectValueProps & { class?: HTMLAttributes['class'] }
 type ScrollDownButtonExtensions = SelectScrollDownButtonProps & { class?: HTMLAttributes['class'] }
 type ScrollUpButtonExtensions = SelectScrollUpButtonProps & { class?: HTMLAttributes['class'] }
 type ContentExtensions = SelectContentProps & { class?: HTMLAttributes['class'] }
-type ItemExtensions = SelectItemProps & { class?: HTMLAttributes['class'] }
+type ItemExtensions = Omit<SelectItemProps, 'value'> & { class?: HTMLAttributes['class'] }
 type ItemTextExtensions = SelectItemTextProps & { class?: HTMLAttributes['class'] }
 type GroupExtensions = SelectGroupProps & { class?: HTMLAttributes['class'] }
 type LabelExtensions = SelectLabelProps & { class?: HTMLAttributes['class'] }
@@ -19,8 +19,11 @@ type Extensions = NSelectRootProps
   & Pick<NSelectItemProps, 'selectItem'>
 
 export interface NSelectProps extends Extensions {
+  id?: string
+  modelValue: any
   multipleGroup?: boolean
   itemAttribute?: string | number
+  valueAttribute?: string | number
   placeholder?: string
   label?: string
   items: any[]
@@ -76,14 +79,27 @@ export interface NSelectContentProps extends ContentExtensions {
   }
 }
 
+export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps {
+  icon?: HTMLAttributes['class']
+  class?: HTMLAttributes['class']
+  una?: {
+    selectItemIndicator?: HTMLAttributes['class']
+    selectItemIndicatorIcon?: HTMLAttributes
+  }
+}
+
 export interface NSelectItemProps extends ItemExtensions {
-  _selectItemIndicator?: SelectItemIndicatorProps
+  value: any
   selectItem?: HTMLAttributes['class']
+  isSelected?: boolean
+
+  _selectItemText?: NSelectItemTextProps
+  _selectItemIndicator?: NSelectItemIndicatorProps
+
   una?: {
     selectItem?: HTMLAttributes['class']
 
     selectItemIndicatorWrapper?: HTMLAttributes['class']
-    selectItemIndicatorIcon?: HTMLAttributes['class']
   }
 }
 

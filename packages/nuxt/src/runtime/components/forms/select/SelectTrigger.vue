@@ -25,12 +25,11 @@ const forwardedProps = useForwardProps(delegatedProps)
       'select-trigger justify-between',
       props.class,
     )"
-    :btn="btn"
     :una="{
       ...props.una,
       ...{
         btnTrailing: cn(
-          'text-xs text-muted',
+          'select-trigger-trailing',
           props.una?.btnTrailing,
         ),
         btnDefaultVariant: props.una?.btnDefaultVariant ?? 'btn-outline-white',
