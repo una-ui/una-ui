@@ -1,3 +1,18 @@
+# [0.8.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.7.0-beta.2...v0.8.0-beta.1) (2024-08-07)
+
+
+### Bug Fixes
+
+* **Slider:** remove passing of size prop to class attribute ([2c8f736](https://github.com/una-ui/una-ui/commit/2c8f736c5783945de55e6cdf389442cc02142781))
+
+
+### Features
+
+* **Button:** add `outline-gray` and `outline-white` preset color ([b05a2d5](https://github.com/una-ui/una-ui/commit/b05a2d594fa00a55072f0c6a5226761a99316ced))
+* **Select:** new preset and component ([#148](https://github.com/una-ui/una-ui/issues/148)) ([fd32d8b](https://github.com/una-ui/una-ui/commit/fd32d8baa5814c49ac119b7b2a7e10e4c848c526))
+
+
+
 # [0.7.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.7.0-beta.1...v0.7.0-beta.2) (2024-07-25)
 
 
