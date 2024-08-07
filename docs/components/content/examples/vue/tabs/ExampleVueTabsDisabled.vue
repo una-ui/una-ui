@@ -1,37 +1,26 @@
 <script setup lang="ts">
-const tabs = ref([
+const items = ref([
   {
-    value: 'Dashboard',
-    label: 'Dashboard',
-    content: '...',
+    value: 'tab1',
+    name: 'Tab 1',
+    content: 'Tab 1 content',
     disabled: false,
   },
   {
-    value: 'Products',
-    label: 'Products',
-    content: '...',
+    value: 'tab2',
+    name: 'Tab 2',
+    content: 'Tab 2 content',
     disabled: false,
   },
   {
-    value: 'Messages',
-    label: 'Messages(disabled)',
-    content: '...',
+    value: 'tab3',
+    name: 'Tab 3 (disabled)',
+    content: 'Tab 3 content',
     disabled: true,
   },
 ])
 </script>
 
 <template>
-  <NTabs default-value="Dashboard">
-    <NTabsList class="grid grid-cols-3">
-      <NTabsTrigger
-        v-for="tab in tabs"
-        :key="tab.value"
-        :value="tab.value"
-        :disabled="tab.disabled"
-      >
-        {{ tab.label }}
-      </NTabsTrigger>
-    </NTabsList>
-  </NTabs>
+  <NTabs :items="items" default-value="tab2" />
 </template>

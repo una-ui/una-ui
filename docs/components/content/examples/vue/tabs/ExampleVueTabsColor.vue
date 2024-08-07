@@ -2,11 +2,11 @@
 const tabs = ref([
   {
     value: 'tab1',
-    label: 'Una Tab',
+    name: 'Una Tab',
   },
   {
     value: 'tab2',
-    label: 'Una Tab',
+    name: 'Una Tab',
   },
 ])
 const defaultValueFirstExample = ref('tab1')
@@ -20,18 +20,14 @@ function isActiveTabSecondExample(value: string) {
 </script>
 
 <template>
-  <NTabs v-model="defaultValueFirstExample" class="mb-4">
-    <NTabsList class="grid grid-cols-2" tabs="green">
-      <NTabsTrigger v-for="tab in tabs" :key="tab.value" :value="tab.value">
-        {{ tab.label }} {{ isActiveTabFirstExample(tab.value) }}
-      </NTabsTrigger>
-    </NTabsList>
+  <NTabs v-model="defaultValueFirstExample" :items="tabs" class="mb-4" tabs="green">
+    <template #trigger="{ item }">
+      {{ item.name }} {{ isActiveTabFirstExample(item.value) }}
+    </template>
   </NTabs>
-  <NTabs v-model="defaultValueSecondExample">
-    <NTabsList class="grid grid-cols-2" tabs="orange">
-      <NTabsTrigger v-for="tab in tabs" :key="tab.value" :value="tab.value">
-        {{ tab.label }} {{ isActiveTabSecondExample(tab.value) }}
-      </NTabsTrigger>
-    </NTabsList>
+  <NTabs v-model="defaultValueSecondExample" :items="tabs" tabs="orange">
+    <template #trigger="{ item }">
+      {{ item.name }} {{ isActiveTabSecondExample(item.value) }}
+    </template>
   </NTabs>
 </template>

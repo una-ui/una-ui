@@ -5,6 +5,7 @@ import { cn } from '../../../utils'
 import type { NTabsTriggerProps } from '../../../types/tabs'
 
 const props = defineProps<NTabsTriggerProps>()
+
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
   return delegated

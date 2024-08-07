@@ -1,9 +1,12 @@
 import type { TabsContentProps, TabsListProps, TabsRootProps, TabsTriggerProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
 
-interface Extensions { class?: HTMLAttributes['class'] }
+interface BaseExtensions {
+  class?: HTMLAttributes['class']
+  size?: HTMLAttributes['class']
+}
 
-export interface NTabsProps extends TabsRootProps, Extensions {
+export interface NTabsProps extends TabsRootProps, BaseExtensions {
   /**
    * Allows you to add `UnaUI` tabs preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -14,33 +17,31 @@ export interface NTabsProps extends TabsRootProps, Extensions {
    */
   tabs?: string
   /**
-   * `UnaUI` preset configuration
+   * The array of items that is passed to tabs.
    *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/tabs.ts
+   * @default []
    */
+  items: any[]
+
+  // sub-components
+  _tabsContent?: Partial<NTabsContentProps>
+  _tabsTrigger?: Partial<NTabsTriggerProps>
+  _tabsList?: Partial<NTabsListProps>
+}
+
+export interface NTabsRootProps extends TabsRootProps, BaseExtensions {
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/tabs.ts
    */
   una?: {
-    // base
-    tabs?: HTMLAttributes['class']
     // components
     tabsRoot?: HTMLAttributes['class']
   }
 }
 
-export interface NTabsListProps extends TabsListProps, Extensions {
-  /**
-   * Allows you to add `UnaUI` tabs preset properties,
-   * Think of it as a shortcut for adding options or variants to the preset if available.
-   *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/tabs.ts
-   * @example
-   * tabs="primary"
-   */
-  tabs?: string
+export interface NTabsListProps extends TabsListProps, BaseExtensions {
   /**
    * `UnaUI` preset configuration
    *
@@ -52,7 +53,7 @@ export interface NTabsListProps extends TabsListProps, Extensions {
   }
 }
 
-export interface NTabsTriggerProps extends TabsTriggerProps, Extensions {
+export interface NTabsTriggerProps extends TabsTriggerProps, BaseExtensions {
   /**
    * `UnaUI` preset configuration
    *
@@ -64,7 +65,7 @@ export interface NTabsTriggerProps extends TabsTriggerProps, Extensions {
   }
 }
 
-export interface NTabsContentProps extends TabsContentProps, Extensions {
+export interface NTabsContentProps extends TabsContentProps, BaseExtensions {
   /**
    * `UnaUI` preset configuration
    *

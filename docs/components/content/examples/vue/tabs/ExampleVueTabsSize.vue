@@ -22,5 +22,10 @@ const items = ref([
 </script>
 
 <template>
-  <NTabs :items="items" default-value="tab1" />
+  <NTabs :items="items" default-value="tab1" size="md" class="mb-4" />
+  <NTabs
+    :items="items" default-value="tab2" size="xl" :_tabs-trigger="{
+      size: 'xl',
+    }"
+  />
 </template>

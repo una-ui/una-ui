@@ -4,7 +4,12 @@ import { TabsContent } from 'radix-vue'
 import { cn } from '../../../utils'
 import type { NTabsContentProps } from '../../../types/tabs'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = defineProps<NTabsContentProps>()
+
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
   return delegated
@@ -13,7 +18,7 @@ const delegatedProps = computed(() => {
 
 <template>
   <TabsContent
-    v-bind="delegatedProps"
+    v-bind="{ ...delegatedProps, ...$attrs }"
     :class="cn(
       'tabs-content',
       props.class,
