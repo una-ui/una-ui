@@ -46,11 +46,13 @@ await fs.writeFile('./packages/preset/src/_style/theme.css', `:root {\n${Object.
 // copyFileSync(resolve(_filename, '..', '../config/color-themes.ts'), resolve(_filename, '..', '../packages/preset/src/_theme/color-themes.ts'))
 
 // generate all prefixes from shortcuts filenames without extension
-const prefixFiles = await fg('packages/preset/src/_shortcuts/*.ts', {
+const prefixFiles = await fg('packages/nuxt/src/runtime/components/**/*.vue', {
   absolute: true,
 })
-const prefixes = prefixFiles.map(i => basename(i, extname(i))).filter(i => i !== 'index')
-const global = ['resize', 'size', 'nav-link-active', 'nav-link-inactive']
+
+const prefixes = prefixFiles.map(i => basename(i, extname(i))).filter(i => i !== 'index' || 'button')
+console.log(prefixes)
+const global = ['resize', 'size', 'btn']
 prefixes.push(...global)
-const formattedPrefixes = `export default [${prefixes.map(p => `'${p}'`).join(', ')}]\n`
+const formattedPrefixes = `export default [${prefixes.map(p => `'${p.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase()}'`).join(', ')}]\n` // convert to kebab-case
 await fs.writeFile('./packages/preset/src/prefixes.ts', formattedPrefixes, { encoding: 'utf-8' })

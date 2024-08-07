@@ -5,6 +5,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+import { presetAnimations } from 'unocss-preset-animations'
 import type { UnocssNuxtOptions } from '@unocss/nuxt'
 
 import presetUna from '@una-ui/preset'
@@ -26,6 +27,7 @@ function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
         },
       }),
       presetUna(),
+      presetAnimations(),
       ...(user.presets || []),
     ],
     extractors: [

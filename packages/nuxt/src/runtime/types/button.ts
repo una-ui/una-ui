@@ -1,4 +1,8 @@
-export interface NButtonProps {
+import type { HTMLAttributes } from 'vue'
+
+interface Extensions { class?: HTMLAttributes['class'] }
+
+export interface NButtonProps extends Extensions {
   /**
    * Change the button type.
    *
@@ -79,6 +83,15 @@ export interface NButtonProps {
    * trailing="i-heroicons-information-circle text-green-500 dark:text-green-400 text-2xl"
    */
   trailing?: string
+  /**
+   * Allows you to change the size of the input.
+   *
+   * @default sm
+   *
+   * @example
+   * size="sm" | size="2cm" | size="2rem" | size="2px"
+   */
+  size?: string
 
   /**
    * `UnaUI` preset configuration

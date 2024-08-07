@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from 'vue'
+
 export interface NIconProps {
   /**
    * Icon name
@@ -5,5 +7,5 @@ export interface NIconProps {
    * @example
    * 'i-heroicons-chevron-up'
    */
-  name: string
+  name: HTMLAttributes['class']
 }
