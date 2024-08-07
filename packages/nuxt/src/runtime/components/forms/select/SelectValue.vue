@@ -6,7 +6,10 @@ const props = defineProps<NSelectValueProps>()
 </script>
 
 <template>
-  <SelectValue v-bind="props">
+  <SelectValue
+    :class="{ 'select-value': !props.placeholder }"
+    v-bind="props"
+  >
     <slot />
   </SelectValue>
 </template>

@@ -15,7 +15,9 @@ import SelectContent from './SelectContent.vue'
 import SelectValue from './SelectValue.vue'
 import SelectSeparator from './SelectSeparator.vue'
 
-const props = defineProps<NSelectProps>()
+const props = withDefaults(defineProps<NSelectProps>(), {
+  size: 'sm',
+})
 const emits = defineEmits<SelectRootEmits>()
 
 const delegatedProps = computed(() => {
@@ -46,6 +48,8 @@ provide('selectModelValue', forwarded.value.modelValue)
   >
     <SelectTrigger
       :id="forwarded.id"
+      :size="forwarded.size"
+      :status="forwarded.status"
       v-bind="forwarded._selectTrigger"
     >
       <slot name="trigger" :value="forwarded.modelValue">
@@ -61,6 +65,7 @@ provide('selectModelValue', forwarded.value.modelValue)
     </SelectTrigger>
 
     <SelectContent
+      :size="forwarded.size"
       v-bind="{
         ...forwarded._selectContent,
         _selectScrollDownButton: forwarded._selectScrollDownButton,
@@ -86,7 +91,8 @@ provide('selectModelValue', forwarded.value.modelValue)
           >
             <SelectItem
               :value="item"
-              v-bind="forwarded._selectItem"
+              :size="forwarded.size"
+              v-bind="{ ...forwarded._selectItem, ...item._selectItem }"
               :is-selected="isEqualObject(item, forwarded.modelValue)"
             >
               <slot name="item" :item="item">
@@ -113,6 +119,7 @@ provide('selectModelValue', forwarded.value.modelValue)
             <slot name="group" :items="groupItems">
               <SelectLabel
                 v-if="groupItems.label"
+                :size="forwarded.size"
                 v-bind="{ ...forwarded._selectLabel, ...groupItems._selectLabel }"
               >
                 <slot name="label" :label="groupItems.label">
@@ -126,6 +133,7 @@ provide('selectModelValue', forwarded.value.modelValue)
               >
                 <SelectItem
                   :value="groupItem "
+                  :size="forwarded.size"
                   v-bind="{ ...forwarded._selectItem, ...groupItems?._selectItem, ...groupItem._selectItem }"
                   :is-selected="groupItem === transformerValue"
                 >

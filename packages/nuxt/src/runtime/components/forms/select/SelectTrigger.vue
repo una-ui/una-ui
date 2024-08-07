@@ -6,7 +6,6 @@ import type { NSelectTriggerProps } from '../../../types'
 import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NSelectTriggerProps>(), {
-  trailing: 'i-lucide-chevrons-up-down',
 })
 
 const delegatedProps = computed(() => {
@@ -16,27 +15,68 @@ const delegatedProps = computed(() => {
 })
 
 const forwardedProps = useForwardProps(delegatedProps)
+
+const statusClassVariants = computed(() => {
+  const btn = {
+    info: 'btn-outline-info',
+    success: 'btn-outline-success',
+    warning: 'btn-outline-warning',
+    error: 'btn-outline-error',
+    default: props?.una?.btnDefaultVariant ?? 'btn-outline-white',
+  }
+
+  const text = {
+    info: 'text-info',
+    success: 'text-success',
+    warning: 'text-warning',
+    error: 'text-error',
+    default: 'text-muted',
+  }
+
+  const icon = {
+    info: props.una?.selectTriggerInfoIcon ?? 'select-trigger-info-icon',
+    success: props.una?.selectTriggerSuccessIcon ?? 'select-trigger-success-icon',
+    warning: props.una?.selectTriggerWarningIcon ?? 'select-trigger-warning-icon',
+    error: props.una?.selectTriggerErrorIcon ?? 'select-trigger-error-icon',
+    default: 'select-trigger-trailing-icon',
+  }
+
+  return {
+    btn: btn[props.status ?? 'default'],
+    text: text[props.status ?? 'default'],
+    icon: icon[props.status ?? 'default'],
+  }
+})
 </script>
 
 <template>
   <SelectTrigger
-    v-bind="forwardedProps"
-    :class="cn(
-      'select-trigger justify-between',
-      props.class,
-    )"
-    :una="{
-      ...props.una,
-      ...{
-        btnTrailing: cn(
-          'select-trigger-trailing',
-          props.una?.btnTrailing,
-        ),
-        btnDefaultVariant: props.una?.btnDefaultVariant ?? 'btn-outline-white',
-      },
-    }"
-    :as="Button"
+    as-child
   >
-    <slot />
+    <Button
+      v-bind="forwardedProps"
+      :class="cn(
+        'select-trigger justify-between font-normal',
+        props.class,
+      )"
+      :trailing="statusClassVariants.icon"
+      :una="{
+        ...props.una,
+        ...{
+          btnLeading: cn(
+            'select-trigger-leading',
+            props.una?.btnLeading,
+          ),
+          btnTrailing: cn(
+            'select-trigger-trailing',
+            props.una?.btnTrailing,
+            statusClassVariants.text,
+          ),
+          btnDefaultVariant: statusClassVariants.btn,
+        },
+      }"
+    >
+      <slot />
+    </Button>
   </SelectTrigger>
 </template>

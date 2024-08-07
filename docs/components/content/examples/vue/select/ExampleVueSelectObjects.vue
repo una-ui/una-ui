@@ -22,7 +22,7 @@ const selected = ref()
 </script>
 
 <template>
-  <div class="flex flex-col space-y-5">
+  <div class="space-y-2">
     <div>
       Output:
       <span class="text-primary">

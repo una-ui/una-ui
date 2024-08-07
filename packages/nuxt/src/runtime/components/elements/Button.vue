@@ -41,6 +41,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :btn="btn"
     :aria-label="icon ? label : null"
     v-bind="$attrs"
+    :size="size"
   >
     <DefineTemplate v-if="loading">
       <slot name="loading">
@@ -91,8 +92,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       <NIcon
         v-if="trailing"
         :name="trailing"
-        :class="una?.btnTrailing"
         btn="trailing"
+        :class="una?.btnTrailing"
       />
     </slot>
   </Component>

@@ -2,30 +2,64 @@ import type { SelectContentProps, SelectGroupProps, SelectItemIndicatorProps, Se
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-type RootExtensions = Omit<SelectRootProps, 'modelValue' > & { class?: HTMLAttributes['class'] }
-type TriggerExtensions = SelectTriggerProps & NButtonProps & { class?: HTMLAttributes['class'] }
-type ValueExtensions = SelectValueProps & { class?: HTMLAttributes['class'] }
-type ScrollDownButtonExtensions = SelectScrollDownButtonProps & { class?: HTMLAttributes['class'] }
-type ScrollUpButtonExtensions = SelectScrollUpButtonProps & { class?: HTMLAttributes['class'] }
-type ContentExtensions = SelectContentProps & { class?: HTMLAttributes['class'] }
-type ItemExtensions = Omit<SelectItemProps, 'value'> & { class?: HTMLAttributes['class'] }
-type ItemTextExtensions = SelectItemTextProps & { class?: HTMLAttributes['class'] }
-type GroupExtensions = SelectGroupProps & { class?: HTMLAttributes['class'] }
-type LabelExtensions = SelectLabelProps & { class?: HTMLAttributes['class'] }
-type SeparatorExtensions = SelectSeparatorProps & { class?: HTMLAttributes['class'] }
+interface BaseExtensions {
+  class?: HTMLAttributes['class']
+  size?: HTMLAttributes['class']
+}
 
-type Extensions = NSelectRootProps
-  & { class?: HTMLAttributes['class'] }
+type RootExtensions = Omit<SelectRootProps, 'modelValue' > & BaseExtensions
+type TriggerExtensions = SelectTriggerProps & Omit<NButtonProps, 'una'> & BaseExtensions
+type ValueExtensions = SelectValueProps & BaseExtensions
+type ScrollDownButtonExtensions = SelectScrollDownButtonProps & BaseExtensions
+type ScrollUpButtonExtensions = SelectScrollUpButtonProps & BaseExtensions
+type ContentExtensions = SelectContentProps & BaseExtensions
+type ItemExtensions = Omit<SelectItemProps, 'value'> & BaseExtensions
+type ItemTextExtensions = SelectItemTextProps & BaseExtensions
+type GroupExtensions = SelectGroupProps & BaseExtensions
+type LabelExtensions = SelectLabelProps & BaseExtensions
+type SeparatorExtensions = SelectSeparatorProps & BaseExtensions
+type SelectExtensions = NSelectRootProps
+  & BaseExtensions
   & Pick<NSelectItemProps, 'selectItem'>
+  & Pick<NSelectTriggerProps, 'status'>
 
-export interface NSelectProps extends Extensions {
+export interface NSelectProps extends SelectExtensions {
+  /**
+   * The unique id of the select.
+   */
   id?: string
+  /**
+   * The value of the select.
+   */
   modelValue: any
+  /**
+   * Enable multiple group items.
+   *
+   * @default false
+   */
   multipleGroup?: boolean
+  /**
+   * The attribute name to use to display in the select items.
+   *
+   */
   itemAttribute?: string | number
+  /**
+   * The attribute name to use to display in the selected value.
+   */
   valueAttribute?: string | number
+  /**
+   * The placeholder to display when no value is selected.
+   */
   placeholder?: string
+  /**
+   * The label to display above the select items.
+   */
   label?: string
+  /**
+   * The items to display in the select.
+   *
+   * @default []
+   */
   items: any[]
 
   // sub-components
@@ -47,6 +81,19 @@ export interface NSelectRootProps extends RootExtensions {
 }
 
 export interface NSelectTriggerProps extends TriggerExtensions {
+  status?: 'info' | 'success' | 'warning' | 'error'
+
+  una?: {
+    selectTrigger?: HTMLAttributes['class']
+    selectTriggerTrailing?: HTMLAttributes['class']
+    selectTriggerTrailingIcon?: HTMLAttributes['class']
+    selectTriggerLeading?: HTMLAttributes['class']
+
+    selectTriggerInfoIcon?: HTMLAttributes['class']
+    selectTriggerSuccessIcon?: HTMLAttributes['class']
+    selectTriggerWarningIcon?: HTMLAttributes['class']
+    selectTriggerErrorIcon?: HTMLAttributes['class']
+  } & NButtonProps['una']
 }
 
 export interface NSelectValueProps extends ValueExtensions {

@@ -45,10 +45,10 @@ use `NSelect` to create a range input.
 
 ## Objects
 
-| Prop              | Description                 |
-| ----------------- | --------------------------- |
-| `value-attribute` | The attribute of the value. |
-| `item-attribute`  | The attribute of the item.  |
+| Prop              | Description                                        |
+| ----------------- | -------------------------------------------------- |
+| `value-attribute` | The attribute value to be displayed in the select. |
+| `item-attribute`  | The attribute value to be displayed in the item.   |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -58,6 +58,7 @@ use `NSelect` to create a range input.
 @@@ ./components/content/examples/vue/select/ExampleVueSelectObjects.vue
 ::
 :::
+
 ## Label
 
 > You can use the `NFormGroup` component to create a label for the slider.
@@ -68,49 +69,38 @@ use `NSelect` to create a range input.
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
-  :ExampleVueSliderLabel
+  :ExampleVueSelectLabel
 ::
  ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/slider/ExampleVueSliderLabel.vue
-::
-:::
-
-## Orientation
-
-`orientation={value}` - change the orientation of the slider.
-
-| Value        | Description               |
-| ------------ | ------------------------- |
-| `horizontal` | The default orientation.  |
-| `vertical`   | The vertical orientation. |
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueSliderOrientation
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/slider/ExampleVueSliderOrientation.vue
+@@@ ./components/content/examples/vue/select/ExampleVueSelectLabel.vue
 ::
 :::
 
 ## Disabled
 
-`disabled` - disable the slider.
+| Prop                   | Description                |
+| ---------------------- | -------------------------- |
+| `disabled`             | Disable the select.        |
+| `_selectItem.disabled` | Disable the specific item. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
-  :ExampleVueSliderDisabled
+  :ExampleVueSelectDisabled
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/slider/ExampleVueSliderDisabled.vue
+@@@ ./components/content/examples/vue/select/ExampleVueSelectDisabled.vue
 ::
 :::
 
 ## Size
 
-`size="{size}"` - change the size of the slider.
+| Prop                  | Description           |
+| --------------------- | --------------------- |
+| `size`                | Set the select size.  |
+| `_selectItem.size`    | Set the item size.    |
+| `_selectTrigger.size` | Set the trigger size. |
 
-> 🚀 You can freely adjust the size of the slider using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+> 🚀 You can freely adjust the size of the slider using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
 
 ::alert{type="info"}
 The `height` and `width` of the slider scale depends on the `slider-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
@@ -118,39 +108,25 @@ The `height` and `width` of the slider scale depends on the `slider-size`. If yo
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
-  :ExampleVueSliderSize
+  :ExampleVueSelectSize
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/slider/ExampleVueSliderSize.vue
+@@@ ./components/content/examples/vue/select/ExampleVueSelectSize.vue
 ::
-:::
-
-## Customization
-
-> You can customize the slider using the `una` prop and utility classes.
-
-::alert{type="info"}
-  You can also globally customize the slider preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
-::
-
-:::CodeGroup
-  ::code-block{label="Preview" preview}
-    :ExampleVueSliderCustom
-  ::
-  ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/slider/ExampleVueSliderCustom.vue
-  ::
 :::
 
 ## Slots
 
 > You can use the following slots to customize the slider.
 
-| Name           | Description                  | Props |
-| -------------- | ---------------------------- | ----- |
-| `slider-track` | The track of the slider.     | -     |
-| `slider-thumb` | The the thumb of the slider. | -     |
-| `slider-range` | The the range of the slider. | -     |
+| Name      | Description       | Props   |
+| --------- | ----------------- | ------- |
+| `trigger` | The trigger slot. | `value` |
+| `value`   | The value slot.   | `value` |
+| `content` | The content slot. | `items` |
+| `label`   | The label slot.   | `label` |
+| `item`    | The item slot.    | `item`  |
+| `group`   | The group slot.   | `items` |
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/select.ts

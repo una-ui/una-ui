@@ -116,6 +116,9 @@ export default defineNuxtModule<ModuleOptions>({
     if (!options.dev)
       nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
 
+    // utils
+    addImportsDir(resolve(runtimeDir, 'utils', 'cn'))
+
     // modules
     await installModule('radix-vue/nuxt')
     await installModule('@unocss/nuxt')
