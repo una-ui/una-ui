@@ -1,5 +1,5 @@
 ---
-description: 'NSelect component - used to create a select input.'
+description: 'NSelect component - used to create a selection input.'
 ---
 
 # 🟢 Select
