@@ -55,7 +55,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     >
       <TabsContent v-bind="forwarded._tabsContent" :value="item.value">
         <slot name="content" :item="item">
-          {{ item.content }}
+          <component :is="typeof item.content === 'string' ? 'span' : item.content">
+            {{ typeof item.content === 'string' ? item.content : '' }}
+          </component>
         </slot>
       </TabsContent>
     </template>
