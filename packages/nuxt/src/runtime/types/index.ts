@@ -19,6 +19,7 @@ export * from './slider'
 export * from './progress'
 export * from './skeleton'
 export * from './tabs'
+export * from './select'
 
 export interface Colors {
   [key: string]: string

@@ -6,6 +6,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+import { presetAnimations } from 'unocss-preset-animations'
 
 import presetUna from './packages/preset/src/index'
 import prefixes from './packages/preset/src/prefixes'
@@ -23,6 +24,7 @@ export default defineConfig({
       },
     }),
     presetUna(),
+    presetAnimations(),
   ],
   transformers: [
     transformerDirectives(),
@@ -35,6 +37,7 @@ export default defineConfig({
   ],
   configDeps: [
     '../packages/preset/src/_shortcuts/tabs.ts',
+    '../packages/preset/src/_shortcuts/select.ts',
     '../packages/preset/src/_shortcuts/skeleton.ts',
     '../packages/preset/src/_shortcuts/progress.ts',
     '../packages/preset/src/_shortcuts/slider.ts',
@@ -59,4 +62,5 @@ export default defineConfig({
 
     '../packages/preset/src/index.ts',
   ],
+
 })

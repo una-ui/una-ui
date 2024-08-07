@@ -57,3 +57,21 @@ export function getPriority<T>(...args: (T | undefined)[]): T | undefined {
 
   return undefined
 }
+
+/**
+ * Check if all objects are equal
+ * @param objects - objects to compare
+ * @returns true if all objects are equal
+ * @example
+ * ```ts
+ * const equal = isEqualObject({ a: 1 }, { a: 1 }, { a: 1 })
+ * ```
+ */
+export function isEqualObject(...objects: Record<string, any>[]): boolean {
+  return objects.every((obj, i) => {
+    if (i === 0)
+      return true
+
+    return JSON.stringify(obj) === JSON.stringify(objects[i - 1])
+  })
+}

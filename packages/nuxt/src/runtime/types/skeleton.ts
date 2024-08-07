@@ -4,16 +4,16 @@ interface Extensions { class?: HTMLAttributes['class'] }
 
 export interface NSkeletonProps extends Extensions {
   /**
-   * Allows you to add `UnaUI` slider preset properties,
+   * Allows you to add `UnaUI` skeleton preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
    *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/slider.ts
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/skeleton.ts
    * @example
-   * slider="green""
+   * skeleton="green""
    */
   skeleton?: string
   /**
-   * Allows you to change the size of the slider.
+   * Allows you to change the size of the skeleton.
    *
    * @default base|md
    *
@@ -24,7 +24,7 @@ export interface NSkeletonProps extends Extensions {
   /**
    * `UnaUI` preset configuration
    *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/slider.ts
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/skeleton.ts
    */
   una?: {
     // base

@@ -94,6 +94,13 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
+      path: resolve(runtimeDir, 'components/forms', 'select'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+    })
+
+    addComponentsDir({
       path: resolve(runtimeDir, 'components', 'misc'),
       prefix: options.prefix,
       global: options.global,
@@ -115,6 +122,9 @@ export default defineNuxtModule<ModuleOptions>({
 
     if (!options.dev)
       nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
+
+    // utils
+    addImportsDir(resolve(runtimeDir, 'utils', 'cn'))
 
     // modules
     await installModule('radix-vue/nuxt')
