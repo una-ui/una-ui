@@ -61,7 +61,7 @@ use `NSelect` to create a range input.
 
 ## Label
 
-> You can use the `NFormGroup` component to create a label for the slider.
+> You can use the `NFormGroup` component to create a label for the select.
 
 ::alert{type="info"}
   Read more about the `NFormGroup` component [here](form-group).
@@ -100,10 +100,10 @@ use `NSelect` to create a range input.
 | `_selectItem.size`    | Set the item size.    |
 | `_selectTrigger.size` | Set the trigger size. |
 
-> 🚀 You can freely adjust the size of the slider using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+> 🚀 You can freely adjust the size of the select using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
 
 ::alert{type="info"}
-The `height` and `width` of the slider scale depends on the `slider-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
+The `height` and `width` of the select scale depends on the `select-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
 ::
 
 :::CodeGroup
@@ -117,7 +117,7 @@ The `height` and `width` of the slider scale depends on the `slider-size`. If yo
 
 ## Slots
 
-> You can use the following slots to customize the slider.
+> You can use the following slots to customize the select.
 
 | Name      | Description       | Props   |
 | --------- | ----------------- | ------- |
