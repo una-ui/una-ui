@@ -2,7 +2,7 @@
 description: 'NSlider component - used to create a range input.'
 ---
 
-# 🌑 Slider 
+# 🟢 Slider 
 
 ## Features
 
