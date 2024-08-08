@@ -7,6 +7,12 @@ export const staticGeneral = {
   'text-base': 'text-$c-foreground',
   'text-inverted': 'text-$c-background',
   'text-muted': 'text-$c-muted-foreground',
+
+  'text-accent': 'text-$c-accent-foreground',
+  'text-accent-forground': 'text-$c-accent',
+  'text-popover': 'text-$c-popover-foreground',
+  'text-popover-foreground': 'text-$c-popover',
+
   'text-info': 'text-info-500 dark:text-info-400',
   'text-error': 'text-error-500 dark:text-error-400',
   'text-success': 'text-success-500 dark:text-success-400',
@@ -28,6 +34,12 @@ export const staticGeneral = {
   'bg-base': 'bg-$c-background',
   'bg-inverted': 'bg-$c-foreground',
   'bg-muted': 'bg-$c-muted',
+
+  'bg-accent': 'bg-$c-accent',
+  'bg-accent-foreground': 'bg-$c-accent-foreground',
+
+  'bg-popover': 'bg-$c-popover',
+  'bg-popover-foreground': 'bg-$c-popover-foreground',
 
   // icon
   'i-loading': 'i-tabler-loader-2',

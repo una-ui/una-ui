@@ -6,7 +6,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-loading-icon': 'i-loading',
 
   // base
-  'btn': 'bg-transparent text-0.875em leading-5 gap-0.42857142857142855em btn-rectangle rounded-md inline-flex justify-center items-center btn-disabled font-semibold cursor-pointer',
+  'btn': 'bg-transparent text-0.875em leading-5 gap-0.42857142857142855em btn-rectangle rounded-md inline-flex justify-center items-center btn-disabled font-medium cursor-pointer',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
   'btn-icon-label': 'text-1.191em',
@@ -26,7 +26,9 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-solid-gray': 'bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-$c-gray-100',
   'btn-ghost-gray': 'text-$c-gray-600 btn-focus hover:bg-$c-gray-100',
   'btn-soft-gray': 'text-$c-gray-600 bg-$c-gray-50 btn-focus hover:bg-$c-gray-100',
-  'btn-link-gray': 'text-$c-gray-500 btn-focus hover:text-$c-gray-950 hover:underline underline-offset-4',
+  'btn-outline-gray': 'bg-transparent text-muted ring-1 ring-base ring-inset btn-focus',
+  'btn-outline-white': 'bg-transparent text-base ring-1 ring-base ring-inset btn-focus',
+  'btn-link-gray': 'text-muted btn-focus hover:text-base hover:underline underline-offset-4',
   'btn-solid-black': 'bg-$c-gray-950 text-inverted shadow-sm btn-focus hover:bg-$c-gray-900',
   'btn-link-black': 'text-$c-gray-950 btn-focus hover:underline underline-offset-4',
   'btn-text-black': 'text-$c-gray-950 btn-focus hover:text-$c-gray-900',
