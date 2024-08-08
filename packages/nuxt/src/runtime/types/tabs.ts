@@ -1,21 +1,13 @@
 import type { TabsContentProps, TabsListProps, TabsRootProps, TabsTriggerProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
+import type { NButtonProps } from './button'
 
 interface BaseExtensions {
   class?: HTMLAttributes['class']
   size?: HTMLAttributes['class']
 }
 
-export interface NTabsProps extends TabsRootProps, BaseExtensions {
-  /**
-   * Allows you to add `UnaUI` tabs preset properties,
-   * Think of it as a shortcut for adding options or variants to the preset if available.
-   *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/tabs.ts
-   * @example
-   * tabs="primary"
-   */
-  tabs?: string
+export interface NTabsProps extends TabsRootProps, BaseExtensions, Pick<NTabsTriggerProps, 'tabs'> {
   /**
    * The array of items that is passed to tabs.
    *
@@ -53,7 +45,9 @@ export interface NTabsListProps extends TabsListProps, BaseExtensions {
   }
 }
 
-export interface NTabsTriggerProps extends TabsTriggerProps, BaseExtensions {
+export interface NTabsTriggerProps extends TabsTriggerProps, Omit<NButtonProps, 'una' | 'size'>, BaseExtensions {
+  tabs?: string
+
   /**
    * `UnaUI` preset configuration
    *
@@ -62,7 +56,8 @@ export interface NTabsTriggerProps extends TabsTriggerProps, BaseExtensions {
   una?: {
     // components
     tabsTrigger?: HTMLAttributes['class']
-  }
+    tabsDefaultVariant?: HTMLAttributes['class']
+  } & NButtonProps['una']
 }
 
 export interface NTabsContentProps extends TabsContentProps, BaseExtensions {

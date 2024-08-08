@@ -1,9 +1,8 @@
 ---
-title: 🌑 Tabs
 description: 'NTabs are used to navigate between different content and also they have robust focus management and keyboard navigation support.'
 ---
 
-# 🌑 Tabs
+# 🟢 Tabs
 
 ---
 

@@ -9,9 +9,7 @@ import TabsList from './TabsList.vue'
 import TabsTrigger from './TabsTrigger.vue'
 import TabsContent from './TabsContent.vue'
 
-const props = withDefaults(defineProps<NTabsProps>(), {
-  defaultValue: '',
-})
+const props = defineProps<NTabsProps>()
 const emits = defineEmits<TabsRootEmits>()
 
 defineSlots<{
@@ -31,9 +29,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <TabsRoot
-    v-bind="omitProps(forwarded, ['items'])"
-    :class="props.class"
-    :default-value="forwarded.defaultValue"
+    v-bind="omitProps(forwarded, ['items', 'tabs'])"
+    :default-value="defaultValue ?? items[0].value"
   >
     <TabsList v-bind="forwarded._tabsList">
       <slot name="list">
@@ -41,7 +38,11 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           v-for="trigger in items"
           :key="trigger.value"
         >
-          <TabsTrigger v-bind="forwarded._tabsTrigger" :value="trigger.value" :disabled="trigger.disabled">
+          <TabsTrigger
+            :tabs="trigger?._tabsTrigger?.tabs || tabs"
+            :value="trigger.value"
+            v-bind="{ ...forwarded._tabsTrigger, ...trigger?._tabsTrigger }"
+          >
             <slot name="trigger" :item="trigger">
               {{ trigger.name }}
             </slot>

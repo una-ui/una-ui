@@ -3,11 +3,13 @@ import { computed } from 'vue'
 import { TabsTrigger } from 'radix-vue'
 import { cn } from '../../../utils'
 import type { NTabsTriggerProps } from '../../../types/tabs'
+import Button from '../Button.vue'
 
 const props = defineProps<NTabsTriggerProps>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
+
   return delegated
 })
 </script>
@@ -18,8 +20,12 @@ const delegatedProps = computed(() => {
     :class="cn(
       'tabs-trigger',
       props.class,
-      props.una?.tabsTrigger,
     )"
+    :una="{
+      ...props.una,
+      btnDefaultVariant: props.tabs ? `tabs-${props.tabs}` : 'tabs-default-variant',
+    }"
+    :as="Button"
   >
     <slot />
   </TabsTrigger>

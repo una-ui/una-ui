@@ -3,17 +3,25 @@ const items = ref([
   {
     value: 'account',
     name: 'Account',
-    disabled: false,
+    _tabsTrigger: {
+      leading: 'i-heroicons-user-20-solid',
+    },
   },
   {
     value: 'service',
     name: 'Service Provider',
-    disabled: false,
+    _tabsTrigger: {
+      trailing: 'i-heroicons-chevron-right-20-solid',
+      tabs: 'solid-primary',
+    },
   },
   {
     value: 'reviews',
     name: 'Reviews',
-    disabled: false,
+    _tabsTrigger: {
+      tabs: 'outline-success',
+      loading: true,
+    },
   },
 ])
 
@@ -21,7 +29,11 @@ const ServiceProvider = defineAsyncComponent(() => import('../radio/ExampleVueRa
 </script>
 
 <template>
-  <NTabs :items="items" default-value="account">
+  <NTabs
+    :items="items"
+    orientation="vertical"
+    tabs="soft-black"
+  >
     <template #content="{ item }">
       <div v-if="item.value === 'account'" flex="~ col items-start">
         <NFormGroup
