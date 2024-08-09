@@ -2,7 +2,7 @@ type DividerPrefix = 'divider'
 
 export const staticDivider: Record<`${DividerPrefix}-${string}` | DividerPrefix, string> = {
   // base
-  'divider': 'divider-gray relative',
+  'divider': 'divider-solid-gray',
 
   // variants
   'divider-horizontal': 'block w-full h-px my-4 relative border-b-1',
@@ -15,15 +15,12 @@ export const staticDivider: Record<`${DividerPrefix}-${string}` | DividerPrefix,
   // for vertical
   'divider-position-bottom': 'bottom-4 left-1/2 -translate-x-1/2',
   'divider-position-top': 'top-4 left-1/2 -translate-x-1/2',
-
-  // types of border
-  'divider-type-solid': 'border-solid',
-  'divider-type-dashed': 'border-dashed',
-  'divider-type-dotted': 'border-dotted',
 }
 
 export const dynamicDivider = [
-  [/^divider(-(\S+))?$/, ([, , c = 'gray']) => `border-${c}-300 dark:border-${c}-500 text-${c}-700 dark:text-${c}-400`],
+  [/^divider-solid(-(\S+))?$/, ([, , c = 'gray']) => `border-solid border-${c}-300 dark:border-${c}-500 text-${c}-700 dark:text-${c}-400`],
+  [/^divider-dashed(-(\S+))?$/, ([, , c = 'gray']) => `border-dashed border-${c}-300 dark:border-${c}-500 text-${c}-700 dark:text-${c}-400`],
+  [/^divider-dotted(-(\S+))?$/, ([, , c = 'gray']) => `border-dotted border-${c}-300 dark:border-${c}-500 text-${c}-700 dark:text-${c}-400`],
 ]
 
 export const divider = [

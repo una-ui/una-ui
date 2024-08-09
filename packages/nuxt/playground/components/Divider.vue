@@ -4,18 +4,18 @@
     <p>
       Example text 1 (base)
     </p>
-    <NDivider />
+    <NDivider divider="dashed-purple" />
 
     <p>
       Example text 2 (type)
     </p>
-    <NDivider type="dashed" />
+    <NDivider />
 
     <p>
       Example text 3 (slot with align)
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus odio quis dicta sunt voluptas, ratione a enim architecto consequuntur officiis repudiandae autem, culpa error consectetur ipsum ullam, doloremque exercitationem debitis.
     </p>
-    <NDivider align="left">
+    <NDivider>
       Una UI
     </NDivider>
   </div>
@@ -26,7 +26,7 @@
     <NDivider direction="vertical" />
 
     <p>Example text 2 (type)</p>
-    <NDivider direction="vertical" type="dotted" />
+    <NDivider direction="vertical" />
 
     <p max-w-100>
       Example text 3 (slot with align)

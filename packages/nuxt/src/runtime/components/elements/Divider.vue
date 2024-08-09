@@ -9,7 +9,6 @@ defineOptions({
 
 const props = withDefaults(defineProps<NDividerProps>(), {
   direction: 'horizontal',
-  type: 'solid',
 })
 
 const slots = useSlots()
@@ -21,14 +20,6 @@ const delegatedProps = computed(() => {
 
 const directionClass = computed(() => {
   return props.direction === 'horizontal' ? 'divider-horizontal' : 'divider-vertical'
-})
-const typeBorderStyle = computed(() => {
-  const borderTypes = {
-    dashed: 'divider-type-dashed',
-    dotted: 'divider-type-dotted',
-    solid: 'divider-type-solid',
-  }
-  return borderTypes[props.type]
 })
 
 type AlignHorizontal = 'left' | 'right' | 'center'
@@ -60,14 +51,21 @@ const alignVariant = computed(() => {
   else
     return alignMap.vertical[props.align as AlignVertical] || defaultAlignVariant
 })
+
+const dividerTypes = ['solid', 'dashed', 'dotted'] as const
+const hasType = computed(() => dividerTypes.some(dividerType => props.divider?.includes(dividerType)))
+const isBaseType = computed(() => props.divider?.includes('~'))
 </script>
 
 <template>
   <div
     v-bind="{ ...$attrs, delegatedProps }"
+    :divider="divider"
     :class="cn(
       'divider',
-      directionClass, typeBorderStyle, props.class,
+      directionClass,
+      props.class,
+      !hasType && !isBaseType ? 'divider-default-variant' : null,
       { [props.direction === 'horizontal' ? 'my-6' : 'mx-8']: slots.default },
     )"
   >

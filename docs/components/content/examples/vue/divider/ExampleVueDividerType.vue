@@ -1,10 +1,10 @@
 <template>
   <div>
     Solid
-    <NDivider type="solid" />
+    <NDivider divider="solid" />
     Dashed
-    <NDivider type="dashed" />
+    <NDivider divider="dashed" />
     Dotted
-    <NDivider type="dotted" />
+    <NDivider divider="dotted" />
   </div>
 </template>

@@ -61,7 +61,7 @@ description: 'The Divider component that separates the content.'
 
 ## Type
 
-`type="{value}"` - change the type of the divider.
+`divider="{type}"` - change the type of the divider.
 
 | Type      | Description                 |
 | --------- | --------------------------- |
@@ -75,6 +75,23 @@ description: 'The Divider component that separates the content.'
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/divider/ExampleVueDividerType.vue
+::
+:::
+
+## Color
+
+`divider="{type}-{color}"` - change the color of the divider.
+
+::alert{type="info"}
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `gray`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+::    
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueDividerColor
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/divider/ExampleVueDividerColor.vue
 ::
 :::
 

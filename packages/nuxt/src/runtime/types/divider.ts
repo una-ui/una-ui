@@ -4,6 +4,15 @@ interface Extensions { class?: HTMLAttributes['class'] }
 
 export interface NDividerProps extends Extensions {
   /**
+   * Allows you to add `UnaUI` divider preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/avatar.ts
+   * @example
+   * divider="solid-green"
+   */
+  divider?: string
+  /**
    * The divider's direction
    *
    * @default horizontal
@@ -13,10 +22,6 @@ export interface NDividerProps extends Extensions {
    * Alignment of the content of the divider.
    */
   align?: 'left' | 'center' | 'right' | 'top' | 'center' | 'bottom'
-  /**
-   * The type of divider's border style.
-   */
-  type?: 'solid' | 'dotted' | 'dashed'
   /**
    * `UnaUI` preset configuration
    *
