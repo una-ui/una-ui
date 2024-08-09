@@ -31,7 +31,6 @@ const ServiceProvider = defineAsyncComponent(() => import('../radio/ExampleVueRa
 <template>
   <NTabs
     :items="items"
-    orientation="vertical"
     tabs="soft-black"
   >
     <template #content="{ item }">
