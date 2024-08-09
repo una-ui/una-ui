@@ -3,6 +3,10 @@ import { computed, useSlots } from 'vue'
 import { cn } from '../../utils'
 import type { NDividerProps } from '../../types'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(defineProps<NDividerProps>(), {
   direction: 'horizontal',
   type: 'solid',
@@ -51,8 +55,6 @@ const alignVariant = computed(() => {
     },
   }
 
-  // I think it might be easier, but we need to prevent user errors.
-
   if (props.direction === 'horizontal')
     return alignMap.horizontal[props.align as AlignHorizontal] || defaultAlignVariant
   else
@@ -62,8 +64,12 @@ const alignVariant = computed(() => {
 
 <template>
   <div
-    v-bind="delegatedProps"
-    :class="cn('divider', directionClass, typeBorderStyle)"
+    v-bind="{ ...$attrs, delegatedProps }"
+    :class="cn(
+      'divider',
+      directionClass, typeBorderStyle, props.class,
+      { [props.direction === 'horizontal' ? 'my-6' : 'mx-8']: slots.default },
+    )"
   >
     <div
       v-if="slots.default"

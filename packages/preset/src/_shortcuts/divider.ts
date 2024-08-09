@@ -5,8 +5,8 @@ export const staticDivider: Record<`${DividerPrefix}-${string}` | DividerPrefix,
   'divider': 'divider-gray relative',
 
   // variants
-  'divider-horizontal': 'block w-full h-px my-8 relative border-b-1',
-  'divider-vertical': 'block w-px h-full border-l-1 mx-6 relative align-middle',
+  'divider-horizontal': 'block w-full h-px my-4 relative border-b-1',
+  'divider-vertical': 'block w-px min-h-4 border-l-1 mx-5 relative',
   'divider-content': 'absolute bg-base font-medium text-sm',
   // for horizontal
   'divider-position-left': 'left-6 top-1/2 -translate-y-1/2',

@@ -1,13 +1,20 @@
 <template>
   <!-- horizontal variant -->
   <div flex="~ col">
-    <p>Example text 1 (base)</p>
+    <p>
+      Example text 1 (base)
+    </p>
     <NDivider />
 
-    <p>Example text 2 (type)</p>
+    <p>
+      Example text 2 (type)
+    </p>
     <NDivider type="dashed" />
 
-    <p>Example text 3 (slot with align)</p>
+    <p>
+      Example text 3 (slot with align)
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus odio quis dicta sunt voluptas, ratione a enim architecto consequuntur officiis repudiandae autem, culpa error consectetur ipsum ullam, doloremque exercitationem debitis.
+    </p>
     <NDivider align="left">
       Una UI
     </NDivider>
