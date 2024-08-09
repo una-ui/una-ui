@@ -1,37 +1,25 @@
 <script setup lang="ts">
+import ExampleVueRadioFormGroup from '../radio/ExampleVueRadioFormGroup.vue'
+
 const items = ref([
   {
     value: 'account',
     name: 'Account',
-    _tabsTrigger: {
-      leading: 'i-heroicons-user-20-solid',
-    },
   },
   {
     value: 'service',
     name: 'Service Provider',
-    _tabsTrigger: {
-      trailing: 'i-heroicons-chevron-right-20-solid',
-      tabs: 'solid-primary',
-    },
   },
   {
     value: 'reviews',
     name: 'Reviews',
-    _tabsTrigger: {
-      tabs: 'outline-success',
-      loading: true,
-    },
   },
 ])
-
-const ServiceProvider = defineAsyncComponent(() => import('../radio/ExampleVueRadioFormGroup.vue'))
 </script>
 
 <template>
   <NTabs
     :items="items"
-    tabs="soft-black"
   >
     <template #content="{ item }">
       <div v-if="item.value === 'account'" flex="~ col items-start">
@@ -50,7 +38,7 @@ const ServiceProvider = defineAsyncComponent(() => import('../radio/ExampleVueRa
         </NButton>
       </div>
       <div v-if="item.value === 'service'">
-        <ServiceProvider />
+        <ExampleVueRadioFormGroup />
       </div>
       <div v-if="item.value === 'reviews'">
         <NFormGroup label="Write your review">
