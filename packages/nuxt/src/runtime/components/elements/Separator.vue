@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { Separator } from 'radix-vue'
-import { cn } from '../../utils'
+import { cn, omitProps } from '../../utils'
 import type { NSeparatorProps } from '../../types'
 
 const props = withDefaults(defineProps<NSeparatorProps>(), {
@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<NSeparatorProps>(), {
 })
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+  const { class: _, ...delegated } = omitProps(props, ['una'])
 
   return delegated
 })
@@ -21,9 +21,7 @@ const delegatedProps = computed(() => {
 
 <template>
   <Separator
-    v-bind="delegatedProps"
-    :size
-    :separator
+    v-bind="omitProps(delegatedProps, ['una', 'separatorPosition'])"
     :class="
       cn(
         'separator',
@@ -39,7 +37,6 @@ const delegatedProps = computed(() => {
       :separator-position="props.separatorPosition || 'center'"
       :class="cn(
         'separator-content',
-        props.separatorContent,
         props.una?.separatorContent,
         props.orientation === 'vertical' ? 'separator-content-vertical' : 'separator-content-horizontal',
       )"

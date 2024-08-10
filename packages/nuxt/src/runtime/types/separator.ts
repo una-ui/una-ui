@@ -19,13 +19,6 @@ export interface NSeparatorProps extends Extensions {
    * @default horizontal-center
    */
   separatorPosition?: HTMLAttributes['class']
-
-  /**
-   * Allows you to add styles to the separator content.
-   *
-   * @default text-xs text-muted bg-base absolute flex justify-center items-center
-   */
-  separatorContent?: HTMLAttributes['class']
   /**
    * Allows you to change the size of the separator.
    *
