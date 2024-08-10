@@ -1,9 +1,8 @@
 ---
-title: 🌑 Divider
 description: 'The Divider component that separates the content.'
 ---
 
-# 🌑 Divider
+# 🟢 Divider
 
 ---
 
