@@ -27,7 +27,7 @@ export interface NSeparatorProps extends Extensions {
    */
   separatorContent?: HTMLAttributes['class']
   /**
-   * Allows you to change the size of the input.
+   * Allows you to change the size of the separator.
    *
    * @default md
    *
