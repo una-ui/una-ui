@@ -54,6 +54,7 @@ const textarea = ref('')
     <NInput
       v-model="textarea"
       type="textarea"
+      placeholder="Type something..."
     />
 
     <NSeparator class="my-10">
