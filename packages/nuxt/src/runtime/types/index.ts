@@ -19,7 +19,7 @@ export * from './slider'
 export * from './progress'
 export * from './skeleton'
 export * from './select'
-export * from './divider'
+export * from './separator'
 
 export interface Colors {
   [key: string]: string

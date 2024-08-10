@@ -38,7 +38,7 @@ export default defineConfig({
   configDeps: [
     '../packages/nuxt/src/preset.config.ts',
 
-    '../packages/preset/src/_shortcuts/divider.ts',
+    '../packages/preset/src/_shortcuts/separator.ts',
     '../packages/preset/src/_shortcuts/select.ts',
     '../packages/preset/src/_shortcuts/skeleton.ts',
     '../packages/preset/src/_shortcuts/progress.ts',
