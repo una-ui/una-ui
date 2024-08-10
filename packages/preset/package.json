@@ -35,11 +35,6 @@
       "import": "./dist/prefixes.mjs",
       "require": "./dist/prefixes.cjs"
     },
-    "./types": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/types.mjs",
-      "require": "./dist/types.cjs"
-    },
     "./*": "./*"
   },
   "main": "dist/index.cjs",
