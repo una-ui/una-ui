@@ -21,7 +21,7 @@ import { slider } from './slider'
 import { progress } from './progress'
 import { skeleton } from './skeleton'
 import { select } from './select'
-import { divider } from './divider'
+import { separator } from './separator'
 
 export const shortcuts = [
   ...general,
@@ -46,5 +46,5 @@ export const shortcuts = [
   ...progress,
   ...skeleton,
   ...select,
-  ...divider,
+  ...separator,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
