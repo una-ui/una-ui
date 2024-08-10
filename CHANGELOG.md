@@ -1,3 +1,23 @@
+# [0.9.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.1...v0.9.0-beta.2) (2024-08-10)
+
+
+
+# [0.9.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.8.0-beta.1...v0.9.0-beta.1) (2024-08-10)
+
+
+### Bug Fixes
+
+* **kbd:** update ring and solid-bg preset ([07aebd2](https://github.com/una-ui/una-ui/commit/07aebd24b198a0e46b655eca5f0863d2b9d38d8e))
+
+
+### Features
+
+* **Button:** add `btn-soft-black` variant and minor preset configurations ([184ed50](https://github.com/una-ui/una-ui/commit/184ed506bc0652db4e426a9c58b9c6e184e4385d))
+* **Divider:** new component and preset ([#150](https://github.com/una-ui/una-ui/issues/150)) ([85d2c90](https://github.com/una-ui/una-ui/commit/85d2c90001e1effa9447512d817e9abd711c5284))
+* **Separator:** introduce new component and preset ([#151](https://github.com/una-ui/una-ui/issues/151)) ([208c292](https://github.com/una-ui/una-ui/commit/208c29255a197bab2ad74f6635c1fc8b91f93431))
+
+
+
 # [0.8.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.7.0-beta.2...v0.8.0-beta.1) (2024-08-07)
 
 
