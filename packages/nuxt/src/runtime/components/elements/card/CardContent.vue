@@ -8,6 +8,7 @@ const props = defineProps<NCardContentProps>()
 <template>
   <div
     :class="cn(
+      'card-content',
       props.class,
       props.una?.cardContent,
     )"
