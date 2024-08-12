@@ -7,7 +7,7 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-export interface NTabsProps extends TabsRootProps, BaseExtensions, Pick<NTabsTriggerProps, 'tabs'> {
+export interface NTabsProps extends TabsRootProps, BaseExtensions, Pick<NTabsTriggerProps, 'tabs' | 'disabled'> {
   /**
    * The array of items that is passed to tabs.
    *
@@ -46,8 +46,15 @@ export interface NTabsListProps extends TabsListProps, BaseExtensions {
 }
 
 export interface NTabsTriggerProps extends TabsTriggerProps, Omit<NButtonProps, 'una' | 'size'>, BaseExtensions {
+  /**
+   * Allows you to add `UnaUI` button preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/tabs.ts
+   * @example
+   * tabs="solid-green"
+   */
   tabs?: string
-
   /**
    * `UnaUI` preset configuration
    *

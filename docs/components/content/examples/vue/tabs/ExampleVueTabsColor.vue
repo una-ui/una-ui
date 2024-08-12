@@ -3,6 +3,7 @@ const items = ref([
   {
     value: 'account',
     name: 'Account',
+    tabs: 'outline-pink',
     _tabsTrigger: {
       leading: 'i-heroicons-user-20-solid',
     },
@@ -11,8 +12,8 @@ const items = ref([
     value: 'service',
     name: 'Service Provider',
     _tabsTrigger: {
-      trailing: 'i-heroicons-chevron-right-20-solid',
       tabs: 'solid-primary',
+      trailing: 'i-heroicons-chevron-right-20-solid',
     },
   },
   {
@@ -31,7 +32,6 @@ const ServiceProvider = defineAsyncComponent(() => import('../radio/ExampleVueRa
 <template>
   <NTabs
     :items="items"
-    tabs="soft-black"
   >
     <template #content="{ item }">
       <div v-if="item.value === 'account'" flex="~ col items-start">

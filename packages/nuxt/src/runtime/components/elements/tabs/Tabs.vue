@@ -12,12 +12,6 @@ import TabsContent from './TabsContent.vue'
 const props = defineProps<NTabsProps>()
 const emits = defineEmits<TabsRootEmits>()
 
-defineSlots<{
-  list: () => any
-  trigger: (props: { item: any }) => any
-  content: (props: { item: any }) => any
-}>()
-
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
 
@@ -29,22 +23,23 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <TabsRoot
-    v-bind="omitProps(forwarded, ['items', 'tabs'])"
-    :default-value="defaultValue ?? items[0].value"
+    v-bind="omitProps(forwarded, ['items', 'tabs', 'disabled'])"
+    :default-value="defaultValue"
   >
     <TabsList v-bind="forwarded._tabsList">
-      <slot name="list">
+      <slot name="list" :items="items">
         <template
-          v-for="trigger in items"
-          :key="trigger.value"
+          v-for="item in items"
+          :key="item.value"
         >
           <TabsTrigger
-            :tabs="trigger?._tabsTrigger?.tabs || tabs"
-            :value="trigger.value"
-            v-bind="{ ...forwarded._tabsTrigger, ...trigger?._tabsTrigger }"
+            :tabs="item?._tabsTrigger?.tabs || item.tabs || props.tabs"
+            :disabled="item?._tabsTrigger?.disabled ?? item.disabled ?? props.disabled"
+            :value="item.value"
+            v-bind="{ ...forwarded._tabsTrigger, ...item?._tabsTrigger }"
           >
-            <slot name="trigger" :item="trigger">
-              {{ trigger.name }}
+            <slot name="trigger" :item="item" :disabled="item?._tabsTrigger?.disabled ?? item.disabled ?? props.disabled ?? false">
+              {{ item.name }}
             </slot>
           </TabsTrigger>
         </template>

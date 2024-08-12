@@ -19,14 +19,17 @@ description: 'NTabs are used to navigate between different content and also they
 ::
 :::
 
-## Color
+## Variant and Color
 
-`tabs="{color}"` - change the color of the tabs.
+`tabs="{variant}-{color}"` is used to set the variant of the tabs. The default variant is `soft-black`.
 
-> You use `tabs="{color}"` in `NTabsList` and the color is applied to the active trigger.
+| Prop                | Description                                        |
+| ------------------- | -------------------------------------------------- |
+| `tabs`              | Set the tabs variant and color.                    |
+| `_tabsTrigger.tabs` | Set the tabs variant and color via `_tabsTrigger`. |
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+`NTabs` is wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available through the `_tabsTrigger` prop.
 ::
 
 :::CodeGroup
@@ -40,7 +43,12 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 ## Disabled
 
-Enabling `disabled` property of a `NTabTrigger` prevents user interaction.
+`disabled="{boolean}"` is used to disable the tabs. The default value is `false`.
+
+| Prop                    | Description                               |
+| ----------------------- | ----------------------------------------- |
+| `disabled`              | Set the tabs disabled.                    |
+| `_tabsTrigger.disabled` | Set the tabs disabled via `_tabsTrigger`. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -53,10 +61,10 @@ Enabling `disabled` property of a `NTabTrigger` prevents user interaction.
 
 ## Size
 
-| Prop                  | Description           |
-| --------------------- | --------------------- |
-| `size`                | Set the tabs size. |
-| `_tabsTrigger.size`      | Set the trigger size. |
+| Prop                | Description           |
+| ------------------- | --------------------- |
+| `size`              | Set the tabs size.    |
+| `_tabsTrigger.size` | Set the trigger size. |
 | `_tabsContent.size` | Set the content size. |
 
 > 🚀 You can freely adjust the size of the tabs using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
