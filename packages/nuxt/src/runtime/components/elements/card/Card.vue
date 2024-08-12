@@ -33,7 +33,7 @@ const delegatedProps = computed(() => {
   return delegated
 })
 
-const cardVariants = ['soft', 'outline', 'border'] as const
+const cardVariants = ['soft', 'outline'] as const
 const hasVariant = computed(() => cardVariants.some(cardVariant => props.card?.includes(cardVariant)))
 const isBaseVariant = computed(() => props.card?.includes('~'))
 </script>
@@ -69,7 +69,7 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
           </slot>
         </CardTitle>
         <CardDescription
-          v-if="$slots.subtitle || description"
+          v-if="$slots.description || description"
           card="description"
           v-bind="delegatedProps.cardSubtitle"
           :size="props.size"
