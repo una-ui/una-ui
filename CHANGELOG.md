@@ -1,3 +1,16 @@
+# [0.9.0-beta.4](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.3...v0.9.0-beta.4) (2024-08-12)
+
+
+
+# [0.9.0-beta.3](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.2...v0.9.0-beta.3) (2024-08-12)
+
+
+### Bug Fixes
+
+* **Separator:** fix preset typo ([f4d87e8](https://github.com/una-ui/una-ui/commit/f4d87e8c663393fa85175e74425d03d06ede261f))
+
+
+
 # [0.9.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.1...v0.9.0-beta.2) (2024-08-10)
 
 
