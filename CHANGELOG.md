@@ -1,3 +1,21 @@
+## [0.10.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.10.0-beta.1...v0.10.1-beta.1) (2024-08-12)
+
+
+### Features
+
+* **Select:** add variants and colors configuration ([#154](https://github.com/una-ui/una-ui/issues/154)) ([1ff0dce](https://github.com/una-ui/una-ui/commit/1ff0dcefd5b2155db68c24c0fa388f7934dac59b))
+
+
+
+# [0.10.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.4...v0.10.0-beta.1) (2024-08-12)
+
+
+### Features
+
+* **Tabs:** introduce new component and preset ([#152](https://github.com/una-ui/una-ui/issues/152)) ([612f739](https://github.com/una-ui/una-ui/commit/612f739d48d179b03e7c0581e829a455f05c44fc))
+
+
+
 # [0.9.0-beta.4](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.3...v0.9.0-beta.4) (2024-08-12)
 
 

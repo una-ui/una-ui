@@ -80,6 +80,13 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
+      path: resolve(runtimeDir, 'components/elements', 'tabs'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+    })
+
+    addComponentsDir({
       path: resolve(runtimeDir, 'components/elements', 'card'),
       prefix: options.prefix,
       global: options.global,
