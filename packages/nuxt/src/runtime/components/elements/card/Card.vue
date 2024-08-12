@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, useSlots } from 'vue'
+import { computed } from 'vue'
 import type { NCardProps } from '../../../types/card'
 import CardContent from './CardContent.vue'
 import CardHeader from './CardHeader.vue'
@@ -16,16 +16,6 @@ const props = withDefaults(defineProps<NCardProps>(), {
     cardDefaultVariant: 'card-default-variant',
   }),
 })
-
-defineSlots<{
-  default: () => any
-  header: () => any
-  footer: () => any
-  title: () => any
-  description: () => any
-}>()
-
-const slots = useSlots()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -50,7 +40,7 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
     ]"
   >
     <CardHeader
-      v-if="slots.header"
+      v-if="$slots.header"
       v-bind="delegatedProps.cardHeader"
     >
       <slot name="header" />
@@ -82,14 +72,14 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
         </CardDescription>
       </div>
       <CardContent
-        v-if="slots.default"
+        v-if="$slots.default"
         v-bind="delegatedProps.cardContent"
         :size="props.size"
       >
         <slot />
       </CardContent>
       <CardFooter
-        v-if="slots.footer"
+        v-if="$slots.footer"
         v-bind="delegatedProps.cardFooter"
         :size="props.size"
       >
