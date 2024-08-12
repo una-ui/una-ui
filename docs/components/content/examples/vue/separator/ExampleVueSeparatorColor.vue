@@ -1,6 +1,6 @@
 <template>
   <NSeparator
-    separator="solid-green"
+    separator="solid-error"
     label="Warning Area"
   />
   <NSeparator
