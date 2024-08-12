@@ -15,7 +15,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-root': '',
   'select-trigger': 'min-h-2.5em w-full', // [&>span]:line-clamp-1
   'select-trigger-trailing-icon': 'i-lucide-chevrons-up-down !text-1.042em',
-  'select-trigger-trailing': 'ml-auto',
+  'select-trigger-trailing': 'ml-auto n-disabled',
   'select-trigger-leading': '',
 
   'select-value': 'h-1.5em',
@@ -47,6 +47,8 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 }
 
 export const dynamicSelect = [
+  [/^select-(\S+)-(\S+)$/, ([, v = 'solid', c = 'gray']) => `btn-${v}-${c}`],
+
   [/^select-item(-(\S+))?$/, ([, , c = 'gray']) => `focus:bg-${c}-100 focus:text-${c}-800 dark:focus:bg-${c}-800 dark:focus:text-${c}-100`],
 ]
 

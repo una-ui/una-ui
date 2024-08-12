@@ -44,13 +44,13 @@ provide('selectModelValue', forwarded.value.modelValue)
 
 <template>
   <SelectRoot
-    v-bind="omitProps(forwarded, ['items', 'multipleGroup', 'itemAttribute', 'placeholder', 'label', 'id'])"
+    v-bind="omitProps(forwarded, ['items', 'multipleGroup', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
   >
     <SelectTrigger
-      :id="forwarded.id"
-      :size="forwarded.size"
-      :status="forwarded.status"
-      :btn="forwarded.btn"
+      :id
+      :size
+      :status
+      :select
       v-bind="forwarded._selectTrigger"
     >
       <slot name="trigger" :value="forwarded.modelValue">
@@ -66,7 +66,7 @@ provide('selectModelValue', forwarded.value.modelValue)
     </SelectTrigger>
 
     <SelectContent
-      :size="forwarded.size"
+      :size
       v-bind="{
         ...forwarded._selectContent,
         _selectScrollDownButton: forwarded._selectScrollDownButton,
@@ -92,8 +92,9 @@ provide('selectModelValue', forwarded.value.modelValue)
           >
             <SelectItem
               :value="item"
-              :size="forwarded.size"
-              v-bind="{ ...forwarded._selectItem, ...item._selectItem }"
+              :size
+              :select-item
+              v-bind="{ ...props._selectItem, ...item._selectItem }"
               :is-selected="isEqualObject(item, forwarded.modelValue)"
             >
               <slot name="item" :item="item">

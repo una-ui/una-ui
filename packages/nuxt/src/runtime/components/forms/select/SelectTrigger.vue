@@ -22,7 +22,7 @@ const statusClassVariants = computed(() => {
     success: 'btn-outline-success',
     warning: 'btn-outline-warning',
     error: 'btn-outline-error',
-    default: props.btn ?? props?.una?.btnDefaultVariant ?? 'btn-outline-white',
+    default: props.select ? `select-${props.select}` : 'select-default-variant',
   }
 
   const text = {
@@ -50,7 +50,6 @@ const statusClassVariants = computed(() => {
 </script>
 
 <template>
-  {{ btn }} test
   <SelectTrigger
     as-child
   >
