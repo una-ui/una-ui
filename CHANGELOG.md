@@ -1,3 +1,54 @@
+## [0.10.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.10.0-beta.1...v0.10.1-beta.1) (2024-08-12)
+
+
+### Features
+
+* **Select:** add variants and colors configuration ([#154](https://github.com/una-ui/una-ui/issues/154)) ([1ff0dce](https://github.com/una-ui/una-ui/commit/1ff0dcefd5b2155db68c24c0fa388f7934dac59b))
+
+
+
+# [0.10.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.4...v0.10.0-beta.1) (2024-08-12)
+
+
+### Features
+
+* **Tabs:** introduce new component and preset ([#152](https://github.com/una-ui/una-ui/issues/152)) ([612f739](https://github.com/una-ui/una-ui/commit/612f739d48d179b03e7c0581e829a455f05c44fc))
+
+
+
+# [0.9.0-beta.4](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.3...v0.9.0-beta.4) (2024-08-12)
+
+
+
+# [0.9.0-beta.3](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.2...v0.9.0-beta.3) (2024-08-12)
+
+
+### Bug Fixes
+
+* **Separator:** fix preset typo ([f4d87e8](https://github.com/una-ui/una-ui/commit/f4d87e8c663393fa85175e74425d03d06ede261f))
+
+
+
+# [0.9.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.9.0-beta.1...v0.9.0-beta.2) (2024-08-10)
+
+
+
+# [0.9.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.8.0-beta.1...v0.9.0-beta.1) (2024-08-10)
+
+
+### Bug Fixes
+
+* **kbd:** update ring and solid-bg preset ([07aebd2](https://github.com/una-ui/una-ui/commit/07aebd24b198a0e46b655eca5f0863d2b9d38d8e))
+
+
+### Features
+
+* **Button:** add `btn-soft-black` variant and minor preset configurations ([184ed50](https://github.com/una-ui/una-ui/commit/184ed506bc0652db4e426a9c58b9c6e184e4385d))
+* **Divider:** new component and preset ([#150](https://github.com/una-ui/una-ui/issues/150)) ([85d2c90](https://github.com/una-ui/una-ui/commit/85d2c90001e1effa9447512d817e9abd711c5284))
+* **Separator:** introduce new component and preset ([#151](https://github.com/una-ui/una-ui/issues/151)) ([208c292](https://github.com/una-ui/una-ui/commit/208c29255a197bab2ad74f6635c1fc8b91f93431))
+
+
+
 # [0.8.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.7.0-beta.2...v0.8.0-beta.1) (2024-08-07)
 
 

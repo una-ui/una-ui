@@ -21,7 +21,7 @@ type SeparatorExtensions = SelectSeparatorProps & BaseExtensions
 type SelectExtensions = NSelectRootProps
   & BaseExtensions
   & Pick<NSelectItemProps, 'selectItem'>
-  & Pick<NSelectTriggerProps, 'status'>
+  & Pick<NSelectTriggerProps, 'status' | 'select'>
 
 export interface NSelectProps extends SelectExtensions {
   /**
@@ -81,8 +81,24 @@ export interface NSelectRootProps extends RootExtensions {
 }
 
 export interface NSelectTriggerProps extends TriggerExtensions {
+  /**
+   * Allows you to add `UnaUI` button preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/select.ts
+   * @example
+   * select="solid-green"
+   */
+  select?: string
+  /**
+   * The status of the select input.
+   */
   status?: 'info' | 'success' | 'warning' | 'error'
-
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/select.ts
+   */
   una?: {
     selectTrigger?: HTMLAttributes['class']
     selectTriggerTrailing?: HTMLAttributes['class']

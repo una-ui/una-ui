@@ -35,7 +35,7 @@ const isSelected = computed(() => {
         props.una?.selectItem,
       )
     "
-    :select-item="selectItem"
+    :select-item
     :aria-selected="isSelected"
     :aria-checked="isSelected"
     :is-selected="isSelected"
