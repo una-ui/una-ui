@@ -8,6 +8,7 @@ const props = defineProps<NCardHeaderProps>()
 <template>
   <div
     :class="cn(
+      'card-header',
       props.class,
       props.una?.cardHeader,
     )"
