@@ -20,6 +20,7 @@ export * from './progress'
 export * from './skeleton'
 export * from './select'
 export * from './separator'
+export * from './card'
 
 export interface Colors {
   [key: string]: string
