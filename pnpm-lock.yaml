@@ -31,7 +31,7 @@ importers:
         version: 3.25.0
       unocss:
         specifier: ^0.61.9
-        version: 0.61.9(@unocss/webpack@0.61.9(rollup@3.29.4)(webpack@5.93.0))(postcss@8.4.41)(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+        version: 0.61.9(@unocss/webpack@0.61.9(rollup@3.29.4)(webpack@5.93.0))(postcss@8.4.41)(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^1.2.1
@@ -107,13 +107,13 @@ importers:
     devDependencies:
       '@nuxt-themes/docus':
         specifier: 1.15.0
-        version: 1.15.0(change-case@4.1.2)(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(postcss@8.4.41)(rollup@3.29.4)(sass@1.77.8)(vue-tsc@2.0.29(typescript@5.5.4))(vue@3.4.37(typescript@5.5.4))
+        version: 1.15.0(change-case@4.1.2)(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(postcss@8.4.41)(rollup@3.29.4)(sass@1.77.8)(vue-tsc@2.0.29(typescript@5.5.4))(vue@3.4.37(typescript@5.5.4))
       '@nuxt/devtools':
         specifier: ^1.3.9
-        version: 1.3.9(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+        version: 1.3.9(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       nuxt:
         specifier: ^3.12.4
-        version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
+        version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
       nuxt-content-snippet:
         specifier: ^1.0.0
         version: 1.0.0(magicast@0.3.4)(rollup@3.29.4)
@@ -149,7 +149,7 @@ importers:
         version: 3.4.2(magicast@0.3.4)(rollup@4.20.0)
       '@tanstack/vue-table':
         specifier: ^8.19.3
-        version: 8.20.2(vue@3.4.36(typescript@5.5.4))
+        version: 8.20.4(vue@3.4.37(typescript@5.5.4))
       '@una-ui/extractor-vue-script':
         specifier: workspace:^
         version: link:../extractor-vue-script
@@ -161,7 +161,7 @@ importers:
         version: 0.61.9
       '@unocss/nuxt':
         specifier: ^0.61.9
-        version: 0.61.9(magicast@0.3.4)(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(webpack@5.93.0(esbuild@0.23.0))
+        version: 0.61.9(magicast@0.3.4)(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(webpack@5.93.0(esbuild@0.23.0))
       '@unocss/preset-attributify':
         specifier: ^0.61.9
         version: 0.61.9
@@ -176,7 +176,7 @@ importers:
         version: 10.11.1(change-case@4.1.2)(focus-trap@7.5.4)(fuse.js@6.6.2)(vue@3.4.37(typescript@5.5.4))
       '@vueuse/nuxt':
         specifier: ^10.11.1
-        version: 10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@4.20.0)(vue@3.4.37(typescript@5.5.4))
+        version: 10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@4.20.0)(vue@3.4.37(typescript@5.5.4))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -188,13 +188,13 @@ importers:
         version: 1.9.3(vue@3.4.37(typescript@5.5.4))
       tailwind-merge:
         specifier: ^2.5.1
-        version: 2.5.1
+        version: 2.5.2
       unocss:
         specifier: ^0.61.9
-        version: 0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+        version: 0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       unocss-preset-animations:
         specifier: ^1.1.0
-        version: 1.1.0(@unocss/preset-wind@0.61.9)(unocss@0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)))
+        version: 1.1.0(@unocss/preset-wind@0.61.9)(unocss@0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)))
     devDependencies:
       '@nuxt/module-builder':
         specifier: ^0.8.1
@@ -204,7 +204,7 @@ importers:
         version: 3.12.4(rollup@4.20.0)
       nuxt:
         specifier: ^3.12.4
-        version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
+        version: 3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
 
   packages/preset:
     dependencies:
@@ -216,7 +216,7 @@ importers:
         version: 0.61.9
       unocss:
         specifier: ^0.61.9
-        version: 0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0))(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+        version: 0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0))(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
 
 packages:
 
@@ -1672,17 +1672,17 @@ packages:
     resolution: {integrity: sha512-5Ly5TIRHnWH7vSDell9B/OVyV380qqIJVg7H7R7jU4fPEmOD4smqAX7VRflpYI09srWR8aj5OLD2Ccs1pI5mTg==}
     engines: {node: '>=12'}
 
-  '@tanstack/virtual-core@3.8.4':
-    resolution: {integrity: sha512-iO5Ujgw3O1yIxWDe9FgUPNkGjyT657b1WNX52u+Wv1DyBFEpdCdGkuVaky0M3hHFqNWjAmHWTn4wgj9rTr7ZQg==}
+  '@tanstack/virtual-core@3.8.6':
+    resolution: {integrity: sha512-UJeU4SBrx3hqULNzJ3oC0kgJ5miIAg+FwomxMTlQNxob6ppTInifANHd9ukETvzdzxr6zt3CjQ0rttQpVjbt6Q==}
 
-  '@tanstack/vue-table@8.20.2':
-    resolution: {integrity: sha512-MBsnJFUi2jg61vpn0bqSTNrFcKZN80wdJYah82AltbPZnaw2SZdOTuvadsB5Dfz9CRd8GmDfEaOQ85pPCNfs0A==}
+  '@tanstack/vue-table@8.20.4':
+    resolution: {integrity: sha512-84SCWnX8H44beXvtkLt11hYfvzNSwb9wHfSQkp64vsCh3ITPqT55oVD7I35JR++7u1BFzjzrfOGjhPj70CYUcw==}
     engines: {node: '>=12'}
     peerDependencies:
       vue: '>=3.2'
 
-  '@tanstack/vue-virtual@3.8.5':
-    resolution: {integrity: sha512-JBHw3xFUslYgrbvNlCYtTWwFo8zjzRs7c2rs6B4JKFXWyP5yHuoeivgQgeZ34t6O6lJTNqc/K4ccmmcmKqpMPA==}
+  '@tanstack/vue-virtual@3.8.6':
+    resolution: {integrity: sha512-nWwmlFuxChPM6bWEwKOyBBYVrQmvSKSArXhbvX2IyVTpuif9UZiBEvIXnftpCEGRvAGSe7lE1coXHk8g2qmwtQ==}
     peerDependencies:
       vue: ^2.7.0 || ^3.0.0
 
@@ -2102,8 +2102,8 @@ packages:
   '@vue/devtools-kit@7.3.3':
     resolution: {integrity: sha512-m+dFI57BrzKYPKq73mt4CJ5GWld5OLBseLHPHGVP7CaILNY9o1gWVJWAJeF8XtQ9LTiMxZSaK6NcBsFuxAhD0g==}
 
-  '@vue/devtools-shared@7.3.7':
-    resolution: {integrity: sha512-M9EU1/bWi5GNS/+IZrAhwGOVZmUTN4MH22Hvh35nUZZg9AZP2R2OhfCb+MG4EtAsrUEYlu3R43/SIj3G7EZYtQ==}
+  '@vue/devtools-shared@7.3.8':
+    resolution: {integrity: sha512-1NiJbn7Yp47nPDWhFZyEKpB2+5/+7JYv8IQnU0ccMrgslPR2dL7u1DIyI7mLqy4HN1ll36gQy0k8GqBYSFgZJw==}
 
   '@vue/language-core@1.8.27':
     resolution: {integrity: sha512-L8Kc27VdQserNaCUNiSFdDl9LWT24ly8Hpwf1ECy3aFb9m6bDhBGQYOujDm21N7EW3moKIOKEanQwe1q5BK+mA==}
@@ -3760,8 +3760,8 @@ packages:
     resolution: {integrity: sha512-WqyrHQb35hinQkdzsNTpFqlmnksHk0mHxmSX/03i91U4WdeiTOYTYf89dB15E8q0oP3lcY+1GP95sqSgjWGUdA==}
     hasBin: true
 
-  ignore@5.3.1:
-    resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
+  ignore@5.3.2:
+    resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
   image-meta@0.2.1:
@@ -5006,8 +5006,8 @@ packages:
     peerDependencies:
       postcss: ^8.4.31
 
-  postcss-selector-parser@6.1.1:
-    resolution: {integrity: sha512-b4dlw/9V8A71rLIDsSwVmak9z2DuBUB7CA1/wSdelNEzqsjoSPeADTWNO09lpH49Diy3/JIZ2bSPB1dI3LJCHg==}
+  postcss-selector-parser@6.1.2:
+    resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
     engines: {node: '>=4'}
 
   postcss-svgo@7.0.1:
@@ -5567,8 +5567,8 @@ packages:
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
-  tailwind-merge@2.5.1:
-    resolution: {integrity: sha512-1zKDdExKvNltulO+J0x/Rqv40xQn78FHsEQVn3rxt8e4HdebRIT6o6zGeLYlGuxd3Efue9Y69qsp8vKwEhuEeg==}
+  tailwind-merge@2.5.2:
+    resolution: {integrity: sha512-kjEBm+pvD+6eAwzJL2Bi+02/9LFLal1Gs61+QB7HvTfQQ0aXwC5LGT8PEt1gS0CWKktKe6ysPTAy3cBC5MeiIg==}
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -5836,8 +5836,8 @@ packages:
       vite:
         optional: true
 
-  unplugin-vue-router@0.10.2:
-    resolution: {integrity: sha512-aG1UzB96cu4Lu+EdQxl22NIKFrde5b+k568JdsaJ2gzPqnQufPk2j1gCA5DxFfGz9zg4tYTqy2A2JHForVbyXg==}
+  unplugin-vue-router@0.10.3:
+    resolution: {integrity: sha512-qyR3etefMT2U6gBz8li6vFhIdGMib1wCZ7iqwYNEk22qBvx7i/LmFTrNsDpNpPpwXlfM6xOITd6yfVo9pPQklw==}
     peerDependencies:
       vue-router: ^4.4.0
     peerDependenciesMeta:
@@ -6976,7 +6976,7 @@ snapshots:
       debug: 4.3.6
       espree: 9.6.1
       globals: 13.24.0
-      ignore: 5.3.1
+      ignore: 5.3.2
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       minimatch: 3.1.2
@@ -7010,7 +7010,7 @@ snapshots:
 
   '@headlessui/vue@1.7.22(vue@3.4.37(typescript@5.5.4))':
     dependencies:
-      '@tanstack/vue-virtual': 3.8.5(vue@3.4.37(typescript@5.5.4))
+      '@tanstack/vue-virtual': 3.8.6(vue@3.4.37(typescript@5.5.4))
       vue: 3.4.37(typescript@5.5.4)
 
   '@humanwhocodes/config-array@0.11.14':
@@ -7165,15 +7165,15 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@nuxt-themes/docus@1.15.0(change-case@4.1.2)(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(postcss@8.4.41)(rollup@3.29.4)(sass@1.77.8)(vue-tsc@2.0.29(typescript@5.5.4))(vue@3.4.37(typescript@5.5.4))':
+  '@nuxt-themes/docus@1.15.0(change-case@4.1.2)(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(postcss@8.4.41)(rollup@3.29.4)(sass@1.77.8)(vue-tsc@2.0.29(typescript@5.5.4))(vue@3.4.37(typescript@5.5.4))':
     dependencies:
       '@nuxt-themes/elements': 0.9.5(magicast@0.3.4)(postcss@8.4.41)(rollup@3.29.4)(sass@1.77.8)(vue-tsc@2.0.29(typescript@5.5.4))(vue@3.4.37(typescript@5.5.4))
       '@nuxt-themes/tokens': 1.9.1(magicast@0.3.4)(postcss@8.4.41)(rollup@3.29.4)(sass@1.77.8)(vue-tsc@2.0.29(typescript@5.5.4))(vue@3.4.37(typescript@5.5.4))
       '@nuxt-themes/typography': 0.11.0(magicast@0.3.4)(postcss@8.4.41)(rollup@3.29.4)(sass@1.77.8)(vue-tsc@2.0.29(typescript@5.5.4))(vue@3.4.37(typescript@5.5.4))
-      '@nuxt/content': 2.13.2(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))
+      '@nuxt/content': 2.13.2(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))
       '@nuxthq/studio': 1.1.2(magicast@0.3.4)(rollup@3.29.4)
       '@vueuse/integrations': 10.11.1(change-case@4.1.2)(focus-trap@7.5.4)(fuse.js@6.6.2)(vue@3.4.37(typescript@5.5.4))
-      '@vueuse/nuxt': 10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))
+      '@vueuse/nuxt': 10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))
       focus-trap: 7.5.4
       fuse.js: 6.6.2
     transitivePeerDependencies:
@@ -7257,13 +7257,13 @@ snapshots:
       - vue
       - vue-tsc
 
-  '@nuxt/content@2.13.2(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))':
+  '@nuxt/content@2.13.2(ioredis@5.4.1)(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))':
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@3.29.4)
       '@nuxtjs/mdc': 0.8.3(magicast@0.3.4)(rollup@3.29.4)
       '@vueuse/core': 10.11.1(vue@3.4.37(typescript@5.5.4))
       '@vueuse/head': 2.0.0(vue@3.4.37(typescript@5.5.4))
-      '@vueuse/nuxt': 10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))
+      '@vueuse/nuxt': 10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))
       consola: 3.2.3
       defu: 6.1.4
       destr: 2.0.3
@@ -7312,23 +7312,23 @@ snapshots:
 
   '@nuxt/devalue@2.0.2': {}
 
-  '@nuxt/devtools-kit@1.3.9(magicast@0.3.4)(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@nuxt/devtools-kit@1.3.9(magicast@0.3.4)(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@3.29.4)
       '@nuxt/schema': 3.12.4(rollup@3.29.4)
       execa: 7.2.0
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - magicast
       - rollup
       - supports-color
 
-  '@nuxt/devtools-kit@1.3.9(magicast@0.3.4)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@nuxt/devtools-kit@1.3.9(magicast@0.3.4)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
       '@nuxt/schema': 3.12.4(rollup@4.20.0)
       execa: 7.2.0
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - magicast
       - rollup
@@ -7347,13 +7347,13 @@ snapshots:
       rc9: 2.1.2
       semver: 7.6.3
 
-  '@nuxt/devtools@1.3.9(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@nuxt/devtools@1.3.9(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@antfu/utils': 0.7.10
-      '@nuxt/devtools-kit': 1.3.9(magicast@0.3.4)(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@nuxt/devtools-kit': 1.3.9(magicast@0.3.4)(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@nuxt/devtools-wizard': 1.3.9
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@3.29.4)
-      '@vue/devtools-core': 7.3.3(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@vue/devtools-core': 7.3.3(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@vue/devtools-kit': 7.3.3
       birpc: 0.2.17
       consola: 3.2.3
@@ -7382,9 +7382,9 @@ snapshots:
       simple-git: 3.25.0
       sirv: 2.0.4
       unimport: 3.10.0(rollup@3.29.4)
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
-      vite-plugin-inspect: 0.8.5(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@3.29.4))(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
-      vite-plugin-vue-inspector: 5.1.3(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite-plugin-inspect: 0.8.5(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@3.29.4))(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      vite-plugin-vue-inspector: 5.1.3(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       which: 3.0.1
       ws: 8.18.0
     transitivePeerDependencies:
@@ -7393,13 +7393,13 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@nuxt/devtools@1.3.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@nuxt/devtools@1.3.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@antfu/utils': 0.7.10
-      '@nuxt/devtools-kit': 1.3.9(magicast@0.3.4)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@nuxt/devtools-kit': 1.3.9(magicast@0.3.4)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@nuxt/devtools-wizard': 1.3.9
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
-      '@vue/devtools-core': 7.3.3(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@vue/devtools-core': 7.3.3(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@vue/devtools-kit': 7.3.3
       birpc: 0.2.17
       consola: 3.2.3
@@ -7428,9 +7428,9 @@ snapshots:
       simple-git: 3.25.0
       sirv: 2.0.4
       unimport: 3.10.0(rollup@4.20.0)
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
-      vite-plugin-inspect: 0.8.5(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@4.20.0))(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
-      vite-plugin-vue-inspector: 5.1.3(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite-plugin-inspect: 0.8.5(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@4.20.0))(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      vite-plugin-vue-inspector: 5.1.3(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       which: 3.0.1
       ws: 8.18.0
     transitivePeerDependencies:
@@ -7448,7 +7448,7 @@ snapshots:
       destr: 2.0.3
       globby: 14.0.2
       hash-sum: 2.0.0
-      ignore: 5.3.1
+      ignore: 5.3.2
       jiti: 1.21.6
       klona: 2.0.6
       knitwork: 1.1.0
@@ -7475,7 +7475,7 @@ snapshots:
       destr: 2.0.3
       globby: 14.0.2
       hash-sum: 2.0.0
-      ignore: 5.3.1
+      ignore: 5.3.2
       jiti: 1.21.6
       klona: 2.0.6
       knitwork: 1.1.0
@@ -7600,8 +7600,8 @@ snapshots:
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@3.29.4)
       '@rollup/plugin-replace': 5.0.7(rollup@3.29.4)
-      '@vitejs/plugin-vue': 5.1.2(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))
-      '@vitejs/plugin-vue-jsx': 4.0.0(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))
+      '@vitejs/plugin-vue': 5.1.2(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))
+      '@vitejs/plugin-vue-jsx': 4.0.0(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))
       autoprefixer: 10.4.20(postcss@8.4.41)
       clear: 0.1.0
       consola: 3.2.3
@@ -7627,9 +7627,9 @@ snapshots:
       ufo: 1.5.4
       unenv: 1.10.0
       unplugin: 1.12.1
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
       vite-node: 2.0.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
-      vite-plugin-checker: 0.7.2(eslint@8.57.0)(optionator@0.9.4)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
+      vite-plugin-checker: 0.7.2(eslint@8.57.0)(optionator@0.9.4)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
       vue: 3.4.37(typescript@5.5.4)
       vue-bundle-renderer: 2.1.0
     transitivePeerDependencies:
@@ -7659,8 +7659,8 @@ snapshots:
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
       '@rollup/plugin-replace': 5.0.7(rollup@4.20.0)
-      '@vitejs/plugin-vue': 5.1.2(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))
-      '@vitejs/plugin-vue-jsx': 4.0.0(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))
+      '@vitejs/plugin-vue': 5.1.2(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))
+      '@vitejs/plugin-vue-jsx': 4.0.0(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))
       autoprefixer: 10.4.20(postcss@8.4.41)
       clear: 0.1.0
       consola: 3.2.3
@@ -7686,9 +7686,9 @@ snapshots:
       ufo: 1.5.4
       unenv: 1.10.0
       unplugin: 1.12.1
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
       vite-node: 2.0.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
-      vite-plugin-checker: 0.7.2(eslint@8.57.0)(optionator@0.9.4)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
+      vite-plugin-checker: 0.7.2(eslint@8.57.0)(optionator@0.9.4)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
       vue: 3.4.37(typescript@5.5.4)
       vue-bundle-renderer: 2.1.0
     transitivePeerDependencies:
@@ -8112,11 +8112,16 @@ snapshots:
 
   '@tanstack/table-core@8.20.1': {}
 
-  '@tanstack/virtual-core@3.8.4': {}
+  '@tanstack/virtual-core@3.8.6': {}
 
-  '@tanstack/vue-virtual@3.8.5(vue@3.4.37(typescript@5.5.4))':
+  '@tanstack/vue-table@8.20.4(vue@3.4.37(typescript@5.5.4))':
     dependencies:
-      '@tanstack/virtual-core': 3.8.4
+      '@tanstack/table-core': 8.20.1
+      vue: 3.4.37(typescript@5.5.4)
+
+  '@tanstack/vue-virtual@3.8.6(vue@3.4.37(typescript@5.5.4))':
+    dependencies:
+      '@tanstack/virtual-core': 3.8.6
       vue: 3.4.37(typescript@5.5.4)
 
   '@trysound/sax@0.2.0': {}
@@ -8217,7 +8222,7 @@ snapshots:
       debug: 4.3.6
       eslint: 8.57.0
       graphemer: 1.4.0
-      ignore: 5.3.1
+      ignore: 5.3.2
       natural-compare: 1.4.0
       semver: 7.6.3
       ts-api-utils: 1.3.0(typescript@5.5.4)
@@ -8359,24 +8364,24 @@ snapshots:
       unhead: 1.9.16
       vue: 3.4.37(typescript@5.5.4)
 
-  '@unocss/astro@0.61.9(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@unocss/astro@0.61.9(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@unocss/core': 0.61.9
       '@unocss/reset': 0.61.9
-      '@unocss/vite': 0.61.9(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/vite': 0.61.9(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
     optionalDependencies:
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - rollup
       - supports-color
 
-  '@unocss/astro@0.61.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@unocss/astro@0.61.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@unocss/core': 0.61.9
       '@unocss/reset': 0.61.9
-      '@unocss/vite': 0.61.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/vite': 0.61.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
     optionalDependencies:
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -8459,7 +8464,7 @@ snapshots:
       gzip-size: 6.0.0
       sirv: 2.0.4
 
-  '@unocss/nuxt@0.61.9(magicast@0.3.4)(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(webpack@5.93.0(esbuild@0.23.0))':
+  '@unocss/nuxt@0.61.9(magicast@0.3.4)(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(webpack@5.93.0(esbuild@0.23.0))':
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
       '@unocss/config': 0.61.9
@@ -8472,9 +8477,9 @@ snapshots:
       '@unocss/preset-web-fonts': 0.61.9
       '@unocss/preset-wind': 0.61.9
       '@unocss/reset': 0.61.9
-      '@unocss/vite': 0.61.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/vite': 0.61.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@unocss/webpack': 0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0))
-      unocss: 0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      unocss: 0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
     transitivePeerDependencies:
       - magicast
       - postcss
@@ -8578,7 +8583,7 @@ snapshots:
     dependencies:
       '@unocss/core': 0.61.9
 
-  '@unocss/vite@0.61.9(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@unocss/vite@0.61.9(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
@@ -8590,12 +8595,12 @@ snapshots:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.11
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - rollup
       - supports-color
 
-  '@unocss/vite@0.61.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@unocss/vite@0.61.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@rollup/pluginutils': 5.1.0(rollup@4.20.0)
@@ -8607,7 +8612,7 @@ snapshots:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.11
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -8684,19 +8689,19 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vitejs/plugin-vue-jsx@4.0.0(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))':
+  '@vitejs/plugin-vue-jsx@4.0.0(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-typescript': 7.25.2(@babel/core@7.25.2)
       '@vue/babel-plugin-jsx': 1.2.2(@babel/core@7.25.2)
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
       vue: 3.4.37(typescript@5.5.4)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@5.1.2(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))':
+  '@vitejs/plugin-vue@5.1.2(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue@3.4.37(typescript@5.5.4))':
     dependencies:
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
       vue: 3.4.37(typescript@5.5.4)
 
   '@vitest/expect@0.34.6':
@@ -8864,20 +8869,20 @@ snapshots:
 
   '@vue/devtools-api@6.6.3': {}
 
-  '@vue/devtools-core@7.3.3(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
+  '@vue/devtools-core@7.3.3(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))':
     dependencies:
       '@vue/devtools-kit': 7.3.3
-      '@vue/devtools-shared': 7.3.7
+      '@vue/devtools-shared': 7.3.8
       mitt: 3.0.1
       nanoid: 3.3.7
       pathe: 1.1.2
-      vite-hot-client: 0.2.3(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      vite-hot-client: 0.2.3(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
     transitivePeerDependencies:
       - vite
 
   '@vue/devtools-kit@7.3.3':
     dependencies:
-      '@vue/devtools-shared': 7.3.7
+      '@vue/devtools-shared': 7.3.8
       birpc: 0.2.17
       hookable: 5.5.3
       mitt: 3.0.1
@@ -8885,7 +8890,7 @@ snapshots:
       speakingurl: 14.0.1
       superjson: 2.2.1
 
-  '@vue/devtools-shared@7.3.7':
+  '@vue/devtools-shared@7.3.8':
     dependencies:
       rfdc: 1.4.1
 
@@ -8985,13 +8990,13 @@ snapshots:
 
   '@vueuse/metadata@9.13.0': {}
 
-  '@vueuse/nuxt@10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))':
+  '@vueuse/nuxt@10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@3.29.4)(vue@3.4.37(typescript@5.5.4))':
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@3.29.4)
       '@vueuse/core': 10.11.1(vue@3.4.37(typescript@5.5.4))
       '@vueuse/metadata': 10.11.1
       local-pkg: 0.5.0
-      nuxt: 3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
+      nuxt: 3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
       vue-demi: 0.14.10(vue@3.4.37(typescript@5.5.4))
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -9000,13 +9005,13 @@ snapshots:
       - supports-color
       - vue
 
-  '@vueuse/nuxt@10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@4.20.0)(vue@3.4.37(typescript@5.5.4))':
+  '@vueuse/nuxt@10.11.1(magicast@0.3.4)(nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)))(rollup@4.20.0)(vue@3.4.37(typescript@5.5.4))':
     dependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
       '@vueuse/core': 10.11.1(vue@3.4.37(typescript@5.5.4))
       '@vueuse/metadata': 10.11.1
       local-pkg: 0.5.0
-      nuxt: 3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
+      nuxt: 3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4))
       vue-demi: 0.14.10(vue@3.4.37(typescript@5.5.4))
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -10137,7 +10142,7 @@ snapshots:
     dependencies:
       escape-string-regexp: 1.0.5
       eslint: 8.57.0
-      ignore: 5.3.1
+      ignore: 5.3.2
 
   eslint-plugin-i@2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0):
     dependencies:
@@ -10197,7 +10202,7 @@ snapshots:
       eslint-plugin-es-x: 7.8.0(eslint@8.57.0)
       get-tsconfig: 4.7.6
       globals: 13.24.0
-      ignore: 5.3.1
+      ignore: 5.3.2
       is-builtin-module: 3.2.1
       is-core-module: 2.15.0
       minimatch: 3.1.2
@@ -10261,7 +10266,7 @@ snapshots:
       globals: 13.24.0
       natural-compare: 1.4.0
       nth-check: 2.1.1
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
       semver: 7.6.3
       vue-eslint-parser: 9.4.3(eslint@8.57.0)
       xml-name-validator: 4.0.0
@@ -10320,7 +10325,7 @@ snapshots:
       glob-parent: 6.0.2
       globals: 13.24.0
       graphemer: 1.4.0
-      ignore: 5.3.1
+      ignore: 5.3.2
       imurmurhash: 0.1.4
       is-glob: 4.0.3
       is-path-inside: 3.0.3
@@ -10640,7 +10645,7 @@ snapshots:
       array-union: 2.1.0
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.3.1
+      ignore: 5.3.2
       merge2: 1.4.1
       slash: 3.0.0
 
@@ -10648,7 +10653,7 @@ snapshots:
     dependencies:
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.3.1
+      ignore: 5.3.2
       merge2: 1.4.1
       slash: 4.0.0
 
@@ -10656,7 +10661,7 @@ snapshots:
     dependencies:
       '@sindresorhus/merge-streams': 2.3.0
       fast-glob: 3.3.2
-      ignore: 5.3.1
+      ignore: 5.3.2
       path-type: 5.0.0
       slash: 5.1.0
       unicorn-magic: 0.1.0
@@ -10834,7 +10839,7 @@ snapshots:
 
   ignore-dependency-scripts@1.0.1: {}
 
-  ignore@5.3.1: {}
+  ignore@5.3.2: {}
 
   image-meta@0.2.1: {}
 
@@ -11920,10 +11925,10 @@ snapshots:
       - supports-color
       - vue
 
-  nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)):
+  nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@3.29.4)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)):
     dependencies:
       '@nuxt/devalue': 2.0.2
-      '@nuxt/devtools': 1.3.9(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@nuxt/devtools': 1.3.9(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@3.29.4)
       '@nuxt/schema': 3.12.4(rollup@3.29.4)
       '@nuxt/telemetry': 2.5.4(magicast@0.3.4)(rollup@3.29.4)
@@ -11948,7 +11953,7 @@ snapshots:
       globby: 14.0.2
       h3: 1.12.0
       hookable: 5.5.3
-      ignore: 5.3.1
+      ignore: 5.3.2
       jiti: 1.21.6
       klona: 2.0.6
       knitwork: 1.1.0
@@ -11974,7 +11979,7 @@ snapshots:
       unenv: 1.10.0
       unimport: 3.10.0(rollup@3.29.4)
       unplugin: 1.12.1
-      unplugin-vue-router: 0.10.2(rollup@3.29.4)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))
+      unplugin-vue-router: 0.10.3(rollup@3.29.4)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))
       unstorage: 1.10.2(ioredis@5.4.1)
       untyped: 1.4.2
       vue: 3.4.37(typescript@5.5.4)
@@ -12027,10 +12032,10 @@ snapshots:
       - vue-tsc
       - xml2js
 
-  nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)):
+  nuxt@3.12.4(@parcel/watcher@2.4.1)(@types/node@20.14.15)(eslint@8.57.0)(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.4)(rollup@4.20.0)(sass@1.77.8)(terser@5.31.5)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)):
     dependencies:
       '@nuxt/devalue': 2.0.2
-      '@nuxt/devtools': 1.3.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@nuxt/devtools': 1.3.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
       '@nuxt/schema': 3.12.4(rollup@4.20.0)
       '@nuxt/telemetry': 2.5.4(magicast@0.3.4)(rollup@4.20.0)
@@ -12055,7 +12060,7 @@ snapshots:
       globby: 14.0.2
       h3: 1.12.0
       hookable: 5.5.3
-      ignore: 5.3.1
+      ignore: 5.3.2
       jiti: 1.21.6
       klona: 2.0.6
       knitwork: 1.1.0
@@ -12081,7 +12086,7 @@ snapshots:
       unenv: 1.10.0
       unimport: 3.10.0(rollup@4.20.0)
       unplugin: 1.12.1
-      unplugin-vue-router: 0.10.2(rollup@4.20.0)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))
+      unplugin-vue-router: 0.10.3(rollup@4.20.0)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))
       unstorage: 1.10.2(ioredis@5.4.1)
       untyped: 1.4.2
       vue: 3.4.37(typescript@5.5.4)
@@ -12405,7 +12410,7 @@ snapshots:
   postcss-calc@10.0.1(postcss@8.4.41):
     dependencies:
       postcss: 8.4.41
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
       postcss-value-parser: 4.2.0
 
   postcss-colormin@7.0.2(postcss@8.4.41):
@@ -12437,7 +12442,7 @@ snapshots:
   postcss-discard-comments@7.0.2(postcss@8.4.41):
     dependencies:
       postcss: 8.4.41
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
 
   postcss-discard-duplicates@7.0.1(postcss@8.4.41):
     dependencies:
@@ -12463,7 +12468,7 @@ snapshots:
       caniuse-api: 3.0.0
       cssnano-utils: 5.0.0(postcss@8.4.41)
       postcss: 8.4.41
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
 
   postcss-minify-font-values@7.0.0(postcss@8.4.41):
     dependencies:
@@ -12488,12 +12493,12 @@ snapshots:
     dependencies:
       cssesc: 3.0.0
       postcss: 8.4.41
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
 
   postcss-nested@6.2.0(postcss@8.4.41):
     dependencies:
       postcss: 8.4.41
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
 
   postcss-normalize-charset@7.0.0(postcss@8.4.41):
     dependencies:
@@ -12557,7 +12562,7 @@ snapshots:
       postcss: 8.4.41
       postcss-value-parser: 4.2.0
 
-  postcss-selector-parser@6.1.1:
+  postcss-selector-parser@6.1.2:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -12571,7 +12576,7 @@ snapshots:
   postcss-unique-selectors@7.0.2(postcss@8.4.41):
     dependencies:
       postcss: 8.4.41
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
 
   postcss-value-parser@4.2.0: {}
 
@@ -12616,7 +12621,7 @@ snapshots:
       '@floating-ui/vue': 1.1.4(vue@3.4.37(typescript@5.5.4))
       '@internationalized/date': 3.5.5
       '@internationalized/number': 3.5.3
-      '@tanstack/vue-virtual': 3.8.5(vue@3.4.37(typescript@5.5.4))
+      '@tanstack/vue-virtual': 3.8.6(vue@3.4.37(typescript@5.5.4))
       '@vueuse/core': 10.11.1(vue@3.4.37(typescript@5.5.4))
       '@vueuse/shared': 10.11.1(vue@3.4.37(typescript@5.5.4))
       aria-hidden: 1.2.4
@@ -13209,7 +13214,7 @@ snapshots:
     dependencies:
       browserslist: 4.23.3
       postcss: 8.4.41
-      postcss-selector-parser: 6.1.1
+      postcss-selector-parser: 6.1.2
 
   superjson@2.2.1:
     dependencies:
@@ -13256,7 +13261,7 @@ snapshots:
 
   tabbable@6.2.0: {}
 
-  tailwind-merge@2.5.1: {}
+  tailwind-merge@2.5.2: {}
 
   tapable@2.2.1: {}
 
@@ -13579,14 +13584,14 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.61.9)(unocss@0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))):
+  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.61.9)(unocss@0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))):
     dependencies:
       '@unocss/preset-wind': 0.61.9
-      unocss: 0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      unocss: 0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
 
-  unocss@0.61.9(@unocss/webpack@0.61.9(rollup@3.29.4)(webpack@5.93.0))(postcss@8.4.41)(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
+  unocss@0.61.9(@unocss/webpack@0.61.9(rollup@3.29.4)(webpack@5.93.0))(postcss@8.4.41)(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
     dependencies:
-      '@unocss/astro': 0.61.9(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/astro': 0.61.9(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@unocss/cli': 0.61.9(rollup@3.29.4)
       '@unocss/core': 0.61.9
       '@unocss/extractor-arbitrary-variants': 0.61.9
@@ -13605,18 +13610,18 @@ snapshots:
       '@unocss/transformer-compile-class': 0.61.9
       '@unocss/transformer-directives': 0.61.9
       '@unocss/transformer-variant-group': 0.61.9
-      '@unocss/vite': 0.61.9(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/vite': 0.61.9(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
     optionalDependencies:
       '@unocss/webpack': 0.61.9(rollup@3.29.4)(webpack@5.93.0)
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - postcss
       - rollup
       - supports-color
 
-  unocss@0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
+  unocss@0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0)))(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
     dependencies:
-      '@unocss/astro': 0.61.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/astro': 0.61.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@unocss/cli': 0.61.9(rollup@4.20.0)
       '@unocss/core': 0.61.9
       '@unocss/extractor-arbitrary-variants': 0.61.9
@@ -13635,18 +13640,18 @@ snapshots:
       '@unocss/transformer-compile-class': 0.61.9
       '@unocss/transformer-directives': 0.61.9
       '@unocss/transformer-variant-group': 0.61.9
-      '@unocss/vite': 0.61.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/vite': 0.61.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
     optionalDependencies:
       '@unocss/webpack': 0.61.9(rollup@4.20.0)(webpack@5.93.0(esbuild@0.23.0))
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - postcss
       - rollup
       - supports-color
 
-  unocss@0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0))(postcss@8.4.41)(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
+  unocss@0.61.9(@unocss/webpack@0.61.9(rollup@4.20.0)(webpack@5.93.0))(postcss@8.4.41)(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
     dependencies:
-      '@unocss/astro': 0.61.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/astro': 0.61.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
       '@unocss/cli': 0.61.9(rollup@4.20.0)
       '@unocss/core': 0.61.9
       '@unocss/extractor-arbitrary-variants': 0.61.9
@@ -13665,16 +13670,16 @@ snapshots:
       '@unocss/transformer-compile-class': 0.61.9
       '@unocss/transformer-directives': 0.61.9
       '@unocss/transformer-variant-group': 0.61.9
-      '@unocss/vite': 0.61.9(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
+      '@unocss/vite': 0.61.9(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))
     optionalDependencies:
       '@unocss/webpack': 0.61.9(rollup@4.20.0)(webpack@5.93.0)
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - postcss
       - rollup
       - supports-color
 
-  unplugin-vue-router@0.10.2(rollup@3.29.4)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4)):
+  unplugin-vue-router@0.10.3(rollup@3.29.4)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4)):
     dependencies:
       '@babel/types': 7.25.2
       '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
@@ -13695,7 +13700,7 @@ snapshots:
       - rollup
       - vue
 
-  unplugin-vue-router@0.10.2(rollup@4.20.0)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4)):
+  unplugin-vue-router@0.10.3(rollup@4.20.0)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4)):
     dependencies:
       '@babel/types': 7.25.2
       '@rollup/pluginutils': 5.1.0(rollup@4.20.0)
@@ -13820,9 +13825,9 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite-hot-client@0.2.3(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
+  vite-hot-client@0.2.3(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
     dependencies:
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
 
   vite-node@0.34.6(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5):
     dependencies:
@@ -13831,7 +13836,7 @@ snapshots:
       mlly: 1.7.1
       pathe: 1.1.2
       picocolors: 1.0.1
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -13849,7 +13854,7 @@ snapshots:
       debug: 4.3.6
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -13861,7 +13866,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-checker@0.7.2(eslint@8.57.0)(optionator@0.9.4)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)):
+  vite-plugin-checker@0.7.2(eslint@8.57.0)(optionator@0.9.4)(typescript@5.5.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5))(vue-tsc@2.0.29(typescript@5.5.4)):
     dependencies:
       '@babel/code-frame': 7.24.7
       ansi-escapes: 4.3.2
@@ -13873,7 +13878,7 @@ snapshots:
       npm-run-path: 4.0.1
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.3
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
       vscode-languageclient: 7.0.0
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.12
@@ -13884,7 +13889,7 @@ snapshots:
       typescript: 5.5.4
       vue-tsc: 2.0.29(typescript@5.5.4)
 
-  vite-plugin-inspect@0.8.5(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@3.29.4))(rollup@3.29.4)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
+  vite-plugin-inspect@0.8.5(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@3.29.4))(rollup@3.29.4)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.0(rollup@3.29.4)
@@ -13895,14 +13900,14 @@ snapshots:
       perfect-debounce: 1.0.0
       picocolors: 1.0.1
       sirv: 2.0.4
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     optionalDependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@3.29.4)
     transitivePeerDependencies:
       - rollup
       - supports-color
 
-  vite-plugin-inspect@0.8.5(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@4.20.0))(rollup@4.20.0)(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
+  vite-plugin-inspect@0.8.5(@nuxt/kit@3.12.4(magicast@0.3.4)(rollup@4.20.0))(rollup@4.20.0)(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.0(rollup@4.20.0)
@@ -13913,14 +13918,14 @@ snapshots:
       perfect-debounce: 1.0.0
       picocolors: 1.0.1
       sirv: 2.0.4
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     optionalDependencies:
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.20.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
 
-  vite-plugin-vue-inspector@5.1.3(vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
+  vite-plugin-vue-inspector@5.1.3(vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)):
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-proposal-decorators': 7.24.7(@babel/core@7.25.2)
@@ -13931,11 +13936,11 @@ snapshots:
       '@vue/compiler-dom': 3.4.37
       kolorist: 1.8.0
       magic-string: 0.30.11
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
     transitivePeerDependencies:
       - supports-color
 
-  vite@5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5):
+  vite@5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.41
@@ -13969,7 +13974,7 @@ snapshots:
       strip-literal: 1.3.0
       tinybench: 2.9.0
       tinypool: 0.7.0
-      vite: 5.3.5(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
+      vite: 5.4.0(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
       vite-node: 0.34.6(@types/node@20.14.15)(sass@1.77.8)(terser@5.31.5)
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
