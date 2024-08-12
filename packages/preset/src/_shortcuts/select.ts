@@ -1,12 +1,9 @@
-import { parseColor } from '@unocss/preset-mini/utils'
-import type { Theme } from '@unocss/preset-uno'
-import type { RuleContext } from '@unocss/core'
-
 type SelectPrefix = 'select'
 
 export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, string> = {
   // configurations
   'select': '',
+  'select-default-variant': 'btn-outline-white',
   'select-disabled': 'n-disabled',
   'select-scroll': 'flex cursor-default items-center justify-center py-1',
   'select-trigger-info-icon': 'i-info',
@@ -18,7 +15,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-root': '',
   'select-trigger': 'min-h-2.5em w-full', // [&>span]:line-clamp-1
   'select-trigger-trailing-icon': 'i-lucide-chevrons-up-down !text-1.042em',
-  'select-trigger-trailing': 'ml-auto',
+  'select-trigger-trailing': 'ml-auto n-disabled',
   'select-trigger-leading': '',
 
   'select-value': 'h-1.5em',
@@ -50,11 +47,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 }
 
 export const dynamicSelect = [
-  [/^select-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
-    const color = parseColor(body, theme)
-    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
-      return `n-${body}-600 dark:n-${body}-500`
-  }],
+  [/^select-(\S+)-(\S+)$/, ([, v = 'solid', c = 'gray']) => `btn-${v}-${c}`],
 
   [/^select-item(-(\S+))?$/, ([, , c = 'gray']) => `focus:bg-${c}-100 focus:text-${c}-800 dark:focus:bg-${c}-800 dark:focus:text-${c}-100`],
 ]

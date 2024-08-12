@@ -76,6 +76,30 @@ use `NSelect` to create a range input.
 ::
 :::
 
+## Variant and Color
+
+`select="{variant}-{color}"` is used to set the variant of the select. The default variant is `soft-black`.
+
+`select-item="{color}"` is used to set the variant of the select item. The default variant is `soft-black`.
+
+| Prop                    | Description                                            |
+| ----------------------- | ------------------------------------------------------ |
+| `select`                | Set the select variant and color.                      |
+| `_selectTrigger.select` | Set the select variant and color via `_selectTrigger`. |
+
+::alert{type="info"}
+`NSelect` is wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available through the `_selectTrigger` prop.
+::
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueSelectColor
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/select/ExampleVueSelectColor.vue
+::
+:::
+
 ## Disabled
 
 | Prop                   | Description                |
