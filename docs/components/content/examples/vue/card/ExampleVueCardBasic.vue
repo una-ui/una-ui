@@ -1,5 +1,5 @@
 <template>
-  <NCard title="Create project" description="Deploy your new project in one-click." class="w-[350px]" card="soft">
+  <NCard title="Create project" description="Deploy your new project in one-click." class="mx-10">
     <div flex="~ col" gap-4>
       <NFormGroup
         label="Email"
@@ -9,22 +9,13 @@
           leading="i-heroicons-envelope-20-solid"
         />
       </NFormGroup>
-      <NFormGroup
-        label="Password"
-      >
-        <NInput
-          placeholder="user_password_123"
-          leading="i-heroicons-key-20-solid"
-          type="password"
-        />
-      </NFormGroup>
     </div>
     <template #footer>
       <div mt-2 w-full flex="~ justify-between">
         <NButton btn="solid-gray">
           Submit
         </NButton>
-        <NButton btn="soft-gray">
+        <NButton btn="outline-gray">
           Cancel
         </NButton>
       </div>
