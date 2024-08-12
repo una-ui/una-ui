@@ -50,7 +50,6 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
           <CardTitle
             v-if="$slots.title || title"
             v-bind="delegatedProps.cardTitle"
-            :size="props.size"
           >
             <slot name="title">
               {{ title }}
@@ -60,7 +59,6 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
           <CardDescription
             v-if="$slots.description || description"
             v-bind="delegatedProps.cardDescription"
-            :size="props.size"
           >
             <slot name="description">
               {{ description }}
@@ -73,7 +71,6 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
       <CardContent
         v-if="$slots.default"
         v-bind="delegatedProps.cardContent"
-        :size="props.size"
       >
         <slot />
       </CardContent>
@@ -82,7 +79,6 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
       <CardFooter
         v-if="$slots.footer"
         v-bind="delegatedProps.cardFooter"
-        :size="props.size"
       >
         <slot name="footer" />
       </CardFooter>

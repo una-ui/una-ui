@@ -16,15 +16,6 @@ export interface NCardProps extends BaseExtensions {
    */
   card?: string
   /**
-   * Allows you to change the size of the card.
-   *
-   * @default md
-   *
-   * @example
-   * size="sm" | size="2cm" | size="2rem" | size="2px"
-   */
-  size?: string
-  /**
    * Add a title to the card.
    */
   title?: string
