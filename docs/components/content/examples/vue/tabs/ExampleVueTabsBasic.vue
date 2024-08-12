@@ -20,6 +20,7 @@ const items = ref([
 <template>
   <NTabs
     :items="items"
+    default-value="account"
   >
     <template #content="{ item }">
       <div v-if="item.value === 'account'" flex="~ col items-start">
