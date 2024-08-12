@@ -36,7 +36,7 @@ export interface NCardProps extends BaseExtensions {
   // sub-components
   cardContent?: Partial<NCardContentProps>
   cardTitle?: Partial<NCardTitleProps>
-  cardSubtitle?: Partial<NCardDescriptionProps>
+  cardDescription?: Partial<NCardDescriptionProps>
   cardHeader?: Partial<NCardHeaderProps>
   cardFooter?: Partial<NCardFooterProps>
   /**
