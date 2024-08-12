@@ -41,44 +41,38 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
     )"
   >
     <slot name="root">
-      <!-- header -->
       <CardHeader
-        v-if="$slots.header"
-        v-bind="delegatedProps.cardHeader"
+        v-bind="delegatedProps._cardHeader"
       >
-        <slot name="header">
-          <CardTitle
-            v-if="$slots.title || title"
-            v-bind="delegatedProps.cardTitle"
-          >
-            <slot name="title">
-              {{ title }}
-            </slot>
-          </CardTitle>
-
-          <CardDescription
-            v-if="$slots.description || description"
-            v-bind="delegatedProps.cardDescription"
-          >
-            <slot name="description">
-              {{ description }}
-            </slot>
-          </CardDescription>
-        </slot>
+        <slot name="header" />
       </CardHeader>
-
-      <!-- content -->
+      <div class="card-about">
+        <CardTitle
+          v-if="$slots.title || title"
+          v-bind="delegatedProps._cardTitle"
+        >
+          <slot name="title">
+            {{ title }}
+          </slot>
+        </CardTitle>
+        <CardDescription
+          v-if="$slots.description || description"
+          v-bind="delegatedProps._cardDescription"
+        >
+          <slot name="description">
+            {{ description }}
+          </slot>
+        </CardDescription>
+      </div>
       <CardContent
         v-if="$slots.default"
-        v-bind="delegatedProps.cardContent"
+        v-bind="delegatedProps._cardContent"
       >
         <slot />
       </CardContent>
-
-      <!-- footer -->
       <CardFooter
         v-if="$slots.footer"
-        v-bind="delegatedProps.cardFooter"
+        v-bind="delegatedProps._cardFooter"
       >
         <slot name="footer" />
       </CardFooter>

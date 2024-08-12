@@ -24,11 +24,11 @@ export interface NCardProps extends BaseExtensions {
   description?: string
 
   // sub-components
-  cardContent?: Partial<NCardContentProps>
-  cardTitle?: Partial<NCardTitleProps>
-  cardDescription?: Partial<NCardDescriptionProps>
-  cardHeader?: Partial<NCardHeaderProps>
-  cardFooter?: Partial<NCardFooterProps>
+  _cardContent?: Partial<NCardContentProps>
+  _cardTitle?: Partial<NCardTitleProps>
+  _cardDescription?: Partial<NCardDescriptionProps>
+  _cardHeader?: Partial<NCardHeaderProps>
+  _cardFooter?: Partial<NCardFooterProps>
   /**
    * `UnaUI` preset configuration
    *

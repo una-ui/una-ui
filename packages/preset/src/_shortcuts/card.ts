@@ -6,13 +6,12 @@ export const staticCard: Record<`${CardPrefix}-${string}` | CardPrefix, string> 
   'card-default-variant': 'card-soft-gray',
 
   // components
-  'card-header': 'flex flex-col gap-y-1.5 p-6',
+  'card-header': 'flex flex-col gap-y-1.5',
   'card-title': 'text-2xl font-semibold leading-none tracking-tight',
   'card-description': 'text-sm text-muted',
-  'card-content': 'p-6 pt-0',
+  'card-content': 'px-4 py-5 sm:p-6 pt-0 sm:pt-0',
   'card-footer': 'flex items-center p-6 pt-0',
-
-  'card-body': 'flex flex-col gap-5 p-4',
+  'card-about': 'flex flex-col gap-1 px-4 py-5 sm:p-6',
 
   // static variants
   'card-soft-gray': 'bg-muted border-base',
