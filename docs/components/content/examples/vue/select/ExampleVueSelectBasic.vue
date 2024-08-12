@@ -8,6 +8,7 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
     <NSelect
       v-model="selected"
       :items
+      btn="solid-primary"
       placeholder="Select Contributor"
       label="Vue Community"
     />

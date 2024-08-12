@@ -50,6 +50,7 @@ provide('selectModelValue', forwarded.value.modelValue)
       :id="forwarded.id"
       :size="forwarded.size"
       :status="forwarded.status"
+      :btn="forwarded.btn"
       v-bind="forwarded._selectTrigger"
     >
       <slot name="trigger" :value="forwarded.modelValue">

@@ -21,7 +21,7 @@ type SeparatorExtensions = SelectSeparatorProps & BaseExtensions
 type SelectExtensions = NSelectRootProps
   & BaseExtensions
   & Pick<NSelectItemProps, 'selectItem'>
-  & Pick<NSelectTriggerProps, 'status'>
+  & Pick<NSelectTriggerProps, 'status' | 'btn'>
 
 export interface NSelectProps extends SelectExtensions {
   /**

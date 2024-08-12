@@ -22,7 +22,7 @@ const statusClassVariants = computed(() => {
     success: 'btn-outline-success',
     warning: 'btn-outline-warning',
     error: 'btn-outline-error',
-    default: props?.una?.btnDefaultVariant ?? 'btn-outline-white',
+    default: props.btn ?? props?.una?.btnDefaultVariant ?? 'btn-outline-white',
   }
 
   const text = {
@@ -30,7 +30,7 @@ const statusClassVariants = computed(() => {
     success: 'text-success',
     warning: 'text-warning',
     error: 'text-error',
-    default: 'text-muted',
+    default: '',
   }
 
   const icon = {
@@ -50,6 +50,7 @@ const statusClassVariants = computed(() => {
 </script>
 
 <template>
+  {{ btn }} test
   <SelectTrigger
     as-child
   >
