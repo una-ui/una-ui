@@ -12,7 +12,6 @@ const props = defineProps<NCardContentProps>()
       props.class,
       props.una?.cardContent,
     )"
-    :size="size"
   >
     <slot />
   </div>

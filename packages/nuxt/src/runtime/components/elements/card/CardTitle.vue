@@ -13,7 +13,6 @@ const props = defineProps<NCardTitleProps>()
          props.una?.cardTitle,
       )
     "
-    :size="size"
   >
     <slot />
   </h3>
