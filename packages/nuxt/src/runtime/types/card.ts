@@ -2,7 +2,6 @@ import type { HTMLAttributes } from 'vue'
 
 interface BaseExtensions {
   class?: HTMLAttributes['class']
-  size?: HTMLAttributes['class']
 }
 
 export interface NCardProps extends BaseExtensions {
