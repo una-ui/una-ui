@@ -2,7 +2,7 @@
 description: 'The Card component is a flexible container component'
 ---
 
-# 🌑 Card
+# 🟢 Card
 
 ---
 
@@ -65,20 +65,6 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Advanced
-
-You can use the `header`, `footer`, `title`, `description` as the named templates for your content positions.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueCardAdvanced
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/card/ExampleVueCardAdvanced.vue
-::
-:::
-
-
 ## Slots
 
 > You can use the following slots to customize the card.
@@ -90,6 +76,16 @@ You can use the `header`, `footer`, `title`, `description` as the named template
 | `title`       | The title slot.       |
 | `description` | The description slot. |
 | `footer`      | The footer slot.      |
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueCardSlots
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/card/ExampleVueCardSlots.vue
+::
+:::
+
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/card.ts
@@ -120,6 +116,10 @@ You can use the `header`, `footer`, `title`, `description` as the named template
 ::
 ::code-block{label="CardHeader"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardHeader.vue
+
+::
+::code-block{label="CardAbout"}
+@@@ ../packages/nuxt/src/runtime/components/elements/card/CardAbout.vue
 
 ::
 ::code-block{label="CardFooter"}
