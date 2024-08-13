@@ -1,38 +1,17 @@
 <script setup lang="ts">
-import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { Table } from '@tanstack/vue-table'
 import rows, { type Task } from './rows'
+import columns from './columns'
 
 const search = ref('')
 const select = ref()
-const columns: ColumnDef<Task>[] = [
-  {
-    accessorKey: 'id',
-    header: 'Id',
-  },
-  {
-    accessorKey: 'title',
-    header: 'Title',
-    enableHiding: true,
-  },
-  {
-    accessorKey: 'status',
-    header: 'Status',
-  },
-  {
-    accessorKey: 'label',
-    header: 'Label',
-  },
-  {
-    accessorKey: 'priority',
-    header: 'Priority',
-  },
-]
 
 const table = ref<Table<Task>>()
 </script>
 
 <template>
   <div class="flex flex-col space-y-4">
+    <!-- header -->
     <div class="flex flex-wrap items-center justify-between gap-4">
       <NInput
         v-model="search"
@@ -43,13 +22,16 @@ const table = ref<Table<Task>>()
         }"
       />
 
-      <NButton
-        label="Add new"
-        leading="i-radix-icons-plus"
-        class="w-full md:w-auto"
-      />
+      <div class="ml-auto flex items-center space-x-2">
+        <NButton
+          label="Add new"
+          class="shrink-0"
+          leading="i-radix-icons-plus"
+        />
+      </div>
     </div>
 
+    <!-- table -->
     <div class="border border-base rounded-md">
       <NTable
         ref="table"
@@ -57,11 +39,12 @@ const table = ref<Table<Task>>()
         :columns
         :rows
         :global-filter="search"
-
-        enable-row-selection enable-sorting
+        enable-row-selection
+        enable-sorting
       />
     </div>
 
+    <!-- footer -->
     <div
       class="flex items-center justify-between px-2"
     >
@@ -112,3 +95,4 @@ const table = ref<Table<Task>>()
     </div>
   </div>
 </template>
+./data./data

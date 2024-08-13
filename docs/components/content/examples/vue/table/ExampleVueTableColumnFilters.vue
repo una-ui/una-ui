@@ -1,35 +1,9 @@
 <script setup lang="ts">
 import rows from './rows'
+import columns from './columns'
 
 const search = ref('')
 const select = ref()
-const columns = [
-  {
-    accessorKey: 'id',
-    header: 'Id',
-  },
-  {
-    accessorKey: 'title',
-    header: 'Title',
-    enableColumnFilters: true,
-    enableSorting: true,
-  },
-  {
-    accessorKey: 'status',
-    header: 'Status',
-    enableColumnFilters: false,
-    enableSorting: true,
-  },
-  {
-    accessorKey: 'label',
-    header: 'Label',
-    enableColumnFilters: true,
-  },
-  {
-    accessorKey: 'priority',
-    header: 'Priority',
-  },
-]
 </script>
 
 <template>
@@ -61,3 +35,4 @@ const columns = [
     </div>
   </div>
 </template>
+./data

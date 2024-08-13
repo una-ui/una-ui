@@ -9,7 +9,6 @@ export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: 'title',
     header: 'Title',
-    enableHiding: true,
   },
   {
     accessorKey: 'status',

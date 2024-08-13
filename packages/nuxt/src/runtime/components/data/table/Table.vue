@@ -4,6 +4,7 @@ import { computed, h } from 'vue'
 import type {
   ColumnDef,
   ColumnFiltersState,
+  ColumnOrderState,
   ColumnPinningState,
   GroupColumnDef,
   Header,
@@ -43,7 +44,6 @@ const props = defineProps<{
   enableRowSelection?: boolean
   enableColumnFilters?: boolean
   enableSorting?: boolean
-  columnPinning?: ColumnPinningState
   manualPagination?: boolean
   manualSorting?: boolean
   pageCount?: number
@@ -61,6 +61,8 @@ const sorting = defineModel<SortingState>('sorting')
 const columnVisibility = defineModel<VisibilityState>('columnVisibility')
 const columnFilters = defineModel<ColumnFiltersState>('columnFilters')
 const globalFilter = defineModel<string>('globalFilter')
+const columnOrder = defineModel<ColumnOrderState>('columnOrder')
+const columnPinning = defineModel<ColumnPinningState>('columnPinning')
 const pagination = defineModel<PaginationState>('pagination', {
   default: () => ({
     pageIndex: 0,
@@ -68,7 +70,7 @@ const pagination = defineModel<PaginationState>('pagination', {
   }),
 })
 
-const columns = computed(() => {
+const columnsWithSelection = computed(() => {
   return props.enableRowSelection
     ? [
         {
@@ -103,8 +105,20 @@ const table = computed(() => {
     get data() {
       return props.rows ?? []
     },
+    get columns() {
+      return columnsWithSelection.value ?? []
+    },
+    state: {
+      get sorting() { return sorting.value },
+      get columnFilters() { return columnFilters.value },
+      get globalFilter() { return globalFilter.value },
+      get rowSelection() { return rowSelection.value },
+      get columnVisibility() { return columnVisibility.value },
+      get pagination() { return pagination.value },
+      get columnOrder() { return columnOrder.value },
+      get columnPinning() { return columnPinning.value },
+    },
 
-    columns: columns.value,
     autoResetAll: props.autoResetAll,
     enableRowSelection: props.enableRowSelection,
     enableColumnFilters: props.enableColumnFilters,
@@ -125,16 +139,8 @@ const table = computed(() => {
     onColumnFiltersChange: updaterOrValue => valueUpdater(updaterOrValue, columnFilters),
     onGlobalFilterChange: updaterOrValue => valueUpdater(updaterOrValue, globalFilter),
     onPaginationChange: updaterOrValue => valueUpdater(updaterOrValue, pagination),
-
-    state: {
-      get sorting() { return sorting.value },
-      get columnFilters() { return columnFilters.value },
-      get globalFilter() { return globalFilter.value },
-      get rowSelection() { return rowSelection.value },
-      get columnVisibility() { return columnVisibility.value },
-      get pagination() { return pagination.value },
-      columnPinning: props.columnPinning,
-    },
+    onColumnOrderChange: updaterOrValue => valueUpdater(updaterOrValue, columnOrder),
+    onColumnPinningChange: updaterOrValue => valueUpdater(updaterOrValue, columnPinning),
   })
 }) as Ref<ReturnType<typeof useVueTable>>
 
