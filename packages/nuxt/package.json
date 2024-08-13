@@ -42,7 +42,7 @@
     "@iconify-json/tabler": "^1.1.120",
     "@nuxt/kit": "^3.12.4",
     "@nuxtjs/color-mode": "^3.4.2",
-    "@tanstack/vue-table": "^8.19.3",
+    "@tanstack/vue-table": "^8.20.4",
     "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/preset": "workspace:^",
     "@unocss/core": "^0.61.9",
