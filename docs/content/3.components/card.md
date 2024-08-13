@@ -1,5 +1,5 @@
 ---
-description: 'The Card component is a flexible container component'
+description: 'NCard - use to display content in a flexible container component.'
 ---
 
 # 🟢 Card
