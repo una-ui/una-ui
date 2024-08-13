@@ -227,30 +227,27 @@ defineExpose({
         :key="headerGroup.id"
       >
         <TableRow
-          v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0"
+          v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0 || enableColumnFilters"
           class="hover:bg-base"
         >
-          <template
+          <TableHead
             v-for="header in headerGroup.headers"
             :key="header.id"
+            :colspan="header.colSpan"
+            :data-pinned="header.column.getIsPinned()"
+            :class="cn(
+              { 'sticky bg-base': header.column.getIsPinned() },
+              header.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
+            )"
           >
-            <TableHead
-              :colspan="header.colSpan"
-              :data-pinned="header.column.getIsPinned()"
-              :class="cn(
-                { 'sticky bg-base': header.column.getIsPinned() },
-                header.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
-              )"
-            >
-              <Input
-                v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
-                class="w-auto"
-                :model-value="table.getColumn(header.id)?.getFilterValue() as string"
-                :placeholder="header.column.columnDef.header as string"
-                @update:model-value="table.getColumn(header.id)?.setFilterValue($event)"
-              />
-            </TableHead>
-          </template>
+            <Input
+              v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
+              class="w-auto"
+              :model-value="table.getColumn(header.id)?.getFilterValue() as string"
+              :placeholder="header.column.columnDef.header as string"
+              @update:model-value="table.getColumn(header.id)?.setFilterValue($event)"
+            />
+          </TableHead>
         </TableRow>
       </template>
     </TableHeader>
