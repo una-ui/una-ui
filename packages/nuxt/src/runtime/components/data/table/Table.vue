@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="TData, TValue">
 import type { HTMLAttributes, Ref } from 'vue'
 import { computed, h } from 'vue'
 import type {
@@ -6,6 +6,7 @@ import type {
   ColumnFiltersState,
   ColumnOrderState,
   ColumnPinningState,
+  ExpandedState,
   GroupColumnDef,
   Header,
   PaginationState,
@@ -16,9 +17,11 @@ import type {
 import {
   FlexRender,
   getCoreRowModel,
+  getExpandedRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+
   useVueTable,
 } from '@tanstack/vue-table'
 
@@ -38,9 +41,9 @@ import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<{
   class?: HTMLAttributes['class']
-  rows: any[] | null
+  rows: TData[]
   rowId?: string
-  columns: ColumnDef<any, unknown>[] | GroupColumnDef<any, unknown>[]
+  columns: ColumnDef<TData, TValue>[] | GroupColumnDef<TData, TValue>[]
   autoResetAll?: boolean
   enableRowSelection?: boolean
   enableMultiRowSelection?: boolean
@@ -59,7 +62,7 @@ const props = withDefaults(defineProps<{
   enableMultiRowSelection: true,
 })
 
-const emit = defineEmits(['select', 'selectAll'])
+const emit = defineEmits(['select', 'selectAll', 'expand'])
 
 const rowSelection = defineModel<Record<string, boolean>>('modelValue')
 const sorting = defineModel<SortingState>('sorting')
@@ -68,6 +71,7 @@ const columnFilters = defineModel<ColumnFiltersState>('columnFilters')
 const globalFilter = defineModel<string>('globalFilter')
 const columnOrder = defineModel<ColumnOrderState>('columnOrder')
 const columnPinning = defineModel<ColumnPinningState>('columnPinning')
+const expanded = defineModel<ExpandedState>('expanded')
 const pagination = defineModel<PaginationState>('pagination', {
   default: () => ({
     pageIndex: 0,
@@ -124,9 +128,9 @@ const table = computed(() => {
       get pagination() { return pagination.value },
       get columnOrder() { return columnOrder.value },
       get columnPinning() { return columnPinning.value },
+      get expanded() { return expanded.value },
     },
 
-    getRowId: (row: any) => props.rowId ? row[props.rowId] : row.id,
     enableMultiRowSelection: props.enableMultiRowSelection,
     enableSubRowSelection: props.enableSubRowSelection,
     autoResetAll: props.autoResetAll,
@@ -142,6 +146,8 @@ const table = computed(() => {
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    getRowId: (row: any) => props.rowId ? row[props.rowId] : row.id,
+    getExpandedRowModel: getExpandedRowModel(),
 
     onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
     onRowSelectionChange: updaterOrValue => valueUpdater(updaterOrValue, rowSelection),
@@ -151,6 +157,7 @@ const table = computed(() => {
     onPaginationChange: updaterOrValue => valueUpdater(updaterOrValue, pagination),
     onColumnOrderChange: updaterOrValue => valueUpdater(updaterOrValue, columnOrder),
     onColumnPinningChange: updaterOrValue => valueUpdater(updaterOrValue, columnPinning),
+    onExpandedChange: updaterOrValue => valueUpdater(updaterOrValue, expanded),
   })
 }) as Ref<ReturnType<typeof useVueTable>>
 
@@ -255,26 +262,39 @@ defineExpose({
     <!-- body -->
     <TableBody>
       <template v-if="table.getRowModel().rows?.length">
-        <TableRow
-          v-for="row in table.getRowModel().rows" :key="row.id"
-          :data-state="row.getIsSelected() && 'selected'"
+        <template
+          v-for="row in table.getRowModel().rows" :key="row[props.rowId]"
         >
-          <!-- rows -->
-          <TableCell
-            v-for="cell in row.getVisibleCells()"
-            :key="cell.id"
-            :data-pinned="cell.column.getIsPinned()"
-            :class="cn(
-              { 'sticky bg-base': cell.column.getIsPinned() },
-              cell.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
-            )"
+          <TableRow
+            :data-state="row.getIsSelected() && 'selected'"
+            @click="row.toggleExpanded()"
           >
-            <FlexRender
-              :render="cell.column.columnDef.cell"
-              :props="cell.getContext()"
-            />
-          </TableCell>
-        </TableRow>
+            <!-- rows -->
+            <TableCell
+              v-for="cell in row.getVisibleCells()"
+              :key="cell.id"
+              :data-pinned="cell.column.getIsPinned()"
+              :class="cn(
+                { 'sticky bg-base': cell.column.getIsPinned() },
+                cell.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
+              )"
+            >
+              <FlexRender
+                :render="cell.column.columnDef.cell"
+                :props="cell.getContext()"
+              />
+            </TableCell>
+          </TableRow>
+
+          <!-- expanded -->
+          <TableRow
+            v-if="row.getIsExpanded() && $slots.expanded"
+          >
+            <TableCell :colspan="row.getAllCells().length">
+              <slot name="expanded" :row="row" />
+            </TableCell>
+          </TableRow>
+        </template>
       </template>
 
       <TableEmpty

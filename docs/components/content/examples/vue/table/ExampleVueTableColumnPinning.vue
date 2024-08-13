@@ -4,7 +4,6 @@ import columns from './columns'
 </script>
 
 <template>
-  <!-- table -->
   <div class="border border-base rounded-md">
     <NTable
       :columns

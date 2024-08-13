@@ -196,6 +196,28 @@ Column pinning allows you to pin columns to the `left` or `right` of the table. 
 ::
 :::
 
+## Expandanding
+
+Expanding allows you to expand rows to show additional information. This is useful when you want to show additional information about a row. Read more about expanding in the [Tanstack Expanding documentation](https://tanstack.com/table/latest/docs/guide/expanding).
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableExpanding
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableExpanding.vue
+
+::
+::code-block{label="Rows"}
+@@@ ./components/content/examples/vue/table/rows.ts
+
+::
+::code-block{label="Columns"}
+@@@ ./components/content/examples/vue/table/columns.ts
+
+::
+:::
+
 ## Advanced
 
 :::CodeGroup
