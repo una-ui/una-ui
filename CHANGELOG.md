@@ -1,3 +1,12 @@
+# [0.11.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.10.1-beta.1...v0.11.0-beta.1) (2024-08-13)
+
+
+### Features
+
+* **Card:** introduce new component and preset ([#155](https://github.com/una-ui/una-ui/issues/155)) ([2ed43f8](https://github.com/una-ui/una-ui/commit/2ed43f84e09029e516ce921b5fd21189fc70ff15))
+
+
+
 ## [0.10.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.10.0-beta.1...v0.10.1-beta.1) (2024-08-12)
 
 
