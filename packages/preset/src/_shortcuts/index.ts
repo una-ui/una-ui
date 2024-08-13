@@ -23,6 +23,7 @@ import { skeleton } from './skeleton'
 import { tabs } from './tabs'
 import { select } from './select'
 import { separator } from './separator'
+import { card } from './card'
 
 export const shortcuts = [
   ...general,
@@ -49,4 +50,5 @@ export const shortcuts = [
   ...tabs,
   ...select,
   ...separator,
+  ...card,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
