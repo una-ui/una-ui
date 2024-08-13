@@ -10,6 +10,7 @@ export const staticGeneral = {
 
   'text-accent': 'text-$c-accent-foreground',
   'text-accent-forground': 'text-$c-accent',
+
   'text-popover': 'text-$c-popover-foreground',
   'text-popover-foreground': 'text-$c-popover',
 
