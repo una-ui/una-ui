@@ -36,12 +36,15 @@ import TableHeader from './TableHeader.vue'
 import TableRoot from './TableRoot.vue'
 import TableRow from './TableRow.vue'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   class?: HTMLAttributes['class']
   rows: any[] | null
+  rowId?: string
   columns: ColumnDef<any, unknown>[] | GroupColumnDef<any, unknown>[]
   autoResetAll?: boolean
   enableRowSelection?: boolean
+  enableMultiRowSelection?: boolean
+  enableSubRowSelection?: boolean
   enableColumnFilters?: boolean
   enableSorting?: boolean
   manualPagination?: boolean
@@ -52,7 +55,9 @@ const props = defineProps<{
     tableRoot?: string
     tableRootWrapper?: string
   }
-}>()
+}>(), {
+  enableMultiRowSelection: true,
+})
 
 const emit = defineEmits(['select', 'selectAll'])
 
@@ -75,15 +80,17 @@ const columnsWithSelection = computed(() => {
     ? [
         {
           accessorKey: 'selection',
-          header: ({ table }: any) => h(Checkbox, {
-            'modelValue': table.getIsAllPageRowsSelected() ?? false,
-            'onUpdate:modelValue': (value: boolean) => {
-              table.toggleAllPageRowsSelected(!!value)
-              emit('selectAll', table.getRowModel().rows)
-            },
-            'areaLabel': 'Select all rows',
-            'id': 'selection',
-          }),
+          header: props.enableMultiRowSelection
+            ? ({ table }: any) => h(Checkbox, {
+                'modelValue': table.getIsAllPageRowsSelected() ?? false,
+                'onUpdate:modelValue': (value: boolean) => {
+                  table.toggleAllPageRowsSelected(!!value)
+                  emit('selectAll', table.getRowModel().rows)
+                },
+                'areaLabel': 'Select all rows',
+                'id': 'selection',
+              })
+            : '',
           cell: ({ row }: any) => h(Checkbox, {
             'modelValue': row.getIsSelected() ?? false,
             'onUpdate:modelValue': (value: boolean) => {
@@ -119,6 +126,9 @@ const table = computed(() => {
       get columnPinning() { return columnPinning.value },
     },
 
+    getRowId: (row: any) => props.rowId ? row[props.rowId] : row.id,
+    enableMultiRowSelection: props.enableMultiRowSelection,
+    enableSubRowSelection: props.enableSubRowSelection,
     autoResetAll: props.autoResetAll,
     enableRowSelection: props.enableRowSelection,
     enableColumnFilters: props.enableColumnFilters,
@@ -184,7 +194,7 @@ defineExpose({
             v-if="header.column.columnDef.enableSorting !== false && enableSorting"
             btn="ghost-gray"
             size="sm"
-            class="font-normal -ml-0.7em"
+            class="font-normal -ml-0.85em"
             :una="{
               btnTrailing: 'text-sm',
             }"

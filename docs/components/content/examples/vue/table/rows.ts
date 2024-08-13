@@ -1,9 +1,12 @@
+import { faker } from '@faker-js/faker'
+
 export interface Task {
   id: string
   title: string
   status: string
   label: string
   priority: string
+  color?: string
 }
 
 export const rows: Task[] = [
@@ -708,5 +711,8 @@ export const rows: Task[] = [
     priority: 'low',
   },
 ]
+
+for (const row of rows)
+  row.color = faker.color.cmyk({ format: 'css' })
 
 export default rows

@@ -37,4 +37,3 @@ function randomizeColumns() {
     />
   </div>
 </template>
-./data

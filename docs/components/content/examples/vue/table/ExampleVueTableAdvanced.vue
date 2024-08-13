@@ -95,4 +95,3 @@ const table = ref<Table<Task>>()
     </div>
   </div>
 </template>
-./data./data

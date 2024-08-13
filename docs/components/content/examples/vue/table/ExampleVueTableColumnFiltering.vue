@@ -35,4 +35,3 @@ const select = ref()
     </div>
   </div>
 </template>
-./data

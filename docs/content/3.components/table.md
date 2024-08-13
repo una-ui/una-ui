@@ -28,6 +28,82 @@ use `NTable` component to create a powerful table and datagrids built using [Tan
 ::
 :::
 
+## Row Selection
+
+Row selection allows you to select rows in the table. This is useful when you want to select rows in the table. Read more about row selection in the [Tanstack documentation](https://tanstack.com/table/latest/docs/guide/row-selection).
+
+| Prop                      | Type      | Default | Description                           |
+| ------------------------- | --------- | ------- | ------------------------------------- |
+| `modelValue`              | `Array`   | `[]`    | Selected rows.                        |
+| `enableRowSelection`      | `Boolean` | `false` | Enable row selection.                 |
+| `enableMultiRowSelection` | `Boolean` | `false` | Enable multiple row selection.        |
+| `rowId`                   | `String`  | `id`    | Row id to uniquely identify each row. |
+| `enableSubRowSelection`   | `Boolean` | `false` | Enable sub row selection.             |
+| `@select`                 | `Event`   |         | Emitted when a row is selected.       |
+| `@select-all`             | `Event`   |         | Emitted when all rows are selected.   |
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableRowSelection
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableRowSelection.vue
+
+::
+::code-block{label="Rows"}
+@@@ ./components/content/examples/vue/table/rows.ts
+
+::
+::code-block{label="Columns"}
+@@@ ./components/content/examples/vue/table/columns.ts
+
+::
+:::
+
+## Sorting
+
+Sorting allows you to sort columns in ascending or descending order. This is useful when you want to sort columns in the table. Read more about sorting in the [Tanstack documentation](https://tanstack.com/table/latest/docs/guide/sorting).
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableSorting
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableSorting.vue
+
+::
+::code-block{label="Rows"}
+@@@ ./components/content/examples/vue/table/rows.ts
+
+::
+::code-block{label="Columns"}
+@@@ ./components/content/examples/vue/table/columns.ts
+
+::
+:::
+
+## Column Filtering
+
+Filtering allows you to filter columns based on the value entered in the filter input. This is useful when you want to filter columns in the table. Read more about filtering in the [Tanstack documentation](https://tanstack.com/table/latest/docs/guide/column-filtering).
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableColumnFiltering
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableColumnFiltering.vue
+
+::
+::code-block{label="Rows"}
+@@@ ./components/content/examples/vue/table/rows.ts
+
+::
+::code-block{label="Columns"}
+@@@ ./components/content/examples/vue/table/columns.ts
+
+::
+:::
+
 ## Column Ordering
 
 Column ordering allows you to reorder columns by dragging and dropping them. This is useful when you want to change the order of columns in the table. Read more about column ordering in the [Tanstack documentation](https://tanstack.com/table/latest/docs/guide/column-ordering).

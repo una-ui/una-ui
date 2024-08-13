@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import rows from './rows'
 import columns from './columns'
+
+const search = ref('')
 </script>
 
 <template>
@@ -8,7 +10,7 @@ import columns from './columns'
     <NTable
       :columns
       :rows
+      :global-filter="search"
     />
   </div>
 </template>
-./data
