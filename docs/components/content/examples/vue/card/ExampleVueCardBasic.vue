@@ -28,10 +28,10 @@
       <template #footer>
         <div mt-2 w-full gap-4 flex="~ justify-end">
           <NButton btn="soft-gray block">
-            Cancel
+            Login
           </NButton>
           <NButton btn="solid-black block">
-            Submit
+            Create an account
           </NButton>
         </div>
       </template>
