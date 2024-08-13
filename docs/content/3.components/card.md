@@ -8,8 +8,7 @@ description: 'NCard - use to display content in a flexible container component.'
 
 ## Basic
 
-<!-- needs to change the description ("flexible container component.") -->
-`NCard` - flexible container component. 
+`NCard` - use to display content in a flexible container component.
 
 | Prop          | Description              |
 | ------------- | ------------------------ |
