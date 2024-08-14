@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import rows from './rows'
 import columns from './columns'
+
+const expanded = ref<Record<string, boolean>>({})
 </script>
 
 <template>
   <div class="border border-base rounded-md">
     <NTable
+      v-model:expanded="expanded"
       :columns
       :rows
     >

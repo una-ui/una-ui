@@ -63,6 +63,7 @@ const props = withDefaults(defineProps<{
 })
 
 const emit = defineEmits(['select', 'selectAll', 'expand'])
+const slots = defineSlots()
 
 const rowSelection = defineModel<Record<string, boolean>>('modelValue')
 const sorting = defineModel<SortingState>('sorting')
@@ -79,8 +80,11 @@ const pagination = defineModel<PaginationState>('pagination', {
   }),
 })
 
-const columnsWithSelection = computed(() => {
-  return props.enableRowSelection
+const columnsWithMisc = computed(() => {
+  let data = []
+
+  // add selection column
+  data = props.enableRowSelection
     ? [
         {
           accessorKey: 'selection',
@@ -109,6 +113,36 @@ const columnsWithSelection = computed(() => {
         ...props.columns,
       ]
     : props.columns
+
+  // add expanded column
+  data = slots.expanded
+    ? [
+        ...data,
+        {
+          accessorKey: 'expanded',
+          header: '',
+          cell: ({ row }: any) => h(Button, {
+            size: 'xs',
+            icon: true,
+            label: 'i-radix-icons-chevron-down',
+            onClick: () => {
+              row.toggleExpanded()
+              emit('expand', row)
+            },
+            una: {
+              btnDefaultVariant: 'btn-ghost-gray btn-square',
+              btnIconLabel: cn(
+                'transform transition-transform duration-200',
+                row.getIsExpanded() ? 'rotate-180' : 'rotate-0',
+              ),
+            },
+          }),
+          enableSorting: false,
+        },
+      ]
+    : data
+
+  return data
 })
 
 const table = computed(() => {
@@ -117,7 +151,7 @@ const table = computed(() => {
       return props.rows ?? []
     },
     get columns() {
-      return columnsWithSelection.value ?? []
+      return columnsWithMisc.value ?? []
     },
     state: {
       get sorting() { return sorting.value },
@@ -267,7 +301,6 @@ defineExpose({
         >
           <TableRow
             :data-state="row.getIsSelected() && 'selected'"
-            @click="row.toggleExpanded()"
           >
             <!-- rows -->
             <TableCell
