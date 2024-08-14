@@ -6,7 +6,7 @@ import Progress from '../../../../../../packages/nuxt/playground/components/Prog
 import Avatar from '../../../../../../packages/nuxt/src/runtime/components/elements/Avatar.vue'
 import makeData, { type Person } from './makeData'
 
-const rows = ref(makeData(20_000))
+const rows = ref(makeData(1_000))
 
 const columns: ColumnDef<Person>[] = [
   {
