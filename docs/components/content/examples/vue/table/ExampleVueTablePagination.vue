@@ -3,7 +3,7 @@ import type { ColumnDef, Table } from '@tanstack/vue-table'
 import makeData from './makeData'
 import type { Person } from './makeData'
 
-const rows = ref(makeData(100_000))
+const rows = ref(makeData(20_000))
 
 const columns: ColumnDef<Person>[] = [
   {
