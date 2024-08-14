@@ -38,15 +38,6 @@ Row selection allows you to select rows in the table. This is useful when you wa
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableRowSelection.vue
-
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/rows.ts
-
-::
-::code-block{label="Columns"}
-@@@ ./components/content/examples/vue/table/columns.ts
-
 ::
 :::
 
@@ -65,15 +56,6 @@ Pagination allows you to paginate rows in the table. This is useful when you wan
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTablePagination.vue
-
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/rows.ts
-
-::
-::code-block{label="Columns"}
-@@@ ./components/content/examples/vue/table/columns.ts
-
 ::
 :::
 
@@ -87,15 +69,6 @@ Sorting allows you to sort columns in ascending or descending order. This is use
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableSorting.vue
-
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/rows.ts
-
-::
-::code-block{label="Columns"}
-@@@ ./components/content/examples/vue/table/columns.ts
-
 ::
 :::
 
@@ -113,14 +86,6 @@ Global filtering allows you to filter rows based on the value entered in the fil
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableGlobalFiltering.vue
-
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/rows.ts
-
-::
-::code-block{label="Columns"}
-@@@ ./components/content/examples/vue/table/columns.ts
 ::
 :::
 
@@ -134,15 +99,6 @@ Filtering allows you to filter columns based on the value entered in the filter 
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnFiltering.vue
-
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/rows.ts
-
-::
-::code-block{label="Columns"}
-@@@ ./components/content/examples/vue/table/columns.ts
-
 ::
 :::
 
@@ -156,15 +112,6 @@ Column ordering allows you to reorder columns by dragging and dropping them. Thi
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnOrdering.vue
-    
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/columns.ts
-
-::
-::code-block{label="Columns"}
-@@@ ./components/content/examples/vue/table/columns.ts
-
 ::
 :::
 
@@ -190,15 +137,6 @@ Expanding allows you to expand rows to show additional information. This is usef
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableExpanding.vue
-
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/rows.ts
-
-::
-::code-block{label="Columns"}
-@@@ ./components/content/examples/vue/table/columns.ts
-
 ::
 :::
 
@@ -212,15 +150,6 @@ Grouping allows you to group rows based on a column value. This is useful when y
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableGrouping.vue
-
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/rows.ts
-
-::
-::code-block{label="Columns"}
-@@@ ./components/content/examples/vue/table/columns.ts
-
 ::
 :::
 
@@ -234,7 +163,6 @@ Footer allows you to show a footer in the table. This is useful when you want to
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableFooter.vue
-
 ::
 :::
 
@@ -246,11 +174,6 @@ Footer allows you to show a footer in the table. This is useful when you want to
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableAdvanced.vue
-
-::
-::code-block{label="Rows"}
-@@@ ./components/content/examples/vue/table/rows.ts
-
 ::
 :::
 
