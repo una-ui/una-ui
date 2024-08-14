@@ -16,7 +16,7 @@ const pagination = ref({
   pageIndex: 0,
   pageSize: 5,
 })
-const tableRef = ref<typeof Table | null>(null)
+const table = ref<typeof Table | null>(null)
 
 const columns = [
   // Types issue
@@ -76,7 +76,7 @@ interface ResourceMeta {
 const currentQuery = ref('https://pokeapi.co/api/v2/pokemon?limit=100000')
 
 const { data, status } = await useFetch<ResourceMeta>(currentQuery, {
-  transform: (data) => {
+  transform: (data: any) => {
     // const next = data.next?.split('?')[1] ?? null
     // const previous = data.previous?.split('?')[1] ?? null
     return {
@@ -102,7 +102,7 @@ const pokemon = computed(() => data.value?.results ?? [])
       placeholder="Search..."
     />
     <NTable
-      ref="tableRef"
+      ref="table"
       v-model="select"
       v-model:sorting="sorting"
       v-model:columnVisibility="visibleColumns"
@@ -141,19 +141,19 @@ const pokemon = computed(() => data.value?.results ?? [])
       <NButton
         btn="outline"
         size="sm"
-        :disabled="!tableRef?.table.getCanPreviousPage()"
-        @click="tableRef?.table.previousPage()"
+        :disabled="!table?.getCanPreviousPage()"
+        @click="table?.previousPage()"
       >
         Previous
       </NButton>
       <NButton
         btn="outline"
         size="sm"
-        :disabled="!tableRef?.table.getCanNextPage()"
-        @click="tableRef?.table.nextPage()"
+        :disabled="!table?.getCanNextPage()"
+        @click="table?.nextPage()"
       >
         Next
       </NButton>
     </div>
   </div>
-</template>../../src/runtime/components/data/table/TableMain.vue../../src/runtime/components/data/table/Table.vue
+</template>
