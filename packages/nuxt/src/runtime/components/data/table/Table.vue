@@ -297,7 +297,7 @@ defineExpose({
     <TableBody>
       <template v-if="table.getRowModel().rows?.length">
         <template
-          v-for="row in table.getRowModel().rows" :key="row[props.rowId]"
+          v-for="row in table.getRowModel().rows" :key="row.index"
         >
           <TableRow
             :data-state="row.getIsSelected() && 'selected'"
