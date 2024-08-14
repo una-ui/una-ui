@@ -43,6 +43,8 @@ const columns: ColumnDef<Person>[] = [
         ],
       ])
     },
+    enableColumnFilter: false,
+    enableSorting: false,
   },
   {
     header: 'First Name',
@@ -134,7 +136,7 @@ const table = ref<Table<Person>>()
           btn="solid-primary"
           leading="i-radix-icons-plus"
           class="shrink-0 active:translate-y-0.5"
-          @click="rows = [...rows, ...makeData(1_000)]"
+          @click="rows = [...makeData(1_000), ...rows]"
         />
       </div>
     </div>
