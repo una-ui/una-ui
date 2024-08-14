@@ -8,7 +8,7 @@ description: 'NTable component - used to create a data table.'
 
 ## Basic
 
-use `NTable` component to create a powerful table and datagrids built using [Tanstack]([https://tanstack.com/table/latest/docs/framework/vue/guide/table-state]).
+use `NTable` component to create a powerful table and datagrids built using [Tanstack](https://tanstack.com/table/latest/docs/framework/vue/guide/table-state).
 
 :::CodeGroup
 ::code-block{label="Preview"}
