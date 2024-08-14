@@ -8,9 +8,11 @@ import type {
   ColumnPinningState,
   ExpandedState,
   GroupColumnDef,
+  GroupingState,
   Header,
   PaginationState,
   SortingState,
+
   VisibilityState,
 } from '@tanstack/vue-table'
 
@@ -21,7 +23,6 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-
   useVueTable,
 } from '@tanstack/vue-table'
 
@@ -73,6 +74,7 @@ const globalFilter = defineModel<string>('globalFilter')
 const columnOrder = defineModel<ColumnOrderState>('columnOrder')
 const columnPinning = defineModel<ColumnPinningState>('columnPinning')
 const expanded = defineModel<ExpandedState>('expanded')
+const grouping = defineModel<GroupingState>('grouping')
 const pagination = defineModel<PaginationState>('pagination', {
   default: () => ({
     pageIndex: 0,
@@ -163,6 +165,7 @@ const table = computed(() => {
       get columnOrder() { return columnOrder.value },
       get columnPinning() { return columnPinning.value },
       get expanded() { return expanded.value },
+      get grouping() { return grouping.value },
     },
 
     enableMultiRowSelection: props.enableMultiRowSelection,
@@ -192,6 +195,7 @@ const table = computed(() => {
     onColumnOrderChange: updaterOrValue => valueUpdater(updaterOrValue, columnOrder),
     onColumnPinningChange: updaterOrValue => valueUpdater(updaterOrValue, columnPinning),
     onExpandedChange: updaterOrValue => valueUpdater(updaterOrValue, expanded),
+    onGroupingChange: updaterOrValue => valueUpdater(updaterOrValue, grouping),
   })
 }) as Ref<ReturnType<typeof useVueTable>>
 
@@ -232,7 +236,7 @@ defineExpose({
           )"
         >
           <Button
-            v-if="header.column.columnDef.enableSorting !== false && enableSorting"
+            v-if="header.column.columnDef.enableSorting || (header.column.columnDef.enableSorting !== false && enableSorting)"
             btn="ghost-gray"
             size="sm"
             class="font-normal -ml-0.85em"

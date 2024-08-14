@@ -1,19 +1,39 @@
 <script setup lang="ts">
-import type { Table } from '@tanstack/vue-table'
+import type { ColumnDef, Table } from '@tanstack/vue-table'
 import { faker } from '@faker-js/faker'
-import rows, { type Task } from './rows'
-import columns from './columns'
+import makeData from './makeData'
+import type { Person } from './makeData'
 
-// override the default column order
-const columnOrder = ref([
-  'title',
-  'status',
-  'priority',
-  'label',
-  'id',
-])
+const rows = ref(makeData(5))
 
-const table = ref<Table<Task>>()
+const columns: ColumnDef<Person>[] = [
+  {
+    header: 'First Name',
+    accessorKey: 'firstName',
+  },
+  {
+    header: 'Last Name',
+    accessorKey: 'lastName',
+  },
+  {
+    header: () => 'Age',
+    accessorKey: 'age',
+  },
+  {
+    header: 'Visits',
+    accessorKey: 'visits',
+  },
+  {
+    header: 'Status',
+    accessorKey: 'status',
+  },
+  {
+    header: 'Profile Progress',
+    accessorKey: 'progress',
+  },
+]
+
+const table = ref<Table<Person>>()
 
 function randomizeColumns() {
   table.value?.setColumnOrder(faker.helpers.shuffle(table.value?.getAllLeafColumns().map(d => d.id)))
@@ -33,7 +53,6 @@ function randomizeColumns() {
       ref="table"
       :columns
       :rows
-      :column-order
     />
   </div>
 </template>

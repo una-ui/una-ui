@@ -40,18 +40,20 @@ const columns = [
  * @todo
  * - [x] Add basic table
  * - [x] Add row selection
- * - [x] Add sortable
+ * - [x] Add sorting
  * - [x] Add pinning
  * - [x] Add column visibility
  * - [x] Add select emit
- * - [x] Add filterable
  * - [x] Add column filters for each column
- * - [ ] Add custom function filters
- * - [ ] Add custom function column filters
+ * - [x] Add global filter
  * - [x] Add manual pagination
  * - [x] Add automatic pagination
  * - [x] Add manual pagination
- * - [ ] Add expandable rows
+ * - [x] Add expandable rows
+ *
+ * - [ ] Add multi-sort
+ * - [ ] Add custom function filters
+ * - [ ] Add custom function column filters
  * - [ ] Add table presets
  * - [ ] Add dynamic sizes
  * - [ ] Add table slots

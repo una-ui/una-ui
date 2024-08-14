@@ -1,14 +1,43 @@
 <script setup lang="ts">
-import type { Table } from '@tanstack/vue-table'
-import rows, { type Task } from './rows'
-import columns from './columns'
+import type { ColumnDef, Table } from '@tanstack/vue-table'
+import makeData from './makeData'
+import type { Person } from './makeData'
+
+const rows = ref(makeData(100_000))
+
+const columns: ColumnDef<Person>[] = [
+  {
+    header: 'First Name',
+    accessorKey: 'firstName',
+  },
+  {
+    header: 'Last Name',
+    accessorKey: 'lastName',
+  },
+  {
+    header: () => 'Age',
+    accessorKey: 'age',
+  },
+  {
+    header: 'Visits',
+    accessorKey: 'visits',
+  },
+  {
+    header: 'Status',
+    accessorKey: 'status',
+  },
+  {
+    header: 'Profile Progress',
+    accessorKey: 'progress',
+  },
+]
 
 const pagination = ref({
   pageSize: 5,
   pageIndex: 0,
 })
 
-const table = ref<Table<Task>>()
+const table = ref<Table<Person>>()
 </script>
 
 <template>

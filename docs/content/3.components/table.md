@@ -222,6 +222,28 @@ Expanding allows you to expand rows to show additional information. This is usef
 ::
 :::
 
+## Grouping
+
+Grouping allows you to group rows based on a column value. This is useful when you want to group rows in the table. Read more about grouping in the [Tanstack Grouping documentation](https://tanstack.com/table/latest/docs/guide/grouping).
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableGrouping
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableGrouping.vue
+
+::
+::code-block{label="Rows"}
+@@@ ./components/content/examples/vue/table/rows.ts
+
+::
+::code-block{label="Columns"}
+@@@ ./components/content/examples/vue/table/columns.ts
+
+::
+:::
+
 ## Advanced
 
 :::CodeGroup
