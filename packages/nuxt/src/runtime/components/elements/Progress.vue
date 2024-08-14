@@ -11,6 +11,9 @@ const props = withDefaults(
   defineProps<NProgressProps>(),
   {
     modelValue: 0,
+    una: () => ({
+      progressDefaultVariant: 'progress-primary',
+    }),
   },
 )
 
@@ -27,8 +30,10 @@ const delegatedProps = computed(() => {
     :class="
       cn(
         'progress-root',
-        props.una?.progressRoot,
+        props.una?.progressDefaultVariant,
         props.class,
+        props.una?.progress,
+        props.una?.progressRoot,
       )
     "
   >

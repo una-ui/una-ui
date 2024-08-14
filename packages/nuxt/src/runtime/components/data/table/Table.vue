@@ -12,7 +12,6 @@ import type {
   Header,
   PaginationState,
   SortingState,
-
   VisibilityState,
 } from '@tanstack/vue-table'
 
@@ -43,24 +42,36 @@ import TableRow from './TableRow.vue'
 const props = withDefaults(defineProps<{
   class?: HTMLAttributes['class']
   rows: TData[]
-  rowId?: string
   columns: ColumnDef<TData, TValue>[] | GroupColumnDef<TData, TValue>[]
+
+  rowId?: string
+
   autoResetAll?: boolean
   enableRowSelection?: boolean
   enableMultiRowSelection?: boolean
   enableSubRowSelection?: boolean
   enableColumnFilters?: boolean
   enableSorting?: boolean
+  enableMultiSort?: boolean
+  enableMultiRemove?: boolean
+  enableSortingRemoval?: boolean
   manualPagination?: boolean
   manualSorting?: boolean
+  maxMultiSortColCount?: number
   pageCount?: number
   rowCount?: number
+
   una?: {
     tableRoot?: string
     tableRootWrapper?: string
   }
+
+  sortingFns?: Record<string, (a: any, b: any) => number>
+  isMultiSortEvent?: (e: unknown) => boolean
 }>(), {
   enableMultiRowSelection: true,
+  enableSortingRemoval: true,
+  enableMultiSort: true,
 })
 
 const emit = defineEmits(['select', 'selectAll', 'expand'])
@@ -98,7 +109,6 @@ const columnsWithMisc = computed(() => {
                   emit('selectAll', table.getRowModel().rows)
                 },
                 'areaLabel': 'Select all rows',
-                'id': 'selection',
               })
             : '',
           cell: ({ row }: any) => h(Checkbox, {
@@ -108,9 +118,9 @@ const columnsWithMisc = computed(() => {
               emit('select', row)
             },
             'areaLabel': 'Select row',
-            'id': row.id,
           }),
           enableSorting: false,
+          enableHiding: false,
         },
         ...props.columns,
       ]
@@ -140,6 +150,7 @@ const columnsWithMisc = computed(() => {
             },
           }),
           enableSorting: false,
+          enableHiding: false,
         },
       ]
     : data
@@ -178,6 +189,12 @@ const table = computed(() => {
     pageCount: props.pageCount,
     rowCount: props.rowCount,
     enableSorting: props.enableSorting,
+    enableSortingRemoval: props.enableSortingRemoval,
+    enableMultiSort: props.enableMultiSort,
+    enableMultiRemove: props.enableMultiRemove,
+    maxMultiSortColCount: props.maxMultiSortColCount,
+    isMultiSortEvent: props.isMultiSortEvent,
+    sortingFns: props.sortingFns,
 
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -246,7 +263,7 @@ defineExpose({
             :trailing="header.column.getIsSorted() === 'asc'
               ? 'i-lucide-arrow-up-wide-narrow' : header.column.getIsSorted() === 'desc'
                 ? 'i-lucide-arrow-down-narrow-wide' : 'i-lucide-arrow-up-down'"
-            @click="header.column.toggleSorting(header.column.getIsSorted() === 'asc')"
+            @click="header.column.toggleSorting(header.column.getIsSorted() === 'asc', enableMultiSort)"
           >
             <FlexRender
               v-if="!header.isPlaceholder"
@@ -301,7 +318,7 @@ defineExpose({
     <TableBody>
       <template v-if="table.getRowModel().rows?.length">
         <template
-          v-for="row in table.getRowModel().rows" :key="row.index"
+          v-for="row in table.getRowModel().rows" :key="row.id"
         >
           <TableRow
             :data-state="row.getIsSelected() && 'selected'"
@@ -343,13 +360,15 @@ defineExpose({
     </TableBody>
 
     <!-- footer -->
-    <TableFooter>
+    <TableFooter
+      v-if="table.getFooterGroups().length > 0"
+    >
       <template
         v-for="footerGroup in table.getFooterGroups()"
         :key="footerGroup.id"
       >
         <TableRow
-          v-if="footerGroup.headers.length"
+          v-if="footerGroup.headers.length > 0"
         >
           <template
             v-for="header in footerGroup.headers"

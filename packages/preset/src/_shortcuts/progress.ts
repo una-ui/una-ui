@@ -6,10 +6,11 @@ type ProgressPrefix = 'progress'
 
 export const staticProgress: Record<`${ProgressPrefix}-${string}` | ProgressPrefix, string> = {
   // configurations
-  'progress': 'progress-primary',
+  'progress': '',
+  'progress-default-variant': 'progress-primary',
 
   // components
-  'progress-root': 'progress relative h-0.5em w-full overflow-hidden rounded-full bg-muted',
+  'progress-root': 'relative h-0.5em w-full overflow-hidden rounded-full bg-muted',
   'progress-indicator': 'h-full w-full flex-1 bg-brand transition-all',
 }
 

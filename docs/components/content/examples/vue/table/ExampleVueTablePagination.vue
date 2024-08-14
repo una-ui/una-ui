@@ -57,10 +57,10 @@ const table = ref<Table<Person>>()
       class="flex items-center justify-between px-2"
     >
       <div
-        class="w-100px flex items-center justify-center text-sm font-medium"
+        class="flex items-center justify-center text-sm font-medium"
       >
         Page {{ (table?.getState().pagination.pageIndex ?? 0) + 1 }} of
-        {{ table?.getPageCount() }}
+        {{ table?.getPageCount().toLocaleString() }}
       </div>
       <div class="flex items-center space-x-2">
         <NButton

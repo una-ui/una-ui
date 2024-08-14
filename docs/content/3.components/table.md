@@ -16,6 +16,7 @@ use `NTable` component to create a powerful table and datagrids built using [Tan
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableBasic.vue
+::
 :::
 
 ## Row Selection
@@ -125,6 +126,7 @@ Column pinning allows you to pin columns to the `left` or `right` of the table. 
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnPinning.vue
+::
 :::
 
 ## Expandanding
@@ -150,19 +152,6 @@ Grouping allows you to group rows based on a column value. This is useful when y
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableGrouping.vue
-::
-:::
-
-## Footer
-
-Footer allows you to show a footer in the table. This is useful when you want to show a footer in the table. Read more about footer in the [Tanstack Footer documentation](https://tanstack.com/table/latest/docs/guide/footer).
-
-:::CodeGroup
-::code-block{label="Preview"}
-  :ExampleVueTableFooter
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/table/ExampleVueTableFooter.vue
 ::
 :::
 

@@ -21,11 +21,11 @@ const columns: ColumnDef<Person>[] = [
   {
     header: 'Visits',
     accessorKey: 'visits',
-    enableSorting: false,
   },
   {
     header: 'Status',
     accessorKey: 'status',
+    enableSorting: false,
   },
   {
     header: 'Profile Progress',
@@ -40,6 +40,7 @@ const columns: ColumnDef<Person>[] = [
       :columns
       :rows
       enable-sorting
+      enable-multi-sort
     />
   </div>
 </template>

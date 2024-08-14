@@ -1,8 +1,12 @@
 import { faker } from '@faker-js/faker'
 
 export interface Person {
-  firstName: string
-  lastName: string
+  id: string
+  username: string
+  email: string
+  firstName?: string
+  lastName?: string
+  avatar?: string
   age: number
   visits: number
   progress: number
@@ -20,8 +24,12 @@ function range(len: number) {
 
 function newPerson(): Person {
   return {
+    id: faker.database.mongodbObjectId(),
+    username: faker.internet.userName(),
+    email: faker.internet.email(),
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
+    avatar: faker.image.avatarGitHub(),
     age: faker.number.int(40),
     visits: faker.number.int(1000),
     progress: faker.number.int(100),
