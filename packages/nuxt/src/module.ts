@@ -122,13 +122,6 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
-      path: resolve(runtimeDir, 'components', 'data'),
-      prefix: options.prefix,
-      global: options.global,
-      watch: nuxt.options.dev,
-    })
-
-    addComponentsDir({
       path: resolve(runtimeDir, 'components/data', 'table'),
       prefix: options.prefix,
       global: options.global,
