@@ -109,6 +109,10 @@ Sorting allows you to sort columns in ascending or descending order. This is use
 ::
 :::
 
+## Visibility
+
+Visibility allows you to show or hide columns in the table. This is useful when you want to show or hide columns in the table. Read more about visibility in the [Tanstack Visibility documentation](https://tanstack.com/table/latest/docs/guide/visibility).
+
 ## Global Filtering
 
 Global filtering allows you to filter rows based on the value entered in the filter input. This is useful when you want to filter rows in the table. Read more about global filtering in the [Tanstack Global Filtering documentation](https://tanstack.com/table/latest/docs/guide/global-filtering).
