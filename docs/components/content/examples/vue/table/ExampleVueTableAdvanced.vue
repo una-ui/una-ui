@@ -2,10 +2,8 @@
 import type { ColumnDef, Table } from '@tanstack/vue-table'
 import { faker } from '@faker-js/faker'
 
-import Avatar from '../../../../../../packages/nuxt/dist/runtime/components/elements/Avatar.vue'
-import Badge from '../../../../../../packages/nuxt/dist/runtime/components/elements/Badge.vue'
-import Progress from '../../../../../../packages/nuxt/dist/runtime/components/elements/Progress.vue'
 import makeData, { type Person } from './makeData'
+import { NAvatar } from '#components'
 
 const rows = ref(makeData(100))
 
@@ -20,13 +18,14 @@ const columns: ColumnDef<Person>[] = [
         email: row.email,
       }
     },
+    // you can customize the cell renderer like this as an alternative to slot 😉
     cell: (info: any) => {
       const username = info.getValue().username
 
       return h('div', {
         class: 'flex items-center',
       }, [
-        h(Avatar, {
+        h(NAvatar, {
           src: info.getValue().avatar,
           alt: username,
         }),
@@ -44,8 +43,8 @@ const columns: ColumnDef<Person>[] = [
         ],
       ])
     },
-    enableColumnFilter: false,
     enableSorting: false,
+    enableColumnFilter: false,
   },
   {
     header: 'First Name',
@@ -58,48 +57,10 @@ const columns: ColumnDef<Person>[] = [
   {
     header: 'Status',
     accessorKey: 'status',
-    cell: (info: any) => {
-      const badge = info.getValue() === 'relationship'
-        ? 'badge-soft-success'
-        : info.getValue() === 'single'
-          ? 'badge-soft-info'
-          : 'badge-soft-warning'
-
-      return h(Badge, {
-        class: 'capitalize',
-        una: {
-          badgeDefaultVariant: badge,
-        },
-      }, info.getValue())
-    },
   },
   {
-    header: 'Profile Progress',
+    header: 'Progress',
     accessorKey: 'progress',
-    cell: ({ row }) => {
-      const value = Number(row.getValue('progress'))
-      const progressColor = value >= 85
-        ? 'progress-success'
-        : value >= 70
-          ? 'progress-info'
-          : value >= 55
-            ? 'progress-warning'
-            : 'progress-error'
-
-      return h('div', {
-        class: 'flex items-center',
-      }, [
-        h(Progress, {
-          modelValue: value,
-          una: {
-            progressDefaultVariant: progressColor,
-          },
-        }),
-        h('div', {
-          class: 'ml-2 text-sm text-muted',
-        }, `${row.getValue('progress')}%`),
-      ])
-    },
   },
 ]
 
@@ -150,10 +111,71 @@ const table = ref<Table<Person>>()
         :columns
         :rows
         :global-filter="search"
-
         enable-column-filters enable-row-selection enable-sorting
         row-id="username"
-      />
+      >
+        <!-- filters -->
+        <template #status-filter="{ column }">
+          <NSelect
+            :items="['Relationship', 'Complicated', 'Single']"
+            placeholder="All"
+            :model-value="column.getFilterValue()"
+            @update:model-value="column?.setFilterValue($event)"
+          />
+        </template>
+
+        <template #progress-filter="{ column }">
+          <div class="flex items-center space-x-2">
+            <NInput
+              type="number"
+              placeholder="min"
+              :model-value="column.getFilterValue()?.[0] ?? ''"
+              @update:model-value="column?.setFilterValue((old: [number, number]) => [
+                $event,
+                old?.[1],
+              ])"
+            />
+
+            <NInput
+              type="number"
+              placeholder="max"
+              :model-value="column.getFilterValue()?.[1] ?? ''"
+              @update:model-value="column?.setFilterValue((old: [number, number]) => [
+                old?.[0],
+                $event,
+              ])"
+            />
+          </div>
+        </template>
+        <!-- end filter -->
+
+        <!-- cells -->
+        <template #status-cell="{ cell }">
+          <NBadge
+            :una="{
+              badgeDefaultVariant: cell.row.original.status === 'relationship'
+                ? 'badge-soft-success' : cell.row.original.status === 'single'
+                  ? 'badge-soft-info' : 'badge-soft-warning' }"
+            class="capitalize"
+            :label="cell.row.original.status"
+          />
+        </template>
+
+        <template #progress-cell="{ cell }">
+          <div class="flex items-center">
+            <NProgress
+              :model-value="cell.row.original.progress"
+              :una="{
+                progressDefaultVariant: cell.row.original.progress >= 85
+                  ? 'progress-success' : cell.row.original.progress >= 70
+                    ? 'progress-info' : cell.row.original.progress >= 55
+                      ? 'progress-warning' : 'progress-error' }"
+            />
+            <span class="ml-2 text-sm text-muted">{{ cell.row.original.progress }}%</span>
+          </div>
+        </template>
+        <!-- end cell -->
+      </NTable>
     </div>
 
     <!-- footer -->

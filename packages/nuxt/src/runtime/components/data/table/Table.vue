@@ -328,21 +328,27 @@ defineExpose({
           <TableRow
             :data-state="row.getIsSelected() && 'selected'"
           >
-            <!-- rows -->
-            <TableCell
-              v-for="cell in row.getVisibleCells()"
-              :key="cell.id"
-              :data-pinned="cell.column.getIsPinned()"
-              :class="cn(
-                { 'sticky bg-base': cell.column.getIsPinned() },
-                cell.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
-              )"
+            <slot
+              name="row"
+              :row="row"
             >
-              <FlexRender
-                :render="cell.column.columnDef.cell"
-                :props="cell.getContext()"
-              />
-            </TableCell>
+              <!-- rows -->
+              <TableCell
+                v-for="cell in row.getVisibleCells()"
+                :key="cell.id"
+                :data-pinned="cell.column.getIsPinned()"
+              >
+                <slot
+                  :name="`${cell.column.id}-cell`"
+                  :cell="cell"
+                >
+                  <FlexRender
+                    :render="cell.column.columnDef.cell"
+                    :props="cell.getContext()"
+                  />
+                </slot>
+              </TableCell>
+            </slot>
           </TableRow>
 
           <!-- expanded -->
