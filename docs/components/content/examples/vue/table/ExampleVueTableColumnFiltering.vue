@@ -40,6 +40,15 @@ const columns: ColumnDef<Person>[] = [
       :columns
       enable-column-filters
       :rows
-    />
+    >
+      <template #status-filter="{ column }">
+        <NSelect
+          :items="['Relationship', 'Complicated', 'Single']"
+          placeholder="All"
+          :model-value="column.getFilterValue()"
+          @update:model-value="column?.setFilterValue($event)"
+        />
+      </template>
+    </NTable>
   </div>
 </template>

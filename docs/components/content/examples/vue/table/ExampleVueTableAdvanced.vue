@@ -12,7 +12,7 @@ const rows = ref(makeData(100))
 const columns: ColumnDef<Person>[] = [
   {
     header: 'Account',
-    accessorKey: 'email',
+    accessorKey: 'account',
     accessorFn: (row) => {
       return {
         username: row.username,
@@ -150,9 +150,8 @@ const table = ref<Table<Person>>()
         :columns
         :rows
         :global-filter="search"
-        enable-row-selection
-        enable-sorting
-        enable-column-filters
+
+        enable-column-filters enable-row-selection enable-sorting
         row-id="username"
       />
     </div>

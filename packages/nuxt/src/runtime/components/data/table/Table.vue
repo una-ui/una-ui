@@ -193,9 +193,9 @@ const table = computed(() => {
     enableMultiSort: props.enableMultiSort,
     enableMultiRemove: props.enableMultiRemove,
     maxMultiSortColCount: props.maxMultiSortColCount,
-    isMultiSortEvent: props.isMultiSortEvent,
     sortingFns: props.sortingFns,
 
+    isMultiSortEvent: props.isMultiSortEvent,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
@@ -302,13 +302,18 @@ defineExpose({
               header.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
             )"
           >
-            <Input
+            <slot
               v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
-              class="w-auto"
-              :model-value="table.getColumn(header.id)?.getFilterValue() as string"
-              :placeholder="header.column.columnDef.header as string"
-              @update:model-value="table.getColumn(header.id)?.setFilterValue($event)"
-            />
+              :name="`${header.id}-filter`"
+              :column="header.column"
+            >
+              <Input
+                class="w-auto"
+                :model-value="header.column.getFilterValue() as string"
+                :placeholder="header.column.columnDef.header"
+                @update:model-value="header.column.setFilterValue($event)"
+              />
+            </slot>
           </TableHead>
         </TableRow>
       </template>
