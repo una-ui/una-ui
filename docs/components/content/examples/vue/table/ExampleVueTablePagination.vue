@@ -15,7 +15,7 @@ const columns: ColumnDef<Person>[] = [
     accessorKey: 'lastName',
   },
   {
-    header: () => 'Age',
+    header: 'Age',
     accessorKey: 'age',
   },
   {

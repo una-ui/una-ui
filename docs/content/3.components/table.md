@@ -48,7 +48,7 @@ Pagination allows you to paginate rows in the table. This is useful when you wan
 
 | Prop                 | Type      | Default                        | Description                       |
 | -------------------- | --------- | ------------------------------ | --------------------------------- |
-| `v-model:pagination` | `Object`  | `{pageIndex: 0 ,pageSize: 10}` | Pagination default configuration. |
+| `v-model:pagination` | `Object`  | `{pageIndex: 0, pageSize: 10}` | Pagination default configuration. |
 | `manualPagination`   | `Boolean` | `false`                        | Enable manual pagination.         |
 
 :::CodeGroup
