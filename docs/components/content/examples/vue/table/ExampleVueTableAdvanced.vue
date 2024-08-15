@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import type { ColumnDef, Table } from '@tanstack/vue-table'
 import { faker } from '@faker-js/faker'
-import Badge from '../../../../../../packages/nuxt/src/runtime/components/elements/Badge.vue'
-import Progress from '../../../../../../packages/nuxt/playground/components/Progress.vue'
-import Avatar from '../../../../../../packages/nuxt/src/runtime/components/elements/Avatar.vue'
+
+import Avatar from '../../../../../../packages/nuxt/dist/runtime/components/elements/Avatar.vue'
+import Badge from '../../../../../../packages/nuxt/dist/runtime/components/elements/Badge.vue'
+import Progress from '../../../../../../packages/nuxt/dist/runtime/components/elements/Progress.vue'
 import makeData, { type Person } from './makeData'
 
-const rows = ref(makeData(1_000))
+const rows = ref(makeData(100))
 
 const columns: ColumnDef<Person>[] = [
   {
