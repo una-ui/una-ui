@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type Table from '../../src/runtime/components/data/Table/Table.vue'
+import type { Table } from '@tanstack/vue-table'
 
 const autoReset = ref(false)
 const select = ref()
@@ -16,7 +16,7 @@ const pagination = ref({
   pageIndex: 0,
   pageSize: 5,
 })
-const table = ref<typeof Table | null>(null)
+const table = ref<Table<any>>()
 
 const columns = [
   // Types issue
