@@ -75,7 +75,16 @@ Sorting allows you to sort columns in ascending or descending order. This is use
 
 ## Visibility
 
-Visibility allows you to show or hide columns in the table. This is useful when you want to show or hide columns in the table. Read more about visibility in the [Tanstack Visibility documentation](https://tanstack.com/table/latest/docs/guide/visibility).
+Visibility allows you to show or hide columns in the table. This is useful when you want to show or hide columns in the table. Read more about visibility in the [Tanstack Visibility documentation](https://tanstack.com/table/latest/docs/guide/column-visibility).
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableVisibility
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableVisibility.vue
+::
+:::
 
 ## Global Filtering
 
