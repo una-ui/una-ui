@@ -70,8 +70,6 @@ const props = withDefaults(defineProps<{
   isMultiSortEvent?: (e: unknown) => boolean
 }>(), {
   enableMultiRowSelection: true,
-  enableSortingRemoval: true,
-  enableMultiSort: true,
 })
 
 const emit = defineEmits(['select', 'selectAll', 'expand'])
@@ -263,7 +261,10 @@ defineExpose({
             :trailing="header.column.getIsSorted() === 'asc'
               ? 'i-lucide-arrow-up-wide-narrow' : header.column.getIsSorted() === 'desc'
                 ? 'i-lucide-arrow-down-narrow-wide' : 'i-lucide-arrow-up-down'"
-            @click="header.column.toggleSorting(header.column.getIsSorted() === 'asc', enableMultiSort)"
+            @click="header.column.toggleSorting(
+              header.column.getIsSorted() === 'asc' ? undefined : header.column.getIsSorted() !== 'desc',
+              enableMultiSort,
+            )"
           >
             <FlexRender
               v-if="!header.isPlaceholder"
