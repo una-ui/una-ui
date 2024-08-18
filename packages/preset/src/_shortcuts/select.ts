@@ -3,7 +3,7 @@ type SelectPrefix = 'select'
 export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, string> = {
   // configurations
   'select': '',
-  'select-default-variant': 'btn-outline-white',
+  'select-default-variant': 'btn-solid-white',
   'select-disabled': 'n-disabled',
   'select-scroll': 'flex cursor-default items-center justify-center py-1',
   'select-trigger-info-icon': 'i-info',
