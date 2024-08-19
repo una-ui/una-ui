@@ -121,6 +121,13 @@ export default defineNuxtModule<ModuleOptions>({
       watch: nuxt.options.dev,
     })
 
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components/navigation', 'breadcrumb'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+    })
+
     // plugins
     if (options.themeable) {
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))

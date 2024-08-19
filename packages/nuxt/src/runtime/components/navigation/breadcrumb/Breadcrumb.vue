@@ -1,0 +1,57 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import type { NBreadcrumbProps } from '../../../types'
+import NIcon from '../../elements/Icon.vue'
+import { cn, omitProps } from '../../../utils'
+import BreadcrumbItem from './BreadcrumbItem.vue'
+import BreadcrumbSeparator from './BreadcrumbSeparator.vue'
+
+const props = defineProps<NBreadcrumbProps>()
+const delegatedProps = computed(() => {
+  const { class: _, ...delegated } = props
+
+  return delegated
+})
+</script>
+
+<template>
+  <ol
+    v-bind="omitProps(delegatedProps, ['items', 'breadcrumb'])"
+    :class="cn(
+      'breadcrumb',
+      props.class,
+    )"
+  >
+    <slot name="home" :item="home">
+      <BreadcrumbItem
+        v-if="home"
+        :breadcrumb="breadcrumb"
+        :label="home.label"
+        :icon="home.icon"
+        :url="home.url"
+        v-bind="{ ...delegatedProps._breadcrumbItem }"
+      />
+    </slot>
+    <template v-for="(item, i) in items" :key="i">
+      <BreadcrumbSeparator
+        v-if="home || i !== 0"
+        v-bind="delegatedProps._breadcrumbSeparator"
+      >
+        <slot name="separator">
+          <NIcon
+            name="i-heroicons:chevron-right-20-solid"
+          />
+        </slot>
+      </BreadcrumbSeparator>
+      <slot name="item" :item>
+        <BreadcrumbItem
+          :breadcrumb="breadcrumb"
+          :label="item.label"
+          :icon="item.icon"
+          :url="item.url"
+          v-bind="{ ...delegatedProps._breadcrumbItem }"
+        />
+      </slot>
+    </template>
+  </ol>
+</template>
