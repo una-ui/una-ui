@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'vue'
 
 interface Extensions { class?: HTMLAttributes['class'] }
 
-export interface NBreadcrumbProps extends Extensions, Pick<NBreadcrumbItemProps, 'breadcrumb'> {
+export interface NBreadcrumbProps extends Extensions, Pick<NBreadcrumbItemProps, 'breadcrumb' | 'withRouting'> {
   /**
    * Configuration for the home icon/name.
    */
@@ -39,6 +39,12 @@ export interface NBreadcrumbItemProps extends Extensions {
    * Url of the item.
    */
   url?: string
+  /**
+   * `withRouting` allows to use Nuxt routing.
+   *
+   * @default false
+   */
+  withRouting?: boolean
 
   // sub-components
   _breadcrumbLabel?: Partial<NBreadcrumbLabelProps>

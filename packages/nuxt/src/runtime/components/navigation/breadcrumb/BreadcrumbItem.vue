@@ -5,6 +5,9 @@ import { cn } from '../../../utils'
 import NIcon from '../../elements/Icon.vue'
 import BreadcrumbLabel from './BreadcrumbLabel.vue'
 
+// @ts-expect-error tsconfig
+import { NuxtLink } from '#components'
+
 const props = withDefaults(defineProps<NBreadcrumbItemProps>(), {
   una: () => ({
     breadcrumbDefaultVariant: 'breadcrumb-default-variant',
@@ -26,8 +29,10 @@ const isBaseVariant = computed(() => props.breadcrumb?.includes('~'))
     )"
     :data-state="url === $route.path ? 'active' : 'inactive'"
   >
-    <a
-      :href="url || '#'"
+    <component
+      :is="withRouting ? NuxtLink : 'a'"
+      :href="!withRouting ? url : null"
+      :to="withRouting ? url : null"
       flex="inline items-center"
     >
       <div
@@ -49,6 +54,6 @@ const isBaseVariant = computed(() => props.breadcrumb?.includes('~'))
       >
         {{ label }}
       </BreadcrumbLabel>
-    </a>
+    </component>
   </li>
 </template>

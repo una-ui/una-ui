@@ -16,7 +16,7 @@ const delegatedProps = computed(() => {
 
 <template>
   <ol
-    v-bind="omitProps(delegatedProps, ['items', 'breadcrumb'])"
+    v-bind="omitProps(delegatedProps, ['items', 'breadcrumb', 'withRouting'])"
     :class="cn(
       'breadcrumb',
       props.class,
@@ -25,6 +25,8 @@ const delegatedProps = computed(() => {
     <slot name="home" :item="home">
       <BreadcrumbItem
         v-if="home"
+        :breadcrumb="breadcrumb"
+        :with-routing="withRouting"
         v-bind="{ ...home, ...delegatedProps._breadcrumbItem }"
       />
     </slot>
@@ -42,6 +44,7 @@ const delegatedProps = computed(() => {
       <slot name="item" :item>
         <BreadcrumbItem
           :breadcrumb="breadcrumb"
+          :with-routing="withRouting"
           v-bind="{ ...item, ...delegatedProps._breadcrumbItem }"
         />
       </slot>
