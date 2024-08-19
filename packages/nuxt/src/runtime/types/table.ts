@@ -13,12 +13,10 @@ export interface NTableProps<TData, TValue> extends NTableRootProps {
    * @see https://tanstack.com/table/latest/docs/api/core/column
    */
   columns: ColumnDef<TData, TValue>[] | GroupColumnDef<TData, TValue>[]
-
   /**
    * @see https://tanstack.com/table/latest/docs/api/core/table#getrowid
    */
   rowId?: string
-
   /**
    * @see https://tanstack.com/table/latest/docs/api/core/table#autoresetall
    */
@@ -79,10 +77,20 @@ export interface NTableProps<TData, TValue> extends NTableRootProps {
    * @see https://tanstack.com/table/latest/docs/api/features/pagination#autoresetpageindex
    */
   autoResetPageIndex?: boolean
-
+  /**
+   * @see https://tanstack.com/table/latest/docs/api/features/sorting#sortingfns
+   */
   sortingFns?: Record<string, (a: any, b: any) => number>
+  /**
+   * @see https://tanstack.com/table/latest/docs/api/features/sorting#sortdescfirst-1
+   */
+  sortDescFirst?: boolean
+  /**
+   * @see https://tanstack.com/table/latest/docs/api/features/sorting#ismultisortevent
+   */
   isMultiSortEvent?: (e: unknown) => boolean
 
+  // sub-components props
   _tableHead?: NTableHeadProps
   _tableHeader?: NTableHeaderProps
   _tableFooter?: NTableFooterProps
@@ -92,6 +100,11 @@ export interface NTableProps<TData, TValue> extends NTableRootProps {
   _tableCell?: NTableCellProps
   _tableEmpty?: NTableEmptyProps
 
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/table.ts
+   */
   una?: NTableUnaProps
 }
 

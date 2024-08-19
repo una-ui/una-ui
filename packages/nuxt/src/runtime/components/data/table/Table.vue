@@ -164,8 +164,8 @@ const table = computed(() => {
     enableMultiRemove: props.enableMultiRemove,
     maxMultiSortColCount: props.maxMultiSortColCount,
     sortingFns: props.sortingFns,
-
     isMultiSortEvent: props.isMultiSortEvent,
+
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),

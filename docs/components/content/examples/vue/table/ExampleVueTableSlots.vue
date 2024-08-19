@@ -73,7 +73,7 @@ const table = ref<Table<Person>>()
 <template>
   <div class="flex flex-col space-y-4">
     <!-- header -->
-    <div class="flex flex-wrap items-center justify-between gap-4">
+    <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
       <NInput
         v-model="search"
         leading="i-radix-icons-magnifying-glass"
@@ -83,21 +83,20 @@ const table = ref<Table<Person>>()
         }"
       />
 
-      <div class="ml-auto flex items-center space-x-2">
+      <div class="flex items-center gap-x-2 sm:ml-auto">
         <NButton
           label="Rerender"
           btn="solid-gray"
           leading="i-radix-icons-update"
-          class="shrink-0 active:translate-y-0.5"
+          class="w-full sm:w-auto sm:shrink-0 active:translate-y-0.5"
           @click="data = makeData(20_000)"
         />
 
-        <!-- add 100 -->
         <NButton
           label="Add 1000"
           btn="solid-primary"
           leading="i-radix-icons-plus"
-          class="shrink-0 active:translate-y-0.5"
+          class="w-full sm:w-auto sm:shrink-0 active:translate-y-0.5"
           @click="data = [...makeData(1_000), ...data]"
         />
       </div>
@@ -183,12 +182,29 @@ const table = ref<Table<Person>>()
       class="flex items-center justify-between px-2"
     >
       <div
-        class="flex-1 text-sm text-muted"
+        class="hidden text-sm text-muted sm:block"
       >
         {{ table?.getFilteredSelectedRowModel().rows.length.toLocaleString() }} of
         {{ table?.getFilteredRowModel().rows.length.toLocaleString() }} row(s) selected.
       </div>
       <div class="flex items-center space-x-6 lg:space-x-8">
+        <div
+          class="hidden items-center justify-center text-sm font-medium sm:flex space-x-2"
+        >
+          <span class="text-nowrap">
+            Rows per page
+          </span>
+
+          <NSelect
+            :items="[10, 20, 30, 40, 50]"
+            :_selectTrigger="{
+              class: 'w-15',
+            }"
+            :model-value="table?.getState().pagination.pageSize"
+            @update:model-value="table?.setPageSize($event as unknown as number)"
+          />
+        </div>
+
         <div
           class="flex items-center justify-center text-sm font-medium"
         >
