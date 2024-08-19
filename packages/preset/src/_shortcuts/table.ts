@@ -34,6 +34,12 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-empty-cell': 'p-4 whitespace-nowrap align-middle text-sm text-muted hover:bg-base',
   'table-empty': 'flex items-center justify-center py-10',
 
+  // table-loading
+  'table-loading-icon': 'i-lucide-refresh-ccw animate-spin text-lg',
+  'table-loading-row': '',
+  'table-loading-cell': 'p-4 whitespace-nowrap align-middle text-sm text-muted hover:bg-base',
+  'table-loading': 'grid place-items-center gap-4 py-10',
+
   // table-footer
   'table-footer': 'border-t border-base bg-muted font-medium [&>tr]:last:border-b-0',
 }

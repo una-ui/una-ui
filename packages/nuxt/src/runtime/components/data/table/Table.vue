@@ -37,6 +37,7 @@ import TableHead from './TableHead.vue'
 import TableHeader from './TableHeader.vue'
 import TableRoot from './TableRoot.vue'
 import TableRow from './TableRow.vue'
+import TableLoading from './TableLoading.vue'
 
 const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
@@ -210,91 +211,103 @@ defineExpose({
       :una="una"
       v-bind="props._tableHeader"
     >
-      <TableRow
-        v-for="headerGroup in table.getHeaderGroups()"
-        :key="headerGroup.id"
-        :una="una"
-        v-bind="props._tableRow"
-      >
-        <!-- headers -->
-        <TableHead
-          v-for="header in headerGroup.headers"
-          :key="header.id"
-          :colspan="header.colSpan"
-          :data-pinned="header.column.getIsPinned()"
-          :una="una"
-          v-bind="props._tableHead"
-        >
-          <Button
-            v-if="header.column.columnDef.enableSorting || (header.column.columnDef.enableSorting !== false && enableSorting)"
-            btn="ghost-gray"
-            size="sm"
-            class="font-normal -ml-0.85em"
-            :una="{
-              btnTrailing: 'text-sm',
-            }"
-            :trailing="header.column.getIsSorted() === 'asc'
-              ? 'i-lucide-arrow-up-wide-narrow' : header.column.getIsSorted() === 'desc'
-                ? 'i-lucide-arrow-down-narrow-wide' : 'i-lucide-arrow-up-down'"
-            @click="header.column.toggleSorting(
-              header.column.getIsSorted() === 'asc' ? undefined : header.column.getIsSorted() !== 'desc',
-              enableMultiSort,
-            )"
-          >
-            <FlexRender
-              v-if="!header.isPlaceholder"
-              :render="header.column.columnDef.header"
-              :props="header.getContext()"
-            />
-          </Button>
-          <component
-            :is="header.id === 'selection' ? 'div' : 'span'"
-            v-else
-            class="text-sm text-muted"
-          >
-            <FlexRender
-              v-if="!header.isPlaceholder"
-              :render="header.column.columnDef.header"
-              :props="header.getContext()"
-            />
-          </component>
-        </TableHead>
-      </TableRow>
-
-      <!-- column filters -->
-      <template
-        v-for="headerGroup in table.getHeaderGroups()"
-        :key="headerGroup.id"
-      >
+      <slot name="header" :table="table">
         <TableRow
-          v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0 || enableColumnFilters"
-          class="hover:bg-base"
+          v-for="headerGroup in table.getHeaderGroups()"
+          :key="headerGroup.id"
           :una="una"
           v-bind="props._tableRow"
         >
+          <!-- headers -->
           <TableHead
             v-for="header in headerGroup.headers"
             :key="header.id"
-            :una="una"
             :colspan="header.colSpan"
             :data-pinned="header.column.getIsPinned()"
+            :una="una"
             v-bind="props._tableHead"
           >
-            <slot
-              v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
-              :name="`${header.id}-filter`"
-              :column="header.column"
+            <Button
+              v-if="header.column.columnDef.enableSorting || (header.column.columnDef.enableSorting !== false && enableSorting)"
+              btn="ghost-gray"
+              size="sm"
+              class="font-normal -ml-0.85em"
+              :una="{
+                btnTrailing: 'text-sm',
+              }"
+              :trailing="header.column.getIsSorted() === 'asc'
+                ? 'i-lucide-arrow-up-wide-narrow' : header.column.getIsSorted() === 'desc'
+                  ? 'i-lucide-arrow-down-narrow-wide' : 'i-lucide-arrow-up-down'"
+              @click="header.column.toggleSorting(
+                header.column.getIsSorted() === 'asc' ? undefined : header.column.getIsSorted() !== 'desc',
+                enableMultiSort,
+              )"
             >
-              <Input
-                class="w-auto"
-                :model-value="header.column.getFilterValue() as string"
-                :placeholder="header.column.columnDef.header"
-                @update:model-value="header.column.setFilterValue($event)"
-              />
-            </slot>
+              <slot
+                :name="`${header.id}-header`"
+                :column="header.column"
+              >
+                <FlexRender
+                  v-if="!header.isPlaceholder"
+                  :render="header.column.columnDef.header"
+                  :props="header.getContext()"
+                />
+              </slot>
+            </Button>
+            <component
+              :is="header.id === 'selection' ? 'div' : 'span'"
+              v-else
+              class="text-sm text-muted"
+            >
+              <slot
+                :name="`${header.id}-header`"
+                :column="header.column"
+              >
+                <FlexRender
+                  v-if="!header.isPlaceholder"
+                  :render="header.column.columnDef.header"
+                  :props="header.getContext()"
+                />
+              </slot>
+            </component>
           </TableHead>
         </TableRow>
-      </template>
+
+        <!-- column filters -->
+        <template
+          v-for="headerGroup in table.getHeaderGroups()"
+          :key="headerGroup.id"
+        >
+          <TableRow
+            v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0 || enableColumnFilters"
+            class="hover:bg-base"
+            :una="una"
+            v-bind="props._tableRow"
+          >
+            <TableHead
+              v-for="header in headerGroup.headers"
+              :key="header.id"
+              :una="una"
+              :colspan="header.colSpan"
+              :data-pinned="header.column.getIsPinned()"
+              v-bind="props._tableHead"
+            >
+              <slot
+                v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
+                :name="`${header.id}-filter`"
+                :column="header.column"
+              >
+                <Input
+                  class="w-auto"
+                  :model-value="header.column.getFilterValue() as string"
+                  :placeholder="header.column.columnDef.header"
+                  @update:model-value="header.column.setFilterValue($event)"
+                />
+              </slot>
+            </TableHead>
+          </TableRow>
+        </template>
+      </slot>
     </TableHeader>
 
     <!-- body -->
@@ -302,68 +315,79 @@ defineExpose({
       :una="una"
       v-bind="props._tableBody"
     >
-      <template v-if="table.getRowModel().rows?.length">
-        <template
-          v-for="row in table.getRowModel().rows"
-          :key="row.id"
-        >
-          <TableRow
-            :data-state="row.getIsSelected() && 'selected'"
-            :una="una"
-            v-bind="props._tableRow"
+      <slot name="body" :table="table">
+        <template v-if="table.getRowModel().rows?.length">
+          <template
+            v-for="row in table.getRowModel().rows"
+            :key="row.id"
           >
-            <slot
-              name="row"
-              :row="row"
+            <TableRow
+              :data-state="row.getIsSelected() && 'selected'"
+              :una="una"
+              v-bind="props._tableRow"
             >
-              <!-- rows -->
+              <slot
+                name="row"
+                :row="row"
+              >
+                <!-- rows -->
+                <TableCell
+                  v-for="cell in row.getVisibleCells()"
+                  :key="cell.id"
+                  :data-pinned="cell.column.getIsPinned()"
+                  :una="una"
+                  v-bind="props._tableCell"
+                >
+                  <slot
+                    :name="`${cell.column.id}-cell`"
+                    :cell="cell"
+                  >
+                    <FlexRender
+                      :render="cell.column.columnDef.cell"
+                      :props="cell.getContext()"
+                    />
+                  </slot>
+                </TableCell>
+              </slot>
+            </TableRow>
+
+            <!-- expanded -->
+            <TableRow
+              v-if="row.getIsExpanded() && $slots.expanded"
+              :una="una"
+              v-bind="props._tableRow"
+            >
               <TableCell
-                v-for="cell in row.getVisibleCells()"
-                :key="cell.id"
-                :data-pinned="cell.column.getIsPinned()"
+                :colspan="row.getAllCells().length"
                 :una="una"
                 v-bind="props._tableCell"
               >
-                <slot
-                  :name="`${cell.column.id}-cell`"
-                  :cell="cell"
-                >
-                  <FlexRender
-                    :render="cell.column.columnDef.cell"
-                    :props="cell.getContext()"
-                  />
-                </slot>
+                <slot name="expanded" :row="row" />
               </TableCell>
-            </slot>
-          </TableRow>
-
-          <!-- expanded -->
-          <TableRow
-            v-if="row.getIsExpanded() && $slots.expanded"
-            :una="una"
-            v-bind="props._tableRow"
-          >
-            <TableCell
-              :colspan="row.getAllCells().length"
-              :una="una"
-              v-bind="props._tableCell"
-            >
-              <slot name="expanded" :row="row" />
-            </TableCell>
-          </TableRow>
+            </TableRow>
+          </template>
         </template>
-      </template>
 
-      <TableEmpty
-        v-else
-        :colspan="table.getAllLeafColumns().length"
-        :una="una"
-        v-bind="props._tableEmpty"
-      >
-        <slot name="empty">
-          No results.
-        </slot>
-      </TableEmpty>
+        <TableEmpty
+          v-else-if="!props.loading && !table.getRowModel().rows?.length"
+          :colspan="table.getAllLeafColumns().length"
+          :una="una"
+          v-bind="props._tableEmpty"
+        >
+          <slot name="empty">
+            No results.
+          </slot>
+        </TableEmpty>
+
+        <TableLoading
+          v-if="props.loading"
+          :colspan="table.getAllLeafColumns().length"
+          :una="una"
+          v-bind="props._tableLoading"
+        >
+          <slot name="loading" />
+        </TableLoading>
+      </slot>
     </TableBody>
 
     <!-- footer -->
@@ -372,34 +396,38 @@ defineExpose({
       :una="una"
       v-bind="props._tableFooter"
     >
-      <template
-        v-for="footerGroup in table.getFooterGroups()"
-        :key="footerGroup.id"
-      >
-        <TableRow
-          v-if="footerGroup.headers.length > 0"
-          :una="una"
-          v-bind="props._tableRow"
+      <slot name="footer" :table="table">
+        <template
+          v-for="footerGroup in table.getFooterGroups()"
+          :key="footerGroup.id"
         >
-          <template
-            v-for="header in footerGroup.headers"
-            :key="header.id"
+          <TableRow
+            v-if="footerGroup.headers.length > 0"
+            :una="una"
+            v-bind="props._tableRow"
           >
-            <TableHead
-              v-if="header.column.columnDef.footer"
-              :colspan="header.colSpan"
-              :una="una"
-              v-bind="props._tableHead"
+            <template
+              v-for="header in footerGroup.headers"
+              :key="header.id"
             >
-              <FlexRender
-                v-if="!header.isPlaceholder"
-                :render="header.column.columnDef.footer"
-                :props="header.getContext()"
-              />
-            </TableHead>
-          </template>
-        </TableRow>
-      </template>
+              <TableHead
+                v-if="header.column.columnDef.footer"
+                :colspan="header.colSpan"
+                :una="una"
+                v-bind="props._tableHead"
+              >
+                <slot :name="`${header.id}-footer`" :column="header.column">
+                  <FlexRender
+                    v-if="!header.isPlaceholder"
+                    :render="header.column.columnDef.footer"
+                    :props="header.getContext()"
+                  />
+                </slot>
+              </TableHead>
+            </template>
+          </TableRow>
+        </template>
+      </slot>
     </TableFooter>
   </TableRoot>
 </template>.

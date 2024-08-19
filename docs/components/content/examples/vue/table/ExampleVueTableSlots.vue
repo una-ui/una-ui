@@ -13,21 +13,21 @@ const columns: ColumnDef<Person>[] = [
     accessorKey: 'account',
     accessorFn: (row) => {
       return {
-        username: row.username,
+        fullname: `${row.firstName} ${row.lastName}`,
         avatar: faker.image.avatar(),
         email: row.email,
       }
     },
     // you can customize the cell renderer like this as an alternative to slot 😉
     cell: (info: any) => {
-      const username = info.getValue().username
+      const fullname = info.getValue().fullname
 
       return h('div', {
         class: 'flex items-center',
       }, [
         h(NAvatar, {
           src: info.getValue().avatar,
-          alt: username,
+          alt: fullname,
         }),
         [
           h('div', {
@@ -35,7 +35,7 @@ const columns: ColumnDef<Person>[] = [
           }, [
             h('div', {
               class: 'text-sm font-semibold leading-none',
-            }, username),
+            }, fullname),
             h('span', {
               class: 'text-sm text-muted',
             }, info.getValue().email),

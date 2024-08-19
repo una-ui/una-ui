@@ -99,6 +99,9 @@ export interface NTableProps<TData, TValue> extends NTableRootProps {
   _tableRow?: NTableRowProps
   _tableCell?: NTableCellProps
   _tableEmpty?: NTableEmptyProps
+  _tableLoading?: NTableLoadingProps
+
+  loading?: boolean
 
   /**
    * `UnaUI` preset configuration
@@ -163,6 +166,16 @@ export interface NTableEmptyProps {
   una?: Pick<NTableUnaProps, 'tableEmpty'>
 }
 
+export interface NTableLoadingProps {
+  class?: HTMLAttributes['class']
+  colspan?: number
+
+  _tableCell?: NTableCellProps
+  _tableRow?: NTableRowProps
+
+  una?: Pick<NTableUnaProps, 'tableLoading'>
+}
+
 export interface NTableCaptionProps {
   class?: HTMLAttributes['class']
 
@@ -180,4 +193,5 @@ interface NTableUnaProps {
   tableCell?: HTMLAttributes['class']
   tableCaption?: HTMLAttributes['class']
   tableEmpty?: HTMLAttributes['class']
+  tableLoading?: HTMLAttributes['class']
 }

@@ -252,16 +252,20 @@ Server-side allows you to fetch data from the server. This is useful when you wa
 
 > You can use the following slots to customize the switch.
 
-| Name      | Description         | Props                          |
-| --------- | ------------------- | ------------------------------ |
-| `header`  | Table header slot.  | `{ columns: Column[] }`        |
-| `footer`  | Table footer slot.  | `{ columns: Column[] }`        |
-| `default` | Table default slot. | `{ row: Row, column: Column }` |
-| `column`  | Table column slot.  | `{ column: Column }`           |
-| `row`     | Table row slot.     | `{ row: Row }`                 |
-| `expand`  | Table expand slot.  | `{ row: Row }`                 |
-| `group`   | Table group slot.   | `{ group: Group }`             |
-| `empty`   | Table empty slot.   | `{}`                           |
+| Name              | Description         | Props    |
+| ----------------- | ------------------- | -------- |
+| `{column}-filter` | Column filter slot. | `column` |
+| `{column}-header` | Column header slot. | `column` |
+| `{column}-cell`   | Column cell slot.   | `cell`   |
+| `{column}-footer` | Column footer slot. | `column` |
+| `header`          | Header slot.        | `table`  |
+| `body`            | Body slot.          | `table`  |
+| `raw`             | Row slot.           | `row`    |
+| `footer`          | Footer slot.        | `table`  |
+| `expanded`        | Expanded slot.      | `row`    |
+| `empty`           | Empty slot.         |          |
+| `loading`         | Loading slot.       |          |
+
 
 :::CodeGroup
 ::code-block{label="Preview"}
