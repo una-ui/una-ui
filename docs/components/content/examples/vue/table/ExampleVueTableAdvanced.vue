@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker'
 import makeData, { type Person } from './makeData'
 import { NAvatar } from '#components'
 
-const rows = ref(makeData(100))
+const data = ref(makeData(100))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -89,7 +89,7 @@ const table = ref<Table<Person>>()
           btn="solid-gray"
           leading="i-radix-icons-update"
           class="shrink-0 active:translate-y-0.5"
-          @click="rows = makeData(20_000)"
+          @click="data = makeData(20_000)"
         />
 
         <!-- add 100 -->
@@ -98,7 +98,7 @@ const table = ref<Table<Person>>()
           btn="solid-primary"
           leading="i-radix-icons-plus"
           class="shrink-0 active:translate-y-0.5"
-          @click="rows = [...makeData(1_000), ...rows]"
+          @click="data = [...makeData(1_000), ...data]"
         />
       </div>
     </div>
@@ -109,7 +109,7 @@ const table = ref<Table<Person>>()
         ref="table"
         v-model="select"
         :columns
-        :rows
+        :data
         :global-filter="search"
         enable-column-filters enable-row-selection enable-sorting
         row-id="username"

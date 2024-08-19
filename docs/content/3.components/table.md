@@ -8,7 +8,12 @@ description: 'NTable component - used to create a data table.'
 
 ## Basic
 
-use `NTable` component to create a powerful table and datagrids built using [Tanstack](https://tanstack.com/table/latest/docs/framework/vue/guide/table-state).
+use `NTable` component to create a powerful table and datagrids built using [Tanstack](https://tanstack.com/table/latest/docs/introduction){target="_blank"}. Read more about the [Tanstack Table documentation](https://tanstack.com/table/latest/docs/framework/vue/guide/table-state){target="_blank"}.
+
+| Prop          | Type      | Default | Description                        |
+| ------------- | --------- | ------- | ---------------------------------- |
+| `columns`     | `Array`   | `[]`    | Table columns.                     |
+| `data`        | `Array`   | `[]`    | Table data.                        |
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -16,12 +21,18 @@ use `NTable` component to create a powerful table and datagrids built using [Tan
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableBasic.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Row Selection
 
-Row selection allows you to select rows in the table. This is useful when you want to select rows in the table. Read more about row selection in the [Tanstack Row Selection documentation](https://tanstack.com/table/latest/docs/guide/row-selection).
+Row selection allows you to select rows in the table. This is useful when you want to select rows in the table. Read more about row selection in the [Tanstack Row Selection documentation](https://tanstack.com/table/latest/docs/guide/row-selection){target="_blank"}.
 
 | Prop                      | Type      | Default | Description                           |
 | ------------------------- | --------- | ------- | ------------------------------------- |
@@ -39,12 +50,18 @@ Row selection allows you to select rows in the table. This is useful when you wa
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableRowSelection.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Pagination
 
-Pagination allows you to paginate rows in the table. This is useful when you want to paginate rows in the table. Read more about pagination in the [Tanstack Pagination documentation](https://tanstack.com/table/latest/docs/guide/pagination).
+Pagination allows you to paginate rows in the table. This is useful when you want to paginate rows in the table. Read more about pagination in the [Tanstack Pagination documentation](https://tanstack.com/table/latest/docs/guide/pagination){target="_blank"}.
 
 | Prop                 | Type      | Default                        | Description                       |
 | -------------------- | --------- | ------------------------------ | --------------------------------- |
@@ -57,12 +74,18 @@ Pagination allows you to paginate rows in the table. This is useful when you wan
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTablePagination.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Sorting
 
-Sorting allows you to sort columns in ascending or descending order. This is useful when you want to sort columns in the table. Read more about sorting in the [Tanstack Sorting documentation](https://tanstack.com/table/latest/docs/guide/sorting).
+Sorting allows you to sort columns in ascending or descending order. This is useful when you want to sort columns in the table. Read more about sorting in the [Tanstack Sorting documentation](https://tanstack.com/table/latest/docs/guide/sorting){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -70,12 +93,18 @@ Sorting allows you to sort columns in ascending or descending order. This is use
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableSorting.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Visibility
 
-Visibility allows you to show or hide columns in the table. This is useful when you want to show or hide columns in the table. Read more about visibility in the [Tanstack Visibility documentation](https://tanstack.com/table/latest/docs/guide/column-visibility).
+Visibility allows you to show or hide columns in the table. This is useful when you want to show or hide columns in the table. Read more about visibility in the [Tanstack Visibility documentation](https://tanstack.com/table/latest/docs/guide/column-visibility){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -83,12 +112,18 @@ Visibility allows you to show or hide columns in the table. This is useful when 
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableVisibility.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Global Filtering
 
-Global filtering allows you to filter rows based on the value entered in the filter input. This is useful when you want to filter rows in the table. Read more about global filtering in the [Tanstack Global Filtering documentation](https://tanstack.com/table/latest/docs/guide/global-filtering).
+Global filtering allows you to filter rows based on the value entered in the filter input. This is useful when you want to filter rows in the table. Read more about global filtering in the [Tanstack Global Filtering documentation](https://tanstack.com/table/latest/docs/guide/global-filtering){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -96,12 +131,18 @@ Global filtering allows you to filter rows based on the value entered in the fil
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableGlobalFiltering.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Column Filtering
 
-Filtering allows you to filter columns based on the value entered in the filter input. This is useful when you want to filter columns in the table. Read more about filtering in the [Tanstack Column Filtering documentation](https://tanstack.com/table/latest/docs/guide/column-filtering).
+Filtering allows you to filter columns based on the value entered in the filter input. This is useful when you want to filter columns in the table. Read more about filtering in the [Tanstack Column Filtering documentation](https://tanstack.com/table/latest/docs/guide/column-filtering){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -109,12 +150,18 @@ Filtering allows you to filter columns based on the value entered in the filter 
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnFiltering.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Column Ordering
 
-Column ordering allows you to reorder columns by dragging and dropping them. This is useful when you want to change the order of columns in the table. Read more about column ordering in the [Tanstack Column Ordering documentation](https://tanstack.com/table/latest/docs/guide/column-ordering).
+Column ordering allows you to reorder columns by dragging and dropping them. This is useful when you want to change the order of columns in the table. Read more about column ordering in the [Tanstack Column Ordering documentation](https://tanstack.com/table/latest/docs/guide/column-ordering){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -122,12 +169,18 @@ Column ordering allows you to reorder columns by dragging and dropping them. Thi
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnOrdering.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Column Pinning
 
-Column pinning allows you to pin columns to the `left` or `right` of the table. This is useful when you have a large number of columns and you want to keep some columns in view while scrolling. Read more about column pinning in the [Tanstack Column Pinning documentation](https://tanstack.com/table/latest/docs/guide/column-pinning).
+Column pinning allows you to pin columns to the `left` or `right` of the table. This is useful when you have a large number of columns and you want to keep some columns in view while scrolling. Read more about column pinning in the [Tanstack Column Pinning documentation](https://tanstack.com/table/latest/docs/guide/column-pinning){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -135,12 +188,18 @@ Column pinning allows you to pin columns to the `left` or `right` of the table. 
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnPinning.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Expandanding
 
-Expanding allows you to expand rows to show additional information. This is useful when you want to show additional information about a row. Read more about expanding in the [Tanstack Expanding documentation](https://tanstack.com/table/latest/docs/guide/expanding).
+Expanding allows you to expand rows to show additional information. This is useful when you want to show additional information about a row. Read more about expanding in the [Tanstack Expanding documentation](https://tanstack.com/table/latest/docs/guide/expanding){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -148,12 +207,18 @@ Expanding allows you to expand rows to show additional information. This is usef
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableExpanding.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
 ## Grouping
 
-Grouping allows you to group rows based on a column value. This is useful when you want to group rows in the table. Read more about grouping in the [Tanstack Grouping documentation](https://tanstack.com/table/latest/docs/guide/grouping).
+Grouping allows you to group rows based on a column value. This is useful when you want to group rows in the table. Read more about grouping in the [Tanstack Grouping documentation](https://tanstack.com/table/latest/docs/guide/grouping){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -161,6 +226,12 @@ Grouping allows you to group rows based on a column value. This is useful when y
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableGrouping.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 
@@ -172,6 +243,12 @@ Grouping allows you to group rows based on a column value. This is useful when y
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableAdvanced.vue
+
+::
+
+::code-block{label="makeData.ts"}
+@@@ ./components/content/examples/vue/table/makeData.ts
+
 ::
 :::
 

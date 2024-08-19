@@ -110,7 +110,7 @@ const pokemon = computed(() => data.value?.results ?? [])
       v-model:globalFilter="filter"
       v-model:pagination="pagination"
       :auto-reset-all="autoReset"
-      :rows="pokemon"
+      :data="pokemon"
       :columns="columns"
       :enable-column-filters="false"
       :row-count="data?.results.length"

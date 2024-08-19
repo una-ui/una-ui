@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker'
 import makeData from './makeData'
 import type { Person } from './makeData'
 
-const rows = ref(makeData(5))
+const data = ref(makeData(5))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -52,7 +52,7 @@ function randomizeColumns() {
     <NTable
       ref="table"
       :columns
-      :rows
+      :data
     />
   </div>
 </template>

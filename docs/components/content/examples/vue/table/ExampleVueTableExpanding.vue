@@ -3,7 +3,7 @@ import type { ColumnDef } from '@tanstack/vue-table'
 import makeData from './makeData'
 import type { Person } from './makeData'
 
-const rows = ref(makeData(5))
+const data = ref(makeData(5))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -40,7 +40,7 @@ const expanded = ref<Record<string, boolean>>({})
     <NTable
       v-model:expanded="expanded"
       :columns
-      :rows
+      :data
     >
       <template #expanded="{ row }">
         <div class="p-4">

@@ -3,7 +3,7 @@ import type { ColumnDef, Table } from '@tanstack/vue-table'
 import makeData from './makeData'
 import type { Person } from './makeData'
 
-const rows = ref(makeData(30))
+const data = ref(makeData(30))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -48,7 +48,7 @@ const table = ref<Table<Person>>()
         ref="table"
         v-model:pagination="pagination"
         :columns
-        :rows
+        :data
       />
     </div>
 

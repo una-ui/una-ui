@@ -3,7 +3,7 @@ import type { ColumnDef } from '@tanstack/vue-table'
 import makeData from './makeData'
 import type { Person } from './makeData'
 
-const rows = ref(makeData(5))
+const data = ref(makeData(5))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -39,7 +39,7 @@ const columns: ColumnDef<Person>[] = [
     <NTable
       :columns
       enable-column-filters
-      :rows
+      :data
     />
   </div>
 </template>

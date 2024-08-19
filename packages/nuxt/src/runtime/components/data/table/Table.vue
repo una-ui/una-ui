@@ -41,7 +41,7 @@ import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<{
   class?: HTMLAttributes['class']
-  rows: TData[]
+  data: TData[]
   columns: ColumnDef<TData, TValue>[] | GroupColumnDef<TData, TValue>[]
 
   rowId?: string
@@ -159,7 +159,7 @@ const columnsWithMisc = computed(() => {
 const table = computed(() => {
   return useVueTable({
     get data() {
-      return props.rows ?? []
+      return props.data ?? []
     },
     get columns() {
       return columnsWithMisc.value ?? []

@@ -3,7 +3,7 @@ import type { ColumnDef } from '@tanstack/vue-table'
 import type { Person } from './makeData'
 import { makeData } from './makeData'
 
-const rows = ref(makeData(5))
+const data = ref(makeData(5))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -51,7 +51,7 @@ const sorting = ref()
     <NTable
       v-model:sorting="sorting"
       :columns
-      :rows
+      :data
     />
   </div>
 </template>

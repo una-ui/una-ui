@@ -3,7 +3,7 @@ import type { ColumnDef, Table } from '@tanstack/vue-table'
 import makeData from './makeData'
 import type { Person } from './makeData'
 
-const rows = ref(makeData(10))
+const data = ref(makeData(10))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -43,7 +43,7 @@ const table = ref<Table<Person>>()
         ref="table"
         v-model="select"
         :columns
-        :rows
+        :data
         enable-row-selection
       />
     </div>

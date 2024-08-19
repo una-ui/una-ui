@@ -3,7 +3,7 @@ import type { ColumnDef, Table } from '@tanstack/vue-table'
 import makeData from './makeData'
 import type { Person } from './makeData'
 
-const rows = ref(makeData(5))
+const data = ref(makeData(5))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -56,7 +56,7 @@ const columnVisibility = ref({})
         ref="table"
         v-model:columnVisibility="columnVisibility"
         :columns
-        :rows
+        :data
       />
     </div>
   </div>

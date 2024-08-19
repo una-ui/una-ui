@@ -3,7 +3,7 @@ import type { ColumnDef } from '@tanstack/vue-table'
 import makeData from './makeData'
 import type { Person } from './makeData'
 
-const rows = ref(makeData(10))
+const data = ref(makeData(10))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -38,7 +38,7 @@ const columns: ColumnDef<Person>[] = [
   <div class="border border-base rounded-md">
     <NTable
       :columns
-      :rows
+      :data
       enable-sorting
       enable-multi-sort
     />
