@@ -235,14 +235,27 @@ Grouping allows you to group rows based on a column value. This is useful when y
 ::
 :::
 
-## Advanced
+## Slots
+
+> You can use the following slots to customize the switch.
+
+| Name | Description | Props |
+| ---- | ----------- | ----- |
+| `header` | Table header slot. | `{ columns: Column[] }` |
+| `footer` | Table footer slot. | `{ columns: Column[] }` |
+| `default` | Table default slot. | `{ row: Row, column: Column }` |
+| `column` | Table column slot. | `{ column: Column }` |
+| `row` | Table row slot. | `{ row: Row }` |
+| `expand` | Table expand slot. | `{ row: Row }` |
+| `group` | Table group slot. | `{ group: Group }` |
+| `empty` | Table empty slot. | `{}` |
 
 :::CodeGroup
 ::code-block{label="Preview"}
-  :ExampleVueTableAdvanced
+  :ExampleVueTableSlots
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/table/ExampleVueTableAdvanced.vue
+@@@ ./components/content/examples/vue/table/ExampleVueTableSlots.vue
 
 ::
 
@@ -251,13 +264,6 @@ Grouping allows you to group rows based on a column value. This is useful when y
 
 ::
 :::
-
-## Slots
-
-> You can use the following slots to customize the switch.
-
-| Name | Description | Props |
-| ---- | ----------- | ----- |
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/table.ts

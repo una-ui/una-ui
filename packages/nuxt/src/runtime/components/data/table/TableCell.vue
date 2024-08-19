@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
 import { cn } from '../../../utils'
+import type { NTableCellProps } from '../../../types'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-  dataPinned?: 'left' | 'right' | false
-}>()
+const props = defineProps<NTableCellProps>()
 </script>
 
 <template>

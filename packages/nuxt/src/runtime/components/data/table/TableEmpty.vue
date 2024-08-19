@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
+import type { NTableEmptyProps } from '../../../types'
 import TableRow from './TableRow.vue'
 import TableCell from './TableCell.vue'
 
-const props = withDefaults(defineProps<{
-  class?: HTMLAttributes['class']
-  colspan?: number
-}>(), {
+const props = withDefaults(defineProps<NTableEmptyProps>(), {
   colspan: 1,
 })
 
@@ -19,7 +17,9 @@ const delegatedProps = computed(() => {
 </script>
 
 <template>
-  <TableRow>
+  <TableRow
+    v-bind="delegatedProps._tableRow"
+  >
     <TableCell
       :class="
         cn(

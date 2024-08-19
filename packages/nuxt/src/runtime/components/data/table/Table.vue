@@ -1,13 +1,11 @@
 <script setup lang="ts" generic="TData, TValue">
-import type { HTMLAttributes, Ref } from 'vue'
+import type { Ref } from 'vue'
 import { computed, h } from 'vue'
 import type {
-  ColumnDef,
   ColumnFiltersState,
   ColumnOrderState,
   ColumnPinningState,
   ExpandedState,
-  GroupColumnDef,
   GroupingState,
   Header,
   PaginationState,
@@ -25,11 +23,12 @@ import {
   useVueTable,
 } from '@tanstack/vue-table'
 
-import { cn, valueUpdater } from '../../../utils'
+import { cn, pickProps, valueUpdater } from '../../../utils'
 
 import Checkbox from '../../forms/Checkbox.vue'
 import Button from '../../elements/Button.vue'
 import Input from '../../forms/Input.vue'
+import type { NTableProps } from '../../../types'
 import TableBody from './TableBody.vue'
 import TableCell from './TableCell.vue'
 import TableEmpty from './TableEmpty.vue'
@@ -39,40 +38,12 @@ import TableHeader from './TableHeader.vue'
 import TableRoot from './TableRoot.vue'
 import TableRow from './TableRow.vue'
 
-const props = withDefaults(defineProps<{
-  class?: HTMLAttributes['class']
-  data: TData[]
-  columns: ColumnDef<TData, TValue>[] | GroupColumnDef<TData, TValue>[]
-
-  rowId?: string
-
-  autoResetAll?: boolean
-  enableRowSelection?: boolean
-  enableMultiRowSelection?: boolean
-  enableSubRowSelection?: boolean
-  enableColumnFilters?: boolean
-  enableSorting?: boolean
-  enableMultiSort?: boolean
-  enableMultiRemove?: boolean
-  enableSortingRemoval?: boolean
-  manualPagination?: boolean
-  manualSorting?: boolean
-  maxMultiSortColCount?: number
-  pageCount?: number
-  rowCount?: number
-
-  una?: {
-    tableRoot?: string
-    tableRootWrapper?: string
-  }
-
-  sortingFns?: Record<string, (a: any, b: any) => number>
-  isMultiSortEvent?: (e: unknown) => boolean
-}>(), {
+const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
 })
 
 const emit = defineEmits(['select', 'selectAll', 'expand'])
+
 const slots = defineSlots()
 
 const rowSelection = defineModel<Record<string, boolean>>('modelValue')
@@ -186,6 +157,7 @@ const table = computed(() => {
     manualSorting: props.manualSorting,
     pageCount: props.pageCount,
     rowCount: props.rowCount,
+    autoResetPageIndex: props.autoResetPageIndex,
     enableSorting: props.enableSorting,
     enableSortingRemoval: props.enableSortingRemoval,
     enableMultiSort: props.enableMultiSort,
@@ -231,13 +203,16 @@ defineExpose({
 
 <template>
   <TableRoot
-    :una
+    v-bind="pickProps(props, ['class', 'una'])"
   >
     <!-- header -->
-    <TableHeader>
+    <TableHeader
+      v-bind="props._tableHeader"
+    >
       <TableRow
         v-for="headerGroup in table.getHeaderGroups()"
         :key="headerGroup.id"
+        v-bind="props._tableRow"
       >
         <!-- headers -->
         <TableHead
@@ -245,10 +220,7 @@ defineExpose({
           :key="header.id"
           :colspan="header.colSpan"
           :data-pinned="header.column.getIsPinned()"
-          :class="cn(
-            { 'sticky bg-base': header.column.getIsPinned() },
-            header.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
-          )"
+          v-bind="props._tableHead"
         >
           <Button
             v-if="header.column.columnDef.enableSorting || (header.column.columnDef.enableSorting !== false && enableSorting)"
@@ -285,6 +257,8 @@ defineExpose({
           </component>
         </TableHead>
       </TableRow>
+
+      <!-- column filters -->
       <template
         v-for="headerGroup in table.getHeaderGroups()"
         :key="headerGroup.id"
@@ -292,16 +266,14 @@ defineExpose({
         <TableRow
           v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0 || enableColumnFilters"
           class="hover:bg-base"
+          v-bind="props._tableRow"
         >
           <TableHead
             v-for="header in headerGroup.headers"
             :key="header.id"
             :colspan="header.colSpan"
             :data-pinned="header.column.getIsPinned()"
-            :class="cn(
-              { 'sticky bg-base': header.column.getIsPinned() },
-              header.column.getIsPinned() === 'left' ? 'left-0' : 'right-0',
-            )"
+            v-bind="props._tableHead"
           >
             <slot
               v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
@@ -321,13 +293,17 @@ defineExpose({
     </TableHeader>
 
     <!-- body -->
-    <TableBody>
+    <TableBody
+      v-bind="props._tableBody"
+    >
       <template v-if="table.getRowModel().rows?.length">
         <template
-          v-for="row in table.getRowModel().rows" :key="row.id"
+          v-for="row in table.getRowModel().rows"
+          :key="row.id"
         >
           <TableRow
             :data-state="row.getIsSelected() && 'selected'"
+            v-bind="props._tableRow"
           >
             <slot
               name="row"
@@ -338,6 +314,7 @@ defineExpose({
                 v-for="cell in row.getVisibleCells()"
                 :key="cell.id"
                 :data-pinned="cell.column.getIsPinned()"
+                v-bind="props._tableCell"
               >
                 <slot
                   :name="`${cell.column.id}-cell`"
@@ -355,8 +332,12 @@ defineExpose({
           <!-- expanded -->
           <TableRow
             v-if="row.getIsExpanded() && $slots.expanded"
+            v-bind="props._tableRow"
           >
-            <TableCell :colspan="row.getAllCells().length">
+            <TableCell
+              :colspan="row.getAllCells().length"
+              v-bind="props._tableCell"
+            >
               <slot name="expanded" :row="row" />
             </TableCell>
           </TableRow>
@@ -365,15 +346,19 @@ defineExpose({
 
       <TableEmpty
         v-else
-        :colspan="table?.getAllLeafColumns()?.length"
+        :colspan="table.getAllLeafColumns().length"
+        v-bind="props._tableEmpty"
       >
-        No results.
+        <slot name="empty">
+          No results.
+        </slot>
       </TableEmpty>
     </TableBody>
 
     <!-- footer -->
     <TableFooter
       v-if="table.getFooterGroups().length > 0"
+      v-bind="props._tableFooter"
     >
       <template
         v-for="footerGroup in table.getFooterGroups()"
@@ -381,6 +366,7 @@ defineExpose({
       >
         <TableRow
           v-if="footerGroup.headers.length > 0"
+          v-bind="props._tableRow"
         >
           <template
             v-for="header in footerGroup.headers"
@@ -389,6 +375,7 @@ defineExpose({
             <TableHead
               v-if="header.column.columnDef.footer"
               :colspan="header.colSpan"
+              v-bind="props._tableHead"
             >
               <FlexRender
                 v-if="!header.isPlaceholder"

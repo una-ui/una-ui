@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
 import { cn } from '../../../utils'
+import type { NTableRowProps } from '../../../types'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<NTableRowProps>()
 </script>
 
 <template>
