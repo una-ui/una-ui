@@ -10,10 +10,10 @@ description: 'NTable component - used to create a data table.'
 
 use `NTable` component to create a powerful table and datagrids built using [Tanstack](https://tanstack.com/table/latest/docs/introduction){target="_blank"}. Read more about the [Tanstack Table documentation](https://tanstack.com/table/latest/docs/framework/vue/guide/table-state){target="_blank"}.
 
-| Prop          | Type      | Default | Description                        |
-| ------------- | --------- | ------- | ---------------------------------- |
-| `columns`     | `Array`   | `[]`    | Table columns.                     |
-| `data`        | `Array`   | `[]`    | Table data.                        |
+| Prop      | Type    | Default | Description    |
+| --------- | ------- | ------- | -------------- |
+| `columns` | `Array` | `[]`    | Table columns. |
+| `data`    | `Array` | `[]`    | Table data.    |
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -235,20 +235,33 @@ Grouping allows you to group rows based on a column value. This is useful when y
 ::
 :::
 
+## Server-side 
+
+Server-side allows you to fetch data from the server. This is useful when you want to fetch data from the server. Read more about server-side in the [Tanstack Server-side documentation](https://tanstack.com/table/latest/docs/guide/pagination#manual-server-side-pagination){target="_blank"}.
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableServerSide
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableServerSide.vue
+::
+:::
+
 ## Slots
 
 > You can use the following slots to customize the switch.
 
-| Name | Description | Props |
-| ---- | ----------- | ----- |
-| `header` | Table header slot. | `{ columns: Column[] }` |
-| `footer` | Table footer slot. | `{ columns: Column[] }` |
+| Name      | Description         | Props                          |
+| --------- | ------------------- | ------------------------------ |
+| `header`  | Table header slot.  | `{ columns: Column[] }`        |
+| `footer`  | Table footer slot.  | `{ columns: Column[] }`        |
 | `default` | Table default slot. | `{ row: Row, column: Column }` |
-| `column` | Table column slot. | `{ column: Column }` |
-| `row` | Table row slot. | `{ row: Row }` |
-| `expand` | Table expand slot. | `{ row: Row }` |
-| `group` | Table group slot. | `{ group: Group }` |
-| `empty` | Table empty slot. | `{}` |
+| `column`  | Table column slot.  | `{ column: Column }`           |
+| `row`     | Table row slot.     | `{ row: Row }`                 |
+| `expand`  | Table expand slot.  | `{ row: Row }`                 |
+| `group`   | Table group slot.   | `{ group: Group }`             |
+| `empty`   | Table empty slot.   | `{}`                           |
 
 :::CodeGroup
 ::code-block{label="Preview"}
@@ -256,11 +269,6 @@ Grouping allows you to group rows based on a column value. This is useful when y
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableSlots.vue
-
-::
-
-::code-block{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
 
 ::
 :::
