@@ -153,10 +153,14 @@ export interface NTableCellProps {
   una?: Pick<NTableUnaProps, 'tableCell'>
 }
 
-export interface NTableEmptyProps extends NTableCellProps {
+export interface NTableEmptyProps {
+  class?: HTMLAttributes['class']
   colspan?: number
 
+  _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
+
+  una?: Pick<NTableUnaProps, 'tableEmpty'>
 }
 
 export interface NTableCaptionProps {
@@ -175,4 +179,5 @@ interface NTableUnaProps {
   tableRow?: HTMLAttributes['class']
   tableCell?: HTMLAttributes['class']
   tableCaption?: HTMLAttributes['class']
+  tableEmpty?: HTMLAttributes['class']
 }

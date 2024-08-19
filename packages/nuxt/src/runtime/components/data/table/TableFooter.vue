@@ -6,7 +6,13 @@ const props = defineProps<NTableFooterProps>()
 </script>
 
 <template>
-  <tfoot :class="cn('border-t border-base bg-muted font-medium [&>tr]:last:border-b-0', props.class)">
+  <tfoot
+    :class="cn(
+      'table-footer',
+      props.class,
+      props.una?.tableFooter,
+    )"
+  >
     <slot />
   </tfoot>
 </template>

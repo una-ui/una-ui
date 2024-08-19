@@ -7,12 +7,13 @@ const props = defineProps<NTableRootProps>()
 
 <template>
   <div
-    :class="cn('relative w-full overflow-x-auto overflow-y-hidden', props.una?.tableRootWrapper)"
+    :class="cn('table-root-wrapper', props.una?.tableRootWrapper)"
   >
     <table
-      :class="cn('w-full caption-bottom text-sm',
-                 props.class,
-                 props.una?.tableRoot,
+      :class="cn(
+        'table-root',
+        props.class,
+        props.una?.tableRoot,
       )"
     >
       <slot />

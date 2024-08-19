@@ -8,10 +8,10 @@ const props = defineProps<NTableHeadProps>()
 <template>
   <th
     :class="cn(
-      'h-12 px-4 text-left align-middle font-medium text-muted [&:has([role=checkbox])]:pr-0',
+      'table-head',
       props.class,
-      { 'sticky bg-base': props.dataPinned },
-      props.dataPinned === 'left' ? 'left-0' : 'right-0',
+      { 'table-head-pinned': props.dataPinned },
+      props.dataPinned === 'left' ? 'table-head-pinned' : 'table-head-pinned-right',
     )"
     v-bind="$attrs"
   >

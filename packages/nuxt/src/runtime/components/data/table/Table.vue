@@ -207,11 +207,13 @@ defineExpose({
   >
     <!-- header -->
     <TableHeader
+      :una="una"
       v-bind="props._tableHeader"
     >
       <TableRow
         v-for="headerGroup in table.getHeaderGroups()"
         :key="headerGroup.id"
+        :una="una"
         v-bind="props._tableRow"
       >
         <!-- headers -->
@@ -220,6 +222,7 @@ defineExpose({
           :key="header.id"
           :colspan="header.colSpan"
           :data-pinned="header.column.getIsPinned()"
+          :una="una"
           v-bind="props._tableHead"
         >
           <Button
@@ -266,11 +269,13 @@ defineExpose({
         <TableRow
           v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0 || enableColumnFilters"
           class="hover:bg-base"
+          :una="una"
           v-bind="props._tableRow"
         >
           <TableHead
             v-for="header in headerGroup.headers"
             :key="header.id"
+            :una="una"
             :colspan="header.colSpan"
             :data-pinned="header.column.getIsPinned()"
             v-bind="props._tableHead"
@@ -294,6 +299,7 @@ defineExpose({
 
     <!-- body -->
     <TableBody
+      :una="una"
       v-bind="props._tableBody"
     >
       <template v-if="table.getRowModel().rows?.length">
@@ -303,6 +309,7 @@ defineExpose({
         >
           <TableRow
             :data-state="row.getIsSelected() && 'selected'"
+            :una="una"
             v-bind="props._tableRow"
           >
             <slot
@@ -314,6 +321,7 @@ defineExpose({
                 v-for="cell in row.getVisibleCells()"
                 :key="cell.id"
                 :data-pinned="cell.column.getIsPinned()"
+                :una="una"
                 v-bind="props._tableCell"
               >
                 <slot
@@ -332,10 +340,12 @@ defineExpose({
           <!-- expanded -->
           <TableRow
             v-if="row.getIsExpanded() && $slots.expanded"
+            :una="una"
             v-bind="props._tableRow"
           >
             <TableCell
               :colspan="row.getAllCells().length"
+              :una="una"
               v-bind="props._tableCell"
             >
               <slot name="expanded" :row="row" />
@@ -347,6 +357,7 @@ defineExpose({
       <TableEmpty
         v-else
         :colspan="table.getAllLeafColumns().length"
+        :una="una"
         v-bind="props._tableEmpty"
       >
         <slot name="empty">
@@ -358,6 +369,7 @@ defineExpose({
     <!-- footer -->
     <TableFooter
       v-if="table.getFooterGroups().length > 0"
+      :una="una"
       v-bind="props._tableFooter"
     >
       <template
@@ -366,6 +378,7 @@ defineExpose({
       >
         <TableRow
           v-if="footerGroup.headers.length > 0"
+          :una="una"
           v-bind="props._tableRow"
         >
           <template
@@ -375,6 +388,7 @@ defineExpose({
             <TableHead
               v-if="header.column.columnDef.footer"
               :colspan="header.colSpan"
+              :una="una"
               v-bind="props._tableHead"
             >
               <FlexRender

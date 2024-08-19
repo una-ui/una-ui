@@ -9,10 +9,11 @@ const props = defineProps<NTableCellProps>()
   <td
     :class="
       cn(
-        'p-4 align-middle [&:has([role=checkbox])]:pr-0',
-        { 'sticky bg-base': dataPinned },
-        dataPinned === 'left' ? 'left-0' : 'right-0',
+        'table-cell',
+        { 'table-cell-pinned': dataPinned },
+        dataPinned === 'left' ? 'table-cell-pinned-left' : 'table-cell-pinned-right',
         props.class,
+        props?.una?.tableCell,
       )
     "
     v-bind="$attrs"

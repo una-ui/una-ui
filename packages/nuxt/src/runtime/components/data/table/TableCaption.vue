@@ -7,7 +7,11 @@ const props = defineProps<NTableCaptionProps>()
 
 <template>
   <caption
-    :class="cn('mt-4 text-sm text-muted', props.class)"
+    :class="cn(
+      'table-caption',
+      props.class,
+      props?.una?.tableCaption,
+    )"
     v-bind="$attrs"
   >
     <slot />

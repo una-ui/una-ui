@@ -7,7 +7,11 @@ const props = defineProps<NTableRowProps>()
 
 <template>
   <tr
-    :class="cn('border-b border-base hover:bg-muted data-[state=selected]:bg-muted', props.class)"
+    :class="cn(
+      'table-row',
+      props.class,
+      props.una?.tableRow,
+    )"
     v-bind="$attrs"
   >
     <slot />

@@ -7,7 +7,11 @@ const props = defineProps<NTableBodyProps>()
 
 <template>
   <tbody
-    :class="cn('[&_tr:last-child]:border-0 border-base', props.class)"
+    :class="cn(
+      'table-body',
+      props.class,
+      props?.una?.tableBody,
+    )"
     v-bind="$attrs"
   >
     <slot />

@@ -7,7 +7,11 @@ const props = defineProps<NTableHeaderProps>()
 
 <template>
   <thead
-    :class="cn('[&_tr]:border-b border-base', props.class)"
+    :class="cn(
+      'table-header',
+      props.class,
+      props?.una?.tableHeader,
+    )"
     v-bind="$attrs"
   >
     <slot />

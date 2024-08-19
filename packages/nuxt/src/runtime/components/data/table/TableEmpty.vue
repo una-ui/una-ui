@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { cn } from '../../../utils'
+import { cn, omitProps } from '../../../utils'
 import type { NTableEmptyProps } from '../../../types'
 import TableRow from './TableRow.vue'
 import TableCell from './TableCell.vue'
@@ -18,18 +18,27 @@ const delegatedProps = computed(() => {
 
 <template>
   <TableRow
+    :class="cn(
+      'table-empty-row',
+    )"
     v-bind="delegatedProps._tableRow"
   >
     <TableCell
       :class="
         cn(
-          'p-4 whitespace-nowrap align-middle text-sm text-muted hover:bg-base',
-          props.class,
+          'table-empty-cell',
         )
       "
-      v-bind="delegatedProps"
+      :colspan="props.colspan"
+      v-bind="delegatedProps._tableCell"
     >
-      <div class="flex items-center justify-center py-10">
+      <div
+        :class="cn(
+          'table-empty',
+          props.class,
+        )"
+        v-bind="omitProps(delegatedProps, ['_tableRow', '_tableCell', 'colspan'])"
+      >
         <slot />
       </div>
     </TableCell>
