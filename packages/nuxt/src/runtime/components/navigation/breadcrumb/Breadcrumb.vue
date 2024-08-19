@@ -25,11 +25,7 @@ const delegatedProps = computed(() => {
     <slot name="home" :item="home">
       <BreadcrumbItem
         v-if="home"
-        :breadcrumb="breadcrumb"
-        :label="home.label"
-        :icon="home.icon"
-        :url="home.url"
-        v-bind="{ ...delegatedProps._breadcrumbItem }"
+        v-bind="{ ...home, ...delegatedProps._breadcrumbItem }"
       />
     </slot>
     <template v-for="(item, i) in items" :key="i">
@@ -46,10 +42,7 @@ const delegatedProps = computed(() => {
       <slot name="item" :item>
         <BreadcrumbItem
           :breadcrumb="breadcrumb"
-          :label="item.label"
-          :icon="item.icon"
-          :url="item.url"
-          v-bind="{ ...delegatedProps._breadcrumbItem }"
+          v-bind="{ ...item, ...delegatedProps._breadcrumbItem }"
         />
       </slot>
     </template>
