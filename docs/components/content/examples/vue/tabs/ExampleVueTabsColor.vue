@@ -25,8 +25,6 @@ const items = ref([
     },
   },
 ])
-
-const ServiceProvider = defineAsyncComponent(() => import('../radio/ExampleVueRadioFormGroup.vue'))
 </script>
 
 <template>
@@ -51,7 +49,7 @@ const ServiceProvider = defineAsyncComponent(() => import('../radio/ExampleVueRa
         </NButton>
       </div>
       <div v-if="item.value === 'service'">
-        <ServiceProvider />
+        <ExampleVueRadioFormGroup />
       </div>
       <div v-if="item.value === 'reviews'">
         <NFormGroup label="Write your review">

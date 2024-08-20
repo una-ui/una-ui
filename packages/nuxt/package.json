@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/nuxt",
   "type": "module",
-  "version": "0.11.0-beta.1",
+  "version": "0.12.0-beta.2",
   "description": "Nuxt module for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -42,6 +42,7 @@
     "@iconify-json/tabler": "^1.1.120",
     "@nuxt/kit": "^3.12.4",
     "@nuxtjs/color-mode": "^3.4.2",
+    "@tanstack/vue-table": "^8.20.4",
     "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/preset": "workspace:^",
     "@unocss/core": "^0.61.9",

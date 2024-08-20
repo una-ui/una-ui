@@ -39,6 +39,7 @@ export default defineConfig({
     '../packages/nuxt/src/preset.config.ts',
 
     '../packages/preset/src/_shortcuts/breadcrumb.ts',
+    '../packages/preset/src/_shortcuts/table.ts',
     '../packages/preset/src/_shortcuts/card.ts',
     '../packages/preset/src/_shortcuts/tabs.ts',
     '../packages/preset/src/_shortcuts/separator.ts',

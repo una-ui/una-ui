@@ -43,6 +43,19 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
+## Indeterminate
+
+By not providing a `modeValue` prop, the progress will be indeterminate. This means that the progress will be animated without a specific value.
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueProgressIndeterminate
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/progress/ExampleVueProgressIndeterminate.vue
+::
+:::
+
 ## Size
 
 `size="{size}"` - change the size of the progress.

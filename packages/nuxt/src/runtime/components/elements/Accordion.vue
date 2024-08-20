@@ -103,19 +103,19 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
       v-slot="{ open, close }"
       as="div"
       accordion="item"
-      :default-open="item.defaultOpen ?? defaultOpen"
+      :default-open="item.defaultOpen || defaultOpen"
       :class="una?.accordionItem"
     >
       <DisclosureButton
         :ref="() => (buttonRefs[i] = close)"
         as="template"
-        :disabled="item.disabled ?? disabled"
+        :disabled="item.disabled || disabled"
         @click="closeOthers(i)"
       >
         <slot name="label" :item="item" :index="i" :open="open" :close="close">
           <NButton
             v-bind="mergedProps(item)"
-            :btn="`~ block ${btn ?? ''}`"
+            :btn="`~ block ${btn || ''}`"
             :class="[
               { 'accordion-button-default-variant': !hasVariant && !isBaseVariant },
               { 'accordion-button-padding': !unstyle },
@@ -132,7 +132,7 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
                 v-if="leading || item.leading"
                 accordion="leading"
                 :class="una?.accordionLeading"
-                :name="item.leading ?? leading ?? ''"
+                :name="item.leading || leading || ''"
                 aria-hidden="true"
               />
             </template>
@@ -143,8 +143,8 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
                 accordion="trailing"
                 :class="[
                   trailingClose || (!trailingClose && open)
-                    ? una?.accordionTrailingClose ?? 'accordion-trailing-close'
-                    : una?.accordionTrailingOpen ?? 'accordion-trailing-open',
+                    ? una?.accordionTrailingClose || 'accordion-trailing-close'
+                    : una?.accordionTrailingOpen || 'accordion-trailing-open',
                   una?.accordionTrailing,
                 ]"
               >
@@ -165,14 +165,14 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
       </DisclosureButton>
 
       <Transition
-        :enter-active-class="una?.accordionLeaveActive ?? 'accordion-leave-active'"
-        :leave-active-class="una?.accordionEnterActive ?? 'accordion-enter-active'"
+        :enter-active-class="una?.accordionLeaveActive || 'accordion-leave-active'"
+        :leave-active-class="una?.accordionEnterActive || 'accordion-enter-active'"
         @enter="onEnter"
         @after-enter="onAfterEnter"
         @before-leave="onBeforeLeave"
         @leave="onLeave"
       >
-        <DisclosurePanel v-if="!item.mounted ?? !mounted">
+        <DisclosurePanel v-if="!item.mounted || !mounted">
           <ReuseTemplate
             v-bind="{
               item,

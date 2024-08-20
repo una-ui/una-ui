@@ -1,3 +1,22 @@
+# [0.12.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.12.0-beta.1...v0.12.0-beta.2) (2024-08-20)
+
+
+### Bug Fixes
+
+* **Table:** add column-header left pinning config ([ffdc9b2](https://github.com/una-ui/una-ui/commit/ffdc9b265fc4a693ed2f0100d095434825db3bed))
+
+
+
+# [0.12.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.11.0-beta.1...v0.12.0-beta.1) (2024-08-20)
+
+
+### Features
+
+* **Progress:** add indeterminate support ([#164](https://github.com/una-ui/una-ui/issues/164)) ([a10ac1c](https://github.com/una-ui/una-ui/commit/a10ac1c556fc385f505479e9735e55e937118853))
+* **Table:** introduce new component and preset ([#157](https://github.com/una-ui/una-ui/issues/157)) ([1aca459](https://github.com/una-ui/una-ui/commit/1aca459ed5248b293c0aa7d7e2aa976d7e5334bb))
+
+
+
 # [0.11.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.10.1-beta.1...v0.11.0-beta.1) (2024-08-13)
 
 

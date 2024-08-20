@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ExampleVueRadioFormGroup from '../radio/ExampleVueRadioFormGroup.vue'
-
 const items = ref([
   {
     value: 'account',
