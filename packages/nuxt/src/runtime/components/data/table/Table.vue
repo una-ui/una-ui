@@ -310,7 +310,7 @@ defineExpose({
       </slot>
 
       <TableLoading
-        v-if="props.loading"
+        :enabled="props.loading"
         :una="una"
         v-bind="props._tableLoading"
       >

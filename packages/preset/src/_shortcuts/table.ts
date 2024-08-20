@@ -18,7 +18,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-head-pinned-right': 'right-0',
 
   // table-header
-  'table-header': '[&_tr]:border-b border-base',
+  'table-header': '[&_tr]:border-b border-base relative',
 
   // table-row
   'table-row': 'border-b border-base hover:bg-muted data-[state=selected]:bg-muted',
@@ -36,16 +36,13 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
 
   // table-loading
   'table-loading-icon': 'i-lucide-refresh-ccw animate-spin text-lg',
-  'table-loading-row': '',
-  'table-loading-cell': 'p-4 whitespace-nowrap align-middle text-sm text-muted hover:bg-base',
-  'table-loading': 'grid place-items-center gap-4 py-10',
+  'table-loading-row': '!border-0',
+  'table-loading-cell': '',
+  'table-loading': 'absolute inset-x-0 overflow-hidden p-0',
 
   // table-footer
   'table-footer': 'border-t border-base bg-muted font-medium [&>tr]:last:border-b-0',
 }
-
-// { 'sticky bg-base': dataPinned },
-// dataPinned === 'left' ? 'left-0' : 'right-0',
 
 export const dynamicTable: [RegExp, (params: RegExpExecArray) => string][] = [
   // modifiers

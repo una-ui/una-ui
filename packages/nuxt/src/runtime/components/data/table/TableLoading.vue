@@ -31,7 +31,10 @@ const delegatedProps = computed(() => {
       :colspan="0"
       v-bind="delegatedProps._tableCell"
     >
-      <div class="table-loading">
+      <div
+        v-if="enabled"
+        class="table-loading"
+      >
         <slot>
           <Progress
             class="rounded-none"

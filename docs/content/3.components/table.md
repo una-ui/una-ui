@@ -59,6 +59,23 @@ Row selection allows you to select rows in the table. This is useful when you wa
 ::
 :::
 
+## Loading
+
+Loading allows you to show a loading progress indicator in the table. This is useful when you want to show a loading progress indicator in the table.
+
+| Prop      | Type      | Default | Description    |
+| --------- | --------- | ------- | -------------- |
+| `loading` | `Boolean` | `false` | Loading state. |
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableLoading
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableLoading.vue
+::
+:::
+
 ## Pagination
 
 Pagination allows you to paginate rows in the table. This is useful when you want to paginate rows in the table. Read more about pagination in the [Tanstack Pagination documentation](https://tanstack.com/table/latest/docs/guide/pagination){target="_blank"}.
