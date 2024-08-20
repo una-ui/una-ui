@@ -99,7 +99,6 @@ const columnsWithMisc = computed(() => {
   // add expanded column
   data = slots.expanded
     ? [
-        ...data,
         {
           accessorKey: 'expanded',
           header: '',
@@ -115,13 +114,14 @@ const columnsWithMisc = computed(() => {
               btnDefaultVariant: 'btn-ghost-gray btn-square',
               btnIconLabel: cn(
                 'transform transition-transform duration-200',
-                row.getIsExpanded() ? 'rotate-180' : 'rotate-0',
+                row.getIsExpanded() ? '-rotate-180' : 'rotate-0',
               ),
             },
           }),
           enableSorting: false,
           enableHiding: false,
         },
+        ...data,
       ]
     : data
 
