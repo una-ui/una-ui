@@ -6,7 +6,7 @@ export interface NBreadcrumbProps extends Extensions, Pick<NBreadcrumbItemProps,
   /**
    * Configuration for the home icon/name.
    */
-  home?: NBreadcrumbItemProps
+  home: NBreadcrumbItemProps
   /**
    *  An array of children BreadcrumbItem.
    */

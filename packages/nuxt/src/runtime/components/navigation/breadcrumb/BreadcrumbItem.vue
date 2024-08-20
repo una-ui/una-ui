@@ -31,29 +31,30 @@ const isBaseVariant = computed(() => props.breadcrumb?.includes('~'))
   >
     <component
       :is="withRouting ? NuxtLink : 'a'"
-      :href="!withRouting ? url : null"
-      :to="withRouting ? url : null"
+      v-bind="!withRouting ? { href: url } : { to: url }"
       flex="inline items-center"
     >
-      <div
-        v-if="icon && label"
-        class="breadcrumb-item-link"
-      >
-        <NIcon :name="icon" class="mb-0.5" />
-        <BreadcrumbLabel v-bind="props._breadcrumbLabel">
+      <slot name="item">
+        <div
+          v-if="icon && label"
+          class="breadcrumb-item-link"
+        >
+          <NIcon :name="icon" class="mb-0.5" />
+          <BreadcrumbLabel v-bind="props._breadcrumbLabel">
+            {{ label }}
+          </BreadcrumbLabel>
+        </div>
+        <NIcon
+          v-else-if="icon"
+          :name="icon"
+        />
+        <BreadcrumbLabel
+          v-else-if="label"
+          v-bind="props._breadcrumbLabel"
+        >
           {{ label }}
         </BreadcrumbLabel>
-      </div>
-      <NIcon
-        v-else-if="icon"
-        :name="icon"
-      />
-      <BreadcrumbLabel
-        v-else-if="label"
-        v-bind="props._breadcrumbLabel"
-      >
-        {{ label }}
-      </BreadcrumbLabel>
+      </slot>
     </component>
   </li>
 </template>

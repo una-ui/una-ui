@@ -22,14 +22,19 @@ const delegatedProps = computed(() => {
       props.class,
     )"
   >
-    <slot name="home" :item="home">
-      <BreadcrumbItem
-        v-if="home"
-        :breadcrumb="breadcrumb"
-        :with-routing="withRouting"
-        v-bind="{ ...home, ...delegatedProps._breadcrumbItem }"
-      />
-    </slot>
+    <!-- home -->
+    <BreadcrumbItem
+      v-if="home"
+      :breadcrumb="breadcrumb || home.breadcrumb"
+      :with-routing="withRouting"
+      v-bind="{ ...home, ...delegatedProps._breadcrumbItem }"
+    >
+      <template #item>
+        <slot name="home" :item="home" />
+      </template>
+    </BreadcrumbItem>
+
+    <!-- separator -->
     <template v-for="(item, i) in items" :key="i">
       <BreadcrumbSeparator
         v-if="home || i !== 0"
@@ -41,13 +46,17 @@ const delegatedProps = computed(() => {
           />
         </slot>
       </BreadcrumbSeparator>
-      <slot name="item" :item>
-        <BreadcrumbItem
-          :breadcrumb="breadcrumb"
-          :with-routing="withRouting"
-          v-bind="{ ...item, ...delegatedProps._breadcrumbItem }"
-        />
-      </slot>
+
+      <!-- item -->
+      <BreadcrumbItem
+        :breadcrumb="breadcrumb || item.breadcrumb"
+        :with-routing="withRouting"
+        v-bind="{ ...item, ...delegatedProps._breadcrumbItem }"
+      >
+        <template #item>
+          <slot name="item" :item="item" />
+        </template>
+      </BreadcrumbItem>
     </template>
   </ol>
 </template>
