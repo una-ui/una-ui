@@ -40,9 +40,16 @@ const delegatedProps = computed(() => {
         v-bind="omitProps(delegatedProps, ['_tableRow', '_tableCell', 'colspan'])"
       >
         <slot>
-          <span>
-            No data available
-          </span>
+          <div class="grid place-items-center gap-4">
+            <NIcon
+              name="i-tabler-database-x"
+              size="2xl"
+            />
+
+            <span>
+              No results.
+            </span>
+          </div>
         </slot>
       </div>
     </TableCell>
