@@ -164,7 +164,7 @@ const table = ref<Table<Person>>()
           <NProgress
             :model-value="cell.row.original.progress"
             :una="{
-              progressDefaultVariant: cell.row.original.progress >= 85
+              progressRoot: cell.row.original.progress >= 85
                 ? 'progress-success' : cell.row.original.progress >= 70
                   ? 'progress-info' : cell.row.original.progress >= 55
                     ? 'progress-warning' : 'progress-error' }"
