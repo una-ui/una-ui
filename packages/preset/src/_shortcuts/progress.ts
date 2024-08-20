@@ -12,6 +12,8 @@ export const staticProgress: Record<`${ProgressPrefix}-${string}` | ProgressPref
   // components
   'progress-root': 'relative h-0.5em w-full overflow-hidden rounded-full bg-muted',
   'progress-indicator': 'h-full w-full flex-1 bg-brand transition-all',
+
+  'progress-indeterminate': 'absolute bg-brand h-full',
 }
 
 export const dynamicProgress = [
