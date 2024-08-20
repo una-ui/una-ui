@@ -45,13 +45,13 @@ const delegatedProps = computed(() => {
       >
         <ProgressIndicator
           :class="cn(
-            'progress increase progress-indeterminate',
+            'increase progress-indeterminate',
             props.una?.progressIndicator,
           )"
         />
         <ProgressIndicator
           :class="cn(
-            'progress decrease progress-indeterminate',
+            'decrease progress-indeterminate',
             props.una?.progressIndicator,
           )"
         />

@@ -18,7 +18,10 @@ import SelectSeparator from './SelectSeparator.vue'
 const props = withDefaults(defineProps<NSelectProps>(), {
   size: 'sm',
 })
+
 const emits = defineEmits<SelectRootEmits>()
+
+const modelValue = defineModel<any>('modelValue')
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -28,23 +31,24 @@ const delegatedProps = computed(() => {
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 const transformerValue = computed(() => {
-  if (typeof forwarded.value.modelValue === 'object') {
+  if (typeof modelValue.value === 'object') {
     if (forwarded.value.valueAttribute)
-      return forwarded.value.modelValue[forwarded.value.valueAttribute]
+      return modelValue.value[forwarded.value.valueAttribute]
 
     if (forwarded.value.itemAttribute)
-      return forwarded.value.modelValue[forwarded.value.itemAttribute]
+      return modelValue.value[forwarded.value.itemAttribute]
   }
 
-  return forwarded.value.modelValue
+  return modelValue.value
 })
 
-provide('selectModelValue', forwarded.value.modelValue)
+provide('selectModelValue', modelValue)
 </script>
 
 <template>
   <SelectRoot
     v-bind="omitProps(forwarded, ['items', 'multipleGroup', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
+    :model-value="transformerValue"
   >
     <SelectTrigger
       :id
@@ -53,12 +57,12 @@ provide('selectModelValue', forwarded.value.modelValue)
       :select
       v-bind="forwarded._selectTrigger"
     >
-      <slot name="trigger" :value="forwarded.modelValue">
+      <slot name="trigger" :value="modelValue">
         <SelectValue
           v-bind="forwarded._selectValue"
           :placeholder="forwarded._selectValue?.placeholder || forwarded.placeholder"
         >
-          <slot :value="forwarded.modelValue">
+          <slot :value="modelValue">
             {{ transformerValue }}
           </slot>
         </SelectValue>
@@ -95,7 +99,7 @@ provide('selectModelValue', forwarded.value.modelValue)
               :size
               :select-item
               v-bind="{ ...props._selectItem, ...item._selectItem }"
-              :is-selected="isEqualObject(item, forwarded.modelValue)"
+              :is-selected="isEqualObject(item, modelValue)"
             >
               <slot name="item" :item="item">
                 {{ props.itemAttribute ? item[props.itemAttribute] : item }}
