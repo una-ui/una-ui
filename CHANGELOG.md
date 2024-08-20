@@ -1,3 +1,12 @@
+# [0.12.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.12.0-beta.1...v0.12.0-beta.2) (2024-08-20)
+
+
+### Bug Fixes
+
+* **Table:** add column-header left pinning config ([ffdc9b2](https://github.com/una-ui/una-ui/commit/ffdc9b265fc4a693ed2f0100d095434825db3bed))
+
+
+
 # [0.12.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.11.0-beta.1...v0.12.0-beta.1) (2024-08-20)
 
 
