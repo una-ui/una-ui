@@ -28,10 +28,6 @@ export interface NProgressProps extends Extensions {
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/progress.ts
    */
   una?: {
-    // configurations
-    progress?: HTMLAttributes['class']
-    progressDefaultVariant?: HTMLAttributes['class']
-
     // components
     progressRoot?: HTMLAttributes['class']
     progressIndicator?: HTMLAttributes['class']

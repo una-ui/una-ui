@@ -26,10 +26,8 @@ const delegatedProps = computed(() => {
     :class="
       cn(
         'progress-root',
-        props.una?.progressDefaultVariant,
-        props.class,
-        props.una?.progress,
         props.una?.progressRoot,
+        props.class,
       )
     "
   >
@@ -42,19 +40,18 @@ const delegatedProps = computed(() => {
         )"
         :style="`transform: translateX(-${100 - (props.modelValue ?? 0)}%);`"
       />
-
       <template
         v-else
       >
         <ProgressIndicator
           :class="cn(
-            'progress-indeterminate increase progress-indeterminate',
+            'progress increase progress-indeterminate',
             props.una?.progressIndicator,
           )"
         />
         <ProgressIndicator
           :class="cn(
-            'progress-indeterminate decrease progress-indeterminate',
+            'progress decrease progress-indeterminate',
             props.una?.progressIndicator,
           )"
         />
@@ -65,14 +62,14 @@ const delegatedProps = computed(() => {
 
 <style scoped>
 .increase.progress-indeterminate {
-  animation: progress-indeterminate-increase 2s ease-in-out infinite;
+  animation: progress-increase 2s ease-in-out infinite;
 }
 
 .decrease.progress-indeterminate  {
   animation: progress-indeterminate-decrease 2s 0.9s ease-in-out infinite;
 }
 
-@keyframes progress-indeterminate-decrease {
+@keyframes progress-decrease {
   0% {
     left: -90%;
     width: 90%;
@@ -84,7 +81,7 @@ const delegatedProps = computed(() => {
   }
 }
 
-@keyframes progress-indeterminate-increase {
+@keyframes progress-increase {
   0% {
     left: -5%;
     width: 5%;
