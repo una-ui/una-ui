@@ -167,6 +167,7 @@ export interface NTableEmptyProps {
 }
 
 export interface NTableLoadingProps {
+  loading?: boolean
   class?: HTMLAttributes['class']
   colspan?: number
 

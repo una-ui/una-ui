@@ -39,7 +39,11 @@ const delegatedProps = computed(() => {
         )"
         v-bind="omitProps(delegatedProps, ['_tableRow', '_tableCell', 'colspan'])"
       >
-        <slot />
+        <slot>
+          <span>
+            No data available
+          </span>
+        </slot>
       </div>
     </TableCell>
   </TableRow>

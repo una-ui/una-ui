@@ -71,6 +71,7 @@ const table = ref<Table<Pokemon>>()
         v-model:pagination="pagination"
         manual-pagination
         :columns
+        :loading="status === 'pending'"
         :page-count
         :data
       />

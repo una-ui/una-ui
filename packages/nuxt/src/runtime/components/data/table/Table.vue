@@ -308,6 +308,14 @@ defineExpose({
           </TableRow>
         </template>
       </slot>
+
+      <TableLoading
+        v-if="props.loading"
+        :una="una"
+        v-bind="props._tableLoading"
+      >
+        <slot name="loading" />
+      </TableLoading>
     </TableHeader>
 
     <!-- body -->
@@ -369,24 +377,13 @@ defineExpose({
         </template>
 
         <TableEmpty
-          v-else-if="!props.loading && !table.getRowModel().rows?.length"
+          v-else
           :colspan="table.getAllLeafColumns().length"
           :una="una"
           v-bind="props._tableEmpty"
         >
-          <slot name="empty">
-            No results.
-          </slot>
+          <slot name="empty" />
         </TableEmpty>
-
-        <TableLoading
-          v-if="props.loading"
-          :colspan="table.getAllLeafColumns().length"
-          :una="una"
-          v-bind="props._tableLoading"
-        >
-          <slot name="loading" />
-        </TableLoading>
       </slot>
     </TableBody>
 
