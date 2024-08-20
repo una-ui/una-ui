@@ -10,7 +10,6 @@ import type { NProgressProps } from '../../types'
 const props = withDefaults(
   defineProps<NProgressProps>(),
   {
-    modelValue: 0,
   },
 )
 
@@ -34,12 +33,64 @@ const delegatedProps = computed(() => {
   >
     <slot>
       <ProgressIndicator
+        v-if="props.modelValue !== undefined || props.modelValue === null"
         :class="cn(
           'progress-indicator',
           props.una?.progressIndicator,
         )"
         :style="`transform: translateX(-${100 - (props.modelValue ?? 0)}%);`"
       />
+
+      <template
+        v-else
+      >
+        <ProgressIndicator
+          :class="cn(
+            'progress-indeterminate increase progress-indeterminate',
+            props.una?.progressIndicator,
+          )"
+        />
+        <ProgressIndicator
+          :class="cn(
+            'progress-indeterminate decrease progress-indeterminate',
+            props.una?.progressIndicator,
+          )"
+        />
+      </template>
     </slot>
   </ProgressRoot>
 </template>
+
+<style scoped>
+.increase.progress-indeterminate {
+  animation: progress-indeterminate-increase 2s ease-in-out infinite;
+}
+
+.decrease.progress-indeterminate  {
+  animation: progress-indeterminate-decrease 2s 0.9s ease-in-out infinite;
+}
+
+@keyframes progress-indeterminate-decrease {
+  0% {
+    left: -90%;
+    width: 90%;
+  }
+
+  100% {
+    left: 110%;
+    width: 10%;
+  }
+}
+
+@keyframes progress-indeterminate-increase {
+  0% {
+    left: -5%;
+    width: 5%;
+  }
+
+  100% {
+    left: 130%;
+    width: 150%;
+  }
+}
+</style>
