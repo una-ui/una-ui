@@ -267,7 +267,7 @@ Server-side allows you to fetch data from the server. This is useful when you wa
 
 ## Slots
 
-> You can use the following slots to customize the switch.
+> You can use the following slots to customize the table.
 
 | Name              | Description         | Props    |
 | ----------------- | ------------------- | -------- |
