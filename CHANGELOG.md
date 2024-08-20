@@ -1,3 +1,12 @@
+## [0.12.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.12.0-beta.2...v0.12.1-beta.1) (2024-08-20)
+
+
+### Bug Fixes
+
+* **Select:** define modelValue reactivity ([#167](https://github.com/una-ui/una-ui/issues/167)) ([304a1a0](https://github.com/una-ui/una-ui/commit/304a1a0049543939a1aa4ca3b67006911931bab2)), closes [#166](https://github.com/una-ui/una-ui/issues/166)
+
+
+
 # [0.12.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.12.0-beta.1...v0.12.0-beta.2) (2024-08-20)
 
 
