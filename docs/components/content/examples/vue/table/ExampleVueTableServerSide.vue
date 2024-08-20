@@ -65,17 +65,15 @@ const table = ref<Table<Pokemon>>()
     </div>
 
     <!-- table -->
-    <div class="border border-base rounded-md">
-      <NTable
-        ref="table"
-        v-model:pagination="pagination"
-        manual-pagination
-        :columns
-        :loading="status === 'pending'"
-        :page-count
-        :data
-      />
-    </div>
+    <NTable
+      ref="table"
+      v-model:pagination="pagination"
+      manual-pagination
+      :columns
+      :loading="status === 'pending'"
+      :page-count
+      :data
+    />
 
     <!-- footer -->
     <div

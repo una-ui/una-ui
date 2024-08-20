@@ -103,79 +103,77 @@ const table = ref<Table<Person>>()
     </div>
 
     <!-- table -->
-    <div class="border border-base rounded-md">
-      <NTable
-        ref="table"
-        v-model="select"
-        :columns
-        :data
-        :global-filter="search"
-        enable-column-filters enable-row-selection enable-sorting
-        row-id="username"
-      >
-        <!-- filters -->
-        <template #status-filter="{ column }">
-          <NSelect
-            :items="['Relationship', 'Complicated', 'Single']"
-            placeholder="All"
-            :model-value="column.getFilterValue()"
-            @update:model-value="column?.setFilterValue($event)"
+    <NTable
+      ref="table"
+      v-model="select"
+      :columns
+      :data
+      :global-filter="search"
+      enable-column-filters enable-row-selection enable-sorting
+      row-id="username"
+    >
+      <!-- filters -->
+      <template #status-filter="{ column }">
+        <NSelect
+          :items="['Relationship', 'Complicated', 'Single']"
+          placeholder="All"
+          :model-value="column.getFilterValue()"
+          @update:model-value="column?.setFilterValue($event)"
+        />
+      </template>
+
+      <template #progress-filter="{ column }">
+        <div class="flex items-center space-x-2">
+          <NInput
+            type="number"
+            placeholder="min"
+            :model-value="column.getFilterValue()?.[0] ?? ''"
+            @update:model-value="column?.setFilterValue((old: [number, number]) => [
+              $event,
+              old?.[1],
+            ])"
           />
-        </template>
 
-        <template #progress-filter="{ column }">
-          <div class="flex items-center space-x-2">
-            <NInput
-              type="number"
-              placeholder="min"
-              :model-value="column.getFilterValue()?.[0] ?? ''"
-              @update:model-value="column?.setFilterValue((old: [number, number]) => [
-                $event,
-                old?.[1],
-              ])"
-            />
+          <NInput
+            type="number"
+            placeholder="max"
+            :model-value="column.getFilterValue()?.[1] ?? ''"
+            @update:model-value="column?.setFilterValue((old: [number, number]) => [
+              old?.[0],
+              $event,
+            ])"
+          />
+        </div>
+      </template>
+      <!-- end filter -->
 
-            <NInput
-              type="number"
-              placeholder="max"
-              :model-value="column.getFilterValue()?.[1] ?? ''"
-              @update:model-value="column?.setFilterValue((old: [number, number]) => [
-                old?.[0],
-                $event,
-              ])"
-            />
-          </div>
-        </template>
-        <!-- end filter -->
+      <!-- cells -->
+      <template #status-cell="{ cell }">
+        <NBadge
+          :una="{
+            badgeDefaultVariant: cell.row.original.status === 'relationship'
+              ? 'badge-soft-success' : cell.row.original.status === 'single'
+                ? 'badge-soft-info' : 'badge-soft-warning' }"
+          class="capitalize"
+          :label="cell.row.original.status"
+        />
+      </template>
 
-        <!-- cells -->
-        <template #status-cell="{ cell }">
-          <NBadge
+      <template #progress-cell="{ cell }">
+        <div class="flex items-center">
+          <NProgress
+            :model-value="cell.row.original.progress"
             :una="{
-              badgeDefaultVariant: cell.row.original.status === 'relationship'
-                ? 'badge-soft-success' : cell.row.original.status === 'single'
-                  ? 'badge-soft-info' : 'badge-soft-warning' }"
-            class="capitalize"
-            :label="cell.row.original.status"
+              progressDefaultVariant: cell.row.original.progress >= 85
+                ? 'progress-success' : cell.row.original.progress >= 70
+                  ? 'progress-info' : cell.row.original.progress >= 55
+                    ? 'progress-warning' : 'progress-error' }"
           />
-        </template>
-
-        <template #progress-cell="{ cell }">
-          <div class="flex items-center">
-            <NProgress
-              :model-value="cell.row.original.progress"
-              :una="{
-                progressDefaultVariant: cell.row.original.progress >= 85
-                  ? 'progress-success' : cell.row.original.progress >= 70
-                    ? 'progress-info' : cell.row.original.progress >= 55
-                      ? 'progress-warning' : 'progress-error' }"
-            />
-            <span class="ml-2 text-sm text-muted">{{ cell.row.original.progress }}%</span>
-          </div>
-        </template>
-        <!-- end cell -->
-      </NTable>
-    </div>
+          <span class="ml-2 text-sm text-muted">{{ cell.row.original.progress }}%</span>
+        </div>
+      </template>
+      <!-- end cell -->
+    </NTable>
 
     <!-- footer -->
     <div

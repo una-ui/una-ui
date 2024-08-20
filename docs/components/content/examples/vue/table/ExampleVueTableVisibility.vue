@@ -51,13 +51,11 @@ const columnVisibility = ref({})
 
     <NSeparator />
 
-    <div class="border border-base rounded-md">
-      <NTable
-        ref="table"
-        v-model:columnVisibility="columnVisibility"
-        :columns
-        :data
-      />
-    </div>
+    <NTable
+      ref="table"
+      v-model:columnVisibility="columnVisibility"
+      :columns
+      :data
+    />
   </div>
 </template>

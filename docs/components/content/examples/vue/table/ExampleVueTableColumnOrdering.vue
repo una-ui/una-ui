@@ -44,15 +44,14 @@ function randomizeColumns() {
   <NButton
     label="Randomize columns"
     leading="i-radix-icons-shuffle"
+    class="mb-4"
     @click="randomizeColumns"
   />
 
   <!-- table -->
-  <div class="mt-4 border border-base rounded-md">
-    <NTable
-      ref="table"
-      :columns
-      :data
-    />
-  </div>
+  <NTable
+    ref="table"
+    :columns
+    :data
+  />
 </template>

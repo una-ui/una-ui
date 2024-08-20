@@ -35,11 +35,9 @@ const columns: ColumnDef<Person>[] = [
 </script>
 
 <template>
-  <div class="border border-base rounded-md">
-    <NTable
-      :columns
-      enable-column-filters
-      :data
-    />
-  </div>
+  <NTable
+    :columns
+    enable-column-filters
+    :data
+  />
 </template>

@@ -47,11 +47,9 @@ const sorting = ref()
 </script>
 
 <template>
-  <div class="border border-base rounded-md">
-    <NTable
-      v-model:sorting="sorting"
-      :columns
-      :data
-    />
-  </div>
+  <NTable
+    v-model:sorting="sorting"
+    :columns
+    :data
+  />
 </template>

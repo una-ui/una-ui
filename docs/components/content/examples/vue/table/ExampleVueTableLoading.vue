@@ -42,12 +42,10 @@ const loading = ref(true)
       label="Loading"
     />
 
-    <div class="border border-base rounded-md">
-      <NTable
-        :loading
-        :columns
-        :data
-      />
-    </div>
+    <NTable
+      :loading
+      :columns
+      :data
+    />
   </div>
 </template>

@@ -43,14 +43,12 @@ const table = ref<Table<Person>>()
 <template>
   <div class="flex flex-col space-y-4">
     <!-- table -->
-    <div class="border border-base rounded-md">
-      <NTable
-        ref="table"
-        v-model:pagination="pagination"
-        :columns
-        :data
-      />
-    </div>
+    <NTable
+      ref="table"
+      v-model:pagination="pagination"
+      :columns
+      :data
+    />
 
     <!-- pagination -->
     <div

@@ -280,7 +280,7 @@ defineExpose({
         >
           <TableRow
             v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0 || enableColumnFilters"
-            class="hover:bg-base"
+            data-filter="true"
             :una="una"
             v-bind="props._tableRow"
           >

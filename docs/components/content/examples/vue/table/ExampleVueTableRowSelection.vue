@@ -38,15 +38,13 @@ const table = ref<Table<Person>>()
 
 <template>
   <div class="flex flex-col space-y-4">
-    <div class="border border-base rounded-md">
-      <NTable
-        ref="table"
-        v-model="select"
-        :columns
-        :data
-        enable-row-selection
-      />
-    </div>
+    <NTable
+      ref="table"
+      v-model="select"
+      :columns
+      :data
+      enable-row-selection
+    />
 
     <div
       class="flex items-center justify-between px-2"

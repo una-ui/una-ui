@@ -34,14 +34,12 @@ const columns: ColumnDef<Person>[] = [
 </script>
 
 <template>
-  <div class="border border-base rounded-md">
-    <NTable
-      :columns
-      :data
-      :column-pinning="{
-        left: ['status'],
-        right: ['priority'],
-      }"
-    />
-  </div>
+  <NTable
+    :columns
+    :data
+    :column-pinning="{
+      left: ['status'],
+      right: ['priority'],
+    }"
+  />
 </template>

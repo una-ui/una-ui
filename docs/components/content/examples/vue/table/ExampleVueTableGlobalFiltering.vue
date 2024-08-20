@@ -53,12 +53,10 @@ const search = ref('')
       />
     </div>
 
-    <div class="border border-base rounded-md">
-      <NTable
-        :columns
-        :global-filter="search"
-        :data
-      />
-    </div>
+    <NTable
+      :columns
+      :global-filter="search"
+      :data
+    />
   </div>
 </template>

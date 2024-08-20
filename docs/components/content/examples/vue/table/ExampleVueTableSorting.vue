@@ -35,12 +35,10 @@ const columns: ColumnDef<Person>[] = [
 </script>
 
 <template>
-  <div class="border border-base rounded-md">
-    <NTable
-      :columns
-      :data
-      enable-sorting
-      enable-multi-sort
-    />
-  </div>
+  <NTable
+    :columns
+    :data
+    enable-sorting
+    enable-multi-sort
+  />
 </template>

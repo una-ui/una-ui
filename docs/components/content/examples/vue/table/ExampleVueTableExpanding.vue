@@ -36,22 +36,20 @@ const expanded = ref<Record<string, boolean>>({})
 </script>
 
 <template>
-  <div class="border border-base rounded-md">
-    <NTable
-      v-model:expanded="expanded"
-      :columns
-      :data
-    >
-      <template #expanded="{ row }">
-        <div class="p-4">
-          <p class="text-sm text-muted">
-            Object:
-          </p>
-          <p class="text-base">
-            {{ row }}
-          </p>
-        </div>
-      </template>
-    </NTable>
-  </div>
+  <NTable
+    v-model:expanded="expanded"
+    :columns
+    :data
+  >
+    <template #expanded="{ row }">
+      <div class="p-4">
+        <p class="text-sm text-muted">
+          Object:
+        </p>
+        <p class="text-base">
+          {{ row }}
+        </p>
+      </div>
+    </template>
+  </NTable>
 </template>

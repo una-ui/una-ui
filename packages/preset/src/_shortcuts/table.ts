@@ -7,7 +7,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
 
   // table-root
   'table-root': 'w-full caption-bottom text-sm',
-  'table-root-wrapper': 'relative w-full overflow-x-auto overflow-y-hidden',
+  'table-root-wrapper': 'relative w-full overflow-x-auto overflow-y-hidden border border-base rounded-md',
   'table-body': '[&_tr:last-child]:border-0 border-base',
   'table-caption': 'mt-4 text-sm text-muted',
 
@@ -21,7 +21,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-header': '[&_tr]:border-b border-base relative',
 
   // table-row
-  'table-row': 'border-b border-base hover:bg-muted data-[state=selected]:bg-muted',
+  'table-row': 'border-b border-base hover:bg-muted data-[filter=true]:hover:bg-base data-[state=selected]:bg-muted',
 
   // table-cell
   'table-cell': 'p-4 align-middle [&:has([role=checkbox])]:pr-0',
@@ -45,12 +45,6 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
 }
 
 export const dynamicTable: [RegExp, (params: RegExpExecArray) => string][] = [
-  // modifiers
-  [/^table-ring(-(\S+))?$/, ([, , c = 'gray']) => `ring-1 ring-inset ring-${c}-200 dark:ring-${c}-700`],
-
-  // variants
-  [/^table-solid(-(\S+))?$/, ([, , c = 'gray']) => `table-ring-${c} bg-${c}-50 text-${c}-500 dark:bg-${c}-900 dark:text-${c}-400`],
-  [/^table-outline(-(\S+))?$/, ([, , c = 'gray']) => `table-ring-${c} bg-transparent text-${c}-500 dark:text-${c}-400`],
 ]
 
 export const table = [
