@@ -29,10 +29,6 @@ export interface NSelectProps extends SelectExtensions {
    */
   id?: string
   /**
-   * The value of the select.
-   */
-  modelValue: any
-  /**
    * Enable multiple group items.
    *
    * @default false
