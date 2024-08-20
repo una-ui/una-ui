@@ -38,7 +38,6 @@ const delegatedProps = computed(() => {
       >
         <slot>
           <Progress
-            class="rounded-none"
             size="3px"
           />
         </slot>
