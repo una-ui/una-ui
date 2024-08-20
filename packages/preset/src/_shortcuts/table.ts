@@ -36,7 +36,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
 
   // table-loading
   'table-loading-icon': 'i-lucide-refresh-ccw animate-spin text-lg',
-  'table-loading-row': '!border-0',
+  'table-loading-row': 'data-[loading=true]:border-0',
   'table-loading-cell': '',
   'table-loading': 'absolute inset-x-0 overflow-hidden p-0',
 

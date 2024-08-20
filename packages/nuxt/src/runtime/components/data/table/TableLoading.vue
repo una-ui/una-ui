@@ -20,6 +20,7 @@ const delegatedProps = computed(() => {
     :class="cn(
       'table-loading-row',
     )"
+    data-loading="true"
     v-bind="delegatedProps._tableRow"
   >
     <td
