@@ -18,14 +18,14 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-head-pinned-right': 'right-0',
 
   // table-header
-  'table-header': '[&_tr]:border-b border-base relative',
+  'table-header': '[&_tr]:border-b border-base',
 
   // table-row
   'table-row': 'border-b border-base hover:bg-muted data-[filter=true]:hover:bg-base data-[state=selected]:bg-muted',
 
   // table-cell
   'table-cell': 'p-4 align-middle [&:has([role=checkbox])]:pr-0',
-  'table-cell-pinned': 'sticky z-10 bg-base',
+  'table-cell-pinned': 'sticky bg-base',
   'table-cell-pinned-left': 'left-0',
   'table-cell-pinned-right': 'right-0',
 

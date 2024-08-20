@@ -126,7 +126,7 @@ export interface NTableBodyProps {
 export interface NTableHeadProps {
   class?: HTMLAttributes['class']
 
-  dataPinned?: boolean | 'left' | 'right'
+  dataPinned?: 'left' | 'right' | false
 
   una?: Pick<NTableUnaProps, 'tableHead'>
 }
@@ -151,6 +151,7 @@ export interface NTableRowProps {
 
 export interface NTableCellProps {
   class?: HTMLAttributes['class']
+
   dataPinned?: 'left' | 'right' | false
 
   una?: Pick<NTableUnaProps, 'tableCell'>

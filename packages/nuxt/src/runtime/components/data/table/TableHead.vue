@@ -11,7 +11,7 @@ const props = defineProps<NTableHeadProps>()
       'table-head',
       props.class,
       { 'table-head-pinned': props.dataPinned },
-      props.dataPinned === 'left' ? 'table-head-pinned' : 'table-head-pinned-right',
+      props.dataPinned === 'left' ? 'table-head-pinned-left' : 'table-head-pinned-right',
     )"
     v-bind="$attrs"
   >
