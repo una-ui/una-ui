@@ -24,7 +24,7 @@ const endpoint = computed (() => {
   return `https://pokeapi.co/api/v2/pokemon?limit=${pageSize}&offset=${pageSize * pageIndex}`
 })
 
-const { data: resource, refresh, status } = await useFetch<ResourceMeta>(endpoint)
+const { data: resource, refresh, status } = await useLazyFetch<ResourceMeta>(endpoint)
 
 const data = computed(() => {
   return resource.value?.results ?? []
