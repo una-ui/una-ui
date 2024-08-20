@@ -301,4 +301,50 @@ Server-side allows you to fetch data from the server. This is useful when you wa
 @@@ ../packages/preset/src/_shortcuts/table.ts
 
 ## Component
-@@@ ../packages/nuxt/src/runtime/components/data/table/table.vue
+
+:::CodeGroup
+::code-block{label="Table" preview}
+@@@ ../packages/nuxt/src/runtime/components/data/table/Table.vue
+
+::
+::code-block{label="TableRoot"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableRoot.vue
+
+::
+::code-block{label="TableHeader"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableHeader.vue
+
+::
+::code-block{label="TableHead"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableHead.vue
+
+::
+::code-block{label="TableBody"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableBody.vue
+
+::
+::code-block{label="TableFooter"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableFooter.vue
+
+::
+::code-block{label="TableCell"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableCell.vue
+
+::
+::code-block{label="TableRow"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableRow.vue
+
+::
+::code-block{label="TableEmpty"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableEmpty.vue
+
+::
+::code-block{label="TableLoading"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableLoading.vue
+
+::
+::code-block{label="TableCaption"}
+@@@ ../packages/nuxt/src/runtime/components/data/table/TableCaption.vue
+
+::
+:::
