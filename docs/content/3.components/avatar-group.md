@@ -29,7 +29,7 @@ description: 'NAvatarGroup component - used to display a group of NAvatar compon
 | ---- | ------- | ------------------------------------- |
 | size | `md`    | The size of the avatars in the group. |
 
-> 🚀 You can freely adjust the size of the button using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+> 🚀 You can freely adjust the size of the avatars in the group using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
 
 ::alert{type="info"}
 You can use `size` prop to set the size of the entire `NAvatar` or you can set the size of individual avatars using the `size` prop on the `NAvatar` component.
@@ -48,9 +48,9 @@ You can use `size` prop to set the size of the entire `NAvatar` or you can set t
 
 Similar to the `size` prop, any available props of the `NAvatar` component can be directly passed to the `NAvatarGroup` component. These props will then be automatically forwarded to the individual `NAvatar` components within the group.
 
-You can also individually customize each `NAvatar`. refer to the [NAvatar](avatar) component for more information.
+You can also individually customize each `NAvatar`, refer to the [NAvatar](avatar) component for more information.
 
-You can also use the `una` prop to add utility classes. refer to the [Props](#props) and [Presets](#presets) sections for more information.
+You can also use the `una` prop to add utility classes, refer to the [Props](#props) and [Presets](#presets) sections for more information.
 
 :::CodeGroup
 ::code-block{label="Preview" preview}

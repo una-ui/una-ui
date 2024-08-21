@@ -21,7 +21,7 @@ description: 'NIndicator component - used to display a basic indicator with or w
 
 ## Variant
 
-`indicator="{variant}"` - change the variant of the button.
+`indicator="{variant}"` - change the variant of the indicator.
 
 ::alert{type="info"}
 For the moment, only the `solid` variant is available. You can add your own variant through configuration.
@@ -34,7 +34,7 @@ For the moment, only the `solid` variant is available. You can add your own vari
 
 ## Color
 
-`indicator="{variant}-{color}"` - change the color of the variant.
+`indicator="{variant}-{color}"` - change the color of the indicator.
 
 ::alert{type="info"}
 You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
