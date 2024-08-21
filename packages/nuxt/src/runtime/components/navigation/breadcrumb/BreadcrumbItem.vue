@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<NBreadcrumbItemProps>(), {
   }),
 })
 
-const breadcrumbVariants = ['solid', 'link', 'text'] as const
+const breadcrumbVariants = ['link', 'text'] as const
 const hasVariant = computed(() => breadcrumbVariants.some(breadcrumbVariant => props.breadcrumb?.includes(breadcrumbVariant)))
 const isBaseVariant = computed(() => props.breadcrumb?.includes('~'))
 </script>
