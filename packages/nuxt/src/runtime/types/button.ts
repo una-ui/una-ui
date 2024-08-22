@@ -1,6 +1,10 @@
 import type { HTMLAttributes } from 'vue'
 
-interface Extensions { class?: HTMLAttributes['class'] }
+interface Extensions {
+  class?: HTMLAttributes['class']
+  breadcrumbActive?: string
+  breadcrumbInactive?: string
+}
 
 export interface NButtonProps extends Extensions {
   /**
