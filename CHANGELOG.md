@@ -1,3 +1,17 @@
+# [0.13.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.12.1-beta.1...v0.13.0-beta.1) (2024-08-22)
+
+
+### Bug Fixes
+
+* **Progress:** update indeterminate class config ([848bedf](https://github.com/una-ui/una-ui/commit/848bedf13af8d28f67b3cb6b1b7230483d9eb0a8))
+
+
+### Features
+
+* **Breadcrumb:** introduce new component and preset ([#165](https://github.com/una-ui/una-ui/issues/165)) ([9131df9](https://github.com/una-ui/una-ui/commit/9131df97be7b9acbed7d2d5e62ecbd4bde1d6c7f))
+
+
+
 ## [0.12.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.12.0-beta.2...v0.12.1-beta.1) (2024-08-20)
 
 
