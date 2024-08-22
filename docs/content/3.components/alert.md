@@ -89,10 +89,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 `size="{size}"` - change the size of the alert.
 
-> 🚀 You can freely adjust the size of the input using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+> 🚀 You can freely adjust the size of the alert using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
 
 ::alert{type="info"}
-The `padding`, `icons`, and `text-size` of the input scale depends on the `size`. If you want to change the `text-size` and `padding` simultaneously, you can always customize it using utility classes.
+The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`. If you want to change the `text-size` and `padding` simultaneously, you can always customize it using utility classes.
 ::
 
 :::CodeGroup

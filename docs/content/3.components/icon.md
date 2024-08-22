@@ -9,7 +9,7 @@ description: 'NIcon component - used to display icons.'
 ## Basic
 
 ::alert{type="info"}
-By default, we use the `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/){target="_blank"}, refer to [configuration](/getting-started/configuration) for more information.
+By default, we use the `radix-icons` `lucide` `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/){target="_blank"}, refer to [configuration](/getting-started/configuration) for more information.
 ::
 
 use the `NIcon` tag to create a basic icon.
