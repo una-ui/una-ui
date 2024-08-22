@@ -1,72 +1,126 @@
 import type { HTMLAttributes } from 'vue'
+import type { NButtonProps } from './button'
 
-interface Extensions { class?: HTMLAttributes['class'] }
+interface BaseExtensions { class?: HTMLAttributes['class'] }
 
-export interface NBreadcrumbProps extends Extensions, Pick<NBreadcrumbItemProps, 'breadcrumb' | 'withRouting'> {
+export interface NBreadcrumbProps extends BaseExtensions, Pick<NBreadcrumbLinkProps, 'breadcrumbActive' | 'breadcrumbInactive'> {
   /**
-   * Configuration for the home icon/name.
-   */
-  home: NBreadcrumbItemProps
-  /**
-   *  An array of children BreadcrumbItem.
-   */
-  items?: NBreadcrumbItemProps[]
-
-  // sub-components
-  _breadcrumbItem?: Partial<NBreadcrumbItemProps>
-  _breadcrumbSeparator?: Partial<NBreadcrumbSeparatorProps>
-}
-
-export interface NBreadcrumbItemProps extends Extensions {
-  /**
-   * Allows you to add `UnaUI` breadcrumb preset properties,
-   * Think of it as a shortcut for adding options or variants to the preset if available.
+   * List of items to display in the breadcrumb.
    *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/breadcrumb.ts
    * @example
-   * breadcrumb="solid-yellow"
+   * items: [{ label: 'Home', to: '/' }, { label: 'About', to: '/about' }]
    */
-  breadcrumb?: string
+  items: Partial<NButtonProps>[]
+  separator?: NBreadcrumbSeparatorProps['icon']
+  ellipsis?: NBreadcrumbEllipsisProps['icon']
   /**
-   * Property name or getter function to use as the label of an item.
-   */
-  label?: string
-  /**
-   * Icon of the item.
-   */
-  icon?: string
-  /**
-   * Url of the item.
-   */
-  url?: string
-  /**
-   * `withRouting` allows to use Nuxt routing.
+   * Allows you to change the size of the input.
    *
-   * @default false
+   * @default sm
+   *
+   * @example
+   * size="sm" | size="2cm" | size="2rem" | size="2px"
    */
-  withRouting?: boolean
+  size?: string
+
+  // maxItems?: number
 
   // sub-components
-  _breadcrumbLabel?: Partial<NBreadcrumbLabelProps>
+  _breadcrumbSeparator?: Partial<NBreadcrumbSeparatorProps>
+  _breadcrumbItem?: Partial<NBreadcrumbItemProps>
+  _breadcrumbRoot?: Partial<NBreadcrumbRootProps>
+  _breadcrumbList?: Partial<NBreadcrumbListProps>
+  _breadcrumbLink?: Partial<NBreadcrumbLinkProps>
+  _breadcrumbEllipsis?: Partial<NBreadcrumbEllipsisProps>
+
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/breadcrumb.ts
    */
-  una?: {
-    breadcrumb?: HTMLAttributes['class']
-    breadcrumbDefaultVariant?: HTMLAttributes['class']
-  }
+  una?: NBreadcrumbUnaProps
 }
 
-export interface NBreadcrumbSeparatorProps extends Extensions {
-  una?: {
-    breadcrumbSeparator?: HTMLAttributes['class']
-  }
+export interface NBreadcrumbRootProps extends BaseExtensions {
+  una?: Pick<NBreadcrumbUnaProps, 'breadcrumbRoot'>
 }
 
-export interface NBreadcrumbLabelProps extends Extensions {
-  una?: {
-    breadcrumbLabel?: HTMLAttributes['class']
-  }
+export interface NBreadcrumbItemProps extends BaseExtensions {
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/breadcrumb.ts
+   */
+  una?: Pick<NBreadcrumbUnaProps, 'breadcrumbItem'>
+}
+
+export interface NBreadcrumbSeparatorProps extends BaseExtensions {
+  /**
+   * Custom separator icon.
+   */
+  icon?: string
+  /**
+   * Allows you to change the size of the input.
+   *
+   * @default sm
+   *
+   * @example
+   * size="sm" | size="2cm" | size="2rem" | size="2px"
+   */
+  size?: string
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/breadcrumb.ts
+   */
+  una?: Pick<NBreadcrumbUnaProps, 'breadcrumbSeparator' | 'breadcrumbSeparatorIcon'>
+}
+
+export interface NBreadcrumbListProps extends BaseExtensions {
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/breadcrumb.ts
+   */
+  una?: Pick<NBreadcrumbUnaProps, 'breadcrumbList'>
+}
+
+export interface NBreadcrumbLinkProps extends BaseExtensions, NButtonProps {
+  active?: boolean
+  breadcrumbActive?: string
+  breadcrumbInactive?: string
+}
+
+export interface NBreadcrumbEllipsisProps extends BaseExtensions {
+  /**
+   * Custom separator icon.
+   */
+  icon?: string
+  /**
+   *  /**
+   * Allows you to change the size of the input.
+   *
+   * @default sm
+   *
+   * @example
+   * size="sm" | size="2cm" | size="2rem" | size="2px"
+   */
+  size?: string
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/breadcrumb.ts
+   */
+  una?: Pick<NBreadcrumbUnaProps, 'breadcrumbEllipsis' | 'breadcrumbEllipsisIcon'>
+}
+
+interface NBreadcrumbUnaProps {
+  breadcrumb?: HTMLAttributes['class']
+  breadcrumbRoot?: HTMLAttributes['class']
+  breadcrumbItem?: HTMLAttributes['class']
+  breadcrumbEllipsis?: HTMLAttributes
+  breadcrumbEllipsisIcon?: HTMLAttributes['class']
+  breadcrumbList?: HTMLAttributes['class']
+  breadcrumbSeparator?: HTMLAttributes['class']
+  breadcrumbSeparatorIcon?: HTMLAttributes['class']
 }

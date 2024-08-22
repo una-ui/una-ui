@@ -2,22 +2,34 @@ type BreadcrumbPrefix = 'breadcrumb'
 
 export const staticBreadcrumb: Record<`${BreadcrumbPrefix}-${string}` | BreadcrumbPrefix, string> = {
   // config
-  'breadcrumb-default-variant': 'breadcrumb-text-gray',
+  'breadcrumb': '',
+  'breadcrumb-active': 'breadcrumb-active-text-primary',
+  'breadcrumb-inactive': 'breadcrumb-inactive-text-muted',
+  'breadcrumb-separator-icon': 'i-radix-icons-chevron-right',
+  'breadcrumb-elipsis-icon': 'i-radix-icons-dots-horizontal',
 
-  // base
-  'breadcrumb': 'flex items-center list-none text-nowrap text-sm',
-  'breadcrumb-separator': 'flex-shrink-0 text-$c-gray-400 dark:text-$c-gray-200 mx-1',
-  'breadcrumb-disabled': 'disabled:n-disabled',
-  'breadcrumb-item': 'inline-flex items-center gap-1.5',
-  'breadcrumb-label': '',
-  'breadcrumb-item-link': 'flex items-center gap-1',
+  // components
+  'breadcrumb-root': '',
+  'breadcrumb-list': 'flex flex-wrap items-center break-words text-muted gap-0.5',
+  'breadcrumb-link': 'transition-colors font-normal btn-square',
+  'breadcrumb-item': 'inline-flex items-center',
 
-  'breadcrumb-text-gray': 'text-$c-gray-400 hover:text-$c-gray-800 data-[state=active]:text-$c-gray-800',
+  // TODO
+  'breadcrumb-ellipsis': 'flex h-9 w-9 items-center justify-center',
 }
 
-export const dynamicBreadcrumb: [RegExp, (params: RegExpExecArray) => string][] = [
-  [/^breadcrumb-text(-(\S+))?$/, ([, , c = 'primary']) => `text-${c}-400 hover:text-${c}-800 dark:text-${c}-200 dark:hover:text-${c}-500 data-[state=active]:text-${c}-700 dark:data-[state=active]:text-${c}-500`],
-  [/^breadcrumb-link(-(\S+))?$/, ([, , c = 'primary']) => `text-${c}-400 dark:text-${c}-200 hover:underline underline-offset-4 hover:text-${c}-700 dark:hover:text-${c}-500 data-[state=active]:text-${c}-700 dark:data-[state=active]:text-${c}-500`],
+export const dynamicBreadcrumb = [
+  // states
+  [
+    /^breadcrumb-active-(\S+)-(\S+)$/,
+    ([, variant = 'text', color = 'primary']) =>
+      `data-[state=active]:btn-${variant}-${color}`,
+  ],
+  [
+    /^breadcrumb-inactive-(\S+)-(\S+)$/,
+    ([, variant = 'text', color = 'muted']) =>
+      `data-[state=inactive]:btn-${variant}-${color}`,
+  ],
 ]
 
 export const breadcrumb = [

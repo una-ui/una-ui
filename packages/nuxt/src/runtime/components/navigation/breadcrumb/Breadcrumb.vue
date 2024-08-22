@@ -1,62 +1,69 @@
-<script setup lang="ts">
-import { computed } from 'vue'
+<script lang="ts" setup>
 import type { NBreadcrumbProps } from '../../../types'
-import NIcon from '../../elements/Icon.vue'
-import { cn, omitProps } from '../../../utils'
+import { cn } from '../../../utils'
+import BreadcrumbRoot from './BreadcrumbRoot.vue'
+import BreadcrumbList from './BreadcrumbList.vue'
 import BreadcrumbItem from './BreadcrumbItem.vue'
+import BreadcrumbLink from './BreadcrumbLink.vue'
 import BreadcrumbSeparator from './BreadcrumbSeparator.vue'
 
 const props = defineProps<NBreadcrumbProps>()
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
 </script>
 
 <template>
-  <ol
-    v-bind="omitProps(delegatedProps, ['items', 'breadcrumb', 'withRouting'])"
+  <BreadcrumbRoot
     :class="cn(
       'breadcrumb',
       props.class,
+      props.una?.breadcrumb,
     )"
+    :una
+    :size
+    v-bind="_breadcrumbRoot"
   >
-    <!-- home -->
-    <BreadcrumbItem
-      v-if="home"
-      :breadcrumb="breadcrumb || home.breadcrumb"
-      :with-routing="withRouting"
-      v-bind="{ ...home, ...delegatedProps._breadcrumbItem }"
-    >
-      <template #item>
-        <slot name="home" :item="home" />
-      </template>
-    </BreadcrumbItem>
-
-    <!-- separator -->
-    <template v-for="(item, i) in items" :key="i">
-      <BreadcrumbSeparator
-        v-if="home || i !== 0"
-        v-bind="delegatedProps._breadcrumbSeparator"
+    <slot name="root" :items="items">
+      <BreadcrumbList
+        :una
+        :size
+        v-bind="_breadcrumbList"
       >
-        <slot name="separator">
-          <NIcon
-            name="i-heroicons:chevron-right-20-solid"
-          />
-        </slot>
-      </BreadcrumbSeparator>
-
-      <!-- item -->
-      <BreadcrumbItem
-        :breadcrumb="breadcrumb || item.breadcrumb"
-        :with-routing="withRouting"
-        v-bind="{ ...item, ...delegatedProps._breadcrumbItem }"
-      >
-        <template #item>
-          <slot name="item" :item="item" />
+        <template
+          v-for="(item, i) in props.items"
+          :key="i"
+        >
+          <slot name="list" :item="item">
+            <BreadcrumbItem
+              :una
+              :size
+              v-bind="_breadcrumbItem"
+            >
+              <slot name="item" :item="item">
+                <BreadcrumbLink
+                  :active="i === items.length - 1"
+                  :breadcrumb-active="props.breadcrumbActive"
+                  :breadcrumb-inactive="props.breadcrumbInactive"
+                  :size
+                  v-bind="{
+                    ...item,
+                    ..._breadcrumbLink,
+                  }"
+                >
+                  <slot :item="item" />
+                </BreadcrumbLink>
+              </slot>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator
+              v-if="i < props.items!.length - 1"
+              :icon="props.separator"
+              :size
+              :una
+              v-bind="_breadcrumbSeparator"
+            >
+              <slot name="separator" />
+            </BreadcrumbSeparator>
+          </slot>
         </template>
-      </BreadcrumbItem>
-    </template>
-  </ol>
+      </BreadcrumbList>
+    </slot>
+  </BreadcrumbRoot>
 </template>

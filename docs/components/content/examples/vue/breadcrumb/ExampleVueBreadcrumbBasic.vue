@@ -1,15 +1,49 @@
 <script setup lang="ts">
-const home = ref({
-  label: 'Home',
-  url: '/getting-started',
-})
-
 const items = ref([
-  { label: 'Components', url: '/components/accordion' },
-  { label: 'Breadcrumb', url: '/components/breadcrumb' },
+  {
+    label: 'i-radix-icons-home',
+    icon: true,
+    to: '/',
+  },
+  {
+    label: 'Components',
+    to: '/components/accordion',
+  },
+  {
+    label: 'Breadcrumb',
+    to: '/components/breadcrumb',
+  },
+])
+
+const items2 = ref([
+  {
+    leading: 'i-radix-icons-home',
+    label: 'Home',
+    to: '/',
+  },
+  {
+    label: 'Components',
+    leading: 'i-radix-icons-cube',
+    to: '/components/accordion',
+  },
+  {
+    label: 'Breadcrumb',
+    leading: 'i-radix-icons-link-2',
+    to: '/components/breadcrumb',
+  },
 ])
 </script>
 
 <template>
-  <NBreadcrumb :home :items />
+  <div class="flex flex-col space-y-4">
+    <NBreadcrumb
+      :items
+    />
+
+    <NSeparator />
+
+    <NBreadcrumb
+      :items="items2"
+    />
+  </div>
 </template>

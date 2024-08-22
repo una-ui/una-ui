@@ -24,11 +24,12 @@ import { tabs } from './tabs'
 import { select } from './select'
 import { separator } from './separator'
 import { card } from './card'
-import { breadcrumb } from './breadcrumb'
 import { table } from './table'
+import { breadcrumb } from './breadcrumb'
 
 export const shortcuts = [
   ...general,
+  ...breadcrumb,
   ...accordion,
   ...btn,
   ...formGroup,
@@ -53,6 +54,5 @@ export const shortcuts = [
   ...select,
   ...separator,
   ...card,
-  ...breadcrumb,
   ...table,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

@@ -1,20 +1,30 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import type { NBreadcrumbSeparatorProps } from '../../../types'
 import { cn } from '../../../utils'
+import Icon from '../../elements/Icon.vue'
 
-const props = defineProps<NBreadcrumbSeparatorProps>()
+const props = withDefaults(defineProps<NBreadcrumbSeparatorProps>(), {
+  icon: 'breadcrumb-separator-icon',
+  size: 'sm',
+})
 </script>
 
 <template>
-  <div
-    :class="
-      cn(
-        'breadcrumb-separator',
-        props.class,
-        props.una?.breadcrumbSeparator,
-      )
-    "
+  <li
+    role="presentation"
+    aria-hidden="true"
+    :class="cn(
+      '',
+      props.class,
+      props.una?.breadcrumbSeparator,
+    )"
+    :size
   >
-    <slot />
-  </div>
+    <slot>
+      <Icon
+        :name="icon"
+        :class="props.una?.breadcrumbSeparatorIcon"
+      />
+    </slot>
+  </li>
 </template>

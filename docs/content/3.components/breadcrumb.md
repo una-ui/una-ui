@@ -2,7 +2,7 @@
 description: 'NBreadcrumb - use to display the path of the current page and the hierarchy of previous routes/links.'
 ---
 
-# 🌑 Breadcrumb
+# 🟢 Breadcrumb
 
 ---
 
@@ -10,10 +10,9 @@ description: 'NBreadcrumb - use to display the path of the current page and the 
 
 `NBreadcrumb` - use to display the path of the current page and the hierarchy of previous routes/links.
 
-| Prop          | Type      | Default  | Description                    |
-| ------------- | --------- | -------- | ------------------------------ |
-| `home`        | `Object`  | `{}`     | The root item of breadcrumb    |
-| `items`       | `Array`   | `[]`     | The list of menuitems          |
+| Prop    | Type    | Default | Description                                                                                                                                     |
+| ------- | ------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `items` | `Array` | `[]`    | The array of `Links` that wrapped around [NButton](button) component, which means that all the props and slots of NButton are available to use. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -24,52 +23,15 @@ description: 'NBreadcrumb - use to display the path of the current page and the 
 ::
 :::
 
-## With routing
+## Variant & Color
 
-`withRouting` gives the opportunity to use Nuxt routing with `NuxtLink` under the hood.
-
-| Prop          | Type      | Default  | Description                              |
-| ------------- | --------- | -------- | ---------------------------------------- |
-| `withRouting` | `Boolean` | `false`  | Allows to use Nuxt routing               |
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueBreadcrumbRouting
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbRouting.vue
-::
-:::
-
-## Separator
-
-> You can use the `NIcon` component with `<template #separator></template>` to change default separator for the breadcrumb.
+| Prop                  | Type                | Default        | Description                                |
+| --------------------- | ------------------- | -------------- | ------------------------------------------ |
+| `breadcrumb-active`   | `{variant}-{color}` | `text-primary` | The active breadcrumb variant and color.   |
+| `breadcrumb-inactive` | `{variant}-{color}` | `text-muted`   | The inactive breadcrumb variant and color. |
 
 ::alert{type="info"}
-  Read more about the `NIcon` component [here](icon).
-::
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueBreadcrumbSeparator
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSeparator.vue
-::
-:::
-
-## Variant
-
-`breadcrumb="{variant}"` - change the breadcrumb variant
-
-| Variant   | Description                 |
-| --------- | --------------------------- |
-| `text`    | The default variant.        |
-| `link`    | The link variant.           |
-| `~`       | The unstyle or base variant |
-
-::alert{type="info"}
-  If you want to change the default variant or add new variant, you can do so through the [Configuration section](/getting-started/configuration).
+You can use any variant and colors provided by the [NButton](button#variants) component, just make sure to use `breadcrumb-active` and `breadcrumb-inactive` as a prefix instead of `btn`.
 ::
 
 :::CodeGroup
@@ -81,50 +43,34 @@ description: 'NBreadcrumb - use to display the path of the current page and the 
 ::
 :::
 
-## Color
+## Separator
 
-`breadcrumb="{variant}-{color}"` - change the color of the breadcrumb.
+| Prop        | Type     | Default                       | Description         |
+| ----------- | -------- | ----------------------------- | ------------------- |
+| `separator` | `String` | `i-radix-icons-chevron-right` | The separator icon. |
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+  You can use any icon provided by the [NIcon](icon) component, the default is `i-radix-icons-chevron-right`.
 ::
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
-  :ExampleVueBreadcrumbColor
+  :ExampleVueBreadcrumbSeparator
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbColor.vue
-::
-:::
-
-## Icon
-
-> Add the item field to your objects
-
-::alert{type="info"}
-  You can use both the icon and the icon together with the label
-::
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueBreadcrumbIcon
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbIcon.vue
+@@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSeparator.vue
 ::
 :::
 
 ## Size
 
-`size="{size}"` - change the size of the breadcrumb.
+| Prop                        | Type     | Default | Description                                                                        |
+| --------------------------- | -------- | ------- | ---------------------------------------------------------------------------------- |
+| `size`                      | `String` | `sm`    | The size of the breadcrumb. This will be applied to all the breadcrumb components. |
+| `_breadcrumbLink.size`      | `String` | `sm`    | The size of the breadcrumb link.                                                   |
+| `_breadcrumbSeparator.size` | `String` | `sm`    | The size of the breadcrumb separator.                                              |
 
 > 🚀 You can freely adjust the size of the breadcrumb using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `height` and `width` of the breadcrumb scale depends on the `breadcrumb-size`. 
-If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
-::
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -139,11 +85,12 @@ If you want to change the `height` and `width` simultaneously, you can always cu
 
 > You can use the following slots to customize the breadcrumb.
 
-| Name          | Description           |
-| ------------- | --------------------- | 
-| `home`        | The home slot.        |
-| `separator`   | The separator slot.   |
-| `items`       | The items slot.       |
+| Name        | Description         | Props   |
+| ----------- | ------------------- | ------- |
+| `default`   | The breadcrumb item | `item`  |
+| `separator` | The separator       | `item`  |
+| `root`      | The root breadcrumb | `items` |
+| `list`      | The list of items   | `item`  |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -170,6 +117,18 @@ If you want to change the `height` and `width` simultaneously, you can always cu
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/Breadcrumb.vue
 
 ::
+::code-block{label="BreadcrumbRoot"}
+@@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbRoot.vue
+
+::
+::code-block{label="BreadcrumbList"}
+@@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbList.vue
+
+::
+::code-block{label="BreadcrumbLink"}
+@@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbLink.vue
+
+::
 ::code-block{label="BreadcrumbItem"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbItem.vue
 
@@ -178,8 +137,8 @@ If you want to change the `height` and `width` simultaneously, you can always cu
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbSeparator.vue
 
 ::
-::code-block{label="BreadcrumbLabel"}
-@@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbLabel.vue
+::code-block{label="BreadcrumbEllipsis"}
+@@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbEllipsis.vue
 
 ::
 :::

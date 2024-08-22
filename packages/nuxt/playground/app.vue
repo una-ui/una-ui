@@ -1,12 +1,13 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <div class="h-screen w-screen flex flex-col items-center justify-center gap-4 !bg-base">
-    <ColorMode />
+  <div class="h-screen w-screen !bg-base">
+    <div class="h-full w-full flex flex-col items-center justify-center gap-4">
+      <ColorMode />
 
-    <Breadcrumb />
+      <Breadcrumb />
 
-    <NThemeSwitcher />
+      <NThemeSwitcher />
+    </div>
+
+    <NuxtPage />
   </div>
 </template>
