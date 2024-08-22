@@ -6,10 +6,6 @@ import type { NButtonProps } from '../../types'
 import NLink from '../elements/Link.vue'
 import { cn } from '../../utils'
 
-defineOptions({
-  inheritAttrs: false,
-})
-
 const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',
   loadingPlacement: 'leading',
@@ -18,9 +14,27 @@ const props = withDefaults(defineProps<NButtonProps>(), {
   }),
 })
 
+const mergeVariants = computed(() => {
+  return {
+    'btn': props.btn,
+    'breadcrumb-active': props.breadcrumbActive,
+    'breadcrumb-inactive': props.breadcrumbInactive,
+  }
+})
+
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text'] as const
-const hasVariant = computed(() => btnVariants.some(btnVariants => props.btn?.includes(btnVariants)))
-const isBaseVariant = computed(() => props.btn?.includes('~'))
+
+const hasVariant = computed(() =>
+  Object.values(mergeVariants.value).some(variantList =>
+    btnVariants.some(variant => variantList?.includes(variant)),
+  ),
+)
+
+const isBaseVariant = computed(() =>
+  Object.values(mergeVariants.value).some(variantList =>
+    variantList?.includes('~'),
+  ),
+)
 
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
@@ -38,9 +52,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       una?.btn,
     )"
     :disabled="to ? null : disabled || loading"
-    :btn="btn"
     :aria-label="icon ? label : null"
-    v-bind="$attrs"
+    v-bind="mergeVariants"
     :size="size"
   >
     <DefineTemplate v-if="loading">

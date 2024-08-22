@@ -25,9 +25,11 @@ import { select } from './select'
 import { separator } from './separator'
 import { card } from './card'
 import { table } from './table'
+import { breadcrumb } from './breadcrumb'
 
 export const shortcuts = [
   ...general,
+  ...breadcrumb,
   ...accordion,
   ...btn,
   ...formGroup,
