@@ -7,7 +7,5 @@
 
       <NThemeSwitcher />
     </div>
-
-    <NuxtPage />
   </div>
 </template>
