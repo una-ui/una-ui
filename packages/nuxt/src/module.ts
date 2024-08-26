@@ -94,6 +94,13 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
+      path: resolve(runtimeDir, 'components/elements', 'dropdown-menu'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+    })
+
+    addComponentsDir({
       path: resolve(runtimeDir, 'components', 'forms'),
       prefix: options.prefix,
       global: options.global,
