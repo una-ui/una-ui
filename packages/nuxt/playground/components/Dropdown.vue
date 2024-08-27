@@ -21,7 +21,6 @@ const items = [
         items: [
           {
             label: 'Slack',
-            leading: 'i-check',
           },
           {
             label: 'Discord',
@@ -60,6 +59,13 @@ const items = [
 <template>
   <NDropdownMenu
     :items
+    menu-label="Menu"
+    dropdown-menu="solid-white"
+    :_dropdownMenuContent="{
+      class: 'w-52',
+      side: 'right',
+      align: 'start',
+    }"
     label="Open"
   />
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { DropdownMenuRootEmits } from 'radix-vue'
+import type { DropdownMenuContentEmits, DropdownMenuRootEmits } from 'radix-vue'
 import { DropdownMenuPortal, useForwardPropsEmits } from 'radix-vue'
 import { createReusableTemplate } from '@vueuse/core'
 import { pickProps } from '../../../utils'
@@ -17,7 +17,7 @@ import DropdownMenuSubContent from './DropdownMenuSubContent.vue'
 import DropdownMenuShortcut from './DropdownMenuShortcut.vue'
 
 const props = defineProps<NDropdownMenuProps>()
-const emits = defineEmits<DropdownMenuRootEmits>()
+const emits = defineEmits<DropdownMenuRootEmits & DropdownMenuContentEmits>()
 const forwarded = useForwardPropsEmits(props, emits)
 
 const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>()
@@ -32,27 +32,37 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
     />
 
     <DropdownMenuContent
-      class="w-52"
+      v-bind="forwarded._dropdownMenuContent"
     >
       <template
         v-if="menuLabel"
       >
-        <DropdownMenuLabel>
+        <DropdownMenuLabel
+          v-bind="forwarded._dropdownMenuLabel"
+        >
           {{ menuLabel }}
         </DropdownMenuLabel>
-        <DropdownMenuSeparator />
+        <DropdownMenuSeparator
+          v-bind="forwarded._dropdownMenuSeparator"
+        />
       </template>
 
-      <DropdownMenuGroup>
+      <DropdownMenuGroup
+        v-bind="forwarded._dropdownMenuGroup"
+      >
         <template
           v-for="item in items"
           :key="item.label"
         >
-          <DropdownMenuItem v-if="!item.items">
+          <DropdownMenuItem
+            v-if="!item.items"
+            v-bind="{ ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
+          >
             {{ item.label }}
 
             <DropdownMenuShortcut
               v-if="item.shortcut"
+              v-bind="{ ...forwarded._dropdownMenuShortcut, ...item._dropdownMenuShortcut }"
             >
               {{ item.shortcut }}
             </DropdownMenuShortcut>
@@ -68,43 +78,57 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
   </DropdownMenuRoot>
 
   <DefineMenuSub
-    v-slot="{ menuLabel, label, items }"
+    v-slot="subProps"
   >
-    <template
-      v-if="menuLabel"
-    >
-      <DropdownMenuLabel>
-        {{ menuLabel }}
-      </DropdownMenuLabel>
-      <DropdownMenuSeparator />
-    </template>
+    <div>
+      <template
+        v-if="subProps.menuLabel"
+      >
+        <DropdownMenuLabel
+          v-bind="{ ...forwarded._dropdownMenuLabel, ...subProps._dropdownMenuLabel }"
+        >
+          {{ subProps.menuLabel }}
+        </DropdownMenuLabel>
+        <DropdownMenuSeparator
+          v-bind="{ ...forwarded._dropdownMenuSeparator, ...subProps._dropdownMenuSeparator }"
+        />
+      </template>
 
-    <DropdownMenuGroup>
-      <DropdownMenuSub>
-        <DropdownMenuSubTrigger>
-          {{ label }}
-        </DropdownMenuSubTrigger>
+      <DropdownMenuGroup
+        v-bind="{ ...forwarded._dropdownMenuGroup, ...subProps._dropdownMenuGroup }"
+      >
+        <DropdownMenuSub
+          v-bind="{ ...forwarded._dropdownMenuSub, ...subProps._dropdownMenuSub }"
+        >
+          <DropdownMenuSubTrigger
+            v-bind="{ ...forwarded._dropdownMenuSubTrigger, ...subProps._dropdownMenuSubTrigger }"
+          >
+            {{ subProps.label }}
+          </DropdownMenuSubTrigger>
 
-        <DropdownMenuPortal>
-          <DropdownMenuSubContent>
-            <template
-              v-for="subItem in items"
-              :key="subItem.label"
+          <DropdownMenuPortal>
+            <DropdownMenuSubContent
+              v-bind="subProps._dropdownMenuSubContent"
             >
-              <DropdownMenuItem
-                v-if="!subItem.items"
+              <template
+                v-for="subItem in subProps.items"
+                :key="subItem.label"
               >
-                {{ subItem.label }}
-              </DropdownMenuItem>
+                <DropdownMenuItem
+                  v-if="!subItem.items"
+                >
+                  {{ subItem.label }}
+                </DropdownMenuItem>
 
-              <ReuseMenuSub
-                v-else
-                v-bind="subItem"
-              />
-            </template>
-          </DropdownMenuSubContent>
-        </DropdownMenuPortal>
-      </DropdownMenuSub>
-    </DropdownMenuGroup>
+                <ReuseMenuSub
+                  v-else
+                  v-bind="subItem"
+                />
+              </template>
+            </DropdownMenuSubContent>
+          </DropdownMenuPortal>
+        </DropdownMenuSub>
+      </DropdownMenuGroup>
+    </div>
   </DefineMenuSub>
 </template>

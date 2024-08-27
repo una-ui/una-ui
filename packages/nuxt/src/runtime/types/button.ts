@@ -4,6 +4,7 @@ interface Extensions {
   class?: HTMLAttributes['class']
   breadcrumbActive?: string
   breadcrumbInactive?: string
+  dropdownMenu?: string
 }
 
 export interface NButtonProps extends Extensions {

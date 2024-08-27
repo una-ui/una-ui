@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { computed } from 'vue'
 import {
   DropdownMenuSubContent,
   type DropdownMenuSubContentEmits,
-  type DropdownMenuSubContentProps,
   useForwardPropsEmits,
 } from 'radix-vue'
 import { cn } from '../../../utils'
+import type { NDropdownMenuSubContentProps } from '../../../types'
 
-const props = defineProps<DropdownMenuSubContentProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NDropdownMenuSubContentProps>()
 const emits = defineEmits<DropdownMenuSubContentEmits>()
 
 const delegatedProps = computed(() => {
