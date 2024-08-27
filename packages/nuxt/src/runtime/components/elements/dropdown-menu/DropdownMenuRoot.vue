@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { DropdownMenuRoot, type DropdownMenuRootEmits, type DropdownMenuRootProps, useForwardPropsEmits } from 'radix-vue'
+import { DropdownMenuRoot, type DropdownMenuRootEmits, useForwardPropsEmits } from 'radix-vue'
+import type { NDropdownMenuRootProps } from '../../../types'
 
-const props = defineProps<DropdownMenuRootProps>()
+const props = defineProps<NDropdownMenuRootProps>()
 const emits = defineEmits<DropdownMenuRootEmits>()
 
 const forwarded = useForwardPropsEmits(props, emits)

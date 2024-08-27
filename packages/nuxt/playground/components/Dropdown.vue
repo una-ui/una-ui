@@ -1,42 +1,65 @@
 <script setup lang="ts">
+const items = [
+  {
+    label: 'Profile',
+    shortcut: '⌘+T',
+  },
+  {
+    label: 'Billing',
+  },
+  {
+    label: 'Invite users',
+    items: [
+      {
+        label: 'Email',
+      },
+      {
+        label: 'Message',
+      },
+      {
+        label: 'More',
+        items: [
+          {
+            label: 'Slack',
+            leading: 'i-check',
+          },
+          {
+            label: 'Discord',
+          },
+          {
+            label: 'More',
+            items: [
+              {
+                label: 'Slack',
+              },
+              {
+                label: 'Discord',
+              },
+              {
+                label: 'Telegram',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+]
+
 /**
  * @name NDropdownMenu
  *
  * @todo
  *
- * - [ ] Add dropdown menu functionality
- * - [ ] Add dropdown menu triggers
+ * - [x] Add dropdown menu functionality
+ * - [x] Add dropdown menu triggers
+ * - [ ] Automatically add shortcut magickeys
  */
 </script>
 
 <template>
-  <NDropdownMenu>
-    <NDropdownMenuTrigger>Open</NDropdownMenuTrigger>
-    <NDropdownMenuContent>
-      <NDropdownMenuLabel>My Account</NDropdownMenuLabel>
-      <NDropdownMenuSeparator />
-      <NDropdownMenuItem>Profile</NDropdownMenuItem>
-      <NDropdownMenuItem>Billing</NDropdownMenuItem>
-      <NDropdownMenuItem>Team</NDropdownMenuItem>
-      <NDropdownMenuSub>
-        <NDropdownMenuSubTrigger>More Tools</NDropdownMenuSubTrigger>
-        <DropdownMenuPortal>
-          <NDropdownMenuSubContent>
-            <NDropdownMenuSub>
-              <NDropdownMenuSubTrigger>More</NDropdownMenuSubTrigger>
-              <NDropdownMenuSubContent>
-                <NDropdownMenuItem>Slack</NDropdownMenuItem>
-                <NDropdownMenuItem>Discord</NDropdownMenuItem>
-                <NDropdownMenuItem>Telegram</NDropdownMenuItem>
-              </NDropdownMenuSubContent>
-            </NDropdownMenuSub>
-            <NDropdownMenuItem>API</NDropdownMenuItem>
-            <NDropdownMenuItem>Plugins</NDropdownMenuItem>
-          </NDropdownMenuSubContent>
-        </DropdownMenuPortal>
-      </NDropdownMenuSub>
-      <NDropdownMenuSeparator />
-      <NDropdownMenuItem>Subscription</NDropdownMenuItem>
-    </NDropdownMenuContent>
-  </NDropdownMenu>
+  <NDropdownMenu
+    :items
+    label="Open"
+  />
 </template>

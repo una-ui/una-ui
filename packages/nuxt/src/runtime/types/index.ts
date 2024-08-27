@@ -24,6 +24,7 @@ export * from './separator'
 export * from './card'
 export * from './breadcrumb'
 export * from './table'
+export * from './dropdown-menu'
 
 export interface Colors {
   [key: string]: string
