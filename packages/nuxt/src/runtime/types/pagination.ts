@@ -20,6 +20,12 @@ export interface NPaginationProps extends PaginationExtensions {
 
   // sub-components
   _paginationList?: Partial<NPaginationRootProps>
+  _paginationItemList?: Partial<NPaginationListItemProps>
+  _paginationEllipsis?: Partial<NPaginationEllipsisProps>
+  _paginationFirst?: Partial<NPaginationFirstProps>
+  _paginationPrev?: Partial<NPaginationPrevProps>
+  _paginationNext?: Partial<NPaginationNextProps>
+  _paginationLast?: Partial<PaginationLastProps>
 }
 
 export interface NPaginationRootProps extends RootExtensions {
