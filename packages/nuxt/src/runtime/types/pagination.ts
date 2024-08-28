@@ -14,6 +14,13 @@ type FirstExtensions = PaginationFirstProps & BaseExtensions
 type PreviousExtensions = PaginationPrevProps & BaseExtensions
 type NextExtensions = PaginationNextProps & BaseExtensions
 type LastExtensions = PaginationLastProps & BaseExtensions
+type PaginationExtensions = NPaginationRootProps & BaseExtensions
+
+export interface NPaginationProps extends PaginationExtensions {
+
+  // sub-components
+  _paginationList?: Partial<NPaginationRootProps>
+}
 
 export interface NPaginationRootProps extends RootExtensions {
   una?: {
