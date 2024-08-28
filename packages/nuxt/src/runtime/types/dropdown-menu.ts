@@ -1,17 +1,20 @@
 import type { HTMLAttributes } from 'vue'
-import type { DropdownMenuContentProps, DropdownMenuGroupProps, DropdownMenuLabelProps, DropdownMenuRootProps, DropdownMenuSeparatorProps, DropdownMenuSubContentProps, DropdownMenuSubProps, DropdownMenuTriggerProps } from 'radix-vue'
+import type { DropdownMenuContentProps, DropdownMenuGroupProps, DropdownMenuLabelProps, DropdownMenuRootProps, DropdownMenuSeparatorProps, DropdownMenuSubContentProps, DropdownMenuSubProps, DropdownMenuSubTriggerProps, DropdownMenuTriggerProps } from 'radix-vue'
 import type { NButtonProps } from './button'
+import type { NSeparatorProps } from './separator'
 
 interface BaseExtensions {
   class?: HTMLAttributes['class']
   size?: HTMLAttributes['class']
 }
 
-export interface NDropdownMenuProps extends Omit<NDropdownMenuRootProps, 'class' | 'size'>, NDropdownMenuTriggerProps {
+export interface NDropdownMenuProps extends
+  Omit<NDropdownMenuRootProps, 'class' | 'size'>,
+  NDropdownMenuTriggerProps,
+  Pick<NDropdownMenuItemProps, 'shortcut' | 'dropdownMenuItem'> {
   label?: string
   menuLabel?: string
   items?: NDropdownMenuProps[]
-  shortcut?: string
 
   // subcomponents
   _dropdownMenuRoot?: Partial<NDropdownMenuItemProps>
@@ -24,13 +27,13 @@ export interface NDropdownMenuProps extends Omit<NDropdownMenuRootProps, 'class'
   _dropdownMenuGroup?: Partial<NDropMenuGroupProps>
   _dropdownMenuSub?: Partial<NDropdownMenuSub>
   _dropdownMenuSubTrigger?: Partial<NDropdownMenuSubTrigger>
-  _dropdownMenuShortcut?: Partial<NDropdownMenuShortcut>
 }
 
 export interface NDropdownMenuRootProps extends BaseExtensions, DropdownMenuRootProps {
 }
 
 export interface NDropdownMenuTriggerProps extends NButtonProps, DropdownMenuTriggerProps {
+  dropdownMenu?: string
 }
 
 export interface NDropdownMenuContentProps extends BaseExtensions, DropdownMenuContentProps {
@@ -40,7 +43,7 @@ export interface NDropdownMenuLabelProps extends BaseExtensions, DropdownMenuLab
   inset?: boolean
 }
 
-export interface NDropdownMenuSeparatorProps extends BaseExtensions, DropdownMenuSeparatorProps {
+export interface NDropdownMenuSeparatorProps extends DropdownMenuSeparatorProps, NSeparatorProps {
 }
 
 export interface NDropMenuGroupProps extends BaseExtensions, DropdownMenuGroupProps {
@@ -49,16 +52,15 @@ export interface NDropMenuGroupProps extends BaseExtensions, DropdownMenuGroupPr
 export interface NDropdownMenuSubContentProps extends BaseExtensions, DropdownMenuSubContentProps {
 }
 
-export interface NDropdownMenuItemProps extends BaseExtensions {
+export interface NDropdownMenuItemProps extends NButtonProps {
   inset?: boolean
+  shortcut?: string
+  dropdownMenuItem?: string
 }
 
 export interface NDropdownMenuSub extends BaseExtensions, DropdownMenuSubProps {
 }
 
-export interface NDropdownMenuSubTrigger extends BaseExtensions, DropdownMenuTriggerProps {
-}
-
-export interface NDropdownMenuShortcut extends BaseExtensions {
-
+export interface NDropdownMenuSubTrigger extends NButtonProps, DropdownMenuSubTriggerProps {
+  dropdownMenuItem?: string
 }

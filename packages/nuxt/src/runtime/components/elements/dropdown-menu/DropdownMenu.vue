@@ -2,7 +2,7 @@
 import type { DropdownMenuContentEmits, DropdownMenuRootEmits } from 'radix-vue'
 import { DropdownMenuPortal, useForwardPropsEmits } from 'radix-vue'
 import { createReusableTemplate } from '@vueuse/core'
-import { pickProps } from '../../../utils'
+import { omitProps, pickProps } from '../../../utils'
 import type { NDropdownMenuProps } from '../../../types'
 import DropdownMenuContent from './DropdownMenuContent.vue'
 import DropdownMenuRoot from './DropdownMenuRoot.vue'
@@ -14,7 +14,6 @@ import DropdownMenuGroup from './DropdownMenuGroup.vue'
 import DropdownMenuSub from './DropdownMenuSub.vue'
 import DropdownMenuSubTrigger from './DropdownMenuSubTrigger.vue'
 import DropdownMenuSubContent from './DropdownMenuSubContent.vue'
-import DropdownMenuShortcut from './DropdownMenuShortcut.vue'
 
 const props = defineProps<NDropdownMenuProps>()
 const emits = defineEmits<DropdownMenuRootEmits & DropdownMenuContentEmits>()
@@ -28,7 +27,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
     v-bind="pickProps(forwarded, ['defaultOpen', 'open', 'modal', 'dir'])"
   >
     <DropdownMenuTrigger
-      v-bind="{ ...forwarded, ...forwarded._dropdownMenuTrigger }"
+      v-bind="omitProps({ ...forwarded, ...forwarded._dropdownMenuTrigger }, ['dropdownMenuItem'])"
     />
 
     <DropdownMenuContent
@@ -55,18 +54,15 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
           :key="item.label"
         >
           <DropdownMenuItem
-            v-if="!item.items"
-            v-bind="{ ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
-          >
-            {{ item.label }}
+            v-if="!item.items && item.label"
+            :dropdown-menu-item
+            v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
+          />
 
-            <DropdownMenuShortcut
-              v-if="item.shortcut"
-              v-bind="{ ...forwarded._dropdownMenuShortcut, ...item._dropdownMenuShortcut }"
-            >
-              {{ item.shortcut }}
-            </DropdownMenuShortcut>
-          </DropdownMenuItem>
+          <DropdownMenuSeparator
+            v-else-if="!item.label && !item.items"
+            v-bind="{ ...forwarded._dropdownMenuSeparator, ...item._dropdownMenuSeparator }"
+          />
 
           <ReuseMenuSub
             v-else
@@ -101,10 +97,13 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
           v-bind="{ ...forwarded._dropdownMenuSub, ...subProps._dropdownMenuSub }"
         >
           <DropdownMenuSubTrigger
-            v-bind="{ ...forwarded._dropdownMenuSubTrigger, ...subProps._dropdownMenuSubTrigger }"
-          >
-            {{ subProps.label }}
-          </DropdownMenuSubTrigger>
+            :dropdown-menu-item
+            v-bind="omitProps({
+              ...subProps,
+              ...forwarded._dropdownMenuSubTrigger,
+              ...subProps._dropdownMenuSubTrigger,
+            }, ['$slots'])"
+          />
 
           <DropdownMenuPortal>
             <DropdownMenuSubContent
@@ -115,10 +114,17 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
                 :key="subItem.label"
               >
                 <DropdownMenuItem
-                  v-if="!subItem.items"
+                  v-if="!subItem.items && subItem.label"
+                  :dropdown-menu-item
+                  v-bind="{ ...subItem, ...forwarded._dropdownMenuItem, ...subItem._dropdownMenuItem }"
                 >
                   {{ subItem.label }}
                 </DropdownMenuItem>
+
+                <DropdownMenuSeparator
+                  v-else-if="!subItem.label && !subItem.items"
+                  v-bind="{ ...forwarded._dropdownMenuSeparator, ...subItem._dropdownMenuSeparator }"
+                />
 
                 <ReuseMenuSub
                   v-else

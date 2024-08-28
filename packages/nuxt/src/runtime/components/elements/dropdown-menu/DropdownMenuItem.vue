@@ -3,8 +3,11 @@ import { computed } from 'vue'
 import { DropdownMenuItem, useForwardProps } from 'radix-vue'
 import { cn } from '../../../utils'
 import type { NDropdownMenuItemProps } from '../../../types'
+import Button from '../Button.vue'
+import DropdownMenuShortcut from './DropdownMenuShortcut.vue'
 
-const props = defineProps<NDropdownMenuItemProps>()
+const props = withDefaults(defineProps<NDropdownMenuItemProps>(), {
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -17,13 +20,28 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <DropdownMenuItem
-    v-bind="forwardedProps"
-    :class="cn(
-      'relative w-full flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-      forwardedProps.inset && 'pl-8',
-      props.class,
-    )"
+    as-child
   >
-    <slot />
+    <Button
+      v-bind="forwardedProps"
+      :class="cn(
+        'w-full justify-start font-normal rounded-sm gap-x-3 px-2 transition-color focus-visible:outline-0',
+        forwardedProps.inset && 'pl-8',
+        props.class,
+      )"
+      :una="{
+        btnDefaultVariant: 'dropdown-menu-item-default-variant',
+        btnTrailing: cn('ml-auto', forwardedProps.una?.btnTrailing),
+      }"
+    >
+      <template
+        v-if="forwardedProps.shortcut"
+        #trailing
+      >
+        <DropdownMenuShortcut>
+          {{ forwardedProps.shortcut }}
+        </DropdownMenuShortcut>
+      </template>
+    </Button>
   </DropdownMenuItem>
 </template>

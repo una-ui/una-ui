@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { computed } from 'vue'
 import {
   DropdownMenuSeparator,
-  type DropdownMenuSeparatorProps,
 } from 'radix-vue'
 import { cn } from '../../../utils'
+import type { NDropdownMenuSeparatorProps } from '../../../types'
+import Separator from '../Separator.vue'
 
-// import Separator from '../Separator.vue'
-
-const props = defineProps<DropdownMenuSeparatorProps & {
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<NDropdownMenuSeparatorProps>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -20,5 +17,14 @@ const delegatedProps = computed(() => {
 </script>
 
 <template>
-  <DropdownMenuSeparator v-bind="delegatedProps" :class="cn('-mx-1 my-1 h-px bg-muted', props.class)" />
+  <DropdownMenuSeparator
+    as-child
+  >
+    <div class="relative -mx-1">
+      <Separator
+        v-bind="delegatedProps"
+        :class="cn('my-1', props.class)"
+      />
+    </div>
+  </DropdownMenuSeparator>
 </template>

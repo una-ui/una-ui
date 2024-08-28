@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { computed } from 'vue'
 import {
   DropdownMenuSubTrigger,
-  type DropdownMenuSubTriggerProps,
   useForwardProps,
 } from 'radix-vue'
 import { cn } from '../../../utils'
-import Icon from '../Icon.vue'
+import Button from '../Button.vue'
+import type { NDropdownMenuSubTrigger } from '../../../types'
 
-const props = defineProps<DropdownMenuSubTriggerProps & { class?: HTMLAttributes['class'] }>()
+const props = withDefaults(defineProps<NDropdownMenuSubTrigger>(), {
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -22,12 +23,16 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <DropdownMenuSubTrigger
     v-bind="forwardedProps"
+    :as="Button"
     :class="cn(
-      'flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent',
+      'w-full justify-start font-normal rounded-sm gap-x-3 px-2 transition-color focus-visible:outline-0',
       props.class,
     )"
-  >
-    <slot />
-    <Icon name="i-radix-icons-chevron-right" class="ml-auto h-4 w-4" />
-  </DropdownMenuSubTrigger>
+    :una="{
+      btnDefaultVariant: 'dropdown-menu-item-default-variant',
+      btnTrailing: cn('ml-auto text-1em', forwardedProps.una?.btnTrailing),
+      ...forwardedProps.una,
+    }"
+    trailing="i-radix-icons-chevron-right"
+  />
 </template>
