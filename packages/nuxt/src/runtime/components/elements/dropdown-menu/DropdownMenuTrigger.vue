@@ -12,16 +12,23 @@ const forwardedProps = useForwardProps(props)
 
 <template>
   <DropdownMenuTrigger
-    v-bind="forwardedProps"
-    :class="cn(
-      'justify-start font-normal',
-      props.class,
-    )"
-    :una="{
-      btnDefaultVariant: 'dropdown-menu-default-variant',
-      btnTrailing: cn('ml-auto', forwardedProps.una?.btnTrailing),
-      ...forwardedProps.una,
-    }"
-    :as="Button"
-  />
+    as-child
+  >
+    <Button
+      v-bind="forwardedProps"
+      :class="cn(
+        'justify-start font-normal',
+        props.class,
+      )"
+      :una="{
+        btnDefaultVariant: 'dropdown-menu-default-variant',
+        btnTrailing: cn('ml-auto', forwardedProps.una?.btnTrailing),
+        ...forwardedProps.una,
+      }"
+    >
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
+    </Button>
+  </DropdownMenuTrigger>
 </template>

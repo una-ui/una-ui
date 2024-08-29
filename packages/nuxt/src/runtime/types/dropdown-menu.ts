@@ -12,12 +12,12 @@ export interface NDropdownMenuProps extends
   Omit<NDropdownMenuRootProps, 'class' | 'size'>,
   NDropdownMenuTriggerProps,
   Pick<NDropdownMenuItemProps, 'shortcut'> {
-  label?: string
   menuLabel?: string
   items?: NDropdownMenuProps[]
+  inset?: boolean
 
   // subcomponents
-  _dropdownMenuRoot?: Partial<NDropdownMenuItemProps>
+  _dropdownMenuRoot?: Partial<NDropdownMenuRootProps>
   _dropdownMenuItem?: Partial<NDropdownMenuItemProps>
   _dropdownMenuTrigger?: Partial<NDropdownMenuTriggerProps>
   _dropdownMenuContent?: Partial<NDropdownMenuContentProps>
@@ -61,4 +61,5 @@ export interface NDropdownMenuSub extends BaseExtensions, DropdownMenuSubProps {
 
 export interface NDropdownMenuSubTrigger extends NButtonProps, DropdownMenuSubTriggerProps {
   dropdownMenuItem?: string
+  inset?: boolean
 }

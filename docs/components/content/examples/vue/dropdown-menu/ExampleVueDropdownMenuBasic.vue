@@ -103,9 +103,10 @@ const items = [
     <NDropdownMenu
       :items
       menu-label="My Account"
-      :_dropdownMenuContent="{
+      :_dropdown-menu-content="{
         class: 'w-52',
       }"
+      inset
       label="Open"
     />
   </div>

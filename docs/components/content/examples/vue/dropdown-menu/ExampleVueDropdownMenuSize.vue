@@ -11,6 +11,7 @@ const items = [
   {
     label: 'Billing',
     shortcut: '⌘B',
+    leading: 'i-lucide-credit-card',
   },
   {
     label: 'Settings',
@@ -102,35 +103,42 @@ const items = [
   <div class="h-50 flex items-center justify-around">
     <NDropdownMenu
       :items
-      dropdown-menu="-pink"
-      dropdown-menu-item="pink"
+      size="xs"
       menu-label="My Account"
       :_dropdown-menu-content="{
         class: 'w-52',
       }"
-      label="Open"
+      label="Open XS"
     />
 
     <NDropdownMenu
       :items
-      dropdown-menu="soft-gray"
-      dropdown-menu-item="gray"
+      size="sm"
       menu-label="My Account"
       :_dropdown-menu-content="{
         class: 'w-52',
       }"
-      label="Open"
+      label="Open SM/Default"
     />
 
     <NDropdownMenu
       :items
-      dropdown-menu="solid-primary"
-      dropdown-menu-item="primary"
+      size="md"
       menu-label="My Account"
       :_dropdown-menu-content="{
         class: 'w-52',
       }"
-      label="Open"
+      label="Open MD"
+    />
+
+    <NDropdownMenu
+      :items
+      size="lg"
+      menu-label="My Account"
+      :_dropdown-menu-content="{
+        class: 'w-52',
+      }"
+      label="Open LG"
     />
   </div>
 </template>

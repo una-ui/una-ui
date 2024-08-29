@@ -22,17 +22,26 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <DropdownMenuSubTrigger
-    v-bind="forwardedProps"
-    :as="Button"
-    :class="cn(
-      'w-full justify-start font-normal rounded-sm gap-x-3 px-2 transition-color focus-visible:outline-0',
-      props.class,
-    )"
-    :una="{
-      btnDefaultVariant: 'dropdown-menu-item-default-variant',
-      btnTrailing: cn('ml-auto text-1em', forwardedProps.una?.btnTrailing),
-      ...forwardedProps.una,
-    }"
-    trailing="i-radix-icons-chevron-right"
-  />
+    as-child
+  >
+    <Button
+      v-bind="forwardedProps"
+      :as="Button"
+      :class="cn(
+        'w-full justify-start font-normal rounded-sm gap-x-3 px-2 transition-color focus-visible:outline-0',
+        forwardedProps.inset && 'pl-8',
+        props.class,
+      )"
+      :una="{
+        btnDefaultVariant: 'dropdown-menu-item-default-variant',
+        btnTrailing: cn('ml-auto text-1em', forwardedProps.una?.btnTrailing),
+        ...forwardedProps.una,
+      }"
+      trailing="i-radix-icons-chevron-right"
+    >
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
+    </Button>
+  </dropdownmenusubtrigger>
 </template>

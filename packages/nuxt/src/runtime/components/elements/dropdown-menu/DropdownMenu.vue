@@ -26,51 +26,79 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
   <DropdownMenuRoot
     v-bind="pickProps(forwarded, ['defaultOpen', 'open', 'modal', 'dir'])"
   >
-    <DropdownMenuTrigger
-      v-bind="omitProps({ ...forwarded, ...forwarded._dropdownMenuTrigger }, ['dropdownMenuItem', '_dropdownMenuItem', '_dropdownMenuContent'])"
-    />
+    <slot>
+      <slot name="trigger">
+        <DropdownMenuTrigger
+          v-bind="omitProps({ ...forwarded, ...forwarded._dropdownMenuTrigger }, [
+            'dropdownMenuItem',
+            'items',
+            'menuLabel',
 
-    <DropdownMenuContent
-      v-bind="forwarded._dropdownMenuContent"
-    >
-      <template
-        v-if="menuLabel"
-      >
-        <DropdownMenuLabel
-          v-bind="forwarded._dropdownMenuLabel"
-        >
-          {{ menuLabel }}
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator
-          v-bind="forwarded._dropdownMenuSeparator"
+            '_dropdownMenuItem',
+            '_dropdownMenuContent',
+            '_dropdownMenuLabel',
+            '_dropdownMenuSeparator',
+            '_dropdownMenuGroup',
+            '_dropdownMenuSub',
+            '_dropdownMenuSubTrigger',
+            '_dropdownMenuSubContent',
+          ])"
         />
-      </template>
+      </slot>
 
-      <DropdownMenuGroup
-        v-bind="forwarded._dropdownMenuGroup"
+      <DropdownMenuContent
+        v-bind="forwarded._dropdownMenuContent"
       >
-        <template
-          v-for="item in items"
-          :key="item.label"
-        >
-          <DropdownMenuItem
-            v-if="!item.items && item.label"
-            :dropdown-menu-item
-            v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
-          />
+        <slot name="content">
+          <template
+            v-if="menuLabel || $slots['menu-label']"
+          >
+            <DropdownMenuLabel
+              :size
+              :inset
+              v-bind="forwarded._dropdownMenuLabel"
+            >
+              <slot name="menu-label">
+                {{ menuLabel }}
+              </slot>
+            </DropdownMenuLabel>
+            <DropdownMenuSeparator
+              v-bind="forwarded._dropdownMenuSeparator"
+            />
+          </template>
 
-          <DropdownMenuSeparator
-            v-else-if="!item.label && !item.items"
-            v-bind="{ ...forwarded._dropdownMenuSeparator, ...item._dropdownMenuSeparator }"
-          />
+          <slot name="items" :items>
+            <DropdownMenuGroup
+              v-bind="forwarded._dropdownMenuGroup"
+            >
+              <template
+                v-for="item in items"
+                :key="item.label"
+              >
+                <slot :name="`item-${item.label}`" />
+                <DropdownMenuItem
+                  v-if="!item.items && item.label"
+                  :size
+                  :inset
+                  :dropdown-menu-item
+                  v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
+                />
 
-          <ReuseMenuSub
-            v-else
-            v-bind="item"
-          />
-        </template>
-      </DropdownMenuGroup>
-    </DropdownMenuContent>
+                <DropdownMenuSeparator
+                  v-else-if="!item.label && !item.items"
+                  v-bind="{ ...forwarded._dropdownMenuSeparator, ...item._dropdownMenuSeparator }"
+                />
+
+                <ReuseMenuSub
+                  v-else
+                  v-bind="item"
+                />
+              </template>
+            </DropdownMenuGroup>
+          </slot>
+        </slot>
+      </DropdownMenuContent>
+    </slot>
   </DropdownMenuRoot>
 
   <DefineMenuSub
@@ -81,6 +109,8 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
         v-if="subProps.menuLabel"
       >
         <DropdownMenuLabel
+          :size
+          :inset
           v-bind="{ ...forwarded._dropdownMenuLabel, ...subProps._dropdownMenuLabel }"
         >
           {{ subProps.menuLabel }}
@@ -97,13 +127,17 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
           v-bind="{ ...forwarded._dropdownMenuSub, ...subProps._dropdownMenuSub }"
         >
           <DropdownMenuSubTrigger
+            :size
+            :inset
             :dropdown-menu-item
             v-bind="omitProps({
               ...subProps,
               ...forwarded._dropdownMenuSubTrigger,
               ...subProps._dropdownMenuSubTrigger,
             }, ['$slots'])"
-          />
+          >
+            <slot name="sub-trigger" :label="subProps.label" />
+          </DropdownMenuSubTrigger>
 
           <DropdownMenuPortal>
             <DropdownMenuSubContent
@@ -115,6 +149,8 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
               >
                 <DropdownMenuItem
                   v-if="!subItem.items && subItem.label"
+                  :size
+                  :inset
                   :dropdown-menu-item
                   v-bind="{ ...subItem, ...forwarded._dropdownMenuItem, ...subItem._dropdownMenuItem }"
                 >

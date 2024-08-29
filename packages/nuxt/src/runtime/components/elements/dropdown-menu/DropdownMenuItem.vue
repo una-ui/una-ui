@@ -25,15 +25,20 @@ const forwardedProps = useForwardProps(delegatedProps)
     <Button
       v-bind="forwardedProps"
       :class="cn(
-        'w-full justify-start font-normal rounded-sm gap-x-3 px-2 transition-color focus-visible:outline-0',
+        'w-full justify-start font-normal text-left rounded-sm gap-x-3 px-2 transition-color focus-visible:outline-0',
         forwardedProps.inset && 'pl-8',
         props.class,
       )"
       :una="{
         btnDefaultVariant: 'dropdown-menu-item-default-variant',
         btnTrailing: cn('ml-auto', forwardedProps.una?.btnTrailing),
+        ...forwardedProps.una,
       }"
     >
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
+
       <template
         v-if="forwardedProps.shortcut"
         #trailing

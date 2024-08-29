@@ -43,6 +43,52 @@ description: 'NDropdownMenu component - used to display a list of actions or opt
 ::
 :::
 
+## **Size**
+
+| Prop                        | Description                         |
+| --------------------------- | ----------------------------------- |
+| `size`                      | Set the dropdown-menu general size. |
+| `_dropdownMenuTrigger.size` | Set the trigger size only.          |
+| `_dropdownMenuItem.size`    | Set the item size only.             |
+| `_dropdownMenuLabel.size`   | Set the menu label size only.       |
+
+> 🚀 You can freely adjust the size of the select using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+
+::alert{type="info"}
+The `height` and `width` of the select scale depends on the `dropdown-menu-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
+::
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueDropdownMenuSize
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuSize.vue
+::
+:::
+
+## Slots
+
+> You can use the following slots to customize the select.
+
+| Name          | Description           | Props   |
+| ------------- | --------------------- | ------- |
+| `trigger`     | The trigger slot.     | -       |
+| `item`        | The item slot.        | `item`  |
+| `sub-trigger` | The sub-trigger slot. | -       |
+| `content`     | The content slot.     | `items` |
+| `label`       | The label slot.       | `label` |
+| `group`       | The group slot.       | `items` |
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueDropdownMenuSlots
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuSlots.vue
+
+::
+:::
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/dropdown-menu.ts
