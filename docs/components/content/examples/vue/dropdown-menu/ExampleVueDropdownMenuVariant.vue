@@ -102,6 +102,8 @@ const items = [
   <div class="grid h-50 place-items-center">
     <NDropdownMenu
       :items
+      dropdown-menu="solid-primary"
+      dropdown-menu-item="primary"
       menu-label="My Account"
       :_dropdownMenuContent="{
         class: 'w-52',
