@@ -27,7 +27,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
     v-bind="pickProps(forwarded, ['defaultOpen', 'open', 'modal', 'dir'])"
   >
     <DropdownMenuTrigger
-      v-bind="omitProps({ ...forwarded, ...forwarded._dropdownMenuTrigger }, ['dropdownMenuItem'])"
+      v-bind="omitProps({ ...forwarded, ...forwarded._dropdownMenuTrigger }, ['dropdownMenuItem', '_dropdownMenuItem', '_dropdownMenuContent'])"
     />
 
     <DropdownMenuContent

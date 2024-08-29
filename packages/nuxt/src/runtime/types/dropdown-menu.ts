@@ -11,7 +11,7 @@ interface BaseExtensions {
 export interface NDropdownMenuProps extends
   Omit<NDropdownMenuRootProps, 'class' | 'size'>,
   NDropdownMenuTriggerProps,
-  Pick<NDropdownMenuItemProps, 'shortcut' | 'dropdownMenuItem'> {
+  Pick<NDropdownMenuItemProps, 'shortcut'> {
   label?: string
   menuLabel?: string
   items?: NDropdownMenuProps[]
@@ -33,7 +33,6 @@ export interface NDropdownMenuRootProps extends BaseExtensions, DropdownMenuRoot
 }
 
 export interface NDropdownMenuTriggerProps extends NButtonProps, DropdownMenuTriggerProps {
-  dropdownMenu?: string
 }
 
 export interface NDropdownMenuContentProps extends BaseExtensions, DropdownMenuContentProps {
@@ -55,7 +54,6 @@ export interface NDropdownMenuSubContentProps extends BaseExtensions, DropdownMe
 export interface NDropdownMenuItemProps extends NButtonProps {
   inset?: boolean
   shortcut?: string
-  dropdownMenuItem?: string
 }
 
 export interface NDropdownMenuSub extends BaseExtensions, DropdownMenuSubProps {
