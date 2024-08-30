@@ -49,6 +49,7 @@ export interface NPaginationListItemProps extends ListItemExtensions {
 export interface NPaginationEllipsisProps extends EllipsisExtensions {
   una?: {
     paginationEllipsis?: HTMLAttributes['class']
+    paginationEllipsisIcon?: HTMLAttributes['class']
   }
 }
 
