@@ -74,5 +74,7 @@ export interface NPaginationNextProps extends NextExtensions {
 export interface NPaginationLastProps extends LastExtensions {
   una?: {
     paginationLast?: HTMLAttributes['class']
+    paginationLastIcon?: HTMLAttributes['class']
+
   }
 }
