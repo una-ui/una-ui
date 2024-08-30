@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/nuxt",
   "type": "module",
-  "version": "0.13.0-beta.1",
+  "version": "0.13.0-beta.2",
   "description": "Nuxt module for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -56,6 +56,7 @@
     "ohash": "^1.1.3",
     "radix-vue": "^1.9.3",
     "tailwind-merge": "^2.5.1",
+    "typescript": "^5.5.4",
     "unocss": "^0.62.2",
     "unocss-preset-animations": "^1.1.0"
   },
