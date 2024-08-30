@@ -20,10 +20,10 @@ const delegatedProps = computed(() => {
   <DropdownMenuSeparator
     as-child
   >
-    <div class="relative -mx-1">
+    <div class="dropdown-menu-separator-root">
       <Separator
         v-bind="delegatedProps"
-        :class="cn('my-1', props.class)"
+        :class="cn('dropdown-menu-separator', props.class)"
       />
     </div>
   </DropdownMenuSeparator>

@@ -68,7 +68,7 @@ export interface NDropdownMenuProps extends
  */
 export interface NDropdownMenuRootProps extends BaseExtensions, DropdownMenuRootProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps
+  una?: NDropdownMenuUnaProps['dropdownMenuRoot']
 }
 
 /**
@@ -76,7 +76,7 @@ export interface NDropdownMenuRootProps extends BaseExtensions, DropdownMenuRoot
  */
 export interface NDropdownMenuTriggerProps extends NButtonProps, DropdownMenuTriggerProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps & NButtonProps['una']
+  una?: NDropdownMenuUnaProps['dropdownMenuTrigger'] & NButtonProps['una']
 }
 
 /**
@@ -84,7 +84,7 @@ export interface NDropdownMenuTriggerProps extends NButtonProps, DropdownMenuTri
  */
 export interface NDropdownMenuContentProps extends BaseExtensions, DropdownMenuContentProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps
+  una?: NDropdownMenuUnaProps['dropdownMenuContent']
 }
 
 /**
@@ -96,7 +96,7 @@ export interface NDropdownMenuLabelProps extends BaseExtensions, DropdownMenuLab
   /** Size of the label */
   size?: string
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps
+  una?: NDropdownMenuUnaProps['dropdownMenuLabel']
 }
 
 /**
@@ -104,7 +104,7 @@ export interface NDropdownMenuLabelProps extends BaseExtensions, DropdownMenuLab
  */
 export interface NDropdownMenuSeparatorProps extends DropdownMenuSeparatorProps, NSeparatorProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps & NSeparatorProps['una']
+  una?: NDropdownMenuUnaProps['dropdownMenuSeparator'] & NSeparatorProps['una']
 }
 
 /**
@@ -112,7 +112,7 @@ export interface NDropdownMenuSeparatorProps extends DropdownMenuSeparatorProps,
  */
 export interface NDropdownMenuGroupProps extends BaseExtensions, DropdownMenuGroupProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps
+  una?: NDropdownMenuUnaProps['dropdownMenuGroup']
 }
 
 /**
@@ -120,7 +120,7 @@ export interface NDropdownMenuGroupProps extends BaseExtensions, DropdownMenuGro
  */
 export interface NDropdownMenuSubContentProps extends BaseExtensions, DropdownMenuSubContentProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps
+  una?: NDropdownMenuUnaProps['dropdownMenuSubContent']
 }
 
 /**
@@ -132,7 +132,7 @@ export interface NDropdownMenuItemProps extends NButtonProps {
   /** Shortcut key for the item */
   shortcut?: string
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps & NButtonProps['una']
+  una?: NDropdownMenuUnaProps['dropdownMenuItem'] & NButtonProps['una']
 }
 
 /**
@@ -140,7 +140,7 @@ export interface NDropdownMenuItemProps extends NButtonProps {
  */
 export interface NDropdownMenuSubProps extends BaseExtensions, DropdownMenuSubProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps
+  una?: NDropdownMenuUnaProps['dropdownMenuSub']
 }
 
 /**
@@ -152,7 +152,17 @@ export interface NDropdownMenuSubTriggerProps extends NButtonProps, DropdownMenu
   /** Whether the sub-trigger is inset */
   inset?: boolean
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps & NButtonProps['una']
+  una?: NDropdownMenuUnaProps['dropdownMenuSubTrigger'] & NButtonProps['una']
+}
+
+/**
+ * Props for the NDropdownMenuShortcut component.
+ */
+export interface NDropdownMenuShortcutProps {
+  /** Shortcut key for the item */
+  shortcut?: string
+  /** Additional properties for the una component */
+  una?: NDropdownMenuUnaProps['dropdownMenuShortcut']
 }
 
 /**
@@ -177,4 +187,8 @@ interface NDropdownMenuUnaProps {
   dropdownMenuItem?: HTMLAttributes['class']
   /** CSS class for the dropdown menu root */
   dropdownMenuRoot?: HTMLAttributes['class']
+  /** CSS class for the dropdown menu shortcut */
+  dropdownMenuShortcut?: HTMLAttributes['class']
+  /** CSS class for the dropdown menu sub */
+  dropdownMenuSub?: HTMLAttributes['class']
 }

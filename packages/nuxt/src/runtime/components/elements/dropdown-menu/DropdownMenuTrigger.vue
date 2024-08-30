@@ -17,12 +17,13 @@ const forwardedProps = useForwardProps(props)
     <Button
       v-bind="forwardedProps"
       :class="cn(
-        'justify-start font-normal',
+        '',
         props.class,
       )"
       :una="{
         btnDefaultVariant: 'dropdown-menu-default-variant',
-        btnTrailing: cn('ml-auto', forwardedProps.una?.btnTrailing),
+        btnLeading: cn('dropdown-menu-trigger-leading', forwardedProps.una?.btnLeading),
+        btnTrailing: cn('dropdown-menu-trigger-trailing', forwardedProps.una?.btnTrailing),
         ...forwardedProps.una,
       }"
     >

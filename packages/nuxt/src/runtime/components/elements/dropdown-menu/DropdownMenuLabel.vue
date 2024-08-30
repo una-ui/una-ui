@@ -20,7 +20,7 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <DropdownMenuLabel
     v-bind="forwardedProps"
-    :class="cn('px-2 py-1.5 text-1em font-semibold', forwardedProps.inset && 'pl-8', props.class)"
+    :class="cn('dropdown-menu-label', forwardedProps.inset && 'pl-8', props.class)"
   >
     <slot />
   </DropdownMenuLabel>
