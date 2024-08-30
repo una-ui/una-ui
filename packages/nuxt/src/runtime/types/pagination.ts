@@ -62,12 +62,15 @@ export interface NPaginationFirstProps extends FirstExtensions {
 export interface NPaginationPrevProps extends PreviousExtensions {
   una?: {
     paginationPrev?: HTMLAttributes['class']
+    paginationPrevIcon?: HTMLAttributes['class']
+
   }
 }
 
 export interface NPaginationNextProps extends NextExtensions {
   una?: {
     paginationNext?: HTMLAttributes['class']
+    paginationNextIcon?: HTMLAttributes['class']
   }
 }
 
