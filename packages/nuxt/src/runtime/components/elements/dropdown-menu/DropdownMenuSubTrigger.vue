@@ -6,9 +6,9 @@ import {
 } from 'radix-vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
-import type { NDropdownMenuSubTrigger } from '../../../types'
+import type { NDropdownMenuSubTriggerProps } from '../../../types'
 
-const props = withDefaults(defineProps<NDropdownMenuSubTrigger>(), {
+const props = withDefaults(defineProps<NDropdownMenuSubTriggerProps>(), {
 })
 
 const delegatedProps = computed(() => {
