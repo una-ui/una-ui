@@ -77,6 +77,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -84,6 +85,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -91,6 +93,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -98,6 +101,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -105,6 +109,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -112,6 +117,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -119,6 +125,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -126,6 +133,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -133,6 +141,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     addComponentsDir({
@@ -140,6 +149,7 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
+      priority: 10,
     })
 
     // plugins
@@ -155,12 +165,15 @@ export default defineNuxtModule<ModuleOptions>({
     addImportsDir(resolve(runtimeDir, 'utils', 'cn'))
 
     // modules
-    await installModule('radix-vue/nuxt')
     await installModule('@unocss/nuxt')
     await installModule('@nuxtjs/color-mode', {
       classSuffix: '',
     })
     await installModule('@vueuse/nuxt')
+    await installModule('radix-vue/nuxt', {
+      prefix: options.prefix,
+      priority: 100, // Set to the lowest priority
+    })
 
     // composables
     addImportsDir(resolve(runtimeDir, 'composables'))

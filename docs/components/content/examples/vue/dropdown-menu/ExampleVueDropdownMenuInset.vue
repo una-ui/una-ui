@@ -104,8 +104,9 @@ const items = [
       :items
       menu-label="My Account"
       :_dropdown-menu-content="{
-        class: 'w-52',
+        class: 'w-60',
       }"
+      inset
       label="Open"
     />
   </div>

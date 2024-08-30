@@ -10,7 +10,7 @@ interface BaseExtensions {
 
 export interface NDropdownMenuProps extends
   Omit<NDropdownMenuRootProps, 'class' | 'size'>,
-  NDropdownMenuTriggerProps,
+  Omit<NDropdownMenuTriggerProps, 'una'>,
   Pick<NDropdownMenuItemProps, 'shortcut'> {
   menuLabel?: string
   items?: NDropdownMenuProps[]
@@ -27,6 +27,8 @@ export interface NDropdownMenuProps extends
   _dropdownMenuGroup?: Partial<NDropMenuGroupProps>
   _dropdownMenuSub?: Partial<NDropdownMenuSub>
   _dropdownMenuSubTrigger?: Partial<NDropdownMenuSubTrigger>
+
+  una?: NDropdownMenuUnaProps & NButtonProps['una']
 }
 
 export interface NDropdownMenuRootProps extends BaseExtensions, DropdownMenuRootProps {
@@ -40,6 +42,7 @@ export interface NDropdownMenuContentProps extends BaseExtensions, DropdownMenuC
 
 export interface NDropdownMenuLabelProps extends BaseExtensions, DropdownMenuLabelProps {
   inset?: boolean
+  size?: string
 }
 
 export interface NDropdownMenuSeparatorProps extends DropdownMenuSeparatorProps, NSeparatorProps {
@@ -62,4 +65,16 @@ export interface NDropdownMenuSub extends BaseExtensions, DropdownMenuSubProps {
 export interface NDropdownMenuSubTrigger extends NButtonProps, DropdownMenuSubTriggerProps {
   dropdownMenuItem?: string
   inset?: boolean
+}
+
+interface NDropdownMenuUnaProps {
+  dropdownMenuContent?: HTMLAttributes['class']
+  dropdownMenuSubContent?: HTMLAttributes['class']
+  dropdownMenuSubTrigger?: HTMLAttributes['class']
+  dropdownMenuTrigger?: HTMLAttributes['class']
+  dropdownMenuLabel?: HTMLAttributes['class']
+  dropdownMenuSeparator?: HTMLAttributes['class']
+  dropdownMenuGroup?: HTMLAttributes['class']
+  dropdownMenuItem?: HTMLAttributes['class']
+  dropdownMenuRoot?: HTMLAttributes['class']
 }

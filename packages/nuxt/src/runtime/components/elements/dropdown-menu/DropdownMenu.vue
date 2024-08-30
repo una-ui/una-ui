@@ -75,14 +75,17 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
                 v-for="item in items"
                 :key="item.label"
               >
-                <slot :name="`item-${item.label}`" />
-                <DropdownMenuItem
+                <slot
                   v-if="!item.items && item.label"
-                  :size
-                  :inset
-                  :dropdown-menu-item
-                  v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
-                />
+                  :name="`item-${item.label}`"
+                >
+                  <DropdownMenuItem
+                    :size
+                    :inset
+                    :dropdown-menu-item
+                    v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
+                  />
+                </slot>
 
                 <DropdownMenuSeparator
                   v-else-if="!item.label && !item.items"

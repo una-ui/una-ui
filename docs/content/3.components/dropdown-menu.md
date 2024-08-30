@@ -17,6 +17,19 @@ description: 'NDropdownMenu component - used to display a list of actions or opt
 ::
 :::
 
+## Inset
+
+`inset` prop is used to set the dropdown-menu to be inset.
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueDropdownMenuInset
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuInset.vue
+::
+:::
+
 ## Variant and Color
 
 `dropdown-menu="{variant}-{color}"` is used to set the variant of the select. The default variant is `soft-black`.

@@ -28,13 +28,14 @@ const forwardedProps = useForwardProps(delegatedProps)
       v-bind="forwardedProps"
       :as="Button"
       :class="cn(
-        'w-full justify-start font-normal rounded-sm gap-x-3 px-2 transition-color focus-visible:outline-0',
+        'w-full justify-start font-normal rounded-sm px-2 transition-color focus-visible:outline-0',
         forwardedProps.inset && 'pl-8',
         props.class,
       )"
       :una="{
         btnDefaultVariant: 'dropdown-menu-item-default-variant',
-        btnTrailing: cn('ml-auto text-1em', forwardedProps.una?.btnTrailing),
+        btnLeading: cn('opacity-75 text-1.1em', forwardedProps.una?.btnLeading),
+        btnTrailing: cn('opacity-75 ml-auto text-1.1em', forwardedProps.una?.btnTrailing),
         ...forwardedProps.una,
       }"
       trailing="i-radix-icons-chevron-right"

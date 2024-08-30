@@ -4,7 +4,9 @@ import { DropdownMenuLabel, useForwardProps } from 'radix-vue'
 import { cn } from '../../../utils'
 import type { NDropdownMenuLabelProps } from '../../../types'
 
-const props = defineProps<NDropdownMenuLabelProps>()
+const props = withDefaults(defineProps<NDropdownMenuLabelProps>(), {
+  size: 'sm',
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -18,7 +20,7 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <DropdownMenuLabel
     v-bind="forwardedProps"
-    :class="cn('px-2 py-1.5 text-sm font-semibold', forwardedProps.inset && 'pl-8', props.class)"
+    :class="cn('px-2 py-1.5 text-1em font-semibold', forwardedProps.inset && 'pl-8', props.class)"
   >
     <slot />
   </DropdownMenuLabel>

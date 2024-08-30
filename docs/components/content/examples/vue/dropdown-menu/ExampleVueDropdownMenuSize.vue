@@ -11,7 +11,6 @@ const items = [
   {
     label: 'Billing',
     shortcut: '⌘B',
-    leading: 'i-lucide-credit-card',
   },
   {
     label: 'Settings',
