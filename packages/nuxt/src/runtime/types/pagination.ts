@@ -55,6 +55,7 @@ export interface NPaginationEllipsisProps extends EllipsisExtensions {
 export interface NPaginationFirstProps extends FirstExtensions {
   una?: {
     paginationFirst?: HTMLAttributes['class']
+    paginationFirstIcon?: HTMLAttributes['class']
   }
 }
 
