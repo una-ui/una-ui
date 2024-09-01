@@ -28,7 +28,7 @@ interface BaseExtensions {
 export interface NDropdownMenuProps extends
   Omit<NDropdownMenuRootProps, 'class' | 'size'>,
   Omit<NDropdownMenuTriggerProps, 'una'>,
-  Pick<NDropdownMenuItemProps, 'shortcut'> {
+  Pick<NDropdownMenuItemProps, 'shortcut' | 'dropdownMenuItem'> {
   /** Label for the menu */
   menuLabel?: string
   /** Items in the dropdown menu */

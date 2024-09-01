@@ -113,7 +113,7 @@ const items = [
 
     <NDropdownMenu
       :items
-      dropdown-menu="soft-gray"
+      dropdown-menu="outline-gray"
       dropdown-menu-item="gray"
       menu-label="My Account"
       :_dropdown-menu-content="{

@@ -26,10 +26,16 @@ description: 'NDropdownMenu component - used to display a list of actions or opt
 
 `NDropdownMenu` is a component that can be used to display a list of actions or options.
 
+| Prop                         | Type                          | Default     | Description                                      |
+| ---------------------------- | ----------------------------- | ----------- | ------------------------------------------------ |
+| `items`                      | `DropdownMenuItemProps[]`     | `[]`        | The items to display in the dropdown-menu.       |
+| `label`                      | `string`                      | `undefined` | The label to display in the dropdown-menu.       |
 
 ::alert{type="info"}
 All the props available in the [Radix Vue Dropdown Menu](https://www.radix-vue.com/components/dropdown-menu) are also
-available via its subcomponents' prop names, e.g., `_dropdown-menu-item`, `_dropdown-menu-trigger`, etc.
+available via its subcomponents' prop names, e.g., `_dropdown-menu-item`, `_dropdown-menu-trigger`, etc. refer to
+[DropdownMenu Props](#props) for more details.
+
 ::
 
 :::CodeGroup
@@ -142,43 +148,43 @@ The `height` and `width` of the select scale depends on the `dropdown-menu-size`
 
 :::CodeGroup
 ::code-block{label="DropdownMenu" preview}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenu.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenu.vue
 
 ::
 ::code-block{label="DropdownMenuTrigger"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuTrigger.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuTrigger.vue
 
 ::
 ::code-block{label="DropdownMenuItem"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuItem.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuItem.vue
 
 ::
 ::code-block{label="DropdownMenuGroup"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuGroup.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuGroup.vue
 
 ::
 ::code-block{label="DropdownMenuLabel"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuLabel.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuLabel.vue
 
 ::
 ::code-block{label="DropdownMenuSeparator"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuSeparator.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSeparator.vue
 
 ::
 ::code-block{label="DropdownMenuContent"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuContent.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuContent.vue
 
 ::
 ::code-block{label="DropdownMenuSub"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuSub.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSub.vue
 
 ::
 ::code-block{label="DropdownMenuSubTrigger"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuSubTrigger.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSubTrigger.vue
 
 ::
 ::code-block{label="DropdownMenuSubContent"}
-@@@ ../packages/nuxt/src/runtime/components/dropdown-menu/DropdownMenuSubContent.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSubContent.vue
 
 ::
 :::
