@@ -6,10 +6,6 @@ import type { NSeparatorProps } from '../../types'
 
 const props = withDefaults(defineProps<NSeparatorProps>(), {
   orientation: 'horizontal',
-  label: '',
-  una: () => ({
-    separatorDefaultVariant: 'separator-default-variant',
-  }),
 })
 
 const delegatedProps = computed(() => {
@@ -25,10 +21,10 @@ const delegatedProps = computed(() => {
     :class="
       cn(
         'separator',
-        props.una?.separatorDefaultVariant,
+        props.una?.separatorDefaultVariant || 'separator-default-variant',
+        props.class,
         props.una?.separator,
         props.orientation === 'vertical' ? 'separator-vertical' : 'separator-horizontal',
-        props.class,
       )
     "
   >
