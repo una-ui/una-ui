@@ -11,7 +11,7 @@
       btn="solid-black"
       label="Next page"
       trailing="i-heroicons-arrow-small-right-20-solid"
-      to="/components/dropdown"
+      to="/components/dropdown-menu"
     />
 
     <NButton

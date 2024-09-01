@@ -7,7 +7,7 @@ import Button from '../Button.vue'
 import DropdownMenuShortcut from './DropdownMenuShortcut.vue'
 
 const props = withDefaults(defineProps<NDropdownMenuItemProps>(), {
-  dropdownMenuItem: 'gray',
+  dropdownMenuItem: '~',
 })
 
 const delegatedProps = computed(() => {
