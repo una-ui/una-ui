@@ -23,7 +23,11 @@ const delegatedProps = computed(() => {
     <div class="dropdown-menu-separator-root">
       <Separator
         v-bind="delegatedProps"
-        :class="cn('dropdown-menu-separator', props.class)"
+        :class="cn(
+          'dropdown-menu-separator my-1',
+          props.class,
+          props.una?.dropdownMenuSeparator,
+        )"
       />
     </div>
   </DropdownMenuSeparator>

@@ -9,6 +9,7 @@ import Button from '../Button.vue'
 import type { NDropdownMenuSubTriggerProps } from '../../../types'
 
 const props = withDefaults(defineProps<NDropdownMenuSubTriggerProps>(), {
+  dropdownMenuItem: '~',
 })
 
 const delegatedProps = computed(() => {
@@ -26,14 +27,14 @@ const forwardedProps = useForwardProps(delegatedProps)
   >
     <Button
       v-bind="forwardedProps"
-      :as="Button"
+      :dropdown-menu-item
       :class="cn(
-        'dropdown-menu-sub-trigger',
-        forwardedProps.inset && 'pl-8',
+        'dropdown-menu-sub-trigger w-full justify-start font-normal rounded-sm px-2',
+        forwardedProps.inset && !(forwardedProps.leading || $slots.leading) && 'pl-8',
         props.class,
       )"
+      btn="~"
       :una="{
-        btnDefaultVariant: 'dropdown-menu-item-default-variant',
         btnLeading: cn('dropdown-menu-sub-trigger-leading', forwardedProps.una?.btnLeading),
         btnTrailing: cn('dropdown-menu-sub-trigger-trailing', forwardedProps.una?.btnTrailing),
         ...forwardedProps.una,

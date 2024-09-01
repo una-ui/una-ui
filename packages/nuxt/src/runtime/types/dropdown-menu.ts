@@ -6,7 +6,6 @@ import type {
   DropdownMenuRootProps,
   DropdownMenuSeparatorProps,
   DropdownMenuSubContentProps,
-  DropdownMenuSubProps,
   DropdownMenuSubTriggerProps,
   DropdownMenuTriggerProps,
 } from 'radix-vue'
@@ -54,8 +53,6 @@ export interface NDropdownMenuProps extends
   _dropdownMenuSeparator?: Partial<NDropdownMenuSeparatorProps>
   /** Props for the dropdown menu group */
   _dropdownMenuGroup?: Partial<NDropdownMenuGroupProps>
-  /** Props for the dropdown menu sub */
-  _dropdownMenuSub?: Partial<NDropdownMenuSubProps>
   /** Props for the dropdown menu sub-trigger */
   _dropdownMenuSubTrigger?: Partial<NDropdownMenuSubTriggerProps>
 
@@ -94,7 +91,7 @@ export interface NDropdownMenuLabelProps extends BaseExtensions, DropdownMenuLab
   /** Whether the label is inset */
   inset?: boolean
   /** Size of the label */
-  size?: string
+  size?: HTMLAttributes['class']
   /** Additional properties for the una component */
   una?: NDropdownMenuUnaProps['dropdownMenuLabel']
 }
@@ -127,6 +124,8 @@ export interface NDropdownMenuSubContentProps extends BaseExtensions, DropdownMe
  * Props for the NDropdownMenuItem component.
  */
 export interface NDropdownMenuItemProps extends NButtonProps {
+  /** Dropdown menu item */
+  dropdownMenuItem?: HTMLAttributes['class']
   /** Whether the item is inset */
   inset?: boolean
   /** Shortcut key for the item */
@@ -136,31 +135,21 @@ export interface NDropdownMenuItemProps extends NButtonProps {
 }
 
 /**
- * Props for the NDropdownMenuSub component.
- */
-export interface NDropdownMenuSubProps extends BaseExtensions, DropdownMenuSubProps {
-  /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuSub']
-}
-
-/**
  * Props for the NDropdownMenuSubTrigger component.
  */
 export interface NDropdownMenuSubTriggerProps extends NButtonProps, DropdownMenuSubTriggerProps {
   /** Dropdown menu item */
-  dropdownMenuItem?: string
+  dropdownMenuItem?: HTMLAttributes['class']
   /** Whether the sub-trigger is inset */
   inset?: boolean
-  /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuSubTrigger'] & NButtonProps['una']
 }
 
 /**
  * Props for the NDropdownMenuShortcut component.
  */
-export interface NDropdownMenuShortcutProps {
+export interface NDropdownMenuShortcutProps extends BaseExtensions {
   /** Shortcut key for the item */
-  shortcut?: string
+  value?: string
   /** Additional properties for the una component */
   una?: NDropdownMenuUnaProps['dropdownMenuShortcut']
 }
@@ -189,6 +178,4 @@ interface NDropdownMenuUnaProps {
   dropdownMenuRoot?: HTMLAttributes['class']
   /** CSS class for the dropdown menu shortcut */
   dropdownMenuShortcut?: HTMLAttributes['class']
-  /** CSS class for the dropdown menu sub */
-  dropdownMenuSub?: HTMLAttributes['class']
 }

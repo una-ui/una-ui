@@ -7,59 +7,66 @@ const items = [
       // eslint-disable-next-line no-alert
       alert('Profile clicked')
     },
+    leading: 'i-lucide-user',
   },
   {
     label: 'Billing',
     shortcut: '⌘B',
+    leading: 'i-lucide-banknote',
   },
   {
     label: 'Settings',
     shortcut: '⌘S',
+    leading: 'i-lucide-settings',
   },
   {
     label: 'Keyboard shortcuts',
     shortcut: '⌘K',
+    leading: 'i-lucide-keyboard',
   },
   {}, // to add a separator between items (label or items should be null).
   {
     label: 'Teams',
+    leading: 'i-lucide-users',
   },
   {
     label: 'Invite users',
+    leading: 'i-lucide-plus',
     items: [
       {
         label: 'Email',
         shortcut: '⌘E',
+        leading: 'i-lucide-mail',
       },
       {
         label: 'Message',
         shortcut: '⌘M',
+        leading: 'i-lucide-message-circle',
       },
       {},
       {
         label: 'More',
+        leading: 'i-lucide-more-horizontal',
         items: [
           {
             label: 'Slack',
             shortcut: '⌘S',
+            leading: 'i-logos-slack-icon',
           },
           {
             label: 'Discord',
             shortcut: '⌘D',
+            leading: 'i-logos-discord-icon',
           },
-          {},
           {
-            label: 'More',
-            items: [
-              {
-                label: 'Telegram',
-                shortcut: '⌘T',
-              },
-              {
-                label: 'WhatsApp',
-                shortcut: '⌘W',
-              },
-            ],
+            label: 'Telegram',
+            shortcut: '⌘T',
+            leading: 'i-logos-telegram',
+          },
+          {
+            label: 'WhatsApp',
+            shortcut: '⌘W',
+            leading: 'i-logos-whatsapp-icon',
           },
         ],
       },

@@ -17,7 +17,7 @@ const forwardedProps = useForwardProps(props)
     <Button
       v-bind="forwardedProps"
       :class="cn(
-        '',
+        'dropdown-menu-trigger justify-start font-normal',
         props.class,
       )"
       :una="{

@@ -102,7 +102,7 @@ const items = [
   <div class="h-50 flex items-center justify-around">
     <NDropdownMenu
       :items
-      dropdown-menu="-pink"
+      dropdown-menu="ghost-pink"
       dropdown-menu-item="pink"
       menu-label="My Account"
       :_dropdown-menu-content="{

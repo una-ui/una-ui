@@ -1,14 +1,22 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
 import { cn } from '../../../utils'
+import type { NDropdownMenuShortcutProps } from '../../../types/dropdown-menu'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = withDefaults(defineProps<NDropdownMenuShortcutProps>(), {
+  size: 'sm',
+})
 </script>
 
 <template>
-  <span :class="cn('dropdown-menu-shortcut', props.class)">
-    <slot />
+  <span
+    :class="cn(
+      'dropdown-menu-shortcut',
+      props.class,
+      props.una?.dropdownMenuShortcut,
+    )"
+  >
+    <slot>
+      {{ props.value }}
+    </slot>
   </span>
 </template>

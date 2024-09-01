@@ -33,6 +33,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       :class="cn(
         'dropdown-menu-content',
         props.class,
+        props.una?.dropdownMenuContent,
       )"
     >
       <slot />

@@ -1,26 +1,28 @@
 <template>
-  <div class="h-50 flex items-center justify-around">
+  <div class="">
     <NDropdownMenu
+      :modal="false"
       :_dropdown-menu-content="{
         class: 'w-60',
         align: 'start',
+        side: 'right',
       }"
     >
       <template #trigger>
         <NDropdownMenuTrigger
           dropdown-menu="data-[state=closed]:soft-gray data-[state=open]:solid-gray"
-          class="rounded-full p-2"
+          class="rounded-full p-1"
         >
           <NAvatar
-            src="/images/avatar.png"
+            src="https://avatars.githubusercontent.com/u/499550?v=4"
           />
         </NDropdownMenuTrigger>
       </template>
 
       <template #menu-label>
         <div class="flex flex-col items-start">
-          <span class="text-accent font-semibold leading-5">Phojie Rengel</span>
-          <span class="text-xs text-muted">phojrengel@gmail.com</span>
+          <span class="text-accent font-semibold leading-5">Evan You</span>
+          <span class="text-xs text-muted">evan@vuejs.org</span>
         </div>
       </template>
 

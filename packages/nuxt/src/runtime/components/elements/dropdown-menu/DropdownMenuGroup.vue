@@ -9,7 +9,11 @@ const props = defineProps<NDropdownMenuGroupProps>()
 <template>
   <DropdownMenuGroup
     v-bind="props"
-    :class="cn('dropdown-menu-group', props.class)"
+    :class="cn(
+      'dropdown-menu-group',
+      props.una?.dropdownMenuGroup,
+      props.class,
+    )"
   >
     <slot />
   </DropdownMenuGroup>

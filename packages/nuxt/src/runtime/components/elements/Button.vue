@@ -20,7 +20,6 @@ const mergeVariants = computed(() => {
     'breadcrumb-active': props.breadcrumbActive,
     'breadcrumb-inactive': props.breadcrumbInactive,
     'dropdown-menu': props.dropdownMenu,
-    'dropdown-menu-item': props.dropdownMenuItem,
   }
 })
 
@@ -55,8 +54,8 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     )"
     :disabled="to ? null : disabled || loading"
     :aria-label="icon ? label : null"
-    v-bind="mergeVariants"
     :size="size"
+    v-bind="mergeVariants"
   >
     <DefineTemplate v-if="loading">
       <slot name="loading">

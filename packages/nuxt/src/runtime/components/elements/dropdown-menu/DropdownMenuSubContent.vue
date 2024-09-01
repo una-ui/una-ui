@@ -23,7 +23,11 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <DropdownMenuSubContent
     v-bind="forwarded"
-    :class="cn('dropdown-menu-sub-content', props.class)"
+    :class="cn(
+      'dropdown-menu-sub-content',
+      props.class,
+      forwarded.una?.dropdownMenuSubContent,
+    )"
   >
     <slot />
   </DropdownMenuSubContent>

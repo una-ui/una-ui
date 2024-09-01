@@ -105,6 +105,8 @@ const items = [
       menu-label="My Account"
       :_dropdown-menu-content="{
         class: 'w-52',
+        align: 'end',
+        side: 'bottom',
       }"
       label="Open"
     />
