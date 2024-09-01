@@ -1,3 +1,12 @@
+# [0.14.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.13.0-beta.2...v0.14.0-beta.1) (2024-09-01)
+
+
+### Features
+
+* **DropdownMenu:** introduce new component and presets ([#174](https://github.com/una-ui/una-ui/issues/174)) ([c8ef6e3](https://github.com/una-ui/una-ui/commit/c8ef6e3e098c801d534800bcbde4de4d4abbf2da))
+
+
+
 # [0.13.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.13.0-beta.1...v0.13.0-beta.2) (2024-08-30)
 
 
