@@ -121,7 +121,7 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
-      path: resolve(runtimeDir, 'components/forms', 'calendar'),
+      path: resolve(runtimeDir, 'components/elements', 'calendar'),
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
