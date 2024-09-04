@@ -1,3 +1,12 @@
+# [0.15.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.14.0-beta.2...v0.15.0-beta.1) (2024-09-04)
+
+
+### Bug Fixes
+
+* add SSR hydration support for id ([#176](https://github.com/una-ui/una-ui/issues/176)) ([897cb8f](https://github.com/una-ui/una-ui/commit/897cb8f3aa503bbdbdb2bf1cc4a0ea88e1f99b47))
+
+
+
 # [0.14.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.14.0-beta.1...v0.14.0-beta.2) (2024-09-01)
 
 
