@@ -1,3 +1,5 @@
+import { useId } from 'vue'
+
 export * from './cn'
 
 export function rgbToHex(r: number, g: number, b: number): string {
@@ -21,7 +23,7 @@ export function hexToRgb(hex: string): [number, number, number] {
 }
 
 export function randomId(prefix: string): string {
-  return `una-${prefix}-${Math.random().toString(36).slice(2)}`
+  return `una-${prefix}-${useId()}`
 }
 
 export function omitProps<T extends Record<string, any>>(obj: T, propsToOmit: Array<keyof T>): Partial<T> {

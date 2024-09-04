@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { DropdownMenuTrigger, useForwardProps } from 'radix-vue'
 import Button from '../Button.vue'
-import { cn } from '../../../utils'
+import { cn, randomId } from '../../../utils'
 import type { NDropdownMenuTriggerProps } from '../../../types'
 
-const props = withDefaults(defineProps<NDropdownMenuTriggerProps>(), {
-})
+const props = defineProps<NDropdownMenuTriggerProps>()
 
 const forwardedProps = useForwardProps(props)
 </script>
@@ -16,6 +15,7 @@ const forwardedProps = useForwardProps(props)
   >
     <Button
       v-bind="forwardedProps"
+      :id="randomId('dropdown-menu-trigger')"
       :class="cn(
         'dropdown-menu-trigger justify-start font-normal',
         props.class,
