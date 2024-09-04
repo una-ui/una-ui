@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
 import { isEqual } from 'ohash'
@@ -112,7 +112,7 @@ export default defineComponent({
       :nav-link-inactive="resolveNavLinkInactive(route, $route, { isActive, isExactActive })"
       @click="(e) => !isExternal && navigate(e)"
     >
-      <slot v-bind="{ isActive: exact ? isExactActive : isActive }" />
+      <slot v-bind="{ isActive: props.exact ? isExactActive : isActive }" />
     </a>
   </NuxtLink>
 </template>
