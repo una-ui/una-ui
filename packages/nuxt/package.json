@@ -61,7 +61,7 @@
     "unocss-preset-animations": "^1.1.0"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.8.3",
+    "@nuxt/module-builder": "^0.8.1",
     "@nuxt/schema": "^3.13.1",
     "nuxt": "^3.13.1"
   },
