@@ -18,11 +18,11 @@ const forwardedProps = useForwardProps(delegatedProps)
   <CalendarCellTrigger
     calendar-today="~"
     calendar-selected="~"
+    calendar-unselected="~"
     calendar-unavailable="~"
     calendar-outside="~"
     :class="cn(
-      'btn',
-      'h-8 w-8 p-0 font-normal',
+      'btn h-8 w-8 p-0 font-normal',
       props.class,
     )"
     v-bind="forwardedProps"
