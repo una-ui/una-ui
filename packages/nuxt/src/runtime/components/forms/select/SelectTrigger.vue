@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { SelectTrigger, useForwardProps } from 'radix-vue'
-import { cn } from '../../../utils'
+import { cn, randomId } from '../../../utils'
 import type { NSelectTriggerProps } from '../../../types'
 import Button from '../../elements/Button.vue'
 
-const props = withDefaults(defineProps<NSelectTriggerProps>(), {
-})
+const props = defineProps<NSelectTriggerProps>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -55,6 +54,7 @@ const statusClassVariants = computed(() => {
   >
     <Button
       v-bind="forwardedProps"
+      :id="randomId('select-trigger')"
       :class="cn(
         'select-trigger justify-between font-normal',
         props.class,
