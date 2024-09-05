@@ -4,7 +4,7 @@ import Button from '../Button.vue'
 import { cn } from '../../../utils'
 import type { NTooltipTriggerProps } from '../../../types'
 
-const props = withDefaults(defineProps<NTooltipTriggerProps>(), {})
+const props = defineProps<NTooltipTriggerProps>()
 
 const forwardedProps = useForwardProps(props)
 </script>

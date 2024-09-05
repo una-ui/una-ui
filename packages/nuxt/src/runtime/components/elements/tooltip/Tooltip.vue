@@ -32,10 +32,10 @@ const forwarded = useForwardPropsEmits(props, emits)
         />
       </slot>
       <TooltipContent
-        v-bind="forwarded._tooltipContent"
-        :una="forwarded.una?.tooltipContent"
         :size
         :tooltip-content
+        :una="forwarded.una?.tooltipContent"
+        v-bind="forwarded._tooltipContent"
       >
         <slot />
       </TooltipContent>
