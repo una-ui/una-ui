@@ -5,6 +5,7 @@ interface Extensions {
   breadcrumbActive?: string
   breadcrumbInactive?: string
   dropdownMenu?: string
+  tooltip?: string
 }
 
 export interface NButtonProps extends Extensions {

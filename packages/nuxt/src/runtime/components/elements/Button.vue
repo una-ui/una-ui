@@ -20,6 +20,7 @@ const mergeVariants = computed(() => {
     'breadcrumb-active': props.breadcrumbActive,
     'breadcrumb-inactive': props.breadcrumbInactive,
     'dropdown-menu': props.dropdownMenu,
+    'tooltip': props.tooltip,
   }
 })
 
