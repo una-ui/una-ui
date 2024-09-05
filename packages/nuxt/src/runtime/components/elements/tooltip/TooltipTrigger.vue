@@ -4,17 +4,19 @@ import Button from '../Button.vue'
 import { cn } from '../../../utils'
 import type { NTooltipTriggerProps } from '../../../types'
 
-const props = defineProps<NTooltipTriggerProps>()
+const props = withDefaults(defineProps<NTooltipTriggerProps>(), {})
 
 const forwardedProps = useForwardProps(props)
 </script>
 
 <template>
-  <TooltipTrigger as-child>
+  <TooltipTrigger
+    as-child
+  >
     <Button
       v-bind="forwardedProps"
       :class="cn(
-        'tooltip-trigger',
+        'tooltip-trigger justify-start font-normal',
         props.class,
       )"
       :una="{

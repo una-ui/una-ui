@@ -13,7 +13,8 @@ type TriggerExtensions = NButtonProps & TooltipTriggerProps
 type ContentExtensions = BaseExtensions & TooltipContentProps
 type TooltipExtensions =
   Omit<NTooltipRootProps, 'class' | 'size'> &
-  Omit<NTooltipTriggerProps, 'una'>
+  Omit<NTooltipTriggerProps, 'una'> &
+  Pick<NTooltipContentProps, 'tooltipContent'>
 
 export interface NTooltipProps extends TooltipExtensions {
 
@@ -42,6 +43,9 @@ export interface NTooltipTriggerProps extends TriggerExtensions {
 }
 
 export interface NTooltipContentProps extends ContentExtensions {
+
+  tooltipContent?: HTMLAttributes['class']
+
   /** Additional properties for the una component */
   una?: NTooltipUnaProps['tooltipContent']
 }
