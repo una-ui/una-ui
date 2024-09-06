@@ -8,5 +8,5 @@ const value = ref(today(getLocalTimeZone())) as Ref<DateValue>
 <template>
   {{ value }}
 
-  <NCalendar v-model="value" weekday-format="short" class="border border-base rounded-md" />
+  <NCalendar v-model="value" weekday-format="short" />
 </template>

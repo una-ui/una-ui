@@ -2,7 +2,9 @@ type CalendarPrefix = 'calendar'
 
 export const staticCalendar: Record<`${CalendarPrefix}-${string}` | CalendarPrefix, string> = {
   // base
-  calendar: '',
+  'calendar': '',
+
+  'calendar-root': 'p-3 border border-base rounded-md',
 
 }
 

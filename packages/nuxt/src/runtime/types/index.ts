@@ -25,6 +25,7 @@ export * from './card'
 export * from './breadcrumb'
 export * from './table'
 export * from './dropdown-menu'
+export * from './calendar'
 
 export interface Colors {
   [key: string]: string
