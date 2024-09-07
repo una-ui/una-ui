@@ -5,6 +5,10 @@ import type { TooltipContentEmits } from 'radix-vue'
 import { cn } from '../../../utils'
 import type { NTooltipContentProps } from '../../../../../dist/runtime/types/tooltip'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(defineProps<NTooltipContentProps>(), {
   sideOffset: 4,
 })
@@ -23,7 +27,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <TooltipPortal>
     <TooltipContent
-      v-bind="forwarded"
+      v-bind="{ ...forwarded, ...$attrs }"
       :tooltip-content
       :class="cn(
         'tooltip-content-base',
