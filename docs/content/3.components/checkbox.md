@@ -10,12 +10,10 @@ description: 'NCheckbox component - use to create a checkbox input.'
 
 use `NCheckbox` component to create a checkbox.
 
-| Attribute | Description                                  |
-| --------- | -------------------------------------------- |
-| `v-model` | Reactive value of checkbox if `checked` or not. |
-| `label`   | The label of the checkbox.                      |
-
-> To view the full list of attributes, see the [Props](#props) section.
+| Attribute         | Type                      | Default | Description                           |
+| ----------------- | ------------------------- | ------- | ------------------------------------- |
+| `v-model:checked` | `boolean` `indeterminate` | `false` | Bind the checkbox to a boolean value. |
+| `label`           | `string`                  | `''`    | Set the label of the checkbox.        |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -23,6 +21,19 @@ use `NCheckbox` component to create a checkbox.
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxBasic.vue
+::
+:::
+
+## Indeterminate
+
+`checked="indeterminate"` - set the checkbox to indeterminate state.
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueCheckboxIndeterminate
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxIndeterminate.vue
 ::
 :::
 
@@ -68,7 +79,15 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 
 `size="{size}"` - change the size of the checkbox.
 
-> 🚀 You can freely adjust the size of the checkbox using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size.
+::alert{type="info"}
+  You can freely adjust the size of the checkbox using any size imaginable. No limits exist, and you can use `data-[state]` to adjust the size based on the state of the checkbox.
+::
+
+| Data state                   | Description                                            |
+| ---------------------------- | ------------------------------------------------------ |
+| `data-[state=checked]`       | Only apply the class if the checkbox is checked.       |
+| `data-[state=unchecked]`     | Only apply the class if the checkbox is unchecked.     |
+| `data-[state=indeterminate]` | Only apply the class if the checkbox is indeterminate. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -102,27 +121,6 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxReverse.vue
-::
-:::
-
-## Rules
-
-You can use the following rules to customize the checkbox if it is checked.
-
-::alert{type="info"}
-  You can also globally customize the checkbox preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
-::
-
-| Rule Name   | Description                                   | Example            |
-| ----------- | --------------------------------------------- | ------------------ |
-| `n-checked` | Only apply the class if the checkbox is checked. | `n-checked:3xl` |
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueCheckboxRules
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxRules.vue
 ::
 :::
 
@@ -169,10 +167,10 @@ You can customize the checkbox using the `una` prop and utility classes.
 
 ## Slots
 
-| Name    | Description                                                           |
-| ------- | --------------------------------------------------------------------- |
-| `label` | Use this slot to customize the label of the checkbox.                    |
-| `icon`  | Use this slot to customize the icon of the checkbox when it is `checked` |
+| Name      | Description                                                              |
+| --------- | ------------------------------------------------------------------------ |
+| `default` | Use this slot to customize the label of the checkbox.                    |
+| `icon`    | Use this slot to customize the icon of the checkbox when it is `checked` |
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/checkbox.ts

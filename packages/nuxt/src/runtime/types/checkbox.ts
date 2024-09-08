@@ -1,8 +1,12 @@
-export interface NCheckboxProps {
-  /**
-   * v-model binding value if the checkbox is checked.
-   */
-  modelValue?: boolean | null
+import type { CheckboxIndicatorProps, CheckboxRootProps } from 'radix-vue'
+import type { HTMLAttributes } from 'vue'
+import type { NLabelProps } from './label'
+
+interface BaseExtensions {
+  class?: HTMLAttributes['class']
+}
+
+export interface NCheckboxProps extends CheckboxRootProps, NLabelProps, BaseExtensions {
   /**
    * Disable the checkbox.
    */
@@ -31,16 +35,6 @@ export interface NCheckboxProps {
    */
   id?: string
   /**
-   * Manually set the for attribute.
-   *
-   * By default, the for attribute is synced with the id attribute for accessibility reasons.
-   *
-   * @default randomId
-   * @example
-   * for="options"
-   */
-  for?: string
-  /**
    * Display label text.
    *
    * @default null
@@ -60,11 +54,26 @@ export interface NCheckboxProps {
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/checkbox.ts
    */
+  /**
+   * Force mount the indicator component.
+   *
+   * @default true
+   */
+  forceMount?: CheckboxIndicatorProps['forceMount']
+
+  // subcomponents
+  _checkboxIndicator?: CheckboxIndicatorProps
+  _label?: NLabelProps
+
   una?: {
-    checkbox?: string
-    checkboxWrapper?: string
-    checkboxLabel?: string
-    checkboxIconBase?: string
-    checkboxIcon?: string
+    checkbox?: HTMLAttributes['class']
+    checkboxWrapper?: HTMLAttributes['class']
+    checkboxLabel?: HTMLAttributes['class']
+    checkboxIndicator?: HTMLAttributes['class']
+    checkboxIconBase?: HTMLAttributes['class']
+
+    checkboxCheckedIcon?: HTMLAttributes['class']
+    checkboxUncheckedIcon?: HTMLAttributes['class']
+    checkboxIndeterminateIcon?: HTMLAttributes['class']
   }
 }
