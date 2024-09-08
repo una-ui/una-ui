@@ -1,4 +1,6 @@
-export interface NFormGroupProps {
+import type { NLabelProps } from './label'
+
+export interface NFormGroupProps extends NLabelProps {
   /**
    * Update the form group status.
    *
@@ -11,18 +13,6 @@ export interface NFormGroupProps {
    * @default false
    */
   required?: boolean
-
-  /**
-   * Manually set the for attribute.
-   *
-   * By default, the for attribute is synced with the id attribute for accessibility reasons.
-   * You can disable this behavior by setting `for` to `false`.
-   *
-   * @default randomId
-   * @example
-   * for="email"
-   */
-  for?: string | boolean
   /**
    * Manually set the id attribute.
    *
