@@ -3,28 +3,41 @@ const options = ref([
   {
     value: true,
     label: 'Vue',
-    class: 'n-checked:bg-green-500/30 n-checked:border-green-500',
+    class: 'data-[state=checked]:bg-green-500/30 data-[state=checked]:border-green-500',
     checkbox: 'green',
     una: {
-      checkboxIcon: 'i-logos-vue n-checked:scale-150 transition-transform duration-1000',
+      checkboxCheckedIcon: 'i-logos-vue',
+      checkboxIndicator: 'data-[state=checked]:scale-150 transition-transform duration-1000',
     },
   },
   {
-    value: false,
+    value: true,
     label: 'React',
-    class: 'n-checked:bg-blue-500/30 n-checked:border-blue-500',
+    class: 'data-[state=checked]:bg-blue-500/30 data-[state=checked]:border-blue-500',
     checkbox: 'blue',
     una: {
-      checkboxIcon: 'i-logos-react  n-checked:rotate-360 transition-transform duration-1000',
+      checkboxCheckedIcon: 'i-logos-react',
+      checkboxIndicator: 'data-[state=checked]:rotate-360 transition-transform duration-1000',
     },
   },
   {
-    value: false,
+    value: true,
     label: 'Angular',
-    class: 'n-checked:bg-red-500/30 n-checked:border-red-500',
+    class: 'data-[state=checked]:bg-red-500/30 data-[state=checked]:border-red-500',
     checkbox: 'red',
     una: {
-      checkboxIcon: 'i-logos-angular-icon n-checked:scale-120 transition-transform duration-1000',
+      checkboxCheckedIcon: 'i-logos-angular-icon',
+      checkboxIndicator: 'data-[state=checked]:scale-120 transition-transform duration-1000',
+    },
+  },
+  {
+    value: true,
+    label: 'Svelte',
+    class: 'data-[state=checked]:bg-orange-500/30 data-[state=checked]:border-orange-500',
+    checkbox: 'orange',
+    una: {
+      checkboxCheckedIcon: 'i-logos-svelte-icon',
+      checkboxIndicator: 'data-[state=checked]:scale-120 transition-transform duration-1000',
     },
   },
 ])
@@ -42,7 +55,7 @@ const optionsValue = computed(() => options.value.map(option => option.value))
       <NCheckbox
         v-for="(option, i) in options"
         :key="i"
-        v-model="option.value"
+        v-model:checked="option.value"
         :checkbox="option.checkbox"
         size="15"
         :label="option.label"

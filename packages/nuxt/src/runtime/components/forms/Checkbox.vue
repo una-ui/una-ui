@@ -1,86 +1,75 @@
 <script setup lang="ts">
-import { computed, watch } from 'vue'
-import { useVModel } from '@vueuse/core'
-import NIcon from '../elements/Icon.vue'
-import { randomId } from '../../utils'
-import type { NCheckboxProps } from '../../types/checkbox'
+import { computed } from 'vue'
+import type { CheckboxRootEmits } from 'radix-vue'
+import { CheckboxIndicator, CheckboxRoot, useForwardPropsEmits } from 'radix-vue'
+import { cn, randomId } from '../../utils'
+import Icon from '../elements/Icon.vue'
+import type { NCheckboxProps } from '../../types'
+import Label from '../elements/Label.vue'
 
-defineOptions({
-  inheritAttrs: false,
+const props = withDefaults(defineProps<NCheckboxProps>(), {
+  forceMount: true,
+})
+const emits = defineEmits<CheckboxRootEmits>()
+
+const delegatedProps = computed(() => {
+  const { class: _, ...delegated } = props
+
+  return delegated
 })
 
-const props = withDefaults(
-  defineProps<NCheckboxProps>(),
-  {
-    modelValue: false,
-    disabled: false,
-  },
-)
-
-const emit = defineEmits<{ (...args: any): void }>()
-
-const slots = defineSlots<{
-  default?: void
-  icon?: any
-}>()
+const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 const id = computed(() => props.id ?? randomId('checkbox'))
-const checked = useVModel(props, 'modelValue', emit, { passive: true })
-
-watch(checked, (value) => {
-  emit('onUpdate', value)
-})
 </script>
 
 <template>
-  <label
+  <div
     checkbox="wrapper"
-    role="checkbox"
-    :for="props.for ?? id"
     :class="[
       una?.checkboxWrapper,
       {
         'checkbox-reverse': reverse,
-        'checkbox-disabled': disabled,
       },
     ]"
-    :checked="checked || null"
-    :disabled="disabled || null"
   >
-    <input
+    <CheckboxRoot
+      v-bind="forwarded"
       :id="id"
-      :value="checked"
-      :checked="!!checked"
-      type="checkbox"
-      class="peer"
-      checkbox="input"
-      :disabled="disabled"
-      :name="name"
-      @keypress.enter="checked = !checked"
-      @click="checked = !checked"
+      :class="
+        cn(
+          'checkbox',
+          props.class,
+        )"
     >
-    <span
-      :checkbox="checkbox"
-      :size="size"
-      class="checkbox checkbox-peer-focus"
-      v-bind="$attrs"
-    >
-      <slot name="icon">
-        <NIcon
-          checkbox="icon-base icon-checked"
-          :name="una?.checkboxIcon ?? 'checkbox-icon'"
-          :class="una?.checkboxIconBase"
-        />
-      </slot>
-    </span>
-    <div
-      v-if="slots.default || label"
-      checkbox="label"
-      :class="una?.checkboxLabel"
+      <CheckboxIndicator
+        :force-mount
+        :size
+        :class="cn('checkbox-indicator', una?.checkboxIndicator)"
+        v-bind="props._checkboxIndicator"
+      >
+        <slot name="icon">
+          <Icon
+            :name="props.checked === 'indeterminate'
+              ? props.una?.checkboxIndeterminateIcon ?? 'checkbox-indeterminate-icon'
+              : props.checked
+                ? props.una?.checkboxCheckedIcon ?? 'checkbox-checked-icon'
+                : props.una?.checkboxUncheckedIcon ?? 'checkbox-unchecked-icon'"
+            :class="cn('checkbox-icon-base', una?.checkboxIconBase)"
+          />
+        </slot>
+      </CheckboxIndicator>
+    </CheckboxRoot>
+
+    <Label
+      v-if="$slots.default || label"
+      :for="props.for || id"
+      :class="cn('checkbox-label', una?.checkboxLabel)"
+      v-bind="props._label"
     >
       <slot>
         {{ label }}
       </slot>
-    </div>
-  </label>
+    </Label>
+  </div>
 </template>

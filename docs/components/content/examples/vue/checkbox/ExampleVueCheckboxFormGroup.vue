@@ -22,14 +22,13 @@ const notifications = ref([
   <div class="flex flex-col space-y-6">
     <!-- Vertical -->
     <NFormGroup
-      :for="false"
       label="Participating, @mentions and custom"
       description="Notifications for the conversations you are participating in, or if someone cites you with an @mention. Also for all activity when subscribed to specific events."
     >
       <NCheckbox
         v-for="option in notifications"
         :key="option.label"
-        v-model="option.value"
+        v-model:checked="option.value"
         :label="option.label"
         :checkbox="option.checkbox"
       />
@@ -39,7 +38,6 @@ const notifications = ref([
 
     <!-- Horizontal -->
     <NFormGroup
-      :for="false"
       required
       message="You must choose at least one event"
       label="Participating, @mentions and custom"
@@ -49,7 +47,7 @@ const notifications = ref([
         <NCheckbox
           v-for="option in notifications"
           :key="option.label"
-          v-model="option.value"
+          v-model:checked="option.value"
           :label="option.label"
           :checkbox="option.checkbox"
         />

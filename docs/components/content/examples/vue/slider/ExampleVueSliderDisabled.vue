@@ -6,7 +6,7 @@ const isDisabled = ref(true)
 <template>
   <div class="flex flex-col space-y-4">
     <NCheckbox
-      v-model="isDisabled"
+      v-model:checked="isDisabled"
       label="Disable"
     />
 
