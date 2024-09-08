@@ -2,8 +2,9 @@
 import { useVModel } from '@vueuse/core'
 import { computed } from 'vue'
 import type { NRadioProps } from '../../types'
-import { randomId } from '../../utils'
+import { cn, randomId } from '../../utils'
 import NIcon from '../elements/Icon.vue'
+import Label from '../elements/Label.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -33,9 +34,8 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
 </script>
 
 <template>
-  <label
+  <div
     radio="wrapper"
-    :for="props.for ?? id"
     :class="[
       una?.radioWrapper,
       {
@@ -73,14 +73,17 @@ const model = useVModel(props, 'modelValue', emit, { passive: true })
         />
       </slot>
     </span>
-    <div
+    <Label
       v-if="slots.default || label"
-      radio="label"
-      :class="una?.radioLabel"
+      :for="props.for ?? id"
+      :class="cn(
+        'radio-label',
+        una?.radioLabel,
+      )"
     >
       <slot>
         {{ label }}
       </slot>
-    </div>
-  </label>
+    </Label>
+  </div>
 </template>
