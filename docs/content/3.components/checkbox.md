@@ -62,10 +62,6 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 
 > Read more about the `NFormGroup` component [here](form-group).
 
-::alert{type="warning"}
-  Remember to set `for` to false to disable `for` behavior on the label since we have a custom implementation for the checkbox input.
-::
-
 :::CodeGroup
 ::code-block{label="Preview" preview}
   :ExampleVueCheckboxFormGroup
