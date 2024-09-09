@@ -28,6 +28,7 @@ import { table } from './table'
 import { breadcrumb } from './breadcrumb'
 import { dropdowMenu } from './dropdown-menu'
 import { label } from './label'
+import { pagination } from './pagination'
 
 export const shortcuts = [
   ...general,
@@ -59,4 +60,5 @@ export const shortcuts = [
   ...table,
   ...dropdowMenu,
   ...label,
+  ...pagination,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

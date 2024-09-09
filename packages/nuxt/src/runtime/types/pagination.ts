@@ -17,9 +17,9 @@ type LastExtensions = PaginationLastProps & BaseExtensions
 type PaginationExtensions = NPaginationRootProps & BaseExtensions
 
 export interface NPaginationProps extends PaginationExtensions {
-
   // sub-components
-  _paginationList?: Partial<NPaginationRootProps>
+  _paginationRoot?: Partial<NPaginationRootProps>
+  _paginationList?: Partial<NPaginationListProps>
   _paginationItemList?: Partial<NPaginationListItemProps>
   _paginationEllipsis?: Partial<NPaginationEllipsisProps>
   _paginationFirst?: Partial<NPaginationFirstProps>
