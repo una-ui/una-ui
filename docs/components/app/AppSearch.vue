@@ -218,8 +218,8 @@ watch(Escape, () => {
     >
       <span class="flex items-center">
         <NIcon name="i-heroicons-magnifying-glass" mr-3 />
-        <span class="flex items-center">
-          <span>Search documentation...</span>
+        <span class="hidden w-14 flex items-center sm:w-auto">
+          <p class="truncate text-ellipsis">Search documentation...</p>
         </span>
       </span>
       <template #trailing>
