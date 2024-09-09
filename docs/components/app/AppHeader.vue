@@ -21,12 +21,13 @@ const isPageLayout = computed(() => layout.value === 'page')
         'has-doc-search': hasDocSearch,
       }]"
   >
-    <Container grid="~ cols-12" items-center gap-3>
+    <Container class="grid cols-12 items-center gap-3">
       <div
         col-span="1 lg:4"
         class="flex items-center"
       >
         <AppHeaderLogo />
+        <NSeparator orientation="vertical" class="mx-0 ml-3.5 mr-1 hidden h-5 lg:block" />
         <AppHeaderNavigation />
       </div>
 

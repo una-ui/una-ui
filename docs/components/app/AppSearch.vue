@@ -211,20 +211,19 @@ watch(Escape, () => {
 <template>
   <div class="z-5 flex items-center">
     <NButton
-      btn="soft-gray block"
-      class="justify-between rounded-lg px-3 font-normal md:w-80"
+      btn="!soft-gray block"
+      class="justify-between rounded-lg px-2 !text-muted font-normal md:w-80"
       aria-label="Search"
       @click="show = true"
     >
       <span class="flex items-center">
         <NIcon name="i-heroicons-magnifying-glass" mr-3 />
         <span class="flex items-center">
-          <span>Search</span>
+          <span>Search documentation...</span>
         </span>
       </span>
-
       <template #trailing>
-        <NKbd kbd="outline" ml-5 size="12px" text-nowrap>
+        <NKbd kbd="soft-gray" ml-5 size="11px" text-nowrap>
           ⌘ K
         </NKbd>
       </template>
@@ -240,7 +239,7 @@ watch(Escape, () => {
       >
         <div class="search-window p-5" @click.stop>
           <div
-            class="search-input"
+            class="search-input rounded-md !bg-base"
             input="solid"
           >
             <Icon
