@@ -26,6 +26,7 @@ export * from './breadcrumb'
 export * from './table'
 export * from './dropdown-menu'
 export * from './label'
+export * from './popover'
 
 export interface Colors {
   [key: string]: string
