@@ -211,8 +211,8 @@ watch(Escape, () => {
 <template>
   <div class="z-5 flex items-center">
     <NButton
-      btn="soft-gray hover:ghost-gray block"
-      class="justify-between rounded-lg px-2 font-normal md:w-80"
+      btn="!soft-gray block"
+      class="justify-between rounded-lg px-2 !text-muted font-normal md:w-80"
       aria-label="Search"
       @click="show = true"
     >
@@ -222,9 +222,8 @@ watch(Escape, () => {
           <span>Search documentation...</span>
         </span>
       </span>
-
       <template #trailing>
-        <NKbd kbd="soft-gray" class="dark:ring-0" ml-5 size="11px" text-nowrap>
+        <NKbd kbd="soft-gray" ml-5 size="11px" text-nowrap>
           ⌘ K
         </NKbd>
       </template>

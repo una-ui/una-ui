@@ -27,7 +27,7 @@ const isPageLayout = computed(() => layout.value === 'page')
         class="flex items-center"
       >
         <AppHeaderLogo />
-        <NSeparator orientation="vertical" class="h-5 -mr-0.1" />
+        <NSeparator orientation="vertical" class="mx-0 ml-3.5 mr-1 hidden h-5 lg:block" />
         <AppHeaderNavigation />
       </div>
 
