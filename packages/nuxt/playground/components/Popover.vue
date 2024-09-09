@@ -8,13 +8,13 @@
         Open popover
       </NButton>
     </NPopoverTrigger>
-    <NPopoverContent class="w-80 bg-muted">
+    <NPopoverContent class="w-80">
       <div class="grid gap-4">
         <div class="space-y-2">
           <h4 class="font-medium leading-none">
             Dimensions
           </h4>
-          <p class="text-muted-foreground text-sm">
+          <p class="text-sm text-muted">
             Set the dimensions for the layer.
           </p>
         </div>

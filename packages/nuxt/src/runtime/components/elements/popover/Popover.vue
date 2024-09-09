@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { PopoverRoot, useForwardPropsEmits } from 'radix-vue'
-import type { PopoverRootEmits, PopoverRootProps } from 'radix-vue'
+import type { PopoverRootEmits } from 'radix-vue'
+import type { NPopoverProps } from '../../../types'
 
-const props = defineProps<PopoverRootProps>()
+const props = defineProps<NPopoverProps>()
 const emits = defineEmits<PopoverRootEmits>()
 
 const forwarded = useForwardPropsEmits(props, emits)
