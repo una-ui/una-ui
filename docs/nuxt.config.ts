@@ -9,6 +9,11 @@ export default defineNuxtConfig({
     unaUI,
   ],
 
+  sourcemap: {
+    server: false,
+    client: true,
+  },
+
   runtimeConfig: {
     public: {
       version: pkg.version,

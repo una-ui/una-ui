@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const off = ref(false)
+const checked = ref(false)
 </script>
 
 <template>
-  <NCheckbox v-model="off" label="Checkbox" />
+  <NCheckbox v-model:checked="checked" label="Checkbox" />
 </template>

@@ -54,5 +54,6 @@ const prefixes = prefixFiles.map(i => basename(i, extname(i))).filter(i => i !==
 console.log(prefixes)
 const global = ['resize', 'size', 'btn', 'breadcrumb-active', 'breadcrumb-inactive']
 prefixes.push(...global)
+prefixes.sort((a, b) => a.localeCompare(b))
 const formattedPrefixes = `export default [${prefixes.map(p => `'${p.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase()}'`).join(', ')}]\n` // convert to kebab-case
 await fs.writeFile('./packages/preset/src/prefixes.ts', formattedPrefixes, { encoding: 'utf-8' })

@@ -80,7 +80,7 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
       una?.accordion,
     ]"
   >
-    <DefineTemplate v-slot="{ item, close, index, open }">
+    <DefineTemplate v-slot="{ item, close, index, open }: any">
       <slot
         :name="item.content ? 'content' : index"
         :item="item" :index="index" :open="open" :close="close"

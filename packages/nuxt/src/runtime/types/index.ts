@@ -24,6 +24,8 @@ export * from './separator'
 export * from './card'
 export * from './breadcrumb'
 export * from './table'
+export * from './dropdown-menu'
+export * from './label'
 export * from './pagination'
 
 export interface Colors {
