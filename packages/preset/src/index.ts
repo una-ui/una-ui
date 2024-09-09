@@ -55,10 +55,10 @@ export default function presetUna(options: unaUIOptions = {
         info: colors.blue,
       },
       borderRadius: {
-        xl: 'calc(var(--radius) + 4px)',
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        xl: 'calc(var(--una-radius) + 4px)',
+        lg: 'var(--una-radius)',
+        md: 'calc(var(--una-radius) - 2px)',
+        sm: 'calc(var(--una-radius) - 4px)',
       },
     }),
     rules: [

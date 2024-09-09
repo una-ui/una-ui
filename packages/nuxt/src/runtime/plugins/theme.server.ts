@@ -19,12 +19,10 @@ export default defineNuxtPlugin(() => {
           const html = document.documentElement
           ${process.dev ? 'console.log({ settings })' : ''}
 
-          if (settings.primaryColors) {
-            Object.entries(settings.primaryColors).map(i => html.style.setProperty(i[0], i[1]))
-          }
-          if (settings.grayColors) {
-            Object.entries(settings.grayColors).map(i => html.style.setProperty(i[0], i[1]))
-          }
+          Object.entries(settings.primaryColors).map(i => html.style.setProperty(i[0], i[1]))
+          Object.entries(settings.grayColors).map(i => html.style.setProperty(i[0], i[1]))
+          html.style.setProperty('--una-radius', settings.radius + 'rem')
+          html.style.setProperty('--una-font-size', settings.fontSize + 'px')
         })()`.trim().replace(/\s*\n+\s*/g, ';'),
       },
     ],

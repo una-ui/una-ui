@@ -52,4 +52,5 @@ export interface UnaSettings {
   primary: string
   gray: string
   fontSize: number
+  radius: number
 }
