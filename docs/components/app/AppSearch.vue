@@ -211,7 +211,7 @@ watch(Escape, () => {
 <template>
   <div class="z-5 flex items-center">
     <NButton
-      btn="soft-gray block"
+      btn="soft-gray hover:ghost-gray block"
       class="justify-between rounded-lg px-3 font-normal md:w-80"
       aria-label="Search"
       @click="show = true"
@@ -224,7 +224,7 @@ watch(Escape, () => {
       </span>
 
       <template #trailing>
-        <NKbd kbd="outline" ml-5 size="12px" text-nowrap>
+        <NKbd kbd="soft-gray" ml-5 size="12px" text-nowrap>
           ⌘ K
         </NKbd>
       </template>
@@ -240,7 +240,7 @@ watch(Escape, () => {
       >
         <div class="search-window p-5" @click.stop>
           <div
-            class="search-input"
+            class="search-input rounded-md !bg-base"
             input="solid"
           >
             <Icon
