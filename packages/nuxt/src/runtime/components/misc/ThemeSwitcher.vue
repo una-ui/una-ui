@@ -15,7 +15,6 @@ import Separator from '../elements/Separator.vue'
 import { useColorMode } from '#imports'
 
 const colorMode = useColorMode()
-const isDark = computed(() => colorMode.preference === 'dark')
 
 const [value, toggle] = useToggle()
 const { primaryThemes, grayThemes } = useUnaThemes()
@@ -87,7 +86,8 @@ function shuffleTheme() {
               v-for="[key, theme] in primaryThemes"
               :key="key"
               :style="{ background: theme['--una-primary-hex'] }"
-              class="h-6.5 w-6.5 rounded-full transition-all" :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
+              class="h-6.5 w-6.5 rounded-full transition-all"
+              :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
               ring="primary offset-4 offset-base"
               aria-label="Primary Color"
               @click="updatePrimaryTheme(key)"
@@ -140,22 +140,33 @@ function shuffleTheme() {
         <div class="space-y-3">
           <Label for="theme" class="text-xs">Mode</Label>
 
-          <div class="flex py-1.5 space-x-2">
+          <div class="flex justify-around py-1.5 space-x-2">
             <Button
-              btn="solid-gray"
-              :class="{ 'ring-2 ring-primary': !isDark }"
+              btn="solid-gray block"
+              :class="{ 'ring-2 ring-primary': colorMode.preference === 'system' }"
+              leading="i-radix-icons-desktop"
+              class="px-3"
+              size="xs"
+              label="System"
+              @click="colorMode.preference = 'system'"
+            />
+
+            <Button
+              btn="solid-gray block"
+              :class="{ 'ring-2 ring-primary': colorMode.preference === 'light' }"
               leading="i-radix-icons-sun"
-              class="px-5"
+              class="px-3"
               size="xs"
               label="Light"
               @click="colorMode.preference = 'light'"
             />
+
             <Button
-              btn="solid-gray"
-              :class="{ 'ring-2 ring-primary': isDark }"
+              btn="solid-gray block"
+              :class="{ 'ring-2 ring-primary': colorMode.preference === 'dark' }"
               leading="i-radix-icons-moon"
+              class="px-3"
               size="xs"
-              class="px-5"
               label="Dark"
               @click="colorMode.preference = 'dark'"
             />
