@@ -22,7 +22,7 @@
   --c-divider: rgb(var(--una-gray-200));
   --c-bg-selection: rgba(var(--una-primary-600), 0.2);
 
-  --radius: 0.95rem;
+  --radius: 0.5rem;
 }
 
 .dark {
