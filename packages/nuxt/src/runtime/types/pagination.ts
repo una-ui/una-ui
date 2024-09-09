@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from 'vue'
 import type { PaginationEllipsisProps, PaginationFirstProps, PaginationLastProps, PaginationListItemProps, PaginationListProps, PaginationNextProps, PaginationPrevProps, PaginationRootProps } from 'radix-vue'
+import type { NButtonProps } from './button'
 
 interface BaseExtensions {
   class?: HTMLAttributes['class']
@@ -8,7 +9,6 @@ interface BaseExtensions {
 
 type RootExtensions = Omit<PaginationRootProps, 'modelValue'> & BaseExtensions
 type ListExtensions = Omit<PaginationListProps, 'value'> & BaseExtensions
-type ListItemExtensions = PaginationListItemProps & BaseExtensions
 type EllipsisExtensions = PaginationEllipsisProps & BaseExtensions
 type FirstExtensions = PaginationFirstProps & BaseExtensions
 type PreviousExtensions = PaginationPrevProps & BaseExtensions
@@ -40,10 +40,7 @@ export interface NPaginationListProps extends ListExtensions {
   }
 }
 
-export interface NPaginationListItemProps extends ListItemExtensions {
-  una?: {
-    paginationItemList?: HTMLAttributes['class']
-  }
+export interface NPaginationListItemProps extends PaginationListItemProps, NButtonProps {
 }
 
 export interface NPaginationEllipsisProps extends EllipsisExtensions {

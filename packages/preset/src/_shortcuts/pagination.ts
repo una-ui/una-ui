@@ -5,9 +5,10 @@ export const staticPagination: Record<`${PaginationPrefix}-${string}` | Paginati
   'pagination': '',
   'pagination-button': 'w-9 h-9 p-0',
   'pagination-list': 'flex items-center gap-1 text-base',
-  'pagination-item': 'data-[selected]:text-white h-9 w-9 border rounded transition data-[selected]:bg-primary hover:bg-secondary/10 focus-within:outline-1 focus-within:outline-offset-1 focus-within:outline',
 
   // components
+  'pagination-item': 'pagination-button',
+
   'pagination-ellipsis': 'w-9 h-9 flex items-center justify-center',
   'pagination-ellipsis-icon': 'i-lucide-ellipsis',
 
