@@ -38,7 +38,7 @@ const id = computed(() => props.id ?? randomId('checkbox'))
       :id="id"
       :class="
         cn(
-          'checkbox',
+          'peer checkbox',
           props.class,
         )"
     >
