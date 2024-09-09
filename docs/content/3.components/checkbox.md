@@ -128,7 +128,14 @@ You can customize the checkbox using the `una` prop and utility classes.
   You can also globally customize the checkbox preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
 ::
 
-`una.checkboxIcon` - Custom icon of the checkbox when it is `checked`.
+| Property                        | Type     | Default          | Description                                             |
+| ------------------------------- | -------- | ---------------- | ------------------------------------------------------- |
+| `una.checkboxCheckedIcon`       | `string` | `i-check`        | Custom icon of the checkbox when it is `checked`.       |
+| `una.checkboxUncheckedIcon`     | `string` | `null`           | Custom icon of the checkbox when it is `unchecked`.     |
+| `una.checkboxIndeterminateIcon` | `string` | `i-lucide-minus` | Custom icon of the checkbox when it is `indeterminate`. |
+
+
+
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
