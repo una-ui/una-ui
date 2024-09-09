@@ -6,6 +6,7 @@
           Open popover
         </NButton>
       </NPopoverTrigger>
+
       <NPopoverContent
         align="start"
         class="w-80"
