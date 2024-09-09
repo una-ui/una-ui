@@ -20,7 +20,7 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <PaginationPrev v-bind="forwardedProps" as-child>
-    <Button :class="cn('pagination-prev', props.class)">
+    <Button :class="cn('pagination-prev', props.class)" btn="solid-white">
       <slot>
         <Icon
           :name="forwardedProps?.una?.paginationPrevIcon || 'pagination-prev-icon'"

@@ -20,7 +20,7 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <PaginationListItem v-bind="forwardedProps" as-child>
     <Button
-      btn="solid-white  data-[selected=true]:solid"
+      btn="solid-white data-[selected=true]:solid"
       :class="cn('pagination-item', props.class)"
     >
       {{ value }}
