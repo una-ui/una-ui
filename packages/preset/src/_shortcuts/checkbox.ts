@@ -6,19 +6,19 @@ type CheckboxPrefix = 'checkbox'
 
 export const staticCheckbox: Record<`${CheckboxPrefix}-${string}` | CheckboxPrefix, string> = {
   // base
-  'checkbox': 'text-md checkbox-primary flex items-center transition-base w-1em h-1em border border-brand rounded n-checked:border-brand n-checked:bg-brand',
-  'checkbox-disabled': 'n-disabled',
-  'checkbox-label': 'block text-sm font-medium leading-6',
-  'checkbox-input': 'absolute w-full opacity-0',
+  'checkbox': 'checkbox-primary text-md w-1em h-1em shrink-0 rounded-sm ring-offset-base focus-visible:outline-none disabled:n-disabled border border-brand bg-brand text-inverted focus-visible:(ring-2 ring-brand ring-offset-2) data-[state=unchecked]:(bg-base text-base)',
+  'checkbox-label': 'block',
   'checkbox-reverse': 'flex-row-reverse',
-  'checkbox-peer-focus': 'peer-focus-(ring-2 ring-brand ring-offset-2 ring-offset-base)',
 
   // wrappers
   'checkbox-wrapper': 'gap-x-3 relative inline-flex items-center hover:cursor-pointer',
 
   // icon
-  'checkbox-icon-base': 'm-auto h-full w-full opacity-0 transition-base n-checked:opacity-100 text-inverted',
-  'checkbox-icon': 'i-check', // refer to general.ts
+  'checkbox-indicator': 'flex items-center justify-center h-full w-full data-[state=unchecked]:opacity-0 transition-base opacity-100 text-inverted',
+  'checkbox-icon-base': 'w-1em h-1em',
+  'checkbox-checked-icon': 'i-check',
+  'checkbox-unchecked-icon': '',
+  'checkbox-indeterminate-icon': 'i-lucide-minus',
 }
 
 export const dynamicCheckbox = [
