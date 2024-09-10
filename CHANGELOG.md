@@ -1,3 +1,12 @@
+## [0.16.1-beta.2](https://github.com/una-ui/una-ui/compare/v0.16.1-beta.1...v0.16.1-beta.2) (2024-09-10)
+
+
+### Bug Fixes
+
+* **ThemeSwitcher:** revert client settings ([75c89cd](https://github.com/una-ui/una-ui/commit/75c89cd9897c4c8d9f1d76028a9d5018e73a43b1))
+
+
+
 ## [0.16.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.0-beta.1...v0.16.1-beta.1) (2024-09-10)
 
 
