@@ -22,14 +22,6 @@ export function useUnaSettings() {
   const settings = useStorage('una-settings', defaultSettings)
 
   watchEffect(() => {
-    if (!settings.value.radius)
-      settings.value.radius = defaultSettings.radius
-
-    if (!settings.value.fontSize)
-      settings.value.fontSize = defaultSettings.fontSize
-  })
-
-  watchEffect(() => {
     settings.value.primaryColors = getPrimaryColors(settings.value.primary)
     settings.value.grayColors = getGrayColors(settings.value.gray)
   })
