@@ -1,28 +1,36 @@
 <template>
   <div class="h-28 flex items-center justify-around">
     <NTooltip
-      label="Hover X"
+      content="The xs size"
       size="xs"
     >
-      The xs size
+      <NButton btn="solid-white">
+        Hover XS
+      </NButton>
     </NTooltip>
     <NTooltip
-      label="Hover SM/Default"
+      content="The sm size"
       size="sm"
     >
-      The sm size
+      <NButton btn="solid-white">
+        Hover SM/Default
+      </NButton>
     </NTooltip>
     <NTooltip
-      label="Hover MD"
+      content="The md size"
       size="md"
     >
-      The md size
+      <NButton btn="solid-white">
+        Hover MD
+      </NButton>
     </NTooltip>
     <NTooltip
-      label="Hover LG"
+      content="The lg size"
       size="lg"
     >
-      The lg size
+      <NButton btn="solid-white">
+        Hover LG
+      </NButton>
     </NTooltip>
   </div>
 </template>

@@ -1,36 +1,44 @@
 <template>
   <div class="h-28 flex items-center justify-around">
     <NTooltip
-      label="Top"
+      content="The side is top"
       :_tooltip-content="{
         side: 'top',
       }"
     >
-      The side is top
+      <NButton btn="solid-white">
+        Top
+      </NButton>
     </NTooltip>
     <NTooltip
-      label="Right"
+      content="The side is right"
       :_tooltip-content="{
         side: 'right',
       }"
     >
-      The side is right
+      <NButton btn="solid-white">
+        Right
+      </NButton>
     </NTooltip>
     <NTooltip
-      label="Bottom"
+      content="The side is bottom"
       :_tooltip-content="{
         side: 'bottom',
       }"
     >
-      The side is bottom
+      <NButton btn="solid-white">
+        Bottom
+      </NButton>
     </NTooltip>
     <NTooltip
-      label="Left"
+      content="The side is left"
       :_tooltip-content="{
         side: 'left',
       }"
     >
-      The side is left
+      <NButton btn="solid-white">
+        Left
+      </NButton>
     </NTooltip>
   </div>
 </template>

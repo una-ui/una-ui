@@ -1,9 +1,11 @@
 <template>
   <div class="grid h-28 place-items-center">
     <NTooltip
-      label="Hover"
+      content="Hello from tooltip"
     >
-      Hello from tooltip
+      <NButton btn="solid-white">
+        Hover
+      </NButton>
     </NTooltip>
   </div>
 </template>

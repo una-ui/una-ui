@@ -3,7 +3,7 @@ import { useForwardPropsEmits } from 'radix-vue'
 import type { TooltipRootEmits } from 'radix-vue'
 import type { NTooltipProps } from '../../../types'
 
-import { omitProps, pickProps } from '../../../utils'
+import { pickProps } from '../../../utils'
 import TooltipContent from './TooltipContent.vue'
 import TooltipProvider from './TooltipProvider.vue'
 import TooltipRoot from './TooltipRoot.vue'
@@ -24,20 +24,21 @@ const forwarded = useForwardPropsEmits(props, emits)
     <TooltipRoot
       v-bind="pickProps({ ...forwarded, ...$attrs }, ['open', 'defaultOpen'])"
     >
-      <slot name="trigger">
-        <TooltipTrigger
-          v-bind="omitProps({ ...forwarded, ...forwarded._tooltipTrigger }, [
-            'tooltipContent',
-          ])"
-        />
-      </slot>
+      <!-- trigger -->
+      <TooltipTrigger as-child>
+        <slot />
+      </TooltipTrigger>
+      <!-- content -->
       <TooltipContent
+        v-if="$slots.content || content"
         :size
-        :tooltip-content
+        :tooltip
         :una="forwarded.una?.tooltipContent"
         v-bind="forwarded._tooltipContent"
       >
-        <slot />
+        <slot name="content">
+          {{ content }}
+        </slot>
       </TooltipContent>
     </TooltipRoot>
   </TooltipProvider>

@@ -13,10 +13,22 @@ type TriggerExtensions = NButtonProps & TooltipTriggerProps
 type ContentExtensions = BaseExtensions & TooltipContentProps
 type TooltipExtensions =
   Omit<NTooltipRootProps, 'class' | 'size'> &
-  Omit<NTooltipTriggerProps, 'una'> &
-  Pick<NTooltipContentProps, 'tooltipContent'>
+  Omit<NTooltipTriggerProps, 'una'>
 
 export interface NTooltipProps extends TooltipExtensions {
+  /**
+   * Allows you to add `UnaUI` tooltip preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/card.ts
+   * @example
+   * tooltip="green"
+   */
+  tooltip?: HTMLAttributes['class']
+  /**
+   * Add a content of the tooltip.
+   */
+  content?: string
 
   // subcomponents
   _tooltipRoot?: Partial<NTooltipRootProps>
@@ -43,9 +55,6 @@ export interface NTooltipTriggerProps extends TriggerExtensions {
 }
 
 export interface NTooltipContentProps extends ContentExtensions {
-
-  tooltipContent?: HTMLAttributes['class']
-
   /** Additional properties for the una component */
   una?: NTooltipUnaProps['tooltipContent']
 }

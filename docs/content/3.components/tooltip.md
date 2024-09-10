@@ -19,30 +19,21 @@ use `NTooltip` to provide information for a component.
 ::
 :::
 
-## Variant and Color
+## Color
 
-`tooltip="{variant}-{color}"` is used to set the variant of the tooltip. The default variant is `solid-white`.
-
-`tooltip-content="{color}"` is used to set the variant of the tooltip content. The default variant is `inverted`.
+`tooltip="{color}"` is used to set the color of the tooltip. The default color is `base`.
 
 | Prop                                     | Description                                                      |
 | ---------------------------------------- | ---------------------------------------------------------------- |
-| `tooltip`                                | Set the tooltip variant and color.                               |
-| `_tooltip-trigger.tooltip`               | Set the tooltip variant and color via `_tooltip-trigger`.        |
-| `tooltip-content`                        | Set the tooltip content color.                                   |
-| `_tooltip-content.tooltip-content`       | Set the tooltip content color via `_tooltip-content`.            |
+| `tooltip`                                | Set the tooltip color.                                           |
 
-::alert{type="info"}
-`NTooltipTrigger` is wrapped around the [NButton](button) component. This means that all the props and slots of
-`NButton` are available to use or through `_tooltip-trigger` prop.
-::
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
-:ExampleVueTooltipVariant
+:ExampleVueTooltipColor
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipVariant.vue
+@@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipColor.vue
 ::
 :::
 
@@ -73,8 +64,6 @@ use `NTooltip` to provide information for a component.
 | Prop                        | Description                         |
 | --------------------------- | ----------------------------------- |
 | `size`                      | Set the tooltip general size.       |
-| `_tooltipTrigger.size`      | Set the trigger size only.          |
-| `_tooltipContent.size`      | Set the content size only.          |
 
 > 🚀 You can freely adjust the size of the tooltip using any size imaginable. No limits exist, and you aan use
 `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to
@@ -96,7 +85,7 @@ change size based on input state and more.
 
 | Name          | Description           |
 | ------------- | --------------------- |
-| `trigger`     | The trigger slot.     | 
+| `default`     | The defualt slot.     | 
 | `content`     | The content slot.     |
 
 :::CodeGroup
@@ -105,6 +94,41 @@ change size based on input state and more.
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipSlots.vue
+
+::
+:::
+
+## Props
+@@@ ../packages/nuxt/src/runtime/types/tooltip.ts
+
+## Presets
+@@@ ../packages/preset/src/_shortcuts/tooltip.ts
+
+## Components
+
+You can use any sub-components of `NTooltip`, such as `NTooltipTrigger`, `NTooltipContent`, which are defined in the Radix Tooltip documentation. For more information, please refer to the [Radix Tooltip documentation](https://www.radix-vue.com/components/tooltip){target="_blank"}.
+
+### 
+
+:::CodeGroup
+::code-block{label="Tooltip" preview}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/Tooltip.vue
+
+::
+::code-block{label="TooltipRoot"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipRoot.vue
+
+::
+::code-block{label="TooltipContent"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipContent.vue
+
+::
+::code-block{label="TooltipProvider"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipProvider.vue
+
+::
+::code-block{label="TooltipTrigger"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipTrigger.vue
 
 ::
 :::

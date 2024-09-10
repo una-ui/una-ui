@@ -4,7 +4,7 @@
       side: 'right',
     }"
   >
-    <template #trigger>
+    <template #default>
       <NTooltipTrigger
         class="rounded-full p-1"
       >
@@ -13,7 +13,7 @@
         />
       </NTooltipTrigger>
     </template>
-    <template #default>
+    <template #content>
       Evan You
     </template>
   </NTooltip>
