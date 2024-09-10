@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { TooltipContent, TooltipPortal, useForwardPropsEmits } from 'radix-vue'
 import type { TooltipContentEmits } from 'radix-vue'
 import { cn } from '../../../utils'
-import type { NTooltipContentProps } from '../../../../../dist/runtime/types/tooltip'
+import type { NTooltipContentProps } from '../../../types'
 
 defineOptions({
   inheritAttrs: false,

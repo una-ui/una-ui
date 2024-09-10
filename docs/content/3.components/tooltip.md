@@ -2,7 +2,7 @@
 description: 'NTooltip component - used to provide information for a component.'
 ---
 
-# 🌑 Tooltip
+# 🟢 Tooltip
 
 ---
 
@@ -85,7 +85,7 @@ change size based on input state and more.
 
 | Name          | Description           |
 | ------------- | --------------------- |
-| `default`     | The defualt slot.     | 
+| `default`     | The trigger slot.     | 
 | `content`     | The content slot.     |
 
 :::CodeGroup

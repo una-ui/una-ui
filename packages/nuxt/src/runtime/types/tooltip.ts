@@ -20,7 +20,7 @@ export interface NTooltipProps extends TooltipExtensions {
    * Allows you to add `UnaUI` tooltip preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
    *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/card.ts
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/tooltip.ts
    * @example
    * tooltip="green"
    */
