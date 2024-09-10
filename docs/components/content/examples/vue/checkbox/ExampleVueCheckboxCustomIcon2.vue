@@ -5,7 +5,7 @@ const options = ref([
     label: '1',
     checkbox: 'green',
     una: {
-      checkboxIcon: 'i-tabler-circle-1-filled',
+      checkboxCheckedIcon: 'i-tabler-circle-1-filled',
     },
   },
   {
@@ -13,7 +13,7 @@ const options = ref([
     label: '2',
     checkbox: 'blue',
     una: {
-      checkboxIcon: 'i-tabler-circle-2-filled',
+      checkboxCheckedIcon: 'i-tabler-circle-2-filled',
     },
   },
   {
@@ -21,7 +21,7 @@ const options = ref([
     label: '3',
     checkbox: 'red',
     una: {
-      checkboxIcon: 'i-tabler-circle-3-filled',
+      checkboxCheckedIcon: 'i-tabler-circle-3-filled',
     },
   },
 ])
@@ -32,7 +32,7 @@ const options = ref([
     <NCheckbox
       v-for="(option, i) in options"
       :key="i"
-      v-model="option.value"
+      v-model:checked="option.value"
       :checkbox="option.checkbox"
       :label="option.label"
       size="3xl"

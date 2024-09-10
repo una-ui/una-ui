@@ -62,7 +62,7 @@ const toggleDisable = ref(false)
 
 <template>
   <div class="flex flex-col gap-4">
-    <NCheckbox v-model="toggleDisable" label="disable" />
+    <NCheckbox v-model:checked="toggleDisable" label="disable" />
     <NInput />
     <NSelect
       v-model="item"
@@ -77,10 +77,6 @@ const toggleDisable = ref(false)
       }"
       :_selectItem="{
         selectItem: 'orange',
-        una: {
-          selectItemIndicatorIconName: 'i-loading animate-spin',
-          selectItemIndicatorIcon: 'text-primary',
-        },
       }"
     />
     {{ item }}
@@ -114,16 +110,6 @@ const toggleDisable = ref(false)
         :disabled="toggleDisable"
         item-attribute="fruit"
         multiple-group
-        :_select-scroll-down-button="{
-          una: {
-            selectScrollDownButtonIconName: 'i-loading',
-          },
-        }"
-        :_select-scroll-up-button="{
-          una: {
-            selectScrollUpButtonIconName: 'i-loading',
-          },
-        }"
       />
       <NButton label="Submit" type="submit" />
     </NFormGroup>

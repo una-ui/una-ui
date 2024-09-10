@@ -1,3 +1,34 @@
+## [0.16.1-beta.2](https://github.com/una-ui/una-ui/compare/v0.16.1-beta.1...v0.16.1-beta.2) (2024-09-10)
+
+
+### Bug Fixes
+
+* **ThemeSwitcher:** revert client settings ([75c89cd](https://github.com/una-ui/una-ui/commit/75c89cd9897c4c8d9f1d76028a9d5018e73a43b1))
+
+
+
+## [0.16.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.0-beta.1...v0.16.1-beta.1) (2024-09-10)
+
+
+### Bug Fixes
+
+* **ThemeSwitcher:** add default value to font-size and radius ([9515130](https://github.com/una-ui/una-ui/commit/95151304673575db739cde615948214575e4d638))
+* **ThemeSwitcher:** reconfig client settings ([ac0a234](https://github.com/una-ui/una-ui/commit/ac0a2343b77c21fde7811a8a82f00760a7f0780e))
+* **ThemeSwitcher:** update shuffle icon ([e8180a3](https://github.com/una-ui/una-ui/commit/e8180a327f2ef66e83aeeeb472fdd673b142564b))
+
+
+
+# [0.16.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.15.1-beta.2...v0.16.0-beta.1) (2024-09-09)
+
+
+### Features
+
+* **Label:** introduce new component and preset ([#178](https://github.com/una-ui/una-ui/issues/178)) ([373a899](https://github.com/una-ui/una-ui/commit/373a899c7ed8a2f73699b5a3e87a4018aff7ffa9))
+* **Popover:** introduce new component and preset ([#183](https://github.com/una-ui/una-ui/issues/183)) ([3bf0121](https://github.com/una-ui/una-ui/commit/3bf0121bb3367cc59c4da18d3f8a69be5e54c25d))
+* **ThemeSwitcher:** add `radius` and `mode` configuration ([#186](https://github.com/una-ui/una-ui/issues/186)) ([1102f36](https://github.com/una-ui/una-ui/commit/1102f36c3b7a493ba046ab500e0e909936f68a07))
+
+
+
 ## [0.15.1-beta.2](https://github.com/una-ui/una-ui/compare/v0.15.1-beta.1...v0.15.1-beta.2) (2024-09-05)
 
 

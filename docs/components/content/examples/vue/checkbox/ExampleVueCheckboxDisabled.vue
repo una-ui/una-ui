@@ -4,8 +4,8 @@ const checkbox = ref()
 
 <template>
   <div class="flex gap-4">
-    <NCheckbox v-model="checkbox" label="Disabled" disabled />
+    <NCheckbox v-model:checked="checkbox" label="Disabled" disabled />
 
-    <NCheckbox v-model="checkbox" label="Not disabled" />
+    <NCheckbox v-model:checked="checkbox" label="Not disabled" />
   </div>
 </template>

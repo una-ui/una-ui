@@ -54,6 +54,12 @@ export default function presetUna(options: unaUIOptions = {
         warning: colors.amber,
         info: colors.blue,
       },
+      borderRadius: {
+        xl: 'calc(var(--una-radius) + 4px)',
+        lg: 'var(--una-radius)',
+        md: 'calc(var(--una-radius) - 2px)',
+        sm: 'calc(var(--una-radius) - 4px)',
+      },
     }),
     rules: [
       [/^n-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {

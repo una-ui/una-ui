@@ -39,6 +39,7 @@ export default defineConfig({
     '../packages/nuxt/src/preset.config.ts',
 
     '../packages/preset/src/_shortcuts/calendar.ts',
+    '../packages/preset/src/_shortcuts/label.ts',
     '../packages/preset/src/_shortcuts/dropdown-menu.ts',
     '../packages/preset/src/_shortcuts/breadcrumb.ts',
     '../packages/preset/src/_shortcuts/table.ts',

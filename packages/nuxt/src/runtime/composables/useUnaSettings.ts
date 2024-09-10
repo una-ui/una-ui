@@ -6,7 +6,7 @@ import { useUnaThemes } from './useUnaThemes'
 // @ts-expect-error tsconfig
 import { useAppConfig } from '#imports'
 
-export function useUnaSettings(): any {
+export function useUnaSettings() {
   const { una } = useAppConfig()
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 
@@ -15,7 +15,8 @@ export function useUnaSettings(): any {
     grayColors: getGrayColors(una.gray),
     primary: una.primary,
     gray: una.gray,
-    fontSize: 16,
+    radius: una.radius,
+    fontSize: una.fontSize,
   } as const
 
   const settings = useStorage('una-settings', defaultSettings)
@@ -29,6 +30,7 @@ export function useUnaSettings(): any {
     settings.value.primary = defaultSettings.primary
     settings.value.gray = defaultSettings.gray
     settings.value.fontSize = defaultSettings.fontSize
+    settings.value.radius = defaultSettings.radius
   }
 
   return {

@@ -27,6 +27,8 @@ import { card } from './card'
 import { table } from './table'
 import { breadcrumb } from './breadcrumb'
 import { dropdowMenu } from './dropdown-menu'
+import { label } from './label'
+import { popover } from './popover'
 import { calendar } from './calendar'
 
 export const shortcuts = [
@@ -59,4 +61,6 @@ export const shortcuts = [
   ...table,
   ...dropdowMenu,
   ...calendar,
+  ...label,
+  ...popover,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
