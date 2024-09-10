@@ -187,7 +187,7 @@ function shuffleTheme() {
             btn="solid block"
             class="transition"
             label="Shuffle"
-            leading="i-ph-paint-brush"
+            leading="i-lucide-paintbrush"
             :una="{
               btnLeading: value ? 'rotate-6 transform' : '-rotate-6',
             }"
