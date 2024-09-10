@@ -10,7 +10,7 @@ export default defineNuxtPlugin(() => {
       {
         innerHTML: `
         ;(function() {
-          const settings = JSON.parse(localStorage.getItem('una-settings'))
+          let settings = JSON.parse(localStorage.getItem('una-settings'))
 
           if (!settings) {
             settings = ${JSON.stringify(defaultSettings)}
