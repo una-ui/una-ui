@@ -1,3 +1,14 @@
+## [0.16.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.0-beta.1...v0.16.1-beta.1) (2024-09-10)
+
+
+### Bug Fixes
+
+* **ThemeSwitcher:** add default value to font-size and radius ([9515130](https://github.com/una-ui/una-ui/commit/95151304673575db739cde615948214575e4d638))
+* **ThemeSwitcher:** reconfig client settings ([ac0a234](https://github.com/una-ui/una-ui/commit/ac0a2343b77c21fde7811a8a82f00760a7f0780e))
+* **ThemeSwitcher:** update shuffle icon ([e8180a3](https://github.com/una-ui/una-ui/commit/e8180a327f2ef66e83aeeeb472fdd673b142564b))
+
+
+
 # [0.16.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.15.1-beta.2...v0.16.0-beta.1) (2024-09-09)
 
 
