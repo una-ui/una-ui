@@ -5,7 +5,18 @@ export const staticCalendar: Record<`${CalendarPrefix}-${string}` | CalendarPref
   'calendar': '',
 
   'calendar-root': 'p-3 border border-base rounded-md',
-
+  'calendar-head-cell': 'w-8 rounded-md text-[0.8rem] font-normal text-muted',
+  'calendar-header': 'relative flex w-full items-center justify-between pt-1',
+  'calendar-heading': 'text-sm font-medium',
+  'calendar-grid-row': 'flex',
+  'calendar-grid-head': '',
+  'calendar-grid-body': '',
+  'calendar-grid': 'w-full border-collapse space-y-1',
+  'calendar-cell': 'relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([data-selected])]:rounded-md [&:has([data-selected])]:bg-accent [&:has([data-selected][data-outside-view])]:(bg-accent opacity-50)',
+  'calendar-grid-wrapper': 'mt-4 flex flex-col gap-y-4 sm:flex-row sm:gap-x-4 sm:gap-y-0',
+  'calendar-button': 'h-7 w-7 p-0 opacity-50 hover:opacity-100',
+  'calendar-next-button': 'calendar-button',
+  'calendar-prev-button': 'calendar-button',
 }
 
 export const dynamicCalendar: [RegExp, (params: RegExpExecArray) => string][] = [
