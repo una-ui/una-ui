@@ -6,7 +6,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-loading-icon': 'i-loading',
 
   // base
-  'btn': 'bg-transparent text-0.875em leading-5 gap-0.42857142857142855em btn-rectangle rounded-md inline-flex justify-center items-center btn-disabled font-medium cursor-pointer',
+  'btn': 'transition-colors text-0.875em leading-5 gap-0.42857142857142855em btn-rectangle rounded-md inline-flex justify-center items-center btn-disabled font-medium cursor-pointer',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
   'btn-icon-label': 'text-1.191em',
