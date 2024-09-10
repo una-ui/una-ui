@@ -1,13 +1,9 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <NTooltip
-    label="Hover me"
-    tooltip-content="primary"
-    tooltip="solid-primary"
+    content="Hello from tooltip"
   >
-    hello from tooltip
+    <NButton btn="solid-white">
+      Hover
+    </NButton>
   </NTooltip>
 </template>
