@@ -25,6 +25,8 @@ export * from './card'
 export * from './breadcrumb'
 export * from './table'
 export * from './dropdown-menu'
+export * from './label'
+export * from './popover'
 export * from './tooltip'
 
 export interface Colors {
@@ -51,4 +53,5 @@ export interface UnaSettings {
   primary: string
   gray: string
   fontSize: number
+  radius: number
 }

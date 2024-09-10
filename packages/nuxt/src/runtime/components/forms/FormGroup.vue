@@ -2,12 +2,10 @@
 import { computed } from 'vue'
 import type { NFormGroupProps } from '../../types'
 import NFormGroupDefaultSlot from '../slots/FormGroupDefault'
-import FormGroupLabel from '../slots/FormGroupLabel'
 import { randomId } from '../../utils'
+import Label from '../elements/Label.vue'
 
-const props = withDefaults(defineProps<NFormGroupProps>(), {
-  for: undefined,
-})
+const props = defineProps<NFormGroupProps>()
 
 const id = computed(() => props.id ?? randomId('form-group'))
 
@@ -17,7 +15,7 @@ const statusClassVariants = computed(() => {
     success: 'text-success',
     warning: 'text-warning',
     error: 'text-error',
-    default: 'text-$c-gray-500',
+    default: 'text-muted',
   }
 
   return text[props.status ?? 'default']
@@ -42,24 +40,26 @@ const statusClassVariants = computed(() => {
             :class="una?.formGroupTopWrapperInner"
           >
             <slot name="label">
-              <FormGroupLabel
-                :id="id"
-                :for="props.for"
-                form-group="label-wrapper"
-                :class="una?.formGroupLabelWrapper"
+              <Label
+                :for="props.for ?? id"
               >
-                <span
-                  form-group="label"
-                  :class="una?.formGroupLabel"
+                <div
+                  form-group="label-wrapper"
+                  :class="una?.formGroupLabelWrapper"
                 >
-                  {{ label }}
-                </span>
-                <span
-                  v-if="required"
-                  form-group="label-required"
-                  :class="una?.formGroupLabelRequired"
-                />
-              </FormGroupLabel>
+                  <span
+                    form-group="label"
+                    :class="una?.formGroupLabel"
+                  >
+                    {{ label }}
+                  </span>
+                  <span
+                    v-if="required"
+                    form-group="label-required"
+                    :class="una?.formGroupLabelRequired"
+                  />
+                </div>
+              </Label>
             </slot>
 
             <slot name="hint">

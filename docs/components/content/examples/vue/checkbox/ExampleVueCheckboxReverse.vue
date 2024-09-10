@@ -11,7 +11,7 @@ const options = ref([
     <NCheckbox
       v-for="option in options"
       :key="option.label"
-      v-model="option.value"
+      v-model:checked="option.value"
       :label="option.label"
       reverse
     />

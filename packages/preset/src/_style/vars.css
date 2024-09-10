@@ -1,4 +1,7 @@
 :root {
+  --una-font-size: 16px;
+  --una-radius: 0.5rem;
+
   --c-brand: rgb(var(--una-primary-600));
   --una-primary: var(--una-primary-600);
   --una-primary-active: var(--una-primary-500);
@@ -21,8 +24,6 @@
   --c-ring: rgb(var(--una-gray-200));
   --c-divider: rgb(var(--una-gray-200));
   --c-bg-selection: rgba(var(--una-primary-600), 0.2);
-
-  --radius: 0.95rem;
 }
 
 .dark {

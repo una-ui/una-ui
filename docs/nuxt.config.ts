@@ -9,6 +9,11 @@ export default defineNuxtConfig({
     unaUI,
   ],
 
+  devtools: {
+    enabled: true,
+    componentInspector: false,
+  },
+
   sourcemap: {
     server: false,
     client: true,
