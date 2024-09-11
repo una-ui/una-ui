@@ -135,7 +135,7 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 
 ::
 ::code-block{label="PaginationPrev"}
-@@@ ../packages/nuxt/src/runtime/components/elements/breadcrumb/PaginationPrev.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/pagination/PaginationPrev.vue
 
 ::
 :::
