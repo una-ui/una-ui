@@ -1,3 +1,12 @@
+## [0.16.3-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.2-beta.1...v0.16.3-beta.1) (2024-09-11)
+
+
+### Bug Fixes
+
+* **Button:** typo ([df5dc76](https://github.com/una-ui/una-ui/commit/df5dc761943c2fb8c5f670d8ae4d1e424f283172))
+
+
+
 ## [0.16.2-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.1-beta.2...v0.16.2-beta.1) (2024-09-11)
 
 
