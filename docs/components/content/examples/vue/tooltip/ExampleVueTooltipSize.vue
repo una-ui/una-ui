@@ -5,7 +5,7 @@
       size="xs"
     >
       <NButton btn="solid-white">
-        Hover XS
+        XS
       </NButton>
     </NTooltip>
     <NTooltip
@@ -13,7 +13,7 @@
       size="sm"
     >
       <NButton btn="solid-white">
-        Hover SM/Default
+        SM
       </NButton>
     </NTooltip>
     <NTooltip
@@ -21,7 +21,7 @@
       size="md"
     >
       <NButton btn="solid-white">
-        Hover MD
+        MD
       </NButton>
     </NTooltip>
     <NTooltip
@@ -29,7 +29,7 @@
       size="lg"
     >
       <NButton btn="solid-white">
-        Hover LG
+        LG
       </NButton>
     </NTooltip>
   </div>

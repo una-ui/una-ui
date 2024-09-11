@@ -2,9 +2,14 @@
   <div class="grid h-28 place-items-center">
     <NTooltip
       content="Hello from tooltip"
+      :_tooltipProvider="{
+        delayDuration: 0,
+        disableClosingTrigger: true,
+        disableHoverableContent: true,
+      }"
     >
       <NButton btn="solid-white">
-        Hover me
+        No delay tooltip
       </NButton>
     </NTooltip>
   </div>

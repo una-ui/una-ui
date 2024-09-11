@@ -1,9 +1,12 @@
 <template>
-  <NTooltip
-    content="Hello from tooltip"
-  >
-    <NButton btn="solid-white">
-      Hover
-    </NButton>
-  </NTooltip>
+  <div>
+    <NTooltip
+      content="Add to library"
+      tooltip="primary"
+    >
+      <NButton btn="solid-white">
+        Hover
+      </NButton>
+    </NTooltip>
+  </div>
 </template>

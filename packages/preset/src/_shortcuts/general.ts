@@ -27,6 +27,7 @@ export const staticGeneral = {
 
   // border
   'border-base': 'border-$c-border',
+  'border-foreground': 'border-$c-border-foreground',
 
   // divide
   'divide-base': 'divide-$c-divider',

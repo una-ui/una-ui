@@ -11,6 +11,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<NTooltipContentProps>(), {
   sideOffset: 4,
+  tooltip: 'black',
 })
 
 const emits = defineEmits<TooltipContentEmits>()
@@ -29,10 +30,11 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <TooltipContent
       v-bind="{ ...forwarded, ...$attrs }"
       :class="cn(
-        'tooltip',
+        'tooltip-content',
         props.class,
         props.una?.tooltipContent,
       )"
+      :tooltip
     >
       <slot />
     </TooltipContent>

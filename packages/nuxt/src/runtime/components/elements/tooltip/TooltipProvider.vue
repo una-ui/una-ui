@@ -2,7 +2,9 @@
 import { TooltipProvider } from 'radix-vue'
 import type { NTooltipProviderProps } from '../../../types'
 
-const props = defineProps<NTooltipProviderProps>()
+const props = withDefaults(defineProps<NTooltipProviderProps>(), {
+  delayDuration: 600,
+})
 </script>
 
 <template>
