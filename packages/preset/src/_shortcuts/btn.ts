@@ -26,7 +26,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-outline-white': 'bg-transparent text-base ring-1 ring-base ring-inset btn-focus',
 
   'btn-solid-gray': 'bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-$c-gray-100',
-  'btn-ghost-gray': 'bg-transaprent text-$c-gray-600 btn-focus hover:bg-$c-gray-100',
+  'btn-ghost-gray': 'bg-transparent text-$c-gray-600 btn-focus hover:bg-$c-gray-100',
   'btn-soft-gray': 'text-$c-gray-600 bg-$c-gray-50 btn-focus hover:bg-$c-gray-100',
   'btn-outline-gray': 'bg-transparent text-muted ring-1 ring-base ring-inset btn-focus',
   'btn-link-gray': 'text-muted btn-focus hover:text-base hover:underline underline-offset-4',
