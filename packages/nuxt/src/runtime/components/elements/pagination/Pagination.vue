@@ -10,21 +10,25 @@ import PaginationEllipsis from './PaginationEllipsis.vue'
 import PaginationListItem from './PaginationListItem.vue'
 
 const props = defineProps<NPaginationProps>()
+const model = defineModel<number>()
 </script>
 
 <template>
   <PaginationRoot
+    v-bind="_paginationRoot"
+    v-model:page="model"
     :class="cn(
       'pagination',
       props.class,
       props.una?.paginationRoot,
     )"
     :una
-    v-bind="_paginationRoot"
     :total
     :sibling-count
     :show-edges
     :default-page
+    :disabled
+    :items-per-page
   >
     <PaginationList
       v-slot="{ items }"
