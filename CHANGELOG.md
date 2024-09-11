@@ -1,3 +1,12 @@
+# [0.17.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.3-beta.1...v0.17.0-beta.1) (2024-09-11)
+
+
+### Features
+
+* **Tooltip:** introduce new component and preset ([#182](https://github.com/una-ui/una-ui/issues/182)) ([fc2a7cc](https://github.com/una-ui/una-ui/commit/fc2a7ccfddda88ee90bca7d0f8e7f3ff9ec77a0d))
+
+
+
 ## [0.16.3-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.2-beta.1...v0.16.3-beta.1) (2024-09-11)
 
 
