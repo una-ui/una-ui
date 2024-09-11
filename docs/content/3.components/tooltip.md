@@ -84,7 +84,7 @@ Configure the tooltip provider using the `_tooltipProvider` prop.
 | disabled                | -       | `boolean` | Set to disable the tooltip.                                                                                    |
 
 ::alert{type="info"}
-For more props and information, please refer to the [Radix Tooltip Provider documentation](https://www.radix-vue.com/components/provider){target="_blank"}.
+For more props and information, please refer to the [Radix Tooltip Provider documentation](https://www.radix-vue.com/components/tooltip#provider){target="_blank"}.
 ::
 
 :::CodeGroup
@@ -107,7 +107,7 @@ Configure the tooltip root using the `_tooltipRoot` prop.
 | onUpdate:open | -       | `void`    | Event handler called when the open state of the tooltip changes. |
 
 ::alert{type="info"}
-For more props and information, please refer to the [Radix Tooltip Root documentation](https://www.radix-vue.com/components/root){target="_blank"}.
+For more props and information, please refer to the [Radix Tooltip Root documentation](https://www.radix-vue.com/components/tooltip#root){target="_blank"}.
 ::
 
 :::CodeGroup
@@ -131,7 +131,7 @@ Configure the tooltip content using the `_tooltipContent` prop.
 | alignOffset | -       | `number`                      | Set the offset of the tooltip content.    |
 
 ::alert{type="info"}
-For more props and information, please refer to the [Radix Tooltip Content documentation](https://www.radix-vue.com/components/tooltip){target="_blank"}.
+For more props and information, please refer to the [Radix Tooltip Content documentation](https://www.radix-vue.com/components/tooltip#content){target="_blank"}.
 ::
 
 :::CodeGroup
