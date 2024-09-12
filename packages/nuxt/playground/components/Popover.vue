@@ -2,11 +2,11 @@
 </script>
 
 <template>
-  <NPopover :popper="{ class: 'w-80', align: 'start', side: 'right' }">
+  <NPopover :_popover-content="{ class: 'w-80', align: 'start', side: 'right' }">
     <NButton btn="solid-white">
       Open popover
     </NButton>
-    <template #popper>
+    <template #content>
       <div class="grid gap-4">
         <div class="space-y-2">
           <h4 class="font-medium leading-none">

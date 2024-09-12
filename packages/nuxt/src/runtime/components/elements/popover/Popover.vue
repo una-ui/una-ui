@@ -9,7 +9,7 @@ const props = defineProps<NPopoverProps>()
 const emits = defineEmits<PopoverRootEmits>()
 
 const delegatedProps = computed(() => {
-  const { popper: _, ...delegated } = props
+  const { _popoverContent, ...delegated } = props
 
   return delegated
 })
@@ -22,8 +22,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <PopoverTrigger as-child>
       <slot name="default" :open />
     </PopoverTrigger>
-    <NPopoverContent v-bind="props.popper">
-      <slot name="popper" />
+    <NPopoverContent v-bind="_popoverContent">
+      <slot name="content" />
     </NPopoverContent>
   </PopoverRoot>
 </template>

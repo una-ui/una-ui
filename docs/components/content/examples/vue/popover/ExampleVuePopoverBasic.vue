@@ -1,10 +1,10 @@
 <template>
   <div class="grid h-50 place-items-center">
-    <NPopover :popper="{ align: 'start', class: 'w-80' }">
+    <NPopover :_popover-content="{ align: 'start', class: 'w-80' }">
       <NButton btn="solid-white">
         Open popover
       </NButton>
-      <template #popper>
+      <template #content>
         <div class="grid gap-4">
           <div class="space-y-2">
             <h4 class="font-medium leading-none">
