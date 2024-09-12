@@ -3,6 +3,7 @@
     <NThemeSwitcher />
 
     <Tooltip />
+    <Popover />
 
     <ColorMode />
   </div>
