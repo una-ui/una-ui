@@ -1,3 +1,12 @@
+## [0.17.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.17.0-beta.1...v0.17.1-beta.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* **nuxt:** update app config types ([349b8ec](https://github.com/una-ui/una-ui/commit/349b8eca2e25da3f1971b3efc4f39acf7ec309a2))
+
+
+
 # [0.17.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.3-beta.1...v0.17.0-beta.1) (2024-09-11)
 
 
