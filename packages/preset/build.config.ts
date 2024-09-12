@@ -24,10 +24,10 @@ export default defineBuildConfig({
   ],
   hooks: {
     'mkdist:done': () => {
-      const compiledSass = sass.compile('./src/index.scss', { style: 'compressed', loadPaths: ['./node_modules/'] })
+      const compiledSass = sass.compile('./src/index.scss', { style: 'expanded', loadPaths: ['./node_modules/'] })
       writeFileSync(
         'una.css',
-        compiledSass.css,
+        `${compiledSass.css}\n`,
         { encoding: 'utf-8' },
       )
     },
