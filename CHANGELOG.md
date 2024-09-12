@@ -1,3 +1,12 @@
+## [0.18.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.18.0-beta.1...v0.18.1-beta.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* **ThemeSwitcher:** Port Popover to content slot ([#192](https://github.com/una-ui/una-ui/issues/192)) ([5e1f2f8](https://github.com/una-ui/una-ui/commit/5e1f2f8930ae37d623dd3303a8169295c5461f3a))
+
+
+
 # [0.18.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.17.1-beta.1...v0.18.0-beta.1) (2024-09-12)
 
 
