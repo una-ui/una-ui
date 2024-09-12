@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { useToggle } from '@vueuse/core'
 import { computed } from 'vue'
-import { PopoverTrigger } from 'radix-vue'
 import { useUnaThemes } from '../../composables/useUnaThemes'
 import { useUnaSettings } from '../../composables/useUnaSettings'
 import Popover from '../elements/popover/Popover.vue'
-import PopoverContent from '../elements/popover/PopoverContent.vue'
 import Button from '../elements/Button.vue'
 import { RADIUS } from '../../constants'
 import Label from '../elements/Label.vue'
@@ -52,21 +50,13 @@ function shuffleTheme() {
 </script>
 
 <template>
-  <Popover>
-    <PopoverTrigger
-      as-child
-    >
-      <Button
-        btn="soft square"
-        icon
-        label="i-lucide-paintbrush"
-      />
-    </PopoverTrigger>
-
-    <PopoverContent
-      align="end"
-      class="z-100 w-73 bg-muted"
-    >
+  <Popover :_popover-content="{ align: 'end', class: 'z-100 w-73 bg-muted' }">
+    <Button
+      btn="soft square"
+      icon
+      label="i-lucide-paintbrush"
+    />
+    <template #content>
       <div class="flex flex-col">
         <div class="grid space-y-1">
           <h1 class="text-md text-base font-semibold">
@@ -195,6 +185,6 @@ function shuffleTheme() {
           />
         </div>
       </div>
-    </PopoverContent>
+    </template>
   </Popover>
 </template>
