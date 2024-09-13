@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { NKbdProps } from '../../types'
+import { computed } from 'vue'
 
 const props = defineProps<NKbdProps>()
 

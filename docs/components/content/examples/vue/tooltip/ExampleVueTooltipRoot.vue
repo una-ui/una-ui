@@ -2,7 +2,7 @@
   <div class="grid h-28 place-items-center">
     <NTooltip
       content="Hello from tooltip"
-      :_tooltipRoot="{
+      :_tooltip-root="{
         'onUpdate:open': (value: boolean) => {
           console.log('open', value)
         },

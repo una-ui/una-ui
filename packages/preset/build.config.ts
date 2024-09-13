@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs-extra'
-import { defineBuildConfig } from 'unbuild'
 import sass from 'sass'
+import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   entries: [

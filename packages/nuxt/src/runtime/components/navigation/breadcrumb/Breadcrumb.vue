@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import type { NBreadcrumbProps } from '../../../types'
 import { cn } from '../../../utils'
-import BreadcrumbRoot from './BreadcrumbRoot.vue'
-import BreadcrumbList from './BreadcrumbList.vue'
 import BreadcrumbItem from './BreadcrumbItem.vue'
 import BreadcrumbLink from './BreadcrumbLink.vue'
+import BreadcrumbList from './BreadcrumbList.vue'
+import BreadcrumbRoot from './BreadcrumbRoot.vue'
 import BreadcrumbSeparator from './BreadcrumbSeparator.vue'
 
 const props = defineProps<NBreadcrumbProps>()

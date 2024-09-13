@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import NIcon from '../elements/Icon.vue'
 import type { NInputProps } from '../../types'
+import { computed, onMounted, ref } from 'vue'
 import { randomId } from '../../utils'
+import NIcon from '../elements/Icon.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -78,7 +78,7 @@ const reverseClassVariants = computed(() => {
 // html refs
 const textarea = ref<HTMLTextAreaElement>()
 
-function resizeTextarea() {
+function resizeTextarea(): void {
   if (!(props.type === 'textarea' && props.autoresize) || !textarea.value)
     return
 
@@ -100,7 +100,7 @@ function resizeTextarea() {
     textarea.value.rows = maxAutoresizeRows
 }
 
-function onInput(event: Event) {
+function onInput(event: Event): void {
   emit('update:modelValue', (event.target as HTMLInputElement).value)
 
   resizeTextarea()

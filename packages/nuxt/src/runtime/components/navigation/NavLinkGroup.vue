@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import type { NVerticalNav } from '../../types'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { omitProps } from '../../utils'
 import NNavLink from './NavLink.vue'
 

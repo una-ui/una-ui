@@ -1,6 +1,6 @@
+import type { ColorPalette, Colors } from '../types'
 import { colors } from '@unocss/preset-mini/colors'
 import { hexToRgb } from '../utils'
-import type { ColorPalette, Colors } from '../types'
 
 type Shade = keyof ColorPalette
 
@@ -121,7 +121,14 @@ const filteredColors = {
   ...filteredGrayColors,
 } as Record<string, ColorPalette>
 
-export function useUnaThemes() {
+export interface UseUnaThemesReturn {
+  primaryThemes: [string, Colors][]
+  grayThemes: [string, Colors][]
+  getPrimaryColors: (color: string) => Colors
+  getGrayColors: (color: string) => Colors
+}
+
+export function useUnaThemes(): UseUnaThemesReturn {
   const primaryThemes = Object.entries(filteredPrimaryColors).map(([color]) => [
     color,
     getColors(color, 'primary'),
@@ -149,11 +156,11 @@ export function useUnaThemes() {
 
     return colors
   }
-  function getPrimaryColors(color: string) {
+  function getPrimaryColors(color: string): Colors {
     return primaryThemes.filter(([colorName, _]) => colorName === color)[0][1]
   }
 
-  function getGrayColors(color: string) {
+  function getGrayColors(color: string): Colors {
     return grayThemes.filter(([colorName, _]) => colorName === color)[0][1]
   }
 

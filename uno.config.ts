@@ -8,9 +8,9 @@ import {
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
 
+import extratorUna from './packages/extractor-vue-script/src/index'
 import presetUna from './packages/preset/src/index'
 import prefixes from './packages/preset/src/prefixes'
-import extratorUna from './packages/extractor-vue-script/src/index'
 
 export default defineConfig({
   presets: [

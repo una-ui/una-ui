@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-
 import type { NBadgeProps } from '../../types'
+
+import { computed } from 'vue'
 import NIcon from './Icon.vue'
 
 const props = withDefaults(defineProps<NBadgeProps>(), {

@@ -1,5 +1,5 @@
-import type { HTMLAttributes } from 'vue'
 import type { SeparatorProps } from 'radix-vue'
+import type { HTMLAttributes } from 'vue'
 
 type Extensions = SeparatorProps & { class?: HTMLAttributes['class'], label?: string }
 

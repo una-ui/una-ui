@@ -1,5 +1,5 @@
-import type { HTMLAttributes } from 'vue'
 import type { TooltipContentProps, TooltipProviderProps, TooltipRootProps, TooltipTriggerProps } from 'radix-vue'
+import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
 interface BaseExtensions {

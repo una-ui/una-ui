@@ -56,7 +56,7 @@ const items = [
     },
   },
 ]
-const item = ref()
+const selected = ref()
 const toggleDisable = ref(false)
 </script>
 
@@ -65,24 +65,24 @@ const toggleDisable = ref(false)
     <NCheckbox v-model:checked="toggleDisable" label="disable" />
     <NInput />
     <NSelect
-      v-model="item"
+      v-model="selected"
       :items="items1"
       placeholder="Select an item"
       :disabled="toggleDisable"
-      :_selectTrigger="{
+      :_select-trigger="{
         trailing: 'i-lucide-chevron-down',
         una: {
           btnTrailing: 'text-primary',
         },
       }"
-      :_selectItem="{
+      :_select-item="{
         selectItem: 'orange',
       }"
     />
-    {{ item }}
+    {{ selected }}
 
     <NSelect
-      v-model="item"
+      v-model="selected"
       :items="options"
       placeholder="Select an item"
       label="Items Available"
@@ -103,7 +103,7 @@ const toggleDisable = ref(false)
       label="Select an item"
     >
       <NSelect
-        v-model="item"
+        v-model="selected"
         :items
         placeholder="Select an item"
         label="Items Available"

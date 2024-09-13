@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { CheckboxRootEmits } from 'radix-vue'
+import type { NCheckboxProps } from '../../types'
 import { CheckboxIndicator, CheckboxRoot, useForwardPropsEmits } from 'radix-vue'
+import { computed } from 'vue'
 import { cn, randomId } from '../../utils'
 import Icon from '../elements/Icon.vue'
-import type { NCheckboxProps } from '../../types'
 import Label from '../elements/Label.vue'
 
 const props = withDefaults(defineProps<NCheckboxProps>(), {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { SelectValue } from 'radix-vue'
 import type { NSelectValueProps } from '../../../types'
+import { SelectValue } from 'radix-vue'
 
 const props = defineProps<NSelectValueProps>()
 </script>

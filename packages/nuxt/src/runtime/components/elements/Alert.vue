@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { NAlertProps } from '../../types'
-import NIcon from '../elements/Icon.vue'
+import { computed } from 'vue'
 import NButton from '../elements/Button.vue'
+import NIcon from '../elements/Icon.vue'
 
 defineOptions({
   inheritAttrs: false,

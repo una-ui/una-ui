@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { NTableLoadingProps } from '../../../types'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
-import type { NTableLoadingProps } from '../../../types'
 import Progress from '../../elements/Progress.vue'
 import TableRow from './TableRow.vue'
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { TabsContent } from 'radix-vue'
-import { cn } from '../../../utils'
 import type { NTabsContentProps } from '../../../types/tabs'
+import { TabsContent } from 'radix-vue'
+import { computed } from 'vue'
+import { cn } from '../../../utils'
 
 defineOptions({
   inheritAttrs: false,

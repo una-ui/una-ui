@@ -16,29 +16,29 @@ const title = computed(() => config.value.header?.title || config.value.title)
 <style lang="ts" scoped>
 css({
   a: {
-    display: 'flex',
-    alignItems: 'center',
-    flex: 'none',
+    'display': 'flex',
+    'alignItems': 'center',
+    'flex': 'none',
 
     '.logo': {
-      height: '{docus.header.logo.height}',
-      width: 'auto',
+      'height': '{docus.header.logo.height}',
+      'width': 'auto',
       'img, svg': {
         height: 'inherit',
       },
       '.light-img': {
-        display: 'block',
+        'display': 'block',
         '@dark': {
-          display: 'none'
-        }
+          display: 'none',
+        },
       },
       '.dark-img': {
-        display: 'none',
+        'display': 'none',
         '@dark': {
-          display: 'block'
-        }
+          display: 'block',
+        },
       },
     },
-  }
+  },
 })
 </style>

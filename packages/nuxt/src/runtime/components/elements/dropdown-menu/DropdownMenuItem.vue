@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { DropdownMenuItem, useForwardProps } from 'radix-vue'
-import { cn } from '../../../utils'
 import type { NDropdownMenuItemProps } from '../../../types'
+import { DropdownMenuItem, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
+import { cn } from '../../../utils'
 import Button from '../Button.vue'
 import DropdownMenuShortcut from './DropdownMenuShortcut.vue'
 

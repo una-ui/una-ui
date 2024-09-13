@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { PopoverRoot, PopoverTrigger, useForwardPropsEmits } from 'radix-vue'
-import { computed } from 'vue'
 import type { PopoverRootEmits } from 'radix-vue'
 import type { NPopoverProps } from '../../../types'
+import { PopoverRoot, PopoverTrigger, useForwardPropsEmits } from 'radix-vue'
+import { computed } from 'vue'
 import NPopoverContent from './PopoverContent.vue'
 
 const props = defineProps<NPopoverProps>()
