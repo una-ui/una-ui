@@ -42,7 +42,7 @@ export default defineComponent({
     },
   },
   setup(props: any) {
-    function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }) {
+    function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }): string | null {
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.inactiveClass
 
@@ -58,7 +58,7 @@ export default defineComponent({
       return props.inactiveClass
     }
 
-    function resolveNavLinkActive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }) {
+    function resolveNavLinkActive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }): string | null {
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return null
 
@@ -74,7 +74,7 @@ export default defineComponent({
       return null
     }
 
-    function resolveNavLinkInactive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }) {
+    function resolveNavLinkInactive(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }): string | null {
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.navLinkInactive
 

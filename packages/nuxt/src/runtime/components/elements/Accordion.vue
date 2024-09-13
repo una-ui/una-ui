@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<NAccordionProps>(), {
 
 const buttonRefs = ref<(() => void)[]>([])
 
-function closeOthers(index: number) {
+function closeOthers(index: number): void {
   if (props.multiple && !props.items[index].closeOthers)
     return
 
@@ -29,24 +29,24 @@ function closeOthers(index: number) {
     .forEach(close => close())
 }
 
-function onEnter(element: Element, done: () => void) {
+function onEnter(element: Element, done: () => void): void {
   const el = element as HTMLElement
   el.style.height = '0'
   el.style.height = `${element.scrollHeight}px`
   el.addEventListener('transitionend', done, { once: true })
 }
 
-function onAfterEnter(element: Element) {
+function onAfterEnter(element: Element): void {
   const el = element as HTMLElement
   el.style.height = 'auto'
 }
 
-function onBeforeLeave(element: Element) {
+function onBeforeLeave(element: Element): void {
   const el = element as HTMLElement
   el.style.height = `${el.scrollHeight}px`
 }
 
-function onLeave(element: Element, done: () => void) {
+function onLeave(element: Element, done: () => void): void {
   const el = element as HTMLElement
   el.style.height = '0'
 
@@ -62,7 +62,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
 
 const pickedProps = pickProps(props, ['reverse', 'icon', 'btn', 'label', 'leading', 'loading', 'loadingPlacement', 'una', 'trailing', 'leading', 'to', 'type', 'disabled'])
 
-function mergedProps(itemProps: NAccordionItemProps) {
+function mergedProps(itemProps: NAccordionItemProps): NAccordionItemProps {
   return Object.assign(pickedProps, itemProps)
 }
 

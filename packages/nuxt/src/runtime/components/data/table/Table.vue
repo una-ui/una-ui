@@ -187,7 +187,7 @@ const table = computed(() => {
   })
 }) as Ref<ReturnType<typeof useVueTable>>
 
-function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]) {
+function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]): number {
   let count = 0
   headers.forEach((header) => {
     if (header.column.columnDef.enableColumnFilter)

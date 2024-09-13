@@ -1,3 +1,4 @@
+import type { Ref } from 'vue'
 import type { UnaSettings } from '../types'
 import { useStorage } from '@vueuse/core'
 import { watchEffect } from 'vue'
@@ -6,7 +7,13 @@ import { useUnaThemes } from './useUnaThemes'
 // @ts-expect-error tsconfig
 import { useAppConfig } from '#imports'
 
-export function useUnaSettings() {
+export interface UseUnaSettingsReturn {
+  defaultSettings: UnaSettings
+  settings: Ref<UnaSettings>
+  reset: () => void
+}
+
+export function useUnaSettings(): UseUnaSettingsReturn {
   const { una } = useAppConfig()
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 
@@ -26,7 +33,7 @@ export function useUnaSettings() {
     settings.value.grayColors = getGrayColors(settings.value.gray || una.gray)
   })
 
-  function reset() {
+  function reset(): void {
     settings.value.primary = defaultSettings.primary
     settings.value.gray = defaultSettings.gray
     settings.value.fontSize = defaultSettings.fontSize
