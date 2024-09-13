@@ -1,12 +1,14 @@
 import type { UnaSettings } from './runtime/types'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
-
 import extendUnocssOptions from './una.config'
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
-    una?: UnaSettings
+    una?: Partial<Omit<UnaSettings, 'primaryColors' | 'grayColors'>>
+  }
+  interface AppConfig {
+    una: Omit<UnaSettings, 'primaryColors' | 'grayColors'>
   }
 }
 

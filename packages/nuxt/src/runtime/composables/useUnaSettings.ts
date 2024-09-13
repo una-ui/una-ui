@@ -1,11 +1,10 @@
 import type { Ref } from 'vue'
 import type { UnaSettings } from '../types'
 import { useStorage } from '@vueuse/core'
+import { defu } from 'defu'
+import { useAppConfig } from 'nuxt/app'
 import { watchEffect } from 'vue'
 import { useUnaThemes } from './useUnaThemes'
-
-// @ts-expect-error tsconfig
-import { useAppConfig } from '#imports'
 
 export interface UseUnaSettingsReturn {
   defaultSettings: UnaSettings
@@ -26,7 +25,9 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     fontSize: una.fontSize,
   } as const
 
-  const settings = useStorage('una-settings', defaultSettings)
+  const settings = useStorage<UnaSettings>('una-settings', defaultSettings, undefined, {
+    mergeDefaults: defu,
+  })
 
   watchEffect(() => {
     settings.value.primaryColors = getPrimaryColors(settings.value.primary || una.primary)
