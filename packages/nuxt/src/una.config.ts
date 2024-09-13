@@ -1,3 +1,8 @@
+import type { UnocssNuxtOptions } from '@unocss/nuxt'
+import extratorUna from '@una-ui/extractor-vue-script'
+import presetUna from '@una-ui/preset'
+
+import prefixes from '@una-ui/preset/prefixes'
 import {
   presetAttributify,
   presetIcons,
@@ -6,11 +11,6 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
-import type { UnocssNuxtOptions } from '@unocss/nuxt'
-
-import presetUna from '@una-ui/preset'
-import prefixes from '@una-ui/preset/prefixes'
-import extratorUna from '@una-ui/extractor-vue-script'
 
 function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
   return {

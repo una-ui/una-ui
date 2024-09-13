@@ -47,7 +47,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 }
 
 export const dynamicSelect = [
-  [/^select-(\S+)-(\S+)$/, ([, v = 'solid', c = 'gray']) => `btn-${v}-${c}`],
+  [/^select-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'gray']) => `btn-${v}-${c}`],
 
   [/^select-item(-(\S+))?$/, ([, , c = 'gray']) => `focus:bg-${c}-100 focus:text-${c}-800 dark:focus:bg-${c}-800 dark:focus:text-${c}-100`],
 ]

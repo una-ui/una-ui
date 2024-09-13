@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { SelectScrollUpButton, useForwardProps } from 'radix-vue'
-import Icon from '../../elements/Icon.vue'
-import { cn } from '../../../utils'
 import type { NSelectScrollUpButtonProps } from '../../../types'
+import { SelectScrollUpButton, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
+import { cn } from '../../../utils'
+import Icon from '../../elements/Icon.vue'
 
 const props = defineProps<NSelectScrollUpButtonProps>()
 

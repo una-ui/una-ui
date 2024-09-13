@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { NAccordionItemProps, NAccordionProps } from '../../types'
+
 import {
   Disclosure,
   DisclosureButton,
@@ -7,10 +9,9 @@ import {
 import { createReusableTemplate } from '@vueuse/core'
 import { computed, ref } from 'vue'
 
-import type { NAccordionItemProps, NAccordionProps } from '../../types'
 import { pickProps } from '../../utils'
-import NIcon from './Icon.vue'
 import NButton from './Button.vue'
+import NIcon from './Icon.vue'
 
 const props = withDefaults(defineProps<NAccordionProps>(), {
   trailingOpen: 'accordion-trailing-icon',

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import NIcon from '../elements/Icon.vue'
 import type { NInputProps } from '../../types'
+import { computed, onMounted, ref } from 'vue'
 import { randomId } from '../../utils'
+import NIcon from '../elements/Icon.vue'
 
 defineOptions({
   inheritAttrs: false,

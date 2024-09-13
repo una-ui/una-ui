@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { TabsTrigger } from 'radix-vue'
-import { cn } from '../../../utils'
 import type { NTabsTriggerProps } from '../../../types/tabs'
+import { TabsTrigger } from 'radix-vue'
+import { computed } from 'vue'
+import { cn } from '../../../utils'
 import Button from '../Button.vue'
 
 const props = defineProps<NTabsTriggerProps>()

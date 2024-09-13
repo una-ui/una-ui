@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { NPopoverContentProps } from '../../../types'
 import {
   PopoverContent,
   type PopoverContentEmits,
@@ -7,7 +8,6 @@ import {
 } from 'radix-vue'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
-import type { NPopoverContentProps } from '../../../types'
 
 defineOptions({
   inheritAttrs: false,

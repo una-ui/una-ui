@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useForwardPropsEmits } from 'radix-vue'
 import type { TabsRootEmits } from 'radix-vue'
-import { omitProps } from '../../../utils'
 import type { NTabsProps } from '../../../types/tabs'
-import TabsRoot from './TabsRoot.vue'
-import TabsList from './TabsList.vue'
-import TabsTrigger from './TabsTrigger.vue'
+import { useForwardPropsEmits } from 'radix-vue'
+import { computed } from 'vue'
+import { omitProps } from '../../../utils'
 import TabsContent from './TabsContent.vue'
+import TabsList from './TabsList.vue'
+import TabsRoot from './TabsRoot.vue'
+import TabsTrigger from './TabsTrigger.vue'
 
 const props = defineProps<NTabsProps>()
 const emits = defineEmits<TabsRootEmits>()

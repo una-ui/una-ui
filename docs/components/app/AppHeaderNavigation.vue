@@ -16,7 +16,7 @@ const tree = computed(() => {
   })
 })
 
-const isActive = (link: any) => (link.exact ? route.fullPath === link._path : route.fullPath.startsWith(link._path))
+const isActive = (link: any): boolean => (link.exact ? route.fullPath === link._path : route.fullPath.startsWith(link._path))
 </script>
 
 <template>

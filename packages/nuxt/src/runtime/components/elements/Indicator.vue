@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { createReusableTemplate } from '@vueuse/core'
 import type { NIndicatorProps } from '../../types'
+import { createReusableTemplate } from '@vueuse/core'
+import { computed } from 'vue'
 
 defineOptions({
   inheritAttrs: false,

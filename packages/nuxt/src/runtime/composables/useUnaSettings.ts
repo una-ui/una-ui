@@ -1,6 +1,6 @@
+import type { UnaSettings } from '../types'
 import { useStorage } from '@vueuse/core'
 import { watchEffect } from 'vue'
-import type { UnaSettings } from '../types'
 import { useUnaThemes } from './useUnaThemes'
 
 // @ts-expect-error tsconfig

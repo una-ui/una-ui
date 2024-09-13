@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { computed, inject } from 'vue'
+import type { NSelectItemProps, NSelectProps } from '../../../types'
 import {
   SelectItem,
   useForwardProps,
 } from 'radix-vue'
+import { computed, inject } from 'vue'
 import { cn } from '../../../utils'
-import type { NSelectItemProps, NSelectProps } from '../../../types'
-import SelectItemText from './SelectItemText.vue'
 import SelectItemIndicator from './SelectItemIndicator.vue'
+import SelectItemText from './SelectItemText.vue'
 
 const props = withDefaults(defineProps<NSelectItemProps>(), {})
 

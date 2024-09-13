@@ -1,6 +1,6 @@
+import type { ColorPalette, Colors } from '../types'
 import { colors } from '@unocss/preset-mini/colors'
 import { hexToRgb } from '../utils'
-import type { ColorPalette, Colors } from '../types'
 
 type Shade = keyof ColorPalette
 

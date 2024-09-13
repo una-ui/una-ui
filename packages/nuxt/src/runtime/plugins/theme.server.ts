@@ -27,7 +27,7 @@ export default defineNuxtPlugin(() => {
             html.style.setProperty('--una-radius', settings.radius + 'rem')
           if (settings.fontSize)
             html.style.setProperty('--una-font-size', settings.fontSize + 'px')
-        })()`.trim().replace(/\s*\n+\s*/g, ';'),
+        })()`.trim().replace(/\s*\n\s*/g, ';'),
       },
     ],
   })

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { ColumnDef, Table } from '@tanstack/vue-table'
+import { NAvatar } from '#components'
 import { faker } from '@faker-js/faker'
 
 import makeData, { type Person } from './makeData'
-import { NAvatar } from '#components'
 
 const data = ref(makeData(100))
 
@@ -195,7 +195,7 @@ const table = ref<Table<Person>>()
 
           <NSelect
             :items="[10, 20, 30, 40, 50]"
-            :_selectTrigger="{
+            :_select-trigger="{
               class: 'w-15',
             }"
             :model-value="table?.getState().pagination.pageSize"

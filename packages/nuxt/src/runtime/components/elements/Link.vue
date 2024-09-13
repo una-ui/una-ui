@@ -1,8 +1,8 @@
 <script lang="ts">
 import type { PropType } from 'vue'
-import { defineComponent } from 'vue'
-import { isEqual } from 'ohash'
 import type { NLinkProps } from '../../types'
+import { isEqual } from 'ohash'
+import { defineComponent } from 'vue'
 
 // @ts-expect-error tsconfig
 import { NuxtLink } from '#components'
@@ -97,6 +97,7 @@ export default defineComponent({
 </script>
 
 <template>
+  <!-- eslint-disable vue/no-template-shadow -->
   <NuxtLink
     v-slot="{ route, href, target, rel, navigate, isActive, isExactActive, isExternal, exact }"
     v-bind="$props"

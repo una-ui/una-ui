@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { cn } from '../../../utils'
 import type { NTableHeadProps } from '../../../types'
+import { cn } from '../../../utils'
 
 const props = defineProps<NTableHeadProps>()
 </script>

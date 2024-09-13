@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { TabsList } from 'radix-vue'
-import { cn } from '../../../utils'
 import type { NTabsListProps } from '../../../types/tabs'
+import { TabsList } from 'radix-vue'
+import { computed } from 'vue'
+import { cn } from '../../../utils'
 
 const props = defineProps<NTabsListProps>()
 const delegatedProps = computed(() => {

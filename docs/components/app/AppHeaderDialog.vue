@@ -59,32 +59,32 @@ watch(show, v => (v ? open() : close()))
 <style scoped lang="ts">
 css({
   '.dialog': {
-    position: 'fixed',
-    inset: '0 0 0 0',
-    zIndex: '50',
-    display: 'flex',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    overflowY: 'auto',
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    backdropFilter: '{elements.backdrop.filter}',
+    'position': 'fixed',
+    'inset': '0 0 0 0',
+    'zIndex': '50',
+    'display': 'flex',
+    'alignItems': 'flex-start',
+    'justifyContent': 'flex-start',
+    'overflowY': 'auto',
+    'backgroundColor': 'rgba(255, 255, 255, 0.5)',
+    'backdropFilter': '{elements.backdrop.filter}',
     '@dark': {
-      backgroundColor: 'rgba(0, 0, 0, 0.5)'
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     '@lg': {
-      display: 'none'
+      display: 'none',
     },
     '.icons': {
-      overflow: 'auto'
+      overflow: 'auto',
     },
     // Dialog content
     '& > div': {
-      maxWidth: '{size.xs}',
-      width: '100%',
-      minHeight: '100%',
-      boxShadow: '{shadow.md}',
-      px: '{space.4}',
-      backgroundColor: '{color.white}',
+      'maxWidth': '{size.xs}',
+      'width': '100%',
+      'minHeight': '100%',
+      'boxShadow': '{shadow.md}',
+      'px': '{space.4}',
+      'backgroundColor': '{color.white}',
       '@dark': {
         backgroundColor: '{color.black}',
       },
@@ -93,22 +93,22 @@ css({
       },
       // Dialog header
       '& > div': {
-        height: '{docus.header.height}',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        borderBottom: '1px solid transparent',
-        gap: '{space.2}',
+        'height': '{docus.header.height}',
+        'display': 'flex',
+        'alignItems': 'center',
+        'justifyContent': 'space-between',
+        'borderBottom': '1px solid transparent',
+        'gap': '{space.2}',
         '.icons': {
           display: 'flex',
           alignItems: 'center',
-        }
-      }
-    }
+        },
+      },
+    },
   },
   ':deep(.icon)': {
     width: '{space.4}',
-    height: '{space.4}'
-  }
+    height: '{space.4}',
+  },
 })
 </style>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { Separator } from 'radix-vue'
-import { cn, omitProps } from '../../utils'
 import type { NSeparatorProps } from '../../types'
+import { Separator } from 'radix-vue'
+import { computed } from 'vue'
+import { cn, omitProps } from '../../utils'
 
 const props = withDefaults(defineProps<NSeparatorProps>(), {
   orientation: 'horizontal',

@@ -51,20 +51,20 @@ const icons = computed<any>(() => {
 <style lang="ts" scoped>
 css({
   a: {
-    display: 'flex',
-    color: '{color.gray.500}',
-    padding: '{space.2}',
+    'display': 'flex',
+    'color': '{color.gray.500}',
+    'padding': '{space.2}',
 
     '@dark': {
-      color: '{color.gray.400}'
+      color: '{color.gray.400}',
     },
 
     '&:hover': {
-      color: '{color.gray.700}',
+      'color': '{color.gray.700}',
       '@dark': {
         color: '{color.gray.200}',
-      }
+      },
     },
-  }
+  },
 })
 </style>

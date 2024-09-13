@@ -26,7 +26,7 @@ export default defineNuxtPlugin(() => {
         --una-radius: ${settings.value.radius}rem;
         --una-font-size: ${settings.value.fontSize}px;
     }
-    `.replace(/\s*\n+\s*/g, '')
+    `.replace(/\s*\n\s*/g, '')
   })
 
   watchEffect(() => {

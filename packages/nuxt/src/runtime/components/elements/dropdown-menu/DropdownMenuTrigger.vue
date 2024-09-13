@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { DropdownMenuTrigger, useForwardProps } from 'radix-vue'
-import Button from '../Button.vue'
-import { cn, randomId } from '../../../utils'
 import type { NDropdownMenuTriggerProps } from '../../../types'
+import { DropdownMenuTrigger, useForwardProps } from 'radix-vue'
+import { cn, randomId } from '../../../utils'
+import Button from '../Button.vue'
 
 const props = defineProps<NDropdownMenuTriggerProps>()
 

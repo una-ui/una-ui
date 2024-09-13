@@ -89,7 +89,7 @@ const table = ref<Table<Pokemon>>()
 
           <NSelect
             :items="[5, 10, 20, 30, 40, 50]"
-            :_selectTrigger="{
+            :_select-trigger="{
               class: 'w-15',
             }"
             :model-value="table?.getState().pagination.pageSize"

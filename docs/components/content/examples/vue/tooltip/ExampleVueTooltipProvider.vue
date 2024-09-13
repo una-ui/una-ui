@@ -2,7 +2,7 @@
   <div class="grid h-28 place-items-center">
     <NTooltip
       content="Hello from tooltip"
-      :_tooltipProvider="{
+      :_tooltip-provider="{
         delayDuration: 0,
         disableClosingTrigger: true,
         disableHoverableContent: true,

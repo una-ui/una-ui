@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import type { DropdownMenuContentEmits, DropdownMenuRootEmits } from 'radix-vue'
-import { DropdownMenuPortal, useForwardPropsEmits } from 'radix-vue'
-import { createReusableTemplate } from '@vueuse/core'
-import { omitProps, pickProps } from '../../../utils'
 import type { NDropdownMenuProps } from '../../../types'
+import { createReusableTemplate } from '@vueuse/core'
+import { DropdownMenuPortal, useForwardPropsEmits } from 'radix-vue'
+import { omitProps, pickProps } from '../../../utils'
 import DropdownMenuContent from './DropdownMenuContent.vue'
-import DropdownMenuRoot from './DropdownMenuRoot.vue'
-import DropdownMenuTrigger from './DropdownMenuTrigger.vue'
-import DropdownMenuLabel from './DropdownMenuLabel.vue'
-import DropdownMenuSeparator from './DropdownMenuSeparator.vue'
-import DropdownMenuItem from './DropdownMenuItem.vue'
 import DropdownMenuGroup from './DropdownMenuGroup.vue'
+import DropdownMenuItem from './DropdownMenuItem.vue'
+import DropdownMenuLabel from './DropdownMenuLabel.vue'
+import DropdownMenuRoot from './DropdownMenuRoot.vue'
+import DropdownMenuSeparator from './DropdownMenuSeparator.vue'
 import DropdownMenuSub from './DropdownMenuSub.vue'
-import DropdownMenuSubTrigger from './DropdownMenuSubTrigger.vue'
 import DropdownMenuSubContent from './DropdownMenuSubContent.vue'
+import DropdownMenuSubTrigger from './DropdownMenuSubTrigger.vue'
+import DropdownMenuTrigger from './DropdownMenuTrigger.vue'
 
 const props = defineProps<NDropdownMenuProps>()
 const emits = defineEmits<DropdownMenuRootEmits & DropdownMenuContentEmits>()
