@@ -1,3 +1,12 @@
+# [0.19.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.18.1-beta.1...v0.19.0-beta.1) (2024-09-13)
+
+
+### Bug Fixes
+
+* **nuxt:** use defu to merge settings defaults ([#194](https://github.com/una-ui/una-ui/issues/194)) ([e7b268a](https://github.com/una-ui/una-ui/commit/e7b268a45d6791af7b277aa7d82637912aa8f0ff)), closes [#193](https://github.com/una-ui/una-ui/issues/193)
+
+
+
 ## [0.18.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.18.0-beta.1...v0.18.1-beta.1) (2024-09-12)
 
 
