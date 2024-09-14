@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { type HTMLAttributes, computed } from 'vue'
 import { CalendarGrid, type CalendarGridProps, useForwardProps } from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '../../../utils'
 
 const props = defineProps<CalendarGridProps & { class?: HTMLAttributes['class'] }>()

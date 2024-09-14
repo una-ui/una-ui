@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { type HTMLAttributes, computed } from 'vue'
+import type { NButtonProps } from '../../../types'
 import { CalendarNext, type CalendarNextProps, useForwardProps } from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
-import type { NButtonProps } from '../../../types'
 
 const props = defineProps<CalendarNextProps & { class?: HTMLAttributes['class'] } & NButtonProps>()
 
