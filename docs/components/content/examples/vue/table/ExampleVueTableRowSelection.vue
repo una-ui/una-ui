@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ColumnDef, Table } from '@tanstack/vue-table'
-import makeData from './makeData'
 import type { Person } from './makeData'
+import makeData from './makeData'
 
 const data = ref(makeData(10))
 

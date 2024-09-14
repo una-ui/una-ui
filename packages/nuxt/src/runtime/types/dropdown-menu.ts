@@ -1,4 +1,3 @@
-import type { HTMLAttributes } from 'vue'
 import type {
   DropdownMenuContentProps,
   DropdownMenuGroupProps,
@@ -9,6 +8,7 @@ import type {
   DropdownMenuSubTriggerProps,
   DropdownMenuTriggerProps,
 } from 'radix-vue'
+import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 import type { NSeparatorProps } from './separator'
 

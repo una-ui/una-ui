@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { SliderRootEmits } from 'radix-vue'
-import { SliderRange, SliderRoot, SliderThumb, SliderTrack, useForwardPropsEmits } from 'radix-vue'
 import type { NSliderProps } from '../../types'
+import { SliderRange, SliderRoot, SliderThumb, SliderTrack, useForwardPropsEmits } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../utils'
 
 const props = defineProps<NSliderProps>()

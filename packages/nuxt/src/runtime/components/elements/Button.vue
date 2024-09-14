@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { createReusableTemplate } from '@vueuse/core'
-import NIcon from '../elements/Icon.vue'
 import type { NButtonProps } from '../../types'
-import NLink from '../elements/Link.vue'
+import { createReusableTemplate } from '@vueuse/core'
+import { computed } from 'vue'
 import { cn } from '../../utils'
+import NIcon from '../elements/Icon.vue'
+import NLink from '../elements/Link.vue'
 
 const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',

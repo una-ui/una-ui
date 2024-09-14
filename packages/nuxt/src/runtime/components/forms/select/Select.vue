@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { computed, provide } from 'vue'
 import type { SelectRootEmits } from 'radix-vue'
+import type { NSelectProps } from '../../../types'
 import {
   useForwardPropsEmits,
 } from 'radix-vue'
-import type { NSelectProps } from '../../../types'
+import { computed, provide } from 'vue'
 import { isEqualObject, omitProps } from '../../../utils'
-import SelectRoot from './SelectRoot.vue'
-import SelectTrigger from './SelectTrigger.vue'
+import SelectContent from './SelectContent.vue'
 import SelectGroup from './SelectGroup.vue'
 import SelectItem from './SelectItem.vue'
 import SelectLabel from './SelectLabel.vue'
-import SelectContent from './SelectContent.vue'
-import SelectValue from './SelectValue.vue'
+import SelectRoot from './SelectRoot.vue'
 import SelectSeparator from './SelectSeparator.vue'
+import SelectTrigger from './SelectTrigger.vue'
+import SelectValue from './SelectValue.vue'
 
 const props = withDefaults(defineProps<NSelectProps>(), {
   size: 'sm',

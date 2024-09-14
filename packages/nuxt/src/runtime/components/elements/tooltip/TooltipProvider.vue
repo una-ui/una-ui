@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { TooltipProvider } from 'radix-vue'
 import type { NTooltipProviderProps } from '../../../types'
+import { TooltipProvider } from 'radix-vue'
 
 const props = withDefaults(defineProps<NTooltipProviderProps>(), {
   delayDuration: 600,

@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import type { NRadioProps } from '../../types'
 import { useVModel } from '@vueuse/core'
 import { computed } from 'vue'
-import type { NRadioProps } from '../../types'
 import { randomId } from '../../utils'
 import NIcon from '../elements/Icon.vue'
 

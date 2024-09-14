@@ -21,12 +21,12 @@ export default defineNuxtPlugin(() => {
   const computedStyles = computed(() => {
     return `
     :root {
-        ${Object.entries(settings.value.primaryColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
-        ${Object.entries(settings.value.grayColors || {}).map(([k, v]) => `${k}: ${v};`).join('\n')}
+        ${Object.entries(settings.value.primaryColors).map(([k, v]) => `${k}: ${v};`).join('\n')}
+        ${Object.entries(settings.value.grayColors).map(([k, v]) => `${k}: ${v};`).join('\n')}
         --una-radius: ${settings.value.radius}rem;
         --una-font-size: ${settings.value.fontSize}px;
     }
-    `.replace(/\s*\n+\s*/g, '')
+    `.replace(/\s*\n\s*/g, '')
   })
 
   watchEffect(() => {

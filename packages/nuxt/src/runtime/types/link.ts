@@ -1,4 +1,6 @@
-export interface NLinkProps {
+import type { NuxtLinkProps } from 'nuxt/app'
+
+export interface NLinkProps extends NuxtLinkProps {
   /**
    * Manually enable/disable the exact match
    *

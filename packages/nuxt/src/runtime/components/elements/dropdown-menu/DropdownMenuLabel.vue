@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { DropdownMenuLabel, useForwardProps } from 'radix-vue'
-import { cn } from '../../../utils'
 import type { NDropdownMenuLabelProps } from '../../../types'
+import { DropdownMenuLabel, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
+import { cn } from '../../../utils'
 
 const props = withDefaults(defineProps<NDropdownMenuLabelProps>(), {
   size: 'sm',

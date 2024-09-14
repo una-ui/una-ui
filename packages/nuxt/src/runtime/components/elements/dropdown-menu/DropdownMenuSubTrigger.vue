@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import type { NDropdownMenuSubTriggerProps } from '../../../types'
 import {
   DropdownMenuSubTrigger,
   useForwardProps,
 } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
-import type { NDropdownMenuSubTriggerProps } from '../../../types'
 
 const props = withDefaults(defineProps<NDropdownMenuSubTriggerProps>(), {
   dropdownMenuItem: '~',

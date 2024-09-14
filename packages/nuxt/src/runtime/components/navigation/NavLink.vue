@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { NNavLinkProps } from '../../types'
+import { computed } from 'vue'
 import { omitProps } from '../../utils'
-import NButton from '../elements/Button.vue'
 import NBadge from '../elements/Badge.vue'
+import NButton from '../elements/Button.vue'
 import NIcon from '../elements/Icon.vue'
 
 defineOptions({

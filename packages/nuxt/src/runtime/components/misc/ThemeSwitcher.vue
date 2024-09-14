@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import { useToggle } from '@vueuse/core'
 import { computed } from 'vue'
-import { PopoverTrigger } from 'radix-vue'
-import { useUnaThemes } from '../../composables/useUnaThemes'
 import { useUnaSettings } from '../../composables/useUnaSettings'
-import Popover from '../elements/popover/Popover.vue'
-import PopoverContent from '../elements/popover/PopoverContent.vue'
-import Button from '../elements/Button.vue'
+import { useUnaThemes } from '../../composables/useUnaThemes'
 import { RADIUS } from '../../constants'
+import Button from '../elements/Button.vue'
 import Label from '../elements/Label.vue'
+import Popover from '../elements/popover/Popover.vue'
 import Separator from '../elements/Separator.vue'
 
 // @ts-expect-error tsconfig
@@ -32,15 +30,15 @@ const currentGrayThemeName = computed(() => {
 })
 
 // update theme in storage
-function updatePrimaryTheme(theme: string) {
+function updatePrimaryTheme(theme: string): void {
   settings.value.primary = theme
 }
 
-function updateGrayTheme(theme: string) {
+function updateGrayTheme(theme: string): void {
   settings.value.gray = theme
 }
 
-function shuffleTheme() {
+function shuffleTheme(): void {
   const randomPrimaryTheme = primaryThemes[Math.floor(Math.random() * primaryThemes.length)][0]
   const randomGrayTheme = grayThemes[Math.floor(Math.random() * grayThemes.length)][0]
   const randomRadius = RADIUS[Math.floor(Math.random() * RADIUS.length)]
@@ -52,21 +50,13 @@ function shuffleTheme() {
 </script>
 
 <template>
-  <Popover>
-    <PopoverTrigger
-      as-child
-    >
-      <Button
-        btn="soft square"
-        icon
-        label="i-lucide-paintbrush"
-      />
-    </PopoverTrigger>
-
-    <PopoverContent
-      align="end"
-      class="z-100 w-73 bg-muted"
-    >
+  <Popover :_popover-content="{ align: 'end', class: 'z-100 w-73 bg-muted' }">
+    <Button
+      btn="soft square"
+      icon
+      label="i-lucide-paintbrush"
+    />
+    <template #content>
       <div class="flex flex-col">
         <div class="grid space-y-1">
           <h1 class="text-md text-base font-semibold">
@@ -195,6 +185,6 @@ function shuffleTheme() {
           />
         </div>
       </div>
-    </PopoverContent>
+    </template>
   </Popover>
 </template>

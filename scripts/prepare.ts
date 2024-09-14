@@ -27,7 +27,8 @@ for (const file of files) {
     const imports = submodules
       .filter(i => i !== file)
       .map(i => relative(dirname(file), i))
-      .map(i => `export * from './${basename(i, extname(i))}'`).join('\n')
+      .map(i => `export * from './${basename(i, extname(i))}'`)
+      .join('\n')
     content = `${content.slice(0, index) + exportSubmodules}\n${imports}\n`
     await fs.writeFile(file, content, 'utf-8')
   }
@@ -55,5 +56,6 @@ console.log(prefixes)
 const global = ['resize', 'size', 'btn', 'breadcrumb-active', 'breadcrumb-inactive']
 prefixes.push(...global)
 prefixes.sort((a, b) => a.localeCompare(b))
-const formattedPrefixes = `export default [${prefixes.map(p => `'${p.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase()}'`).join(', ')}]\n` // convert to kebab-case
+const kebabPrefixes = prefixes.map(p => p.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase()) // convert to kebab-case
+const formattedPrefixes = `export default [\n${kebabPrefixes.map(name => `  '${name}',`).join('\n')}\n]\n`
 await fs.writeFile('./packages/preset/src/prefixes.ts', formattedPrefixes, { encoding: 'utf-8' })

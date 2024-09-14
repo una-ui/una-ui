@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { TooltipTrigger } from 'radix-vue'
 import type { NTooltipTriggerProps } from '../../../types'
+import { TooltipTrigger } from 'radix-vue'
 
 const props = defineProps<NTooltipTriggerProps>()
 </script>

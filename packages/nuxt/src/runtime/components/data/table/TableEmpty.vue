@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import type { NTableEmptyProps } from '../../../types'
 import { computed } from 'vue'
 import { cn, omitProps } from '../../../utils'
-import type { NTableEmptyProps } from '../../../types'
-import TableRow from './TableRow.vue'
 import TableCell from './TableCell.vue'
+import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<NTableEmptyProps>(), {
   colspan: 1,

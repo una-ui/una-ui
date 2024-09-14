@@ -1,8 +1,8 @@
-import type { HTMLAttributes } from 'vue'
 import type {
   ColumnDef,
   GroupColumnDef,
 } from '@tanstack/vue-table'
+import type { HTMLAttributes } from 'vue'
 
 export interface NTableProps<TData, TValue> extends NTableRootProps {
   /**

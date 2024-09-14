@@ -1,6 +1,4 @@
 <script setup lang="ts" generic="TData, TValue">
-import type { Ref } from 'vue'
-import { computed, h } from 'vue'
 import type {
   ColumnFiltersState,
   ColumnOrderState,
@@ -12,6 +10,8 @@ import type {
   SortingState,
   VisibilityState,
 } from '@tanstack/vue-table'
+import type { Ref } from 'vue'
+import type { NTableProps } from '../../../types'
 
 import {
   FlexRender,
@@ -22,22 +22,22 @@ import {
   getSortedRowModel,
   useVueTable,
 } from '@tanstack/vue-table'
+import { computed, h } from 'vue'
 
 import { cn, pickProps, valueUpdater } from '../../../utils'
 
-import Checkbox from '../../forms/Checkbox.vue'
 import Button from '../../elements/Button.vue'
+import Checkbox from '../../forms/Checkbox.vue'
 import Input from '../../forms/Input.vue'
-import type { NTableProps } from '../../../types'
 import TableBody from './TableBody.vue'
 import TableCell from './TableCell.vue'
 import TableEmpty from './TableEmpty.vue'
 import TableFooter from './TableFooter.vue'
 import TableHead from './TableHead.vue'
 import TableHeader from './TableHeader.vue'
+import TableLoading from './TableLoading.vue'
 import TableRoot from './TableRoot.vue'
 import TableRow from './TableRow.vue'
-import TableLoading from './TableLoading.vue'
 
 const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
@@ -187,7 +187,7 @@ const table = computed(() => {
   })
 }) as Ref<ReturnType<typeof useVueTable>>
 
-function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]) {
+function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]): number {
   let count = 0
   headers.forEach((header) => {
     if (header.column.columnDef.enableColumnFilter)

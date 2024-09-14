@@ -1,27 +1,24 @@
 import antfu from '@antfu/eslint-config'
-import pluginUnoCSS from '@unocss/eslint-plugin'
 
 export default antfu(
   {
-    ingores: [
+    type: 'lib',
+    unocss: true,
+    ignores: [
       '**/docs/content/**',
       '**/*.sh',
-      '/scripts/release-edge.sh',
     ],
-  },
-  {
     rules: {
       'node/prefer-global/process': 'off',
       'vue/no-v-text-v-html-on-component': 'off',
+      'unocss/order': 'warn',
+      'unocss/order-attributify': 'warn',
     },
   },
   {
-    plugins: {
-      unocss: pluginUnoCSS,
-    },
+    files: ['docs/**', '**/playground/**'],
     rules: {
-      'unocss/order': 'warn',
-      'unocss/order-attributify': 'warn',
+      'ts/explicit-function-return-type': ['off'],
     },
   },
 )

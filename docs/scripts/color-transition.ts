@@ -10,7 +10,7 @@ function generateCSSTransition() {
     keyframes.push(keyframe)
   }
 
-  const cssTransition = `@keyframes colorTransition {${keyframes.join('')}}`.replace(/\n|\s\s+/g, '')
+  const cssTransition = `@keyframes colorTransition {${keyframes.join('')}}`.replace(/\n|\s{2,}/g, '')
 
   return cssTransition
 }

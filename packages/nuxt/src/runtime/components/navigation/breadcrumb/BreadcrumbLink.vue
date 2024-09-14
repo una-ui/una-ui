@@ -1,8 +1,8 @@
 <script lang="ts" setup>
+import type { NBreadcrumbLinkProps } from '../../../types'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'
-import type { NBreadcrumbLinkProps } from '../../../types'
 
 const props = withDefaults(defineProps<NBreadcrumbLinkProps>(), {
   active: false,

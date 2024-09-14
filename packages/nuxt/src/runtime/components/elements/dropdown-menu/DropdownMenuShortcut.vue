@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { cn } from '../../../utils'
 import type { NDropdownMenuShortcutProps } from '../../../types/dropdown-menu'
+import { cn } from '../../../utils'
 
 const props = withDefaults(defineProps<NDropdownMenuShortcutProps>(), {
   size: 'sm',

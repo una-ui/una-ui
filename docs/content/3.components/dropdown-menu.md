@@ -62,16 +62,16 @@ available via its subcomponents' prop names, e.g., `_dropdown-menu-item`, `_drop
 
 ## Variant and Color
 
-`dropdown-menu="{variant}-{color}"` is used to set the variant of the select. The default variant is `soft-black`.
+`dropdown-menu="{variant}-{color}"` is used to set the variant of the dropdown-menu. The default variant is `soft-black`.
 
-`dropdown-menu-item="{color}"` is used to set the variant of the select item. The default variant is `soft-black`.
+`dropdown-menu-item="{color}"` is used to set the variant of the dropdown-menu item. The default variant is `soft-black`.
 
-| Prop                                     | Description                                                      |
-| ---------------------------------------- | ---------------------------------------------------------------- |
-| `dropdown-menu`                          | Set the select variant and color.                                |
-| `_dropdown-menu-trigger.dropdown-menu`   | Set the select variant and color via `_dropdown-menu-trigger`.   |
-| `dropdown-menu-item`                     | Set the select item variant and color.                           |
-| `_dropdown-menu-item.dropdown-menu-item` | Set the select item variant and color via `_dropdown-menu-item`. |
+| Prop                                     | Description                                                             |
+| ---------------------------------------- | ----------------------------------------------------------------------- |
+| `dropdown-menu`                          | Set the dropdown-menu variant and color.                                |
+| `_dropdown-menu-trigger.dropdown-menu`   | Set the dropdown-menu variant and color via `_dropdown-menu-trigger`.   |
+| `dropdown-menu-item`                     | Set the dropdown-menu item variant and color.                           |
+| `_dropdown-menu-item.dropdown-menu-item` | Set the dropdown-menu item variant and color via `_dropdown-menu-item`. |
 
 ::alert{type="info"}
 `NDropdownMenuTrigger` is wrapped around the [NButton](button) component. This means that all the props and slots of
@@ -96,12 +96,12 @@ available via its subcomponents' prop names, e.g., `_dropdown-menu-item`, `_drop
 | `_dropdownMenuItem.size`    | Set the item size only.             |
 | `_dropdownMenuLabel.size`   | Set the menu label size only.       |
 
-> 🚀 You can freely adjust the size of the select using any size imaginable. No limits exist, and you aan use
+> 🚀 You can freely adjust the size of the dropdown-menu using any size imaginable. No limits exist, and you can use
 `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to
 change size based on input state and more.
 
 ::alert{type="info"}
-The `height` and `width` of the select scale depends on the `dropdown-menu-size`. If you want to change the `height` and
+The `height` and `width` of the dropdown-menu scale depends on the `dropdown-menu-size`. If you want to change the `height` and
 `width` simultaneously, you can always customize it using utility classes.
 ::
 
@@ -116,7 +116,7 @@ The `height` and `width` of the select scale depends on the `dropdown-menu-size`
 
 ## Slots
 
-> You can use the following slots to customize the select.
+> You can use the following slots to customize the dropdown-menu.
 
 | Name          | Description           | Props   |
 | ------------- | --------------------- | ------- |

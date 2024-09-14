@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import type { NFormGroupProps } from '../../types'
-import NFormGroupDefaultSlot from '../slots/FormGroupDefault'
+import { computed } from 'vue'
 import { randomId } from '../../utils'
 import Label from '../elements/Label.vue'
+import NFormGroupDefaultSlot from '../slots/FormGroupDefault'
 
 const props = defineProps<NFormGroupProps>()
 

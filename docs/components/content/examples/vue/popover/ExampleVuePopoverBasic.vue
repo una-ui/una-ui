@@ -1,16 +1,10 @@
 <template>
   <div class="grid h-50 place-items-center">
-    <NPopover>
-      <NPopoverTrigger as-child>
-        <NButton btn="solid-white">
-          Open popover
-        </NButton>
-      </NPopoverTrigger>
-
-      <NPopoverContent
-        align="start"
-        class="w-80"
-      >
+    <NPopover :_popover-content="{ align: 'start', class: 'w-80' }">
+      <NButton btn="solid-white">
+        Open popover
+      </NButton>
+      <template #content>
         <div class="grid gap-4">
           <div class="space-y-2">
             <h4 class="font-medium leading-none">
@@ -70,7 +64,7 @@
             </div>
           </div>
         </div>
-      </NPopoverContent>
+      </template>
     </NPopover>
   </div>
 </template>

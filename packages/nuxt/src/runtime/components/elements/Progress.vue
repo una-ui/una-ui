@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import type { NProgressProps } from '../../types'
 import {
   ProgressIndicator,
   ProgressRoot,
 } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../utils'
-import type { NProgressProps } from '../../types'
 
 const props = withDefaults(
   defineProps<NProgressProps>(),

@@ -83,7 +83,7 @@ const items = [
   <NDropdownMenu
     :items
     menu-label="Menu"
-    :_dropdownMenuContent="{
+    :_dropdown-menu-content="{
       class: 'w-52',
       side: 'right',
       align: 'start',

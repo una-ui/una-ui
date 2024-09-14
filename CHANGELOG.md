@@ -1,3 +1,34 @@
+# [0.19.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.18.1-beta.1...v0.19.0-beta.1) (2024-09-13)
+
+
+### Bug Fixes
+
+* **nuxt:** use defu to merge settings defaults ([#194](https://github.com/una-ui/una-ui/issues/194)) ([e7b268a](https://github.com/una-ui/una-ui/commit/e7b268a45d6791af7b277aa7d82637912aa8f0ff)), closes [#193](https://github.com/una-ui/una-ui/issues/193)
+
+
+
+## [0.18.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.18.0-beta.1...v0.18.1-beta.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* **ThemeSwitcher:** Port Popover to content slot ([#192](https://github.com/una-ui/una-ui/issues/192)) ([5e1f2f8](https://github.com/una-ui/una-ui/commit/5e1f2f8930ae37d623dd3303a8169295c5461f3a))
+
+
+
+# [0.18.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.17.1-beta.1...v0.18.0-beta.1) (2024-09-12)
+
+
+
+## [0.17.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.17.0-beta.1...v0.17.1-beta.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* **nuxt:** update app config types ([349b8ec](https://github.com/una-ui/una-ui/commit/349b8eca2e25da3f1971b3efc4f39acf7ec309a2))
+
+
+
 # [0.17.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.16.3-beta.1...v0.17.0-beta.1) (2024-09-11)
 
 

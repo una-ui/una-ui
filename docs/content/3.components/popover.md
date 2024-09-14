@@ -19,10 +19,6 @@ description: 'NPopover - Displays rich content in a portal, triggered by a butto
 
 Displays rich content in a portal, triggered by a button.
 
-::alert{type="info"}
-  You can use and pass any props to `NPopover` and its sub-components, such as `NPopoverTrigger`, `NPopoverContent`, and `NPopoverClose`. For more information, please refer to the [Radix Popover documentation](https://www.radix-vue.com/components/popover){target="_blank"}.
-::
-
 :::CodeGroup
 ::code-block{label="Preview" preview}
   :ExampleVuePopoverBasic
@@ -33,6 +29,15 @@ Displays rich content in a portal, triggered by a button.
 ::
 :::
 
+## Slots
+
+> You can use the following slots to customize the popover.
+
+| Name           | Description                  | Props  |
+| -------------- | ---------------------------- | ------ |
+| `default`      | The button trigger.          | `open` |
+| `content`      | The popover content.         | -      |
+
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/popover.ts
 
@@ -40,8 +45,6 @@ Displays rich content in a portal, triggered by a button.
 @@@ ../packages/preset/src/_shortcuts/popover.ts
 
 ## Component
-
-You can use any sub-components of `NPopover`, such as `NPopoverTrigger`, `NPopoverContent`, and `NPopoverClose`, which are defined in the Radix Popover documentation. For more information, please refer to the [Radix Popover documentation](https://www.radix-vue.com/components/popover){target="_blank"}.
 
 :::CodeGroup
 ::code-block{label="Popover" preview}

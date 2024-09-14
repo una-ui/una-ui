@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import type { NPopoverContentProps } from '../../../types'
 import {
   PopoverContent,
   type PopoverContentEmits,
   PopoverPortal,
   useForwardPropsEmits,
 } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
-import type { NPopoverContentProps } from '../../../types'
 
 defineOptions({
   inheritAttrs: false,
@@ -37,7 +37,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       v-bind="{ ...forwarded, ...$attrs }"
       :class="
         cn(
-          'popover',
+          'popover-content',
           props.class,
         )
       "

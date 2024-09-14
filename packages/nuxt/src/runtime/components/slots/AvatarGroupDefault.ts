@@ -1,6 +1,6 @@
 import type { PropType, VNode } from 'vue'
-import { cloneVNode, computed, defineComponent, h } from 'vue'
 import type { NAvatarGroupProps } from '../../types'
+import { cloneVNode, computed, defineComponent, h } from 'vue'
 import NAvatar from '../elements/Avatar.vue'
 
 // @unocss-include
