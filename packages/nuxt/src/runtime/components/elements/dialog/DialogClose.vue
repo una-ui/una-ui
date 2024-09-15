@@ -20,6 +20,7 @@ const delegatedProps = computed(() => {
   >
     <slot>
       <Button
+        aria-label="Close"
         icon
         size="xs"
         btn="text-muted square"
