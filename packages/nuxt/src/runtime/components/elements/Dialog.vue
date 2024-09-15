@@ -33,6 +33,7 @@ function preventClosure(event: Event): void {
   <DialogRoot
     v-slot="{ open }"
     v-model:open="openState"
+    modal
   >
     <DialogTrigger as-child>
       <slot name="trigger" :open />
@@ -43,6 +44,7 @@ function preventClosure(event: Event): void {
         :class="cn('dialog-overlay', una?.overlay)"
       />
       <DialogContent
+        :dialog
         :class="cn('dialog-content', una?.content)"
         v-bind="{
           ..._dialogContent,

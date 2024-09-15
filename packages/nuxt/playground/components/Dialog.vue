@@ -1,5 +1,6 @@
 <template>
   <NDialog
+    dialog="fade fast"
     title="Hello" description="Hello, world!"
   >
     <template #trigger>
