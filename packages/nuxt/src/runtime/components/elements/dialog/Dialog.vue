@@ -15,9 +15,9 @@ const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-  <DialogRoot v-bind="omitProps(forwarded, ['title', 'description'])">
+  <DialogRoot v-slot="{ open }" v-bind="omitProps(forwarded, ['title', 'description'])">
     <DialogTrigger as-child>
-      <slot name="trigger" />
+      <slot name="trigger" :open />
     </DialogTrigger>
 
     <DialogContent>
