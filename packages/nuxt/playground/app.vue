@@ -4,6 +4,7 @@
 
     <Tooltip />
     <Popover />
+    <Dialog />
 
     <ColorMode />
   </div>

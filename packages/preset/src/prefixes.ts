@@ -23,6 +23,7 @@ export default [
   'card-header',
   'card-title',
   'checkbox',
+  'dialog',
   'dropdown-menu',
   'dropdown-menu-content',
   'dropdown-menu-group',

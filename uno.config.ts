@@ -66,9 +66,9 @@ export default defineConfig({
     '../packages/preset/src/_shortcuts/form-group.ts',
     '../packages/preset/src/_shortcuts/accordion.ts',
     '../packages/preset/src/_shortcuts/switch.ts',
+    '../packages/preset/src/_shortcuts/dialog.ts',
     '../packages/preset/src/_shortcuts/general.ts',
     '../packages/preset/src/_shortcuts/index.ts',
-
     '../packages/preset/src/index.ts',
   ],
 
