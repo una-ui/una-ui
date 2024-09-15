@@ -3,13 +3,13 @@ import {
   DialogContent,
   type DialogContentEmits,
   type DialogContentProps,
-  DialogOverlay,
   DialogPortal,
   useForwardPropsEmits,
 } from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '../../../utils'
 import DialogClose from './DialogClose.vue'
+import DialogOverlay from './DialogOverlay.vue'
 
 const props = defineProps<DialogContentProps & { class?: HTMLAttributes['class'] }>()
 const emits = defineEmits<DialogContentEmits>()
@@ -25,9 +25,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <DialogPortal>
-    <DialogOverlay
-      class="fixed inset-0 z-50 data-[state=closed]:animate-out data-[state=open]:animate-in bg-black/80 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0"
-    />
+    <DialogOverlay />
     <DialogContent
       v-bind="forwarded"
       :class="
