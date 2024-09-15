@@ -9,7 +9,7 @@ export interface NDialogProps extends DialogRootProps {
   _dialogTitle?: NDialogTitleProps
   // add more eg. dialogContent, dialogFooter, etc.
 
-  una: NDialogUnaProps
+  una?: NDialogUnaProps
 }
 
 export interface NDialogTitleProps extends DialogTitleProps {
