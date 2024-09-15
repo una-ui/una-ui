@@ -26,6 +26,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <DialogPortal>
     <DialogOverlay />
+
     <DialogContent
       v-bind="forwarded"
       :class="

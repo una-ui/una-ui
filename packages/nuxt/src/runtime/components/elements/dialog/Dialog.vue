@@ -2,7 +2,6 @@
 import type { NDialogProps } from '../../../types'
 import { DialogRoot, type DialogRootEmits, DialogTrigger, useForwardPropsEmits } from 'radix-vue'
 import { omitProps } from '../../../utils'
-import DialogContent from './DialogContent.vue'
 import DialogDescription from './DialogDescription.vue'
 import DialogHeader from './DialogHeader.vue'
 import DialogTitle from './DialogTitle.vue'
@@ -19,7 +18,7 @@ const forwarded = useForwardPropsEmits(props, emits)
       <slot name="trigger" />
     </DialogTrigger>
 
-    <DialogContent>
+    <DialogScrollContent>
       <!-- header -->
       <DialogHeader
         v-if="title || description || $slots.header || $slots.title || $slots.description"
@@ -41,6 +40,6 @@ const forwarded = useForwardPropsEmits(props, emits)
 
       <!-- content -->
       <slot />
-    </DialogContent>
+    </DialogScrollContent>
   </DialogRoot>
 </template>
