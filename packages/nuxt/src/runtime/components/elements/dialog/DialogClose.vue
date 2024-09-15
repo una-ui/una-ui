@@ -24,7 +24,7 @@ const delegatedProps = computed(() => {
         icon
         size="xs"
         btn="text-muted square"
-        :class="cn('absolute right-4 top-4', props.class)"
+        :class="cn('dialog-close', props.class)"
         label="i-radix-icons-cross-2"
         v-bind="delegatedProps"
       />

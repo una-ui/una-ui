@@ -28,12 +28,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <DialogOverlay />
 
     <DialogContent
-      :class="
-        cn(
-          'relative z-50 grid w-full max-w-lg my-8 gap-4 border border-base bg-base p-6 shadow-lg duration-200 sm:rounded-lg md:w-full',
-          props.class,
-        )
-      "
+      :class="cn('dialog-scroll-content', props.class) "
       v-bind="forwarded"
       @pointer-down-outside="(event) => {
         const originalEvent = event.detail.originalEvent;

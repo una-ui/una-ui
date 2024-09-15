@@ -2,23 +2,17 @@ type KbdPrefix = 'dialog'
 
 export const staticDialog: Record<`${KbdPrefix}-${string}` | KbdPrefix, string> = {
   // base
-  'dialog': 'dialog-fade dialog-slow',
+  'dialog': '',
 
   // wrappers
-  'dialog-overlay': 'fixed inset-0 z-30 bg-black/75 dialog-fade dialog-slow',
-  'dialog-content': 'fixed z-100 left-50% top-50% translate-x--50% translate-y--50% max-h-85vh max-w-450px w-90vw rounded bg-popover px-4 py-1 shadow border border-$c focus:outline-none',
-  'dialog-title': 'text-lg font-bold',
-  'dialog-description': 'text-sm font-light',
-  'dialog-close': 'absolute top-2 right-2 h-4 w-4 rounded-full bg-transparent hover:text-red',
-
-  // animation variants
-  'dialog-animate': 'data-[state=open]:animate-in data-[state=closed]:animate-out',
-  'dialog-fast': 'dialog-animate data-[state=open]:animate-duration-300! data-[state=closed]:animate-duration-200!',
-  'dialog-slow': 'dialog-animate data-[state=open]:animate-duration-700! data-[state=closed]:animate-duration-500!',
-
-  'dialog-fade': 'dialog-animate data-[state=open]:fade-in data-[state=closed]:fade-out',
-  'dialog-zoom': 'dialog-animate data-[state=open]:zoom-in-80 data-[state=closed]:zoom-out-80',
-  'dialog-slide-left': 'dialog-animate data-[state=open]:animate-slide-in-from-left data-[state=closed]:animate-slide-out-to-left',
+  'dialog-overlay': 'fixed inset-0 z-50 data-[state=closed]:animate-out data-[state=open]:animate-in bg-black/80 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
+  'dialog-content': 'fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 border border-base bg-base p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-48% data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-48% sm:rounded-lg',
+  'dialog-scroll-content': 'relative z-50 grid w-full max-w-lg my-8 gap-4 border border-base bg-base p-6 shadow-lg duration-200 sm:rounded-lg md:w-full',
+  'dialog-header': 'flex flex-col gap-y-1.5 text-center sm:text-left',
+  'dialog-title': 'text-lg font-semibold leading-none tracking-tight',
+  'dialog-description': 'text-sm text-muted',
+  'dialog-close': 'absolute right-4 top-4',
+  'dialog-footer': 'flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-x-2',
 }
 
 export const dynamicDialog: [RegExp, (params: RegExpExecArray) => string][] = [
