@@ -1,3 +1,12 @@
+## [0.19.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.19.0-beta.1...v0.19.1-beta.1) (2024-09-15)
+
+
+### Bug Fixes
+
+* **Button:** add bg-transparent to base preset ([63e463d](https://github.com/una-ui/una-ui/commit/63e463d4954d7c583151f55fcf56f222bbbdc1a5))
+
+
+
 # [0.19.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.18.1-beta.1...v0.19.0-beta.1) (2024-09-13)
 
 
