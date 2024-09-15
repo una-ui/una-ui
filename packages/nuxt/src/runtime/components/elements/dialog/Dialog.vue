@@ -4,6 +4,7 @@ import { DialogRoot, type DialogRootEmits, DialogTrigger, useForwardPropsEmits }
 import { omitProps } from '../../../utils'
 import DialogContent from './DialogContent.vue'
 import DialogDescription from './DialogDescription.vue'
+import DialogFooter from './DialogFooter.vue'
 import DialogHeader from './DialogHeader.vue'
 import DialogTitle from './DialogTitle.vue'
 
@@ -41,6 +42,10 @@ const forwarded = useForwardPropsEmits(props, emits)
 
       <!-- content -->
       <slot />
+
+      <DialogFooter v-if="$slots.footer">
+        <slot name="footer" />
+      </DialogFooter>
     </DialogContent>
   </DialogRoot>
 </template>
