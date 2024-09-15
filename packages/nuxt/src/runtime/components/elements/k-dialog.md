@@ -12,7 +12,7 @@ import {
 } from 'radix-vue'
 
 import { cn } from '../../utils'
-import Button from '../elements/Button.vue'
+import Button from './Button.vue'
 
 defineOptions({ inheritAttrs: false })
 const props = withDefaults(defineProps<NDialogProps>(), {
