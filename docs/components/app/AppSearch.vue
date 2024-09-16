@@ -211,7 +211,7 @@ watch(Escape, () => {
 <template>
   <div class="z-5 flex items-center">
     <NButton
-      btn="!soft-gray block"
+      btn="!solid-white block"
       class="justify-between rounded-lg px-2 !text-muted font-normal md:w-80"
       aria-label="Search"
       @click="show = true"

@@ -20,10 +20,10 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <PopoverRoot v-slot="{ open }" v-bind="forwarded">
     <PopoverTrigger as-child>
-      <slot name="default" :open />
+      <slot name="trigger" :open />
     </PopoverTrigger>
     <NPopoverContent v-bind="_popoverContent">
-      <slot name="content" />
+      <slot />
     </NPopoverContent>
   </PopoverRoot>
 </template>

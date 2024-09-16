@@ -35,8 +35,8 @@ Displays rich content in a portal, triggered by a button.
 
 | Name           | Description                  | Props  |
 | -------------- | ---------------------------- | ------ |
-| `default`      | The button trigger.          | `open` |
-| `content`      | The popover content.         | -      |
+| `trigger`      | The button trigger.          | `open` |
+| `default`      | The popover content.         | -      |
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/popover.ts
