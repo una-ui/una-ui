@@ -4,6 +4,7 @@
 <template>
   <NPopover
     :_popover-content="{ class: 'w-80', align: 'start', side: 'right' }"
+    animate="fast fade slide-2"
   >
     <template #trigger>
       <NButton btn="solid-white">

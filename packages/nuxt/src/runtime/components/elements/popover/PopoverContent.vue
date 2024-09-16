@@ -7,7 +7,7 @@ import {
   useForwardPropsEmits,
 } from 'radix-vue'
 import { computed } from 'vue'
-import { cn } from '../../../utils'
+import { cn, createAnimateDirective } from '../../../utils'
 
 defineOptions({
   inheritAttrs: false,
@@ -29,11 +29,14 @@ const delegatedProps = computed(() => {
 })
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
+
+const vAnimate = createAnimateDirective('div[role=dialog]')
 </script>
 
 <template>
   <PopoverPortal>
     <PopoverContent
+      v-animate="animate"
       v-bind="{ ...forwarded, ...$attrs }"
       :class="
         cn(

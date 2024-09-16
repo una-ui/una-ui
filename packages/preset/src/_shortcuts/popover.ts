@@ -1,7 +1,7 @@
 type PopoverPrefix = 'popover'
 
 export const staticPopover: Record<`${PopoverPrefix}-${string}`, string> = {
-  'popover-content': 'w-72 rounded-md border border-base bg-popover p-4 text-popover shadow-md outline-none animate animate-fast animate-fade animate-slide-1',
+  'popover-content': 'w-72 rounded-md border border-base bg-popover p-4 text-popover shadow-md outline-none',
 }
 
 export const dynamicPopover: [RegExp, (params: RegExpExecArray) => string][] = [
