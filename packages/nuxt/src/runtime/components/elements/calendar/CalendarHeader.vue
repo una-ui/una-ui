@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { CalendarHeader, type CalendarHeaderProps, useForwardProps } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import type { NCalendarHeaderProps } from '../../../types'
+import { CalendarHeader, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
 
-const props = defineProps<CalendarHeaderProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NCalendarHeaderProps>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -15,7 +16,14 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <CalendarHeader :class="cn('calendar-header', props.class)" v-bind="forwardedProps">
+  <CalendarHeader
+    :class="cn(
+      'calendar-header',
+      props.class,
+      props.una?.calendarHeader,
+    )"
+    v-bind="forwardedProps"
+  >
     <slot />
   </CalendarHeader>
 </template>

@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { CalendarGridRow, type CalendarGridRowProps, useForwardProps } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import type { NCalendarGridRowProps } from '../../../types'
+import { CalendarGridRow, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
 
-const props = defineProps<CalendarGridRowProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NCalendarGridRowProps>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -15,7 +16,14 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <CalendarGridRow :class="cn('calendar-grid-row', props.class)" v-bind="forwardedProps">
+  <CalendarGridRow
+    :class="cn(
+      'calendar-grid-row',
+      props.class,
+      props.una?.calendarGridRow,
+    )"
+    v-bind="forwardedProps"
+  >
     <slot />
   </CalendarGridRow>
 </template>

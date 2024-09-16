@@ -1,9 +1,16 @@
 <script lang="ts" setup>
-import { CalendarCellTrigger, type CalendarCellTriggerProps, useForwardProps } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import type { NCalendarCellTriggerProps } from '../../../types'
+import { CalendarCellTrigger, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
 
-const props = defineProps<CalendarCellTriggerProps & { class?: HTMLAttributes['class'] }>()
+const props = withDefaults(defineProps<NCalendarCellTriggerProps>(), {
+  calendarToday: '~',
+  calendarSelected: '~',
+  calendarUnselected: '~',
+  calendarUnavailable: '~',
+  calendarOutside: '~',
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -16,16 +23,17 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <CalendarCellTrigger
-    calendar-today="~"
-    calendar-selected="~"
-    calendar-unselected="~"
-    calendar-unavailable="~"
-    calendar-outside="~"
+    v-bind="forwardedProps"
     :class="cn(
       'btn h-8 w-8 p-0 font-normal',
       props.class,
+      props.una?.calendarCellTrigger,
     )"
-    v-bind="forwardedProps"
+    :calendar-today
+    :calendar-selected
+    :calendar-unselected
+    :calendar-unavailable
+    :calendar-outside
   >
     <slot />
   </CalendarCellTrigger>

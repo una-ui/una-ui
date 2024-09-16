@@ -53,7 +53,7 @@ const prefixFiles = await fg('packages/nuxt/src/runtime/components/**/*.vue', {
 
 const prefixes = prefixFiles.map(i => basename(i, extname(i))).filter(i => i !== 'index' || 'button')
 console.log(prefixes)
-const global = ['resize', 'size', 'btn', 'breadcrumb-active', 'breadcrumb-inactive']
+const global = ['resize', 'size', 'btn', 'breadcrumb-active', 'breadcrumb-inactive', 'calendar-today', 'calendar-selected', 'calendar-unselected', 'calendar-unavailable', 'calendar-outside']
 prefixes.push(...global)
 prefixes.sort((a, b) => a.localeCompare(b))
 const kebabPrefixes = prefixes.map(p => p.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase()) // convert to kebab-case

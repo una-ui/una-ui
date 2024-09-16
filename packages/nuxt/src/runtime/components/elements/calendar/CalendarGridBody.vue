@@ -1,12 +1,20 @@
 <script lang="ts" setup>
-import { CalendarGridBody, type CalendarGridBodyProps } from 'radix-vue'
+import type { NCalendarGridBodyProps } from '../../../types'
+import { CalendarGridBody } from 'radix-vue'
 import { cn } from '../../../utils'
 
-const props = defineProps<CalendarGridBodyProps & { class?: string }>()
+const props = defineProps<NCalendarGridBodyProps>()
 </script>
 
 <template>
-  <CalendarGridBody :class="cn('calendar-grid-body', props.class)" v-bind="props">
+  <CalendarGridBody
+    v-bind="props"
+    :class="cn(
+      'calendar-grid-body',
+      props.class,
+      props.una?.calendarGridBody,
+    )"
+  >
     <slot />
   </CalendarGridBody>
 </template>

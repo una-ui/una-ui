@@ -1,11 +1,15 @@
 <script lang="ts" setup>
-import type { NButtonProps } from '../../../types'
-import { CalendarPrev, type CalendarPrevProps, useForwardProps } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import type { NCalendarPrevButtonProps } from '../../../types'
+import { CalendarPrev, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
 
-const props = defineProps<CalendarPrevProps & { class?: HTMLAttributes['class'] } & NButtonProps>()
+const props = withDefaults(defineProps<NCalendarPrevButtonProps>(), {
+  btn: 'solid-white',
+  icon: true,
+  label: 'calendar-prev-button-icon',
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -26,11 +30,9 @@ const forwardedProps = useForwardProps(delegatedProps)
         props.class,
       )"
       v-bind="forwardedProps"
-      btn="solid-white"
-      icon
-      label="i-heroicons-chevron-left"
+      :btn
       :una="{
-        btnIconLabel: 'text-1em',
+        btnIconLabel: 'calendar-btn-icon-label',
         ...forwardedProps.una,
       }"
       :as="Button"
