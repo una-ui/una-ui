@@ -50,7 +50,10 @@ function shuffleTheme(): void {
 </script>
 
 <template>
-  <Popover :_popover-content="{ align: 'end', class: 'z-100 w-73 bg-muted' }">
+  <Popover
+    animate="fast fade slide-2"
+    :_popover-content="{ align: 'end', class: 'z-100 w-73 bg-muted' }"
+  >
     <template #trigger>
       <Button
         btn="soft square"
