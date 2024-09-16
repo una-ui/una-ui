@@ -1,9 +1,6 @@
 <template>
   <div class="grid h-50 place-items-center">
-    <NPopover
-      animate="fast fade slide-2"
-      :_popover-content="{ align: 'start', class: 'w-80' }"
-    >
+    <NPopover :_popover-content="{ align: 'start', class: 'w-80' }">
       <template #trigger>
         <NButton btn="solid-white">
           Open popover

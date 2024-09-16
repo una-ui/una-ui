@@ -18,7 +18,10 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <PopoverTrigger as-child>
       <slot name="trigger" :open />
     </PopoverTrigger>
-    <NPopoverContent v-bind="_popoverContent" :animate>
+    <NPopoverContent
+      v-bind="_popoverContent"
+      :animate="animate || 'fast fade slide-2'"
+    >
       <slot />
     </NPopoverContent>
   </PopoverRoot>
