@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { TooltipContentEmits } from 'radix-vue'
 import type { NTooltipContentProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { TooltipContent, TooltipPortal, useForwardPropsEmits } from 'radix-vue'
-import { computed } from 'vue'
-import { cn } from '../../../utils'
+import { cn, createAnimateDirective } from '../../../utils'
 
 defineOptions({
   inheritAttrs: false,
@@ -16,18 +16,16 @@ const props = withDefaults(defineProps<NTooltipContentProps>(), {
 
 const emits = defineEmits<TooltipContentEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class', 'animate'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const vAnimate = createAnimateDirective('div:has(>[role=tooltip])')
 </script>
 
 <template>
   <TooltipPortal>
     <TooltipContent
+      v-animate="animate"
       v-bind="{ ...forwarded, ...$attrs }"
       :class="cn(
         'tooltip-content',

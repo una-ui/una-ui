@@ -1,5 +1,6 @@
 import type { TooltipContentProps, TooltipProviderProps, TooltipRootProps, TooltipTriggerProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
+import type { AnimateProps } from './animate'
 import type { NButtonProps } from './button'
 
 interface BaseExtensions {
@@ -10,7 +11,7 @@ interface BaseExtensions {
 type TriggerExtensions = NButtonProps & TooltipTriggerProps
 type ContentExtensions = BaseExtensions & TooltipContentProps
 
-export interface NTooltipProps extends BaseExtensions {
+export interface NTooltipProps extends BaseExtensions, AnimateProps {
   /**
    * Disable the tooltip.
    */
@@ -48,7 +49,7 @@ export interface NTooltipProviderProps extends TooltipProviderProps {
 export interface NTooltipTriggerProps extends TriggerExtensions {
 }
 
-export interface NTooltipContentProps extends ContentExtensions {
+export interface NTooltipContentProps extends ContentExtensions, AnimateProps {
   /**
    * Allows you to add `UnaUI` tooltip preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
