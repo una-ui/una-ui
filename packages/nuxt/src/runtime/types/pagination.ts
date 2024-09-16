@@ -1,5 +1,5 @@
-import type { HTMLAttributes } from 'vue'
 import type { PaginationEllipsisProps, PaginationFirstProps, PaginationLastProps, PaginationListItemProps, PaginationListProps, PaginationNextProps, PaginationPrevProps, PaginationRootProps } from 'radix-vue'
+import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
 interface BaseExtensions {

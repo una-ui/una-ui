@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { PaginationList, PaginationRoot } from 'radix-vue'
 import type { NPaginationProps } from '../../../types'
+import { PaginationList, PaginationRoot } from 'radix-vue'
 import { cn } from '../../../utils'
-import PaginationFirst from './PaginationFirst.vue'
-import PaginationPrev from './PaginationPrev.vue'
-import PaginationNext from './PaginationNext.vue'
-import PaginationLast from './PaginationLast.vue'
 import PaginationEllipsis from './PaginationEllipsis.vue'
+import PaginationFirst from './PaginationFirst.vue'
+import PaginationLast from './PaginationLast.vue'
 import PaginationListItem from './PaginationListItem.vue'
+import PaginationNext from './PaginationNext.vue'
+import PaginationPrev from './PaginationPrev.vue'
 
 const props = defineProps<NPaginationProps>()
 const model = defineModel<number>()

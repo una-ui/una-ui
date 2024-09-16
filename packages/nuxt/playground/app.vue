@@ -4,7 +4,7 @@
 
     <Tooltip />
     <Popover />
-    <Pagination/>
+    <Pagination />
     <ColorMode />
   </div>
 </template>

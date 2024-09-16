@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { PaginationNext, useForwardProps } from 'radix-vue'
 import type { NPaginationNextProps } from '../../../types'
-import Button from '../../elements/Button.vue'
+import { PaginationNext, useForwardProps } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
+import Button from '../../elements/Button.vue'
 import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NPaginationNextProps>(), {
