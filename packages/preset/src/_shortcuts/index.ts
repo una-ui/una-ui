@@ -1,6 +1,7 @@
 import type { Preset, StaticShortcutMap } from '@unocss/core'
 import { accordion } from './accordion'
 import { alert } from './alert'
+import { animate } from './animate'
 import { avatar } from './avatar'
 import { avatarGroup } from './avatar-group'
 import { badge } from './badge'
@@ -33,6 +34,7 @@ import { tooltip } from './tooltip'
 
 export const shortcuts = [
   ...general,
+  ...animate,
   ...breadcrumb,
   ...accordion,
   ...btn,
