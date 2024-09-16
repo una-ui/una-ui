@@ -21,12 +21,12 @@ export const staticBreadcrumb: Record<`${BreadcrumbPrefix}-${string}` | Breadcru
 export const dynamicBreadcrumb = [
   // states
   [
-    /^breadcrumb-active-(\S+)-(\S+)$/,
+    /^breadcrumb-active-([^-]+)-([^-]+)$/,
     ([, variant = 'text', color = 'primary']) =>
       `data-[state=active]:btn-${variant}-${color}`,
   ],
   [
-    /^breadcrumb-inactive-(\S+)-(\S+)$/,
+    /^breadcrumb-inactive-([^-]+)-([^-]+)$/,
     ([, variant = 'text', color = 'muted']) =>
       `data-[state=inactive]:btn-${variant}-${color}`,
   ],

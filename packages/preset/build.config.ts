@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs-extra'
-import { defineBuildConfig } from 'unbuild'
 import sass from 'sass'
+import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   entries: [
@@ -24,10 +24,10 @@ export default defineBuildConfig({
   ],
   hooks: {
     'mkdist:done': () => {
-      const compiledSass = sass.compile('./src/index.scss', { style: 'compressed', loadPaths: ['./node_modules/'] })
+      const compiledSass = sass.compile('./src/index.scss', { style: 'expanded', loadPaths: ['./node_modules/'] })
       writeFileSync(
         'una.css',
-        compiledSass.css,
+        `${compiledSass.css}\n`,
         { encoding: 'utf-8' },
       )
     },

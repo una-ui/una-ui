@@ -1,12 +1,12 @@
-import type { Preset } from 'unocss'
 import type { RuleContext } from '@unocss/core'
+import type { Theme } from '@unocss/preset-uno'
+import type { Preset } from 'unocss'
+import type { unaUIOptions } from './types'
+import { theme as unoTheme } from '@unocss/preset-mini'
+import { colors } from '@unocss/preset-mini/colors'
 import { fonts } from '@unocss/preset-mini/rules'
 import { parseColor } from '@unocss/preset-mini/utils'
-import type { Theme } from '@unocss/preset-uno'
-import { theme as unoTheme } from '@unocss/preset-mini'
 import { mergeDeep } from 'unocss'
-import { colors } from '@unocss/preset-mini/colors'
-import type { unaUIOptions } from './types'
 import { shortcuts } from './shortcuts'
 
 export default function presetUna(options: unaUIOptions = {
@@ -53,6 +53,12 @@ export default function presetUna(options: unaUIOptions = {
         success: colors.green,
         warning: colors.amber,
         info: colors.blue,
+      },
+      borderRadius: {
+        xl: 'calc(var(--una-radius) + 4px)',
+        lg: 'var(--una-radius)',
+        md: 'calc(var(--una-radius) - 2px)',
+        sm: 'calc(var(--una-radius) - 4px)',
       },
     }),
     rules: [

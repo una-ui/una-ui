@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { Person } from './makeData'
 import { faker } from '@faker-js/faker'
 import makeData from './makeData'
-import type { Person } from './makeData'
 
 const data = ref(makeData(5))
 

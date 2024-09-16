@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { DropdownMenuGroup } from 'radix-vue'
 import type { NDropdownMenuGroupProps } from '../../../types'
+import { DropdownMenuGroup } from 'radix-vue'
 import { cn } from '../../../utils'
 
 const props = defineProps<NDropdownMenuGroupProps>()

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Switch } from '@headlessui/vue'
-import { computed } from 'vue'
-import { useVModel } from '@vueuse/core'
 import type { NSwitchProps } from '../../types'
+import { Switch } from '@headlessui/vue'
+import { useVModel } from '@vueuse/core'
+import { computed } from 'vue'
 import NIcon from '../elements/Icon.vue'
 
 defineOptions({

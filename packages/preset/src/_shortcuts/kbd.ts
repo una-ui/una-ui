@@ -10,7 +10,7 @@ export const staticKbd: Record<`${KbdPrefix}-${string}` | KbdPrefix, string> = {
 
 export const dynamicKbd: [RegExp, (params: RegExpExecArray) => string][] = [
   // modifiers
-  [/^kbd-ring(-(\S+))?$/, ([, , c = 'gray']) => `ring-1 ring-inset ring-${c}-200 dark:ring-${c}-700`],
+  [/^kbd-ring(-(\S+))?$/, ([, , c = 'gray']) => `ring-1 ring-inset ring-${c}-200 dark:ring-${c}-700/58`],
 
   // variants
   [/^kbd-solid(-(\S+))?$/, ([, , c = 'gray']) => `kbd-ring-${c} bg-${c}-50 text-${c}-500 dark:bg-${c}-900 dark:text-${c}-400`],

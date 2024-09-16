@@ -1,5 +1,5 @@
-import { defaultSplitRE } from '@unocss/core'
 import type { Extractor } from '@unocss/core'
+import { defaultSplitRE } from '@unocss/core'
 
 interface ExtractorVueScriptOptions {
   /**
@@ -25,7 +25,7 @@ function splitCodeWithArbitraryVariants(code: string, prefixes: string[]): strin
   prefixes = [...prefixes, ...camelCasePrefixes]
 
   for (const prefix of prefixes) {
-    const regex = new RegExp(`^\\s*${prefix}:\\s+'.*',?\\s*$`, 'mg')
+    const regex = new RegExp(`^\\s*${prefix}:\\s+'.*',?\\s*$`, 'gm')
     const matches = code.match(regex)
 
     if (!matches)

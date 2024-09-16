@@ -1,16 +1,14 @@
+import type { UnaSettings } from './runtime/types'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
-
 import extendUnocssOptions from './una.config'
-
-interface UnaOptions {
-  primary?: string
-  gray?: string
-}
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
-    una?: UnaOptions
+    una?: Partial<Omit<UnaSettings, 'primaryColors' | 'grayColors'>>
+  }
+  interface AppConfig {
+    una: Omit<UnaSettings, 'primaryColors' | 'grayColors'>
   }
 }
 
@@ -64,6 +62,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.appConfig.una = {
       primary: 'yellow',
       gray: 'stone',
+      radius: 0.5,
+      fontSize: 16,
     }
 
     // transpile runtime
@@ -98,6 +98,22 @@ export default defineNuxtModule<ModuleOptions>({
 
     addComponentsDir({
       path: resolve(runtimeDir, 'components/elements', 'dropdown-menu'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components/elements', 'popover'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components/elements', 'tooltip'),
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { cn } from '../../../utils'
 import type { NBreadcrumbListProps } from '../../../types'
+import { cn } from '../../../utils'
 
 const props = defineProps<NBreadcrumbListProps>()
 </script>

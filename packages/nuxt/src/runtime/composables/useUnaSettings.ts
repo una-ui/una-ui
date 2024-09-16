@@ -1,12 +1,18 @@
-import { useStorage } from '@vueuse/core'
-import { watchEffect } from 'vue'
+import type { Ref } from 'vue'
 import type { UnaSettings } from '../types'
+import { useStorage } from '@vueuse/core'
+import { defu } from 'defu'
+import { useAppConfig } from 'nuxt/app'
+import { watchEffect } from 'vue'
 import { useUnaThemes } from './useUnaThemes'
 
-// @ts-expect-error tsconfig
-import { useAppConfig } from '#imports'
+export interface UseUnaSettingsReturn {
+  defaultSettings: UnaSettings
+  settings: Ref<UnaSettings>
+  reset: () => void
+}
 
-export function useUnaSettings(): any {
+export function useUnaSettings(): UseUnaSettingsReturn {
   const { una } = useAppConfig()
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 
@@ -15,20 +21,24 @@ export function useUnaSettings(): any {
     grayColors: getGrayColors(una.gray),
     primary: una.primary,
     gray: una.gray,
-    fontSize: 16,
+    radius: una.radius,
+    fontSize: una.fontSize,
   } as const
 
-  const settings = useStorage('una-settings', defaultSettings)
-
-  watchEffect(() => {
-    settings.value.primaryColors = getPrimaryColors(settings.value.primary)
-    settings.value.grayColors = getGrayColors(settings.value.gray)
+  const settings = useStorage<UnaSettings>('una-settings', defaultSettings, undefined, {
+    mergeDefaults: defu,
   })
 
-  function reset() {
+  watchEffect(() => {
+    settings.value.primaryColors = getPrimaryColors(settings.value.primary || una.primary)
+    settings.value.grayColors = getGrayColors(settings.value.gray || una.gray)
+  })
+
+  function reset(): void {
     settings.value.primary = defaultSettings.primary
     settings.value.gray = defaultSettings.gray
     settings.value.fontSize = defaultSettings.fontSize
+    settings.value.radius = defaultSettings.radius
   }
 
   return {

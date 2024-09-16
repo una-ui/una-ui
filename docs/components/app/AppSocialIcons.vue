@@ -9,11 +9,11 @@ const icons = computed<any>(() => {
         return value
       }
       else if (typeof value === 'string' && value && socials.includes(key)) {
-        const icon = key === 'github' ? 'github-logo' : key === 'twitter' ? 'twitter-logo' : key
+        const icon = key === 'github' ? 'radix-icons:github-logo' : key === 'twitter' ? 'ri:twitter-x-fill' : key
 
         return {
           href: /^https?:\/\//.test(value) ? value : `https://${key}.com/${value}`,
-          icon: `radix-icons:${icon}`,
+          icon: `${icon}`,
           label: value,
           rel: 'noopener noreferrer',
         }
@@ -27,42 +27,44 @@ const icons = computed<any>(() => {
 </script>
 
 <template>
-  <NuxtLink
-    v-for="icon in icons"
-    :key="icon.label"
-    :rel="icon.rel"
-    :title="icon.label"
-    :aria-label="icon.label"
-    :href="icon.href"
-    target="_blank"
-    btn="!text-gray"
-    class="p-0 text-lg"
-  >
-    <Icon
-      v-if="icon.icon"
-      class="!h-5 !w-5"
-      :name="icon.icon"
-    />
-  </NuxtLink>
+  <div class="flex items-center">
+    <NuxtLink
+      v-for="icon in icons"
+      :key="icon.label"
+      :rel="icon.rel"
+      :title="icon.label"
+      :aria-label="icon.label"
+      :href="icon.href"
+      target="_blank"
+      btn="!text-gray"
+      class="p-0 text-lg"
+    >
+      <Icon
+        v-if="icon.icon"
+        class="size-lg !h-1.1em !w-1.1em"
+        :name="icon.icon"
+      />
+    </NuxtLink>
+  </div>
 </template>
 
 <style lang="ts" scoped>
 css({
   a: {
-    display: 'flex',
-    color: '{color.gray.500}',
-    padding: '{space.2}',
+    'display': 'flex',
+    'color': '{color.gray.500}',
+    'padding': '{space.2}',
 
     '@dark': {
-      color: '{color.gray.400}'
+      color: '{color.gray.400}',
     },
 
     '&:hover': {
-      color: '{color.gray.700}',
+      'color': '{color.gray.700}',
       '@dark': {
         color: '{color.gray.200}',
-      }
+      },
     },
-  }
+  },
 })
 </style>

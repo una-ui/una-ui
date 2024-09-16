@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import type { NSelectContentProps } from '../../../types'
 import {
   SelectContent,
   type SelectContentEmits,
@@ -7,8 +7,8 @@ import {
   SelectViewport,
   useForwardPropsEmits,
 } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
-import type { NSelectContentProps } from '../../../types'
 import SelectScrollDownButton from './SelectScrollDownButton.vue'
 import SelectScrollUpButton from './SelectScrollUpButton.vue'
 

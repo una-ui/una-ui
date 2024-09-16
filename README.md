@@ -1,6 +1,6 @@
 # ✨ Una UI
 
-> [!WARNING]  
+> [!WARNING]
 > This project is heavily working in progress.
 
 ## 🏗️ Release Status
@@ -29,6 +29,12 @@ Visit https://www.unaui.com for full documentation.
     <img src='https://cdn.jsdelivr.net/gh/phojie/static/sponsors.svg'/>
   </a>
 </p>
+
+## 👨‍💻 Contributors
+
+<a href="https://github.com/una-ui/una-ui/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=una-ui/una-ui" />
+</a>
 
 ## 🏛️ License
 

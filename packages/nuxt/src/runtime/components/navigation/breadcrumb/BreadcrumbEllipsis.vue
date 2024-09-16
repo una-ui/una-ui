@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { cn } from '../../../utils'
 import type { NBreadcrumbEllipsisProps } from '../../../types'
+import { cn } from '../../../utils'
 
 const props = withDefaults(defineProps<NBreadcrumbEllipsisProps>(), {
   icon: 'breadcrumb-ellipsis-icon',

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useFuse } from '@vueuse/integrations/useFuse'
-import { useFocusTrap } from '@vueuse/integrations/useFocusTrap'
 import { useMagicKeys } from '@vueuse/core'
+import { useFocusTrap } from '@vueuse/integrations/useFocusTrap'
+import { useFuse } from '@vueuse/integrations/useFuse'
 
 interface DocusSearchResult {
   id: string
@@ -211,20 +211,19 @@ watch(Escape, () => {
 <template>
   <div class="z-5 flex items-center">
     <NButton
-      btn="soft-gray block"
-      class="justify-between rounded-lg px-3 font-normal md:w-80"
+      btn="!solid-white block"
+      class="justify-between rounded-lg px-2 !text-muted font-normal md:w-80"
       aria-label="Search"
       @click="show = true"
     >
       <span class="flex items-center">
         <NIcon name="i-heroicons-magnifying-glass" mr-3 />
-        <span class="flex items-center">
-          <span>Search</span>
+        <span class="hidden w-14 flex items-center sm:w-auto">
+          <p class="truncate text-ellipsis">Search documentation...</p>
         </span>
       </span>
-
       <template #trailing>
-        <NKbd kbd="outline" ml-5 size="12px" text-nowrap>
+        <NKbd kbd="soft-gray" ml-5 size="11px" text-nowrap>
           ⌘ K
         </NKbd>
       </template>
@@ -240,7 +239,7 @@ watch(Escape, () => {
       >
         <div class="search-window p-5" @click.stop>
           <div
-            class="search-input"
+            class="search-input rounded-md !bg-base"
             input="solid"
           >
             <Icon
@@ -342,35 +341,35 @@ watch(Escape, () => {
 <style scoped lang="ts">
 css({
   '.search-content': {
-    position: 'fixed',
-    inset: '0 0 0 0',
-    zIndex: '50',
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    backdropFilter: '{elements.backdrop.filter}',
+    'position': 'fixed',
+    'inset': '0 0 0 0',
+    'zIndex': '50',
+    'display': 'flex',
+    'justifyContent': 'center',
+    'backgroundColor': 'rgba(255, 255, 255, 0.5)',
+    'backdropFilter': '{elements.backdrop.filter}',
     '@dark': {
-      backgroundColor: 'rgba(0, 0, 0, 0.5)'
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
 
     '.search-window': {
-      display: 'flex',
-      flexDirection: 'column',
-      border: '1px solid {elements.border.primary.static}',
-      borderRadius: '{docus.search.results.window.borderRadius}',
-      marginTop: '{docus.search.results.window.marginTop}',
-      width: '100%',
-      maxWidth: '{docus.search.results.window.maxWidth}',
-      height: 'fit-content',
-      maxHeight: '{docus.search.results.window.maxHeight}',
-      mx: '{docus.search.results.window.marginX}',
-      overflow: 'hidden',
-      backdropFilter: '{docus.search.backdropFilter}',
+      'display': 'flex',
+      'flexDirection': 'column',
+      'border': '1px solid {elements.border.primary.static}',
+      'borderRadius': '{docus.search.results.window.borderRadius}',
+      'marginTop': '{docus.search.results.window.marginTop}',
+      'width': '100%',
+      'maxWidth': '{docus.search.results.window.maxWidth}',
+      'height': 'fit-content',
+      'maxHeight': '{docus.search.results.window.maxHeight}',
+      'mx': '{docus.search.results.window.marginX}',
+      'overflow': 'hidden',
+      'backdropFilter': '{docus.search.backdropFilter}',
 
       '.search-input': {
-        display: 'flex',
-        alignItems: 'center',
-        backgroundColor: '{docus.search.input.backgroundColor}',
+        'display': 'flex',
+        'alignItems': 'center',
+        'backgroundColor': '{docus.search.input.backgroundColor}',
         '.search-icon': {
           color: '{elements.text.tertiary.color.static}',
           flexShrink: 0,
@@ -389,42 +388,42 @@ css({
           width: '{size.20}',
           height: '{size.20}',
         },
-        input: {
-          width: '100%',
-          padding: '{space.2} 0',
-          color: '{elements.text.primary.color.static}',
-          backgroundColor: 'transparent',
+        'input': {
+          'width': '100%',
+          'padding': '{space.2} 0',
+          'color': '{elements.text.primary.color.static}',
+          'backgroundColor': 'transparent',
           '&:focus, &:focus-visible': {
             outline: 'none',
           },
           '&::placeholder': {
             color: '{elements.text.tertiary.color.static}',
-            opacity: '0.5'
-          }
+            opacity: '0.5',
+          },
         },
         '&:focus, &:focus-visible': {
           outline: 'none',
-        }
+        },
       },
 
       '.search-results': {
-        overflow: 'auto',
-        display: 'flex',
-        flexDirection: 'column',
+        'overflow': 'auto',
+        'display': 'flex',
+        'flexDirection': 'column',
         '&.empty': {
           height: '80px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           color: '{elements.text.tertiary.color.static}',
-        }
+        },
       },
 
       '.search-result': {
-        padding: '{space.1} {space.2}',
-        cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
+        'padding': '{space.1} {space.2}',
+        'cursor': 'pointer',
+        'display': 'flex',
+        'alignItems': 'center',
         '&.selected': {
           backgroundColor: '{docus.search.results.selected.backgroundColor}',
         },
@@ -434,13 +433,13 @@ css({
           borderRadius: '{radii.2xs}',
           padding: '{space.2} 0',
           flexDirection: 'column',
-          overflow: 'hidden'
+          overflow: 'hidden',
         },
         '.search-result-content-head': {
-          display: 'flex',
-          alignItems: 'center',
-          gap: '{space.2}',
-          svg: {
+          'display': 'flex',
+          'alignItems': 'center',
+          'gap': '{space.2}',
+          'svg': {
             flexShrink: '0',
             opacity: '0.5',
             width: '{size.20}',
@@ -448,11 +447,11 @@ css({
             marginLeft: '{space.2}',
             marginRight: '{space.2}',
           },
-          span: {
+          'span': {
             whiteSpace: 'nowrap',
           },
           '.arrow': {
-            opacity: '0.5'
+            opacity: '0.5',
           },
         },
         '.search-result-content-preview': {
@@ -463,9 +462,9 @@ css({
         ':deep(mark)': {
           color: '{docus.search.results.highlight.color}',
           backgroundColor: '{docus.search.results.highlight.backgroundColor}',
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 })
 </style>

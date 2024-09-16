@@ -1,6 +1,6 @@
-import { parseColor } from '@unocss/preset-mini/utils'
-import type { Theme } from '@unocss/preset-uno'
 import type { RuleContext } from '@unocss/core'
+import type { Theme } from '@unocss/preset-uno'
+import { parseColor } from '@unocss/preset-mini/utils'
 
 type CheckboxPrefix = 'checkbox'
 
