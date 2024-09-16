@@ -45,6 +45,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
 
 export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
   // base
+  // [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-${c}-200 dark:focus-visible:ring-${c}-700/58`],
   [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-600 dark:focus-visible:outline-${c}-500 focus-visible:outline-2 focus-visible:outline-offset-2`],
 
   // variants

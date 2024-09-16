@@ -18,7 +18,6 @@ import CalendarNextButton from './CalendarNextButton.vue'
 import CalendarPrevButton from './CalendarPrevButton.vue'
 
 const props = withDefaults(defineProps<CalendarRootProps & NCalendarProps>(), {
-  weekdayFormat: 'short',
 })
 
 const emits = defineEmits<CalendarRootEmits>()

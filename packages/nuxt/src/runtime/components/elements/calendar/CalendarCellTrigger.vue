@@ -5,6 +5,7 @@ import { computed } from 'vue'
 import { cn } from '../../../utils'
 
 const props = withDefaults(defineProps<NCalendarCellTriggerProps>(), {
+  size: 'sm',
   calendarToday: '~',
   calendarSelected: '~',
   calendarUnselected: '~',
@@ -25,7 +26,7 @@ const forwardedProps = useForwardProps(delegatedProps)
   <CalendarCellTrigger
     v-bind="forwardedProps"
     :class="cn(
-      'btn h-8 w-8 p-0 font-normal',
+      'calendar-cell-trigger',
       props.class,
       props.una?.calendarCellTrigger,
     )"
