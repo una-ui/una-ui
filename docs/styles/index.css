@@ -27,12 +27,10 @@ code {
   /* color: rgb(var(--una-primary-active)) !important; */
 }
 
-/*
-.card {
+.layout .card {
   background-color: var(--c-muted) !important;
   border-color: var(--c-border) !important;
 }
-*/
 
 .card .icon {
   font-size: 1.5rem !important;
