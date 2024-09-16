@@ -18,7 +18,7 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <CalendarCell
     :class="cn(
-      'calendar-cell',
+      'calendar-cell w-full',
       props.class,
       props.una?.calendarCell,
     )"
