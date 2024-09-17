@@ -1,5 +1,6 @@
 import type { SelectContentProps, SelectGroupProps, SelectItemIndicatorProps, SelectItemProps, SelectItemTextProps, SelectLabelProps, SelectRootProps, SelectScrollDownButtonProps, SelectScrollUpButtonProps, SelectSeparatorProps, SelectTriggerProps, SelectValueProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
+import type { AnimateProps } from './animate'
 import type { NButtonProps } from './button'
 
 interface BaseExtensions {
@@ -23,7 +24,7 @@ type SelectExtensions = NSelectRootProps
   & Pick<NSelectItemProps, 'selectItem'>
   & Pick<NSelectTriggerProps, 'status' | 'select'>
 
-export interface NSelectProps extends SelectExtensions {
+export interface NSelectProps extends SelectExtensions, AnimateProps {
   /**
    * The unique id of the select.
    */
@@ -128,7 +129,7 @@ export interface NSelectScrollUpButtonProps extends ScrollUpButtonExtensions {
   }
 }
 
-export interface NSelectContentProps extends ContentExtensions {
+export interface NSelectContentProps extends ContentExtensions, AnimateProps {
   _selectScrollDownButton?: NSelectScrollDownButtonProps
   _selectScrollUpButton?: NSelectScrollUpButtonProps
   _selectSeparator?: NSelectSeparator

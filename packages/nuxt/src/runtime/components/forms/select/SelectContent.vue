@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NSelectContentProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import {
   SelectContent,
   type SelectContentEmits,
@@ -7,8 +8,7 @@ import {
   SelectViewport,
   useForwardPropsEmits,
 } from 'radix-vue'
-import { computed } from 'vue'
-import { cn } from '../../../utils'
+import { cn, createAnimateDirective } from '../../../utils'
 import SelectScrollDownButton from './SelectScrollDownButton.vue'
 import SelectScrollUpButton from './SelectScrollUpButton.vue'
 
@@ -24,18 +24,17 @@ const props = withDefaults(
 )
 const emits = defineEmits<SelectContentEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class', 'animate'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
+
+const vAnimate = createAnimateDirective('[role=listbox]')
 </script>
 
 <template>
   <SelectPortal>
     <SelectContent
+      v-animate="animate"
       v-bind="{ ...forwarded, ...$attrs }"
       :class="cn(
         'select-content',
