@@ -23,13 +23,11 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "**/*.d.ts",
     "dist"
   ],
   "scripts": {
     "build": "nuxt-build-module build",
-    "stub": "nuxt-build-module build --stub",
-    "prepare": "nuxt-module-build prepare",
+    "stub": "nuxt-build-module build --stub && pnpm nuxt-module-build prepare",
     "dev": "nuxi dev playground",
     "prepack": "nr build",
     "playground:build": "nuxi generate playground",
