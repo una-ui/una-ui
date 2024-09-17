@@ -1,7 +1,6 @@
-import { useUnaSettings } from '../composables/useUnaSettings'
-
-// @ts-expect-error tsconfig
 import { defineNuxtPlugin, useHead } from '#app'
+
+import { useUnaSettings } from '../composables/useUnaSettings'
 
 export default defineNuxtPlugin(() => {
   const { defaultSettings } = useUnaSettings()

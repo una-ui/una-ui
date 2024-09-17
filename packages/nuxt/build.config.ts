@@ -2,7 +2,7 @@ import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   entries: [
-    'src/una.config',
+    'src/una.config.ts',
   ],
   externals: [
     'nuxt',
