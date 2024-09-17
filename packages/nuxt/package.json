@@ -23,7 +23,6 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "**/*.d.ts",
     "dist"
   ],
   "scripts": {
