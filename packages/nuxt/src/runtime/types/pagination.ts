@@ -7,16 +7,7 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-type RootExtensions = Omit<PaginationRootProps, 'modelValue'> & BaseExtensions
-type ListExtensions = Omit<PaginationListProps, 'value'> & BaseExtensions
-type EllipsisExtensions = PaginationEllipsisProps & BaseExtensions
-type FirstExtensions = PaginationFirstProps & BaseExtensions
-type PreviousExtensions = PaginationPrevProps & BaseExtensions
-type NextExtensions = PaginationNextProps & BaseExtensions
-type LastExtensions = PaginationLastProps & BaseExtensions
-type PaginationExtensions = NPaginationRootProps & BaseExtensions
-
-export interface NPaginationProps extends PaginationExtensions {
+export interface NPaginationProps extends NPaginationRootProps, BaseExtensions {
   // sub-components
   _paginationRoot?: Partial<NPaginationRootProps>
   _paginationList?: Partial<NPaginationListProps>
@@ -28,13 +19,13 @@ export interface NPaginationProps extends PaginationExtensions {
   _paginationLast?: Partial<PaginationLastProps>
 }
 
-export interface NPaginationRootProps extends RootExtensions {
+export interface NPaginationRootProps extends PaginationRootProps, BaseExtensions {
   una?: {
     paginationRoot?: HTMLAttributes['class']
   }
 }
 
-export interface NPaginationListProps extends ListExtensions {
+export interface NPaginationListProps extends PaginationListProps, BaseExtensions {
   una?: {
     paginationList?: HTMLAttributes['class']
   }
@@ -43,21 +34,21 @@ export interface NPaginationListProps extends ListExtensions {
 export interface NPaginationListItemProps extends PaginationListItemProps, NButtonProps {
 }
 
-export interface NPaginationEllipsisProps extends EllipsisExtensions {
+export interface NPaginationEllipsisProps extends PaginationEllipsisProps, BaseExtensions {
   una?: {
     paginationEllipsis?: HTMLAttributes['class']
     paginationEllipsisIcon?: HTMLAttributes['class']
   }
 }
 
-export interface NPaginationFirstProps extends FirstExtensions {
+export interface NPaginationFirstProps extends PaginationFirstProps, BaseExtensions {
   una?: {
     paginationFirst?: HTMLAttributes['class']
     paginationFirstIcon?: HTMLAttributes['class']
   }
 }
 
-export interface NPaginationPrevProps extends PreviousExtensions {
+export interface NPaginationPrevProps extends PaginationPrevProps, BaseExtensions {
   una?: {
     paginationPrev?: HTMLAttributes['class']
     paginationPrevIcon?: HTMLAttributes['class']
@@ -65,14 +56,14 @@ export interface NPaginationPrevProps extends PreviousExtensions {
   }
 }
 
-export interface NPaginationNextProps extends NextExtensions {
+export interface NPaginationNextProps extends PaginationNextProps, BaseExtensions {
   una?: {
     paginationNext?: HTMLAttributes['class']
     paginationNextIcon?: HTMLAttributes['class']
   }
 }
 
-export interface NPaginationLastProps extends LastExtensions {
+export interface NPaginationLastProps extends PaginationLastProps, BaseExtensions {
   una?: {
     paginationLast?: HTMLAttributes['class']
     paginationLastIcon?: HTMLAttributes['class']
