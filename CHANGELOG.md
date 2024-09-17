@@ -1,3 +1,12 @@
+# [0.22.0-beta.3](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.2...v0.22.0-beta.3) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** remove .nuxt and playground folders from nuxt tarball ([#201](https://github.com/una-ui/una-ui/issues/201)) ([b8b104b](https://github.com/una-ui/una-ui/commit/b8b104bf8d93cc7d5c1afb0316609e3e1bcfb5a7))
+
+
+
 # [0.22.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.1...v0.22.0-beta.2) (2024-09-17)
 
 
