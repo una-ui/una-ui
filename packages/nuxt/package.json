@@ -26,9 +26,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "nuxt-build-module build",
-    "stub": "nuxt-build-module build --stub",
-    "prepare": "nuxt-module-build prepare",
+    "build": "nuxt-build-module",
+    "stub": "nuxt-build-module build --stub && pnpm nuxt-module-build prepare",
     "dev": "nuxi dev playground",
     "prepack": "nr build",
     "playground:build": "nuxi generate playground",
