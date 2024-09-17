@@ -1,3 +1,12 @@
+# [0.21.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.20.0-beta.1...v0.21.0-beta.1) (2024-09-17)
+
+
+### Bug Fixes
+
+* **types:** Generate nuxt types automatically at install ([#200](https://github.com/una-ui/una-ui/issues/200)) ([3bb3824](https://github.com/una-ui/una-ui/commit/3bb3824528a7f6f71141dbbb9894537cf74aaf57))
+
+
+
 # [0.20.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.19.1-beta.1...v0.20.0-beta.1) (2024-09-16)
 
 
