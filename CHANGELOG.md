@@ -1,3 +1,12 @@
+# [0.22.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.1...v0.22.0-beta.2) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** optimize package size ([872f7c3](https://github.com/una-ui/una-ui/commit/872f7c3c831f90dc278418a58509f75a17468658))
+
+
+
 # [0.22.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.21.1-beta.2...v0.22.0-beta.1) (2024-09-17)
 
 
