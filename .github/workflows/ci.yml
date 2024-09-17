@@ -22,8 +22,8 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: pnpm lint
-      - run: pnpm typecheck
       - run: pnpm build
+      - run: pnpm typecheck
       - name: Release Edge
         if: |
           github.event_name == 'push' &&
