@@ -9,7 +9,7 @@ const icons = computed<any>(() => {
         return value
       }
       else if (typeof value === 'string' && value && socials.includes(key)) {
-        const icon = key === 'github' ? 'radix-icons:github-logo' : key === 'twitter' ? 'ri:twitter-x-fill' : key
+        const icon = key === 'github' ? 'radix-icons:github-logo' : key === 'twitter' ? 'hugeicons:new-twitter' : key
 
         return {
           href: /^https?:\/\//.test(value) ? value : `https://${key}.com/${value}`,
@@ -41,7 +41,7 @@ const icons = computed<any>(() => {
     >
       <Icon
         v-if="icon.icon"
-        class="size-lg !h-1.1em !w-1.1em"
+        class="!h-1.1em !w-1.1em"
         :name="icon.icon"
       />
     </NuxtLink>
