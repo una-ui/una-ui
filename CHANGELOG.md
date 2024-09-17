@@ -1,3 +1,12 @@
+## [0.21.1-beta.2](https://github.com/una-ui/una-ui/compare/v0.21.1-beta.1...v0.21.1-beta.2) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** update build config ([5bbe3a9](https://github.com/una-ui/una-ui/commit/5bbe3a9b63bab6ce74ca4da9edf97ce6f48baced))
+
+
+
 ## [0.21.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.21.0-beta.1...v0.21.1-beta.1) (2024-09-17)
 
 
