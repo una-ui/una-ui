@@ -1,8 +1,8 @@
 import type { Ref } from 'vue'
 import type { UnaSettings } from '../types'
+import { useAppConfig } from '#imports'
 import { useStorage } from '@vueuse/core'
 import { defu } from 'defu'
-import { useAppConfig } from 'nuxt/app'
 import { watchEffect } from 'vue'
 import { useUnaThemes } from './useUnaThemes'
 
