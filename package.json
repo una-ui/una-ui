@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/monorepo",
   "type": "module",
-  "version": "0.20.0-beta.1",
+  "version": "0.21.1-beta.1",
   "private": true,
   "packageManager": "pnpm@9.9.0",
   "description": "The Atomic UI Framework",
@@ -62,7 +62,7 @@
     "chroma-js": "^2.6.0",
     "ignore-dependency-scripts": "^1.0.1",
     "simple-git": "^3.26.0",
-    "unocss": "^0.62.3"
+    "unocss": "^0.62.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.6.0",
@@ -73,7 +73,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^13.0.9",
     "@types/node": "^20.16.5",
-    "@unocss/eslint-config": "^0.62.3",
+    "@unocss/eslint-config": "^0.62.4",
     "bumpp": "^9.5.2",
     "conventional-changelog-cli": "^4.1.0",
     "eslint": "^9.10.0",

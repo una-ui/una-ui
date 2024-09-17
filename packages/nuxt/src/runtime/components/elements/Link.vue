@@ -1,11 +1,9 @@
 <script lang="ts">
 import type { PropType } from 'vue'
 import type { NLinkProps } from '../../types'
+import { NuxtLink } from '#components'
 import { isEqual } from 'ohash'
 import { defineComponent } from 'vue'
-
-// @ts-expect-error tsconfig
-import { NuxtLink } from '#components'
 
 export default defineComponent({
   inheritAttrs: false,

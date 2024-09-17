@@ -30,6 +30,10 @@ Visit https://www.unaui.com for full documentation.
   </a>
 </p>
 
+## 🪴 Project Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/49dee6a65be83113d1241c7bd38f23e211a0f189.svg "Repobeats analytics image")
+
 ## 👨‍💻 Contributors
 
 <a href="https://github.com/una-ui/una-ui/graphs/contributors">
