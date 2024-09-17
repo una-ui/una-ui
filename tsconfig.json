@@ -1,31 +1,5 @@
 {
-  "compilerOptions": { // Allow default imports from modules with no default export (nuxt module)
-    "target": "esnext",
-    "jsx": "preserve",
-    "lib": ["esnext", "dom"], // Required for path aliases (nuxt module)
-    "baseUrl": ".",
-    "rootDir": ".",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "paths": {
-      "#app": ["node_modules/nuxt/dist/app"],
-      "#app/*": ["node_modules/nuxt/dist/app/*"],
-      "#components": ["./packages/nuxt/playground/.nuxt/components"],
-      "#imports": ["./packages/nuxt/playground/.nuxt/imports"],
-      "@una-ui/preset": ["./packages/preset/src/index.ts"]
-    },
-    "resolveJsonModule": true,
-    "types": [
-      "node"
-    ],
-    "strict": true,
-    "strictNullChecks": true,
-    "noUnusedLocals": true, // Required for path aliases (nuxt module)
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true
-  },
+  "extends": "./packages/nuxt/tsconfig.json",
   "exclude": [
     "**/docs",
     "**/node_modules",

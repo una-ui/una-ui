@@ -47,7 +47,7 @@
     "release": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release.ts",
     "start": "echo 'No start script defined'",
     "test": "vitest",
-    "typecheck": "vue-tsc --noEmit",
+    "typecheck": "pnpm -C packages/nuxt dev:prepare && vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
     "reset": "pnpm store prune && rimraf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules} && ni",
     "stub": "pnpm -r --filter=./packages/* run stub",
