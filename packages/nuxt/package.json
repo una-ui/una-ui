@@ -27,10 +27,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "pnpm dev:prepare && pnpm dev:prepare && nuxt-build-module",
+    "build": "nuxt-build-module",
     "stub": "nuxt-build-module build --stub",
     "dev": "pnpm dev:prepare && nuxi dev playground",
-    "dev:prepare": "pnpm stub && nuxt-module-build prepare && nuxi prepare playground",
+    "prepare": "pnpm stub && nuxt-module-build prepare && nuxi prepare playground",
     "prepack": "nr build",
     "playground:build": "nuxi generate playground",
     "playground:preview": "nuxi preview playground"
