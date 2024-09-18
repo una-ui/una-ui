@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useColorMode } from '#imports'
 import { useToggle } from '@vueuse/core'
 import { computed } from 'vue'
 import { useUnaSettings } from '../../composables/useUnaSettings'
@@ -8,9 +9,6 @@ import Button from '../elements/Button.vue'
 import Label from '../elements/Label.vue'
 import Popover from '../elements/popover/Popover.vue'
 import Separator from '../elements/Separator.vue'
-
-// @ts-expect-error tsconfig
-import { useColorMode } from '#imports'
 
 const colorMode = useColorMode()
 

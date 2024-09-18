@@ -1,6 +1,8 @@
+import type { HTMLAttributes } from 'vue'
 import type { NLabelProps } from './label'
 
 export interface NFormGroupProps extends NLabelProps {
+  class?: HTMLAttributes['class']
   /**
    * Update the form group status.
    *
@@ -71,18 +73,20 @@ export interface NFormGroupProps extends NLabelProps {
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/form-group.ts
    */
   una?: {
-    formGroupTopWrapper?: string
-    formGroupTopWrapperInner?: string
-    formGroupBottomWrapper?: string
-    formGroupCounterWrapper?: string
-    formGroupMessageWrapper?: string
-    formGroupLabelWrapper?: string
+    formGroup?: HTMLAttributes['class']
 
-    formGroupLabel?: string
-    formGroupDescription?: string
-    formGroupHint?: string
-    formGroupMessage?: string
+    formGroupTopWrapper?: HTMLAttributes['class']
+    formGroupTopWrapperInner?: HTMLAttributes['class']
+    formGroupBottomWrapper?: HTMLAttributes['class']
+    formGroupCounterWrapper?: HTMLAttributes['class']
+    formGroupMessageWrapper?: HTMLAttributes['class']
+    formGroupLabelWrapper?: HTMLAttributes['class']
 
-    formGroupLabelRequired?: string
+    formGroupLabel?: HTMLAttributes['class']
+    formGroupDescription?: HTMLAttributes['class']
+    formGroupHint?: HTMLAttributes['class']
+    formGroupMessage?: HTMLAttributes['class']
+
+    formGroupLabelRequired?: HTMLAttributes['class']
   }
 }

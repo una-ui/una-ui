@@ -1,3 +1,56 @@
+# [0.22.0-beta.3](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.2...v0.22.0-beta.3) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** remove .nuxt and playground folders from nuxt tarball ([#201](https://github.com/una-ui/una-ui/issues/201)) ([b8b104b](https://github.com/una-ui/una-ui/commit/b8b104bf8d93cc7d5c1afb0316609e3e1bcfb5a7))
+
+
+
+# [0.22.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.1...v0.22.0-beta.2) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** optimize package size ([872f7c3](https://github.com/una-ui/una-ui/commit/872f7c3c831f90dc278418a58509f75a17468658))
+
+
+
+# [0.22.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.21.1-beta.2...v0.22.0-beta.1) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** update build config ([d9de2d8](https://github.com/una-ui/una-ui/commit/d9de2d82ec4a798e45956d5bd9200983a2dc795d))
+
+
+
+## [0.21.1-beta.2](https://github.com/una-ui/una-ui/compare/v0.21.1-beta.1...v0.21.1-beta.2) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** update build config ([5bbe3a9](https://github.com/una-ui/una-ui/commit/5bbe3a9b63bab6ce74ca4da9edf97ce6f48baced))
+
+
+
+## [0.21.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.21.0-beta.1...v0.21.1-beta.1) (2024-09-17)
+
+
+
+# [0.21.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.20.0-beta.1...v0.21.0-beta.1) (2024-09-17)
+
+
+### Bug Fixes
+
+* **types:** Generate nuxt types automatically at install ([#200](https://github.com/una-ui/una-ui/issues/200)) ([3bb3824](https://github.com/una-ui/una-ui/commit/3bb3824528a7f6f71141dbbb9894537cf74aaf57))
+
+
+
+# [0.20.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.19.1-beta.1...v0.20.0-beta.1) (2024-09-16)
+
+
+
 ## [0.19.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.19.0-beta.1...v0.19.1-beta.1) (2024-09-15)
 
 

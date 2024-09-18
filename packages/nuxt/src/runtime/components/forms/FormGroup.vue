@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NFormGroupProps } from '../../types'
 import { computed } from 'vue'
-import { randomId } from '../../utils'
+import { cn, randomId } from '../../utils'
 import Label from '../elements/Label.vue'
 import NFormGroupDefaultSlot from '../slots/FormGroupDefault'
 
@@ -23,7 +23,13 @@ const statusClassVariants = computed(() => {
 </script>
 
 <template>
-  <div form-group>
+  <div
+    :class="cn(
+      'form-group',
+      props.class,
+      una?.formGroup,
+    )"
+  >
     <slot name="top">
       <div
         form-group="message-wrapper"
