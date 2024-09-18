@@ -1,6 +1,5 @@
 import { useId } from 'vue'
 
-export * from './animate'
 export * from './cn'
 
 export function rgbToHex(r: number, g: number, b: number): string {

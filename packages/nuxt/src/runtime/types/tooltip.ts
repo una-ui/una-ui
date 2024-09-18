@@ -11,7 +11,7 @@ interface BaseExtensions {
 type TriggerExtensions = NButtonProps & TooltipTriggerProps
 type ContentExtensions = BaseExtensions & TooltipContentProps
 
-export interface NTooltipProps extends BaseExtensions, AnimateProps {
+export interface NTooltipProps extends BaseExtensions {
   /**
    * Disable the tooltip.
    */

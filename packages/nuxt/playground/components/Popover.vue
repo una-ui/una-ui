@@ -4,7 +4,6 @@
 <template>
   <NPopover
     :_popover-content="{
-      dataAnimate: 'duration-slow fade slide-2',
       class: 'w-80',
       align: 'start',
       side: 'right',

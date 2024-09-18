@@ -24,7 +24,7 @@ type SelectExtensions = NSelectRootProps
   & Pick<NSelectItemProps, 'selectItem'>
   & Pick<NSelectTriggerProps, 'status' | 'select'>
 
-export interface NSelectProps extends SelectExtensions, AnimateProps {
+export interface NSelectProps extends SelectExtensions {
   /**
    * The unique id of the select.
    */

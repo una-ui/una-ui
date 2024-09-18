@@ -38,7 +38,6 @@ const forwarded = useForwardPropsEmits(props, emits)
         v-bind="forwarded._tooltipContent"
         :size
         :tooltip
-        :animate="animate || 'fast fade slide-1'"
         :disabled
         :una="forwarded.una?.tooltipContent"
       >

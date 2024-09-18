@@ -3,7 +3,7 @@ import type { TooltipContentEmits } from 'radix-vue'
 import type { NTooltipContentProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { TooltipContent, TooltipPortal, useForwardPropsEmits } from 'radix-vue'
-import { cn, createAnimateDirective } from '../../../utils'
+import { cn } from '../../../utils'
 
 defineOptions({
   inheritAttrs: false,
@@ -12,20 +12,19 @@ defineOptions({
 const props = withDefaults(defineProps<NTooltipContentProps>(), {
   sideOffset: 4,
   tooltip: 'black',
+  dataAnimate: 'duration-fast fade slide-2',
 })
 
 const emits = defineEmits<TooltipContentEmits>()
 
-const delegatedProps = reactiveOmit(props, ['class', 'animate'])
+const delegatedProps = reactiveOmit(props, ['class', 'dataAnimate'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
-const vAnimate = createAnimateDirective('div:has(>[role=tooltip])')
 </script>
 
 <template>
   <TooltipPortal>
     <TooltipContent
-      v-animate="animate"
       v-bind="{ ...forwarded, ...$attrs }"
       :class="cn(
         'tooltip-content',
@@ -33,6 +32,7 @@ const vAnimate = createAnimateDirective('div:has(>[role=tooltip])')
         props.una?.tooltipContent,
       )"
       :tooltip
+      :data-animate
     >
       <slot />
     </TooltipContent>

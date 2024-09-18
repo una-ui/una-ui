@@ -26,7 +26,6 @@ const modelValue = defineModel<any>('modelValue')
 
 const delegatedProps = reactiveOmit(props, [
   'class',
-  'animate',
   'items',
   'multipleGroup',
   'itemAttribute',
@@ -79,7 +78,6 @@ provide('selectModelValue', modelValue)
 
     <SelectContent
       :size
-      :animate="animate || 'slow fade-0 zoom-95 slide-2'"
       v-bind="{
         ...forwarded._selectContent,
         _selectScrollDownButton: forwarded._selectScrollDownButton,

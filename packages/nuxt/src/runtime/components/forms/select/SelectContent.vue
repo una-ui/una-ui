@@ -8,7 +8,7 @@ import {
   SelectViewport,
   useForwardPropsEmits,
 } from 'radix-vue'
-import { cn, createAnimateDirective } from '../../../utils'
+import { cn } from '../../../utils'
 import SelectScrollDownButton from './SelectScrollDownButton.vue'
 import SelectScrollUpButton from './SelectScrollUpButton.vue'
 
@@ -20,21 +20,19 @@ const props = withDefaults(
   defineProps<NSelectContentProps>(),
   {
     position: 'popper',
+    dataAnimate: 'duration-fast fade-0 zoom-95',
   },
 )
 const emits = defineEmits<SelectContentEmits>()
 
-const delegatedProps = reactiveOmit(props, ['class', 'animate'])
+const delegatedProps = reactiveOmit(props, ['class', 'dataAnimate'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
-
-const vAnimate = createAnimateDirective('[role=listbox]')
 </script>
 
 <template>
   <SelectPortal>
     <SelectContent
-      v-animate="animate"
       v-bind="{ ...forwarded, ...$attrs }"
       :class="cn(
         'select-content',
@@ -43,6 +41,7 @@ const vAnimate = createAnimateDirective('[role=listbox]')
         props.class,
       )
       "
+      :data-animate
     >
       <SelectScrollUpButton
         v-bind="forwarded._selectScrollUpButton"
