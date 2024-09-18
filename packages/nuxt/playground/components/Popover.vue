@@ -2,12 +2,20 @@
 </script>
 
 <template>
-  <NPopover :_popover-content="{ class: 'w-80', align: 'start', side: 'right' }">
+  <NPopover
+    :_popover-content="{
+      dataAnimate: 'duration-slow fade slide-2',
+      class: 'w-80',
+      align: 'start',
+      side: 'right',
+    }"
+  >
     <template #trigger>
       <NButton btn="solid-white">
         Open popover
       </NButton>
     </template>
+
     <div class="grid gap-4">
       <div class="space-y-2">
         <h4 class="font-medium leading-none">

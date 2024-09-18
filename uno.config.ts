@@ -37,6 +37,7 @@ export default defineConfig({
   ],
   configDeps: [
     '../packages/nuxt/src/preset.config.ts',
+
     '../packages/preset/src/_shortcuts/animate.ts',
     '../packages/preset/src/_shortcuts/calendar.ts',
     '../packages/preset/src/_shortcuts/label.ts',

@@ -4,7 +4,7 @@ import type { AnimateProps } from './animate'
 
 interface BaseExtensions { class?: HTMLAttributes['class'] }
 
-export interface NPopoverProps extends PopoverRootProps, AnimateProps {
+export interface NPopoverProps extends PopoverRootProps {
   /** Props for the popover content */
   _popoverContent?: NPopoverContentProps
 }
