@@ -7,8 +7,8 @@ export const staticAnimate: Record<`${Prefix}-${string}` | Prefix, string> = {
   'data-animate-base': '[&[data-state=open]]:animate-in [&[data-state=closed]]:animate-out',
 
   // static duration
-  'data-animate-duration-slow': 'animate-duration-250!',
-  'data-animate-duration-fast': 'animate-duration-1s!',
+  'data-animate-duration-fast': 'animate-duration-250!',
+  'data-animate-duration-slow': 'animate-duration-1s!',
 }
 
 export const dynamicAnimate: [RegExp, (params: RegExpExecArray) => string][] = [
