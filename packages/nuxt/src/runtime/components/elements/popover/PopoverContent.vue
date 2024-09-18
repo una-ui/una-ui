@@ -18,6 +18,7 @@ const props = withDefaults(
   {
     align: 'center',
     sideOffset: 4,
+    dataAnimate: 'popover-animation',
   },
 )
 const emits = defineEmits<PopoverContentEmits>()
