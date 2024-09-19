@@ -1,11 +1,12 @@
 <script setup lang="ts">
-const model = ref<number>(1)
+const model = ref(2)
 </script>
 
 <template>
   <span>Current Page: {{ model }}</span>
   <NPagination
-    v-model="model"
-    :total="100"
+    v-model:page="model"
+    :total="500"
+    show-edges
   />
 </template>

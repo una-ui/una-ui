@@ -3,13 +3,13 @@ type PaginationPrefix = 'pagination'
 export const staticPagination: Record<`${PaginationPrefix}-${string}` | PaginationPrefix, string> = {
   // configurations
   'pagination': '',
-  'pagination-button': 'w-9 h-9 p-0',
-  'pagination-list': 'flex items-center gap-1 text-base',
+  'pagination-button': 'min-w-2.5em min-h-2.5em !p-0',
+  'pagination-list': 'flex items-center gap-1',
 
   // components
-  'pagination-item': 'pagination-button',
+  'pagination-list-item': 'pagination-button',
 
-  'pagination-ellipsis': 'w-9 h-9 flex items-center justify-center',
+  'pagination-ellipsis': 'pagination-button flex items-center justify-center',
   'pagination-ellipsis-icon': 'i-lucide-ellipsis',
 
   'pagination-first': 'pagination-button',
@@ -26,7 +26,8 @@ export const staticPagination: Record<`${PaginationPrefix}-${string}` | Paginati
 }
 
 export const dynamicPagination: [RegExp, (params: RegExpExecArray) => string][] = [
-
+  [/^pagination-selected([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[selected=true]:btn-${v}-${c}`],
+  [/^pagination-unselected([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'white']) => `data-[selected]:btn-${v}-${c}`],
 ]
 
 export const pagination = [

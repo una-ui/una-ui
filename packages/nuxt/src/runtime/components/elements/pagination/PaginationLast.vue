@@ -4,9 +4,11 @@ import { PaginationLast, useForwardProps } from 'radix-vue'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'
-import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NPaginationLastProps>(), {
+  btn: 'solid-white',
+  icon: true,
+  label: 'pagination-last-icon',
 })
 
 const delegatedProps = computed(() => {
@@ -19,13 +21,14 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <PaginationLast v-bind="forwardedProps" as-child>
-    <Button :class="cn('pagination-last', props.class)" btn="solid-white">
-      <slot>
-        <Icon
-          :name="forwardedProps?.una?.paginationLastIcon || 'pagination-last-icon'"
-        />
-      </slot>
+  <PaginationLast as-child>
+    <Button
+      v-bind="forwardedProps"
+      :class="cn('pagination-last', props.class)"
+    >
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
     </Button>
-  </PaginationLast>
+  </paginationlast>
 </template>

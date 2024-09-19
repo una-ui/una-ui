@@ -4,11 +4,24 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 
 # 🟢 Pagination
 
+::list{type="primary"}
+- Enable quick access to first, or last page
+- Enable to show edges constantly, or not
+::
+
 ---
 
 ## Basic
 
-`NPagination` - use to divide content into pages by displaying a subset of data at a time.
+`NPagination` - use to divide content into pages by displaying a subset of data at a time, please refer to the [radix-ui pagination](https://www.radix-vue.com/components/pagination.html#api-reference) for more api information.
+
+| Prop           | Type      | Default | Description                                                                       |
+| -------------- | --------- | ------- | --------------------------------------------------------------------------------- |
+| `total`        | `number`  | `0`     | Number of items in your list.                                                     |
+| `page`         | `number`  | `-`     | The value that controls the current page and can be bound with `v-model`          |
+| `itemsPerPage` | `number`  | `10`    | Number of items per page.                                                         |
+| `disabled`     | `boolean` | `false` | Disables the pagination.                                                          |
+
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -19,57 +32,11 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 :::
 
-|  Prop   |   Type   | Default |                                Description                               | 
-| ------- | -------- | ------- | ------------------------------------------------------------------------ |
-| `total` | `number` |   `0`   | Number of items in your list.                                            |
-| `page`  | `number` |   `-`   | The value that controls the current page and can be bound with `v-model` |
-
-## Default Page
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVuePaginationDefault
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationDefault.vue
-::
-:::
-
-|      Prop     |   Type   | Default |                             Description                           | 
-| ------------- | -------- | ------- | ----------------------------------------------------------------- |
-| `defaultPage` | `number` |   `1`   | The initial active value for the page when it is first displayed. |
-
-## Disabled
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVuePaginationDisable
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationDisable.vue
-::
-:::
-
-|    Prop    |   Type    | Default |                            Description                              | 
-| ---------- | --------- | ------- | ------------------------------------------------------------------- |
-| `disabled` | `boolean` |   `-`   | When set to `true`, blocks the user from interacting with the item. |
-
-## Items Per Page
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVuePaginationItemsPerPage
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationItemsPerPage.vue
-::
-:::
-
-|      Prop      |   Type   | Default  |     Description      | 
-| -------------- | -------- | -------- | -------------------- |
-| `itemsPerPage` | `number` |   `10`   | Items shown per page |
-
 ## Show Edges
+
+| Prop        | Type      | Default | Description                                                                       |
+| ----------- | --------- | ------- | --------------------------------------------------------------------------------- |
+| `showEdges` | `boolean` | `false` | When set to `true`, the first page, last page, and ellipsis will always be shown. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -80,11 +47,11 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 :::
 
-|      Prop      |    Type   |  Default  |                                  Description                                      | 
-| -------------- | --------- | --------- | --------------------------------------------------------------------------------- |
-|   `showEdges`  | `boolean` |  `false`  | When set to `true`, the first page, last page, and ellipsis will always be shown. |
-
 ## Sibling Count
+
+| Prop           | Type     | Default | Description                                                  |
+| -------------- | -------- | ------- | ------------------------------------------------------------ |
+| `siblingCount` | `number` | `2`     | Number of surrounding pages to show around the current page. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -95,9 +62,16 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 :::
 
-|        Prop       |   Type   | Default |                        Description                           | 
-| ----------------- | -------- | ------- | ------------------------------------------------------------ |
-|   `siblingCount`  | `number` |   `2`   | Number of surrounding pages to show around the current page. |
+## Slots
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVuePaginationSlots
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSlots.vue
+::
+:::
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/pagination.ts

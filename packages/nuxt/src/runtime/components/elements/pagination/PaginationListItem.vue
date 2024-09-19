@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<NPaginationListItemProps>(), {
 })
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+  const { value: __, class: _, ...delegated } = props
 
   return delegated
 })
@@ -18,12 +18,16 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <PaginationListItem v-bind="forwardedProps" as-child>
+  <PaginationListItem
+    :value
+    as-child
+  >
+    <!-- btn="data-[selected]:solid-white data-[selected=true]:solid-primary" -->
     <Button
-      btn="solid-white data-[selected=true]:solid"
-      :class="cn('pagination-item', props.class)"
-    >
-      {{ value }}
-    </Button>
+      v-bind="forwardedProps"
+      :btn="`${value === page ? 'solid-primary' : 'solid-white'}`"
+      :label="value.toString()"
+      :class="cn('pagination-list-item', props.class)"
+    />
   </PaginationListItem>
 </template>
