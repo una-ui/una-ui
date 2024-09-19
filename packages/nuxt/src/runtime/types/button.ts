@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from 'vue'
+import type { RouteLocationRaw } from 'vue-router'
 
 interface Extensions {
   class?: HTMLAttributes['class']
@@ -55,7 +56,7 @@ export interface NButtonProps extends Extensions {
    * @example
    * to="/"
    */
-  to?: string
+  to?: RouteLocationRaw
   /**
    * Add a label to the button.
    *

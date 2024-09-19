@@ -13,7 +13,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 
   // components
   'select-root': '',
-  'select-trigger': 'min-h-2.5em w-full', // [&>span]:line-clamp-1
+  'select-trigger': 'w-full', // [&>span]:line-clamp-1
   'select-trigger-trailing-icon': 'i-lucide-chevrons-up-down !text-1.042em',
   'select-trigger-trailing': 'ml-auto n-disabled',
   'select-trigger-leading': '',
