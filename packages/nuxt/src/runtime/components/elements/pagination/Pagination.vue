@@ -40,25 +40,25 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
       )"
       v-bind="_paginationList"
     >
-      <slot
+      <PaginationFirst
         v-if="isFirstVisible"
-        name="pagination-first"
+        :size
+        v-bind="_paginationFirst"
       >
-        <PaginationFirst
-          :size
-          v-bind="_paginationFirst"
+        <slot
+          name="pagination-first"
         />
-      </slot>
+      </PaginationFirst>
 
-      <slot
+      <PaginationPrev
         v-if="isPrevVisible"
-        name="pagination-prev"
+        :size
+        v-bind="_paginationPrev"
       >
-        <PaginationPrev
-          :size
-          v-bind="_paginationPrev"
+        <slot
+          name="pagination-prev"
         />
-      </slot>
+      </PaginationPrev>
 
       <template v-if="isListItemVisible">
         <template v-for="(item, index) in items">
@@ -80,25 +80,25 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
         </template>
       </template>
 
-      <slot
+      <PaginationNext
         v-if="isNextVisible"
-        name="pagination-next"
+        :size
+        v-bind="_paginationNext"
       >
-        <PaginationNext
-          :size
-          v-bind="_paginationNext"
+        <slot
+          name="pagination-next"
         />
-      </slot>
+      </PaginationNext>
 
-      <slot
+      <PaginationLast
         v-if="isLastVisible"
-        name="pagination-last"
+        :size
+        v-bind="_paginationLast"
       >
-        <PaginationLast
-          :size
-          v-bind="_paginationLast"
+        <slot
+          name="pagination-last"
         />
-      </slot>
+      </PaginationLast>
     </PaginationList>
   </PaginationRoot>
 </template>

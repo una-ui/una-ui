@@ -22,13 +22,11 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <PaginationPrev as-child>
-    <Button
-      v-bind="forwardedProps"
-      :class="cn('pagination-prev', props.class)"
-    >
-      <template v-for="(_, name) in $slots" #[name]="slotData">
-        <slot :name="name" v-bind="slotData" />
-      </template>
-    </Button>
+    <slot>
+      <Button
+        v-bind="forwardedProps"
+        :class="cn('pagination-prev', props.class)"
+      />
+    </slot>
   </PaginationPrev>
 </template>
