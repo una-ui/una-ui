@@ -3,7 +3,7 @@ export interface NInputProps {
    *
    * @default null
    */
-  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' | 'textarea' | ''
+  type?: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' | 'search' | 'textarea' | ''
 
   /**
    * Update the input status.
