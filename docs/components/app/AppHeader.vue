@@ -32,7 +32,7 @@ const isPageLayout = computed(() => layout.value === 'page')
       </div>
 
       <div col-span="11 lg:8" class="flex items-center justify-end gap-x-2">
-        <AppSearch class="ml-2 mr-auto sm:mr-0" />
+        <AppSearch class="ml-4 mr-auto sm:mr-0" />
 
         <div class="hidden md:flex">
           <AppSocialIcons />

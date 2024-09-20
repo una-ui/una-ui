@@ -196,7 +196,6 @@ export default defineNuxtModule<ModuleOptions>({
     await installModule('@vueuse/nuxt')
     await installModule('radix-vue/nuxt', {
       prefix: options.prefix,
-      priority: 100, // Set to the lowest priority
     })
 
     // composables

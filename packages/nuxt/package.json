@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/nuxt",
   "type": "module",
-  "version": "0.19.1-beta.1",
+  "version": "0.22.0-beta.3",
   "description": "Nuxt module for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -23,12 +23,11 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "files": [
-    "**/*.d.ts",
     "dist"
   ],
   "scripts": {
-    "build": "nuxt-build-module",
-    "stub": "nuxt-build-module build --stub",
+    "build": "nuxt-build-module build",
+    "stub": "nuxt-build-module build --stub && pnpm nuxt-module-build prepare",
     "dev": "nuxi dev playground",
     "prepack": "nr build",
     "playground:build": "nuxi generate playground",
@@ -45,10 +44,10 @@
     "@tanstack/vue-table": "^8.20.5",
     "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/preset": "workspace:^",
-    "@unocss/core": "^0.62.3",
-    "@unocss/nuxt": "^0.62.3",
-    "@unocss/preset-attributify": "^0.62.3",
-    "@unocss/preset-icons": "^0.62.3",
+    "@unocss/core": "^0.62.4",
+    "@unocss/nuxt": "^0.62.4",
+    "@unocss/preset-attributify": "^0.62.4",
+    "@unocss/preset-icons": "^0.62.4",
     "@vueuse/core": "^10.11.1",
     "@vueuse/integrations": "^10.11.1",
     "@vueuse/nuxt": "^10.11.1",
@@ -57,7 +56,7 @@
     "radix-vue": "^1.9.5",
     "tailwind-merge": "^2.5.2",
     "typescript": "^5.5.4",
-    "unocss": "^0.62.3",
+    "unocss": "^0.62.4",
     "unocss-preset-animations": "^1.1.0"
   },
   "devDependencies": {
