@@ -89,4 +89,13 @@ export default [
   'tooltip-provider',
   'tooltip-root',
   'tooltip-trigger',
+  'toast',
+  'toast-provider',
+  'toast-root',
+  'toast-title',
+  'toast-description',
+  'toast-action',
+  'toast-info',
+  'toast-close',
+  'toast-viewport',
 ]
