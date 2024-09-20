@@ -15,12 +15,12 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 
 `NPagination` - use to divide content into pages by displaying a subset of data at a time, please refer to the [radix-ui pagination](https://www.radix-vue.com/components/pagination.html#api-reference) for more api information.
 
-| Prop           | Type      | Default | Description                                                                       |
-| -------------- | --------- | ------- | --------------------------------------------------------------------------------- |
-| `total`        | `number`  | `0`     | Number of items in your list.                                                     |
-| `page`         | `number`  | `-`     | The value that controls the current page and can be bound with `v-model`          |
-| `itemsPerPage` | `number`  | `10`    | Number of items per page.                                                         |
-| `disabled`     | `boolean` | `false` | Disables the pagination.                                                          |
+| Prop           | Type      | Default | Description                                                              |
+| -------------- | --------- | ------- | ------------------------------------------------------------------------ |
+| `total`        | `number`  | `0`     | Number of items in your list.                                            |
+| `page`         | `number`  | `-`     | The value that controls the current page and can be bound with `v-model` |
+| `itemsPerPage` | `number`  | `10`    | Number of items per page.                                                |
+| `disabled`     | `boolean` | `false` | Disables the pagination.                                                 |
 
 
 :::CodeGroup
@@ -59,6 +59,39 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSiblingCount.vue
+::
+:::
+
+## Variant and Color
+
+| Prop     | Type     | Default | Description                                                                 |
+| -------- | -------- | ------- | --------------------------------------------------------------------------- |
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVuePaginationVariant
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationVariant.vue
+::
+:::
+
+## Components Visibility
+
+| Prop           | Type      | Default | Description                    |
+| -------------- | --------- | ------- | ------------------------------ |
+| `showFirst`    | `boolean` | `true`  | Show the first page button.    |
+| `showLast`     | `boolean` | `true`  | Show the last page button.     |
+| `showPrev`     | `boolean` | `true`  | Show the previous page button. |
+| `showNext`     | `boolean` | `true`  | Show the next page button.     |
+| `showListItem` | `boolean` | `true`  | Show the list items.           |
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVuePaginationComponentsVisibility
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationComponentsVisibility.vue
 ::
 :::
 

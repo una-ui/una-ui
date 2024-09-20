@@ -18,7 +18,13 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <PaginationEllipsis v-bind="forwardedProps" :class="cn('pagination-ellipsis', props.class)">
+  <PaginationEllipsis
+    v-bind="forwardedProps"
+    :class="cn(
+      'pagination-ellipsis',
+      props.class,
+    )"
+  >
     <slot>
       <Icon
         :name="forwardedProps?.una?.paginationEllipsisIcon || 'pagination-ellipsis-icon'"

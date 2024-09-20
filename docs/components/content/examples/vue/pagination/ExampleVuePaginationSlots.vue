@@ -2,17 +2,23 @@
   <div flex items-start>
     <NPagination
       :total="100"
-      :is-first-visible="false"
-      :is-last-visible="false"
+      :show-first="false"
+      :show-last="false"
+      :_pagination-prev="{
+        icon: false,
+        btn: 'ghost-gray !rectangle',
+        label: 'Previous',
+        leading: 'i-lucide-chevron-left',
+      }"
     >
-      <template #pagination-prev>
+      <!-- <template #pagination-prev>
         <NButton
           btn="ghost-gray"
           leading="i-lucide-chevron-left"
         >
           Previous
         </NButton>
-      </template>
+      </template> -->
 
       <template #pagination-next>
         <NButton

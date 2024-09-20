@@ -6,6 +6,8 @@ import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NPaginationListItemProps>(), {
+  paginationSelected: 'solid-primary',
+  paginationUnselected: 'solid-white',
 })
 
 const delegatedProps = computed(() => {
@@ -21,13 +23,12 @@ const forwardedProps = useForwardProps(delegatedProps)
   <PaginationListItem
     :value
     as-child
+    :data-selected="value === page"
   >
-    <!-- btn="data-[selected]:solid-white data-[selected=true]:solid-primary" -->
     <Button
       v-bind="forwardedProps"
-      :btn="`${value === page ? 'solid-primary' : 'solid-white'}`"
       :label="value.toString()"
-      :class="cn('pagination-list-item', props.class)"
+      :class="cn('pagination-list-item p-0', props.class)"
     />
   </PaginationListItem>
 </template>

@@ -11,11 +11,11 @@ import PaginationNext from './PaginationNext.vue'
 import PaginationPrev from './PaginationPrev.vue'
 
 const props = withDefaults(defineProps<NPaginationProps>(), {
-  isFirstVisible: true,
-  isLastVisible: true,
-  isListItemVisible: true,
-  isNextVisible: true,
-  isPrevVisible: true,
+  showFirst: true,
+  showLast: true,
+  showListItem: true,
+  showNext: true,
+  showPrev: true,
 })
 
 const emits = defineEmits<PaginationRootEmits>()
@@ -41,8 +41,10 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
       v-bind="_paginationList"
     >
       <PaginationFirst
-        v-if="isFirstVisible"
+        v-if="showFirst"
         :size
+        :pagination-selected
+        :pagination-unselected
         v-bind="_paginationFirst"
       >
         <slot
@@ -51,7 +53,9 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
       </PaginationFirst>
 
       <PaginationPrev
-        v-if="isPrevVisible"
+        v-if="showPrev"
+        :pagination-selected
+        :pagination-unselected
         :size
         v-bind="_paginationPrev"
       >
@@ -60,7 +64,7 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
         />
       </PaginationPrev>
 
-      <template v-if="isListItemVisible">
+      <template v-if="showListItem">
         <template v-for="(item, index) in items">
           <PaginationListItem
             v-if="item.type === 'page'"
@@ -68,6 +72,8 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
             :value="item.value"
             :page
             :size
+            :pagination-selected
+            :pagination-unselected
             v-bind="_paginationListItem"
           />
           <PaginationEllipsis
@@ -75,14 +81,17 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
             :key="item.type"
             :index="index"
             :size
+            :pagination-ellipsis
             v-bind="_paginationEllipsis"
           />
         </template>
       </template>
 
       <PaginationNext
-        v-if="isNextVisible"
+        v-if="showNext"
         :size
+        :pagination-selected
+        :pagination-unselected
         v-bind="_paginationNext"
       >
         <slot
@@ -91,8 +100,10 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
       </PaginationNext>
 
       <PaginationLast
-        v-if="isLastVisible"
+        v-if="showLast"
         :size
+        :pagination-selected
+        :pagination-unselected
         v-bind="_paginationLast"
       >
         <slot

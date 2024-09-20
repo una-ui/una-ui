@@ -5,6 +5,8 @@ interface Extensions {
   class?: HTMLAttributes['class']
   breadcrumbActive?: string
   breadcrumbInactive?: string
+  paginationSelected?: string
+  paginationUnselected?: string
   dropdownMenu?: string
 }
 

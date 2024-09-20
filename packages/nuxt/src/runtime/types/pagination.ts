@@ -9,12 +9,16 @@ interface BaseExtensions {
 
 type isVisible = boolean
 
-export interface NPaginationProps extends PaginationRootProps, BaseExtensions {
-  isFirstVisible?: isVisible
-  isPrevVisible?: isVisible
-  isNextVisible?: isVisible
-  isLastVisible?: isVisible
-  isListItemVisible?: isVisible
+export interface NPaginationProps extends
+  PaginationRootProps,
+  BaseExtensions,
+  Pick<NButtonProps, 'paginationSelected' | 'paginationUnselected'>,
+  Pick<NPaginationEllipsisProps, 'paginationEllipsis'> {
+  showFirst?: isVisible
+  showPrev?: isVisible
+  showNext?: isVisible
+  showLast?: isVisible
+  showListItem?: isVisible
 
   // sub-components
   _paginationList?: Partial<NPaginationListProps>
@@ -42,6 +46,8 @@ export interface NPaginationListItemProps extends PaginationListItemProps, NButt
 }
 
 export interface NPaginationEllipsisProps extends PaginationEllipsisProps, BaseExtensions {
+  paginationEllipsis?: HTMLAttributes['class']
+
   una?: {
     paginationEllipsis?: HTMLAttributes['class']
     paginationEllipsisIcon?: HTMLAttributes['class']

@@ -3,7 +3,7 @@ type PaginationPrefix = 'pagination'
 export const staticPagination: Record<`${PaginationPrefix}-${string}` | PaginationPrefix, string> = {
   // configurations
   'pagination': '',
-  'pagination-button': 'min-w-2.5em min-h-2.5em !p-0',
+  'pagination-button': 'min-w-2.5em',
   'pagination-list': 'flex items-center gap-1',
 
   // components
@@ -26,8 +26,23 @@ export const staticPagination: Record<`${PaginationPrefix}-${string}` | Paginati
 }
 
 export const dynamicPagination: [RegExp, (params: RegExpExecArray) => string][] = [
-  [/^pagination-selected([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[selected=true]:btn-${v}-${c}`],
-  [/^pagination-unselected([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'white']) => `data-[selected]:btn-${v}-${c}`],
+  [
+    /^pagination-ellipsis-([^-]+)-([^-]+)$/,
+    ([, vc = 'text-white']) =>
+      `data-[type=ellipsis]:btn-${vc}`,
+  ],
+
+  [
+    /^pagination-selected-([^-]+)-([^-]+)$/,
+    ([, variant = 'solid', color = 'primary']) =>
+      `data-[selected=true]:btn-${variant}-${color}`,
+  ],
+  [
+    /^pagination-unselected-([^-]+)-([^-]+)$/,
+    ([, variant = 'solid', color = 'white']) =>
+      `data-[selected=false]:btn-${variant}-${color}`,
+  ],
+
 ]
 
 export const pagination = [

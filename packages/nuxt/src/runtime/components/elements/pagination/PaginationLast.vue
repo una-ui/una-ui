@@ -6,7 +6,7 @@ import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NPaginationLastProps>(), {
-  btn: 'solid-white',
+  paginationUnselected: 'solid-white',
   icon: true,
   label: 'pagination-last-icon',
 })
@@ -22,13 +22,12 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <PaginationLast as-child>
-    <Button
-      v-bind="forwardedProps"
-      :class="cn('pagination-last', props.class)"
-    >
-      <template v-for="(_, name) in $slots" #[name]="slotData">
-        <slot :name="name" v-bind="slotData" />
-      </template>
-    </Button>
+    <slot>
+      <Button
+        :data-selected="false"
+        v-bind="forwardedProps"
+        :class="cn('pagination-last p-0', props.class)"
+      />
+    </slot>
   </paginationlast>
 </template>
