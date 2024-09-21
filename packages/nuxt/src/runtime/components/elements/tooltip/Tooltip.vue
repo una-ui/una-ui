@@ -40,6 +40,7 @@ const forwarded = useForwardPropsEmits(props, emits)
         :tooltip
         :disabled
         :una="forwarded.una?.tooltipContent"
+        :data-animate="dataAnimate || _tooltipContent?.dataAnimate"
       >
         <slot name="content">
           {{ content }}

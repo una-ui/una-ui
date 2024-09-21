@@ -21,6 +21,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
     <NPopoverContent
       v-bind="_popoverContent"
+      :data-animate="dataAnimate || _popoverContent?.dataAnimate"
     >
       <slot />
     </NPopoverContent>
