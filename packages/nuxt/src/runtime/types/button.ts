@@ -1,7 +1,8 @@
 import type { HTMLAttributes } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
-interface Extensions {
+interface BaseExtensionProps {
+  rounded?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
   breadcrumbActive?: string
   breadcrumbInactive?: string
@@ -10,7 +11,7 @@ interface Extensions {
   dropdownMenu?: string
 }
 
-export interface NButtonProps extends Extensions {
+export interface NButtonProps extends BaseExtensionProps {
   /**
    * Change the button type.
    *

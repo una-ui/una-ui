@@ -80,12 +80,31 @@ The `padding` and `font-size` of the button scale depends on the `size`. If you 
 ::
 :::
 
-## Padding & Shape
+## Rounded
 
-`btn="square"` - to force the padding to have the same size, usefull for icon buttons.
+`rounded="{size}"` - change the border-radius of the button.
+
+> 🚀 You can freely adjust the size of the rounded using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
 
 ::alert{type="info"}
-By default, the padding is `rectangle`, you can change it to `square`. You can always add and customize it using utility classes such as adding `rounded-full` to make it circle.
+You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale, the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
+::
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueButtonRounded
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/button/ExampleVueButtonRounded.vue
+::
+:::
+
+## Shape
+
+`btn="square"` - to force the padding and width to have the same size, usefull for icon buttons.
+
+::alert{type="info"}
+By default, the padding is `rectangle`, you can change it to `square`. 
 ::
 
 :::CodeGroup

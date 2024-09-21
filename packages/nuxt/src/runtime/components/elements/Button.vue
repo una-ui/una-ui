@@ -48,15 +48,17 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :to="to"
     :type="to ? null : type"
     :class="cn(
+      !rounded && 'btn-default-radius',
       !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
+      reverse && 'btn-reverse',
       'btn',
-      { 'btn-reverse': reverse },
-      props.class,
       una?.btn,
+      props.class,
     )"
     :disabled="to ? null : disabled || loading"
     :aria-label="icon ? label : null"
-    :size="size"
+    :rounded
+    :size
     v-bind="mergeVariants"
   >
     <DefineTemplate v-if="loading">
