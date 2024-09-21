@@ -5,7 +5,7 @@ export const staticAnimate: Record<`${Prefix}-${string}` | Prefix, string> = {
   'animate': '',
 
   'animate-base': '[&[data-state$=open]]:animate-in [&[data-state=closed]]:animate-out',
-  'animate-default': 'animate-base animate-duration-fast [&:not([data-animate]):not([animate])]:animate-fade [&:not([data-animate]):not([animate])]:animate-slide-2',
+  'animate-default': 'animate-base animate-duration-fast [&:not([data-animate]):not([animate])]:animate-fade-0 [&:not([data-animate]):not([animate])]:animate-slide-2 [&:not([data-animate]):not([animate])]:zoom-95',
 
   // static duration
   'animate-duration-fast': 'animate-base animate-duration-250',

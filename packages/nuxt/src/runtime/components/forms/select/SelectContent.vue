@@ -20,7 +20,6 @@ const props = withDefaults(
   defineProps<NSelectContentProps>(),
   {
     position: 'popper',
-    dataAnimate: 'duration-fast fade-0 zoom-95',
   },
 )
 const emits = defineEmits<SelectContentEmits>()
