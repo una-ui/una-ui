@@ -29,6 +29,10 @@ Displays rich content in a portal, triggered by a button.
 ::
 :::
 
+### Animation
+
+Animation of the popover can be customized using the `animate` property.
+
 ## Slots
 
 > You can use the following slots to customize the popover.
