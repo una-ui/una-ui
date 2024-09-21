@@ -7,7 +7,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-default-radius': 'rounded-md',
 
   // base
-  'btn': 'btn-rectangle bg-transparent transition-colors text-0.875em leading-5 gap-x-0.42857142857142855em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium cursor-pointer',
+  'btn': 'min-h-2.5em btn-rectangle bg-transparent transition-colors text-0.875em leading-5 gap-x-0.42857142857142855em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium cursor-pointer',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
   'btn-icon-label': 'text-1.191em',
@@ -18,7 +18,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   // options
   'btn-block': 'w-full',
   'btn-reverse': 'flex-row-reverse',
-  'btn-rectangle': 'min-h-2.5em px-0.7142857142857143em py-0.42857142857142855em',
+  'btn-rectangle': 'px-0.7142857142857143em py-0.42857142857142855em',
   'btn-square': 'p-0.42857142857142855em h-2.5em w-2.5em',
 
   // variants
