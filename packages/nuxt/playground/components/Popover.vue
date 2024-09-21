@@ -8,6 +8,7 @@
       align: 'start',
       side: 'right',
     }"
+    data-animate="fade spin zoom-85"
   >
     <template #trigger>
       <NButton btn="solid-white">

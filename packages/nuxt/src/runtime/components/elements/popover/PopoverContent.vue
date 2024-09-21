@@ -18,7 +18,6 @@ const props = withDefaults(
   {
     align: 'center',
     sideOffset: 4,
-    dataAnimate: 'duration-fast fade slide-2',
   },
 )
 const emits = defineEmits<PopoverContentEmits>()

@@ -4,7 +4,7 @@ description: Animation shortcuts
 # 🟡 Animation
 ---
 
-Some components support being animated on open and close. To customize this behavior, use the `data-animate` component prop.
+Some components support being animated when opened and closed. To customize this behavior, use the `data-animate` component prop.
 
 ## Examples
 

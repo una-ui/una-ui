@@ -1,7 +1,7 @@
 type TooltipPrefix = 'tooltip'
 
 export const staticTooltip: Record<`${TooltipPrefix}-${string}`, string> = {
-  'tooltip-content': 'z-50 overflow-hidden rounded-md px-0.75em py-0.375em text-xs shadow-md',
+  'tooltip-content': 'z-50 overflow-hidden rounded-md px-0.75em py-0.375em text-xs shadow-md animate-default',
 
   'tooltip-white': 'border border-base bg-popover text-popover',
   'tooltip-black': 'border border-foreground bg-popover-foreground text-popover-foreground',

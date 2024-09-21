@@ -12,7 +12,6 @@ defineOptions({
 const props = withDefaults(defineProps<NTooltipContentProps>(), {
   sideOffset: 4,
   tooltip: 'black',
-  dataAnimate: 'duration-fast fade slide-2',
 })
 
 const emits = defineEmits<TooltipContentEmits>()
