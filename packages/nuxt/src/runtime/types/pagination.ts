@@ -2,8 +2,9 @@ import type { PaginationEllipsisProps, PaginationFirstProps, PaginationLastProps
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-interface BaseExtensions {
+interface BaseExtensionProps {
   class?: HTMLAttributes['class']
+  rounded?: HTMLAttributes['class']
   size?: HTMLAttributes['class']
 }
 
@@ -11,7 +12,7 @@ type isVisible = boolean
 
 export interface NPaginationProps extends
   PaginationRootProps,
-  BaseExtensions,
+  BaseExtensionProps,
   Pick<NButtonProps, 'paginationSelected' | 'paginationUnselected'>,
   Pick<NPaginationEllipsisProps, 'paginationEllipsis'> {
   showFirst?: isVisible
@@ -27,7 +28,7 @@ export interface NPaginationProps extends
   _paginationFirst?: Partial<NPaginationFirstProps>
   _paginationPrev?: Partial<NPaginationPrevProps>
   _paginationNext?: Partial<NPaginationNextProps>
-  _paginationLast?: Partial<PaginationLastProps>
+  _paginationLast?: Partial<NPaginationLastProps>
 
   una?: {
     paginationRoot: HTMLAttributes['class']
@@ -35,7 +36,7 @@ export interface NPaginationProps extends
   }
 }
 
-export interface NPaginationListProps extends PaginationListProps, BaseExtensions {
+export interface NPaginationListProps extends PaginationListProps, BaseExtensionProps {
   una?: {
     paginationList?: HTMLAttributes['class']
   }
@@ -45,11 +46,12 @@ export interface NPaginationListItemProps extends PaginationListItemProps, NButt
   page?: PaginationRootProps['page']
 }
 
-export interface NPaginationEllipsisProps extends PaginationEllipsisProps, BaseExtensions {
+export interface NPaginationEllipsisProps extends PaginationEllipsisProps, BaseExtensionProps {
   paginationEllipsis?: HTMLAttributes['class']
 
   una?: {
     paginationEllipsis?: HTMLAttributes['class']
+    paginationEllipsisIconBase?: HTMLAttributes['class']
     paginationEllipsisIcon?: HTMLAttributes['class']
   }
 }

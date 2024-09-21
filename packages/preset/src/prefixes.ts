@@ -45,6 +45,7 @@ export default [
   'nav-link',
   'nav-link-group',
   'pagination',
+  'pagination-ellipsis',
   'pagination-selected',
   'pagination-unselected',
   'pagination-ellipsis',

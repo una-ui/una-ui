@@ -10,6 +10,7 @@ export const staticPagination: Record<`${PaginationPrefix}-${string}` | Paginati
   'pagination-list-item': 'pagination-button',
 
   'pagination-ellipsis': 'pagination-button flex items-center justify-center',
+  'pagination-ellipsis-icon-base': 'w-1em h-1em',
   'pagination-ellipsis-icon': 'i-lucide-ellipsis',
 
   'pagination-first': 'pagination-button',
@@ -25,11 +26,11 @@ export const staticPagination: Record<`${PaginationPrefix}-${string}` | Paginati
   'pagination-last-icon': 'i-lucide-chevrons-right',
 }
 
-export const dynamicPagination: [RegExp, (params: RegExpExecArray) => string][] = [
+export const dynamicPagination = [
   [
     /^pagination-ellipsis-([^-]+)-([^-]+)$/,
-    ([, vc = 'text-white']) =>
-      `data-[type=ellipsis]:btn-${vc}`,
+    ([, variant = 'text', color = 'black']) =>
+      `btn btn-${variant}-${color}`,
   ],
 
   [

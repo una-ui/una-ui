@@ -6,6 +6,7 @@ import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NPaginationEllipsisProps>(), {
+  paginationEllipsis: '~',
 })
 
 const delegatedProps = computed(() => {
@@ -20,13 +21,19 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <PaginationEllipsis
     v-bind="forwardedProps"
+    :pagination-ellipsis
     :class="cn(
       'pagination-ellipsis',
+      props.una?.paginationEllipsis,
       props.class,
     )"
   >
     <slot>
       <Icon
+        :class="cn(
+          'pagination-ellipsis-icon-base',
+          props.una?.paginationEllipsisIconBase,
+        )"
         :name="forwardedProps?.una?.paginationEllipsisIcon || 'pagination-ellipsis-icon'"
       />
     </slot>
