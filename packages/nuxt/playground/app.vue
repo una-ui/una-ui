@@ -4,6 +4,8 @@
 
     <Toast />
 
+    <NToastToasts />
+
     <ColorMode />
   </div>
 </template>

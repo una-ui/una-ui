@@ -4,6 +4,7 @@ import { computed } from 'vue'
 import { randomId } from '../../../utils'
 
 const props = defineProps<NToastActionProps>()
+const emits = defineEmits(['click'])
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -22,6 +23,7 @@ const delegatedProps = computed(() => {
       btnDefaultVariant: 'toast-default-variant',
       ...delegatedProps.una,
     }"
+    @click="emits('click')"
   >
     <slot />
   </NButton>

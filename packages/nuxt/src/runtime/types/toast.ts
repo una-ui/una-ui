@@ -6,6 +6,8 @@ interface BaseExtensions {
   class?: HTMLAttributes['class']
 }
 
+type Action = Omit<NButtonProps, 'una'> & { click?: () => void }
+
 export interface NToastProps extends BaseExtensions {
   /**
    * Allows you to add `UnaUI` toast preset properties,
@@ -33,7 +35,7 @@ export interface NToastProps extends BaseExtensions {
   /**
    * The array of actions.
    */
-  actions?: Omit<NButtonProps[], 'una'>
+  actions?: Action[]
   /**
    * Allows you to change the size of the input.
    *
@@ -101,14 +103,9 @@ export interface NToastViewportProps extends ToastViewportProps, BaseExtensions 
 
 export interface NToastActionProps extends NButtonProps, Partial<ToastActionProps> {
   /**
-   * Allows you to add `UnaUI` toast preset properties,
-   * Think of it as a shortcut for adding options or variants to the preset if available.
-   *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/toast.ts
-   * @example
-   * toast="outline-green"
+   * Function to handle click action for the toast.
    */
-  toast?: HTMLAttributes['class']
+  click?: () => void
 }
 
 export interface NToastInfoProps extends BaseExtensions {
