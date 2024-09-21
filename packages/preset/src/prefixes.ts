@@ -49,6 +49,7 @@ export default [
   'progress',
   'radio',
   'resize',
+  'rounded',
   'select',
   'select-content',
   'select-group',
