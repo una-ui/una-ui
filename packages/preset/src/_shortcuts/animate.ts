@@ -38,6 +38,10 @@ export const dynamicAnimate: [RegExp, (params: RegExpExecArray) => string][] = [
     data-[state$=open]:zoom-in${level}
     data-[state=closed]:zoom-out${level}
   `],
+  [/^data-animate-spin(-[^-]+)?$/, ([,value = '']) => `
+    data-[state$=open]:spin-in${value}
+    data-[state=closed]:spin-out${value}
+  `],
 
   // dynamic duration
   [/^data-animate-duration(-[^-]+)?$/, ([,value = '150']) => `
