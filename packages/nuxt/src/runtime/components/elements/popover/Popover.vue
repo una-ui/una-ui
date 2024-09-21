@@ -8,7 +8,7 @@ import NPopoverContent from './PopoverContent.vue'
 const props = defineProps<NPopoverProps>()
 const emits = defineEmits<PopoverRootEmits>()
 
-const delegatedProps = reactiveOmit(props, ['_popoverContent'])
+const delegatedProps = reactiveOmit(props, ['_popoverContent', 'dataAnimate'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
