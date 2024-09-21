@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NDialogFooterProps } from '../../../types'
 import { cn } from '../../../utils'
 
-const props = defineProps<{ class?: HTMLAttributes['class'] }>()
+const props = defineProps<NDialogFooterProps>()
 </script>
 
 <template>

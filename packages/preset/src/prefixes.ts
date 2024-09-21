@@ -29,6 +29,7 @@ export default [
   'dialog-description',
   'dialog-footer',
   'dialog-header',
+  'dialog-overlay',
   'dialog-scroll-content',
   'dialog-title',
   'dropdown-menu',

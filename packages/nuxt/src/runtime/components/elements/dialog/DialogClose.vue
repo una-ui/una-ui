@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { DialogClose, type DialogCloseProps } from 'radix-vue'
-import { computed } from 'vue'
+import type { NDialogCloseProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
+import { DialogClose } from 'radix-vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
 
-const props = defineProps<DialogCloseProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NDialogCloseProps>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, 'class')
 </script>
 
 <template>

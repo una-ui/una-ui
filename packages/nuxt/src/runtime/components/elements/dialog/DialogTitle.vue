@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import { DialogTitle, type DialogTitleProps, useForwardProps } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import type { NDialogTitleProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
+import { DialogTitle, useForwardProps } from 'radix-vue'
 import { cn } from '../../../utils'
 
-const props = defineProps<DialogTitleProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NDialogTitleProps>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, 'class')
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>

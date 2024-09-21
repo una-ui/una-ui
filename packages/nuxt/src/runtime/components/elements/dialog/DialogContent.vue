@@ -1,31 +1,27 @@
 <script setup lang="ts">
+import type { NDialogContentProps, NDialogProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import {
   DialogContent,
   type DialogContentEmits,
-  type DialogContentProps,
   DialogPortal,
   useForwardPropsEmits,
 } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '../../../utils'
 import DialogClose from './DialogClose.vue'
 import DialogOverlay from './DialogOverlay.vue'
 
-const props = defineProps<DialogContentProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NDialogContentProps & Pick<NDialogProps, '_dialogOverlay' | 'una'>>()
 const emits = defineEmits<DialogContentEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, 'class')
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
   <DialogPortal>
-    <DialogOverlay />
+    <DialogOverlay v-bind="_dialogOverlay" :class="una?.dialogOverlay" />
 
     <DialogContent
       v-bind="forwarded"
