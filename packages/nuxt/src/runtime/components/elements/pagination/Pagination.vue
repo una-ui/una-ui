@@ -93,6 +93,7 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
             :rounded
             :size
             :pagination-ellipsis
+            :una
             v-bind="_paginationEllipsis"
           />
         </template>

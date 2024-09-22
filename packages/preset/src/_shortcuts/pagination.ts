@@ -9,7 +9,7 @@ export const staticPagination: Record<`${PaginationPrefix}-${string}` | Paginati
   'pagination-root': '',
   'pagination-list-item': 'pagination',
 
-  'pagination-ellipsis-base': 'flex items-center justify-center',
+  'pagination-ellipsis-base': 'btn flex items-center justify-center',
   'pagination-ellipsis-icon-base': 'w-1em h-1em',
   'pagination-ellipsis-icon': 'i-lucide-ellipsis',
 
@@ -30,7 +30,7 @@ export const dynamicPagination = [
   [
     /^pagination-ellipsis(?:-([^-]+))?(?:-([^-]+))?$/,
     ([, variant = 'text', color = 'black']) =>
-      `btn btn-${variant}-${color}`,
+      `btn-${variant}-${color}`,
   ],
 
   [

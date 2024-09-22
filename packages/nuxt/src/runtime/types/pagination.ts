@@ -31,16 +31,11 @@ export interface NPaginationProps extends
   _paginationNext?: Partial<NPaginationNextProps>
   _paginationLast?: Partial<NPaginationLastProps>
 
-  una?: {
-    paginationRoot: HTMLAttributes['class']
-    paginationList?: HTMLAttributes['class']
-  }
+  una?: NPaginationUnaProps
 }
 
 export interface NPaginationListProps extends PaginationListProps, BaseExtensionProps {
-  una?: {
-    paginationList?: HTMLAttributes['class']
-  }
+  una?: Pick<NPaginationUnaProps, 'paginationList'>
 }
 
 export interface NPaginationListItemProps extends PaginationListItemProps, NButtonProps {
@@ -51,37 +46,26 @@ export interface NPaginationListItemProps extends PaginationListItemProps, NButt
 export interface NPaginationEllipsisProps extends PaginationEllipsisProps, BaseExtensionProps {
   paginationEllipsis?: HTMLAttributes['class']
 
-  una?: {
-    paginationEllipsis?: HTMLAttributes['class']
-    paginationEllipsisIconBase?: HTMLAttributes['class']
-    paginationEllipsisIcon?: HTMLAttributes['class']
-  }
+  una?: Pick<NPaginationUnaProps, 'paginationEllipsis' | 'paginationEllipsisIconBase' | 'paginationEllipsisIcon'>
 }
 
 export interface NPaginationFirstProps extends PaginationFirstProps, NButtonProps {
-  // una?: {
-  //   paginationFirst?: HTMLAttributes['class']
-  //   paginationFirstIcon?: HTMLAttributes['class']
-  // }
 }
 
 export interface NPaginationPrevProps extends PaginationPrevProps, NButtonProps {
-  // una?: {
-  //   paginationPrev?: HTMLAttributes['class']
-  //   paginationPrevIcon?: HTMLAttributes['class']
-  // }
 }
 
 export interface NPaginationNextProps extends PaginationNextProps, NButtonProps {
-  // una?: {
-  //   paginationNext?: HTMLAttributes['class']
-  //   paginationNextIcon?: HTMLAttributes['class']
-  // }
 }
 
 export interface NPaginationLastProps extends PaginationLastProps, NButtonProps {
-  // una?: {
-  //   paginationLast?: HTMLAttributes['class']
-  //   paginationLastIcon?: HTMLAttributes['class']
-  // }
+}
+
+interface NPaginationUnaProps {
+  paginationRoot: HTMLAttributes['class']
+  paginationList: HTMLAttributes['class']
+  paginationListItem: HTMLAttributes['class']
+  paginationEllipsis: HTMLAttributes['class']
+  paginationEllipsisIconBase: HTMLAttributes['class']
+  paginationEllipsisIcon: HTMLAttributes['class']
 }
