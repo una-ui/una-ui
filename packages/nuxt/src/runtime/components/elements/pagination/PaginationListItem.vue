@@ -28,11 +28,12 @@ const forwardedProps = useForwardProps(delegatedProps)
   >
     <Button
       v-bind="forwardedProps"
-      :label="value.toString()"
       :class="cn(
         'pagination-list-item',
         props.class,
       )"
-    />
+    >
+      {{ value }}
+    </Button>
   </PaginationListItem>
 </template>

@@ -98,6 +98,25 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 :::
 
+## Rounded
+
+`rounded="{size}"` - change the border-radius of the pagination.
+
+> 🚀 You can freely adjust the size of the rounded using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+
+::alert{type="info"}
+You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale, the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
+::
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVuePaginationRounded
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/button/ExampleVuePaginationRounded.vue
+::
+:::
+
 ## Sub Components
 
 | Prop                    | Description                                          |

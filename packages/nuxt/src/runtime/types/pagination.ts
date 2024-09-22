@@ -44,6 +44,7 @@ export interface NPaginationListProps extends PaginationListProps, BaseExtension
 }
 
 export interface NPaginationListItemProps extends PaginationListItemProps, NButtonProps {
+  isSelected?: boolean
   page?: PaginationRootProps['page']
 }
 
