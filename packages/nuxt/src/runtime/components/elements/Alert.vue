@@ -121,7 +121,8 @@ const icon = computed(() => {
           <NButton
             alert="close"
             :class="una?.alertClose"
-            btn="~ square"
+            btn="~"
+            square
             @click="emit('close')"
           >
             <slot name="closeIcon">

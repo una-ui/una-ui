@@ -13,7 +13,8 @@
       <NButton
         label="i-heroicons-arrow-down-tray-20-solid"
         icon
-        btn="soft square"
+        btn="soft"
+        square
       />
     </div>
 
