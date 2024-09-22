@@ -7,7 +7,7 @@ import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NPaginationFirstProps>(), {
   square: true,
-  paginationUnselected: 'solid-white',
+  paginationUnselected: '~',
   icon: true,
   label: 'pagination-first-icon',
 })

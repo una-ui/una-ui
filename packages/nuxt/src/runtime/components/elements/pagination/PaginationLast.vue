@@ -6,7 +6,7 @@ import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NPaginationLastProps>(), {
-  paginationUnselected: 'solid-white',
+  paginationUnselected: '~',
   icon: true,
   square: true,
   label: 'pagination-last-icon',

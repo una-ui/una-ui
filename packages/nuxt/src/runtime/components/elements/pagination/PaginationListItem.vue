@@ -6,8 +6,8 @@ import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NPaginationListItemProps>(), {
-  paginationSelected: 'solid-primary',
-  paginationUnselected: 'solid-white',
+  paginationSelected: '~',
+  paginationUnselected: '~',
   square: true,
 })
 
