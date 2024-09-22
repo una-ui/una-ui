@@ -5,27 +5,26 @@ export const staticAnimate: Record<`${Prefix}-${string}` | Prefix, string> = {
   'animate': '',
 
   'animate-base': '[&[data-state$=open]]:animate-in [&[data-state=closed]]:animate-out',
-  'animate-default': 'animate-base animate-duration-fast [&:not([data-animate]):not([animate])]:animate-fade-0 [&:not([data-animate]):not([animate])]:animate-slide-2 [&:not([data-animate]):not([animate])]:zoom-95',
+  'animate-default': `animate-base animate-duration-fast
+    [&:not([data-animate]):not([animate])]:animate-fade-0
+    [&:not([data-animate]):not([animate])]:animate-slide-2
+    [&:not([data-animate]):not([animate])]:animate-zoom-95
+  `,
 
   // static duration
-  'animate-duration-fast': 'animate-base animate-duration-250',
-  'animate-duration-slow': 'animate-base animate-duration-1s',
+  'animate-duration-fast': '[&[data-state$=open]]:animate-duration-250 [&[data-state=closed]]:animate-duration-250',
+  'animate-duration-slow': '[&[data-state$=open]]:animate-duration-1s [&[data-state=closed]]:animate-duration-1s',
 }
 
 export const dynamicAnimate: [RegExp, (params: RegExpExecArray) => string][] = [
   // dynamic preset
 
   // unocss doesn't like multiple data-xxx variants
-  [/^animate-slide(-[^-]+)?$/, ([,value = '']) => `
-    [&[data-state$=open]]:[&[data-side=bottom]]:slide-in-top${value}
-    [&[data-state$=open]]:[&[data-side=left]]:slide-in-right${value}
-    [&[data-state$=open]]:[&[data-side=right]]:slide-in-left${value}
-    [&[data-state$=open]]:[&[data-side=top]]:slide-in-bottom${value}
-
-    [&[data-state=closed]]:[&[data-side=bottom]]:slide-out-top${value}
-    [&[data-state=closed]]:[&[data-side=left]]:slide-out-right${value}
-    [&[data-state=closed]]:[&[data-side=right]]:slide-out-left${value}
-    [&[data-state=closed]]:[&[data-side=top]]:slide-out-bottom${value}
+  [/^(?:data-)?animate-slide(-[^-]+)?$/, ([,value = '']) => `
+    [&[data-side=bottom]]:animate-slide-from-top${value}
+    [&[data-side=left]]:animate-slide-from-right${value}
+    [&[data-side=right]]:animate-slide-from-left${value}
+    [&[data-side=top]]:animate-slide-from-bottom${value}
   `],
   [/^animate-slide-from-(top|left|right|bottom)(-[^-]+)?$/, ([,dir, value = '']) => `
     data-[state$=open]:slide-in-from-${dir}${value}
@@ -45,9 +44,6 @@ export const dynamicAnimate: [RegExp, (params: RegExpExecArray) => string][] = [
   `],
 
   // dynamic duration
-  [/^animate-duration(-[^-]+)?$/, ([,value = '150']) => `
-    animate-base !animate-duration${value}
-  `],
   [/^data-animate-(.+)$/, ([,value]) => `animate-${value}`],
 ]
 

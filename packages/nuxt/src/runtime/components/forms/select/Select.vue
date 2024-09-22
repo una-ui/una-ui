@@ -83,8 +83,8 @@ provide('selectModelValue', modelValue)
         _selectScrollDownButton: forwarded._selectScrollDownButton,
         _selectScrollUpButton: forwarded._selectScrollUpButton,
         _selectViewport: forwarded._selectViewport,
+        dataAnimate: dataAnimate || _selectContent?.dataAnimate,
       }"
-      :data-animate="dataAnimate || _selectContent?.dataAnimate"
     >
       <slot name="content" :items="forwarded.items">
         <!--  single-group -->
