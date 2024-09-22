@@ -86,7 +86,7 @@ description: 'NPagination - used to divide content into pages by displaying a su
 | ----------------------- | ------------------- | --------------- | --------------------------------- |
 | `pagination-selected`   | `{variant}-{color}` | `solid-primary` | The color of the selected page.   |
 | `pagination-unselected` | `{variant}-{color}` | `solid-white`   | The color of the unselected page. |
-| `pagination-ellipsis`   | `{variant}-{color}` | `gray`          | The color of the ellipsis.        |
+| `pagination-ellipsis`   | `{variant}-{color}` | `text-black`    | The color of the ellipsis.        |
 
 ::alert{type="info"}
 Some `NPagination` subcomponents are wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available. Please refer to the [Props](#props) section for more information.
