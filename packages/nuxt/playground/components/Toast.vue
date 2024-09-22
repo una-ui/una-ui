@@ -14,7 +14,7 @@ const actions = ref([{
  * - [x] Add toast functionality
  *     - [x] Add Toasts.vue to app for Button functionality
  *         - [ ] Add list of toasts
- *     - [ ] Add NToast general functionality
+ *     - [x] Add NToast general functionality
  * - [x] Add useToast composable
  * - [x] Add toast presets
  * - [x] Add dynamic colors
@@ -38,6 +38,11 @@ const actions = ref([{
           btn: 'solid',
         },
         closable: true,
+        _toastClose: {
+          una: {
+            toastCloseIcon: 'i-gravity-ui:circle-xmark-fill',
+          },
+        },
       },
     )"
   />

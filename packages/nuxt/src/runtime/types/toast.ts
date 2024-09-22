@@ -79,7 +79,7 @@ export interface NToastRootProps extends ToastRootProps, BaseExtensions {
   toast?: HTMLAttributes['class']
   /** Additional properties for the una component */
   una?: {
-    toastRoot: HTMLAttributes['class']
+    toastRoot?: HTMLAttributes['class']
   }
 }
 
@@ -88,14 +88,14 @@ export interface NToastProviderProps extends ToastProviderProps {}
 export interface NToastTitleProps extends ToastTitleProps, BaseExtensions {
   /** Additional properties for the una component */
   una?: {
-    toastTitle: HTMLAttributes['class']
+    toastTitle?: HTMLAttributes['class']
   }
 }
 
 export interface NToastDescriptionProps extends ToastDescriptionProps, BaseExtensions {
   /** Additional properties for the una component */
   una?: {
-    toastDescription: HTMLAttributes['class']
+    toastDescription?: HTMLAttributes['class']
   }
 }
 
@@ -108,21 +108,21 @@ export interface NToastActionProps extends Omit<NButtonProps, 'una'>, Partial<To
   click?: () => void
   /** Additional properties for the una component */
   una?: {
-    toastAction: HTMLAttributes['class']
+    toastAction?: HTMLAttributes['class']
   }
 }
 
 export interface NToastInfoProps extends BaseExtensions {
   /** Additional properties for the una component */
   una?: {
-    toastInfo: HTMLAttributes['class']
+    toastInfo?: HTMLAttributes['class']
   }
 }
 
 export interface NToastCloseProps extends ToastCloseProps, BaseExtensions {
   /** Additional properties for the una component */
   una?: {
-    toastClose: HTMLAttributes['class']
+    toastClose?: HTMLAttributes['class']
     toastCloseIconBase?: string
     toastCloseIcon?: string
   }
