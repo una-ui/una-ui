@@ -9,6 +9,7 @@ import NLink from '../elements/Link.vue'
 const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',
   loadingPlacement: 'leading',
+  square: false,
   una: () => ({
     btnDefaultVariant: 'btn-default-variant',
   }),
@@ -19,6 +20,8 @@ const mergeVariants = computed(() => {
     'btn': props.btn,
     'breadcrumb-active': props.breadcrumbActive,
     'breadcrumb-inactive': props.breadcrumbInactive,
+    'pagination-selected': props.paginationSelected,
+    'pagination-unselected': props.paginationUnselected,
     'dropdown-menu': props.dropdownMenu,
   }
 })
@@ -46,15 +49,19 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :to="to"
     :type="to ? null : type"
     :class="cn(
+      (square === '' || square === true) && 'btn-square',
+      !rounded && 'btn-default-radius',
       !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
+      reverse && 'btn-reverse',
       'btn',
-      { 'btn-reverse': reverse },
-      props.class,
       una?.btn,
+      props.class,
     )"
     :disabled="to ? null : disabled || loading"
     :aria-label="icon ? label : null"
-    :size="size"
+    :rounded
+    :size
+    :square
     v-bind="mergeVariants"
   >
     <DefineTemplate v-if="loading">

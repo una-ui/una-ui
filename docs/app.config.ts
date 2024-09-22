@@ -6,6 +6,11 @@ export default defineAppConfig({
     image: '/logo.png', // initial og:image
     socials: {
       twitter: 'phojiee',
+      discord: {
+        label: 'Join our Discord',
+        icon: 'fa6-brands:discord',
+        href: 'https://discord.gg/gmdTPGkxRs',
+      },
       github: 'una-ui/una-ui',
     },
     github: {

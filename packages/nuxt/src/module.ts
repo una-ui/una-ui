@@ -121,6 +121,14 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
+      path: resolve(runtimeDir, 'components/elements', 'pagination'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
       path: resolve(runtimeDir, 'components', 'forms'),
       prefix: options.prefix,
       global: options.global,
@@ -196,7 +204,6 @@ export default defineNuxtModule<ModuleOptions>({
     await installModule('@vueuse/nuxt')
     await installModule('radix-vue/nuxt', {
       prefix: options.prefix,
-      priority: 100, // Set to the lowest priority
     })
 
     // composables

@@ -1,13 +1,18 @@
 import type { HTMLAttributes } from 'vue'
+import type { RouteLocationRaw } from 'vue-router'
 
-interface Extensions {
+interface BaseExtensionProps {
+  square?: HTMLAttributes['class']
+  rounded?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
   breadcrumbActive?: string
   breadcrumbInactive?: string
+  paginationSelected?: string
+  paginationUnselected?: string
   dropdownMenu?: string
 }
 
-export interface NButtonProps extends Extensions {
+export interface NButtonProps extends BaseExtensionProps {
   /**
    * Change the button type.
    *
@@ -55,7 +60,7 @@ export interface NButtonProps extends Extensions {
    * @example
    * to="/"
    */
-  to?: string
+  to?: RouteLocationRaw
   /**
    * Add a label to the button.
    *

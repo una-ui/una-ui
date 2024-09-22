@@ -1,8 +1,6 @@
+import { defineNuxtPlugin } from '#app'
 import { computed, watchEffect } from 'vue'
 import { useUnaSettings } from '../composables/useUnaSettings'
-
-// @ts-expect-error tsconfig
-import { defineNuxtPlugin } from '#app'
 
 let unaUIStyle: HTMLStyleElement
 

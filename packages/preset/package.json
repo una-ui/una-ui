@@ -1,6 +1,6 @@
 {
   "name": "@una-ui/preset",
-  "version": "0.20.0-beta.1",
+  "version": "0.23.0-beta.1",
   "description": "The default preset for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -54,8 +54,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@unocss/core": "^0.62.3",
-    "@unocss/preset-mini": "^0.62.3",
-    "unocss": "^0.62.3"
+    "@unocss/core": "^0.62.4",
+    "@unocss/preset-mini": "^0.62.4",
+    "unocss": "^0.62.4"
   }
 }

@@ -1,3 +1,73 @@
+# [0.23.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.3...v0.23.0-beta.1) (2024-09-22)
+
+
+### Bug Fixes
+
+* **Button:** add rounded prefix config ([60de93e](https://github.com/una-ui/una-ui/commit/60de93eec8b187d07440419ebf5b241e55e4b3ec))
+* **Button:** allow RouteLocationRaw for `to` prop ([#205](https://github.com/una-ui/una-ui/issues/205)) ([3f2a9f6](https://github.com/una-ui/una-ui/commit/3f2a9f60f1efb9f98bae7e0b4dd63fd1cc8c4661))
+* **Button:** Include search as possible type ([#206](https://github.com/una-ui/una-ui/issues/206)) ([89c44b8](https://github.com/una-ui/una-ui/commit/89c44b87884c50f779bd131e37e0114fd69022c6))
+* **FormGroup:** add class and preset configuration to root ([#203](https://github.com/una-ui/una-ui/issues/203)) ([9e82531](https://github.com/una-ui/una-ui/commit/9e82531328bc69b6881218ef10b5e1ced83a2c5a))
+* **Slider:** remove unuse utility to base preset ([c1ae9c6](https://github.com/una-ui/una-ui/commit/c1ae9c655ecf662ea0a88222496713bc5d3b4685))
+
+
+### Features
+
+* add rounded prop + improve `shapes` configuration ([#207](https://github.com/una-ui/una-ui/issues/207)) ([d05d9fc](https://github.com/una-ui/una-ui/commit/d05d9fcaa4452fe955950cdcd5f68f6f0a316201))
+* **Button:** add minimum height to base preset ([e9885d5](https://github.com/una-ui/una-ui/commit/e9885d5d00b4522a431691d83bf8d062f8e40bbe))
+* **Pagination:** introduce new component and presets ([#210](https://github.com/una-ui/una-ui/issues/210)) ([61400f1](https://github.com/una-ui/una-ui/commit/61400f1fb9a02a5a284bede0131f6566174ffbc7))
+* **preset:** introduce `area-*` shortcut ([#208](https://github.com/una-ui/una-ui/issues/208)) ([4248f98](https://github.com/una-ui/una-ui/commit/4248f9848fd79b6a26fe94f0c1c72584cc2073dc))
+
+
+
+# [0.22.0-beta.3](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.2...v0.22.0-beta.3) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** remove .nuxt and playground folders from nuxt tarball ([#201](https://github.com/una-ui/una-ui/issues/201)) ([b8b104b](https://github.com/una-ui/una-ui/commit/b8b104bf8d93cc7d5c1afb0316609e3e1bcfb5a7))
+
+
+
+# [0.22.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.1...v0.22.0-beta.2) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** optimize package size ([872f7c3](https://github.com/una-ui/una-ui/commit/872f7c3c831f90dc278418a58509f75a17468658))
+
+
+
+# [0.22.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.21.1-beta.2...v0.22.0-beta.1) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** update build config ([d9de2d8](https://github.com/una-ui/una-ui/commit/d9de2d82ec4a798e45956d5bd9200983a2dc795d))
+
+
+
+## [0.21.1-beta.2](https://github.com/una-ui/una-ui/compare/v0.21.1-beta.1...v0.21.1-beta.2) (2024-09-17)
+
+
+### Bug Fixes
+
+* **nuxt:** update build config ([5bbe3a9](https://github.com/una-ui/una-ui/commit/5bbe3a9b63bab6ce74ca4da9edf97ce6f48baced))
+
+
+
+## [0.21.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.21.0-beta.1...v0.21.1-beta.1) (2024-09-17)
+
+
+
+# [0.21.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.20.0-beta.1...v0.21.0-beta.1) (2024-09-17)
+
+
+### Bug Fixes
+
+* **types:** Generate nuxt types automatically at install ([#200](https://github.com/una-ui/una-ui/issues/200)) ([3bb3824](https://github.com/una-ui/una-ui/commit/3bb3824528a7f6f71141dbbb9894537cf74aaf57))
+
+
+
 # [0.20.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.19.1-beta.1...v0.20.0-beta.1) (2024-09-16)
 
 
