@@ -40,90 +40,96 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
       )"
       v-bind="_paginationList"
     >
-      <PaginationFirst
-        v-if="showFirst"
-        :rounded
-        :size
-        :pagination-selected
-        :pagination-unselected
-        v-bind="_paginationFirst"
-      >
-        <slot
-          name="first"
-        />
-      </PaginationFirst>
-
-      <PaginationPrev
-        v-if="showPrev"
-        :rounded
-        :pagination-selected
-        :pagination-unselected
-        :size
-        v-bind="_paginationPrev"
-      >
-        <slot
-          name="prev"
-        />
-      </PaginationPrev>
-
-      <template v-if="showListItem">
-        <template v-for="(item, index) in items">
+      <slot>
+        <PaginationFirst
+          v-if="showFirst"
+          :rounded
+          :size
+          :pagination-selected
+          :pagination-unselected
+          v-bind="_paginationFirst"
+        >
           <slot
-            v-if="item.type === 'page'"
-            name="list-item"
-            :item="item"
-            :page="page"
-          >
-            <PaginationListItem
-              :key="index"
-              :value="item.value"
-              :page
+            name="first"
+          />
+        </PaginationFirst>
+
+        <PaginationPrev
+          v-if="showPrev"
+          :rounded
+          :pagination-selected
+          :pagination-unselected
+          :size
+          v-bind="_paginationPrev"
+        >
+          <slot
+            name="prev"
+          />
+        </PaginationPrev>
+
+        <template v-if="showListItem">
+          <template v-for="(item, index) in items">
+            <slot
+              v-if="item.type === 'page'"
+              name="list-item"
+              :item="item"
+              :page="page"
+            >
+              <PaginationListItem
+                :key="index"
+                :value="item.value"
+                :page
+                :rounded
+                :size
+                :pagination-selected
+                :pagination-unselected
+                v-bind="_paginationListItem"
+              />
+            </slot>
+
+            <PaginationEllipsis
+              v-else
+              :key="item.type"
+              :index="index"
               :rounded
               :size
-              :pagination-selected
-              :pagination-unselected
-              v-bind="_paginationListItem"
-            />
-          </slot>
-
-          <PaginationEllipsis
-            v-else
-            :key="item.type"
-            :index="index"
-            :rounded
-            :size
-            :pagination-ellipsis
-            :una
-            v-bind="_paginationEllipsis"
-          />
+              :pagination-ellipsis
+              :una
+              v-bind="_paginationEllipsis"
+            >
+              <slot
+                name="ellipsis"
+              />
+            </PaginationEllipsis>
+          </template>
         </template>
-      </template>
 
-      <PaginationNext
-        v-if="showNext"
-        :rounded
-        :size
-        :pagination-selected
-        :pagination-unselected
-        v-bind="_paginationNext"
-      >
-        <slot
-          name="next"
-        />
-      </PaginationNext>
+        <PaginationNext
+          v-if="showNext"
+          :rounded
+          :size
+          :pagination-selected
+          :pagination-unselected
+          v-bind="_paginationNext"
+        >
+          <slot
+            name="next"
+          />
+        </PaginationNext>
 
-      <PaginationLast
-        v-if="showLast"
-        :rounded
-        :size
-        :pagination-selected
-        :pagination-unselected
-        v-bind="_paginationLast"
-      >
-        <slot
-          name="last"
-        />
-      </PaginationLast>
+        <PaginationLast
+          v-if="showLast"
+          :rounded
+          :size
+          :pagination-selected
+          :pagination-unselected
+          v-bind="_paginationLast"
+        >
+          <slot
+            name="last"
+          />
+        </PaginationLast>
+      </slot>
     </PaginationList>
   </PaginationRoot>
 </template>

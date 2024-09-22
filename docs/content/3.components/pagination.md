@@ -147,6 +147,15 @@ For the sub-components' props, please refer to the [Props](#props) section. Refe
 
 ## Slots
 
+| Slot        | Description                                          | Props         |
+| ----------- | ---------------------------------------------------- | ------------- |
+| `first`     | Customizes the first page navigation button.         | -             |
+| `last`      | Customizes the last page navigation button.          | -             |
+| `prev`      | Customizes the previous page navigation button.      | -             |
+| `next`      | Customizes the next page navigation button.          | -             |
+| `list-item` | Customizes the pagination list item component.       | `item` `page` |
+| `ellipsis`  | Customizes the ellipsis indicator in the pagination. | -             |
+
 :::CodeGroup
 ::code-block{label="Preview" preview}
   :ExampleVuePaginationSlots

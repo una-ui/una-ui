@@ -17,6 +17,10 @@ const delegatedProps = computed(() => {
   return delegated
 })
 
+const label = computed(() => {
+  return props.label || props.value.toString()
+})
+
 const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
@@ -28,12 +32,15 @@ const forwardedProps = useForwardProps(delegatedProps)
   >
     <Button
       v-bind="forwardedProps"
+      :label
       :class="cn(
         'pagination-list-item',
         props.class,
       )"
     >
-      {{ value }}
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
     </Button>
   </PaginationListItem>
 </template>

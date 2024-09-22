@@ -16,10 +16,24 @@
 
       <template #list-item="{ item, page }">
         <NPaginationListItem
+          :square="false"
           pagination-unselected="ghost-gray"
           pagination-selected="solid-white"
           :value="item.value"
+          class="gap-0"
+          leading="i-lucide-hash"
+          :label="`${item.value}`"
           :page
+          :una="{
+            btnLeading: 'text-10px',
+          }"
+        />
+      </template>
+
+      <template #ellipsis>
+        <NIcon
+          name="i-lucide-chevrons-left-right-ellipsis"
+          size="xs"
         />
       </template>
 

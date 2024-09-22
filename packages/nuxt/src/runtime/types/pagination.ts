@@ -62,10 +62,10 @@ export interface NPaginationLastProps extends PaginationLastProps, NButtonProps 
 }
 
 interface NPaginationUnaProps {
-  paginationRoot: HTMLAttributes['class']
-  paginationList: HTMLAttributes['class']
-  paginationListItem: HTMLAttributes['class']
-  paginationEllipsis: HTMLAttributes['class']
-  paginationEllipsisIconBase: HTMLAttributes['class']
-  paginationEllipsisIcon: HTMLAttributes['class']
+  paginationRoot?: HTMLAttributes['class']
+  paginationList?: HTMLAttributes['class']
+  paginationListItem?: HTMLAttributes['class']
+  paginationEllipsis?: HTMLAttributes['class']
+  paginationEllipsisIconBase?: HTMLAttributes['class']
+  paginationEllipsisIcon?: HTMLAttributes['class']
 }
