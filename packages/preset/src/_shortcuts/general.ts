@@ -66,7 +66,7 @@ export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
    * @refer https://tailwindcss.com/docs/size
    * @example area-100 -> w-100 h-100
    */
-  [/^area-([^-]+)$/, ([, size = 'auto']) => `w-${size} h-${size}`],
+  [/^square-([^-]+)$/, ([, size]) => `w-${size} h-${size}`],
 ]
 
 export const general = [
