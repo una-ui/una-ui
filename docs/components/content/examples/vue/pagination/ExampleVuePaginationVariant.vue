@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <NPagination
       :total="100"
-      pagination-selected="solid-gray"
+      pagination-selected="solid-white"
       pagination-unselected="ghost-gray"
       show-edges
     />
@@ -11,21 +11,28 @@
 
     <NPagination
       :total="100"
-      pagination-selected="solid-pink"
-      pagination-unselected="outline-pink"
-      pagination-ellipsis="text-pink"
+      pagination-selected="solid-black"
+      pagination-unselected="ghost-gray"
       show-edges
-      rounded="full"
     />
 
     <NSeparator />
 
     <NPagination
       :total="100"
-      rounded="b-full"
+      pagination-selected="solid-green"
+      pagination-unselected="outline-green"
+      pagination-ellipsis="text-green"
+      show-edges
+    />
+
+    <NSeparator />
+
+    <NPagination
+      :total="100"
       pagination-selected="solid-indigo"
-      pagination-unselected="text-white"
-      pagination-ellipsis="text-white"
+      pagination-unselected="soft-indigo"
+      pagination-ellipsis="text-indigo"
       show-edges
     />
   </div>
