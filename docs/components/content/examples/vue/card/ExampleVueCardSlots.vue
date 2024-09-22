@@ -20,7 +20,8 @@
             size="sm"
             icon
             class="rounded-full"
-            btn="ghost-gray square"
+            btn="ghost-gray"
+            square
             label="i-heroicons-ellipsis-vertical"
           />
         </div>

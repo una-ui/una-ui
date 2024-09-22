@@ -103,12 +103,12 @@ You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs
 
 `square` - to force `width` and `height` to have the same size, usefull for icon buttons.
 
-| Props  | Type               | Default | Description                                       |
-| ------ | ------------------ | ------- | ------------------------------------------------- |
-| square | `string` `boolean` | `2.5em` | Set the button to have the same width and height. |
+| Props  | Type               | Default | Description                                                                                                            |
+| ------ | ------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| square | `string` `boolean` | `2.5em` | Set the button to have the same width and height. If you provide empty value or `true`, it will use the default value. |
 
 ::alert{type="info"}
-You can use any value provided by the [Tailwind CSS](https://tailwindcss.com/docs/size){target="_blank"} width scale, the default is `2.5em`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
+You can use any value provided by the [Tailwind CSS](https://tailwindcss.com/docs/size){target="_blank"}. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
 ::
 
 :::CodeGroup

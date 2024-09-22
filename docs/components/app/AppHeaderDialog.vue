@@ -24,7 +24,8 @@ watch(show, v => (v ? open() : close()))
     icon
     class="ml-1 lg:hidden"
     label="i-radix-icons-hamburger-menu"
-    btn="ghost-gray square"
+    btn="ghost-gray"
+    square
     @click="show = true"
   />
 
@@ -45,7 +46,8 @@ watch(show, v => (v ? open() : close()))
           <NButton
             icon
             label="i-close"
-            btn="soft-gray square"
+            btn="soft-gray"
+            square
             @click="show = false"
           />
         </div>
