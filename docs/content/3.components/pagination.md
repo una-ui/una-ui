@@ -63,10 +63,10 @@ description: 'NPagination - used to divide content into pages by displaying a su
 | `_pagination-list-item.size` | `sm`    | Customizes the size of the page list items.      |
 | `_pagination-ellipsis.size`  | `sm`    | Customizes the size of the ellipsis indicator.   |
 
-> 🚀 You can freely adjust the size of the select using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+> 🚀 You can freely adjust the size of the pagination using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
 
 ::alert{type="info"}
-The `height` and `width` of the select scale depends on the `size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes or you can use the [square](button#square) prop.
+The `height` and `width` of the pagination scale depends on the `size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes or you can use the [square](button#square) prop.
 ::
 
 :::CodeGroup
@@ -74,7 +74,7 @@ The `height` and `width` of the select scale depends on the `size`. If you want 
   :ExampleVuePaginationSize
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVuePaginationSize.vue
+@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSize.vue
 ::
 :::
 ## Sibling Count
