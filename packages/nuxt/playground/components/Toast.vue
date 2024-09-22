@@ -2,7 +2,7 @@
 const toast = useToast()
 
 const actions = ref([{
-  label: 'Click',
+  label: 'Try again',
   // click: () => alert('Lets gooo'),
   // altText: 'Hello',
 }])
@@ -37,6 +37,7 @@ const actions = ref([{
         _toastAction: {
           btn: 'solid',
         },
+        closable: true,
       },
     )"
   />

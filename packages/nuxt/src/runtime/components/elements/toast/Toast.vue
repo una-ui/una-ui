@@ -97,7 +97,10 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
           <slot name="closeIcon">
             <Icon
               :name="_toastClose?.una?.toastCloseIcon ?? 'toast-close-icon'"
-              :class="_toastClose?.una?.toastCloseIconBase"
+              :class="cn(
+                _toastClose?.una?.toastCloseIconBase,
+                'toast-close-icon-base',
+              )"
               aria-hidden="true"
             />
           </slot>

@@ -2,6 +2,7 @@
 import type { NToastCloseProps } from '../../../types'
 import { ToastClose } from 'radix-vue'
 import { computed } from 'vue'
+import { cn } from '../../../utils'
 
 const props = defineProps<NToastCloseProps>()
 
@@ -13,7 +14,14 @@ const delegatedProps = computed(() => {
 </script>
 
 <template>
-  <ToastClose v-bind="delegatedProps">
+  <ToastClose
+    v-bind="delegatedProps"
+    :class="cn(
+      'toast-close',
+      props.class,
+      props.una?.toastClose,
+    )"
+  >
     <slot />
   </ToastClose>
 </template>
