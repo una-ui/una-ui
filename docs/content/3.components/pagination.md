@@ -15,12 +15,13 @@ description: 'NPagination - used to divide content into pages by displaying a su
 
 `NPagination` is used to divide content into pages by displaying a subset of data at a time. Please refer to the [Radix-ui pagination](https://www.radix-vue.com/components/pagination.html#api-reference) for more API information.
 
-| Prop           | Type      | Default | Description                                                               |
-| -------------- | --------- | ------- | ------------------------------------------------------------------------- |
-| `total`        | `number`  | `0`     | The total number of items in your list.                                   |
-| `page`         | `number`  | `-`     | The value that controls the current page and can be bound with `v-model`. |
-| `itemsPerPage` | `number`  | `10`    | The number of items displayed per page.                                   |
-| `disabled`     | `boolean` | `false` | Disables pagination functionality.                                        |
+| Prop           | Type      | Default | Description                                                                           |
+| -------------- | --------- | ------- | ------------------------------------------------------------------------------------- |
+| `total`        | `number`  | `0`     | The total number of items in your list.                                               |
+| `page`         | `number`  | `-`     | The value that controls the current page and can be bound with `v-model`.             |
+| `itemsPerPage` | `number`  | `10`    | The number of items displayed per page.                                               |
+| `showEdges`    | `boolean` | `false` | When set to `true`, the first page, last page, and ellipsis will always be displayed. |
+| `disabled`     | `boolean` | `false` | Disables pagination functionality.                                                    |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -50,21 +51,32 @@ description: 'NPagination - used to divide content into pages by displaying a su
 ::
 :::
 
-## Show Edges
+## Size
 
-| Prop        | Type      | Default | Description                                                                           |
-| ----------- | --------- | ------- | ------------------------------------------------------------------------------------- |
-| `showEdges` | `boolean` | `false` | When set to `true`, the first page, last page, and ellipsis will always be displayed. |
+| Prop                         | Default | Description                                      |
+| ---------------------------- | ------- | ------------------------------------------------ |
+| `size`                       | `sm`    | Adjusts the size of the entire pagination.       |
+| `_pagination-first.size`     | `sm`    | Customizes the size of the first page button.    |
+| `_pagination-last.size`      | `sm`    | Customizes the size of the last page button.     |
+| `_pagination-prev.size`      | `sm`    | Customizes the size of the previous page button. |
+| `_pagination-next.size`      | `sm`    | Customizes the size of the next page button.     |
+| `_pagination-list-item.size` | `sm`    | Customizes the size of the page list items.      |
+| `_pagination-ellipsis.size`  | `sm`    | Customizes the size of the ellipsis indicator.   |
+
+> 🚀 You can freely adjust the size of the select using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+
+::alert{type="info"}
+The `height` and `width` of the select scale depends on the `size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes or you can use the [square](button#square) prop.
+::
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
-  :ExampleVuePaginationShowEdges
+  :ExampleVuePaginationSize
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationShowEdges.vue
+@@@ ./components/content/examples/vue/select/ExampleVuePaginationSize.vue
 ::
 :::
-
 ## Sibling Count
 
 | Prop           | Type     | Default | Description                                                        |
