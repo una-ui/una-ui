@@ -9,6 +9,7 @@ import NLink from '../elements/Link.vue'
 const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',
   loadingPlacement: 'leading',
+  square: false,
   una: () => ({
     btnDefaultVariant: 'btn-default-variant',
   }),
@@ -46,6 +47,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :to="to"
     :type="to ? null : type"
     :class="cn(
+      (square === '' || square === true) && 'btn-square',
       !rounded && 'btn-default-radius',
       !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
       reverse && 'btn-reverse',
@@ -57,6 +59,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :aria-label="icon ? label : null"
     :rounded
     :size
+    :square
     v-bind="mergeVariants"
   >
     <DefineTemplate v-if="loading">

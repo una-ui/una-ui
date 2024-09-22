@@ -99,20 +99,24 @@ You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs
 ::
 :::
 
-## Shape
+## Square
 
-`btn="square"` - to force the padding and width to have the same size, usefull for icon buttons.
+`square` - to force `width` and `height` to have the same size, usefull for icon buttons.
+
+| Props  | Type               | Default | Description                                       |
+| ------ | ------------------ | ------- | ------------------------------------------------- |
+| square | `string` `boolean` | `2.5em` | Set the button to have the same width and height. |
 
 ::alert{type="info"}
-By default, the padding is `rectangle`, you can change it to `square`. 
+You can use any value provided by the [Tailwind CSS](https://tailwindcss.com/docs/size){target="_blank"} width scale, the default is `2.5em`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
 ::
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
-  :ExampleVueButtonShape
+  :ExampleVueButtonSquare
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/button/ExampleVueButtonShape.vue
+@@@ ./components/content/examples/vue/button/ExampleVueButtonSquare.vue
 ::
 :::
 
