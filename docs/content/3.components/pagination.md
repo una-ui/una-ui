@@ -1,27 +1,26 @@
 ---
-description: 'NPagination - use to divide content into pages by displaying a subset of data at a time.'
+description: 'NPagination - used to divide content into pages by displaying a subset of data at a time.'
 ---
 
 # 🟢 Pagination
 
 ::list{type="primary"}
-- Enable quick access to first, or last page
-- Enable to show edges constantly, or not
+- Enables quick access to the first or last page.
+- Allows the option to show edges constantly or not.
 ::
 
 ---
 
 ## Basic
 
-`NPagination` - use to divide content into pages by displaying a subset of data at a time, please refer to the [radix-ui pagination](https://www.radix-vue.com/components/pagination.html#api-reference) for more api information.
+`NPagination` is used to divide content into pages by displaying a subset of data at a time. Please refer to the [Radix-ui pagination](https://www.radix-vue.com/components/pagination.html#api-reference) for more API information.
 
-| Prop           | Type      | Default | Description                                                              |
-| -------------- | --------- | ------- | ------------------------------------------------------------------------ |
-| `total`        | `number`  | `0`     | Number of items in your list.                                            |
-| `page`         | `number`  | `-`     | The value that controls the current page and can be bound with `v-model` |
-| `itemsPerPage` | `number`  | `10`    | Number of items per page.                                                |
-| `disabled`     | `boolean` | `false` | Disables the pagination.                                                 |
-
+| Prop           | Type      | Default | Description                                                               |
+| -------------- | --------- | ------- | ------------------------------------------------------------------------- |
+| `total`        | `number`  | `0`     | The total number of items in your list.                                   |
+| `page`         | `number`  | `-`     | The value that controls the current page and can be bound with `v-model`. |
+| `itemsPerPage` | `number`  | `10`    | The number of items displayed per page.                                   |
+| `disabled`     | `boolean` | `false` | Disables pagination functionality.                                        |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -34,13 +33,13 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 
 ## Visibility
 
-| Prop           | Type      | Default | Description                    |
-| -------------- | --------- | ------- | ------------------------------ |
-| `showFirst`    | `boolean` | `true`  | Show the first page button.    |
-| `showLast`     | `boolean` | `true`  | Show the last page button.     |
-| `showPrev`     | `boolean` | `true`  | Show the previous page button. |
-| `showNext`     | `boolean` | `true`  | Show the next page button.     |
-| `showListItem` | `boolean` | `true`  | Show the list items.           |
+| Prop           | Type      | Default | Description                        |
+| -------------- | --------- | ------- | ---------------------------------- |
+| `showFirst`    | `boolean` | `true`  | Displays the first page button.    |
+| `showLast`     | `boolean` | `true`  | Displays the last page button.     |
+| `showPrev`     | `boolean` | `true`  | Displays the previous page button. |
+| `showNext`     | `boolean` | `true`  | Displays the next page button.     |
+| `showListItem` | `boolean` | `true`  | Displays the list items.           |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -53,9 +52,9 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 
 ## Show Edges
 
-| Prop        | Type      | Default | Description                                                                       |
-| ----------- | --------- | ------- | --------------------------------------------------------------------------------- |
-| `showEdges` | `boolean` | `false` | When set to `true`, the first page, last page, and ellipsis will always be shown. |
+| Prop        | Type      | Default | Description                                                                           |
+| ----------- | --------- | ------- | ------------------------------------------------------------------------------------- |
+| `showEdges` | `boolean` | `false` | When set to `true`, the first page, last page, and ellipsis will always be displayed. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -68,9 +67,9 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 
 ## Sibling Count
 
-| Prop           | Type     | Default | Description                                                  |
-| -------------- | -------- | ------- | ------------------------------------------------------------ |
-| `siblingCount` | `number` | `2`     | Number of surrounding pages to show around the current page. |
+| Prop           | Type     | Default | Description                                                        |
+| -------------- | -------- | ------- | ------------------------------------------------------------------ |
+| `siblingCount` | `number` | `2`     | The number of surrounding pages displayed around the current page. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -90,7 +89,7 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 | `pagination-ellipsis`   | `{variant}-{color}` | `gray`          | The color of the ellipsis.        |
 
 ::alert{type="info"}
-Some of `NPagination subcomponents` are wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available. Please refer to the [Props](#props) section for more information.
+Some `NPagination` subcomponents are wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available. Please refer to the [Props](#props) section for more information.
 
 ::
 :::CodeGroup
@@ -104,12 +103,12 @@ Some of `NPagination subcomponents` are wrapped around the [NButton](button) com
 
 ## Rounded
 
-`rounded="{size}"` - change the border-radius of the pagination.
+`rounded="{size}"` - changes the border-radius of the pagination.
 
-> 🚀 You can freely adjust the size of the rounded using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+> 🚀 You can freely adjust the size of the rounded corners using any size imaginable. There are no limits, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state, and more.
 
 ::alert{type="info"}
-You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale, the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
+You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale; the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -134,7 +133,7 @@ You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs
 | `_pagination-list`      | Customizes the pagination list component.            |
 
 ::alert{type="info"}
-For the sub-components props, please refer to [Props](#props) section. Refer to the [radix-ui pagination](https://www.radix-vue.com/components/pagination.html#api-reference) for more information.
+For the sub-components' props, please refer to the [Props](#props) section. Refer to the [Radix-ui pagination](https://www.radix-vue.com/components/pagination.html#api-reference) for more information.
 ::
 
 :::CodeGroup
