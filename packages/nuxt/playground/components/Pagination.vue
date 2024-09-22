@@ -4,9 +4,10 @@ const model = ref(2)
 
 <template>
   <span>Current Page: {{ model }}</span>
+
   <NPagination
     v-model:page="model"
-    :total="500"
+    :total="100"
     show-edges
   />
 </template>
