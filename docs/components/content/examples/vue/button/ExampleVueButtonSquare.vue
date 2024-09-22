@@ -8,8 +8,26 @@
 
     <NButton
       label="Rose Dawson"
-      :square="false"
+      square="16"
       btn="solid-lime"
+    />
+
+    <NButton
+      label="Rose Dawson"
+      square="24"
+      btn="solid-pink"
+    />
+
+    <NButton
+      label="Rose Dawson"
+      square="32"
+      btn="solid-purple"
+    />
+
+    <NButton
+      label="Rose Dawson"
+      square="40"
+      btn="solid-red"
     />
   </div>
 </template>

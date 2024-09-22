@@ -103,6 +103,8 @@ You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs
 
 `square` - to force `width` and `height` to have the same size, usefull for icon buttons.
 
+> 🚀 You can freely adjust the square of the button using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+
 | Props  | Type               | Default | Description                                                                                                            |
 | ------ | ------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------- |
 | square | `string` `boolean` | `2.5em` | Set the button to have the same width and height. If you provide empty value or `true`, it will use the default value. |
