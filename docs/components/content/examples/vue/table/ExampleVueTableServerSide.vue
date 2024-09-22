@@ -105,8 +105,8 @@ const table = ref<Table<Pokemon>>()
 
         <NPagination
           :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
-          :total="table?.getFilteredRowModel().rows.length"
-          show-edges
+          :total="pageCount * pagination.pageSize"
+          :show-list-item="false"
           :items-per-page="table?.getState().pagination.pageSize"
           @update:page="table?.setPageIndex($event - 1)"
         />
