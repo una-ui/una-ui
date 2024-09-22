@@ -62,10 +62,21 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 :::
 
+## Shape
+
+`btn="square"` - to force the padding to have the same size, usefull for icon buttons.
+
+::alert{type="info"}
+By default, the padding is `rectangle`, you can change it to `square`. You can always add and customize it using utility classes such as adding `rounded-full` to make it circle.
+::
+
 ## Variant and Color
 
-| Prop     | Type     | Default | Description                                                                 |
-| -------- | -------- | ------- | --------------------------------------------------------------------------- |
+| Prop                    | Type                | Default         | Description                       |
+| ----------------------- | ------------------- | --------------- | --------------------------------- |
+| `pagination-selected`   | `{variant}-{color}` | `solid-primary` | The color of the selected page.   |
+| `pagination-unselected` | `{variant}-{color}` | `solid-white`   | The color of the unselected page. |
+| `pagination-ellipsis`   | `{variant}-{color}` | `gray`          | The color of the ellipsis.        |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -73,6 +84,29 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationVariant.vue
+::
+:::
+
+## Sub Components
+
+| Prop                    | Type                                     | Description                                  |
+| ----------------------- | ---------------------------------------- | -------------------------------------------- |
+| `_pagination-list-item` | [NButtonProps](/components/button#props) | Props and slots of the pagination item.      |
+| `_pagination-prev`      | [NButtonProps](/components/button#props) | Props and slots of the previous page button. |
+| `_pagination-next`      | [NButtonProps](/components/button#props) | Props and slots of the next page button.     |
+| `_pagination_first`     | [NButtonProps](/components/button#props) | Props and slots of the first page button.    |
+| `_pagination_last`      | [NButtonProps](/components/button#props) | Props and slots of the last page button.     |
+
+::alert{type="info"}
+This means that all the props and slots of `NButton` are available.
+::
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVuePaginationCustomization
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationCustomization.vue
 ::
 :::
 

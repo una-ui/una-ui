@@ -27,7 +27,7 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
     v-slot="{ page }"
     v-bind="rootProps"
     :class="cn(
-      'pagination',
+      'pagination-root',
       props.class,
       props.una?.paginationRoot,
     )"

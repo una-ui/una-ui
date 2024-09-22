@@ -23,7 +23,7 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :pagination-ellipsis
     :class="cn(
-      'pagination-ellipsis',
+      'pagination-ellipsis-base',
       props.una?.paginationEllipsis,
       props.class,
     )"

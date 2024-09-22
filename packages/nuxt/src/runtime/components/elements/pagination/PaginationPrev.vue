@@ -7,6 +7,7 @@ import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NPaginationPrevProps>(), {
   paginationUnselected: 'solid-white',
+  square: true,
   icon: true,
   label: 'pagination-prev-icon',
 })
@@ -26,7 +27,10 @@ const forwardedProps = useForwardProps(delegatedProps)
       <Button
         :data-selected="false"
         v-bind="forwardedProps"
-        :class="cn('pagination-prev p-0', props.class)"
+        :class="cn(
+          'pagination-prev',
+          props.class,
+        )"
       />
     </slot>
   </PaginationPrev>

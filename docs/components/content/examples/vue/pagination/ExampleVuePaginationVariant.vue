@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col">
     <NPagination
       :total="100"
       pagination-selected="solid-gray"
@@ -11,20 +11,9 @@
 
     <NPagination
       :total="100"
-      pagination-selected="solid-pink"
-      pagination-unselected="outline-pink"
-      pagination-ellipsis="ghost-pink"
-      show-edges
-      rounded="full"
-    />
-
-    <NSeparator />
-
-    <NPagination
-      :total="100"
-      pagination-selected="solid-blue"
-      pagination-unselected="text-blue"
-      pagination-ellipsis="text-blue"
+      pagination-selected="solid-orange"
+      pagination-unselected="outline-orange"
+      pagination-ellipsis="outline-orange"
       show-edges
     />
   </div>

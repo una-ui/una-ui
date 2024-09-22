@@ -1,24 +1,18 @@
 <template>
-  <div flex items-start>
+  <div class="flex items-start">
     <NPagination
       :total="100"
       :show-first="false"
       :show-last="false"
-      :_pagination-prev="{
-        icon: false,
-        btn: 'ghost-gray !rectangle',
-        label: 'Previous',
-        leading: 'i-lucide-chevron-left',
-      }"
     >
-      <!-- <template #pagination-prev>
+      <template #pagination-prev>
         <NButton
           btn="ghost-gray"
           leading="i-lucide-chevron-left"
         >
           Previous
         </NButton>
-      </template> -->
+      </template>
 
       <template #pagination-next>
         <NButton

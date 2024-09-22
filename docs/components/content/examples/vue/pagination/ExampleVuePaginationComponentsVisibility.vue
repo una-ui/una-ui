@@ -3,7 +3,7 @@ const currentPage = ref(1)
 </script>
 
 <template>
-  <div space-y-4>
+  <div class="flex flex-col space-y-4">
     <span>Current Page: {{ currentPage }}</span>
 
     <NPagination
