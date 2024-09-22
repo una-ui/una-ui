@@ -17,8 +17,9 @@ const currentPage = ref(1)
     <NPagination
       v-model:page="currentPage"
       :total="100"
-      pagination-selected="solid-primary"
+      pagination-selected="soft-primary"
       pagination-unselected="link-primary"
+      pagination-ellipsis="text-primary"
       show-edges
     />
 
@@ -28,7 +29,7 @@ const currentPage = ref(1)
       v-model:page="currentPage"
       :total="100"
       pagination-selected="solid-pink"
-      pagination-unselected="ghost-pink"
+      pagination-unselected="outline-pink"
       pagination-ellipsis="text-pink"
       show-edges
     />

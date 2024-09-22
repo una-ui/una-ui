@@ -1,32 +1,33 @@
+<script lang="ts" setup>
+const currentPage = ref(1)
+</script>
+
 <template>
   <div class="flex flex-col">
     <NPagination
+      v-model:page="currentPage"
       :total="100"
       pagination-selected="solid-white"
       pagination-unselected="ghost-gray"
-      show-edges
       rounded="b-2xl"
     />
 
     <NSeparator />
 
     <NPagination
+      v-model:page="currentPage"
       :total="100"
       pagination-selected="solid-orange"
       pagination-unselected="outline-white"
-      pagination-ellipsis="text-orange"
-      rounded="none"
-      show-edges
     />
 
     <NSeparator />
 
     <NPagination
+      v-model:page="currentPage"
       :total="100"
       pagination-selected="solid-yellow"
       pagination-unselected="outline-white"
-      pagination-ellipsis="text-yellow"
-      show-edges
       rounded="t-full"
     />
   </div>
