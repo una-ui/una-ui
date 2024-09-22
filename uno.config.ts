@@ -40,6 +40,7 @@ export default defineConfig({
 
     '../packages/preset/src/_shortcuts/toast.ts',
     '../packages/preset/src/_shortcuts/calendar.ts',
+    '../packages/preset/src/_shortcuts/pagination.ts',
     '../packages/preset/src/_shortcuts/label.ts',
     '../packages/preset/src/_shortcuts/dropdown-menu.ts',
     '../packages/preset/src/_shortcuts/breadcrumb.ts',
