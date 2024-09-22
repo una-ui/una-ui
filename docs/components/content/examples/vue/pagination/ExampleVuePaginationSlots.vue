@@ -4,23 +4,31 @@
       :total="100"
       :show-first="false"
       :show-last="false"
+      show-edges
     >
-      <template #pagination-prev>
+      <template #prev>
         <NButton
           btn="ghost-gray"
+          label="Previous"
           leading="i-lucide-chevron-left"
-        >
-          Previous
-        </NButton>
+        />
       </template>
 
-      <template #pagination-next>
+      <template #list-item="{ item, page }">
+        <NPaginationListItem
+          pagination-unselected="ghost-gray"
+          pagination-selected="solid-white"
+          :value="item.value"
+          :page
+        />
+      </template>
+
+      <template #next>
         <NButton
           btn="ghost-gray"
+          label="Next"
           trailing="i-lucide-chevron-right"
-        >
-          Next
-        </NButton>
+        />
       </template>
     </NPagination>
   </div>
