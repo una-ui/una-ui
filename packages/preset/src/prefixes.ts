@@ -77,6 +77,7 @@ export default [
   'size',
   'skeleton',
   'slider',
+  'square',
   'switch',
   'table',
   'table-body',
