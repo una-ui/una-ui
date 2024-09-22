@@ -12,16 +12,6 @@
 
     <NPagination
       :total="100"
-      pagination-selected="solid-black"
-      pagination-unselected="ghost-gray"
-      show-edges
-      rounded="full"
-    />
-
-    <NSeparator />
-
-    <NPagination
-      :total="100"
       pagination-selected="solid-orange"
       pagination-unselected="outline-white"
       pagination-ellipsis="text-orange"
