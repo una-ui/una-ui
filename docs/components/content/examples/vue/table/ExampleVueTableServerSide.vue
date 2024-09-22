@@ -106,28 +106,32 @@ const table = ref<Table<Pokemon>>()
 
         <div class="flex items-center space-x-2">
           <NButton
-            btn="solid-white square"
+            btn="solid-white"
+            square
             icon
             label="i-radix-icons-double-arrow-left"
             :disabled="!table?.getCanPreviousPage()"
             @click="table?.setPageIndex(0)"
           />
           <NButton
-            btn="solid-white square"
+            btn="solid-white"
+            square
             icon
             label="i-radix-icons-chevron-left"
             :disabled="!table?.getCanPreviousPage()"
             @click="table?.previousPage()"
           />
           <NButton
-            btn="solid-white square"
+            btn="solid-white"
+            square
             icon
             label="i-radix-icons-chevron-right"
             :disabled="!table?.getCanNextPage()"
             @click="table?.nextPage()"
           />
           <NButton
-            btn="solid-white square"
+            btn="solid-white"
+            square
             icon
             label="i-radix-icons-double-arrow-right"
             :disabled="!table?.getCanNextPage()"
