@@ -20,6 +20,8 @@ const mergeVariants = computed(() => {
     'btn': props.btn,
     'breadcrumb-active': props.breadcrumbActive,
     'breadcrumb-inactive': props.breadcrumbInactive,
+    'pagination-selected': props.paginationSelected,
+    'pagination-unselected': props.paginationUnselected,
     'dropdown-menu': props.dropdownMenu,
   }
 })
