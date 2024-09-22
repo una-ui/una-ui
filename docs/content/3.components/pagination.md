@@ -32,6 +32,25 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 :::
 
+## Visibility
+
+| Prop           | Type      | Default | Description                    |
+| -------------- | --------- | ------- | ------------------------------ |
+| `showFirst`    | `boolean` | `true`  | Show the first page button.    |
+| `showLast`     | `boolean` | `true`  | Show the last page button.     |
+| `showPrev`     | `boolean` | `true`  | Show the previous page button. |
+| `showNext`     | `boolean` | `true`  | Show the next page button.     |
+| `showListItem` | `boolean` | `true`  | Show the list items.           |
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVuePaginationComponentsVisibility
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationComponentsVisibility.vue
+::
+:::
+
 ## Show Edges
 
 | Prop        | Type      | Default | Description                                                                       |
@@ -62,14 +81,6 @@ description: 'NPagination - use to divide content into pages by displaying a sub
 ::
 :::
 
-## Shape
-
-`btn="square"` - to force the padding to have the same size, usefull for icon buttons.
-
-::alert{type="info"}
-By default, the padding is `rectangle`, you can change it to `square`. You can always add and customize it using utility classes such as adding `rounded-full` to make it circle.
-::
-
 ## Variant and Color
 
 | Prop                    | Type                | Default         | Description                       |
@@ -89,43 +100,26 @@ By default, the padding is `rectangle`, you can change it to `square`. You can a
 
 ## Sub Components
 
-| Prop                    | Type                                     | Description                                  |
-| ----------------------- | ---------------------------------------- | -------------------------------------------- |
-| `_pagination-list-item` | [NButtonProps](/components/button#props) | Props and slots of the pagination item.      |
-| `_pagination-prev`      | [NButtonProps](/components/button#props) | Props and slots of the previous page button. |
-| `_pagination-next`      | [NButtonProps](/components/button#props) | Props and slots of the next page button.     |
-| `_pagination_first`     | [NButtonProps](/components/button#props) | Props and slots of the first page button.    |
-| `_pagination_last`      | [NButtonProps](/components/button#props) | Props and slots of the last page button.     |
+| Prop                    | Description                                          |
+| ----------------------- | ---------------------------------------------------- |
+| `_pagination-list-item` | Customizes the pagination list item component.       |
+| `_pagination-prev`      | Customizes the previous page navigation button.      |
+| `_pagination-next`      | Customizes the next page navigation button.          |
+| `_pagination-first`     | Customizes the first page navigation button.         |
+| `_pagination-last`      | Customizes the last page navigation button.          |
+| `_pagination-ellipsis`  | Customizes the ellipsis indicator in the pagination. |
+| `_pagination-list`      | Customizes the pagination list component.            |
 
 ::alert{type="info"}
-This means that all the props and slots of `NButton` are available.
+For the sub-components props, please refer to [Props](#props) section. Refer to the [radix-ui pagination](https://www.radix-vue.com/components/pagination.html#api-reference) for more information.
 ::
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
-  :ExampleVuePaginationCustomization
+  :ExampleVuePaginationSubComponents
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationCustomization.vue
-::
-:::
-
-## Components Visibility
-
-| Prop           | Type      | Default | Description                    |
-| -------------- | --------- | ------- | ------------------------------ |
-| `showFirst`    | `boolean` | `true`  | Show the first page button.    |
-| `showLast`     | `boolean` | `true`  | Show the last page button.     |
-| `showPrev`     | `boolean` | `true`  | Show the previous page button. |
-| `showNext`     | `boolean` | `true`  | Show the next page button.     |
-| `showListItem` | `boolean` | `true`  | Show the list items.           |
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVuePaginationComponentsVisibility
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationComponentsVisibility.vue
+@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSubComponents.vue
 ::
 :::
 

@@ -11,9 +11,20 @@
 
     <NPagination
       :total="100"
-      pagination-selected="solid-orange"
-      pagination-unselected="outline-orange"
-      pagination-ellipsis="outline-orange"
+      pagination-selected="solid-pink"
+      pagination-unselected="outline-pink"
+      pagination-ellipsis="text-pink"
+      show-edges
+      rounded="full"
+    />
+
+    <NSeparator />
+
+    <NPagination
+      :total="100"
+      pagination-selected="solid-blue"
+      pagination-unselected="outline-blue"
+      pagination-ellipsis="text-blue"
       show-edges
     />
   </div>

@@ -3,7 +3,7 @@ type PaginationPrefix = 'pagination'
 export const staticPagination: Record<`${PaginationPrefix}-${string}` | PaginationPrefix, string> = {
   // configurations
   'pagination': 'overflow-hidden',
-  'pagination-list': 'flex items-center gap-1',
+  'pagination-list': 'flex items-center gap-1 overflow-hidden',
 
   // components
   'pagination-root': '',

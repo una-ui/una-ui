@@ -3,6 +3,7 @@ import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
 interface BaseExtensionProps {
+  square?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
   rounded?: HTMLAttributes['class']
   size?: HTMLAttributes['class']
