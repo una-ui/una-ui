@@ -16,6 +16,7 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-close': 'relative rounded-sm h-1.16em w-1.16em grid place-items-center -mr-0.375em hover:bg-brand/20',
   'toast-close-icon-base': 'text-brand/75 group-hover:text-brand/90',
   'toast-info': 'flex flex-col',
+  'toast-actions': 'flex flex-shrink-0 items-center gap-2',
 
   // static
   'toast-soft-gray': 'bg-muted border border-base',

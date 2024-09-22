@@ -6,7 +6,7 @@ interface BaseExtensions {
   class?: HTMLAttributes['class']
 }
 
-type Action = Omit<NButtonProps, 'una'> & { click?: () => void }
+type Action = Omit<NButtonProps, 'una'> & Partial<ToastActionProps> & { click?: () => void }
 
 export interface NToastProps extends BaseExtensions {
   /**
@@ -52,7 +52,7 @@ export interface NToastProps extends BaseExtensions {
   _toastTitle?: Partial<NToastTitleProps>
   _toastDescription?: Partial<NToastDescriptionProps>
   _toastViewport?: Partial<NToastViewportProps>
-  _toastAction?: Partial<NToastActionProps>
+  _toastAction?: NToastActionProps
   _toastClose?: Partial<NToastCloseProps>
   _toastInfo?: Partial<NToastInfoProps>
 
@@ -101,11 +101,15 @@ export interface NToastDescriptionProps extends ToastDescriptionProps, BaseExten
 
 export interface NToastViewportProps extends ToastViewportProps, BaseExtensions {}
 
-export interface NToastActionProps extends NButtonProps, Partial<ToastActionProps> {
+export interface NToastActionProps extends Omit<NButtonProps, 'una'>, Partial<ToastActionProps>, BaseExtensions {
   /**
    * Function to handle click action for the toast.
    */
   click?: () => void
+  /** Additional properties for the una component */
+  una?: {
+    toastAction: HTMLAttributes['class']
+  }
 }
 
 export interface NToastInfoProps extends BaseExtensions {

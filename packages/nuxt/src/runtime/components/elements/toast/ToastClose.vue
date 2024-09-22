@@ -3,10 +3,6 @@ import type { NToastCloseProps } from '../../../types'
 import { ToastClose } from 'radix-vue'
 import { computed } from 'vue'
 
-defineOptions({
-  inheritAttrs: false,
-})
-
 const props = defineProps<NToastCloseProps>()
 
 const delegatedProps = computed(() => {
@@ -18,10 +14,6 @@ const delegatedProps = computed(() => {
 
 <template>
   <ToastClose v-bind="delegatedProps">
-    <NIcon
-      :name="una?.toastCloseIcon ?? 'toast-close-icon'"
-      :class="una?.toastCloseIconBase"
-      aria-hidden="true"
-    />
+    <slot />
   </ToastClose>
 </template>

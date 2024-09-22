@@ -2,6 +2,11 @@
 import type { NToastActionProps } from '../../../types'
 import { computed } from 'vue'
 import { randomId } from '../../../utils'
+import Button from '../Button.vue'
+
+defineOptions({
+  inheritAttrs: false,
+})
 
 const props = defineProps<NToastActionProps>()
 const emits = defineEmits(['click'])
@@ -14,17 +19,23 @@ const delegatedProps = computed(() => {
 </script>
 
 <template>
-  <NButton
-    v-bind="delegatedProps"
-    :id="randomId('toast-action')"
-    size="xs"
-    :class="props.class"
-    :una="{
-      btnDefaultVariant: 'toast-default-variant',
-      ...delegatedProps.una,
-    }"
-    @click="emits('click')"
-  >
-    <slot />
-  </NButton>
+  <div>
+    <slot>
+      <Button
+        v-bind="{ ...$attrs, ...delegatedProps }"
+        :id="randomId('toast-action')"
+        size="xs"
+        :class="props.class"
+        :una="{
+          btnDefaultVariant: 'toast-default-variant',
+          ...delegatedProps.una,
+        }"
+        @click="emits('click')"
+      >
+        <template v-for="(_, name) in $slots" #[name]="slotData">
+          <slot :name="name" v-bind="slotData" />
+        </template>
+      </Button>
+    </slot>
+  </div>
 </template>

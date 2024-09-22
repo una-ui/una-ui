@@ -5,6 +5,7 @@ import { useForwardPropsEmits } from 'radix-vue'
 
 import { computed } from 'vue'
 import { cn } from '../../../utils'
+import Icon from '../Icon.vue'
 import ToastAction from './ToastAction.vue'
 import ToastClose from './ToastClose.vue'
 import ToastDescription from './ToastDescription.vue'
@@ -70,10 +71,37 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
             </ToastDescription>
           </slot>
         </ToastInfo>
-        <div v-if="actions" class="flex flex-shrink-0 items-center gap-2">
-          <ToastAction v-for="(action, index) in actions" :key="index" v-bind="{ ...action, ...forwarded._toastAction }" @click="action.click" />
+        <div
+          v-if="actions"
+          class="toast-actions"
+        >
+          <ToastAction
+            v-for="(action, index) in actions"
+            :key="index" v-bind="{ ...action, ...forwarded._toastAction }"
+            @click="action.click"
+          >
+            <slot name="actions" />
+          </ToastAction>
         </div>
-        <ToastClose v-if="closable" v-bind="forwarded._toastClose" />
+        <div
+          v-else-if="$slots.actions"
+          class="toast-actions"
+        >
+          <ToastAction
+            v-bind="_toastAction"
+          >
+            <slot name="actions" />
+          </ToastAction>
+        </div>
+        <ToastClose v-if="closable" v-bind="forwarded._toastClose">
+          <slot name="closeIcon">
+            <Icon
+              :name="_toastClose?.una?.toastCloseIcon ?? 'toast-close-icon'"
+              :class="_toastClose?.una?.toastCloseIconBase"
+              aria-hidden="true"
+            />
+          </slot>
+        </ToastClose>
       </slot>
     </ToastRoot>
 
