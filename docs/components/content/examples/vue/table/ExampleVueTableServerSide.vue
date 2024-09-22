@@ -103,40 +103,13 @@ const table = ref<Table<Pokemon>>()
           Page {{ (table?.getState().pagination.pageIndex ?? 0) + 1 }} of  {{ pageCount }}
         </div>
 
-        <div class="flex items-center space-x-2">
-          <NButton
-            btn="solid-white"
-            square
-            icon
-            label="i-radix-icons-double-arrow-left"
-            :disabled="!table?.getCanPreviousPage()"
-            @click="table?.setPageIndex(0)"
-          />
-          <NButton
-            btn="solid-white"
-            square
-            icon
-            label="i-radix-icons-chevron-left"
-            :disabled="!table?.getCanPreviousPage()"
-            @click="table?.previousPage()"
-          />
-          <NButton
-            btn="solid-white"
-            square
-            icon
-            label="i-radix-icons-chevron-right"
-            :disabled="!table?.getCanNextPage()"
-            @click="table?.nextPage()"
-          />
-          <NButton
-            btn="solid-white"
-            square
-            icon
-            label="i-radix-icons-double-arrow-right"
-            :disabled="!table?.getCanNextPage()"
-            @click="table?.setPageIndex(table.getPageCount() - 1)"
-          />
-        </div>
+        <NPagination
+          :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
+          :total="table?.getFilteredRowModel().rows.length"
+          show-edges
+          :items-per-page="table?.getState().pagination.pageSize"
+          @update:page="table?.setPageIndex($event - 1)"
+        />
       </div>
     </div>
   </div>

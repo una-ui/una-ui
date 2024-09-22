@@ -3,12 +3,11 @@ const currentPage = ref(1)
 </script>
 
 <template>
-  <div class="flex flex-col space-y-4">
-    <span>Current Page: {{ currentPage }}</span>
-
+  <div class="flex">
     <NPagination
       v-model:page="currentPage"
       :total="100"
+      show-edges
     />
   </div>
 </template>
