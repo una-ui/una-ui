@@ -11,7 +11,7 @@ import { cn } from '../../../utils'
 import DialogClose from './DialogClose.vue'
 import DialogOverlay from './DialogOverlay.vue'
 
-const props = defineProps<NDialogContentProps & Pick<NDialogProps, '_dialogOverlay' | 'una'>>()
+const props = defineProps<NDialogContentProps & Pick<NDialogProps, '_dialogOverlay' | '_dialogClose' | 'una'>>()
 const emits = defineEmits<DialogContentEmits>()
 
 const delegatedProps = reactiveOmit(props, 'class')
@@ -29,7 +29,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     >
       <slot />
 
-      <DialogClose />
+      <DialogClose v-bind="_dialogClose" :class="una?.dialogClose" />
     </DialogContent>
   </DialogPortal>
 </template>

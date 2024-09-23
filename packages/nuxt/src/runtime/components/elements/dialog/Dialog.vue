@@ -38,6 +38,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       v-bind="_dialogContent"
       :class="cn(_dialogContent?.class, una?.dialogContent)"
       :_dialog-overlay
+      :_dialog-close
       :una
     >
       <slot name="content">
