@@ -52,7 +52,7 @@ export interface NToastProps extends BaseExtensions {
   _toastTitle?: Partial<NToastTitleProps>
   _toastDescription?: Partial<NToastDescriptionProps>
   _toastViewport?: Partial<NToastViewportProps>
-  _toastAction?: NToastActionProps
+  _toastAction?: Partial<NToastActionProps>
   _toastClose?: Partial<NToastCloseProps>
   _toastInfo?: Partial<NToastInfoProps>
 

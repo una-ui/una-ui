@@ -38,31 +38,7 @@ const actions = ref([{
           btn: 'solid',
         },
         closable: true,
-        _toastClose: {
-          una: {
-            toastCloseIcon: 'i-gravity-ui:circle-xmark-fill',
-          },
-        },
       },
     )"
   />
-  <!-- <NToast closable>
-    <template #title>
-      Hello title
-    </template>
-    <template #description>
-      Hello description
-    </template>
-    <template #actions>
-      <NButton
-        v-for="a, i in actions"
-        :key="i"
-        :label="a.label"
-        @click="a.click"
-      />
-    </template>
-    <template #closeIcon>
-      <NIcon name="i-gravity-ui:hand-ok" />
-    </template>
-  </NToast> -->
 </template>
