@@ -1,6 +1,9 @@
 ---
-title: 🔴 Dialog
 description: NDialog component - Used for making dialog boxes and popup screens
+---
+
+# 🔴 Dialog
+
 ---
 
 ## Basic
@@ -76,3 +79,4 @@ A dialog whose overlay blurs the background content.
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBackgroundBlur.vue
 ::
 :::
+
