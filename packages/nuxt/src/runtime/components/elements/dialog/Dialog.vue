@@ -2,6 +2,7 @@
 import type { NDialogProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { DialogRoot, type DialogRootEmits, DialogTrigger, useForwardPropsEmits } from 'radix-vue'
+import { computed, useSlots } from 'vue'
 import { cn } from '../../../utils'
 import DialogContent from './DialogContent.vue'
 import DialogDescription from './DialogDescription.vue'
@@ -26,6 +27,24 @@ const delegatedProps = reactiveOmit(props, [
 ])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
+
+const slots = useSlots()
+
+const hasTitle = computed(() => {
+  return !!(props.title || slots.title)
+})
+
+const hasDescription = computed(() => {
+  return !!(props.description || slots.description)
+})
+
+const contentAriaProps = computed(() => {
+  // remove the aria-describedby attribute from the dialog when there is no description provided
+  if (hasDescription.value) {
+    return {}
+  }
+  return { 'aria-describedby': undefined }
+})
 </script>
 
 <template>
@@ -35,7 +54,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     </DialogTrigger>
 
     <DialogContent
-      v-bind="_dialogContent"
+      v-bind="{ ..._dialogContent, ...contentAriaProps }"
       :class="cn(_dialogContent?.class, una?.dialogContent)"
       :_dialog-overlay
       :_dialog-close
@@ -44,12 +63,13 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       <slot name="content">
         <!-- header -->
         <DialogHeader
-          v-if="title || description || $slots.header || $slots.title || $slots.description"
+          v-if="hasTitle || hasDescription || $slots.header"
           v-bind="_dialogHeader"
           :class="cn(_dialogHeader?.class, una?.dialogHeader)"
         >
           <slot name="header">
             <DialogTitle
+              v-if="hasTitle"
               v-bind="_dialogTitle"
               :class="una?.dialogTitle"
             >
@@ -59,6 +79,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
             </DialogTitle>
 
             <DialogDescription
+              v-if="hasDescription"
               v-bind="_dialogDescription"
               :class="cn(_dialogDescription?.class, una?.dialogDescription)"
             >

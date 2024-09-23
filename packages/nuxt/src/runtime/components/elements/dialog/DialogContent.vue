@@ -11,10 +11,12 @@ import { cn } from '../../../utils'
 import DialogClose from './DialogClose.vue'
 import DialogOverlay from './DialogOverlay.vue'
 
+defineOptions({ inheritAttrs: false })
+
 const props = defineProps<NDialogContentProps & Pick<NDialogProps, '_dialogOverlay' | '_dialogClose' | 'una'>>()
 const emits = defineEmits<DialogContentEmits>()
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, ['class', '_dialogOverlay', '_dialogClose', 'una'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
@@ -24,7 +26,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <DialogOverlay v-bind="_dialogOverlay" :class="una?.dialogOverlay" />
 
     <DialogContent
-      v-bind="forwarded"
+      v-bind="{ ...forwarded, ...$attrs }"
       :class="cn('dialog-content', props.class)"
     >
       <slot />
