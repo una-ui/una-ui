@@ -6,7 +6,7 @@ type SliderPrefix = 'slider'
 
 export const staticSlider: Record<`${SliderPrefix}-${string}` | SliderPrefix, string> = {
   // configurations
-  'slider': 'slider-primary size-base',
+  'slider': 'slider-primary',
   'slider-disabled': 'n-disabled',
   'slider-root-vertical': 'flex-col w-1em h-full',
   'slider-track-vertical': 'w-0.5em h-full',

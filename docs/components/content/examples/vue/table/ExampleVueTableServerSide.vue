@@ -79,7 +79,7 @@ const table = ref<Table<Pokemon>>()
     <div
       class="flex items-center justify-end px-2"
     >
-      <div class="flex items-center space-x-6 lg:space-x-8">
+      <div class="flex items-center justify-between space-x-6 lg:space-x-8">
         <div
           class="hidden items-center justify-center text-sm font-medium sm:flex space-x-2"
         >
@@ -100,40 +100,16 @@ const table = ref<Table<Pokemon>>()
         <div
           class="flex items-center justify-center text-sm font-medium"
         >
-          Page {{ (table?.getState().pagination.pageIndex ?? 0) + 1 }} of
-          {{ table?.getPageCount().toLocaleString() }}
+          Page {{ (table?.getState().pagination.pageIndex ?? 0) + 1 }} of  {{ pageCount }}
         </div>
 
-        <div class="flex items-center space-x-2">
-          <NButton
-            btn="solid-white square"
-            icon
-            label="i-radix-icons-double-arrow-left"
-            :disabled="!table?.getCanPreviousPage()"
-            @click="table?.setPageIndex(0)"
-          />
-          <NButton
-            btn="solid-white square"
-            icon
-            label="i-radix-icons-chevron-left"
-            :disabled="!table?.getCanPreviousPage()"
-            @click="table?.previousPage()"
-          />
-          <NButton
-            btn="solid-white square"
-            icon
-            label="i-radix-icons-chevron-right"
-            :disabled="!table?.getCanNextPage()"
-            @click="table?.nextPage()"
-          />
-          <NButton
-            btn="solid-white square"
-            icon
-            label="i-radix-icons-double-arrow-right"
-            :disabled="!table?.getCanNextPage()"
-            @click="table?.setPageIndex(table.getPageCount() - 1)"
-          />
-        </div>
+        <NPagination
+          :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
+          :total="pageCount * pagination.pageSize"
+          :show-list-item="false"
+          :items-per-page="table?.getState().pagination.pageSize"
+          @update:page="table?.setPageIndex($event - 1)"
+        />
       </div>
     </div>
   </div>
