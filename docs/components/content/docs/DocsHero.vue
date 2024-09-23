@@ -40,18 +40,18 @@ const { copy, copied } = useClipboard({ source })
         <NButton
           to="/getting-started"
           btn="solid"
-          class="rounded-full px-5.5 py-3 font-bold"
+          class="h-2.9em rounded-full px-5.5 py-3 font-bold"
           label="Getting Started"
         />
         <NButton
           to="/components/accordion"
           btn="solid-gray"
-          class="rounded-full px-5.5 py-3 font-bold"
+          class="h-2.9em rounded-full px-5.5 py-3 font-bold"
           label="View Components"
         />
         <NButton
           btn="solid-gray"
-          class="rounded-full px-5.5 py-3 font-bold"
+          class="h-2.9em rounded-full px-5.5 py-3 font-bold"
           :class="{ 'text-primary-active': copied }"
           :label="source"
           :trailing="!copied ? 'i-heroicons-clipboard-document' : 'i-heroicons-check'"

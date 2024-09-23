@@ -218,7 +218,7 @@ watch(Escape, () => {
     >
       <span class="flex items-center">
         <NIcon name="i-heroicons-magnifying-glass" sm:mr-3 />
-        <span class="max-w-20 w-auto flex items-center sm:max-w-auto">
+        <span class="max-w-20 w-auto flex items-center sm:max-w-fit">
           <p class="truncate text-ellipsis">Search documentation...</p>
         </span>
       </span>
