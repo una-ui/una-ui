@@ -14,8 +14,8 @@ import CalendarGridWrapper from './CalendarGridWrapper.vue'
 import CalendarHeadCell from './CalendarHeadCell.vue'
 import CalendarHeader from './CalendarHeader.vue'
 import CalendarHeading from './CalendarHeading.vue'
-import CalendarNextButton from './CalendarNextButton.vue'
-import CalendarPrevButton from './CalendarPrevButton.vue'
+import CalendarNext from './CalendarNext.vue'
+import CalendarPrev from './CalendarPrev.vue'
 
 const props = withDefaults(defineProps<CalendarRootProps & NCalendarProps>(), {
 })
@@ -42,17 +42,17 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       v-bind="forwarded._calendarHeader"
       :una="props.una?.calendarHeader"
     >
-      <CalendarPrevButton
-        v-bind="forwarded._calendarPrevButton"
-        :una="props.una?.calendarPrevButton"
+      <CalendarPrev
+        v-bind="forwarded._calendarPrev"
+        :una="props.una?.calendarPrev"
       />
       <CalendarHeading
         v-bind="forwarded._calendarHeading"
         :una="props.una?.calendarHeading"
       />
-      <CalendarNextButton
-        v-bind="forwarded._calendarNextButton"
-        :una="props.una?.calendarNextButton"
+      <CalendarNext
+        v-bind="forwarded._calendarNext"
+        :una="props.una?.calendarNext"
       />
     </CalendarHeader>
 

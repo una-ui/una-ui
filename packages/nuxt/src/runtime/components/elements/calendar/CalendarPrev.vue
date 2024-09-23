@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { NCalendarPrevButtonProps } from '../../../types'
+import type { NCalendarPrevProps } from '../../../types'
 import { CalendarPrev, useForwardProps } from 'radix-vue'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
 
-const props = withDefaults(defineProps<NCalendarPrevButtonProps>(), {
+const props = withDefaults(defineProps<NCalendarPrevProps>(), {
   btn: 'solid-white',
   icon: true,
   label: 'calendar-prev-button-icon',

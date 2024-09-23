@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-import type { NCalendarNextButtonProps } from '../../../types'
+import type { NCalendarNextProps } from '../../../types'
 import { CalendarNext, useForwardProps } from 'radix-vue'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
 
-const props = withDefaults(defineProps<NCalendarNextButtonProps>(), {
+const props = withDefaults(defineProps<NCalendarNextProps>(), {
   btn: 'solid-white',
   icon: true,
   label: 'calendar-next-button-icon',

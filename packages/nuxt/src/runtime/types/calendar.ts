@@ -22,8 +22,8 @@ export interface NCalendarProps extends BaseExtensions, NCalendarRootProps {
   _calendarGridRow?: Partial<NCalendarGridRowProps>
   _calendarHeadCell?: Partial<NCalendarHeadCellProps>
   _calendarHeading?: Partial<NCalendarHeadingProps>
-  _calendarPrevButton?: Partial<NCalendarPrevButtonProps>
-  _calendarNextButton?: Partial<NCalendarNextButtonProps>
+  _calendarPrev?: Partial<NCalendarPrevProps>
+  _calendarNext?: Partial<NCalendarNextProps>
 
   _calendarUna?: Partial<NCalendarUnaProps>
 }
@@ -89,10 +89,10 @@ export interface NCalendarHeadingProps extends CalendarHeadingProps, BaseExtensi
   una?: NCalendarUnaProps['calendarHeading']
 }
 
-export interface NCalendarPrevButtonProps extends NButtonProps {
+export interface NCalendarPrevProps extends NButtonProps {
 }
 
-export interface NCalendarNextButtonProps extends NButtonProps {
+export interface NCalendarNextProps extends NButtonProps {
 }
 
 export interface NCalendarUnaProps {
@@ -106,6 +106,6 @@ export interface NCalendarUnaProps {
   calendarGridRow?: HTMLAttributes['class']
   calendarHeadCell?: HTMLAttributes['class']
   calendarHeading?: HTMLAttributes['class']
-  calendarPrevButton?: HTMLAttributes['class']
-  calendarNextButton?: HTMLAttributes['class']
+  calendarPrev?: HTMLAttributes['class']
+  calendarNext?: HTMLAttributes['class']
 }
