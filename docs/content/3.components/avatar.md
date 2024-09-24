@@ -82,6 +82,9 @@ The `skeleton` prop is only available when using the `src` prop.
 ::
 
 :::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueAvatarSkeleton
+::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSkeleton.vue
 ::
