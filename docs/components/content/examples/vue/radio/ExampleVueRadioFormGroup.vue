@@ -36,7 +36,7 @@ const options = [
       <NRadio v-for="option in options" :key="option.value" v-model="gender" v-bind="option" />
     </NFormGroup>
 
-    <hr class="border-base">
+    <NSeparator />
 
     <!-- Horizontal -->
     <NFormGroup
