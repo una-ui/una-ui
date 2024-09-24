@@ -1,5 +1,5 @@
 <template>
-  <div flex>
+  <div class="flex">
     <NInput
       placeholder="Search"
       trailing="i-heroicons-chat-bubble-left-right-20-solid"

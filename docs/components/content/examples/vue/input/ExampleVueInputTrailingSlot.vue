@@ -1,5 +1,5 @@
 <template>
-  <div flex>
+  <div class="flex">
     <NInput
       leading="i-heroicons-currency-dollar-20-solid"
       placeholder="Search"

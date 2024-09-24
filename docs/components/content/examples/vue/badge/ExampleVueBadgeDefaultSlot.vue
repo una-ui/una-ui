@@ -37,7 +37,7 @@ function close(name: string) {
 </script>
 
 <template>
-  <div flex="~ wrap" gap-2>
+  <div class="flex flex-wrap gap-2">
     <NBadge
       v-for="{ name, avatar } in openSourser"
       :key="name"

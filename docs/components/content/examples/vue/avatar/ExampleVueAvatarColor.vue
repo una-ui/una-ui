@@ -1,7 +1,7 @@
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <span class="text-sm font-medium">Dynamic colors:</span>
-    <div flex="~ items-center" gap-4>
+    <div class="flex items-center gap-4">
       <NAvatar avatar="solid-gray" label="PR" />
 
       <NAvatar avatar="solid-primary" label="PR" />
@@ -15,11 +15,11 @@
       <NAvatar avatar="outline-pink" label="PR" />
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
     <span class="text-sm font-medium">Static colors:</span>
 
-    <div flex="~ items-center" gap-4>
+    <div class="flex items-center gap-4">
       <NAvatar avatar="solid-black" label="PR" />
 
       <NAvatar avatar="solid-white" label="PR" />

@@ -1,8 +1,8 @@
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <span class="text-sm font-medium">Dynamic colors:</span>
 
-    <div grid="~ sm:cols-2" gap-4>
+    <div class="grid gap-4 sm:cols-2">
       <NInput
         input="outline-primary"
         placeholder="This is the primary color (default)"
@@ -21,7 +21,7 @@
       />
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
     <span class="text-sm font-medium">Static color:</span>
 

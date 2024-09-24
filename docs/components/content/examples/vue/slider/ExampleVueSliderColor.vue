@@ -13,7 +13,7 @@ const models = ref([
 </script>
 
 <template>
-  <div flex="~ wrap" items-center gap-4>
+  <div class="flex flex-wrap items-center gap-4">
     <NSlider
       v-model="models[0]"
     />

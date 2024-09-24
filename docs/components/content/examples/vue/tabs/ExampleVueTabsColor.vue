@@ -33,7 +33,7 @@ const items = ref([
     default-value="account"
   >
     <template #content="{ item }">
-      <div v-if="item.value === 'account'" flex="~ col items-start">
+      <div v-if="item.value === 'account'" class="flex flex-col items-start">
         <NFormGroup
           label="Email"
           required
@@ -44,7 +44,7 @@ const items = ref([
             leading="i-heroicons-envelope-20-solid"
           />
         </NFormGroup>
-        <NButton mt-3 self-start px-4>
+        <NButton class="mt-3 self-start px-4">
           Confirm
         </NButton>
       </div>
@@ -59,7 +59,7 @@ const items = ref([
             resize="x"
           />
         </NFormGroup>
-        <NButton mt-2 self-start px-4>
+        <NButton class="mt-2 self-start px-4">
           Save changes
         </NButton>
       </div>

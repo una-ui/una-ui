@@ -18,7 +18,7 @@ const textarea = ref('')
 </script>
 
 <template>
-  <div flex="~ items-center" mb-6 h-5 gap-1>
+  <div class="mb-6 h-5 flex items-center gap-1">
     <NButton
       v-for="icon in icons1"
       :key="icon._id"
@@ -50,7 +50,7 @@ const textarea = ref('')
       @click="icon.value = !icon.value"
     />
   </div>
-  <div flex="~ col">
+  <div class="flex flex-col">
     <NInput
       v-model="textarea"
       type="textarea"

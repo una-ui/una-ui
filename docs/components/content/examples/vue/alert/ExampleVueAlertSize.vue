@@ -7,7 +7,7 @@ const alerts = {
 </script>
 
 <template>
-  <div flex="~ col" space-y-4>
+  <div class="flex flex-col space-y-4">
     <NAlert size="xs" alert="outline-info" v-bind="alerts" />
 
     <NAlert size="sm" alert="outline-success" v-bind="alerts" />

@@ -1,9 +1,9 @@
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <span class="text-sm font-medium">Dynamic colors:</span>
 
-    <div flex="~ col" gap-4>
-      <div flex="~ col md:row" gap-4>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 md:flex-row">
         <NButton
           label="solid-primary"
           btn="solid-primary"
@@ -26,11 +26,11 @@
         />
       </div>
 
-      <hr border="base">
+      <NSeparator />
 
       <span class="text-sm font-medium">Color with states:</span>
 
-      <div flex="~ col md:row" gap-4>
+      <div class="flex flex-col gap-4 md:flex-row">
         <NButton
           btn="solid-error hover:solid-success"
           label="hover me"
@@ -50,11 +50,11 @@
         />
       </div>
 
-      <hr border="base">
+      <NSeparator />
 
       <span class="text-sm font-medium">Custom colors using utilities:</span>
 
-      <div flex="~ col md:row" gap-2>
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           btn="~"
           class="from-primary to-$c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
@@ -69,12 +69,12 @@
       </div>
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
     <span class="text-sm font-medium">Static colors:</span>
 
-    <div flex="~ col" gap-4>
-      <div flex="~ col md:row" gap-2>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="solid-gray"
           btn="solid-gray"
@@ -93,7 +93,7 @@
         />
       </div>
 
-      <div flex="~ col md:row" gap-2>
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="solid-white"
           btn="solid-white"
@@ -104,7 +104,7 @@
         />
       </div>
 
-      <div flex="~ col md:row" gap-2>
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="solid-black"
           btn="solid-black"
@@ -115,7 +115,7 @@
         />
       </div>
 
-      <div flex="~ col md:row" gap-2>
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="text-black"
           btn="text-black"

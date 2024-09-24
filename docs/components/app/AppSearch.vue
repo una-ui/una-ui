@@ -211,14 +211,14 @@ watch(Escape, () => {
 <template>
   <div class="z-5 flex items-center">
     <NButton
-      btn="!solid-gray block"
+      btn="!solid-white block"
       class="justify-between rounded-lg px-2 !text-muted font-normal md:w-80"
       aria-label="Search"
       @click="show = true"
     >
       <span class="flex items-center">
         <NIcon name="i-heroicons-magnifying-glass" sm:mr-3 />
-        <span class="max-w-20 w-auto flex items-center sm:max-w-auto">
+        <span class="max-w-20 w-auto flex items-center sm:max-w-fit">
           <p class="truncate text-ellipsis">Search documentation...</p>
         </span>
       </span>

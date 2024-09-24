@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ wrap" items-center gap-4>
+  <div class="flex flex-wrap items-center gap-4">
     <NSwitch
       size="xs"
     />

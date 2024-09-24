@@ -4,7 +4,7 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
 </script>
 
 <template>
-  <div flex items-end>
+  <div class="flex items-end">
     <NFormGroup
       label="Contributor"
       description="Select a contributor from the Vue community"

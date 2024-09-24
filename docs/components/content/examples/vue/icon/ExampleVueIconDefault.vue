@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ wrap items-center" gap-4 size="2xl">
+  <div class="flex flex-wrap items-center gap-4" size="2xl">
     <NIcon name="i-info" text-info />
 
     <NIcon name="i-success" text-success />

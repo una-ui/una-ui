@@ -122,8 +122,8 @@ const isBaseVariant = computed(() => props.btn?.includes('~'))
               { 'accordion-button-padding': !unstyle },
               una?.accordionButton,
             ]"
-            accordion="button"
             :una="{
+              btn: 'h-auto accordion-button',
               btnLabel: 'accordion-label',
             }"
           >

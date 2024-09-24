@@ -55,6 +55,9 @@ export const staticGeneral = {
 
   // transition
   'transition-base': 'transition-all duration-100 ease-out',
+
+  // overrides
+  'square-false': '',
 }
 
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
