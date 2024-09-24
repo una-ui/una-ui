@@ -4,10 +4,10 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
 </script>
 
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <span class="text-sm font-medium">Dynamic colors:</span>
 
-    <div grid="~ sm:cols-2" gap-4>
+    <div class="grid gap-4 sm:cols-2">
       <NSelect
         v-model="selected"
         :items="items"
@@ -25,7 +25,7 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
       />
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
     <span class="text-sm font-medium">Default color:</span>
 

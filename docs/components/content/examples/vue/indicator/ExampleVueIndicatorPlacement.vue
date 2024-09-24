@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ items-center" gap-4>
+  <div class="flex items-center gap-4">
     <NIndicator indicator="top-right solid-error" ping>
       <NAvatar label="TR" />
     </NIndicator>

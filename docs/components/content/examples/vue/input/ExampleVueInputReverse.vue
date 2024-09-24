@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col" space-y-4>
+  <div class="flex flex-col space-y-4">
     <NInput
       input="outline-purple"
       leading="i-heroicons-paper-clip-20-solid"

@@ -8,7 +8,7 @@ const form = ref({
 </script>
 
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <NFormGroup
       label="Username"
       message="Your username is available."

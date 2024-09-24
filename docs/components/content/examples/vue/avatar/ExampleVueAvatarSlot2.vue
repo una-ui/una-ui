@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ items-center" gap-4>
+  <div class="flex items-center gap-4">
     <NAvatar label="PR">
       <template #default="props">
         <span>{{ props.label }}</span>

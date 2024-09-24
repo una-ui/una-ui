@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ wrap" gap-4>
+  <div class="flex flex-wrap gap-4">
     <NKbd kbd="solid-lime" label="⌘" />
 
     <NKbd kbd="solid-rose" label="⌘" />

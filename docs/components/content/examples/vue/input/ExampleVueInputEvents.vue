@@ -8,7 +8,7 @@ const isPasswordVisible = ref(false)
 </script>
 
 <template>
-  <div grid="~ cols-1 sm:cols-2" gap-4>
+  <div class="grid cols-1 gap-4 sm:cols-2">
     <NInput
       :type="isPasswordVisible ? 'text' : 'password'"
       :trailing="isPasswordVisible ? 'i-heroicons-eye-20-solid' : 'i-heroicons-eye-slash-20-solid'"

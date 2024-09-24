@@ -3,7 +3,7 @@ const value = ref([40])
 </script>
 
 <template>
-  <div grid="~ cols-1" class="gap-8 py-4">
+  <div class="grid cols-1 gap-8 py-4">
     <NSlider
       v-model="value"
       slider="orange"
