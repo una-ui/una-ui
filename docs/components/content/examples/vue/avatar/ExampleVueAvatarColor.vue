@@ -15,7 +15,7 @@
       <NAvatar avatar="outline-pink" label="PR" />
     </div>
 
-    <hr class="border-base">
+    <NSeparator />
 
     <span class="text-sm font-medium">Static colors:</span>
 

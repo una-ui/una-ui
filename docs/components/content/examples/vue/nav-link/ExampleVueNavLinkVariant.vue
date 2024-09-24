@@ -28,8 +28,6 @@ const links = [
       />
     </div>
 
-    <hr class="border-base">
-
     <div class="flex flex-wrap gap-4 rounded bg-primary p-3">
       <NNavLink
         v-for="(link, i) in links"

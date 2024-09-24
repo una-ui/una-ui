@@ -44,7 +44,7 @@ const items2 = [
       leading="i-heroicons-question-mark-circle"
     />
 
-    <hr class="border-base">
+    <NSeparator />
 
     <span class="text-sm font-medium">
       Custom per item leading icon
@@ -54,7 +54,7 @@ const items2 = [
       :items="items2"
     />
 
-    <hr class="border-base">
+    <NSeparator />
 
     <span class="text-sm font-medium">
       Custom Trailing open icon
@@ -69,7 +69,7 @@ const items2 = [
       }"
     />
 
-    <hr class="border-base">
+    <NSeparator />
 
     <span class="text-sm font-medium">
       Custom Trailing open and close icons

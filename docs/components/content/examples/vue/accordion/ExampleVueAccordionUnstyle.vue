@@ -37,7 +37,7 @@ const items = [
       :items="items"
     />
 
-    <hr class="border-base">
+    <NSeparator />
 
     <NAccordion
       unstyle
@@ -45,7 +45,7 @@ const items = [
       btn="ghost-lime"
     />
 
-    <hr class="border-base">
+    <NSeparator />
 
     <NAccordion
       unstyle
