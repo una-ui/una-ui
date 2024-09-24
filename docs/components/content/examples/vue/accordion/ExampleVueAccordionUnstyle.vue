@@ -31,13 +31,13 @@ const items = [
 </script>
 
 <template>
-  <div flex="~ col" gap-4>
+  <div flex="~ col gap-4">
     <NAccordion
       unstyle
       :items="items"
     />
 
-    <hr border-base>
+    <hr class="border-base">
 
     <NAccordion
       unstyle
@@ -45,7 +45,7 @@ const items = [
       btn="ghost-lime"
     />
 
-    <hr border-base>
+    <hr class="border-base">
 
     <NAccordion
       unstyle

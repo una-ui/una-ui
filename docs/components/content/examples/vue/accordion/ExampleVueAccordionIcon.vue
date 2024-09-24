@@ -34,7 +34,7 @@ const items2 = [
 </script>
 
 <template>
-  <div flex="~ col" gap-4>
+  <div flex="~ col gap-4">
     <span class="text-sm font-medium">
       Custom Global leading icons
     </span>
@@ -44,7 +44,7 @@ const items2 = [
       leading="i-heroicons-question-mark-circle"
     />
 
-    <hr border-base>
+    <hr class="border-base">
 
     <span class="text-sm font-medium">
       Custom per item leading icon
@@ -54,7 +54,7 @@ const items2 = [
       :items="items2"
     />
 
-    <hr border-base>
+    <hr class="border-base">
 
     <span class="text-sm font-medium">
       Custom Trailing open icon
@@ -69,7 +69,7 @@ const items2 = [
       }"
     />
 
-    <hr border-base>
+    <hr class="border-base">
 
     <span class="text-sm font-medium">
       Custom Trailing open and close icons

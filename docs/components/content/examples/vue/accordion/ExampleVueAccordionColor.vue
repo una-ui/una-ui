@@ -22,14 +22,14 @@ const items = [
       btn="text-gray"
     />
 
-    <hr border="base">
+    <hr class="border-base">
 
     <NAccordion
       :items="items"
       btn="text-orange"
     />
 
-    <hr border="base">
+    <hr class="border-base">
 
     <NAccordion
       :items="items"
