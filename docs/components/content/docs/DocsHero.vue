@@ -40,20 +40,20 @@ const { copy, copied } = useClipboard({ source })
         <NButton
           to="/getting-started"
           btn="solid"
-          class="p-(3 6) font-bold"
+          class="p-5.5 font-bold"
           rounded="full"
           label="Getting Started"
         />
         <NButton
           to="/components/accordion"
           btn="solid-gray"
-          class="p-(3 6) font-bold"
+          class="p-5.5 font-bold"
           rounded="full"
           label="View Components"
         />
         <NButton
           btn="solid-gray"
-          class="p-(3 6) font-bold"
+          class="p-5.5 font-bold"
           rounded="full"
           :class="{ 'text-primary-active': copied }"
           :label="source"
