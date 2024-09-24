@@ -1,6 +1,6 @@
 {
   "name": "@una-ui/docs",
-  "version": "0.22.0-beta.3",
+  "version": "0.23.0-beta.1",
   "private": true,
   "description": "The Atomic UI Framework",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
@@ -28,7 +28,7 @@
     "ui"
   ],
   "scripts": {
-    "build": "nuxt generate",
+    "build": "NODE_OPTIONS='--max-old-space-size=8192' nuxt generate",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "c": "esno scripts/color-transition.ts",

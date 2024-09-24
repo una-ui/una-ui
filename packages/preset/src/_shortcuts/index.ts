@@ -20,6 +20,7 @@ import { label } from './label'
 import { link } from './link'
 import { navLink } from './nav-link'
 import { navLinkGroup } from './nav-link-group'
+import { pagination } from './pagination'
 import { popover } from './popover'
 import { progress } from './progress'
 import { radio } from './radio'
@@ -65,4 +66,5 @@ export const shortcuts = [
   ...label,
   ...popover,
   ...tooltip,
+  ...pagination,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
