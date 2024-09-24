@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <NDropdownMenu
       :modal="false"
       :_dropdown-menu-content="{
