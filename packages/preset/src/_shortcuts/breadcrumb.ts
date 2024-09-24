@@ -10,12 +10,12 @@ export const staticBreadcrumb: Record<`${BreadcrumbPrefix}-${string}` | Breadcru
 
   // components
   'breadcrumb-root': '',
-  'breadcrumb-list': 'flex flex-wrap items-center break-words text-muted gap-0.5',
-  'breadcrumb-link': 'transition-colors font-normal btn-square',
-  'breadcrumb-item': 'inline-flex items-center',
+  'breadcrumb-list': 'flex flex-wrap items-center break-words text-muted',
+  'breadcrumb-link': 'transition-colors font-normal',
+  'breadcrumb-item': 'inline-flex items-center gap-1.5',
 
   // TODO
-  'breadcrumb-ellipsis': 'flex h-9 w-9 items-center justify-center',
+  'breadcrumb-ellipsis': 'flex items-center justify-center',
 }
 
 export const dynamicBreadcrumb = [
