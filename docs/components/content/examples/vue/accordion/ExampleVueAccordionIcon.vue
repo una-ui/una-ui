@@ -34,7 +34,7 @@ const items2 = [
 </script>
 
 <template>
-  <div flex="~ col gap-4">
+  <div class="flex flex-col gap-4">
     <span class="text-sm font-medium">
       Custom Global leading icons
     </span>
