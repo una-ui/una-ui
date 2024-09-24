@@ -60,7 +60,7 @@
 
       <template #footer>
         <div class="w-full flex flex-col">
-          <div mt-2 w-full gap-4 flex="~ justify-between items-center">
+          <div class="mt-2 w-full flex items-center justify-between gap-4">
             <NButton
               size="md"
               btn="ghost-warning"
