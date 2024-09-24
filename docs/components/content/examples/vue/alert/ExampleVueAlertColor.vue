@@ -3,7 +3,7 @@ const description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Al
 </script>
 
 <template>
-  <div flex="~ col" space-y-4>
+  <div class="flex flex-col space-y-4">
     <NAlert alert="outline-info" title="Info color" :description="description" />
 
     <NAlert alert="border-success" title="Success color" :description="description" />
