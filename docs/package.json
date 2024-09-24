@@ -28,7 +28,7 @@
     "ui"
   ],
   "scripts": {
-    "build": "nuxt generate",
+    "build": "NODE_OPTIONS='--max-old-space-size=8192' nuxt generate",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "c": "esno scripts/color-transition.ts",
