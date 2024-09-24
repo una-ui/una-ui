@@ -5,6 +5,7 @@ import { cn } from '../../../utils'
 const props = withDefaults(defineProps<NBreadcrumbEllipsisProps>(), {
   icon: 'breadcrumb-ellipsis-icon',
   size: 'sm',
+  square: 9,
 })
 </script>
 
