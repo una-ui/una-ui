@@ -1,5 +1,5 @@
 <template>
-  <div flex gap-4>
+  <div class="flex gap-4">
     <NBadge label="Badge" />
 
     <NBadge class="rounded-full">

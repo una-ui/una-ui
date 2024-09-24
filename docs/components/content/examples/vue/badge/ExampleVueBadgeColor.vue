@@ -1,8 +1,8 @@
 <template>
-  <div flex="~ col" space-y-4>
+  <div class="flex flex-col space-y-4">
     <span class="text-sm font-medium">Dynamic colors:</span>
 
-    <div flex flex-wrap gap-2>
+    <div class="flex flex-wrap gap-2">
       <NBadge badge="soft-primary" label="soft-primary (default)" />
 
       <NBadge badge="solid-pink" label="solid-pink" />
@@ -18,11 +18,11 @@
       <NBadge badge="soft-indigo" label="outline-indigo" />
     </div>
 
-    <hr border="base">
+    <hr class="border-base">
 
     <span class="text-sm font-medium">Static colors:</span>
 
-    <div flex flex-wrap gap-2>
+    <div class="flex flex-wrap gap-2">
       <NBadge badge="soft-gray" label="soft-gray" />
 
       <NBadge badge="solid-black" label="solid-black" />

@@ -1,5 +1,5 @@
 <template>
-  <div flex flex-wrap gap-2>
+  <div class="flex flex-wrap gap-2">
     <NBadge badge="soft" label="Soft Badge" />
 
     <NBadge badge="solid" label="Solid Badge" />
