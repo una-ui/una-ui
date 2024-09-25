@@ -20,7 +20,7 @@ export const dynamicAnimate: [RegExp, (params: RegExpExecArray) => string][] = [
   // dynamic preset
 
   // unocss doesn't like multiple data-xxx variants
-  [/^(?:data-)?animate-slide(-[^-]+)?$/, ([,value = '']) => `
+  [/^animate-slide(-[^-]+)?$/, ([,value = '']) => `
     [&[data-side=bottom]]:animate-slide-from-top${value}
     [&[data-side=left]]:animate-slide-from-right${value}
     [&[data-side=right]]:animate-slide-from-left${value}
