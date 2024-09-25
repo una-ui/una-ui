@@ -9,7 +9,7 @@ export const staticGeneral = {
   'text-muted': 'text-$c-muted-foreground',
 
   'text-accent': 'text-$c-accent-foreground',
-  'text-accent-forground': 'text-$c-accent',
+  'text-accent-foreground': 'text-$c-accent',
 
   'text-popover': 'text-$c-popover-foreground',
   'text-popover-foreground': 'text-$c-popover',
@@ -55,6 +55,9 @@ export const staticGeneral = {
 
   // transition
   'transition-base': 'transition-all duration-100 ease-out',
+
+  // overrides
+  'square-false': '',
 }
 
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [

@@ -34,7 +34,7 @@ const notifications = ref([
       />
     </NFormGroup>
 
-    <hr class="border-base">
+    <NSeparator />
 
     <!-- Horizontal -->
     <NFormGroup

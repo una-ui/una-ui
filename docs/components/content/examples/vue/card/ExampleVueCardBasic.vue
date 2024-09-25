@@ -5,7 +5,7 @@
       description="Fill in the form below to create an account."
       class="sm:w-100"
     >
-      <div flex="~ col" gap-4>
+      <div class="flex flex-col gap-4">
         <NFormGroup
           label="Email"
         >
@@ -26,7 +26,7 @@
         </NFormGroup>
       </div>
       <template #footer>
-        <div mt-2 w-full gap-4 flex="~ justify-end">
+        <div class="mt-2 w-full flex justify-end gap-4">
           <NButton btn="soft-gray block">
             Login
           </NButton>

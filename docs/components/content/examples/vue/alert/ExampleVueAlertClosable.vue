@@ -14,7 +14,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div flex="~ col" space-y-4>
+  <div class="flex flex-col space-y-4">
     <NAlert
       v-if="!close1"
       title="Closable alert 1"

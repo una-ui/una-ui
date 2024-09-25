@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col" space-y-4>
+  <div class="flex flex-col space-y-4">
     <NAlert
       alert="outline"
       title="Outline variant (default)"

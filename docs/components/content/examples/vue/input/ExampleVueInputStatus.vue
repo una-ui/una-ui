@@ -1,5 +1,5 @@
 <template>
-  <div grid="~ sm:cols-2" gap-4>
+  <div class="grid gap-4 sm:cols-2">
     <NInput
       status="error"
       placeholder="This is the outline variant with error status"

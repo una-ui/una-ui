@@ -9,7 +9,7 @@ const models = ref([
 </script>
 
 <template>
-  <div flex="~ wrap" items-center gap-8>
+  <div class="flex flex-wrap items-center gap-8">
     <NSlider
       v-model="models[0]"
       size="xs"

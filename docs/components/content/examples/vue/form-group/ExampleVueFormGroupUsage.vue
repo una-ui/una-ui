@@ -1,5 +1,5 @@
 <template>
-  <div flex>
+  <div class="flex">
     <NFormGroup
       label="Name"
     >

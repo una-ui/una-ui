@@ -1,10 +1,10 @@
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <span class="text-sm font-medium">
       Icon buttons with and without square preset
     </span>
 
-    <div flex="~ row" gap-2>
+    <div class="flex flex-row gap-2">
       <NButton
         label="i-heroicons-arrow-down-tray-20-solid"
         icon
@@ -18,13 +18,13 @@
       />
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
     <span class="text-sm font-medium">
       Icon with states
     </span>
 
-    <div flex="~ row" gap-2>
+    <div class="flex flex-row gap-2">
       <NButton
         label="i-heroicons-bell-20-solid group-hover:i-heroicons-bell-alert-20-solid"
         icon
@@ -40,13 +40,13 @@
       />
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
     <span class="text-sm font-medium">
       Leading icon with label
     </span>
 
-    <div flex="~ col sm:row" gap-2>
+    <div class="flex flex-col gap-2 sm:flex-row">
       <NButton
         leading="i-logos-google-icon"
         btn="solid-gray"
@@ -64,13 +64,13 @@
       />
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
     <span class="text-sm font-medium">
       Trailing icon with label
     </span>
 
-    <div flex="~ col sm:row" gap-2>
+    <div class="flex flex-col gap-2 sm:flex-row">
       <NButton
         trailing="i-heroicons-at-symbol-20-solid"
         btn="outline"
