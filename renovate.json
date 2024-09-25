@@ -12,12 +12,12 @@
   "packageRules": [
     {
       "matchPackageNames": ["typescript"],
-      "allowedVersions": ">=5.5,<5.6"
+      "allowedVersions": "<5.6"
     },
     {
       "matchPackageNames": ["/.*eslint.*"],
       "postUpgradeTasks": {
-        "commands": ["pnpm lint"],
+        "commands": ["pnpm lint:fix"],
         "executionMode": "branch"
       }
     }
