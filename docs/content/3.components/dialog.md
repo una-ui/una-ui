@@ -31,15 +31,15 @@ description: NDialog component - Used for making dialog boxes and popup screens
 
 | Slot          | Properties | Description
 | ------------- | ---------- | ---------------------------------------------
-| `trigger`     | `open`     | The trigger button used to open the dialog
-| `default`     | -          | The main content of the dialog
+| `trigger`     | `open`     | The trigger button used to open the dialog.
+| `default`     | -          | The main content of the dialog.
 | `content`     | -          | The full content of the dialog. It covers the header, title, description, footer, and default slots.
-| `header`      | -          | Contains the title and description slots
+| `header`      | -          | Contains the title and description slots.
 | `footer`      | -          | The footer.
 | `title`       | -          | The title displayed in the dialog.
 | `description` | -          | The description displayed below the title.
 
-## Recipes
+## Examples
 
 ### Login Prompt
 
@@ -51,6 +51,19 @@ A login dialog with state which closes itself after a successful login.
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogLogin.vue
+::
+:::
+
+### Confirmation Prompt
+
+A confirmation dialog confirming an action
+
+:::CodeGroup
+::code-block{label=Preview preview}
+  :ExampleVueDialogConfirmation
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogConfirmation.vue
 ::
 :::
 
