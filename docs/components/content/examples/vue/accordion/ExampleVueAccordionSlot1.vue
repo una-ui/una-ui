@@ -47,8 +47,7 @@ const items = [
 
     <template #content="{ item, open, close }">
       <div
-        p="x-4 y-6"
-        flex="~ col"
+        class="flex flex-col px-4 py-6"
         :class="[
           open ? 'border border-primary border-t-0' : '',
         ]"
@@ -57,7 +56,7 @@ const items = [
           {{ item.content }}
         </p>
 
-        <div mt-5 text-right>
+        <div class="mt-5 text-right">
           <NButton
             btn="solid-gray"
             class="mt-3"

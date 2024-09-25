@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ items-center" gap-4>
+  <div class="flex items-center gap-4">
     <NIndicator indicator="solid-green">
       <NAvatar src="/images/avatar.png" alt="Phojie Rengel" />
     </NIndicator>

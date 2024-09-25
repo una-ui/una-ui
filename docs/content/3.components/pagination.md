@@ -128,7 +128,7 @@ You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs
   :ExampleVuePaginationRounded
 ::
 ::code-block{label="Code"}
-@@@ ./components/content/examples/vue/button/ExampleVuePaginationRounded.vue
+@@@ ./components/content/examples/vue/pagination/ExampleVuePaginationRounded.vue
 ::
 :::
 

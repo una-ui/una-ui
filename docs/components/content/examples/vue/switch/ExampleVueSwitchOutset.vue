@@ -1,5 +1,5 @@
 <template>
-  <div flex items-center space-x-4>
+  <div class="flex items-center space-x-4">
     <NSwitch />
 
     <NSwitch outset />

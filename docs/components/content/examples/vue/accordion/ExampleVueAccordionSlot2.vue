@@ -21,20 +21,20 @@ const items = [
     :items="items"
   >
     <template #0>
-      <div grid place-items-center px-2 pb-8>
-        <NIcon name="i-logos-vue" text-8xl />
+      <div class="grid place-items-center px-2 pb-8">
+        <NIcon name="i-logos-vue" class="text-8xl" />
       </div>
     </template>
 
     <template #1>
-      <div grid place-items-center px-2 pb-8>
-        <NIcon name="i-logos-react" text-8xl />
+      <div class="grid place-items-center px-2 pb-8">
+        <NIcon name="i-logos-react" class="text-8xl" />
       </div>
     </template>
 
     <template #2>
-      <div grid place-items-center px-2 pb-8>
-        <NIcon name="i-logos-svelte-icon" text-8xl />
+      <div class="grid place-items-center px-2 pb-8">
+        <NIcon name="i-logos-svelte-icon" class="text-8xl" />
       </div>
     </template>
   </NAccordion>

@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ wrap" gap-4>
+  <div class="flex flex-wrap gap-4">
     <NButton
       disabled
       label="Disabled"

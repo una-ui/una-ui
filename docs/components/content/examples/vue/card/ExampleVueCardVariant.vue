@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <NCard
       title="Outline variant"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."

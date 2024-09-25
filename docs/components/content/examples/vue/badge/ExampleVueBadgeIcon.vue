@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ wrap" gap-2>
+  <div class="flex flex-wrap gap-2">
     <NBadge label="v1.2.0" icon="i-heroicons-sparkles-solid text-primary" class="rounded-full" />
 
     <NBadge badge="soft-gray" label="Offline" icon="i-tabler-circle-filled text-7px text-gray" />

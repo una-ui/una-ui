@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col" space-y-4>
+  <div class="flex flex-col space-y-4">
     <NAlert
       title="Customize icon"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
