@@ -75,7 +75,7 @@
     "@types/node": "^20.16.5",
     "@unocss/eslint-config": "^0.62.4",
     "bumpp": "^9.5.2",
-    "conventional-changelog-cli": "^4.1.0",
+    "conventional-changelog-cli": "^5.0.0",
     "eslint": "^9.10.0",
     "esno": "^4.7.0",
     "fast-glob": "^3.3.2",
