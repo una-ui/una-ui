@@ -28,6 +28,7 @@ export * from './slider'
 export * from './switch'
 export * from './table'
 export * from './tabs'
+export * from './toggle'
 export * from './tooltip'
 
 export interface Colors {

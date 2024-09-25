@@ -11,8 +11,26 @@
   ],
   "packageRules": [
     {
+      "enabled": false,
+      "matchFileNames": ["package.json"],
+      "matchDatasources": ["node-version"]
+    },
+    {
       "matchPackageNames": ["typescript"],
-      "bumpVersion": "patch"
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["@iconify/json", "@iconify-json/*"],
+      "groupName": "iconify"
+    },
+    {
+      "matchPackageNames": ["unocss", "@unocss/*"],
+      "groupName": "unocss"
+    },
+    {
+      "matchPackageNames": ["@vueuse/*"],
+      "groupName": "vueuse"
     }
   ]
 }
