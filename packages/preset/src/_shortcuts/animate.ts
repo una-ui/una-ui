@@ -43,7 +43,7 @@ export const dynamicAnimate: [RegExp, (params: RegExpExecArray) => string][] = [
     data-[state=closed]:spin-out${value}
   `],
 
-  // dynamic duration
+  // data- alias for attributify
   [/^data-animate-(.+)$/, ([,value]) => `animate-${value}`],
 ]
 
