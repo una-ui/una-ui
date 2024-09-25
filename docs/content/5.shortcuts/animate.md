@@ -2,7 +2,7 @@
 description: Animation shortcuts
 ---
 
-# 🟡 Animation
+# 🟢 Animation
 
 ---
 
@@ -14,7 +14,7 @@ The default animation is `slide-2 fade-0 zoom-95 duration-fast`..
 
 Animations are handled using the [`unocss-preset-animations`](https://unocss-preset-animations.aelita.me/) library, and all shortcuts added by it are available for use.
 
-In addition, some additional shortcuts were added that have special variants for certain openable components. They automatically choose the correct shortcut or variant based on the element's `data-state` and/or `data-side` arguments.
+In addition, some additional shortcuts were added that have special variants for certain openable components. They automatically choose the correct shortcut or variant based on the element's `data-state` and/or `data-side` attributes.
 
 - `slide`
 - `slide-from-(top|left|bottom|right)`
