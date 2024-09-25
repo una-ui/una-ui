@@ -115,7 +115,7 @@ importers:
         specifier: ^1.4.1
         version: 1.5.1(rollup@3.29.5)(vite@5.4.7(@types/node@20.16.7)(sass@1.79.3)(terser@5.33.0))(vue@3.5.8(typescript@5.6.2))(webpack-sources@3.2.3)
       nuxt:
-        specifier: ^3.13.1
+        specifier: ^3.13.2
         version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.0)(eslint@9.11.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@3.29.5)(sass@1.79.3)(terser@5.33.0)(typescript@5.6.2)(vite@5.4.7(@types/node@20.16.7)(sass@1.79.3)(terser@5.33.0))(vue-tsc@2.1.6(typescript@5.6.2))(webpack-sources@3.2.3)
       nuxt-content-snippet:
         specifier: ^1.0.0
@@ -145,7 +145,7 @@ importers:
         specifier: ^1.2.0
         version: 1.2.3
       '@nuxt/kit':
-        specifier: ^3.13.1
+        specifier: ^3.13.2
         version: 3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3)
       '@nuxtjs/color-mode':
         specifier: ^3.4.4
@@ -206,10 +206,10 @@ importers:
         specifier: ^0.8.1
         version: 0.8.4(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3))(nuxi@3.13.2)(sass@1.79.3)(typescript@5.5.4)(vue-tsc@2.1.6(typescript@5.5.4))(webpack-sources@3.2.3)
       '@nuxt/schema':
-        specifier: ^3.13.1
+        specifier: ^3.13.2
         version: 3.13.2(rollup@4.22.4)(webpack-sources@3.2.3)
       nuxt:
-        specifier: ^3.13.1
+        specifier: ^3.13.2
         version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.0)(eslint@9.11.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.22.4)(sass@1.79.3)(terser@5.33.0)(typescript@5.5.4)(vite@5.4.7(@types/node@22.7.0)(sass@1.79.3)(terser@5.33.0))(vue-tsc@2.1.6(typescript@5.5.4))(webpack-sources@3.2.3)
 
   packages/preset:
@@ -8227,6 +8227,7 @@ snapshots:
   '@types/node@22.7.0':
     dependencies:
       undici-types: 6.19.8
+    optional: true
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -11147,7 +11148,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.7.0
+      '@types/node': 20.16.7
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
