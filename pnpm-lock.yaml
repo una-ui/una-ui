@@ -43,7 +43,7 @@ importers:
         specifier: ^8.4.1
         version: 8.4.1
       '@iconify/json':
-        specifier: ^2.2.244
+        specifier: ^2.2.252
         version: 2.2.252
       '@types/chroma-js':
         specifier: ^2.4.4
@@ -136,13 +136,13 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@iconify-json/lucide':
-        specifier: ^1.2.2
+        specifier: ^1.2.5
         version: 1.2.5
       '@iconify-json/radix-icons':
         specifier: ^1.2.0
         version: 1.2.0
       '@iconify-json/tabler':
-        specifier: ^1.2.0
+        specifier: ^1.2.3
         version: 1.2.3
       '@nuxt/kit':
         specifier: ^3.13.2
