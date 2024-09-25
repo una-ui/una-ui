@@ -48,7 +48,7 @@
     "@unocss/nuxt": "^0.62.4",
     "@unocss/preset-attributify": "^0.62.4",
     "@unocss/preset-icons": "^0.62.4",
-    "@vueuse/core": "^10.11.1",
+    "@vueuse/core": "^11.1.0",
     "@vueuse/integrations": "^10.11.1",
     "@vueuse/nuxt": "^10.11.1",
     "clsx": "^2.1.1",
