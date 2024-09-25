@@ -67,7 +67,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.6.0",
     "@antfu/ni": "^0.21.12",
-    "@faker-js/faker": "^8.4.1",
+    "@faker-js/faker": "^9.0.2",
     "@iconify/json": "^2.2.252",
     "@types/chroma-js": "^2.4.4",
     "@types/fs-extra": "^11.0.4",
