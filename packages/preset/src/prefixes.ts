@@ -100,6 +100,7 @@ export default [
   'toast-action',
   'toast-close',
   'toast-description',
+  'toaster',
   'toast-info',
   'toast-provider',
   'toast-root',

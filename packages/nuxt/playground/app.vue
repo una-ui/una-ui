@@ -4,7 +4,7 @@
 
     <Toast />
 
-    <NToastToasts />
+    <NToastToaster />
 
     <ColorMode />
   </div>
