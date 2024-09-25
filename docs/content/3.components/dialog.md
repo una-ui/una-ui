@@ -80,6 +80,19 @@ A dialog which controls its own open state, and prevents closing normally.
 ::
 :::
 
+### Loading Dialog
+
+A dialog that stays open while in a loading state. Like the uncloseable dialog, it cannot be closed manually.
+
+:::CodeGroup
+::code-block{label=Preview preview}
+  :ExampleVueDialogLoading
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogLoading.vue
+::
+:::
+
 ### Blurred Background
 
 A dialog whose overlay blurs the background content.
