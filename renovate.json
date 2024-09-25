@@ -11,15 +11,14 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["typescript"],
-      "allowedVersions": "<5.6"
+      "enabled": false,
+      "matchFileNames": ["package.json"],
+      "matchDatasources": ["node-version"]
     },
     {
-      "matchPackageNames": ["/.*eslint.*"],
-      "postUpgradeTasks": {
-        "commands": ["pnpm lint:fix"],
-        "executionMode": "branch"
-      }
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
     }
   ]
 }
