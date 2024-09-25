@@ -2,7 +2,7 @@
 description: NDialog component - Used for making dialog boxes and popup screens
 ---
 
-# 🔴 Dialog
+# 🟢 Dialog
 
 ---
 
@@ -82,7 +82,7 @@ A dialog which controls its own open state, and prevents closing normally.
 
 ### Loading Dialog
 
-A dialog that stays open while in a loading state. Like the uncloseable dialog, it cannot be closed manually.
+A dialog that stays open while in a loading state. Like the uncloseable dialog, it cannot be closed by the user.
 
 :::CodeGroup
 ::code-block{label=Preview preview}
@@ -105,4 +105,3 @@ A dialog whose overlay blurs the background content.
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBackgroundBlur.vue
 ::
 :::
-
