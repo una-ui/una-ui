@@ -71,7 +71,7 @@
     "@iconify/json": "^2.2.252",
     "@types/chroma-js": "^2.4.4",
     "@types/fs-extra": "^11.0.4",
-    "@types/markdown-it": "^13.0.9",
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^20.16.5",
     "@unocss/eslint-config": "^0.62.4",
     "bumpp": "^9.5.2",
