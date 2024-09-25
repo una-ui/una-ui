@@ -49,7 +49,7 @@
     "test": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
-    "reset": "pnpm store prune && rimraf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules} && ni",
+    "reset": "pnpm store prune && rm -rf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules} && ni",
     "stub": "pnpm -r --filter=./packages/* run stub",
     "postinstall": "npx simple-git-hooks",
     "prepare": "ignore-dependency-scripts \"esno scripts/prepare.ts\" && pnpm -r --filter=./packages/* run stub"
