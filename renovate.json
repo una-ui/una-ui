@@ -8,5 +8,11 @@
   ],
   "labels": [
     "c: dependencies 📦"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["typescript"],
+      "bumpVersion": "patch"
+    }
   ]
 }
