@@ -1,14 +1,11 @@
 import type { Ref } from 'vue'
-import type { NToastProps } from '../types'
+import type { Toaster } from '../types'
 import { useState } from '#app'
-
-type Toaster = NToastProps & {
-  id: string
-}
 
 interface ToastReturn {
   toasts: Ref<Toaster[]>
   add: (toast: Partial<Toaster>) => void
+  update: (id: string, toast: Partial<Toaster>) => void
   remove: (id: string) => void
   clear: () => void
 }
@@ -21,17 +18,25 @@ export function useToast(): ToastReturn {
       id: new Date().getTime().toString(),
       ...toast,
     }
-
-    const index = toasts.value.findIndex((t: Toaster) => t.id === body.id)
+    // TODO: the `id` is unique (ms) -> think about this cond
+    const index = toasts.value.findIndex(t => t.id === body.id)
     if (index === -1) {
-      toasts.value.push(body as Toaster)
+      toasts.value.push(body)
     }
 
     return body
   }
 
+  function update(id: string, toast: Partial<Toaster>): void {
+    // TODO: needs to update the naming
+    const updateToastOne = toasts.value.find(t => t.id === id)
+    if (updateToastOne) {
+      Object.assign(updateToastOne, toast)
+    }
+  }
+
   const remove = (id: string): void => {
-    toasts.value = toasts.value.filter((t: Toaster) => t.id !== id)
+    toasts.value = toasts.value.filter(t => t.id !== id)
   }
 
   const clear = (): void => {
@@ -41,6 +46,7 @@ export function useToast(): ToastReturn {
   return {
     toasts,
     add,
+    update,
     remove,
     clear,
   }
