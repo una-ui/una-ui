@@ -33,6 +33,7 @@ const { copy, copied } = useClipboard({ source })
         icon
         square
         type="submit"
+        :btn="copied ? 'outline' : 'solid'"
         :label="!copied ? 'i-radix-icons-copy' : 'i-radix-icons-check'"
       />
     </form>
