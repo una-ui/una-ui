@@ -19,14 +19,16 @@ const delegatedProps = reactiveOmit(props, 'class')
   <DialogClose
     as-child
   >
-    <Button
-      tabindex="-1"
-      v-bind="delegatedProps"
-      :class="cn('dialog-close', props.class)"
-    >
-      <template v-for="(_, name) in $slots" #[name]="slotData">
-        <slot :name="name" v-bind="slotData" />
-      </template>
-    </Button>
+    <slot>
+      <Button
+        tabindex="-1"
+        v-bind="delegatedProps"
+        :class="cn('dialog-close', props.class)"
+      >
+        <template v-for="(_, name) in $slots" #[name]="slotData">
+          <slot :name="name" v-bind="slotData" />
+        </template>
+      </Button>
+    </slot>
   </DialogClose>
 </template>

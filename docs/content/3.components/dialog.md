@@ -33,7 +33,22 @@ description: NDialog component - Used for making dialog boxes and popup screens
 ::
 :::
 
+## Custom Close Button
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueDialogCustomClose
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogCustomClose.vue
+::
+:::
+
 ## Scrollable Content
+
+| Prop         | Type    | Description                                      |
+| ------------ | ------- | ------------------------------------------------ |
+| `scrollable` | Boolean | If true, the dialog will have a scrollable body. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}

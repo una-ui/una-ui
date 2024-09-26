@@ -13,7 +13,9 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NDialogProps>()
+const props = withDefaults(defineProps<NDialogProps>(), {
+  showClose: true,
+})
 const emits = defineEmits<DialogRootEmits>()
 
 const rootProps = reactivePick(props, [
@@ -38,6 +40,8 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
       :_dialog-close
       :una
       :scrollable
+      :show-close
+      :aria-describedby="props.description ? 'dialog-description' : undefined"
     >
       <slot name="content">
         <DialogHeader

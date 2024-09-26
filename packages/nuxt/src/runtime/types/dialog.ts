@@ -14,11 +14,13 @@ import type { NButtonProps } from './button'
  * @default false
  */
 type scrollable = boolean
+type showClose = boolean
 
 export interface NDialogProps extends DialogRootProps {
   title?: string
   description?: string
   scrollable?: scrollable
+  showClose?: showClose
 
   // sub-components
   _dialogTitle?: NDialogTitleProps
@@ -44,7 +46,9 @@ export interface NDialogDescriptionProps extends DialogDescriptionProps, BaseExt
   una?: NDialogUnaProps['dialogDescription']
 }
 
-export interface NDialogContentProps extends DialogContentProps, BaseExtensions {
+export interface NDialogContentProps extends DialogContentProps, BaseExtensions, Pick<NDialogProps, '_dialogOverlay' | '_dialogClose'> {
+  showClose?: showClose
+
   una?: NDialogUnaProps['dialogContent']
 }
 

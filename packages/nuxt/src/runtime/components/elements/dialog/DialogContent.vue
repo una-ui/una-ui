@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NDialogContentProps, NDialogProps } from '../../../types'
+import type { NDialogContentProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
 import {
   DialogContent,
@@ -15,10 +15,12 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NDialogContentProps & Pick<NDialogProps, '_dialogOverlay' | '_dialogClose' | 'una'>>()
+const props = withDefaults(defineProps<NDialogContentProps>(), {
+  showClose: true,
+})
 const emits = defineEmits<DialogContentEmits>()
 
-const delegatedProps = reactiveOmit(props, ['class', '_dialogOverlay', '_dialogClose', 'una'])
+const delegatedProps = reactiveOmit(props, ['class', '_dialogOverlay', '_dialogClose'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
@@ -41,6 +43,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       <slot />
 
       <DialogClose
+        v-if="showClose"
         v-bind="_dialogClose"
       />
     </DialogContent>
