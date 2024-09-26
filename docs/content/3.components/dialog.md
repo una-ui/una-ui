@@ -18,11 +18,11 @@ description: NDialog component - Used for making dialog boxes and popup screens
 
 `NDialog` is used to create dialog windows inside the web browser. It can be used for messages, prompts, logins, and much more.
 
-| Prop          | Type   | Description                                                                                                                                          |
-| ------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`       | String | The title of the dialog. Required for accessibility purposes `aria-labelledby`. May optionally be provided via `title` slot.                         |
-| `description` | String | The description of the dialog. Optionally required for accessibility purposes `aria-describedby`. May optionally be provided via `description` slot. |
-| `una`         | Object | Classes for child components.                                                                                                                        |
+| Prop          | Type    | Default | Description                    |
+| ------------- | ------- | ------- | ------------------------------ |
+| `title`       | String  | `null`  | The title of the dialog.       |
+| `description` | String  | `null`  | The description of the dialog. |
+| `showClose`   | Boolean | `true`  | Show the close button.         |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -30,17 +30,6 @@ description: NDialog component - Used for making dialog boxes and popup screens
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBasic.vue
-::
-:::
-
-## Custom Close Button
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueDialogCustomClose
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/dialog/ExampleVueDialogCustomClose.vue
 ::
 :::
 
@@ -56,6 +45,17 @@ description: NDialog component - Used for making dialog boxes and popup screens
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollable.vue
+::
+:::
+
+## Custom Close Button
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueDialogCustomClose
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogCustomClose.vue
 ::
 :::
 
@@ -84,6 +84,17 @@ A dialog which controls its own open state, and prevents closing normally.
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogUncloseable.vue
+::
+:::
+
+### Scrollable Body
+
+:::CodeGroup
+::code-block{label=Preview preview}
+  :ExampleVueDialogScrollableBody
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollableBody.vue
 ::
 :::
 

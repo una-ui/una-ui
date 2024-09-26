@@ -1,14 +1,7 @@
-<script setup lang="ts">
-import { useClipboard } from '@vueuse/core'
-
-const source = ref('https://unaui.com/getting-started/installation')
-const { copy, copied } = useClipboard({ source })
-</script>
-
 <template>
   <NDialog
-    title="Share Link"
-    description="Anyone with this link will be able to view this project."
+    title="Edit Profile"
+    description="Edit your profile information"
   >
     <template #trigger>
       <NButton btn="solid-gray">
@@ -16,26 +9,51 @@ const { copy, copied } = useClipboard({ source })
       </NButton>
     </template>
 
-    <form
-      class="flex gap-2"
-      @submit.prevent="copy(source)"
-    >
-      <NInput
-        v-model="source"
-        leading="i-radix-icons-link-2"
-        :una="{
-          inputWrapper: 'w-full',
-        }"
-        read-only
-      />
+    <div class="grid gap-4 py-4">
+      <div class="grid gap-2">
+        <div class="grid grid-cols-3 items-center gap-4">
+          <NLabel for="name">
+            Name
+          </NLabel>
+          <NInput
+            id="name"
+            :una="{
+              inputWrapper: 'col-span-2',
+            }"
+          />
+        </div>
+        <div class="grid grid-cols-3 items-center gap-4">
+          <NLabel for="email">
+            Email
+          </NLabel>
+          <NInput
+            id="email"
+            type="email"
+            :una="{
+              inputWrapper: 'col-span-2',
+            }"
+          />
+        </div>
+        <div class="grid grid-cols-3 items-center gap-4">
+          <NLabel for="password">
+            Current Password
+          </NLabel>
+          <NInput
+            id="password"
+            type="password"
+            :una="{
+              inputWrapper: 'col-span-2',
+            }"
+          />
+        </div>
+      </div>
+    </div>
 
+    <template #footer>
       <NButton
-        icon
-        square
-        type="submit"
-        :btn="copied ? 'outline' : 'solid'"
-        :label="!copied ? 'i-radix-icons-copy' : 'i-radix-icons-check'"
+        btn="solid"
+        label="Save Changes"
       />
-    </form>
+    </template>
   </NDialog>
 </template>
