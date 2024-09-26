@@ -8,6 +8,12 @@ const props = defineProps<NDialogOverlayProps>()
 
 <template>
   <DialogOverlay
-    :class="cn('dialog-overlay', props.class)"
-  />
+    :class="cn(
+      !props.scrollable ? 'dialog-overlay' : 'dialog-scroll-overlay',
+      props.una?.dialogOverlay,
+      props.class,
+    )"
+  >
+    <slot />
+  </DialogOverlay>
 </template>

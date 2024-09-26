@@ -8,9 +8,17 @@ import type {
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
+/**
+ * Whether to enable the scroll of the dialog content.
+ *
+ * @default false
+ */
+type scrollable = boolean
+
 export interface NDialogProps extends DialogRootProps {
   title?: string
   description?: string
+  scrollable?: scrollable
 
   // sub-components
   _dialogTitle?: NDialogTitleProps
@@ -41,6 +49,7 @@ export interface NDialogContentProps extends DialogContentProps, BaseExtensions 
 }
 
 export interface NDialogOverlayProps extends BaseExtensions {
+  scrollable?: scrollable
   una?: NDialogUnaProps['dialogOverlay']
 }
 

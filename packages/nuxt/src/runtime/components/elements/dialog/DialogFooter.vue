@@ -7,7 +7,11 @@ const props = defineProps<NDialogFooterProps>()
 
 <template>
   <div
-    :class="cn('dialog-footer', props.class)"
+    :class="cn(
+      'dialog-footer',
+      props.una?.dialogFooter,
+      props.class,
+    )"
   >
     <slot />
   </div>

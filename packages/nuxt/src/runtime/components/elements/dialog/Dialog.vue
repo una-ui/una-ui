@@ -6,6 +6,7 @@ import DialogContent from './DialogContent.vue'
 import DialogDescription from './DialogDescription.vue'
 import DialogFooter from './DialogFooter.vue'
 import DialogHeader from './DialogHeader.vue'
+import DialogScrollContent from './DialogScrollContent.vue'
 import DialogTitle from './DialogTitle.vue'
 
 defineOptions({
@@ -30,22 +31,25 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
       <slot name="trigger" :open />
     </DialogTrigger>
 
-    <DialogContent
-      v-bind="{ ..._dialogContent }"
+    <component
+      :is="!scrollable ? DialogContent : DialogScrollContent"
+      v-bind="_dialogContent"
       :_dialog-overlay
       :_dialog-close
       :una
+      :scrollable
     >
       <slot name="content">
         <DialogHeader
           v-if="props.title || props.description || $slots.header"
           v-bind="_dialogHeader"
+          :una
         >
           <slot name="header">
             <DialogTitle
               v-if="props.title"
               v-bind="_dialogTitle"
-              :class="una?.dialogTitle"
+              :una
             >
               <slot name="title">
                 {{ title }}
@@ -55,6 +59,7 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
             <DialogDescription
               v-if="props.description"
               v-bind="_dialogDescription"
+              :una
             >
               <slot name="description">
                 {{ description }}
@@ -69,10 +74,11 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
         <DialogFooter
           v-if="$slots.footer"
           v-bind="_dialogFooter"
+          :una
         >
           <slot name="footer" />
         </DialogFooter>
       </slot>
-    </DialogContent>
+    </component>
   </DialogRoot>
 </template>

@@ -25,15 +25,24 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <DialogPortal>
-    <DialogOverlay v-bind="_dialogOverlay" :una />
+    <DialogOverlay
+      v-bind="_dialogOverlay"
+      :una
+    />
 
     <DialogContent
       v-bind="{ ...forwarded, ...$attrs }"
-      :class="cn('dialog-content', props.class)"
+      :class="cn(
+        'dialog-content',
+        props.una?.dialogContent,
+        props.class,
+      )"
     >
       <slot />
 
-      <DialogClose v-bind="_dialogClose" />
+      <DialogClose
+        v-bind="_dialogClose"
+      />
     </DialogContent>
   </DialogPortal>
 </template>

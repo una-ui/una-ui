@@ -33,6 +33,17 @@ description: NDialog component - Used for making dialog boxes and popup screens
 ::
 :::
 
+## Scrollable Content
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueDialogScrollable
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollable.vue
+::
+:::
+
 ## Recipes
 
 ### Login Prompt
@@ -90,3 +101,43 @@ A dialog whose overlay blurs the background content.
 
 @@@ ../packages/nuxt/src/runtime/types/dialog.ts
 
+## Component
+
+:::CodeGroup
+::code-block{label="Dialog" preview}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
+
+::
+::code-block{label="DialogTitle"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogTitle.vue
+
+::
+::code-block{label="DialogDescription"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogDescription.vue
+
+::
+::code-block{label="DialogHeader"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogHeader.vue
+
+::
+::code-block{label="DialogFooter"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogFooter.vue
+
+::
+::code-block{label="DialogClose"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogClose.vue
+
+::
+::code-block{label="DialogOverlay"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogOverlay.vue
+
+::
+::code-block{label="DialogContent"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogContent.vue
+
+::
+::code-block{label="DialogScrollContent"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogScrollContent.vue
+
+::
+:::
