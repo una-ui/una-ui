@@ -7,8 +7,7 @@ import Icon from './Icon.vue'
 
 const props = withDefaults(defineProps<NToggleProps>(), {
   toggle: 'accent',
-  size: 'toggle-size',
-  rounded: 'toggle-corner',
+  rounded: 'md',
   disabled: false,
 })
 
@@ -26,7 +25,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <Toggle
     v-bind="forwarded"
-    :class="cn('toggle', props.toggle, props.size, props.rounded, props.class)"
+    :class="cn('toggle', 'toggle-size', props.toggle, props.size, props.rounded, props.class)"
   >
     <slot>
       <span v-if="forwarded.label">{{ forwarded.label }}</span>
