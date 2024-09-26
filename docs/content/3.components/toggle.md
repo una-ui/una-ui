@@ -25,8 +25,8 @@ description: 'NToggle component - used to create a toggle button.'
 | `disabled`     | `boolean` | `false` | When set to `true`, disables user interaction with the toggle.                        |
 | `pressed`      | `boolean` | `-`     | The controlled pressed state of the toggle, which can be bound using `v-model`.       |
 | `label`        | `string`  | `-`     | Insert text inside the toggle                                                         |
-| `size`         | `string`  | `toggle-size`| Adjust toggle size                                                               |
-| `rounded`      | `string`  | `md`    | Change corner radius                                                                  |
+| `size`         | `{size}`  | `-`     | Adjust toggle size                                                               |
+| `rounded`      | `{size}`  | `md`    | Change corner radius                                                                  |
 
 
 :::CodeGroup
