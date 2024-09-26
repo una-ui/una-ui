@@ -26,10 +26,10 @@ description: 'NDropdownMenu component - used to display a list of actions or opt
 
 `NDropdownMenu` is a component that can be used to display a list of actions or options.
 
-| Prop                         | Type                          | Default     | Description                                      |
-| ---------------------------- | ----------------------------- | ----------- | ------------------------------------------------ |
-| `items`                      | `DropdownMenuItemProps[]`     | `[]`        | The items to display in the dropdown-menu.       |
-| `label`                      | `string`                      | `undefined` | The label to display in the dropdown-menu.       |
+| Prop    | Type                      | Default     | Description                                |
+| ------- | ------------------------- | ----------- | ------------------------------------------ |
+| `items` | `DropdownMenuItemProps[]` | `[]`        | The items to display in the dropdown-menu. |
+| `label` | `string`                  | `undefined` | The label to display in the dropdown-menu. |
 
 ::alert{type="info"}
 All the props available in the [Radix Vue Dropdown Menu](https://www.radix-vue.com/components/dropdown-menu) are also
