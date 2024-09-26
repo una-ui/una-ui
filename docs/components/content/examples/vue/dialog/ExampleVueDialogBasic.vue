@@ -16,27 +16,25 @@ const { copy, copied } = useClipboard({ source })
       </NButton>
     </template>
 
-    <div class="w-full flex flex-col space-y-2">
-      <form
-        class="flex gap-2"
-        @submit.prevent="copy(source)"
-      >
-        <NInput
-          v-model="source"
-          leading="i-radix-icons-link-2"
-          :una="{
-            inputWrapper: 'w-full',
-          }"
-          read-only
-        />
+    <form
+      class="flex gap-2"
+      @submit.prevent="copy(source)"
+    >
+      <NInput
+        v-model="source"
+        leading="i-radix-icons-link-2"
+        :una="{
+          inputWrapper: 'w-full',
+        }"
+        read-only
+      />
 
-        <NButton
-          icon
-          square
-          type="submit"
-          :label="!copied ? 'i-radix-icons-copy' : 'i-radix-icons-check'"
-        />
-      </form>
-    </div>
+      <NButton
+        icon
+        square
+        type="submit"
+        :label="!copied ? 'i-radix-icons-copy' : 'i-radix-icons-check'"
+      />
+    </form>
   </NDialog>
 </template>
