@@ -7,7 +7,7 @@ function toggleLoading() {
 </script>
 
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <div>
       <NButton
         btn="solid-gray"
@@ -16,9 +16,9 @@ function toggleLoading() {
       />
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
-    <div flex="~ col sm:row" gap-4>
+    <div class="flex flex-col gap-4 sm:flex-row">
       <NButton
         :loading="loading"
         :label="loading ? 'Leading...' : 'Leading'"
@@ -48,9 +48,9 @@ function toggleLoading() {
       />
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
-    <div flex="~ col sm:row" gap-4>
+    <div class="flex flex-col gap-4 sm:flex-row">
       <NButton
         btn="soft-yellow"
         :class="{ 'animate-pulse': loading }"

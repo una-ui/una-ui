@@ -3,7 +3,7 @@ const username = ref('')
 </script>
 
 <template>
-  <div grid="~ cols-1 sm:cols-2" gap-4>
+  <div class="grid cols-1 gap-4 sm:cols-2">
     <NFormGroup
       label="Username"
       :counter="{

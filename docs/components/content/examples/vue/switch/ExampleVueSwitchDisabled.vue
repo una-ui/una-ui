@@ -3,7 +3,7 @@ const enabled = ref(false)
 </script>
 
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <NFormGroup :label="!enabled ? 'Clickable' : 'Disabled'">
       <NSwitch
         v-model="enabled"

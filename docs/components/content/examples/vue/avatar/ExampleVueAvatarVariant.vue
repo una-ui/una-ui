@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ items-center" gap-4>
+  <div class="flex items-center gap-4">
     <NAvatar avatar="solid" label="PR" />
 
     <NAvatar avatar="soft" label="PR" />

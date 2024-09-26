@@ -1,17 +1,36 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "@nuxtjs"
+    "github>nuxt/renovate-config-nuxt"
   ],
   "baseBranches": [
     "main"
   ],
+  "labels": [
+    "c: dependencies 📦"
+  ],
   "packageRules": [
     {
-      "matchBaseBranches": [
-        "main"
-      ],
-      "ignoreDeps": [
-      ]
+      "enabled": false,
+      "matchFileNames": ["package.json"],
+      "matchDatasources": ["node-version"]
+    },
+    {
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major", "minor"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["@iconify/json", "@iconify-json/*"],
+      "groupName": "iconify"
+    },
+    {
+      "matchPackageNames": ["unocss", "@unocss/*"],
+      "groupName": "unocss"
+    },
+    {
+      "matchPackageNames": ["@vueuse/*"],
+      "groupName": "vueuse"
     }
   ]
 }

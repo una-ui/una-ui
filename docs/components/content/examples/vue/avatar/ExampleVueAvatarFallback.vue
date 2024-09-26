@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ items-center" gap-4>
+  <div class="flex items-center gap-4">
     <NAvatar
       src="https://test.com/dummy.png"
       fallback="/images/avatar.png"

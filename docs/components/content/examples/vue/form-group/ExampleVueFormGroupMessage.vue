@@ -1,5 +1,5 @@
 <template>
-  <div flex>
+  <div class="flex">
     <NFormGroup
       label="Email"
       message="We'll never share your email with anyone else."
