@@ -24,6 +24,9 @@ const { copy, copied } = useClipboard({ source })
         <NInput
           v-model="source"
           leading="i-radix-icons-link-2"
+          :una="{
+            inputWrapper: 'w-full',
+          }"
           read-only
         />
 
