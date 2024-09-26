@@ -13,20 +13,13 @@ import DialogTitle from './DialogTitle.vue'
 const props = defineProps<NDialogProps>()
 const emits = defineEmits<DialogRootEmits>()
 
-const delegatedProps = reactiveOmit(props, [
-  'title',
-  'description',
-  'una',
-  '_dialogClose',
-  '_dialogContent',
-  '_dialogDescription',
-  '_dialogFooter',
-  '_dialogHeader',
-  '_dialogOverlay',
-  '_dialogTitle',
+const rootProps = reactiveOmit(props, [
+  'open',
+  'defaultOpen',
+  'modal',
 ])
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(rootProps, emits)
 
 const slots = useSlots()
 
