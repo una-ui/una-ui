@@ -3,8 +3,6 @@ description: NDialog component - Used for making dialog boxes and popup screens
 ---
 
 # 🟢 Dialog
-<<<<<<< HEAD
-=======
 
 ::list{type="primary"}
 - Supports modal and non-modal modes.
@@ -13,7 +11,6 @@ description: NDialog component - Used for making dialog boxes and popup screens
 - Manages screen reader announcements with Title andDescription components.
 - Esc closes the component automatically.
 ::
->>>>>>> d4509ffbfa8725b0401afed5112c77094f681745
 
 ---
 
