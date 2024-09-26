@@ -4,7 +4,5 @@ const toggle = ref(false)
 
 <template>
   {{ toggle }}
-  <NToggle v-model:pressed="toggle" size="xl">
-    <span>U</span>
-  </NToggle>
+  <NToggle v-model:pressed="toggle" toggle="primary" label="U" />
 </template>
