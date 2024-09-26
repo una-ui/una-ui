@@ -41,6 +41,7 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
       :una
       :scrollable
       :show-close
+      :prevent-close
       :aria-describedby="props.description ? 'dialog-description' : undefined"
     >
       <slot name="content">

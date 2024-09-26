@@ -8,19 +8,12 @@ import type {
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-/**
- * Whether to enable the scroll of the dialog content.
- *
- * @default false
- */
-type scrollable = boolean
-type showClose = boolean
-
 export interface NDialogProps extends DialogRootProps {
   title?: string
   description?: string
-  scrollable?: scrollable
-  showClose?: showClose
+  scrollable?: boolean
+  showClose?: boolean
+  preventClose?: boolean
 
   // sub-components
   _dialogTitle?: NDialogTitleProps
@@ -46,14 +39,17 @@ export interface NDialogDescriptionProps extends DialogDescriptionProps, BaseExt
   una?: NDialogUnaProps['dialogDescription']
 }
 
-export interface NDialogContentProps extends DialogContentProps, BaseExtensions, Pick<NDialogProps, '_dialogOverlay' | '_dialogClose'> {
-  showClose?: showClose
+export interface NDialogContentProps extends DialogContentProps, BaseExtensions, Pick<NDialogProps, '_dialogOverlay' | '_dialogClose' | 'preventClose' | 'showClose'> {
+  onCloseAutoFocus?: (event: any) => void
+  onEscapeKeyDown?: (event: KeyboardEvent) => void
+  onInteractOutside?: (event: any) => void
+  onOpenAutoFocus?: (event: any) => void
+  onPointerDownOutside?: (event: any) => void
 
   una?: NDialogUnaProps['dialogContent']
 }
 
-export interface NDialogOverlayProps extends BaseExtensions {
-  scrollable?: scrollable
+export interface NDialogOverlayProps extends BaseExtensions, Pick<NDialogProps, 'scrollable'> {
   una?: NDialogUnaProps['dialogOverlay']
 }
 

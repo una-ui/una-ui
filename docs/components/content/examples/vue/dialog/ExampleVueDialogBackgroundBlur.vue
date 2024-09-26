@@ -4,7 +4,7 @@
     :una="{ dialogOverlay: 'backdrop-blur' }"
   >
     <template #trigger>
-      <NButton btn="solid-warning" label="View" leading="i-mdi:alert" />
+      <NButton btn="solid-gray" label="Open Dialog" />
     </template>
 
     <div>

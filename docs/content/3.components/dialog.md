@@ -24,6 +24,12 @@ description: NDialog component - Used for making dialog boxes and popup screens
 | `description` | String  | `null`  | The description of the dialog. |
 | `showClose`   | Boolean | `true`  | Show the close button.         |
 
+::alert{type="info"}
+All the props available in the [Radix Vue Dialog](https://www.radix-vue.com/components/dialog) are also
+available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-title`, etc. refer to
+[Dialog Props](#props) for more details.
+::
+
 :::CodeGroup
 ::code-block{label="Preview" preview}
   :ExampleVueDialogBasic
@@ -48,7 +54,35 @@ description: NDialog component - Used for making dialog boxes and popup screens
 ::
 :::
 
-## Custom Close Button
+## Prevent Closing
+
+| Prop           | Type    | Description                                                              |
+| -------------- | ------- | ------------------------------------------------------------------------ |
+| `preventClose` | Boolean | If true, the dialog will not close on overlay click or escape key press. |
+
+:::CodeGroup
+::code-block{label="Preview" preview}
+  :ExampleVueDialogPreventClose
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogPreventClose.vue
+::
+:::
+
+## Slots
+
+| Slot          | Properties | Description                                                                            |
+| ------------- | ---------- | -------------------------------------------------------------------------------------- |
+| `trigger`     | `open`     | The trigger button used to open the dialog                                             |
+| `default`     | -          | The body of the dialog                                                                 |
+| `content`     | -          | The full content of the dialog. It covers the header, body, footer, and default slots. |
+| `header`      | -          | Contains the title and description slots                                               |
+| `footer`      | -          | The footer.                                                                            |
+| `title`       | -          | The title displayed in the dialog.                                                     |
+| `description` | -          | The description displayed below the title.                                             |
+
+
+### Custom Close Button
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -56,34 +90,6 @@ description: NDialog component - Used for making dialog boxes and popup screens
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogCustomClose.vue
-::
-:::
-
-## Recipes
-
-### Login Prompt
-
-A login dialog with state which closes itself after a successful login.
-
-:::CodeGroup
-::code-block{label=Preview preview}
-  :ExampleVueDialogLogin
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/dialog/ExampleVueDialogLogin.vue
-::
-:::
-
-### Uncloseable Dialog
-
-A dialog which controls its own open state, and prevents closing normally.
-
-:::CodeGroup
-::code-block{label=Preview preview}
-  :ExampleVueDialogUncloseable
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/dialog/ExampleVueDialogUncloseable.vue
 ::
 :::
 
@@ -95,6 +101,19 @@ A dialog which controls its own open state, and prevents closing normally.
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollableBody.vue
+::
+:::
+
+### Login Prompt
+
+A login dialog with state which closes itself after a successful login.
+
+:::CodeGroup
+::code-block{label=Preview preview}
+  :ExampleVueDialogLogin
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogLogin.vue
 ::
 :::
 
@@ -110,18 +129,6 @@ A dialog whose overlay blurs the background content.
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBackgroundBlur.vue
 ::
 :::
-
-## Slots
-
-| Slot          | Properties | Description                                                                            |
-| ------------- | ---------- | -------------------------------------------------------------------------------------- |
-| `trigger`     | `open`     | The trigger button used to open the dialog                                             |
-| `default`     | -          | The body of the dialog                                                                 |
-| `content`     | -          | The full content of the dialog. It covers the header, body, footer, and default slots. |
-| `header`      | -          | Contains the title and description slots                                               |
-| `footer`      | -          | The footer.                                                                            |
-| `title`       | -          | The title displayed in the dialog.                                                     |
-| `description` | -          | The description displayed below the title.                                             |
 
 ## Props
 

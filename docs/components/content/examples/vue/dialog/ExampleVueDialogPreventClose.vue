@@ -3,16 +3,14 @@
 
 <template>
   <NDialog
-    title="Uncloseable Dialog"
-    :_dialog-content="{
-      trapFocus: true,
-    }"
+    title="Unclosable Dialog"
     :_dialogClose="{
-      btn: 'solid-white',
+      btn: 'solid-gray',
     }"
+    prevent-close
   >
     <template #trigger>
-      <NButton>
+      <NButton btn="solid-gray">
         Open Dialog
       </NButton>
     </template>

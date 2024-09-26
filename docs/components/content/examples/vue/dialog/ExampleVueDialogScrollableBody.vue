@@ -13,7 +13,7 @@
     }"
   >
     <template #trigger>
-      <NButton>
+      <NButton btn="solid-gray">
         Open Dialog
       </NButton>
     </template>

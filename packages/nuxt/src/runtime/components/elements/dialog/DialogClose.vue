@@ -7,7 +7,7 @@ import Button from '../Button.vue'
 
 const props = withDefaults(defineProps<NDialogCloseProps>(), {
   btn: 'text-muted',
-  square: true,
+  square: '2em',
   icon: true,
   label: 'i-close',
 })

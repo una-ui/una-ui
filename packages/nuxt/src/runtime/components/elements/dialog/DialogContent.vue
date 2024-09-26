@@ -39,6 +39,12 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         props.una?.dialogContent,
         props.class,
       )"
+      @interact-outside="event => {
+        if (preventClose) return event.preventDefault()
+      }"
+      @escape-key-down="event => {
+        if (preventClose) return event.preventDefault()
+      }"
     >
       <slot />
 
