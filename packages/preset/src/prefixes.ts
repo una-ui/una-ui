@@ -96,6 +96,7 @@ export default [
   'tabs-root',
   'tabs-trigger',
   'theme-switcher',
+  'toggle',
   'tooltip',
   'tooltip-content',
   'tooltip-provider',
