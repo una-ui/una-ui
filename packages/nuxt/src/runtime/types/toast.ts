@@ -7,6 +7,7 @@ interface BaseExtensions {
 }
 
 type Action = Omit<NButtonProps, 'una'> & Partial<ToastActionProps> & { click?: () => void }
+export type Toaster = NToastProps & { id: string }
 
 export interface NToastProps extends BaseExtensions {
   /**
@@ -99,7 +100,14 @@ export interface NToastDescriptionProps extends ToastDescriptionProps, BaseExten
   }
 }
 
-export interface NToastViewportProps extends ToastViewportProps, BaseExtensions {}
+export interface NToastViewportProps extends ToastViewportProps, BaseExtensions {
+  /** The array of toasts */
+  toasts: Toaster[]
+  /** Additional properties for the una component */
+  una?: {
+    toastViewport?: HTMLAttributes['class']
+  }
+}
 
 export interface NToastActionProps extends Omit<NButtonProps, 'una'>, Partial<ToastActionProps>, BaseExtensions {
   /**

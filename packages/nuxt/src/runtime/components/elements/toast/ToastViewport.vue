@@ -16,9 +16,12 @@ const delegatedProps = computed(() => {
 <template>
   <ToastViewport
     v-bind="delegatedProps"
+    :toasts
     :class="cn(
       'toast-viewport',
       props.class,
+      props.una?.toastViewport,
+      !toasts.length && 'relative',
     )"
   />
 </template>

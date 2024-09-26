@@ -13,7 +13,7 @@ const actions = ref([{
  * @todo
  * - [x] Add toast functionality
  *     - [x] Add Toasts.vue to app for Button functionality
- *         - [ ] Add list of toasts
+ *         - [x] Add list of toasts
  *     - [x] Add NToast general functionality
  * - [x] Add useToast composable
  * - [x] Add toast presets
