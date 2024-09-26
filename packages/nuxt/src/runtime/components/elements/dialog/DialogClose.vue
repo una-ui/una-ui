@@ -5,7 +5,12 @@ import { DialogClose } from 'radix-vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
 
-const props = defineProps<NDialogCloseProps>()
+const props = withDefaults(defineProps<NDialogCloseProps>(), {
+  btn: 'text-muted',
+  square: '2em',
+  icon: true,
+  label: 'i-close',
+})
 
 const delegatedProps = reactiveOmit(props, 'class')
 </script>
@@ -16,14 +21,14 @@ const delegatedProps = reactiveOmit(props, 'class')
   >
     <slot>
       <Button
-        aria-label="Close"
-        icon
-        size="xs"
-        btn="text-muted square"
-        :class="cn('dialog-close', props.class)"
-        label="i-radix-icons-cross-2"
+        tabindex="-1"
         v-bind="delegatedProps"
-      />
+        :class="cn('dialog-close', props.class)"
+      >
+        <template v-for="(_, name) in $slots" #[name]="slotData">
+          <slot :name="name" v-bind="slotData" />
+        </template>
+      </Button>
     </slot>
   </DialogClose>
 </template>

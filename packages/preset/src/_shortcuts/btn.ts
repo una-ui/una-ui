@@ -7,7 +7,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-default-radius': 'rounded-md',
 
   // base
-  'btn': 'btn-rectangle px-0.7142857142857143em py-0.42857142857142855em bg-transparent transition-colors text-0.875em leading-5 gap-x-0.42857142857142855em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium cursor-pointer',
+  'btn': 'btn-rectangle px-1em py-0.5em bg-transparent transition-colors text-0.875em leading-5 gap-x-0.5em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium cursor-pointer',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
   'btn-icon-label': 'text-1.191em',
@@ -39,6 +39,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-soft-black': 'text-base bg-base btn-focus shadow-sm',
 
   'btn-text-muted': 'text-muted btn-focus hover:text-accent',
+  'btn-link-muted': 'text-muted btn-focus hover:underline underline-offset-4',
 }
 
 export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [

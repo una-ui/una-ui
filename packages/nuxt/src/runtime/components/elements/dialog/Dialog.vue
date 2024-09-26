@@ -1,77 +1,60 @@
 <script setup lang="ts">
 import type { NDialogProps } from '../../../types'
-import { reactiveOmit } from '@vueuse/core'
+import { reactivePick } from '@vueuse/core'
 import { DialogRoot, type DialogRootEmits, DialogTrigger, useForwardPropsEmits } from 'radix-vue'
-import { computed, useSlots } from 'vue'
-import { cn } from '../../../utils'
 import DialogContent from './DialogContent.vue'
 import DialogDescription from './DialogDescription.vue'
 import DialogFooter from './DialogFooter.vue'
 import DialogHeader from './DialogHeader.vue'
+import DialogScrollContent from './DialogScrollContent.vue'
 import DialogTitle from './DialogTitle.vue'
 
-const props = defineProps<NDialogProps>()
+defineOptions({
+  inheritAttrs: false,
+})
+
+const props = withDefaults(defineProps<NDialogProps>(), {
+  showClose: true,
+})
 const emits = defineEmits<DialogRootEmits>()
 
-const delegatedProps = reactiveOmit(props, [
-  'title',
-  'description',
-  'una',
-  '_dialogClose',
-  '_dialogContent',
-  '_dialogDescription',
-  '_dialogFooter',
-  '_dialogHeader',
-  '_dialogOverlay',
-  '_dialogTitle',
+const rootProps = reactivePick(props, [
+  'open',
+  'defaultOpen',
+  'modal',
 ])
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
-
-const slots = useSlots()
-
-const hasTitle = computed(() => {
-  return !!(props.title || slots.title)
-})
-
-const hasDescription = computed(() => {
-  return !!(props.description || slots.description)
-})
-
-const contentAriaProps = computed(() => {
-  // remove the aria-describedby attribute from the dialog when there is no description provided
-  if (hasDescription.value) {
-    return {}
-  }
-  return { 'aria-describedby': undefined }
-})
+const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
 </script>
 
 <template>
-  <DialogRoot v-slot="{ open }" v-bind="forwarded">
+  <DialogRoot v-slot="{ open }" v-bind="rootPropsEmits">
     <DialogTrigger as-child>
       <slot name="trigger" :open />
     </DialogTrigger>
 
-    <DialogContent
-      v-bind="{ ..._dialogContent, ...contentAriaProps }"
-      :class="cn(_dialogContent?.class, una?.dialogContent)"
+    <component
+      :is="!scrollable ? DialogContent : DialogScrollContent"
+      v-bind="_dialogContent"
       :_dialog-overlay
       :_dialog-close
       :una
+      :scrollable
+      :show-close
+      :prevent-close
+      :aria-describedby="props.description ? 'dialog-description' : undefined"
     >
       <slot name="content">
-        <!-- header -->
         <DialogHeader
-          v-if="hasTitle || hasDescription || $slots.header"
+          v-if="props.title || props.description || $slots.header"
           v-bind="_dialogHeader"
-          :class="cn(_dialogHeader?.class, una?.dialogHeader)"
+          :una
         >
           <slot name="header">
             <DialogTitle
-              v-if="hasTitle"
+              v-if="props.title"
               v-bind="_dialogTitle"
-              :class="una?.dialogTitle"
+              :una
             >
               <slot name="title">
                 {{ title }}
@@ -79,9 +62,9 @@ const contentAriaProps = computed(() => {
             </DialogTitle>
 
             <DialogDescription
-              v-if="hasDescription"
+              v-if="props.description"
               v-bind="_dialogDescription"
-              :class="cn(_dialogDescription?.class, una?.dialogDescription)"
+              :una
             >
               <slot name="description">
                 {{ description }}
@@ -90,17 +73,17 @@ const contentAriaProps = computed(() => {
           </slot>
         </DialogHeader>
 
-        <!-- content -->
+        <!-- body -->
         <slot />
 
         <DialogFooter
           v-if="$slots.footer"
           v-bind="_dialogFooter"
-          :class="cn(_dialogFooter?.class, una?.dialogFooter)"
+          :una
         >
           <slot name="footer" />
         </DialogFooter>
       </slot>
-    </DialogContent>
+    </component>
   </DialogRoot>
 </template>

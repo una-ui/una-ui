@@ -1,7 +1,7 @@
 <template>
   <NDialog
-    title="Example dialog"
-    description="This is an example dialog."
+    title="Edit Profile"
+    description="Edit your profile information"
   >
     <template #trigger>
       <NButton btn="solid-gray">
@@ -9,9 +9,51 @@
       </NButton>
     </template>
 
-    <div class="grid">
-      <p>Hello, dialog!</p>
-      <p>Click outside to close.</p>
+    <div class="grid gap-4 py-4">
+      <div class="grid gap-2">
+        <div class="grid grid-cols-3 items-center gap-4">
+          <NLabel for="name">
+            Name
+          </NLabel>
+          <NInput
+            id="name"
+            :una="{
+              inputWrapper: 'col-span-2',
+            }"
+          />
+        </div>
+        <div class="grid grid-cols-3 items-center gap-4">
+          <NLabel for="email">
+            Email
+          </NLabel>
+          <NInput
+            id="email"
+            type="email"
+            :una="{
+              inputWrapper: 'col-span-2',
+            }"
+          />
+        </div>
+        <div class="grid grid-cols-3 items-center gap-4">
+          <NLabel for="password">
+            Current Password
+          </NLabel>
+          <NInput
+            id="password"
+            type="password"
+            :una="{
+              inputWrapper: 'col-span-2',
+            }"
+          />
+        </div>
+      </div>
     </div>
+
+    <template #footer>
+      <NButton
+        btn="solid"
+        label="Save Changes"
+      />
+    </template>
   </NDialog>
 </template>
