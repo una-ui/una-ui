@@ -6,9 +6,10 @@ interface BaseExtensionProps {
   class?: HTMLAttributes['class']
   rounded?: HTMLAttributes['class']
   size?: HTMLAttributes['class']
-  variant?: HTMLAttributes['class']
 }
 
 export interface NToggleProps extends BaseExtensionProps, ToggleProps {
-
+  toggle?: string
+  label?: string
+  icon?: string
 }
