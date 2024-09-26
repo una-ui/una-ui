@@ -11,7 +11,9 @@ import { cn } from '../../../utils'
 import DialogClose from './DialogClose.vue'
 import DialogOverlay from './DialogOverlay.vue'
 
-defineOptions({ inheritAttrs: false })
+defineOptions({
+  inheritAttrs: false,
+})
 
 const props = defineProps<NDialogContentProps & Pick<NDialogProps, '_dialogOverlay' | '_dialogClose' | 'una'>>()
 const emits = defineEmits<DialogContentEmits>()
@@ -23,7 +25,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <DialogPortal>
-    <DialogOverlay v-bind="_dialogOverlay" :class="una?.dialogOverlay" />
+    <DialogOverlay v-bind="_dialogOverlay" :una />
 
     <DialogContent
       v-bind="{ ...forwarded, ...$attrs }"
@@ -31,7 +33,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     >
       <slot />
 
-      <DialogClose v-bind="_dialogClose" :class="una?.dialogClose" />
+      <DialogClose v-bind="_dialogClose" />
     </DialogContent>
   </DialogPortal>
 </template>

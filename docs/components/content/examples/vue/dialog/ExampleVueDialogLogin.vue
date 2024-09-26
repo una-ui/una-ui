@@ -52,7 +52,7 @@ async function submitLogin() {
     </template>
     <template #default>
       <form
-        id="login-form" class="grid"
+        id="login-form" class="grid space-y-4"
         @submit.prevent="submitLogin()"
       >
         <NFormGroup label="Username">
@@ -100,7 +100,7 @@ async function submitLogin() {
       <NButton
         type="submit"
         form="login-form"
-        btn="solid-slate"
+        btn="solid"
         label="Login"
         leading="i-mdi:login"
         :loading="loginStatus === 'pending'"

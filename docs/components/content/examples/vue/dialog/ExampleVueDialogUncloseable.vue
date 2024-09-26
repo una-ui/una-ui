@@ -7,6 +7,9 @@
     :_dialog-content="{
       trapFocus: true,
     }"
+    :_dialogClose="{
+      btn: 'solid-white',
+    }"
   >
     <template #trigger>
       <NButton>

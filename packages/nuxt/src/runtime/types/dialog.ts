@@ -6,6 +6,7 @@ import type {
   DialogTitleProps,
 } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
+import type { NButtonProps } from './button'
 
 export interface NDialogProps extends DialogRootProps {
   title?: string
@@ -19,7 +20,6 @@ export interface NDialogProps extends DialogRootProps {
   _dialogOverlay?: NDialogOverlayProps
   _dialogContent?: NDialogContentProps
   _dialogClose?: NDialogCloseProps
-  // add more eg. dialogContent, dialogFooter, etc.
 
   una?: NDialogUnaProps
 }
@@ -29,27 +29,31 @@ interface BaseExtensions {
 }
 
 export interface NDialogTitleProps extends DialogTitleProps, BaseExtensions {
+  una?: NDialogUnaProps['dialogTitle']
 }
 
 export interface NDialogDescriptionProps extends DialogDescriptionProps, BaseExtensions {
+  una?: NDialogUnaProps['dialogDescription']
 }
 
 export interface NDialogContentProps extends DialogContentProps, BaseExtensions {
+  una?: NDialogUnaProps['dialogContent']
 }
 
 export interface NDialogOverlayProps extends BaseExtensions {
+  una?: NDialogUnaProps['dialogOverlay']
 }
 
 export interface NDialogHeaderProps extends BaseExtensions {
+  una?: NDialogUnaProps['dialogHeader']
 }
 
 export interface NDialogFooterProps extends BaseExtensions {
+  una?: NDialogUnaProps['dialogFooter']
 }
 
-export interface NDialogCloseProps extends DialogCloseProps, BaseExtensions {
+export interface NDialogCloseProps extends DialogCloseProps, NButtonProps {
 }
-
-// add more sub-components based on the dialog sub-component structure eg. dialogContent, dialogFooter, etc.
 
 export interface NDialogUnaProps {
   dialogTitle?: HTMLAttributes['class']
@@ -58,5 +62,4 @@ export interface NDialogUnaProps {
   dialogFooter?: HTMLAttributes['class']
   dialogOverlay?: HTMLAttributes['class']
   dialogContent?: HTMLAttributes['class']
-  dialogClose?: HTMLAttributes['class']
 }

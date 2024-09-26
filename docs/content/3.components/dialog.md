@@ -2,13 +2,27 @@
 description: NDialog component - Used for making dialog boxes and popup screens
 ---
 
-# 🔴 Dialog
+# 🟢 Dialog
+
+::list{type="primary"}
+- Supports modal and non-modal modes.
+- Focus is automatically trapped when modal.
+- Can be controlled or uncontrolled.
+- Manages screen reader announcements with Title andDescription components.
+- Esc closes the component automatically.
+::
 
 ---
 
 ## Basic
 
 `NDialog` is used to create dialog windows inside the web browser. It can be used for messages, prompts, logins, and much more.
+
+| Prop          | Type   | Description                                                                                                                                          |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | String | The title of the dialog. Required for accessibility purposes `aria-labelledby`. May optionally be provided via `title` slot.                         |
+| `description` | String | The description of the dialog. Optionally required for accessibility purposes `aria-describedby`. May optionally be provided via `description` slot. |
+| `una`         | Object | Classes for child components.                                                                                                                        |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -18,26 +32,6 @@ description: NDialog component - Used for making dialog boxes and popup screens
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBasic.vue
 ::
 :::
-
-## Props
-
-| Prop          | Type   | Description
-| ----          | ----   | ----
-| `title`       | String | The title of the dialog. Required for accessibility purposes (`aria-labelledby`). May optionally be provided via `title` slot.
-| `description` | String | The description of the dialog. Optionally required for accessibiilty purposes (`aria-describedby`). May optionally be provided via `description` slot.
-| `una`         | Object | Classes for child components.
-
-## Slots
-
-| Slot          | Properties | Description
-| ------------- | ---------- | ---------------------------------------------
-| `trigger`     | `open`     | The trigger button used to open the dialog
-| `default`     | -          | The main content of the dialog
-| `content`     | -          | The full content of the dialog. It covers the header, title, description, footer, and default slots.
-| `header`      | -          | Contains the title and description slots
-| `footer`      | -          | The footer.
-| `title`       | -          | The title displayed in the dialog.
-| `description` | -          | The description displayed below the title.
 
 ## Recipes
 
@@ -79,4 +73,20 @@ A dialog whose overlay blurs the background content.
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBackgroundBlur.vue
 ::
 :::
+
+## Slots
+
+| Slot          | Properties | Description                                                                            |
+| ------------- | ---------- | -------------------------------------------------------------------------------------- |
+| `trigger`     | `open`     | The trigger button used to open the dialog                                             |
+| `default`     | -          | The body of the dialog                                                                 |
+| `content`     | -          | The full content of the dialog. It covers the header, body, footer, and default slots. |
+| `header`      | -          | Contains the title and description slots                                               |
+| `footer`      | -          | The footer.                                                                            |
+| `title`       | -          | The title displayed in the dialog.                                                     |
+| `description` | -          | The description displayed below the title.                                             |
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/dialog.ts
 
