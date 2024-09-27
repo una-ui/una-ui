@@ -65,9 +65,9 @@
     "unocss": "^0.62.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.2",
+    "@antfu/eslint-config": "^3.7.3",
     "@antfu/ni": "^0.23.0",
-    "@faker-js/faker": "^9.0.2",
+    "@faker-js/faker": "^9.0.3",
     "@iconify/json": "^2.2.253",
     "@types/chroma-js": "^2.4.4",
     "@types/fs-extra": "^11.0.4",
