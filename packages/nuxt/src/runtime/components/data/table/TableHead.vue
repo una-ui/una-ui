@@ -9,6 +9,7 @@ const props = defineProps<NTableHeadProps>()
   <th
     :class="cn(
       'table-head',
+      props.una?.tableHead,
       props.class,
       { 'table-head-pinned': props.dataPinned },
       props.dataPinned === 'left' ? 'table-head-pinned-left' : 'table-head-pinned-right',

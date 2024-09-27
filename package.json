@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/monorepo",
   "type": "module",
-  "version": "0.23.0-beta.1",
+  "version": "0.24.0-beta.1",
   "private": true,
   "packageManager": "pnpm@9.11.0",
   "description": "The Atomic UI Framework",
@@ -68,7 +68,7 @@
     "@antfu/eslint-config": "^3.7.2",
     "@antfu/ni": "^0.23.0",
     "@faker-js/faker": "^9.0.2",
-    "@iconify/json": "^2.2.252",
+    "@iconify/json": "^2.2.253",
     "@types/chroma-js": "^2.4.4",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.1.2",

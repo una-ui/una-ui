@@ -19,6 +19,7 @@ const delegatedProps = computed(() => {
   <TableRow
     :class="cn(
       'table-loading-row',
+      props.una?.tableRow,
     )"
     data-loading="true"
     v-bind="delegatedProps._tableRow"
@@ -27,6 +28,7 @@ const delegatedProps = computed(() => {
       :class="
         cn(
           'table-loading-cell',
+          props.una?.tableCell,
         )
       "
       :colspan="0"
@@ -34,7 +36,10 @@ const delegatedProps = computed(() => {
     >
       <div
         v-if="enabled"
-        class="table-loading"
+        :class="cn(
+          'table-loading',
+          props.una?.tableLoading,
+        )"
       >
         <slot>
           <Progress

@@ -164,7 +164,7 @@ export interface NTableEmptyProps {
   _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
 
-  una?: Pick<NTableUnaProps, 'tableEmpty'>
+  una?: Pick<NTableUnaProps, 'tableEmpty' | 'tableRow' | 'tableCell'>
 }
 
 export interface NTableLoadingProps {
@@ -175,7 +175,7 @@ export interface NTableLoadingProps {
   _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
 
-  una?: Pick<NTableUnaProps, 'tableLoading'>
+  una?: Pick<NTableUnaProps, 'tableLoading' | 'tableRow' | 'tableCell'>
 }
 
 export interface NTableCaptionProps {

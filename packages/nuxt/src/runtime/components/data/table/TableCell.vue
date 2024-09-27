@@ -10,10 +10,10 @@ const props = defineProps<NTableCellProps>()
     :class="
       cn(
         'table-cell',
+        props?.una?.tableCell,
+        props.class,
         { 'table-cell-pinned': dataPinned },
         dataPinned === 'left' ? 'table-cell-pinned-left' : 'table-cell-pinned-right',
-        props.class,
-        props?.una?.tableCell,
       )
     "
     v-bind="$attrs"
