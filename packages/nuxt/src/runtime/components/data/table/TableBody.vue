@@ -9,8 +9,8 @@ const props = defineProps<NTableBodyProps>()
   <tbody
     :class="cn(
       'table-body',
-      props.class,
       props?.una?.tableBody,
+      props.class,
     )"
     v-bind="$attrs"
   >

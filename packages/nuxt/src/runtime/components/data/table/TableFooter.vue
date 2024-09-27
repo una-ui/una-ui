@@ -9,8 +9,8 @@ const props = defineProps<NTableFooterProps>()
   <tfoot
     :class="cn(
       'table-footer',
-      props.class,
       props.una?.tableFooter,
+      props.class,
     )"
   >
     <slot />

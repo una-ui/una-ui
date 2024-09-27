@@ -265,6 +265,28 @@ Server-side allows you to fetch data from the server. This is useful when you wa
 ::
 :::
 
+## Customization
+
+You can customize the table by using the following props.
+
+| Prop                | Type     | Default | Description            |
+| ------------------- | -------- | ------- | ---------------------- |
+| `columns.meta.meta` | `Object` | `{}`    | Column meta data.      |
+| `una`               | `Object` | `{}`    | Unique name attribute. |
+
+::alert{type="info"}
+For more information on customization, read the available [props](#props) and [presets](#presets). 
+::
+
+:::CodeGroup
+::code-block{label="Preview"}
+  :ExampleVueTableCustomization
+::
+::code-block{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableCustomization.vue
+::
+:::
+
 ## Slots
 
 > You can use the following slots to customize the table.

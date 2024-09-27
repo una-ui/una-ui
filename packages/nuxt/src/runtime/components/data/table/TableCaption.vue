@@ -9,8 +9,8 @@ const props = defineProps<NTableCaptionProps>()
   <caption
     :class="cn(
       'table-caption',
-      props.class,
       props?.una?.tableCaption,
+      props.class,
     )"
     v-bind="$attrs"
   >
