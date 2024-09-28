@@ -43,8 +43,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       '@iconify/json':
-        specifier: ^2.2.253
-        version: 2.2.253
+        specifier: ^2.2.254
+        version: 2.2.254
       '@types/chroma-js':
         specifier: ^2.4.4
         version: 2.4.4
@@ -142,8 +142,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       '@iconify-json/tabler':
-        specifier: ^1.2.3
-        version: 1.2.3
+        specifier: ^1.2.4
+        version: 1.2.4
       '@nuxt/kit':
         specifier: ^3.13.2
         version: 3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3)
@@ -1266,11 +1266,11 @@ packages:
   '@iconify-json/radix-icons@1.2.0':
     resolution: {integrity: sha512-HO2ydGjQG43tLy/X0BGb+4mJZZZ5KBAzTRGnwtPl+2uH48gv1o6Q4iA1PIJHU/8WkZ2cW4nibWzieztDer4nxg==}
 
-  '@iconify-json/tabler@1.2.3':
-    resolution: {integrity: sha512-km0P/1Gtp/bFhvBQQmDkMx3nNIkNmU57WCYl9b8Envl81m3bhVVT85A8FtWChQxMXsYv3cTNuwMq/WZGfcY9vQ==}
+  '@iconify-json/tabler@1.2.4':
+    resolution: {integrity: sha512-8sUrdJQpNaX3ZfJ5Po4hhA6n+JougMZeRg3AFvh5OuAvhZ8hEAOzPHuY8OB96x6cZCqY/j5idsbZWqKDinxRbQ==}
 
-  '@iconify/json@2.2.253':
-    resolution: {integrity: sha512-lGfG3aaprpO+zg0mP4BJR69ezBG7V/rIyJy/76kWxmJFyKXLhEfdmnlH+wn5D7uOl5CpApTVBbSTrusf7fe0ww==}
+  '@iconify/json@2.2.254':
+    resolution: {integrity: sha512-Czl0QoUY6339X+VovtTmsguvBTbkT//IdO9CTIz9nUwpWE23cf0yKydoAsQpa1i3cxGI+03ytmaTQqwivFYumg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7083,11 +7083,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/tabler@1.2.3':
+  '@iconify-json/tabler@1.2.4':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.253':
+  '@iconify/json@2.2.254':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
