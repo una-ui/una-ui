@@ -5,12 +5,12 @@
     />
 
     <NSwitch
-      :model-value="true"
+      checked
       switch="xl"
     />
 
     <NSwitch
-      :model-value="true"
+      checked
       size="3vw"
       outset
     />

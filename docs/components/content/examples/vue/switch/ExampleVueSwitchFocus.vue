@@ -1,35 +1,32 @@
 <template>
   <div class="flex items-center gap-4">
     <NSwitch
-      :model-value="true"
-      outset
+      checked
       switch="primary focus"
     />
 
     <NSwitch
-      :model-value="true"
+      checked
       switch="green focus"
     />
 
     <NSwitch
-      :model-value="true"
-      outset
+      checked
       switch="info focus"
     />
 
     <NSwitch
-      :model-value="true"
+      checked
       switch="pink focus"
     />
 
     <NSwitch
-      :model-value="true"
-      outset
+      checked
       switch="purple focus"
     />
 
     <NSwitch
-      :model-value="true"
+      checked
       switch="warning focus"
     />
   </div>

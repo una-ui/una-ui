@@ -4,6 +4,6 @@ const enabled = ref(false)
 
 <template>
   <NSwitch
-    v-model="enabled"
+    v-model:checked="enabled"
   />
 </template>

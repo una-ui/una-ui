@@ -104,6 +104,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 
 `icon` - add an icon to the switch.
 
+`onIcon` - add an icon for the on state.
+
+`offIcon` - add an icon for the off state.  
+
 :::CodeGroup
 ::code-block{label="Preview" preview}
   :ExampleVueSwitchIcon
@@ -160,10 +164,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 
 > You can use the following slots to customize the switch.
 
-| Name           | Description                             | Props |
-| -------------- | --------------------------------------- | ----- |
-| `icon`         | The `on` and `off` icons of the switch. | `on`  |
-| `loading-icon` | The loading icon slot.                  | `on`  |
+| Name           | Description                             | Props     |
+| -------------- | --------------------------------------- | --------- |
+| `icon`         | The `on` and `off` icons of the switch. | `checked` |
+| `loading-icon` | The loading icon slot.                  | `checked` |
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/switch.ts
