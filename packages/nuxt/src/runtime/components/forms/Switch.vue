@@ -7,6 +7,7 @@ import {
   useForwardPropsEmits,
 } from 'radix-vue'
 import { cn } from '../../utils'
+import NIcon from '../elements/Icon.vue'
 
 const props = defineProps<NSwitchProps>()
 
