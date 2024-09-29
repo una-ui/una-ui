@@ -9,7 +9,7 @@ defineOptions({
 })
 
 const props = defineProps<NToastActionProps>()
-const emits = defineEmits(['click'])
+const emits = defineEmits(['onAction'])
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -30,7 +30,7 @@ const delegatedProps = computed(() => {
           btnDefaultVariant: 'toast-default-variant',
           ...delegatedProps.una,
         }"
-        @click="emits('click')"
+        @click="emits('onAction')"
       >
         <template v-for="(_, name) in $slots" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />

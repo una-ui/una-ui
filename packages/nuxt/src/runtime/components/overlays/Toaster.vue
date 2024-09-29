@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Toaster } from '../../../types/toast'
+import type { Toaster } from '../../types/toast'
 import { useState } from '#app'
-import { useToast } from '../../../composables/useToast'
-import Toast from './Toast.vue'
+import { useToast } from '../../composables/useToast'
+import Toast from '../overlays/toast/Toast.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -20,6 +20,7 @@ const toasts = useState<Toaster[]>('toasts', () => [])
         :key="t.id"
         v-bind="{ ...$attrs, ...t }"
         @close="toaster.remove(t.id)"
+        @update:open="toaster.update(t.id, t)"
       >
         <template v-for="(_, name) in $slots" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />

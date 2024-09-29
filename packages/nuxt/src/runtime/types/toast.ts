@@ -6,7 +6,7 @@ interface BaseExtensions {
   class?: HTMLAttributes['class']
 }
 
-type Action = Omit<NButtonProps, 'una'> & Partial<ToastActionProps> & { click?: () => void }
+export type Action = Omit<NButtonProps, 'una'> & Partial<ToastActionProps> & { click?: () => void }
 export type Toaster = NToastProps & { id: string }
 
 export interface NToastProps extends BaseExtensions {
@@ -78,6 +78,8 @@ export interface NToastRootProps extends ToastRootProps, BaseExtensions {
    * toast="outline-green"
    */
   toast?: HTMLAttributes['class']
+
+  onOpenChange?: ((value: boolean) => void) | undefined
   /** Additional properties for the una component */
   una?: {
     toastRoot?: HTMLAttributes['class']

@@ -28,7 +28,8 @@ const actions = ref([{
 
 <template>
   <NButton
-    label="Show toast" @click="toast.add(
+    label="Show toast"
+    @click="toast.add(
       {
         title: 'Uh oh! Something went wrong.',
         description: 'There was a problem with your request.',
