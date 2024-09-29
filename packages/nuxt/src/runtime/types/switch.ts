@@ -10,14 +10,6 @@ export interface NSwitchProps extends SwitchRootProps {
    */
   loading?: boolean
   /**
-   * Allows you to add `UnaUI` switch preset properties,
-   * Think of it as a shortcut for adding options or variants to the preset if available.
-   *
-   * @example
-   * switch="green"
-   */
-  switch?: HTMLAttributes['class']
-  /**
    * Allows you to display an icon. Equivalent of setting both `onIcon` and `offIcon`.
    *
    * @example
