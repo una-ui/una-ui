@@ -1,3 +1,12 @@
+# [0.25.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.24.0-beta.1...v0.25.0-beta.1) (2024-09-29)
+
+
+### Bug Fixes
+
+* **Tooltip:** reconfig tooltip colors preset ([#253](https://github.com/una-ui/una-ui/issues/253)) ([e42ddd4](https://github.com/una-ui/una-ui/commit/e42ddd4e81da2fad5742a645a5847e3f891f8720))
+
+
+
 # [0.24.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.23.0-beta.1...v0.24.0-beta.1) (2024-09-27)
 
 
