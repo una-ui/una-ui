@@ -113,14 +113,6 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
-      path: resolve(runtimeDir, 'components/elements', 'toast'),
-      prefix: options.prefix,
-      global: options.global,
-      watch: nuxt.options.dev,
-      priority: 10,
-    })
-
-    addComponentsDir({
       path: resolve(runtimeDir, 'components/elements', 'tooltip'),
       prefix: options.prefix,
       global: options.global,
@@ -178,6 +170,22 @@ export default defineNuxtModule<ModuleOptions>({
 
     addComponentsDir({
       path: resolve(runtimeDir, 'components/navigation', 'breadcrumb'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'overlays'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components/overlays', 'toast'),
       prefix: options.prefix,
       global: options.global,
       watch: nuxt.options.dev,
