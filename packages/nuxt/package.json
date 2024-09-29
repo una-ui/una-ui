@@ -44,10 +44,10 @@
     "@tanstack/vue-table": "^8.20.5",
     "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/preset": "workspace:^",
-    "@unocss/core": "^0.63.0",
-    "@unocss/nuxt": "^0.63.0",
-    "@unocss/preset-attributify": "^0.63.0",
-    "@unocss/preset-icons": "^0.63.0",
+    "@unocss/core": "^0.63.1",
+    "@unocss/nuxt": "^0.63.1",
+    "@unocss/preset-attributify": "^0.63.1",
+    "@unocss/preset-icons": "^0.63.1",
     "@vueuse/core": "^11.1.0",
     "@vueuse/integrations": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
@@ -56,7 +56,7 @@
     "radix-vue": "^1.9.6",
     "tailwind-merge": "^2.5.2",
     "typescript": "^5.6.2",
-    "unocss": "^0.63.0",
+    "unocss": "^0.63.1",
     "unocss-preset-animations": "^1.1.0"
   },
   "devDependencies": {
