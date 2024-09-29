@@ -6,28 +6,25 @@ const enabled = ref(false)
   <div class="flex flex-wrap gap-7 py-24">
     <NSwitch
       v-model:checked="enabled"
-      switch="focus"
+      switch-checked="primary"
       rotate-90
     />
 
     <NSwitch
       v-model:checked="enabled"
-      switch="focus rose"
+      switch-checked="rose"
       class="w-4.5em rotate-90"
       :una="{
-        switchTrack: 'w-4.5em',
-        switchThumbOn: 'translate-x-3em',
-        switchThumbOff: 'translate-x-0',
+        switchThumbChecked: 'translate-x-3em',
       }"
     />
 
     <NSwitch
       v-model:checked="enabled"
-      switch="focus indigo"
+      switch-checked="indigo"
       size="1cm"
       class="rotate-120 rounded-lg"
       :una="{
-        switchTrack: 'rounded-lg',
         switchThumb: 'bg-inverted',
       }"
     />
@@ -35,13 +32,11 @@ const enabled = ref(false)
     <NSwitch
       v-model:checked="enabled"
       size="3xl"
-      outset
-      class="rounded-non rotate-90"
+      class="rotate-90 rounded-none"
       :una="{
-        switchThumb: 'rounded-none h-2em w-2em',
-        switchTrack: 'rounded-none',
-        switchThumbOn: 'bg-success',
-        switchThumbOff: 'bg-error',
+        switchThumb: 'rounded-none square-2em',
+        switchThumbChecked: 'bg-success',
+        switchThumbUnchecked: '-translate-x-5 bg-error',
       }"
     />
 
@@ -49,10 +44,10 @@ const enabled = ref(false)
       v-model:checked="enabled"
       size="4xl"
       :una="{
-        switchTrackOn: 'bg-yellow',
-        switchTrackOff: 'bg-blue',
-        switchThumbOn: 'rounded-l-lg',
-        switchThumbOff: 'rounded-r-lg',
+        switchChecked: 'bg-yellow',
+        switchUnchecked: 'bg-blue',
+        switchThumbChecked: 'rounded-l-lg',
+        switchThumbUnchecked: 'rounded-r-lg',
       }"
     />
   </div>

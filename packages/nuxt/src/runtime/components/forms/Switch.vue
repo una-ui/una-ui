@@ -9,7 +9,11 @@ import {
 import { cn } from '../../utils'
 import NIcon from '../elements/Icon.vue'
 
-const props = defineProps<NSwitchProps>()
+const props = withDefaults(defineProps<NSwitchProps>(), {
+  size: 'md',
+  switchChecked: 'primary',
+  switchUnchecked: 'gray',
+})
 
 const emit = defineEmits<SwitchRootEmits>()
 
@@ -20,56 +24,51 @@ const forwarded = useForwardPropsEmits(props, emit)
   <SwitchRoot
     v-slot="{ checked }"
     v-bind="forwarded"
-    class="switch data-[disabled]:switch-disabled"
-    :class="outset ? 'switch-outset' : 'switch-inset'"
-    :switch="props.switch"
+    :class="cn(
+      'peer switch',
+      una?.switch,
+      checked
+        ? una?.switchChecked
+        : una?.switchUnchecked,
+    )"
     :disabled="disabled || loading"
+    :switch-unchecked
+    :switch-checked
+    :size
   >
-    <div
+    <SwitchThumb
       :class="cn(
-        'switch-track',
-        outset
-          ? 'switch-track-outset'
-          : 'switch-track-inset',
-        una?.switchTrack,
+        'switch-thumb',
+        una?.switchThumb,
         checked
-          ? cn('switch-track-on', una?.switchTrackOn)
-          : cn('switch-track-off', una?.switchTrackOff),
+          ? 'switch-thumb-checked'
+          : 'switch-thumb-unchecked',
+        checked
+          ? una?.switchThumbChecked
+          : una?.switchThumbUnchecked,
       )"
     >
-      <SwitchThumb
-        aria-hidden="true"
-        switch="thumb"
-        :class="[
-          una?.switchThumb,
-          checked
-            ? cn('switch-thumb-on', una?.switchThumbOn)
-            : cn('switch-thumb-off', una?.switchThumbOff),
-          outset
-            ? 'switch-thumb-outset'
-            : 'switch-thumb-inset',
-        ]"
-      >
-        <slot v-if="!loading" name="icon" :checked :on="checked">
-          <NIcon
-            switch="icon-base"
-            :name="(checked ? onIcon : offIcon) || icon"
-            :class="cn(
-              una?.switchIconBase,
-              checked
-                ? ['switch-icon-on', una?.switchIconOn]
-                : ['switch-icon-off', una?.switchIconOff],
-            )"
-          />
-        </slot>
-        <slot v-else name="loading-icon" :checked :on="checked">
-          <NIcon
-            switch="icon-base loading"
-            :class="una?.switchLoading"
-            :name="una?.switchLoadingIcon ?? 'switch-loading-icon'"
-          />
-        </slot>
-      </SwitchThumb>
-    </div>
+      <slot v-if="!loading" name="icon" :checked>
+        <NIcon
+          :name="(checked ? checkedIcon : uncheckedIcon) || icon"
+          :class="cn(
+            'switch-icon',
+            una?.switchIcon,
+            checked
+              ? ['switch-icon-checked', una?.switchIconChecked]
+              : ['switch-icon-unchecked', una?.switchIconUnchecked],
+          )"
+        />
+      </slot>
+      <slot v-else name="loading-icon" :checked>
+        <NIcon
+          :class="cn(
+            'switch-icon switch-loading-icon',
+            una?.switchLoading,
+          )"
+          :name="una?.switchLoadingIconName || 'switch-loading-icon-name'"
+        />
+      </slot>
+    </SwitchThumb>
   </SwitchRoot>
 </template>

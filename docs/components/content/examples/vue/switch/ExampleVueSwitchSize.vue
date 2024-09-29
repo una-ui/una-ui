@@ -5,23 +5,19 @@
     />
 
     <NSwitch
-      checked
-      switch="xl"
+      size="lg"
     />
 
     <NSwitch
-      checked
-      size="3vw"
-      outset
+      size="xl"
     />
 
     <NSwitch
-      size="1cm"
+      size="2xl"
     />
 
     <NSwitch
-      size="45px"
-      outset
+      size="3xl"
     />
   </div>
 </template>

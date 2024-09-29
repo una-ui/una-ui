@@ -2,7 +2,6 @@
   <div class="flex flex-wrap items-center gap-4">
     <NSwitch
       checked
-      outset
       loading
     />
 
@@ -14,31 +13,29 @@
 
     <NSwitch
       checked
-      outset
       size="lg"
       loading
-      switch="info"
+      switch-checked="info"
     />
 
     <NSwitch
       checked
       loading
       size="7"
-      switch="pink"
+      switch-checked="pink"
     />
 
     <NSwitch
       checked
-      outset
       loading
       size="8"
-      switch="purple"
+      switch-checked="purple"
     />
 
     <NSwitch
       checked
       loading
-      switch="warning"
+      switch-checked="warning"
     />
   </div>
 </template>
