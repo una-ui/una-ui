@@ -2,7 +2,7 @@
 import type { NToastActionProps } from '../../../types'
 import { computed } from 'vue'
 import { randomId } from '../../../utils'
-import Button from '../Button.vue'
+import Button from '../../elements/Button.vue'
 
 defineOptions({
   inheritAttrs: false,
