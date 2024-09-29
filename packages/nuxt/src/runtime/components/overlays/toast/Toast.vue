@@ -6,7 +6,7 @@ import { useForwardPropsEmits } from 'radix-vue'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 
-import Icon from '../Icon.vue'
+import Icon from '../../elements/Icon.vue'
 import ToastAction from './ToastAction.vue'
 import ToastClose from './ToastClose.vue'
 import ToastDescription from './ToastDescription.vue'
