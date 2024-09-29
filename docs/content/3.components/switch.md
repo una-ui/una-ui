@@ -36,21 +36,6 @@ use `NSwitch` to create a switch input.
 ::
 :::
 
-## Outset
-
-> By default, the switch is in inset mode. You can change it to outset mode using the `outset` prop. 
-
-`outset` - force the switch to be outset mode.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueSwitchOutset
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/switch/ExampleVueSwitchOutset.vue
-::
-:::
-
 ## Color
 
 `switch="{color}"` - change the color of the switch.
@@ -65,19 +50,6 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 ::code-block{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchColor.vue
-::
-:::
-
-## Focus
-
-`switch="focus"` - add a focus color to the switch.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueSwitchFocus
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/switch/ExampleVueSwitchFocus.vue
 ::
 :::
 
@@ -103,6 +75,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 ## Icon
 
 `icon` - add an icon to the switch.
+
+`checkedIcon` - add an icon for the on state.
+
+`uncheckedIcon` - add an icon for the off state.  
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -160,10 +136,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 
 > You can use the following slots to customize the switch.
 
-| Name           | Description                             | Props |
-| -------------- | --------------------------------------- | ----- |
-| `icon`         | The `on` and `off` icons of the switch. | `on`  |
-| `loading-icon` | The loading icon slot.                  | `on`  |
+| Name           | Description                                                             | Props     |
+| -------------- | ----------------------------------------------------------------------- | --------- |
+| `icon`         | Customizable icons for the switch in both checked and unchecked states. | `checked` |
+| `loading-icon` | The loading icon slot.                                                  | `checked` |
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/switch.ts

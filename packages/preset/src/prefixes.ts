@@ -79,6 +79,8 @@ export default [
   'slider',
   'square',
   'switch',
+  'switch-checked',
+  'switch-unchecked',
   'table',
   'table-body',
   'table-caption',
