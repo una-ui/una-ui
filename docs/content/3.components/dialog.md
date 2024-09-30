@@ -71,19 +71,6 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 
 ## Slots
 
-<<<<<<< HEAD
-| Slot          | Properties | Description
-| ------------- | ---------- | ---------------------------------------------
-| `trigger`     | `open`     | The trigger button used to open the dialog.
-| `default`     | -          | The main content of the dialog.
-| `content`     | -          | The full content of the dialog. It covers the header, title, description, footer, and default slots.
-| `header`      | -          | Contains the title and description slots.
-| `footer`      | -          | The footer.
-| `title`       | -          | The title displayed in the dialog.
-| `description` | -          | The description displayed below the title.
-
-## Examples
-=======
 | Slot          | Properties | Description                                                                            |
 | ------------- | ---------- | -------------------------------------------------------------------------------------- |
 | `trigger`     | `open`     | The trigger button used to open the dialog                                             |
@@ -116,7 +103,6 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollableBody.vue
 ::
 :::
->>>>>>> d4509ffbfa8725b0401afed5112c77094f681745
 
 ### Login Prompt
 
@@ -131,48 +117,6 @@ A login dialog with state which closes itself after a successful login.
 ::
 :::
 
-<<<<<<< HEAD
-### Confirmation Prompt
-
-A confirmation dialog confirming an action
-
-:::CodeGroup
-::code-block{label=Preview preview}
-  :ExampleVueDialogConfirmation
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/dialog/ExampleVueDialogConfirmation.vue
-::
-:::
-
-### Uncloseable Dialog
-
-A dialog which controls its own open state, and prevents closing normally.
-
-:::CodeGroup
-::code-block{label=Preview preview}
-  :ExampleVueDialogUncloseable
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/dialog/ExampleVueDialogUncloseable.vue
-::
-:::
-
-### Loading Dialog
-
-A dialog that stays open while in a loading state. Like the uncloseable dialog, it cannot be closed by the user.
-
-:::CodeGroup
-::code-block{label=Preview preview}
-  :ExampleVueDialogLoading
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/dialog/ExampleVueDialogLoading.vue
-::
-:::
-
-=======
->>>>>>> d4509ffbfa8725b0401afed5112c77094f681745
 ### Blurred Background
 
 A dialog whose overlay blurs the background content.
@@ -185,8 +129,6 @@ A dialog whose overlay blurs the background content.
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBackgroundBlur.vue
 ::
 :::
-<<<<<<< HEAD
-=======
 
 ## Props
 
@@ -232,4 +174,3 @@ A dialog whose overlay blurs the background content.
 
 ::
 :::
->>>>>>> d4509ffbfa8725b0401afed5112c77094f681745
