@@ -14,19 +14,12 @@ export default defineNuxtConfig({
     componentInspector: false,
   },
 
-  sourcemap: {
-    server: false,
-    client: true,
-  },
+  sourcemap: false,
 
   runtimeConfig: {
     public: {
       version: pkg.version,
     },
-  },
-
-  experimental: {
-    payloadExtraction: true,
   },
 
   routeRules: {
