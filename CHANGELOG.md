@@ -1,3 +1,30 @@
+# [0.26.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.25.0-beta.1...v0.26.0-beta.1) (2024-09-30)
+
+
+### Bug Fixes
+
+* accept _dialogOverlay as a prop to DialogContent ([e3c1d6a](https://github.com/una-ui/una-ui/commit/e3c1d6a41298eeb07a46eb78ea9549f294f8bd63))
+* add z-50 to popover to make it visible in a dialog ([0c23f4e](https://github.com/una-ui/una-ui/commit/0c23f4e69df29c0071d6ca485523c3f286c34f03))
+* **Dialog:** improve dialog animations ([12128f8](https://github.com/una-ui/una-ui/commit/12128f832ed06e6ecdb4b105d2be9b8196cefad5))
+* reconfig dialog root props ([2ef9d37](https://github.com/una-ui/una-ui/commit/2ef9d37c31317421b542d7e4c436f2a8803ad288))
+* remove aria-describedby when no description is provided ([49ca5e7](https://github.com/una-ui/una-ui/commit/49ca5e76d4d9876228ff053a9fec302565985d20))
+
+
+### Features
+
+* abstractify subcomponent props and classes ([9fb4f7a](https://github.com/una-ui/una-ui/commit/9fb4f7a7d55c654aff3b46bc2967cd62fca5b246))
+* add custom close config ([d81fa0b](https://github.com/una-ui/una-ui/commit/d81fa0bb38853aad73a066a3395fda5f001ba809))
+* add prevent closing and few configs ([e9bfa05](https://github.com/una-ui/una-ui/commit/e9bfa058bad63a8ba2b451b07b66cb039d4be964))
+* add scrollable configuration ([bdd9d43](https://github.com/una-ui/una-ui/commit/bdd9d43c786fb7f4d821ff1893717b19a0f3b781))
+* **Dialog:** new component and preset ([8ef99e9](https://github.com/una-ui/una-ui/commit/8ef99e9188797427932ca0bd1157155f931b1f76))
+
+
+### Reverts
+
+* Revert "chore: relock pnpm-lock.yaml" ([91c7cbd](https://github.com/una-ui/una-ui/commit/91c7cbdc8c34cf6c704679e5b48bde4412d68c9f))
+
+
+
 # [0.25.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.24.0-beta.1...v0.25.0-beta.1) (2024-09-29)
 
 
