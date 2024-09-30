@@ -36,7 +36,7 @@
     "preinstall": "npx only-allow pnpm",
     "build": "rimraf packages/*/dist && ignore-dependency-scripts \"esno scripts/copy-files.ts\" && pnpm -r --filter=./packages/* run build",
     "build:packages": "nr --r prepack",
-    "deploy": "nr build && nr docs build",
+    "deploy": "nr build && NODE_OPTIONS=--max_old_space_size=16384 nr docs build",
     "dev": "nr stub && nr -r dev",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "preset": "nr --filter @una-ui/preset",
