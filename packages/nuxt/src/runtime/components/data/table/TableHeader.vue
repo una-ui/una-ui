@@ -9,8 +9,8 @@ const props = defineProps<NTableHeaderProps>()
   <thead
     :class="cn(
       'table-header',
-      props.class,
       props?.una?.tableHeader,
+      props.class,
     )"
     v-bind="$attrs"
   >

@@ -20,6 +20,7 @@ const delegatedProps = computed(() => {
   <TableRow
     :class="cn(
       'table-empty-row',
+      props.una?.tableRow,
     )"
     v-bind="delegatedProps._tableRow"
   >
@@ -27,6 +28,7 @@ const delegatedProps = computed(() => {
       :class="
         cn(
           'table-empty-cell',
+          props.una?.tableCell,
         )
       "
       :colspan="props.colspan"
@@ -35,6 +37,7 @@ const delegatedProps = computed(() => {
       <div
         :class="cn(
           'table-empty',
+          props.una?.tableEmpty,
           props.class,
         )"
         v-bind="omitProps(delegatedProps, ['_tableRow', '_tableCell', 'colspan'])"
