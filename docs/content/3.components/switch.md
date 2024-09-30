@@ -4,11 +4,22 @@ description: 'NSwitch component - used to create a switch input.'
 
 # 🟢 Switch
 
+::list{type="primary"}
+- Full keyboard navigation.
+- Can be controlled or uncontrolled.
+::
+
 ---
 
 ## Basic
 
-use `NSwitch` to create a switch input.
+`NSwitch` is used to create a switch input. For more information about the APIs, please refer to the [Radix-UI Switch](https://radix-ui.com/primitives/docs/switch){target="_blank"} documentation.
+
+| Props            | Type      | Default | Description                                                           |
+| ---------------- | --------- | ------- | --------------------------------------------------------------------- |
+| `checked`        | `boolean` | -       | The controlled state of the switch. Can be bind as `v-model:checked`. |
+| `defaultChecked` | `boolean` | -       | The uncontrolled state of the switch.                                 |
+| `value`          | `string`  | `on`    | The value of the switch.                                              |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
