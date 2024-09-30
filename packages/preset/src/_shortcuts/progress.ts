@@ -4,15 +4,13 @@ import { parseColor } from '@unocss/preset-mini/utils'
 
 type ProgressPrefix = 'progress'
 
-export const staticProgress: Record<`${ProgressPrefix}-${string}` | ProgressPrefix, string> = {
-  // configurations
-  'progress': 'progress-primary',
+export const staticProgress: Record<`${ProgressPrefix}-${string}`, string> = {
+  // base
+  'progress-indeterminate': 'absolute bg-brand h-full',
 
   // components
-  'progress-root': 'progress relative h-0.5em w-full overflow-hidden rounded-full bg-muted',
+  'progress-root': 'relative h-0.5em w-full overflow-hidden rounded-full bg-brand/20',
   'progress-indicator': 'h-full w-full flex-1 bg-brand transition-all',
-
-  'progress-indeterminate': 'absolute bg-brand h-full',
 }
 
 export const dynamicProgress = [

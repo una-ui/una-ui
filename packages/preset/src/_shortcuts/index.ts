@@ -9,6 +9,7 @@ import { btn } from './btn'
 import { calendar } from './calendar'
 import { card } from './card'
 import { checkbox } from './checkbox'
+import { dialog } from './dialog'
 import { dropdowMenu } from './dropdown-menu'
 import { formGroup } from './form-group'
 import { general } from './general'
@@ -38,6 +39,7 @@ export const shortcuts = [
   ...breadcrumb,
   ...accordion,
   ...btn,
+  ...dialog,
   ...formGroup,
   ...input,
   ...icon,
