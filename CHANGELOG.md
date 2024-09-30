@@ -1,3 +1,29 @@
+# [0.25.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.24.0-beta.1...v0.25.0-beta.1) (2024-09-29)
+
+
+### Bug Fixes
+
+* **Tooltip:** reconfig tooltip colors preset ([#253](https://github.com/una-ui/una-ui/issues/253)) ([e42ddd4](https://github.com/una-ui/una-ui/commit/e42ddd4e81da2fad5742a645a5847e3f891f8720))
+
+
+
+# [0.24.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.23.0-beta.1...v0.24.0-beta.1) (2024-09-27)
+
+
+### Bug Fixes
+
+* **Accordion:** reconfig trigger button height style ([#216](https://github.com/una-ui/una-ui/issues/216)) ([83f8a26](https://github.com/una-ui/una-ui/commit/83f8a2631af59d8f8e0c5d10f81d70c99471a5a1))
+* **Breadcrumb:** reconfig padding and square value ([#214](https://github.com/una-ui/una-ui/issues/214)) ([01673bd](https://github.com/una-ui/una-ui/commit/01673bddfe93ee7534101ede7a102667eb6354e0))
+* **Preset:** override `square-false` value ([1934579](https://github.com/una-ui/una-ui/commit/1934579c6f06b645efa7dbd07ad01a1e08c550a6))
+* **preset:** typo ([#239](https://github.com/una-ui/una-ui/issues/239)) ([e7f907d](https://github.com/una-ui/una-ui/commit/e7f907db1ef0146dd6a8191bcdd94465dc2d5823))
+
+
+### Features
+
+* **Table:** add ability to customize subcomponents using columns.meta ([cb1fdf4](https://github.com/una-ui/una-ui/commit/cb1fdf478b3fdbe4d7da6fe241d8eab2d6d06480))
+
+
+
 # [0.23.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.22.0-beta.3...v0.23.0-beta.1) (2024-09-22)
 
 

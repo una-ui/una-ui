@@ -1,44 +1,41 @@
 <template>
   <div class="flex flex-wrap items-center gap-4">
     <NSwitch
-      :model-value="true"
-      outset
+      checked
       loading
     />
 
     <NSwitch
-      :model-value="false"
+      checked
       switch="green"
       loading
     />
 
     <NSwitch
-      :model-value="false"
-      outset
+      checked
       size="lg"
       loading
-      switch="info"
+      switch-checked="info"
     />
 
     <NSwitch
-      :model-value="true"
+      checked
       loading
       size="7"
-      switch="pink"
+      switch-checked="pink"
     />
 
     <NSwitch
-      :model-value="true"
-      outset
+      checked
       loading
       size="8"
-      switch="purple"
+      switch-checked="purple"
     />
 
     <NSwitch
-      :model-value="true"
+      checked
       loading
-      switch="warning"
+      switch-checked="warning"
     />
   </div>
 </template>

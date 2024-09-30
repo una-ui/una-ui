@@ -12,8 +12,8 @@ const props = defineProps<NTableRootProps>()
     <table
       :class="cn(
         'table-root',
-        props.class,
         props.una?.tableRoot,
+        props.class,
       )"
     >
       <slot />
