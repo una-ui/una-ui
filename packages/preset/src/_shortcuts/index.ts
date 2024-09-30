@@ -6,6 +6,7 @@ import { avatarGroup } from './avatar-group'
 import { badge } from './badge'
 import { breadcrumb } from './breadcrumb'
 import { btn } from './btn'
+import { calendar } from './calendar'
 import { card } from './card'
 import { checkbox } from './checkbox'
 import { dialog } from './dialog'
@@ -67,4 +68,5 @@ export const shortcuts = [
   ...popover,
   ...tooltip,
   ...pagination,
+  ...calendar,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

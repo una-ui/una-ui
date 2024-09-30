@@ -39,11 +39,16 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-soft-black': 'text-base bg-base btn-focus shadow-sm',
 
   'btn-text-muted': 'text-muted btn-focus hover:text-accent',
+
+  'btn-soft-accent': 'text-accent bg-accent btn-focus',
+  'btn-ghost-accent': 'text-accent btn-focus hover:bg-accent',
+
   'btn-link-muted': 'text-muted btn-focus hover:underline underline-offset-4',
 }
 
 export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
   // base
+  // [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-${c}-200 dark:focus-visible:ring-${c}-700/58`],
   [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-600 dark:focus-visible:outline-${c}-500 focus-visible:outline-2 focus-visible:outline-offset-2`],
 
   // variants
