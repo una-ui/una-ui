@@ -5,23 +5,19 @@
     />
 
     <NSwitch
-      :model-value="true"
-      switch="xl"
+      size="lg"
     />
 
     <NSwitch
-      :model-value="true"
-      size="3vw"
-      outset
+      size="xl"
     />
 
     <NSwitch
-      size="1cm"
+      size="2xl"
     />
 
     <NSwitch
-      size="45px"
-      outset
+      size="3xl"
     />
   </div>
 </template>

@@ -5,7 +5,7 @@ const enabled = ref(false)
 <template>
   <NFormGroup :label="enabled ? 'Toggled on' : 'Toggled off'">
     <NSwitch
-      v-model="enabled"
+      v-model:checked="enabled"
     />
   </NFormGroup>
 </template>

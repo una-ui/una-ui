@@ -6,7 +6,7 @@ const value = ref('cat')
   <div class="h-screen w-screen flex flex-col items-center justify-center gap-12 !bg-base">
     <NThemeSwitcher />
 
-    <Pagination />
+    <Dialog />
 
     <div>
       <NSelect v-model="value" :items="['cat', 'dog', 'cow', 'bat']" />
