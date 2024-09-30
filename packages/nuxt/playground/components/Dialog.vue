@@ -2,10 +2,6 @@
   <NDialog
     title="Edit profile"
     description="Make changes to your profile here. Click save when you're done."
-    :una="{
-      dialogOverlay: 'data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out animate-duration-250!',
-      dialogContent: 'data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out animate-duration-250!',
-    }"
   >
     <template #trigger>
       <NButton btn="solid-white" label="Open Dialog" />
