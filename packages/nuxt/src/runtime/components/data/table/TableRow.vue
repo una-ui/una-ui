@@ -9,8 +9,8 @@ const props = defineProps<NTableRowProps>()
   <tr
     :class="cn(
       'table-row',
-      props.class,
       props.una?.tableRow,
+      props.class,
     )"
     v-bind="$attrs"
   >

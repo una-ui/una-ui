@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<NAvatarGroupProps>(), {
 <template>
   <div
     avatar-group
-    v-bind="$attrs"
+    v-bind="{ ...$attrs, size }"
     :class="una?.avatarGroup"
   >
     <NAvatarGroupDefaultSlot
