@@ -28,7 +28,7 @@ useIntervalFn(() => {
           <NIcon v-if="loading" name="switch-loading-icon" class="switch-loading" />
           <Transition
             v-else
-            class="absolute switch-icon-base transition-opacity-500"
+            class="switch-icon-base absolute transition-opacity-500"
             enter-active-class="delay-250"
             leave-to-class="opacity-0"
             enter-from-class="opacity-0"
