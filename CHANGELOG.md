@@ -1,3 +1,12 @@
+# [0.26.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.25.0-beta.1...v0.26.0-beta.2) (2024-09-30)
+
+
+### Features
+
+* **Dialog:** Implement new component and preset ([#196](https://github.com/una-ui/una-ui/issues/196)) ([c5f0b50](https://github.com/una-ui/una-ui/commit/c5f0b50ec1fb65ac78866d7b30c7176c2d6413d1)), closes [#240](https://github.com/una-ui/una-ui/issues/240)
+
+
+
 # [0.25.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.24.0-beta.1...v0.25.0-beta.1) (2024-09-29)
 
 
