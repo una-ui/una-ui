@@ -37,7 +37,7 @@ const pagination = ref({
   pageIndex: 0,
 })
 
-const table = ref<Table<Person>>()
+const table = useTemplateRef<Table<Person>>('table')
 </script>
 
 <template>

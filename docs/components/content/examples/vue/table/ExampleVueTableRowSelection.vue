@@ -33,7 +33,7 @@ const columns: ColumnDef<Person>[] = [
 ]
 
 const select = ref()
-const table = ref<Table<Person>>()
+const table = useTemplateRef<Table<Person>>('table')
 </script>
 
 <template>

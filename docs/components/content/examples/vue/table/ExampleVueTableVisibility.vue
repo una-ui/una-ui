@@ -32,7 +32,7 @@ const columns: ColumnDef<Person>[] = [
   },
 ]
 
-const table = ref<Table<Person>>()
+const table = useTemplateRef<Table<Person>>('table')
 
 const columnVisibility = ref({})
 </script>

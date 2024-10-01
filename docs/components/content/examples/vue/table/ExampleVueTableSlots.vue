@@ -67,7 +67,7 @@ const columns: ColumnDef<Person>[] = [
 const search = ref('')
 const select = ref()
 
-const table = ref<Table<Person>>()
+const table = useTemplateRef<Table<Person>>('table')
 </script>
 
 <template>
@@ -109,7 +109,7 @@ const table = ref<Table<Person>>()
       :columns
       :data
       :global-filter="search"
-      enable-column-filters enable-row-selection enable-sorting
+      enable-row-selection enable-column-filters enable-sorting
       row-id="username"
     >
       <!-- filters -->
