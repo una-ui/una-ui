@@ -35,8 +35,9 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-empty': 'flex items-center justify-center py-10',
 
   // table-loading
-  'table-loading-icon': 'i-lucide-refresh-ccw animate-spin text-lg',
-  'table-loading-row': 'data-[loading=true]:border-0',
+  'table-loading-icon': 'animate-spin text-lg', // TODO: to add
+  'table-loading-icon-name': 'i-lucide-refresh-ccw', // TODO: to add
+  'table-loading-row': 'data-[loading=true]:border-0 absolute inset-x-0 -mt-1.5px',
   'table-loading-cell': '',
   'table-loading': 'absolute inset-x-0 overflow-hidden p-0',
 
