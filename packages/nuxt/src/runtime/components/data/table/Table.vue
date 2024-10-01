@@ -21,7 +21,6 @@ import {
   getSortedRowModel,
   useVueTable,
 } from '@tanstack/vue-table'
-import { reactivePick } from '@vueuse/core'
 
 import { computed, h } from 'vue'
 
@@ -105,13 +104,14 @@ const columnsWithMisc = computed(() => {
           cell: ({ row }: any) => h(Button, {
             size: 'xs',
             icon: true,
+            square: true,
+            btn: 'ghost-gray',
             label: 'i-radix-icons-chevron-down',
             onClick: () => {
               row.toggleExpanded()
               emit('expand', row)
             },
             una: {
-              btnDefaultVariant: 'btn-ghost-gray btn-square',
               btnIconLabel: cn(
                 'transform transition-transform duration-200',
                 row.getIsExpanded() ? '-rotate-180' : 'rotate-0',
@@ -202,7 +202,7 @@ defineExpose({
 
 <template>
   <TableRoot
-    v-bind="reactivePick(props, ['class'])"
+    :class="props.class"
     :una
   >
     <!-- header -->
