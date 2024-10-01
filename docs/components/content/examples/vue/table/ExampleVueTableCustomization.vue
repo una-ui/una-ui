@@ -11,8 +11,8 @@ const columns: ColumnDef<Person>[] = [
     accessorKey: 'firstName',
     meta: {
       una: {
-        tableHead: 'text-left',
-        tableCell: 'text-left',
+        tableHead: 'text-left bg-primary-700 text-white',
+        tableCell: 'text-left bg-primary-700 text-white',
       },
     },
   },
@@ -21,8 +21,8 @@ const columns: ColumnDef<Person>[] = [
     accessorKey: 'lastName',
     meta: {
       una: {
-        tableHead: 'text-left',
-        tableCell: 'text-left',
+        tableHead: 'text-left bg-primary-700 text-white',
+        tableCell: 'text-left bg-primary-700 text-white',
       },
     },
   },
@@ -55,6 +55,9 @@ const columns: ColumnDef<Person>[] = [
   <NTable
     :columns
     :data
+    :column-pinning="{
+      left: ['firstName', 'lastName'],
+    }"
     :una="{
       tableHead: 'text-right',
       tableCell: 'text-right',

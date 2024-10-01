@@ -45,9 +45,9 @@ const delegatedProps = computed(() => {
         <slot>
           <Progress
             :size
-            v-bind="_tableProgress"
+            v-bind="props._tableProgress"
             :class="cn(
-              _tableProgress?.class,
+              props._tableProgress?.class,
               'bg-transparent',
             )"
           />

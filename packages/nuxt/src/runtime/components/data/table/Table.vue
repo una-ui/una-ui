@@ -10,7 +10,6 @@ import type {
   SortingState,
   VisibilityState,
 } from '@tanstack/vue-table'
-import type { Ref } from 'vue'
 import type { NTableProps } from '../../../types'
 
 import {
@@ -22,10 +21,11 @@ import {
   getSortedRowModel,
   useVueTable,
 } from '@tanstack/vue-table'
+import { reactivePick } from '@vueuse/core'
+
 import { computed, h } from 'vue'
 
-import { cn, pickProps, valueUpdater } from '../../../utils'
-
+import { cn, valueUpdater } from '../../../utils'
 import Button from '../../elements/Button.vue'
 import Checkbox from '../../forms/Checkbox.vue'
 import Input from '../../forms/Input.vue'
@@ -128,64 +128,62 @@ const columnsWithMisc = computed(() => {
   return data
 })
 
-const table = computed(() => {
-  return useVueTable({
-    get data() {
-      return props.data ?? []
-    },
-    get columns() {
-      return columnsWithMisc.value ?? []
-    },
-    state: {
-      get sorting() { return sorting.value },
-      get columnFilters() { return columnFilters.value },
-      get globalFilter() { return globalFilter.value },
-      get rowSelection() { return rowSelection.value },
-      get columnVisibility() { return columnVisibility.value },
-      get pagination() { return pagination.value },
-      get columnOrder() { return columnOrder.value },
-      get columnPinning() { return columnPinning.value },
-      get expanded() { return expanded.value },
-      get grouping() { return grouping.value },
-    },
+const table = useVueTable({
+  get data() {
+    return props.data ?? []
+  },
+  get columns() {
+    return columnsWithMisc.value ?? []
+  },
+  state: {
+    get sorting() { return sorting.value },
+    get columnFilters() { return columnFilters.value },
+    get globalFilter() { return globalFilter.value },
+    get rowSelection() { return rowSelection.value },
+    get columnVisibility() { return columnVisibility.value },
+    get pagination() { return pagination.value },
+    get columnOrder() { return columnOrder.value },
+    get columnPinning() { return columnPinning.value },
+    get expanded() { return expanded.value },
+    get grouping() { return grouping.value },
+  },
 
-    enableMultiRowSelection: props.enableMultiRowSelection,
-    enableSubRowSelection: props.enableSubRowSelection,
-    autoResetAll: props.autoResetAll,
-    enableRowSelection: props.enableRowSelection,
-    enableColumnFilters: props.enableColumnFilters,
-    manualPagination: props.manualPagination,
-    manualSorting: props.manualSorting,
-    pageCount: props.pageCount,
-    rowCount: props.rowCount,
-    autoResetPageIndex: props.autoResetPageIndex,
-    enableSorting: props.enableSorting,
-    enableSortingRemoval: props.enableSortingRemoval,
-    enableMultiSort: props.enableMultiSort,
-    enableMultiRemove: props.enableMultiRemove,
-    maxMultiSortColCount: props.maxMultiSortColCount,
-    sortingFns: props.sortingFns,
-    isMultiSortEvent: props.isMultiSortEvent,
+  enableMultiRowSelection: props.enableMultiRowSelection,
+  enableSubRowSelection: props.enableSubRowSelection,
+  autoResetAll: props.autoResetAll,
+  enableRowSelection: props.enableRowSelection,
+  enableColumnFilters: props.enableColumnFilters,
+  manualPagination: props.manualPagination,
+  manualSorting: props.manualSorting,
+  pageCount: props.pageCount,
+  rowCount: props.rowCount,
+  autoResetPageIndex: props.autoResetPageIndex,
+  enableSorting: props.enableSorting,
+  enableSortingRemoval: props.enableSortingRemoval,
+  enableMultiSort: props.enableMultiSort,
+  enableMultiRemove: props.enableMultiRemove,
+  maxMultiSortColCount: props.maxMultiSortColCount,
+  sortingFns: props.sortingFns,
+  isMultiSortEvent: props.isMultiSortEvent,
 
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getRowId: (row: any) => props.rowId ? row[props.rowId] : row.id,
-    getExpandedRowModel: getExpandedRowModel(),
+  getCoreRowModel: getCoreRowModel(),
+  getSortedRowModel: getSortedRowModel(),
+  getFilteredRowModel: getFilteredRowModel(),
+  getPaginationRowModel: getPaginationRowModel(),
+  getRowId: (row: any) => props.rowId ? row[props.rowId] : row.id,
+  getExpandedRowModel: getExpandedRowModel(),
 
-    onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
-    onRowSelectionChange: updaterOrValue => valueUpdater(updaterOrValue, rowSelection),
-    onColumnVisibilityChange: updaterOrValue => valueUpdater(updaterOrValue, columnVisibility),
-    onColumnFiltersChange: updaterOrValue => valueUpdater(updaterOrValue, columnFilters),
-    onGlobalFilterChange: updaterOrValue => valueUpdater(updaterOrValue, globalFilter),
-    onPaginationChange: updaterOrValue => valueUpdater(updaterOrValue, pagination),
-    onColumnOrderChange: updaterOrValue => valueUpdater(updaterOrValue, columnOrder),
-    onColumnPinningChange: updaterOrValue => valueUpdater(updaterOrValue, columnPinning),
-    onExpandedChange: updaterOrValue => valueUpdater(updaterOrValue, expanded),
-    onGroupingChange: updaterOrValue => valueUpdater(updaterOrValue, grouping),
-  })
-}) as Ref<ReturnType<typeof useVueTable>>
+  onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
+  onRowSelectionChange: updaterOrValue => valueUpdater(updaterOrValue, rowSelection),
+  onColumnVisibilityChange: updaterOrValue => valueUpdater(updaterOrValue, columnVisibility),
+  onColumnFiltersChange: updaterOrValue => valueUpdater(updaterOrValue, columnFilters),
+  onGlobalFilterChange: updaterOrValue => valueUpdater(updaterOrValue, globalFilter),
+  onPaginationChange: updaterOrValue => valueUpdater(updaterOrValue, pagination),
+  onColumnOrderChange: updaterOrValue => valueUpdater(updaterOrValue, columnOrder),
+  onColumnPinningChange: updaterOrValue => valueUpdater(updaterOrValue, columnPinning),
+  onExpandedChange: updaterOrValue => valueUpdater(updaterOrValue, expanded),
+  onGroupingChange: updaterOrValue => valueUpdater(updaterOrValue, grouping),
+})
 
 function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]): number {
   let count = 0
@@ -198,24 +196,25 @@ function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]): numbe
 }
 
 defineExpose({
-  ...table.value,
+  ...table,
 })
 </script>
 
 <template>
   <TableRoot
-    v-bind="pickProps(props, ['class', 'una'])"
+    v-bind="reactivePick(props, ['class'])"
+    :una
   >
     <!-- header -->
     <TableHeader
-      :una="una"
+      :una
       v-bind="props._tableHeader"
     >
       <slot name="header" :table="table">
         <TableRow
           v-for="headerGroup in table.getHeaderGroups()"
           :key="headerGroup.id"
-          :una="una"
+          :una
           v-bind="props._tableRow"
         >
           <!-- headers -->
@@ -224,14 +223,14 @@ defineExpose({
             :key="header.id"
             :colspan="header.colSpan"
             :data-pinned="header.column.getIsPinned()"
-            :una="una"
+            :una
             v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
           >
             <Button
               v-if="header.column.columnDef.enableSorting || (header.column.columnDef.enableSorting !== false && enableSorting)"
               btn="ghost-gray"
               size="sm"
-              class="font-normal -ml-0.85em"
+              class="font-normal -ml-1em"
               :una="{
                 btnTrailing: 'text-sm',
               }"
@@ -254,22 +253,18 @@ defineExpose({
                 />
               </slot>
             </Button>
-            <component
-              :is="header.id === 'selection' ? 'div' : 'span'"
+
+            <slot
               v-else
-              class="text-sm text-muted"
+              :name="`${header.id}-header`"
+              :column="header.column"
             >
-              <slot
-                :name="`${header.id}-header`"
-                :column="header.column"
-              >
-                <FlexRender
-                  v-if="!header.isPlaceholder"
-                  :render="header.column.columnDef.header"
-                  :props="header.getContext()"
-                />
-              </slot>
-            </component>
+              <FlexRender
+                v-if="!header.isPlaceholder"
+                :render="header.column.columnDef.header"
+                :props="header.getContext()"
+              />
+            </slot>
           </TableHead>
         </TableRow>
 
@@ -281,13 +276,13 @@ defineExpose({
           <TableRow
             v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0 || enableColumnFilters"
             data-filter="true"
-            :una="una"
+            :una
             v-bind="props._tableRow"
           >
             <TableHead
               v-for="header in headerGroup.headers"
               :key="header.id"
-              :una="una"
+              :una
               :colspan="header.colSpan"
               :data-pinned="header.column.getIsPinned()"
               v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
@@ -298,7 +293,7 @@ defineExpose({
                 :column="header.column"
               >
                 <Input
-                  class="w-auto"
+                  class="w-auto text-sm text-base"
                   :model-value="header.column.getFilterValue() as string"
                   :placeholder="header.column.columnDef.header"
                   @update:model-value="header.column.setFilterValue($event)"
@@ -311,7 +306,7 @@ defineExpose({
 
       <TableLoading
         :enabled="props.loading"
-        :una="una"
+        :una
         v-bind="props._tableLoading"
       >
         <slot name="loading" />
@@ -320,7 +315,7 @@ defineExpose({
 
     <!-- body -->
     <TableBody
-      :una="una"
+      :una
       v-bind="props._tableBody"
     >
       <slot name="body" :table="table">
@@ -331,7 +326,7 @@ defineExpose({
           >
             <TableRow
               :data-state="row.getIsSelected() && 'selected'"
-              :una="una"
+              :una
               v-bind="props._tableRow"
             >
               <slot
@@ -343,7 +338,7 @@ defineExpose({
                   v-for="cell in row.getVisibleCells()"
                   :key="cell.id"
                   :data-pinned="cell.column.getIsPinned()"
-                  :una="una"
+                  :una
                   v-bind="{ ...props._tableCell, ...cell.column.columnDef.meta }"
                 >
                   <slot
@@ -362,12 +357,12 @@ defineExpose({
             <!-- expanded -->
             <TableRow
               v-if="row.getIsExpanded() && $slots.expanded"
-              :una="una"
+              :una
               v-bind="props._tableRow"
             >
               <TableCell
                 :colspan="row.getAllCells().length"
-                :una="una"
+                :una
                 v-bind="props._tableCell"
               >
                 <slot name="expanded" :row="row" />
@@ -379,7 +374,7 @@ defineExpose({
         <TableEmpty
           v-else
           :colspan="table.getAllLeafColumns().length"
-          :una="una"
+          :una
           v-bind="props._tableEmpty"
         >
           <slot name="empty" />
@@ -390,7 +385,7 @@ defineExpose({
     <!-- footer -->
     <TableFooter
       v-if="table.getFooterGroups().length > 0"
-      :una="una"
+      :una
       v-bind="props._tableFooter"
     >
       <slot name="footer" :table="table">
@@ -400,7 +395,7 @@ defineExpose({
         >
           <TableRow
             v-if="footerGroup.headers.length > 0"
-            :una="una"
+            :una
             v-bind="props._tableRow"
           >
             <template
@@ -410,7 +405,7 @@ defineExpose({
               <TableHead
                 v-if="header.column.columnDef.footer"
                 :colspan="header.colSpan"
-                :una="una"
+                :una
                 v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
               >
                 <slot :name="`${header.id}-footer`" :column="header.column">
