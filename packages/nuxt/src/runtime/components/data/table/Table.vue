@@ -225,7 +225,7 @@ defineExpose({
             :colspan="header.colSpan"
             :data-pinned="header.column.getIsPinned()"
             :una="una"
-            v-bind="props._tableHead"
+            v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
           >
             <Button
               v-if="header.column.columnDef.enableSorting || (header.column.columnDef.enableSorting !== false && enableSorting)"
@@ -290,7 +290,7 @@ defineExpose({
               :una="una"
               :colspan="header.colSpan"
               :data-pinned="header.column.getIsPinned()"
-              v-bind="props._tableHead"
+              v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
             >
               <slot
                 v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
@@ -344,7 +344,7 @@ defineExpose({
                   :key="cell.id"
                   :data-pinned="cell.column.getIsPinned()"
                   :una="una"
-                  v-bind="props._tableCell"
+                  v-bind="{ ...props._tableCell, ...cell.column.columnDef.meta }"
                 >
                   <slot
                     :name="`${cell.column.id}-cell`"
@@ -411,7 +411,7 @@ defineExpose({
                 v-if="header.column.columnDef.footer"
                 :colspan="header.colSpan"
                 :una="una"
-                v-bind="props._tableHead"
+                v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
               >
                 <slot :name="`${header.id}-footer`" :column="header.column">
                   <FlexRender
