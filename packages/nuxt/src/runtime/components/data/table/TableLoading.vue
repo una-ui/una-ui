@@ -6,6 +6,7 @@ import Progress from '../../elements/Progress.vue'
 import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<NTableLoadingProps>(), {
+  size: '2.5px',
 })
 
 const delegatedProps = computed(() => {
@@ -43,7 +44,12 @@ const delegatedProps = computed(() => {
       >
         <slot>
           <Progress
-            size="3px"
+            :size
+            v-bind="props._tableProgress"
+            :class="cn(
+              props._tableProgress?.class,
+              'bg-transparent',
+            )"
           />
         </slot>
       </div>

@@ -47,7 +47,7 @@ const pageCount = computed(() => {
   return Math.ceil((resource.value?.count || 0) / pageSize)
 })
 
-const table = ref<Table<Pokemon>>()
+const table = useTemplateRef<Table<Pokemon>>('table')
 </script>
 
 <template>
