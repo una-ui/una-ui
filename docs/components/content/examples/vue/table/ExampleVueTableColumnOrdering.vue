@@ -33,7 +33,7 @@ const columns: ColumnDef<Person>[] = [
   },
 ]
 
-const table = ref<Table<Person>>()
+const table = useTemplateRef<Table<Person>>('table')
 
 function randomizeColumns() {
   table.value?.setColumnOrder(faker.helpers.shuffle(table.value?.getAllLeafColumns().map(d => d.id)))

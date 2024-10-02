@@ -3,6 +3,7 @@ import type {
   GroupColumnDef,
 } from '@tanstack/vue-table'
 import type { HTMLAttributes } from 'vue'
+import type { NProgressProps } from './progress'
 
 export interface NTableProps<TData, TValue> extends NTableRootProps {
   /**
@@ -168,12 +169,14 @@ export interface NTableEmptyProps {
 }
 
 export interface NTableLoadingProps {
+  size?: HTMLAttributes['class']
   enabled?: boolean
   class?: HTMLAttributes['class']
   colspan?: number
 
   _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
+  _tableProgress?: NProgressProps
 
   una?: Pick<NTableUnaProps, 'tableLoading' | 'tableRow' | 'tableCell'>
 }
