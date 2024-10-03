@@ -36,7 +36,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.23",
     "@iconify-json/heroicons": "^1.2.0",
-    "@iconify-json/lucide": "^1.2.6",
+    "@iconify-json/lucide": "^1.2.7",
     "@iconify-json/radix-icons": "^1.2.0",
     "@iconify-json/tabler": "^1.2.4",
     "@nuxt/kit": "^3.13.2",
