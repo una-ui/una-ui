@@ -47,7 +47,7 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
         props.una?.toast,
       )"
       :toast="toast"
-      v-bind="{ ...$attrs, forwarded, _toastRoot }"
+      v-bind="forwarded._toastRoot"
     >
       <slot name="root">
         <ToastInfo
@@ -63,6 +63,7 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
                 {{ title }}
               </slot>
             </ToastTitle>
+
             <ToastDescription
               v-if="$slots.description || description"
               v-bind="_toastDescription"
@@ -79,20 +80,12 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
         >
           <ToastAction
             v-for="(action, index) in actions"
-            :key="index" v-bind="{ ...action, ..._toastAction }"
+            :key="index"
+            :alt-text="_toastAction?.altText!"
+            v-bind="{ ...action, ...forwarded._toastAction }"
             @on-action="action.click"
           />
         </div>
-        <!-- <div
-          v-else-if="$slots.actions"
-          class="toast-actions"
-        >
-          <ToastAction
-            v-bind="_toastAction"
-          >
-            <slot name="actions" />
-          </ToastAction>
-        </div> -->
         <ToastClose v-if="closable" v-bind="_toastClose">
           <slot name="closeIcon">
             <Icon

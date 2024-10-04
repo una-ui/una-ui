@@ -77,11 +77,13 @@ export interface NToastRootProps extends ToastRootProps, BaseExtensions {
    * @example
    * toast="outline-green"
    */
-  toast?: HTMLAttributes['class']
-
-  onOpenChange?: ((value: boolean) => void) | undefined
+  'toast'?: HTMLAttributes['class']
+  /**
+   * Сontrols open state of the toast
+   */
+  'onUpdate:open'?: ((value: boolean) => void) | undefined
   /** Additional properties for the una component */
-  una?: {
+  'una'?: {
     toastRoot?: HTMLAttributes['class']
   }
 }
@@ -111,7 +113,7 @@ export interface NToastViewportProps extends ToastViewportProps, BaseExtensions 
   }
 }
 
-export interface NToastActionProps extends Omit<NButtonProps, 'una'>, Partial<ToastActionProps>, BaseExtensions {
+export interface NToastActionProps extends Omit<NButtonProps, 'una'>, ToastActionProps, BaseExtensions {
   /**
    * Function to handle click action for the toast.
    */

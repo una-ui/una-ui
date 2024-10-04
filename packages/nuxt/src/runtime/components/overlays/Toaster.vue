@@ -20,7 +20,6 @@ const toasts = useState<Toaster[]>('toasts', () => [])
         :key="t.id"
         v-bind="{ ...$attrs, ...t }"
         @close="toaster.remove(t.id)"
-        @update:open="toaster.update(t.id, t)"
       >
         <template v-for="(_, name) in $slots" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />

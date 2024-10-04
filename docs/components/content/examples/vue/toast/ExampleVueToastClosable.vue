@@ -3,7 +3,6 @@ const toast = useToast()
 </script>
 
 <template>
-  <NToaster />
   <div class="grid h-28 place-items-center">
     <NButton
       label="Show toast"

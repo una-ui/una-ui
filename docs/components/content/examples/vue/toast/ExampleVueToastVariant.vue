@@ -12,7 +12,6 @@ const actions = ref([
 </script>
 
 <template>
-  <NToaster />
   <div class="h-28 flex flex-wrap items-center justify-around gap-4">
     <NButton
       label="Base toast"

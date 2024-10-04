@@ -3,7 +3,6 @@ const toast = useToast()
 </script>
 
 <template>
-  <NToaster />
   <div class="grid h-28 place-items-center">
     <NButton
       label="Show toast"
@@ -13,8 +12,11 @@ const toast = useToast()
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
           _toastRoot: {
-            onOpenChange: (value: boolean) => {
-              console.log('open', value)
+            'onUpdate:open': (value: boolean) => {
+              toast.add({
+                title: `open: ${value}`,
+                closable: true,
+              })
             },
           },
           closable: true,
