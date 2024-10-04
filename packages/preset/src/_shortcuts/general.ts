@@ -14,10 +14,10 @@ export const staticGeneral = {
   'text-popover': 'text-$c-popover-foreground',
   'text-popover-foreground': 'text-$c-popover',
 
-  'text-info': 'text-info-500 dark:text-info-400',
-  'text-error': 'text-error-500 dark:text-error-400',
-  'text-success': 'text-success-500 dark:text-success-400',
-  'text-warning': 'text-warning-500 dark:text-warning-400',
+  'text-info': 'text-info-600 dark:text-info-500',
+  'text-error': 'text-error-600 dark:text-error-500',
+  'text-success': 'text-success-600 dark:text-success-500',
+  'text-warning': 'text-warning-600 dark:text-warning-500',
 
   // ring
   'ring-base': 'ring-$c-ring',
