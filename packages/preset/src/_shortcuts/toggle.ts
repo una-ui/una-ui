@@ -13,7 +13,7 @@ export const dynamicToggle = [
   ],
   [
     /^toggle-off(?:-([^-]+))?(?:-([^-]+))?$/,
-    ([, variant = 'ghost', color = 'gray']) =>
+    ([, variant = 'ghost', color = 'muted']) =>
       `data-[state=off]:btn-${variant}-${color}`,
   ],
 ]
