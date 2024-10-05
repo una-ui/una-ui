@@ -1,9 +1,9 @@
 {
   "name": "@una-ui/monorepo",
   "type": "module",
-  "version": "0.26.0-beta.2",
+  "version": "0.27.0-beta.1",
   "private": true,
-  "packageManager": "pnpm@9.11.0",
+  "packageManager": "pnpm@9.12.0",
   "description": "The Atomic UI Framework",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -62,21 +62,21 @@
     "chroma-js": "^3.1.1",
     "ignore-dependency-scripts": "^1.0.1",
     "simple-git": "^3.27.0",
-    "unocss": "^0.63.1"
+    "unocss": "^0.63.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",
     "@antfu/ni": "^0.23.0",
     "@faker-js/faker": "^9.0.3",
-    "@iconify/json": "^2.2.255",
+    "@iconify/json": "^2.2.256",
     "@types/chroma-js": "^2.4.4",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^20.16.10",
-    "@unocss/eslint-config": "^0.63.1",
+    "@unocss/eslint-config": "^0.63.3",
     "bumpp": "^9.6.1",
     "conventional-changelog-cli": "^5.0.0",
-    "eslint": "^9.11.1",
+    "eslint": "^9.12.0",
     "esno": "^4.8.0",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
@@ -87,7 +87,7 @@
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.6.2",
     "unbuild": "^2.0.0",
-    "vitest": "^2.1.1",
+    "vitest": "^2.1.2",
     "vue-tsc": "^2.1.6"
   },
   "simple-git-hooks": {

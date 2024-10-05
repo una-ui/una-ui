@@ -1,6 +1,6 @@
 {
   "name": "@una-ui/docs",
-  "version": "0.26.0-beta.2",
+  "version": "0.27.0-beta.1",
   "private": true,
   "description": "The Atomic UI Framework",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@nuxt-themes/docus": "1.15.0",
-    "@nuxt/devtools": "^1.5.1",
+    "@nuxt/devtools": "^1.5.2",
     "nuxt": "^3.13.2",
     "nuxt-content-snippet": "^1.0.0"
   }

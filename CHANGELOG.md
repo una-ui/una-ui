@@ -1,3 +1,12 @@
+# [0.27.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.26.0-beta.2...v0.27.0-beta.1) (2024-10-05)
+
+
+### Features
+
+* **Toggle:** introduce new component and presets ([#243](https://github.com/una-ui/una-ui/issues/243)) ([456b8ab](https://github.com/una-ui/una-ui/commit/456b8abd979b1e5d42e252eb36c447c516be82e2))
+
+
+
 # [0.26.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.25.0-beta.1...v0.26.0-beta.2) (2024-09-30)
 
 

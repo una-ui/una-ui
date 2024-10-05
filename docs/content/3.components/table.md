@@ -269,10 +269,10 @@ Server-side allows you to fetch data from the server. This is useful when you wa
 
 You can customize the table by using the following props.
 
-| Prop                | Type     | Default | Description            |
-| ------------------- | -------- | ------- | ---------------------- |
-| `columns.meta.meta` | `Object` | `{}`    | Column meta data.      |
-| `una`               | `Object` | `{}`    | Unique name attribute. |
+| Prop           | Type     | Default | Description            |
+| -------------- | -------- | ------- | ---------------------- |
+| `columns.meta` | `Object` | `{}`    | Column meta data.      |
+| `una`          | `Object` | `{}`    | Unique name attribute. |
 
 ::alert{type="info"}
 For more information on customization, read the available [props](#props) and [presets](#presets). 
