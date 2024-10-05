@@ -6,28 +6,33 @@ const toggle = ref(false)
   <div class="flex gap-4">
     <NToggle
       v-model:pressed="toggle"
-      :icon="toggle ? 'i-radix-icons-star-filled' : 'i-radix-icons-star'"
-      toggle="primary"
+      :label="toggle ? 'i-radix-icons-star-filled' : 'i-radix-icons-star'"
+      toggle-on="solid-blue"
+      toggle-off="soft-gray"
     />
 
     <NToggle
-      icon="i-info"
-      toggle="info"
+      label="i-radix-icons-font-italic"
+      toggle-on="solid-orange"
+      toggle-off="soft-gray"
     />
 
     <NToggle
-      icon="i-success"
-      toggle="success"
+      label="i-radix-icons-underline"
+      toggle-on="soft-green"
+      toggle-off="outline-gray"
     />
 
     <NToggle
-      icon="i-warning"
-      toggle="warning"
+      label="i-radix-icons-strikethrough"
+      toggle-on="outline-yellow"
+      toggle-off="text-muted"
     />
 
     <NToggle
-      icon="i-error"
-      toggle="error"
+      label="i-radix-icons-code"
+      toggle-on="soft-red"
+      toggle-off="outline-gray"
     />
   </div>
 </template>

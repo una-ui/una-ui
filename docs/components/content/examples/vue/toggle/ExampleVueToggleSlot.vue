@@ -3,11 +3,16 @@ const toggle = ref(false)
 </script>
 
 <template>
-  <NToggle v-model:pressed="toggle" size="min-w-100px min-h-40px">
-    <div v-if="toggle" class="flex flex-col items-center justify-center">
-      <span>Initializing . . .</span>
+  <NToggle
+    v-model:pressed="toggle"
+    square="30"
+    toggle-off="soft-gray"
+  >
+    <div v-if="toggle" class="flex flex-col items-center justify-center space-y-2">
+      <small>Initializing . . .</small>
+
       <NProgress />
     </div>
-    <span v-else>Paused.</span>
+    <span v-else>Click now</span>
   </NToggle>
 </template>

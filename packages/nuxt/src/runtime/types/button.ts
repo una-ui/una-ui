@@ -10,6 +10,8 @@ interface BaseExtensionProps {
   paginationSelected?: string
   paginationUnselected?: string
   dropdownMenu?: string
+  toggleOn?: string
+  toggleOff?: string
 }
 
 export interface NButtonProps extends BaseExtensionProps {
@@ -115,10 +117,10 @@ export interface NButtonProps extends BaseExtensionProps {
     btnLabel?: string
     btnIconLabel?: string
     btnLoading?: string
-
-    // icons
     btnTrailing?: string
     btnLeading?: string
+
+    // icon
     btnLoadingIcon?: string
   }
 }

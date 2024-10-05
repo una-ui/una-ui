@@ -3,12 +3,13 @@ import type { NToggleProps } from '../../types'
 import { Toggle, type ToggleEmits, useForwardPropsEmits } from 'radix-vue'
 import { computed } from 'vue'
 import { cn } from '../../utils'
-import Icon from './Icon.vue'
+import Button from './Button.vue'
 
 const props = withDefaults(defineProps<NToggleProps>(), {
-  toggle: 'accent',
-  rounded: 'md',
-  disabled: false,
+  icon: true,
+  square: true,
+  toggleOff: '~',
+  toggleOn: '~',
 })
 
 const emits = defineEmits<ToggleEmits>()
@@ -24,13 +25,36 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <Toggle
+    :class="cn(
+      'toggle',
+      props.class,
+    )"
     v-bind="forwarded"
-    :class="cn('toggle', 'toggle-size', props.toggle, props.size, props.rounded, props.class)"
+    :toggle-off
+    :toggle-on
+    :as="Button"
+    :una="{
+      btnLoading: cn(
+        'text-1em',
+        props.una?.btnLoading,
+      ),
+      btnLeading: cn(
+        'text-1em',
+        props.una?.btnLeading,
+      ),
+      btnTrailing: cn(
+        'text-1em',
+        props.una?.btnTrailing,
+      ),
+      btnIconLabel: cn(
+        'text-1em',
+        props.una?.btnIconLabel,
+      ),
+      ...props.una,
+    }"
   >
-    <slot>
-      <span v-if="forwarded.label">{{ forwarded.label }}</span>
-
-      <Icon v-else-if="forwarded.icon" :name="forwarded.icon" />
-    </slot>
+    <template v-for="(_, name) in $slots" #[name]="slotData">
+      <slot :name="name" v-bind="slotData" />
+    </template>
   </Toggle>
 </template>

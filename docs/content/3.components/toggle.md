@@ -17,17 +17,17 @@ description: 'NToggle component - used to create a toggle button.'
 
 ## Basic
 
-`Ntoggle`  is a user interface element that allows users to switch between two states, typically representing opposite conditions such as `on | off`. For more details on the API, please visit the [Radix-ui toggle](https://www.radix-vue.com/components/toggle.html#api-reference) documentation.
+`NToggle`  is a user interface element that allows users to switch between two states, typically representing opposite conditions such as `on | off`. For more details on the API, please visit the [Radix-ui toggle](https://www.radix-vue.com/components/toggle.html#api-reference) documentation.
 
-| Prop           | Type      | Default | Description                                                                           |
-| -------------- | --------- | ------- | ------------------------------------------------------------------------------------- |
+| Prop           | Type      | Default | Description                                                                                                                        |
+| -------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `defaultValue` | `boolean` | `-`     | The initial pressed state of the toggle when it is first rendered. Use this when you don't need to manage its open state manually. |
-| `disabled`     | `boolean` | `false` | When set to `true`, disables user interaction with the toggle.                        |
-| `pressed`      | `boolean` | `-`     | The controlled pressed state of the toggle, which can be bound using `v-model`.       |
-| `label`        | `string`  | `-`     | Insert text inside the toggle                                                         |
-| `size`         | `{size}`  | `-`     | Adjust toggle size                                                               |
-| `rounded`      | `{radius}`| `md`    | Change corner radius                                                                  |
+| `disabled`     | `boolean` | `false` | When set to `true`, disables user interaction with the toggle.                                                                     |
+| `pressed`      | `boolean` | `-`     | The controlled pressed state of the toggle, which can be bound using `v-model`.                                                    |
 
+::alert{type="info"}
+`NToggle` is wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available to use directly.
+::
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -38,28 +38,12 @@ description: 'NToggle component - used to create a toggle button.'
 ::
 :::
 
-## Icon
+## Variant and Color
 
-| Prop           | Type      | Default | Description                |
-| -------------- | --------- | ------- | -------------------------- |
-| `icon`         | `string`  | `-`     | Change label text to icon. |
-
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueToggleIcon
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/toggle/ExampleVueToggleIcon.vue
-::
-:::
-
-## Color
-
-| Prop           | Type      | Default | Description                                    |
-| -------------- | --------- | ------- | ---------------------------------------------- |
-| `toggle`       | `{color}` | `-`     | Change toggle color while `data-state` is `on` |
-
+| Prop         | Type     | Default       | Description                                    |
+| ------------ | -------- | ------------- | ---------------------------------------------- |
+| `toggle-on`  | `string` | `soft-accent` | Change the color of the toggle when it is on.  |
+| `toggle-off` | `string` | `ghost-gray`  | Change the color of the toggle when it is off. |
 
 :::CodeGroup
 ::code-block{label="Preview" preview}

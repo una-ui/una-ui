@@ -108,6 +108,8 @@ export default [
   'tabs-trigger',
   'theme-switcher',
   'toggle',
+  'toggle-off',
+  'toggle-on',
   'tooltip',
   'tooltip-content',
   'tooltip-provider',
