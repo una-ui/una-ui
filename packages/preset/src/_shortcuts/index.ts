@@ -8,6 +8,7 @@ import { breadcrumb } from './breadcrumb'
 import { btn } from './btn'
 import { card } from './card'
 import { checkbox } from './checkbox'
+import { dialog } from './dialog'
 import { dropdowMenu } from './dropdown-menu'
 import { formGroup } from './form-group'
 import { general } from './general'
@@ -31,6 +32,7 @@ import { _switch } from './switch'
 import { table } from './table'
 import { tabs } from './tabs'
 import { toast } from './toast'
+import { toggle } from './toggle'
 import { tooltip } from './tooltip'
 
 export const shortcuts = [
@@ -38,6 +40,7 @@ export const shortcuts = [
   ...breadcrumb,
   ...accordion,
   ...btn,
+  ...dialog,
   ...formGroup,
   ...input,
   ...icon,
@@ -67,4 +70,5 @@ export const shortcuts = [
   ...tooltip,
   ...pagination,
   ...toast,
+  ...toggle,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

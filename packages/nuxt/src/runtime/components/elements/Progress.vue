@@ -10,6 +10,7 @@ import { cn } from '../../utils'
 const props = withDefaults(
   defineProps<NProgressProps>(),
   {
+    progress: 'primary',
   },
 )
 
@@ -30,6 +31,7 @@ const delegatedProps = computed(() => {
         props.class,
       )
     "
+    :progress
   >
     <slot>
       <ProgressIndicator

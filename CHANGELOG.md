@@ -1,3 +1,30 @@
+# [0.27.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.26.0-beta.2...v0.27.0-beta.1) (2024-10-05)
+
+
+### Features
+
+* **Toggle:** introduce new component and presets ([#243](https://github.com/una-ui/una-ui/issues/243)) ([456b8ab](https://github.com/una-ui/una-ui/commit/456b8abd979b1e5d42e252eb36c447c516be82e2))
+
+
+
+# [0.26.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.25.0-beta.1...v0.26.0-beta.2) (2024-09-30)
+
+
+### Features
+
+* **Dialog:** Implement new component and preset ([#196](https://github.com/una-ui/una-ui/issues/196)) ([c5f0b50](https://github.com/una-ui/una-ui/commit/c5f0b50ec1fb65ac78866d7b30c7176c2d6413d1)), closes [#240](https://github.com/una-ui/una-ui/issues/240)
+
+
+
+# [0.25.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.24.0-beta.1...v0.25.0-beta.1) (2024-09-29)
+
+
+### Bug Fixes
+
+* **Tooltip:** reconfig tooltip colors preset ([#253](https://github.com/una-ui/una-ui/issues/253)) ([e42ddd4](https://github.com/una-ui/una-ui/commit/e42ddd4e81da2fad5742a645a5847e3f891f8720))
+
+
+
 # [0.24.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.23.0-beta.1...v0.24.0-beta.1) (2024-09-27)
 
 

@@ -39,6 +39,10 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-soft-black': 'text-base bg-base btn-focus shadow-sm',
 
   'btn-text-muted': 'text-muted btn-focus hover:text-accent',
+  'btn-link-muted': 'text-muted btn-focus hover:underline underline-offset-4',
+  'btn-ghost-muted': 'text-accent hover:text-muted btn-focus hover:bg-muted',
+
+  'btn-soft-accent': 'text-accent bg-accent btn-focus',
 }
 
 export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
@@ -51,7 +55,7 @@ export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^btn-outline(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-500 dark:text-${c}-400 ring-1 ring-inset ring-${c}-500 dark:ring-${c}-400 hover:bg-${c}-50 dark:hover:bg-${c}-950`],
   [/^btn-soft(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-400 bg-${c}-50 dark:bg-${c}-950 hover:bg-${c}-100 dark:hover:bg-${c}-900`],
   [/^btn-ghost(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-400 hover:bg-${c}-100 dark:hover:bg-${c}-900`],
-  [/^btn-link(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-500 dark:text-${c}-400 hover:underline underline-offset-4`],
+  [/^btn-link(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-500 hover:underline underline-offset-4`],
 ]
 
 export const btn = [

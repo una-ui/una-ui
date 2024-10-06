@@ -129,6 +129,14 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
+      path: resolve(runtimeDir, 'components/elements', 'dialog'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
       path: resolve(runtimeDir, 'components', 'forms'),
       prefix: options.prefix,
       global: options.global,
