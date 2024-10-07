@@ -187,8 +187,8 @@ importers:
         specifier: ^1.1.4
         version: 1.1.4
       radix-vue:
-        specifier: ^1.9.6
-        version: 1.9.6(vue@3.5.8(typescript@5.6.2))
+        specifier: ^1.9.7
+        version: 1.9.7(vue@3.5.8(typescript@5.6.2))
       tailwind-merge:
         specifier: ^2.5.3
         version: 2.5.3
@@ -5169,8 +5169,8 @@ packages:
   queue-tick@1.0.1:
     resolution: {integrity: sha512-kJt5qhMxoszgU/62PLP1CJytzd2NKetjSRnyuj31fDd3Rlcz3fzlFdFLD1SItunPwyqEOkca6GbV612BWfaBag==}
 
-  radix-vue@1.9.6:
-    resolution: {integrity: sha512-legrn9jHbEpbJS4QYrA0VmIafj1bmc4MSVzN55WZatGiXMJg3oFrQL5QxpiURJciS+OlATbKA2KAGkMuuLA0LA==}
+  radix-vue@1.9.7:
+    resolution: {integrity: sha512-1xleWzWNFPfAMmb81gu/4/MV8dXMvc7j2EIjutBpBcKwxdJfeIcQg4k9De18L2rL1/GZg5wA9KykeKTM4MjWow==}
     peerDependencies:
       vue: '>= 3.2.0'
 
@@ -12869,7 +12869,7 @@ snapshots:
 
   queue-tick@1.0.1: {}
 
-  radix-vue@1.9.6(vue@3.5.8(typescript@5.6.2)):
+  radix-vue@1.9.7(vue@3.5.8(typescript@5.6.2)):
     dependencies:
       '@floating-ui/dom': 1.6.11
       '@floating-ui/vue': 1.1.5(vue@3.5.8(typescript@5.6.2))
