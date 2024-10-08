@@ -5,7 +5,7 @@ const loading = ref(false)
 <template>
   <form
     flex="~ col"
-    border="~ base" w-100 gap-4 rounded-md p-8 @submit.prevent="loading = true"
+    w-100 gap-4 border rounded-md p-8 @submit.prevent="loading = true"
   >
     <div
       :class="{ 'n-disabled': loading }"

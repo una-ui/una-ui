@@ -59,7 +59,7 @@
 :root {
   --una-font-size: 16px;
   --una-radius: 0.5rem;
-  --c-brand: var(--una-primary-600);
+  --una-brand: var(--una-primary-600);
   --una-primary: var(--una-primary-600);
   --una-primary-active: var(--una-primary-500);
   --una-gray: var(--una-gray-600);

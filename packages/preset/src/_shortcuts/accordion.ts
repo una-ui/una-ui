@@ -5,7 +5,7 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-trailing-icon': 'i-heroicons-chevron-up',
   'accordion-button-padding': 'p-(x-3 y-4)',
   'accordion-button-default-variant': 'btn-text',
-  'accordion-divider': 'divide-(y base)',
+  'accordion-divider': 'divide-y divide-border',
   'accordion-border': 'border-(~ base) rounded-md',
 
   // base

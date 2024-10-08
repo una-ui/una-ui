@@ -21,7 +21,7 @@ export default function presetUna(options: unaUIOptions = {
         const color = parseColor(body, theme)
         if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components) {
           return {
-            '--c-brand': `${color.cssColor.components.join(',')}`,
+            '--una-brand': `${color.cssColor.components.join(',')}`,
           }
         }
       }],
