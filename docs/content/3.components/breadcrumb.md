@@ -28,7 +28,7 @@ description: 'NBreadcrumb - use to display the path of the current page and the 
 | Prop                  | Type                | Default        | Description                                |
 | --------------------- | ------------------- | -------------- | ------------------------------------------ |
 | `breadcrumb-active`   | `{variant}-{color}` | `text-primary` | The active breadcrumb variant and color.   |
-| `breadcrumb-inactive` | `{variant}-{color}` | `text-muted`   | The inactive breadcrumb variant and color. |
+| `breadcrumb-inactive` | `{variant}-{color}` | `text-muted-foreground`   | The inactive breadcrumb variant and color. |
 
 ::alert{type="info"}
 You can use any variant and colors provided by the [NButton](button#variants) component, just make sure to use `breadcrumb-active` and `breadcrumb-inactive` as a prefix instead of `btn`.

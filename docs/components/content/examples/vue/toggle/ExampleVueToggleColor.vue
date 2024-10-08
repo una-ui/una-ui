@@ -26,7 +26,7 @@ const toggle = ref(false)
     <NToggle
       label="i-radix-icons-strikethrough"
       toggle-on="outline-yellow"
-      toggle-off="text-muted"
+      toggle-off="text-muted-foreground"
     />
 
     <NToggle

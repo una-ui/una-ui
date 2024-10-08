@@ -47,7 +47,7 @@ const items2 = ref([
       :items="items2"
       separator="i-lucide-slash"
       breadcrumb-active="text-black"
-      breadcrumb-inactive="text-muted"
+      breadcrumb-inactive="text-muted-foreground"
     />
   </div>
 </template>

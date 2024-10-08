@@ -29,8 +29,8 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-solid-gray': 'bg-$c-gray-50 text-$c-gray-800 ring-1 ring-ring ring-inset shadow-sm btn-focus hover:bg-$c-gray-100',
   'btn-ghost-gray': 'text-$c-gray-600 btn-focus hover:bg-$c-gray-100',
   'btn-soft-gray': 'text-$c-gray-600 bg-$c-gray-50 btn-focus hover:bg-$c-gray-100',
-  'btn-outline-gray': 'text-muted ring-1 ring-ring ring-inset btn-focus',
-  'btn-link-gray': 'text-muted btn-focus hover:text-foreground hover:underline underline-offset-4',
+  'btn-outline-gray': 'text-muted-foreground ring-1 ring-ring ring-inset btn-focus',
+  'btn-link-gray': 'text-muted-foreground btn-focus hover:text-foreground hover:underline underline-offset-4',
   'btn-text-gray': 'text-$c-gray-600 btn-focus hover:text-$c-gray-900',
 
   'btn-solid-black': 'bg-foreground text-background shadow-sm btn-focus',
@@ -38,8 +38,8 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-text-black': 'text-foreground btn-focus',
   'btn-soft-black': 'text-foreground bg-background btn-focus shadow-sm',
 
-  'btn-text-muted': 'text-muted btn-focus hover:text-accent-foreground',
-  'btn-link-muted': 'text-muted btn-focus hover:underline underline-offset-4',
+  'btn-text-muted-foreground': 'text-muted-foreground btn-focus hover:text-accent-foreground',
+  'btn-link-muted': 'text-muted-foreground btn-focus hover:underline underline-offset-4',
   'btn-ghost-muted': 'text-accent-foreground hover:text-muted-foreground btn-focus hover:bg-muted',
 
   'btn-soft-accent': 'text-accent-foreground bg-accent btn-focus',

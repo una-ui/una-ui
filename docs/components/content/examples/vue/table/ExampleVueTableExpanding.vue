@@ -43,7 +43,7 @@ const expanded = ref<Record<string, boolean>>({})
   >
     <template #expanded="{ row }">
       <div class="p-4">
-        <p class="text-sm text-muted">
+        <p class="text-sm text-muted-foreground">
           Object:
         </p>
         <p class="text-foreground">

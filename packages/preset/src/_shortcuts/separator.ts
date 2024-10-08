@@ -4,7 +4,7 @@ export const staticSeparator: Record<`${SeparatorPrefix}-${string}` | SeparatorP
   // base
   'separator': 'text-md shrink-0 relative',
   'separator-default-variant': 'separator-solid-gray',
-  'separator-content': 'text-0.75em text-muted bg-background absolute flex justify-center items-center',
+  'separator-content': 'text-0.75em text-muted-foreground bg-background absolute flex justify-center items-center',
 
   // orientation states
   'separator-horizontal': 'h-px my-4 w-full border-t-0.0625em',

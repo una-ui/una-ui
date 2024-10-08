@@ -37,7 +37,7 @@ const columns: ColumnDef<Person>[] = [
               class: 'text-sm font-semibold leading-none',
             }, fullname),
             h('span', {
-              class: 'text-sm text-muted',
+              class: 'text-sm text-muted-foreground',
             }, info.getValue().email),
           ]),
         ],
@@ -169,7 +169,7 @@ const table = useTemplateRef<Table<Person>>('table')
                   ? 'progress-info' : cell.row.original.progress >= 55
                     ? 'progress-warning' : 'progress-error' }"
           />
-          <span class="ml-2 text-sm text-muted">{{ cell.row.original.progress }}%</span>
+          <span class="ml-2 text-sm text-muted-foreground">{{ cell.row.original.progress }}%</span>
         </div>
       </template>
       <!-- end cell -->
@@ -180,7 +180,7 @@ const table = useTemplateRef<Table<Person>>('table')
       class="flex items-center justify-between px-2"
     >
       <div
-        class="hidden text-sm text-muted sm:block"
+        class="hidden text-sm text-muted-foreground sm:block"
       >
         {{ table?.getFilteredSelectedRowModel().rows.length.toLocaleString() }} of
         {{ table?.getFilteredRowModel().rows.length.toLocaleString() }} row(s) selected.
