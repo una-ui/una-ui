@@ -21,9 +21,7 @@ const actions = ref([
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
           toast: 'outline-gray',
-          _toastAction: {
-            btn: 'outline-gray',
-          },
+          toastAction: 'solid-white',
           actions,
           closable: true,
         },
@@ -37,9 +35,7 @@ const actions = ref([
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
           toast: 'outline-yellow',
-          _toastAction: {
-            btn: 'soft-yellow',
-          },
+          toastAction: 'soft-yellow',
           actions,
           closable: true,
         },
@@ -53,9 +49,7 @@ const actions = ref([
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
           toast: 'soft-green',
-          _toastAction: {
-            btn: 'outline-green',
-          },
+          toastAction: 'outline-green',
           actions,
           closable: true,
         },

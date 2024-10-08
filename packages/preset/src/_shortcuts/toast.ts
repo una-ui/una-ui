@@ -28,6 +28,8 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
 export const dynamicToast = [
   [/^toast-soft(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-50 dark:bg-${c}-900 border-${c}-200 dark:border-${c}-700/58`],
   [/^toast-outline(-(\S+))?$/, ([, , c = 'primary']) => `bg-base border border-${c}-200 dark:border-${c}-700/58`],
+
+  [/^toast-action-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `btn-${v}-${c}`],
 ]
 
 export const toast = [

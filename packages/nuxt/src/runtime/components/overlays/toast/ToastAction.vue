@@ -2,7 +2,7 @@
 import type { NToastActionProps } from '../../../types'
 import { ToastAction } from 'radix-vue'
 import { computed } from 'vue'
-import { omitProps, randomId } from '../../../utils'
+import { cn, omitProps, randomId } from '../../../utils'
 import Button from '../../elements/Button.vue'
 
 defineOptions({
@@ -28,9 +28,9 @@ const delegatedProps = computed(() => {
       v-bind="omitProps({ ...$attrs, ...delegatedProps }, ['altText'])"
       :id="randomId('toast-action')"
       size="xs"
-      :class="props.class"
+      :class="cn('toast-action', props.class)"
       :una="{
-        btnDefaultVariant: 'toast-default-variant',
+        btnDefaultVariant: toastAction,
         ...delegatedProps.una,
       }"
       @click="emits('onAction')"

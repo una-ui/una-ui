@@ -21,6 +21,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NToastProps>(), {
+  toastAction: 'solid-white',
   una: () => ({
     toastDefaultVariant: 'toast-default-variant',
   }),
@@ -30,7 +31,7 @@ const emits = defineEmits<ToastRootEmits>()
 const forwarded = useForwardPropsEmits(props, emits)
 const toasts = useState<Toaster[]>('toasts', () => [])
 
-const toastVariants = ['soft', 'outline'] as const
+const toastVariants = ['soft', 'solid'] as const
 const hasVariant = computed(() => toastVariants.some(toastVariant => props.toast?.includes(toastVariant)))
 const isBaseVariant = computed(() => props.toast?.includes('~'))
 </script>
@@ -81,6 +82,7 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
           <ToastAction
             v-for="(action, index) in actions"
             :key="index"
+            :toast-action
             :alt-text="_toastAction?.altText!"
             v-bind="{ ...action, ...forwarded._toastAction }"
             @on-action="action.click"
