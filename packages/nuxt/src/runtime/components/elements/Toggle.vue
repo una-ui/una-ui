@@ -33,25 +33,6 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     :toggle-off
     :toggle-on
     :as="Button"
-    :una="{
-      btnLoading: cn(
-        'text-1em',
-        props.una?.btnLoading,
-      ),
-      btnLeading: cn(
-        'text-1em',
-        props.una?.btnLeading,
-      ),
-      btnTrailing: cn(
-        'text-1em',
-        props.una?.btnTrailing,
-      ),
-      btnIconLabel: cn(
-        'text-1em',
-        props.una?.btnIconLabel,
-      ),
-      ...props.una,
-    }"
   >
     <template v-for="(_, name) in $slots" #[name]="slotData">
       <slot :name="name" v-bind="slotData" />

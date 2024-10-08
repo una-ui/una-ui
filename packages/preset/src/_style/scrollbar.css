@@ -16,7 +16,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground);
+  background: var(--c-muted-foreground);
   border-radius: calc(var(--una-radius) - 4px);
 }
 
