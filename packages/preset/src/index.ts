@@ -17,6 +17,10 @@ export default function presetUna(options: unaUIOptions = {
     options,
     shortcuts,
     theme: mergeDeep<Theme>(unoTheme, {
+      container: {
+        center: true,
+        padding: '2rem',
+      },
       colors: {
         brand: 'rgba(var(--c-brand),%alpha)',
         primary: {
