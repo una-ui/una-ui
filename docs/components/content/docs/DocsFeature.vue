@@ -5,7 +5,7 @@
 <template>
   <div grid="~ cols-3" class="my-4">
     <!-- card -->
-    <div class="group border border-base rounded-lg bg-muted hover:bg-base p-4 transition duration-300 ease-out space-y-4 hover:border-primary hover:ease-in">
+    <div class="group border border-base rounded-lg bg-muted p-4 transition duration-300 ease-out space-y-4 hover:border-primary hover:bg-background hover:ease-in">
       <!-- icon -->
       <div class="flex">
         <div class="w-auto rounded bg-$c-gray-200 px-2.5 py-2 text-2xl">

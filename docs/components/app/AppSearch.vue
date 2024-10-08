@@ -239,7 +239,7 @@ watch(Escape, () => {
       >
         <div class="search-window p-5" @click.stop>
           <div
-            class="search-input rounded-md !bg-base"
+            class="search-input rounded-md !bg-background"
             input="solid"
           >
             <Icon

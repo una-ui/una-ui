@@ -47,7 +47,7 @@ function close(name: string) {
     >
       <!-- TODO convert to NAvatar soon -->
       <img
-        class="h-5 rounded-full bg-base p-0.5px"
+        class="h-5 rounded-full bg-background p-0.5px"
         :src="avatar"
       >
 

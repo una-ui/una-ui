@@ -15,7 +15,7 @@ export const staticCard: Record<`${CardPrefix}-${string}` | CardPrefix, string> 
 
   // static variants
   'card-soft-gray': 'bg-muted border border-base',
-  'card-outline-gray': 'bg-base border border-base',
+  'card-outline-gray': 'bg-background border border-base',
 }
 
 export const dynamicCard = [

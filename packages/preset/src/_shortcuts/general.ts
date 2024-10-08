@@ -32,7 +32,6 @@ export const staticGeneral = {
   'divide-base': 'divide-$c-divider',
 
   // bg
-  'bg-base': 'bg-$c-background',
   'bg-inverted': 'bg-$c-foreground',
   'bg-muted': 'bg-$c-muted',
 
