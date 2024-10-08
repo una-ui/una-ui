@@ -19,4 +19,5 @@ html.dark {
 
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-color: var(--c-border);
 }
