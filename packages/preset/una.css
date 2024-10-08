@@ -59,48 +59,46 @@
 :root {
   --una-font-size: 16px;
   --una-radius: 0.5rem;
-  --c-brand: rgb(var(--una-primary-600));
+  --c-brand: var(--una-primary-600);
   --una-primary: var(--una-primary-600);
   --una-primary-active: var(--una-primary-500);
   --una-gray: var(--una-gray-600);
   --una-gray-active: var(--una-gray-500);
-  --c-background: rgb(255 255 255);
-  --c-foreground: rgb(var(--una-gray-950));
-  --c-muted: rgb(var(--una-gray-50));
-  --c-muted-foreground: rgb(var(--una-gray-500));
-  --c-accent: rgb(var(--una-gray-100));
-  --c-accent-foreground: rgb(var(--una-gray-800));
-  --c-popover: rgb(255 255 255);
-  --c-popover-foreground: rgb(var(--una-gray-950));
-  --c-border: rgb(var(--una-gray-200));
-  --c-ring: rgb(var(--una-gray-200));
-  --c-bg-selection: rgba(var(--una-primary-600), 0.2);
+  --una-background: 255, 255, 255;
+  --una-foreground: var(--una-gray-950);
+  --una-muted: var(--una-gray-50);
+  --una-muted-foreground: var(--una-gray-500);
+  --una-accent: var(--una-gray-100);
+  --una-accent-foreground: var(--una-gray-800);
+  --una-popover: 255, 255 255;
+  --una-popover-foreground: var(--una-gray-950);
+  --una-border: var(--una-gray-200);
+  --una-ring: var(--una-gray-200);
+  --bg-selection: rgba(var(--una-primary-600), 0.2);
 }
 
 .dark {
-  --c-brand: rgb(var(--una-primary-500));
+  --una-brand: var(--una-primary-500);
   --una-primary: var(--una-primary-500);
   --una-primary-active: var(--una-primary-400);
   --una-gray: var(--una-gray-500);
   --una-gray-active: var(--una-gray-400);
-  --c-background: rgb(var(--una-gray-950));
-  --c-foreground: rgb(255 255 255);
-  --c-muted: rgb(var(--una-gray-900));
-  --c-muted-foreground: rgb(var(--una-gray-400));
-  --c-accent: rgb(var(--una-gray-800));
-  --c-accent-foreground: rgb(var(--una-gray-100));
-  --c-popover: rgb(var(--una-gray-950));
-  --c-popover-foreground: rgb(255 255 255);
-  --c-border: rgba(var(--una-gray-700), .58);
-  --c-ring: rgba(var(--una-gray-700), .58);
+  --una-background: var(--una-gray-950);
+  --una-foreground: 255, 255, 255;
+  --una-muted: var(--una-gray-900);
+  --una-muted-foreground: var(--una-gray-400);
+  --una-accent: var(--una-gray-800);
+  --una-accent-foreground: var(--una-gray-100);
+  --una-popover: var(--una-gray-950);
+  --una-popover-foreground: 255 255 255;
+  --una-border: var(--una-gray-700, 0.58);
+  --una-ring: var(--una-gray-700, 0.58);
   --c-bg-selection: rgba(var(--una-primary-500), 0.2);
 }
 
 html {
   font-size: var(--una-font-size, 16px);
-  background-color: var(--c-background);
-  color: var(--c-foreground);
-  height: 100dvh;
+  @apply text-foreground bg-background min-h-screen;
 }
 
 html.dark {
@@ -117,10 +115,11 @@ html.dark {
 
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-color: rgba(var(--una-border));
 }
 
 * {
-  scrollbar-color: rgba(136, 136, 136, 0.3333333333) var(--c-border);
+  scrollbar-color: rgba(136, 136, 136, 0.3333333333) rgb(var(--una-border));
 }
 
 ::-webkit-scrollbar {
@@ -132,15 +131,15 @@ html.dark {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--c-border);
-  border-radius: var(--una-radius);
+  background: rgb(var(--una-border));
+  border-radius: rgb(var(--una-radius));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground);
-  border-radius: calc(var(--una-radius) - 4px);
+  background: rgb(var(--una-muted-foreground));
+  border-radius: calc(rgb(var(--una-radius)) - 4px);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--c-muted) !important;
+  background: rgb(var(--una-muted)) !important;
 }

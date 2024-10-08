@@ -25,7 +25,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 
   'select-group': 'p-1 w-full',
 
-  'select-separator': '-mx-1 my-1 h-px bg-muted',
+  'select-separator': '-mx-1 my-1 h-px bg-muted-foreground',
 
   'select-item': 'select-item-gray relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-1em outline-none data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
 

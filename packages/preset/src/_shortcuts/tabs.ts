@@ -9,7 +9,7 @@ export const staticTabs: Record<`${TabsPrefix}-${string}` | TabsPrefix, string> 
   // components
   'tabs-root': 'flex flex-col w-full',
   'tabs-trigger': 'w-full focus-visible:z-10',
-  'tabs-list': 'flex bg-muted items-center justify-center rounded-md p-1 w-full',
+  'tabs-list': 'flex bg-muted-foreground items-center justify-center rounded-md p-1 w-full',
   'tabs-content': 'mt-4 text-foreground',
 }
 

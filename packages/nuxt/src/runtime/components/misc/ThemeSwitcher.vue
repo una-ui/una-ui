@@ -48,7 +48,7 @@ function shuffleTheme(): void {
 </script>
 
 <template>
-  <Popover :_popover-content="{ align: 'end', class: 'z-100 w-73 bg-muted' }">
+  <Popover :_popover-content="{ align: 'end', class: 'z-100 w-73 bg-muted text-foreground' }">
     <template #trigger>
       <slot name="trigger">
         <Button
@@ -63,10 +63,10 @@ function shuffleTheme(): void {
     <slot name="content">
       <div class="flex flex-col">
         <div class="grid space-y-1">
-          <h1 class="text-md text-foreground font-semibold">
+          <h1 class="text-md font-semibold">
             Customize
           </h1>
-          <p class="text-xs text-muted">
+          <p class="text-xs text-muted-foreground">
             Pick a style and color for your components.
           </p>
         </div>
@@ -82,7 +82,7 @@ function shuffleTheme(): void {
               :style="{ background: theme['--una-primary-hex'] }"
               class="h-6.5 w-6.5 rounded-full transition-all"
               :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
-              ring="primary offset-4 offset-base"
+              ring="primary offset-4 offset-background"
               aria-label="Primary Color"
               @click="updatePrimaryTheme(key)"
             />
@@ -101,7 +101,7 @@ function shuffleTheme(): void {
               :class="currentGrayThemeName === key ? 'ring-2' : 'scale-93'"
               class="h-6.5 w-6.5 rounded-full transition-all"
               aria-label="Gray Color"
-              ring="gray offset-4 offset-base"
+              ring="gray offset-4 offset-background"
               @click="updateGrayTheme(key)"
             />
           </div>

@@ -1,8 +1,6 @@
 html {
   font-size: var(--una-font-size, 16px);
-  background-color: var(--c-background);
-  color: var(--c-foreground);
-  height: 100dvh;
+  @apply text-foreground bg-background min-h-screen;
 }
 
 html.dark {
@@ -19,4 +17,5 @@ html.dark {
 
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-color: rgba(var(--una-border));
 }

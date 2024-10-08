@@ -20,7 +20,7 @@ const { version } = useRuntimeConfig().public
     :label="`v${version}`"
     dropdown-menu="text-gray"
     :_dropdown-menu-content="{
-      class: 'bg-muted',
+      class: 'bg-muted-foreground',
     }"
     trailing="i-radix-icons-caret-down"
   />

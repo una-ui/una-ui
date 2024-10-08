@@ -68,25 +68,26 @@ export default function presetUna(options: unaUIOptions = {
         padding: '2rem',
       },
       colors: {
-        foreground: 'rgba(var(--c-foreground) / <alpha-value>)',
-        background: 'rgba(var(--c-background) / <alpha-value>)',
-        border: 'rgba(var(--c-border) / <alpha-value>)',
-        brand: 'rgba(var(--c-brand) / <alpha-value>)',
+        foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
+        background: 'rgba(var(--una-background) / <alpha-value>)',
+        ring: 'rgba(var(--una-ring) / <alpha-value>)',
+        border: 'rgba(var(--una-border) / <alpha-value>)',
+        brand: 'rgba(var(--una-brand) / <alpha-value>)',
         muted: {
-          DEFAULT: 'rgba(var(--c-muted) / <alpha-value>)',
-          foreground: 'rgba(var(--c-muted-foreground) / <alpha-value>)',
+          DEFAULT: 'rgba(var(--una-muted) / <alpha-value>)',
+          foreground: 'rgba(var(--una-muted-foreground) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: 'rgba(var(--c-accent) / <alpha-value>)',
-          foreground: 'rgba(var(--c-accent-foreground) / <alpha-value>)',
+          DEFAULT: 'rgba(var(--una-accent) / <alpha-value>)',
+          foreground: 'rgba(var(--una-accent-foreground) / <alpha-value>)',
         },
         popover: {
-          DEFAULT: 'rgba(var(--c-popover) / <alpha-value>)',
-          foreground: 'rgba(var(--c-popover-foreground) / <alpha-value>)',
+          DEFAULT: 'rgba(var(--una-popover) / <alpha-value>)',
+          foreground: 'rgba(var(--una-popover-foreground) / <alpha-value>)',
         },
         card: {
-          DEFAULT: 'rgba(var(--c-card) / <alpha-value>)',
-          foreground: 'rgba(var(--c-card-foreground) / <alpha-value>)',
+          DEFAULT: 'rgba(var(--una-card) / <alpha-value>)',
+          foreground: 'rgba(var(--una-card-foreground) / <alpha-value>)',
         },
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',

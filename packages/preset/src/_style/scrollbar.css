@@ -1,5 +1,5 @@
 * {
-  scrollbar-color: #8885 var(--c-border);
+  scrollbar-color: #8885 rgb(var(--una-border));
 }
 
 ::-webkit-scrollbar {
@@ -11,15 +11,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--c-border);
-  border-radius: var(--una-radius);
+  background: rgb(var(--una-border));
+  border-radius: rgb(var(--una-radius));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground);
-  border-radius: calc(var(--una-radius) - 4px);
+  background: rgb(var(--una-muted-foreground));
+  border-radius: calc(rgb(var(--una-radius)) - 4px);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--c-muted) !important;
+  background: rgb(var(--una-muted)) !important;
 }

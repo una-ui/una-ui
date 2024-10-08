@@ -19,7 +19,7 @@ const items = [
 <template>
   <NAccordion
     :items="items"
-    class="rounded-none bg-muted"
+    class="rounded-none bg-muted-foreground"
     reverse
     trailing-open="i-heroicons-chevron-right"
     :una="{

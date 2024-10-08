@@ -21,7 +21,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-header': '[&_tr]:border-b [&_tr]:border-border',
 
   // table-row
-  'table-row': 'border-b border-border transition-colors hover:bg-muted data-[filter=true]:hover:bg-background data-[state=selected]:bg-muted',
+  'table-row': 'border-b border-border transition-colors hover:bg-muted-foreground data-[filter=true]:hover:bg-background data-[state=selected]:bg-muted-foreground',
 
   // table-cell
   'table-cell': 'p-4 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-0.5',
@@ -42,7 +42,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-loading': 'absolute inset-x-0 overflow-hidden p-0',
 
   // table-footer
-  'table-footer': 'border-t border-border bg-muted font-medium [&>tr]:last:border-b-0',
+  'table-footer': 'border-t border-border bg-muted-foreground font-medium [&>tr]:last:border-b-0',
 }
 
 export const dynamicTable: [RegExp, (params: RegExpExecArray) => string][] = [

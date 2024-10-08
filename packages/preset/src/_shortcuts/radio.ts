@@ -6,7 +6,7 @@ type RadioPrefix = 'radio'
 
 export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, string> = {
   // base
-  'radio': 'radio-primary flex items-center transition-base border border-$c-ring rounded-full p-0.12em h-1em w-1em n-checked:border-brand n-checked:bg-brand',
+  'radio': 'radio-primary flex items-center transition-base border border-border rounded-full p-0.12em h-1em w-1em n-checked:border-brand n-checked:bg-brand',
   'radio-disabled': 'n-disabled',
   'radio-label': 'block text-sm font-medium leading-6',
   'radio-input': 'absolute w-full opacity-0',

@@ -23,7 +23,7 @@ const items = [
     trailing-open="i-heroicons-plus"
     :una="{
       accordionButton: 'px-0',
-      accordionPanel: 'bg-muted rounded-none mt-2',
+      accordionPanel: 'bg-muted-foreground rounded-none mt-2',
       accordionTrailingClose: '-rotate-45',
       accordionTrailing: 'text-md',
     }"
