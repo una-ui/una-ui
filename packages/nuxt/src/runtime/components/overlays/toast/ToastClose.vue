@@ -6,6 +6,8 @@ import { cn } from '../../../utils'
 
 const props = defineProps<NToastCloseProps>()
 
+const emit = defineEmits(['close'])
+
 const delegatedProps = computed(() => {
   const { ...delegated } = props
 
@@ -21,6 +23,7 @@ const delegatedProps = computed(() => {
       props.class,
       props.una?.toastClose,
     )"
+    @click="emit('close')"
   >
     <slot />
   </ToastClose>

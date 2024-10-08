@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import type { ToastRootEmits } from 'radix-vue'
-import type { NToastProps, Toaster } from '../../../types'
-import { useState } from '#app'
+import type { NToastProps } from '../../../types'
 import { useForwardPropsEmits } from 'radix-vue'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
@@ -26,12 +24,20 @@ const props = withDefaults(defineProps<NToastProps>(), {
     toastDefaultVariant: 'toast-default-variant',
   }),
 })
-const emits = defineEmits<ToastRootEmits>()
+
+const emits = defineEmits<{
+  (e: 'close'): void
+  (e: 'update:open', value: boolean): void
+}>()
 
 const forwarded = useForwardPropsEmits(props, emits)
-const toasts = useState<Toaster[]>('toasts', () => [])
 
-const toastVariants = ['soft', 'solid'] as const
+function onActionTrigger(f: (() => void) | undefined) {
+  f && f()
+  emits('close')
+}
+
+const toastVariants = ['soft', 'outline'] as const
 const hasVariant = computed(() => toastVariants.some(toastVariant => props.toast?.includes(toastVariant)))
 const isBaseVariant = computed(() => props.toast?.includes('~'))
 </script>
@@ -48,7 +54,7 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
         props.una?.toast,
       )"
       :toast="toast"
-      v-bind="forwarded._toastRoot"
+      v-bind="{ forwarded, ...forwarded._toastRoot }"
     >
       <slot name="root">
         <ToastInfo
@@ -85,10 +91,14 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
             :toast-action
             :alt-text="_toastAction?.altText!"
             v-bind="{ ...action, ...forwarded._toastAction }"
-            @on-action="action.click"
+            @on-action="onActionTrigger(action.click)"
           />
         </div>
-        <ToastClose v-if="closable" v-bind="_toastClose">
+        <ToastClose
+          v-if="closable"
+          v-bind="_toastClose"
+          @close="emits('close')"
+        >
           <slot name="closeIcon">
             <Icon
               :name="_toastClose?.una?.toastCloseIcon ?? 'toast-close-icon'"
