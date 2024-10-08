@@ -70,7 +70,24 @@ export default function presetUna(options: unaUIOptions = {
       colors: {
         foreground: 'rgba(var(--c-foreground) / <alpha-value>)',
         background: 'rgba(var(--c-background) / <alpha-value>)',
-        brand: 'rgba(var(--c-brand),%alpha)',
+        border: 'rgba(var(--c-border) / <alpha-value>)',
+        brand: 'rgba(var(--c-brand) / <alpha-value>)',
+        muted: {
+          DEFAULT: 'rgba(var(--c-muted) / <alpha-value>)',
+          foreground: 'rgba(var(--c-muted-foreground) / <alpha-value>)',
+        },
+        accent: {
+          DEFAULT: 'rgba(var(--c-accent) / <alpha-value>)',
+          foreground: 'rgba(var(--c-accent-foreground) / <alpha-value>)',
+        },
+        popover: {
+          DEFAULT: 'rgba(var(--c-popover) / <alpha-value>)',
+          foreground: 'rgba(var(--c-popover-foreground) / <alpha-value>)',
+        },
+        card: {
+          DEFAULT: 'rgba(var(--c-card) / <alpha-value>)',
+          foreground: 'rgba(var(--c-card-foreground) / <alpha-value>)',
+        },
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
           active: 'rgba(var(--una-primary-active) / <alpha-value>)',

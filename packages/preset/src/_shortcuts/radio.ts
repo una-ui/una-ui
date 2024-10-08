@@ -11,13 +11,13 @@ export const staticRadio: Record<`${RadioPrefix}-${string}` | RadioPrefix, strin
   'radio-label': 'block text-sm font-medium leading-6',
   'radio-input': 'absolute w-full opacity-0',
   'radio-reverse': 'flex-row-reverse',
-  'radio-peer-focus': 'peer-focus-(ring-2 ring-brand ring-offset-2 ring-offset-base)',
+  'radio-peer-focus': 'peer-focus-(ring-2 ring-brand ring-offset-2 ring-offset-background)',
 
   // wrappers
   'radio-wrapper': 'gap-x-3 relative inline-flex items-center hover:cursor-pointer',
 
   // icon
-  'radio-icon-base': 'm-auto opacity-0 text-inverted w-full h-full transition-base n-checked:opacity-100',
+  'radio-icon-base': 'm-auto opacity-0 text-background w-full h-full transition-base n-checked:opacity-100',
   'radio-icon': 'i-dot', // refer to general.ts
 }
 

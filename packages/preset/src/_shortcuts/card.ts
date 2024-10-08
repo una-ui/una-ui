@@ -14,8 +14,8 @@ export const staticCard: Record<`${CardPrefix}-${string}` | CardPrefix, string> 
   'card-about': 'flex flex-col gap-y-1.5 px-4 py-5 sm:p-6',
 
   // static variants
-  'card-soft-gray': 'bg-muted border border-base',
-  'card-outline-gray': 'bg-background border border-base',
+  'card-soft-gray': 'bg-muted border border-border',
+  'card-outline-gray': 'bg-background border border-border',
 }
 
 export const dynamicCard = [

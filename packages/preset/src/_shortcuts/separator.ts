@@ -22,7 +22,7 @@ export const staticSeparator: Record<`${SeparatorPrefix}-${string}` | SeparatorP
   'separator-position-top': 'top-4 left-1/2 -translate-x-1/2',
 
   // static variants
-  'separator-solid-gray': 'border-base',
+  'separator-solid-gray': 'border-border',
 }
 
 export const dynamicSeparator = [
