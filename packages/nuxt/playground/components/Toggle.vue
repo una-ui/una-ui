@@ -1,8 +1,3 @@
-<script setup lang="ts">
-const toggle = ref(false)
-</script>
-
 <template>
-  {{ toggle }}
-  <NToggle v-model:pressed="toggle" toggle="primary" label="U" />
+  <NToggle label="i-radix-icons-underline" />
 </template>
