@@ -10,7 +10,7 @@ export const staticTabs: Record<`${TabsPrefix}-${string}` | TabsPrefix, string> 
   'tabs-root': 'flex flex-col w-full',
   'tabs-trigger': 'w-full focus-visible:z-10',
   'tabs-list': 'flex bg-muted items-center justify-center rounded-md p-1 w-full',
-  'tabs-content': 'mt-4 text-base',
+  'tabs-content': 'mt-4 text-foreground',
 }
 
 export const dynamicTabs = [

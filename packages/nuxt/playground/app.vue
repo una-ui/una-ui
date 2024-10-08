@@ -4,6 +4,10 @@
 
     <Toggle />
 
+    <div class="text-foreground">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum delectus eum nemo dignissimos possimus, odit dicta repellat praesentium. Ut aut reprehenderit dolorum omnis tenetur ullam eum nam sapiente quisquam dolores?
+    </div>
+
     <ColorMode />
   </div>
 </template>

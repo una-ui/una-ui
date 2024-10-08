@@ -68,8 +68,8 @@ export default function presetUna(options: unaUIOptions = {
         padding: '2rem',
       },
       colors: {
-        foreground: 'rgba(var(--c-foreground),%alpha)',
-        background: 'rgba(var(--c-background),%alpha)',
+        foreground: 'rgba(var(--c-foreground) / <alpha-value>)',
+        background: 'rgba(var(--c-background) / <alpha-value>)',
         brand: 'rgba(var(--c-brand),%alpha)',
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',

@@ -14,7 +14,7 @@ export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, st
   'avatar-icon-base': 'text-1.2em',
 
   // variants
-  'avatar-solid-white': 'bg-base text-base ring-1 ring-base',
+  'avatar-solid-white': 'bg-base text-foreground ring-1 ring-base',
   'avatar-solid-black': 'bg-inverted text-inverted',
 }
 
