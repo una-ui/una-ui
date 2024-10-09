@@ -24,12 +24,12 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   // variants
   'btn-solid-white': 'bg-base text-base ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-muted',
   'btn-ghost-white': 'text-base btn-focus hover:bg-$c-gray-50',
-  'btn-outline-white': 'text-base ring-1 ring-base ring-inset btn-focus',
+  'btn-outline-white': 'text-base ring-1 ring-base ring-inset btn-focus hover:bg-$c-gray-50',
 
   'btn-solid-gray': 'bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-$c-gray-100',
   'btn-ghost-gray': 'text-$c-gray-600 btn-focus hover:bg-$c-gray-100',
   'btn-soft-gray': 'text-$c-gray-600 bg-$c-gray-50 btn-focus hover:bg-$c-gray-100',
-  'btn-outline-gray': 'text-muted ring-1 ring-base ring-inset btn-focus',
+  'btn-outline-gray': 'text-muted hover:text-$c-gray-600 ring-1 ring-base ring-inset btn-focus hover:bg-$c-gray-50',
   'btn-link-gray': 'text-muted btn-focus hover:text-base hover:underline underline-offset-4',
   'btn-text-gray': 'text-$c-gray-600 btn-focus hover:text-$c-gray-900',
 

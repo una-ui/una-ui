@@ -84,6 +84,10 @@
           btn="soft-gray"
         />
         <NButton
+          label="outline-gray"
+          btn="outline-gray"
+        />
+        <NButton
           label="ghost-gray"
           btn="ghost-gray"
         />
@@ -101,6 +105,10 @@
         <NButton
           label="ghost-white"
           btn="ghost-white"
+        />
+        <NButton
+          label="outline-white"
+          btn="outline-white"
         />
       </div>
 
