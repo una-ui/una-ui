@@ -18,7 +18,7 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-info': 'flex flex-col pr-1',
   'toast-actions': 'flex flex-shrink-0 items-center gap-2',
   'toast-toaster': 'fixed bottom-0 right-0 z-[999] md:max-w-[420px] w-full',
-  'toast-toaster-list': 'overflow-y-auto flex flex-col justify-end px-4 py-6 sm:px-6 last:mt-0',
+  'toast-toaster-list': 'overflow-y-auto flex flex-col justify-end px-4 py-6 sm:px-6',
 
   // static
   'toast-soft-gray': 'bg-muted border border-base',
@@ -27,7 +27,7 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
 
 export const dynamicToast = [
   [/^toast-soft(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-50 dark:bg-${c}-900 border-${c}-200 dark:border-${c}-700/58`],
-  [/^toast-outline(-(\S+))?$/, ([, , c = 'primary']) => `bg-base border border-${c}-200 dark:border-${c}-700/58`],
+  [/^toast-outline(-(\S+))?$/, ([, , c = 'primary']) => `bg-base border border-${c}-200 dark:border-${c}-700/58 text-${c}-200 text-${c}-600 dark:text-${c}-400`],
 
   [/^toast-action-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `btn-${v}-${c}`],
 ]

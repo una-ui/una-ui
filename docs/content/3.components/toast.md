@@ -106,11 +106,11 @@ const toast = useToast()
 | Prop                  | Description                             |
 | ----------------------| --------------------------------------- |
 | `toast`               | Set the toast variant and color.        |
-| `_toast-action.btn`   | Set the toast action variant and color. |
+| `toast-action`   | Set the toast action variant and color. |
 
 ::alert{type="info"}
 `NToastAction` is wrapped around the [NButton](button) component. This means that all the props and slots of
-`NButton` are available to use or through `_toast-action` prop.
+`NButton` are available to use or through `toast-action` prop.
 ::
 
 :::CodeGroup

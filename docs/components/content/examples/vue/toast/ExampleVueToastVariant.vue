@@ -42,14 +42,14 @@ const actions = ref([
       )"
     />
     <NButton
-      label="Soft-green toast"
-      btn="soft-green"
+      label="Soft-info toast"
+      btn="soft-info"
       @click="toast.add(
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
-          toast: 'soft-green',
-          toastAction: 'outline-green',
+          toast: 'soft-info',
+          toastAction: 'solid-gray',
           actions,
           closable: true,
         },
