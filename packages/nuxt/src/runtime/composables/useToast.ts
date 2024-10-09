@@ -18,7 +18,6 @@ export function useToast(): ToastReturn {
       id: new Date().getTime().toString(),
       ...toast,
     }
-    // TODO: the `id` is unique (ms) -> think about this cond
     const index = toasts.value.findIndex(t => t.id === body.id)
     if (index === -1) {
       toasts.value.push(body)
@@ -28,7 +27,6 @@ export function useToast(): ToastReturn {
   }
 
   function update(id: string, toast: Partial<Toaster>): void {
-    // TODO: needs to update the naming
     const updateToastOne = toasts.value.find(t => t.id === id)
     if (updateToastOne) {
       Object.assign(updateToastOne, toast)
