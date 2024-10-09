@@ -43,8 +43,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       '@iconify/json':
-        specifier: ^2.2.257
-        version: 2.2.257
+        specifier: ^2.2.258
+        version: 2.2.258
       '@types/chroma-js':
         specifier: ^2.4.4
         version: 2.4.4
@@ -133,17 +133,17 @@ importers:
         specifier: ^1.7.23
         version: 1.7.23(vue@3.5.8(typescript@5.6.3))
       '@iconify-json/heroicons':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^1.2.1
+        version: 1.2.1
       '@iconify-json/lucide':
-        specifier: ^1.2.7
-        version: 1.2.7
+        specifier: ^1.2.8
+        version: 1.2.8
       '@iconify-json/radix-icons':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^1.2.1
+        version: 1.2.1
       '@iconify-json/tabler':
-        specifier: ^1.2.4
-        version: 1.2.4
+        specifier: ^1.2.5
+        version: 1.2.5
       '@nuxt/kit':
         specifier: ^3.13.2
         version: 3.13.2(magicast@0.3.5)(rollup@4.22.4)(webpack-sources@3.2.3)
@@ -1265,20 +1265,20 @@ packages:
     resolution: {integrity: sha512-e5+YUKENATs1JgYHMzTr2MW/NDcXGfYFAuOQU8gJgF/kEh4EqKgfGrfLI67bMD4tbhZVlkigz/9YYwWcbOFthg==}
     engines: {node: '>=10.13.0'}
 
-  '@iconify-json/heroicons@1.2.0':
-    resolution: {integrity: sha512-EmvGN0L9EUJCmQ82rkLGZ4tkz0YGQfZV7ugKT6UvHni/bxNitQrD0gLj6NJj2W9zsSoXyNHyCX236+EJmO4pmA==}
+  '@iconify-json/heroicons@1.2.1':
+    resolution: {integrity: sha512-TkKfS5U27kE5MXmSGLzPoz95BP5VA9xEJXwJFwmPMVLX+xyWq0OkoiWTUXB0uAoQODpb8BaRpzSydItrq9fIRA==}
 
-  '@iconify-json/lucide@1.2.7':
-    resolution: {integrity: sha512-j85GBSDqQoBJCKU3XrVV97alx4ADuphrt5u/LfAGEybuXyQCn63ZahUJ164LELGvxqTbt4ZoRLb4PsFuMzkeWg==}
+  '@iconify-json/lucide@1.2.8':
+    resolution: {integrity: sha512-knmDUXky8AAQ0rnGdnBjS1mBr6c0tT7aVbBd7AJcDTcJYvx9XEeyHlabFKG03DaLbOkCy0QHwCYoeZHRDEzOFA==}
 
-  '@iconify-json/radix-icons@1.2.0':
-    resolution: {integrity: sha512-HO2ydGjQG43tLy/X0BGb+4mJZZZ5KBAzTRGnwtPl+2uH48gv1o6Q4iA1PIJHU/8WkZ2cW4nibWzieztDer4nxg==}
+  '@iconify-json/radix-icons@1.2.1':
+    resolution: {integrity: sha512-glzHFq3Sj9QKUQG7u2dnlC+KPJGpGM1GhyUIrFFWhXqr9CZgkUPnF5n/6YlbCkYGMa+feSwdhwroLTfKvaAaVA==}
 
-  '@iconify-json/tabler@1.2.4':
-    resolution: {integrity: sha512-8sUrdJQpNaX3ZfJ5Po4hhA6n+JougMZeRg3AFvh5OuAvhZ8hEAOzPHuY8OB96x6cZCqY/j5idsbZWqKDinxRbQ==}
+  '@iconify-json/tabler@1.2.5':
+    resolution: {integrity: sha512-BDDLgDCbJ2btwi6cPmBL04QyPyNmWy6H13ynUAX48xxpxqUuG+hT+yrqL+RCugFimrvuhcecbSfEKnFc0BW1Ng==}
 
-  '@iconify/json@2.2.257':
-    resolution: {integrity: sha512-IqjXD7BrtORxEK1eRq77550zMztRnwTn8Qyid+WuGspYP+wn5PUEoNPvF3bOJkWiq14QqPphi339nEKuomgR2A==}
+  '@iconify/json@2.2.258':
+    resolution: {integrity: sha512-BW622A/EZ5651qOYkPkXn906U1bLsk/Cv/rYtmkArbZz/h+0c4WdcdrAHiC+weMqjQIUxB1JE20bpERT79BFIg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7165,23 +7165,23 @@ snapshots:
 
   '@hutson/parse-repository-url@5.0.0': {}
 
-  '@iconify-json/heroicons@1.2.0':
+  '@iconify-json/heroicons@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.7':
+  '@iconify-json/lucide@1.2.8':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/radix-icons@1.2.0':
+  '@iconify-json/radix-icons@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/tabler@1.2.4':
+  '@iconify-json/tabler@1.2.5':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.257':
+  '@iconify/json@2.2.258':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
