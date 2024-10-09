@@ -12,8 +12,7 @@ export type Action = Omit<NButtonProps, 'una'> & Partial<ToastActionProps>
 export type Toaster = NToastProps & { id: string }
 
 export interface NToastProps extends BaseExtensions,
-  Pick<NToastActionProps, 'toastAction'>,
-  Pick<NToastViewportProps, 'toasts'> {
+  Pick<NToastActionProps, 'toastAction'> {
   /**
    * Allows you to add `UnaUI` toast preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -41,6 +40,10 @@ export interface NToastProps extends BaseExtensions,
    * The array of actions.
    */
   actions?: Action[]
+  /**
+   * The array of toasts
+   */
+  toasts?: Toaster[]
   /**
    * Allows you to change the size of the input.
    *
@@ -109,8 +112,6 @@ export interface NToastDescriptionProps extends ToastDescriptionProps, BaseExten
 }
 
 export interface NToastViewportProps extends ToastViewportProps, BaseExtensions {
-  /** The array of toasts */
-  toasts?: Toaster[]
   /** Additional properties for the una component */
   una?: {
     toastViewport?: HTMLAttributes['class']

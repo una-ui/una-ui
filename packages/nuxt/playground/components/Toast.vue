@@ -20,9 +20,9 @@ const actions = ref([{
  * - [x] Add dynamic colors
  * - [x] Add toast slots
  * - [x] Add toast props
- * - [ ] Add toast documentation
- *     - [ ] Add toast markdown
- *     - [ ] Add toast examples
+ * - [x] Add toast documentation
+ *     - [x] Add toast markdown
+ *     - [x] Add toast examples
  */
 </script>
 
@@ -34,10 +34,6 @@ const actions = ref([{
         title: 'Uh oh! Something went wrong.',
         description: 'There was a problem with your request.',
         actions,
-        toast: 'soft',
-        _toastAction: {
-          btn: 'solid',
-        },
         closable: true,
       },
     )"

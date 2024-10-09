@@ -55,7 +55,7 @@ const toast = useToast()
 
 `NToast` - use to display messages in an overlay. Please refer to the [Radix-ui toast](https://www.radix-vue.com/components/toast.html#api-reference) for more API information.
 
-> Use [useToast](/utilities/use-una-settings) composable to add toasts to your application with the help of a special design.
+> Use [useToast](/packages/nuxt/src/runtime/composables/useToast.ts) composable to add toasts to your application with the help of a special design.
 
 | Prop            | Default | Type       | Description                                          |
 | --------------- | ------- | ---------- | ---------------------------------------------------  |
@@ -175,7 +175,12 @@ For more props and information, please refer to the [Radix Toast Root documentat
 @@@ ../packages/nuxt/src/runtime/types/toast.ts
 
 ## Presets
+
 @@@ ../packages/preset/src/_shortcuts/toast.ts
+
+## Composable
+
+@@@ ../packages/nuxt/src/runtime/composables/useToast.ts
 
 ## Components
 
@@ -184,6 +189,7 @@ You can use any sub-components of `NToast`, such as `NToastTitle`, `NToastRoot`,
 ### 
 
 :::CodeGroup
+
 ::code-block{label="Toast" preview}
 @@@ ../packages/nuxt/src/runtime/components/overlays/toast/Toast.vue
 
@@ -197,34 +203,31 @@ You can use any sub-components of `NToast`, such as `NToastTitle`, `NToastRoot`,
 
 ::
 ::code-block{label="ToastProvider"}
-@@@ ../packages/nuxt/src/runtime/components/elements/toast/ToastProvider.vue
+@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastProvider.vue
 
 ::
 ::code-block{label="ToastViewport"}
-@@@ ../packages/nuxt/src/runtime/components/elements/toast/ToastViewport.vue
+@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastViewport.vue
 
 ::
 ::code-block{label="ToastInfo"}
-@@@ ../packages/nuxt/src/runtime/components/elements/toast/ToastInfo.vue
+@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastInfo.vue
 
-::
 ::
 ::code-block{label="ToastTitle"}
-@@@ ../packages/nuxt/src/runtime/components/elements/toast/ToastTitle.vue
+@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastTitle.vue
 
-::
 ::
 ::code-block{label="ToastDescription"}
-@@@ ../packages/nuxt/src/runtime/components/elements/toast/ToastDescription.vue
+@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastDescription.vue
 
 ::
-::
 ::code-block{label="ToastAction"}
-@@@ ../packages/nuxt/src/runtime/components/elements/toast/ToastAction.vue
+@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastAction.vue
 
 ::
 ::code-block{label="ToastClose"}
-@@@ ../packages/nuxt/src/runtime/components/elements/toast/ToastClose.vue
+@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastClose.vue
 
 ::
 :::

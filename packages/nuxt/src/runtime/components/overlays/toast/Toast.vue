@@ -113,6 +113,6 @@ const isBaseVariant = computed(() => props.toast?.includes('~'))
       </slot>
     </ToastRoot>
 
-    <ToastViewport :toasts v-bind="_toastViewport" />
+    <ToastViewport v-bind="_toastViewport" />
   </ToastProvider>
 </template>
