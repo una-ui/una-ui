@@ -32,7 +32,7 @@ An interactive component which expands/collapses a panel.
 | Name      | Description             | Props  |
 | --------- | ----------------------- | ------ |
 | `default` | The collapsible root    | `open` |
-| `content` | The collapsible content | `open` |
+| `content` | The collapsible content | -      |
 | `trigger` | The button trigger.     | `open` |
 
 ## Props
