@@ -26,6 +26,8 @@
   --c-ring: rgb(var(--una-gray-200));
   --c-divider: rgb(var(--una-gray-200));
   --c-bg-selection: rgba(var(--una-primary-600), 0.2);
+
+  --un-default-border-color: var(--c-border);
 }
 
 .dark {
