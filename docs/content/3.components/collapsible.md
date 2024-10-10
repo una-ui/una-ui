@@ -1,5 +1,5 @@
 ---
-description: 'NCollapsible - Displays content in a portal, triggered by a button.'
+description: 'NCollapsible - An interactive component which expands/collapses a panel'
 ---
 
 # 🟢 Collapsible
