@@ -31,6 +31,7 @@ import { slider } from './slider'
 import { _switch } from './switch'
 import { table } from './table'
 import { tabs } from './tabs'
+import { toast } from './toast'
 import { toggle } from './toggle'
 import { tooltip } from './tooltip'
 
@@ -68,5 +69,6 @@ export const shortcuts = [
   ...popover,
   ...tooltip,
   ...pagination,
+  ...toast,
   ...toggle,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
