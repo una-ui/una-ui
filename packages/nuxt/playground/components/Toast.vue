@@ -3,8 +3,9 @@ const toast = useToast()
 
 const actions = ref([{
   label: 'Try again',
-  // click: () => alert('Lets gooo'),
-  // altText: 'Hello',
+  // eslint-disable-next-line no-alert
+  click: () => alert('Lets gooo'),
+  altText: 'Try again',
 }])
 
 /**
