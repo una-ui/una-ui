@@ -5,7 +5,7 @@ const isOpen = ref(false)
 <template>
   <NCollapsible
     v-model:open="isOpen"
-    class="w-350px space-y-2"
+    class="w-[350px] space-y-2"
   >
     <div class="flex items-center justify-between px-4 space-x-4">
       <h4 class="text-sm font-semibold">

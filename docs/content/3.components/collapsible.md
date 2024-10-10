@@ -13,7 +13,7 @@ description: 'NCollapsible - Displays content in a portal, triggered by a button
 
 ## Basic
 
-Displays rich content in a portal, triggered by a button.
+An interactive component which expands/collapses a panel.
 
 :::CodeGroup
 ::code-block{label="Preview" preview}
@@ -29,10 +29,11 @@ Displays rich content in a portal, triggered by a button.
 
 > You can use the following slots to customize the collapsible.
 
-| Name           | Description                  | Props  |
-| -------------- | ---------------------------- | ------ |
-| `trigger`      | The button trigger.          | `open` |
-| `default`      | The collapsible content.         | -      |
+| Name      | Description             | Props  |
+| --------- | ----------------------- | ------ |
+| `default` | The collapsible root    | `open` |
+| `content` | The collapsible content | `open` |
+| `trigger` | The button trigger.     | `open` |
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/collapsible.ts
@@ -45,6 +46,10 @@ Displays rich content in a portal, triggered by a button.
 :::CodeGroup
 ::code-block{label="Collapsible" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/collapsible/Collapsible.vue
+
+::
+::code-block{label="CollapsibleTrigger"}
+@@@ ../packages/nuxt/src/runtime/components/elements/collapsible/CollapsibleTrigger.vue
 
 ::
 ::code-block{label="CollapsibleContent"}

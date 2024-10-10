@@ -121,6 +121,10 @@ html.dark {
 }
 
 * {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+* {
   scrollbar-color: rgba(136, 136, 136, 0.3333333333) var(--c-border);
 }
 

@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import type { CollapsibleRootEmits, CollapsibleRootProps } from 'radix-vue'
+import type { CollapsibleRootEmits } from 'radix-vue'
+import type { NCollapsibleProps } from '../../../types'
 import { CollapsibleRoot, useForwardPropsEmits } from 'radix-vue'
 import CollapsibleContent from './CollapsibleContent.vue'
 import CollapsibleTrigger from './CollapsibleTrigger.vue'
 
-const props = defineProps<CollapsibleRootProps>()
+const props = defineProps<NCollapsibleProps>()
 const emits = defineEmits<CollapsibleRootEmits>()
 
 const forwarded = useForwardPropsEmits(props, emits)
@@ -17,7 +18,9 @@ const forwarded = useForwardPropsEmits(props, emits)
         <slot name="trigger" :open />
       </CollapsibleTrigger>
 
-      <CollapsibleContent>
+      <CollapsibleContent
+        v-bind="_collapsibleContent"
+      >
         <slot name="content" />
       </CollapsibleContent>
     </slot>

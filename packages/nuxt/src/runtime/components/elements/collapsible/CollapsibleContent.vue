@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import { CollapsibleContent, type CollapsibleContentProps } from 'radix-vue'
+import type { NCollapsibleContentProps } from '../../../types'
+import { CollapsibleContent } from 'radix-vue'
+import { cn } from '../../../utils'
 
-const props = defineProps<CollapsibleContentProps>()
+const props = defineProps<NCollapsibleContentProps>()
 </script>
 
 <template>
-  <CollapsibleContent v-bind="props" class="data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down overflow-hidden transition-all">
+  <CollapsibleContent
+    v-bind="props"
+    :class="cn(
+      'collapsible-content',
+      props.class,
+    )"
+  >
     <slot />
   </CollapsibleContent>
 </template>
