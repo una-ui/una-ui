@@ -8,6 +8,7 @@ import { breadcrumb } from './breadcrumb'
 import { btn } from './btn'
 import { card } from './card'
 import { checkbox } from './checkbox'
+import { collapsible } from './collapsible'
 import { dialog } from './dialog'
 import { dropdowMenu } from './dropdown-menu'
 import { formGroup } from './form-group'
@@ -69,4 +70,5 @@ export const shortcuts = [
   ...tooltip,
   ...pagination,
   ...toggle,
+  ...collapsible,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
