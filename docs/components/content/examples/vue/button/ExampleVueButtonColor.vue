@@ -95,6 +95,10 @@
           label="link-gray"
           btn="link-gray"
         />
+        <NButton
+          label="text-gray"
+          btn="text-gray"
+        />
       </div>
 
       <div class="flex flex-col gap-2 md:flex-row">
@@ -118,19 +122,45 @@
           btn="solid-black"
         />
         <NButton
+          label="soft-black"
+          btn="soft-black"
+        />
+        <NButton
           label="link-black"
           btn="link-black"
+        />
+        <NButton
+          label="text-black"
+          btn="text-black"
         />
       </div>
 
       <div class="flex flex-col gap-2 md:flex-row">
         <NButton
-          label="text-black"
-          btn="text-black"
+          label="ghost-muted"
+          btn="ghost-muted"
         />
         <NButton
-          label="text-gray"
-          btn="text-gray"
+          label="link-muted"
+          btn="link-muted"
+        />
+        <NButton
+          label="text-muted"
+          btn="text-muted"
+        />
+      </div>
+      <div class="flex flex-col gap-2 md:flex-row">
+        <NButton
+          label="soft-accent"
+          btn="soft-accent"
+        />
+        <NButton
+          label="text-accent"
+          btn="text-accent"
+        />
+        <NButton
+          label="link-accent"
+          btn="link-accent"
         />
       </div>
     </div>

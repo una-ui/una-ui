@@ -43,6 +43,8 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-ghost-muted': 'text-accent hover:text-muted btn-focus hover:bg-muted',
 
   'btn-soft-accent': 'text-accent bg-accent btn-focus',
+  'btn-text-accent': 'text-accent btn-focus',
+  'btn-link-accent': 'text-accent btn-focus hover:underline underline-offset-4',
 }
 
 export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
