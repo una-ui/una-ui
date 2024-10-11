@@ -39,6 +39,7 @@ export default defineConfig({
     '../packages/nuxt/src/preset.config.ts',
 
     '../packages/preset/src/_shortcuts/toast.ts',
+    '../packages/preset/src/_shortcuts/collapsible.ts',
     '../packages/preset/src/_shortcuts/calendar.ts',
     '../packages/preset/src/_shortcuts/pagination.ts',
     '../packages/preset/src/_shortcuts/label.ts',

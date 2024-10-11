@@ -1,3 +1,20 @@
+# [0.28.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.27.1-beta.1...v0.28.0-beta.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* **Button:** update static variant presets and add examples in docs ([#271](https://github.com/una-ui/una-ui/issues/271)) ([5eb53f6](https://github.com/una-ui/una-ui/commit/5eb53f65275689e55f4566dcd3eaa80639e2ba1a))
+* **Preset:** update default border-color configuration ([0cbfd29](https://github.com/una-ui/una-ui/commit/0cbfd2967817cb6511b8351596bae77177c07bfd))
+
+
+### Features
+
+* **Collapsible:** introduce new preset and component ([#274](https://github.com/una-ui/una-ui/issues/274)) ([1d8e031](https://github.com/una-ui/una-ui/commit/1d8e031419a2a51743133b6b6a18183f754d1ed6))
+* **Preset:** add container default config ([d44377e](https://github.com/una-ui/una-ui/commit/d44377ea154a67a9d26e4149fdc6c24f1f4d5b50))
+* **Preset:** add html border-color value and fix typo ([ddfb97d](https://github.com/una-ui/una-ui/commit/ddfb97dc060dd121ea19ddb1970b94ce20c4c427))
+
+
+
 ## [0.27.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.27.0-beta.1...v0.27.1-beta.1) (2024-10-08)
 
 

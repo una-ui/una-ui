@@ -64,6 +64,20 @@ export default function presetUna(options: unaUIOptions = {
         md: 'calc(var(--una-radius) - 2px)',
         sm: 'calc(var(--una-radius) - 4px)',
       },
+      animation: {
+        keyframes: {
+          'collapsible-down': '{from{height: 0}to{height:var(--radix-collapsible-content-height)}}',
+          'collapsible-up': '{from{height:var(--radix-collapsible-content-height)}to{height: 0}}',
+        },
+        durations: {
+          'collapsible-down': '0.2s',
+          'collapsible-up': '0.2s',
+        },
+        timingFns: {
+          'collapsible-down': 'ease-in-out',
+          'collapsible-up': 'ease-in-out',
+        },
+      },
     }),
     rules: [
       [/^n-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
