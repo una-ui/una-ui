@@ -64,7 +64,7 @@ export default defineConfig({
     '../packages/preset/src/_shortcuts/badge.ts',
     '../packages/preset/src/_shortcuts/alert.ts',
     '../packages/preset/src/_shortcuts/input.ts',
-    '../packages/preset/src/_shortcuts/button.ts',
+    '../packages/preset/src/_shortcuts/btn.ts',
     '../packages/preset/src/_shortcuts/form-group.ts',
     '../packages/preset/src/_shortcuts/accordion.ts',
     '../packages/preset/src/_shortcuts/switch.ts',
