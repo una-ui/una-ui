@@ -36,7 +36,7 @@ export const dynamicSwitch = [
 
   [
     /^switch-unchecked(?:-([^-]+))?(?:-([^-]+))?$/,
-    ([, color = 'primary'], { theme }: RuleContext<Theme>) => {
+    ([, color = 'gray'], { theme }: RuleContext<Theme>) => {
       const parsedColor = parseColor(color, theme)
       if ((parsedColor?.cssColor?.type === 'rgb' || parsedColor?.cssColor?.type === 'rgba') && parsedColor.cssColor.components)
         return `data-[state=unchecked]:n-${color}-200 dark:data-[state=unchecked]:n-${color}-700/58`
