@@ -22,6 +22,7 @@ import { link } from './link'
 import { navLink } from './nav-link'
 import { navLinkGroup } from './nav-link-group'
 import { pagination } from './pagination'
+import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { progress } from './progress'
 import { radio } from './radio'
@@ -71,4 +72,5 @@ export const shortcuts = [
   ...pagination,
   ...toggle,
   ...collapsible,
+  ...pinInput,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
