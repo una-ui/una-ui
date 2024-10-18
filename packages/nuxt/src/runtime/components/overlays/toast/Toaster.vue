@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NToasterProps } from '../../../types'
+import { reactivePick } from '@vueuse/core'
 import { useToast } from '../../../composables/useToast'
 import Toast from './Toast.vue'
 import ToastProvider from './ToastProvider.vue'
@@ -9,13 +10,17 @@ defineOptions({
   inheritAttrs: false,
 })
 
-defineProps<NToasterProps>()
+const props = defineProps<NToasterProps>()
+
+const rootProps = reactivePick(props, ['duration', 'label', 'swipeDirection', 'swipeThreshold'])
 
 const { toasts } = useToast()
 </script>
 
 <template>
-  <ToastProvider>
+  <ToastProvider
+    v-bind="rootProps"
+  >
     <slot>
       <Toast
         v-for="t in toasts"
@@ -28,6 +33,6 @@ const { toasts } = useToast()
       </Toast>
     </slot>
 
-    <ToastViewport />
+    <ToastViewport v-bind="_toastViewport" />
   </ToastProvider>
 </template>
