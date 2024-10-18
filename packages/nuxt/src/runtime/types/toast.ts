@@ -8,6 +8,11 @@ interface BaseExtensions {
 
 export type Toaster = NToastProps & { id: string }
 
+export interface NToasterProps extends BaseExtensions, ToastProviderProps {
+  _toastViewport?: Partial<NToastViewportProps>
+  _toast?: Partial<NToastProps>
+}
+
 export interface NToastProps extends BaseExtensions, ToastRootProps,
   Pick<NToastActionProps, 'toastAction'> {
   /**

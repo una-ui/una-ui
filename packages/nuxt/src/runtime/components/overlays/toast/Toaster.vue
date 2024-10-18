@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import { useToast } from '../../composables/useToast'
-import Toast from './toast/Toast.vue'
-import ToastProvider from './toast/ToastProvider.vue'
-import ToastViewport from './toast/ToastViewport.vue'
+import type { NToasterProps } from '../../../types'
+import { useToast } from '../../../composables/useToast'
+import Toast from './Toast.vue'
+import ToastProvider from './ToastProvider.vue'
+import ToastViewport from './ToastViewport.vue'
 
 defineOptions({
   inheritAttrs: false,
 })
+
+defineProps<NToasterProps>()
 
 const { toasts } = useToast()
 </script>
@@ -17,7 +20,7 @@ const { toasts } = useToast()
       <Toast
         v-for="t in toasts"
         :key="t.id"
-        v-bind="{ ...$attrs, ...t }"
+        v-bind="{ ..._toast, ...$attrs, ...t }"
       >
         <template v-for="(_, name) in $slots" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />

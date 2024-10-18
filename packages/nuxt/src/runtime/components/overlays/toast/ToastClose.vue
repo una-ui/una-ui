@@ -26,7 +26,7 @@ const delegatedProps = computed(() => {
     <Icon
       :name="una?.toastCloseIcon ?? 'toast-close-icon'"
       :class="cn(
-        'toast-icon-base',
+        'toast-close-icon-base',
         una?.toastCloseIconBase,
       )"
       aria-hidden="true"
