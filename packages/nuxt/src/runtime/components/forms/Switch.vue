@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NSwitchProps } from '../../types'
+import { reactivePick } from '@vueuse/core'
 import {
   SwitchRoot,
   type SwitchRootEmits,
@@ -11,19 +12,19 @@ import NIcon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NSwitchProps>(), {
   size: 'md',
-  switchChecked: 'primary',
-  switchUnchecked: 'gray',
+  switchChecked: '~',
+  switchUnchecked: '~',
 })
 
 const emit = defineEmits<SwitchRootEmits>()
 
-const forwarded = useForwardPropsEmits(props, emit)
+const rootPropsEmits = useForwardPropsEmits(reactivePick(props, 'as', 'asChild', 'checked', 'defaultChecked', 'disabled', 'id', 'name', 'required', 'value'), emit)
 </script>
 
 <template>
   <SwitchRoot
     v-slot="{ checked }"
-    v-bind="forwarded"
+    v-bind="rootPropsEmits"
     :class="cn(
       'peer switch',
       una?.switch,
@@ -32,8 +33,8 @@ const forwarded = useForwardPropsEmits(props, emit)
         : una?.switchUnchecked,
     )"
     :disabled="disabled || loading"
-    :switch-unchecked
     :switch-checked
+    :switch-unchecked
     :size
   >
     <SwitchThumb
