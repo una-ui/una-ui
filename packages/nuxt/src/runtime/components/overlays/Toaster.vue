@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { NToasterProps } from '../../../types'
+import type { NToasterProps } from '../../types'
 import { reactivePick } from '@vueuse/core'
-import { useToast } from '../../../composables/useToast'
-import Toast from './Toast.vue'
-import ToastProvider from './ToastProvider.vue'
-import ToastViewport from './ToastViewport.vue'
+import { useToast } from '../../composables/useToast'
+import Toast from './toast/Toast.vue'
+import ToastProvider from './toast/ToastProvider.vue'
+import ToastViewport from './toast/ToastViewport.vue'
 
 defineOptions({
   inheritAttrs: false,
