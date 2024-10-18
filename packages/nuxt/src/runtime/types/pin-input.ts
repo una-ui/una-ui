@@ -43,7 +43,7 @@ export interface NPinInputInputProps extends PinInputInputProps, BaseExtensions 
    */
   pinInput?: string
   /** Additional properties for the una component */
-  una?: NPinInputUnaProps['pinInputInput']
+  una?: Pick<NPinInputUnaProps, 'pinInputInput' | 'pinInputInputDefault'>
 }
 
 export interface NPinInputSeparatorProps extends BaseExtensions {
@@ -63,6 +63,8 @@ export interface NPinInputGroupProps extends Omit<BaseExtensions, 'size'> {
 interface NPinInputUnaProps {
   /** CSS class for the pin-input input */
   pinInputInput?: HTMLAttributes['class']
+  /** CSS class for the pin-input input default variant */
+  pinInputInputDefault?: HTMLAttributes['class']
   /** CSS class for the pin-input separator */
   pinInputSeparator?: HTMLAttributes['class']
   /** CSS class for the pin-input separator icon */

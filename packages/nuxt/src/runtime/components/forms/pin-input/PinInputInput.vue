@@ -2,15 +2,20 @@
 import type { NPinInputInputProps } from '../../../../runtime/types'
 import { reactiveOmit } from '@vueuse/core'
 import { PinInputInput } from 'radix-vue'
+import { computed } from 'vue'
 import { cn } from '../../../../runtime/utils'
 
 const props = withDefaults(defineProps<NPinInputInputProps>(), {
   una: () => ({
-    pinInputInput: 'pin-input-default-variant',
+    pinInputInputDefault: 'pin-input-default-variant',
   }),
 })
 
 const delegatedProps = reactiveOmit(props, 'class')
+
+const pinInputVariants = ['outline', 'solid'] as const
+const hasVariant = computed(() => pinInputVariants.some(pinInputVariant => props.pinInput?.includes(pinInputVariant)))
+const isBaseVariant = computed(() => props.pinInput?.includes('~'))
 </script>
 
 <template>
@@ -20,7 +25,8 @@ const delegatedProps = reactiveOmit(props, 'class')
     :class="cn(
       'pin-input-input',
       props.class,
-      props.una.pinInputInput,
+      !hasVariant && !isBaseVariant ? una?.pinInputInputDefault : '',
+      una.pinInputInput,
     )"
   />
 </template>

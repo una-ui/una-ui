@@ -22,7 +22,7 @@ export const dynamicPinInput: [RegExp, (params: RegExpExecArray) => string][] = 
   [/^pin-input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400`],
 
   [/^pin-input-outline(-(\S+))?$/, ([, , c = 'primary']) => `pin-input-focus-${c}`],
-  [/^pin-input-solid(-(\S+))?$/, ([, , c = 'primary']) => `pin-input-focus-${c} ring-${c}-500 dark:ring-${c}-400`],
+  [/^pin-input-solid(-(\S+))?$/, ([, , c = 'primary']) => `pin-input-focus-${c} ring-1 ring-${c}-500 dark:ring-${c}-400`],
 ]
 
 export const pinInput = [
