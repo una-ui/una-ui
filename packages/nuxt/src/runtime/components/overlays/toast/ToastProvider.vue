@@ -3,7 +3,7 @@ import type { NToastProviderProps } from '../../../types'
 import { ToastProvider } from 'radix-vue'
 
 const props = withDefaults(defineProps<NToastProviderProps>(), {
-  duration: 4000,
+  duration: 5000,
 })
 </script>
 

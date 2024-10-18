@@ -1,118 +1,88 @@
 <script setup lang="ts">
 import type { NToastProps } from '../../../types'
-import { useForwardPropsEmits } from 'radix-vue'
-import { computed } from 'vue'
-import { cn } from '../../../utils'
+import { reactivePick } from '@vueuse/core'
+import { ToastRoot, type ToastRootEmits, useForwardPropsEmits } from 'radix-vue'
 
-import Icon from '../../elements/Icon.vue'
+import { cn } from '../../../utils'
 import ToastAction from './ToastAction.vue'
 import ToastClose from './ToastClose.vue'
 import ToastDescription from './ToastDescription.vue'
 import ToastInfo from './ToastInfo.vue'
-import ToastProvider from './ToastProvider.vue'
-import ToastRoot from './ToastRoot.vue'
 import ToastTitle from './ToastTitle.vue'
-import ToastViewport from './ToastViewport.vue'
 
 defineOptions({
   inheritAttrs: false,
 })
 
 const props = withDefaults(defineProps<NToastProps>(), {
-  toastAction: 'solid-white',
-  una: () => ({
-    toastDefaultVariant: 'toast-default-variant',
-  }),
+  toast: 'soft-red',
 })
 
-const emits = defineEmits<{
-  (e: 'close'): void
-  (e: 'update:open', value: boolean): void
-}>()
-
-const forwarded = useForwardPropsEmits(props, emits)
-
-function onActionTrigger(f: (() => void) | undefined) {
-  f && f()
-  emits('close')
-}
-
-const toastVariants = ['soft', 'outline'] as const
-const hasVariant = computed(() => toastVariants.some(toastVariant => props.toast?.includes(toastVariant)))
-const isBaseVariant = computed(() => props.toast?.includes('~'))
+const emits = defineEmits<ToastRootEmits>()
+const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultOpen', 'open', 'duration', 'type'), emits)
 </script>
 
 <template>
-  <ToastProvider
-    v-bind="_toastProvider"
+  <ToastRoot
+    :class="cn(
+      'group pointer-events-auto relative flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full',
+      props.class,
+      props.una?.toast,
+    )"
+    v-bind="rootProps"
+    :toast
+    @update:open="onOpenChange"
   >
-    <ToastRoot
-      :class="cn(
-        'toast',
-        props.class,
-        !hasVariant && !isBaseVariant ? una?.toastDefaultVariant : '',
-        props.una?.toast,
-      )"
-      :toast="toast"
-      v-bind="{ forwarded, ...forwarded._toastRoot }"
-    >
-      <slot name="root">
-        <ToastInfo
-          v-if="$slots.info || $slots.title || $slots.description || title || description"
-          v-bind="_toastInfo"
-        >
-          <slot name="info">
-            <ToastTitle
-              v-if="$slots.title || title"
-              v-bind="_toastTitle"
-            >
-              <slot name="title">
-                {{ title }}
-              </slot>
-            </ToastTitle>
+    <slot>
+      <ToastInfo
+        v-if="$slots.info || $slots.title || $slots.description || title || description"
+        v-bind="_toastInfo"
+        :una
+      >
+        <slot name="info">
+          <ToastTitle
+            v-if="$slots.title || title"
+            v-bind="_toastTitle"
+            :una
+          >
+            <slot name="title">
+              {{ title }}
+            </slot>
+          </ToastTitle>
 
-            <ToastDescription
-              v-if="$slots.description || description"
-              v-bind="_toastDescription"
-            >
-              <slot name="description">
-                {{ description }}
-              </slot>
-            </ToastDescription>
-          </slot>
-        </ToastInfo>
-        <div
-          v-if="actions"
-          class="toast-actions"
-        >
+          <ToastDescription
+            v-if="$slots.description || description"
+            v-bind="_toastDescription"
+            :una
+          >
+            <slot name="description">
+              {{ description }}
+            </slot>
+          </ToastDescription>
+        </slot>
+      </ToastInfo>
+
+      <div
+        v-if="actions"
+        class="toast-actions"
+      >
+        <slot name="actions" :actions>
           <ToastAction
             v-for="(action, index) in actions"
             :key="index"
-            :toast-action
-            :alt-text="_toastAction?.altText!"
-            v-bind="{ ...action, ...forwarded._toastAction }"
-            @on-action="onActionTrigger(action.click)"
+            v-bind="action"
+            :una
           />
-        </div>
-        <ToastClose
-          v-if="closable"
-          v-bind="_toastClose"
-          @close="emits('close')"
-        >
-          <slot name="closeIcon">
-            <Icon
-              :name="_toastClose?.una?.toastCloseIcon ?? 'toast-close-icon'"
-              :class="cn(
-                _toastClose?.una?.toastCloseIconBase,
-                'toast-close-icon-base',
-              )"
-              aria-hidden="true"
-            />
-          </slot>
-        </ToastClose>
-      </slot>
-    </ToastRoot>
+        </slot>
+      </div>
 
-    <ToastViewport v-bind="_toastViewport" />
-  </ToastProvider>
+      <ToastClose
+        v-if="closable"
+        v-bind="_toastClose"
+        :una
+      >
+        <slot name="closeIcon" />
+      </ToastClose>
+    </slot>
+  </ToastRoot>
 </template>

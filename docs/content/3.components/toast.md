@@ -55,7 +55,7 @@ const toast = useToast()
 
 `NToast` - use to display messages in an overlay. Please refer to the [Radix-ui toast](https://www.radix-vue.com/components/toast.html#api-reference) for more API information.
 
-> Use [useToast](/packages/nuxt/src/runtime/composables/useToast.ts) composable to add toasts to your application with the help of a special design.
+<!-- > Use [useToast](/packages/nuxt/src/runtime/composables/useToast.ts) composable to add toasts to your application with the help of a special design. -->
 
 | Prop            | Default | Type       | Description                                          |
 | --------------- | ------- | ---------- | ---------------------------------------------------  |

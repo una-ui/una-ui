@@ -4,8 +4,8 @@
 
     <Toast />
 
-    <NToaster />
-
     <ColorMode />
   </div>
+
+  <NToaster />
 </template>

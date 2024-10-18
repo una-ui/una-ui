@@ -1,12 +1,5 @@
 <script setup lang="ts">
-const toast = useToast()
-
-const actions = ref([{
-  label: 'Try again',
-  // eslint-disable-next-line no-alert
-  click: () => alert('Lets gooo'),
-  altText: 'Try again',
-}])
+const { toast } = useToast()
 
 /**
  * @name NToast
@@ -29,12 +22,53 @@ const actions = ref([{
 
 <template>
   <NButton
+    btn="solid-white"
     label="Show toast"
-    @click="toast.add(
+    @click="toast(
       {
+        toast: 'soft-error',
         title: 'Uh oh! Something went wrong.',
         description: 'There was a problem with your request.',
-        actions,
+        actions: [
+          {
+            label: 'Try again',
+            size: 'xs',
+            btn: 'outline-white',
+            altText: 'Text',
+          },
+        ],
+        closable: true,
+      },
+    )"
+  />
+
+  <NButton
+    btn="solid-white"
+    label="Show toast"
+    @click="toast(
+      {
+        toast: 'solid-white',
+        title: 'Uh oh! Something went wrong.',
+        description: 'There was a problem with your request.',
+        actions: [
+          {
+            label: 'Try again',
+            size: 'xs',
+            altText: 'Text',
+          },
+        ],
+      },
+    )"
+  />
+
+  <NButton
+    btn="solid-white"
+    label="Show toast"
+    @click="toast(
+      {
+        toast: 'solid-white',
+        title: 'Uh oh! Something went wrong.',
+        description: 'There was a problem with your request.',
         closable: true,
       },
     )"

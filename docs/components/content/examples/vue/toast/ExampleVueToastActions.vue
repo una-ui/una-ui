@@ -1,14 +1,12 @@
 <script setup lang="ts">
-const toast = useToast()
+const { toast } = useToast()
 
 const actions = ref([
   {
     label: 'Try again',
     click: () => {
-      // eslint-disable-next-line no-alert
       alert('Try again')
     },
-    altText: 'Try again',
   },
 ])
 </script>
@@ -18,7 +16,7 @@ const actions = ref([
     <NButton
       label="Show toast"
       btn="solid-white"
-      @click="toast.add(
+      @click="toast(
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',

@@ -117,7 +117,6 @@ export default [
   'toaster',
   'toast-info',
   'toast-provider',
-  'toast-root',
   'toast-title',
   'toast-viewport',
   'toggle',
