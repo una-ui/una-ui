@@ -28,13 +28,13 @@ useIntervalFn(() => {
           <NIcon v-if="loading" name="switch-loading-icon" class="switch-loading" />
           <Transition
             v-else
-            class="switch-icon-base absolute transition-opacity-500"
+            class="absolute switch-icon transition-opacity-500"
             enter-active-class="delay-250"
             leave-to-class="opacity-0"
             enter-from-class="opacity-0"
           >
-            <NIcon v-if="checked" name="i-radix-icons:moon" class="switch-icon-on" />
-            <NIcon v-else name="i-radix-icons:sun" class="switch-icon-off" />
+            <NIcon v-if="checked" name="i-radix-icons:moon" class="switch-icon-checked" />
+            <NIcon v-else name="i-radix-icons:sun" class="switch-icon-unchecked" />
           </Transition>
         </template>
       </NSwitch>
@@ -46,9 +46,9 @@ useIntervalFn(() => {
         icon="i-tabler:fidget-spinner"
         :una="{
           switchThumb: 'duration-500',
-          switchIconBase: 'transition-transform duration-2500',
-          switchIconOn: 'rotate-1270',
-          switchIconOff: 'rotate-0',
+          switchIcon: 'transition-transform duration-2500',
+          switchIconChecked: 'rotate-1270',
+          switchIconUnchecked: 'rotate-0',
         }"
       />
     </NFormGroup>
