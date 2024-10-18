@@ -33,7 +33,7 @@ const { toast } = useToast()
           {
             label: 'Try again',
             size: 'xs',
-            btn: 'outline-white',
+            btn: 'solid-error',
             altText: 'Text',
           },
         ],

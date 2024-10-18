@@ -18,7 +18,7 @@ const delegatedProps = computed(() => {
   <ToastClose
     v-bind="delegatedProps"
     :class="cn(
-      'bg-transparent flex items-center justify-center absolute right-1 top-1 rounded-md p-1 text-muted opacity-0 transition-opacity hover:text-base focus:opacity-100 focus:outline-none group-hover:opacity-100',
+      'toast-close',
       props.class,
       props.una?.toastClose,
     )"
@@ -26,7 +26,7 @@ const delegatedProps = computed(() => {
     <Icon
       :name="una?.toastCloseIcon ?? 'toast-close-icon'"
       :class="cn(
-        'w-4 h-4',
+        'toast-icon-base',
         una?.toastCloseIconBase,
       )"
       aria-hidden="true"
