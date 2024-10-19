@@ -63,10 +63,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 | Prop        | Type                 | Default                       | Description         |
 | ----------- | -------------------- | ----------------------------- | ------------------- |
-| `separator` | `string` `boolean`   | `i-radix-icons:dot-filled`    | The separator icon. |
+| `separator` | `string`             | -                             | The separator icon. |
 
 ::alert{type="info"}
-  You can use any icon provided by the [NIcon](icon) component, the default is `i-radix-icons:dot-filled`.
+  You can use any icon provided by the [NIcon](icon) component.
 ::
 
 :::CodeGroup
