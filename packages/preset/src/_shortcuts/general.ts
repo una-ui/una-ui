@@ -21,9 +21,9 @@ export const staticGeneral = {
 
   // ring
   'ring-base': 'ring-$c-ring',
-  'ring-inverted': 'ring-$c-ring-foreground',
+  'ring-inverted': 'ring-$c-foreground',
   'ring-offset-base': 'ring-offset-$c-background',
-  'ring-offset-inverted': 'ring-offset-$c-bg-foreground',
+  'ring-offset-inverted': 'ring-offset-$c-foreground',
 
   // border
   'border-base': 'border-$c-border',
