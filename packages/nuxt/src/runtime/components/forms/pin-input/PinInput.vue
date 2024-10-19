@@ -39,7 +39,7 @@ const id = computed(() => props.id ?? randomId('input'))
 
 <template>
   <PinInputRoot
-    v-bind="forwarded"
+    v-bind="{ ...forwarded, ..._pinInputRoot }"
     :id
   >
     <slot name="root">
@@ -49,6 +49,7 @@ const id = computed(() => props.id ?? randomId('input'))
             <PinInputInput
               :index
               :pin-input
+              :with-separator="!!separator || !!$slots.separator"
               v-bind="{ _pinInputInput, una, size }"
             />
             <template v-if="($slots.separator || separator) && index !== count - 1">

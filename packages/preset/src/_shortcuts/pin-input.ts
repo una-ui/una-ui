@@ -5,7 +5,7 @@ export const staticPinInput: Record<`${PinInputPrefix}-${string}` | PinInputPref
   'pin-input': '',
   'pin-input-default-variant': 'pin-input-outline',
   'pin-input-disabled': 'disabled:(n-disabled)',
-  'pin-input-separator-icon': 'i-lucide:dot',
+  'pin-input-separator-icon': 'i-radix-icons:dot-filled',
 
   // components
   'pin-input-root': 'flex gap-2 items-center',
@@ -14,8 +14,8 @@ export const staticPinInput: Record<`${PinInputPrefix}-${string}` | PinInputPref
   'pin-input-separator': '',
 
   // static variants
-  'pin-input-outline-gray': 'focus:!ring-$c-gray-400',
-  'pin-input-outline-black': 'focus:!ring-$c-foreground',
+  'pin-input-outline-gray': 'focus:ring-2 focus:!ring-$c-gray-400',
+  'pin-input-outline-black': 'focus:ring-2 focus:!ring-$c-foreground',
 }
 
 export const dynamicPinInput: [RegExp, (params: RegExpExecArray) => string][] = [

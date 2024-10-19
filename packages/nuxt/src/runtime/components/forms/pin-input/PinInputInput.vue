@@ -6,6 +6,7 @@ import { computed } from 'vue'
 import { cn } from '../../../../runtime/utils'
 
 const props = withDefaults(defineProps<NPinInputInputProps>(), {
+  withSeparator: false,
   una: () => ({
     pinInputInputDefault: 'pin-input-default-variant',
   }),
@@ -25,8 +26,9 @@ const isBaseVariant = computed(() => props.pinInput?.includes('~'))
     :class="cn(
       'pin-input-input',
       props.class,
+      withSeparator ? '!rounded-md border first:!rounded-md last:!rounded-md' : '',
       !hasVariant && !isBaseVariant ? una?.pinInputInputDefault : '',
-      una.pinInputInput,
+      una?.pinInputInput,
     )"
   />
 </template>

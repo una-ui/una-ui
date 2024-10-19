@@ -22,6 +22,7 @@ export interface NPinInputProps extends Omit<NPinInputRootProps, 'size' | 'class
   separator?: NPinInputSeparatorProps['icon']
 
   // sub-components
+  _pinInputRoot?: Partial<NPinInputRootProps>
   _pinInputInput?: Partial<NPinInputInputProps>
   _pinInputSeparator?: Partial<NPinInputSeparatorProps>
   _pinInputGroup?: Partial<NPinInputGroupProps>
@@ -30,7 +31,10 @@ export interface NPinInputProps extends Omit<NPinInputRootProps, 'size' | 'class
   una?: NPinInputUnaProps
 }
 
-export interface NPinInputRootProps extends PinInputRootProps, BaseExtensions {}
+export interface NPinInputRootProps extends PinInputRootProps, BaseExtensions {
+  /** Additional properties for the una component */
+  una?: NPinInputUnaProps['pinInputRoot']
+}
 
 export interface NPinInputInputProps extends PinInputInputProps, BaseExtensions {
   /**
@@ -42,6 +46,12 @@ export interface NPinInputInputProps extends PinInputInputProps, BaseExtensions 
    * pin-input="solid-yellow"
    */
   pinInput?: string
+  /**
+   * The separator flag of NPinInputProps['separator']
+   *
+   * @default false
+   */
+  withSeparator?: boolean
   /** Additional properties for the una component */
   una?: Pick<NPinInputUnaProps, 'pinInputInput' | 'pinInputInputDefault'>
 }
@@ -61,6 +71,8 @@ export interface NPinInputGroupProps extends Omit<BaseExtensions, 'size'> {
 }
 
 interface NPinInputUnaProps {
+  /** CSS class for the pin-input root */
+  pinInputRoot?: HTMLAttributes['class']
   /** CSS class for the pin-input input */
   pinInputInput?: HTMLAttributes['class']
   /** CSS class for the pin-input input default variant */

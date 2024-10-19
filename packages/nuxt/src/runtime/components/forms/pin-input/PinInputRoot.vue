@@ -18,6 +18,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     :class="cn(
       'pin-input-root',
       props.class,
+      props.una?.pinInputRoot,
     )"
   >
     <slot />

@@ -5,7 +5,6 @@ import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NPinInputSeparatorProps>(), {
   size: 'sm',
-  icon: 'pin-input-separator-icon',
 })
 </script>
 
