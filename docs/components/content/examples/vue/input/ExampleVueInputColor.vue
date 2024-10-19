@@ -23,7 +23,7 @@
 
     <NSeparator />
 
-    <span class="text-sm font-medium">Static color:</span>
+    <span class="text-sm font-medium">Static colors:</span>
 
     <div class="flex flex-col gap-4">
       <NInput
