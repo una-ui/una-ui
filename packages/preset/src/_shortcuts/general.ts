@@ -45,13 +45,13 @@ export const staticGeneral = {
 
   // icon
   'i-loading': 'i-tabler-loader-2',
-  'i-warning': 'i-heroicons-exclamation-triangle-20-solid',
-  'i-error': 'i-heroicons-exclamation-circle-20-solid',
-  'i-success': 'i-heroicons-check-circle-20-solid',
-  'i-info': 'i-heroicons-information-circle-20-solid',
-  'i-close': 'i-heroicons-x-mark-20-solid',
+  'i-warning': 'i-radix-icons-exclamation-triangle',
+  'i-error': 'i-radix-icons-cross-circled',
+  'i-success': 'i-radix-icons-check-circled',
+  'i-info': 'i-radix-icons-info-circled',
+  'i-close': 'i-radix-icons-cross-2',
+  'i-check': 'i-radix-icons-check',
   'i-dot': 'i-tabler-circle-filled',
-  'i-check': 'i-lucide-check',
 
   // transition
   'transition-base': 'transition-all duration-100 ease-out',
