@@ -1,0 +1,3 @@
+<template>
+  <NPinInput disabled />
+</template>
