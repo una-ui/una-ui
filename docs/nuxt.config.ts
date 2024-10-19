@@ -14,10 +14,7 @@ export default defineNuxtConfig({
     componentInspector: false,
   },
 
-  sourcemap: {
-    server: false,
-    client: true,
-  },
+  sourcemap: false,
 
   runtimeConfig: {
     public: {
@@ -29,9 +26,19 @@ export default defineNuxtConfig({
     payloadExtraction: true,
   },
 
+  nitro: {
+    prerender: {
+      routes: [
+        '/',
+      ],
+      ignore: [
+        '/components/table',
+      ],
+    },
+  },
+
   routeRules: {
-    // '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined, prerender: true },
-    '/': { prerender: true },
+    '/components': { redirect: '/components/accordion', prerender: false },
   },
 
   css: [
