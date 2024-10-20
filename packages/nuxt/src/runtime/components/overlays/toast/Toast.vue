@@ -4,6 +4,7 @@ import { reactivePick } from '@vueuse/core'
 import { ToastRoot, type ToastRootEmits, useForwardPropsEmits } from 'radix-vue'
 
 import { cn } from '../../../utils'
+import Progress from '../../elements/Progress.vue'
 import ToastAction from './ToastAction.vue'
 import ToastClose from './ToastClose.vue'
 import ToastDescription from './ToastDescription.vue'
@@ -15,7 +16,8 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NToastProps>(), {
-  toast: 'soft-red',
+  toast: 'solid-white',
+  closable: true,
 })
 
 const emits = defineEmits<ToastRootEmits>()
@@ -24,6 +26,7 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultOpen', 
 
 <template>
   <ToastRoot
+    v-slot="{ remaining, duration }"
     :class="cn(
       'group toast data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full',
       props.class,
@@ -71,7 +74,6 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultOpen', 
             v-for="(action, index) in actions"
             :key="index"
             v-bind="action"
-            :una
           />
         </slot>
       </div>
@@ -84,5 +86,15 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultOpen', 
         <slot name="closeIcon" />
       </ToastClose>
     </slot>
+
+    <div
+      v-if="showProgress"
+      class="absolute inset-x-0 bottom-0 !mx-0"
+    >
+      <Progress
+        class="h-1 rounded-none bg-transparent"
+        :model-value="remaining / duration * 100"
+      />
+    </div>
   </ToastRoot>
 </template>

@@ -30,10 +30,6 @@ const delegatedProps = computed(() => {
       v-bind="omitProps({ ...$attrs, ...delegatedProps }, ['altText'])"
       :id="randomId('toast-action')"
       :class="cn('toast-action', props.class)"
-      :una="{
-        btnDefaultVariant: toastAction,
-        ...delegatedProps.una,
-      }"
     >
       <template v-for="(_, name) in $slots" #[name]="slotData">
         <slot :name="name" v-bind="slotData" />

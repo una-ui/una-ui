@@ -10,7 +10,6 @@ interface BaseExtensionProps {
   paginationSelected?: string
   paginationUnselected?: string
   dropdownMenu?: string
-  toastAction?: string
   toggleOn?: string
   toggleOff?: string
 }

@@ -2,7 +2,7 @@
 description: 'NToast component - used to display messages in an overlay.'
 ---
 
-# 🌑 Toast
+# 🟢 Toast
 
 ::list{type="primary"}
 - Automatically closes.

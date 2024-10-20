@@ -1,10 +1,9 @@
 <script setup lang="ts">
-const toast = useToast()
+const { toast } = useToast()
 
 const actions = ref([
   {
     label: 'Try again',
-    // eslint-disable-next-line no-alert
     click: () => alert('Try again'),
     altText: 'Try again',
   },
@@ -16,12 +15,11 @@ const actions = ref([
     <NButton
       label="Base toast"
       btn="solid-white"
-      @click="toast.add(
+      @click="toast(
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
           toast: 'outline-gray',
-          toastAction: 'solid-white',
           actions,
           closable: true,
         },
@@ -30,12 +28,11 @@ const actions = ref([
     <NButton
       label="Outline-yellow toast"
       btn="outline-yellow"
-      @click="toast.add(
+      @click="toast(
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
           toast: 'outline-yellow',
-          toastAction: 'soft-yellow',
           actions,
           closable: true,
         },
@@ -44,12 +41,11 @@ const actions = ref([
     <NButton
       label="Soft-info toast"
       btn="soft-info"
-      @click="toast.add(
+      @click="toast(
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
           toast: 'soft-info',
-          toastAction: 'solid-gray',
           actions,
           closable: true,
         },

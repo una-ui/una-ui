@@ -23,7 +23,6 @@ const mergeVariants = computed(() => {
     'pagination-selected': props.paginationSelected,
     'pagination-unselected': props.paginationUnselected,
     'dropdown-menu': props.dropdownMenu,
-    'toast-action': props.toastAction,
     'toggle-on': props.toggleOn,
     'toggle-off': props.toggleOff,
   }

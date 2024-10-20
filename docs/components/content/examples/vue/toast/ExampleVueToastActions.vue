@@ -1,14 +1,16 @@
 <script setup lang="ts">
 const { toast } = useToast()
 
-const actions = ref([
+const actions = [
   {
-    label: 'Try again',
-    click: () => {
-      alert('Try again')
+    label: 'Undo',
+    btn: 'solid-white',
+    altText: 'Error',
+    onClick: () => {
+      alert('Undo clicked')
     },
   },
-])
+]
 </script>
 
 <template>

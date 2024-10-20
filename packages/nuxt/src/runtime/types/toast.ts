@@ -13,8 +13,7 @@ export interface NToasterProps extends BaseExtensions, ToastProviderProps {
   _toast?: Partial<NToastProps>
 }
 
-export interface NToastProps extends BaseExtensions, ToastRootProps,
-  Pick<NToastActionProps, 'toastAction'> {
+export interface NToastProps extends BaseExtensions, ToastRootProps {
   /**
    * Allows you to add `UnaUI` toast preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -55,9 +54,14 @@ export interface NToastProps extends BaseExtensions, ToastRootProps,
    * size="sm" | size="2cm" | size="2rem" | size="2px"
    */
   size?: string
+  /**
+   * Show progress bar on the toast.
+   *
+   * @default false
+   */
+  showProgress?: boolean
 
   // Subcomponents
-  _toastRoot?: Partial<NToastRootProps>
   _toastProvider?: Partial<NToastProviderProps>
   _toastTitle?: Partial<NToastTitleProps>
   _toastDescription?: Partial<NToastDescriptionProps>
@@ -74,24 +78,6 @@ export interface NToastProps extends BaseExtensions, ToastRootProps,
   una?: NToastUnaProps
 
   onOpenChange?: ((value: boolean) => void) | undefined
-}
-
-export interface NToastRootProps extends ToastRootProps, BaseExtensions {
-  /**
-   * Allows you to add `UnaUI` toast preset properties,
-   * Think of it as a shortcut for adding options or variants to the preset if available.
-   *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/toast.ts
-   * @example
-   * toast="outline-green"
-   */
-  'toast'?: HTMLAttributes['class']
-  /**
-   * Сontrols open state of the toast
-   */
-  'onUpdate:open'?: ((value: boolean) => void) | undefined
-  /** Additional properties for the una component */
-  'una'?: Pick<NToastUnaProps, 'toastRoot'>
 }
 
 export interface NToastProviderProps extends ToastProviderProps {}
@@ -111,13 +97,7 @@ export interface NToastViewportProps extends ToastViewportProps, BaseExtensions 
   una?: Pick<NToastUnaProps, 'toastViewport'>
 }
 
-export interface NToastActionProps extends Omit<NButtonProps, 'una'>, ToastActionProps, BaseExtensions {
-  /**
-   * Function to handle click action for the toast.
-   */
-  click?: () => void
-  /** Additional properties for the una component */
-  una?: Pick<NToastUnaProps, 'toastAction'>
+export interface NToastActionProps extends NButtonProps, ToastActionProps {
 }
 
 export interface NToastInfoProps extends BaseExtensions {
@@ -136,7 +116,6 @@ export interface NToastUnaProps {
   toastTitle?: HTMLAttributes['class']
   toastDescription?: HTMLAttributes['class']
   toastViewport?: HTMLAttributes['class']
-  toastAction?: NButtonProps['una']
   toastClose?: HTMLAttributes['class']
   toastCloseIconBase?: HTMLAttributes['class']
   toastCloseIcon?: HTMLAttributes['class']

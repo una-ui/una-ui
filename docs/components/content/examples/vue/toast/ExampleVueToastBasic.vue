@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const toast = useToast()
+const { toast } = useToast()
 </script>
 
 <template>
@@ -8,9 +8,11 @@ const toast = useToast()
     <NButton
       label="Show toast"
       btn="solid-white"
-      @click="toast.add(
+      @click="toast(
         {
           title: 'Example Toast',
+          duration: 5 * 1000,
+          showProgress: true,
           description: 'This toast automatically closes.',
         },
       )"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const toast = useToast()
+const { toast } = useToast()
 </script>
 
 <template>
@@ -7,7 +7,7 @@ const toast = useToast()
     <NButton
       label="Show toast"
       btn="solid-white"
-      @click="toast.add(
+      @click="toast(
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
