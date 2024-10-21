@@ -18,10 +18,10 @@ Work in progress - this component is not yet ready for use.
 > refer to the [NButton](button) and [NuxtLink](link) documentation for more information on the props that can be passed to those components.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueNavLinkBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/nav-link/ExampleVueNavLinkBasic.vue
 ::
 :::
@@ -45,10 +45,10 @@ You can wrap the `nav-link` component with a `dark` class to force the component
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueNavLinkVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/nav-link/ExampleVueNavLinkVariant.vue
 ::
 :::

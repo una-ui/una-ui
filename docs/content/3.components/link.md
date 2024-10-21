@@ -22,10 +22,10 @@ description: 'NLink component - a component for rendering links to pages in your
 You can take a look and click at examples of different usage below:
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueLinkBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/link/ExampleVueLinkBasic.vue
 ::
 :::

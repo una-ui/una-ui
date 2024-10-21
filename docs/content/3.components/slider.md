@@ -23,10 +23,10 @@ description: 'NSlider component - used to create a range input.'
 use `NSlider` to create a range input.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSliderBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderBasic.vue
 ::
 :::
@@ -40,10 +40,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSliderColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderColor.vue
 ::
 :::
@@ -59,10 +59,10 @@ To avoid the thumb from overlapping, you can set the `min-steps-between-thumbs` 
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSliderSteps
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderSteps.vue
 ::
 :::
@@ -76,10 +76,10 @@ To avoid the thumb from overlapping, you can set the `min-steps-between-thumbs` 
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSliderLabel
 ::
- ::code-block{label="Code"}
+ ::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderLabel.vue
 ::
 :::
@@ -94,10 +94,10 @@ To avoid the thumb from overlapping, you can set the `min-steps-between-thumbs` 
 | `vertical`   | The vertical orientation. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSliderOrientation
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderOrientation.vue
 ::
 :::
@@ -107,10 +107,10 @@ To avoid the thumb from overlapping, you can set the `min-steps-between-thumbs` 
 `disabled` - disable the slider.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSliderDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderDisabled.vue
 ::
 :::
@@ -126,10 +126,10 @@ The `height` and `width` of the slider scale depends on the `slider-size`. If yo
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSliderSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderSize.vue
 ::
 :::
@@ -143,10 +143,10 @@ The `height` and `width` of the slider scale depends on the `slider-size`. If yo
 ::
 
 :::CodeGroup
-  ::code-block{label="Preview" preview}
+  ::div{label="Preview" preview}
     :ExampleVueSliderCustom
   ::
-  ::code-block{label="Code"}
+  ::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderCustom.vue
   ::
 :::

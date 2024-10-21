@@ -23,10 +23,10 @@ use `NTooltip` to provide information for a component.
 | disabled   | -       | `boolean` | Set to disable the tooltip. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTooltipBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipBasic.vue
 ::
 :::
@@ -44,10 +44,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueTooltipColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipColor.vue
 ::
 :::
@@ -63,11 +63,11 @@ You can adjust the tooltip size using any value, including breakpoints (e.g., `s
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueTooltipSize
 
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipSize.vue
 ::
 :::
@@ -88,10 +88,10 @@ For more props and information, please refer to the [Radix Tooltip Provider docu
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueTooltipProvider
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipProvider.vue
 ::
 :::
@@ -111,10 +111,10 @@ For more props and information, please refer to the [Radix Tooltip Root document
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueTooltipRoot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipRoot.vue
 ::
 :::
@@ -135,11 +135,11 @@ For more props and information, please refer to the [Radix Tooltip Content docum
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueTooltipContent
 ::
 
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipContent.vue
 ::
 ::
@@ -155,10 +155,10 @@ For more props and information, please refer to the [Radix Tooltip Content docum
 | `content` | The content slot. |
 
 :::CodeGroup
-::code-block{label="Preview"}
+::div{label="Preview"}
 :ExampleVueTooltipSlots
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipSlots.vue
 
 ::
@@ -178,23 +178,23 @@ You can use any sub-components of `NTooltip`, such as `NTooltipTrigger`, `NToolt
 ### 
 
 :::CodeGroup
-::code-block{label="Tooltip" preview}
+::div{label="Tooltip" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/tooltip/Tooltip.vue
 
 ::
-::code-block{label="TooltipRoot"}
+::div{label="TooltipRoot"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipRoot.vue
 
 ::
-::code-block{label="TooltipContent"}
+::div{label="TooltipContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipContent.vue
 
 ::
-::code-block{label="TooltipProvider"}
+::div{label="TooltipProvider"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipProvider.vue
 
 ::
-::code-block{label="TooltipTrigger"}
+::div{label="TooltipTrigger"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipTrigger.vue
 
 ::

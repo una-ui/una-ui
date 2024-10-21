@@ -13,10 +13,10 @@ description: 'NBadge component - used to display a small badge with a number or 
 >You can use `label prop` or `default slot` to set the label text.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeBasic.vue
 ::
 :::
@@ -33,10 +33,10 @@ description: 'NBadge component - used to display a small badge with a number or 
 | `~`       | The unstyle or base variant |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeVariant.vue
 ::
 :::
@@ -50,10 +50,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeColor.vue
 ::
 :::
@@ -69,10 +69,10 @@ The `padding` and `font-size` of the badge scale depends on the `size`. If you w
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeSize.vue
 ::
 :::
@@ -86,10 +86,10 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeIcon.vue
 ::
 :::
@@ -99,10 +99,10 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 `closable` - add a close button to the badge.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeClosable
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeClosable.vue
 ::
 :::
@@ -118,10 +118,10 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ### Default
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeDefaultSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeDefaultSlot.vue
 ::
 :::

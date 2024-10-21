@@ -16,10 +16,10 @@ description: 'NCard - use to display content in a flexible container component.'
 | `description` | Description of the card |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCardBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardBasic.vue
 ::
 :::
@@ -39,10 +39,10 @@ description: 'NCard - use to display content in a flexible container component.'
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCardVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardVariant.vue
 ::
 :::
@@ -56,10 +56,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCardColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardColor.vue
 ::
 :::
@@ -77,10 +77,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 | `footer`      | The footer slot.      |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCardSlots
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardSlots.vue
 ::
 :::
@@ -97,31 +97,31 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ### 
 
 :::CodeGroup
-::code-block{label="Card" preview}
+::div{label="Card" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/Card.vue
 
 ::
-::code-block{label="CardContent"}
+::div{label="CardContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardContent.vue
 
 ::
-::code-block{label="CardTitle"}
+::div{label="CardTitle"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardTitle.vue
 
 ::
-::code-block{label="CardDescription"}
+::div{label="CardDescription"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardDescription.vue
 
 ::
-::code-block{label="CardHeader"}
+::div{label="CardHeader"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardHeader.vue
 
 ::
-::code-block{label="CardAbout"}
+::div{label="CardAbout"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardAbout.vue
 
 ::
-::code-block{label="CardFooter"}
+::div{label="CardFooter"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardFooter.vue
 
 ::

@@ -13,10 +13,10 @@ description: 'NButton component - use to trigger an action or event, such as sub
 >You can use `label prop` or `default slot` to set the button text.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonUsage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonUsage.vue
 ::
 :::
@@ -36,10 +36,10 @@ description: 'NButton component - use to trigger an action or event, such as sub
 | `~`       | The unstyle or base variant |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonVariant.vue
 ::
 :::
@@ -53,10 +53,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonColor.vue
 ::
 :::
@@ -72,10 +72,10 @@ The `padding` and `font-size` of the button scale depends on the `size`. If you 
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonSize.vue
 ::
 :::
@@ -91,10 +91,10 @@ You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonRounded
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonRounded.vue
 ::
 :::
@@ -114,10 +114,10 @@ You can use any value provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonSquare
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonSquare.vue
 ::
 :::
@@ -136,10 +136,10 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonIcon.vue
 ::
 :::
@@ -153,10 +153,10 @@ Since we use `NuxtLink` for the link, you can use any `NuxtLink` props such as `
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonLink
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLink.vue
 ::
 :::
@@ -169,10 +169,10 @@ Since we use `NuxtLink` for the link, you can use any `NuxtLink` props such as `
 <!-- @unocss-skip-end -->
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonBlock
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonBlock.vue
 ::
 :::
@@ -182,10 +182,10 @@ Since we use `NuxtLink` for the link, you can use any `NuxtLink` props such as `
 `disabled` - add a disabled state to the button.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonDisabled.vue
 ::
 :::
@@ -204,10 +204,10 @@ You can use `loading` with `icon` and `label` at the same time.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonLoading
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLoading.vue
 ::
 :::
@@ -222,10 +222,10 @@ You can use `loading` with `icon` and `label` at the same time.
 `#leading` - add a leading icon to the button.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonLeadingSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLeadingSlot.vue
 ::
 :::
@@ -235,10 +235,10 @@ You can use `loading` with `icon` and `label` at the same time.
 `#tailing` - add a trailing icon to the button.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonTrailingSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonTrailingSlot.vue
 ::
 :::
@@ -248,10 +248,10 @@ You can use `loading` with `icon` and `label` at the same time.
 `#loading` - add a loading icon to the button.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonLoadingSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLoadingSlot.vue
 ::
 :::

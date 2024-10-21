@@ -16,11 +16,11 @@ description: 'NCollapsible - An interactive component which expands/collapses a 
 An interactive component which expands/collapses a panel.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCollapsibleBasic
 ::
 
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/collapsible/ExampleVueCollapsibleBasic.vue
 ::
 :::
@@ -44,15 +44,15 @@ An interactive component which expands/collapses a panel.
 ## Component
 
 :::CodeGroup
-::code-block{label="Collapsible" preview}
+::div{label="Collapsible" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/collapsible/Collapsible.vue
 
 ::
-::code-block{label="CollapsibleTrigger"}
+::div{label="CollapsibleTrigger"}
 @@@ ../packages/nuxt/src/runtime/components/elements/collapsible/CollapsibleTrigger.vue
 
 ::
-::code-block{label="CollapsibleContent"}
+::div{label="CollapsibleContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/collapsible/CollapsibleContent.vue
 
 ::

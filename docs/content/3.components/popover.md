@@ -20,11 +20,11 @@ description: 'NPopover - Displays rich content in a portal, triggered by a butto
 Displays rich content in a portal, triggered by a button.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePopoverBasic
 ::
 
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/popover/ExampleVuePopoverBasic.vue
 ::
 :::
@@ -47,11 +47,11 @@ Displays rich content in a portal, triggered by a button.
 ## Component
 
 :::CodeGroup
-::code-block{label="Popover" preview}
+::div{label="Popover" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/popover/Popover.vue
 
 ::
-::code-block{label="PopoverContent"}
+::div{label="PopoverContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/popover/PopoverContent.vue
 
 ::

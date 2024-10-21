@@ -24,10 +24,10 @@ description: 'NPagination - used to divide content into pages by displaying a su
 | `disabled`     | `boolean` | `false` | Disables pagination functionality.                                                    |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePaginationBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationBasic.vue
 ::
 :::
@@ -43,10 +43,10 @@ description: 'NPagination - used to divide content into pages by displaying a su
 | `showListItem` | `boolean` | `true`  | Displays the list items.           |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePaginationComponentsVisibility
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationComponentsVisibility.vue
 ::
 :::
@@ -70,10 +70,10 @@ The `height` and `width` of the pagination scale depends on the `size`. If you w
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePaginationSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSize.vue
 ::
 :::
@@ -84,10 +84,10 @@ The `height` and `width` of the pagination scale depends on the `size`. If you w
 | `siblingCount` | `number` | `2`     | The number of surrounding pages displayed around the current page. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePaginationSiblingCount
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSiblingCount.vue
 ::
 :::
@@ -105,10 +105,10 @@ Some `NPagination` subcomponents are wrapped around the [NButton](button) compon
 
 ::
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePaginationVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationVariant.vue
 ::
 :::
@@ -124,10 +124,10 @@ You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePaginationRounded
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationRounded.vue
 ::
 :::
@@ -149,10 +149,10 @@ For the sub-components' props, please refer to the [Props](#props) section. Refe
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePaginationSubComponents
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSubComponents.vue
 ::
 :::
@@ -169,10 +169,10 @@ For the sub-components' props, please refer to the [Props](#props) section. Refe
 | `ellipsis`  | Customizes the ellipsis indicator in the pagination. | -             |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVuePaginationSlots
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSlots.vue
 ::
 :::
@@ -188,31 +188,31 @@ For the sub-components' props, please refer to the [Props](#props) section. Refe
 ### 
 
 :::CodeGroup
-::code-block{label="Pagination" preview}
+::div{label="Pagination" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/pagination/Pagination.vue
 
 ::
-::code-block{label="PaginationEllipsis"}
+::div{label="PaginationEllipsis"}
 @@@ ../packages/nuxt/src/runtime/components/elements/pagination/PaginationEllipsis.vue
 
 ::
-::code-block{label="PaginationListItem"}
+::div{label="PaginationListItem"}
 @@@ ../packages/nuxt/src/runtime/components/elements/pagination/PaginationListItem.vue
 
 ::
-::code-block{label="PaginationFirst"}
+::div{label="PaginationFirst"}
 @@@ ../packages/nuxt/src/runtime/components/elements/pagination/PaginationFirst.vue
 
 ::
-::code-block{label="PaginationLast"}
+::div{label="PaginationLast"}
 @@@ ../packages/nuxt/src/runtime/components/elements/pagination/PaginationLast.vue
 
 ::
-::code-block{label="PaginationNext"}
+::div{label="PaginationNext"}
 @@@ ../packages/nuxt/src/runtime/components/elements/pagination/PaginationNext.vue
 
 ::
-::code-block{label="PaginationPrev"}
+::div{label="PaginationPrev"}
 @@@ ../packages/nuxt/src/runtime/components/elements/pagination/PaginationPrev.vue
 
 ::

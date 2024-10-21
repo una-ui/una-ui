@@ -11,10 +11,10 @@ description: "NAvatar component - used to display a user's profile picture, init
 `NAvatar` - used to display a user's profile picture, initials, or icon.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarBasic.vue
 ::
 :::
@@ -31,10 +31,10 @@ description: "NAvatar component - used to display a user's profile picture, init
 | `~`       | The unstyle or base variant |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarVariant.vue
 ::
 :::
@@ -48,10 +48,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarColor.vue
 ::
 :::
@@ -65,10 +65,10 @@ You can't use the `icon` prop with the `src` prop.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarIcon.vue
 ::
 :::
@@ -82,10 +82,10 @@ The `skeleton` prop is only available when using the `src` prop.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarSkeleton
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSkeleton.vue
 ::
 :::
@@ -95,10 +95,10 @@ The `skeleton` prop is only available when using the `src` prop.
 Refer to the [Indicator](indicator) component for more details.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarIndicator
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarIndicator.vue
 ::
 :::
@@ -114,10 +114,10 @@ The `padding` and `font-size` of the avatar scale depends on the `size`. If you 
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSize.vue
 ::
 :::
@@ -134,10 +134,10 @@ If there is an error loading the avatar image, the component falls back to an al
 4. a generic avatar icon
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarFallback
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarFallback.vue
 ::
 :::
@@ -157,10 +157,10 @@ If there is an error loading the avatar image, the component falls back to an al
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
  :ExampleVueAvatarCustom
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarCustom.vue
 ::
 :::
@@ -178,10 +178,10 @@ You will lose the ability to have fallbacks if you use the `default` slot, we us
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
  :ExampleVueAvatarSlot1
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSlot1.vue
 ::
 :::
@@ -203,10 +203,10 @@ You don't have to use this case, this is just an example of how you can use the 
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
  :ExampleVueAvatarSlot2
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSlot2.vue
 ::
 :::

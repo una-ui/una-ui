@@ -16,10 +16,10 @@ description: 'NAlert component - display a short, important message in a way tha
 | `description` | Description of the alert |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertBasic.vue
 ::
 :::
@@ -39,10 +39,10 @@ description: 'NAlert component - display a short, important message in a way tha
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertVariant.vue
 ::
 :::
@@ -56,10 +56,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertColor.vue
 ::
 :::
@@ -77,10 +77,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertIcon.vue
 ::
 :::
@@ -96,10 +96,10 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSize.vue
 ::
 :::
@@ -109,10 +109,10 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 `closable` - add a close button to the alert.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertClosable
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertClosable.vue
 ::
 :::
@@ -136,10 +136,10 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 > Example 1
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertSlot1
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot1.vue
 ::
 :::
@@ -147,10 +147,10 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 > Example 2
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertSlot2
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot2.vue
 ::
 :::
@@ -158,10 +158,10 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 > Example 3
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAlertSlot3
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot3.vue
 ::
 :::

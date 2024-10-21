@@ -15,10 +15,10 @@ By default, we use the `radix-icons` `lucide` `heroicons` and `tabler` for the i
 use the `NIcon` tag to create a basic icon.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIconUsage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/icon/ExampleVueIconUsage.vue
 ::
 :::
@@ -41,10 +41,10 @@ If you want to update or add default icons, you can do so through the [Configura
 | `i-close`   | `i-heroicons-x-20-solid`                    |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIconDefault
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/icon/ExampleVueIconDefault.vue
 ::
 :::

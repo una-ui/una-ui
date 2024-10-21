@@ -39,10 +39,10 @@ available via its subcomponents' prop names, e.g., `_dropdown-menu-item`, `_drop
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueDropdownMenuBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuBasic.vue
 ::
 :::
@@ -52,10 +52,10 @@ available via its subcomponents' prop names, e.g., `_dropdown-menu-item`, `_drop
 `inset` prop is used to set the dropdown-menu to be inset.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueDropdownMenuInset
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuInset.vue
 ::
 :::
@@ -79,10 +79,10 @@ available via its subcomponents' prop names, e.g., `_dropdown-menu-item`, `_drop
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueDropdownMenuVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuVariant.vue
 ::
 :::
@@ -106,10 +106,10 @@ The `height` and `width` of the dropdown-menu scale depends on the `dropdown-men
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueDropdownMenuSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuSize.vue
 ::
 :::
@@ -128,10 +128,10 @@ The `height` and `width` of the dropdown-menu scale depends on the `dropdown-men
 | `group`       | The group slot.       | `items` |
 
 :::CodeGroup
-::code-block{label="Preview"}
+::div{label="Preview"}
 :ExampleVueDropdownMenuSlots
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuSlots.vue
 
 ::
@@ -147,43 +147,43 @@ The `height` and `width` of the dropdown-menu scale depends on the `dropdown-men
 ## Component
 
 :::CodeGroup
-::code-block{label="DropdownMenu" preview}
+::div{label="DropdownMenu" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenu.vue
 
 ::
-::code-block{label="DropdownMenuTrigger"}
+::div{label="DropdownMenuTrigger"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuTrigger.vue
 
 ::
-::code-block{label="DropdownMenuItem"}
+::div{label="DropdownMenuItem"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuItem.vue
 
 ::
-::code-block{label="DropdownMenuGroup"}
+::div{label="DropdownMenuGroup"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuGroup.vue
 
 ::
-::code-block{label="DropdownMenuLabel"}
+::div{label="DropdownMenuLabel"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuLabel.vue
 
 ::
-::code-block{label="DropdownMenuSeparator"}
+::div{label="DropdownMenuSeparator"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSeparator.vue
 
 ::
-::code-block{label="DropdownMenuContent"}
+::div{label="DropdownMenuContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuContent.vue
 
 ::
-::code-block{label="DropdownMenuSub"}
+::div{label="DropdownMenuSub"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSub.vue
 
 ::
-::code-block{label="DropdownMenuSubTrigger"}
+::div{label="DropdownMenuSubTrigger"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSubTrigger.vue
 
 ::
-::code-block{label="DropdownMenuSubContent"}
+::div{label="DropdownMenuSubContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSubContent.vue
 
 ::

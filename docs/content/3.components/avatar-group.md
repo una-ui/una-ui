@@ -15,10 +15,10 @@ description: 'NAvatarGroup component - used to display a group of NAvatar compon
 | max  | `3`     | The maximum number of avatars to display before the rest are hidden. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarGroupBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar-group/ExampleVueAvatarGroupBasic.vue
 ::
 :::
@@ -36,10 +36,10 @@ You can use `size` prop to set the size of the entire `NAvatar` or you can set t
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarGroupSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar-group/ExampleVueAvatarGroupSize.vue
 ::
 :::
@@ -53,10 +53,10 @@ You can also individually customize each `NAvatar`, refer to the [NAvatar](avata
 You can also use the `una` prop to add utility classes, refer to the [Props](#props) and [Presets](#presets) sections for more information.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAvatarGroupCustomization
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar-group/ExampleVueAvatarGroupCustomization.vue
 ::
 :::

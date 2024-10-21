@@ -11,10 +11,10 @@ description: 'NTabs are used to navigate between different content and also they
 `NTabs` are used to navigate between different content and also they have robust focus management and keyboard navigation support.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTabsBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsBasic.vue
 ::
 :::
@@ -33,10 +33,10 @@ description: 'NTabs are used to navigate between different content and also they
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTabsColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsColor.vue
 ::
 :::
@@ -51,10 +51,10 @@ description: 'NTabs are used to navigate between different content and also they
 | `_tabsTrigger.disabled` | Set the tabs disabled via `_tabsTrigger`. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTabsDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsDisabled.vue
 ::
 :::
@@ -74,10 +74,10 @@ The `height` and `width` of the tabs scale depends on the `tabs-size`. If you wa
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTabsSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsSize.vue
 ::
 :::
@@ -92,23 +92,23 @@ The `height` and `width` of the tabs scale depends on the `tabs-size`. If you wa
 ## Component
 
 :::CodeGroup
-::code-block{label="Tabs" preview}
+::div{label="Tabs" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/Tabs.vue
 
 ::
-::code-block{label="TabsRoot"}
+::div{label="TabsRoot"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsRoot.vue
 
 ::
-::code-block{label="TabsList"}
+::div{label="TabsList"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsList.vue
 
 ::
-::code-block{label="TabsTrigger"}
+::div{label="TabsTrigger"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsTrigger.vue
 
 ::
-::code-block{label="TabsContent"}
+::div{label="TabsContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsContent.vue
 
 ::

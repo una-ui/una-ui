@@ -21,10 +21,10 @@ The `NLabel` component is used already in different components like [Checkbox](c
 | for     | `string`  | The id of the element the label is associated with.                                                  |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueLabelBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/label/ExampleVueLabelBasic.vue
 ::
 :::

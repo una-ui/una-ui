@@ -16,10 +16,10 @@ use `NCheckbox` component to create a checkbox.
 | `label`           | `string`                  | `''`    | Set the label of the checkbox.        |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxBasic.vue
 ::
 :::
@@ -29,10 +29,10 @@ use `NCheckbox` component to create a checkbox.
 `checked="indeterminate"` - set the checkbox to indeterminate state.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxIndeterminate
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxIndeterminate.vue
 ::
 :::
@@ -48,10 +48,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxColor.vue
 ::
 :::
@@ -63,10 +63,10 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 > Read more about the `NFormGroup` component [here](form-group).
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxFormGroup
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxFormGroup.vue
 ::
 :::
@@ -86,10 +86,10 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 | `data-[state=indeterminate]` | Only apply the class if the checkbox is indeterminate. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxSize.vue
 ::
 :::
@@ -99,10 +99,10 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 `disabled` - disable the checkbox.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxDisabled.vue
 ::
 :::
@@ -112,10 +112,10 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 `reverse` - Switch the position of the checkbox and the label.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxReverse
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxReverse.vue
 ::
 :::
@@ -138,10 +138,10 @@ You can customize the checkbox using the `una` prop and utility classes.
 
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxCustomIcon1
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustomIcon1.vue
 ::
 :::
@@ -149,10 +149,10 @@ You can customize the checkbox using the `una` prop and utility classes.
 ---
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxCustomIcon2
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustomIcon2.vue
 ::
 :::
@@ -160,10 +160,10 @@ You can customize the checkbox using the `una` prop and utility classes.
 ---
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxCustom
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustom.vue
 ::
 :::

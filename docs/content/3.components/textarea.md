@@ -15,10 +15,10 @@ This component shares the same API as the [NInput](input) component. So you can 
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTextareaBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaBasic.vue
 ::
 :::
@@ -30,10 +30,10 @@ This component shares the same API as the [NInput](input) component. So you can 
 `cols={value}` - Set the number of columns for the textarea.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTextareaRowsCols
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaRowsCols.vue
 ::
 :::
@@ -49,10 +49,10 @@ This component shares the same API as the [NInput](input) component. So you can 
 | `number` | The textarea will automatically adjust its height to fit the content, but will not exceed the specified number of rows. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTextareaAutoresize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaAutoresize.vue
 ::
 :::
@@ -73,10 +73,10 @@ The examples below utilize `NFormGroup`. Refer to the [FormGroup](form-group) se
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTextareaResize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaResize.vue
 ::
 :::

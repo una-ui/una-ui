@@ -22,10 +22,10 @@ description: 'NSelect component - used to create a selection input.'
 use `NSelect` to create a range input.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectBasic.vue
 ::
 :::
@@ -35,10 +35,10 @@ use `NSelect` to create a range input.
 `multiple-group="{value}"` - enable multiple group items.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectMultipleGroup
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectMultipleGroup.vue
 ::
 :::
@@ -51,10 +51,10 @@ use `NSelect` to create a range input.
 | `item-attribute`  | The attribute value to be displayed in the item.   |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectObjects
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectObjects.vue
 ::
 :::
@@ -68,10 +68,10 @@ use `NSelect` to create a range input.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectLabel
 ::
- ::code-block{label="Code"}
+ ::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectLabel.vue
 ::
 :::
@@ -92,10 +92,10 @@ use `NSelect` to create a range input.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectColor.vue
 ::
 :::
@@ -108,10 +108,10 @@ use `NSelect` to create a range input.
 | `_selectItem.disabled` | Disable the specific item. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectDisabled.vue
 ::
 :::
@@ -131,10 +131,10 @@ The `height` and `width` of the select scale depends on the `select-size`. If yo
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectSize.vue
 ::
 :::
@@ -163,51 +163,51 @@ The `height` and `width` of the select scale depends on the `select-size`. If yo
 ### 
 
 :::CodeGroup
-::code-block{label="Select" preview}
+::div{label="Select" preview}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/Select.vue
 
 ::
-::code-block{label="SelectContent"}
+::div{label="SelectContent"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectContent.vue
 
 ::
-::code-block{label="SelectGroup"}
+::div{label="SelectGroup"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectGroup.vue
 
 ::
-::code-block{label="SelectItem"}
+::div{label="SelectItem"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectItem.vue
 
 ::
-::code-block{label="SelectItemText"}
+::div{label="SelectItemText"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectItemText.vue
 
 ::
-::code-block{label="SelectLabel"}
+::div{label="SelectLabel"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectLabel.vue
 
 ::
-::code-block{label="SelectRoot"}
+::div{label="SelectRoot"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectRoot.vue
 
 ::
-::code-block{label="SelectScrollDownButton"}
+::div{label="SelectScrollDownButton"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectScrollDownButton.vue
 
 ::
-::code-block{label="SelectScrollUpButton"}
+::div{label="SelectScrollUpButton"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectScrollUpButton.vue
 
 ::
-::code-block{label="SelectSeperator"}
+::div{label="SelectSeperator"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectSeparator.vue
 
 ::
-::code-block{label="SelectTrigger"}
+::div{label="SelectTrigger"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectTrigger.vue
 
 ::
-::code-block{label="SelectValue"}
+::div{label="SelectValue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectValue.vue
 
 ::

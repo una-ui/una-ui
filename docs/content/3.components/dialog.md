@@ -31,10 +31,10 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueDialogBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBasic.vue
 ::
 :::
@@ -46,10 +46,10 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 | `scrollable` | Boolean | If true, the dialog will have a scrollable body. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueDialogScrollable
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollable.vue
 ::
 :::
@@ -61,10 +61,10 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 | `preventClose` | Boolean | If true, the dialog will not close on overlay click or escape key press. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueDialogPreventClose
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogPreventClose.vue
 ::
 :::
@@ -85,10 +85,10 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 ### Custom Close Button
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueDialogCustomClose
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogCustomClose.vue
 ::
 :::
@@ -96,10 +96,10 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 ### Scrollable Body
 
 :::CodeGroup
-::code-block{label=Preview preview}
+::div{label=Preview preview}
   :ExampleVueDialogScrollableBody
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollableBody.vue
 ::
 :::
@@ -109,10 +109,10 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 A login dialog with state which closes itself after a successful login.
 
 :::CodeGroup
-::code-block{label=Preview preview}
+::div{label=Preview preview}
   :ExampleVueDialogLogin
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogLogin.vue
 ::
 :::
@@ -122,10 +122,10 @@ A login dialog with state which closes itself after a successful login.
 A dialog whose overlay blurs the background content.
 
 :::CodeGroup
-::code-block{label=Preview preview}
+::div{label=Preview preview}
   :ExampleVueDialogBackgroundBlur
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBackgroundBlur.vue
 ::
 :::
@@ -137,39 +137,39 @@ A dialog whose overlay blurs the background content.
 ## Component
 
 :::CodeGroup
-::code-block{label="Dialog" preview}
+::div{label="Dialog" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
 
 ::
-::code-block{label="DialogTitle"}
+::div{label="DialogTitle"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogTitle.vue
 
 ::
-::code-block{label="DialogDescription"}
+::div{label="DialogDescription"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogDescription.vue
 
 ::
-::code-block{label="DialogHeader"}
+::div{label="DialogHeader"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogHeader.vue
 
 ::
-::code-block{label="DialogFooter"}
+::div{label="DialogFooter"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogFooter.vue
 
 ::
-::code-block{label="DialogClose"}
+::div{label="DialogClose"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogClose.vue
 
 ::
-::code-block{label="DialogOverlay"}
+::div{label="DialogOverlay"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogOverlay.vue
 
 ::
-::code-block{label="DialogContent"}
+::div{label="DialogContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogContent.vue
 
 ::
-::code-block{label="DialogScrollContent"}
+::div{label="DialogScrollContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogScrollContent.vue
 
 ::

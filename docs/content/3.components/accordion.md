@@ -12,10 +12,10 @@ description: 'NAccordion component - used to display collapsible content.'
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionBasic.vue
 ::
 :::
@@ -33,10 +33,10 @@ If you have a lot of accordion items, it is not recommended to use the `mounted`
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionMounted
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionMounted.vue
 ::
 :::
@@ -46,10 +46,10 @@ If you have a lot of accordion items, it is not recommended to use the `mounted`
 `multiple` - allows you to expand multiple items at the same time.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionMultiple
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionMultiple.vue
 ::
 :::
@@ -65,10 +65,10 @@ Use `multiple` prop when using `default-open` to open multiple items by default.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionDefaultOpen
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionDefaultOpen.vue
 ::
 :::
@@ -82,10 +82,10 @@ Since we use the [NButton](button) component for the accordion label, you can us
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionColor.vue
 ::
 :::
@@ -110,10 +110,10 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionIcon.vue
 ::
 :::
@@ -129,10 +129,10 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionReverse
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionReverse.vue
 ::
 :::
@@ -142,10 +142,10 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 `unstyle` - removes the default border, padding, and divider of the accordion.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionUnstyle
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionUnstyle.vue
 ::
 :::
@@ -159,10 +159,10 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionCustom1
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionCustom1.vue
 ::
 :::
@@ -170,10 +170,10 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 ---
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionCustom2
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionCustom2.vue
 ::
 :::
@@ -181,10 +181,10 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 ---
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionCustom3
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionCustom3.vue
 ::
 :::
@@ -207,10 +207,10 @@ If you have a more complex content, you can use slots to customize the accordion
 | `close`    | allows you to access the close state of the item. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionSlot1
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionSlot1.vue
 ::
 :::
@@ -224,10 +224,10 @@ If you want to customize the content of a specific item, make sure not to provid
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueAccordionSlot2
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionSlot2.vue
 ::
 :::

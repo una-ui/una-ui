@@ -22,10 +22,10 @@ description: 'NSwitch component - used to create a switch input.'
 | `value`          | `string`  | `on`    | The value of the switch.                                              |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSwitchBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchBasic.vue
 ::
 :::
@@ -39,10 +39,10 @@ description: 'NSwitch component - used to create a switch input.'
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSwitchLabel
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchLabel.vue
 ::
 :::
@@ -56,10 +56,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSwitchColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchColor.vue
 ::
 :::
@@ -75,10 +75,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSwitchSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchSize.vue
 ::
 :::
@@ -92,10 +92,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 `uncheckedIcon` - add an icon for the off state.  
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSwitchIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchIcon.vue
 ::
 :::
@@ -105,10 +105,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 `disabled` - disable the switch.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSwitchDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchDisabled.vue
 ::
 :::
@@ -118,10 +118,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 `loading` - set the switch to loading state.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSwitchLoading
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchLoading.vue
 ::
 :::
@@ -135,10 +135,10 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSwitchCustom
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchCustom.vue
 ::
 :::

@@ -19,10 +19,10 @@ use `NRadio` to create a radio input.
 > To view the full list of attributes, see the [Props](#props) section.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueRadioBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioBasic.vue
 ::
 :::
@@ -38,10 +38,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueRadioColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioColor.vue
 ::
 :::
@@ -51,10 +51,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 `disabled` - disable the radio.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueRadioDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioDisabled.vue
 ::
 :::
@@ -70,10 +70,10 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueRadioFormGroup
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioFormGroup.vue
 ::
 :::
@@ -83,10 +83,10 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 `reverse` - Switch the position of the radio and the label.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueRadioReverse
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioReverse.vue
 ::
 :::
@@ -98,10 +98,10 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 > 🚀 You can freely adjust the size of the radio using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueRadioSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioSize.vue
 ::
 :::
@@ -119,10 +119,10 @@ You can use the following rules to customize the radio if it is checked.
 | `n-checked` | Only apply the class if the radio is checked. | `n-checked:bg-red` |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueRadioRules
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioRules.vue
 ::
 :::
@@ -132,10 +132,10 @@ You can use the following rules to customize the radio if it is checked.
 > You can customize the radio using the `una` prop and utility classes.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueRadioCustom
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioCustom.vue
 ::
 :::

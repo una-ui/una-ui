@@ -30,10 +30,10 @@ description: 'NToggle component - used to create a toggle button.'
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueToggleBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleBasic.vue
 ::
 :::
@@ -46,10 +46,10 @@ description: 'NToggle component - used to create a toggle button.'
 | `toggle-off` | `string` | `ghost-gray`  | Change the color of the toggle when it is off. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueToggleColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleColor.vue
 ::
 :::
@@ -57,10 +57,10 @@ description: 'NToggle component - used to create a toggle button.'
 ## Slot
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueToggleSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleSlot.vue
 ::
 :::
@@ -77,5 +77,5 @@ description: 'NToggle component - used to create a toggle button.'
 ### 
 
 :::CodeGroup
-::code-block{label="Pagination" preview}
+::div{label="Pagination" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/Toggle.vue

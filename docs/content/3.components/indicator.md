@@ -11,10 +11,10 @@ description: 'NIndicator component - used to display a basic indicator with or w
 `NIndicator` is a component that can be used to display a basic indicator with or without a label.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorBasic.vue
 ::
 :::
@@ -41,10 +41,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorColor.vue
 ::
 :::
@@ -54,10 +54,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 `label="{label}"` - add label to the indicator.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorLabel
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorLabel.vue
 ::
 :::
@@ -67,10 +67,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 `ping` - add a ping animation to the indicator.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorPing
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorPing.vue
 ::
 :::
@@ -80,10 +80,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 `indicator="{size}"` - change the size of the indicator.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorSize.vue
 ::
 :::
@@ -93,10 +93,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 `visible` - change the visibility of the indicator.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorVisibility
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorVisibility.vue
 ::
 :::
@@ -117,10 +117,10 @@ You can add your own placement through configuration. see [Configuration section
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorPlacement
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorPlacement.vue
 ::
 :::

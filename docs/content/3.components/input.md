@@ -15,10 +15,10 @@ By default we automatically generate an `id` for the input for accessibility pur
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputUsage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputUsage.vue
 ::
 :::
@@ -34,10 +34,10 @@ By default we automatically generate an `id` for the input for accessibility pur
 | `~`       | The unstyle or base variant |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputVariant.vue
 ::
 :::
@@ -51,10 +51,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputColor.vue
 ::
 :::
@@ -70,10 +70,10 @@ The `padding`, `icons`, and `text-size` of the input scale depends on the `size`
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputSize.vue
 ::
 :::
@@ -89,10 +89,10 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputIcon.vue
 ::
 :::
@@ -102,10 +102,10 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 `loading` - add a loading icon to the input outline.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputLoading
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputLoading.vue
 ::
 :::
@@ -115,10 +115,10 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 `status="{status}"` - change the status of the input outline.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputStatus
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputStatus.vue
 ::
 :::
@@ -128,10 +128,10 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 `readonly` - make the input readonly.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputDisabledReadonly
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputDisabledReadonly.vue
 ::
 :::
@@ -147,10 +147,10 @@ By default, the `leading` and `trailing` are wrapped around `pointer-events-none
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputEvents
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputEvents.vue
 ::
 :::
@@ -162,10 +162,10 @@ By default, the `leading` and `trailing` are wrapped around `pointer-events-none
 `#leading` - add a leading slot to the input.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputLeadingSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputLeadingSlot.vue
 ::
 :::
@@ -175,10 +175,10 @@ By default, the `leading` and `trailing` are wrapped around `pointer-events-none
 `#trailing` - add a trailing slot to the input.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueInputTrailingSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputTrailingSlot.vue
 ::
 :::

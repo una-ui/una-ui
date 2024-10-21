@@ -15,10 +15,10 @@ description: 'NFormGroup component - a wrapper component for `NInput`, `NTextare
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueFormGroupUsage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupUsage.vue
 ::
 :::
@@ -28,10 +28,10 @@ description: 'NFormGroup component - a wrapper component for `NInput`, `NTextare
 `required` - adds `*` to the label.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueFormGroupRequired
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupRequired.vue
 ::
 :::
@@ -41,10 +41,10 @@ description: 'NFormGroup component - a wrapper component for `NInput`, `NTextare
 `description` - displays description text.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueFormGroupDescription
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupDescription.vue
 ::
 :::
@@ -54,10 +54,10 @@ description: 'NFormGroup component - a wrapper component for `NInput`, `NTextare
 `hint` - displays hint text.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueFormGroupHint
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupHint.vue
 ::
 :::
@@ -67,10 +67,10 @@ description: 'NFormGroup component - a wrapper component for `NInput`, `NTextare
 `message` - displays message text. Useful in combination with `status` prop.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueFormGroupMessage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupMessage.vue
 ::
 :::
@@ -86,10 +86,10 @@ Notice that when you change the `status` prop, the `message` prop and the child 
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueFormGroupStatus
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupStatus.vue
 ::
 :::
@@ -101,10 +101,10 @@ Notice that when you change the `status` prop, the `message` prop and the child 
 `counter.max` - the maximum number of characters.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueFormGroupCounter
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupCounter.vue
 ::  
 :::

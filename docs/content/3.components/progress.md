@@ -18,10 +18,10 @@ description: 'NProgress component - used to display a progress bar.'
 use `NProgress` to display a progress bar.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueProgressBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressBasic.vue
 ::
 :::
@@ -35,10 +35,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueProgressColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressColor.vue
 ::
 :::
@@ -48,10 +48,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 By not providing a `modeValue` prop, the progress will be indeterminate. This means that the progress will be animated without a specific value.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueProgressIndeterminate
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressIndeterminate.vue
 ::
 :::
@@ -67,10 +67,10 @@ The `height` and `width` of the progress scale depends on the `progress-size`. I
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueProgressSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressSize.vue
 ::
 :::
@@ -84,10 +84,10 @@ The `height` and `width` of the progress scale depends on the `progress-size`. I
 ::
 
 :::CodeGroup
-  ::code-block{label="Preview" preview}
+  ::div{label="Preview" preview}
     :ExampleVueProgressCustom
   ::
-  ::code-block{label="Code"}
+  ::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressCustom.vue
   ::
 :::

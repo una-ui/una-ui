@@ -11,10 +11,10 @@ description: 'NSkeleton component - use to create a placeholder while the conten
 `NSkeleton` is a placeholder while the content is being loaded.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSkeletonBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/skeleton/ExampleVueSkeletonBasic.vue
 ::
 :::
@@ -30,10 +30,10 @@ The `value` determines the overall form of the skeleton. You can always add and 
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSkeletonShape
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/skeleton/ExampleVueSkeletonShape.vue
 ::
 :::
@@ -47,10 +47,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSkeletonColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/skeleton/ExampleVueSkeletonColor.vue
 ::
 :::

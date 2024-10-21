@@ -11,10 +11,10 @@ description: 'The Separator component that separates the content.'
 `NSeparator` - used to separate the content.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSeparatorBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/separator/ExampleVueSeparatorBasic.vue
 ::
 :::
@@ -30,10 +30,10 @@ description: 'The Separator component that separates the content.'
 | `dotted` | The dotted variant.  |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSeparatorVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/separator/ExampleVueSeparatorVariant.vue
 ::
 :::
@@ -47,10 +47,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::    
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSeparatorColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/separator/ExampleVueSeparatorColor.vue
 ::
 :::
@@ -65,10 +65,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 | `vertical`   | The vertical direction. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSeparatorOrientation
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/separator/ExampleVueSeparatorOrientation.vue
 ::
 :::
@@ -87,10 +87,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSeparatorPosition
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/separator/ExampleVueSeparatorPosition.vue
 ::
 :::
@@ -106,10 +106,10 @@ The `padding` and `font-size` of the separator scale depends on the `size`. If y
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSeparatorSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/separator/ExampleVueSeparatorSize.vue
 ::
 :::

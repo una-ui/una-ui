@@ -15,10 +15,10 @@ description: 'NBreadcrumb - use to display the path of the current page and the 
 | `items` | `Array` | `[]`    | The array of `Links` that wrapped around [NButton](button) component, which means that all the props and slots of NButton are available to use. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbBasic.vue
 ::
 :::
@@ -35,10 +35,10 @@ You can use any variant and colors provided by the [NButton](button#variants) co
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbVariant.vue
 ::
 :::
@@ -54,10 +54,10 @@ You can use any variant and colors provided by the [NButton](button#variants) co
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbSeparator
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSeparator.vue
 ::
 :::
@@ -73,10 +73,10 @@ You can use any variant and colors provided by the [NButton](button#variants) co
 > 🚀 You can freely adjust the size of the breadcrumb using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSize.vue
 ::
 :::
@@ -93,10 +93,10 @@ You can use any variant and colors provided by the [NButton](button#variants) co
 | `list`      | The list of items   | `item`  |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbSlots
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSlots.vue
 ::
 :::
@@ -113,31 +113,31 @@ You can use any variant and colors provided by the [NButton](button#variants) co
 ### 
 
 :::CodeGroup
-::code-block{label="Breadcrumb" preview}
+::div{label="Breadcrumb" preview}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/Breadcrumb.vue
 
 ::
-::code-block{label="BreadcrumbRoot"}
+::div{label="BreadcrumbRoot"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbRoot.vue
 
 ::
-::code-block{label="BreadcrumbList"}
+::div{label="BreadcrumbList"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbList.vue
 
 ::
-::code-block{label="BreadcrumbLink"}
+::div{label="BreadcrumbLink"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbLink.vue
 
 ::
-::code-block{label="BreadcrumbItem"}
+::div{label="BreadcrumbItem"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbItem.vue
 
 ::
-::code-block{label="BreadcrumbSeparator"}
+::div{label="BreadcrumbSeparator"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbSeparator.vue
 
 ::
-::code-block{label="BreadcrumbEllipsis"}
+::div{label="BreadcrumbEllipsis"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbEllipsis.vue
 
 ::

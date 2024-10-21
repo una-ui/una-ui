@@ -17,10 +17,10 @@ Work in progress - this component is not yet ready for use.
 >You can use `label prop` or `default slot` to set the value kbd.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueKbdBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdBasic.vue
 ::
 :::
@@ -36,10 +36,10 @@ Work in progress - this component is not yet ready for use.
 | `~`       | The unstyle or base variant |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueKbdVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdVariant.vue
 ::
 :::
@@ -53,10 +53,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueKbdColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdColor.vue
 ::
 :::
@@ -72,10 +72,10 @@ The `padding` and `font-size` of the kbd scale depends on the `size`. If you wan
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueKbdSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdSize.vue
 ::
 :::
@@ -92,10 +92,10 @@ The `padding` and `font-size` of the kbd scale depends on the `size`. If you wan
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueKbdWithOtherComponent
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdWithOtherComponent.vue
 ::
 :::
