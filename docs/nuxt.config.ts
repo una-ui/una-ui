@@ -30,10 +30,10 @@ export default defineNuxtConfig({
     payloadExtraction: true,
   },
 
-  routeRules: {
-    // '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined, prerender: true },
-    '/': { prerender: true },
-  },
+  // routeRules: {
+  //   // '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined, prerender: true },
+  //   '/': { prerender: true },
+  // },
 
   css: [
     '~/styles/index.css',
