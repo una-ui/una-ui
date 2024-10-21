@@ -13,6 +13,11 @@ import presetUna from './packages/preset/src/index'
 import prefixes from './packages/preset/src/prefixes'
 
 export default defineConfig({
+  safelist: [
+    'i-radix-icons-github-logo',
+    'i-tabler-brand-x',
+    'i-tabler-brand-discord-filled',
+  ],
   presets: [
     presetUno(),
     presetAttributify(),
