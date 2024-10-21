@@ -40,7 +40,7 @@ use `NTooltip` to provide information for a component.
 | tooltip   | black | `string`  | Set the tooltip color. |
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup

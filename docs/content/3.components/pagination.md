@@ -120,7 +120,7 @@ Some `NPagination` subcomponents are wrapped around the [NButton](button) compon
 > 🚀 You can freely adjust the size of the rounded corners using any size imaginable. There are no limits, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state, and more.
 
 ::alert{type="info"}
-You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale; the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
+You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale; the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup

@@ -34,7 +34,7 @@ use `NRadio` to create a radio input.
 > You can use `breakpoints` such as `sm:red, xs:green` to change color based on screen size.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -111,7 +111,7 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 You can use the following rules to customize the radio if it is checked.
 
 ::alert{type="info"}
-  You can also globally customize the radio preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
+  You can also globally customize the radio preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
 ::
 
 | Rule Name   | Description                                   | Example            |

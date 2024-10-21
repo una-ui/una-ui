@@ -1,54 +1,31 @@
 ---
-title: 'Una UI - The Atomic UI Framework'
-titleTemplate: '%s'
-layout: page
+title: Home
+navigation: false
 ---
 
-:docs-hero
+::hero
+---
+announcement:
+  title: Release v0.0.1
+  icon: 🚀
+  to: https://github.com/una-ui/content/releases
+  target: _blank
+actions:
+  - label: Get Started
+    to: /getting-started/introduction
+  - label: GitHub
+    btn: 'solid-gray'
+    to: https://github.com/una-ui/content
+    leading: 'i-radix-icons-github-logo'
+---
 
-::card-grid
-#default
-  ::card{icon=🔥}
-  #title
-  High Quality Presets
-  #description
-  A set of high quality presets for your next project. No more boilerplates.
-  ::
+#title
+Craft visually appealing content effortlessly.
 
-  ::card{icon=🎨}
-  #title
-  Themeable
-  #description
-  Built-in theming system support. Dark mode ready. Customizable.
-  ::
-
-  ::card{icon=🚀}
-  #title
-  Crafted Components
-  #description
-  A set of crafted components for Vue 3 with TypeScript support.
-  ::
-
-  ::card{icon=⚡}
-  #title
-  Lightweight
-  #description
-  Built with performance in mind. And powered by Unocss style engine.
-  ::
-
-  ::card{icon=🔌}
-  #title
-  Extendable & Hackable
-  #description
-  Use your own components. Use your own theme. Use your own style.
-  ::
-
-  ::card{icon=🌘}
-  #title
-  Auto Dark Mode
-  #description
-  Auto dark mode support based on prefer color-scheme.
-  ::
+#description
+Beautifully designed Nuxt Content template built with UnaUI. :br Customizable. Compatible. Open Source.
 ::
 
-:docs-sponsors
+<div class="border rounded-lg shadow-md">
+  <iframe src="/getting-started/introduction" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0">
+</div>

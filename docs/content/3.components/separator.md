@@ -43,7 +43,7 @@ description: 'The Separator component that separates the content.'
 `separator="{variant}-{color}"` - change the color of the separator.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `gray`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `gray`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::    
 
 :::CodeGroup

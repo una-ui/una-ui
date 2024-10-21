@@ -35,7 +35,7 @@ description: 'NCard - use to display content in a flexible container component.'
 | `~`       | The unstyle or base variant |
 
 ::alert{type="info"}
-  If you want to change the default variant or add new variant, you can do so through the [Configuration section](/getting-started/configuration).
+  If you want to change the default variant or add new variant, you can do so through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -52,7 +52,7 @@ description: 'NCard - use to display content in a flexible container component.'
 `card="{variant}-{color}"` - change the color of the card.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup

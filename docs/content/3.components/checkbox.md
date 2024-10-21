@@ -44,7 +44,7 @@ use `NCheckbox` component to create a checkbox.
 > You can use `breakpoints` such as `sm:red, xs:green` to change color based on screen size.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -125,7 +125,7 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 You can customize the checkbox using the `una` prop and utility classes.
 
 ::alert{type="info"}
-  You can also globally customize the checkbox preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
+  You can also globally customize the checkbox preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
 ::
 
 | Property                        | Type     | Default          | Description                                             |

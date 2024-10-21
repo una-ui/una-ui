@@ -2,7 +2,7 @@
 const list = [
   {
     label: 'Getting Started',
-    href: '/getting-started',
+    href: '/#getting-started',
     btn: 'solid-pink',
     class: 'rounded-full px-5.5 py-3 font-bold',
   },

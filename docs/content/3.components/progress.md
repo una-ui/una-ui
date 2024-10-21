@@ -31,7 +31,7 @@ use `NProgress` to display a progress bar.
 `progress="{color}"` - change the color of the progress.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -80,7 +80,7 @@ The `height` and `width` of the progress scale depends on the `progress-size`. I
 > You can customize the progress using the `una` prop and utility classes.
 
 ::alert{type="info"}
-  You can also globally customize the progress preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
+  You can also globally customize the progress preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
 ::
 
 :::CodeGroup

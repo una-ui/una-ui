@@ -2,7 +2,8 @@ import pkg from '../package.json'
 import unaUI from '../packages/nuxt/src/module'
 
 export default defineNuxtConfig({
-  extends: '@nuxt-themes/docus',
+  // extends: '@una-ui/content',
+  extends: '../../content/nuxt.config.ts',
 
   modules: [
     'nuxt-content-snippet',

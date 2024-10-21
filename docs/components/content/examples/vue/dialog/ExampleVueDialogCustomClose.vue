@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
 
-const source = ref('https://unaui.com/getting-started/installation')
+const source = ref('https://unaui.com/#getting-started/installation')
 const { copy, copied } = useClipboard({ source })
 </script>
 

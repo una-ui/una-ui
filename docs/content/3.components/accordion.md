@@ -1,8 +1,5 @@
 ---
 description: 'NAccordion component - used to display collapsible content.'
----
-
-# 🟢 Accordion
 
 ---
 
@@ -109,7 +106,7 @@ Since we use the [NButton](button) component for the accordion label, you can us
 ::
 
 ::alert{type="info"}
-By default, we use the `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/getting-started/configuration) for more information.
+By default, we use the `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/#getting-started/configuration) for more information.
 ::
 
 :::CodeGroup
@@ -158,7 +155,7 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 > Customize the accordion with your own styles using `una` preset configuration.
 
 ::alert{type="success"}
-  You can globally customize the accordion preset if want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
+  You can globally customize the accordion preset if want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
 ::
 
 :::CodeGroup

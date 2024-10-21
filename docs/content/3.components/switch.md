@@ -52,7 +52,7 @@ description: 'NSwitch component - used to create a switch input.'
 `switch="{color}"` - change the color of the switch.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -131,7 +131,7 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 > You can customize the switch using the `una` prop and utility classes.
 
 ::alert{type="info"}
-  You can also globally customize the switch preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
+  You can also globally customize the switch preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
 ::
 
 :::CodeGroup

@@ -49,7 +49,7 @@ description: 'NButton component - use to trigger an action or event, such as sub
 `btn="{variant}-{color}"` - change the color of the button.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -87,7 +87,7 @@ The `padding` and `font-size` of the button scale depends on the `size`. If you 
 > 🚀 You can freely adjust the size of the rounded using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
 
 ::alert{type="info"}
-You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale, the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
+You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale, the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -110,7 +110,7 @@ You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs
 | square | `string` `boolean` | `2.5em` | Set the button to have the same width and height. If you provide empty value or `true`, it will use the default value. |
 
 ::alert{type="info"}
-You can use any value provided by the [Tailwind CSS](https://tailwindcss.com/docs/size){target="_blank"}. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
+You can use any value provided by the [Tailwind CSS](https://tailwindcss.com/docs/size){target="_blank"}. You can also add your own sizes to the scale through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -132,7 +132,7 @@ You can use any value provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 
 ::alert{type="info"}
-By default we use `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/getting-started/configuration) for more information.
+By default we use `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/#getting-started/configuration) for more information.
 ::
 
 :::CodeGroup

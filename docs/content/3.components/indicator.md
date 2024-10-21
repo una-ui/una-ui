@@ -37,7 +37,7 @@ For the moment, only the `solid` variant is available. You can add your own vari
 `indicator="{variant}-{color}"` - change the color of the indicator.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
@@ -113,7 +113,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 | `bottom-left`  | Position indicator bottom left.  |
 
 ::alert{type="info"}
-You can add your own placement through configuration. see [Configuration section](/getting-started/configuration).
+You can add your own placement through configuration. see [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
