@@ -1,5 +1,5 @@
 import pkg from '../package.json'
-// import unaUI from '../packages/nuxt/src/module'
+import unaUI from '../packages/nuxt/src/module'
 
 export default defineNuxtConfig({
   // extends: '@una-ui/content',
@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   modules: [
     'nuxt-content-snippet',
-    // unaUI,
+    unaUI,
   ],
 
   devtools: {
@@ -26,9 +26,9 @@ export default defineNuxtConfig({
     },
   },
 
-  // experimental: {
-  //   payloadExtraction: true,
-  // },
+  experimental: {
+    payloadExtraction: true,
+  },
 
   // routeRules: {
   //   // '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined, prerender: true },
