@@ -3,10 +3,8 @@ import unaUI from '../packages/nuxt/src/module'
 
 export default defineNuxtConfig({
   extends: '@una-ui/content',
-  // extends: '../../content/nuxt.config.ts',
 
   modules: [
-    'nuxt-content-snippet',
     unaUI,
   ],
 
@@ -15,10 +13,10 @@ export default defineNuxtConfig({
     componentInspector: false,
   },
 
-  // sourcemap: {
-  //   server: false,
-  //   client: true,
-  // },
+  sourcemap: {
+    server: false,
+    client: true,
+  },
 
   runtimeConfig: {
     public: {
@@ -30,25 +28,24 @@ export default defineNuxtConfig({
     payloadExtraction: true,
   },
 
-  // routeRules: {
-  //   // '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined, prerender: true },
-  //   '/': { prerender: true },
-  // },
+  routeRules: {
+    '/': { prerender: true },
+  },
 
   css: [
     '~/styles/index.css',
   ],
 
-  // hooks: {
-  //   // Related to https://github.com/nuxt/nuxt/pull/22558
-  //   // To avoid lagging during page navigation on client-side
-  //   'components:extend': function (components) {
-  //     for (const comp of components) {
-  //       if (comp.global)
-  //         comp.global = 'sync'
-  //     }
-  //   },
-  // },
+  hooks: {
+    // Related to https://github.com/nuxt/nuxt/pull/22558
+    // To avoid lagging during page navigation on client-side
+    'components:extend': function (components) {
+      for (const comp of components) {
+        if (comp.global)
+          comp.global = 'sync'
+      }
+    },
+  },
 
   compatibilityDate: '2024-07-17',
 })
