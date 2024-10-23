@@ -5,7 +5,7 @@ withDefaults(defineProps<{
   icon: string
   title: string
   description: string
-  action: NButtonProps
+  action?: NButtonProps
 }>(), {})
 </script>
 
