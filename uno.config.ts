@@ -38,6 +38,7 @@ export default defineConfig({
   configDeps: [
     '../packages/nuxt/src/preset.config.ts',
 
+    '../packages/preset/src/_shortcuts/pin-input.ts',
     '../packages/preset/src/_shortcuts/collapsible.ts',
     '../packages/preset/src/_shortcuts/calendar.ts',
     '../packages/preset/src/_shortcuts/pagination.ts',
