@@ -8,7 +8,7 @@ export default defineAppConfig({
       links: [
         {
           icon: 'i-radix-icons-github-logo',
-          to: 'https://github.com/una-ui/content',
+          to: 'https://github.com/una-ui/una-ui',
           target: '_blank',
         },
         {
@@ -83,7 +83,7 @@ export default defineAppConfig({
           label: 'i-radix-icons-github-logo',
           icon: true,
           square: true,
-          to: 'https://github.com/una-ui/content',
+          to: 'https://github.com/una-ui/una-ui',
           target: '_blank',
         },
       ],
@@ -94,12 +94,12 @@ export default defineAppConfig({
       links: [{
         title: 'Star on GitHub',
         icon: 'lucide:star',
-        to: 'https://github.com/una-ui/content',
+        to: 'https://github.com/una-ui/una-ui',
         target: '_blank',
       }, {
         title: 'Create Issues',
         icon: 'lucide:circle-dot',
-        to: 'https://github.com/una-ui/content/issues',
+        to: 'https://github.com/una-ui/una-ui/issues',
         target: '_blank',
       }],
     },
