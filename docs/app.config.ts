@@ -4,7 +4,7 @@ export default defineAppConfig({
       darkModeToggle: true,
       showLoadingIndicator: true,
       showLogo: true,
-      showTitle: false,
+      border: true,
       links: [
         {
           icon: 'i-radix-icons-github-logo',
