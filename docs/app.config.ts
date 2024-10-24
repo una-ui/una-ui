@@ -28,6 +28,7 @@ export default defineAppConfig({
       collapse: false,
     },
     main: {
+      padded: true,
       breadCrumb: true,
       showTitle: true,
       codeCopyToast: true,

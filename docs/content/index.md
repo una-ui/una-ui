@@ -1,5 +1,4 @@
 ---
-title: Home
 navigation: false
 ---
 

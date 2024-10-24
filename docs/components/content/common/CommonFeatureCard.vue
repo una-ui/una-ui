@@ -17,7 +17,7 @@ withDefaults(defineProps<{
     />
 
     <div>
-      <h3 class="text-xl font-bold group-hover:text-$c-brand-light">
+      <h3 class="text-accent font-bold group-hover:text-$c-brand-light">
         {{ title }}
       </h3>
 

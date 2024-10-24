@@ -29,7 +29,7 @@ const items = [{
 <template>
   <div class="flex flex-col space-y-6">
     <NLink to="#sponsors" class="cursor-pointer">
-      <h2 id="sponsors" class="text-4xl font-bold">
+      <h2 id="sponsors" class="text-3xl font-bold">
         Features
       </h2>
     </NLink>
