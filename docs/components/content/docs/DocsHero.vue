@@ -32,7 +32,7 @@ const { copy, copied } = useClipboard({ source })
           The Atomic UI Framework
         </h2>
         <p class="text-xl text-muted md:text-2xl">
-          Experience the power of Unocss Engine, enabling the creation of fast, modern, and lightweight web applications with ease.
+          Experience the power of Unocss Engine, enabling the creation of fast, modern, and lightweight components with ease.
         </p>
       </div>
 
