@@ -10,7 +10,7 @@ const { copy, copied } = useClipboard({ source })
 <template>
   <div grid="~ cols-1 lg:cols-5" class="my-15 gap-x-30 gap-y-5 lg:my-30 md:my-20 sm:my-15">
     <!-- left section -->
-    <div col="lg:span-3 span-1" class="flex flex-col items-center gap-y-6 lg:items-start lg:px-0 sm:px-25">
+    <div col="lg:span-3 span-1" class="flex flex-col items-center gap-y-6 lg:items-start sm:gap-y-8 lg:px-0 sm:px-25">
       <NButton
         to="https://github.com/una-ui/una-ui/releases"
         target="blank"
