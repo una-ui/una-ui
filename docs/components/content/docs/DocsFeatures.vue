@@ -35,7 +35,7 @@ const items = [{
     </NLink>
 
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 md:grid-cols-2">
-      <CommonFeatureCard
+      <CommonCardFeature
         v-for="item in items"
         :key="item.title"
         v-bind="item"
