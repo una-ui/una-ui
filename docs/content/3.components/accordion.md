@@ -1,15 +1,11 @@
 ---
-description: 'NAccordion component - used to display collapsible content.'
+description: 'A vertically stacked set of interactive headings that each reveal a section of content.'
 
 ---
 
 ## Basic
 
-`NAccordion` is a component that allows you to display collapsible content.
-
-::alert{type="info"}
-`NAccordion` label is wrapped around the [NButton](button) component, which means that all the props and slots of NButton are available to use.
-::
+Accordion inherits all props and slots from [NButton](button).
 
 :::CodeGroup
 ::div{label="Preview" preview}

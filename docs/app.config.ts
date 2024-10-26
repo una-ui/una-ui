@@ -106,6 +106,16 @@ export default defineAppConfig({
         icon: 'lucide:circle-dot',
         to: 'https://github.com/una-ui/una-ui/issues',
         target: '_blank',
+      }, {
+        title: 'Release Notes',
+        icon: 'lucide:book',
+        to: 'https://github.com/una-ui/una-ui/releases',
+        target: '_blank',
+      }, {
+        title: 'Sponsor the Project',
+        icon: 'lucide:heart',
+        to: 'https://github.com/sponsors/phojie',
+        target: '_blank',
       }],
     },
     search: {
