@@ -140,7 +140,7 @@ export default defineAppConfig({
       enable: true,
       style: 'input',
       inAside: false,
-      placeholder: 'Search',
+      placeholder: 'Search...',
     },
   },
 })
