@@ -1,8 +1,6 @@
 ---
-description: 'NTooltip component - used to provide information for a component.'
+description: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.'
 ---
-
-# 🟢 Tooltip
 
 ::list{type="primary"}
 - Provider to control display delay globally.

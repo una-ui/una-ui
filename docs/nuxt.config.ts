@@ -24,10 +24,6 @@ export default defineNuxtConfig({
     },
   },
 
-  experimental: {
-    payloadExtraction: true,
-  },
-
   routeRules: {
     '/': { prerender: true },
   },
