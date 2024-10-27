@@ -1,3 +1,5 @@
+import pkg from './package.json'
+
 export default defineAppConfig({
   unaContent: {
     site: {
@@ -27,6 +29,22 @@ export default defineAppConfig({
           target: '_blank',
         },
       ],
+      packageVersionNav: {
+        enable: true,
+        label: `v${pkg.version}`,
+        items: [
+          {
+            label: 'Release Notes',
+            to: 'https://github.com/una-ui/una-ui/releases',
+            trailing: 'i-heroicons-arrow-up-right text-10px',
+          },
+          {
+            label: 'Contributing',
+            to: 'https://github.com/una-ui/una-ui/blob/main/CONTRIBUTING.md',
+            trailing: 'i-heroicons-arrow-up-right text-10px',
+          },
+        ],
+      },
     },
     aside: {
       useLevel: true,

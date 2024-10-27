@@ -17,6 +17,7 @@ export default defineConfig({
     'i-radix-icons-github-logo',
     'i-tabler-brand-x',
     'i-tabler-brand-discord-filled',
+    'i-heroicons-arrow-up-right',
   ],
   presets: [
     presetUno(),
