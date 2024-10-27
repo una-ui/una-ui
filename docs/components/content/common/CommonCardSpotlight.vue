@@ -4,7 +4,7 @@ import { cn } from '../../../../packages/nuxt/src/runtime/utils'
 const props = defineProps({
   gradientSize: { type: Number, default: 150 },
   gradientColor: { type: String, default: 'var(--c-brand-next)' },
-  gradientOpacity: { type: Number, default: 0.1 },
+  gradientOpacity: { type: Number, default: 0.3 },
   class: { type: String, default: '' },
   slotClass: String,
 })
