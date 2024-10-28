@@ -4,9 +4,11 @@
       side: 'right',
     }"
   >
-    <NAvatar
-      src="https://avatars.githubusercontent.com/u/499550?v=4"
-    />
+    <template #default>
+      <NAvatar
+        src="https://avatars.githubusercontent.com/u/499550?v=4"
+      />
+    </template>
 
     <template #content>
       <div class="flex items-center gap-2">
