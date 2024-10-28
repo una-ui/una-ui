@@ -130,7 +130,7 @@ export default defineAppConfig({
         to: 'https://github.com/una-ui/una-ui/releases',
         target: '_blank',
       }, {
-        title: 'Sponsor the Project',
+        title: 'Become a Sponsor',
         icon: 'lucide:heart',
         to: 'https://github.com/sponsors/phojie',
         target: '_blank',
