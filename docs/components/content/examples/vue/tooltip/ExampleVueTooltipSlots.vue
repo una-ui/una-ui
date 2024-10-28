@@ -4,15 +4,9 @@
       side: 'right',
     }"
   >
-    <template #default>
-      <NTooltipTrigger
-        class="rounded-full p-1"
-      >
-        <NAvatar
-          src="https://avatars.githubusercontent.com/u/499550?v=4"
-        />
-      </NTooltipTrigger>
-    </template>
+    <NAvatar
+      src="https://avatars.githubusercontent.com/u/499550?v=4"
+    />
 
     <template #content>
       <div class="flex items-center gap-2">
