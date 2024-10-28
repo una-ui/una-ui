@@ -57,7 +57,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 | size   | xs   | `string`  | Set the tooltip general size. |
 
 ::alert{type="info"}
-You can adjust the tooltip size using any value, including breakpoints (e.g., `sm:sm`, `xs:lg`) and states (e.g., `hover:lg`, `focus:3xl`).
+You can adjust the tooltip size using any value, including breakpoints (`sm:sm`, `xs:lg`) and states (`hover:lg`, `focus:3xl`).
 ::
 
 :::CodeGroup
@@ -81,7 +81,9 @@ Configure the tooltip provider using the `_tooltipProvider` prop.
 | disableHoverableContent | false   | `boolean` | When `true`, trying to hover the content will result in the tooltip closing as the pointer leaves the trigger. |
 | disabled                | -       | `boolean` | Set to disable the tooltip.                                                                                    |
 
-For more props and information, please refer to the [Radix Tooltip Provider documentation](https://www.radix-vue.com/components/tooltip#provider){target="_blank"}.
+::alert{to="https://www.radix-vue.com/components/tooltip#provider" target="_blank"}
+For more `Provider` props, please refer to the [Radix Tooltip Provider documentation](https://www.radix-vue.com/components/tooltip#provider){target="_blank"}.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -168,6 +170,10 @@ For more props and information, please refer to the [Radix Tooltip Content docum
 @@@ ../packages/preset/src/_shortcuts/tooltip.ts
 
 ## Components
+
+You can use any sub-components of `NTooltip`, such as `NTooltipTrigger`, `NTooltipContent`, which are defined in the Radix Tooltip documentation. For more information, please refer to the [Radix Tooltip documentation](https://www.radix-vue.com/components/tooltip){target="_blank"}.
+
+### 
 
 :::CodeGroup
 ::div{label="Tooltip" preview}

@@ -2,10 +2,6 @@
 description: 'NFormGroup component - a wrapper component for `NInput`, `NTextarea`, `Select`, and other form components. It provides a label, description, hint, message, status and other features.'
 ---
 
-# Form group
-
----
-
 ## Basic
 
 `NFormGroup` - a wrapper component for `NInput`, `NTextarea`, `Select`, and other form components. It provides a label, description, hint, message, status and other features.

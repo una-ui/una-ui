@@ -2,10 +2,6 @@
 description: 'NCard - use to display content in a flexible container component.'
 ---
 
-# Card
-
----
-
 ## Basic
 
 `NCard` - use to display content in a flexible container component.

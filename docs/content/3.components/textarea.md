@@ -2,10 +2,6 @@
 description: 'NTextarea component - used to collect data from the user.'
 ---
 
-# Textarea
-
----
-
 ## Basic
 
 You can use [NInput](input) with the `textarea"` type to create a basic textarea.

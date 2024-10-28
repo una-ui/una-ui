@@ -1,9 +1,6 @@
 ---
 description: 'A vertically stacked set of interactive headings that each reveal a section of content.'
-
 ---
-
-## Basic
 
 Accordion inherits all props and slots from [NButton](button).
 

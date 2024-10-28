@@ -2,10 +2,6 @@
 description: 'NDropdownMenu component - used to display a list of actions or options.'
 ---
 
-# Dropdown Menu
-
----
-
 ::list{type="primary"}
 - Can be controlled or uncontrolled.
 - Supports submenus with configurable reading direction.
@@ -19,8 +15,6 @@ description: 'NDropdownMenu component - used to display a list of actions or opt
 - Typeahead support.
 - Dismissing and layering behavior is highly customizable.
 ::
-
----
 
 ## Basic
 

@@ -2,10 +2,6 @@
 description: 'NIcon component - used to display icons.'
 ---
 
-# Icon
-
----
-
 ## Basic
 
 ::alert{type="info"}

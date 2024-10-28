@@ -2,10 +2,6 @@
 description: 'NIndicator component - used to display a basic indicator with or without a label.'
 ---
 
-# Indicator
-
----
-
 ## Basic
 
 `NIndicator` is a component that can be used to display a basic indicator with or without a label.

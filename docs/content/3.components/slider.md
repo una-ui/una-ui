@@ -2,10 +2,6 @@
 description: 'NSlider component - used to create a range input.'
 ---
 
-# Slider 
-
-## Features
-
 ::list{type="primary"}
 - Can be controlled or uncontrolled.
 - Supports multiple thumbs.
@@ -15,8 +11,6 @@ description: 'NSlider component - used to create a range input.'
 - Full keyboard navigation.
 - Customizable.
 ::
-
----
 
 ## Basic
 

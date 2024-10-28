@@ -2,8 +2,6 @@
 description: 'NPopover - Displays rich content in a portal, triggered by a button.'
 ---
 
-# Popover
-
 ::list{type="primary"}
 - Can be controlled or uncontrolled.
 - Customize side, alignment, offsets, collision handling.
@@ -12,8 +10,6 @@ description: 'NPopover - Displays rich content in a portal, triggered by a butto
 - Supports modal and non-modal modes.
 - Dismissing and layering behavior is highly customizable.
 ::
-
----
 
 ## Basic
 

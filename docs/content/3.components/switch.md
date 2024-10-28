@@ -2,14 +2,10 @@
 description: 'NSwitch component - used to create a switch input.'
 ---
 
-# Switch
-
 ::list{type="primary"}
 - Full keyboard navigation.
 - Can be controlled or uncontrolled.
 ::
-
----
 
 ## Basic
 

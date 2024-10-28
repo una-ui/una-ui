@@ -2,10 +2,6 @@
 description: 'NSkeleton component - use to create a placeholder while the content is being loaded.'
 ---
 
-# Skeleton
-
----
-
 ## Basic
 
 `NSkeleton` is a placeholder while the content is being loaded.

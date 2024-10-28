@@ -2,10 +2,6 @@
 description: 'NBadge component - used to display a small badge with a number or text.'
 ---
 
-# Badge
-
----
-
 ## Basic
 
 `NBadge` is a component that can be used to display a small badge with a number or text.

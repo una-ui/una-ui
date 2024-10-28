@@ -2,10 +2,6 @@
 description: 'NCheckbox component - use to create a checkbox input.'
 ---
 
-# Checkbox
-
----
-
 ## Basic
 
 use `NCheckbox` component to create a checkbox.

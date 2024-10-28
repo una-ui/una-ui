@@ -2,10 +2,6 @@
 description: 'NInput component - used to collect data from the user.'
 ---
 
-# Input
-
----
-
 ## Basic
 
 use the `NInput` tag to create a basic input.

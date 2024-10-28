@@ -2,10 +2,6 @@
 description: 'NRadio component - use to create a radio input.'
 ---
 
-# Radio
-
----
-
 ## Basic
 
 use `NRadio` to create a radio input.

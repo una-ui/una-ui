@@ -2,16 +2,10 @@
 description: 'NProgress component - used to display a progress bar.'
 ---
 
-# Progress
-
-## Features
-
 ::list{type="primary"}
 - Provides context for assistive technology to read the progress of a task.
 - Adheres to the [`progressbar` role requirements](https://www.w3.org/WAI/ARIA/apg/patterns/meter){target="_blank"}.
 ::
-
----
 
 ## Basic
 

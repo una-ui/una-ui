@@ -2,8 +2,6 @@
 description: 'NSelect component - used to create a selection input.'
 ---
 
-# Select
-
 ::list{type="primary"}
 - Can be controlled or uncontrolled.
 - Offers 2 positioning modes.
@@ -14,8 +12,6 @@ description: 'NSelect component - used to create a selection input.'
 - Typeahead support.
 - Supports Right to Left direction.
 ::
-
----
 
 ## Basic
 

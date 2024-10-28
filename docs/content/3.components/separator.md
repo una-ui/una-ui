@@ -2,10 +2,6 @@
 description: 'The Separator component that separates the content.'
 ---
 
-# Separator
-
----
-
 ## Basic
 
 `NSeparator` - used to separate the content.

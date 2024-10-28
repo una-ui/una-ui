@@ -2,10 +2,6 @@
 description: 'NLink component - a component for rendering links to pages in your application.'
 ---
 
-# Link
-
----
-
 ## Basic
 
 `NLink` is a custom `NuxtLink` component that provides additional functionality for rendering links to pages in your application.

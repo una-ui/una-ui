@@ -2,8 +2,6 @@
 description: 'NToggle component - used to create a toggle button.'
 ---
 
-# Toggle
-
 ::list{type="primary"}
 - On/Off States.
 - Accessible Labeling.
@@ -12,8 +10,6 @@ description: 'NToggle component - used to create a toggle button.'
 - Disabled State.
 - Keyboard Accessibility.
 ::
-
----
 
 ## Basic
 
