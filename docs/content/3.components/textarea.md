@@ -2,7 +2,7 @@
 description: 'NTextarea component - used to collect data from the user.'
 ---
 
-# 🟢 Textarea
+# Textarea
 
 ---
 

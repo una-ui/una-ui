@@ -9,9 +9,9 @@ description: 'A popup that displays information related to an element when the e
 - Supports custom timings.
 ::
 
----
+## Examples
 
-## Basic
+### Basic
 
 use `NTooltip` to provide information for a component.
 
@@ -29,7 +29,7 @@ use `NTooltip` to provide information for a component.
 ::
 :::
 
-## Color
+### Color
 
 `tooltip="{color}"` is used to set the color of the tooltip.
 
@@ -50,7 +50,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Size
+### Size
 
 | Prop   | Default | Type      | Description                   |
 | ------ | ------- | --------- | ----------------------------- |
@@ -70,7 +70,7 @@ You can adjust the tooltip size using any value, including breakpoints (e.g., `s
 ::
 :::
 
-## Provider
+### Provider
 
 Configure the tooltip provider using the `_tooltipProvider` prop.
 
@@ -81,9 +81,7 @@ Configure the tooltip provider using the `_tooltipProvider` prop.
 | disableHoverableContent | false   | `boolean` | When `true`, trying to hover the content will result in the tooltip closing as the pointer leaves the trigger. |
 | disabled                | -       | `boolean` | Set to disable the tooltip.                                                                                    |
 
-::alert{type="info"}
 For more props and information, please refer to the [Radix Tooltip Provider documentation](https://www.radix-vue.com/components/tooltip#provider){target="_blank"}.
-::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -94,7 +92,7 @@ For more props and information, please refer to the [Radix Tooltip Provider docu
 ::
 :::
 
-## Root
+### Root
 
 Configure the tooltip root using the `_tooltipRoot` prop.
 
@@ -117,7 +115,7 @@ For more props and information, please refer to the [Radix Tooltip Root document
 ::
 :::
 
-## Content
+### Content
 
 Configure the tooltip content using the `_tooltipContent` prop. 
 
@@ -143,7 +141,7 @@ For more props and information, please refer to the [Radix Tooltip Content docum
 ::
 :::
 
-## Slots
+### Slots
 
 > You can use the following slots to customize the tooltip.
 
@@ -170,10 +168,6 @@ For more props and information, please refer to the [Radix Tooltip Content docum
 @@@ ../packages/preset/src/_shortcuts/tooltip.ts
 
 ## Components
-
-You can use any sub-components of `NTooltip`, such as `NTooltipTrigger`, `NTooltipContent`, which are defined in the Radix Tooltip documentation. For more information, please refer to the [Radix Tooltip documentation](https://www.radix-vue.com/components/tooltip){target="_blank"}.
-
-### 
 
 :::CodeGroup
 ::div{label="Tooltip" preview}

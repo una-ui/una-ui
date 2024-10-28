@@ -2,7 +2,7 @@
 description: 'NPagination - used to divide content into pages by displaying a subset of data at a time.'
 ---
 
-# 🟢 Pagination
+# Pagination
 
 ::list{type="primary"}
 - Enables quick access to the first or last page.

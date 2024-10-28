@@ -2,7 +2,7 @@
 description: 'NPopover - Displays rich content in a portal, triggered by a button.'
 ---
 
-# 🟢 Popover
+# Popover
 
 ::list{type="primary"}
 - Can be controlled or uncontrolled.

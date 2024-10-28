@@ -2,7 +2,7 @@
 description: 'NCard - use to display content in a flexible container component.'
 ---
 
-# 🟢 Card
+# Card
 
 ---
 

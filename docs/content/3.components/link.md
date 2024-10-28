@@ -2,7 +2,7 @@
 description: 'NLink component - a component for rendering links to pages in your application.'
 ---
 
-# 🟢 Link
+# Link
 
 ---
 

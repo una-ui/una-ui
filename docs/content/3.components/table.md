@@ -2,7 +2,7 @@
 description: 'NTable component - used to create a data table.'
 ---
 
-# 🟢 Table
+# Table
 
 ---
 

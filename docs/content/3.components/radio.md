@@ -2,7 +2,7 @@
 description: 'NRadio component - use to create a radio input.'
 ---
 
-# 🟢 Radio
+# Radio
 
 ---
 

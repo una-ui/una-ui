@@ -2,7 +2,7 @@
 description: 'NBadge component - used to display a small badge with a number or text.'
 ---
 
-# 🟢 Badge
+# Badge
 
 ---
 

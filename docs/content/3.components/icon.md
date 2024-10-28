@@ -2,7 +2,7 @@
 description: 'NIcon component - used to display icons.'
 ---
 
-# 🟢 Icon
+# Icon
 
 ---
 

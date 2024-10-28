@@ -2,7 +2,7 @@
 description: 'NKbd component - a component for indicating input that is typically entered via keyboard.'
 ---
 
-# 🟢 Kbd
+# Kbd
 
 ::alert{type="warning"}
 Work in progress - this component is not yet ready for use.

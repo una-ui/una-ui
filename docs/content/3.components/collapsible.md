@@ -2,7 +2,7 @@
 description: 'NCollapsible - An interactive component which expands/collapses a panel'
 ---
 
-# 🟢 Collapsible
+# Collapsible
 
 ::list{type="primary"}
 - Full keyboard navigation.

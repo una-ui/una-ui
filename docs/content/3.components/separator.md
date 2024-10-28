@@ -2,7 +2,7 @@
 description: 'The Separator component that separates the content.'
 ---
 
-# 🟢 Separator
+# Separator
 
 ---
 

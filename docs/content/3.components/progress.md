@@ -2,7 +2,7 @@
 description: 'NProgress component - used to display a progress bar.'
 ---
 
-# 🟢 Progress
+# Progress
 
 ## Features
 

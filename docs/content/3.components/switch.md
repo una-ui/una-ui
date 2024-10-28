@@ -2,7 +2,7 @@
 description: 'NSwitch component - used to create a switch input.'
 ---
 
-# 🟢 Switch
+# Switch
 
 ::list{type="primary"}
 - Full keyboard navigation.

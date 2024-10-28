@@ -2,7 +2,7 @@
 description: "NAvatar component - used to display a user's profile picture, initials, or icon."
 ---
 
-# 🟢 Avatar
+# Avatar
 
 ---
 

@@ -2,7 +2,7 @@
 description: 'NLabel - Renders an accessible label associated with controls.'
 ---
 
-# 🟢 Label
+# Label
 
 ---
 

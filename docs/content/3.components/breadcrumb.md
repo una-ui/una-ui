@@ -2,7 +2,7 @@
 description: 'NBreadcrumb - use to display the path of the current page and the hierarchy of previous routes/links.'
 ---
 
-# 🟢 Breadcrumb
+# Breadcrumb
 
 ---
 

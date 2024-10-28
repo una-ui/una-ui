@@ -2,7 +2,7 @@
 description: 'NIndicator component - used to display a basic indicator with or without a label.'
 ---
 
-# 🟢 Indicator
+# Indicator
 
 ---
 

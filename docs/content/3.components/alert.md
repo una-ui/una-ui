@@ -2,7 +2,7 @@
 description: 'NAlert component - display a short, important message in a way that attracts the user''s attention without interrupting the user''s task.'
 ---
 
-# 🟢 Alert
+# Alert
 
 ---
 

@@ -2,7 +2,7 @@
 description: 'NSelect component - used to create a selection input.'
 ---
 
-# 🟢 Select
+# Select
 
 ::list{type="primary"}
 - Can be controlled or uncontrolled.

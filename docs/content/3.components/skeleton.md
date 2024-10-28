@@ -2,7 +2,7 @@
 description: 'NSkeleton component - use to create a placeholder while the content is being loaded.'
 ---
 
-# 🟢 Skeleton
+# Skeleton
 
 ---
 

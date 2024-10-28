@@ -2,7 +2,7 @@
 description: 'NAvatarGroup component - used to display a group of NAvatar components.'
 ---
 
-# 🟢 Avatar Group
+# Avatar Group
 
 ---
 

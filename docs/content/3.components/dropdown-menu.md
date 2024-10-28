@@ -2,7 +2,7 @@
 description: 'NDropdownMenu component - used to display a list of actions or options.'
 ---
 
-# 🟢 Dropdown Menu
+# Dropdown Menu
 
 ---
 

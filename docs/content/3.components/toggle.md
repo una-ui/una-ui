@@ -2,7 +2,7 @@
 description: 'NToggle component - used to create a toggle button.'
 ---
 
-# 🟢 Toggle
+# Toggle
 
 ::list{type="primary"}
 - On/Off States.

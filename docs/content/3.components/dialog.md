@@ -2,7 +2,7 @@
 description: NDialog component - Used for making dialog boxes and popup screens
 ---
 
-# 🟢 Dialog
+# Dialog
 
 ::list{type="primary"}
 - Supports modal and non-modal modes.

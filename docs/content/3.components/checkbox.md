@@ -2,7 +2,7 @@
 description: 'NCheckbox component - use to create a checkbox input.'
 ---
 
-# 🟢 Checkbox
+# Checkbox
 
 ---
 
