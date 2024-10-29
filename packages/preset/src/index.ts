@@ -25,7 +25,9 @@ export default function presetUna(options: unaUIOptions = {
         },
       },
       colors: {
-        brand: 'rgba(var(--c-brand),%alpha)',
+        background: 'rgba(var(--una-background) / <alpha-value>)',
+        foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
+        brand: 'rgba(var(--una-brand) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
           active: 'rgba(var(--una-primary-active) / <alpha-value>)',
@@ -87,7 +89,7 @@ export default function presetUna(options: unaUIOptions = {
         const color = parseColor(body, theme)
         if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components) {
           return {
-            '--c-brand': `${color.cssColor.components.join(',')}`,
+            '--una-brand': `${color.cssColor.components.join(',')}`,
           }
         }
       }],
