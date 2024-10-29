@@ -25,6 +25,8 @@ badges:
 
 :read-more{to="/components/button" title="Button component" target="_blank"}
 
+:read-more{to="https://www.radix-vue.com/components/toggle#root" title="Radix Toggle Root API" target="_blank"}
+
 :::CodeGroup
 ::div{label="Preview" preview}
   :ExampleVueToggleBasic
@@ -51,9 +53,9 @@ badges:
 ::
 :::
 
-### Slot
+### Slots
 
-:read-more{to="/components/button#slots" title="Button component" target="_blank"}
+:read-more{to="/components/button#slots" title="Button component slots" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
