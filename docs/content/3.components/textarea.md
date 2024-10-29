@@ -22,9 +22,10 @@ badges:
 
 ### Rows and Cols
 
-`rows={value}` - Set the number of rows for the textarea.
-
-`cols={value}` - Set the number of columns for the textarea.
+| Prop   | Default | Type     | Description                                 |
+| ------ | ------- | -------- | ------------------------------------------- |
+| `rows` | -       | `number` | Set the number of rows for the textarea.    |
+| `cols` | -       | `number` | Set the number of columns for the textarea. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -37,13 +38,9 @@ badges:
 
 ### Autosizing
 
-`autoresize={value}` - Enable autosizing of the textarea, you can also pass a number to set the maximum number of rows.
-
-| Value    | Description                                                                                                             |
-| -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `true`   | The textarea will automatically adjust its height to fit the content.                                                   |
-| `false`  | The textarea will not automatically adjust its height to fit the content.                                               |
-| `number` | The textarea will automatically adjust its height to fit the content, but will not exceed the specified number of rows. |
+| Prop         | Default | Type               | Description                                                                                                                                                               |
+| ------------ | ------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `autoresize` | `false` | `boolean` `number` | Enables textarea autosizing. When `true`, it adjusts height to fit content. When a `number`, it sets the maximum height to fit content, not exceeding the specified rows. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -56,18 +53,16 @@ badges:
 
 ### Resizing
 
-`resize="{value}"` - change the resize behavior of the textarea.
+| Prop     | Default | Type                  | Description                                 |
+| -------- | ------- | --------------------- | ------------------------------------------- |
+| `resize` | `none`  | `none` `null` `y` `x` | Change the resize behavior of the textarea. |
 
-| Value  | Description                                                 |
-| ------ | ----------------------------------------------------------- |
-| `none` | The textarea will not be resizable. (Default)               |
-| `null` | The textarea will be resizable vertically and horizontally. |
-| `y`    | The textarea will be resizable vertically.                  |
-| `x`    | The textarea will be resizable horizontally.                |
-
-::alert{type=info}
-The examples below utilize `NFormGroup`. Refer to the [FormGroup](form-group) section for more details.
-::
+| Option | Description                                           |
+| ------ | ----------------------------------------------------- |
+| `none` | Prevents the textarea from being resizable. (Default) |
+| `null` | Enables both vertical and horizontal resizing.        |
+| `y`    | Allows vertical resizing.                             |
+| `x`    | Allows horizontal resizing.                           |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -77,6 +72,12 @@ The examples below utilize `NFormGroup`. Refer to the [FormGroup](form-group) se
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaResize.vue
 ::
 :::
+
+:read-more{to="/components/form-group" title="form-group component" target="_blank"}
+
+## Slots
+
+:read-more{to="/components/input#slots" title="Input component slots" target="_blank"}
 
 ## Props
 

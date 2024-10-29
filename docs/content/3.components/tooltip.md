@@ -17,7 +17,7 @@ badges:
 | Prop       | Default | Type      | Description                 |
 | ---------- | ------- | --------- | --------------------------- |
 | `content`  | -       | `string`  | Set the tooltip content.    |
-| `disabled` | -       | `boolean` | Set to disable the tooltip. |a
+| `disabled` | -       | `boolean` | Set to disable the tooltip. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
