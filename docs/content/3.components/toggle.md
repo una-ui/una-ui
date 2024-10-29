@@ -1,31 +1,21 @@
 ---
-description: 'NToggle component - used to create a toggle button.'
+description: 'A two-state button that can be either on or off.'
 navBadges:
   - value: New
     type: lime
 badges:
-  - value: Docus
-    to: https://docus.dev/api/components#buttonlink
+  - value: API reference
+    to: https://www.radix-vue.com/components/toggle
     target: _blank
   - value: Source
     icon: lucide:code
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/ButtonLink.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Toggle.vue
     target: _blank
-  - value: 0.6.5
 ---
 
-::list{type="primary"}
-- On/Off States.
-- Accessible Labeling.
-- Iconography.
-- Customization.
-- Disabled State.
-- Keyboard Accessibility.
-::
+## Examples
 
-## Basic
-
-`NToggle`  is a user interface element that allows users to switch between two states, typically representing opposite conditions such as `on | off`. For more details on the API, please visit the [Radix-ui toggle](https://www.radix-vue.com/components/toggle.html#api-reference) documentation.
+### Basic
 
 | Prop           | Type      | Default | Description                                                                                                                        |
 | -------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,9 +23,7 @@ badges:
 | `disabled`     | `boolean` | `false` | When set to `true`, disables user interaction with the toggle.                                                                     |
 | `pressed`      | `boolean` | `-`     | The controlled pressed state of the toggle, which can be bound using `v-model`.                                                    |
 
-::alert{type="info"}
-`NToggle` is wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available to use directly.
-::
+:read-more{to="/components/button" title="Button component" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -46,12 +34,13 @@ badges:
 ::
 :::
 
-## Variant and Color
+### Variant and Color
 
 | Prop         | Type     | Default       | Description                                    |
 | ------------ | -------- | ------------- | ---------------------------------------------- |
 | `toggle-on`  | `string` | `soft-accent` | Change the color of the toggle when it is on.  |
 | `toggle-off` | `string` | `ghost-gray`  | Change the color of the toggle when it is off. |
+
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -62,7 +51,9 @@ badges:
 ::
 :::
 
-## Slot
+### Slot
+
+:read-more{to="/components/button#slots" title="Button component" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -73,17 +64,18 @@ badges:
 ::
 :::
 
-
 ## Props
+
 @@@ ../packages/nuxt/src/runtime/types/toggle.ts
 
 ## Presets
+
 @@@ ../packages/preset/src/_shortcuts/toggle.ts
 
 ## Component
 
-### 
-
 :::CodeGroup
-::div{label="Pagination" preview}
+::div{label="Toggle" preview}
 @@@ ../packages/nuxt/src/runtime/components/elements/Toggle.vue
+::
+:::

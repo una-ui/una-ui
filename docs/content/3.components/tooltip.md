@@ -1,7 +1,7 @@
 ---
 description: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.'
 badges:
-  - value: Radix API
+  - value: API reference
     to: https://www.radix-vue.com/components/tooltip
     target: _blank
   - value: Source
@@ -72,7 +72,7 @@ Configure the tooltip provider by using the `_tooltipProvider` prop.
 | ignoreNonKeyboardFocus  | false   | `boolean` | Prevent the tooltip from opening if the focus did not come from the keyboard by matching against the :focus-visible selector. This is useful if you want to avoid opening it when switching browser tabs or closing a dialog. |
 | skipDelayDuration       | 300     | `number`  | How much time a user has to enter another trigger without incurring a delay again.                                                                                                                                            |
 
-:read-more{to="https://www.radix-vue.com/components/tooltip#provider" title="Radix Tooltip Provider API"}
+:read-more{to="https://www.radix-vue.com/components/tooltip#provider" title="Radix Tooltip Provider API" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -97,7 +97,7 @@ Configure the tooltip root using the `_tooltipRoot` prop.
 | ignoreNonKeyboardFocus  | -       | `boolean` | Prevent the tooltip from opening if the focus did not come from the keyboard by matching against the :focus-visible selector. This is useful if you want to avoid opening it when switching browser tabs or closing a dialog. |
 | open                    | false   | `boolean` | The controlled open state of the tooltip.                                                                                                                                                                                     |
 
-:read-more{to="https://www.radix-vue.com/components/tooltip#root" title="Radix Tooltip Root API"}
+:read-more{to="https://www.radix-vue.com/components/tooltip#root" title="Radix Tooltip Root API" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -119,7 +119,7 @@ Configure the tooltip content using the `_tooltipContent` prop.
 | side        | top     | `top` `right` `bottom` `left` | The preferred side of the trigger to render against when open. Will be reversed when collisions occur and avoidCollisions is enabled. |
 | sideOffset  | -       | `number`                      | The distance in pixels from the trigger.                                                                                              |
 
-:read-more{to="https://www.radix-vue.com/components/tooltip#content" title="Radix Tooltip Content API"}
+:read-more{to="https://www.radix-vue.com/components/tooltip#content" title="Radix Tooltip Content API" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -157,10 +157,6 @@ Configure the tooltip content using the `_tooltipContent` prop.
 @@@ ../packages/preset/src/_shortcuts/tooltip.ts
 
 ## Components
-
-You can use any sub-components of `NTooltip`, such as `NTooltipTrigger`, `NTooltipContent`, which are defined in the Radix Tooltip documentation. For more information, please refer to the [Radix Tooltip documentation](https://www.radix-vue.com/components/tooltip){target="_blank"}.
-
-### 
 
 :::CodeGroup
 ::div{label="Tooltip" preview}
