@@ -1,14 +1,15 @@
 ---
-description: 'NTextarea component - used to collect data from the user.'
+description: 'Displays a form textarea or a component that looks like a textarea.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Input.vue
+    target: _blank
 ---
 
-## Basic
+## Examples
 
-You can use [NInput](input) with the `textarea"` type to create a basic textarea.
-
-::alert{type=info}
-This component shares the same API as the [NInput](input) component. So you can use all the same props, variants, slots, events, etc. as the input component.
-::
+### Basic
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -19,7 +20,7 @@ This component shares the same API as the [NInput](input) component. So you can 
 ::
 :::
 
-## Rows and Cols
+### Rows and Cols
 
 `rows={value}` - Set the number of rows for the textarea.
 
@@ -34,7 +35,7 @@ This component shares the same API as the [NInput](input) component. So you can 
 ::
 :::
 
-## Autosizing
+### Autosizing
 
 `autoresize={value}` - Enable autosizing of the textarea, you can also pass a number to set the maximum number of rows.
 
@@ -53,7 +54,7 @@ This component shares the same API as the [NInput](input) component. So you can 
 ::
 :::
 
-## Resizing
+### Resizing
 
 `resize="{value}"` - change the resize behavior of the textarea.
 
