@@ -31,12 +31,12 @@
     </NTooltip>
 
     <NTooltip
-      tooltip="primary"
-      content="The color is primary"
+      tooltip="lime"
+      content="The color is lime"
     >
       <NButton
-        btn="solid-primary"
-        label="Primary"
+        btn="solid-lime"
+        label="Lime"
       />
     </NTooltip>
 

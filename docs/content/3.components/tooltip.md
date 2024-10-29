@@ -1,24 +1,23 @@
 ---
 description: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.'
+badges:
+  - value: Radix API
+    to: https://www.radix-vue.com/components/tooltip
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/tooltip/Tooltip.vue
+    target: _blank
 ---
-
-::list{type="primary"}
-- Provider to control display delay globally.
-- Opens when the trigger is focused or hovered.
-- Closes when the trigger is activated or when pressing escape.
-- Supports custom timings.
-::
 
 ## Examples
 
 ### Basic
 
-use `NTooltip` to provide information for a component.
-
-| Prop       | Default | Type      | Description                 |
-| ---------- | ------- | --------- | --------------------------- |
-| content    | -       | `string`  | Set the tooltip content.    |
-| disabled   | -       | `boolean` | Set to disable the tooltip. |
+| Prop     | Default | Type      | Description                 |
+| -------- | ------- | --------- | --------------------------- |
+| content  | -       | `string`  | Set the tooltip content.    |
+| disabled | -       | `boolean` | Set to disable the tooltip. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -31,15 +30,9 @@ use `NTooltip` to provide information for a component.
 
 ### Color
 
-`tooltip="{color}"` is used to set the color of the tooltip.
-
-| Prop      | Default | Type      | Description            |
-| --------- | ------- | --------- | ---------------------- |
-| tooltip   | black | `string`  | Set the tooltip color. |
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+| Prop    | Default | Type     | Description            |
+| ------- | ------- | -------- | ---------------------- |
+| tooltip | black   | `string` | Set the tooltip color. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -52,13 +45,9 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 ### Size
 
-| Prop   | Default | Type      | Description                   |
-| ------ | ------- | --------- | ----------------------------- |
-| size   | xs   | `string`  | Set the tooltip general size. |
-
-::alert{type="info"}
-You can adjust the tooltip size using any value, including breakpoints (`sm:sm`, `xs:lg`) and states (`hover:lg`, `focus:3xl`).
-::
+| Prop | Default | Type     | Description                   |
+| ---- | ------- | -------- | ----------------------------- |
+| size | xs      | `string` | Set the tooltip general size. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -72,18 +61,18 @@ You can adjust the tooltip size using any value, including breakpoints (`sm:sm`,
 
 ### Provider
 
-Configure the tooltip provider using the `_tooltipProvider` prop.
+Configure the tooltip provider by using the `_tooltipProvider` prop.
 
-| Prop                      | Default | Type      | Description                                                                                                    |
-| ------------------------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------- |
-| delayDuration           | 600     | `number`  | Set the delay duration of the tooltip.                                                                         |
-| disableClosingTrigger   | -       | `boolean` | When `true`, clicking on trigger will not close the content.                                                   |
-| disableHoverableContent | false   | `boolean` | When `true`, trying to hover the content will result in the tooltip closing as the pointer leaves the trigger. |
-| disabled                | -       | `boolean` | Set to disable the tooltip.                                                                                    |
+| Prop                    | Default | Type      | Description                                                                                                                                                                                                                   |
+| ----------------------- | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| delayDuration           | 700     | `number`  | The duration from when the pointer enters the trigger until the tooltip gets opened.                                                                                                                                          |
+| disableClosingTrigger   | -       | `boolean` | When `true`, clicking on trigger will not close the content.                                                                                                                                                                  |
+| disabled                | -       | `boolean` | When `true`, disable tooltip.                                                                                                                                                                                                 |
+| disableHoverableContent | false   | `boolean` | When `true`, trying to hover the content will result in the tooltip closing as the pointer leaves the trigger.                                                                                                                |
+| ignoreNonKeyboardFocus  | false   | `boolean` | Prevent the tooltip from opening if the focus did not come from the keyboard by matching against the :focus-visible selector. This is useful if you want to avoid opening it when switching browser tabs or closing a dialog. |
+| skipDelayDuration       | 300     | `number`  | How much time a user has to enter another trigger without incurring a delay again.                                                                                                                                            |
 
-::alert{to="https://www.radix-vue.com/components/tooltip#provider" target="_blank"}
-For more `Provider` props, please refer to the [Radix Tooltip Provider documentation](https://www.radix-vue.com/components/tooltip#provider){target="_blank"}.
-::
+:read-more{to="https://www.radix-vue.com/components/tooltip#provider" title="Radix Tooltip Provider API"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -98,15 +87,17 @@ For more `Provider` props, please refer to the [Radix Tooltip Provider documenta
 
 Configure the tooltip root using the `_tooltipRoot` prop.
 
-| Prop            | Default | Type      | Description                                                      |
-| --------------- | ------- | --------- | ---------------------------------------------------------------- |
-| defaultOpen   | false | `boolean` | Set the default open state of the tooltip.                       |
-| open          | false | `boolean` | Set the open state of the tooltip.                               |
-| onUpdate:open | -       | `void`    | Event handler called when the open state of the tooltip changes. |
+| Prop                    | Default | Type      | Description                                                                                                                                                                                                                   |
+| ----------------------- | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| defaultOpen             | false   | `boolean` | The open state of the tooltip when it is initially rendered. Use when you do not need to control its open state.                                                                                                              |
+| delayDuration           | -       | `number`  | Override the duration given to the Provider to customize the open delay for a specific tooltip.                                                                                                                               |
+| disableClosingTrigger   | -       | `boolean` | When true, clicking on trigger will not close the content.                                                                                                                                                                    |
+| disabled                | -       | `boolean` | When true, disable tooltip                                                                                                                                                                                                    |
+| disableHoverableContent | -       | `boolean` | Prevents Tooltip.Content from remaining open when hovering. Disabling this has accessibility consequences. Inherits from Tooltip.Provider.                                                                                    |
+| ignoreNonKeyboardFocus  | -       | `boolean` | Prevent the tooltip from opening if the focus did not come from the keyboard by matching against the :focus-visible selector. This is useful if you want to avoid opening it when switching browser tabs or closing a dialog. |
+| open                    | false   | `boolean` | The controlled open state of the tooltip.                                                                                                                                                                                     |
 
-::alert{type="info"}
-For more props and information, please refer to the [Radix Tooltip Root documentation](https://www.radix-vue.com/components/tooltip#root){target="_blank"}.
-::
+:read-more{to="https://www.radix-vue.com/components/tooltip#root" title="Radix Tooltip Root API"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -121,16 +112,14 @@ For more props and information, please refer to the [Radix Tooltip Root document
 
 Configure the tooltip content using the `_tooltipContent` prop. 
 
-| Prop        | Default | Type                          | Description                               |
-| ----------- | ------- | ----------------------------- | ----------------------------------------- |
-| align       | center  | `start` `end` `center`        | Set the alignment of the tooltip content. |
-| side        | top     | `top` `right` `bottom` `left` | Set the side of the tooltip content.      |
-| sideOffset  | -       | `number`                      | Set the offset of the tooltip content.    |
-| alignOffset | -       | `number`                      | Set the offset of the tooltip content.    |
+| Prop        | Default | Type                          | Description                                                                                                                           |
+| ----------- | ------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| align       | center  | `start` `end` `center`        | The preferred alignment against the trigger. May change when collisions occur.                                                        |
+| alignOffset | -       | `number`                      | An offset in pixels from the start or end alignment options.                                                                          |
+| side        | top     | `top` `right` `bottom` `left` | The preferred side of the trigger to render against when open. Will be reversed when collisions occur and avoidCollisions is enabled. |
+| sideOffset  | -       | `number`                      | The distance in pixels from the trigger.                                                                                              |
 
-::alert{type="info"}
-For more props and information, please refer to the [Radix Tooltip Content documentation](https://www.radix-vue.com/components/tooltip#content){target="_blank"}.
-::
+:read-more{to="https://www.radix-vue.com/components/tooltip#content" title="Radix Tooltip Content API"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -145,12 +134,10 @@ For more props and information, please refer to the [Radix Tooltip Content docum
 
 ### Slots
 
-> You can use the following slots to customize the tooltip.
-
-| Name      | Description       |
-| --------- | ----------------- |
-| `default` | The trigger slot. |
-| `content` | The content slot. |
+| Name      | Props | Description       |
+| --------- | ----- | ----------------- |
+| `default` | -     | The trigger slot. |
+| `content` | -     | The content slot. |
 
 :::CodeGroup
 ::div{label="Preview"}
