@@ -34,9 +34,10 @@ export const staticGeneral = {
   'bg-base': 'bg-$c-background',
   'bg-inverted': 'bg-$c-foreground',
   'bg-muted': 'bg-$c-muted',
+  'bg-muted-inverted': 'bg-$c-muted-foreground',
 
   'bg-accent': 'bg-$c-accent',
-  'bg-accent-foreground': 'bg-$c-accent-foreground',
+  'bg-accent-inverted': 'bg-$c-accent-foreground',
 
   'bg-popover': 'bg-$c-popover',
   'bg-popover-foreground': 'bg-$c-popover-foreground',
