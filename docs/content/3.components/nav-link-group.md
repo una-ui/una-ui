@@ -1,6 +1,9 @@
 ---
 title: NavLinkGroup
 description: 'Work in progress - this component is not yet ready for use.'
+navBadges:
+  - value: In Progress
+    type: warning
 ---
 
 ::alert{type="warning"}

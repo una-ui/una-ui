@@ -1,5 +1,17 @@
 ---
 description: 'NToggle component - used to create a toggle button.'
+navBadges:
+  - value: New
+    type: lime
+badges:
+  - value: Docus
+    to: https://docus.dev/api/components#buttonlink
+    target: _blank
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt/blob/main/components/content/ButtonLink.vue
+    target: _blank
+  - value: 0.6.5
 ---
 
 ::list{type="primary"}
