@@ -79,14 +79,19 @@ badges:
 
 :read-more{to="/components/input#slots" title="Input component slots" target="_blank"}
 
-## Props
-
-@@@ ../packages/nuxt/src/runtime/types/input.ts
-
 ## Presets
 
-@@@ ../packages/preset/src/_shortcuts/input.ts
+@@@ ../packages/preset/src/_shortcuts/input.ts [shortcuts/input.ts]
 
-## Component
+## Props
 
+@@@ ../packages/nuxt/src/runtime/types/input.ts [types/input.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Input.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/Input.vue
+::
+:::
+

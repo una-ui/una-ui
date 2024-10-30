@@ -145,37 +145,37 @@ a
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipSlots.vue
-
 ::
 :::
 
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/tooltip.ts [shortcuts/tooltip.ts]
+
 ## Props
 
-@@@ ../packages/nuxt/src/runtime/types/tooltip.ts
-
-## Presets
-@@@ ../packages/preset/src/_shortcuts/tooltip.ts
+@@@ ../packages/nuxt/src/runtime/types/tooltip.ts [types/tooltip.ts]
 
 ## Components
 
 :::CodeGroup
-::div{label="Tooltip" preview}
+::div{label="Tooltip.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tooltip/Tooltip.vue
 
 ::
-::div{label="TooltipRoot"}
-@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipRoot.vue
-
-::
-::div{label="TooltipContent"}
-@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipContent.vue
-
-::
-::div{label="TooltipProvider"}
+::div{label="TooltipProvider.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipProvider.vue
 
 ::
-::div{label="TooltipTrigger"}
+::div{label="TooltipRoot.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipRoot.vue
+
+::
+::div{label="TooltipContent.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipContent.vue
+
+::
+::div{label="TooltipTrigger.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipTrigger.vue
 
 ::

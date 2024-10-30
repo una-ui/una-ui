@@ -66,18 +66,19 @@ badges:
 ::
 :::
 
-## Props
-
-@@@ ../packages/nuxt/src/runtime/types/toggle.ts
-
 ## Presets
 
-@@@ ../packages/preset/src/_shortcuts/toggle.ts
+@@@ ../packages/preset/src/_shortcuts/toggle.ts [shortcuts/toggle.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/toggle.ts [types/toggle.ts]
 
 ## Component
 
 :::CodeGroup
-::div{label="Toggle" preview}
+::div{label="Toggle.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Toggle.vue
+
 ::
 :::
