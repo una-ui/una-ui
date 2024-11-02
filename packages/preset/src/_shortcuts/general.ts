@@ -43,12 +43,12 @@ export const staticGeneral = {
 
   // icon
   'i-loading': 'i-tabler-loader-2',
-  'i-warning': 'i-radix-icons-exclamation-triangle',
-  'i-error': 'i-radix-icons-cross-circled',
-  'i-success': 'i-radix-icons-check-circled',
-  'i-info': 'i-radix-icons-info-circled',
-  'i-close': 'i-radix-icons-cross-2',
-  'i-check': 'i-radix-icons-check',
+  'i-warning': 'i-tabler-alert-triangle-filled',
+  'i-error': 'i-tabler-exclamation-circle-filled',
+  'i-success': 'i-tabler-circle-check-filled',
+  'i-info': 'i-tabler-info-circle-filled',
+  'i-close': 'i-tabler-x',
+  'i-check': 'i-tabler-check',
   'i-dot': 'i-tabler-circle-filled',
 
   // transition
