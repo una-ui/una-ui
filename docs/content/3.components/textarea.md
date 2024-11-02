@@ -81,7 +81,7 @@ badges:
 
 ## Presets
 
-@@@ ../packages/preset/src/_shortcuts/input.ts [shortcuts/input.ts]
+:read-more{to="/components/input#slots" title="Input component slots" target="_blank"}
 
 ## Props
 

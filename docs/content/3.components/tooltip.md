@@ -1,12 +1,12 @@
 ---
 description: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.'
 badges:
-  - value: API reference
-    to: https://www.radix-vue.com/components/tooltip
-    target: _blank
   - value: Source
     icon: lucide:code
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/tooltip/Tooltip.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/tooltip
     target: _blank
 ---
 
@@ -125,7 +125,6 @@ Configure the tooltip content using the `_tooltipContent` prop.
 ::div{label="Preview" preview}
 :ExampleVueTooltipContent
 ::
-a
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipContent.vue
 ::

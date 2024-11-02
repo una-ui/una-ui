@@ -4,12 +4,12 @@ navBadges:
   - value: New
     type: lime
 badges:
-  - value: API reference
-    to: https://www.radix-vue.com/components/toggle
-    target: _blank
   - value: Source
     icon: lucide:code
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Toggle.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/toggle
     target: _blank
 ---
 
