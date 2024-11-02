@@ -15,7 +15,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-root': '',
   'select-trigger': 'w-full', // [&>span]:line-clamp-1
   'select-trigger-trailing-icon': 'i-lucide-chevrons-up-down !text-1.042em',
-  'select-trigger-trailing': 'ml-auto n-disabled',
+  'select-trigger-trailing': 'ml-auto',
   'select-trigger-leading': '',
 
   'select-value': 'h-1.5em',
