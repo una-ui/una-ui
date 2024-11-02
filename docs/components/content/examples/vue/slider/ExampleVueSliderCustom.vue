@@ -17,7 +17,7 @@ const equalizerValues = ref([
 </script>
 
 <template>
-  <div class="w-md flex flex-col border rounded-lg p-2 space-y-4">
+  <div class="w-full flex flex-col overflow-auto border rounded-lg p-2 space-y-4">
     <div class="flex items-center justify-between">
       <div class="flex items-center">
         <NLabel
