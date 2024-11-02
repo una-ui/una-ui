@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<NToggleProps>(), {
 const emits = defineEmits<ToggleEmits>()
 
 const delegatedProps = computed(() => {
-  const { class: _, size, ...delegated } = props
+  const { class: _, ...delegated } = props
 
   return delegated
 })
