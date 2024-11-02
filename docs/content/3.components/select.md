@@ -1,21 +1,18 @@
 ---
-description: 'NSelect component - used to create a selection input.'
+description: 'Displays a list of options for the user to pick from—triggered by a button.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/select/Select.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/select
+    target: _blank
 ---
 
-::list{type="primary"}
-- Can be controlled or uncontrolled.
-- Offers 2 positioning modes.
-- Supports items, labels, groups of items.
-- Focus is fully managed.
-- Full keyboard navigation.
-- Supports custom placeholder.
-- Typeahead support.
-- Supports Right to Left direction.
-::
+## Examples 
 
-## Basic
-
-use `NSelect` to create a range input.
+### Basic
 
 :::CodeGroup
 ::div{label="Preview" preview}
