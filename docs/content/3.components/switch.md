@@ -1,21 +1,25 @@
 ---
-description: 'NSwitch component - used to create a switch input.'
+description: 'A control that allows the user to toggle between checked and not checked.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Switch.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/switch
+    target: _blank
 ---
 
-::list{type="primary"}
-- Full keyboard navigation.
-- Can be controlled or uncontrolled.
-::
+## Examples
 
-## Basic
-
-`NSwitch` is used to create a switch input. For more information about the APIs, please refer to the [Radix-UI Switch](https://radix-ui.com/primitives/docs/switch){target="_blank"} documentation.
+### Basic
 
 | Props            | Type      | Default | Description                                                           |
 | ---------------- | --------- | ------- | --------------------------------------------------------------------- |
 | `checked`        | `boolean` | -       | The controlled state of the switch. Can be bind as `v-model:checked`. |
 | `defaultChecked` | `boolean` | -       | The uncontrolled state of the switch.                                 |
 | `value`          | `string`  | `on`    | The value of the switch.                                              |
+| `disabled`       | `boolean` | `false` | When `true`, prevents the user from interacting with the switch.      |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -26,12 +30,14 @@ description: 'NSwitch component - used to create a switch input.'
 ::
 :::
 
-## Label
+:read-more{to="https://www.radix-vue.com/components/switch#root" title="Radix Switch Root API" target="_blank"}
 
-> You can use the `NFormGroup` component to create a label for the switch.
+### Form Group
+
+You can use the `switch` component inside the `form-group` component, or you can use it with the `label` component.
 
 ::alert{type="info"}
-  Notice that when you click on the label, the switch gets toggled. Read more about the `NFormGroup` component [here](form-group).
+  Notice that when you click on the label, the switch gets toggled. 
 ::
 
 :::CodeGroup
@@ -43,13 +49,15 @@ description: 'NSwitch component - used to create a switch input.'
 ::
 :::
 
-## Color
+:read-more{to="/components/form-group" title="Form-group component" target="_blank"}
 
-`switch="{color}"` - change the color of the switch.
+:read-more{to="/components/label" title="Label component" target="_blank"}
 
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+### Color
+
+| Prop     | Default   | Type     | Description                     |
+| -------- | --------- | -------- | ------------------------------- |
+| `switch` | `primary` | `string` | Change the color of the switch. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -60,15 +68,13 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Size
+### Size
 
-`size="{size}"` - change the size of the switch.
+Adjust the switch size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
 
-> 🚀 You can freely adjust the size of the switch using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `height` and `width` of the switch scale depends on the `switch-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
-::
+| Prop   | Default | Type     | Description                    |
+| ------ | ------- | -------- | ------------------------------ |
+| `size` | `md`    | `string` | Change the size of the switch. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -79,13 +85,15 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 ::
 :::
 
-## Icon
+### Icon
 
-`icon` - add an icon to the switch.
+Configure the switch icon using the following props.
 
-`checkedIcon` - add an icon for the on state.
-
-`uncheckedIcon` - add an icon for the off state.  
+| Prop            | Default | Type     | Description                                      |
+| --------------- | ------- | -------- | ------------------------------------------------ |
+| `icon`          | -       | `string` | Add an icon that appears regardless of state.    |
+| `checkedIcon`   | -       | `string` | Add an icon that appears when the switch is on.  |
+| `uncheckedIcon` | -       | `string` | Add an icon that appears when the switch is off. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -96,22 +104,13 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 ::
 :::
 
-## Disabled
+### Loading
 
-`disabled` - disable the switch.
+Set the switch to loading state.
 
-:::CodeGroup
-::div{label="Preview" preview}
-  :ExampleVueSwitchDisabled
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/switch/ExampleVueSwitchDisabled.vue
-::
-:::
-
-## Loading
-
-`loading` - set the switch to loading state.
+| Prop     | Default | Type     | Description                 |
+| -------- | ------- | -------- | --------------------------- |
+| `loading` | -       | `boolean` | Set the switch to loading. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -122,13 +121,9 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 ::
 :::
 
-## Customization
+### Customization
 
-> You can customize the switch using the `una` prop and utility classes.
-
-::alert{type="info"}
-  You can also globally customize the switch preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
-::
+Allows you to customize the switch style using the `una` prop.
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -139,20 +134,29 @@ The `height` and `width` of the switch scale depends on the `switch-size`. If yo
 ::
 :::
 
-## Slots
+:read-more{to="#props" title="Component Props API"}
 
-> You can use the following slots to customize the switch.
+:read-more{to="#presets" title="Component Presets"}
 
-| Name           | Description                                                             | Props     |
-| -------------- | ----------------------------------------------------------------------- | --------- |
-| `icon`         | Customizable icons for the switch in both checked and unchecked states. | `checked` |
-| `loading-icon` | The loading icon slot.                                                  | `checked` |
+### Slots
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/switch.ts
+| Name           | Props     | Description                                                             |
+| -------------- | --------- | ----------------------------------------------------------------------- |
+| `icon`         | `checked` | Customizable icons for the switch in both checked and unchecked states. |
+| `loading-icon` | `checked` | The loading icon slot.                                                  |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/switch.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/switch.ts [shortcuts/switch.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/switch.ts [types/switch.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Switch.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/Switch.vue
+::
+:::

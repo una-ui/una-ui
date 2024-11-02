@@ -322,7 +322,7 @@ Allows you to fetch data from the server. This is useful when you want to fetch 
 
 ### Customization
 
-Allows you to customize the table. This is useful when you want to customize the table.
+Allows you to customize the table style using the `una` prop.
 
 | Prop               | Default | Type     | Description           |
 | ------------------ | ------- | -------- | --------------------- |

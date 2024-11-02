@@ -5,6 +5,14 @@
     />
 
     <NSwitch
+      size="sm"
+    />
+
+    <NSwitch
+      size="md"
+    />
+
+    <NSwitch
       size="lg"
     />
 
@@ -13,11 +21,11 @@
     />
 
     <NSwitch
-      size="2xl"
+      size=".25in"
     />
 
     <NSwitch
-      size="3xl"
+      size="0.7cm"
     />
   </div>
 </template>
