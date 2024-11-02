@@ -1,10 +1,15 @@
 ---
-description: 'NSkeleton component - use to create a placeholder while the content is being loaded.'
+description: 'Use to show a placeholder while content is loading.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Skeleton.vue
+    target: _blank
 ---
 
-## Basic
+## Examples
 
-`NSkeleton` is a placeholder while the content is being loaded.
+### Basic
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -15,15 +20,11 @@ description: 'NSkeleton component - use to create a placeholder while the conten
 ::
 :::
 
-## Shape
+### Shape
 
-`rounded="{value}"` - change the shape of the skeleton.
-
-> 🚀 You can freely adjust the size of the rounded using any value imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `value` determines the overall form of the skeleton. You can always add and customize it using utility classes in the `class` attribute.
-::
+| Prop      | Default | Type     | Description                     |
+| --------- | ------- | -------- | ------------------------------- |
+| `rounded` | `none`  | `string` | Change the shape of the skeleton.|
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -34,13 +35,11 @@ The `value` determines the overall form of the skeleton. You can always add and 
 ::
 :::
 
-## Color
+### Color
 
-`skeleton="{color}"` - change the color of the skeleton.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `gray`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+| Prop      | Default | Type     | Description                     |
+| --------- | ------- | -------- | ------------------------------- |
+| `skeleton`   | `gray`  | `string` | Change the color of the skeleton.|
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -51,11 +50,24 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/skeleton.ts
+### Slots
+
+| Name      | Props | Description       |
+| --------- | ----- | ----------------- |
+| `default` | -     | The default slot. |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/skeleton.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/skeleton.ts [shortcuts/skeleton.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/skeleton.ts [types/skeleton.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Skeleton.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Skeleton.vue
+::
+:::

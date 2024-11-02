@@ -15,7 +15,6 @@ const props = defineProps<NSkeletonProps>()
       )
     "
     :skeleton="props.skeleton"
-    :size="props.size"
   >
     <slot />
   </div>
