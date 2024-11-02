@@ -26,7 +26,6 @@ const items = [
       v-model="selected"
       :items
       placeholder="Select Option"
-      multiple-group
     />
   </div>
 </template>

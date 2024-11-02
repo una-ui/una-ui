@@ -14,6 +14,20 @@ badges:
 
 ### Basic
 
+| Name           | Default | Type      | Description                                                                                                     |
+| -------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
+| `items`        | -       | `array`   | Set the select items.                                                                                           |
+| `placeholder`  | -       | `string`  | The content that will be rendered inside the SelectValue when no value or defaultValue is set.                  |
+| `label`        | -       | `string`  | Set the select items label.                                                                                     |
+| `defaultOpen`  | -       | `boolean` | The open state of the select when it is initially rendered. Use when you do not need to control its open state. |
+| `defaultValue` | -       | `string`  | The value of the select when initially rendered. Use when you do not need to control the state of the Select    |
+| `open`         | -       | `boolean` | The controlled open state of the Select. Can be bind as `v-model:open`.                                         |
+| `modelValue`   | -       | `string`  | The controlled value of the Select. Can be bind as `v-model`.                                                   |
+
+:read-more{to="https://www.radix-vue.com/components/select#root" title="Radix Select Root API" target="_blank"}
+
+:read-more{to="https://www.radix-vue.com/components/select#value" title="Radix Select Value API" target="_blank"}
+
 :::CodeGroup
 ::div{label="Preview" preview}
   :ExampleVueSelectBasic
@@ -23,9 +37,9 @@ badges:
 ::
 :::
 
-## Multiple Group
+### Multiple Group
 
-`multiple-group="{value}"` - enable multiple group items.
+Automatically groups items by their nested structure.
 
 :::CodeGroup
 ::div{label="Preview" preview}
