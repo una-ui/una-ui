@@ -27,7 +27,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.radix-vue.com/components/tabs#root" title="Radix Tabs Root API" target="_blank"}
+:read-more{to="https://www.radix-vue.com/components/tabs#root" title="Radix Tabs Root API." target="_blank"}
 
 ### Variant and Color
 

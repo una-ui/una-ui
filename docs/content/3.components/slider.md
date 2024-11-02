@@ -1,20 +1,28 @@
 ---
-description: 'NSlider component - used to create a range input.'
+description: 'An input where the user selects a value from within a given range.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Slider.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/slider
+    target: _blank
 ---
 
-::list{type="primary"}
-- Can be controlled or uncontrolled.
-- Supports multiple thumbs.
-- Supports a minimum value between thumbs.
-- Supports touch or click on track to update value.
-- Supports Right to Left direction.
-- Full keyboard navigation.
-- Customizable.
-::
+## Examples
 
-## Basic
+### Basic
 
-use `NSlider` to create a range input.
+| Prop                    | Default | Type       | Description                                                                                                   |
+| ----------------------- | ------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
+| `modelValue`            | -       | `number`   | The controlled value of the slider. Can be bind as `v-model`.                                                 |
+| `defaultValue`          | `[0]`   | `number[]` | The value of the slider when initially rendered. Use when you do not need to control the state of the slider. |
+| `dir`                   | `ltr`   | `string`   | The direction of the slider.                                                                                  |
+| `disabled`              | `false` | `boolean`  | When `true`, prevents the user from interacting with the slider.                                              |
+| `inverted`              | `false` | `boolean`  | When `true`, the slider will be inverted.                                                                     |
+| `max`                   | `100`   | `number`   | The maximum value of the slider.                                                                              |
+| `min`                   | `0`     | `number`   | The minimum value of the slider.                                                                              |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -25,13 +33,13 @@ use `NSlider` to create a range input.
 ::
 :::
 
-## Color
+:read-more{to="https://www.radix-vue.com/components/slider#root" title="Radix Slider Root API." target="_blank"}
 
-`slider="{color}"` - change the color of the slider.
+### Color
 
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+| Prop     | Default   | Type     | Description                     |
+| -------- | --------- | -------- | ------------------------------- |
+| `slider` | `primary` | `string` | Change the color of the slider. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -42,14 +50,15 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Steps
+### Steps
 
-`step="{number}"` - define the step value of the slider.
-
-`min-steps-between-thumbs="{number}"` - define the minimum steps between thumbs.
+| Prop                    | Default | Type     | Description                                          |
+| ----------------------- | ------- | -------- | ---------------------------------------------------- |
+| `minStepsBetweenThumbs` | `0`     | `number` | The minimum permitted steps between multiple thumbs. |
+| `step`                  | `1`     | `number` | The step value of the slider.                        |
 
 ::alert{type="info"}
-To avoid the thumb from overlapping, you can set the `min-steps-between-thumbs` prop.
+To avoid the thumbs from overlapping, you can set the `minStepsBetweenThumbs` prop.
 ::
 
 :::CodeGroup
@@ -61,31 +70,30 @@ To avoid the thumb from overlapping, you can set the `min-steps-between-thumbs` 
 ::
 :::
 
-## Label
+### Form Group
 
-> You can use the `NFormGroup` component to create a label for the slider.
-
-::alert{type="info"}
-  Read more about the `NFormGroup` component [here](form-group).
-::
+You can use the `slider` component inside the `form-group` component, or you can use it with the `label` component.
 
 :::CodeGroup
 ::div{label="Preview" preview}
   :ExampleVueSliderLabel
 ::
- ::div{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderLabel.vue
 ::
 :::
 
-## Orientation
+:read-more{to="/components/form-group" title="Form-group component" target="_blank"}
 
-`orientation={value}` - change the orientation of the slider.
+:read-more{to="/components/label" title="Label component" target="_blank"}
 
-| Value        | Description               |
-| ------------ | ------------------------- |
-| `horizontal` | The default orientation.  |
-| `vertical`   | The vertical orientation. |
+### Orientation
+
+Configure the slider orientation by using the `orientation` prop.
+
+| Prop          | Default      | Type                    | Description                    |
+| ------------- | ------------ | ----------------------- | ------------------------------ |
+| `orientation` | `horizontal` | `vertical` `horizontal` | The orientation of the slider. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -96,28 +104,13 @@ To avoid the thumb from overlapping, you can set the `min-steps-between-thumbs` 
 ::
 :::
 
-## Disabled
+### Size
 
-`disabled` - disable the slider.
+Adjust the slider size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
 
-:::CodeGroup
-::div{label="Preview" preview}
-  :ExampleVueSliderDisabled
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/slider/ExampleVueSliderDisabled.vue
-::
-:::
-
-## Size
-
-`size="{size}"` - change the size of the slider.
-
-> 🚀 You can freely adjust the size of the slider using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `height` and `width` of the slider scale depends on the `slider-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
-::
+| Prop   | Default | Type     | Description                  |
+| ------ | ------- | -------- | ---------------------------- |
+| `size` | `md`    | `string` | Set the slider general size. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -128,13 +121,9 @@ The `height` and `width` of the slider scale depends on the `slider-size`. If yo
 ::
 :::
 
-## Customization
+### Customization
 
-> You can customize the slider using the `una` prop and utility classes.
-
-::alert{type="info"}
-  You can also globally customize the slider preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
-::
+Allows you to customize the switch style using the `una` prop.
 
 :::CodeGroup
   ::div{label="Preview" preview}
@@ -145,21 +134,26 @@ The `height` and `width` of the slider scale depends on the `slider-size`. If yo
   ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the slider.
-
-| Name           | Description                  | Props |
-| -------------- | ---------------------------- | ----- |
-| `slider-track` | The track of the slider.     | -     |
-| `slider-thumb` | The the thumb of the slider. | -     |
-| `slider-range` | The the range of the slider. | -     |
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/slider.ts
+| Name           | Props | Description              |
+| -------------- | ----- | ------------------------ |
+| `slider-track` | -     | The track of the slider. |
+| `slider-thumb` | -     | The thumb of the slider. |
+| `slider-range` | -     | The range of the slider. |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/slider.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/slider.ts [shortcuts/slider.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/slider.ts [types/slider.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Slider.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/Slider.vue
+::
+:::

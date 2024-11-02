@@ -14,12 +14,12 @@ badges:
 
 ### Basic
 
-| Props            | Type      | Default | Description                                                           |
-| ---------------- | --------- | ------- | --------------------------------------------------------------------- |
-| `checked`        | `boolean` | -       | The controlled state of the switch. Can be bind as `v-model:checked`. |
-| `defaultChecked` | `boolean` | -       | The uncontrolled state of the switch.                                 |
-| `value`          | `string`  | `on`    | The value of the switch.                                              |
-| `disabled`       | `boolean` | `false` | When `true`, prevents the user from interacting with the switch.      |
+| Prop             | Default | Type      | Description                                                           |
+| ---------------- | ------- | --------- | --------------------------------------------------------------------- |
+| `checked`        | -       | `boolean` | The controlled state of the switch. Can be bind as `v-model:checked`. |
+| `defaultChecked` | -       | `boolean` | The uncontrolled state of the switch.                                 |
+| `value`          | `on`    | `string`  | The value of the switch.                                              |
+| `disabled`       | `false` | `boolean` | When `true`, prevents the user from interacting with the switch.      |
 
 :::CodeGroup
 ::div{label="Preview" preview}

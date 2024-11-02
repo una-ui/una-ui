@@ -25,7 +25,7 @@ badges:
 
 :read-more{to="/components/button" title="Button component" target="_blank"}
 
-:read-more{to="https://www.radix-vue.com/components/toggle#root" title="Radix Toggle Root API" target="_blank"}
+:read-more{to="https://www.radix-vue.com/components/toggle#root" title="Radix Toggle Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

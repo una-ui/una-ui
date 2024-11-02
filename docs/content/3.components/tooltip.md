@@ -97,7 +97,7 @@ Configure the tooltip root using the `_tooltipRoot` prop.
 | `ignoreNonKeyboardFocus`  | -       | `boolean` | Prevent the tooltip from opening if the focus did not come from the keyboard by matching against the :focus-visible selector. This is useful if you want to avoid opening it when switching browser tabs or closing a dialog. |
 | `open`                    | `false` | `boolean` | The controlled open state of the tooltip.                                                                                                                                                                                     |
 
-:read-more{to="https://www.radix-vue.com/components/tooltip#root" title="Radix Tooltip Root API" target="_blank"}
+:read-more{to="https://www.radix-vue.com/components/tooltip#root" title="Radix Tooltip Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

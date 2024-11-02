@@ -7,6 +7,7 @@ const isTooHigh = computed(() => value.value[0] > 50)
 <template>
   <NFormGroup
     label="Volume"
+    required
     hint="Adjust the volume"
     :message="isTooHigh ? 'Volume is too high' : ''"
     :status="isTooHigh ? 'error' : undefined"
