@@ -93,7 +93,7 @@ Configure the slider orientation by using the `orientation` prop.
 
 | Prop          | Default      | Type                    | Description                    |
 | ------------- | ------------ | ----------------------- | ------------------------------ |
-| `orientation` | `horizontal` | `vertical` `horizontal` | The orientation of the slider. |
+| `orientation` | `horizontal` | `vertical`, `horizontal` | The orientation of the slider. |
 
 :::CodeGroup
 ::div{label="Preview" preview}

@@ -40,22 +40,21 @@ badges:
 
 | Prop         | Default       | Type     | Description                                    |
 | ------------ | ------------- | -------- | ---------------------------------------------- |
-| `toggle-on`  | `soft-accent` | `string` | Change the color of the toggle when it is on.  |
-| `toggle-off` | `ghost-gray`  | `string` | Change the color of the toggle when it is off. |
+| `toggle-on`  | `soft-accent` | `{variant}-{color}` | Change the color of the toggle when it is on.  |
+| `toggle-off` | `ghost-gray`  | `{variant}-{color}` | Change the color of the toggle when it is off. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
   :ExampleVueToggleColor
 ::
-
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleColor.vue
 ::
 :::
 
-### Slots
+:read-more{to="/components/button#color" title="Button variant and color section" target="_blank"}
 
-:read-more{to="/components/button#slots" title="Button component slots" target="_blank"}
+### Slots
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -65,6 +64,8 @@ badges:
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleSlot.vue
 ::
 :::
+
+:read-more{to="/components/button#slots" title="Button component slots" target="_blank"}
 
 ## Presets
 
