@@ -13,7 +13,7 @@ export const staticSlider: Record<`${SliderPrefix}-${string}`, string> = {
   'slider-thumb-vertical': 'w-1.25em h-1.25em',
 
   // components
-  'slider-root': 'slider relative flex w-full touch-none select-none items-center',
+  'slider-root': 'relative flex w-full touch-none select-none items-center',
   'slider-track': 'h-0.5em relative w-full grow overflow-hidden rounded-full bg-muted',
   'slider-range': 'absolute h-full bg-brand',
   'slider-thumb': 'w-1.25em h-1.25em block border-2 border-brand rounded-full bg-base focus-visible:ring-base ring-offset-base transition-colors disabled:slider-disabled focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
