@@ -1,44 +1,51 @@
 ---
-description: 'NTable component - used to create a data table.'
+description: 'A powerful, responsive table and datagrids built using Tanstack'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/data/table/Table.vue
+    target: _blank
+  - value: API reference
+    to: https://tanstack.com/table/latest/docs/introduction
+    target: _blank
 ---
+## Examples
 
-## Basic
+### Basic
 
-use `NTable` component to create a powerful table and datagrids built using [Tanstack](https://tanstack.com/table/latest/docs/introduction){target="_blank"}. Read more about the [Tanstack Table documentation](https://tanstack.com/table/latest/docs/framework/vue/guide/table-state){target="_blank"}.
-
-| Prop      | Type    | Default | Description    |
+| Prop      | Default | Type    | Description    |
 | --------- | ------- | ------- | -------------- |
-| `columns` | `Array` | `[]`    | Table columns. |
-| `data`    | `Array` | `[]`    | Table data.    |
+| `columns` | `[]`    | `Array` | Table columns. |
+| `data`    | `[]`    | `Array` | Table data.    |
 
 :::CodeGroup
-::div{label="Preview"}
+::div{label="Preview" preview}
   :ExampleVueTableBasic
+
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableBasic.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Row Selection
+### Row Selection
 
-Row selection allows you to select rows in the table. This is useful when you want to select rows in the table. Read more about row selection in the [Tanstack Row Selection documentation](https://tanstack.com/table/latest/docs/guide/row-selection){target="_blank"}.
+Row selection allows you to select rows in the table. This is useful when you want to select rows in the table.
 
-| Prop                      | Type      | Default | Description                           |
-| ------------------------- | --------- | ------- | ------------------------------------- |
-| `modelValue`              | `Array`   | `[]`    | Selected rows.                        |
-| `enableRowSelection`      | `Boolean` | `false` | Enable row selection.                 |
-| `enableMultiRowSelection` | `Boolean` | `false` | Enable multiple row selection.        |
-| `rowId`                   | `String`  | `id`    | Row id to uniquely identify each row. |
-| `enableSubRowSelection`   | `Boolean` | `false` | Enable sub row selection.             |
-| `@select`                 | `Event`   |         | Emitted when a row is selected.       |
-| `@select-all`             | `Event`   |         | Emitted when all rows are selected.   |
+| Prop                      | Default | Type      | Description                           |
+| ------------------------- | ------- | --------- | ------------------------------------- |
+| `modelValue`              | `[]`    | `Array`   | Selected rows.                        |
+| `enableRowSelection`      | `false` | `Boolean` | Enable row selection.                 |
+| `enableMultiRowSelection` | `false` | `Boolean` | Enable multiple row selection.        |
+| `rowId`                   | `id`    | `String`  | Row id to uniquely identify each row. |
+| `enableSubRowSelection`   | `false` | `Boolean` | Enable sub row selection.             |
+| `@select`                 | -       | `Event`   | Emitted when a row is selected.       |
+| `@select-all`             | -       | `Event`   | Emitted when all rows are selected.   |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -48,20 +55,21 @@ Row selection allows you to select rows in the table. This is useful when you wa
 @@@ ./components/content/examples/vue/table/ExampleVueTableRowSelection.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Loading
+:read-more{to="https://tanstack.com/table/latest/docs/guide/row-selection" title="Tanstack Row Selection Documentation" target="_blank"}
+
+### Loading
 
 Loading allows you to show a loading progress indicator in the table. This is useful when you want to show a loading progress indicator in the table.
 
-| Prop      | Type      | Default | Description    |
-| --------- | --------- | ------- | -------------- |
-| `loading` | `Boolean` | `false` | Loading state. |
+| Prop      | Default | Type      | Description    |
+| --------- | ------- | --------- | -------------- |
+| `loading` | `false` | `Boolean` | Loading state. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -69,17 +77,24 @@ Loading allows you to show a loading progress indicator in the table. This is us
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableLoading.vue
+
+::
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
+
 ::
 :::
 
-## Pagination
+:read-more{to="https://tanstack.com/table/latest/docs/guide/loading" title="Tanstack Loading Documentation" target="_blank"}
 
-Pagination allows you to paginate rows in the table. This is useful when you want to paginate rows in the table. Read more about pagination in the [Tanstack Pagination documentation](https://tanstack.com/table/latest/docs/guide/pagination){target="_blank"}.
+### Pagination
 
-| Prop                 | Type      | Default                        | Description                       |
-| -------------------- | --------- | ------------------------------ | --------------------------------- |
-| `v-model:pagination` | `Object`  | `{pageIndex: 0, pageSize: 10}` | Pagination default configuration. |
-| `manualPagination`   | `Boolean` | `false`                        | Enable manual pagination.         |
+Pagination allows you to paginate rows in the table. This is useful when you want to paginate rows in the table.
+
+| Prop               | Default                        | Type      | Description                       |
+| ------------------ | ------------------------------ | --------- | --------------------------------- |
+| `pagination`       | `{pageIndex: 0, pageSize: 10}` | `{pageIndex: Number, pageSize: Number}`  | Pagination default configuration. |
+| `manualPagination` | `false`                        | `Boolean` | Enable manual pagination.         |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -89,16 +104,25 @@ Pagination allows you to paginate rows in the table. This is useful when you wan
 @@@ ./components/content/examples/vue/table/ExampleVueTablePagination.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Sorting
+:read-more{to="pagination" title="Pagination Component"}
 
-Sorting allows you to sort columns in ascending or descending order. This is useful when you want to sort columns in the table. Read more about sorting in the [Tanstack Sorting documentation](https://tanstack.com/table/latest/docs/guide/sorting){target="_blank"}.
+:read-more{to="https://tanstack.com/table/latest/docs/guide/pagination" title="Tanstack Pagination Documentation" target="_blank"}
+
+### Sorting
+
+Sorting allows you to sort columns in ascending or descending order. This is useful when you want to sort columns in the table.
+
+| Prop                    | Default | Type      | Description                    |
+| ----------------------- | ------- | --------- | ------------------------------ |
+| `enableSorting`         | -       | `boolean` | Enable all column sorting      |
+| `column.enableSorting`  | -       | `boolean` | Enable specific column sorting |
+| `enableMultiColumnSort` | -       | `boolean` | Enable multi-column sorting    |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -108,16 +132,21 @@ Sorting allows you to sort columns in ascending or descending order. This is use
 @@@ ./components/content/examples/vue/table/ExampleVueTableSorting.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Visibility
+:read-more{to="https://tanstack.com/table/latest/docs/guide/sorting" title="Tanstack Sorting Documentation" target="_blank"}
 
-Visibility allows you to show or hide columns in the table. This is useful when you want to show or hide columns in the table. Read more about visibility in the [Tanstack Visibility documentation](https://tanstack.com/table/latest/docs/guide/column-visibility){target="_blank"}.
+### Visibility
+
+Visibility allows you to show or hide columns in the table. This is useful when you want to show or hide columns in the table.
+
+| Prop               | Default | Type     | Description                 |
+| ------------------ | ------- | -------- | --------------------------- |
+| `columnVisibility` | -       | `object` | The column visibility state |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -127,16 +156,21 @@ Visibility allows you to show or hide columns in the table. This is useful when 
 @@@ ./components/content/examples/vue/table/ExampleVueTableVisibility.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Global Filtering
+:read-more{to="https://tanstack.com/table/latest/docs/guide/column-visibility" title="Tanstack Visibility Documentation" target="_blank"}
 
-Global filtering allows you to filter rows based on the value entered in the filter input. This is useful when you want to filter rows in the table. Read more about global filtering in the [Tanstack Global Filtering documentation](https://tanstack.com/table/latest/docs/guide/global-filtering){target="_blank"}.
+### Global Filtering
+
+Global filtering allows you to filter rows based on the value entered in the filter input. This is useful when you want to filter rows in the table.
+
+| Prop           | Default | Type     | Description             |
+| -------------- | ------- | -------- | ----------------------- |
+| `globalFilter` | -       | `string` | The global filter value |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -146,16 +180,22 @@ Global filtering allows you to filter rows based on the value entered in the fil
 @@@ ./components/content/examples/vue/table/ExampleVueTableGlobalFiltering.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Column Filtering
+:read-more{to="https://tanstack.com/table/latest/docs/guide/global-filtering" title="Tanstack Global Filtering Documentation" target="_blank"}
 
-Filtering allows you to filter columns based on the value entered in the filter input. This is useful when you want to filter columns in the table. Read more about filtering in the [Tanstack Column Filtering documentation](https://tanstack.com/table/latest/docs/guide/column-filtering){target="_blank"}.
+### Column Filtering
+
+Column filtering allows you to filter columns based on the value entered in the filter input. This is useful when you want to filter columns in the table.
+
+| Prop                        | Default | Type      | Description                      |
+| --------------------------- | ------- | --------- | -------------------------------- |
+| `enableColumnFilter`        | -       | `boolean` | Enable all column filtering      |
+| `column.enableColumnFilter` | -       | `boolean` | Enable specific column filtering |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -165,16 +205,17 @@ Filtering allows you to filter columns based on the value entered in the filter 
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnFiltering.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Column Ordering
+:read-more{to="https://tanstack.com/table/latest/docs/guide/column-filtering" title="Tanstack Column Filtering Documentation" target="_blank"}
 
-Column ordering allows you to reorder columns by dragging and dropping them. This is useful when you want to change the order of columns in the table. Read more about column ordering in the [Tanstack Column Ordering documentation](https://tanstack.com/table/latest/docs/guide/column-ordering){target="_blank"}.
+### Column Ordering
+
+Column ordering allows you to reorder columns by dragging and dropping them. This is useful when you want to change the order of columns in the table.
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -184,16 +225,21 @@ Column ordering allows you to reorder columns by dragging and dropping them. Thi
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnOrdering.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Column Pinning
+:read-more{to="https://tanstack.com/table/latest/docs/guide/column-ordering" title="Tanstack Column Ordering Documentation" target="_blank"}
 
-Column pinning allows you to pin columns to the `left` or `right` of the table. This is useful when you have a large number of columns and you want to keep some columns in view while scrolling. Read more about column pinning in the [Tanstack Column Pinning documentation](https://tanstack.com/table/latest/docs/guide/column-pinning){target="_blank"}.
+### Column Pinning
+
+Column pinning allows you to pin columns to the `left` or `right` of the table. This is useful when you have a large number of columns and you want to keep some columns in view while scrolling.
+
+| Prop         | Default | Type                            | Description                                            |
+| ------------ | ------- | ------------------------------- | ------------------------------------------------------ |
+| `columnPins` | -       | `{ left: Array, right: Array }` | Defines which columns are pinned to the left or right. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -203,166 +249,190 @@ Column pinning allows you to pin columns to the `left` or `right` of the table. 
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnPinning.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Expandanding
+:read-more{to="https://tanstack.com/table/latest/docs/guide/column-pinning" title="Tanstack Column Pinning Documentation" target="_blank"}
 
-Expanding allows you to expand rows to show additional information. This is useful when you want to show additional information about a row. Read more about expanding in the [Tanstack Expanding documentation](https://tanstack.com/table/latest/docs/guide/expanding){target="_blank"}.
+### Expanding
+
+Expanding allows you to expand rows to show additional information. This is useful when you want to show additional information about a row.
 
 :::CodeGroup
 ::div{label="Preview"}
   :ExampleVueTableExpanding
+  
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableExpanding.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Grouping
+:read-more{to="https://tanstack.com/table/latest/docs/guide/expanding" title="Tanstack Expanding Documentation" target="_blank"}
 
-Grouping allows you to group rows based on a column value. This is useful when you want to group rows in the table. Read more about grouping in the [Tanstack Grouping documentation](https://tanstack.com/table/latest/docs/guide/grouping){target="_blank"}.
+### Grouping
+
+Grouping allows you to group rows based on a column value. This is useful when you want to group rows in the table.
 
 :::CodeGroup
 ::div{label="Preview"}
   :ExampleVueTableGrouping
+  
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableGrouping.vue
 
 ::
-
-::div{label="makeData.ts"}
-@@@ ./components/content/examples/vue/table/makeData.ts
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
 
 ::
 :::
 
-## Server-side 
+:read-more{to="https://tanstack.com/table/latest/docs/guide/grouping" title="Tanstack Grouping Documentation" target="_blank"}
 
-Server-side allows you to fetch data from the server. This is useful when you want to fetch data from the server. Read more about server-side in the [Tanstack Server-side documentation](https://tanstack.com/table/latest/docs/guide/pagination#manual-server-side-pagination){target="_blank"}.
+### Server-side 
+
+Allows you to fetch data from the server. This is useful when you want to fetch data from the server.
 
 :::CodeGroup
 ::div{label="Preview"}
   :ExampleVueTableServerSide
+  
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableServerSide.vue
+
+::
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
+
 ::
 :::
 
-## Customization
+:read-more{to="https://tanstack.com/table/latest/docs/guide/pagination#manual-server-side-pagination" title="Tanstack Table Serve-Side Documentation" target="_blank"}
 
-You can customize the table by using the following props.
+### Customization
 
-| Prop           | Type     | Default | Description            |
-| -------------- | -------- | ------- | ---------------------- |
-| `columns.meta` | `Object` | `{}`    | Column meta data.      |
-| `una`          | `Object` | `{}`    | Unique name attribute. |
+Allows you to customize the table. This is useful when you want to customize the table.
 
-::alert{type="info"}
-For more information on customization, read the available [props](#props) and [presets](#presets). 
-::
+| Prop               | Default | Type     | Description           |
+| ------------------ | ------- | -------- | --------------------- |
+| `columns.meta.una` | `{}`    | `Object` | Column Una meta data. |
+| `una`              | `{}`    | `Object` | Global Una attribute. |
+
+:read-more{to="#props" title="Component Props API"}
+
+:read-more{to="#presets" title="Component Presets"}
 
 :::CodeGroup
 ::div{label="Preview"}
   :ExampleVueTableCustomization
+  
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableCustomization.vue
+
+::
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
+
 ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the table.
-
-| Name              | Description         | Props    |
-| ----------------- | ------------------- | -------- |
-| `{column}-filter` | Column filter slot. | `column` |
-| `{column}-header` | Column header slot. | `column` |
-| `{column}-cell`   | Column cell slot.   | `cell`   |
-| `{column}-footer` | Column footer slot. | `column` |
-| `header`          | Header slot.        | `table`  |
-| `body`            | Body slot.          | `table`  |
-| `raw`             | Row slot.           | `row`    |
-| `footer`          | Footer slot.        | `table`  |
-| `expanded`        | Expanded slot.      | `row`    |
-| `empty`           | Empty slot.         |          |
-| `loading`         | Loading slot.       |          |
-
+| Name              | Props    | Description         |
+| ----------------- | -------- | ------------------- |
+| `{column}-filter` | `column` | Column filter slot. |
+| `{column}-header` | `column` | Column header slot. |
+| `{column}-cell`   | `cell`   | Column cell slot.   |
+| `{column}-footer` | `column` | Column footer slot. |
+| `header`          | `table`  | Header slot.        |
+| `body`            | `table`  | Body slot.          |
+| `raw`             | `row`    | Row slot.           |
+| `footer`          | `table`  | Footer slot.        |
+| `expanded`        | `row`    | Expanded slot.      |
+| `empty`           | -        | Empty slot.         |
+| `loading`         | -        | Loading slot.       |
 
 :::CodeGroup
 ::div{label="Preview"}
   :ExampleVueTableSlots
+
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableSlots.vue
 
 ::
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
+
+::
 :::
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/table.ts
-
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/table.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/table.ts [shortcuts/table.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/table.ts [types/table.ts]
+
+## Components
 
 :::CodeGroup
-::div{label="Table" preview}
+::div{label="Table.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/Table.vue
 
 ::
-::div{label="TableRoot"}
+::div{label="TableRoot.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableRoot.vue
 
 ::
-::div{label="TableHeader"}
+::div{label="TableHeader.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableHeader.vue
 
 ::
-::div{label="TableHead"}
+::div{label="TableHead.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableHead.vue
 
 ::
-::div{label="TableBody"}
+::div{label="TableBody.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableBody.vue
 
 ::
-::div{label="TableFooter"}
+::div{label="TableFooter.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableFooter.vue
 
 ::
-::div{label="TableCell"}
+::div{label="TableCell.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableCell.vue
 
 ::
-::div{label="TableRow"}
+::div{label="TableRow.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableRow.vue
 
 ::
-::div{label="TableEmpty"}
+::div{label="TableEmpty.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableEmpty.vue
 
 ::
-::div{label="TableLoading"}
+::div{label="TableLoading.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableLoading.vue
 
 ::
-::div{label="TableCaption"}
+::div{label="TableCaption.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/data/table/TableCaption.vue
 
 ::
 :::
+
