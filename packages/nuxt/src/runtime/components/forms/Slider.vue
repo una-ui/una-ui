@@ -5,7 +5,9 @@ import { SliderRange, SliderRoot, SliderThumb, SliderTrack, useForwardPropsEmits
 import { computed } from 'vue'
 import { cn } from '../../utils'
 
-const props = defineProps<NSliderProps>()
+const props = withDefaults(defineProps<NSliderProps>(), {
+  slider: 'primary',
+})
 const emits = defineEmits<SliderRootEmits>()
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -26,6 +28,7 @@ const isVertical = computed(() => props.orientation === 'vertical')
       disabled && 'slider-disabled',
     )"
     v-bind="forwarded"
+    :slider="slider"
   >
     <slot name="slider-track">
       <SliderTrack
