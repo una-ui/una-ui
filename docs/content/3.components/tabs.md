@@ -45,7 +45,7 @@ badges:
 ::
 :::
 
-:read-more{to="/components/button" title="Button component" target="_blank"}
+:read-more{to="/components/button#color" title="Button Colors" target="_blank"}
 
 ### Disabled
 
@@ -80,6 +80,8 @@ badges:
 ::
 :::
 
+:read-more{to="/components/button#size" title="Button Size" target="_blank"}
+
 ### Slots
 
 | Name      | Props   | Description       |
@@ -87,7 +89,6 @@ badges:
 | `list`    | `items` | The list slot.    |
 | `trigger` | -       | The trigger slot. |
 | `content` | `item`  | The content slot. |
-
 
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/tabs.ts [shortcuts/tabs.ts]
