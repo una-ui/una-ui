@@ -29,12 +29,6 @@ export interface NSelectProps extends SelectExtensions {
    */
   id?: string
   /**
-   * Enable multiple group items.
-   *
-   * @default false
-   */
-  multipleGroup?: boolean
-  /**
    * The attribute name to use to display in the select items.
    *
    */
