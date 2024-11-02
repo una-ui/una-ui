@@ -42,12 +42,16 @@ const transformerValue = computed(() => {
   return modelValue.value
 })
 
+const _isItemsHasObject = computed(() => {
+  return forwarded.value.items.some((item: any) => typeof item === 'object')
+})
+
 provide('selectModelValue', modelValue)
 </script>
 
 <template>
   <SelectRoot
-    v-bind="omitProps(forwarded, ['items', 'multipleGroup', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
+    v-bind="omitProps(forwarded, ['items', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
     :model-value="transformerValue"
   >
     <SelectTrigger
@@ -80,7 +84,7 @@ provide('selectModelValue', modelValue)
     >
       <slot name="content" :items="forwarded.items">
         <!--  single-group -->
-        <template v-if="!forwarded.multipleGroup">
+        <template v-if="!_isItemsHasObject">
           <SelectLabel
             v-if="forwarded.label"
             v-bind="forwarded._selectLabel"
