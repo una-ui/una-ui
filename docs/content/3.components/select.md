@@ -37,25 +37,27 @@ badges:
 ::
 :::
 
-### Multiple Group
+## Nested 
 
-Automatically groups items by their nested structure.
+Enable support for nested items.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectMultipleGroup
+  :ExampleVueSelectNested
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueSelectMultipleGroup.vue
+@@@ ./components/content/examples/vue/select/ExampleVueSelectNested.vue
 ::
 :::
 
-## Objects
+### Objects
 
-| Prop              | Description                                        |
-| ----------------- | -------------------------------------------------- |
-| `value-attribute` | The attribute value to be displayed in the select. |
-| `item-attribute`  | The attribute value to be displayed in the item.   |
+Control the attribute value to be displayed in the select and the item.
+
+| Prop             | Default | Type     | Description                                        |
+| ---------------- | ------- | -------- | -------------------------------------------------- |
+| `valueAttribute` | -       | `string` | The attribute value to be displayed in the select. |
+| `itemAttribute`  | -       | `string` | The attribute value to be displayed in the item.   |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -66,7 +68,7 @@ Automatically groups items by their nested structure.
 ::
 :::
 
-## Label
+### Label
 
 > You can use the `NFormGroup` component to create a label for the select.
 
@@ -83,7 +85,7 @@ Automatically groups items by their nested structure.
 ::
 :::
 
-## Variant and Color
+### Variant and Color
 
 `select="{variant}-{color}"` is used to set the variant of the select. The default variant is `soft-black`.
 
@@ -107,12 +109,12 @@ Automatically groups items by their nested structure.
 ::
 :::
 
-## Disabled
+### Disabled
 
-| Prop                   | Description                |
-| ---------------------- | -------------------------- |
-| `disabled`             | Disable the select.        |
-| `_selectItem.disabled` | Disable the specific item. |
+| Prop                   | Default | Type      | Description                |
+| ---------------------- | ------- | --------- | -------------------------- |
+| `disabled`             | -       | `boolean` | Disable the select.        |
+| `_selectItem.disabled` | -       | `boolean` | Disable the specific item. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -123,19 +125,13 @@ Automatically groups items by their nested structure.
 ::
 :::
 
-## Size
+### Size
 
-| Prop                  | Description           |
-| --------------------- | --------------------- |
-| `size`                | Set the select size.  |
-| `_selectItem.size`    | Set the item size.    |
-| `_selectTrigger.size` | Set the trigger size. |
-
-> 🚀 You can freely adjust the size of the select using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `height` and `width` of the select scale depends on the `select-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
-::
+| Prop                  | Default | Type     | Description                   |
+| --------------------- | ------- | -------- | ----------------------------- |
+| `size`                | `sm`    | `string` | Set the select general size.  |
+| `_selectItem.size`    | `sm`    | `string` | Set the item general size.    |
+| `_selectTrigger.size` | `sm`    | `string` | Set the trigger general size. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -146,75 +142,73 @@ The `height` and `width` of the select scale depends on the `select-size`. If yo
 ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the select.
-
-| Name      | Description       | Props   |
-| --------- | ----------------- | ------- |
-| `trigger` | The trigger slot. | `value` |
-| `value`   | The value slot.   | `value` |
-| `content` | The content slot. | `items` |
-| `label`   | The label slot.   | `label` |
-| `item`    | The item slot.    | `item`  |
-| `group`   | The group slot.   | `items` |
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/select.ts
+| Name      | Props | Description       |
+| --------- | ----- | ----------------- |
+| `trigger` | -     | The trigger slot. |
+| `value`   | -     | The value slot.   |
+| `content` | -     | The content slot. |
+| `label`   | -     | The label slot.   |
+| `item`    | -     | The item slot.    |
+| `group`   | -     | The group slot.   |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/select.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/select.ts [shortcuts/select.ts]
 
-### 
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/select.ts [types/select.ts]
+
+## Components
 
 :::CodeGroup
-::div{label="Select" preview}
+::div{label="Select.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/Select.vue
 
 ::
-::div{label="SelectContent"}
+::div{label="SelectContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectContent.vue
 
 ::
-::div{label="SelectGroup"}
+::div{label="SelectGroup.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectGroup.vue
 
 ::
-::div{label="SelectItem"}
+::div{label="SelectItem.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectItem.vue
 
 ::
-::div{label="SelectItemText"}
+::div{label="SelectItemText.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectItemText.vue
 
 ::
-::div{label="SelectLabel"}
+::div{label="SelectLabel.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectLabel.vue
 
 ::
-::div{label="SelectRoot"}
+::div{label="SelectRoot.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectRoot.vue
 
 ::
-::div{label="SelectScrollDownButton"}
+::div{label="SelectScrollDownButton.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectScrollDownButton.vue
 
 ::
-::div{label="SelectScrollUpButton"}
+::div{label="SelectScrollUpButton.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectScrollUpButton.vue
 
 ::
-::div{label="SelectSeperator"}
+::div{label="SelectSeperator.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectSeparator.vue
 
 ::
-::div{label="SelectTrigger"}
+::div{label="SelectTrigger.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectTrigger.vue
 
 ::
-::div{label="SelectValue"}
+::div{label="SelectValue.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectValue.vue
 
 ::
