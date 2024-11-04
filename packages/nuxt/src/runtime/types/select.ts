@@ -51,12 +51,23 @@ export interface NSelectProps extends SelectExtensions {
    * @default []
    */
   items: any[]
+  /**
+   * Allows for nested groups within the select.
+   *
+   * @default false
+   * @example
+   * items: [
+   *  { label: 'Group 1', items: [1, 2, 3] },
+   * ]
+   */
+  nested?: boolean
 
   // sub-components
   _selectScrollUpButton?: Partial<NSelectScrollUpButtonProps>
   _selectItemText?: Partial<NSelectItemTextProps>
   _selectScrollDownButton?: Partial<NSelectScrollDownButtonProps>
   _selectGroup?: Partial<NSelectGroupProps>
+  _selectSeparator?: Partial<NSelectSeparator>
   _selectContent?: Partial<NSelectContentProps>
   _selectValue?: Partial<NSelectValueProps>
   _selectTrigger?: Partial<NSelectTriggerProps>
