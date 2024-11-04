@@ -39,7 +39,7 @@
     "@iconify-json/lucide": "^1.2.11",
     "@iconify-json/radix-icons": "^1.2.1",
     "@iconify-json/tabler": "^1.2.7",
-    "@nuxt/kit": "^3.13.2",
+    "@nuxt/kit": "^3.14.0",
     "@nuxtjs/color-mode": "^3.5.2",
     "@tanstack/vue-table": "^8.20.5",
     "@una-ui/extractor-vue-script": "workspace:^",
@@ -61,8 +61,8 @@
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.8.4",
-    "@nuxt/schema": "^3.13.2",
-    "nuxt": "^3.13.2"
+    "@nuxt/schema": "^3.14.0",
+    "nuxt": "^3.14.0"
   },
   "publishConfig": {
     "access": "public"
