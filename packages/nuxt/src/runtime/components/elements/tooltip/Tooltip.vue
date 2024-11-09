@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { TooltipRootEmits } from 'radix-vue'
 import type { NTooltipProps } from '../../../types'
+import { reactivePick } from '@vueuse/core'
 import { useForwardPropsEmits } from 'radix-vue'
-
 import TooltipContent from './TooltipContent.vue'
 import TooltipProvider from './TooltipProvider.vue'
 import TooltipRoot from './TooltipRoot.vue'
@@ -14,17 +14,24 @@ defineOptions({
 
 const props = defineProps<NTooltipProps>()
 const emits = defineEmits<TooltipRootEmits>()
-
-const forwarded = useForwardPropsEmits(props, emits)
+const rootProps = reactivePick(props, [
+  'defaultOpen',
+  'delayDuration',
+  'disableClosingTrigger',
+  'disabled',
+  'disableHoverableContent',
+  'ignoreNonKeyboardFocus',
+  'open',
+])
+const forwarded = useForwardPropsEmits(rootProps, emits)
 </script>
 
 <template>
   <TooltipProvider
     v-bind="_tooltipProvider"
-    :disabled
   >
     <TooltipRoot
-      v-bind="_tooltipRoot"
+      v-bind="forwarded"
     >
       <TooltipTrigger
         as-child
@@ -35,11 +42,11 @@ const forwarded = useForwardPropsEmits(props, emits)
 
       <TooltipContent
         v-if="$slots.content || content"
-        v-bind="forwarded._tooltipContent"
+        v-bind="_tooltipContent"
         :size
         :tooltip
         :disabled
-        :una="forwarded.una?.tooltipContent"
+        :una="una?.tooltipContent"
       >
         <slot name="content">
           {{ content }}
