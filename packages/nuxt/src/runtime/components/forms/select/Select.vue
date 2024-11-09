@@ -47,7 +47,7 @@ provide('selectModelValue', modelValue)
 
 <template>
   <SelectRoot
-    v-bind="omitProps(forwarded, ['items', 'nested', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
+    v-bind="omitProps(forwarded, ['items', 'groupItems', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
     :model-value="transformerValue"
   >
     <SelectTrigger
@@ -80,7 +80,7 @@ provide('selectModelValue', modelValue)
     >
       <slot name="content" :items="forwarded.items">
         <!--  single-group -->
-        <template v-if="!nested">
+        <template v-if="!groupItems">
           <SelectLabel
             v-if="forwarded.label"
             v-bind="forwarded._selectLabel"
