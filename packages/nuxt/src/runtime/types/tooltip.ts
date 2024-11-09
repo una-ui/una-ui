@@ -36,6 +36,9 @@ export interface NTooltipProps extends BaseExtensions, TooltipRootProps {
 export interface NTooltipProviderProps extends TooltipProviderProps {
 }
 
+export interface NTooltipRootProps extends TooltipRootProps {
+}
+
 export interface NTooltipTriggerProps extends TriggerExtensions {
 }
 
