@@ -10,11 +10,7 @@ interface BaseExtensions {
 type TriggerExtensions = NButtonProps & TooltipTriggerProps
 type ContentExtensions = BaseExtensions & TooltipContentProps
 
-export interface NTooltipProps extends BaseExtensions {
-  /**
-   * Disable the tooltip.
-   */
-  disabled?: boolean
+export interface NTooltipProps extends BaseExtensions, TooltipRootProps {
   /**
    * Add a content of the tooltip.
    */
@@ -31,15 +27,10 @@ export interface NTooltipProps extends BaseExtensions {
 
   // subcomponents
   _tooltipProvider?: Partial<NTooltipProviderProps>
-  _tooltipRoot?: Partial<NTooltipRootProps>
   _tooltipTrigger?: Partial<NTooltipTriggerProps>
   _tooltipContent?: Partial<NTooltipContentProps>
 
   una?: NTooltipUnaProps
-}
-
-export interface NTooltipRootProps extends TooltipRootProps {
-  'onUpdate:open'?: (value: boolean) => void
 }
 
 export interface NTooltipProviderProps extends TooltipProviderProps {
