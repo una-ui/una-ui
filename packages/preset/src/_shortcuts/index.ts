@@ -25,6 +25,7 @@ import { pagination } from './pagination'
 import { popover } from './popover'
 import { progress } from './progress'
 import { radio } from './radio'
+import { radioGroup } from './radio-group'
 import { select } from './select'
 import { separator } from './separator'
 import { skeleton } from './skeleton'
@@ -71,4 +72,5 @@ export const shortcuts = [
   ...pagination,
   ...toggle,
   ...collapsible,
+  ...radioGroup,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
