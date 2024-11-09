@@ -25,7 +25,7 @@ const items = [
     <NSelect
       v-model="selected"
       :items
-      nested
+      group-items
       placeholder="Select Option"
     />
   </div>

@@ -37,16 +37,18 @@ badges:
 ::
 :::
 
-## Nested 
+### Group Items
 
-Enable support for nested items.
+| Prop         | Default | Type      | Description                     |
+| ------------ | ------- | --------- | ------------------------------- |
+| `groupItems` | -       | `boolean` | Enable support for group items. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectNested
+  :ExampleVueSelectGroupItems
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueSelectNested.vue
+@@@ ./components/content/examples/vue/select/ExampleVueSelectGroupItems.vue
 ::
 :::
 
