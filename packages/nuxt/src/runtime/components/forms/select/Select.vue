@@ -62,7 +62,7 @@ provide('selectModelValue', modelValue)
           v-bind="forwarded._selectValue"
           :placeholder="forwarded._selectValue?.placeholder || forwarded.placeholder"
         >
-          <slot :value="modelValue">
+          <slot name="value" :value="modelValue">
             {{ transformerValue }}
           </slot>
         </SelectValue>
