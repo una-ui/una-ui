@@ -1,6 +1,13 @@
 ---
 description: 'NRadio component - use to create a radio input.'
+navBadges:
+  - value: Deprecated
+    type: warning
 ---
+
+::alert{type="warning"}
+This component is deprecated and will be removed in the next major release. Please use the [NRadioGroup](/components/radiog-group) component instead.
+::
 
 ## Basic
 
