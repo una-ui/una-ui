@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useColorMode } from '#imports'
 import { useToggle } from '@vueuse/core'
-import { computed } from 'vue'
+import { capitalize, computed } from 'vue'
 import { useUnaSettings } from '../../composables/useUnaSettings'
 import { useUnaThemes } from '../../composables/useUnaThemes'
 import { RADIUS } from '../../constants'
@@ -48,7 +48,7 @@ function shuffleTheme(): void {
 </script>
 
 <template>
-  <Popover :_popover-content="{ align: 'end', class: 'z-100 w-73 bg-muted' }">
+  <Popover :_popover-content="{ align: 'end', class: 'w-73 bg-muted' }">
     <template #trigger>
       <slot name="trigger">
         <Button
@@ -79,11 +79,14 @@ function shuffleTheme(): void {
             <button
               v-for="[key, theme] in primaryThemes"
               :key="key"
+              :title="capitalize(key)"
               :style="{ background: theme['--una-primary-hex'] }"
-              class="h-6.5 w-6.5 rounded-full transition-all"
+              class="transition-all"
+              rounded="full"
+              square="6.5"
               :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
               ring="primary offset-4 offset-base"
-              aria-label="Primary Color"
+              :aria-label="`Primary Color: ${key}`"
               @click="updatePrimaryTheme(key)"
             />
           </div>
@@ -97,10 +100,13 @@ function shuffleTheme(): void {
             <button
               v-for="[key, theme] in grayThemes"
               :key="key"
+              :title="capitalize(key)"
               :style="{ background: theme['--una-gray-hex'] }"
               :class="currentGrayThemeName === key ? 'ring-2' : 'scale-93'"
-              class="h-6.5 w-6.5 rounded-full transition-all"
-              aria-label="Gray Color"
+              class="transition-all"
+              rounded="full"
+              square="6.5"
+              :aria-label="`Gray Color: ${key}`"
               ring="gray offset-4 offset-base"
               @click="updateGrayTheme(key)"
             />
