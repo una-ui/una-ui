@@ -6,7 +6,7 @@ navBadges:
 ---
 
 ::alert{type="warning"}
-This component is deprecated and will be removed in the next major release. Please use the [NRadioGroup](/components/radiog-group) component instead.
+This component is deprecated and will be removed in the next major release.
 ::
 
 ## Basic
