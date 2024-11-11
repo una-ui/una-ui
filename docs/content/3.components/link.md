@@ -1,21 +1,27 @@
 ---
-description: 'NLink component - a component for rendering links to pages in your application.'
+description: 'Provides a custom <NuxtLink> component to handle any kind of links within your application.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Link.vue
+    target: _blank
+  - value: API reference
+    to: https://nuxt.com/docs/api/components/nuxt-link
+    target: _blank
 ---
 
-## Basic
+## Examples
 
-`NLink` is a custom `NuxtLink` component that provides additional functionality for rendering links to pages in your application.
+### Basic
 
-| Prop            | Type      | Description                                                       |
-| --------------- | --------- | ----------------------------------------------------------------- |
-| `inactiveClass` | `string`  | The class to apply when the link is inactive.                     |
-| `exact`         | `boolean` | Trigger the link active class only on exact matches of the `path`.  |
-| `exactQuery`    | `boolean` | Trigger the link active class only on exact matches of the `query`. |
-| `exactHash`     | `boolean` | Trigger the link active class only on exact matches of the `hash`.  |
+| Prop            | Default | Type      | Description                                                         |
+| --------------- | ------- | --------- | ------------------------------------------------------------------- |
+| `inactiveClass` | -       | `string`  | The class to apply when the link is inactive.                       |
+| `exact`         | `false` | `boolean` | Trigger the link active class only on exact matches of the `path`.  |
+| `exactQuery`    | `false` | `boolean` | Trigger the link active class only on exact matches of the `query`. |
+| `exactHash`     | `false` | `boolean` | Trigger the link active class only on exact matches of the `hash`.  |
 
-> You can also use any prop provided by the [NuxtLink](https://nuxt.com/docs/api/components/nuxt-link#props){target="_blank"} component.
-
-You can take a look and click at examples of different usage below:
+:read-more{to="https://nuxt.com/docs/api/components/nuxt-link#props" title="Nuxt Link Props" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -25,6 +31,12 @@ You can take a look and click at examples of different usage below:
 @@@ ./components/content/examples/vue/link/ExampleVueLinkBasic.vue
 ::
 :::
+
+## Slots
+
+| Name      | Props | Description              |
+| --------- | ----- | ------------------------ |
+| `default` | -     | The content of the link. |
 
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/link.ts
