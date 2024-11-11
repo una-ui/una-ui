@@ -4,7 +4,7 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
 </script>
 
 <template>
-  <div class="flex items-start gap-4">
+  <div class="flex flex-wrap items-start gap-4">
     <NSelect
       v-model="selected"
       :items
