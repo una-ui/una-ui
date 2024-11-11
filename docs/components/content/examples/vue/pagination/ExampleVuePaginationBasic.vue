@@ -3,7 +3,7 @@ const currentPage = ref(1)
 </script>
 
 <template>
-  <div class="flex">
+  <div class="flex overflow-auto">
     <NPagination
       v-model:page="currentPage"
       :total="100"
