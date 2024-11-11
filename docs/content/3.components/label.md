@@ -35,17 +35,24 @@ The **Label** component is used already in different components like [Checkbox](
 ::
 :::
 
-## Slots
+### Slots
 
-| Name      | Props | Description               |
-| --------- | ----- | ------------------------- |
-| `default` | -     | The content of the label. |
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/label.ts
+| Name      | Props | Description       |
+| --------- | ----- | ----------------- |
+| `default` | -     | The content slot. |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/label.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/label.ts [shortcuts/label.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/label.ts [types/label.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Label.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Label.vue
+
+::
