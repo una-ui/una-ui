@@ -18,11 +18,11 @@ badges:
 The **Label** component is used already in different components like [Checkbox](checkbox), [Radio](radio), [FormGroup](form-group), etc. but can also be used as a standalone component if you want more customization.
 ::
 
-| Prop    | Default   | Type                                                                                                 |
-| ------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| as      | `label`   | AsTag                                                                                                | Component |
-| asChild | `boolean` | Change the default rendered element for the one passed as a child, merging their props and behavior. |
-| for     | `string`  | The id of the element the label is associated with.                                                  |
+| Prop      | Default   | Type                 | Description                                                                                                                                       |
+| --------- | --------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `as`      | `label`   | `AsTag`, `Component` | The element or component this component should render as. Can be overwrite by asChild.                                                            |
+| `asChild` | `boolean` | `boolean`            | Change the default rendered element for the one passed as a child, merging their props and behavior. Read our Composition guide for more details. |
+| `for`     | `string`  | `string`             | The id of the element the label is associated with.                                                                                               |
 
 :read-more{to="https://www.radix-vue.com/components/label#root" title="Radix Label Root API." target="_blank"}
 
