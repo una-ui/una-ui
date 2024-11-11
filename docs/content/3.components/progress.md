@@ -36,7 +36,7 @@ badges:
 
 | Prop    | Default   | Type     | Description                         |
 | ------- | --------- | -------- | ----------------------------------- |
-| `color` | `primary` | `string` | Sets the color of the progress bar. |
+| `progress` | `primary` | `string` | Sets the color of the progress bar. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
