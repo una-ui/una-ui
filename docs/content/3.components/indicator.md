@@ -1,10 +1,15 @@
 ---
-description: 'NIndicator component - used to display a basic indicator with or without a label.'
+description: 'Displays an indicator that can be used to show the status of a task or a component.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Indicator.vue
+    target: _blank
 ---
 
-## Basic
+## Examples
 
-`NIndicator` is a component that can be used to display a basic indicator with or without a label.
+### Basic
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -15,39 +20,11 @@ description: 'NIndicator component - used to display a basic indicator with or w
 ::
 :::
 
-## Variant
+### Label
 
-`indicator="{variant}"` - change the variant of the indicator.
-
-::alert{type="info"}
-For the moment, only the `solid` variant is available. You can add your own variant through configuration.
-::
-
-| Variant | Description                 |
-| ------- | --------------------------- |
-| `solid` | The default variant.        |
-| `~`     | The unstyle or base variant |
-
-## Color
-
-`indicator="{variant}-{color}"` - change the color of the indicator.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
-
-:::CodeGroup
-::div{label="Preview" preview}
-  :ExampleVueIndicatorColor
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorColor.vue
-::
-:::
-
-## Label
-
-`label="{label}"` - add label to the indicator.
+| Prop    | Default | Type     | Description                 |
+| ------- | ------- | -------- | --------------------------- |
+| `label` | -       | `string` | The label of the indicator. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -58,9 +35,37 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Ping
+### Variant
 
-`ping` - add a ping animation to the indicator.
+| Prop        | Default | Type        | Description                   |
+| ----------- | ------- | ----------- | ----------------------------- |
+| `indicator` | `solid` | `{variant}` | The variant of the indicator. |
+
+| Variant | Description                 |
+| ------- | --------------------------- |
+| `solid` | The default variant.        |
+| `~`     | The unstyle or base variant |
+
+### Color
+
+| Prop        | Default             | Type                | Description                 |
+| ----------- | ------------------- | ------------------- | --------------------------- |
+| `indicator` | `{variant}-primary` | `{variant}-{color}` | The color of the indicator. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+  :ExampleVueIndicatorColor
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorColor.vue
+::
+:::
+
+### Ping
+
+| Prop   | Default | Type      | Description                |
+| ------ | ------- | --------- | -------------------------- |
+| `ping` | `false` | `boolean` | Enable the ping animation. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -71,9 +76,11 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Size
+### Size
 
-`indicator="{size}"` - change the size of the indicator.
+| Prop   | Default | Type     | Description                |
+| ------ | ------- | -------- | -------------------------- |
+| `size` | `md`    | `string` | The size of the indicator. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -84,9 +91,11 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Visibility
+### Visibility
 
-`visible` - change the visibility of the indicator.
+| Prop      | Default | Type      | Description                 |
+| --------- | ------- | --------- | --------------------------- |
+| `visible` | `true`  | `boolean` | Show or hide the indicator. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -97,20 +106,18 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Placement
+### Placement
 
-`indicator="{placement}"` - change the placement of the indicator.
+| Prop        | Default     | Type          | Description                    |
+| ----------- | ----------- | ------------- | ------------------------------ |
+| `indicator` | `top-right` | `{placement}` | The position of the indicator. |
 
 | Placement      | Description                      |
 | -------------- | -------------------------------- |
-| `top-right`    | The default placement.           |
+| `top-right`    | Position indicator top right.    |
 | `top-left`     | Position indicator top left.     |
 | `bottom-right` | Position indicator bottom right. |
 | `bottom-left`  | Position indicator bottom left.  |
-
-::alert{type="info"}
-You can add your own placement through configuration. see [Configuration section](/#getting-started/configuration).
-::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -123,17 +130,23 @@ You can add your own placement through configuration. see [Configuration section
 
 ## Slots
 
-| Name        | Description                                                   |
-| ----------- | ------------------------------------------------------------- |
-| `default`   | The content of the indicator.                                 |
-| `indicator` | The entire indicator, this will reset including the position. |
-| `label`     | The label of the indicator.                                   |
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/indicator.ts
+| Name        | Props | Description                                                   |
+| ----------- | ----- | ------------------------------------------------------------- |
+| `default`   | -     | The content of the indicator.                                 |
+| `indicator` | -     | The entire indicator, this will reset including the position. |
+| `label`     | -     | The label of the indicator.                                   |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/indicator.ts
+@@@ ../packages/preset/src/_shortcuts/indicator.ts [shortcuts/indicator.ts]
 
-## Component
+## Props
+@@@ ../packages/nuxt/src/runtime/types/indicator.ts [types/indicator.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Indicator.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Indicator.vue
+::
+:::
+
