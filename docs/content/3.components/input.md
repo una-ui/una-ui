@@ -199,7 +199,7 @@ Aad a trailing slot to the input.
 
 @@@ ../packages/nuxt/src/runtime/types/input.ts [types/input.ts]
 
-## Component
+## Components
 
 :::CodeGroup
 ::div{label="Input.vue" icon="i-vscode-icons-file-type-vue"}

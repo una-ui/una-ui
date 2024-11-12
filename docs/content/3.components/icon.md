@@ -51,6 +51,6 @@ If you want to update or add default icons, you can do so through the [Configura
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/icon.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/elements/Icon.vue
 

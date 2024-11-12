@@ -258,5 +258,5 @@ You can use `loading` with `icon` and `label` at the same time.
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/btn.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/elements/Button.vue

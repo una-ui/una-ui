@@ -54,7 +54,7 @@ You can wrap the `nav-link` component with a `dark` class to force the component
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/nav-link.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/navigation/NavLink.vue
 
 

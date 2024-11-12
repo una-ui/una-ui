@@ -96,7 +96,7 @@ badges:
 ## Props
 @@@ ../packages/nuxt/src/runtime/types/tabs.ts [types/tabs.ts]
 
-## Component
+## Components
 
 :::CodeGroup
 ::div{label="Tabs.vue" icon="i-vscode-icons-file-type-vue"}

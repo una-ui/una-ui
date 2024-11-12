@@ -25,7 +25,7 @@ navBadges:
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/nav-link-group.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/navigation/NavLinkGroup.vue
 
 

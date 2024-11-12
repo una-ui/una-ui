@@ -109,7 +109,7 @@ badges:
 
 :read-more{to="/components/kbd#presets" title="Kbd component presets" target="_blank"}
 
-### Component
+### Components
 
 :::CodeGroup
 ::div{label="Kbd.vue" icon="i-vscode-icons-file-type-vue"}

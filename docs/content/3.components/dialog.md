@@ -130,7 +130,7 @@ A dialog whose overlay blurs the background content.
 
 @@@ ../packages/nuxt/src/runtime/types/dialog.ts
 
-## Component
+## Components
 
 :::CodeGroup
 ::div{label="Dialog" preview}

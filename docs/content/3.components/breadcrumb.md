@@ -104,7 +104,7 @@ You can use any variant and colors provided by the [NButton](button#variants) co
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/breadcrumb.ts
 
-## Component
+## Components
 
 ### 
 

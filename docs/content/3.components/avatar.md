@@ -213,5 +213,5 @@ You don't have to use this case, this is just an example of how you can use the 
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/avatar.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/elements/Avatar.vue

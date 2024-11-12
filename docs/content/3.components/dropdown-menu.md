@@ -138,7 +138,7 @@ The `height` and `width` of the dropdown-menu scale depends on the `dropdown-men
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/dropdown-menu.ts
 
-## Component
+## Components
 
 :::CodeGroup
 ::div{label="DropdownMenu" preview}

@@ -128,5 +128,5 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/badge.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/elements/Badge.vue

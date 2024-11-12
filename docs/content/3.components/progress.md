@@ -34,8 +34,8 @@ badges:
 
 ### Color
 
-| Prop    | Default   | Type     | Description                         |
-| ------- | --------- | -------- | ----------------------------------- |
+| Prop       | Default   | Type     | Description                         |
+| ---------- | --------- | -------- | ----------------------------------- |
 | `progress` | `primary` | `string` | Sets the color of the progress bar. |
 
 :::CodeGroup
@@ -78,9 +78,9 @@ Configure the progress using the `una` prop and utility classes.
 
 ### Slots
 
-| Name      | Description             | Props |
-| --------- | ----------------------- | ----- |
-| `default` | The progress indicator. | -     |
+| Name      | Props | Description             |
+| --------- | ----- | ----------------------- |
+| `default` | -     | The progress indicator. |
 
 ## Presets
 

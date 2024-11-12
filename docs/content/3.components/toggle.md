@@ -75,7 +75,7 @@ badges:
 
 @@@ ../packages/nuxt/src/runtime/types/toggle.ts [types/toggle.ts]
 
-## Component
+## Components
 
 :::CodeGroup
 ::div{label="Toggle.vue" icon="i-vscode-icons-file-type-vue"}

@@ -231,7 +231,7 @@ If you want to customize the content of a specific item, make sure not to provid
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/accordion.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/elements/Accordion.vue
 
 

@@ -177,5 +177,5 @@ You can customize the checkbox using the `una` prop and utility classes.
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/checkbox.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/forms/Checkbox.vue

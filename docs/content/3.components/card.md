@@ -88,7 +88,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/card.ts
 
-## Component
+## Components
 
 ### 
 

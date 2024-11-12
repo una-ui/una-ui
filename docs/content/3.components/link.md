@@ -44,5 +44,5 @@ badges:
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/link.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/elements/Link.vue

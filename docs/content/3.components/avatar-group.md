@@ -63,5 +63,5 @@ You can also use the `una` prop to add utility classes, refer to the [Props](#pr
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/avatar-group.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/elements/AvatarGroup.vue

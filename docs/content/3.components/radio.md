@@ -156,5 +156,5 @@ You can use the following rules to customize the radio if it is checked.
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/radio.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/forms/Radio.vue

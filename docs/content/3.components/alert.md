@@ -168,5 +168,5 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/alert.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/elements/Alert.vue

@@ -37,7 +37,7 @@ An interactive component which expands/collapses a panel.
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/collapsible.ts
 
-## Component
+## Components
 
 :::CodeGroup
 ::div{label="Collapsible" preview}
