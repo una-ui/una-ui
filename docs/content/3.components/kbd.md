@@ -22,9 +22,9 @@ badges:
 
 ### Variant
 
-| Prop  | Default | Type     | Description             |
-| ----- | ------- | -------- | ----------------------- |
-| `kbd` | `solid` | `string` | The variant of the kbd. |
+| Prop  | Default | Type        | Description             |
+| ----- | ------- | ----------- | ----------------------- |
+| `kbd` | `solid` | `{variant}` | The variant of the kbd. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |

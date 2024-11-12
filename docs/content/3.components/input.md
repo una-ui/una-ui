@@ -32,9 +32,9 @@ badges:
 
 ### Variant
 
-| Prop    | Default   | Type     | Description               |
-| ------- | --------- | -------- | ------------------------- |
-| `input` | `outline` | `string` | The variant of the input. |
+| Prop    | Default   | Type        | Description               |
+| ------- | --------- | ----------- | ------------------------- |
+| `input` | `outline` | `{variant}` | The variant of the input. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
