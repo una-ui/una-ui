@@ -1,15 +1,26 @@
 ---
-description: 'NCollapsible - An interactive component which expands/collapses a panel'
+description: 'An interactive component which expands/collapses a panel.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/collapsible/Collapsible.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/collapsible
+    target: _blank
 ---
 
-::list{type="primary"}
-- Full keyboard navigation.
-- Can be controlled or uncontrolled.
-::
+## Examples
 
-## Basic
+### Basic
 
-An interactive component which expands/collapses a panel.
+| Prop          | Default | Type      | Description                                                                                                          |
+| ------------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
+| `defaultOpen` | `false` | `boolean` | The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state. |
+| `disabled`    | -       | `boolean` | When true, prevents the user from interacting with the collapsible.                                                  |
+| `open`        | -       | `boolean` | The controlled open state of the collapsible. Can be binded with `v-model`.                                          |
+
+:read-more{to="https://www.radix-vue.com/components/collapsible#root" title="Radix Collapsible Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -21,34 +32,43 @@ An interactive component which expands/collapses a panel.
 ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the collapsible.
+| Name      | Props  | Description                   |
+| --------- | ------ | ----------------------------- |
+| `default` | `open` | The collapsible root slot.    |
+| `content` | -      | The collapsible content slot. |
+| `trigger` | `open` | The button trigger slot.      |
 
-| Name      | Description             | Props  |
-| --------- | ----------------------- | ------ |
-| `default` | The collapsible root    | `open` |
-| `content` | The collapsible content | -      |
-| `trigger` | The button trigger.     | `open` |
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/collapsible.ts
+:::CodeGroup
+::div{label="Preview"}
+:ExampleVueCollapsibleSlots
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/collapsible/ExampleVueCollapsibleSlots.vue
+::
+:::
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/collapsible.ts
+
+@@@ ../packages/preset/src/_shortcuts/collapsible.ts [shortcuts/collapsible.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/collapsible.ts [types/collapsible.ts]
 
 ## Components
 
 :::CodeGroup
-::div{label="Collapsible" preview}
+::div{label="Collapsible.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/collapsible/Collapsible.vue
 
 ::
-::div{label="CollapsibleTrigger"}
+::div{label="CollapsibleTrigger.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/collapsible/CollapsibleTrigger.vue
 
 ::
-::div{label="CollapsibleContent"}
+::div{label="CollapsibleContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/collapsible/CollapsibleContent.vue
 
 ::
