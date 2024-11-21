@@ -7,7 +7,6 @@ badges:
     target: _blank
 ---
 
-
 ## Examples
 
 ### Basic

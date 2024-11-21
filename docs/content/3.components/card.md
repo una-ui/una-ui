@@ -1,15 +1,21 @@
 ---
-description: 'NCard - use to display content in a flexible container component.'
+description: 'Displays a card with header, content, and footer.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/card/Card.vue
+    target: _blank
 ---
 
-## Basic
 
-`NCard` - use to display content in a flexible container component.
+## Examples
 
-| Prop          | Description              |
-| ------------- | ------------------------ |
-| `title`       | Title of the card       |
-| `description` | Description of the card |
+### Basic
+
+| Prop          | Default | Type     | Description           |
+| ------------- | ------- | -------- | --------------------- |
+| `title`       | -       | `string` | The card title.       |
+| `description` | -       | `string` | The card description. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -20,19 +26,17 @@ description: 'NCard - use to display content in a flexible container component.'
 ::
 :::
 
-## Variants
+### Variant
 
-`card="{variant}"` - change the card variant
+| Prop   | Default   | Type        | Description              |
+| ------ | --------- | ----------- | ------------------------ |
+| `card` | `outline` | `{variant}` | The variant of the card. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
 | `outline` | The default variant.        |
 | `soft`    | The soft variant.           |
 | `~`       | The unstyle or base variant |
-
-::alert{type="info"}
-  If you want to change the default variant or add new variant, you can do so through the [Configuration section](/#getting-started/configuration).
-::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -43,13 +47,11 @@ description: 'NCard - use to display content in a flexible container component.'
 ::
 :::
 
-## Color
+### Color
 
-`card="{variant}-{color}"` - change the color of the card.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+| Prop   | Default             | Type                | Description            |
+| ------ | ------------------- | ------------------- | ---------------------- |
+| `card` | `{variant}-primary` | `{variant}-{color}` | The color of the card. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -60,17 +62,15 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the card.
-
-| Name          | Description           |
-| ------------- | --------------------- | 
-| `header`      | The header slot.      |
-| `default`     | The default slot.     |
-| `title`       | The title slot.       |
-| `description` | The description slot. |
-| `footer`      | The footer slot.      |
+| Name          | Props | Description           |
+| ------------- | ----- | --------------------- |
+| `header`      | -     | The header slot.      |
+| `default`     | -     | The default slot.     |
+| `title`       | -     | The title slot.       |
+| `description` | -     | The description slot. |
+| `footer`      | -     | The footer slot.      |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -81,44 +81,35 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/tooltip.ts [shortcuts/tooltip.ts]
 
 ## Props
-@@@ ../packages/nuxt/src/runtime/types/card.ts
 
-## Presets
-@@@ ../packages/preset/src/_shortcuts/card.ts
+@@@ ../packages/nuxt/src/runtime/types/tooltip.ts [types/tooltip.ts]
 
 ## Components
 
-### 
-
 :::CodeGroup
-::div{label="Card" preview}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/Card.vue
+::div{label="Tooltip.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/Tooltip.vue
 
 ::
-::div{label="CardContent"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardContent.vue
+::div{label="TooltipProvider.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipProvider.vue
 
 ::
-::div{label="CardTitle"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardTitle.vue
+::div{label="TooltipRoot.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipRoot.vue
 
 ::
-::div{label="CardDescription"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardDescription.vue
+::div{label="TooltipContent.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipContent.vue
 
 ::
-::div{label="CardHeader"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardHeader.vue
-
-::
-::div{label="CardAbout"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardAbout.vue
-
-::
-::div{label="CardFooter"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardFooter.vue
+::div{label="TooltipTrigger.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/tooltip/TooltipTrigger.vue
 
 ::
 :::
