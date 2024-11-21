@@ -43,8 +43,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       '@iconify/json':
-        specifier: ^2.2.270
-        version: 2.2.270
+        specifier: ^2.2.274
+        version: 2.2.274
       '@types/chroma-js':
         specifier: ^2.4.4
         version: 2.4.4
@@ -136,14 +136,14 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1
       '@iconify-json/lucide':
-        specifier: ^1.2.13
-        version: 1.2.13
+        specifier: ^1.2.15
+        version: 1.2.15
       '@iconify-json/radix-icons':
         specifier: ^1.2.1
         version: 1.2.1
       '@iconify-json/tabler':
-        specifier: ^1.2.7
-        version: 1.2.7
+        specifier: ^1.2.8
+        version: 1.2.8
       '@nuxt/kit':
         specifier: ^3.14.159
         version: 3.14.159(magicast@0.3.5)(rollup@4.24.4)(webpack-sources@3.2.3)
@@ -1339,17 +1339,17 @@ packages:
   '@iconify-json/heroicons@1.2.1':
     resolution: {integrity: sha512-TkKfS5U27kE5MXmSGLzPoz95BP5VA9xEJXwJFwmPMVLX+xyWq0OkoiWTUXB0uAoQODpb8BaRpzSydItrq9fIRA==}
 
-  '@iconify-json/lucide@1.2.13':
-    resolution: {integrity: sha512-hBRp3kZiy71YtAjKV48p1LRZMQmFKKBkjGWV2v2MWUOuMxIMo0Bp1KPJhCXCYwB0xZLTdi3iED4JjamwMSp3AQ==}
+  '@iconify-json/lucide@1.2.15':
+    resolution: {integrity: sha512-mbHlTJRqOrqRk8E8xnpPzqZwCqsKNB9ZyITqDEYEtePEGxki9VJWJMU8JcNqRKDfPS9vlFsjwepUuOGgusmZUA==}
 
   '@iconify-json/radix-icons@1.2.1':
     resolution: {integrity: sha512-glzHFq3Sj9QKUQG7u2dnlC+KPJGpGM1GhyUIrFFWhXqr9CZgkUPnF5n/6YlbCkYGMa+feSwdhwroLTfKvaAaVA==}
 
-  '@iconify-json/tabler@1.2.7':
-    resolution: {integrity: sha512-q6FbDeC5caOC7i7/dcJOv7PdovHWItd84hCvsnlD/mzsrl5Nhol6eSQOMRv1bIpyxykGEiSDbOsVK5f23j/aFg==}
+  '@iconify-json/tabler@1.2.8':
+    resolution: {integrity: sha512-xvi/UKhLiFRnutSo6xuHxvOGmskYEoC2St4WDVsU9WAW1DRG1EkBUk/Zy1TpeSsBKMQfyqtdjjx9Cf4ZezOK2w==}
 
-  '@iconify/json@2.2.270':
-    resolution: {integrity: sha512-BpuvTnPpjmKwzopqhokLz99v69n2BOeWAEvm7ttIsesUM2a8JWr4PTYzu8iMbK9cFNcrGMtWNmBYqDznxRAQcA==}
+  '@iconify/json@2.2.274':
+    resolution: {integrity: sha512-wU4zS3eMLZgPFHieCRGile/sVz7QXD3jiCaaQ72quMH4Tf8FzO2WH10un1g96YaNLY8CTKDV4MNZDO2/LtkwFA==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7625,7 +7625,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.13':
+  '@iconify-json/lucide@1.2.15':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7633,11 +7633,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/tabler@1.2.7':
+  '@iconify-json/tabler@1.2.8':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.270':
+  '@iconify/json@2.2.274':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
