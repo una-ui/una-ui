@@ -1,6 +1,5 @@
 ---
 description: 'Visually or semantically separates content.'
-
 badges:
   - value: Source
     icon: lucide:code
