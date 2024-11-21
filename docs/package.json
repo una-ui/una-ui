@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.6.0",
-    "@una-ui/content": "^0.0.35",
+    "@una-ui/content": "^0.0.36",
     "nuxt": "^3.14.0"
   }
 }
