@@ -1,30 +1,28 @@
+--- description: 'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Dialog/dialog.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/dialog
+    target: _blank
 ---
-description: NDialog component - Used for making dialog boxes and popup screens
----
 
-::list{type="primary"}
-- Supports modal and non-modal modes.
-- Focus is automatically trapped when modal.
-- Can be controlled or uncontrolled.
-- Manages screen reader announcements with Title andDescription components.
-- Esc closes the component automatically.
-::
+## Examples
 
-## Basic
+### Basic
 
-`NDialog` is used to create dialog windows inside the web browser. It can be used for messages, prompts, logins, and much more.
+| Prop          | Default | Type      | Description                                                                                                                                                |
+| ------------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | -       | `string`  | The title of the dialog.                                                                                                                                   |
+| `description` | -       | `string`  | The description of the dialog.                                                                                                                             |
+| `showClose`   | `true`  | `boolean` | Show the close button.                                                                                                                                     |
+| `defaultOpen` | `false` | `boolean` | The open state of the dialog when it is initially rendered. Use when you do not need to control its open state.                                            |
+| `modal`       | `true`  | `boolean` | The modality of the dialog When set to true, interaction with outside elements will be disabled and only dialog content will be visible to screen readers. |
+| `open`        | -       | `boolean` | The controlled open state of the dialog. Can be binded as `v-model:open`.                                                                                  |
 
-| Prop          | Type    | Default | Description                    |
-| ------------- | ------- | ------- | ------------------------------ |
-| `title`       | String  | `null`  | The title of the dialog.       |
-| `description` | String  | `null`  | The description of the dialog. |
-| `showClose`   | Boolean | `true`  | Show the close button.         |
-
-::alert{type="info"}
-All the props available in the [Radix Vue Dialog](https://www.radix-vue.com/components/dialog) are also
-available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-title`, etc. refer to
-[Dialog Props](#props) for more details.
-::
+:read-more{to="https://www.radix-vue.com/components/dialog#root" title="Radix Dialog Root API" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -35,11 +33,11 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 ::
 :::
 
-## Scrollable Content
+### Scrollable Content
 
-| Prop         | Type    | Description                                      |
-| ------------ | ------- | ------------------------------------------------ |
-| `scrollable` | Boolean | If true, the dialog will have a scrollable body. |
+| Prop         | Default | Type      | Description                                      |
+| ------------ | ------- | --------- | ------------------------------------------------ |
+| `scrollable` | `false` | `boolean` | If true, the dialog will have a scrollable body. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -50,11 +48,11 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 ::
 :::
 
-## Prevent Closing
+### Prevent Closing
 
-| Prop           | Type    | Description                                                              |
-| -------------- | ------- | ------------------------------------------------------------------------ |
-| `preventClose` | Boolean | If true, the dialog will not close on overlay click or escape key press. |
+| Prop           | Default | Type      | Description                                                              |
+| -------------- | ------- | --------- | ------------------------------------------------------------------------ |
+| `preventClose` | -       | `boolean` | If true, the dialog will not close on overlay click or escape key press. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -65,20 +63,20 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 ::
 :::
 
-## Slots
+### Slots
 
-| Slot          | Properties | Description                                                                            |
-| ------------- | ---------- | -------------------------------------------------------------------------------------- |
-| `trigger`     | `open`     | The trigger button used to open the dialog                                             |
-| `default`     | -          | The body of the dialog                                                                 |
-| `content`     | -          | The full content of the dialog. It covers the header, body, footer, and default slots. |
-| `header`      | -          | Contains the title and description slots                                               |
-| `footer`      | -          | The footer.                                                                            |
-| `title`       | -          | The title displayed in the dialog.                                                     |
-| `description` | -          | The description displayed below the title.                                             |
+| Name          | Props  | Description                                 |
+| ------------- | ------ | ------------------------------------------- |
+| `default`     | -      | The trigger slot.                           |
+| `content`     | -      | The content slot.                           |
+| `trigger`     | `open` | The trigger button used to open the dialog. |
+| `header`      | -      | Contains the title and description slots.   |
+| `footer`      | -      | The footer.                                 |
+| `title`       | -      | The title displayed in the dialog.          |
+| `description` | -      | The description displayed below the title.  |
 
 
-### Custom Close Button
+#### Custom Close Button
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -89,7 +87,7 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 ::
 :::
 
-### Scrollable Body
+#### Scrollable Body
 
 :::CodeGroup
 ::div{label=Preview preview}
@@ -100,7 +98,7 @@ available via its subcomponents' prop names, e.g., `_dialog-content`, `_dialog-t
 ::
 :::
 
-### Login Prompt
+#### Login Prompt
 
 A login dialog with state which closes itself after a successful login.
 
@@ -113,7 +111,7 @@ A login dialog with state which closes itself after a successful login.
 ::
 :::
 
-### Blurred Background
+#### Blurred Background
 
 A dialog whose overlay blurs the background content.
 
@@ -126,46 +124,50 @@ A dialog whose overlay blurs the background content.
 ::
 :::
 
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/dialog.ts [shortcuts/dialog.ts]
+
 ## Props
 
-@@@ ../packages/nuxt/src/runtime/types/dialog.ts
+@@@ ../packages/nuxt/src/runtime/types/dialog.ts [types/dialog.ts]
 
 ## Components
 
 :::CodeGroup
-::div{label="Dialog" preview}
+::div{label="Dialog.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
 
 ::
-::div{label="DialogTitle"}
+::div{label="DialogTitle.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogTitle.vue
 
 ::
-::div{label="DialogDescription"}
+::div{label="DialogDescription.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogDescription.vue
 
 ::
-::div{label="DialogHeader"}
+::div{label="DialogHeader.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogHeader.vue
 
 ::
-::div{label="DialogFooter"}
+::div{label="DialogFooter.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogFooter.vue
 
 ::
-::div{label="DialogClose"}
+::div{label="DialogClose.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogClose.vue
 
 ::
-::div{label="DialogOverlay"}
+::div{label="DialogOverlay.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogOverlay.vue
 
 ::
-::div{label="DialogContent"}
+::div{label="DialogContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogContent.vue
 
 ::
-::div{label="DialogScrollContent"}
+::div{label="DialogScrollContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogScrollContent.vue
 
 ::
