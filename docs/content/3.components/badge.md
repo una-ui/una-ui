@@ -1,12 +1,23 @@
 ---
-description: 'NBadge component - used to display a small badge with a number or text.'
+description: 'Displays a badge or a component that looks like a badge.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Badge.vue
+    target: _blank
 ---
 
-## Basic
+## Examples
 
-`NBadge` is a component that can be used to display a small badge with a number or text.
+### Basic
 
->You can use `label prop` or `default slot` to set the label text.
+| Prop    | Default | Type     | Description             |
+| ------- | ------- | -------- | ----------------------- |
+| `label` | -       | `string` | The label of the badge. |
+
+::alert{type="info"}
+You can also use default slot to set the badge label. Refer to [slots](#slots) for more information.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -17,9 +28,11 @@ description: 'NBadge component - used to display a small badge with a number or 
 ::
 :::
 
-## Variants
+### Variant
 
-`badge="{variant}"` - change the variant of the badge.
+| Prop    | Default | Type        | Description               |
+| ------- | ------- | ----------- | ------------------------- |
+| `badge` | `soft`  | `{variant}` | The variant of the badge. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
@@ -37,13 +50,11 @@ description: 'NBadge component - used to display a small badge with a number or 
 ::
 :::
 
-## Colors
+### Color
 
-`badge="{variant}-{color}"` - change the color of the badge.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+| Prop    | Default             | Type                | Description             |
+| ------- | ------------------- | ------------------- | ----------------------- |
+| `badge` | `{variant}-primary` | `{variant}-{color}` | The color of the badge. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -54,15 +65,13 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Sizes
+### Size
 
-`size="{size}"` - change the size of the badge.
+| Prop   | Default | Type     | Description                                 |
+| ------ | ------- | -------- | ------------------------------------------- |
+| `size` | `xs`    | `string` | Allows you to change the size of the input. |
 
-> 🚀 You can freely adjust the size of the badge using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `padding` and `font-size` of the badge scale depends on the `size`. If you want to change the `font-size` and `padding` simultaneously, you can always customize it using utility classes.
-::
+> 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -73,7 +82,7 @@ The `padding` and `font-size` of the badge scale depends on the `size`. If you w
 ::
 :::
 
-## Icon
+### Icon
 
 `icon={icon}` - add an icon to the badge.
 
@@ -90,9 +99,11 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 :::
 
-## Closable
+### Closable
 
-`closable` - add a close button to the badge.
+| Prop       | Default | Type      | Description                    |
+| ---------- | ------- | --------- | ------------------------------ |
+| `closable` | `false` | `boolean` | Add a close icon to the badge. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -103,15 +114,11 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 :::
 
-## Events
+### Slots
 
-| Event Name | Description                                                                       |
-| ---------- | --------------------------------------------------------------------------------- |
-| `@close`   | emit an event when the close icon is clicked. Use in conjunction with `closable`. |
-
-## Slots
-
-### Default
+| Name      | Props | Description      |
+| --------- | ----- | ---------------- |
+| `default` | -     | The badge label. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -122,11 +129,25 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 :::
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/badge.ts
+### Events
+
+| Event Name | Description                                                                       |
+| ---------- | --------------------------------------------------------------------------------- |
+| `@close`   | emit an event when the close icon is clicked. Use in conjunction with `closable`. |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/badge.ts
+
+@@@ ../packages/preset/src/_shortcuts/badge.ts [shortcuts/badge.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/badge.ts [types/badge.ts]
 
 ## Components
+
+:::CodeGroup
+::div{label="Badge.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Badge.vue
+::
+:::
+
