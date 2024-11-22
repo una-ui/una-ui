@@ -68,7 +68,7 @@
     "@antfu/eslint-config": "^3.8.0",
     "@antfu/ni": "^0.23.0",
     "@faker-js/faker": "^9.0.3",
-    "@iconify/json": "^2.2.270",
+    "@iconify/json": "^2.2.274",
     "@types/chroma-js": "^2.4.4",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.1.2",
