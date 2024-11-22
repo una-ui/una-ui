@@ -52,6 +52,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :type="to ? null : type"
     :class="cn(
       (square === '' || square === true) && 'btn-square',
+      block && 'btn-block',
       !rounded && 'btn-default-radius',
       !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
       reverse && 'btn-reverse',
