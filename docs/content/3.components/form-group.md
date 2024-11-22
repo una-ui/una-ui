@@ -17,7 +17,7 @@ badges:
 | `id`    | -       | `string` | Sets the form group's id.       |
 | `for`   | -       | `string` | Sets the label's for attribute. |
 
-::alert{type="success"}
+::alert{type="info"}
   Clicking the label focuses the input. We automatically add `for` to the label and `id` to the input. Override this by defining `for` and `id` manually.
 ::
 
