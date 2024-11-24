@@ -129,7 +129,7 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 :::
 
-### Events
+## Events
 
 | Event Name | Description                                                                       |
 | ---------- | --------------------------------------------------------------------------------- |
