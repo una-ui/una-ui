@@ -20,7 +20,7 @@ badges:
 | `defaultPage`  | `1`     | `number`  | The value of the page that should be active when initially rendered. Use when you do not need to control the value state. |
 | `disabled`     | `false` | `boolean` | When true, prevents the user from interacting with item.                                                                  |
 | `itemsPerPage` | `10`    | `number`  | Number of items per page.                                                                                                 |
-| `page`         | `-`     | `number`  | The controlled value of the current page. Can be binded as `v-model:page`.                                                |
+| `page`         | -     | `number`  | The controlled value of the current page. Can be binded as `v-model:page`.                                                |
 | `showEdges`    | `false` | `boolean` | When true, always show first page, last page, and ellipsis.                                                               |
 
 :read-more{to="https://www.radix-vue.com/components/pagination#root" title="Radix Pagination Root API." target="_blank"}
