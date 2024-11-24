@@ -1,7 +1,7 @@
 import type { PropType, VNode } from 'vue'
 import type { NAvatarGroupProps } from '../../types'
 import { cloneVNode, computed, defineComponent, h } from 'vue'
-import Avatar from '../elements/avatar/avatar.vue'
+import Avatar from '../elements/avatar/Avatar.vue'
 
 // @unocss-include
 export default defineComponent({
