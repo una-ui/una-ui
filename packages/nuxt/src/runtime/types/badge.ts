@@ -20,7 +20,6 @@ export interface NBadgeProps {
    * icon="i-heroicons-information-circle text-green-500 dark:text-green-400 text-2xl"
    */
   icon?: string
-
   /**
    * Display `close` icon on the right side of the badge,
    *
