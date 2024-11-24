@@ -1,28 +1,28 @@
 <template>
-  <div class="flex items-center gap-4">
+  <div class="flex flex-wrap items-center gap-4">
     <NAvatar
-      square="5"
       src="/images/avatar.png"
+      rounded="none"
     />
 
     <NAvatar
-      square="10"
       src="/images/avatar.png"
+      rounded="lg"
     />
 
     <NAvatar
-      size="2xl"
       src="/images/avatar.png"
+      rounded="t-none b-full"
     />
 
     <NAvatar
-      size="39px"
       src="/images/avatar.png"
+      rounded="l-none r-full"
     />
 
     <NAvatar
-      size="sm:3xl md:4xl lg:5xl"
       src="/images/avatar.png"
+      rounded="t-none r-full b-full l-none"
     />
   </div>
 </template>
