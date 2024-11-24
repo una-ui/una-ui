@@ -2,7 +2,7 @@
 description: 'An image element with a fallback for representing the user.'
 navBadges:
   - value: Updated
-    type: warning
+    type: lime
 badges:
   - value: Source
     icon: lucide:code

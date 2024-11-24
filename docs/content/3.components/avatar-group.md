@@ -2,7 +2,7 @@
 description: 'Displays a group of Avatar components.'
 navBadges:
   - value: Updated
-    type: warning
+    type: lime
 badges:
   - value: Source
     icon: lucide:code
