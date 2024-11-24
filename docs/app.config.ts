@@ -98,6 +98,13 @@ export default defineAppConfig({
         'json': 'vscode-icons:file-type-json',
         'terminal': 'lucide:terminal',
       },
+      editLink: {
+        enable: true,
+        pattern: 'https://github.com/una-ui/una-ui/edit/main/content/:path',
+        text: 'Edit this page on GitHub',
+        icon: 'lucide:square-pen',
+        placement: ['docsFooter', 'toc'],
+      },
     },
     footer: {
       credits: 'Copyright © 2024',
