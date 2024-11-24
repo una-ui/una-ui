@@ -1,15 +1,20 @@
 ---
-description: 'NAlert component - display a short, important message in a way that attracts the user''s attention without interrupting the user''s task.'
+description: 'Displays a callout for user attention.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Alert.vue
+    target: _blank
 ---
 
-## Basic
+## Examples
 
-`NAlert` - display a short, important message in a way that attracts the user's attention without interrupting the user's task.
+### Basic
 
-| Prop          | Description              |
-| ------------- | ------------------------ |
-| `title`       | Title of the alert       |
-| `description` | Description of the alert |
+| Prop          | Default | Type     | Description              |
+| ------------- | ------- | -------- | ------------------------ |
+| `title`       | -       | `string` | Title of the alert       |
+| `description` | -       | `string` | Description of the alert |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -20,19 +25,17 @@ description: 'NAlert component - display a short, important message in a way tha
 ::
 :::
 
-## Variants
+### Variant
 
-`alert="{variant}"` - change the alert variant.
+| Prop    | Default   | Type        | Description               |
+| ------- | --------- | ----------- | ------------------------- |
+| `alert` | `outline` | `{variant}` | The variant of the alert. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
 | `outline` | The default variant.        |
 | `soft`    | The soft variant.           |
 | `~`       | The unstyle or base variant |
-
-::alert{type="info"}
-  If you want to change the default variant or add new variant, you can do so through the [Configuration section](/#getting-started/configuration).
-::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -43,13 +46,11 @@ description: 'NAlert component - display a short, important message in a way tha
 ::
 :::
 
-## Color
+### Color
 
-`alert="{variant}-{color}"` - change the color of the alert.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+| Prop    | Default             | Type                | Description             |
+| ------- | ------------------- | ------------------- | ----------------------- |
+| `alert` | `{variant}-primary` | `{variant}-{color}` | The color of the alert. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -60,16 +61,14 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Icon
+### Icon
 
-`icon` - Automatically add icon to the alert based on the color.
-
-> Supported colors are `success`, `error`, `warning`, `info` eg. `icon="outline-success"`.
-
-`icon="{icon}"` - Customize the icon of the alert.
+| Prop   | Default | Type     | Description                      |
+| ------ | ------- | -------- | -------------------------------- |
+| `icon` | -       | `string` | Customize the icon of the alert. |
 
 ::alert{type="info"}
-  You can customize the default icon status through the [Configuration section](/#getting-started/configuration).
+  If you provide an icon type such as `success`, `error`, `warning`, or `info`, the alert will automatically use the corresponding color. 
 ::
 
 :::CodeGroup
@@ -81,14 +80,18 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Size
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
 
-`size="{size}"` - change the size of the alert.
+### Size
 
-> 🚀 You can freely adjust the size of the alert using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+| Prop   | Default | Type     | Description                                 |
+| ------ | ------- | -------- | ------------------------------------------- |
+| `size` | `sm`    | `string` | Allows you to change the size of the input. |
 
-::alert{type="info"}
-The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`. If you want to change the `text-size` and `padding` simultaneously, you can always customize it using utility classes.
+> 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
+
+::alert{type="warning"}
+The **padding**, **icons**, and **text-size** of the input scale are dynamically adjusted based on the **size** property. To customize the **text-size** and **padding** simultaneously, you can use utility classes.
 ::
 
 :::CodeGroup
@@ -100,9 +103,11 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 ::
 :::
 
-## Closable
+### Closable
 
-`closable` - add a close button to the alert.
+| Prop       | Default | Type      | Description                      |
+| ---------- | ------- | --------- | -------------------------------- |
+| `closable` | -       | `boolean` | Add a close button to the alert. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -121,15 +126,15 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 
 ## Slots
 
-| Slot          | Description                                |
-| ------------- | ------------------------------------------ |
-| `default`     | Cover the `title` and `description` slots. |
-| `title`       | The title of the alert.                    |
-| `description` | The description of the alert.              |
-| `icon`        | The icon of the alert.                     |
-| `closeIcon`  | The close icon of the alert.               |
+| Name          | Props | Description                                |
+| ------------- | ----- | ------------------------------------------ |
+| `default`     | -     | Cover the `title` and `description` slots. |
+| `title`       | -     | The title of the alert.                    |
+| `description` | -     | The description of the alert.              |
+| `icon`        | -     | The icon of the alert.                     |
+| `closeIcon`   | -     | The close icon of the alert.               |
 
-> Example 1
+### Example 1
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -140,7 +145,7 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 ::
 :::
 
-> Example 2
+### Example 2
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -151,7 +156,7 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 ::
 :::
 
-> Example 3
+### Example 3
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -162,11 +167,18 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 ::
 :::
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/alert.ts
+### Presets
 
-## Presets
-@@@ ../packages/preset/src/_shortcuts/alert.ts
+@@@ ../packages/preset/src/_shortcuts/alert.ts [shortcuts/alert.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/alert.ts [types/alert.ts]
 
 ## Components
+
+:::CodeGroup
+::div{label="Alert.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Alert.vue
+::
+:::
