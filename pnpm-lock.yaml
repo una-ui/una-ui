@@ -43,8 +43,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       '@iconify/json':
-        specifier: ^2.2.274
-        version: 2.2.274
+        specifier: ^2.2.276
+        version: 2.2.276
       '@types/chroma-js':
         specifier: ^2.4.4
         version: 2.4.4
@@ -133,8 +133,8 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1
       '@iconify-json/lucide':
-        specifier: ^1.2.15
-        version: 1.2.15
+        specifier: ^1.2.16
+        version: 1.2.16
       '@iconify-json/radix-icons':
         specifier: ^1.2.1
         version: 1.2.1
@@ -1235,8 +1235,8 @@ packages:
   '@iconify-json/heroicons@1.2.1':
     resolution: {integrity: sha512-TkKfS5U27kE5MXmSGLzPoz95BP5VA9xEJXwJFwmPMVLX+xyWq0OkoiWTUXB0uAoQODpb8BaRpzSydItrq9fIRA==}
 
-  '@iconify-json/lucide@1.2.15':
-    resolution: {integrity: sha512-mbHlTJRqOrqRk8E8xnpPzqZwCqsKNB9ZyITqDEYEtePEGxki9VJWJMU8JcNqRKDfPS9vlFsjwepUuOGgusmZUA==}
+  '@iconify-json/lucide@1.2.16':
+    resolution: {integrity: sha512-3uZ6/zjAMbAH44Xdfn3ZI+ATKIYK9wuQ0KYVkXYuh3DDU6NZMGq3bCzr9z3/jjAfb3d8AMMAxAzkHSjLGKcq1w==}
 
   '@iconify-json/radix-icons@1.2.1':
     resolution: {integrity: sha512-glzHFq3Sj9QKUQG7u2dnlC+KPJGpGM1GhyUIrFFWhXqr9CZgkUPnF5n/6YlbCkYGMa+feSwdhwroLTfKvaAaVA==}
@@ -1253,8 +1253,8 @@ packages:
   '@iconify/collections@1.0.486':
     resolution: {integrity: sha512-E/xw5Vku+QD/eHa89W6FYSIf+ljqiBOTSAZ+dg0dCg7Wj65qZoxfp/LJBC6EZV4J2jfPS3PVOFfyxqiK4iYrkg==}
 
-  '@iconify/json@2.2.274':
-    resolution: {integrity: sha512-wU4zS3eMLZgPFHieCRGile/sVz7QXD3jiCaaQ72quMH4Tf8FzO2WH10un1g96YaNLY8CTKDV4MNZDO2/LtkwFA==}
+  '@iconify/json@2.2.276':
+    resolution: {integrity: sha512-YXCcFQSgFTj/3rlK6Vlv9T5suFjWBQu5dt9k/aYbje/U21jNp7P2xf0CPiAn8iItU/9uDj9mi3UsITMShqeCug==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7663,7 +7663,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.15':
+  '@iconify-json/lucide@1.2.16':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7687,7 +7687,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.274':
+  '@iconify/json@2.2.276':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
@@ -8928,7 +8928,7 @@ snapshots:
   '@una-ui/content@0.0.39(@parcel/watcher@2.4.1)(@types/node@22.8.2)(@unocss/preset-wind@0.64.1)(@unocss/webpack@0.63.6(rollup@4.24.4)(webpack@5.94.0))(change-case@5.4.4)(eslint@9.13.0(jiti@2.4.0))(focus-trap@7.6.0)(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(postcss@8.4.49)(rollup@4.24.4)(sass@1.80.4)(terser@5.33.0)(vite@5.4.8(@types/node@22.8.2)(sass@1.80.4)(terser@5.33.0))(vue-tsc@2.1.6(typescript@5.6.3))(webpack@5.94.0)':
     dependencies:
       '@iconify-json/heroicons': 1.2.1
-      '@iconify-json/lucide': 1.2.15
+      '@iconify-json/lucide': 1.2.16
       '@iconify-json/radix-icons': 1.2.1
       '@iconify-json/simple-icons': 1.2.12
       '@iconify-json/tabler': 1.2.8
@@ -9017,7 +9017,7 @@ snapshots:
     dependencies:
       '@headlessui/vue': 1.7.23(vue@3.5.13(typescript@5.6.3))
       '@iconify-json/heroicons': 1.2.1
-      '@iconify-json/lucide': 1.2.15
+      '@iconify-json/lucide': 1.2.16
       '@iconify-json/radix-icons': 1.2.1
       '@iconify-json/tabler': 1.2.8
       '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.24.4)
