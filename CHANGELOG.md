@@ -1,3 +1,37 @@
+# [0.29.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.28.0-beta.1...v0.29.0-beta.1) (2024-11-25)
+
+
+### Bug Fixes
+
+* **AvatarGroupDefault:** correct avatar import path ([c7d8901](https://github.com/una-ui/una-ui/commit/c7d89012170a242dc6673a58d9f9693ac37e80a0))
+* **Badge:** add bg-transparent to closable button ([3e2ff87](https://github.com/una-ui/una-ui/commit/3e2ff875b3c8c196c1040342d05e78a8d3de0ac7))
+* **Checkbox:** reconfigure reverse prop configuration ([2091488](https://github.com/una-ui/una-ui/commit/2091488e1b71ebb4fba39f97d731b1b0b46a443f))
+* **Dialog:** update animation configuration ([81e54af](https://github.com/una-ui/una-ui/commit/81e54af6e2b5fb42cd1dabafd3d94fc3e3412f27))
+* **Preset:** properly set variable with rgba value ([a7c1a0b](https://github.com/una-ui/una-ui/commit/a7c1a0bc7488e6f2c2ac5b5154b38cf40fba79ac))
+* **Preset:** properly set variable with rgba value ([b2f3fe5](https://github.com/una-ui/una-ui/commit/b2f3fe5502cedd6a5f5e66961c6c3c94c93e243e))
+* **preset:** remove ring-inverted and offset-inverted shortcuts ([#286](https://github.com/una-ui/una-ui/issues/286)) ([82cf37e](https://github.com/una-ui/una-ui/commit/82cf37ed223ed82d1b43d0466b263ea12633c424))
+* **Skeleton:** add update props and types config ([f62bc09](https://github.com/una-ui/una-ui/commit/f62bc0903637394db66429dcb19baff7fd2d5a72))
+* **Slider:** remove unuse utility in slider-root preset ([cb240f4](https://github.com/una-ui/una-ui/commit/cb240f458a2695f30e8f1891918f68d07d7468a7))
+* **Switch:** update default props preset configuration ([1c93f94](https://github.com/una-ui/una-ui/commit/1c93f94375fca269326865e1b03d2896905ce84e))
+* **Switch:** update root-props-emits configuration ([c406141](https://github.com/una-ui/una-ui/commit/c40614172a4894e942487f9ccddf8da99904e836))
+* **Toggle:** add size prop to component bind configuration ([ed93761](https://github.com/una-ui/una-ui/commit/ed93761e3f5909431e6a8f648989a84268f69c65))
+* **Tooltip:** add missing types ([71382a9](https://github.com/una-ui/una-ui/commit/71382a91a34a0138fd6b0a7cb83bafeb41db3023))
+
+
+### Features
+
+* add static icons configuration and refactor imports ([b18be01](https://github.com/una-ui/una-ui/commit/b18be01bd140e705f158bf87b09e19272a3efde5))
+* **Button:** add block prop configuration ([ac7f41f](https://github.com/una-ui/una-ui/commit/ac7f41f1e5fc01fcb0e91c1934dcd73870ee4733))
+* **Preset:** add `--una-foreground` and `--una-background` color variable ([2691c3b](https://github.com/una-ui/una-ui/commit/2691c3b94f0d277354e342c1a046f5fe8fd7152c))
+* **preset:** add screen configuration to 2xl container preset ([c7c3a56](https://github.com/una-ui/una-ui/commit/c7c3a56f586e4ffea6fd1556bce52f9e333b0bbb))
+* **Preset:** add transparent background by default to form elements ([7678607](https://github.com/una-ui/una-ui/commit/7678607cce1b8e5d4e8c14ea26d21327fc0910c0))
+* **select:** add nested groups support in select component ([7ec85ea](https://github.com/una-ui/una-ui/commit/7ec85eab7259123f45a6b2ca05f07c643b260f0b))
+* **Slider:** add accent static color preset and update disabled config ([dc5c78e](https://github.com/una-ui/una-ui/commit/dc5c78e1f8fbadee15b5bfe2613524ac8ca530c5))
+* **Slider:** add default prop for slider color option ([b4af95f](https://github.com/una-ui/una-ui/commit/b4af95f1f5fbd8c31ec571d1454f093409ee6bab))
+* **ThemeSwither:** improve accessibility ([9419bf0](https://github.com/una-ui/una-ui/commit/9419bf0d6787c656707cba0c81be609dbf245709))
+
+
+
 # [0.28.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.27.1-beta.1...v0.28.0-beta.1) (2024-10-10)
 
 
