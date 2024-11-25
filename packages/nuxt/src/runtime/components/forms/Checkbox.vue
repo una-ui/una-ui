@@ -45,6 +45,7 @@ const id = computed(() => props.id ?? randomId('checkbox'))
           'peer checkbox',
           props.class,
         )"
+      :checkbox
     >
       <CheckboxIndicator
         :force-mount
