@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/popover/Popover.vue
     target: _blank
   - value: API reference
-    icon: /icons/radix-vue.svg
+    icon: icons/radix-vue.svg
     to: https://www.radix-vue.com/components/popover
     target: _blank
 ---
