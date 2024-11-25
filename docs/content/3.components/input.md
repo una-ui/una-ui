@@ -2,7 +2,7 @@
 description: 'Displays a form input field or a component that looks like an input field.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Input.vue
     target: _blank
 ---

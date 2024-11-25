@@ -2,10 +2,11 @@
 description: 'An interactive component which expands/collapses a panel.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/collapsible/Collapsible.vue
     target: _blank
   - value: API reference
+    icon: /icons/radix-vue.svg
     to: https://www.radix-vue.com/components/collapsible
     target: _blank
 ---

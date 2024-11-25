@@ -2,7 +2,7 @@
 description: 'Displays a card with header, content, and footer.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/card/Card.vue
     target: _blank
 ---

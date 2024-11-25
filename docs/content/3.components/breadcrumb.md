@@ -2,7 +2,7 @@
 description: 'Displays the path to the current resource using a hierarchy of links.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/navigation/breadcrumb/Breadcrumb.vue
     target: _blank
 ---

@@ -2,10 +2,11 @@
 description: 'Provides a custom <NuxtLink> component to handle any kind of links within your application.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Link.vue
     target: _blank
   - value: API reference
+    icon: /icons/radix-vue.svg
     to: https://nuxt.com/docs/api/components/nuxt-link
     target: _blank
 ---

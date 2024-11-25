@@ -2,7 +2,7 @@
 description: 'Displays an indicator that can be used to show the status of a task or a component.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Indicator.vue
     target: _blank
 ---

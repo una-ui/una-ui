@@ -2,7 +2,7 @@
 description: 'Use to show a placeholder while content is loading.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Skeleton.vue
     target: _blank
 ---

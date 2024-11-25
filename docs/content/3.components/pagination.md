@@ -2,10 +2,11 @@
 description: 'Pagination with page navigation, next and previous links.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/pagination/Pagination.vue
     target: _blank
   - value: API reference
+    icon: /icons/radix-vue.svg
     to: https://www.radix-vue.com/components/pagination
     target: _blank
 ---

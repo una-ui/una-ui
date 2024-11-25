@@ -2,7 +2,7 @@
 description: 'Displays a button or a component that looks like a button.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Button.vue
     target: _blank
 ---

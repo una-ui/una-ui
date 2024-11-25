@@ -2,7 +2,7 @@
 description: 'Displays a callout for user attention.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Alert.vue
     target: _blank
 ---
