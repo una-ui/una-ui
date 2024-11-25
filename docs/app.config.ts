@@ -4,7 +4,8 @@ export default defineAppConfig({
   unaContent: {
     site: {
       name: 'Una UI',
-      description: 'The Atomic UI Framework',
+      description: 'The Atomic UI Framework - Experience the power of Unocss Engine, enabling the creation of fast, modern, and lightweight components with ease.',
+      ogImage: '/hero.png',
     },
     header: {
       darkModeToggle: true,
