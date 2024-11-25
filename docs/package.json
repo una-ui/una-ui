@@ -35,9 +35,8 @@
     "f": "esno scripts/file-creator.ts"
   },
   "devDependencies": {
-    "@nuxt-themes/docus": "1.15.0",
     "@nuxt/devtools": "^1.6.0",
-    "nuxt": "^3.14.159",
-    "nuxt-content-snippet": "^1.0.0"
+    "@una-ui/content": "^0.0.39",
+    "nuxt": "^3.14.159"
   }
 }

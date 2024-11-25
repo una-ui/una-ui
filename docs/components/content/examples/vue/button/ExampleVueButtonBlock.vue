@@ -5,7 +5,7 @@
     />
 
     <NButton
-      btn="block"
+      block
       label="Block"
     />
   </div>

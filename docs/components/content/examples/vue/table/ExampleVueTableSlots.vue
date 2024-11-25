@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker'
 
 import makeData, { type Person } from './makeData'
 
-const data = ref(makeData(10))
+const data = ref(makeData(50))
 
 const columns: ColumnDef<Person>[] = [
   {

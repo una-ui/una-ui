@@ -1,83 +1,91 @@
 ---
-description: 'NCheckbox component - use to create a checkbox input.'
+description: 'A control that allows the user to toggle between checked and not checked.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Checkbox.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/checkbox
+    target: _blank
 ---
 
-# 🟢 Checkbox
+## Examples
 
----
+### Basic
 
-## Basic
+| Prop             | Default      | Type                       | Description                                                                                                             |
+| ---------------- | ------------ | -------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `checked`        | -            | `boolean`, `indeterminate` | The controlled checked state of the checkbox. Can be binded with `v-model`.                                             |
+| `defaultChecked` | -            | `boolean`                  | The checked state of the checkbox when it is initially rendered. Use when you do not need to control its checked state. |
+| `disabled`       | -            | `boolean`                  | When true, prevents the user from interacting with the checkbox.                                                        |
+| `id`             | `randomId()` | `string`                   | Id of the element.                                                                                                      |
+| `name`           | -            | `string`                   | The name of the checkbox. Submitted with its owning form as part of a name/value pair.                                  |
+| `required`       | -            | `boolean`                  | When true, indicates that the user must check the checkbox before the owning form can be submitted.                     |
+| `value`          | `on`         | `string`                   | The value given as data when submitted with a name.                                                                     |
+| `label`          | -            | `string`                   | Set the label of the checkbox.                                                                                          |
 
-use `NCheckbox` component to create a checkbox.
-
-| Attribute         | Type                      | Default | Description                           |
-| ----------------- | ------------------------- | ------- | ------------------------------------- |
-| `v-model:checked` | `boolean` `indeterminate` | `false` | Bind the checkbox to a boolean value. |
-| `label`           | `string`                  | `''`    | Set the label of the checkbox.        |
+:read-more{to="https://www.radix-vue.com/components/checkbox#root" title="Radix Checkbox Root API." target="_blank"}
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxBasic.vue
 ::
 :::
 
-## Indeterminate
+### Color
 
-`checked="indeterminate"` - set the checkbox to indeterminate state.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueCheckboxIndeterminate
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxIndeterminate.vue
-::
-:::
-
-## Color
-
-`checkbox="{color}"` - change the color of the checkbox.
-
-> You can use `breakpoints` such as `sm:red, xs:green` to change color based on screen size.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
-::
+| Prop    | Default   | Type     | Description                       |
+| ------- | --------- | -------- | --------------------------------- |
+| `color` | `primary` | `string` | Change the color of the checkbox. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxColor.vue
 ::
 :::
 
-## Form Group
+### Form Group
 
-You can use the `NFormGroup` component to create a checkbox group for the checkbox,
-
-> Read more about the `NFormGroup` component [here](form-group).
+You can use the `checkbox` component inside the `form-group` component, or you can use it with the `label` component.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxFormGroup
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxFormGroup.vue
 ::
 :::
 
-## Size
+:read-more{to="/components/form-group" title="Form-group component" target="_blank"}
 
-`size="{size}"` - change the size of the checkbox.
+:read-more{to="/components/label" title="Label component" target="_blank"}
 
-::alert{type="info"}
-  You can freely adjust the size of the checkbox using any size imaginable. No limits exist, and you can use `data-[state]` to adjust the size based on the state of the checkbox.
+### Size
+
+Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
+
+| Prop   | Default | Type     | Description                      |
+| ------ | ------- | -------- | -------------------------------- |
+| `size` | `md`    | `string` | Adjust the size of the checkbox. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+  :ExampleVueCheckboxSize
 ::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/select/ExampleVueCheckboxSize.vue
+::
+:::
+
+You can also utilize `data-[state]` to dynamically modify the size of the checkbox based on its state.
 
 | Data state                   | Description                                            |
 | ---------------------------- | ------------------------------------------------------ |
@@ -86,62 +94,44 @@ You can use the `NFormGroup` component to create a checkbox group for the checkb
 | `data-[state=indeterminate]` | Only apply the class if the checkbox is indeterminate. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxSize.vue
 ::
 :::
 
-## Disabled
+### Reverse
 
-`disabled` - disable the checkbox.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueCheckboxDisabled
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxDisabled.vue
-::
-:::
-
-## Reverse
-
-`reverse` - Switch the position of the checkbox and the label.
+| Prop      | Default | Type      | Description                                     |
+| --------- | ------- | --------- | ----------------------------------------------- |
+| `reverse` | -       | `boolean` | Reverse the position of the checkbox and label. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxReverse
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxReverse.vue
 ::
 :::
 
-## Customization
+### Customization
 
-You can customize the checkbox using the `una` prop and utility classes.
+> You can customize the checkbox using the `una` prop and utility classes.
 
-::alert{type="info"}
-  You can also globally customize the checkbox preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
-::
-
-| Property                        | Type     | Default          | Description                                             |
-| ------------------------------- | -------- | ---------------- | ------------------------------------------------------- |
-| `una.checkboxCheckedIcon`       | `string` | `i-check`        | Custom icon of the checkbox when it is `checked`.       |
-| `una.checkboxUncheckedIcon`     | `string` | `null`           | Custom icon of the checkbox when it is `unchecked`.     |
-| `una.checkboxIndeterminateIcon` | `string` | `i-lucide-minus` | Custom icon of the checkbox when it is `indeterminate`. |
-
-
-
+| Prop                            | Default          | Type     | Description                                             |
+| ------------------------------- | ---------------- | -------- | ------------------------------------------------------- |
+| `una.checkboxCheckedIcon`       | `i-check`        | `string` | Custom icon of the checkbox when it is `checked`.       |
+| `una.checkboxUncheckedIcon`     | `null`           | `string` | Custom icon of the checkbox when it is `unchecked`.     |
+| `una.checkboxIndeterminateIcon` | `i-lucide-minus` | `string` | Custom icon of the checkbox when it is `indeterminate`. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxCustomIcon1
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustomIcon1.vue
 ::
 :::
@@ -149,10 +139,10 @@ You can customize the checkbox using the `una` prop and utility classes.
 ---
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxCustomIcon2
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustomIcon2.vue
 ::
 :::
@@ -160,26 +150,32 @@ You can customize the checkbox using the `una` prop and utility classes.
 ---
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueCheckboxCustom
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustom.vue
 ::
 :::
 
-## Slots
+### Slots
 
 | Name      | Description                                                              |
 | --------- | ------------------------------------------------------------------------ |
 | `default` | Use this slot to customize the label of the checkbox.                    |
 | `icon`    | Use this slot to customize the icon of the checkbox when it is `checked` |
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/checkbox.ts
-
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/checkbox.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/checkbox.ts [shortcuts/checkbox.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/checkbox.ts [types/checkbox.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Checkbox.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/Checkbox.vue
+::

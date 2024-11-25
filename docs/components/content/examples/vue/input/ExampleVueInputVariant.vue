@@ -2,12 +2,12 @@
   <div class="grid gap-4 sm:cols-2">
     <NInput
       input="outline"
-      placeholder="This is the outline variant (default color)"
+      placeholder="This is the outline variant"
     />
 
     <NInput
       input="solid"
-      placeholder="This is the solid variant (default color)"
+      placeholder="This is the solid variant"
     />
 
     <NInput

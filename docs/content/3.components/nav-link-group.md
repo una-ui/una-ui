@@ -1,14 +1,9 @@
 ---
-title: 🟡 NavLinkGroup
+title: NavLinkGroup
 description: 'Work in progress - this component is not yet ready for use.'
----
-
-# 🟡 NavLinkGroup
-
-::alert{type="warning"}
-Work in progress - this component is not yet ready for use.
-::
-
+navBadges:
+  - value: Deprecated
+    type: warning
 ---
 
 ## Basic
@@ -16,10 +11,10 @@ Work in progress - this component is not yet ready for use.
 `NNavLinkGroup` is a component that renders a group of `NNavLink` components. 
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueNavLinkGroupBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/nav-link-group/ExampleVueNavLinkGroupBasic.vue
 ::
 :::
@@ -30,7 +25,7 @@ Work in progress - this component is not yet ready for use.
 ## Presets
 @@@ ../packages/preset/src/_shortcuts/nav-link-group.ts
 
-## Component
+## Components
 @@@ ../packages/nuxt/src/runtime/components/navigation/NavLinkGroup.vue
 
 

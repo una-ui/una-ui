@@ -20,7 +20,7 @@ const items = [
     leading: 'i-lucide-settings',
   },
   {
-    label: 'Keyboard shortcuts',
+    label: 'Shortcuts',
     shortcut: '⌘K',
     leading: 'i-lucide-keyboard',
   },
@@ -110,11 +110,16 @@ const items = [
     <NDropdownMenu
       :items
       menu-label="My Account"
+      inset
       :_dropdown-menu-content="{
         class: 'w-60',
       }"
-      inset
-      label="Open"
+      :_dropdown-menu-trigger="{
+        icon: true,
+        square: true,
+        rounded: 'full',
+        label: 'i-lucide-ellipsis-vertical',
+      }"
     />
   </div>
 </template>

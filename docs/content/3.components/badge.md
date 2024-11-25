@@ -1,29 +1,38 @@
 ---
-description: 'NBadge component - used to display a small badge with a number or text.'
+description: 'Displays a badge or a component that looks like a badge.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Badge.vue
+    target: _blank
 ---
 
-# 🟢 Badge
+## Examples
 
----
+### Basic
 
-## Basic
+| Prop    | Default | Type     | Description             |
+| ------- | ------- | -------- | ----------------------- |
+| `label` | -       | `string` | The label of the badge. |
 
-`NBadge` is a component that can be used to display a small badge with a number or text.
-
->You can use `label prop` or `default slot` to set the label text.
+::alert{type="info"}
+You can also use default slot to set the badge label. Refer to [slots](#slots) for more information.
+::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeBasic.vue
 ::
 :::
 
-## Variants
+### Variant
 
-`badge="{variant}"` - change the variant of the badge.
+| Prop    | Default | Type        | Description               |
+| ------- | ------- | ----------- | ------------------------- |
+| `badge` | `soft`  | `{variant}` | The variant of the badge. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
@@ -33,77 +42,90 @@ description: 'NBadge component - used to display a small badge with a number or 
 | `~`       | The unstyle or base variant |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeVariant.vue
 ::
 :::
 
-## Colors
+### Color
 
-`badge="{variant}-{color}"` - change the color of the badge.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
-::
+| Prop    | Default             | Type                | Description             |
+| ------- | ------------------- | ------------------- | ----------------------- |
+| `badge` | `{variant}-primary` | `{variant}-{color}` | The color of the badge. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeColor.vue
 ::
 :::
 
-## Sizes
+### Size
 
-`size="{size}"` - change the size of the badge.
+| Prop   | Default | Type     | Description                                 |
+| ------ | ------- | -------- | ------------------------------------------- |
+| `size` | `xs`    | `string` | Allows you to change the size of the input. |
 
-> 🚀 You can freely adjust the size of the badge using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `padding` and `font-size` of the badge scale depends on the `size`. If you want to change the `font-size` and `padding` simultaneously, you can always customize it using utility classes.
-::
+> 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeSize.vue
 ::
 :::
 
-## Icon
+### Icon
 
 `icon={icon}` - add an icon to the badge.
 
 ::alert{type="info"}
-By default we use `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/getting-started/configuration) for more information.
+By default we use `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/#getting-started/configuration) for more information.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeIcon.vue
 ::
 :::
 
-## Closable
+### Closable
 
-`closable` - add a close button to the badge.
+| Prop       | Default | Type      | Description                    |
+| ---------- | ------- | --------- | ------------------------------ |
+| `closable` | `false` | `boolean` | Add a close icon to the badge. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBadgeClosable
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeClosable.vue
+::
+:::
+
+### Slots
+
+| Name      | Props | Description      |
+| --------- | ----- | ---------------- |
+| `default` | -     | The badge label. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+  :ExampleVueBadgeDefaultSlot
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/badge/ExampleVueBadgeDefaultSlot.vue
 ::
 :::
 
@@ -113,24 +135,19 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 | ---------- | --------------------------------------------------------------------------------- |
 | `@close`   | emit an event when the close icon is clicked. Use in conjunction with `closable`. |
 
-## Slots
+## Presets
 
-### Default
+@@@ ../packages/preset/src/_shortcuts/badge.ts [shortcuts/badge.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/badge.ts [types/badge.ts]
+
+## Components
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueBadgeDefaultSlot
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/badge/ExampleVueBadgeDefaultSlot.vue
+::div{label="Badge.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/Badge.vue
 ::
 :::
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/badge.ts
-
-## Presets
-@@@ ../packages/preset/src/_shortcuts/badge.ts
-
-## Component
-@@@ ../packages/nuxt/src/runtime/components/elements/Badge.vue

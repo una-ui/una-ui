@@ -9,7 +9,7 @@
     </NIndicator>
 
     <NIndicator label="1" indicator="solid-red top-right">
-      <NAvatar icon="i-heroicons-phone-arrow-down-left-20-solid" />
+      <NAvatar icon label="i-heroicons-phone-arrow-down-left-20-solid" />
     </NIndicator>
 
     <NIndicator indicator="solid-info" label="New">

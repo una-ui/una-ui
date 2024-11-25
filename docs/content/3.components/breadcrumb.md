@@ -1,144 +1,143 @@
 ---
-description: 'NBreadcrumb - use to display the path of the current page and the hierarchy of previous routes/links.'
+description: 'Displays the path to the current resource using a hierarchy of links.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/navigation/breadcrumb/Breadcrumb.vue
+    target: _blank
 ---
 
-# 🟢 Breadcrumb
+## Examples
 
----
+### Basic
 
-## Basic
-
-`NBreadcrumb` - use to display the path of the current page and the hierarchy of previous routes/links.
-
-| Prop    | Type    | Default | Description                                                                                                                                     |
-| ------- | ------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `items` | `Array` | `[]`    | The array of `Links` that wrapped around [NButton](button) component, which means that all the props and slots of NButton are available to use. |
+| Prop    | Default | Type    | Description                                                                                            |
+| ------- | ------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| `items` | `[]`    | `array` | An array of `Links` wrapped around the [Button](button) component, inheriting all its props and slots. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbBasic.vue
 ::
 :::
 
-## Variant & Color
+:read-more{to="/components/button" title="Button component" target="_blank"}
 
-| Prop                  | Type                | Default        | Description                                |
-| --------------------- | ------------------- | -------------- | ------------------------------------------ |
-| `breadcrumb-active`   | `{variant}-{color}` | `text-primary` | The active breadcrumb variant and color.   |
-| `breadcrumb-inactive` | `{variant}-{color}` | `text-muted`   | The inactive breadcrumb variant and color. |
+### Variant & Color
+
+| Prop                  | Default        | Type                | Description                                |
+| --------------------- | -------------- | ------------------- | ------------------------------------------ |
+| `breadcrumb-active`   | `text-primary` | `{variant}-{color}` | The active breadcrumb variant and color.   |
+| `breadcrumb-inactive` | `text-muted`   | `{variant}-{color}` | The inactive breadcrumb variant and color. |
 
 ::alert{type="info"}
-You can use any variant and colors provided by the [NButton](button#variants) component, just make sure to use `breadcrumb-active` and `breadcrumb-inactive` as a prefix instead of `btn`.
+  You can use any variant and color provided by the [Button](button#variants) component. Just use `breadcrumb-active` and `breadcrumb-inactive` as prefixes instead of `btn`.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbVariant.vue
 ::
 :::
 
-## Separator
+### Separator
 
-| Prop        | Type     | Default                       | Description         |
-| ----------- | -------- | ----------------------------- | ------------------- |
-| `separator` | `String` | `i-radix-icons-chevron-right` | The separator icon. |
+| Prop        | Default                       | Type     | Description         |
+| ----------- | ----------------------------- | -------- | ------------------- |
+| `separator` | `i-radix-icons-chevron-right` | `string` | The separator icon. |
 
-::alert{type="info"}
-  You can use any icon provided by the [NIcon](icon) component, the default is `i-radix-icons-chevron-right`.
-::
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbSeparator
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSeparator.vue
 ::
 :::
 
-## Size
+### Size
 
-| Prop                        | Type     | Default | Description                                                                        |
-| --------------------------- | -------- | ------- | ---------------------------------------------------------------------------------- |
-| `size`                      | `String` | `sm`    | The size of the breadcrumb. This will be applied to all the breadcrumb components. |
-| `_breadcrumbLink.size`      | `String` | `sm`    | The size of the breadcrumb link.                                                   |
-| `_breadcrumbSeparator.size` | `String` | `sm`    | The size of the breadcrumb separator.                                              |
+Adjust the breadcrumb size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
 
-> 🚀 You can freely adjust the size of the breadcrumb using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+| Prop                        | Default | Type     | Description                                           |
+| --------------------------- | ------- | -------- | ----------------------------------------------------- |
+| `size`                      | `sm`    | `string` | Adjusts the overall size of the breadcrumb component. |
+| `_breadcrumbLink.size`      | `sm`    | `string` | Customizes the size of each breadcrumb link.          |
+| `_breadcrumbSeparator.size` | `sm`    | `string` | Modifies the size of the breadcrumb separator.        |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSize.vue
 ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the breadcrumb.
-
-| Name        | Description         | Props   |
-| ----------- | ------------------- | ------- |
-| `default`   | The breadcrumb item | `item`  |
-| `separator` | The separator       | `item`  |
-| `root`      | The root breadcrumb | `items` |
-| `list`      | The list of items   | `item`  |
+| Name        | Props   | Description         |
+| ----------- | ------- | ------------------- |
+| `default`   | `item`  | The breadcrumb item |
+| `separator` | `item`  | The separator       |
+| `root`      | `items` | The root breadcrumb |
+| `list`      | `item`  | The list of items   |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueBreadcrumbSlots
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSlots.vue
 ::
 :::
 
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/breadcrumb.ts [shortcuts/breadcrumb.ts]
 
 ## Props
-@@@ ../packages/nuxt/src/runtime/types/breadcrumb.ts
 
-## Presets
-@@@ ../packages/preset/src/_shortcuts/breadcrumb.ts
+@@@ ../packages/nuxt/src/runtime/types/breadcrumb.ts [types/breadcrumb.ts]
 
-## Component
-
-### 
+## Components
 
 :::CodeGroup
-::code-block{label="Breadcrumb" preview}
+::div{label="Breadcrumb.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/Breadcrumb.vue
 
 ::
-::code-block{label="BreadcrumbRoot"}
+::div{label="BreadcrumbRoot.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbRoot.vue
 
 ::
-::code-block{label="BreadcrumbList"}
+::div{label="BreadcrumbList.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbList.vue
 
 ::
-::code-block{label="BreadcrumbLink"}
+::div{label="BreadcrumbLink.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbLink.vue
 
 ::
-::code-block{label="BreadcrumbItem"}
+::div{label="BreadcrumbItem.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbItem.vue
 
 ::
-::code-block{label="BreadcrumbSeparator"}
+::div{label="BreadcrumbSeparator.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbSeparator.vue
 
 ::
-::code-block{label="BreadcrumbEllipsis"}
+::div{label="BreadcrumbEllipsis.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/navigation/breadcrumb/BreadcrumbEllipsis.vue
 
 ::
 :::
+

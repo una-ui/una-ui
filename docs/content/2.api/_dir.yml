@@ -1,0 +1,5 @@
+# @unocss-include
+
+title: API
+icon: i-lucide-book-open
+navigation.redirect: /api/configuration

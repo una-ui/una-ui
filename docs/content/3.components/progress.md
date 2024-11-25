@@ -1,111 +1,99 @@
 ---
-description: 'NProgress component - used to display a progress bar.'
+description: 'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Progress.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/progress
+    target: _blank
 ---
 
-# 🟢 Progress
+## Examples
 
-## Features
+### Basic
 
-::list{type="primary"}
-- Provides context for assistive technology to read the progress of a task.
-- Adheres to the [`progressbar` role requirements](https://www.w3.org/WAI/ARIA/apg/patterns/meter){target="_blank"}.
-::
+| Prop            | Default                                       | Type                                       | Description                                                                                                                                                                                                 |
+| --------------- | --------------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `modelValue`    | -                                             | `number`                                   | The progress value. Can be bind as `v-model`.                                                                                                                                                               |
+| `max`           | `100`                                         | `number`                                   | The maximum progress value.                                                                                                                                                                                 |
+| `indeterminate` | `false`                                       | `boolean`                                  | Makes the progress bar indeterminate. When true, the progress bar will animate without a specific value.                                                                                                    |
+| `getValueLabel` | `${Math.round((value / max) * DEFAULT_MAX)}%` | `((value: number, max: number) => string)` | A function to get the accessible label text representing the current value in a human-readable format. If not provided, the value label will be read as the numeric value as a percentage of the max value. |
 
----
-
-## Basic
-
-use `NProgress` to display a progress bar.
+:read-more{to="https://www.radix-vue.com/components/progress#root" title="Radix Progress Root API." target="_blank"}
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueProgressBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressBasic.vue
 ::
 :::
 
-## Color
+### Color
 
-`progress="{color}"` - change the color of the progress.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
-::
+| Prop       | Default   | Type     | Description                         |
+| ---------- | --------- | -------- | ----------------------------------- |
+| `progress` | `primary` | `string` | Sets the color of the progress bar. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueProgressColor
+::div{label="Preview" preview}
+:ExampleVueProgressColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressColor.vue
 ::
 :::
 
-## Indeterminate
+### Size
 
-By not providing a `modeValue` prop, the progress will be indeterminate. This means that the progress will be animated without a specific value.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueProgressIndeterminate
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/progress/ExampleVueProgressIndeterminate.vue
-::
-:::
-
-## Size
-
-`size="{size}"` - change the size of the progress.
-
-> 🚀 You can freely adjust the size of the progress using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `height` and `width` of the progress scale depends on the `progress-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
-::
+| Prop   | Default | Type     | Description                        |
+| ------ | ------- | -------- | ---------------------------------- |
+| `size` | `md`    | `string` | Sets the size of the progress bar. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueProgressSize
+::div{label="Preview" preview}
+:ExampleVueProgressSize
+
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressSize.vue
 ::
 :::
 
-## Customization
+### Customization
 
-> You can customize the progress using the `una` prop and utility classes.
-
-::alert{type="info"}
-  You can also globally customize the progress preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
-::
+Configure the progress using the `una` prop and utility classes.
 
 :::CodeGroup
-  ::code-block{label="Preview" preview}
+  ::div{label="Preview" preview}
     :ExampleVueProgressCustom
   ::
-  ::code-block{label="Code"}
+  ::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressCustom.vue
   ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the progress.
-
-| Name           | Description                  | Props |
-| -------------- | ---------------------------- | ----- |
-| `default`      | The progress indicator.      | -     |
-
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/progress.ts
+| Name      | Props | Description             |
+| --------- | ----- | ----------------------- |
+| `default` | -     | The progress indicator. |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/progress.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/progress.ts [shortcuts/tooltip.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/progress.ts [types/tooltip.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Progress.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Progress.vue
+::
+:::

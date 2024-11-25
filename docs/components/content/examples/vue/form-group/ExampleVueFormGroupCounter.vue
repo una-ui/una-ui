@@ -11,9 +11,9 @@ const username = ref('')
       }"
       message="Username has no length limit"
     >
-      <!-- TODO: update to NTextArea later -->
       <NInput
         v-model="username"
+        type="textarea"
         leading="i-heroicons-user-20-solid"
       />
     </NFormGroup>
@@ -27,9 +27,9 @@ const username = ref('')
       :status="username.length > 10 ? 'error' : undefined"
       :message="username.length > 10 ? 'Username must be less than 10 characters' : undefined"
     >
-      <!-- TODO: update to NTextArea later -->
       <NInput
         v-model="username"
+        type="textarea"
         leading="i-heroicons-user-20-solid"
       />
     </NFormGroup>

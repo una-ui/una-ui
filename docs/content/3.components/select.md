@@ -1,213 +1,196 @@
 ---
-description: 'NSelect component - used to create a selection input.'
+description: 'Displays a list of options for the user to pick from—triggered by a button.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/select/Select.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/select
+    target: _blank
 ---
 
-# 🟢 Select
+## Examples 
 
-::list{type="primary"}
-- Can be controlled or uncontrolled.
-- Offers 2 positioning modes.
-- Supports items, labels, groups of items.
-- Focus is fully managed.
-- Full keyboard navigation.
-- Supports custom placeholder.
-- Typeahead support.
-- Supports Right to Left direction.
-::
+### Basic
 
----
+| Name           | Default | Type      | Description                                                                                                     |
+| -------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
+| `items`        | -       | `array`   | Set the select items.                                                                                           |
+| `placeholder`  | -       | `string`  | The content that will be rendered inside the SelectValue when no value or defaultValue is set.                  |
+| `label`        | -       | `string`  | Set the select items label.                                                                                     |
+| `defaultOpen`  | -       | `boolean` | The open state of the select when it is initially rendered. Use when you do not need to control its open state. |
+| `defaultValue` | -       | `string`  | The value of the select when initially rendered. Use when you do not need to control the state of the Select    |
+| `open`         | -       | `boolean` | The controlled open state of the Select. Can be bind as `v-model:open`.                                         |
+| `modelValue`   | -       | `string`  | The controlled value of the Select. Can be bind as `v-model`.                                                   |
 
-## Basic
+:read-more{to="https://www.radix-vue.com/components/select#root" title="Radix Select Root API" target="_blank"}
 
-use `NSelect` to create a range input.
+:read-more{to="https://www.radix-vue.com/components/select#value" title="Radix Select Value API" target="_blank"}
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectBasic.vue
 ::
 :::
 
-## Multiple Group
+### Group Items
 
-`multiple-group="{value}"` - enable multiple group items.
+| Prop         | Default | Type      | Description                     |
+| ------------ | ------- | --------- | ------------------------------- |
+| `groupItems` | -       | `boolean` | Enable support for group items. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueSelectMultipleGroup
+::div{label="Preview" preview}
+  :ExampleVueSelectGroupItems
 ::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueSelectMultipleGroup.vue
+::div{label="Code"}
+@@@ ./components/content/examples/vue/select/ExampleVueSelectGroupItems.vue
 ::
 :::
 
-## Objects
+### Objects
 
-| Prop              | Description                                        |
-| ----------------- | -------------------------------------------------- |
-| `value-attribute` | The attribute value to be displayed in the select. |
-| `item-attribute`  | The attribute value to be displayed in the item.   |
+Control the attribute value to be displayed in the select and the item.
+
+| Prop             | Default | Type     | Description                                        |
+| ---------------- | ------- | -------- | -------------------------------------------------- |
+| `valueAttribute` | -       | `string` | The attribute value to be displayed in the select. |
+| `itemAttribute`  | -       | `string` | The attribute value to be displayed in the item.   |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectObjects
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectObjects.vue
 ::
 :::
 
-## Label
+### Form Group
 
-> You can use the `NFormGroup` component to create a label for the select.
-
-::alert{type="info"}
-  Read more about the `NFormGroup` component [here](form-group).
-::
+You can use the `select` component inside the `form-group` component, or you can use it with the `label` component.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectLabel
 ::
- ::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectLabel.vue
 ::
 :::
 
-## Variant and Color
+:read-more{to="/components/form-group" title="Form-group component" target="_blank"}
 
-`select="{variant}-{color}"` is used to set the variant of the select. The default variant is `soft-black`.
+:read-more{to="/components/label" title="Label component" target="_blank"}
 
-`select-item="{color}"` is used to set the variant of the select item. The default variant is `soft-black`.
+### Variant and Color
 
-| Prop                    | Description                                            |
-| ----------------------- | ------------------------------------------------------ |
-| `select`                | Set the select variant and color.                      |
-| `_selectTrigger.select` | Set the select variant and color via `_selectTrigger`. |
-
-::alert{type="info"}
-`NSelect` is wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available through the `_selectTrigger` prop.
-::
+| Prop          | Default      | Type                | Description                          |
+| ------------- | ------------ | ------------------- | ------------------------------------ |
+| `select`      | `soft-white` | `{variant}-{color}` | Change the color of the select.      |
+| `select-item` | `gray`       | `{color}`           | Change the color of the select item. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectColor.vue
 ::
 :::
 
-## Disabled
+:read-more{to="/components/button#color" title="Button variant and color section" target="_blank"}
 
-| Prop                   | Description                |
-| ---------------------- | -------------------------- |
-| `disabled`             | Disable the select.        |
-| `_selectItem.disabled` | Disable the specific item. |
+### Size
 
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueSelectDisabled
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueSelectDisabled.vue
-::
-:::
+Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
 
-## Size
-
-| Prop                  | Description           |
-| --------------------- | --------------------- |
-| `size`                | Set the select size.  |
-| `_selectItem.size`    | Set the item size.    |
-| `_selectTrigger.size` | Set the trigger size. |
-
-> 🚀 You can freely adjust the size of the select using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `height` and `width` of the select scale depends on the `select-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
-::
+| Prop                  | Default | Type     | Description                                                  |
+| --------------------- | ------- | -------- | ------------------------------------------------------------ |
+| `size`                | `sm`    | `string` | Adjusts the overall size of the select component.            |
+| `_selectItem.size`    | `sm`    | `string` | Customizes the size of each item within the select dropdown. |
+| `_selectTrigger.size` | `sm`    | `string` | Modifies the size of the select trigger element.             |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueSelectSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectSize.vue
 ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the select.
-
-| Name      | Description       | Props   |
-| --------- | ----------------- | ------- |
-| `trigger` | The trigger slot. | `value` |
-| `value`   | The value slot.   | `value` |
-| `content` | The content slot. | `items` |
-| `label`   | The label slot.   | `label` |
-| `item`    | The item slot.    | `item`  |
-| `group`   | The group slot.   | `items` |
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/select.ts
+| Name      | Props   | Description       |
+| --------- | ------- | ----------------- |
+| `trigger` | `value` | The trigger slot. |
+| `value`   | `value` | The value slot.   |
+| `content` | `items` | The content slot. |
+| `label`   | `label` | The label slot.   |
+| `item`    | `item`  | The item slot.    |
+| `group`   | `items` | The group slot.   |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/select.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/select.ts [shortcuts/select.ts]
 
-### 
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/select.ts [types/select.ts]
+
+## Components
 
 :::CodeGroup
-::code-block{label="Select" preview}
+::div{label="Select.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/Select.vue
 
 ::
-::code-block{label="SelectContent"}
+::div{label="SelectContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectContent.vue
 
 ::
-::code-block{label="SelectGroup"}
+::div{label="SelectGroup.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectGroup.vue
 
 ::
-::code-block{label="SelectItem"}
+::div{label="SelectItem.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectItem.vue
 
 ::
-::code-block{label="SelectItemText"}
+::div{label="SelectItemText.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectItemText.vue
 
 ::
-::code-block{label="SelectLabel"}
+::div{label="SelectLabel.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectLabel.vue
 
 ::
-::code-block{label="SelectRoot"}
+::div{label="SelectRoot.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectRoot.vue
 
 ::
-::code-block{label="SelectScrollDownButton"}
+::div{label="SelectScrollDownButton.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectScrollDownButton.vue
 
 ::
-::code-block{label="SelectScrollUpButton"}
+::div{label="SelectScrollUpButton.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectScrollUpButton.vue
 
 ::
-::code-block{label="SelectSeperator"}
+::div{label="SelectSeperator.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectSeparator.vue
 
 ::
-::code-block{label="SelectTrigger"}
+::div{label="SelectTrigger.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectTrigger.vue
 
 ::
-::code-block{label="SelectValue"}
+::div{label="SelectValue.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectValue.vue
 
 ::

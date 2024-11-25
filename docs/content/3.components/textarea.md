@@ -1,94 +1,97 @@
 ---
-description: 'NTextarea component - used to collect data from the user.'
+description: 'Displays a form textarea or a component that looks like a textarea.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Input.vue
+    target: _blank
 ---
 
-# 🟢 Textarea
+## Examples
 
----
-
-## Basic
-
-You can use [NInput](input) with the `textarea"` type to create a basic textarea.
-
-::alert{type=info}
-This component shares the same API as the [NInput](input) component. So you can use all the same props, variants, slots, events, etc. as the input component.
-::
+### Basic
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTextareaBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaBasic.vue
 ::
 :::
 
-## Rows and Cols
+### Rows and Cols
 
-`rows={value}` - Set the number of rows for the textarea.
-
-`cols={value}` - Set the number of columns for the textarea.
+| Prop   | Default | Type     | Description                                 |
+| ------ | ------- | -------- | ------------------------------------------- |
+| `rows` | -       | `number` | Set the number of rows for the textarea.    |
+| `cols` | -       | `number` | Set the number of columns for the textarea. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTextareaRowsCols
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaRowsCols.vue
 ::
 :::
 
-## Autosizing
+### Autosizing
 
-`autoresize={value}` - Enable autosizing of the textarea, you can also pass a number to set the maximum number of rows.
-
-| Value    | Description                                                                                                             |
-| -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `true`   | The textarea will automatically adjust its height to fit the content.                                                   |
-| `false`  | The textarea will not automatically adjust its height to fit the content.                                               |
-| `number` | The textarea will automatically adjust its height to fit the content, but will not exceed the specified number of rows. |
+| Prop         | Default | Type               | Description                                                                                                                                                               |
+| ------------ | ------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `autoresize` | `false` | `boolean` `number` | Enables textarea autosizing. When `true`, it adjusts height to fit content. When a `number`, it sets the maximum height to fit content, not exceeding the specified rows. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTextareaAutoresize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaAutoresize.vue
 ::
 :::
 
-## Resizing
+### Resizing
 
-`resize="{value}"` - change the resize behavior of the textarea.
+| Prop     | Default | Type                  | Description                                 |
+| -------- | ------- | --------------------- | ------------------------------------------- |
+| `resize` | `none`  | `none` `null` `y` `x` | Change the resize behavior of the textarea. |
 
-| Value  | Description                                                 |
-| ------ | ----------------------------------------------------------- |
-| `none` | The textarea will not be resizable. (Default)               |
-| `null` | The textarea will be resizable vertically and horizontally. |
-| `y`    | The textarea will be resizable vertically.                  |
-| `x`    | The textarea will be resizable horizontally.                |
-
-::alert{type=info}
-The examples below utilize `NFormGroup`. Refer to the [FormGroup](form-group) section for more details.
-::
+| Option | Description                                           |
+| ------ | ----------------------------------------------------- |
+| `none` | Prevents the textarea from being resizable. (Default) |
+| `null` | Enables both vertical and horizontal resizing.        |
+| `y`    | Allows vertical resizing.                             |
+| `x`    | Allows horizontal resizing.                           |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueTextareaResize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaResize.vue
 ::
 :::
 
-## Props
+:read-more{to="/components/form-group" title="form-group component" target="_blank"}
 
-@@@ ../packages/nuxt/src/runtime/types/input.ts
+## Slots
+
+:read-more{to="/components/input#slots" title="Input component slots" target="_blank"}
 
 ## Presets
 
-@@@ ../packages/preset/src/_shortcuts/input.ts
+:read-more{to="/components/input#slots" title="Input component slots" target="_blank"}
 
-## Component
+## Props
 
+@@@ ../packages/nuxt/src/runtime/types/input.ts [types/input.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Input.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/Input.vue
+::
+:::
+

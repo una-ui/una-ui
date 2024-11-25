@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const models = ref([
-  [30],
+  [20],
   [40],
-  [23],
-  [49.40, 70],
-  [10, 50],
+  [60],
+  [80],
+  [100],
 ])
 </script>
 
@@ -12,28 +12,27 @@ const models = ref([
   <div class="flex flex-wrap items-center gap-8">
     <NSlider
       v-model="models[0]"
-      size="xs"
+      size="sm"
     />
 
     <NSlider
       v-model="models[1]"
-      switch="xl"
+      size="md"
     />
 
     <NSlider
       v-model="models[2]"
-      size="3vw"
-      outset
+      size="lg"
     />
 
     <NSlider
       v-model="models[3]"
-      size="1cm"
+      size="xl"
     />
 
     <NSlider
       v-model="models[4]"
-      size="45px"
+      size="2xl"
     />
   </div>
 </template>

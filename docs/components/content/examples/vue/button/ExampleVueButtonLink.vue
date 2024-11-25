@@ -28,7 +28,7 @@
       label="Back to top"
       leading="i-heroicons-arrow-small-up-20-solid"
       active-class="btn-link-lime"
-      to="#button"
+      to="#examples"
     />
   </div>
 </template>

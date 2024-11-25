@@ -1,266 +1,279 @@
 ---
-description: 'NButton component - use to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.'
+description: 'Displays a button or a component that looks like a button.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Button.vue
+    target: _blank
 ---
 
-# 🟢 Button
+## Examples
 
----
+### Basic
 
-## Basic
+| Prop    | Default | Type     | Description              |
+| ------- | ------- | -------- | ------------------------ |
+| `label` | -       | `string` | The label of the button. |
 
-`NButton` - use to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.
-
->You can use `label prop` or `default slot` to set the button text.
+::alert{type="info"}
+You can also use default slot to set the button label. Refer to [slots](#slots) for more information.
+::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonUsage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonUsage.vue
 ::
 :::
 
-## Variants
+### Variant
 
-`btn="{variant}"` - change the variant of the button.
+| Prop  | Default | Type        | Description                |
+| ----- | ------- | ----------- | -------------------------- |
+| `btn` | `solid` | `{variant}` | The variant of the button. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
 | `solid`   | The default variant.        |
 | `outline` | The outline variant.        |
+| `soft`    | The soft variant.           |
 | `ghost`   | The ghost variant.          |
 | `link`    | The link variant.           |
-| `soft`    | The soft variant.           |
 | `text`    | The text variant.           |
 | `~`       | The unstyle or base variant |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonVariant.vue
 ::
 :::
 
-## Color
+### Color
 
-`btn="{variant}-{color}"` - change the color of the button.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
-::
+| Prop  | Default             | Type                | Description              |
+| ----- | ------------------- | ------------------- | ------------------------ |
+| `btn` | `{variant}-primary` | `{variant}-{color}` | The color of the button. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonColor.vue
 ::
 :::
 
-## Size
+### Size
 
-`size="{size}"` - change the size of the button.
+| Prop   | Default | Type     | Description                                  |
+| ------ | ------- | -------- | -------------------------------------------- |
+| `size` | `sm`    | `string` | Allows you to change the size of the button. |
 
-> 🚀 You can freely adjust the size of the button using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+> 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 
-::alert{type="info"}
-The `padding` and `font-size` of the button scale depends on the `size`. If you want to change the `font-size` and `padding` simultaneously, you can always customize it using utility classes.
+::alert{type="warning"}
+The **padding**, **icons**, and **text-size** of the input scale are dynamically adjusted based on the **size** property. To customize the **text-size** and **padding** simultaneously, you can use utility classes.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonSize.vue
 ::
 :::
 
-## Rounded
+### Rounded
 
-`rounded="{size}"` - change the border-radius of the button.
-
-> 🚀 You can freely adjust the size of the rounded using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-You can use any size provided by the [Tailwind CSS](https://tailwindcss.com/docs/border-radius){target="_blank"} border-radius scale, the default is `md`. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
-::
+| Prop      | Default | Type     | Description                             |
+| --------- | ------- | -------- | --------------------------------------- |
+| `rounded` | `md`    | `string` | Set the button to have rounded corners. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonRounded
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonRounded.vue
 ::
 :::
 
-## Square
+### Square
 
-`square` - to force `width` and `height` to have the same size, usefull for icon buttons.
-
-> 🚀 You can freely adjust the square of the button using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-| Props  | Type               | Default | Description                                                                                                            |
-| ------ | ------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| square | `string` `boolean` | `2.5em` | Set the button to have the same width and height. If you provide empty value or `true`, it will use the default value. |
+| Prop     | Default | Type                | Description                                                                                                      |
+| -------- | ------- | ------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `square` | `true`  | `boolean`, `string` | Set the button to have the same width and height. If you provide empty value or `true`, it will provide `2.5em`. |
 
 ::alert{type="info"}
-You can use any value provided by the [Tailwind CSS](https://tailwindcss.com/docs/size){target="_blank"}. You can also add your own sizes to the scale through the [Configuration section](/getting-started/configuration).
+You can also provide a custom value to the `square` prop to set the width and height of the button, e.g., `square="3em"`.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonSquare
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonSquare.vue
 ::
 :::
 
-## Icon
+### Icon
 
-`icon` - change label text to icon.
+| Prop       | Default | Type      | Description                      |
+| ---------- | ------- | --------- | -------------------------------- |
+| `icon`     | -       | `boolean` | Force the `label` to be an icon. |
+| `leading`  | -       | `string`  | Display leading icon.            |
+| `trailing` | -       | `string`  | Display trailing icon.           |
 
-`leading="{icon}"` - add a leading icon to the button.
-
-`trailing="{icon}"` - add a trailing icon to the button.
-
-
-::alert{type="info"}
-By default we use `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/getting-started/configuration) for more information.
-::
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonIcon.vue
 ::
 :::
 
-## Link
+### Link
 
-`to` - add a link to the button. 
+| Prop | Default | Type     | Description              |
+| ---- | ------- | -------- | ------------------------ |
+| `to` | -       | `string` | The link to navigate to. |
 
-::alert{type="info"}
-Since we use `NuxtLink` for the link, you can use any `NuxtLink` props such as `prefetch`, `target`, `activeClass`, etc. Refer to [NuxtLink](https://nuxt.com/docs/api/components/nuxt-link#props){target="_blank"} for more information.
-::
+:read-more{to="/components/link" title="Link component" target="_blank"}
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonLink
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLink.vue
 ::
 :::
 
+### Block
 
-## Block
-
-<!-- @unocss-skip-start -->
-`btn="block"` - add block style to the button.
-<!-- @unocss-skip-end -->
+| Prop    | Default | Type      | Description                        |
+| ------- | ------- | --------- | ---------------------------------- |
+| `block` | -       | `boolean` | Set the button to have full width. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonBlock
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonBlock.vue
 ::
 :::
 
-## Disabled
+### Disabled
 
-`disabled` - add a disabled state to the button.
+| Prop      | Default | Type      | Description              |
+| --------- | ------- | --------- | ------------------------ |
+| `disabled` | -       | `boolean` | Set the button to disabled. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueButtonDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonDisabled.vue
-::
-:::
-
-## Loading
-
-By default we trigger the disabled state when the button is loading.
-
-`loading` - add a loading state to the button.
-
-`loading-placement` - change the loading icon placement, default is `leading`. options are `leading`, `trailing` and `label`.
-
-
-::alert{type="info"}
-You can use `loading` with `icon` and `label` at the same time.
-::
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueButtonLoading
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/button/ExampleVueButtonLoading.vue
-::
-:::
-
-## Slots
-
-### Default
-`#default` - set the button label, refer to [label](#usage) for the example.
-
-### Leading
-
-`#leading` - add a leading icon to the button.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueButtonLeadingSlot
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/button/ExampleVueButtonLeadingSlot.vue
-::
-:::
-
-### Trailing
-
-`#tailing` - add a trailing icon to the button.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueButtonTrailingSlot
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/button/ExampleVueButtonTrailingSlot.vue
 ::
 :::
 
 ### Loading
 
-`#loading` - add a loading icon to the button.
+| Prop               | Default | Type      | Description                        |
+| ------------------ | ------- | --------- | ---------------------------------- |
+| `loading`          | -       | `boolean` | Set the button to loading state.   |
+| `loading-placement` | `leading` | `leading`, `trailing`, `label` | Set the loading icon placement. |
+
+::alert{type="info"}
+  By default, the disabled state is triggered when the button is loading.
+::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
+  :ExampleVueButtonLoading
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/button/ExampleVueButtonLoading.vue
+::
+:::
+
+### Slots
+
+#### Default
+
+| Name      | Props | Description       |
+| --------- | ----- | ----------------- |
+| `default` | -     | The button label. |
+
+#### Leading
+
+| Name      | Props | Description       |
+| --------- | ----- | ----------------- |
+| `leading` | -     | The leading icon. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+  :ExampleVueButtonLeadingSlot
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/button/ExampleVueButtonLeadingSlot.vue
+::
+:::
+
+#### Trailing
+
+| Name       | Props | Description        |
+| ---------- | ----- | ------------------ |
+| `trailing` | -     | The trailing icon. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+  :ExampleVueButtonTrailingSlot
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/button/ExampleVueButtonTrailingSlot.vue
+::
+:::
+
+#### Loading
+
+| Name       | Props | Description        |
+| ---------- | ----- | ------------------ |
+| `loading`  | -     | The loading icon.  |
+
+:::CodeGroup
+::div{label="Preview" preview}
   :ExampleVueButtonLoadingSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLoadingSlot.vue
 ::
 :::
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/button.ts
-
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/btn.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/btn.ts [shortcuts/btn.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/button.ts [types/button.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Button.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Button.vue
+::
+:::

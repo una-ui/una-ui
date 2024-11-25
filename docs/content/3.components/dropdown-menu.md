@@ -1,189 +1,164 @@
 ---
-description: 'NDropdownMenu component - used to display a list of actions or options.'
+description: 'Displays a menu to the user — such as a set of actions or functions — triggered by a button.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenu.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/dropdown-menu
+    target: _blank
 ---
 
-# 🟢 Dropdown Menu
+## Examples
 
----
+### Basic
 
-::list{type="primary"}
-- Can be controlled or uncontrolled.
-- Supports submenus with configurable reading direction.
-- Supports items, labels, groups of items.
-- Supports checkable items (single or multiple) with optional indeterminate state.
-- Supports modal and non-modal modes.
-- Customize side, alignment, offsets, collision handling.
-- Optionally render a pointing arrow.
-- Focus is fully managed.
-- Full keyboard navigation.
-- Typeahead support.
-- Dismissing and layering behavior is highly customizable.
-::
-
----
-
-## Basic
-
-`NDropdownMenu` is a component that can be used to display a list of actions or options.
-
-| Prop    | Type                      | Default     | Description                                |
-| ------- | ------------------------- | ----------- | ------------------------------------------ |
-| `items` | `DropdownMenuItemProps[]` | `[]`        | The items to display in the dropdown-menu. |
-| `label` | `string`                  | `undefined` | The label to display in the dropdown-menu. |
-
-::alert{type="info"}
-All the props available in the [Radix Vue Dropdown Menu](https://www.radix-vue.com/components/dropdown-menu) are also
-available via its subcomponents' prop names, e.g., `_dropdown-menu-item`, `_dropdown-menu-trigger`, etc. refer to
-[DropdownMenu Props](#props) for more details.
-
-::
+| Prop          | Default | Type                      | Description                                                                                                                                                      |
+| ------------- | ------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `items`       | `[]`    | `DropdownMenuItemProps[]` | The items to display in the dropdown-menu.                                                                                                                       |
+| `label`       | -       | `string`                  | The label to display in the dropdown-menu.                                                                                                                       |
+| `defaultOpen` | `false` | `boolean`                 | The open state of the dropdown menu when it is initially rendered. Use when you do not need to control its open state.                                           |
+| `dir`         | `ltr`   | `ltr`, `rtl`              | The reading direction of the combobox when applicable. If omitted, inherits globally from ConfigProvider or assumes LTR (left-to-right) reading mode.            |
+| `modal`       | `true`  | `boolean`                 | The modality of the dropdown menu. When set to true, interaction with outside elements will be disabled and only menu content will be visible to screen readers. |
+| `open`        | `false` | `boolean`                 | The controlled open state of the menu. Can be used as `v-model:open`.                                                                                            |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueDropdownMenuBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuBasic.vue
 ::
 :::
 
-## Inset
+:read-more{to="https://www.radix-vue.com/components/dropdown-menu#root" title="Radix Dropdown Menu Root API." target="_blank"}
 
-`inset` prop is used to set the dropdown-menu to be inset.
+### Inset
+
+| Prop    | Default | Type      | Description                        |
+| ------- | ------- | --------- | ---------------------------------- |
+| `inset` | `false` | `boolean` | Set the dropdown-menu to be inset. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueDropdownMenuInset
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuInset.vue
 ::
 :::
 
-## Variant and Color
+### Variant and Color
 
-`dropdown-menu="{variant}-{color}"` is used to set the variant of the dropdown-menu. The default variant is `soft-black`.
-
-`dropdown-menu-item="{color}"` is used to set the variant of the dropdown-menu item. The default variant is `soft-black`.
-
-| Prop                                     | Description                                                             |
-| ---------------------------------------- | ----------------------------------------------------------------------- |
-| `dropdown-menu`                          | Set the dropdown-menu variant and color.                                |
-| `_dropdown-menu-trigger.dropdown-menu`   | Set the dropdown-menu variant and color via `_dropdown-menu-trigger`.   |
-| `dropdown-menu-item`                     | Set the dropdown-menu item variant and color.                           |
-| `_dropdown-menu-item.dropdown-menu-item` | Set the dropdown-menu item variant and color via `_dropdown-menu-item`. |
-
-::alert{type="info"}
-`NDropdownMenuTrigger` is wrapped around the [NButton](button) component. This means that all the props and slots of
-`NButton` are available to use or through `_dropdown-menu-trigger` prop.
-::
+| Prop                                     | Default       | Type                | Description                                    |
+| ---------------------------------------- | ------------- | ------------------- | ---------------------------------------------- |
+| `dropdown-menu`                          | `solid-white` | `{variant}-{color}` | Change the color of the dropdown-menu.         |
+| `dropdown-menu-item`                     | `gray`        | `{color}`           | Change the color of the dropdown-menu item.    |
+| `_dropdown-menu-trigger.dropdown-menu`   | `solid-white` | `{variant}-{color}` | Change the color of the dropdown-menu trigger. |
+| `_dropdown-menu-item.dropdown-menu-item` | `gray`        | `{color}`           | Change the color of the dropdown-menu item.    |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueDropdownMenuVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuVariant.vue
 ::
 :::
 
-## **Size**
+:read-more{to="/components/button#color" title="Button variant and color section" target="_blank"}
 
-| Prop                        | Description                         |
-| --------------------------- | ----------------------------------- |
-| `size`                      | Set the dropdown-menu general size. |
-| `_dropdownMenuTrigger.size` | Set the trigger size only.          |
-| `_dropdownMenuItem.size`    | Set the item size only.             |
-| `_dropdownMenuLabel.size`   | Set the menu label size only.       |
+### Size
 
-> 🚀 You can freely adjust the size of the dropdown-menu using any size imaginable. No limits exist, and you can use
-`breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to
-change size based on input state and more.
+Adjust the dropdown-menu size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
 
-::alert{type="info"}
-The `height` and `width` of the dropdown-menu scale depends on the `dropdown-menu-size`. If you want to change the `height` and
-`width` simultaneously, you can always customize it using utility classes.
-::
+| Prop                        | Default | Type     | Description                                                         |
+| --------------------------- | ------- | -------- | ------------------------------------------------------------------- |
+| `size`                      | `sm`    | `string` | Adjusts the overall size of the dropdown-menu component.            |
+| `_dropdownMenuItem.size`    | `sm`    | `string` | Customizes the size of each item within the dropdown-menu dropdown. |
+| `_dropdownMenuTrigger.size` | `sm`    | `string` | Modifies the size of the dropdown-menu trigger element.             |
+| `_dropdownMenuLabel.size`   | `sm`    | `string` | Adjusts the size of the dropdown-menu label.                        |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
 :ExampleVueDropdownMenuSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuSize.vue
 ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the dropdown-menu.
-
-| Name          | Description           | Props   |
-| ------------- | --------------------- | ------- |
-| `trigger`     | The trigger slot.     | -       |
-| `item`        | The item slot.        | `item`  |
-| `sub-trigger` | The sub-trigger slot. | -       |
-| `content`     | The content slot.     | `items` |
-| `label`       | The label slot.       | `label` |
-| `group`       | The group slot.       | `items` |
+| Name          | Props   | Description           |
+| ------------- | ------- | --------------------- |
+| `trigger`     | -       | The trigger slot.     |
+| `item`        | `item`  | The item slot.        |
+| `sub-trigger` | -       | The sub-trigger slot. |
+| `content`     | `items` | The content slot.     |
+| `label`       | `label` | The label slot.       |
+| `group`       | `items` | The group slot.       |
 
 :::CodeGroup
-::code-block{label="Preview"}
+::div{label="Preview"}
 :ExampleVueDropdownMenuSlots
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/dropdown-menu/ExampleVueDropdownMenuSlots.vue
-
 ::
 :::
 
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/dropdown-menu.ts [shortcuts/dropdown-menu.ts]
+
+
 ## Props
 
-@@@ ../packages/nuxt/src/runtime/types/dropdown-menu.ts
+@@@ ../packages/nuxt/src/runtime/types/dropdown-menu.ts [types/dropdown-menu.ts]
 
-## Presets
-@@@ ../packages/preset/src/_shortcuts/dropdown-menu.ts
 
-## Component
+## Components
 
 :::CodeGroup
-::code-block{label="DropdownMenu" preview}
+::div{label="DropdownMenu.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenu.vue
 
 ::
-::code-block{label="DropdownMenuTrigger"}
+::div{label="DropdownMenuTrigger.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuTrigger.vue
 
 ::
-::code-block{label="DropdownMenuItem"}
+::div{label="DropdownMenuItem.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuItem.vue
 
 ::
-::code-block{label="DropdownMenuGroup"}
+::div{label="DropdownMenuGroup.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuGroup.vue
 
 ::
-::code-block{label="DropdownMenuLabel"}
+::div{label="DropdownMenuLabel.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuLabel.vue
 
 ::
-::code-block{label="DropdownMenuSeparator"}
+::div{label="DropdownMenuSeparator.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSeparator.vue
 
 ::
-::code-block{label="DropdownMenuContent"}
+::div{label="DropdownMenuContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuContent.vue
 
 ::
-::code-block{label="DropdownMenuSub"}
+::div{label="DropdownMenuSub.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSub.vue
 
 ::
-::code-block{label="DropdownMenuSubTrigger"}
+::div{label="DropdownMenuSubTrigger"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSubTrigger.vue
 
 ::
-::code-block{label="DropdownMenuSubContent"}
+::div{label="DropdownMenuSubContent"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dropdown-menu/DropdownMenuSubContent.vue
 
 ::

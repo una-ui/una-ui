@@ -1,143 +1,152 @@
 ---
-description: 'NIndicator component - used to display a basic indicator with or without a label.'
+description: 'Displays an indicator that can be used to show the status of a task or a component.'
+badges:
+  - value: Source
+    icon: lucide:code
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Indicator.vue
+    target: _blank
 ---
 
-# 🟢 Indicator
+## Examples
 
----
-
-## Basic
-
-`NIndicator` is a component that can be used to display a basic indicator with or without a label.
+### Basic
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorBasic.vue
 ::
 :::
 
-## Variant
+### Label
 
-`indicator="{variant}"` - change the variant of the indicator.
+| Prop    | Default | Type     | Description                 |
+| ------- | ------- | -------- | --------------------------- |
+| `label` | -       | `string` | The label of the indicator. |
 
-::alert{type="info"}
-For the moment, only the `solid` variant is available. You can add your own variant through configuration.
+:::CodeGroup
+::div{label="Preview" preview}
+  :ExampleVueIndicatorLabel
 ::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorLabel.vue
+::
+:::
+
+### Variant
+
+| Prop        | Default | Type        | Description                   |
+| ----------- | ------- | ----------- | ----------------------------- |
+| `indicator` | `solid` | `{variant}` | The variant of the indicator. |
 
 | Variant | Description                 |
 | ------- | --------------------------- |
 | `solid` | The default variant.        |
 | `~`     | The unstyle or base variant |
 
-## Color
+### Color
 
-`indicator="{variant}-{color}"` - change the color of the indicator.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
-::
+| Prop        | Default             | Type                | Description                 |
+| ----------- | ------------------- | ------------------- | --------------------------- |
+| `indicator` | `{variant}-primary` | `{variant}-{color}` | The color of the indicator. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorColor.vue
 ::
 :::
 
-## Label
+### Ping
 
-`label="{label}"` - add label to the indicator.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueIndicatorLabel
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorLabel.vue
-::
-:::
-
-## Ping
-
-`ping` - add a ping animation to the indicator.
+| Prop   | Default | Type      | Description                |
+| ------ | ------- | --------- | -------------------------- |
+| `ping` | `false` | `boolean` | Enable the ping animation. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorPing
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorPing.vue
 ::
 :::
 
-## Size
+### Size
 
-`indicator="{size}"` - change the size of the indicator.
+| Prop   | Default | Type     | Description                |
+| ------ | ------- | -------- | -------------------------- |
+| `size` | `md`    | `string` | The size of the indicator. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorSize.vue
 ::
 :::
 
-## Visibility
+### Visibility
 
-`visible` - change the visibility of the indicator.
+| Prop      | Default | Type      | Description                 |
+| --------- | ------- | --------- | --------------------------- |
+| `visible` | `true`  | `boolean` | Show or hide the indicator. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorVisibility
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorVisibility.vue
 ::
 :::
 
-## Placement
+### Placement
 
-`indicator="{placement}"` - change the placement of the indicator.
+| Prop        | Default     | Type          | Description                    |
+| ----------- | ----------- | ------------- | ------------------------------ |
+| `indicator` | `top-right` | `{placement}` | The position of the indicator. |
 
 | Placement      | Description                      |
 | -------------- | -------------------------------- |
-| `top-right`    | The default placement.           |
+| `top-right`    | Position indicator top right.    |
 | `top-left`     | Position indicator top left.     |
 | `bottom-right` | Position indicator bottom right. |
 | `bottom-left`  | Position indicator bottom left.  |
 
-::alert{type="info"}
-You can add your own placement through configuration. see [Configuration section](/getting-started/configuration).
-::
-
 :::CodeGroup
-::code-block{label="Preview" preview}
+::div{label="Preview" preview}
   :ExampleVueIndicatorPlacement
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorPlacement.vue
 ::
 :::
 
 ## Slots
 
-| Name        | Description                                                   |
-| ----------- | ------------------------------------------------------------- |
-| `default`   | The content of the indicator.                                 |
-| `indicator` | The entire indicator, this will reset including the position. |
-| `label`     | The label of the indicator.                                   |
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/indicator.ts
+| Name        | Props | Description                                                   |
+| ----------- | ----- | ------------------------------------------------------------- |
+| `default`   | -     | The content of the indicator.                                 |
+| `indicator` | -     | The entire indicator, this will reset including the position. |
+| `label`     | -     | The label of the indicator.                                   |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/indicator.ts
+@@@ ../packages/preset/src/_shortcuts/indicator.ts [shortcuts/indicator.ts]
 
-## Component
+## Props
+@@@ ../packages/nuxt/src/runtime/types/indicator.ts [types/indicator.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Indicator.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Indicator.vue
+::
+:::
+

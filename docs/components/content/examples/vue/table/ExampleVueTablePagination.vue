@@ -3,7 +3,7 @@ import type { ColumnDef, Table } from '@tanstack/vue-table'
 import type { Person } from './makeData'
 import makeData from './makeData'
 
-const data = ref(makeData(100))
+const data = ref(makeData(50))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -45,14 +45,14 @@ const table = useTemplateRef<Table<Person>>('table')
     <!-- table -->
     <NTable
       ref="table"
-      v-model:pagination="pagination"
+      :pagination="pagination"
       :columns
       :data
     />
 
     <!-- pagination -->
     <div
-      class="flex items-center justify-between px-2"
+      class="flex flex-wrap items-center justify-between gap-4 overflow-auto px-2"
     >
       <div
         class="flex items-center justify-center text-sm font-medium"

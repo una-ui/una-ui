@@ -1,2 +1,3 @@
-icon: radix-icons:codesandbox-logo
+icon: i-radix-icons-codesandbox-logo
 title: Components
+navigation.redirect: /components/accordion
