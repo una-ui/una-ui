@@ -9,6 +9,7 @@ const props = defineProps<NDialogOverlayProps>()
 <template>
   <DialogOverlay
     :class="cn(
+      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
       !props.scrollable ? 'dialog-overlay' : 'dialog-scroll-overlay',
       props.una?.dialogOverlay,
       props.class,

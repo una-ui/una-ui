@@ -9,7 +9,7 @@ const isVisible = ref(true)
     </NIndicator>
 
     <NSwitch
-      v-model="isVisible"
+      v-model:checked="isVisible"
     />
   </div>
 </template>

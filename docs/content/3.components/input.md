@@ -1,14 +1,24 @@
 ---
-description: 'NInput component - used to collect data from the user.'
+description: 'Displays a form input field or a component that looks like an input field.'
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Input.vue
+    target: _blank
 ---
 
-## Basic
+## Examples
 
-use the `NInput` tag to create a basic input.
+### Basic
 
-::alert{type="info"}
-By default we automatically generate an `id` for the input for accessibility purposes. If you want to override this behavior, you can define the `id` attribute manually.
-::
+| Prop         | Default      | Type                                                                      | Description                                                                                                  |
+| ------------ | ------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `type`       | -            | `text`, `password`, `email`, `number`, `tel`, `url`, `search`, `textarea` | The type of input field.                                                                                     |
+| `reverse`    | `false`      | `boolean`                                                                 | Swap the position of the leading and trailing icons.                                                         |
+| `modelValue` | -            | `any`                                                                     | Value of the input. Can be a string or a number.                                                             |
+| `id`         | `randomId()` | `string`                                                                  | Manually set the id attribute. By default, the id attribute is generated randomly for accessibility reasons. |
+| `readonly`   | `false`      | `boolean`                                                                 | Make the input readonly.                                                                                     |
+| `disabled`   | `false`      | `boolean`                                                                 | Disable the input.                                                                                           |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -19,9 +29,11 @@ By default we automatically generate an `id` for the input for accessibility pur
 ::
 :::
 
-## Variants
+### Variant
 
-`input="{variant}"` - change the variant of the input outline.
+| Prop    | Default   | Type        | Description               |
+| ------- | --------- | ----------- | ------------------------- |
+| `input` | `outline` | `{variant}` | The variant of the input. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
@@ -38,13 +50,11 @@ By default we automatically generate an `id` for the input for accessibility pur
 ::
 :::
 
-## Color
+### Color
 
-`input="{variant}-{color}"` - change the color of the input outline.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+| Prop    | Default             | Type                | Description             |
+| ------- | ------------------- | ------------------- | ----------------------- |
+| `input` | `{variant}-primary` | `{variant}-{color}` | The color of the input. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -55,14 +65,16 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Size
+### Size
 
-`size="{size}"` - change the size of the input.
+| Prop   | Default | Type     | Description                                 |
+| ------ | ------- | -------- | ------------------------------------------- |
+| `size` | `sm`    | `string` | Allows you to change the size of the input. |
 
-> 🚀 You can freely adjust the size of the input using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+> 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 
-::alert{type="info"}
-The `padding`, `icons`, and `text-size` of the input scale depends on the `size`. If you want to change the `text-size` and `padding` simultaneously, you can always customize it using utility classes.
+::alert{type="warning"}
+The **padding**, **icons**, and **text-size** of the input scale are dynamically adjusted based on the **size** property. To customize the **text-size** and **padding** simultaneously, you can use utility classes.
 ::
 
 :::CodeGroup
@@ -74,15 +86,12 @@ The `padding`, `icons`, and `text-size` of the input scale depends on the `size`
 ::
 :::
 
-## Icon
+### Leading and Trailing Icons
 
-`trailing="{icon}"` - add a trailing icon to the input outline.
-
-`leading="{icon}"` - add a leading icon to the input outline.
-
-::alert{type="info"}
-By default we use `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/#getting-started/configuration) for more information.
-::
+| Prop       | Default | Type     | Description            |
+| ---------- | ------- | -------- | ---------------------- |
+| `leading`  | -       | `string` | Display leading icon.  |
+| `trailing` | -       | `string` | Display trailing icon. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -93,9 +102,13 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 :::
 
-## Loading
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
 
-`loading` - add a loading icon to the input outline.
+### Loading
+
+| Prop      | Default | Type      | Description            |
+| --------- | ------- | --------- | ---------------------- |
+| `loading` | -       | `boolean` | Display loading state. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -106,9 +119,11 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 :::
 
-## Status
+### Status
 
-`status="{status}"` - change the status of the input outline.
+| Prop     | Default | Type                                  | Description                                      |
+| -------- | ------- | ------------------------------------- | ------------------------------------------------ |
+| `status` | -       | `info`, `success`, `warning`, `error` | Update the input status. Useful for validations. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -119,27 +134,17 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 :::
 
-`disabled` - disable the input.
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
 
-`readonly` - make the input readonly.
+### Events
 
-:::CodeGroup
-::div{label="Preview" preview}
-  :ExampleVueInputDisabledReadonly
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/input/ExampleVueInputDisabledReadonly.vue
-::
-:::
-
-## Events
-
-`@leading` - emit an event when the leading icon is clicked.
-
-`@trailing` - emit an event when the trailing icon is clicked.
+| Event       | Description                                      |
+| ----------- | ------------------------------------------------ |
+| `@leading`  | Emit an event when the leading icon is clicked.  |
+| `@trailing` | Emit an event when the trailing icon is clicked. |
 
 ::alert{type="warning"}
-By default, the `leading` and `trailing` are wrapped around `pointer-events-none` class, if you want to remove this behavior, you can use `pointer-events-auto` class.
+Leading and trailing icons are wrapped in **pointer-events-none** by default. Use **pointer-events-auto** to remove this behavior.
 ::
 
 :::CodeGroup
@@ -153,9 +158,15 @@ By default, the `leading` and `trailing` are wrapped around `pointer-events-none
 
 ## Slots
 
+| Name       | Props | Description        |
+| ---------- | ----- | ------------------ |
+| `default`  | -     | The content slot.  |
+| `leading`  | -     | The leading slot.  |
+| `trailing` | -     | The trailing slot. |
+
 ### Leading
 
-`#leading` - add a leading slot to the input.
+Add a leading slot to the input.
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -168,7 +179,7 @@ By default, the `leading` and `trailing` are wrapped around `pointer-events-none
 
 ### Trailing
 
-`#trailing` - add a trailing slot to the input.
+Aad a trailing slot to the input.
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -179,14 +190,19 @@ By default, the `leading` and `trailing` are wrapped around `pointer-events-none
 ::
 :::
 
-## Props
-
-@@@ ../packages/nuxt/src/runtime/types/input.ts
-
 ## Presets
 
-@@@ ../packages/preset/src/_shortcuts/input.ts
+@@@ ../packages/preset/src/_shortcuts/input.ts [shortcuts/input.ts]
 
-## Component
+## Props
 
+@@@ ../packages/nuxt/src/runtime/types/input.ts [types/input.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Input.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/Input.vue
+
+::
+:::

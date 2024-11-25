@@ -2,10 +2,11 @@
 description: 'A powerful, responsive table and datagrids built using Tanstack'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/data/table/Table.vue
     target: _blank
   - value: API reference
+    icon: /icons/radix-vue.svg
     to: https://tanstack.com/table/latest/docs/introduction
     target: _blank
 ---
@@ -322,7 +323,7 @@ Allows you to fetch data from the server. This is useful when you want to fetch 
 
 ### Customization
 
-Allows you to customize the table style using the `una` prop.
+Configure the progress using the `una` prop and utility classes.
 
 | Prop               | Default | Type     | Description           |
 | ------------------ | ------- | -------- | --------------------- |

@@ -1,6 +1,13 @@
 ---
 description: 'NRadio component - use to create a radio input.'
+navBadges:
+  - value: Deprecated
+    type: warning
 ---
+
+::alert{type="warning"}
+This component is deprecated and will be removed in the next major release.
+::
 
 ## Basic
 
@@ -143,11 +150,17 @@ You can use the following rules to customize the radio if it is checked.
 | `label` | Use this slot to customize the label of the radio.                    |
 | `icon`  | Use this slot to customize the icon of the radio when it is `checked` |
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/radio.ts
-
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/radio.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/radio.ts [shortcuts/radio.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/radio.ts [types/radio.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Radio.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/Radio.vue
+::

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-start">
+  <div class="flex items-start overflow-auto">
     <NPagination
       :total="100"
       :show-first="false"

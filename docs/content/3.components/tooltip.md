@@ -2,10 +2,11 @@
 description: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/tooltip/Tooltip.vue
     target: _blank
   - value: API reference
+    icon: /icons/radix-vue.svg
     to: https://www.radix-vue.com/components/tooltip
     target: _blank
 ---
@@ -14,10 +15,18 @@ badges:
 
 ### Basic
 
-| Prop       | Default | Type      | Description                 |
-| ---------- | ------- | --------- | --------------------------- |
-| `content`  | -       | `string`  | Set the tooltip content.    |
-| `disabled` | -       | `boolean` | Set to disable the tooltip. |
+| Prop                      | Default | Type      | Description                                                                                                                                                                                                                   |
+| ------------------------- | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `content`                 | -       | `string`  | Set the tooltip content.                                                                                                                                                                                                      |
+| `defaultOpen`             | `false` | `boolean` | The open state of the tooltip when it is initially rendered. Use when you do not need to control its open state.                                                                                                              |
+| `delayDuration`           | -       | `number`  | Override the duration given to the Provider to customize the open delay for a specific tooltip.                                                                                                                               |
+| `disableClosingTrigger`   | -       | `boolean` | When true, clicking on trigger will not close the content.                                                                                                                                                                    |
+| `disabled`                | -       | `boolean` | When true, disable tooltip                                                                   a                                                                                                                                |
+| `disableHoverableContent` | -       | `boolean` | Prevents Tooltip.Content from remaining open when hovering. Disabling this has accessibility consequences. Inherits from Tooltip.Provider.                                                                                    |
+| `ignoreNonKeyboardFocus`  | -       | `boolean` | Prevent the tooltip from opening if the focus did not come from the keyboard by matching against the :focus-visible selector. This is useful if you want to avoid opening it when switching browser tabs or closing a dialog. |
+| `open`                    | `false` | `boolean` | The controlled open state of the tooltip.                                                                                                                                                                                     |
+
+:read-more{to="https://www.radix-vue.com/components/tooltip#root" title="Radix Tooltip Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -80,31 +89,6 @@ Configure the tooltip provider by using the `_tooltipProvider` prop.
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipProvider.vue
-::
-:::
-
-### Root
-
-Configure the tooltip root using the `_tooltipRoot` prop.
-
-| Prop                      | Default | Type      | Description                                                                                                                                                                                                                   |
-| ------------------------- | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `defaultOpen`             | `false` | `boolean` | The open state of the tooltip when it is initially rendered. Use when you do not need to control its open state.                                                                                                              |
-| `delayDuration`           | -       | `number`  | Override the duration given to the Provider to customize the open delay for a specific tooltip.                                                                                                                               |
-| `disableClosingTrigger`   | -       | `boolean` | When true, clicking on trigger will not close the content.                                                                                                                                                                    |
-| `disabled`                | -       | `boolean` | When true, disable tooltip                                                                   a                                                                                                                                |
-| `disableHoverableContent` | -       | `boolean` | Prevents Tooltip.Content from remaining open when hovering. Disabling this has accessibility consequences. Inherits from Tooltip.Provider.                                                                                    |
-| `ignoreNonKeyboardFocus`  | -       | `boolean` | Prevent the tooltip from opening if the focus did not come from the keyboard by matching against the :focus-visible selector. This is useful if you want to avoid opening it when switching browser tabs or closing a dialog. |
-| `open`                    | `false` | `boolean` | The controlled open state of the tooltip.                                                                                                                                                                                     |
-
-:read-more{to="https://www.radix-vue.com/components/tooltip#root" title="Radix Tooltip Root API." target="_blank"}
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueTooltipRoot
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipRoot.vue
 ::
 :::
 

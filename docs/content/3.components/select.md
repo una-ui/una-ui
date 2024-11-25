@@ -2,10 +2,11 @@
 description: 'Displays a list of options for the user to pick from—triggered by a button.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/select/Select.vue
     target: _blank
   - value: API reference
+    icon: /icons/radix-vue.svg
     to: https://www.radix-vue.com/components/select
     target: _blank
 ---
@@ -37,16 +38,18 @@ badges:
 ::
 :::
 
-## Nested 
+### Group Items
 
-Enable support for nested items.
+| Prop         | Default | Type      | Description                     |
+| ------------ | ------- | --------- | ------------------------------- |
+| `groupItems` | -       | `boolean` | Enable support for group items. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectNested
+  :ExampleVueSelectGroupItems
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueSelectNested.vue
+@@@ ./components/content/examples/vue/select/ExampleVueSelectGroupItems.vue
 ::
 :::
 
@@ -68,37 +71,29 @@ Control the attribute value to be displayed in the select and the item.
 ::
 :::
 
-### Label
+### Form Group
 
-> You can use the `NFormGroup` component to create a label for the select.
-
-::alert{type="info"}
-  Read more about the `NFormGroup` component [here](form-group).
-::
+You can use the `select` component inside the `form-group` component, or you can use it with the `label` component.
 
 :::CodeGroup
 ::div{label="Preview" preview}
   :ExampleVueSelectLabel
 ::
- ::div{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectLabel.vue
 ::
 :::
 
+:read-more{to="/components/form-group" title="Form-group component" target="_blank"}
+
+:read-more{to="/components/label" title="Label component" target="_blank"}
+
 ### Variant and Color
 
-`select="{variant}-{color}"` is used to set the variant of the select. The default variant is `soft-black`.
-
-`select-item="{color}"` is used to set the variant of the select item. The default variant is `soft-black`.
-
-| Prop                    | Description                                            |
-| ----------------------- | ------------------------------------------------------ |
-| `select`                | Set the select variant and color.                      |
-| `_selectTrigger.select` | Set the select variant and color via `_selectTrigger`. |
-
-::alert{type="info"}
-`NSelect` is wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available through the `_selectTrigger` prop.
-::
+| Prop          | Default      | Type                | Description                          |
+| ------------- | ------------ | ------------------- | ------------------------------------ |
+| `select`      | `soft-white` | `{variant}-{color}` | Change the color of the select.      |
+| `select-item` | `gray`       | `{color}`           | Change the color of the select item. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -109,29 +104,17 @@ Control the attribute value to be displayed in the select and the item.
 ::
 :::
 
-### Disabled
-
-| Prop                   | Default | Type      | Description                |
-| ---------------------- | ------- | --------- | -------------------------- |
-| `disabled`             | -       | `boolean` | Disable the select.        |
-| `_selectItem.disabled` | -       | `boolean` | Disable the specific item. |
-
-:::CodeGroup
-::div{label="Preview" preview}
-  :ExampleVueSelectDisabled
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueSelectDisabled.vue
-::
-:::
+:read-more{to="/components/button#color" title="Button variant and color section" target="_blank"}
 
 ### Size
 
-| Prop                  | Default | Type     | Description                   |
-| --------------------- | ------- | -------- | ----------------------------- |
-| `size`                | `sm`    | `string` | Set the select general size.  |
-| `_selectItem.size`    | `sm`    | `string` | Set the item general size.    |
-| `_selectTrigger.size` | `sm`    | `string` | Set the trigger general size. |
+Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
+
+| Prop                  | Default | Type     | Description                                                  |
+| --------------------- | ------- | -------- | ------------------------------------------------------------ |
+| `size`                | `sm`    | `string` | Adjusts the overall size of the select component.            |
+| `_selectItem.size`    | `sm`    | `string` | Customizes the size of each item within the select dropdown. |
+| `_selectTrigger.size` | `sm`    | `string` | Modifies the size of the select trigger element.             |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -144,14 +127,14 @@ Control the attribute value to be displayed in the select and the item.
 
 ### Slots
 
-| Name      | Props | Description       |
-| --------- | ----- | ----------------- |
-| `trigger` | -     | The trigger slot. |
-| `value`   | -     | The value slot.   |
-| `content` | -     | The content slot. |
-| `label`   | -     | The label slot.   |
-| `item`    | -     | The item slot.    |
-| `group`   | -     | The group slot.   |
+| Name      | Props   | Description       |
+| --------- | ------- | ----------------- |
+| `trigger` | `value` | The trigger slot. |
+| `value`   | `value` | The value slot.   |
+| `content` | `items` | The content slot. |
+| `label`   | `label` | The label slot.   |
+| `item`    | `item`  | The item slot.    |
+| `group`   | `items` | The group slot.   |
 
 ## Presets
 

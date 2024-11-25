@@ -2,10 +2,11 @@
 description: 'An input where the user selects a value from within a given range.'
 badges:
   - value: Source
-    icon: lucide:code
+    icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Slider.vue
     target: _blank
   - value: API reference
+    icon: /icons/radix-vue.svg
     to: https://www.radix-vue.com/components/slider
     target: _blank
 ---
@@ -123,7 +124,7 @@ Adjust the slider size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 ### Customization
 
-Allows you to customize the switch style using the `una` prop.
+Configure the progress using the `una` prop and utility classes.
 
 :::CodeGroup
   ::div{label="Preview" preview}

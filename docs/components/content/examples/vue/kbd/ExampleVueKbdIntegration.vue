@@ -4,7 +4,6 @@
       label="Search"
       btn="soft-gray"
       leading="i-heroicons-magnifying-glass"
-      class="font-normal"
     >
       <template #trailing>
         <span class="ml-3 inline-flex items-center space-x-0.5" size="md">
@@ -18,7 +17,6 @@
       label="Search"
       btn="soft"
       leading="i-heroicons-magnifying-glass"
-      class="font-normal"
     >
       <template #trailing>
         <span class="ml-3 inline-flex items-center space-x-0.5" size="md">

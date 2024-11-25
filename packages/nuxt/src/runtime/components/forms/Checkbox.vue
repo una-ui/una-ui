@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { CheckboxRootEmits } from 'radix-vue'
 import type { NCheckboxProps } from '../../types'
+import { reactivePick } from '@vueuse/core'
 import { CheckboxIndicator, CheckboxRoot, useForwardPropsEmits } from 'radix-vue'
 import { computed } from 'vue'
 import { cn, randomId } from '../../utils'
@@ -12,11 +13,16 @@ const props = withDefaults(defineProps<NCheckboxProps>(), {
 })
 const emits = defineEmits<CheckboxRootEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactivePick(props, [
+  'checked',
+  'defaultChecked',
+  'disabled',
+  'id',
+  'name',
+  'required',
+  'value',
+  'size',
+])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
@@ -25,13 +31,11 @@ const id = computed(() => props.id ?? randomId('checkbox'))
 
 <template>
   <div
-    checkbox="wrapper"
-    :class="[
+    :class="cn(
+      'checkbox-wrapper flex',
       una?.checkboxWrapper,
-      {
-        'checkbox-reverse': reverse,
-      },
-    ]"
+      reverse && 'checkbox-reverse',
+    )"
   >
     <CheckboxRoot
       v-bind="forwarded"
@@ -41,6 +45,7 @@ const id = computed(() => props.id ?? randomId('checkbox'))
           'peer checkbox',
           props.class,
         )"
+      :checkbox
     >
       <CheckboxIndicator
         :force-mount

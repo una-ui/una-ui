@@ -1,8 +1,19 @@
 ---
 description: 'A vertically stacked set of interactive headings that each reveal a section of content.'
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Element.vue
+    target: _blank
 ---
 
-Accordion inherits all props and slots from [NButton](button).
+## Examples
+
+### Basic
+
+| Prop    | Default | Type    | Description              |
+| ------- | ------- | ------- | ------------------------ |
+| `items` | -       | `array` | Set the accordion items. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -13,13 +24,14 @@ Accordion inherits all props and slots from [NButton](button).
 ::
 :::
 
-## Mounted
+### Mounted
+
+| Prop         | Default | Type      | Description                                                                                |
+| ------------ | ------- | --------- | ------------------------------------------------------------------------------------------ |
+| `mounted`    | `false` | `boolean` | Mount the content of the accordion when the page loads, even if the accordion is closed.   |
+| `item.mount` | `false` | `boolean` | Mount the content of a specific item when the page loads, even if the accordion is closed. |
 
 > ⚡ By default, the accordion's content is not rendered until it is opened for performance reasons. To render the content when the page loads, even if the accordion is closed for SEO purposes, use the `mounted` prop.
-
-`mounted` - allows you to set the mount state of all items.
-
-`item.mount` - allows you to set the mount state of a specific item. This will override the `mounted` prop.
 
 ::alert{type="warning"}
 If you have a lot of accordion items, it is not recommended to use the `mounted` prop because it affects the performance of the page, instead use the `item.mount` prop to mount the content of a specific item if needed.
@@ -34,9 +46,11 @@ If you have a lot of accordion items, it is not recommended to use the `mounted`
 ::
 :::
 
-## Multiple
+### Multiple
 
-`multiple` - allows you to expand multiple items at the same time.
+| Prop       | Default | Type      | Description            |
+| ---------- | ------- | --------- | ---------------------- |
+| `multiple` | `false` | `boolean` | Expand multiple items. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -47,11 +61,12 @@ If you have a lot of accordion items, it is not recommended to use the `mounted`
 ::
 :::
 
-## Default open
+### Default open
 
-`default-open` - opens all items by default.
-
-`item.defaultOpen` - allows you to control the default open state of a specific item.
+| Prop               | Default | Type      | Description                      |
+| ------------------ | ------- | --------- | -------------------------------- |
+| `defaultOpen`      | `false` | `boolean` | Open all items by default.       |
+| `item.defaultOpen` | `false` | `boolean` | Open a specific item by default. |
 
 ::alert{type="warning"}
 Use `multiple` prop when using `default-open` to open multiple items by default.
@@ -66,12 +81,12 @@ Use `multiple` prop when using `default-open` to open multiple items by default.
 ::
 :::
 
-## Color
+### Color
 
-Since we use the [NButton](button) component for the accordion label, you can use the `btn` prop to change the color of the label. See [NButton](button) for more information.
+Since we use the [Button](button) component for the accordion label, you can use the `btn` prop to change the color of the label. See [Button](button) for more information.
 
 ::alert{type="info"}
-`btn="text-{color}"` prop is basically from [NButton](button) component. You can use it to change the color of the label.
+`btn="text-{color}"` prop is basically from [Button](button) component. You can use it to change the color of the label.
 ::
 
 :::CodeGroup
@@ -84,22 +99,17 @@ Since we use the [NButton](button) component for the accordion label, you can us
 :::
 
 
-## Icon
+### Icon
 
-`leading` - allows you to add leading icon to the label.
-
-`item.leading` - allows you to add leading icon to the label of a specific item.
-
-`trailingOpen` - allows you to customize trailing open icon.
-
-`trailingClose` - allows you to customize trailing close icon.
+| Prop            | Default | Type     | Description                                       |
+| --------------- | ------- | -------- | ------------------------------------------------- |
+| `leading`       | -       | `string` | Add leading icon to the label.                    |
+| `item.leading`  | -       | `string` | Add leading icon to the label of a specific item. |
+| `trailingOpen`  | -       | `string` | Customize trailing open icon.                     |
+| `trailingClose` | -       | `string` | Customize trailing close icon.                    |
 
 ::alert{type="success"}
   If no `trailing` icon is given, it will be used for both open and close states and will animate upside down automatically.
-::
-
-::alert{type="info"}
-By default, we use the `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/), refer to [configuration](/#getting-started/configuration) for more information.
 ::
 
 :::CodeGroup
@@ -111,14 +121,17 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 ::
 :::
 
-## Reverse
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
 
-`reverse` - allows you to switch the position of the trailing and leading icons.
+### Reverse
 
-`item.reverse` - allows you to switch the position of the trailing and leading icons of a specific item.
+| Prop           | Default | Type      | Description                                                               |
+| -------------- | ------- | --------- | ------------------------------------------------------------------------- |
+| `reverse`      | -       | `boolean` | Switch the position of the trailing and leading icons.                    |
+| `item.reverse` | -       | `boolean` | Switch the position of the trailing and leading icons of a specific item. |
 
 ::alert{type="info"}
-`reverse` prop is basically from [NButton](button) component. You can use it to switch the position of the trailing and leading icons.
+`reverse` prop is basically from [Button](button) component. You can use it to switch the position of the trailing and leading icons.
 ::
 
 :::CodeGroup
@@ -130,9 +143,11 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 ::
 :::
 
-## Unstyle mode
+### Unstyle mode
 
-`unstyle` - removes the default border, padding, and divider of the accordion.
+| Prop      | Default | Type      | Description                                                       |
+| --------- | ------- | --------- | ----------------------------------------------------------------- |
+| `unstyle` | -       | `boolean` | Remove the default border, padding, and divider of the accordion. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -143,13 +158,9 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 ::
 :::
 
-## Custom
+### Customization
 
-> Customize the accordion with your own styles using `una` preset configuration.
-
-::alert{type="success"}
-  You can globally customize the accordion preset if want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
-::
+> You can customize the accordion using the `una` prop and utility classes.
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -184,15 +195,12 @@ By default, we use the `heroicons` and `tabler` for the icons, you can use any i
 
 ## Slots
 
-::alert{type="info"}
-If you have a more complex content, you can use slots to customize the accordion.
-::
+| Name      | Props     | Description                   |
+| --------- | --------- | ----------------------------- |
+| `label`   | `{prop}` | The label of the accordion.   |
+| `content` | `{prop}` | The content of the accordion. |
 
-`label` - allows you to customize the label of the accordion.
-
-`content` - allows you to customize the content of the accordion.
-
-| Slot props | Description                                       |
+| Slot prop | Description                                       |
 | ---------- | ------------------------------------------------- |
 | `index`    | allows you to access index of the item.           |
 | `item`     | allows you to access the item properties.         |
@@ -225,13 +233,19 @@ If you want to customize the content of a specific item, make sure not to provid
 ::
 :::
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/accordion.ts
-
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/accordion.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/accordion.ts [shortcuts/accordion.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/accordion.ts [types/accordion.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Accordion.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Accordion.vue
-
+::
+:::
 

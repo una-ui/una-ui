@@ -8,16 +8,9 @@
         side: 'right',
       }"
     >
-      <template #trigger>
-        <NDropdownMenuTrigger
-          dropdown-menu="data-[state=closed]:soft-gray data-[state=open]:solid-gray"
-          class="rounded-full p-1"
-        >
-          <NAvatar
-            src="https://avatars.githubusercontent.com/u/499550?v=4"
-          />
-        </NDropdownMenuTrigger>
-      </template>
+      <NAvatar
+        src="https://avatars.githubusercontent.com/u/499550?v=4"
+      />
 
       <template #menu-label>
         <div class="flex flex-col items-start">

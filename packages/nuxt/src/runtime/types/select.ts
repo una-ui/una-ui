@@ -52,7 +52,7 @@ export interface NSelectProps extends SelectExtensions {
    */
   items: any[]
   /**
-   * Allows for nested groups within the select.
+   * Allows for multiple groups within the select.
    *
    * @default false
    * @example
@@ -60,7 +60,7 @@ export interface NSelectProps extends SelectExtensions {
    *  { label: 'Group 1', items: [1, 2, 3] },
    * ]
    */
-  nested?: boolean
+  groupItems?: boolean
 
   // sub-components
   _selectScrollUpButton?: Partial<NSelectScrollUpButtonProps>

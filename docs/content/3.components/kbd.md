@@ -1,16 +1,15 @@
 ---
-description: 'NKbd component - a component for indicating input that is typically entered via keyboard.'
+description: 'Indicates input that is typically entered via keyboard.'
+badges:
+  - value: Github
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Kbd.vue
+    target: _blank
 ---
 
-::alert{type="warning"}
-Work in progress - this component is not yet ready for use.
-::
+## Examples
 
-## Basic
-
-`NKbd` is a component for indicating input that is typically entered via keyboard.
-
->You can use `label prop` or `default slot` to set the value kbd.
+### Basic
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -21,9 +20,11 @@ Work in progress - this component is not yet ready for use.
 ::
 :::
 
-## Variants
+### Variant
 
-`kbd="{variant}"` - change the variant of the kbd.
+| Prop  | Default | Type        | Description             |
+| ----- | ------- | ----------- | ----------------------- |
+| `kbd` | `solid` | `{variant}` | The variant of the kbd. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
@@ -40,13 +41,11 @@ Work in progress - this component is not yet ready for use.
 ::
 :::
 
-## Color
+### Color
 
-`kbd="{variant}-{color}"` - change the color of the kbd.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
-::
+| Prop  | Default          | Type                | Description           |
+| ----- | ---------------- | ------------------- | --------------------- |
+| `kbd` | `{variant}-gray` | `{variant}-{color}` | The color of the kbd. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -57,15 +56,11 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 ::
 :::
 
-## Sizes
+### Size
 
-`NKbd` can be sized using the `size` prop.
-
-> 🚀 You can freely adjust the size of the kbd using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `padding` and `font-size` of the kbd scale depends on the `size`. If you want to change the `font-size` and `padding` simultaneously, you can always customize it using utility classes.
-::
+| Prop   | Default | Type     | Description          |
+| ------ | ------- | -------- | -------------------- |
+| `size` | `md`    | `string` | The size of the kbd. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -76,7 +71,7 @@ The `padding` and `font-size` of the kbd scale depends on the `size`. If you wan
 ::
 :::
 
-## Usage with Other Components
+### Integration
 
 `NKbd` can be used with other components to create more complex elements e.g:
 
@@ -84,29 +79,41 @@ The `padding` and `font-size` of the kbd scale depends on the `size`. If you wan
 - can be used with `NInput` to create an input that is triggered by a keyboard shortcut.
 
 ::alert{type="info"}
-`size` prop is automatically inherited from the parent component when used with other components.
+**size** prop is automatically inherited from the parent component when used with other components.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueKbdWithOtherComponent
+  :ExampleVueKbdIntegration
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/kbd/ExampleVueKbdWithOtherComponent.vue
+@@@ ./components/content/examples/vue/kbd/ExampleVueKbdIntegration.vue
 ::
 :::
 
 ## Slots
 
-### Default
+| Name      | Props | Description       |
+| --------- | ----- | ----------------- |
+| `default` | -     | The content slot. |
 
-`#default` - set the kbd value.
+### Props
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/kbd.ts
+@@@ ../packages/nuxt/src/runtime/types/kbd.ts [types/kbd.ts]
 
-## Presets
-@@@ ../packages/preset/src/_shortcuts/kbd.ts
+:read-more{to="/components/kbd#props" title="Kbd component props" target="_blank"}
 
-## Component
+### Presets
+
+@@@ ../packages/preset/src/_shortcuts/kbd.ts [shortcuts/kbd.ts]
+
+:read-more{to="/components/kbd#presets" title="Kbd component presets" target="_blank"}
+
+### Components
+
+:::CodeGroup
+::div{label="Kbd.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Kbd.vue
+
+::
+:::

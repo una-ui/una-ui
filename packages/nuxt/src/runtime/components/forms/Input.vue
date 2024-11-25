@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NInputProps } from '../../types'
 import { computed, onMounted, ref } from 'vue'
-import { randomId } from '../../utils'
+import { cn, randomId } from '../../utils'
 import NIcon from '../elements/Icon.vue'
 
 defineOptions({
@@ -143,11 +143,12 @@ onMounted(() => {
       :value="modelValue"
       :type="props.type !== 'textarea' ? props.type : undefined"
       class="input"
-      :class="[
+      :class="cn(
+        type === 'textarea' ? 'input-textarea' : 'input-input',
         statusClassVariants.input,
         reverseClassVariants.input,
         una?.input,
-      ]"
+      )"
       :input="input"
       :resize="type === 'textarea' ? resize : undefined"
       :rows="type === 'textarea' ? rows : undefined"
@@ -158,11 +159,11 @@ onMounted(() => {
 
     <div
       v-if="isTrailing"
-      :class="[
+      :class="cn(
         una?.inputTrailingWrapper,
         reverseClassVariants.trailingWrapper,
         statusClassVariants.text,
-      ]"
+      )"
     >
       <NIcon
         v-if="loading"

@@ -4,8 +4,8 @@ export default defineAppConfig({
   unaContent: {
     site: {
       name: 'Una UI',
-      description: 'The Atomic UI Framework',
-      ogImage: '', // TODO: Add ogImage
+      description: 'The Atomic UI Framework - Experience the power of Unocss Engine, enabling the creation of fast, modern, and lightweight components with ease.',
+      ogImage: '/hero.png',
     },
     header: {
       darkModeToggle: true,
@@ -97,6 +97,13 @@ export default defineAppConfig({
         'yml': 'vscode-icons:file-type-yaml',
         'json': 'vscode-icons:file-type-json',
         'terminal': 'lucide:terminal',
+      },
+      editLink: {
+        enable: true,
+        pattern: 'https://github.com/una-ui/una-ui/edit/main/content/:path',
+        text: 'Edit this page on GitHub',
+        icon: 'lucide:square-pen',
+        placement: ['docsFooter', 'toc'],
       },
     },
     footer: {
