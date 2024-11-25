@@ -5,7 +5,6 @@ export default defineAppConfig({
     site: {
       name: 'Una UI',
       description: 'The Atomic UI Framework',
-      ogImage: '', // TODO: Add ogImage
     },
     header: {
       darkModeToggle: true,
