@@ -36,7 +36,6 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  {{ radioGroup }}
   <div
     class="radio-group-item-wrapper"
     :radio-group="radioGroup"

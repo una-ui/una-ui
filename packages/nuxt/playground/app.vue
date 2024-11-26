@@ -4,8 +4,6 @@
 
     <RadioGroup />
 
-    <Radio />
-
     <ColorMode />
   </div>
 </template>
