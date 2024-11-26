@@ -1,7 +1,7 @@
 ---
 description: 'Indicates input that is typically entered via keyboard.'
 badges:
-  - value: Github
+  - value: Source
     icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Kbd.vue
     target: _blank
