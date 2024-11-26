@@ -3,7 +3,7 @@ description: 'A vertically stacked set of interactive headings that each reveal 
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Element.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Accordion.vue
     target: _blank
 ---
 
