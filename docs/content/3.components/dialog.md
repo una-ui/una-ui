@@ -2,7 +2,7 @@
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Dialog/dialog.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
     target: _blank
   - value: API reference
     icon: icons/radix-vue.svg

@@ -40,10 +40,15 @@ badges:
 | `default` | -     | The content of the link. |
 
 ## Props
-@@@ ../packages/nuxt/src/runtime/types/link.ts
+@@@ ../packages/nuxt/src/runtime/types/link.ts [types/link.ts]
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/link.ts
+@@@ ../packages/preset/src/_shortcuts/link.ts [shortcuts/link.ts]
 
 ## Components
+
+:::CodeGroup
+::div{label="Link.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Link.vue
+
+::

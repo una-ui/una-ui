@@ -7,7 +7,7 @@ const options = ref([
 </script>
 
 <template>
-  <div class="flex flex-wrap space-x-8">
+  <div class="flex flex-wrap gap-x-8 gap-y-6">
     <NCheckbox
       v-for="option in options"
       :key="option.label"

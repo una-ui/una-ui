@@ -3,7 +3,7 @@ description: 'A set of layered sections of content—known as tab panels—that 
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/tabs.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/tabs/Tabs.vue
     target: _blank
   - value: API reference
     icon: icons/radix-vue.svg

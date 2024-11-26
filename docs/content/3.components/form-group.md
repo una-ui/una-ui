@@ -3,7 +3,7 @@ description: 'A versatile wrapper for various form components such as `Input`, `
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/forms/FormGroup.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/FormGroup.vue
     target: _blank
 ---
 

@@ -85,11 +85,11 @@ Configure the progress using the `una` prop and utility classes.
 
 ## Presets
 
-@@@ ../packages/preset/src/_shortcuts/progress.ts [shortcuts/tooltip.ts]
+@@@ ../packages/preset/src/_shortcuts/progress.ts [shortcuts/progress.ts]
 
 ## Props
 
-@@@ ../packages/nuxt/src/runtime/types/progress.ts [types/tooltip.ts]
+@@@ ../packages/nuxt/src/runtime/types/progress.ts [types/progress.ts]
 
 ## Components
 
