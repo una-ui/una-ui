@@ -422,4 +422,4 @@ defineExpose({
       </slot>
     </TableFooter>
   </TableRoot>
-</template>.
+</template>
