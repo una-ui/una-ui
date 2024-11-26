@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NAvatarAvatarFallbackProps } from '../../../types'
 import { AvatarFallback } from 'radix-vue'
-import { cn } from '../../../utils'
+import { cn, omitProps } from '../../../utils'
 import Icon from '../Icon.vue'
 
 const props = withDefaults(defineProps<NAvatarAvatarFallbackProps>(), {
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<NAvatarAvatarFallbackProps>(), {
   >
     <component
       :is="as"
-      v-bind="props"
+      v-bind="omitProps(props, ['label', 'una', 'icon'])"
       :class="cn(
         'avatar-fallback',
         una?.avatarFallback,
