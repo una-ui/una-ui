@@ -13,6 +13,7 @@ export const staticRadioGroup: Record<`${RadioGroupPrefix}-${string}` | RadioGro
   'radio-group-icon': 'i-dot',
 
   // components
+  'radio-group-item-wrapper': 'flex items-center space-x-2',
   'radio-group-item': 'aspect-square h-1em w-1em rounded-full border border-brand text-brand shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-base disabled:n-disabled',
   'radio-group-indicator': 'flex items-center justify-center',
 }

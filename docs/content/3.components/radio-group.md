@@ -1,5 +1,8 @@
 ---
 description: 'A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.'
+navBadges:
+  - value: New
+    type: lime
 badges:
   - value: Source
     icon: lucide:code
@@ -31,6 +34,21 @@ badges:
 :::
 
 :read-more{to="https://www.radix-vue.com/components/radio-group#root" title="Radix Radio Group Root API." target="_blank"}
+
+### Color
+
+| Prop          | Default   | Type     | Description                   |
+| ------------- | --------- | -------- | ----------------------------- |
+| `radio-group` | `primary` | `string` | The color of the radio-group. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+  :ExampleVueRadioGroupColor
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/input/ExampleVueRadioGroupColor.vue
+::
+:::
 
 ### Slots
 

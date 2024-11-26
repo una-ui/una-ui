@@ -1,16 +1,25 @@
 <script setup lang="ts">
-import { RadioGroupRoot, type RadioGroupRootEmits, type RadioGroupRootProps, useForwardPropsEmits } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import type { NRadioGroupProps } from '../../../types'
+import { reactivePick } from '@vueuse/core'
+import { RadioGroupRoot, type RadioGroupRootEmits, useForwardPropsEmits } from 'radix-vue'
 import { cn } from '../../../utils'
+import RadioGroupItem from './RadioGroupItem.vue'
 
-const props = defineProps<RadioGroupRootProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NRadioGroupProps>()
 const emits = defineEmits<RadioGroupRootEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactivePick(props, [
+  'as',
+  'asChild',
+  'defaultValue',
+  'dir',
+  'disabled',
+  'loop',
+  'modelValue',
+  'name',
+  'orientation',
+  'required',
+])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
@@ -24,6 +33,13 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     )"
     v-bind="forwarded"
   >
-    <slot />
+    <slot>
+      <RadioGroupItem
+        v-for="item in items"
+        :key="item.value"
+        :radio-group="radioGroup || item.radioGroup"
+        v-bind="item"
+      />
+    </slot>
   </RadioGroupRoot>
 </template>
