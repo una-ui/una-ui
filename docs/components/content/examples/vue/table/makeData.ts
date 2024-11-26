@@ -25,7 +25,7 @@ function range(len: number) {
 function newPerson(): Person {
   return {
     id: faker.database.mongodbObjectId(),
-    username: faker.internet.userName(),
+    username: faker.internet.username(),
     email: faker.internet.email(),
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
