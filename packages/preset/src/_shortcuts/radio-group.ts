@@ -6,16 +6,19 @@ type RadioGroupPrefix = 'radio-group'
 
 export const staticRadioGroup: Record<`${RadioGroupPrefix}-${string}` | RadioGroupPrefix, string> = {
   // configurations
-  'radio-group': 'gap-2',
-  'radio-group-orientation-vertical': 'grid',
-  'radio-group-orientation-horizontal': 'grid auto-cols-max grid-flow-col',
-  'radio-group-icon-base': 'h-0.875em w-0.875em fill-brand',
-  'radio-group-icon': 'i-dot',
+  'radio-group': 'gap-2 flex flex-nowrap',
+  'radio-group-orientation-vertical': 'flex-col',
+  'radio-group-orientation-horizontal': 'flex-row',
 
   // components
   'radio-group-item-wrapper': 'flex items-center space-x-2',
-  'radio-group-item': 'aspect-square h-1em w-1em rounded-full border border-brand text-brand shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-base disabled:n-disabled',
+  'radio-group-item': 'aspect-square rounded-full border border-brand text-brand shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-base disabled:n-disabled',
+
   'radio-group-indicator': 'flex items-center justify-center',
+  'radio-group-indicator-icon-base': 'h-0.875em w-0.875em fill-brand',
+  'radio-group-indicator-icon': 'i-dot',
+
+  'radio-group-item-label': '',
 }
 
 export const dynamicRadioGroup = [

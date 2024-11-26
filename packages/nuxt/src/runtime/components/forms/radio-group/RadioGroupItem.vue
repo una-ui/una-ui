@@ -6,7 +6,6 @@ import {
   RadioGroupItem,
   useForwardProps,
 } from 'radix-vue'
-import { computed } from 'vue'
 import { cn, randomId } from '../../../utils'
 import Icon from '../../elements/Icon.vue'
 import Label from '../../elements/Label.vue'
@@ -16,15 +15,16 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NRadioGroupItemProps>(), {
-  icon: 'radio-group-icon',
+  icon: 'radio-group-indicator-icon',
   radioGroup: 'primary',
+  size: 'md',
+  square: '1em',
 })
 
-const id = computed(() => props.id ?? randomId('radio-group'))
+const id = props.id || randomId('radio-group')
 
 const delegatedProps = reactivePick(props, [
   'as',
-  'asChild',
   'disabled',
   'id',
   'name',
@@ -37,32 +37,56 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <div
-    class="radio-group-item-wrapper"
+    :class="cn(
+      'radio-group-item-wrapper',
+      una?.radioGroupItemWrapper,
+    )"
     :radio-group="radioGroup"
   >
     <RadioGroupItem
+      as-child
       v-bind="forwardedProps"
-      :id
-      :class="
-        cn(
-          'radio-group-item',
-          props.class,
-        )
-      "
     >
-      <RadioGroupIndicator
-        class="radio-group-indicator"
+      <button
+        :id
+        :class="
+          cn(
+            'radio-group-item',
+            una?.radioGroupItem,
+            props.class,
+          )
+        "
+        :square
+        :size
+        :rounded
       >
-        <slot name="icon">
-          <Icon :name="icon" class="radio-group-icon-base" />
-        </slot>
-      </RadioGroupIndicator>
+        <RadioGroupIndicator
+          :class="cn(
+            'radio-group-indicator',
+            una?.radioGroupIndicator,
+          )"
+        >
+          <slot name="icon">
+            <Icon
+              :name="icon"
+              :class="cn(
+                'radio-group-indicator-icon-base',
+                una?.radioGroupIndicatorIcon,
+              )"
+            />
+          </slot>
+        </RadioGroupIndicator>
+      </button>
     </RadioGroupItem>
 
     <slot name="label">
       <Label
         v-if="props.label"
         :for="props.id ?? id"
+        :class="cn(
+          'radio-group-item-label',
+          una?.radioGroupItemLabel,
+        )"
       >
         {{ label }}
       </Label>
