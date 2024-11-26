@@ -25,14 +25,14 @@ function splitCodeWithArbitraryVariants(code: string, prefixes: string[]): strin
   prefixes = [...prefixes, ...camelCasePrefixes]
 
   for (const prefix of prefixes) {
-    const regex = new RegExp(`^\\s*${prefix}:\\s+'.*',?\\s*$`, 'gm')
-    const matches = code.match(regex)
+    const regex = new RegExp(`\\b${prefix}\\s*:\\s*'([^']*)'`, 'g')
+    let match: RegExpExecArray | null
 
-    if (!matches)
-      continue
-
-    for (const match of matches) {
-      const values = match.replace(/^.*:\s*'(.*)',?\s*$/, '$1').split(defaultSplitRE)
+    while (true) {
+      match = regex.exec(code)
+      if (match === null)
+        break
+      const values = match[1].split(defaultSplitRE)
       const selectors = generateSelectors(prefix, values)
 
       result.push(...selectors)
