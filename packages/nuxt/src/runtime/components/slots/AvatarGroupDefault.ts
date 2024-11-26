@@ -46,8 +46,9 @@ export default defineComponent({
       return h(Avatar, {
         // TODO: add `more` configuration
         class: 'avatar-(soft group-margin)',
+        size: props.avatar?.size,
         label: `+${countChildren.value - props.max}`,
-        una: { avatarLabel: `${props.avatar?.una?.avatarGroupLabel} avatar-group-label` },
+        una: { avatarLabel: `${props.avatar?.una?.avatarGroupLabel ?? ''} avatar-group-label` },
       })
     })
 
