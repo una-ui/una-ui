@@ -53,8 +53,8 @@
     "@vueuse/nuxt": "^11.3.0",
     "clsx": "^2.1.1",
     "ohash": "^1.1.4",
-    "radix-vue": "^1.9.7",
-    "tailwind-merge": "^2.5.4",
+    "radix-vue": "^1.9.10",
+    "tailwind-merge": "^2.5.5",
     "typescript": "5.6.3",
     "unocss": "^0.64.1",
     "unocss-preset-animations": "^1.1.0"
