@@ -61,12 +61,12 @@ badges:
 
 ### Size and Square
 
-| Prop          | Default | Type     | Description                               |
-| ------------- | ------- | -------- | ----------------------------------------- |
-| `size`        | -       | `string` | Set the size of the radio-group.          |
-| `square`      | `false` | `string` | Set the radio-group to be square.         |
-| `item.size`   | -       | `string` | Set the size of the specific radio item.  |
-| `item.square` | `false` | `string` | Set the specific radio item to be square. |
+| Prop          | Default  | Type     | Description                                                                                                                    |
+| ------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `size`        | `md`     | `string` | Sets the size of the radio-group.                                                                                              |
+| `square`      | `2.5rem` | `string` | Sets the radio-group to a square shape with specified dimensions. This does not affect the size of the fallback value.         |
+| `item.size`   | `md`     | `string` | Sets the size of the specific radio item.                                                                                      |
+| `item.square` | `2.5rem` | `string` | Sets the specific radio item to a square shape with specified dimensions. This does not affect the size of the fallback value. |
 
 > 🚀 Adjust radio-group size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 
@@ -99,10 +99,10 @@ badges:
 
 ### Rounded
 
-| Prop          | Default | Type     | Description                               |
-| ------------- | ------- | -------- | ----------------------------------------- |
-| `rounded`     | `md`    | `string` | Set the radio-group to be rounded.        |
-| `item.rounded` | `md`   | `string` | Set the specific radio item to be rounded.|
+| Prop           | Default | Type     | Description                                |
+| -------------- | ------- | -------- | ------------------------------------------ |
+| `rounded`      | `md`    | `string` | Set the radio-group to be rounded.         |
+| `item.rounded` | `md`    | `string` | Set the specific radio item to be rounded. |
 
 > 🚀 Adjust radio-group rounded freely using any value, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:full`).
 
