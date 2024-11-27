@@ -6,7 +6,7 @@ type RadioGroupPrefix = 'radio-group'
 
 export const staticRadioGroup: Record<`${RadioGroupPrefix}-${string}` | RadioGroupPrefix, string> = {
   // configurations
-  'radio-group': 'gap-2 flex flex-nowrap',
+  'radio-group': 'gap-2 flex flex-wrap',
   'radio-group-orientation-vertical': 'flex-col',
   'radio-group-orientation-horizontal': 'flex-row',
 
