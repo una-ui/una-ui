@@ -1,3 +1,18 @@
+# [0.30.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.29.0-beta.1...v0.30.0-beta.1) (2024-11-27)
+
+
+### Bug Fixes
+
+* **AvatarGroup:** update props configuration and inheret size properly ([09a0942](https://github.com/una-ui/una-ui/commit/09a0942c0c8e417a976245fe10997d3ee98157ea))
+* **Checkbox:** add checkbox prop to root component ([7b9434f](https://github.com/una-ui/una-ui/commit/7b9434f0345fc7847a6ab6dcbd0f73530a1a580e))
+
+
+### Features
+
+* **RadioGroup:** introduce new component and presets ([#306](https://github.com/una-ui/una-ui/issues/306)) ([d04a63f](https://github.com/una-ui/una-ui/commit/d04a63f17a2b7e4e8301fd702bda4b0546b0c776))
+
+
+
 # [0.29.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.28.0-beta.1...v0.29.0-beta.1) (2024-11-25)
 
 
