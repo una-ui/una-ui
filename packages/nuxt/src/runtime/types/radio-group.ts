@@ -15,6 +15,10 @@ interface BaseProps {
    * Set the border radius of the avatar.
    */
   rounded?: HTMLAttributes['class']
+  /**
+   * Update the icon of the radio.
+   */
+  icon?: HTMLAttributes['class']
 }
 
 export interface NRadioGroupProps extends BaseProps, RadioGroupRootProps {
@@ -39,13 +43,10 @@ export interface NRadioGroupProps extends BaseProps, RadioGroupRootProps {
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/radio.ts
    */
-  una?: {
-    radioGroup?: HTMLAttributes['class']
-  }
+  una?: NRadioGroupUnaProps
 }
 
 export interface NRadioGroupItemProps extends BaseProps, RadioGroupItemProps {
-  icon?: HTMLAttributes['class']
   label?: string
   /**
    * Allows you to add `UnaUI` radio preset properties,
@@ -56,4 +57,17 @@ export interface NRadioGroupItemProps extends BaseProps, RadioGroupItemProps {
    * radio-group="green"
    */
   radioGroup?: HTMLAttributes['class']
+
+  una?: NRadioGroupUnaProps
+}
+
+export interface NRadioGroupUnaProps {
+  radioGroup?: HTMLAttributes['class']
+
+  radioGroupItemWrapper?: HTMLAttributes['class']
+  radioGroupItem?: HTMLAttributes['class']
+  radioGroupItemLabel?: HTMLAttributes['class']
+
+  radioGroupIndicator?: HTMLAttributes['class']
+  radioGroupIndicatorIcon?: HTMLAttributes['class']
 }

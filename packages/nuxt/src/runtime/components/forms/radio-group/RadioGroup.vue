@@ -5,10 +5,14 @@ import { RadioGroupRoot, type RadioGroupRootEmits, useForwardPropsEmits } from '
 import { cn } from '../../../utils'
 import RadioGroupItem from './RadioGroupItem.vue'
 
-const props = defineProps<NRadioGroupProps>()
+const props = withDefaults(defineProps<NRadioGroupProps>(), {
+  radioGroup: 'primary',
+  size: 'md',
+  square: '1em',
+})
 const emits = defineEmits<RadioGroupRootEmits>()
 
-const delegatedProps = reactivePick(props, [
+const rootProps = reactivePick(props, [
   'as',
   'asChild',
   'defaultValue',
@@ -21,7 +25,7 @@ const delegatedProps = reactivePick(props, [
   'required',
 ])
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(rootProps, emits)
 </script>
 
 <template>
@@ -29,6 +33,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     :class="cn(
       'radio-group',
       orientation === 'horizontal' ? 'radio-group-orientation-horizontal' : 'radio-group-orientation-vertical',
+      una?.radioGroup,
       props.class,
     )"
     v-bind="forwarded"
@@ -37,8 +42,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       <RadioGroupItem
         v-for="item in items"
         :key="item.value"
-        :radio-group="radioGroup || item.radioGroup"
-        v-bind="item"
+        v-bind="{ rounded, icon, size, square, radioGroup, ...item }"
+        :una="{ ...una, ...item.una }"
       />
     </slot>
   </RadioGroupRoot>

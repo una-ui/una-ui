@@ -1,28 +1,22 @@
 <script setup lang="ts">
+const options = ref([
+  { label: 'Orange', value: 'orange', radioGroup: 'orange' },
+  { label: 'Green', value: 'green', radioGroup: 'green' },
+  { label: 'Blue', value: 'blue', radioGroup: 'blue' },
+  { label: 'Red', value: 'red', radioGroup: 'red' },
+  { label: 'Purple', value: 'purple', radioGroup: 'purple' },
+  { label: 'Pink', value: 'pink', radioGroup: 'pink' },
+  { label: 'Teal', value: 'teal', radioGroup: 'teal' },
+  { label: 'Yellow', value: 'yellow', radioGroup: 'yellow' },
+])
+const value = ref('default')
 </script>
 
 <template>
   <NRadioGroup
-    default-value="comfortable"
+    v-model="value"
+    radio-group="yellow"
     orientation="horizontal"
-  >
-    <div class="flex items-center space-x-2">
-      <NRadioGroupItem id="r1" value="default" />
-      <NLabel for="r1">
-        Default
-      </NLabel>
-    </div>
-    <div class="flex items-center space-x-2">
-      <NRadioGroupItem id="r2" value="comfortable" />
-      <NLabel for="r2">
-        Comfortable
-      </NLabel>
-    </div>
-    <div class="flex items-center space-x-2">
-      <NRadioGroupItem id="r3" value="compact" />
-      <NLabel for="r3">
-        Compact
-      </NLabel>
-    </div>
-  </NRadioGroup>
+    :items="options"
+  />
 </template>
