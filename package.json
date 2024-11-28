@@ -90,9 +90,6 @@
     "vitest": "^2.1.6",
     "vue-tsc": "^2.1.10"
   },
-  "resolutions": {
-    "vite": "^6.0.1"
-  },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
   },
