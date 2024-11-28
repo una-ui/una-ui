@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import type { NAvatarImageProps } from '../../../types'
 import { AvatarImage } from 'radix-vue'
-import { cn } from '../../../utils'
+import { cn, omitProps } from '../../../utils'
 
 const props = defineProps<NAvatarImageProps>()
 </script>
 
 <template>
   <AvatarImage
-    v-bind="props"
+    v-bind="omitProps(props, ['class', 'una'])"
     :src="src!"
     :class="cn(
       'avatar-image',
