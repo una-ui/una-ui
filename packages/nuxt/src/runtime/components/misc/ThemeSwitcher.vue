@@ -178,7 +178,6 @@ function shuffleTheme(): void {
         <div class="flex space-x-3">
           <Button
             btn="solid-gray block"
-            size="xs"
             label="Reset"
             leading="i-radix-icons-reload"
             @click="reset"
