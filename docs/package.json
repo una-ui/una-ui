@@ -35,8 +35,8 @@
     "f": "esno scripts/file-creator.ts"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.6.1",
-    "@una-ui/content": "^0.0.40",
-    "nuxt": "^3.14.1592"
+    "@nuxt/devtools": "catalog:",
+    "@una-ui/content": "catalog:",
+    "nuxt": "catalog:"
   }
 }

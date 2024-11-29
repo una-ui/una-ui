@@ -54,8 +54,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@unocss/core": "^0.64.1",
-    "@unocss/preset-mini": "^0.64.1",
-    "unocss": "^0.64.1"
+    "@unocss/core": "catalog:",
+    "@unocss/preset-mini": "catalog:",
+    "unocss": "catalog:"
   }
 }

@@ -42,6 +42,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@unocss/core": "^0.64.1"
+    "@unocss/core": "catalog:"
   }
 }
