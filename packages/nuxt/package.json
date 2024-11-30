@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "@headlessui/vue": "catalog:",
-    "@iconify-json/heroicons": "catalog:",
     "@iconify-json/lucide": "catalog:",
     "@iconify-json/radix-icons": "catalog:",
     "@iconify-json/tabler": "catalog:",
