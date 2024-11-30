@@ -10,7 +10,7 @@ badges:
     target: _blank
 ---
 
-## Examples 
+## Examples
 
 ### Basic
 
@@ -30,7 +30,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectBasic
+:ExampleVueSelectBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectBasic.vue
@@ -45,7 +45,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectGroupItems
+:ExampleVueSelectGroupItems
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectGroupItems.vue
@@ -63,7 +63,7 @@ Control the attribute value to be displayed in the select and the item.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectObjects
+:ExampleVueSelectObjects
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectObjects.vue
@@ -76,7 +76,7 @@ You can use the `select` component inside the `form-group` component, or you can
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectLabel
+:ExampleVueSelectLabel
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectLabel.vue
@@ -96,7 +96,7 @@ You can use the `select` component inside the `form-group` component, or you can
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectColor
+:ExampleVueSelectColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectColor.vue
@@ -117,7 +117,7 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSelectSize
+:ExampleVueSelectSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueSelectSize.vue

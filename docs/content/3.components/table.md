@@ -9,6 +9,7 @@ badges:
     to: https://tanstack.com/table/latest/docs/introduction
     target: _blank
 ---
+
 ## Examples
 
 ### Basic
@@ -20,7 +21,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueTableBasic
+:ExampleVueTableBasic
 
 ::
 ::div{label="Code"}
@@ -49,7 +50,7 @@ Row selection allows you to select rows in the table. This is useful when you wa
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableRowSelection
+:ExampleVueTableRowSelection
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableRowSelection.vue
@@ -73,7 +74,7 @@ Loading allows you to show a loading progress indicator in the table. This is us
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableLoading
+:ExampleVueTableLoading
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableLoading.vue
@@ -91,14 +92,14 @@ Loading allows you to show a loading progress indicator in the table. This is us
 
 Pagination allows you to paginate rows in the table. This is useful when you want to paginate rows in the table.
 
-| Prop               | Default                        | Type      | Description                       |
-| ------------------ | ------------------------------ | --------- | --------------------------------- |
-| `pagination`       | `{pageIndex: 0, pageSize: 10}` | `{pageIndex: Number, pageSize: Number}`  | Pagination default configuration. |
-| `manualPagination` | `false`                        | `Boolean` | Enable manual pagination.         |
+| Prop               | Default                        | Type                                    | Description                       |
+| ------------------ | ------------------------------ | --------------------------------------- | --------------------------------- |
+| `pagination`       | `{pageIndex: 0, pageSize: 10}` | `{pageIndex: Number, pageSize: Number}` | Pagination default configuration. |
+| `manualPagination` | `false`                        | `Boolean`                               | Enable manual pagination.         |
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTablePagination
+:ExampleVueTablePagination
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTablePagination.vue
@@ -126,7 +127,7 @@ Sorting allows you to sort columns in ascending or descending order. This is use
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableSorting
+:ExampleVueTableSorting
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableSorting.vue
@@ -150,7 +151,7 @@ Visibility allows you to show or hide columns in the table. This is useful when 
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableVisibility
+:ExampleVueTableVisibility
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableVisibility.vue
@@ -174,7 +175,7 @@ Global filtering allows you to filter rows based on the value entered in the fil
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableGlobalFiltering
+:ExampleVueTableGlobalFiltering
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableGlobalFiltering.vue
@@ -199,7 +200,7 @@ Column filtering allows you to filter columns based on the value entered in the 
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableColumnFiltering
+:ExampleVueTableColumnFiltering
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnFiltering.vue
@@ -219,7 +220,7 @@ Column ordering allows you to reorder columns by dragging and dropping them. Thi
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableColumnOrdering
+:ExampleVueTableColumnOrdering
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnOrdering.vue
@@ -243,7 +244,7 @@ Column pinning allows you to pin columns to the `left` or `right` of the table. 
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableColumnPinning
+:ExampleVueTableColumnPinning
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableColumnPinning.vue
@@ -263,8 +264,8 @@ Expanding allows you to expand rows to show additional information. This is usef
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableExpanding
-  
+:ExampleVueTableExpanding
+
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableExpanding.vue
@@ -284,8 +285,8 @@ Grouping allows you to group rows based on a column value. This is useful when y
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableGrouping
-  
+:ExampleVueTableGrouping
+
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableGrouping.vue
@@ -299,14 +300,14 @@ Grouping allows you to group rows based on a column value. This is useful when y
 
 :read-more{to="https://tanstack.com/table/latest/docs/guide/grouping" title="Tanstack Grouping Documentation" target="_blank"}
 
-### Server-side 
+### Server-side
 
 Allows you to fetch data from the server. This is useful when you want to fetch data from the server.
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableServerSide
-  
+:ExampleVueTableServerSide
+
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableServerSide.vue
@@ -335,8 +336,8 @@ Configure the progress using the `una` prop and utility classes.
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableCustomization
-  
+:ExampleVueTableCustomization
+
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/table/ExampleVueTableCustomization.vue
@@ -366,7 +367,7 @@ Configure the progress using the `una` prop and utility classes.
 
 :::CodeGroup
 ::div{label="Preview"}
-  :ExampleVueTableSlots
+:ExampleVueTableSlots
 
 ::
 ::div{label="Code"}
@@ -435,4 +436,3 @@ Configure the progress using the `una` prop and utility classes.
 
 ::
 :::
-

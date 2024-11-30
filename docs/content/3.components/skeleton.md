@@ -13,7 +13,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSkeletonBasic
+:ExampleVueSkeletonBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/skeleton/ExampleVueSkeletonBasic.vue
@@ -22,13 +22,13 @@ badges:
 
 ### Shape
 
-| Prop      | Default | Type     | Description                     |
-| --------- | ------- | -------- | ------------------------------- |
-| `rounded` | `none`  | `string` | Change the shape of the skeleton.|
+| Prop      | Default | Type     | Description                       |
+| --------- | ------- | -------- | --------------------------------- |
+| `rounded` | `none`  | `string` | Change the shape of the skeleton. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSkeletonShape
+:ExampleVueSkeletonShape
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/skeleton/ExampleVueSkeletonShape.vue
@@ -37,13 +37,13 @@ badges:
 
 ### Color
 
-| Prop      | Default | Type     | Description                     |
-| --------- | ------- | -------- | ------------------------------- |
-| `skeleton`   | `gray`  | `string` | Change the color of the skeleton.|
+| Prop       | Default | Type     | Description                       |
+| ---------- | ------- | -------- | --------------------------------- |
+| `skeleton` | `gray`  | `string` | Change the color of the skeleton. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSkeletonColor
+:ExampleVueSkeletonColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/skeleton/ExampleVueSkeletonColor.vue

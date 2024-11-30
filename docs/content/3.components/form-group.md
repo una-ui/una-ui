@@ -18,12 +18,12 @@ badges:
 | `for`   | -       | `string` | Sets the label's for attribute. |
 
 ::alert{type="info"}
-  Clicking the label focuses the input. We automatically add `for` to the label and `id` to the input. Override this by defining `for` and `id` manually.
+Clicking the label focuses the input. We automatically add `for` to the label and `id` to the input. Override this by defining `for` and `id` manually.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueFormGroupUsage
+:ExampleVueFormGroupUsage
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupUsage.vue
@@ -40,7 +40,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueFormGroupRequired
+:ExampleVueFormGroupRequired
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupRequired.vue
@@ -55,7 +55,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueFormGroupDescription
+:ExampleVueFormGroupDescription
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupDescription.vue
@@ -70,7 +70,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueFormGroupHint
+:ExampleVueFormGroupHint
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupHint.vue
@@ -85,7 +85,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueFormGroupMessage
+:ExampleVueFormGroupMessage
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupMessage.vue
@@ -104,7 +104,7 @@ Notice that when you change the `status` prop, the `message` prop and the child 
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueFormGroupStatus
+:ExampleVueFormGroupStatus
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupStatus.vue
@@ -124,11 +124,11 @@ Notice that when you change the `status` prop, the `message` prop and the child 
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueFormGroupCounter
+:ExampleVueFormGroupCounter
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupCounter.vue
-::  
+::
 :::
 
 ### Slots
@@ -156,6 +156,6 @@ Notice that when you change the `status` prop, the `message` prop and the child 
 
 :::CodeGroup
 ::div{label="FormGroup.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/forms/FormGroup.vue 
+@@@ ../packages/nuxt/src/runtime/components/forms/FormGroup.vue
 ::
 :::

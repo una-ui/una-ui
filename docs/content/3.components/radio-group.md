@@ -34,7 +34,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioGroupBasic
+:ExampleVueRadioGroupBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio-group/ExampleVueRadioGroupBasic.vue
@@ -52,7 +52,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioGroupColor
+:ExampleVueRadioGroupColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio-group/ExampleVueRadioGroupColor.vue
@@ -72,7 +72,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioGroupSize
+:ExampleVueRadioGroupSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio-group/ExampleVueRadioGroupSize.vue
@@ -88,7 +88,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioGroupIcon
+:ExampleVueRadioGroupIcon
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio-group/ExampleVueRadioGroupIcon.vue
@@ -108,7 +108,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioGroupRounded
+:ExampleVueRadioGroupRounded
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio-group/ExampleVueRadioGroupRounded.vue
@@ -124,12 +124,12 @@ badges:
 | `icon`    | -       | The icon slot.  |
 
 ::alert{type="info"}
-  You can use the `RadioGroupItem` component to render the radio items.
+You can use the `RadioGroupItem` component to render the radio items.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioGroupSlot
+:ExampleVueRadioGroupSlot
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio-group/ExampleVueRadioGroupSlot.vue

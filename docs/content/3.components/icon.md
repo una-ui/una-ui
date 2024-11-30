@@ -11,15 +11,16 @@ UnaUI integrates [Iconify](https://icones.js.org/) to provide a wide variety of 
 
 By default, UnaUI includes the following icon collections:
 
-* [Lucide](https://icones.js.org/collection/lucide)
-* [Radix Icons](https://icones.js.org/collection/radix-icons)
-* [Tabler Icons](https://icones.js.org/collection/tabler)
+- [Lucide](https://icones.js.org/collection/lucide)
+- [Radix Icons](https://icones.js.org/collection/radix-icons)
+- [Tabler Icons](https://icones.js.org/collection/tabler)
 
 To add more icon collections, follow these steps:
 
 Install the desired icon collection using your preferred package manager:
 
 :::CodeGroup
+
 ```bash [pnpm]
 pnpm add -D @iconify-icons/[collection-name]
 ```
@@ -31,6 +32,7 @@ yarn add -D @iconify-icons/[collection-name]
 ```bash [npm]
 npm install -D @iconify-icons/[collection-name]
 ```
+
 :::
 
 :read-more{to="https://unocss.dev/presets/icons#install" title="Unocss Icons Preset" target="_blank"}
@@ -41,7 +43,7 @@ npm install -D @iconify-icons/[collection-name]
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIconUsage
+:ExampleVueIconUsage
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/icon/ExampleVueIconUsage.vue
@@ -60,7 +62,7 @@ If you want to update or add default icons, you can do so through the [Configura
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIconDefault
+:ExampleVueIconDefault
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/icon/ExampleVueIconDefault.vue
@@ -68,12 +70,15 @@ If you want to update or add default icons, you can do so through the [Configura
 :::
 
 ## Presets
+
 @@@ ../packages/preset/src/_shortcuts/icon.ts [shortcuts/icon.ts]
 
 ## Props
+
 @@@ ../packages/nuxt/src/runtime/types/icon.ts [types/icon.ts]
 
 ## Components
+
 :::CodeGroup
 ::div{label="Icon.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Icon.vue

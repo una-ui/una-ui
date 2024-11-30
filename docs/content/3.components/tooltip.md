@@ -20,7 +20,7 @@ badges:
 | `defaultOpen`             | `false` | `boolean` | The open state of the tooltip when it is initially rendered. Use when you do not need to control its open state.                                                                                                              |
 | `delayDuration`           | -       | `number`  | Override the duration given to the Provider to customize the open delay for a specific tooltip.                                                                                                                               |
 | `disableClosingTrigger`   | -       | `boolean` | When true, clicking on trigger will not close the content.                                                                                                                                                                    |
-| `disabled`                | -       | `boolean` | When true, disable tooltip                                                                   a                                                                                                                                |
+| `disabled`                | -       | `boolean` | When true, disable tooltip a                                                                                                                                                                                                  |
 | `disableHoverableContent` | -       | `boolean` | Prevents Tooltip.Content from remaining open when hovering. Disabling this has accessibility consequences. Inherits from Tooltip.Provider.                                                                                    |
 | `ignoreNonKeyboardFocus`  | -       | `boolean` | Prevent the tooltip from opening if the focus did not come from the keyboard by matching against the :focus-visible selector. This is useful if you want to avoid opening it when switching browser tabs or closing a dialog. |
 | `open`                    | `false` | `boolean` | The controlled open state of the tooltip.                                                                                                                                                                                     |
@@ -29,7 +29,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueTooltipBasic
+:ExampleVueTooltipBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/tooltip/ExampleVueTooltipBasic.vue
@@ -93,7 +93,7 @@ Configure the tooltip provider by using the `_tooltipProvider` prop.
 
 ### Content
 
-Configure the tooltip content using the `_tooltipContent` prop. 
+Configure the tooltip content using the `_tooltipContent` prop.
 
 | Prop          | Default  | Type                          | Description                                                                                                                           |
 | ------------- | -------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |

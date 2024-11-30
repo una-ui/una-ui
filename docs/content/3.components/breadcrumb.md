@@ -17,7 +17,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBreadcrumbBasic
+:ExampleVueBreadcrumbBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbBasic.vue
@@ -34,12 +34,12 @@ badges:
 | `breadcrumb-inactive` | `text-muted`   | `{variant}-{color}` | The inactive breadcrumb variant and color. |
 
 ::alert{type="info"}
-  You can use any variant and color provided by the [Button](button#variants) component. Just use `breadcrumb-active` and `breadcrumb-inactive` as prefixes instead of `btn`.
+You can use any variant and color provided by the [Button](button#variants) component. Just use `breadcrumb-active` and `breadcrumb-inactive` as prefixes instead of `btn`.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBreadcrumbVariant
+:ExampleVueBreadcrumbVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbVariant.vue
@@ -56,7 +56,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBreadcrumbSeparator
+:ExampleVueBreadcrumbSeparator
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSeparator.vue
@@ -75,7 +75,7 @@ Adjust the breadcrumb size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBreadcrumbSize
+:ExampleVueBreadcrumbSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSize.vue
@@ -93,7 +93,7 @@ Adjust the breadcrumb size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBreadcrumbSlots
+:ExampleVueBreadcrumbSlots
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbSlots.vue
@@ -140,4 +140,3 @@ Adjust the breadcrumb size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs
 
 ::
 :::
-

@@ -23,7 +23,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSwitchBasic
+:ExampleVueSwitchBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchBasic.vue
@@ -37,12 +37,12 @@ badges:
 You can use the `switch` component inside the `form-group` component, or you can use it with the `label` component.
 
 ::alert{type="info"}
-  Notice that when you click on the label, the switch gets toggled. 
+Notice that when you click on the label, the switch gets toggled.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSwitchLabel
+:ExampleVueSwitchLabel
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchLabel.vue
@@ -61,7 +61,7 @@ You can use the `switch` component inside the `form-group` component, or you can
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSwitchColor
+:ExampleVueSwitchColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchColor.vue
@@ -78,7 +78,7 @@ Adjust the switch size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSwitchSize
+:ExampleVueSwitchSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchSize.vue
@@ -97,7 +97,7 @@ Configure the switch icon using the following props.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSwitchIcon
+:ExampleVueSwitchIcon
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchIcon.vue
@@ -108,13 +108,13 @@ Configure the switch icon using the following props.
 
 Set the switch to loading state.
 
-| Prop     | Default | Type     | Description                 |
-| -------- | ------- | -------- | --------------------------- |
+| Prop      | Default | Type      | Description                |
+| --------- | ------- | --------- | -------------------------- |
 | `loading` | -       | `boolean` | Set the switch to loading. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSwitchLoading
+:ExampleVueSwitchLoading
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchLoading.vue
@@ -127,7 +127,7 @@ Configure the progress using the `una` prop and utility classes.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSwitchCustom
+:ExampleVueSwitchCustom
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/switch/ExampleVueSwitchCustom.vue

@@ -21,7 +21,7 @@ You can also use default slot to set the badge label. Refer to [slots](#slots) f
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBadgeBasic
+:ExampleVueBadgeBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeBasic.vue
@@ -43,7 +43,7 @@ You can also use default slot to set the badge label. Refer to [slots](#slots) f
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBadgeVariant
+:ExampleVueBadgeVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeVariant.vue
@@ -58,7 +58,7 @@ You can also use default slot to set the badge label. Refer to [slots](#slots) f
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBadgeColor
+:ExampleVueBadgeColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeColor.vue
@@ -75,7 +75,7 @@ You can also use default slot to set the badge label. Refer to [slots](#slots) f
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBadgeSize
+:ExampleVueBadgeSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeSize.vue
@@ -92,7 +92,7 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBadgeIcon
+:ExampleVueBadgeIcon
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeIcon.vue
@@ -107,7 +107,7 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBadgeClosable
+:ExampleVueBadgeClosable
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeClosable.vue
@@ -122,7 +122,7 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueBadgeDefaultSlot
+:ExampleVueBadgeDefaultSlot
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/badge/ExampleVueBadgeDefaultSlot.vue
@@ -150,4 +150,3 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 @@@ ../packages/nuxt/src/runtime/components/elements/Badge.vue
 ::
 :::
-

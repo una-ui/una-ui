@@ -1,12 +1,14 @@
 --- description: 'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.'
 badges:
-  - value: Source
-    icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
-    target: _blank
-  - value: API reference
-    to: https://www.radix-vue.com/components/dialog
-    target: _blank
+
+- value: Source
+  icon: radix-icons:github-logo
+  to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
+  target: _blank
+- value: API reference
+  to: https://www.radix-vue.com/components/dialog
+  target: _blank
+
 ---
 
 ## Examples
@@ -26,7 +28,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueDialogBasic
+:ExampleVueDialogBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBasic.vue
@@ -41,7 +43,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueDialogScrollable
+:ExampleVueDialogScrollable
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollable.vue
@@ -56,7 +58,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueDialogPreventClose
+:ExampleVueDialogPreventClose
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogPreventClose.vue
@@ -75,12 +77,11 @@ badges:
 | `title`       | -      | The title displayed in the dialog.          |
 | `description` | -      | The description displayed below the title.  |
 
-
 #### Custom Close Button
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueDialogCustomClose
+:ExampleVueDialogCustomClose
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogCustomClose.vue
@@ -91,7 +92,7 @@ badges:
 
 :::CodeGroup
 ::div{label=Preview preview}
-  :ExampleVueDialogScrollableBody
+:ExampleVueDialogScrollableBody
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogScrollableBody.vue
@@ -104,7 +105,7 @@ A login dialog with state which closes itself after a successful login.
 
 :::CodeGroup
 ::div{label=Preview preview}
-  :ExampleVueDialogLogin
+:ExampleVueDialogLogin
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogLogin.vue
@@ -117,7 +118,7 @@ A dialog whose overlay blurs the background content.
 
 :::CodeGroup
 ::div{label=Preview preview}
-  :ExampleVueDialogBackgroundBlur
+:ExampleVueDialogBackgroundBlur
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/dialog/ExampleVueDialogBackgroundBlur.vue

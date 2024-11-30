@@ -20,7 +20,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSeparatorBasic
+:ExampleVueSeparatorBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/separator/ExampleVueSeparatorBasic.vue
@@ -41,7 +41,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSeparatorVariantColor
+:ExampleVueSeparatorVariantColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/separator/ExampleVueSeparatorVariantColor.vue

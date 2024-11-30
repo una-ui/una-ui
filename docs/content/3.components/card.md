@@ -7,7 +7,6 @@ badges:
     target: _blank
 ---
 
-
 ## Examples
 
 ### Basic
@@ -19,7 +18,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCardBasic
+:ExampleVueCardBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardBasic.vue
@@ -40,7 +39,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCardVariant
+:ExampleVueCardVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardVariant.vue
@@ -55,7 +54,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCardColor
+:ExampleVueCardColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardColor.vue
@@ -74,7 +73,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCardSlots
+:ExampleVueCardSlots
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardSlots.vue

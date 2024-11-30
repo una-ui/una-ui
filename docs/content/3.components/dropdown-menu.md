@@ -113,11 +113,9 @@ Adjust the dropdown-menu size without limits. Use `breakpoints` (e.g., `sm:sm`, 
 
 @@@ ../packages/preset/src/_shortcuts/dropdown-menu.ts [shortcuts/dropdown-menu.ts]
 
-
 ## Props
 
 @@@ ../packages/nuxt/src/runtime/types/dropdown-menu.ts [types/dropdown-menu.ts]
-
 
 ## Components
 

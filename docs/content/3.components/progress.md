@@ -25,7 +25,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueProgressBasic
+:ExampleVueProgressBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressBasic.vue
@@ -68,12 +68,12 @@ badges:
 Configure the progress using the `una` prop and utility classes.
 
 :::CodeGroup
-  ::div{label="Preview" preview}
-    :ExampleVueProgressCustom
-  ::
-  ::div{label="Code"}
+::div{label="Preview" preview}
+:ExampleVueProgressCustom
+::
+::div{label="Code"}
 @@@ ./components/content/examples/vue/progress/ExampleVueProgressCustom.vue
-  ::
+::
 :::
 
 ### Slots

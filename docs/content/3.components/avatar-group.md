@@ -23,7 +23,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarGroupBasic
+:ExampleVueAvatarGroupBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar-group/ExampleVueAvatarGroupBasic.vue
@@ -47,7 +47,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarGroupSize
+:ExampleVueAvatarGroupSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar-group/ExampleVueAvatarGroupSize.vue
@@ -56,13 +56,13 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 ### Customization
 
-Similar to the `size` prop, any available props of the  [Avatar](avatar) component can be directly passed to the `AvatarGroup` component. These props will then be automatically forwarded to the individual `Avatar` components within the group.
+Similar to the `size` prop, any available props of the [Avatar](avatar) component can be directly passed to the `AvatarGroup` component. These props will then be automatically forwarded to the individual `Avatar` components within the group.
 
 You can also use the `una` prop to add utility classes, refer to the [Props](#props) and [Presets](#presets) sections for more information.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarGroupCustomization
+:ExampleVueAvatarGroupCustomization
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar-group/ExampleVueAvatarGroupCustomization.vue

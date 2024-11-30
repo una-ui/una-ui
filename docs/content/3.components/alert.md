@@ -18,7 +18,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertBasic
+:ExampleVueAlertBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertBasic.vue
@@ -39,7 +39,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertVariant
+:ExampleVueAlertVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertVariant.vue
@@ -54,7 +54,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertColor
+:ExampleVueAlertColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertColor.vue
@@ -68,12 +68,12 @@ badges:
 | `icon` | -       | `string` | Customize the icon of the alert. |
 
 ::alert{type="info"}
-  If you provide an icon type such as `success`, `error`, `warning`, or `info`, the alert will automatically use the corresponding color. 
+If you provide an icon type such as `success`, `error`, `warning`, or `info`, the alert will automatically use the corresponding color.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertIcon
+:ExampleVueAlertIcon
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertIcon.vue
@@ -96,7 +96,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertSize
+:ExampleVueAlertSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSize.vue
@@ -111,7 +111,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertClosable
+:ExampleVueAlertClosable
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertClosable.vue
@@ -138,7 +138,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertSlot1
+:ExampleVueAlertSlot1
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot1.vue
@@ -149,7 +149,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertSlot2
+:ExampleVueAlertSlot2
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot2.vue
@@ -160,7 +160,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAlertSlot3
+:ExampleVueAlertSlot3
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot3.vue

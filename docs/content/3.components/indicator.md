@@ -13,7 +13,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIndicatorBasic
+:ExampleVueIndicatorBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorBasic.vue
@@ -28,7 +28,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIndicatorLabel
+:ExampleVueIndicatorLabel
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorLabel.vue
@@ -54,7 +54,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIndicatorColor
+:ExampleVueIndicatorColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorColor.vue
@@ -69,7 +69,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIndicatorPing
+:ExampleVueIndicatorPing
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorPing.vue
@@ -84,7 +84,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIndicatorSize
+:ExampleVueIndicatorSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorSize.vue
@@ -99,7 +99,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIndicatorVisibility
+:ExampleVueIndicatorVisibility
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorVisibility.vue
@@ -121,7 +121,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueIndicatorPlacement
+:ExampleVueIndicatorPlacement
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/indicator/ExampleVueIndicatorPlacement.vue
@@ -137,9 +137,11 @@ badges:
 | `label`     | -     | The label of the indicator.                                   |
 
 ## Presets
+
 @@@ ../packages/preset/src/_shortcuts/indicator.ts [shortcuts/indicator.ts]
 
 ## Props
+
 @@@ ../packages/nuxt/src/runtime/types/indicator.ts [types/indicator.ts]
 
 ## Components
@@ -149,4 +151,3 @@ badges:
 @@@ ../packages/nuxt/src/runtime/components/elements/Indicator.vue
 ::
 :::
-

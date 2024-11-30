@@ -23,7 +23,7 @@ use `NRadio` to create a radio input.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioBasic
+:ExampleVueRadioBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioBasic.vue
@@ -42,7 +42,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioColor
+:ExampleVueRadioColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioColor.vue
@@ -55,7 +55,7 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioDisabled
+:ExampleVueRadioDisabled
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioDisabled.vue
@@ -69,12 +69,12 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 > Read more about the `NFormGroup` component [here](form-group).
 
 ::alert{type="warning"}
-  Remember to set `for` to false to disable `for` behavior on the label since we have a custom implementation for the radio input.
+Remember to set `for` to false to disable `for` behavior on the label since we have a custom implementation for the radio input.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioFormGroup
+:ExampleVueRadioFormGroup
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioFormGroup.vue
@@ -87,7 +87,7 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioReverse
+:ExampleVueRadioReverse
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioReverse.vue
@@ -102,7 +102,7 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioSize
+:ExampleVueRadioSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioSize.vue
@@ -114,7 +114,7 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 You can use the following rules to customize the radio if it is checked.
 
 ::alert{type="info"}
-  You can also globally customize the radio preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
+You can also globally customize the radio preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
 ::
 
 | Rule Name   | Description                                   | Example            |
@@ -123,7 +123,7 @@ You can use the following rules to customize the radio if it is checked.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioRules
+:ExampleVueRadioRules
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioRules.vue
@@ -136,7 +136,7 @@ You can use the following rules to customize the radio if it is checked.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueRadioCustom
+:ExampleVueRadioCustom
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioCustom.vue

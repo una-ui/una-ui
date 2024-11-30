@@ -9,6 +9,7 @@ badges:
     to: https://www.radix-vue.com/components/tabs
     target: _blank
 ---
+
 ## Examples
 
 ### Basic
@@ -20,7 +21,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueTabsBasic
+:ExampleVueTabsBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsBasic.vue
@@ -91,9 +92,11 @@ badges:
 | `content` | `item`  | The content slot. |
 
 ## Presets
+
 @@@ ../packages/preset/src/_shortcuts/tabs.ts [shortcuts/tabs.ts]
 
 ## Props
+
 @@@ ../packages/nuxt/src/runtime/types/tabs.ts [types/tabs.ts]
 
 ## Components

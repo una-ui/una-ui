@@ -27,7 +27,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarBasic
+:ExampleVueAvatarBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarBasic.vue
@@ -49,7 +49,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarVariant
+:ExampleVueAvatarVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarVariant.vue
@@ -64,7 +64,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarColor
+:ExampleVueAvatarColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarColor.vue
@@ -79,7 +79,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarIcon
+:ExampleVueAvatarIcon
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarIcon.vue
@@ -101,7 +101,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarSize
+:ExampleVueAvatarSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSize.vue
@@ -116,7 +116,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarRounded
+:ExampleVueAvatarRounded
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarRounded.vue
@@ -127,7 +127,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarIndicator
+:ExampleVueAvatarIndicator
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarIndicator.vue
@@ -142,7 +142,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
- :ExampleVueAvatarCustom
+:ExampleVueAvatarCustom
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarCustom.vue
@@ -158,7 +158,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAvatarSlot1
+:ExampleVueAvatarSlot1
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSlot1.vue
@@ -191,4 +191,3 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 ::
 :::
-

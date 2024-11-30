@@ -17,7 +17,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionBasic
+:ExampleVueAccordionBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionBasic.vue
@@ -39,7 +39,7 @@ If you have a lot of accordion items, it is not recommended to use the `mounted`
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionMounted
+:ExampleVueAccordionMounted
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionMounted.vue
@@ -54,7 +54,7 @@ If you have a lot of accordion items, it is not recommended to use the `mounted`
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionMultiple
+:ExampleVueAccordionMultiple
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionMultiple.vue
@@ -74,7 +74,7 @@ Use `multiple` prop when using `default-open` to open multiple items by default.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionDefaultOpen
+:ExampleVueAccordionDefaultOpen
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionDefaultOpen.vue
@@ -91,13 +91,12 @@ Since we use the [Button](button) component for the accordion label, you can use
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionColor
+:ExampleVueAccordionColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionColor.vue
 ::
 :::
-
 
 ### Icon
 
@@ -109,12 +108,12 @@ Since we use the [Button](button) component for the accordion label, you can use
 | `trailingClose` | -       | `string` | Customize trailing close icon.                    |
 
 ::alert{type="success"}
-  If no `trailing` icon is given, it will be used for both open and close states and will animate upside down automatically.
+If no `trailing` icon is given, it will be used for both open and close states and will animate upside down automatically.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionIcon
+:ExampleVueAccordionIcon
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionIcon.vue
@@ -136,7 +135,7 @@ Since we use the [Button](button) component for the accordion label, you can use
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionReverse
+:ExampleVueAccordionReverse
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionReverse.vue
@@ -151,7 +150,7 @@ Since we use the [Button](button) component for the accordion label, you can use
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionUnstyle
+:ExampleVueAccordionUnstyle
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionUnstyle.vue
@@ -164,7 +163,7 @@ Since we use the [Button](button) component for the accordion label, you can use
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionCustom1
+:ExampleVueAccordionCustom1
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionCustom1.vue
@@ -175,7 +174,7 @@ Since we use the [Button](button) component for the accordion label, you can use
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionCustom2
+:ExampleVueAccordionCustom2
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionCustom2.vue
@@ -186,7 +185,7 @@ Since we use the [Button](button) component for the accordion label, you can use
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionCustom3
+:ExampleVueAccordionCustom3
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionCustom3.vue
@@ -195,21 +194,21 @@ Since we use the [Button](button) component for the accordion label, you can use
 
 ## Slots
 
-| Name      | Props     | Description                   |
-| --------- | --------- | ----------------------------- |
+| Name      | Props    | Description                   |
+| --------- | -------- | ----------------------------- |
 | `label`   | `{prop}` | The label of the accordion.   |
 | `content` | `{prop}` | The content of the accordion. |
 
 | Slot prop | Description                                       |
-| ---------- | ------------------------------------------------- |
-| `index`    | allows you to access index of the item.           |
-| `item`     | allows you to access the item properties.         |
-| `open`     | allows you to access the open state of the item.  |
-| `close`    | allows you to access the close state of the item. |
+| --------- | ------------------------------------------------- |
+| `index`   | allows you to access index of the item.           |
+| `item`    | allows you to access the item properties.         |
+| `open`    | allows you to access the open state of the item.  |
+| `close`   | allows you to access the close state of the item. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionSlot1
+:ExampleVueAccordionSlot1
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionSlot1.vue
@@ -226,7 +225,7 @@ If you want to customize the content of a specific item, make sure not to provid
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueAccordionSlot2
+:ExampleVueAccordionSlot2
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/accordion/ExampleVueAccordionSlot2.vue
@@ -248,4 +247,3 @@ If you want to customize the content of a specific item, make sure not to provid
 @@@ ../packages/nuxt/src/runtime/components/elements/Accordion.vue
 ::
 :::
-

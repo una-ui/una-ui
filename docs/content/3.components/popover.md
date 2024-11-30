@@ -55,12 +55,12 @@ badges:
 :read-more{to="https://www.radix-vue.com/components/popover#content" title="Radix Popover Content API." target="_blank"}
 
 :::CodeGroup
-  ::div{label="Preview"}
-  :ExampleVuePopoverContent
-  ::
-  ::div{label="Code"}
-  @@@ ./components/content/examples/vue/popover/ExampleVuePopoverContent.vue
-  ::
+::div{label="Preview"}
+:ExampleVuePopoverContent
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/popover/ExampleVuePopoverContent.vue
+::
 :::
 
 ### Slots

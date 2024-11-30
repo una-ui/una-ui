@@ -22,7 +22,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputUsage
+:ExampleVueInputUsage
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputUsage.vue
@@ -43,7 +43,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputVariant
+:ExampleVueInputVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputVariant.vue
@@ -58,7 +58,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputColor
+:ExampleVueInputColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputColor.vue
@@ -79,7 +79,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputSize
+:ExampleVueInputSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputSize.vue
@@ -95,7 +95,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputIcon
+:ExampleVueInputIcon
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputIcon.vue
@@ -112,7 +112,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputLoading
+:ExampleVueInputLoading
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputLoading.vue
@@ -127,7 +127,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputStatus
+:ExampleVueInputStatus
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputStatus.vue
@@ -149,7 +149,7 @@ Leading and trailing icons are wrapped in **pointer-events-none** by default. Us
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputEvents
+:ExampleVueInputEvents
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputEvents.vue
@@ -170,7 +170,7 @@ Add a leading slot to the input.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputLeadingSlot
+:ExampleVueInputLeadingSlot
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputLeadingSlot.vue
@@ -183,7 +183,7 @@ Aad a trailing slot to the input.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueInputTrailingSlot
+:ExampleVueInputTrailingSlot
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/input/ExampleVueInputTrailingSlot.vue

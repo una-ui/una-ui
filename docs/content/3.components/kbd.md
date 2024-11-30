@@ -13,7 +13,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueKbdBasic
+:ExampleVueKbdBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdBasic.vue
@@ -34,7 +34,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueKbdVariant
+:ExampleVueKbdVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdVariant.vue
@@ -49,7 +49,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueKbdColor
+:ExampleVueKbdColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdColor.vue
@@ -64,7 +64,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueKbdSize
+:ExampleVueKbdSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdSize.vue
@@ -84,7 +84,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueKbdIntegration
+:ExampleVueKbdIntegration
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/kbd/ExampleVueKbdIntegration.vue

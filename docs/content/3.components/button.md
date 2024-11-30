@@ -21,7 +21,7 @@ You can also use default slot to set the button label. Refer to [slots](#slots) 
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonUsage
+:ExampleVueButtonUsage
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonUsage.vue
@@ -46,7 +46,7 @@ You can also use default slot to set the button label. Refer to [slots](#slots) 
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonVariant
+:ExampleVueButtonVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonVariant.vue
@@ -61,7 +61,7 @@ You can also use default slot to set the button label. Refer to [slots](#slots) 
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonColor
+:ExampleVueButtonColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonColor.vue
@@ -82,7 +82,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonSize
+:ExampleVueButtonSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonSize.vue
@@ -97,7 +97,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonRounded
+:ExampleVueButtonRounded
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonRounded.vue
@@ -116,7 +116,7 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonSquare
+:ExampleVueButtonSquare
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonSquare.vue
@@ -135,7 +135,7 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonIcon
+:ExampleVueButtonIcon
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonIcon.vue
@@ -152,7 +152,7 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonLink
+:ExampleVueButtonLink
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLink.vue
@@ -167,7 +167,7 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonBlock
+:ExampleVueButtonBlock
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonBlock.vue
@@ -176,13 +176,13 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 ### Disabled
 
-| Prop      | Default | Type      | Description              |
-| --------- | ------- | --------- | ------------------------ |
+| Prop       | Default | Type      | Description                 |
+| ---------- | ------- | --------- | --------------------------- |
 | `disabled` | -       | `boolean` | Set the button to disabled. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonDisabled
+:ExampleVueButtonDisabled
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonDisabled.vue
@@ -191,18 +191,18 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 ### Loading
 
-| Prop               | Default | Type      | Description                        |
-| ------------------ | ------- | --------- | ---------------------------------- |
-| `loading`          | -       | `boolean` | Set the button to loading state.   |
-| `loading-placement` | `leading` | `leading`, `trailing`, `label` | Set the loading icon placement. |
+| Prop                | Default   | Type                           | Description                      |
+| ------------------- | --------- | ------------------------------ | -------------------------------- |
+| `loading`           | -         | `boolean`                      | Set the button to loading state. |
+| `loading-placement` | `leading` | `leading`, `trailing`, `label` | Set the loading icon placement.  |
 
 ::alert{type="info"}
-  By default, the disabled state is triggered when the button is loading.
+By default, the disabled state is triggered when the button is loading.
 ::
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonLoading
+:ExampleVueButtonLoading
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLoading.vue
@@ -225,7 +225,7 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonLeadingSlot
+:ExampleVueButtonLeadingSlot
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLeadingSlot.vue
@@ -240,7 +240,7 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonTrailingSlot
+:ExampleVueButtonTrailingSlot
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonTrailingSlot.vue
@@ -249,13 +249,13 @@ You can also provide a custom value to the `square` prop to set the width and he
 
 #### Loading
 
-| Name       | Props | Description        |
-| ---------- | ----- | ------------------ |
-| `loading`  | -     | The loading icon.  |
+| Name      | Props | Description       |
+| --------- | ----- | ----------------- |
+| `loading` | -     | The loading icon. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueButtonLoadingSlot
+:ExampleVueButtonLoadingSlot
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/button/ExampleVueButtonLoadingSlot.vue

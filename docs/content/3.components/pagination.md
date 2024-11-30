@@ -20,14 +20,14 @@ badges:
 | `defaultPage`  | `1`     | `number`  | The value of the page that should be active when initially rendered. Use when you do not need to control the value state. |
 | `disabled`     | `false` | `boolean` | When true, prevents the user from interacting with item.                                                                  |
 | `itemsPerPage` | `10`    | `number`  | Number of items per page.                                                                                                 |
-| `page`         | -     | `number`  | The controlled value of the current page. Can be binded as `v-model:page`.                                                |
+| `page`         | -       | `number`  | The controlled value of the current page. Can be binded as `v-model:page`.                                                |
 | `showEdges`    | `false` | `boolean` | When true, always show first page, last page, and ellipsis.                                                               |
 
 :read-more{to="https://www.radix-vue.com/components/pagination#root" title="Radix Pagination Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVuePaginationBasic
+:ExampleVuePaginationBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationBasic.vue
@@ -42,7 +42,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVuePaginationSiblingCount
+:ExampleVuePaginationSiblingCount
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSiblingCount.vue
@@ -61,7 +61,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVuePaginationComponentsVisibility
+:ExampleVuePaginationComponentsVisibility
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationComponentsVisibility.vue
@@ -84,7 +84,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVuePaginationSize
+:ExampleVuePaginationSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSize.vue
@@ -103,7 +103,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVuePaginationVariant
+:ExampleVuePaginationVariant
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationVariant.vue
@@ -114,7 +114,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVuePaginationRounded
+:ExampleVuePaginationRounded
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationRounded.vue
@@ -137,7 +137,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVuePaginationSubComponents
+:ExampleVuePaginationSubComponents
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSubComponents.vue
@@ -157,7 +157,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVuePaginationSlots
+:ExampleVuePaginationSlots
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSlots.vue

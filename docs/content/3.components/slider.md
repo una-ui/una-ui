@@ -14,19 +14,19 @@ badges:
 
 ### Basic
 
-| Prop                    | Default | Type       | Description                                                                                                   |
-| ----------------------- | ------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
-| `modelValue`            | -       | `number`   | The controlled value of the slider. Can be bind as `v-model`.                                                 |
-| `defaultValue`          | `[0]`   | `number[]` | The value of the slider when initially rendered. Use when you do not need to control the state of the slider. |
-| `dir`                   | `ltr`   | `string`   | The direction of the slider.                                                                                  |
-| `disabled`              | `false` | `boolean`  | When `true`, prevents the user from interacting with the slider.                                              |
-| `inverted`              | `false` | `boolean`  | When `true`, the slider will be inverted.                                                                     |
-| `max`                   | `100`   | `number`   | The maximum value of the slider.                                                                              |
-| `min`                   | `0`     | `number`   | The minimum value of the slider.                                                                              |
+| Prop           | Default | Type       | Description                                                                                                   |
+| -------------- | ------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
+| `modelValue`   | -       | `number`   | The controlled value of the slider. Can be bind as `v-model`.                                                 |
+| `defaultValue` | `[0]`   | `number[]` | The value of the slider when initially rendered. Use when you do not need to control the state of the slider. |
+| `dir`          | `ltr`   | `string`   | The direction of the slider.                                                                                  |
+| `disabled`     | `false` | `boolean`  | When `true`, prevents the user from interacting with the slider.                                              |
+| `inverted`     | `false` | `boolean`  | When `true`, the slider will be inverted.                                                                     |
+| `max`          | `100`   | `number`   | The maximum value of the slider.                                                                              |
+| `min`          | `0`     | `number`   | The minimum value of the slider.                                                                              |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSliderBasic
+:ExampleVueSliderBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderBasic.vue
@@ -43,7 +43,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSliderColor
+:ExampleVueSliderColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderColor.vue
@@ -63,7 +63,7 @@ To avoid the thumbs from overlapping, you can set the `minStepsBetweenThumbs` pr
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSliderSteps
+:ExampleVueSliderSteps
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderSteps.vue
@@ -76,7 +76,7 @@ You can use the `slider` component inside the `form-group` component, or you can
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSliderLabel
+:ExampleVueSliderLabel
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderLabel.vue
@@ -91,13 +91,13 @@ You can use the `slider` component inside the `form-group` component, or you can
 
 Configure the slider orientation by using the `orientation` prop.
 
-| Prop          | Default      | Type                    | Description                    |
-| ------------- | ------------ | ----------------------- | ------------------------------ |
+| Prop          | Default      | Type                     | Description                    |
+| ------------- | ------------ | ------------------------ | ------------------------------ |
 | `orientation` | `horizontal` | `vertical`, `horizontal` | The orientation of the slider. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSliderOrientation
+:ExampleVueSliderOrientation
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderOrientation.vue
@@ -114,7 +114,7 @@ Adjust the slider size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueSliderSize
+:ExampleVueSliderSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderSize.vue
@@ -126,12 +126,12 @@ Adjust the slider size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 Configure the progress using the `una` prop and utility classes.
 
 :::CodeGroup
-  ::div{label="Preview" preview}
-    :ExampleVueSliderCustom
-  ::
-  ::div{label="Code"}
+::div{label="Preview" preview}
+:ExampleVueSliderCustom
+::
+::div{label="Code"}
 @@@ ./components/content/examples/vue/slider/ExampleVueSliderCustom.vue
-  ::
+::
 :::
 
 ### Slots

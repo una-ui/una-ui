@@ -4,9 +4,13 @@ export default antfu(
   {
     type: 'lib',
     unocss: true,
-    formatters: true,
+    formatters: {
+      css: true,
+      html: true,
+      markdown: 'dprint',
+    },
     ignores: [
-      '**/docs/content/**',
+      './packages/preset/src/_style/theme.css',
       '**/*.sh',
     ],
     rules: {

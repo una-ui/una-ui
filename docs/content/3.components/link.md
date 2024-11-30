@@ -25,7 +25,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueLinkBasic
+:ExampleVueLinkBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/link/ExampleVueLinkBasic.vue
@@ -39,9 +39,11 @@ badges:
 | `default` | -     | The content of the link. |
 
 ## Props
+
 @@@ ../packages/nuxt/src/runtime/types/link.ts [types/link.ts]
 
 ## Presets
+
 @@@ ../packages/preset/src/_shortcuts/link.ts [shortcuts/link.ts]
 
 ## Components

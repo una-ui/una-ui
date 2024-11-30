@@ -29,7 +29,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxBasic
+:ExampleVueCheckboxBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxBasic.vue
@@ -44,7 +44,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxColor
+:ExampleVueCheckboxColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxColor.vue
@@ -57,7 +57,7 @@ You can use the `checkbox` component inside the `form-group` component, or you c
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxFormGroup
+:ExampleVueCheckboxFormGroup
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxFormGroup.vue
@@ -78,7 +78,7 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxSize
+:ExampleVueCheckboxSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/select/ExampleVueCheckboxSize.vue
@@ -95,7 +95,7 @@ You can also utilize `data-[state]` to dynamically modify the size of the checkb
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxSize
+:ExampleVueCheckboxSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxSize.vue
@@ -110,7 +110,7 @@ You can also utilize `data-[state]` to dynamically modify the size of the checkb
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxReverse
+:ExampleVueCheckboxReverse
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxReverse.vue
@@ -129,7 +129,7 @@ You can also utilize `data-[state]` to dynamically modify the size of the checkb
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxCustomIcon1
+:ExampleVueCheckboxCustomIcon1
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustomIcon1.vue
@@ -140,7 +140,7 @@ You can also utilize `data-[state]` to dynamically modify the size of the checkb
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxCustomIcon2
+:ExampleVueCheckboxCustomIcon2
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustomIcon2.vue
@@ -151,7 +151,7 @@ You can also utilize `data-[state]` to dynamically modify the size of the checkb
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCheckboxCustom
+:ExampleVueCheckboxCustom
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxCustom.vue

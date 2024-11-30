@@ -24,7 +24,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueCollapsibleBasic
+:ExampleVueCollapsibleBasic
 ::
 
 ::div{label="Code"}

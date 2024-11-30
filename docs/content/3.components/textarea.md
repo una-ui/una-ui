@@ -13,7 +13,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueTextareaBasic
+:ExampleVueTextareaBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaBasic.vue
@@ -29,7 +29,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueTextareaRowsCols
+:ExampleVueTextareaRowsCols
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaRowsCols.vue
@@ -44,7 +44,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueTextareaAutoresize
+:ExampleVueTextareaAutoresize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaAutoresize.vue
@@ -66,7 +66,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueTextareaResize
+:ExampleVueTextareaResize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/textarea/ExampleVueTextareaResize.vue
@@ -94,4 +94,3 @@ badges:
 @@@ ../packages/nuxt/src/runtime/components/forms/Input.vue
 ::
 :::
-

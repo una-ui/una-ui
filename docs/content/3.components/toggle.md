@@ -29,7 +29,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueToggleBasic
+:ExampleVueToggleBasic
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleBasic.vue
@@ -38,14 +38,14 @@ badges:
 
 ### Variant and Color
 
-| Prop         | Default       | Type     | Description                                    |
-| ------------ | ------------- | -------- | ---------------------------------------------- |
+| Prop         | Default       | Type                | Description                                    |
+| ------------ | ------------- | ------------------- | ---------------------------------------------- |
 | `toggle-on`  | `soft-accent` | `{variant}-{color}` | Change the color of the toggle when it is on.  |
 | `toggle-off` | `ghost-gray`  | `{variant}-{color}` | Change the color of the toggle when it is off. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueToggleColor
+:ExampleVueToggleColor
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleColor.vue
@@ -58,7 +58,7 @@ badges:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-  :ExampleVueToggleSlot
+:ExampleVueToggleSlot
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleSlot.vue
