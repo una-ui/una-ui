@@ -8,6 +8,8 @@
         This is a playground for testing UnaUI features.
       </p>
 
+      <NIcon name="i-warning" square="1em" />
+
       <div class="mt-2">
         <NThemeSwitcher />
       </div>

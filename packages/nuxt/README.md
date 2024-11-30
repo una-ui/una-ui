@@ -5,10 +5,10 @@
 
 ## 🏗️ Release Status
 
-| Branch | Version | Status | Downloads |
-| --- | --- | --- | --- |
-| Main (Edge) | [![npm-edge][npm-edge-src]][npm-edge-href] | [![github-status][github-status-src-main]][github-status-href-main] | [![npm-edge-downloads][npm-edge-downloads-src]][npm-edge-downloads-href] |
-| Release | [![npm-version][npm-version-src]][npm-version-href] | [![github-status][github-status-src-release]][github-status-href-release] | [![npm-downloads][npm-downloads-src]][npm-downloads-href] |
+| Branch      | Version                                             | Status                                                                    | Downloads                                                                |
+| ----------- | --------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Main (Edge) | [![npm-edge][npm-edge-src]][npm-edge-href]          | [![github-status][github-status-src-main]][github-status-href-main]       | [![npm-edge-downloads][npm-edge-downloads-src]][npm-edge-downloads-href] |
+| Release     | [![npm-version][npm-version-src]][npm-version-href] | [![github-status][github-status-src-release]][github-status-href-release] | [![npm-downloads][npm-downloads-src]][npm-downloads-href]                |
 
 ## 📙 Documentation
 
@@ -32,7 +32,7 @@ Visit https://www.unaui.com for full documentation.
 
 ## 🪴 Project Activity
 
-![Alt](https://repobeats.axiom.co/api/embed/49dee6a65be83113d1241c7bd38f23e211a0f189.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/49dee6a65be83113d1241c7bd38f23e211a0f189.svg 'Repobeats analytics image')
 
 ## 👨‍💻 Contributors
 

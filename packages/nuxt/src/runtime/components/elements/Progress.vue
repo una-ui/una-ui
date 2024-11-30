@@ -67,7 +67,7 @@ const delegatedProps = computed(() => {
   animation: progress-increase 2s ease-in-out infinite;
 }
 
-.decrease.progress-indeterminate  {
+.decrease.progress-indeterminate {
   animation: progress-indeterminate-decrease 2s 0.9s ease-in-out infinite;
 }
 

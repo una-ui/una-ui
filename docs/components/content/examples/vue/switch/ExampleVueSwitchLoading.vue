@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-wrap items-center gap-4">
     <NSwitch
-      checked
-      loading
+
+      loading checked
     />
 
     <NSwitch

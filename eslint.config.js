@@ -4,6 +4,7 @@ export default antfu(
   {
     type: 'lib',
     unocss: true,
+    formatters: true,
     ignores: [
       '**/docs/content/**',
       '**/*.sh',
