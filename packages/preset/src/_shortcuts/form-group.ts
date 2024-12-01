@@ -4,7 +4,7 @@ export const staticFormGroup: Record<`${FormGroupPrefix}-${string}` | FormGroupP
   // base
   'form-group': 'space-y-2',
   'form-group-description': 'text-0.8rem text-muted',
-  'form-group-hint': 'text-sm text-muted',
+  'form-group-hint': 'text-sm leading-none text-muted',
   'form-group-message': 'text-0.8em transition-all duration-1000 ease-in-out',
 
   // wrappers
