@@ -100,7 +100,7 @@ export default defineAppConfig({
       },
       editLink: {
         enable: true,
-        pattern: 'https://github.com/una-ui/una-ui/edit/main/content/:path',
+        pattern: 'https://github.com/una-ui/una-ui/edit/main/docs/content/:path',
         text: 'Edit this page on GitHub',
         icon: 'lucide:square-pen',
         placement: ['docsFooter', 'toc'],
