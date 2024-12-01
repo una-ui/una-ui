@@ -23,6 +23,7 @@ The **Label** component is used already in different components like [Checkbox](
 | `as`      | `label`   | `AsTag`, `Component` | The element or component this component should render as. Can be overwrite by asChild.                                                            |
 | `asChild` | `boolean` | `boolean`            | Change the default rendered element for the one passed as a child, merging their props and behavior. Read our Composition guide for more details. |
 | `for`     | `string`  | `string`             | The id of the element the label is associated with.                                                                                               |
+| `label`   | `string`  | `string`             | The label text, An alternative to the default slot.                                                                                               |
 
 :read-more{to="https://www.radix-vue.com/components/label#root" title="Radix Label Root API." target="_blank"}
 

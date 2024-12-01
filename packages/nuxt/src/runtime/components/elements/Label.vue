@@ -1,21 +1,17 @@
 <script setup lang="ts">
 import type { NLabelProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { Label } from 'radix-vue'
-import { computed } from 'vue'
 import { cn } from '../../utils'
 
 const props = defineProps<NLabelProps>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const rootProps = reactiveOmit(props, ['label', 'class'])
 </script>
 
 <template>
   <Label
-    v-bind="delegatedProps"
+    v-bind="rootProps"
     :class="
       cn(
         'label-base',
@@ -23,6 +19,8 @@ const delegatedProps = computed(() => {
       )
     "
   >
-    <slot />
+    <slot>
+      {{ label }}
+    </slot>
   </Label>
 </template>
