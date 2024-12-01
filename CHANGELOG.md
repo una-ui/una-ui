@@ -1,3 +1,18 @@
+# [0.31.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.30.0-beta.1...v0.31.0-beta.1) (2024-12-01)
+
+
+### Bug Fixes
+
+* **Avatar:** prevent passing unnecessary props ([b18aa56](https://github.com/una-ui/una-ui/commit/b18aa568e7f0c00c4a7e3b97c241935e7e35b8e1))
+* **RadioGroup:** set flex-wrap to radio-group preset ([5efab17](https://github.com/una-ui/una-ui/commit/5efab17a575b7923604cc79e4d43ea676022a159))
+
+
+### Features
+
+* **Label:** add ability to define label using label prop ([098120f](https://github.com/una-ui/una-ui/commit/098120f82718b6505bad5ec30afb16e19538f841))
+
+
+
 # [0.30.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.29.0-beta.1...v0.30.0-beta.1) (2024-11-27)
 
 
