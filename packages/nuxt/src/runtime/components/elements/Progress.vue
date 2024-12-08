@@ -64,14 +64,14 @@ const delegatedProps = computed(() => {
 
 <style scoped>
 .increase.progress-indeterminate {
-  animation: progress-increase 2s ease-in-out infinite;
+  animation: progress-indeterminate-increase 2s ease-in-out infinite;
 }
 
 .decrease.progress-indeterminate {
-  animation: progress-indeterminate-decrease 2s 0.9s ease-in-out infinite;
+  animation: progress-indeterminate-decrease 2s 0.5s ease-in-out infinite;
 }
 
-@keyframes progress-decrease {
+@keyframes progress-indeterminate-decrease {
   0% {
     left: -90%;
     width: 90%;
@@ -83,7 +83,7 @@ const delegatedProps = computed(() => {
   }
 }
 
-@keyframes progress-increase {
+@keyframes progress-indeterminate-increase {
   0% {
     left: -5%;
     width: 5%;
