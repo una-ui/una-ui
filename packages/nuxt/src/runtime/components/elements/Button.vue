@@ -28,6 +28,8 @@ const mergeVariants = computed(() => {
   }
 })
 
+const loadingPlacement = computed(() => props.loadingPlacement === 'leading' && props.icon ? 'label' : props.loadingPlacement)
+
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text'] as const
 
 const hasVariant = computed(() =>
@@ -91,7 +93,6 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     </slot>
 
     <ReuseTemplate v-if="loading && loadingPlacement === 'label'" />
-
     <slot v-else>
       <NIcon
         v-if="label && icon"
