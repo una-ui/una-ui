@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Forms from './components/Forms.vue'
+</script>
+
 <template>
   <div class="h-screen w-screen flex flex-col items-center justify-center gap-12 !bg-base">
     <div>
@@ -8,13 +12,13 @@
         This is a playground for testing UnaUI features.
       </p>
 
-      <NIcon name="i-warning" square="1em" />
-
       <div class="mt-2">
         <NThemeSwitcher />
       </div>
-    </div>
 
-    <RadioGroup />
+      <div class="my-20 border rounded p-10">
+        <Forms />
+      </div>
+    </div>
   </div>
 </template>

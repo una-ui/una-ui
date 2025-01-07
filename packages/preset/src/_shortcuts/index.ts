@@ -11,6 +11,7 @@ import { checkbox } from './checkbox'
 import { collapsible } from './collapsible'
 import { dialog } from './dialog'
 import { dropdowMenu } from './dropdown-menu'
+import { form } from './form'
 import { formGroup } from './form-group'
 import { general } from './general'
 import { icon } from './icon'
@@ -73,4 +74,5 @@ export const shortcuts = [
   ...toggle,
   ...collapsible,
   ...radioGroup,
+  ...form,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

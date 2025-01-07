@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.31.0-beta.1",
   "private": true,
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@9.15.3",
   "description": "The Atomic UI Framework",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -62,7 +62,8 @@
     "chroma-js": "catalog:",
     "ignore-dependency-scripts": "catalog:",
     "simple-git": "catalog:",
-    "unocss": "catalog:"
+    "unocss": "catalog:",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
