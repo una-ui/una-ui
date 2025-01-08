@@ -42,7 +42,7 @@ const actions = ref([
       )"
     />
     <NButton
-      label="Soft-warning toast"
+      label="soft-warning toast"
       btn="soft-warning"
       @click="toast(
         {
