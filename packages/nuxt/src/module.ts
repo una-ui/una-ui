@@ -221,6 +221,14 @@ export default defineNuxtModule<ModuleOptions>({
     await installModule('radix-vue/nuxt', {
       prefix: options.prefix,
     })
+    await installModule('@vee-validate/nuxt', {
+      componentNames: {
+        Form: `${options.prefix}Form`,
+        // Field: `${options.prefix}FormField`,
+        FieldArray: `${options.prefix}FormFieldArray`,
+        ErrorMessage: `${options.prefix}FormErrorMessage`,
+      },
+    })
 
     // composables
     addImportsDir(resolve(runtimeDir, 'composables'))

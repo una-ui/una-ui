@@ -1,11 +1,18 @@
 ---
 description: 'A versatile wrapper for various form components such as `Input`, `Textarea`, `Select`, and more. It offers a comprehensive set of features, including label, description, hint, message, status, and others.'
+navBadges:
+  - value: Deprecated
+    type: warning
 badges:
   - value: Source
     icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/FormGroup.vue
     target: _blank
 ---
+
+::alert{type="warning"}
+This component is deprecated and will be removed in the next major release. Use the [form](form) component instead.
+::
 
 ## Examples
 

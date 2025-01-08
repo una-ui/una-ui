@@ -62,7 +62,8 @@
     "chroma-js": "catalog:",
     "ignore-dependency-scripts": "catalog:",
     "simple-git": "catalog:",
-    "unocss": "catalog:"
+    "unocss": "catalog:",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",

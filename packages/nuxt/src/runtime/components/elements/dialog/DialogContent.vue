@@ -42,7 +42,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       @interact-outside="event => {
         if (preventClose) return event.preventDefault()
       }"
-      @escape-key-down="event => {
+      @escape-key-down="(event:any) => {
         if (preventClose) return event.preventDefault()
       }"
     >
