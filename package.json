@@ -78,7 +78,7 @@
     "bumpp": "catalog:",
     "conventional-changelog-cli": "catalog:",
     "eslint": "catalog:",
-    "eslint-plugin-format": "^0.1.3",
+    "eslint-plugin-format": "^1.0.1",
     "esno": "catalog:",
     "fast-glob": "catalog:",
     "fs-extra": "catalog:",
