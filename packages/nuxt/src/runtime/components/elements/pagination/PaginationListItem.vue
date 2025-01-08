@@ -11,6 +11,8 @@ const props = withDefaults(defineProps<NPaginationListItemProps>(), {
   square: true,
 })
 
+const slots = defineSlots<any>()
+
 const delegatedProps = computed(() => {
   const { value: __, class: _, ...delegated } = props
 
@@ -38,7 +40,7 @@ const forwardedProps = useForwardProps(delegatedProps)
         props.class,
       )"
     >
-      <template v-for="(_, name) in $slots" #[name]="slotData">
+      <template v-for="(_, name) in slots" #[name]="slotData">
         <slot :name="name" v-bind="slotData" />
       </template>
     </Button>
