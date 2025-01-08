@@ -63,7 +63,7 @@
     "ignore-dependency-scripts": "catalog:",
     "simple-git": "catalog:",
     "unocss": "catalog:",
-    "zod": "^3.24.1"
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
@@ -78,7 +78,7 @@
     "bumpp": "catalog:",
     "conventional-changelog-cli": "catalog:",
     "eslint": "catalog:",
-    "eslint-plugin-format": "^0.1.3",
+    "eslint-plugin-format": "catalog:",
     "esno": "catalog:",
     "fast-glob": "catalog:",
     "fs-extra": "catalog:",

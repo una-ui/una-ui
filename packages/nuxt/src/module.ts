@@ -200,6 +200,22 @@ export default defineNuxtModule<ModuleOptions>({
       priority: 10,
     })
 
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'overlays'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components/overlays', 'toast'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
     // plugins
     if (options.themeable) {
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))

@@ -109,7 +109,7 @@ const table = useTemplateRef<Table<Person>>('table')
       :columns
       :data
       :global-filter="search"
-      enable-row-selection enable-column-filters enable-sorting
+      enable-sorting enable-row-selection enable-column-filters
       row-id="username"
     >
       <!-- filters -->

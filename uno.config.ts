@@ -44,6 +44,7 @@ export default defineConfig({
   configDeps: [
     '../packages/nuxt/src/preset.config.ts',
 
+    '../packages/preset/src/_shortcuts/toast.ts',
     '../packages/preset/src/_shortcuts/form.ts',
     '../packages/preset/src/_shortcuts/radio-group.ts',
     '../packages/preset/src/_shortcuts/collapsible.ts',

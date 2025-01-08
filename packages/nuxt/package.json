@@ -47,8 +47,8 @@
     "@unocss/nuxt": "catalog:",
     "@unocss/preset-attributify": "catalog:",
     "@unocss/preset-icons": "catalog:",
-    "@vee-validate/nuxt": "^4.15.0",
-    "@vee-validate/zod": "^4.15.0",
+    "@vee-validate/nuxt": "catalog:",
+    "@vee-validate/zod": "catalog:",
     "@vueuse/core": "catalog:",
     "@vueuse/integrations": "catalog:",
     "@vueuse/nuxt": "catalog:",
@@ -64,7 +64,7 @@
     "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
     "nuxt": "catalog:",
-    "zod": "^3.24.1"
+    "zod": "catalog:"
   },
   "publishConfig": {
     "access": "public"

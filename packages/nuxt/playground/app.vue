@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Forms from './components/Forms.vue'
 </script>
 
 <template>
@@ -16,9 +15,9 @@ import Forms from './components/Forms.vue'
         <NThemeSwitcher />
       </div>
 
-      <div class="my-20 border rounded p-10">
-        <Forms />
-      </div>
+      <Toast />
     </div>
   </div>
+
+  <NToaster />
 </template>
