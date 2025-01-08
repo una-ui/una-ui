@@ -1,3 +1,19 @@
+# [0.32.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.31.0-beta.1...v0.32.0-beta.1) (2025-01-08)
+
+
+### Bug Fixes
+
+* **Progress:** reconfig indeterminate default progress animation ([fe29a98](https://github.com/una-ui/una-ui/commit/fe29a98a00132babff762d635013fac1b03abe05))
+
+
+### Features
+
+* **Button:** set loadingPlacement to label by default if icon prop is enabled ([1062e30](https://github.com/una-ui/una-ui/commit/1062e30e78e9cf7617105c57e9eba50a8c418fa6))
+* **Form:** introduce new component with vee-validate + zod config ([#314](https://github.com/una-ui/una-ui/issues/314)) ([a4a3b35](https://github.com/una-ui/una-ui/commit/a4a3b35ec61c669c7df5e0f4820eed708e16f1ec))
+* **Toast:** introduce new component and composable ([#315](https://github.com/una-ui/una-ui/issues/315)) ([875adc6](https://github.com/una-ui/una-ui/commit/875adc68ca6f0195ef3bae7c874e312113bb9816))
+
+
+
 # [0.31.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.30.0-beta.1...v0.31.0-beta.1) (2024-12-01)
 
 
