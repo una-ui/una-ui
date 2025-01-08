@@ -1,4 +1,4 @@
-import type { VNode } from 'vue'
+import type { ComputedRef, VNode } from 'vue'
 import type { NToastProps } from '../types'
 import { computed, ref } from 'vue'
 
@@ -121,14 +121,6 @@ function dispatch(action: Action) {
   }
 }
 
-function useToast() {
-  return {
-    toasts: computed(() => state.value.toasts),
-    toast,
-    dismiss: (toastId?: string) => dispatch({ type: actionTypes.DISMISS_TOAST, toastId }),
-  }
-}
-
 type Toast = Omit<ToasterToast, 'id'>
 
 function toast(props: Toast) {
@@ -159,6 +151,20 @@ function toast(props: Toast) {
     id,
     dismiss,
     update,
+  }
+}
+
+interface UseToast {
+  toasts: ComputedRef<ToasterToast[]>
+  toast: (props: Toast) => { id: string, dismiss: () => void, update: (props: ToasterToast) => void }
+  dismiss: (toastId?: string) => void
+}
+
+function useToast(): UseToast {
+  return {
+    toasts: computed(() => state.value.toasts),
+    toast,
+    dismiss: (toastId?: string) => dispatch({ type: actionTypes.DISMISS_TOAST, toastId }),
   }
 }
 
