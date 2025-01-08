@@ -1,3 +1,12 @@
+# [0.32.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.32.0-beta.1...v0.32.0-beta.2) (2025-01-08)
+
+
+### Features
+
+* **toast:** add leading icon example and documentation ([1d49717](https://github.com/una-ui/una-ui/commit/1d49717050c5cd7a6bfd04e0c665b9acca15c1bf))
+
+
+
 # [0.32.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.31.0-beta.1...v0.32.0-beta.1) (2025-01-08)
 
 
