@@ -161,6 +161,14 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
+      path: resolve(runtimeDir, 'components/forms', 'radio-group'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
       path: resolve(runtimeDir, 'components', 'misc'),
       prefix: options.prefix,
       global: options.global,
@@ -228,6 +236,14 @@ export default defineNuxtModule<ModuleOptions>({
     await installModule('@vueuse/nuxt')
     await installModule('radix-vue/nuxt', {
       prefix: options.prefix,
+    })
+    await installModule('@vee-validate/nuxt', {
+      componentNames: {
+        Form: `${options.prefix}Form`,
+        // Field: `${options.prefix}FormField`,
+        FieldArray: `${options.prefix}FormFieldArray`,
+        ErrorMessage: `${options.prefix}FormErrorMessage`,
+      },
     })
 
     // composables

@@ -3,7 +3,7 @@ const items = ref([
   {
     value: 'account',
     name: 'Account',
-    tabs: 'outline-pink',
+    tabs: 'solid-lime',
     _tabsTrigger: {
       leading: 'i-heroicons-user-20-solid',
     },
@@ -12,7 +12,7 @@ const items = ref([
     value: 'service',
     name: 'Service Provider',
     _tabsTrigger: {
-      tabs: 'solid-primary',
+      tabs: 'soft-pink',
       trailing: 'i-heroicons-chevron-right-20-solid',
     },
   },
@@ -21,7 +21,6 @@ const items = ref([
     name: 'Reviews',
     _tabsTrigger: {
       tabs: 'outline-success',
-      loading: true,
     },
   },
 ])

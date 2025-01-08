@@ -1,54 +1,7 @@
 ---
-title: 'Una UI - The Atomic UI Framework'
-titleTemplate: '%s'
-layout: page
+navigation: false
 ---
 
 :docs-hero
 
-::card-grid
-#default
-  ::card{icon=🔥}
-  #title
-  High Quality Presets
-  #description
-  A set of high quality presets for your next project. No more boilerplates.
-  ::
-
-  ::card{icon=🎨}
-  #title
-  Themeable
-  #description
-  Built-in theming system support. Dark mode ready. Customizable.
-  ::
-
-  ::card{icon=🚀}
-  #title
-  Crafted Components
-  #description
-  A set of crafted components for Vue 3 with TypeScript support.
-  ::
-
-  ::card{icon=⚡}
-  #title
-  Lightweight
-  #description
-  Built with performance in mind. And powered by Unocss style engine.
-  ::
-
-  ::card{icon=🔌}
-  #title
-  Extendable & Hackable
-  #description
-  Use your own components. Use your own theme. Use your own style.
-  ::
-
-  ::card{icon=🌘}
-  #title
-  Auto Dark Mode
-  #description
-  Auto dark mode support based on prefer color-scheme.
-  ::
-::
-
-:docs-sponsors
+:docs-landing-sections

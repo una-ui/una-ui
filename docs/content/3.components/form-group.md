@@ -1,135 +1,168 @@
 ---
-description: 'NFormGroup component - a wrapper component for `NInput`, `NTextarea`, `Select`, and other form components. It provides a label, description, hint, message, status and other features.'
+description: 'A versatile wrapper for various form components such as `Input`, `Textarea`, `Select`, and more. It offers a comprehensive set of features, including label, description, hint, message, status, and others.'
+navBadges:
+  - value: Deprecated
+    type: warning
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/FormGroup.vue
+    target: _blank
 ---
 
-# 🟢 Form group
+::alert{type="warning"}
+This component is deprecated and will be removed in the next major release. Use the [form](form) component instead.
+::
 
----
+## Examples
 
-## Basic
+### Basic
 
-`NFormGroup` - a wrapper component for `NInput`, `NTextarea`, `Select`, and other form components. It provides a label, description, hint, message, status and other features.
+| Prop    | Default | Type     | Description                     |
+| ------- | ------- | -------- | ------------------------------- |
+| `label` | -       | `string` | Adds a label to the form group. |
+| `id`    | -       | `string` | Sets the form group's id.       |
+| `for`   | -       | `string` | Sets the label's for attribute. |
 
 ::alert{type="info"}
-  Notice that when you click on the label, the input gets focused. By default, we automatically add `for` attribute to the label and `id` attribute to the input. If you want to override this behavior, you can define `for` and `id` attributes manually.
+Clicking the label focuses the input. We automatically add `for` to the label and `id` to the input. Override this by defining `for` and `id` manually.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueFormGroupUsage
+::div{label="Preview" preview}
+:ExampleVueFormGroupUsage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupUsage.vue
 ::
 :::
 
-## Required
+:read-more{to="label" title="Label component"}
 
-`required` - adds `*` to the label.
+### Required
+
+| Prop       | Default | Type      | Description            |
+| ---------- | ------- | --------- | ---------------------- |
+| `required` | `false` | `boolean` | Adds `*` to the label. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueFormGroupRequired
+::div{label="Preview" preview}
+:ExampleVueFormGroupRequired
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupRequired.vue
 ::
 :::
 
-## Description
+### Description
 
-`description` - displays description text.
+| Prop          | Default | Type     | Description                           |
+| ------------- | ------- | -------- | ------------------------------------- |
+| `description` | -       | `string` | Adds a description to the form group. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueFormGroupDescription
+::div{label="Preview" preview}
+:ExampleVueFormGroupDescription
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupDescription.vue
 ::
 :::
 
-## Hint
+### Hint
 
-`hint` - displays hint text.
+| Prop   | Default | Type     | Description                    |
+| ------ | ------- | -------- | ------------------------------ |
+| `hint` | -       | `string` | Adds a hint to the form group. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueFormGroupHint
+::div{label="Preview" preview}
+:ExampleVueFormGroupHint
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupHint.vue
 ::
 :::
 
-## Message
+### Message
 
-`message` - displays message text. Useful in combination with `status` prop.
+| Prop      | Default | Type     | Description                    |
+| --------- | ------- | -------- | ------------------------------ |
+| `message` | -       | `string` | Sets the form group's message. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueFormGroupMessage
+::div{label="Preview" preview}
+:ExampleVueFormGroupMessage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupMessage.vue
 ::
 :::
 
-## Status
+### Status
 
-`status` - changes the status of the form group. Useful for displaying validation status.
-
->Possible values: `info`, `success`, `warning`, `error`.
+| Prop     | Default | Type                                              | Description                   |
+| -------- | ------- | ------------------------------------------------- | ----------------------------- |
+| `status` | -       | `info`,`success`, `warning`, `error`, `undefined` | Sets the form group's status. |
 
 ::alert{type="info"}
 Notice that when you change the `status` prop, the `message` prop and the child component `status` prop are automatically updated.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueFormGroupStatus
+::div{label="Preview" preview}
+:ExampleVueFormGroupStatus
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupStatus.vue
 ::
 :::
 
-## Counter
+### Counter
 
-`counter.value` - displays counter text, useful for displaying the number of characters in the input.
+| Prop      | Default | Type     | Description                       |
+| --------- | ------- | -------- | --------------------------------- |
+| `counter` | -       | `object` | Enables the form group's counter. |
 
-`counter.max` - the maximum number of characters.
+| Counter | Default | Type     | Description                      |
+| ------- | ------- | -------- | -------------------------------- |
+| `value` | -       | `string` | Sets the counter value.          |
+| `max`   | -       | `number` | Sets the maximum counter number. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueFormGroupCounter
+::div{label="Preview" preview}
+:ExampleVueFormGroupCounter
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/form-group/ExampleVueFormGroupCounter.vue
-::  
+::
 :::
 
-## Slots
+### Slots
 
-| Name          | Description                                                        |
-| ------------- | ------------------------------------------------------------------ |
-| `default`     | The default slot of the form group, refer [Basic](#basic) section. |
-| `top`         | The top section of the form group.                                 |
-| `bottom`      | The bottom section of the form group.                              |
-| `label`       | The label slot of the form group.                                  |
-| `description` | The description slot of the form group.                            |
-| `hint`        | The hint slot of the form group.                                   |
-| `message`     | The message slot of the form group.                                |
-| `counter`     | The counter slot of the form group.                                |
+| Name          | Props | Description                                                        |
+| ------------- | ----- | ------------------------------------------------------------------ |
+| `default`     | -     | The default slot of the form group, refer [Basic](#basic) section. |
+| `top`         | -     | The top section of the form group.                                 |
+| `bottom`      | -     | The bottom section of the form group.                              |
+| `label`       | -     | The label slot of the form group.                                  |
+| `description` | -     | The description slot of the form group.                            |
+| `hint`        | -     | The hint slot of the form group.                                   |
+| `message`     | -     | The message slot of the form group.                                |
+| `counter`     | -     | The counter slot of the form group.                                |
 
 ## Props
 
-@@@ ../packages/nuxt/src/runtime/types/form-group.ts
+@@@ ../packages/nuxt/src/runtime/types/form-group.ts [types/form-group.ts]
 
 ## Presets
 
-@@@ ../packages/preset/src/_shortcuts/form-group.ts
+@@@ ../packages/preset/src/_shortcuts/form-group.ts [shortcuts/form-group.ts]
 
-## Component
+## Components
 
+:::CodeGroup
+::div{label="FormGroup.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/FormGroup.vue
+::
+:::

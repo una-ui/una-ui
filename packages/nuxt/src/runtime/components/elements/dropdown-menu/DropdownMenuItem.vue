@@ -10,6 +10,8 @@ const props = withDefaults(defineProps<NDropdownMenuItemProps>(), {
   dropdownMenuItem: '~',
 })
 
+const slots = defineSlots<any>()
+
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
 
@@ -29,7 +31,7 @@ const forwardedProps = useForwardProps(delegatedProps)
         :dropdown-menu-item
         :class="cn(
           'dropdown-menu-item-base w-full justify-start font-normal rounded-sm px-2',
-          forwardedProps.inset && !(forwardedProps.leading || $slots.leading) && 'pl-8',
+          forwardedProps.inset && !(forwardedProps.leading || slots.leading) && 'pl-8',
           props.class,
         )"
         btn="~"
@@ -39,7 +41,7 @@ const forwardedProps = useForwardProps(delegatedProps)
           ...forwardedProps.una,
         }"
       >
-        <template v-for="(_, name) in $slots" #[name]="slotData">
+        <template v-for="(_, name) in slots" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />
         </template>
 

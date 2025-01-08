@@ -23,12 +23,16 @@
 
     <NSeparator />
 
-    <span class="text-sm font-medium">Static color:</span>
+    <span class="text-sm font-medium">Static colors:</span>
 
-    <div>
+    <div class="flex flex-col gap-4">
       <NInput
         input="outline-gray"
         placeholder="This is the gray color"
+      />
+      <NInput
+        input="outline-black"
+        placeholder="This is the black color"
       />
     </div>
   </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const toggle = ref(false)
+const toggle = ref(true)
 </script>
 
 <template>
@@ -13,24 +13,28 @@ const toggle = ref(false)
 
     <NToggle
       label="i-radix-icons-font-italic"
+      :default-value="true"
       toggle-on="solid-orange"
       toggle-off="soft-gray"
     />
 
     <NToggle
       label="i-radix-icons-underline"
+      :default-value="true"
       toggle-on="soft-green"
       toggle-off="outline-gray"
     />
 
     <NToggle
       label="i-radix-icons-strikethrough"
+      :default-value="true"
       toggle-on="outline-yellow"
       toggle-off="text-muted"
     />
 
     <NToggle
       label="i-radix-icons-code"
+      :default-value="true"
       toggle-on="soft-red"
       toggle-off="outline-gray"
     />

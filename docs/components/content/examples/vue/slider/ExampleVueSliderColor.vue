@@ -9,11 +9,14 @@ const models = ref([
   [90],
   [100],
   [50],
+  [30],
 ])
 </script>
 
 <template>
   <div class="flex flex-wrap items-center gap-4">
+    <NSeparator label="Dynamic Colors" />
+
     <NSlider
       v-model="models[0]"
     />
@@ -51,6 +54,13 @@ const models = ref([
     <NSlider
       v-model="models[7]"
       slider="teal"
+    />
+
+    <NSeparator label="Static Colors" />
+
+    <NSlider
+      v-model="models[8]"
+      slider="accent"
     />
   </div>
 </template>

@@ -11,6 +11,7 @@ import { checkbox } from './checkbox'
 import { collapsible } from './collapsible'
 import { dialog } from './dialog'
 import { dropdowMenu } from './dropdown-menu'
+import { form } from './form'
 import { formGroup } from './form-group'
 import { general } from './general'
 import { icon } from './icon'
@@ -25,6 +26,7 @@ import { pagination } from './pagination'
 import { popover } from './popover'
 import { progress } from './progress'
 import { radio } from './radio'
+import { radioGroup } from './radio-group'
 import { select } from './select'
 import { separator } from './separator'
 import { skeleton } from './skeleton'
@@ -73,4 +75,6 @@ export const shortcuts = [
   ...toast,
   ...toggle,
   ...collapsible,
+  ...radioGroup,
+  ...form,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

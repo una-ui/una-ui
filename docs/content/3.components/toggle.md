@@ -1,81 +1,85 @@
 ---
-description: 'NToggle component - used to create a toggle button.'
+description: 'A two-state button that can be either on or off.'
+navBadges:
+  - value: New
+    type: lime
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Toggle.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/toggle
+    target: _blank
 ---
 
-# 🟢 Toggle
+## Examples
 
-::list{type="primary"}
-- On/Off States.
-- Accessible Labeling.
-- Iconography.
-- Customization.
-- Disabled State.
-- Keyboard Accessibility.
-::
+### Basic
 
----
+| Prop           | Default | Type      | Description                                                                                                                        |
+| -------------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `defaultValue` | -       | `boolean` | The initial pressed state of the toggle when it is first rendered. Use this when you don't need to manage its open state manually. |
+| `disabled`     | `false` | `boolean` | When set to `true`, disables user interaction with the toggle.                                                                     |
+| `pressed`      | -       | `boolean` | The controlled pressed state of the toggle, which can be bound using `v-model`.                                                    |
 
-## Basic
+:read-more{to="/components/button" title="Button component" target="_blank"}
 
-`NToggle`  is a user interface element that allows users to switch between two states, typically representing opposite conditions such as `on | off`. For more details on the API, please visit the [Radix-ui toggle](https://www.radix-vue.com/components/toggle.html#api-reference) documentation.
-
-| Prop           | Type      | Default | Description                                                                                                                        |
-| -------------- | --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `defaultValue` | `boolean` | `-`     | The initial pressed state of the toggle when it is first rendered. Use this when you don't need to manage its open state manually. |
-| `disabled`     | `boolean` | `false` | When set to `true`, disables user interaction with the toggle.                                                                     |
-| `pressed`      | `boolean` | `-`     | The controlled pressed state of the toggle, which can be bound using `v-model`.                                                    |
-
-::alert{type="info"}
-`NToggle` is wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available to use directly.
-::
+:read-more{to="https://www.radix-vue.com/components/toggle#root" title="Radix Toggle Root API." target="_blank"}
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueToggleBasic
+::div{label="Preview" preview}
+:ExampleVueToggleBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleBasic.vue
 ::
 :::
 
-## Variant and Color
+### Variant and Color
 
-| Prop         | Type     | Default       | Description                                    |
-| ------------ | -------- | ------------- | ---------------------------------------------- |
-| `toggle-on`  | `string` | `soft-accent` | Change the color of the toggle when it is on.  |
-| `toggle-off` | `string` | `ghost-gray`  | Change the color of the toggle when it is off. |
+| Prop         | Default       | Type                | Description                                    |
+| ------------ | ------------- | ------------------- | ---------------------------------------------- |
+| `toggle-on`  | `soft-accent` | `{variant}-{color}` | Change the color of the toggle when it is on.  |
+| `toggle-off` | `ghost-gray`  | `{variant}-{color}` | Change the color of the toggle when it is off. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueToggleColor
+::div{label="Preview" preview}
+:ExampleVueToggleColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleColor.vue
 ::
 :::
 
-## Slot
+:read-more{to="/components/button#color" title="Button variant and color section" target="_blank"}
+
+### Slots
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueToggleSlot
+::div{label="Preview" preview}
+:ExampleVueToggleSlot
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/toggle/ExampleVueToggleSlot.vue
 ::
 :::
 
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/toggle.ts
+:read-more{to="/components/button#slots" title="Button component slots" target="_blank"}
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/toggle.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/toggle.ts [shortcuts/toggle.ts]
 
-### 
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/toggle.ts [types/toggle.ts]
+
+## Components
 
 :::CodeGroup
-::code-block{label="Pagination" preview}
+::div{label="Toggle.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Toggle.vue
+
+::
+:::

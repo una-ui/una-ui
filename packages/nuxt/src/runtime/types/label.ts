@@ -6,4 +6,5 @@ interface BaseExtensions {
 }
 
 export interface NLabelProps extends BaseExtensions, LabelProps {
+  label?: string
 }

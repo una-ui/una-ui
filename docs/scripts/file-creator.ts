@@ -13,7 +13,7 @@ function createDirectory(name: string) {
 const directoryFolder = './content/4.components/0.elements'
 const listOfDirectoriesWithFiles = [
   {
-    text: '🔴 Button',
+    text: 'Button',
     link: '4.button',
     presetName: 'button.ts',
     componentName: 'elements/button.vue',

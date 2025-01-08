@@ -1,32 +1,35 @@
 ---
-description: 'NCard - use to display content in a flexible container component.'
+description: 'Displays a card with header, content, and footer.'
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/card/Card.vue
+    target: _blank
 ---
 
-# 🟢 Card
+## Examples
 
----
+### Basic
 
-## Basic
-
-`NCard` - use to display content in a flexible container component.
-
-| Prop          | Description              |
-| ------------- | ------------------------ |
-| `title`       | Title of the card       |
-| `description` | Description of the card |
+| Prop          | Default | Type     | Description           |
+| ------------- | ------- | -------- | --------------------- |
+| `title`       | -       | `string` | The card title.       |
+| `description` | -       | `string` | The card description. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueCardBasic
+::div{label="Preview" preview}
+:ExampleVueCardBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardBasic.vue
 ::
 :::
 
-## Variants
+### Variant
 
-`card="{variant}"` - change the card variant
+| Prop   | Default   | Type        | Description              |
+| ------ | --------- | ----------- | ------------------------ |
+| `card` | `outline` | `{variant}` | The variant of the card. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
@@ -34,94 +37,85 @@ description: 'NCard - use to display content in a flexible container component.'
 | `soft`    | The soft variant.           |
 | `~`       | The unstyle or base variant |
 
-::alert{type="info"}
-  If you want to change the default variant or add new variant, you can do so through the [Configuration section](/getting-started/configuration).
-::
-
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueCardVariant
+::div{label="Preview" preview}
+:ExampleVueCardVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardVariant.vue
 ::
 :::
 
-## Color
+### Color
 
-`card="{variant}-{color}"` - change the color of the card.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
-::
+| Prop   | Default             | Type                | Description            |
+| ------ | ------------------- | ------------------- | ---------------------- |
+| `card` | `{variant}-primary` | `{variant}-{color}` | The color of the card. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueCardColor
+::div{label="Preview" preview}
+:ExampleVueCardColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardColor.vue
 ::
 :::
 
-## Slots
+### Slots
 
-> You can use the following slots to customize the card.
-
-| Name          | Description           |
-| ------------- | --------------------- | 
-| `header`      | The header slot.      |
-| `default`     | The default slot.     |
-| `title`       | The title slot.       |
-| `description` | The description slot. |
-| `footer`      | The footer slot.      |
+| Name          | Props | Description           |
+| ------------- | ----- | --------------------- |
+| `header`      | -     | The header slot.      |
+| `default`     | -     | The default slot.     |
+| `title`       | -     | The title slot.       |
+| `description` | -     | The description slot. |
+| `footer`      | -     | The footer slot.      |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueCardSlots
+::div{label="Preview" preview}
+:ExampleVueCardSlots
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/card/ExampleVueCardSlots.vue
 ::
 :::
 
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/card.ts [shortcuts/card.ts]
 
 ## Props
-@@@ ../packages/nuxt/src/runtime/types/card.ts
 
-## Presets
-@@@ ../packages/preset/src/_shortcuts/card.ts
+@@@ ../packages/nuxt/src/runtime/types/card.ts [types/card.ts]
 
-## Component
-
-### 
+## Components
 
 :::CodeGroup
-::code-block{label="Card" preview}
+::div{label="Card.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/Card.vue
 
 ::
-::code-block{label="CardContent"}
+::div{label="CardContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardContent.vue
 
 ::
-::code-block{label="CardTitle"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardTitle.vue
-
-::
-::code-block{label="CardDescription"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardDescription.vue
-
-::
-::code-block{label="CardHeader"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardHeader.vue
-
-::
-::code-block{label="CardAbout"}
+::div{label="CardAbout.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardAbout.vue
 
 ::
-::code-block{label="CardFooter"}
+::div{label="CardTitle.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/card/CardTitle.vue
+
+::
+::div{label="CardDescription.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/card/CardDescription.vue
+
+::
+::div{label="CardHeader.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/card/CardHeader.vue
+
+::
+::div{label="CardFooter.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardFooter.vue
 
 ::

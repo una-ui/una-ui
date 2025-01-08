@@ -47,7 +47,7 @@ provide('selectModelValue', modelValue)
 
 <template>
   <SelectRoot
-    v-bind="omitProps(forwarded, ['items', 'multipleGroup', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
+    v-bind="omitProps(forwarded, ['items', 'groupItems', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
     :model-value="transformerValue"
   >
     <SelectTrigger
@@ -62,7 +62,7 @@ provide('selectModelValue', modelValue)
           v-bind="forwarded._selectValue"
           :placeholder="forwarded._selectValue?.placeholder || forwarded.placeholder"
         >
-          <slot :value="modelValue">
+          <slot name="value" :value="modelValue">
             {{ transformerValue }}
           </slot>
         </SelectValue>
@@ -80,7 +80,7 @@ provide('selectModelValue', modelValue)
     >
       <slot name="content" :items="forwarded.items">
         <!--  single-group -->
-        <template v-if="!forwarded.multipleGroup">
+        <template v-if="!groupItems">
           <SelectLabel
             v-if="forwarded.label"
             v-bind="forwarded._selectLabel"
@@ -115,18 +115,18 @@ provide('selectModelValue', modelValue)
           <SelectGroup
             v-for="(groupItems, i) in items"
             :key="i"
-            v-bind="forwarded._selectGroup"
+            v-bind="props._selectGroup"
           >
             <SelectSeparator
               v-if="i > 0"
-              v-bind="forwarded._selectSeparator"
+              v-bind="props._selectSeparator"
             />
 
             <slot name="group" :items="groupItems">
               <SelectLabel
                 v-if="groupItems.label"
-                :size="forwarded.size"
-                v-bind="{ ...forwarded._selectLabel, ...groupItems._selectLabel }"
+                :size
+                v-bind="{ ...props._selectLabel, ...groupItems._selectLabel }"
               >
                 <slot name="label" :label="groupItems.label">
                   {{ groupItems.label }}
@@ -138,8 +138,8 @@ provide('selectModelValue', modelValue)
                 :key="groupItem"
               >
                 <SelectItem
-                  :value="groupItem "
-                  :size="forwarded.size"
+                  :value="groupItem"
+                  :size
                   v-bind="{ ...forwarded._selectItem, ...groupItems?._selectItem, ...groupItem._selectItem }"
                   :is-selected="groupItem === transformerValue"
                 >

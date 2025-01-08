@@ -12,6 +12,8 @@ const props = withDefaults(defineProps<NDialogCloseProps>(), {
   label: 'i-close',
 })
 
+const slots = defineSlots<any>()
+
 const delegatedProps = reactiveOmit(props, 'class')
 </script>
 
@@ -25,7 +27,7 @@ const delegatedProps = reactiveOmit(props, 'class')
         v-bind="delegatedProps"
         :class="cn('dialog-close', props.class)"
       >
-        <template v-for="(_, name) in $slots" #[name]="slotData">
+        <template v-for="(_, name) in slots" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />
         </template>
       </Button>

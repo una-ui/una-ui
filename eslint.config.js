@@ -4,8 +4,14 @@ export default antfu(
   {
     type: 'lib',
     unocss: true,
+    typescript: true,
+    vue: true,
+    formatters: {
+      css: true,
+      html: true,
+      markdown: 'dprint',
+    },
     ignores: [
-      '**/docs/content/**',
       '**/*.sh',
     ],
     rules: {
@@ -18,7 +24,6 @@ export default antfu(
     },
   },
   {
-    files: ['docs/**', '**/playground/**'],
     rules: {
       'ts/explicit-function-return-type': ['off'],
     },

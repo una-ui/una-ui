@@ -53,7 +53,7 @@ const columnVisibility = ref({})
 
     <NTable
       ref="table"
-      v-model:column-visibility="columnVisibility"
+      :column-visibility="columnVisibility"
       :columns
       :data
     />

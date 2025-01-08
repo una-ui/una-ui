@@ -1,221 +1,193 @@
 ---
-description: "NAvatar component - used to display a user's profile picture, initials, or icon."
+description: 'An image element with a fallback for representing the user.'
+navBadges:
+  - value: Updated
+    type: lime
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/avatar/Avatar.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/avatar
+    target: _blank
 ---
 
-# 🟢 Avatar
+## Examples
 
----
+### Basic
 
-## Basic
+| Prop    | Default | Type     | Description                                                                                                             |
+| ------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `src`   | -       | `string` | The image source.                                                                                                       |
+| `alt`   | -       | `string` | The alternative text.                                                                                                   |
+| `label` | -       | `string` | The placeholder of the avatar when it is loading. By default, it uses the first letters of each word in the `alt` prop. |
 
-`NAvatar` - used to display a user's profile picture, initials, or icon.
+:read-more{to="https://www.radix-vue.com/components/avatar#root" title="Radix Avatar Root API." target="_blank"}
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAvatarBasic
+::div{label="Preview" preview}
+:ExampleVueAvatarBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarBasic.vue
 ::
 :::
 
-## Variants
+### Variant
 
-`variant="{variant}"` - change the variant of the avatar.
+| Prop     | Default | Type        | Description                |
+| -------- | ------- | ----------- | -------------------------- |
+| `avatar` | `soft`  | `{variant}` | The variant of the avatar. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
-| `solid`   | The default variant.        |
-| `soft`    | The soft variant.           |
+| `soft`    | The default variant.        |
+| `solid`   | The solid variant.          |
 | `outline` | The outline variant.        |
 | `~`       | The unstyle or base variant |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAvatarVariant
+::div{label="Preview" preview}
+:ExampleVueAvatarVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarVariant.vue
 ::
 :::
 
-## Color
+### Color
 
-`avatar="{variant}-{color}"` - change the color of the avatar.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
-::
+| Prop     | Default          | Type                | Description              |
+| -------- | ---------------- | ------------------- | ------------------------ |
+| `avatar` | `{variant}-gray` | `{variant}-{color}` | The color of the avatar. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAvatarColor
+::div{label="Preview" preview}
+:ExampleVueAvatarColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarColor.vue
 ::
 :::
 
-## Icon
+### Icon
 
-`icon="{icon}"` - set the icon of the avatar, instead of an image.
-
-::alert{type="warning"}
-You can't use the `icon` prop with the `src` prop.
-::
+| Prop   | Default | Type    | Description                                                                                                                     |
+| ------ | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `icon` | `false` | boolean | If true, the label will be wrapped as an [Icon component](/components/icon). The label can be passed as the `name` of the icon. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAvatarIcon
+::div{label="Preview" preview}
+:ExampleVueAvatarIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarIcon.vue
 ::
 :::
 
-## Skeleton mode
+### Size and Square
 
-`skeleton` - set skeleton mode while the image is loading.
+| Prop     | Default  | Type     | Description                                                                                                       |
+| -------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `size`   | `md`     | `string` | Sets the size of the avatar.                                                                                      |
+| `square` | `2.5rem` | `string` | Sets the avatar to a square shape with specified dimensions. This does not affect the size of the fallback value. |
+
+> 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 
 ::alert{type="warning"}
-The `skeleton` prop is only available when using the `src` prop.
+The **padding**, **icons**, and **text-size** of the input scale are dynamically adjusted based on the **size** property. To customize the **text-size** and **padding** simultaneously, you can use utility classes.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAvatarSkeleton
+::div{label="Preview" preview}
+:ExampleVueAvatarSize
 ::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSkeleton.vue
-::
-:::
-
-## With Indicator
-
-Refer to the [Indicator](indicator) component for more details.
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAvatarIndicator
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/avatar/ExampleVueAvatarIndicator.vue
-::
-:::
-
-## Size
-
-`size="{size}"` - change the size of the avatar.
-
-> 🚀 You can freely adjust the size of the avatar using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `padding` and `font-size` of the avatar scale depends on the `size`. If you want to change the `font-size` and `padding` simultaneously, you can always customize it using utility classes.
-::
-
-:::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAvatarSize
-::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSize.vue
 ::
 :::
 
-## Fallbacks
+### Rounded
 
-`fallback="{fallback}"` - set the fallback image url.
-
-If there is an error loading the avatar image, the component falls back to an alternative in the following order:
-
-1. the provided `fallback` slot or prop
-2. the provided `label` slot or prop
-3. the first two letters of each word in the `alt` prop
-4. a generic avatar icon
+| Prop      | Default | Type     | Description                             |
+| --------- | ------- | -------- | --------------------------------------- |
+| `rounded` | `full`  | `string` | Set the avatar to have rounded corners. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAvatarFallback
+::div{label="Preview" preview}
+:ExampleVueAvatarRounded
 ::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/avatar/ExampleVueAvatarFallback.vue
+::div{label="Code"}
+@@@ ./components/content/examples/vue/avatar/ExampleVueAvatarRounded.vue
 ::
 :::
 
-## Lazy loading
-
-> Use the `Lazy` prefix provided by nuxt to lazy load the NAvatar component. For example:
-
-`<LazyNAvatar src="..." />`
-
-## Customization
-
-> You can customize the `avatar` using the `una` prop and utility classes.
-
-::alert{type="info"}
-  You can also globally customize the avatar preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
-::
+### With Indicator
 
 :::CodeGroup
-::code-block{label="Preview" preview}
- :ExampleVueAvatarCustom
+::div{label="Preview" preview}
+:ExampleVueAvatarIndicator
 ::
-::code-block{label="Code"}
+::div{label="Code"}
+@@@ ./components/content/examples/vue/avatar/ExampleVueAvatarIndicator.vue
+::
+:::
+
+:read-more{to="/components/indicator" title="Indicator component" target="_blank"}
+
+### Customization
+
+> You can customize the avatar using the `una` prop and utility classes.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueAvatarCustom
+::
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarCustom.vue
 ::
 :::
 
-## Slots
+### Slots
 
-| Slot      | Description                               |
-| --------- | ----------------------------------------- |
-| `default` | The image, icon, or labels of the avatar. |
-
-##### Example 1
-
-::alert{type="warning"}
-You will lose the ability to have fallbacks if you use the `default` slot, we usually recommend this if you want to have a component inside the avatar such as `NIcon` or just a label. But if you want to have a fallback, you can see the [example 2](#example-2) below.
-::
+| Slot       | Props | Description                         |
+| ---------- | ----- | ----------------------------------- |
+| `default`  | -     | The image element of the avatar.    |
+| `fallback` | -     | The fallback element of the avatar. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
- :ExampleVueAvatarSlot1
+::div{label="Preview" preview}
+:ExampleVueAvatarSlot1
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSlot1.vue
 ::
 :::
 
----
-
-| Prop        | Description                      |
-| ----------- | -------------------------------- |
-| `isLoading` | The loading state of the avatar. |
-| `error`     | The error state of the avatar.   |
-| `isReady`   | The ready state of the avatar.   |
-| `src`       | The source of the avatar.        |
-| `alt`       | The alt text of the avatar.      |
-
-##### Example 2
-
-::alert{type="info"}
-You don't have to use this case, this is just an example of how you can use the `default` slot to have fallbacks in a custom way.
-::
-
-:::CodeGroup
-::code-block{label="Preview" preview}
- :ExampleVueAvatarSlot2
-::
-::code-block{label="Code"}
-@@@ ./components/content/examples/vue/avatar/ExampleVueAvatarSlot2.vue
-::
-:::
-
-## Props
-@@@ ../packages/nuxt/src/runtime/types/avatar.ts
+:read-more{to="/components/button#slots" title="Button component slots" target="_blank"}
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/avatar.ts
 
-## Component
-@@@ ../packages/nuxt/src/runtime/components/elements/Avatar.vue
+@@@ ../packages/preset/src/_shortcuts/avatar.ts [shortcuts/avatar.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/avatar.ts [types/avatar.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Avatar.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/avatar/Avatar.vue
+
+::
+::div{label="AvatarFallback.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/avatar/AvatarFallback.vue
+
+::
+::div{label="AvatarImage.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/avatar/AvatarImage.vue
+
+::
+:::

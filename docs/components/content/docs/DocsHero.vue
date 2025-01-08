@@ -8,37 +8,37 @@ const { copy, copied } = useClipboard({ source })
 </script>
 
 <template>
-  <div grid="~ cols-1 lg:cols-5" class="my-15 gap-x-30 gap-y-5 lg:my-35 md:my-20 sm:my-15">
+  <div grid="~ cols-1 lg:cols-5" class="my-15 gap-x-30 gap-y-5 lg:my-30 md:my-20 sm:my-15">
     <!-- left section -->
-    <div col="lg:span-3 span-1" class="flex flex-col items-center lg:items-start space-y-10 lg:px-0 sm:px-25">
+    <div col="lg:span-3 span-1" class="flex flex-col items-center gap-y-6 lg:items-start sm:gap-y-8 lg:px-0 sm:px-25">
       <NButton
         to="https://github.com/una-ui/una-ui/releases"
         target="blank"
         btn="soft-gray"
-        size="xs"
-        rounded-lg
+        size="10px sm:xs"
+        rounded="lg"
       >
         <NIcon name="i-heroicons-sparkles-solid" mr-1 text-sm text-primary />
         v{{ version }}
       </NButton>
 
       <div flex="~ col" class="text-center space-y-2 lg:text-left">
-        <h1 class="text-6xl font-bold lg:text-7xl">
+        <h1 class="text-5xl font-bold lg:text-7xl">
           <span class="from-$c-brand-next to-primary bg-gradient-to-r bg-clip-text text-transparent">
             Una UI
           </span>
         </h1>
-        <h2 class="text-5xl text-muted font-bold lg:text-6xl">
-          The Atomic UI Framework for Nuxt
+        <h2 class="text-4xl text-accent font-bold lg:text-6xl">
+          The Atomic UI Framework
         </h2>
-        <p class="pt-5 text-xl text-$c-gray-500 lg:text-2xl">
-          A technology that helps you build fast, modern, and lightweight web applications with the power of Unocss Engine.
+        <p class="text-xl text-muted md:text-2xl">
+          Experience the power of Unocss Engine, enabling the creation of fast, modern, and lightweight components with ease.
         </p>
       </div>
 
-      <div flex="~ wrap" class="justify-center gap-4 lg:justify-start">
+      <div flex="~ wrap" class="mt-4 justify-center gap-4 lg:justify-start">
         <NButton
-          to="/getting-started"
+          to="/getting-started/introduction"
           btn="solid"
           class="p-5.5 font-bold"
           rounded="full"
@@ -55,7 +55,7 @@ const { copy, copied } = useClipboard({ source })
           btn="solid-gray"
           class="p-5.5 font-bold"
           rounded="full"
-          :class="{ 'text-primary-active': copied }"
+          :class="{ 'text-$c-brand-next': copied }"
           :label="source"
           :trailing="!copied ? 'i-heroicons-clipboard-document' : 'i-heroicons-check'"
           @click="copy(source)"
@@ -64,11 +64,20 @@ const { copy, copied } = useClipboard({ source })
     </div>
 
     <!-- right section -->
-    <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid mb-10 w-full place-items-center text-center lg:mb-0 lg:text-right">
-      <div class="image-bg absolute z-5 h-50 w-50 rotate-0 lg:h-85 lg:w-85" />
-      <div class="image-bg absolute z-5 h-50 w-50 rotate-45 lg:h-85 lg:w-85" />
-      <div class="h-50 w-50 -mt-10% lg:h-85 lg:w-85">
-        <LogoSvg />
+    <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid w-full place-items-center text-center lg:text-right">
+      <div
+        square="50 lg:85"
+        class="image-bg absolute z-5 rotate-0"
+      />
+      <div
+        square="50 lg:85"
+        class="image-bg absolute z-5 rotate-45"
+      />
+      <div
+        square="50 lg:85"
+        class="-mt-10%"
+      >
+        <CommonLogo />
       </div>
     </div>
   </div>
@@ -81,7 +90,7 @@ const { copy, copied } = useClipboard({ source })
   }
 }
 .image-bg {
-  opacity: .5;
+  opacity: 0.5;
   transition: opacity 2s ease;
   background-image: linear-gradient(-80deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
   filter: blur(120px);

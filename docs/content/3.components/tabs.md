@@ -1,114 +1,124 @@
 ---
-description: 'NTabs are used to navigate between different content and also they have robust focus management and keyboard navigation support.'
+description: 'A set of layered sections of content—known as tab panels—that are displayed one at a time.'
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/tabs/Tabs.vue
+    target: _blank
+  - value: API reference
+    to: https://www.radix-vue.com/components/tabs
+    target: _blank
 ---
 
-# 🟢 Tabs
+## Examples
 
----
+### Basic
 
-## Basic
-
-`NTabs` are used to navigate between different content and also they have robust focus management and keyboard navigation support.
+| Prop       | Default | Type      | Description                 |
+| ---------- | ------- | --------- | --------------------------- |
+| `content`  | -       | `string`  | Set the tooltip content.    |
+| `disabled` | -       | `boolean` | Set to disable the tooltip. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueTabsBasic
+::div{label="Preview" preview}
+:ExampleVueTabsBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsBasic.vue
 ::
 :::
 
-## Variant and Color
+:read-more{to="https://www.radix-vue.com/components/tabs#root" title="Radix Tabs Root API." target="_blank"}
 
-`tabs="{variant}-{color}"` is used to set the variant of the tabs. The default variant is `soft-black`.
+### Variant and Color
 
-| Prop                | Description                                        |
-| ------------------- | -------------------------------------------------- |
-| `tabs`              | Set the tabs variant and color.                    |
-| `_tabsTrigger.tabs` | Set the tabs variant and color via `_tabsTrigger`. |
-
-::alert{type="info"}
-`NTabs` is wrapped around the [NButton](button) component. This means that all the props and slots of `NButton` are available through the `_tabsTrigger` prop.
-::
+| Prop                | Default      | Type     | Description                                        |
+| ------------------- | ------------ | -------- | -------------------------------------------------- |
+| `tabs`              | `soft-black` | `string` | Set the tabs variant and color.                    |
+| `_tabsTrigger.tabs` | -            | `string` | Set the tabs variant and color via `_tabsTrigger`. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueTabsColor
+::div{label="Preview" preview}
+:ExampleVueTabsColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsColor.vue
 ::
 :::
 
-## Disabled
+:read-more{to="/components/button#color" title="Button Colors" target="_blank"}
 
-`disabled="{boolean}"` is used to disable the tabs. The default value is `false`.
+### Disabled
 
-| Prop                    | Description                               |
-| ----------------------- | ----------------------------------------- |
-| `disabled`              | Set the tabs disabled.                    |
-| `_tabsTrigger.disabled` | Set the tabs disabled via `_tabsTrigger`. |
+| Prop                    | Default | Type      | Description                               |
+| ----------------------- | ------- | --------- | ----------------------------------------- |
+| `disabled`              | `false` | `boolean` | Set the tabs disabled.                    |
+| `_tabsTrigger.disabled` | -       | `boolean` | Set the tabs disabled via `_tabsTrigger`. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueTabsDisabled
+::div{label="Preview" preview}
+:ExampleVueTabsDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsDisabled.vue
 ::
 :::
 
-## Size
+### Size
 
-| Prop                | Description           |
-| ------------------- | --------------------- |
-| `size`              | Set the tabs size.    |
-| `_tabsTrigger.size` | Set the trigger size. |
-| `_tabsContent.size` | Set the content size. |
-
-> 🚀 You can freely adjust the size of the tabs using any size imaginable. No limits exist, and you aan use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
-
-::alert{type="info"}
-The `height` and `width` of the tabs scale depends on the `tabs-size`. If you want to change the `height` and `width` simultaneously, you can always customize it using utility classes.
-::
+| Prop                | Default | Type     | Description           |
+| ------------------- | ------- | -------- | --------------------- |
+| `size`              | -       | `string` | Set the tabs size.    |
+| `_tabsTrigger.size` | -       | `string` | Set the trigger size. |
+| `_tabsContent.size` | -       | `string` | Set the content size. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueTabsSize
+::div{label="Preview" preview}
+:ExampleVueTabsSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/tabs/ExampleVueTabsSize.vue
 ::
 :::
 
+:read-more{to="/components/button#size" title="Button Size" target="_blank"}
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/tabs.ts
+### Slots
+
+| Name      | Props   | Description       |
+| --------- | ------- | ----------------- |
+| `list`    | `items` | The list slot.    |
+| `trigger` | -       | The trigger slot. |
+| `content` | `item`  | The content slot. |
 
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/tabs.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/tabs.ts [shortcuts/tabs.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/tabs.ts [types/tabs.ts]
+
+## Components
 
 :::CodeGroup
-::code-block{label="Tabs" preview}
+::div{label="Tabs.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/Tabs.vue
 
 ::
-::code-block{label="TabsRoot"}
+::div{label="TabsRoot.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsRoot.vue
 
 ::
-::code-block{label="TabsList"}
+::div{label="TabsList.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsList.vue
 
 ::
-::code-block{label="TabsTrigger"}
+::div{label="TabsTrigger.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsTrigger.vue
 
 ::
-::code-block{label="TabsContent"}
+::div{label="TabsContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsContent.vue
 
 ::

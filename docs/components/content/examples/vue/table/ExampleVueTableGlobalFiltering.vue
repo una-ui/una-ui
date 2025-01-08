@@ -48,6 +48,7 @@ const search = ref('')
 
       <NButton
         label="Add new"
+        disabled
         leading="i-radix-icons-plus"
         class="w-full md:w-auto"
       />

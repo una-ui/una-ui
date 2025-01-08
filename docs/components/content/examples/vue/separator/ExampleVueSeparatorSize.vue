@@ -1,15 +1,12 @@
 <template>
   <div>
     <NSeparator
-      separator="solid"
       size="4xl"
     />
     <NSeparator
-      separator="dashed"
       size="40px"
     />
     <NSeparator
-      separator="dotted"
       size="9xl"
     />
   </div>

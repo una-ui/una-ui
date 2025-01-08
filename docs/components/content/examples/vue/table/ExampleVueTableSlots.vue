@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker'
 
 import makeData, { type Person } from './makeData'
 
-const data = ref(makeData(10))
+const data = ref(makeData(50))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -109,7 +109,7 @@ const table = useTemplateRef<Table<Person>>('table')
       :columns
       :data
       :global-filter="search"
-      enable-row-selection enable-column-filters enable-sorting
+      enable-sorting enable-row-selection enable-column-filters
       row-id="username"
     >
       <!-- filters -->

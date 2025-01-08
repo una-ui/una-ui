@@ -8,7 +8,7 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
   // base
   'badge': 'text-xs leading-tight py-0.3333333333333333em px-0.6666666666666666em gap-x-0.25em inline-flex items-center rounded-md font-medium text-brand',
   'badge-icon-base': 'text-1em',
-  'badge-close': 'relative rounded-sm h-1.16em w-1.16em grid place-items-center -mr-0.375em hover:bg-brand/20',
+  'badge-close': 'relative rounded-sm h-1.16em w-1.16em grid place-items-center -mr-0.375em hover:bg-brand/20 bg-transparent',
   'badge-close-icon-base': 'text-brand/75 group-hover:text-brand/90',
 
   // variants

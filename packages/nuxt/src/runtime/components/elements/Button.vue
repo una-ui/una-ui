@@ -28,6 +28,8 @@ const mergeVariants = computed(() => {
   }
 })
 
+const loadingPlacement = computed(() => props.loadingPlacement === 'leading' && props.icon ? 'label' : props.loadingPlacement)
+
 const btnVariants = ['solid', 'outline', 'soft', 'ghost', 'link', 'text'] as const
 
 const hasVariant = computed(() =>
@@ -52,6 +54,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :type="to ? null : type"
     :class="cn(
       (square === '' || square === true) && 'btn-square',
+      block && 'btn-block',
       !rounded && 'btn-default-radius',
       !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
       reverse && 'btn-reverse',
@@ -90,7 +93,6 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     </slot>
 
     <ReuseTemplate v-if="loading && loadingPlacement === 'label'" />
-
     <slot v-else>
       <NIcon
         v-if="label && icon"
