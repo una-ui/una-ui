@@ -92,6 +92,8 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultOpen', 
       class="absolute inset-x-0 bottom-0 !mx-0"
     >
       <Progress
+        :progress
+        v-bind="_progress"
         class="h-1 rounded-none bg-transparent"
         :model-value="remaining / duration * 100"
       />

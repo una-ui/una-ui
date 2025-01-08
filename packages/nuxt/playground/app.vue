@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Forms from './components/Forms.vue'
 </script>
 
 <template>
@@ -15,11 +14,8 @@ import Forms from './components/Forms.vue'
       <div class="mt-2">
         <NThemeSwitcher />
       </div>
-      <Collapsible />
 
-      <div class="my-20 border rounded p-10">
-        <Forms />
-      </div>
+      <Toast />
     </div>
   </div>
 

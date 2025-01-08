@@ -19,20 +19,24 @@ const actions = ref([
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
-          toast: 'outline-gray',
+          toast: 'solid-white',
+          progress: 'white',
+          showProgress: true,
           actions,
           closable: true,
         },
       )"
     />
     <NButton
-      label="Outline-yellow toast"
-      btn="outline-yellow"
+      label="Outline-orange toast"
+      btn="outline-orange"
       @click="toast(
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
-          toast: 'outline-yellow',
+          toast: 'outline-orange',
+          progress: 'progress',
+          showProgress: true,
           actions,
           closable: true,
         },
@@ -46,6 +50,8 @@ const actions = ref([
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
           toast: 'soft-info',
+          progress: 'info',
+          showProgress: true,
           actions,
           closable: true,
         },

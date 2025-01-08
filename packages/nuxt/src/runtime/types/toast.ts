@@ -1,6 +1,7 @@
 import type { ToastActionProps, ToastCloseProps, ToastDescriptionProps, ToastProviderProps, ToastRootProps, ToastTitleProps, ToastViewportProps } from 'radix-vue'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
+import type { NProgressProps } from './progress'
 
 interface BaseExtensions {
   class?: HTMLAttributes['class']
@@ -13,7 +14,7 @@ export interface NToasterProps extends BaseExtensions, ToastProviderProps {
   _toast?: Partial<NToastProps>
 }
 
-export interface NToastProps extends BaseExtensions, ToastRootProps {
+export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progress'>, ToastRootProps {
   /**
    * Allows you to add `UnaUI` toast preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -69,6 +70,7 @@ export interface NToastProps extends BaseExtensions, ToastRootProps {
   _toastAction?: Partial<NToastActionProps>
   _toastClose?: Partial<NToastCloseProps>
   _toastInfo?: Partial<NToastInfoProps>
+  _progress?: Partial<NProgressProps>
 
   /**
    * `UnaUI` preset configuration
