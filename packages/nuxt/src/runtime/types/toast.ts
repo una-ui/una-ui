@@ -25,6 +25,12 @@ export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progr
    */
   toast?: HTMLAttributes['class']
   /**
+   * Display leading icon.
+   *
+   * @default null
+   */
+  leading?: HTMLAttributes['class']
+  /**
    * Add a title to the toast.
    */
   title?: string
@@ -122,4 +128,7 @@ export interface NToastUnaProps {
   toastCloseIconBase?: HTMLAttributes['class']
   toastCloseIcon?: HTMLAttributes['class']
   toastInfo?: HTMLAttributes['class']
+  toastLeading?: HTMLAttributes['class']
+  toastWrapper?: HTMLAttributes['class']
+  toastProgress?: HTMLAttributes['class']
 }

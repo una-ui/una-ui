@@ -33,10 +33,12 @@ For the beginning, add the `Toaster` component to your `app.vue`.
 
 Then, you can use the `useToast` composable to add toasts to your app:
 
-| Prop          | Default | Type     | Description              |
-| ------------- | ------- | -------- | ------------------------ |
-| `title`       | -       | `string` | Title of the toast       |
-| `description` | -       | `string` | Description of the toast |
+| Prop           | Default | Type      | Description              |
+| -------------- | ------- | --------- | ------------------------ |
+| `title`        | -       | `string`  | Title of the toast       |
+| `description`  | -       | `string`  | Description of the toast |
+| `showProgress` | `false` | `boolean` | Show the progress bar.   |
+| `closable`     | `true`  | `boolean` | Display close button.    |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -49,9 +51,9 @@ Then, you can use the `useToast` composable to add toasts to your app:
 
 ### With actions
 
-| Prop      | Default | Type       | Description           |
-| --------- | ------- | ---------- | --------------------- |
-| `actions` | `[]`    | `Action[]` | The array of actions. |
+| Prop      | Default | Type       | Description          |
+| --------- | ------- | ---------- | -------------------- |
+| `actions` | `[]`    | `Action[]` | The array of action. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -59,21 +61,6 @@ Then, you can use the `useToast` composable to add toasts to your app:
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/toast/ExampleVueToastActions.vue
-::
-:::
-
-### Closable
-
-| Prop       | Default | Type      | Description           |
-| ---------- | ------- | --------- | --------------------- |
-| `closable` | `true`  | `boolean` | Display close button. |
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueToastClosable
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/toast/ExampleVueToastClosable.vue
 ::
 :::
 
@@ -117,27 +104,6 @@ Configure the toast provider using the `_toastProvider` prop.
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/toast/ExampleVueToastProvider.vue
-::
-:::
-
-### Root
-
-Configure the toast root using the `_toastRoot` prop.
-
-| Prop          | Default | Type      | Description                                                    |
-| ------------- | ------- | --------- | -------------------------------------------------------------- |
-| defaultOpen   | `false` | `boolean` | Set the default open state of the toast.                       |
-| open          | `false` | `boolean` | Set the open state of the toast.                               |
-| onUpdate:open | -       | `void`    | Event handler called when the open state of the toast changes. |
-
-:read-more{to="https://www.radix-vue.com/components/toast#root" title="Radix Toast Root API" target="_blank"}
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueToastRoot
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/toast/ExampleVueToastRoot.vue
 ::
 :::
 

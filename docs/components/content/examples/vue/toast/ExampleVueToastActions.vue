@@ -3,11 +3,19 @@ const { toast } = useToast()
 
 const actions = [
   {
-    label: 'Undo',
+    label: 'Retry',
+    btn: 'solid-primary',
+    altText: 'Error',
+    onClick: () => {
+      alert('Retry clicked')
+    },
+  },
+  {
+    label: 'Dismiss',
     btn: 'solid-white',
     altText: 'Error',
     onClick: () => {
-      alert('Undo clicked')
+      alert('Dismiss clicked')
     },
   },
 ]

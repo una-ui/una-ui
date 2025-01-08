@@ -13,7 +13,7 @@ const { toast } = useToast()
           description: 'There was a problem with your request.',
           _toastProvider: {
             duration: 1000,
-            swipeDirection: 'left',
+            swipeDirection: 'up',
           },
           closable: true,
         },

@@ -28,29 +28,28 @@ const actions = ref([
       )"
     />
     <NButton
-      label="Outline-orange toast"
-      btn="outline-orange"
+      label="soft-success toast"
+      btn="soft-success"
       @click="toast(
         {
-          title: 'Uh oh! Something went wrong.',
-          description: 'There was a problem with your request.',
-          toast: 'outline-orange',
-          progress: 'progress',
+          title: 'Success! Your request was processed.',
+          description: 'Your request has been successfully processed.',
+          toast: 'soft-success',
+          progress: 'success',
           showProgress: true,
-          actions,
           closable: true,
         },
       )"
     />
     <NButton
-      label="Soft-info toast"
-      btn="soft-info"
+      label="Soft-warning toast"
+      btn="soft-warning"
       @click="toast(
         {
           title: 'Uh oh! Something went wrong.',
           description: 'There was a problem with your request.',
-          toast: 'soft-info',
-          progress: 'info',
+          toast: 'soft-warning',
+          progress: 'warning',
           showProgress: true,
           actions,
           closable: true,

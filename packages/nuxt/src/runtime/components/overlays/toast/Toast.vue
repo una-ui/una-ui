@@ -4,6 +4,7 @@ import { reactivePick } from '@vueuse/core'
 import { ToastRoot, type ToastRootEmits, useForwardPropsEmits } from 'radix-vue'
 
 import { cn } from '../../../utils'
+import Icon from '../../elements/Icon.vue'
 import Progress from '../../elements/Progress.vue'
 import ToastAction from './ToastAction.vue'
 import ToastClose from './ToastClose.vue'
@@ -36,56 +37,74 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultOpen', 
     :toast
     @update:open="onOpenChange"
   >
-    <slot>
-      <ToastInfo
-        v-if="$slots.info || $slots.title || $slots.description || title || description"
-        v-bind="_toastInfo"
-        :una
-      >
-        <slot name="info">
-          <ToastTitle
-            v-if="$slots.title || title"
-            v-bind="_toastTitle"
-            :una
-          >
-            <slot name="title">
-              {{ title }}
-            </slot>
-          </ToastTitle>
-
-          <ToastDescription
-            v-if="$slots.description || description"
-            v-bind="_toastDescription"
-            :una
-          >
-            <slot name="description">
-              {{ description }}
-            </slot>
-          </ToastDescription>
-        </slot>
-      </ToastInfo>
-
-      <div
-        v-if="actions"
-        class="toast-actions"
-      >
-        <slot name="actions" :actions>
-          <ToastAction
-            v-for="(action, index) in actions"
-            :key="index"
-            v-bind="action"
-          />
-        </slot>
-      </div>
-
-      <ToastClose
-        v-if="closable"
-        v-bind="_toastClose"
-        :una
-      >
-        <slot name="closeIcon" />
-      </ToastClose>
+    <slot name="leading">
+      <Icon
+        v-if="leading"
+        :name="leading"
+        :class="cn(
+          'toast-leading',
+          props.una?.toastLeading,
+        )"
+      />
     </slot>
+
+    <div
+      :class="cn(
+        'toast-wrapper',
+        props.una?.toastWrapper,
+      )"
+    >
+      <slot>
+        <ToastInfo
+          v-if="$slots.info || $slots.title || $slots.description || title || description"
+          v-bind="_toastInfo"
+          :una
+        >
+          <slot name="info">
+            <ToastTitle
+              v-if="$slots.title || title"
+              v-bind="_toastTitle"
+              :una
+            >
+              <slot name="title">
+                {{ title }}
+              </slot>
+            </ToastTitle>
+
+            <ToastDescription
+              v-if="$slots.description || description"
+              v-bind="_toastDescription"
+              :una
+            >
+              <slot name="description">
+                {{ description }}
+              </slot>
+            </ToastDescription>
+          </slot>
+        </ToastInfo>
+
+        <div
+          v-if="actions"
+          class="toast-actions"
+        >
+          <slot name="actions" :actions>
+            <ToastAction
+              v-for="(action, index) in actions"
+              :key="index"
+              v-bind="action"
+            />
+          </slot>
+        </div>
+
+        <ToastClose
+          v-if="closable"
+          v-bind="_toastClose"
+          :una
+        >
+          <slot name="closeIcon" />
+        </ToastClose>
+      </slot>
+    </div>
 
     <div
       v-if="showProgress"
@@ -94,7 +113,10 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultOpen', 
       <Progress
         :progress
         v-bind="_progress"
-        class="h-1 rounded-none bg-transparent"
+        :class="cn(
+          'toast-progress bg-transparent',
+          props.una?.toastProgress,
+        )"
         :model-value="remaining / duration * 100"
       />
     </div>
