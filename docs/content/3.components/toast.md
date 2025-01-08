@@ -13,9 +13,7 @@ badges:
     target: _blank
 ---
 
-## Examples
-
-### Add the Toaster component
+## Setup
 
 For the beginning, add the `Toaster` component to your `app.vue`.
 
@@ -28,6 +26,8 @@ For the beginning, add the `Toaster` component to your `app.vue`.
   </div>
 </template>
 ```
+
+## Examples
 
 ### Basic
 
@@ -63,6 +63,23 @@ Then, you can use the `useToast` composable to add toasts to your app:
 @@@ ./components/content/examples/vue/toast/ExampleVueToastActions.vue
 ::
 :::
+
+### Leading Icon
+
+| Prop      | Default | Type     | Description                   |
+| --------- | ------- | -------- | ----------------------------- |
+| `leading` | -       | `string` | The leading icon of the toast |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueToastLeading
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/toast/ExampleVueToastLeading.vue
+::
+:::
+
+:read-more{to="/components/icon" title="Icon Component" target="_blank"}
 
 ### Variant and Color
 

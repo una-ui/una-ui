@@ -2,7 +2,7 @@ type ToastPrefix = 'toast'
 
 export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, string> = {
   // config
-  'toast': 'pointer-events-auto relative flex w-full items-center justify-between space-x-2 overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all ',
+  'toast': 'pointer-events-auto relative flex w-full space-x-2 justify-end overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all ',
 
   'toast-viewport': 'fixed top-0 z-100 flex max-h-screen gap-y-4 w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-420px',
   'toast-wrapper': 'w-0 flex flex-1 flex-col gap-2',
