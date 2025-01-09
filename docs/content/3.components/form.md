@@ -141,11 +141,11 @@ Notice that when you change the `status` prop, the `message` prop and the child 
 ## Components
 
 :::CodeGroup
-::div{label="FormGroup.vue" icon="i-vscode-icons-file-type-vue"}
+::div{label="FormField.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/form/FormField.vue
 
 ::
-::div{label="Form.vue" icon="i-vscode-icons-file-type-vue"}
+::div{label="FormControl.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/form/FormControl.vue
 
 ::
