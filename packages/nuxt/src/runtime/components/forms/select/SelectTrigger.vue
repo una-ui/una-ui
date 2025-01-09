@@ -37,7 +37,7 @@ const statusClassVariants = computed(() => {
     success: props.una?.selectTriggerSuccessIcon ?? 'select-trigger-success-icon',
     warning: props.una?.selectTriggerWarningIcon ?? 'select-trigger-warning-icon',
     error: props.una?.selectTriggerErrorIcon ?? 'select-trigger-error-icon',
-    default: 'select-trigger-trailing-icon',
+    default: props.una?.selectTriggerTrailingIcon ?? 'select-trigger-trailing-icon',
   }
 
   return {

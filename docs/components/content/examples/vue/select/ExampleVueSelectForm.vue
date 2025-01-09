@@ -5,7 +5,8 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
 
 <template>
   <div class="flex items-end">
-    <NFormGroup
+    <NFormField
+      name="contributor"
       label="Contributor"
       description="Select a contributor from the Vue community"
       :status="selected ? undefined : 'error'"
@@ -17,6 +18,6 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
         placeholder="Options"
         :items
       />
-    </NFormGroup>
+    </NFormField>
   </div>
 </template>
