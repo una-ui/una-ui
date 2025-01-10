@@ -17,10 +17,10 @@ badges:
 | Name           | Default | Type      | Description                                                                                                     |
 | -------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
 | `items`        | -       | `array`   | Set the select items.                                                                                           |
-| `placeholder`  | -       | `string`  | The content that will be rendered inside the SelectValue when no value or defaultValue is set.                  |
+| `placeholder`  | -       | `string`  | The content that will be rendered inside the `SelectValue` when no `value` or `defaultValue` is set.            |
 | `label`        | -       | `string`  | Set the select items label.                                                                                     |
 | `defaultOpen`  | -       | `boolean` | The open state of the select when it is initially rendered. Use when you do not need to control its open state. |
-| `defaultValue` | -       | `string`  | The value of the select when initially rendered. Use when you do not need to control the state of the Select    |
+| `defaultValue` | -       | `string`  | The value of the select when initially rendered. Use when you do not need to control the state of the `Select`  |
 | `open`         | -       | `boolean` | The controlled open state of the Select. Can be bind as `v-model:open`.                                         |
 | `modelValue`   | -       | `string`  | The controlled value of the Select. Can be bind as `v-model`.                                                   |
 
@@ -70,22 +70,20 @@ Control the attribute value to be displayed in the select and the item.
 ::
 :::
 
-### Form Group
+### Form Field
 
-You can use the `select` component inside the `form-group` component, or you can use it with the `label` component.
+The `NSelect` component can be easily embedded within the `NFormField` component.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-:ExampleVueSelectLabel
+:ExampleVueSelectForm
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueSelectLabel.vue
+@@@ ./components/content/examples/vue/select/ExampleVueSelectForm.vue
 ::
 :::
 
-:read-more{to="/components/form-group" title="Form-group component" target="_blank"}
-
-:read-more{to="/components/label" title="Label component" target="_blank"}
+:read-more{to="/components/form" title="Form component" target="_blank"}
 
 ### Variant and Color
 
@@ -134,6 +132,15 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 | `label`   | `label` | The label slot.   |
 | `item`    | `item`  | The item slot.    |
 | `group`   | `items` | The group slot.   |
+
+:::CodeGroup
+::div{label="Preview"}
+:ExampleVueSelectSlots
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/select/ExampleVueSelectSlots.vue
+::
+:::
 
 ## Presets
 
