@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<NBreadcrumbSeparatorProps>(), {
     role="presentation"
     aria-hidden="true"
     :class="cn(
-      '',
+      'breadcrumb-separator',
       props.class,
       props.una?.breadcrumbSeparator,
     )"

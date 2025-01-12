@@ -15,7 +15,9 @@
         <NThemeSwitcher />
       </div>
 
-      <Toast />
+      <div class="mt-2">
+        <Breadcrumb />
+      </div>
     </div>
   </div>
 
