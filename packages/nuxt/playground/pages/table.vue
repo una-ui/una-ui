@@ -91,7 +91,7 @@ const pokemon = computed(() => data.value?.results ?? [])
 </script>
 
 <template>
-  <div class="w-9/12">
+  <div class="w-full">
     {{ sorting }}
     {{ status }}
     {{ pagination }}

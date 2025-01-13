@@ -35,7 +35,7 @@ async function onValidating() {
 
 <template>
   <form
-    class="mt-5 space-y-4"
+    class="mt-5 w-70% space-y-4"
     @submit.prevent="onValidating()"
   >
     <NFormField

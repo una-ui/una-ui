@@ -16,7 +16,7 @@ const items = [
 </script>
 
 <template>
-  <div flex="~ col" w-90 space-y-4>
+  <div flex="~ col" w-full space-y-4>
     <NAccordion
       :items="items"
       btn="soft rectangle"
