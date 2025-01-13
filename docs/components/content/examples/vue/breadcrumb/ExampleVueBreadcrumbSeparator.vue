@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const items = ref([
+const items = [
   {
     label: 'i-radix-icons-home',
     icon: true,
@@ -13,9 +13,9 @@ const items = ref([
     label: 'Breadcrumb',
     to: '/components/breadcrumb',
   },
-])
+]
 
-const items2 = ref([
+const items2 = [
   {
     leading: 'i-radix-icons-home',
     label: 'Home',
@@ -31,14 +31,14 @@ const items2 = ref([
     leading: 'i-radix-icons-link-2',
     to: '/components/breadcrumb',
   },
-])
+]
 </script>
 
 <template>
   <div class="flex flex-col space-y-4">
     <NBreadcrumb
       :items
-      separator="i-lucide-slash"
+      separator="i-heroicons-slash-20-solid"
     />
 
     <NSeparator />

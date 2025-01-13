@@ -1,32 +1,70 @@
 <script setup lang="ts">
-const items = ref([
-  { label: 'Components', to: '/components/accordion' },
-  { label: 'Alert', to: '/components/alert' },
-  { label: 'Breadcrumb', to: '/components/breadcrumb' },
-])
-
-const colors = ['#ffd45e', '#45ad2d', '#3b54c4', '#b156db', '#a6a2a3', '#ff7a97', '#a1612a'] as const
-
-function getRandomColor() {
-  const index = Math.floor(Math.random() * colors.length)
-  return colors[index]
-}
+const items = [
+  {
+    label: 'Components',
+    to: '/components/accordion',
+  },
+  {
+    label: 'Alert',
+    to: '/components/alert',
+  },
+  {
+    label: 'Ellipsis',
+    children: [
+      {
+        label: 'Badge',
+        to: '/components/badge',
+      },
+      {
+        label: 'Avatar Components',
+        items: [
+          {
+            label: 'Avatar',
+            to: '/components/avatar',
+          },
+          {
+            label: 'Avatar Group',
+            to: '/components/avatar-group',
+          },
+        ],
+      },
+      {
+        disabled: true,
+        label: 'Smth magical 📃',
+      },
+    ],
+  },
+  {
+    label: 'Breadcrumb',
+    to: '/components/breadcrumb',
+  },
+]
 </script>
 
 <template>
-  <NBreadcrumb :items>
-    <template #separator>
-      <NSeparator orientation="vertical" class="h-10" />
+  <NBreadcrumb
+    :items="items"
+  >
+    <template #dropdown="{ item }">
+      <NDropdownMenu
+        :items="item.children"
+        :_dropdown-menu-item="{
+          class: 'text-xs',
+        }"
+        :_dropdown-menu-sub-trigger="{
+          class: 'text-xs',
+        }"
+      >
+        <NBreadcrumbEllipsis />
+      </NDropdownMenu>
     </template>
-
-    <template #default="{ item }">
-      <div class="flex items-center gap2">
-        <div
-          :style="{ backgroundColor: getRandomColor() }"
-          class="h-2 w-2 rounded-full"
-        />
-        {{ item.label }}
-      </div>
+    <template #default="{ item, index, isActive }">
+      <NBadge :badge="isActive ? 'primary' : 'soft-gray'" class="rounded-full">
+        {{ index + 1 }}. {{ item.label }}
+      </NBadge>
+    </template>
+    <template #separator>
+      <NSeparator label="👉" class="w-14" />
     </template>
   </NBreadcrumb>
 </template>
