@@ -61,7 +61,7 @@ const toggleDisable = ref(false)
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="w-70% flex flex-col gap-4">
     <NCheckbox v-model:checked="toggleDisable" label="disable" />
     <NInput />
     <NSelect

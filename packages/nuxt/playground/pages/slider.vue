@@ -21,11 +21,12 @@ const value = ref([0])
 </script>
 
 <template>
-  <div class="grid h-100 w-100 place-items-center">
+  <div class="grid h-100 w-full place-items-center">
     <NFormGroup
       label="Volume"
       hint="Adjust the volume"
       message="Volume is too high"
+      class="w-1/2"
       :counter="{
         value: value[0],
         max: 80,

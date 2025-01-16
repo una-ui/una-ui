@@ -1,5 +1,5 @@
 <template>
-  <NCard title="Create project" description="Deploy your new project in one-click." class="w-[350px]">
+  <NCard title="Create project" description="Deploy your new project in one-click." class="w-[450px]">
     <div flex="~ col" gap-4>
       <NFormGroup
         label="Email"

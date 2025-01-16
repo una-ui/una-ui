@@ -91,7 +91,7 @@ const pokemon = computed(() => data.value?.results ?? [])
 </script>
 
 <template>
-  <div class="w-9/12">
+  <div class="w-full space-y-2">
     {{ sorting }}
     {{ status }}
     {{ pagination }}
@@ -101,6 +101,7 @@ const pokemon = computed(() => data.value?.results ?? [])
       v-model="filter"
       placeholder="Search..."
     />
+
     <NTable
       ref="table"
       v-model="select"
