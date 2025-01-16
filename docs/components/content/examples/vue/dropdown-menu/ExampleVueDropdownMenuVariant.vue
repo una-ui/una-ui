@@ -4,7 +4,6 @@ const items = [
     label: 'Profile',
     shortcut: '⇧⌘P',
     onclick: () => {
-      // eslint-disable-next-line no-alert
       alert('Profile clicked')
     },
   },

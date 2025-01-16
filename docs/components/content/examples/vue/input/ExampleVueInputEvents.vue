@@ -1,6 +1,5 @@
 <script setup lang="ts">
 function click(description: string) {
-  // eslint-disable-next-line no-alert
   alert(description)
 }
 

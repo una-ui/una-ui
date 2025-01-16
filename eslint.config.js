@@ -18,7 +18,7 @@ export default antfu(
       'node/prefer-global/process': 'off',
       'vue/no-v-text-v-html-on-component': 'off',
       'unocss/order': 'warn',
-      'no-alert': 'warn',
+      'no-alert': 'off',
       'unocss/order-attributify': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
     },
