@@ -21,56 +21,61 @@ const { toast } = useToast()
 </script>
 
 <template>
-  <NButton
-    btn="solid-white"
-    label="Show toast"
-    @click="toast(
-      {
-        toast: 'soft-error',
-        title: 'Uh oh! Something went wrong.',
-        description: 'There was a problem with your request.',
-        actions: [
-          {
-            label: 'Try again',
-            size: 'xs',
-            btn: 'solid-error',
-            altText: 'Text',
-          },
-        ],
-        closable: true,
-      },
-    )"
-  />
+  <div class="space-x-2">
+    <NButton
+      btn="solid-white"
+      label="Show toast"
+      @click="toast(
+        {
+          toast: 'soft-error',
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem with your request.',
+          showProgress: true,
+          progress: 'error',
+          actions: [
+            {
+              label: 'Try again',
+              size: 'xs',
+              btn: 'solid-error',
+              altText: 'Text',
+            },
+          ],
+          closable: true,
+        },
+      )"
+    />
 
-  <NButton
-    btn="solid-white"
-    label="Show toast"
-    @click="toast(
-      {
-        toast: 'solid-white',
-        title: 'Uh oh! Something went wrong.',
-        description: 'There was a problem with your request.',
-        actions: [
-          {
-            label: 'Try again',
-            size: 'xs',
-            altText: 'Text',
-          },
-        ],
-      },
-    )"
-  />
+    <NButton
+      btn="solid-white"
+      label="Show toast"
+      @click="toast(
+        {
+          toast: 'solid-warning',
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem with your request.',
+          actions: [
+            {
+              label: 'Try again',
+              size: 'xs',
+              altText: 'Text',
+              btn: 'solid-warning',
+            },
+          ],
+        },
+      )"
+    />
 
-  <NButton
-    btn="solid-white"
-    label="Show toast"
-    @click="toast(
-      {
-        toast: 'solid-white',
-        title: 'Uh oh! Something went wrong.',
-        description: 'There was a problem with your request.',
-        closable: true,
-      },
-    )"
-  />
+    <NButton
+      btn="solid-white"
+      label="Show toast"
+      @click="toast(
+        {
+          toast: 'solid-white',
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem with your request.',
+          closable: true,
+        },
+      )"
+    />
+  </div>
 </template>

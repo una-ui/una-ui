@@ -37,7 +37,7 @@ const components = [
   <div class="relative grid grid-cols-12 h-screen w-screen flex gap-4 bg-base p-4 p-6 container">
     <!-- aside -->
     <div class="col-span-5 h-full flex flex-col border p-6">
-      <p class="mb-4 text-2xl font-bold">
+      <p class="mb-4 font-bold">
         Components
       </p>
       <NButton
