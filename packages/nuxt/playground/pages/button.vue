@@ -1,19 +1,17 @@
 <template>
-  <div flex="~ col" gap-4>
+  <div class="flex flex-col gap-4">
     <span class="text-sm font-medium">Dynamic colors:</span>
 
-    <div flex="~ col" gap-4>
-      <div flex="~ col md:row" gap-4>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 md:flex-row">
         <NButton
           label="solid-primary"
-          btn="solid-green"
+          btn="solid-primary"
         />
-
         <NButton
           label="outline-lime"
-          btn="solid-gray"
+          btn="outline-lime"
         />
-
         <NButton
           label="link-yellow"
           btn="link-yellow"
@@ -28,11 +26,11 @@
         />
       </div>
 
-      <hr border="base">
+      <NSeparator />
 
       <span class="text-sm font-medium">Color with states:</span>
 
-      <div flex="~ col md:row" gap-4>
+      <div class="flex flex-col gap-4 md:flex-row">
         <NButton
           btn="solid-error hover:solid-success"
           label="hover me"
@@ -52,14 +50,14 @@
         />
       </div>
 
-      <hr border="base">
+      <NSeparator />
 
       <span class="text-sm font-medium">Custom colors using utilities:</span>
 
-      <div flex="~ col md:row" gap-2>
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           btn="~"
-          class="from-primary to-$una-c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
+          class="from-primary to-$c-brand-next bg-gradient-to-r text-white hover:from-pink-500 hover:to-yellow-500"
           label="gradient color"
         />
 
@@ -71,12 +69,12 @@
       </div>
     </div>
 
-    <hr border="base">
+    <NSeparator />
 
     <span class="text-sm font-medium">Static colors:</span>
 
-    <div flex="~ col" gap-4>
-      <div flex="~ col md:row" gap-2>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="solid-gray"
           btn="solid-gray"
@@ -86,6 +84,10 @@
           btn="soft-gray"
         />
         <NButton
+          label="outline-gray"
+          btn="outline-gray"
+        />
+        <NButton
           label="ghost-gray"
           btn="ghost-gray"
         />
@@ -93,9 +95,13 @@
           label="link-gray"
           btn="link-gray"
         />
+        <NButton
+          label="text-gray"
+          btn="text-gray"
+        />
       </div>
 
-      <div flex="~ col md:row" gap-2>
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="solid-white"
           btn="solid-white"
@@ -104,16 +110,57 @@
           label="ghost-white"
           btn="ghost-white"
         />
+        <NButton
+          label="outline-white"
+          btn="outline-white"
+        />
       </div>
 
-      <div flex="~ col md:row" gap-2>
+      <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="solid-black"
           btn="solid-black"
         />
         <NButton
+          label="soft-black"
+          btn="soft-black"
+        />
+        <NButton
           label="link-black"
           btn="link-black"
+        />
+        <NButton
+          label="text-black"
+          btn="text-black"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 md:flex-row">
+        <NButton
+          label="ghost-muted"
+          btn="ghost-muted"
+        />
+        <NButton
+          label="link-muted"
+          btn="link-muted"
+        />
+        <NButton
+          label="text-muted"
+          btn="text-muted"
+        />
+      </div>
+      <div class="flex flex-col gap-2 md:flex-row">
+        <NButton
+          label="soft-accent"
+          btn="soft-accent"
+        />
+        <NButton
+          label="text-accent"
+          btn="text-accent"
+        />
+        <NButton
+          label="link-accent"
+          btn="link-accent"
         />
       </div>
     </div>
