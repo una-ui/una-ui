@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const items = ref([
+const items = [
   {
     label: 'i-radix-icons-home',
     icon: true,
@@ -13,9 +13,9 @@ const items = ref([
     label: 'Breadcrumb',
     to: '/components/breadcrumb',
   },
-])
+]
 
-const items2 = ref([
+const items2 = [
   {
     leading: 'i-radix-icons-home',
     label: 'Home',
@@ -31,7 +31,7 @@ const items2 = ref([
     leading: 'i-radix-icons-link-2',
     to: '/components/breadcrumb',
   },
-])
+]
 </script>
 
 <template>
@@ -52,10 +52,9 @@ const items2 = ref([
     <NSeparator label="or" />
 
     <NBreadcrumb
-      breadcrumb-active="solid-primary"
-      breadcrumb-inactive="ghost-primary"
+      breadcrumb-active="text-gray"
+      breadcrumb-inactive="link-primary"
       :_breadcrumb-link="{
-        size: 'xs',
         class: 'rounded-full btn-rectangle',
       }"
       :items="items2"

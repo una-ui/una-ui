@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import type { NBreadcrumbEllipsisProps } from '../../../types'
 import { cn } from '../../../utils'
+import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NBreadcrumbEllipsisProps>(), {
   icon: 'breadcrumb-ellipsis-icon',
@@ -10,7 +11,7 @@ const props = withDefaults(defineProps<NBreadcrumbEllipsisProps>(), {
 </script>
 
 <template>
-  <span
+  <div
     role="presentation"
     aria-hidden="true"
     :class="cn(
@@ -21,12 +22,12 @@ const props = withDefaults(defineProps<NBreadcrumbEllipsisProps>(), {
     :size
   >
     <slot>
-      <NIcon
+      <Icon
         :name="icon"
         :class="props.una?.breadcrumbEllipsisIcon"
         aria-hidden="true"
       />
     </slot>
     <span class="sr-only">More</span>
-  </span>
+  </div>
 </template>

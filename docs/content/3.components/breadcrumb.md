@@ -11,9 +11,9 @@ badges:
 
 ### Basic
 
-| Prop    | Default | Type    | Description                                                                                            |
-| ------- | ------- | ------- | ------------------------------------------------------------------------------------------------------ |
-| `items` | `[]`    | `array` | An array of `Links` wrapped around the [Button](button) component, inheriting all its props and slots. |
+| Prop    | Default | Type    | Description                                                                                                                            |
+| ------- | ------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `items` | `[]`    | `array` | An array of `Links` wrapped around the [Button](button) component, inheriting all its props and slots with additional `children` prop. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -63,6 +63,35 @@ You can use any variant and color provided by the [Button](button#variants) comp
 ::
 :::
 
+### Ellipsis
+
+You can adjust the breadcrumb behavior dynamically with the `BreadcrumbEllipsis`. When there are children in the breadcrumb, the `BreadcrumbEllipsis` will appear as an icon, and upon clicking it, a `DropdownMenu` will open, allowing you to navigate to the child elements.
+
+| Prop       | Default                         | Type     | Description        |
+| ---------- | ------------------------------- | -------- | ------------------ |
+| `ellipsis` | `i-radix-icons-dots-horizontal` | `string` | The ellipsis icon. |
+
+| Condition  | Default | Type   | Description                                                                |
+| ---------- | ------- | ------ | -------------------------------------------------------------------------- |
+| `children` | -       | `aray` | An array of children `Links` wrapped around the [Button](button) component |
+
+::alert{type="info"}
+For more details, please refer to the [Components](#components) and [Slots](#slots) sections.
+::
+
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
+
+:read-more{to="/components/dropdown-menu" title="Dropdown menu component" target="_blank"}
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueBreadcrumbEllipsis
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/breadcrumb/ExampleVueBreadcrumbEllipsis.vue
+::
+:::
+
 ### Size
 
 Adjust the breadcrumb size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
@@ -84,12 +113,13 @@ Adjust the breadcrumb size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs
 
 ### Slots
 
-| Name        | Props   | Description         |
-| ----------- | ------- | ------------------- |
-| `default`   | `item`  | The breadcrumb item |
-| `separator` | `item`  | The separator       |
-| `root`      | `items` | The root breadcrumb |
-| `list`      | `item`  | The list of items   |
+| Name        | Props                     | Description                        |
+| ----------- | ------------------------- | ---------------------------------- |
+| `default`   | `item` `index` `isActive` | The breadcrumb item                |
+| `separator` | `item`                    | The separator                      |
+| `root`      | `items`                   | The root breadcrumb                |
+| `list`      | `item`                    | The list of items                  |
+| `dropdown`  | `item`                    | The dropdown if available ellipsis |
 
 :::CodeGroup
 ::div{label="Preview" preview}
