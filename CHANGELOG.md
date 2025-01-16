@@ -1,3 +1,18 @@
+# [0.33.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.32.0-beta.2...v0.33.0-beta.1) (2025-01-16)
+
+
+### Bug Fixes
+
+* **Breadcrumb:** add ellipsis slot and update examples ([#318](https://github.com/una-ui/una-ui/issues/318)) ([93c4ac2](https://github.com/una-ui/una-ui/commit/93c4ac222baecdae0d1a8099229dc9d11ad07619))
+* **select): trigger shortcuts and component, feat(docs:** update examples ([#317](https://github.com/una-ui/una-ui/issues/317)) ([e4fa447](https://github.com/una-ui/una-ui/commit/e4fa4477f25cfbe65fee74a1334cd92fbbf8e4b7))
+
+
+### Features
+
+* **forms:** add new form component files and structure ([53c6ee6](https://github.com/una-ui/una-ui/commit/53c6ee63f1fec0d5c3adfb07f01b88e5bbb75109))
+
+
+
 # [0.32.0-beta.2](https://github.com/una-ui/una-ui/compare/v0.32.0-beta.1...v0.32.0-beta.2) (2025-01-08)
 
 
