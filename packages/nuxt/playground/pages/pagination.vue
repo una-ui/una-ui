@@ -3,11 +3,13 @@ const model = ref(2)
 </script>
 
 <template>
-  <span>Current Page: {{ model }}</span>
+  <div class="space-y-2">
+    <span>Current Page: {{ model }}</span>
 
-  <NPagination
-    v-model:page="model"
-    :total="100"
-    show-edges
-  />
+    <NPagination
+      v-model:page="model"
+      :total="100"
+      show-edges
+    />
+  </div>
 </template>
