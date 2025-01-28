@@ -46,14 +46,14 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
     >
       <slot name="content">
         <DialogHeader
-          v-if="props.title || props.description || $slots.header"
           v-bind="_dialogHeader"
+          :class="!props.title && !props.description && !$slots.title && !$slots.description && !$slots.header ? 'sr-only' : undefined"
           :una
         >
           <slot name="header">
             <DialogTitle
-              v-if="props.title"
               v-bind="_dialogTitle"
+              :class="!props.title && !$slots.title ? 'sr-only' : undefined"
               :una
             >
               <slot name="title">
@@ -62,7 +62,7 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
             </DialogTitle>
 
             <DialogDescription
-              v-if="props.description"
+              v-if="props.description || $slots.description"
               v-bind="_dialogDescription"
               :una
             >
