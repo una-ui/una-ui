@@ -20,6 +20,7 @@ badges:
 | `max`           | `100`                                         | `number`                                   | The maximum progress value.                                                                                                                                                                                 |
 | `indeterminate` | `false`                                       | `boolean`                                  | Makes the progress bar indeterminate. When true, the progress bar will animate without a specific value.                                                                                                    |
 | `getValueLabel` | `${Math.round((value / max) * DEFAULT_MAX)}%` | `((value: number, max: number) => string)` | A function to get the accessible label text representing the current value in a human-readable format. If not provided, the value label will be read as the numeric value as a percentage of the max value. |
+| `rounded`       | `full`                                        | `string`                                   | Sets the border-radius of the progress bar.                                                                                                                                                                 |
 
 :read-more{to="https://www.radix-vue.com/components/progress#root" title="Radix Progress Root API." target="_blank"}
 

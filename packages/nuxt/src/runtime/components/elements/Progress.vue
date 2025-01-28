@@ -11,6 +11,7 @@ const props = withDefaults(
   defineProps<NProgressProps>(),
   {
     progress: 'primary',
+    rounded: 'full',
   },
 )
 
@@ -31,6 +32,7 @@ const delegatedProps = computed(() => {
         props.class,
       )
     "
+    :rounded
     :progress
   >
     <slot>
