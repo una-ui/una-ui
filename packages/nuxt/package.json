@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/nuxt",
   "type": "module",
-  "version": "0.34.0-beta.1",
+  "version": "0.35.0-beta.1",
   "description": "Nuxt module for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",

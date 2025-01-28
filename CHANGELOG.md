@@ -1,3 +1,17 @@
+# [0.35.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.34.0-beta.1...v0.35.0-beta.1) (2025-01-28)
+
+
+### Bug Fixes
+
+* **Dialog:** improve component accessibility ([98027c8](https://github.com/una-ui/una-ui/commit/98027c80ef2dca7feb94ce1101c942e0c65eb148))
+
+
+### Features
+
+* **Progress:** add rounded prop to progress root ([a014565](https://github.com/una-ui/una-ui/commit/a014565bcc1af0695ab8587322cf0f1206d2592f))
+
+
+
 # [0.34.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.33.0-beta.1...v0.34.0-beta.1) (2025-01-23)
 
 
