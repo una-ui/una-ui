@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<NDialogContentProps>(), {
 })
 const emits = defineEmits<DialogContentEmits>()
 
-const delegatedProps = reactiveOmit(props, ['class', '_dialogOverlay', '_dialogClose'])
+const delegatedProps = reactiveOmit(props, ['class', 'una', '_dialogOverlay', '_dialogClose'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>

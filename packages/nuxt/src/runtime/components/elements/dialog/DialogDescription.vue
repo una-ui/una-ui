@@ -6,7 +6,7 @@ import { cn } from '../../../utils'
 
 const props = defineProps<NDialogDescriptionProps>()
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class', 'una')
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>

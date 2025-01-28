@@ -6,7 +6,7 @@ import { cn } from '../../../utils'
 
 const props = defineProps<NDialogTitleProps>()
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class', 'una')
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>
@@ -14,7 +14,12 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <DialogTitle
     v-bind="forwardedProps"
-    :class="cn('dialog-title', props.class)"
+    :class="cn(
+      'dialog-title',
+      props.una?.dialogTitle,
+      props.class,
+    )
+    "
   >
     <slot />
   </DialogTitle>
