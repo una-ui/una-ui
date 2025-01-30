@@ -8,10 +8,10 @@ catalog:
   '@faker-js/faker': ^9.4.0
   '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.2
-  '@iconify-json/lucide': ^1.2.24
+  '@iconify-json/lucide': ^1.2.25
   '@iconify-json/radix-icons': ^1.2.2
   '@iconify-json/tabler': ^1.2.15
-  '@iconify/json': ^2.2.299
+  '@iconify/json': ^2.2.301
   '@nuxt/devtools': ^1.7.0
   '@nuxt/kit': ^3.15.4
   '@nuxt/module-builder': ^0.8.4
