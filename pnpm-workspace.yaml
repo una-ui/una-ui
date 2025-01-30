@@ -13,9 +13,9 @@ catalog:
   '@iconify-json/tabler': ^1.2.15
   '@iconify/json': ^2.2.299
   '@nuxt/devtools': ^1.7.0
-  '@nuxt/kit': ^3.15.2
+  '@nuxt/kit': ^3.15.4
   '@nuxt/module-builder': ^0.8.4
-  '@nuxt/schema': ^3.15.2
+  '@nuxt/schema': ^3.15.4
   '@nuxtjs/color-mode': ^3.5.2
   '@tanstack/vue-table': ^8.20.5
   '@types/chroma-js': ^3.1.0
@@ -46,7 +46,7 @@ catalog:
   fs-extra: ^11.3.0
   ignore-dependency-scripts: ^1.0.1
   lint-staged: ^15.4.2
-  nuxt: ^3.15.2
+  nuxt: ^3.15.4
   ohash: ^1.1.4
   pathe: ^2.0.2
   radix-vue: ^1.9.12
