@@ -100,8 +100,8 @@ catalogs:
       specifier: ^12.5.0
       version: 12.5.0
     bumpp:
-      specifier: ^9.10.2
-      version: 9.10.2
+      specifier: ^10.0.1
+      version: 10.0.1
     chroma-js:
       specifier: ^3.1.2
       version: 3.1.2
@@ -242,7 +242,7 @@ importers:
         version: 65.4.3(eslint@9.18.0(jiti@2.4.2))(typescript@5.6.3)
       bumpp:
         specifier: 'catalog:'
-        version: 9.10.2(magicast@0.3.5)
+        version: 10.0.1(magicast@0.3.5)
       conventional-changelog-cli:
         specifier: 'catalog:'
         version: 5.0.0(conventional-commits-filter@5.0.0)
@@ -2815,9 +2815,9 @@ packages:
     resolution: {integrity: sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==}
     engines: {node: '>=6'}
 
-  bumpp@9.10.2:
-    resolution: {integrity: sha512-QX1JdswFLLVgrA+I/t+926/jsuJ92BTKKxGvMYC6fg+1lFpCl9RbILQJg0thc5UirIjQ6/jY1Sj+b4tz3evA5g==}
-    engines: {node: '>=10'}
+  bumpp@10.0.1:
+    resolution: {integrity: sha512-TBCR4FjNiubf+t6QFncNHJzCDwcz6SM2PPt/UoIGwGoe5ZTbSqu37nNJFlxBngWCUb1rYbf43ocNT1pPaNu5CQ==}
+    engines: {node: '>=18'}
     hasBin: true
 
   bundle-name@4.1.0:
@@ -10084,7 +10084,7 @@ snapshots:
 
   builtin-modules@3.3.0: {}
 
-  bumpp@9.10.2(magicast@0.3.5):
+  bumpp@10.0.1(magicast@0.3.5):
     dependencies:
       c12: 2.0.1(magicast@0.3.5)
       cac: 6.7.14
