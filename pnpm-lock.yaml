@@ -28,8 +28,8 @@ catalogs:
       specifier: ^1.2.16
       version: 1.2.16
     '@iconify/json':
-      specifier: ^2.2.304
-      version: 2.2.304
+      specifier: ^2.2.308
+      version: 2.2.308
     '@nuxt/devtools':
       specifier: ^2.0.0
       version: 2.0.0
@@ -224,7 +224,7 @@ importers:
         version: 9.4.0
       '@iconify/json':
         specifier: 'catalog:'
-        version: 2.2.304
+        version: 2.2.308
       '@types/chroma-js':
         specifier: 'catalog:'
         version: 3.1.1
@@ -1232,8 +1232,8 @@ packages:
   '@iconify/collections@1.0.503':
     resolution: {integrity: sha512-cU8zxXlxwHO18+ToinuCyNBTsYe9rM7yAX7kgw+EYVpFAk5pyS37TYE2aVfjO/1zEIT8MJuPGehql6ajcSKLcw==}
 
-  '@iconify/json@2.2.304':
-    resolution: {integrity: sha512-8eO5m27lIfYLRFCxNgZQD/AMcDYw9NzPT6ViSYJDvX+Vevuj/smaQ/SfHVTNFzj5JcISDh5AV6n2nllQthceog==}
+  '@iconify/json@2.2.308':
+    resolution: {integrity: sha512-tT+fOVu/cU9Q6GOZfFE+rcfrK4rqwM7ucn3PnTXG+bIcr9PmuvJExZ4oSXwdgPKLdjPqFnQFGgEvDtWFfJVP2g==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7522,7 +7522,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.304':
+  '@iconify/json@2.2.308':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
