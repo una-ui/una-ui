@@ -154,16 +154,40 @@ function toast(props: Toast) {
   }
 }
 
+interface ToastReturn {
+  id: string
+  dismiss: () => void
+  update: (props: ToasterToast) => void
+}
+
+type ToastPresetFunction = (message: string, props?: Omit<Toast, 'toast' | 'title'>) => ToastReturn
+
 interface UseToast {
   toasts: ComputedRef<ToasterToast[]>
-  toast: (props: Toast) => { id: string, dismiss: () => void, update: (props: ToasterToast) => void }
+  toast: ((props: Toast) => ToastReturn) & {
+    success: ToastPresetFunction
+    error: ToastPresetFunction
+    warning: ToastPresetFunction
+    info: ToastPresetFunction
+    loading: ToastPresetFunction
+  }
   dismiss: (toastId?: string) => void
 }
 
+// @unocss-include
+
 function useToast(): UseToast {
+  const toastWithPreset = Object.assign(toast, {
+    success: (message: string, props?: Omit<Toast, 'toast'>) => toast({ toast: 'solid-success', title: message, ...props }),
+    error: (message: string, props?: Omit<Toast, 'toast'>) => toast({ toast: 'soft-error', title: message, ...props }),
+    warning: (message: string, props?: Omit<Toast, 'toast'>) => toast({ toast: 'solid-warning', title: message, ...props }),
+    info: (message: string, props?: Omit<Toast, 'toast'>) => toast({ toast: 'solid-info', title: message, ...props }),
+    loading: (message: string, props?: Omit<Toast, 'toast'>) => toast({ toast: 'solid-loading', title: message, ...props }),
+  })
+
   return {
     toasts: computed(() => state.value.toasts),
-    toast,
+    toast: toastWithPreset,
     dismiss: (toastId?: string) => dispatch({ type: actionTypes.DISMISS_TOAST, toastId }),
   }
 }

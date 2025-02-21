@@ -25,6 +25,7 @@ const components = [
   'Toast',
   'Toggle',
   'Tooltip',
+  'Sonner',
 ]
   .map(component => ({
     name: component.replaceAll(' ', ''),
@@ -76,4 +77,5 @@ const components = [
     </main>
   </div>
   <NToaster />
+  <NSonner />
 </template>

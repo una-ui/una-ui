@@ -99,6 +99,7 @@ export default [
   'size',
   'skeleton',
   'slider',
+  'sonner',
   'square',
   'switch',
   'switch-checked',

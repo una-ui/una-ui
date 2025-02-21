@@ -25,24 +25,18 @@ const { toast } = useToast()
     <NButton
       btn="solid-white"
       label="Show toast"
-      @click="toast(
-        {
-          toast: 'soft-error',
-          title: 'Uh oh! Something went wrong.',
-          description: 'There was a problem with your request.',
-          showProgress: true,
-          progress: 'error',
-          actions: [
-            {
-              label: 'Try again',
-              size: 'xs',
-              btn: 'solid-error',
-              altText: 'Text',
-            },
-          ],
-          closable: true,
-        },
-      )"
+      @click="toast.error('Uh oh! Something went wrong.', {
+        description: 'There was a problem with your request.',
+        showProgress: true,
+        actions: [
+          {
+            label: 'Try again',
+            size: 'xs',
+            altText: 'Text',
+          },
+        ],
+        closable: true,
+      })"
     />
 
     <NButton
