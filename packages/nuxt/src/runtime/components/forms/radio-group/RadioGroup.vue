@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T">
 import type { NRadioGroupProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
 import { RadioGroupRoot, type RadioGroupRootEmits, useForwardPropsEmits } from 'reka-ui'
@@ -40,8 +40,8 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
   >
     <slot>
       <RadioGroupItem
-        v-for="item in items"
-        :key="item.value"
+        v-for="(item, i) in items"
+        :key="i"
         v-bind="{ rounded, icon, size, square, radioGroup, ...item }"
         :una="{ ...una, ...item.una }"
       />
