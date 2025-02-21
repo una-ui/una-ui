@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NDropdownMenuRootProps } from '../../../types'
-import { DropdownMenuRoot, type DropdownMenuRootEmits, useForwardPropsEmits } from 'radix-vue'
+import { DropdownMenuRoot, type DropdownMenuRootEmits, useForwardPropsEmits } from 'reka-ui'
 
 const props = defineProps<NDropdownMenuRootProps>()
 const emits = defineEmits<DropdownMenuRootEmits>()

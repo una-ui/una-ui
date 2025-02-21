@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NPaginationLastProps } from '../../../types'
-import { PaginationLast, useForwardProps } from 'radix-vue'
+import { PaginationLast, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'

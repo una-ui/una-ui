@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NSelectValueProps } from '../../../types'
-import { SelectValue } from 'radix-vue'
+import { SelectValue } from 'reka-ui'
 
 const props = defineProps<NSelectValueProps>()
 </script>

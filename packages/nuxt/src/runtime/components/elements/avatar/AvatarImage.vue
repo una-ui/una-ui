@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NAvatarImageProps } from '../../../types'
-import { AvatarImage } from 'radix-vue'
+import { AvatarImage } from 'reka-ui'
 import { cn, omitProps } from '../../../utils'
 
 const props = defineProps<NAvatarImageProps>()

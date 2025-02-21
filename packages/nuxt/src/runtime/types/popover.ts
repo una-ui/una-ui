@@ -1,4 +1,4 @@
-import type { PopoverContentProps, PopoverRootProps } from 'radix-vue'
+import type { PopoverContentProps, PopoverRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 interface BaseExtensions { class?: HTMLAttributes['class'] }

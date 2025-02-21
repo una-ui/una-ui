@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NDropdownMenuLabelProps } from '../../../types'
-import { DropdownMenuLabel, useForwardProps } from 'radix-vue'
+import { DropdownMenuLabel, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 

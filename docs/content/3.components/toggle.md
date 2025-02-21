@@ -9,7 +9,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Toggle.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/toggle
+    to: https://www.reka-ui.com/docs/components/toggle
     target: _blank
 ---
 
@@ -25,7 +25,7 @@ badges:
 
 :read-more{to="/components/button" title="Button component" target="_blank"}
 
-:read-more{to="https://www.radix-vue.com/components/toggle#root" title="Radix Toggle Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/toggle#root" title="Radix Toggle Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

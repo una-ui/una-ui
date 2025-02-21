@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NDialogCloseProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
-import { DialogClose } from 'radix-vue'
+import { DialogClose } from 'reka-ui'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
 

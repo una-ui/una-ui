@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NToastProviderProps } from '../../../types'
-import { ToastProvider } from 'radix-vue'
+import { ToastProvider } from 'reka-ui'
 
 const props = withDefaults(defineProps<NToastProviderProps>(), {
   duration: 5000,

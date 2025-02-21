@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NSelectItemTextProps } from '../../../types'
-import { SelectItemText } from 'radix-vue'
+import { SelectItemText } from 'reka-ui'
 
 const props = defineProps<NSelectItemTextProps>()
 </script>

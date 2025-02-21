@@ -2,7 +2,7 @@
 import type { NDropdownMenuSeparatorProps } from '../../../types'
 import {
   DropdownMenuSeparator,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Separator from '../Separator.vue'

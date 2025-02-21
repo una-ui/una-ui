@@ -4,7 +4,7 @@ import type {
   DialogDescriptionProps,
   DialogRootProps,
   DialogTitleProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 

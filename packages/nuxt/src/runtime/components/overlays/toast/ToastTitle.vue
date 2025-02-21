@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NToastTitleProps } from '../../../types'
-import { ToastTitle } from 'radix-vue'
+import { ToastTitle } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 

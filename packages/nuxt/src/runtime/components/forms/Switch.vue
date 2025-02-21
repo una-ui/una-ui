@@ -6,7 +6,7 @@ import {
   type SwitchRootEmits,
   SwitchThumb,
   useForwardPropsEmits,
-} from 'radix-vue'
+} from 'reka-ui'
 import { cn } from '../../utils'
 import NIcon from '../elements/Icon.vue'
 

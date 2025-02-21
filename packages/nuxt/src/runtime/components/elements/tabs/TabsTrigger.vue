@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NTabsTriggerProps } from '../../../types/tabs'
-import { TabsTrigger } from 'radix-vue'
+import { TabsTrigger } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'

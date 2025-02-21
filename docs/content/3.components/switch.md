@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Switch.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/switch
+    to: https://www.reka-ui.com/docs/components/switch
     target: _blank
 ---
 
@@ -30,7 +30,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.radix-vue.com/components/switch#root" title="Radix Switch Root API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/switch#root" title="Radix Switch Root API" target="_blank"}
 
 ### Form Group
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NSeparatorProps } from '../../types'
-import { Separator } from 'radix-vue'
+import { Separator } from 'reka-ui'
 import { computed } from 'vue'
 import { cn, omitProps } from '../../utils'
 

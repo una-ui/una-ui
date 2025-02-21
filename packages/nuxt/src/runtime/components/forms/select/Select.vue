@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { SelectRootEmits } from 'radix-vue'
+import type { SelectRootEmits } from 'reka-ui'
 import type { NSelectProps } from '../../../types'
 import {
   useForwardPropsEmits,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed, provide } from 'vue'
 import { isEqualObject, omitProps } from '../../../utils'
 import SelectContent from './SelectContent.vue'

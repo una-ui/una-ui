@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NToastDescriptionProps } from '../../../types'
-import { ToastDescription } from 'radix-vue'
+import { ToastDescription } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 

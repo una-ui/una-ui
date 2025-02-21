@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NPaginationListItemProps } from '../../../types'
-import { PaginationListItem, useForwardProps } from 'radix-vue'
+import { PaginationListItem, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'

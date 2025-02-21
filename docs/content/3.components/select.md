@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/select/Select.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/select
+    to: https://www.reka-ui.com/docs/components/select
     target: _blank
 ---
 
@@ -24,9 +24,9 @@ badges:
 | `open`         | -       | `boolean` | The controlled open state of the Select. Can be bind as `v-model:open`.                                         |
 | `modelValue`   | -       | `string`  | The controlled value of the Select. Can be bind as `v-model`.                                                   |
 
-:read-more{to="https://www.radix-vue.com/components/select#root" title="Radix Select Root API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/select#root" title="Radix Select Root API" target="_blank"}
 
-:read-more{to="https://www.radix-vue.com/components/select#value" title="Radix Select Value API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/select#value" title="Radix Select Value API" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

@@ -5,7 +5,7 @@ import {
   RadioGroupIndicator,
   RadioGroupItem,
   useForwardProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { cn, randomId } from '../../../utils'
 import Icon from '../../elements/Icon.vue'
 import Label from '../../elements/Label.vue'

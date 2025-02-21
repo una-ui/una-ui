@@ -7,7 +7,7 @@ import type {
   DropdownMenuSubContentProps,
   DropdownMenuSubTriggerProps,
   DropdownMenuTriggerProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 import type { NSeparatorProps } from './separator'

@@ -3,7 +3,7 @@ import type { NSelectItemProps, NSelectProps } from '../../../types'
 import {
   SelectItem,
   useForwardProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed, inject } from 'vue'
 import { cn } from '../../../utils'
 import SelectItemIndicator from './SelectItemIndicator.vue'

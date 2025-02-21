@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NSelectTriggerProps } from '../../../types'
-import { SelectTrigger, useForwardProps } from 'radix-vue'
+import { SelectTrigger, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn, randomId } from '../../../utils'
 import Button from '../../elements/Button.vue'

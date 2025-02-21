@@ -1,4 +1,4 @@
-import type { CheckboxIndicatorProps, CheckboxRootProps } from 'radix-vue'
+import type { CheckboxIndicatorProps, CheckboxRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NLabelProps } from './label'
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { PopoverRootEmits } from 'radix-vue'
+import type { PopoverRootEmits } from 'reka-ui'
 import type { NPopoverProps } from '../../../types'
-import { PopoverRoot, PopoverTrigger, useForwardPropsEmits } from 'radix-vue'
+import { PopoverRoot, PopoverTrigger, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import NPopoverContent from './PopoverContent.vue'
 

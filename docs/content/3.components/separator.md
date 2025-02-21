@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Separator.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/separator
+    to: https://www.reka-ui.com/docs/components/separator
     target: _blank
 ---
 

@@ -6,7 +6,7 @@ badges:
   to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
   target: _blank
 - value: API reference
-  to: https://www.radix-vue.com/components/dialog
+  to: https://www.reka-ui.com/docs/components/dialog
   target: _blank
 
 ---
@@ -24,7 +24,7 @@ badges:
 | `modal`       | `true`  | `boolean` | The modality of the dialog When set to true, interaction with outside elements will be disabled and only dialog content will be visible to screen readers. |
 | `open`        | -       | `boolean` | The controlled open state of the dialog. Can be binded as `v-model:open`.                                                                                  |
 
-:read-more{to="https://www.radix-vue.com/components/dialog#root" title="Radix Dialog Root API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/dialog#root" title="Radix Dialog Root API" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

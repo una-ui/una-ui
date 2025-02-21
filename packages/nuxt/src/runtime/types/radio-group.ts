@@ -1,4 +1,4 @@
-import type { RadioGroupItemProps, RadioGroupRootProps } from 'radix-vue'
+import type { RadioGroupItemProps, RadioGroupRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 interface BaseProps {

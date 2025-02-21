@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Checkbox.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/checkbox
+    to: https://www.reka-ui.com/docs/components/checkbox
     target: _blank
 ---
 
@@ -25,7 +25,7 @@ badges:
 | `value`          | `on`         | `string`                   | The value given as data when submitted with a name.                                                                     |
 | `label`          | -            | `string`                   | Set the label of the checkbox.                                                                                          |
 
-:read-more{to="https://www.radix-vue.com/components/checkbox#root" title="Radix Checkbox Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/checkbox#root" title="Radix Checkbox Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

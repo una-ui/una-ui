@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { CheckboxRootEmits } from 'radix-vue'
+import type { CheckboxRootEmits } from 'reka-ui'
 import type { NCheckboxProps } from '../../types'
 import { reactivePick } from '@vueuse/core'
-import { CheckboxIndicator, CheckboxRoot, useForwardPropsEmits } from 'radix-vue'
+import { CheckboxIndicator, CheckboxRoot, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { cn, randomId } from '../../utils'
 import Icon from '../elements/Icon.vue'
@@ -14,14 +14,9 @@ const props = withDefaults(defineProps<NCheckboxProps>(), {
 const emits = defineEmits<CheckboxRootEmits>()
 
 const delegatedProps = reactivePick(props, [
-  'checked',
-  'defaultChecked',
-  'disabled',
-  'id',
-  'name',
   'required',
   'value',
-  'size',
+  'defaultValue',
 ])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
@@ -55,9 +50,9 @@ const id = computed(() => props.id ?? randomId('checkbox'))
       >
         <slot name="icon">
           <Icon
-            :name="props.checked === 'indeterminate'
+            :name="props.modelValue === 'indeterminate'
               ? props.una?.checkboxIndeterminateIcon ?? 'checkbox-indeterminate-icon'
-              : props.checked
+              : props.modelValue
                 ? props.una?.checkboxCheckedIcon ?? 'checkbox-checked-icon'
                 : props.una?.checkboxUncheckedIcon ?? 'checkbox-unchecked-icon'"
             :class="cn('checkbox-icon-base', una?.checkboxIconBase)"
