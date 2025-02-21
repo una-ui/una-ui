@@ -1,8 +1,5 @@
 ---
 description: 'An image element with a fallback for representing the user.'
-navBadges:
-  - value: Updated
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

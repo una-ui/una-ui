@@ -1,8 +1,5 @@
 ---
 description: 'Displays a group of Avatar components.'
-navBadges:
-  - value: Updated
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

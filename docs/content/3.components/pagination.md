@@ -1,5 +1,8 @@
 ---
 description: 'Pagination with page navigation, next and previous links.'
+navBadges:
+  - value: Updated
+    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

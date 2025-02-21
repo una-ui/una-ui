@@ -1,8 +1,5 @@
 ---
 description: 'A succinct message that is displayed temporarily.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
