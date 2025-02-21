@@ -24,7 +24,7 @@ useIntervalFn(() => {
           switchThumb: 'duration-500',
         }"
       >
-        <template #icon="{ checked }">
+        <template #icon>
           <NIcon v-if="loading" name="switch-loading-icon" class="switch-loading" />
           <Transition
             v-else
@@ -33,7 +33,7 @@ useIntervalFn(() => {
             leave-to-class="opacity-0"
             enter-from-class="opacity-0"
           >
-            <NIcon v-if="checked" name="i-radix-icons:moon" class="switch-icon-checked" />
+            <NIcon v-if="nightOrDay" name="i-radix-icons:moon" class="switch-icon-checked" />
             <NIcon v-else name="i-radix-icons:sun" class="switch-icon-unchecked" />
           </Transition>
         </template>
