@@ -40,15 +40,6 @@ badges:
 | `content` | -      | The collapsible content slot. |
 | `trigger` | `open` | The button trigger slot.      |
 
-:::CodeGroup
-::div{label="Preview"}
-:ExampleVueCollapsibleSlots
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/collapsible/ExampleVueCollapsibleSlots.vue
-::
-:::
-
 ## Presets
 
 @@@ ../packages/preset/src/_shortcuts/collapsible.ts [shortcuts/collapsible.ts]
