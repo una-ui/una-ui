@@ -5,6 +5,7 @@ const components = [
   'Breadcrumb',
   'Card',
   'Collapsible',
+  'Checkbox',
   'Dialog',
   'Dropdown Menu',
   'Extractor',

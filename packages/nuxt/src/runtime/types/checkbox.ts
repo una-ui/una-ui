@@ -7,7 +7,6 @@ interface BaseExtensions {
 }
 
 export interface NCheckboxProps extends CheckboxRootProps, NLabelProps, BaseExtensions {
-
   /**
    * Allows you to add `UnaUI` checkbox preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.

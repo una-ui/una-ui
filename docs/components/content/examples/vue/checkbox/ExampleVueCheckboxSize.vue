@@ -38,7 +38,7 @@ const items = ref([
     <NCheckbox
       v-for="item in items"
       :key="item.size"
-      v-model:checked="item.value as boolean | 'indeterminate'"
+      v-model="item.value as boolean | 'indeterminate'"
       v-bind="{
         size: item.size,
         label: item.label,

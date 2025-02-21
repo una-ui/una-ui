@@ -11,15 +11,17 @@ import Label from '../elements/Label.vue'
 const props = withDefaults(defineProps<NCheckboxProps>(), {
   forceMount: true,
 })
+
 const emits = defineEmits<CheckboxRootEmits>()
 
-const delegatedProps = reactivePick(props, [
+const rootProps = reactivePick(props, [
   'required',
   'value',
+  'modelValue',
   'defaultValue',
 ])
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(rootProps, emits)
 
 const id = computed(() => props.id ?? randomId('checkbox'))
 </script>

@@ -11,12 +11,12 @@ useIntervalFn(() => {
 <template>
   <div flex gap="8">
     <NFormGroup label="Loading">
-      <NSwitch v-model:checked="loading" />
+      <NSwitch v-model="loading" />
     </NFormGroup>
 
     <NFormGroup label="Night & Day">
       <NSwitch
-        v-model:checked="nightOrDay"
+        v-model="nightOrDay"
         switch="primary"
         :loading
         size="lg"

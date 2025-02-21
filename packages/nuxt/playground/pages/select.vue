@@ -62,7 +62,7 @@ const toggleDisable = ref(false)
 
 <template>
   <div class="w-70% flex flex-col gap-4">
-    <NCheckbox v-model:checked="toggleDisable" label="disable" />
+    <NCheckbox v-model="toggleDisable" label="disable" />
     <NInput />
     <NSelect
       v-model="selected"
