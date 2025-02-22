@@ -29,7 +29,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/popover#root" title="Radix Popover Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/popover#root" title="Reka Popover Root API." target="_blank"}
 
 ### Content
 
@@ -52,7 +52,7 @@ badges:
 | `trapFocus`                   | `false`   | `boolean`                        | Whether focus should be trapped within the MenuContent                                                                                                                                                                                               |
 | `updatePositionStrategy`      | -         | `always`, `optimized`            | Strategy to update the position of the floating element on every animation frame.                                                                                                                                                                    |
 
-:read-more{to="https://www.reka-ui.com/docs/components/popover#content" title="Radix Popover Content API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/popover#content" title="Reka Popover Content API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview"}

@@ -25,7 +25,7 @@ The **Label** component is used already in different components like [Checkbox](
 | `for`     | `string`  | `string`             | The id of the element the label is associated with.                                                                                               |
 | `label`   | `string`  | `string`             | The label text, An alternative to the default slot.                                                                                               |
 
-:read-more{to="https://www.reka-ui.com/docs/components/label#root" title="Radix Label Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/label#root" title="Reka Label Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

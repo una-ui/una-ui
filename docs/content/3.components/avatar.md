@@ -20,7 +20,7 @@ badges:
 | `alt`   | -       | `string` | The alternative text.                                                                                                   |
 | `label` | -       | `string` | The placeholder of the avatar when it is loading. By default, it uses the first letters of each word in the `alt` prop. |
 
-:read-more{to="https://www.reka-ui.com/docs/components/avatar#root" title="Radix Avatar Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/avatar#root" title="Reka Avatar Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

@@ -20,7 +20,7 @@ badges:
 | `disabled`    | -       | `boolean` | When true, prevents the user from interacting with the collapsible.                                                  |
 | `open`        | -       | `boolean` | The controlled open state of the collapsible. Can be binded with `v-model`.                                          |
 
-:read-more{to="https://www.reka-ui.com/docs/components/collapsible#root" title="Radix Collapsible Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/collapsible#root" title="Reka Collapsible Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

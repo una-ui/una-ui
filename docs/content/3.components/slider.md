@@ -33,7 +33,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/slider#root" title="Radix Slider Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/slider#root" title="Reka Slider Root API." target="_blank"}
 
 ### Color
 

@@ -32,7 +32,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/dropdown-menu#root" title="Radix Dropdown Menu Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/dropdown-menu#root" title="Reka Dropdown Menu Root API." target="_blank"}
 
 ### Inset
 

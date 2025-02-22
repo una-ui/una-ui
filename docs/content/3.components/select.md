@@ -28,9 +28,9 @@ badges:
 | `modelValue`   | -       | `string`  | The controlled value of the Select. Can be bind as `v-model`.                                                   |
 | `status`       | -       | `string`  | Set the status of the select. Values: `info`, `success`, `warning`, `error`                                     |
 
-:read-more{to="https://www.reka-ui.com/docs/components/select#root" title="Radix Select Root API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/select#root" title="Reka Select Root API" target="_blank"}
 
-:read-more{to="https://www.reka-ui.com/docs/components/select#value" title="Radix Select Value API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/select#value" title="Reka Select Value API" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -86,7 +86,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://reka-ui.com/docs/components/select#group" title="Radix Select Group Items API" target="_blank"}
+:read-more{to="https://reka-ui.com/docs/components/select#group" title="Reka Select Group Items API" target="_blank"}
 
 ### Objects
 

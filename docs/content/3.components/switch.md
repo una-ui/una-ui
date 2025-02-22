@@ -33,7 +33,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/switch#root" title="Radix Switch Root API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/switch#root" title="Reka Switch Root API" target="_blank"}
 
 ### Form Group
 

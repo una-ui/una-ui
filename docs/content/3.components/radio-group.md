@@ -38,7 +38,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/radio-group#root" title="Radix Radio Group Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/radio-group#root" title="Reka Radio Group Root API." target="_blank"}
 
 ### Color
 

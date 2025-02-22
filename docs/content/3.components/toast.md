@@ -110,7 +110,7 @@ Configure the toast provider using the `_toastProvider` prop.
 | `swipeDirection` | `right`        | `right` `left` `up` `down` | Direction of pointer swipe that should close the toast.             |
 | `swipeThreshold` | `50`           | `number`                   | Distance in pixels that the swipe pass before a close is triggered. |
 
-:read-more{to="https://www.reka-ui.com/docs/components/toast#root" title="Radix Toast Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/toast#root" title="Reka Toast Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
