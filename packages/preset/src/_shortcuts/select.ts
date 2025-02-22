@@ -33,7 +33,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-item-indicator-icon': 'i-check',
 
   'select-viewport': 'p-1',
-  'select-viewport-popper': 'h-[--radix-select-trigger-height] w-full min-w-[--radix-select-trigger-width]',
+  'select-viewport-popper': 'h-[--reka-select-trigger-height] w-full min-w-[--reka-select-trigger-width]',
 
   'select-scroll-up-button': 'select-scroll',
   'select-scroll-down-button': 'select-scroll',
