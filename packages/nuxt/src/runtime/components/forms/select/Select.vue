@@ -103,7 +103,6 @@ function isItemSelected(item: unknown, modelValue: unknown) {
       }"
     >
       <slot name="content" :items="items">
-        <!--  single-group -->
         <template v-if="!group">
           <SelectLabel
             v-if="label"
@@ -131,7 +130,6 @@ function isItemSelected(item: unknown, modelValue: unknown) {
           </template>
         </template>
 
-        <!-- multiple-group -->
         <template v-if="group">
           <SelectGroup
             v-for="(group, i) in items as SelectGroupType<T>[]"
