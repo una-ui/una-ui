@@ -33,6 +33,8 @@ const statusClassVariants = computed(() => {
     icon: icon[props.status ?? 'default'],
   }
 })
+
+const id = computed(() => props.id ?? randomId('select-trigger'))
 </script>
 
 <template>
@@ -41,7 +43,7 @@ const statusClassVariants = computed(() => {
   >
     <Button
       v-bind="forwardedProps"
-      :id="randomId('select-trigger')"
+      :id
       :data-status="status"
       :class="cn(
         'select-trigger justify-between font-normal',

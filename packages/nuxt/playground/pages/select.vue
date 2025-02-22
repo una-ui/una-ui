@@ -1,5 +1,16 @@
 <script setup lang="ts">
-const selected = ref()
+import { toTypedSchema } from '@vee-validate/zod'
+import * as z from 'zod'
+
+const formSchema = toTypedSchema(z.object({
+  contributor: z.string().min(1, 'This field is required'),
+}))
+
+useForm({
+  validationSchema: formSchema,
+})
+
+const selected = ref<string>()
 const selected2 = ref()
 const selected3 = ref()
 const selectedMultiple = ref([])
@@ -48,6 +59,23 @@ const objectItems = [
 
 <template>
   <div class="space-y-8">
+    <form>
+      <div class="flex items-end">
+        <NFormField
+          name="contributor"
+          label="Contributor"
+          description="Select a contributor from the Vue community"
+          required
+        >
+          <NSelect
+            v-model="selected"
+            placeholder="Options"
+            :items="simpleItems"
+          />
+        </NFormField>
+      </div>
+    </form>
+
     <div class="max-w-50 flex flex-col space-y-2">
       <NLabel>
         Multiple Select

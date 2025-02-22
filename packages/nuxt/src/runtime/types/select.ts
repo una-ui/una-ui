@@ -22,7 +22,7 @@ type SelectExtensions = NSelectRootProps
   & BaseExtensions
   & Pick<NSelectValueProps, 'placeholder'>
   & Pick<NSelectItemProps, 'selectItem'>
-  & Pick<NSelectTriggerProps, 'status' | 'select'>
+  & Pick<NSelectTriggerProps, 'status' | 'select' | 'id'>
 
 export interface SelectGroup<T extends AcceptableValue> {
   label?: string
@@ -33,10 +33,7 @@ export interface SelectGroup<T extends AcceptableValue> {
 
 export interface NSelectProps<T extends AcceptableValue> extends SelectExtensions {
   /**
-   * The unique id of the select.
-   */
-  id?: string
-  /**
+   * s
    * The items to display in the select.
    */
   items: T[] | SelectGroup<T>[]
@@ -78,6 +75,10 @@ export interface NSelectRootProps extends RootExtensions {
 }
 
 export interface NSelectTriggerProps extends TriggerExtensions {
+  /**
+   * The unique id of the select trigger to be used for the form field.
+   */
+  id?: string
   /**
    * Allows you to add `UnaUI` button preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.

@@ -24,7 +24,6 @@ const emits = defineEmits<SelectRootEmits>()
 
 const rootProps = reactivePick(props, [
   'modelValue',
-  'id',
   'defaultValue',
   'multiple',
   'disabled',
