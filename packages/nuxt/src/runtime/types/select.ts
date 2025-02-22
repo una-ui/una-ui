@@ -20,6 +20,7 @@ type LabelExtensions = SelectLabelProps & BaseExtensions
 type SeparatorExtensions = SelectSeparatorProps & BaseExtensions
 type SelectExtensions = NSelectRootProps
   & BaseExtensions
+  & Pick<NSelectValueProps, 'placeholder'>
   & Pick<NSelectItemProps, 'selectItem'>
   & Pick<NSelectTriggerProps, 'status' | 'select'>
 
@@ -37,21 +38,6 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
   id?: string
 
   /**
-   * The value of the select when initially rendered.
-   */
-  defaultValue?: T | T[]
-
-  /**
-   * When true, prevents the user from interacting with Select
-   */
-  disabled?: boolean
-
-  /**
-   * Whether multiple options can be selected or not.
-   */
-  multiple?: boolean
-
-  /**
    * The items to display in the select.
    */
   items: T[] | SelectGroup<T>[]
@@ -67,17 +53,14 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
   valueAttribute?: keyof T
 
   /**
-   * The placeholder to display when no value is selected.
-   */
-  placeholder?: string
-
-  /**
    * The label to display above the select items.
    */
   label?: string
 
   /**
    * Allows for multiple groups within the select.
+   *
+   * !REFACTOR: automatically detect if the items are grouped
    */
   groupItems?: boolean
 
@@ -167,7 +150,7 @@ export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps {
   class?: HTMLAttributes['class']
   una?: {
     selectItemIndicator?: HTMLAttributes['class']
-    selectItemIndicatorIcon?: HTMLAttributes
+    selectItemIndicatorIcon?: HTMLAttributes['class']
   }
 }
 

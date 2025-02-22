@@ -5,9 +5,7 @@ import type { NSelectProps, SelectGroup as SelectGroupType } from '../../../type
 
 <script setup lang="ts" generic="T extends AcceptableValue">
 import { reactivePick } from '@vueuse/core'
-import {
-  useForwardPropsEmits,
-} from 'reka-ui'
+import { useForwardPropsEmits } from 'reka-ui'
 import { isEqualObject } from '../../../utils'
 import SelectContent from './SelectContent.vue'
 import SelectGroup from './SelectGroup.vue'
@@ -25,22 +23,17 @@ const props = withDefaults(defineProps<NSelectProps<T>>(), {
 const emits = defineEmits<SelectRootEmits>()
 
 const rootProps = reactivePick(props, [
-  'items',
   'modelValue',
-  'groupItems',
-  'itemAttribute',
-  'placeholder',
-  'label',
   'id',
-  'select',
   'defaultValue',
   'multiple',
+  'disabled',
 ])
 const forwarded = useForwardPropsEmits(rootProps, emits)
 
 function formatSelectedValue(value: typeof props.modelValue) {
-  if (!value)
-    return ''
+  if (!value || (Array.isArray(value) && value.length === 0))
+    return null
 
   if (props.multiple && Array.isArray(value)) {
     return value.map((val) => {
@@ -70,13 +63,15 @@ function formatSelectedValue(value: typeof props.modelValue) {
       :select
       v-bind="props._selectTrigger"
     >
-      <slot name="trigger" :value="modelValue">
+      <slot name="trigger" :model-value>
         <SelectValue
           :placeholder="props.placeholder"
           v-bind="props._selectValue"
+          :aria-label="formatSelectedValue(modelValue)"
+          :data-status="status"
         >
-          <slot name="value" :value="props.modelValue">
-            {{ formatSelectedValue(modelValue) }}
+          <slot name="value" :model-value>
+            {{ formatSelectedValue(modelValue) || props.placeholder }}
           </slot>
         </SelectValue>
       </slot>
