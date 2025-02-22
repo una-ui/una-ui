@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { SelectContentEmits } from 'reka-ui'
 import type { NSelectContentProps } from '../../../types'
 import {
   SelectContent,
-  type SelectContentEmits,
   SelectPortal,
   SelectViewport,
   useForwardPropsEmits,

@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import type { SwitchRootEmits } from 'reka-ui'
 import type { NSwitchProps } from '../../types'
 import { reactivePick } from '@vueuse/core'
 import {
   SwitchRoot,
-  type SwitchRootEmits,
   SwitchThumb,
   useForwardPropsEmits,
 } from 'reka-ui'

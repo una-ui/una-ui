@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import type { DropdownMenuSubContentEmits } from 'reka-ui'
 import type { NDropdownMenuSubContentProps } from '../../../types'
 import {
   DropdownMenuSubContent,
-  type DropdownMenuSubContentEmits,
   useForwardPropsEmits,
 } from 'reka-ui'
 import { computed } from 'vue'

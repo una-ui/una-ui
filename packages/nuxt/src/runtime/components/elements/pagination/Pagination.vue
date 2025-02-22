@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { PaginationRootEmits } from 'reka-ui'
 import type { NPaginationProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { PaginationList, PaginationRoot, type PaginationRootEmits, useForwardPropsEmits } from 'reka-ui'
+import { PaginationList, PaginationRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../../utils'
 import PaginationEllipsis from './PaginationEllipsis.vue'
 import PaginationFirst from './PaginationFirst.vue'

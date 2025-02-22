@@ -1,7 +1,8 @@
 <script setup lang="ts" generic="T">
+import type { RadioGroupRootEmits } from 'reka-ui'
 import type { NRadioGroupProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { RadioGroupRoot, type RadioGroupRootEmits, useForwardPropsEmits } from 'reka-ui'
+import { RadioGroupRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../../utils'
 import RadioGroupItem from './RadioGroupItem.vue'
 

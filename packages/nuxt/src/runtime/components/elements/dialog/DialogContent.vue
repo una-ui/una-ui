@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import type { DialogContentEmits } from 'reka-ui'
 import type { NDialogContentProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
 import {
   DialogContent,
-  type DialogContentEmits,
   DialogPortal,
   useForwardPropsEmits,
 } from 'reka-ui'
