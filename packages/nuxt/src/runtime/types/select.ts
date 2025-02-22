@@ -2,28 +2,18 @@ import type { AcceptableValue, SelectContentProps, SelectGroupProps, SelectItemI
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-interface BaseExtensions {
-  class?: HTMLAttributes['class']
-  size?: HTMLAttributes['class']
+// Base Types
+interface ClassProp { class?: HTMLAttributes['class'] }
+interface SizeProp { size?: HTMLAttributes['class'] }
+type BaseExtensions = ClassProp & SizeProp
+
+interface UnaConfig<T extends string> {
+  una?: {
+    [K in T]?: HTMLAttributes['class']
+  }
 }
 
-type RootExtensions = SelectRootProps & BaseExtensions
-type TriggerExtensions = SelectTriggerProps & Omit<NButtonProps, 'una'> & BaseExtensions
-type ValueExtensions = SelectValueProps & BaseExtensions
-type ScrollDownButtonExtensions = SelectScrollDownButtonProps & BaseExtensions
-type ScrollUpButtonExtensions = SelectScrollUpButtonProps & BaseExtensions
-type ContentExtensions = SelectContentProps & BaseExtensions
-type ItemExtensions = SelectItemProps & BaseExtensions
-type ItemTextExtensions = SelectItemTextProps & BaseExtensions
-type GroupExtensions = SelectGroupProps & BaseExtensions
-type LabelExtensions = SelectLabelProps & BaseExtensions
-type SeparatorExtensions = SelectSeparatorProps & BaseExtensions
-type SelectExtensions = NSelectRootProps
-  & BaseExtensions
-  & Pick<NSelectValueProps, 'placeholder'>
-  & Pick<NSelectItemProps, 'selectItem'>
-  & Pick<NSelectTriggerProps, 'status' | 'select'>
-
+// Core Select Types
 export interface SelectGroup<T extends AcceptableValue> {
   label?: string
   items: T[]
@@ -31,7 +21,8 @@ export interface SelectGroup<T extends AcceptableValue> {
   _selectItem?: Partial<NSelectItemProps>
 }
 
-export interface NSelectProps<T extends AcceptableValue> extends SelectExtensions {
+// Component Props
+export interface NSelectProps<T extends AcceptableValue> extends BaseExtensions {
   /**
    * The unique id of the select.
    */
@@ -62,7 +53,7 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
    */
   group?: boolean
 
-  // sub-components
+  // Sub-component configurations
   _selectScrollUpButton?: Partial<NSelectScrollUpButtonProps>
   _selectItemText?: Partial<NSelectItemTextProps>
   _selectScrollDownButton?: Partial<NSelectScrollDownButtonProps>
@@ -75,13 +66,11 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
   _selectLabel?: Partial<NSelectLabelProps>
 }
 
-export interface NSelectRootProps extends RootExtensions {
-  una?: {
-    selectRoot?: HTMLAttributes['class']
-  }
-}
+// Root Components
+export interface NSelectRootProps extends SelectRootProps, BaseExtensions, UnaConfig<'selectRoot'> {}
 
-export interface NSelectTriggerProps extends TriggerExtensions {
+// Trigger Components
+export interface NSelectTriggerProps extends SelectTriggerProps, Omit<NButtonProps, 'una'>, ClassProp {
   /**
    * Allows you to add `UnaUI` button preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -91,10 +80,12 @@ export interface NSelectTriggerProps extends TriggerExtensions {
    * select="solid-green"
    */
   select?: string
+
   /**
    * The status of the select input.
    */
   status?: 'info' | 'success' | 'warning' | 'error'
+
   /**
    * `UnaUI` preset configuration
    *
@@ -105,7 +96,6 @@ export interface NSelectTriggerProps extends TriggerExtensions {
     selectTriggerTrailing?: HTMLAttributes['class']
     selectTriggerTrailingIcon?: HTMLAttributes['class']
     selectTriggerLeading?: HTMLAttributes['class']
-
     selectTriggerInfoIcon?: HTMLAttributes['class']
     selectTriggerSuccessIcon?: HTMLAttributes['class']
     selectTriggerWarningIcon?: HTMLAttributes['class']
@@ -113,79 +103,78 @@ export interface NSelectTriggerProps extends TriggerExtensions {
   } & NButtonProps['una']
 }
 
-export interface NSelectValueProps extends ValueExtensions {
-  una?: {
-    selectValue?: HTMLAttributes['class']
-  }
-}
+// Value Components
+export interface NSelectValueProps extends SelectValueProps, BaseExtensions, UnaConfig<'selectValue'> {}
 
-export interface NSelectScrollDownButtonProps extends ScrollDownButtonExtensions {
-  una?: {
-    selectScrollDownButton?: HTMLAttributes['class']
-    selectScrollDownButtonIcon?: HTMLAttributes['class']
-  }
-}
+// Scroll Button Components
+export interface NSelectScrollDownButtonProps extends SelectScrollDownButtonProps, BaseExtensions, UnaConfig<'selectScrollDownButton' | 'selectScrollDownButtonIcon'> {}
 
-export interface NSelectScrollUpButtonProps extends ScrollUpButtonExtensions {
-  una?: {
-    selectScrollUpButton?: HTMLAttributes['class']
-    selectScrollUpButtonIcon?: HTMLAttributes['class']
-  }
-}
+export interface NSelectScrollUpButtonProps extends SelectScrollUpButtonProps, BaseExtensions, UnaConfig<'selectScrollUpButton' | 'selectScrollUpButtonIcon'> {}
 
-export interface NSelectContentProps extends ContentExtensions {
+// Content Components
+export interface NSelectContentProps extends SelectContentProps, BaseExtensions {
+  /**
+   * Sub-component configurations
+   */
   _selectScrollDownButton?: NSelectScrollDownButtonProps
   _selectScrollUpButton?: NSelectScrollUpButtonProps
   _selectSeparator?: NSelectSeparator
 
+  /**
+   * `UnaUI` preset configuration
+   */
   una?: {
     selectContent?: HTMLAttributes['class']
   }
 }
 
-export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps {
+// Item Components
+export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps, ClassProp {
+  /**
+   * Icon class for the indicator
+   */
   icon?: HTMLAttributes['class']
-  class?: HTMLAttributes['class']
+
+  /**
+   * `UnaUI` preset configuration
+   */
   una?: {
     selectItemIndicator?: HTMLAttributes['class']
     selectItemIndicatorIcon?: HTMLAttributes['class']
   }
 }
 
-export interface NSelectItemProps extends ItemExtensions {
+export interface NSelectItemProps extends SelectItemProps, BaseExtensions {
+  /**
+   * Class for the select item
+   */
   selectItem?: HTMLAttributes['class']
+
+  /**
+   * Whether the item is selected
+   */
   isSelected?: boolean
 
+  /**
+   * Sub-component configurations
+   */
   _selectItemText?: NSelectItemTextProps
   _selectItemIndicator?: NSelectItemIndicatorProps
 
+  /**
+   * `UnaUI` preset configuration
+   */
   una?: {
     selectItem?: HTMLAttributes['class']
-
     selectItemIndicatorWrapper?: HTMLAttributes['class']
   }
 }
 
-export interface NSelectItemTextProps extends ItemTextExtensions {
-  una?: {
-    selectItemText?: HTMLAttributes['class']
-  }
-}
+export interface NSelectItemTextProps extends SelectItemTextProps, BaseExtensions, UnaConfig<'selectItemText'> {}
 
-export interface NSelectGroupProps extends GroupExtensions {
-  una?: {
-    selectGroup?: HTMLAttributes['class']
-  }
-}
+// Group Components
+export interface NSelectGroupProps extends SelectGroupProps, BaseExtensions, UnaConfig<'selectGroup'> {}
 
-export interface NSelectLabelProps extends LabelExtensions {
-  una?: {
-    selectLabel?: HTMLAttributes['class']
-  }
-}
+export interface NSelectLabelProps extends SelectLabelProps, BaseExtensions, UnaConfig<'selectLabel'> {}
 
-export interface NSelectSeparator extends SeparatorExtensions {
-  una?: {
-    selectSeparator?: HTMLAttributes['class']
-  }
-}
+export interface NSelectSeparator extends SelectSeparatorProps, BaseExtensions, UnaConfig<'selectSeparator'> {}
