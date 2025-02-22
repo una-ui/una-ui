@@ -35,9 +35,9 @@ const components = [
 </script>
 
 <template>
-  <div class="relative grid grid-cols-12 h-screen w-screen flex gap-4 bg-base p-4 p-6 container">
+  <div class="relative h-screen flex gap-4 bg-base p-4 p-6 container">
     <!-- aside -->
-    <div class="col-span-5 h-full flex flex-col border p-6">
+    <div class="no-scrollbar col-span-5 h-full flex flex-col overflow-y-auto border p-6 py-6 pr-12">
       <p class="mb-4 font-bold">
         Components
       </p>
@@ -52,7 +52,7 @@ const components = [
     </div>
 
     <!-- main -->
-    <main class="col-span-7 w-full overflow-y-auto border">
+    <main class="w-full overflow-y-auto border">
       <div class="flex flex-col items-center gap-2 border-b p-6">
         <h1 class="text-3xl text-primary-active font-bold">
           <span class="dark:drop-shadow-[0_0_0.1mm_rgb(var(--c-primary))text-nowrap text-base font-bold drop-shadow-lg">
@@ -78,3 +78,9 @@ const components = [
   </div>
   <NToaster />
 </template>
+
+<style scoped>
+.no-scrollbar {
+  scrollbar-width: none;
+}
+</style>
