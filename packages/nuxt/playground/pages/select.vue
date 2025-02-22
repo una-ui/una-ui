@@ -1,117 +1,42 @@
 <script setup lang="ts">
-/**
- * @name NSelect
- *
- * @todo
- * - [] Add select props
- * - [] Add select functionality
- * - [] Add select presets
- * - [] Add dynamic colors
- * - [] Add dynamic sizes
- * - [] NFormGroup integration
- * - [] Add disabled state
- * - [] Add select slots
- * - [] Add select documentation
- * - [] Add select markdown
- * - [] Add select examples
- */
-
-const options = [
-  { fruit: 'Apple', price: '$1.00' },
-  { fruit: 'Banana', price: '$2.00' },
-  { fruit: 'Blueberry', price: '$3.00' },
-  { fruit: 'Grapes', price: '$4.00' },
-  { fruit: 'Pineapple', price: '$5.00' },
-]
-const vegetables = [
-  { fruit: 'Aubergine', price: '$1.50' },
-  { fruit: 'Broccoli', price: '$2.30' },
-  { fruit: 'Carrot', price: '$0.75' },
-  { fruit: 'Courgette', price: '$1.80', _selectItem: {
-    disabled: true,
-  } },
-  { fruit: 'Leek', price: '$1.20' },
-]
-
-const items1 = ['Apple', 'Banana', 'Blueberry', 'Grapes', 'Pineapple']
-const items = [
+const selected = ref([])
+const selected2 = ref([])
+const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastien Chopin', 'Alexander Lichter']
+const items2 = [
   {
-    label: 'Fruits',
-    items: options,
-    _selectItem: {
-      selectItem: 'purple',
-    },
-    _selectLabel: {
-      class: 'text-fuchsia',
-    },
+    label: 'React Community',
+    items: ['Theo', 'John', 'Jane'],
   },
   {
-    label: 'Vegetables',
-    items: vegetables,
-    _selectItem: {
-      selectItem: 'lime',
-    },
-    _selectLabel: {
-      class: 'text-success',
-    },
+    label: 'Vue Community',
+    items: ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastien Chopin', 'Alexander Lichter'],
   },
 ]
-const selected = ref()
-const toggleDisable = ref(false)
 </script>
 
 <template>
-  <div class="w-70% flex flex-col gap-4">
-    <NCheckbox v-model="toggleDisable" label="disable" />
-    <NInput />
+  <div class="max-w-50">
     <NSelect
       v-model="selected"
-      :items="items1"
-      placeholder="Select an item"
-      :disabled="toggleDisable"
+      :items
+      placeholder="Select Contributor"
+      label="Vue Community"
+      multiple
+    />
+
+    <NSelect
+      v-model="selected2"
+      :items="items2"
+      value-attribute="label"
+      item-attribute="label"
+      placeholder="Select Contributor"
+      multiple
       :_select-trigger="{
-        trailing: 'i-lucide-chevron-down',
-        una: {
-          btnTrailing: 'text-primary',
-        },
-      }"
-      :_select-item="{
-        selectItem: 'orange',
+        class: 'w-100',
       }"
     />
-    {{ selected }}
-
-    <NSelect
-      v-model="selected"
-      :items="options"
-      placeholder="Select an item"
-      label="Items Available"
-      :disabled="toggleDisable"
-      :_select-item="{
-        selectItem: 'orange',
-      }"
-      item-attribute="fruit"
-    >
-      <template #item="{ item }">
-        <div class="flex justify-between">
-          <span>{{ item?.fruit }} - {{ item?.price }}</span>
-        </div>
-      </template>
-    </NSelect>
-
-    <NFormGroup
-      label="Select an item"
-    >
-      <NSelect
-        v-model="selected"
-        :items
-        placeholder="Select an item"
-        label="Items Available"
-        :disabled="toggleDisable"
-        item-attribute="fruit"
-        multiple-group
-      />
-      <NButton label="Submit" type="submit" />
-    </NFormGroup>
+    <pre>
+    {{ selected2 }}
+  </pre>
   </div>
 </template>

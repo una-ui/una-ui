@@ -1,4 +1,4 @@
-import type { SelectContentProps, SelectGroupProps, SelectItemIndicatorProps, SelectItemProps, SelectItemTextProps, SelectLabelProps, SelectRootProps, SelectScrollDownButtonProps, SelectScrollUpButtonProps, SelectSeparatorProps, SelectTriggerProps, SelectValueProps } from 'reka-ui'
+import type { AcceptableValue, SelectContentProps, SelectGroupProps, SelectItemIndicatorProps, SelectItemProps, SelectItemTextProps, SelectLabelProps, SelectRootProps, SelectScrollDownButtonProps, SelectScrollUpButtonProps, SelectSeparatorProps, SelectTriggerProps, SelectValueProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
@@ -7,13 +7,13 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-type RootExtensions = Omit<SelectRootProps, 'modelValue' > & BaseExtensions
+type RootExtensions = SelectRootProps & BaseExtensions
 type TriggerExtensions = SelectTriggerProps & Omit<NButtonProps, 'una'> & BaseExtensions
 type ValueExtensions = SelectValueProps & BaseExtensions
 type ScrollDownButtonExtensions = SelectScrollDownButtonProps & BaseExtensions
 type ScrollUpButtonExtensions = SelectScrollUpButtonProps & BaseExtensions
 type ContentExtensions = SelectContentProps & BaseExtensions
-type ItemExtensions = Omit<SelectItemProps, 'value'> & BaseExtensions
+type ItemExtensions = SelectItemProps & BaseExtensions
 type ItemTextExtensions = SelectItemTextProps & BaseExtensions
 type GroupExtensions = SelectGroupProps & BaseExtensions
 type LabelExtensions = SelectLabelProps & BaseExtensions
@@ -23,42 +23,61 @@ type SelectExtensions = NSelectRootProps
   & Pick<NSelectItemProps, 'selectItem'>
   & Pick<NSelectTriggerProps, 'status' | 'select'>
 
-export interface NSelectProps extends SelectExtensions {
+export interface SelectGroup<T extends AcceptableValue> {
+  label?: string
+  items: T[]
+  _selectLabel?: Partial<NSelectLabelProps>
+  _selectItem?: Partial<NSelectItemProps>
+}
+
+export interface NSelectProps<T extends AcceptableValue> extends SelectExtensions {
   /**
    * The unique id of the select.
    */
   id?: string
+
+  /**
+   * The value of the select when initially rendered.
+   */
+  defaultValue?: T | T[]
+
+  /**
+   * When true, prevents the user from interacting with Select
+   */
+  disabled?: boolean
+
+  /**
+   * Whether multiple options can be selected or not.
+   */
+  multiple?: boolean
+
+  /**
+   * The items to display in the select.
+   */
+  items: T[] | SelectGroup<T>[]
+
   /**
    * The attribute name to use to display in the select items.
-   *
    */
-  itemAttribute?: string | number
+  itemAttribute?: keyof T
+
   /**
    * The attribute name to use to display in the selected value.
    */
-  valueAttribute?: string | number
+  valueAttribute?: keyof T
+
   /**
    * The placeholder to display when no value is selected.
    */
   placeholder?: string
+
   /**
    * The label to display above the select items.
    */
   label?: string
-  /**
-   * The items to display in the select.
-   *
-   * @default []
-   */
-  items: any[]
+
   /**
    * Allows for multiple groups within the select.
-   *
-   * @default false
-   * @example
-   * items: [
-   *  { label: 'Group 1', items: [1, 2, 3] },
-   * ]
    */
   groupItems?: boolean
 
@@ -153,7 +172,6 @@ export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps {
 }
 
 export interface NSelectItemProps extends ItemExtensions {
-  value: any
   selectItem?: HTMLAttributes['class']
   isSelected?: boolean
 

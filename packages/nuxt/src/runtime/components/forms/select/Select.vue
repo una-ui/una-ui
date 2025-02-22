@@ -1,11 +1,14 @@
-<script setup lang="ts">
-import type { SelectRootEmits } from 'reka-ui'
-import type { NSelectProps } from '../../../types'
+<script lang="ts">
+import type { AcceptableValue, SelectRootEmits } from 'reka-ui'
+import type { NSelectProps, SelectGroup as SelectGroupType } from '../../../types'
+</script>
+
+<script setup lang="ts" generic="T extends AcceptableValue">
+import { reactivePick } from '@vueuse/core'
 import {
   useForwardPropsEmits,
 } from 'reka-ui'
-import { computed, provide } from 'vue'
-import { isEqualObject, omitProps } from '../../../utils'
+import { isEqualObject } from '../../../utils'
 import SelectContent from './SelectContent.vue'
 import SelectGroup from './SelectGroup.vue'
 import SelectItem from './SelectItem.vue'
@@ -15,55 +18,65 @@ import SelectSeparator from './SelectSeparator.vue'
 import SelectTrigger from './SelectTrigger.vue'
 import SelectValue from './SelectValue.vue'
 
-const props = withDefaults(defineProps<NSelectProps>(), {
+const props = withDefaults(defineProps<NSelectProps<T>>(), {
   size: 'sm',
 })
 
 const emits = defineEmits<SelectRootEmits>()
 
-const modelValue = defineModel<any>('modelValue')
+const rootProps = reactivePick(props, [
+  'items',
+  'modelValue',
+  'groupItems',
+  'itemAttribute',
+  'placeholder',
+  'label',
+  'id',
+  'select',
+  'defaultValue',
+  'multiple',
+])
+const forwarded = useForwardPropsEmits(rootProps, emits)
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+function formatSelectedValue(value: typeof props.modelValue) {
+  if (!value)
+    return ''
 
-  return delegated
-})
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
-
-const transformerValue = computed(() => {
-  if (typeof modelValue.value === 'object') {
-    if (forwarded.value.valueAttribute)
-      return modelValue.value[forwarded.value.valueAttribute]
-
-    if (forwarded.value.itemAttribute)
-      return modelValue.value[forwarded.value.itemAttribute]
+  if (props.multiple && Array.isArray(value)) {
+    return value.map((val) => {
+      if (props.valueAttribute && typeof val === 'object') {
+        return (val as Record<string, any>)[props.valueAttribute as string]
+      }
+      return val
+    }).join(', ')
   }
 
-  return modelValue.value
-})
+  if (props.valueAttribute && typeof value === 'object') {
+    return (value as Record<string, any>)[props.valueAttribute as string]
+  }
 
-provide('selectModelValue', modelValue)
+  return value
+}
 </script>
 
 <template>
   <SelectRoot
-    v-bind="omitProps(forwarded, ['items', 'groupItems', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
-    :model-value="transformerValue"
+    v-bind="forwarded"
   >
     <SelectTrigger
       :id
       :size
       :status
       :select
-      v-bind="forwarded._selectTrigger"
+      v-bind="props._selectTrigger"
     >
       <slot name="trigger" :value="modelValue">
         <SelectValue
-          v-bind="forwarded._selectValue"
-          :placeholder="forwarded._selectValue?.placeholder || forwarded.placeholder"
+          :placeholder="props.placeholder"
+          v-bind="props._selectValue"
         >
-          <slot name="value" :value="modelValue">
-            {{ transformerValue }}
+          <slot name="value" :value="props.modelValue">
+            {{ formatSelectedValue(modelValue) }}
           </slot>
         </SelectValue>
       </slot>
@@ -96,24 +109,23 @@ provide('selectModelValue', modelValue)
           >
             <SelectItem
               :value="item"
-              :size
-              :select-item
-              v-bind="{ ...props._selectItem, ...item._selectItem }"
-              :is-selected="isEqualObject(item, modelValue)"
+              :size="size"
+              v-bind="props._selectItem"
+              :is-selected="multiple
+                ? Array.isArray(modelValue) && modelValue.some(val => isEqualObject(val as Record<string, any>, item as Record<string, any>))
+                : isEqualObject(item as Record<string, any>, modelValue as Record<string, any>)"
             >
               <slot name="item" :item="item">
-                {{ props.itemAttribute ? item[props.itemAttribute] : item }}
+                {{ props.itemAttribute && item ? (item as any)[props.itemAttribute] : item }}
               </slot>
             </SelectItem>
           </template>
         </template>
 
         <!-- multiple-group -->
-        <template
-          v-else
-        >
+        <template v-if="groupItems">
           <SelectGroup
-            v-for="(groupItems, i) in items"
+            v-for="(group, i) in items as unknown as SelectGroupType<T>[]"
             :key="i"
             v-bind="props._selectGroup"
           >
@@ -122,29 +134,31 @@ provide('selectModelValue', modelValue)
               v-bind="props._selectSeparator"
             />
 
-            <slot name="group" :items="groupItems">
+            <slot name="group" :items="group">
               <SelectLabel
-                v-if="groupItems.label"
-                :size
-                v-bind="{ ...props._selectLabel, ...groupItems._selectLabel }"
+                v-if="group.label"
+                :size="size"
+                v-bind="{ ...props._selectLabel, ...group._selectLabel }"
               >
-                <slot name="label" :label="groupItems.label">
-                  {{ groupItems.label }}
+                <slot name="label" :label="group.label">
+                  {{ group.label }}
                 </slot>
               </SelectLabel>
 
               <template
-                v-for="groupItem in groupItems.items"
-                :key="groupItem"
+                v-for="item in group.items"
+                :key="item"
               >
                 <SelectItem
-                  :value="groupItem"
-                  :size
-                  v-bind="{ ...forwarded._selectItem, ...groupItems?._selectItem, ...groupItem._selectItem }"
-                  :is-selected="groupItem === transformerValue"
+                  :value="item"
+                  :size="size"
+                  v-bind="{ ...forwarded._selectItem, ...group._selectItem }"
+                  :is-selected="multiple
+                    ? Array.isArray(modelValue) && modelValue.some(val => isEqualObject(val as Record<string, any>, item as Record<string, any>))
+                    : isEqualObject(item as Record<string, any>, modelValue as Record<string, any>)"
                 >
-                  <slot name="item" :item="groupItem">
-                    {{ props.itemAttribute ? groupItem[props.itemAttribute] : groupItem }}
+                  <slot name="item" :item="item">
+                    {{ props.itemAttribute ? (item as any)[props.itemAttribute] : item }}
                   </slot>
                 </SelectItem>
               </template>
