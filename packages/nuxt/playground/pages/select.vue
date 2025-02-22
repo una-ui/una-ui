@@ -82,7 +82,7 @@ const objectItems = [
       <NSelect
         v-model="selected2"
         :items="alphabetItems"
-        group-items
+        group
         placeholder="Select Option"
       />
       <pre class="mt-2">{{ selected2 }}</pre>
@@ -95,7 +95,7 @@ const objectItems = [
       <NSelect
         v-model="selected3"
         :items="communityItems"
-        group-items
+        group
         placeholder="Select Community Member"
       />
       <pre class="mt-2">{{ selected3 }}</pre>

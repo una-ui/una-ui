@@ -15,10 +15,10 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-root': '',
   'select-trigger': 'w-full [&>span]:truncate',
   'select-trigger-trailing-icon': 'i-lucide-chevron-down n-disabled',
-  'select-trigger-trailing': 'ml-auto data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info',
+  'select-trigger-trailing': 'ml-auto data-[status]:text-1.2em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info',
   'select-trigger-leading': '',
 
-  'select-value': 'h-1.5em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[placeholder]:text-muted',
+  'select-value': 'h-1.5em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[placeholder]:n-disabled',
 
   'select-content': 'relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border border-base bg-popover text-popover shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
   'select-content-popper': 'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',

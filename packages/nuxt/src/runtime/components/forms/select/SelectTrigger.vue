@@ -54,10 +54,6 @@ const statusClassVariants = computed(() => {
             'select-trigger-leading',
             props.una?.btnLeading,
           ),
-          btnTrailing: cn(
-            'select-trigger-trailing',
-            props.una?.btnTrailing,
-          ),
           btnDefaultVariant: statusClassVariants.btn,
         },
       }"
@@ -69,7 +65,12 @@ const statusClassVariants = computed(() => {
           as-child
         >
           <Icon
+            :data-status="status"
             :name="statusClassVariants.icon"
+            :class="cn(
+              'select-trigger-trailing',
+              props.una?.btnTrailing,
+            )"
           />
         </SelectIcon>
       </template>

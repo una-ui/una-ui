@@ -31,7 +31,7 @@ const rootProps = reactivePick(props, [
 ])
 const forwarded = useForwardPropsEmits(rootProps, emits)
 
-function formatSelectedValue(value: typeof props.modelValue) {
+function formatSelectedValue(value: unknown) {
   if (!value || (Array.isArray(value) && value.length === 0))
     return null
 
@@ -50,10 +50,28 @@ function formatSelectedValue(value: typeof props.modelValue) {
 
   return value
 }
+
+function isItemSelected(item: unknown, modelValue: unknown) {
+  if (!modelValue)
+    return false
+
+  if (props.multiple && Array.isArray(modelValue)) {
+    return modelValue.some((val) => {
+      const valObj = typeof val === 'object' && val ? val : { value: val }
+      const itemObj = typeof item === 'object' && item ? item : { value: item }
+      return isEqualObject(valObj, itemObj)
+    })
+  }
+
+  const modelObj = typeof modelValue === 'object' && modelValue ? modelValue : { value: modelValue }
+  const itemObj = typeof item === 'object' && item ? item : { value: item }
+  return isEqualObject(modelObj, itemObj)
+}
 </script>
 
 <template>
   <SelectRoot
+    v-slot="{ modelValue, open }"
     v-bind="forwarded"
   >
     <SelectTrigger
@@ -63,14 +81,14 @@ function formatSelectedValue(value: typeof props.modelValue) {
       :select
       v-bind="props._selectTrigger"
     >
-      <slot name="trigger" :model-value>
+      <slot name="trigger" :model-value :open="open">
         <SelectValue
           :placeholder="props.placeholder"
           v-bind="props._selectValue"
           :aria-label="formatSelectedValue(modelValue)"
           :data-status="status"
         >
-          <slot name="value" :model-value>
+          <slot name="value" :model-value :open>
             {{ formatSelectedValue(modelValue) || props.placeholder }}
           </slot>
         </SelectValue>
@@ -80,21 +98,20 @@ function formatSelectedValue(value: typeof props.modelValue) {
     <SelectContent
       :size
       v-bind="{
-        ...forwarded._selectContent,
-        _selectScrollDownButton: forwarded._selectScrollDownButton,
-        _selectScrollUpButton: forwarded._selectScrollUpButton,
-        _selectViewport: forwarded._selectViewport,
+        ..._selectContent,
+        _selectScrollDownButton,
+        _selectScrollUpButton,
       }"
     >
-      <slot name="content" :items="forwarded.items">
+      <slot name="content" :items="items">
         <!--  single-group -->
-        <template v-if="!groupItems">
+        <template v-if="!group">
           <SelectLabel
-            v-if="forwarded.label"
-            v-bind="forwarded._selectLabel"
+            v-if="label"
+            v-bind="_selectLabel"
           >
-            <slot name="label" :label="forwarded.label">
-              {{ forwarded.label }}
+            <slot name="label" :label>
+              {{ label }}
             </slot>
           </SelectLabel>
 
@@ -106,9 +123,7 @@ function formatSelectedValue(value: typeof props.modelValue) {
               :value="item"
               :size="size"
               v-bind="props._selectItem"
-              :is-selected="multiple
-                ? Array.isArray(modelValue) && modelValue.some(val => isEqualObject(val as Record<string, any>, item as Record<string, any>))
-                : isEqualObject(item as Record<string, any>, modelValue as Record<string, any>)"
+              :is-selected="isItemSelected(item, modelValue)"
             >
               <slot name="item" :item="item">
                 {{ props.itemAttribute && item ? (item as any)[props.itemAttribute] : item }}
@@ -118,9 +133,9 @@ function formatSelectedValue(value: typeof props.modelValue) {
         </template>
 
         <!-- multiple-group -->
-        <template v-if="groupItems">
+        <template v-if="group">
           <SelectGroup
-            v-for="(group, i) in items as unknown as SelectGroupType<T>[]"
+            v-for="(group, i) in items as SelectGroupType<T>[]"
             :key="i"
             v-bind="props._selectGroup"
           >
@@ -147,10 +162,8 @@ function formatSelectedValue(value: typeof props.modelValue) {
                 <SelectItem
                   :value="item"
                   :size="size"
-                  v-bind="{ ...forwarded._selectItem, ...group._selectItem }"
-                  :is-selected="multiple
-                    ? Array.isArray(modelValue) && modelValue.some(val => isEqualObject(val as Record<string, any>, item as Record<string, any>))
-                    : isEqualObject(item as Record<string, any>, modelValue as Record<string, any>)"
+                  v-bind="{ ..._selectItem, ...group._selectItem }"
+                  :is-selected="isItemSelected(item, modelValue)"
                 >
                   <slot name="item" :item="item">
                     {{ props.itemAttribute ? (item as any)[props.itemAttribute] : item }}

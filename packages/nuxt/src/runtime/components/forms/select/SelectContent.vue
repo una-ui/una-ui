@@ -46,18 +46,17 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       "
     >
       <SelectScrollUpButton
-        v-bind="forwarded._selectScrollUpButton"
+        v-bind="_selectScrollUpButton"
       />
       <SelectViewport
         :class="cn(
           'select-viewport',
           position === 'popper' && 'select-viewport-popper')"
-        v-bind="forwarded._selectViewport"
       >
         <slot />
       </SelectViewport>
       <SelectScrollDownButton
-        v-bind="forwarded._selectScrollDownButton"
+        v-bind="_selectScrollDownButton"
       />
     </SelectContent>
   </SelectPortal>

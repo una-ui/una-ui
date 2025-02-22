@@ -59,10 +59,8 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
 
   /**
    * Allows for multiple groups within the select.
-   *
-   * !REFACTOR: automatically detect if the items are grouped
    */
-  groupItems?: boolean
+  group?: boolean
 
   // sub-components
   _selectScrollUpButton?: Partial<NSelectScrollUpButtonProps>

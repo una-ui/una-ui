@@ -12,6 +12,7 @@ const forwarded = useForwardPropsEmits(props, emits)
 
 <template>
   <SelectRoot
+    v-slot="slotProps"
     :class="cn(
       'select-root',
       props.class,
@@ -19,6 +20,8 @@ const forwarded = useForwardPropsEmits(props, emits)
     )"
     v-bind="forwarded"
   >
-    <slot />
+    <slot
+      v-bind="slotProps"
+    />
   </SelectRoot>
 </template>
