@@ -36,33 +36,29 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
    * The unique id of the select.
    */
   id?: string
-
   /**
    * The items to display in the select.
    */
   items: T[] | SelectGroup<T>[]
-
   /**
    * The key name to use to display in the select items.
    */
   itemKey?: keyof T
-
   /**
    * The key name to use to display in the selected value.
    */
   valueKey?: keyof T
-
   /**
    * The label to display above the select items.
    */
   label?: string
-
   /**
    * Allows for multiple groups within the select.
    */
   group?: boolean
-
-  // sub-components
+  /**
+   * Sub-component configurations
+   */
   _selectScrollUpButton?: Partial<NSelectScrollUpButtonProps>
   _selectItemText?: Partial<NSelectItemTextProps>
   _selectScrollDownButton?: Partial<NSelectScrollDownButtonProps>
@@ -105,7 +101,6 @@ export interface NSelectTriggerProps extends TriggerExtensions {
     selectTriggerTrailing?: HTMLAttributes['class']
     selectTriggerTrailingIcon?: HTMLAttributes['class']
     selectTriggerLeading?: HTMLAttributes['class']
-
     selectTriggerInfoIcon?: HTMLAttributes['class']
     selectTriggerSuccessIcon?: HTMLAttributes['class']
     selectTriggerWarningIcon?: HTMLAttributes['class']
@@ -137,7 +132,6 @@ export interface NSelectContentProps extends ContentExtensions {
   _selectScrollDownButton?: NSelectScrollDownButtonProps
   _selectScrollUpButton?: NSelectScrollUpButtonProps
   _selectSeparator?: NSelectSeparator
-
   una?: {
     selectContent?: HTMLAttributes['class']
   }
@@ -155,10 +149,8 @@ export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps {
 export interface NSelectItemProps extends ItemExtensions {
   selectItem?: HTMLAttributes['class']
   isSelected?: boolean
-
   _selectItemText?: NSelectItemTextProps
   _selectItemIndicator?: NSelectItemIndicatorProps
-
   una?: {
     selectItem?: HTMLAttributes['class']
 
