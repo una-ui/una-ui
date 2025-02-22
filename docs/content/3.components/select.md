@@ -92,10 +92,10 @@ badges:
 
 Control the attribute value to be displayed in the select and the item.
 
-| Prop             | Default | Type     | Description                                        |
-| ---------------- | ------- | -------- | -------------------------------------------------- |
-| `valueAttribute` | -       | `string` | The attribute value to be displayed in the select. |
-| `itemAttribute`  | -       | `string` | The attribute value to be displayed in the item.   |
+| Prop       | Default | Type     | Description                                         |
+| ---------- | ------- | -------- | --------------------------------------------------- |
+| `valueKey` | -       | `string` | The key name to be displayed in the selected value. |
+| `itemKey`  | -       | `string` | The key name to be displayed in the item.           |
 
 :::CodeGroup
 ::div{label="Preview" preview}

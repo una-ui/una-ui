@@ -37,15 +37,15 @@ function formatSelectedValue(value: unknown) {
 
   if (props.multiple && Array.isArray(value)) {
     return value.map((val) => {
-      if (props.valueAttribute && typeof val === 'object') {
-        return (val as Record<string, any>)[props.valueAttribute as string]
+      if (props.valueKey && typeof val === 'object') {
+        return (val as Record<string, any>)[props.valueKey as string]
       }
       return val
     }).join(', ')
   }
 
-  if (props.valueAttribute && typeof value === 'object') {
-    return (value as Record<string, any>)[props.valueAttribute as string]
+  if (props.valueKey && typeof value === 'object') {
+    return (value as Record<string, any>)[props.valueKey as string]
   }
 
   return value
@@ -126,7 +126,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               :is-selected="isItemSelected(item, modelValue)"
             >
               <slot name="item" :item="item">
-                {{ props.itemAttribute && item ? (item as any)[props.itemAttribute] : item }}
+                {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
               </slot>
             </SelectItem>
           </template>
@@ -166,7 +166,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
                   :is-selected="isItemSelected(item, modelValue)"
                 >
                   <slot name="item" :item="item">
-                    {{ props.itemAttribute ? (item as any)[props.itemAttribute] : item }}
+                    {{ props.itemKey ? (item as any)[props.itemKey] : item }}
                   </slot>
                 </SelectItem>
               </template>

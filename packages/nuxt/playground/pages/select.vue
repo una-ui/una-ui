@@ -111,8 +111,8 @@ const objectItems = [
         placeholder="Select Contributors"
         label="Vue Community"
         multiple
-        item-attribute="name"
-        value-attribute="name"
+        item-key="name"
+        value-key="name"
       />
       <pre class="mt-2">{{ selectedMultipleObj }}</pre>
     </div>
