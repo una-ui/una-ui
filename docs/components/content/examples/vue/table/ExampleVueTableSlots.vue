@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { Person } from './makeData'
 import { NAvatar } from '#components'
-import { faker } from '@faker-js/faker'
 
-import makeData, { type Person } from './makeData'
+import { faker } from '@faker-js/faker'
+import makeData from './makeData'
 
 const data = ref(makeData(50))
 
@@ -109,7 +110,7 @@ const table = useTemplateRef<Table<Person>>('table')
       :columns
       :data
       :global-filter="search"
-      enable-row-selection enable-column-filters enable-sorting
+      enable-column-filters enable-row-selection enable-sorting
       row-id="username"
     >
       <!-- filters -->
