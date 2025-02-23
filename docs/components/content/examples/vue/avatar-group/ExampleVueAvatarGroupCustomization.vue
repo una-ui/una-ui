@@ -1,9 +1,9 @@
 <template>
   <NAvatarGroup
     :max="2"
-    avatar="solid-info"
-    :una="{
-      avatar: 'text-white',
+    avatar="solid-blue"
+    :_avatar-fallback="{
+      class: 'text-white',
     }"
   >
     <NAvatar label="AF" />

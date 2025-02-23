@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/collapsible/Collapsible.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/collapsible
+    to: https://www.reka-ui.com/docs/components/collapsible
     target: _blank
 ---
 
@@ -20,7 +20,7 @@ badges:
 | `disabled`    | -       | `boolean` | When true, prevents the user from interacting with the collapsible.                                                  |
 | `open`        | -       | `boolean` | The controlled open state of the collapsible. Can be binded with `v-model`.                                          |
 
-:read-more{to="https://www.radix-vue.com/components/collapsible#root" title="Radix Collapsible Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/collapsible#root" title="Reka Collapsible Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -39,15 +39,6 @@ badges:
 | `default` | `open` | The collapsible root slot.    |
 | `content` | -      | The collapsible content slot. |
 | `trigger` | `open` | The button trigger slot.      |
-
-:::CodeGroup
-::div{label="Preview"}
-:ExampleVueCollapsibleSlots
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/collapsible/ExampleVueCollapsibleSlots.vue
-::
-:::
 
 ## Presets
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NSelectScrollUpButtonProps } from '../../../types'
-import { SelectScrollUpButton, useForwardProps } from 'radix-vue'
+import { SelectScrollUpButton, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'

@@ -8,6 +8,7 @@ const model = ref(2)
 
     <NPagination
       v-model:page="model"
+      :items-per-page="10"
       :total="100"
       show-edges
     />

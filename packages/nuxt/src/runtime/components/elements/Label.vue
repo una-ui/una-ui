@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NLabelProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
-import { Label } from 'radix-vue'
+import { Label } from 'reka-ui'
 import { cn } from '../../utils'
 
 const props = defineProps<NLabelProps>()

@@ -1,4 +1,4 @@
-import type { AvatarFallbackProps, AvatarImageProps, AvatarRootProps } from 'radix-vue'
+import type { AvatarFallbackProps, AvatarImageProps, AvatarRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 interface BaseProps {

@@ -25,7 +25,7 @@ const selected = ref(items[0])
       label="Vue Community"
       :_select-trigger="{
         una: {
-          selectTriggerTrailingIcon: 'i-lucide-chevron-down',
+          selectTriggerTrailingIcon: 'i-lucide-chevrons-up-down',
         },
       }"
     >
@@ -35,6 +35,7 @@ const selected = ref(items[0])
           <span class="text-xs text-muted">Mini example list of contributors</span>
         </div>
       </template>
+
       <template #item="{ item }">
         <div class="flex items-center space-x-2">
           <img
@@ -45,14 +46,15 @@ const selected = ref(items[0])
           <span>{{ item.name }}</span>
         </div>
       </template>
-      <template #value="{ value }">
+
+      <template #value>
         <div class="flex items-center space-x-2">
           <img
-            :src="value?.avatar"
-            :alt="value?.name"
+            :src="selected?.avatar"
+            :alt="selected?.name"
             class="h-6 w-6 rounded-full"
           >
-          <span>{{ value?.name }}</span>
+          <span>{{ selected?.name }}</span>
         </div>
       </template>
     </NSelect>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NSelectLabelProps } from '../../../types'
-import { SelectLabel } from 'radix-vue'
+import { SelectLabel } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NSelectLabelProps>()

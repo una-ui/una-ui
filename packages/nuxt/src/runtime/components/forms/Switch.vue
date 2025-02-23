@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import type { SwitchRootEmits } from 'radix-vue'
+import type { SwitchRootEmits } from 'reka-ui'
 import type { NSwitchProps } from '../../types'
 import { reactivePick } from '@vueuse/core'
 import {
   SwitchRoot,
-
   SwitchThumb,
   useForwardPropsEmits,
-} from 'radix-vue'
+} from 'reka-ui'
 import { cn } from '../../utils'
 import NIcon from '../elements/Icon.vue'
 
@@ -19,17 +18,17 @@ const props = withDefaults(defineProps<NSwitchProps>(), {
 
 const emit = defineEmits<SwitchRootEmits>()
 
-const rootPropsEmits = useForwardPropsEmits(reactivePick(props, 'as', 'asChild', 'checked', 'defaultChecked', 'disabled', 'id', 'name', 'required', 'value'), emit)
+const rootPropsEmits = useForwardPropsEmits(reactivePick(props, 'as', 'asChild', 'modelValue', 'defaultValue', 'disabled', 'id', 'name', 'required', 'value'), emit)
 </script>
 
 <template>
   <SwitchRoot
-    v-slot="{ checked }"
+    v-slot="{ modelValue }"
     v-bind="rootPropsEmits"
     :class="cn(
       'peer switch',
       una?.switch,
-      checked
+      modelValue
         ? una?.switchChecked
         : una?.switchUnchecked,
     )"
@@ -42,27 +41,27 @@ const rootPropsEmits = useForwardPropsEmits(reactivePick(props, 'as', 'asChild',
       :class="cn(
         'switch-thumb',
         una?.switchThumb,
-        checked
+        modelValue
           ? 'switch-thumb-checked'
           : 'switch-thumb-unchecked',
-        checked
+        modelValue
           ? una?.switchThumbChecked
           : una?.switchThumbUnchecked,
       )"
     >
-      <slot v-if="!loading" name="icon" :checked>
+      <slot v-if="!loading" name="icon" :model-value>
         <NIcon
-          :name="(checked ? checkedIcon : uncheckedIcon) || icon"
+          :name="(modelValue ? checkedIcon : uncheckedIcon) || icon"
           :class="cn(
             'switch-icon',
             una?.switchIcon,
-            checked
+            modelValue
               ? ['switch-icon-checked', una?.switchIconChecked]
               : ['switch-icon-unchecked', una?.switchIconUnchecked],
           )"
         />
       </slot>
-      <slot v-else name="loading-icon" :checked>
+      <slot v-else name="loading-icon" :model-value>
         <NIcon
           :class="cn(
             'switch-icon switch-loading-icon',

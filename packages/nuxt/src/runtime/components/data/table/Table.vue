@@ -72,8 +72,8 @@ const columnsWithMisc = computed(() => {
           accessorKey: 'selection',
           header: props.enableMultiRowSelection
             ? ({ table }: any) => h(Checkbox, {
-                'checked': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
-                'onUpdate:checked': (value: boolean) => {
+                'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
+                'onUpdate:modelValue': (value: boolean | 'indeterminate' | null) => {
                   table.toggleAllPageRowsSelected(!!value)
                   emit('selectAll', table.getRowModel().rows)
                 },
@@ -81,8 +81,8 @@ const columnsWithMisc = computed(() => {
               })
             : '',
           cell: ({ row }: any) => h(Checkbox, {
-            'checked': row.getIsSelected() ?? false,
-            'onUpdate:checked': (value: boolean) => {
+            'modelValue': row.getIsSelected() ?? false,
+            'onUpdate:modelValue': (value: boolean | 'indeterminate' | null) => {
               row.toggleSelected(!!value)
               emit('select', row)
             },

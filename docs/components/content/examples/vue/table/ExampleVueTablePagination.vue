@@ -65,7 +65,7 @@ const table = useTemplateRef<Table<Person>>('table')
         :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
         :total="table?.getFilteredRowModel().rows.length"
         show-edges
-        :items-per-page="table?.getState().pagination.pageSize"
+        :items-per-page="table?.getState().pagination.pageSize ?? 5"
         @update:page="table?.setPageIndex($event - 1)"
       />
     </div>

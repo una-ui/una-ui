@@ -33,7 +33,7 @@ const selected = ref()
         v-model="selected"
         :items
         placeholder="Select a brand"
-        item-attribute="label"
+        item-key="label"
       />
     </div>
   </div>

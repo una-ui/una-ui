@@ -1,12 +1,15 @@
 ---
 description: 'A control that allows the user to toggle between checked and not checked.'
+navBadges:
+  - value: Updated
+    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Switch.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/switch
+    to: https://www.reka-ui.com/docs/components/switch
     target: _blank
 ---
 
@@ -14,12 +17,12 @@ badges:
 
 ### Basic
 
-| Prop             | Default | Type      | Description                                                           |
-| ---------------- | ------- | --------- | --------------------------------------------------------------------- |
-| `checked`        | -       | `boolean` | The controlled state of the switch. Can be bind as `v-model:checked`. |
-| `defaultChecked` | -       | `boolean` | The uncontrolled state of the switch.                                 |
-| `value`          | `on`    | `string`  | The value of the switch.                                              |
-| `disabled`       | `false` | `boolean` | When `true`, prevents the user from interacting with the switch.      |
+| Prop           | Default | Type      | Description                                                      |
+| -------------- | ------- | --------- | ---------------------------------------------------------------- |
+| `modelValue`   | -       | `boolean` | The controlled state of the switch. Can be bind as `v-model`.    |
+| `defaultValue` | -       | `boolean` | The uncontrolled state of the switch.                            |
+| `value`        | `on`    | `string`  | The value of the switch.                                         |
+| `disabled`     | `false` | `boolean` | When `true`, prevents the user from interacting with the switch. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -30,7 +33,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.radix-vue.com/components/switch#root" title="Radix Switch Root API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/switch#root" title="Reka Switch Root API" target="_blank"}
 
 ### Form Group
 
@@ -55,9 +58,10 @@ Notice that when you click on the label, the switch gets toggled.
 
 ### Color
 
-| Prop     | Default   | Type     | Description                     |
-| -------- | --------- | -------- | ------------------------------- |
-| `switch` | `primary` | `string` | Change the color of the switch. |
+| Prop               | Default   | Type     | Description                                    |
+| ------------------ | --------- | -------- | ---------------------------------------------- |
+| `switch-checked`   | `primary` | `string` | Change the color of the switch when checked.   |
+| `switch-unchecked` | `gray`    | `string` | Change the color of the switch when unchecked. |
 
 :::CodeGroup
 ::div{label="Preview" preview}

@@ -54,7 +54,7 @@
     "@vueuse/nuxt": "catalog:",
     "clsx": "catalog:",
     "ohash": "catalog:",
-    "radix-vue": "catalog:",
+    "reka-ui": "catalog:",
     "tailwind-merge": "catalog:",
     "typescript": "catalog:",
     "unocss": "catalog:",

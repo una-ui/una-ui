@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NDialogTitleProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
-import { DialogTitle, useForwardProps } from 'radix-vue'
+import { DialogTitle, useForwardProps } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NDialogTitleProps>()

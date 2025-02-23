@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { SliderRootEmits } from 'radix-vue'
+import type { SliderRootEmits } from 'reka-ui'
 import type { NSliderProps } from '../../types'
-import { SliderRange, SliderRoot, SliderThumb, SliderTrack, useForwardPropsEmits } from 'radix-vue'
+import { SliderRange, SliderRoot, SliderThumb, SliderTrack, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
 

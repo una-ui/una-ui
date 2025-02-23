@@ -1,16 +1,16 @@
 <script setup lang="ts">
-const options = ref([
-  { value: 'default', label: 'Default' },
-  { value: 'comfortable', label: 'Comfortable' },
-  { value: 'compact', label: 'Compact' },
+const themes = ref([
+  { value: 'light', label: 'Light', description: 'For bright environments' },
+  { value: 'dark', label: 'Dark', description: 'Easier on the eyes' },
+  { value: 'system', label: 'System', description: 'Follows your system preference' },
 ])
 
-const value = ref('default')
+const selectedTheme = ref('system')
 </script>
 
 <template>
   <NRadioGroup
-    v-model="value"
-    :items="options"
+    v-model="selectedTheme"
+    :items="themes"
   />
 </template>

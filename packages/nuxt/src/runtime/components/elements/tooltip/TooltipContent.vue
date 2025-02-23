@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { TooltipContentEmits } from 'radix-vue'
+import type { TooltipContentEmits } from 'reka-ui'
 import type { NTooltipContentProps } from '../../../types'
-import { TooltipContent, TooltipPortal, useForwardPropsEmits } from 'radix-vue'
+import { TooltipContent, TooltipPortal, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 

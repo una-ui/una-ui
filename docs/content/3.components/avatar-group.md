@@ -1,15 +1,12 @@
 ---
 description: 'Displays a group of Avatar components.'
-navBadges:
-  - value: Updated
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/slots/AvatarGroupDefault.ts
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/avatar
+    to: https://www.reka-ui.com/docs/components/avatar
     target: _blank
 ---
 

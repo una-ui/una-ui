@@ -2,6 +2,7 @@
   <div class="flex items-start overflow-auto">
     <NPagination
       :total="100"
+      :items-per-page="10"
       :show-first="false"
       :show-last="false"
       show-edges

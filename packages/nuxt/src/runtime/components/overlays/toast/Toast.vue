@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { ToastRootEmits } from 'radix-vue'
+import type { ToastRootEmits } from 'reka-ui'
 import type { NToastProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { ToastRoot, useForwardPropsEmits } from 'radix-vue'
+import { ToastRoot, useForwardPropsEmits } from 'reka-ui'
 
 import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'
@@ -30,7 +30,7 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultOpen', 
   <ToastRoot
     v-slot="{ remaining, duration }"
     :class="cn(
-      'group toast data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full',
+      'group toast data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--reka-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--reka-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full',
       props.class,
       props.una?.toast,
     )"

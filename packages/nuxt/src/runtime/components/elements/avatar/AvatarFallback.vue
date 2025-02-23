@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NAvatarAvatarFallbackProps } from '../../../types'
-import { AvatarFallback } from 'radix-vue'
+import { AvatarFallback } from 'reka-ui'
 import { cn, omitProps } from '../../../utils'
 import Icon from '../Icon.vue'
 

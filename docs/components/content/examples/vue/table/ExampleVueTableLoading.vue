@@ -38,7 +38,7 @@ const loading = ref(true)
 <template>
   <div class="flex flex-col space-y-2">
     <NCheckbox
-      v-model:checked="loading"
+      v-model="loading"
       label="Loading"
     />
 

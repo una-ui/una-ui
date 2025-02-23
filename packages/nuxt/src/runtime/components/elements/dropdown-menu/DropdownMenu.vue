@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { DropdownMenuContentEmits, DropdownMenuRootEmits } from 'radix-vue'
+import type { DropdownMenuContentEmits, DropdownMenuRootEmits } from 'reka-ui'
 import type { NDropdownMenuProps } from '../../../types'
 import { createReusableTemplate, reactivePick } from '@vueuse/core'
-import { DropdownMenuPortal, useForwardPropsEmits } from 'radix-vue'
+import { DropdownMenuPortal, useForwardPropsEmits } from 'reka-ui'
 import { omitProps } from '../../../utils'
 import DropdownMenuContent from './DropdownMenuContent.vue'
 import DropdownMenuGroup from './DropdownMenuGroup.vue'

@@ -3,7 +3,7 @@ import type { NDropdownMenuSubTriggerProps } from '../../../types'
 import {
   DropdownMenuSubTrigger,
   useForwardProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'

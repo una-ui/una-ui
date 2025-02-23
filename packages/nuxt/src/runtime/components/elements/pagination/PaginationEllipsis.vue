@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NPaginationEllipsisProps } from '../../../types'
-import { PaginationEllipsis, useForwardProps } from 'radix-vue'
+import { PaginationEllipsis, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'

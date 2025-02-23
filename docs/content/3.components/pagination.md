@@ -1,12 +1,15 @@
 ---
 description: 'Pagination with page navigation, next and previous links.'
+navBadges:
+  - value: Updated
+    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/pagination/Pagination.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/pagination
+    to: https://www.reka-ui.com/docs/components/pagination
     target: _blank
 ---
 
@@ -23,7 +26,7 @@ badges:
 | `page`         | -       | `number`  | The controlled value of the current page. Can be binded as `v-model:page`.                                                |
 | `showEdges`    | `false` | `boolean` | When true, always show first page, last page, and ellipsis.                                                               |
 
-:read-more{to="https://www.radix-vue.com/components/pagination#root" title="Radix Pagination Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/pagination#root" title="Reka Pagination Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -125,15 +128,15 @@ badges:
 
 ### Sub Components
 
-| Prop                    | API reference                                                                             | Description                                          |
-| ----------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| `_pagination-list-item` | [Radix Pagination ListItem API](https://www.radix-vue.com/components/pagination#list)     | Customizes the pagination list item component.       |
-| `_pagination-prev`      | [Radix Pagination Prev API](https://www.radix-vue.com/components/pagination#prev)         | Customizes the previous page navigation button.      |
-| `_pagination-next`      | [Radix Pagination Next API](https://www.radix-vue.com/components/pagination#next)         | Customizes the next page navigation button.          |
-| `_pagination-first`     | [Radix Pagination First API](https://www.radix-vue.com/components/pagination#first)       | Customizes the first page navigation button.         |
-| `_pagination-last`      | [Radix Pagination Last API](https://www.radix-vue.com/components/pagination#last)         | Customizes the last page navigation button.          |
-| `_pagination-ellipsis`  | [Radix Pagination Ellipsis API](https://www.radix-vue.com/components/pagination#ellipsis) | Customizes the ellipsis indicator in the pagination. |
-| `_pagination-list`      | [Radix Pagination List API](https://www.radix-vue.com/components/pagination#list)         | Customizes the pagination list component.            |
+| Prop                    | API reference                                                                               | Description                                          |
+| ----------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| `_pagination-list-item` | [Reka Pagination ListItem API](https://www.reka-ui.com/docs/components/pagination#list)     | Customizes the pagination list item component.       |
+| `_pagination-prev`      | [Reka Pagination Prev API](https://www.reka-ui.com/docs/components/pagination#prev)         | Customizes the previous page navigation button.      |
+| `_pagination-next`      | [Reka Pagination Next API](https://www.reka-ui.com/docs/components/pagination#next)         | Customizes the next page navigation button.          |
+| `_pagination-first`     | [Reka Pagination First API](https://www.reka-ui.com/docs/components/pagination#first)       | Customizes the first page navigation button.         |
+| `_pagination-last`      | [Reka Pagination Last API](https://www.reka-ui.com/docs/components/pagination#last)         | Customizes the last page navigation button.          |
+| `_pagination-ellipsis`  | [Reka Pagination Ellipsis API](https://www.reka-ui.com/docs/components/pagination#ellipsis) | Customizes the ellipsis indicator in the pagination. |
+| `_pagination-list`      | [Reka Pagination List API](https://www.reka-ui.com/docs/components/pagination#list)         | Customizes the pagination list component.            |
 
 :::CodeGroup
 ::div{label="Preview" preview}

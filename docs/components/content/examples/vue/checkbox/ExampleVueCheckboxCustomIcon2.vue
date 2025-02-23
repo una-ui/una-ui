@@ -32,7 +32,7 @@ const options = ref([
     <NCheckbox
       v-for="(option, i) in options"
       :key="i"
-      v-model:checked="option.value"
+      v-model="option.value"
       :checkbox="option.checkbox"
       :label="option.label"
       size="3xl"

@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Progress.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/progress
+    to: https://www.reka-ui.com/docs/components/progress
     target: _blank
 ---
 
@@ -22,7 +22,7 @@ badges:
 | `getValueLabel` | `${Math.round((value / max) * DEFAULT_MAX)}%` | `((value: number, max: number) => string)` | A function to get the accessible label text representing the current value in a human-readable format. If not provided, the value label will be read as the numeric value as a percentage of the max value. |
 | `rounded`       | `full`                                        | `string`                                   | Sets the border-radius of the progress bar.                                                                                                                                                                 |
 
-:read-more{to="https://www.radix-vue.com/components/progress#root" title="Radix Progress Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/progress#root" title="Reka Progress Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}

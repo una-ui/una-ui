@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NToastActionProps } from '../../../types'
-import { ToastAction } from 'radix-vue'
+import { ToastAction } from 'reka-ui'
 import { computed } from 'vue'
 import { cn, omitProps, randomId } from '../../../utils'
 import Button from '../../elements/Button.vue'

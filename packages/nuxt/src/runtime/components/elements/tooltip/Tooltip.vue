@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { TooltipRootEmits } from 'radix-vue'
+import type { TooltipRootEmits } from 'reka-ui'
 import type { NTooltipProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { useForwardPropsEmits } from 'radix-vue'
+import { useForwardPropsEmits } from 'reka-ui'
 import TooltipContent from './TooltipContent.vue'
 import TooltipProvider from './TooltipProvider.vue'
 import TooltipRoot from './TooltipRoot.vue'
