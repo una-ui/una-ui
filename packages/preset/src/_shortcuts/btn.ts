@@ -7,7 +7,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-default-radius': 'rounded-md',
 
   // base
-  'btn': 'btn-rectangle px-1em py-0.5em bg-transparent transition-colors text-0.875em leading-5 gap-x-0.5em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium cursor-pointer',
+  'btn': 'btn-rectangle px-1em py-0.5em bg-transparent transition-colors text-0.875em leading-5 gap-x-0.5em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
   'btn-icon-label': 'text-1em',
@@ -49,7 +49,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
 
 export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
   // base
-  [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-${c}-600 dark:focus-visible:outline-${c}-500 focus-visible:outline-2 focus-visible:outline-offset-2`],
+  [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-${c}-600 dark:focus-visible:ring-${c}-500`],
 
   // variants
   [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-inverted shadow-sm bg-${c}-600 hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
