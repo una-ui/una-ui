@@ -7,7 +7,7 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-type RootExtensions = Omit<SelectRootProps, 'modelValue' > & BaseExtensions
+type RootExtensions = Omit<SelectRootProps, 'modelValue'> & BaseExtensions
 type TriggerExtensions = SelectTriggerProps & Omit<NButtonProps, 'una'> & BaseExtensions
 type ValueExtensions = SelectValueProps & BaseExtensions
 type ScrollDownButtonExtensions = SelectScrollDownButtonProps & BaseExtensions

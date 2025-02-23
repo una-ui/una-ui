@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { DialogRootEmits } from 'radix-vue'
 import type { NDialogProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { DialogRoot, type DialogRootEmits, DialogTrigger, useForwardPropsEmits } from 'radix-vue'
+import { DialogRoot, DialogTrigger, useForwardPropsEmits } from 'radix-vue'
 import DialogContent from './DialogContent.vue'
 import DialogDescription from './DialogDescription.vue'
 import DialogFooter from './DialogFooter.vue'

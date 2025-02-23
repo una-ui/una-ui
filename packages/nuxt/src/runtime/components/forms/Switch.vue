@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import type { SwitchRootEmits } from 'radix-vue'
 import type { NSwitchProps } from '../../types'
 import { reactivePick } from '@vueuse/core'
 import {
   SwitchRoot,
-  type SwitchRootEmits,
+
   SwitchThumb,
   useForwardPropsEmits,
 } from 'radix-vue'
