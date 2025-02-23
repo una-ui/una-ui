@@ -77,12 +77,8 @@ const currentQuery = ref('https://pokeapi.co/api/v2/pokemon?limit=100000')
 
 const { data, status } = await useFetch<ResourceMeta>(currentQuery, {
   transform: (data: any) => {
-    // const next = data.next?.split('?')[1] ?? null
-    // const previous = data.previous?.split('?')[1] ?? null
     return {
       ...data,
-      // next,
-      // previous,
     }
   },
 })
@@ -118,27 +114,8 @@ const pokemon = computed(() => data.value?.results ?? [])
       :page-count="data?.count"
       enable-row-selection
     />
-    <!-- @select="console.log('select', $event)" -->
-    <!-- @select-all="console.log('selectAll', $event)" -->
 
     <div class="flex items-center justify-end py-4 space-x-2">
-      <!-- <NButton
-        btn="outline"
-        size="sm"
-        :disabled="!data?.previous"
-        @click=" currentQuery = data?.previous ?? ''"
-      >
-        Previous
-      </NButton>
-      <NButton
-        btn="outline"
-        size="sm"
-        :disabled="!data?.next"
-        @click=" currentQuery = data?.next ?? ''"
-      >
-        Next
-      </NButton> -->
-
       <NButton
         btn="outline"
         size="sm"
