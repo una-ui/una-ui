@@ -30,7 +30,7 @@
     "ui"
   ],
   "engines": {
-    "node": "20"
+    "node": ">=20"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
