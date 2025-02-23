@@ -16,6 +16,7 @@ const emits = defineEmits<CheckboxRootEmits>()
 
 const rootProps = reactivePick(props, [
   'required',
+  'disabled',
   'value',
   'modelValue',
   'defaultValue',
@@ -42,6 +43,7 @@ const id = computed(() => props.id ?? randomId('checkbox'))
           'peer checkbox',
           props.class,
         )"
+      :size
       :checkbox
     >
       <CheckboxIndicator
