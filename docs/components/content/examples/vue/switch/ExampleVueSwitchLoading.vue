@@ -1,39 +1,39 @@
 <template>
   <div class="flex flex-wrap items-center gap-4">
     <NSwitch
-
-      loading checked
+      loading
+      default-value
     />
 
     <NSwitch
-      checked
+      default-value
       switch="green"
       loading
     />
 
     <NSwitch
-      checked
+      default-value
       size="lg"
       loading
       switch-checked="info"
     />
 
     <NSwitch
-      checked
+      default-value
       loading
       size="7"
       switch-checked="pink"
     />
 
     <NSwitch
-      checked
+      default-value
       loading
       size="8"
       switch-checked="purple"
     />
 
     <NSwitch
-      checked
+      default-value
       loading
       switch-checked="warning"
     />
