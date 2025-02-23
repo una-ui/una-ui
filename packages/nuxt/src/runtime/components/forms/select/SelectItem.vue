@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { NSelectItemProps, NSelectProps } from '../../../types'
+import type { NSelectItemProps } from '../../../types'
 import {
   SelectItem,
   useForwardProps,
-} from 'radix-vue'
-import { computed, inject } from 'vue'
+} from 'reka-ui'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
 import SelectItemIndicator from './SelectItemIndicator.vue'
 import SelectItemText from './SelectItemText.vue'
@@ -18,11 +18,6 @@ const delegatedProps = computed(() => {
 })
 
 const forwardedProps = useForwardProps(delegatedProps)
-const modelValue = inject<NSelectProps>('selectModelValue')
-
-const isSelected = computed(() => {
-  return props.isSelected || modelValue === props.value
-})
 </script>
 
 <template>
@@ -36,20 +31,16 @@ const isSelected = computed(() => {
       )
     "
     :select-item
-    :aria-selected="isSelected"
-    :aria-checked="isSelected"
-    :is-selected="isSelected"
-    :data-state="true ? 'checked' : 'unchecked'"
   >
     <SelectItemIndicator
       v-if="isSelected"
-      v-bind="forwardedProps._selectItemIndicator"
+      v-bind="props._selectItemIndicator"
     >
       <slot name="item-indicator" />
     </SelectItemIndicator>
 
     <SelectItemText
-      v-bind="forwardedProps._selectItemText"
+      v-bind="props._selectItemText"
     >
       <slot />
     </SelectItemText>

@@ -1,9 +1,9 @@
 {
   "name": "@una-ui/monorepo",
   "type": "module",
-  "version": "0.35.0-beta.1",
+  "version": "0.36.0-beta.1",
   "private": true,
-  "packageManager": "pnpm@10.3.0",
+  "packageManager": "pnpm@10.4.1",
   "description": "The Atomic UI Framework",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "ui"
   ],
   "engines": {
-    "node": "20"
+    "node": ">=20"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",

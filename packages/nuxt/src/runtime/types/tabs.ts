@@ -1,4 +1,4 @@
-import type { TabsContentProps, TabsListProps, TabsRootProps, TabsTriggerProps } from 'radix-vue'
+import type { TabsContentProps, TabsListProps, TabsRootProps, TabsTriggerProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 

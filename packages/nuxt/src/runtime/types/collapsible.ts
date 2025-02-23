@@ -1,4 +1,4 @@
-import type { CollapsibleContentProps, CollapsibleRootProps } from 'radix-vue'
+import type { CollapsibleContentProps, CollapsibleRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 interface BaseExtensions { class?: HTMLAttributes['class'] }

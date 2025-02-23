@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import type { NSelectValueProps } from '../../../types'
-import { SelectValue } from 'radix-vue'
+import { SelectValue } from 'reka-ui'
+import { cn } from '../../../utils'
 
 const props = defineProps<NSelectValueProps>()
 </script>
 
 <template>
   <SelectValue
-    :class="{ 'select-value': !props.placeholder }"
+    :class="cn('select-value', props.class)"
     v-bind="props"
   >
     <slot />

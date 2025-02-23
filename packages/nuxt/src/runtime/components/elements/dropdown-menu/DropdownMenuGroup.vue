@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NDropdownMenuGroupProps } from '../../../types'
-import { DropdownMenuGroup } from 'radix-vue'
+import { DropdownMenuGroup } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NDropdownMenuGroupProps>()

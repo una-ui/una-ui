@@ -43,9 +43,9 @@ const columnVisibility = ref({})
       <NCheckbox
         v-for="tableColumn in table?.getAllLeafColumns()"
         :key="tableColumn.id"
-        :checked="tableColumn.getIsVisible()"
+        :model-value="tableColumn.getIsVisible()"
         :label="tableColumn.id"
-        @update:checked="tableColumn.toggleVisibility()"
+        @update:model-value="tableColumn.toggleVisibility()"
       />
     </div>
 

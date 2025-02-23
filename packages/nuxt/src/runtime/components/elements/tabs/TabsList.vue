@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NTabsListProps } from '../../../types/tabs'
-import { TabsList } from 'radix-vue'
+import { TabsList } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 

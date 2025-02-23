@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NSelectItemIndicatorProps } from '../../../types'
-import { Primitive } from 'radix-vue'
+import { Primitive } from 'reka-ui'
 import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'
 

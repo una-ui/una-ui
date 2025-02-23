@@ -12,7 +12,7 @@ UnaUI integrates [Iconify](https://icones.js.org/) to provide a wide variety of 
 By default, UnaUI includes the following icon collections:
 
 - [Lucide](https://icones.js.org/collection/lucide)
-- [Radix Icons](https://icones.js.org/collection/radix-icons)
+- [Reka Icons](https://icones.js.org/collection/radix-icons)
 - [Tabler Icons](https://icones.js.org/collection/tabler)
 
 To add more icon collections, follow these steps:

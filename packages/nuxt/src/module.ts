@@ -234,7 +234,7 @@ export default defineNuxtModule<ModuleOptions>({
       classSuffix: '',
     })
     await installModule('@vueuse/nuxt')
-    await installModule('radix-vue/nuxt', {
+    await installModule('reka-ui/nuxt', {
       prefix: options.prefix,
     })
     await installModule('@vee-validate/nuxt', {

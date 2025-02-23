@@ -1,4 +1,4 @@
-import type { LabelProps } from 'radix-vue'
+import type { LabelProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 interface BaseExtensions {

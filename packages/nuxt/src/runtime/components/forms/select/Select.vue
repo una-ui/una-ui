@@ -1,11 +1,12 @@
-<script setup lang="ts">
-import type { SelectRootEmits } from 'radix-vue'
-import type { NSelectProps } from '../../../types'
-import {
-  useForwardPropsEmits,
-} from 'radix-vue'
-import { computed, provide } from 'vue'
-import { isEqualObject, omitProps } from '../../../utils'
+<script lang="ts">
+import type { AcceptableValue, SelectRootEmits } from 'reka-ui'
+import type { NSelectProps, SelectGroup as SelectGroupType } from '../../../types'
+</script>
+
+<script setup lang="ts" generic="T extends AcceptableValue">
+import { reactivePick } from '@vueuse/core'
+import { useForwardPropsEmits } from 'reka-ui'
+import { isEqualObject } from '../../../utils'
 import SelectContent from './SelectContent.vue'
 import SelectGroup from './SelectGroup.vue'
 import SelectItem from './SelectItem.vue'
@@ -15,55 +16,79 @@ import SelectSeparator from './SelectSeparator.vue'
 import SelectTrigger from './SelectTrigger.vue'
 import SelectValue from './SelectValue.vue'
 
-const props = withDefaults(defineProps<NSelectProps>(), {
+const props = withDefaults(defineProps<NSelectProps<T>>(), {
   size: 'sm',
 })
 
 const emits = defineEmits<SelectRootEmits>()
 
-const modelValue = defineModel<any>('modelValue')
+const rootProps = reactivePick(props, [
+  'modelValue',
+  'defaultValue',
+  'multiple',
+  'disabled',
+])
+const forwarded = useForwardPropsEmits(rootProps, emits)
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+function formatSelectedValue(value: unknown) {
+  if (!value || (Array.isArray(value) && value.length === 0))
+    return null
 
-  return delegated
-})
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
-
-const transformerValue = computed(() => {
-  if (typeof modelValue.value === 'object') {
-    if (forwarded.value.valueAttribute)
-      return modelValue.value[forwarded.value.valueAttribute]
-
-    if (forwarded.value.itemAttribute)
-      return modelValue.value[forwarded.value.itemAttribute]
+  if (props.multiple && Array.isArray(value)) {
+    return value.map((val) => {
+      if (props.valueKey && typeof val === 'object') {
+        return (val as Record<string, any>)[props.valueKey as string]
+      }
+      return val
+    }).join(', ')
   }
 
-  return modelValue.value
-})
+  if (props.valueKey && typeof value === 'object') {
+    return (value as Record<string, any>)[props.valueKey as string]
+  }
 
-provide('selectModelValue', modelValue)
+  return value
+}
+
+function isItemSelected(item: unknown, modelValue: unknown) {
+  if (!modelValue)
+    return false
+
+  if (props.multiple && Array.isArray(modelValue)) {
+    return modelValue.some((val) => {
+      const valObj = typeof val === 'object' && val ? val : { value: val }
+      const itemObj = typeof item === 'object' && item ? item : { value: item }
+      return isEqualObject(valObj, itemObj)
+    })
+  }
+
+  const modelObj = typeof modelValue === 'object' && modelValue ? modelValue : { value: modelValue }
+  const itemObj = typeof item === 'object' && item ? item : { value: item }
+  return isEqualObject(modelObj, itemObj)
+}
 </script>
 
 <template>
   <SelectRoot
-    v-bind="omitProps(forwarded, ['items', 'groupItems', 'itemAttribute', 'placeholder', 'label', 'id', 'select'])"
-    :model-value="transformerValue"
+    v-slot="{ modelValue, open }"
+    v-bind="forwarded"
   >
     <SelectTrigger
       :id
       :size
       :status
       :select
-      v-bind="forwarded._selectTrigger"
+      v-bind="props._selectTrigger"
     >
-      <slot name="trigger" :value="modelValue">
+      <slot name="trigger" :model-value :open="open">
         <SelectValue
-          v-bind="forwarded._selectValue"
-          :placeholder="forwarded._selectValue?.placeholder || forwarded.placeholder"
+          :placeholder="props.placeholder"
+          v-bind="props._selectValue"
+          :aria-label="formatSelectedValue(modelValue)"
+          :data-status="status"
         >
-          <slot name="value" :value="modelValue">
-            {{ transformerValue }}
+          <slot name="value" :model-value :open>
+            {{ formatSelectedValue(modelValue) || props.placeholder }}
           </slot>
         </SelectValue>
       </slot>
@@ -72,21 +97,19 @@ provide('selectModelValue', modelValue)
     <SelectContent
       :size
       v-bind="{
-        ...forwarded._selectContent,
-        _selectScrollDownButton: forwarded._selectScrollDownButton,
-        _selectScrollUpButton: forwarded._selectScrollUpButton,
-        _selectViewport: forwarded._selectViewport,
+        ..._selectContent,
+        _selectScrollDownButton,
+        _selectScrollUpButton,
       }"
     >
-      <slot name="content" :items="forwarded.items">
-        <!--  single-group -->
-        <template v-if="!groupItems">
+      <slot name="content" :items="items">
+        <template v-if="!group">
           <SelectLabel
-            v-if="forwarded.label"
-            v-bind="forwarded._selectLabel"
+            v-if="label"
+            v-bind="_selectLabel"
           >
-            <slot name="label" :label="forwarded.label">
-              {{ forwarded.label }}
+            <slot name="label" :label>
+              {{ label }}
             </slot>
           </SelectLabel>
 
@@ -96,24 +119,20 @@ provide('selectModelValue', modelValue)
           >
             <SelectItem
               :value="item"
-              :size
-              :select-item
-              v-bind="{ ...props._selectItem, ...item._selectItem }"
-              :is-selected="isEqualObject(item, modelValue)"
+              :size="size"
+              v-bind="props._selectItem"
+              :is-selected="isItemSelected(item, modelValue)"
             >
               <slot name="item" :item="item">
-                {{ props.itemAttribute ? item[props.itemAttribute] : item }}
+                {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
               </slot>
             </SelectItem>
           </template>
         </template>
 
-        <!-- multiple-group -->
-        <template
-          v-else
-        >
+        <template v-if="group">
           <SelectGroup
-            v-for="(groupItems, i) in items"
+            v-for="(group, i) in items as SelectGroupType<T>[]"
             :key="i"
             v-bind="props._selectGroup"
           >
@@ -122,29 +141,29 @@ provide('selectModelValue', modelValue)
               v-bind="props._selectSeparator"
             />
 
-            <slot name="group" :items="groupItems">
+            <slot name="group" :items="group">
               <SelectLabel
-                v-if="groupItems.label"
-                :size
-                v-bind="{ ...props._selectLabel, ...groupItems._selectLabel }"
+                v-if="group.label"
+                :size="size"
+                v-bind="{ ...props._selectLabel, ...group._selectLabel }"
               >
-                <slot name="label" :label="groupItems.label">
-                  {{ groupItems.label }}
+                <slot name="label" :label="group.label">
+                  {{ group.label }}
                 </slot>
               </SelectLabel>
 
               <template
-                v-for="groupItem in groupItems.items"
-                :key="groupItem"
+                v-for="item in group.items"
+                :key="item"
               >
                 <SelectItem
-                  :value="groupItem"
-                  :size
-                  v-bind="{ ...forwarded._selectItem, ...groupItems?._selectItem, ...groupItem._selectItem }"
-                  :is-selected="groupItem === transformerValue"
+                  :value="item"
+                  :size="size"
+                  v-bind="{ ..._selectItem, ...group._selectItem }"
+                  :is-selected="isItemSelected(item, modelValue)"
                 >
-                  <slot name="item" :item="groupItem">
-                    {{ props.itemAttribute ? groupItem[props.itemAttribute] : groupItem }}
+                  <slot name="item" :item="item">
+                    {{ props.itemKey ? (item as any)[props.itemKey] : item }}
                   </slot>
                 </SelectItem>
               </template>

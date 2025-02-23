@@ -28,7 +28,7 @@ const notifications = ref([
       <NCheckbox
         v-for="option in notifications"
         :key="option.label"
-        v-model:checked="option.value"
+        v-model="option.value"
         :label="option.label"
         :checkbox="option.checkbox"
       />
@@ -47,7 +47,7 @@ const notifications = ref([
         <NCheckbox
           v-for="option in notifications"
           :key="option.label"
-          v-model:checked="option.value"
+          v-model="option.value"
           :label="option.label"
           :checkbox="option.checkbox"
         />

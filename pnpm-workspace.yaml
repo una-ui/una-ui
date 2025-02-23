@@ -3,25 +3,25 @@ packages:
   - packages/**
   - playground/**
 catalog:
-  '@antfu/eslint-config': ^3.16.0
+  '@antfu/eslint-config': ^4.3.0
   '@antfu/ni': ^23.3.1
-  '@faker-js/faker': ^9.4.0
+  '@faker-js/faker': ^9.5.0
   '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.2
   '@iconify-json/lucide': ^1.2.26
   '@iconify-json/radix-icons': ^1.2.2
   '@iconify-json/tabler': ^1.2.16
-  '@iconify/json': ^2.2.304
-  '@nuxt/devtools': ^2.0.0
+  '@iconify/json': ^2.2.308
+  '@nuxt/devtools': ^2.1.0
   '@nuxt/kit': ^3.15.4
   '@nuxt/module-builder': ^0.8.4
   '@nuxt/schema': ^3.15.4
   '@nuxtjs/color-mode': ^3.5.2
-  '@tanstack/vue-table': ^8.20.5
+  '@tanstack/vue-table': ^8.21.2
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.13.1
+  '@types/node': ^22.13.4
   '@una-ui/content': ^0.0.40
   '@unocss/core': ^65.4.3
   '@unocss/eslint-config': ^65.4.3
@@ -31,15 +31,15 @@ catalog:
   '@unocss/preset-mini': ^65.4.3
   '@vee-validate/nuxt': ^4.15.0
   '@vee-validate/zod': ^4.15.0
-  '@vercel/analytics': ^1.4.1
+  '@vercel/analytics': ^1.5.0
   '@vueuse/core': ^12.5.0
   '@vueuse/integrations': ^12.5.0
   '@vueuse/nuxt': ^12.5.0
-  bumpp: ^10.0.2
+  bumpp: ^10.0.3
   chroma-js: ^3.1.2
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.20.0
+  eslint: ^9.20.1
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
@@ -48,10 +48,10 @@ catalog:
   lint-staged: ^15.4.3
   nuxt: ^3.15.4
   ohash: ^1.1.4
-  pathe: ^2.0.2
-  radix-vue: ^1.9.13
+  pathe: ^2.0.3
+  reka-ui: ^2.0.0
   rimraf: ^6.0.1
-  sass: ^1.84.0
+  sass: ^1.85.0
   simple-git: ^3.27.0
   simple-git-hooks: ^2.11.1
   tailwind-merge: ^3.0.1
@@ -59,6 +59,6 @@ catalog:
   unbuild: ^3.3.1
   unocss: ^65.4.3
   unocss-preset-animations: ^1.1.1
-  vitest: ^3.0.5
-  vue-tsc: ^2.2.0
-  zod: ^3.24.1
+  vitest: ^3.0.6
+  vue-tsc: ^2.2.2
+  zod: ^3.24.2

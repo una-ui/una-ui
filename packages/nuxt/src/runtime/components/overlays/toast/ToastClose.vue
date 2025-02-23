@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NToastCloseProps } from '../../../types'
-import { ToastClose } from 'radix-vue'
+import { ToastClose } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'

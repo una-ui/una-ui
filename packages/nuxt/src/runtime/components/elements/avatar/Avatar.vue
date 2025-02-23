@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NAvatarProps } from '../../../types'
-import { AvatarRoot } from 'radix-vue'
+import { AvatarRoot } from 'reka-ui'
 import { cn } from '../../../utils'
 import AvatarFallback from './AvatarFallback.vue'
 import AvatarImage from './AvatarImage.vue'

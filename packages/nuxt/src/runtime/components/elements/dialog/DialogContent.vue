@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import type { DialogContentEmits } from 'reka-ui'
 import type { NDialogContentProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
 import {
   DialogContent,
-  type DialogContentEmits,
   DialogPortal,
   useForwardPropsEmits,
-} from 'radix-vue'
+} from 'reka-ui'
 import { cn } from '../../../utils'
 import DialogClose from './DialogClose.vue'
 import DialogOverlay from './DialogOverlay.vue'

@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/tabs/Tabs.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/tabs
+    to: https://www.reka-ui.com/docs/components/tabs
     target: _blank
 ---
 
@@ -28,7 +28,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.radix-vue.com/components/tabs#root" title="Radix Tabs Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/tabs#root" title="Reka Tabs Root API." target="_blank"}
 
 ### Variant and Color
 

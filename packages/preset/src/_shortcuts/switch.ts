@@ -1,5 +1,6 @@
+import type { Theme } from '@unocss/preset-mini'
 import type { RuleContext } from 'unocss'
-import { parseColor, type Theme } from '@unocss/preset-mini'
+import { parseColor } from '@unocss/preset-mini'
 
 type SwitchPrefix = 'switch'
 

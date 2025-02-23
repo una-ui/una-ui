@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import type { DropdownMenuContentEmits } from 'reka-ui'
 import type { NDropdownMenuContentProps } from '../../../types'
 import {
   DropdownMenuContent,
-  type DropdownMenuContentEmits,
   DropdownMenuPortal,
   useForwardPropsEmits,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 

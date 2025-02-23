@@ -1,12 +1,15 @@
 ---
 description: 'Displays a list of options for the user to pick from—triggered by a button.'
+navBadges:
+  - value: Updated
+    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/select/Select.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/select
+    to: https://www.reka-ui.com/docs/components/select
     target: _blank
 ---
 
@@ -23,10 +26,11 @@ badges:
 | `defaultValue` | -       | `string`  | The value of the select when initially rendered. Use when you do not need to control the state of the `Select`  |
 | `open`         | -       | `boolean` | The controlled open state of the Select. Can be bind as `v-model:open`.                                         |
 | `modelValue`   | -       | `string`  | The controlled value of the Select. Can be bind as `v-model`.                                                   |
+| `status`       | -       | `string`  | Set the status of the select. Values: `info`, `success`, `warning`, `error`                                     |
 
-:read-more{to="https://www.radix-vue.com/components/select#root" title="Radix Select Root API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/select#root" title="Reka Select Root API" target="_blank"}
 
-:read-more{to="https://www.radix-vue.com/components/select#value" title="Radix Select Value API" target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/select#value" title="Reka Select Value API" target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -37,29 +41,61 @@ badges:
 ::
 :::
 
-### Group Items
+### Multiple
 
-| Prop         | Default | Type      | Description                     |
-| ------------ | ------- | --------- | ------------------------------- |
-| `groupItems` | -       | `boolean` | Enable support for group items. |
+| Prop       | Default | Type      | Description                     |
+| ---------- | ------- | --------- | ------------------------------- |
+| `multiple` | `false` | `boolean` | Enable multiple selection mode. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
-:ExampleVueSelectGroupItems
+:ExampleVueSelectMultiple
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueSelectGroupItems.vue
+@@@ ./components/content/examples/vue/select/ExampleVueSelectMultiple.vue
 ::
 :::
+
+### Disabled
+
+| Prop       | Default | Type      | Description                   |
+| ---------- | ------- | --------- | ----------------------------- |
+| `disabled` | `false` | `boolean` | Disable the select component. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueSelectDisabled
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/select/ExampleVueSelectDisabled.vue
+::
+:::
+
+### Group
+
+| Prop    | Default | Type      | Description                     |
+| ------- | ------- | --------- | ------------------------------- |
+| `group` | -       | `boolean` | Enable support for group items. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueSelectGroup
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/select/ExampleVueSelectGroup.vue
+::
+:::
+
+:read-more{to="https://reka-ui.com/docs/components/select#group" title="Reka Select Group Items API" target="_blank"}
 
 ### Objects
 
 Control the attribute value to be displayed in the select and the item.
 
-| Prop             | Default | Type     | Description                                        |
-| ---------------- | ------- | -------- | -------------------------------------------------- |
-| `valueAttribute` | -       | `string` | The attribute value to be displayed in the select. |
-| `itemAttribute`  | -       | `string` | The attribute value to be displayed in the item.   |
+| Prop       | Default | Type     | Description                                         |
+| ---------- | ------- | -------- | --------------------------------------------------- |
+| `valueKey` | -       | `string` | The key name to be displayed in the selected value. |
+| `itemKey`  | -       | `string` | The key name to be displayed in the item.           |
 
 :::CodeGroup
 ::div{label="Preview" preview}

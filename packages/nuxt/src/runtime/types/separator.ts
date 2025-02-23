@@ -1,4 +1,4 @@
-import type { SeparatorProps } from 'radix-vue'
+import type { SeparatorProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 type Extensions = SeparatorProps & { class?: HTMLAttributes['class'], label?: string }

@@ -1,34 +1,34 @@
 <template>
   <div class="flex flex-wrap items-center gap-4">
     <NSwitch
-      default-checked
+      default-value
       switch-checked="primary"
     />
 
     <NSwitch
-      default-checked
+      default-value
       switch-checked="green"
     />
 
     <NSwitch
-      default-checked
+      default-value
       outset
       switch-checked="info"
     />
 
     <NSwitch
-      default-checked
+      default-value
       switch-checked="pink"
     />
 
     <NSwitch
-      default-checked
+      default-value
       outset
       switch-checked="purple"
     />
 
     <NSwitch
-      default-checked
+      default-value
       switch-checked="warning"
     />
   </div>

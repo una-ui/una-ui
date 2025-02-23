@@ -6,7 +6,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/Slider.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/slider
+    to: https://www.reka-ui.com/docs/components/slider
     target: _blank
 ---
 
@@ -33,7 +33,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.radix-vue.com/components/slider#root" title="Radix Slider Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/slider#root" title="Reka Slider Root API." target="_blank"}
 
 ### Color
 

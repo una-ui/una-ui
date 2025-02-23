@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import type { ToggleEmits } from 'reka-ui'
 import type { NToggleProps } from '../../types'
-import { Toggle, type ToggleEmits, useForwardPropsEmits } from 'radix-vue'
+import { Toggle, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
 import Button from './Button.vue'

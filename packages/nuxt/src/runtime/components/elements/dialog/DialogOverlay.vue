@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { NDialogOverlayProps } from '../../../types'
-import { DialogOverlay } from 'radix-vue'
+import { DialogOverlay } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NDialogOverlayProps>()

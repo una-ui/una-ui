@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { TabsRootEmits } from 'radix-vue'
+import type { TabsRootEmits } from 'reka-ui'
 import type { NTabsRootProps } from '../../../types/tabs'
-import { TabsRoot, useForwardPropsEmits } from 'radix-vue'
+import { TabsRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NTabsRootProps>()

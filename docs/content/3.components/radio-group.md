@@ -1,7 +1,7 @@
 ---
 description: 'A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.'
 navBadges:
-  - value: New
+  - value: Updated
     type: lime
 badges:
   - value: Source
@@ -9,7 +9,7 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/radio-group/RadioGroup.vue
     target: _blank
   - value: API reference
-    to: https://www.radix-vue.com/components/radio-group
+    to: https://www.reka-ui.com/docs/components/radio-group
     target: _blank
 ---
 
@@ -17,13 +17,15 @@ badges:
 
 ### Basic
 
-| Prop           | Default | Type                     | Description                                                                  |
-| -------------- | ------- | ------------------------ | ---------------------------------------------------------------------------- |
-| `defaultValue` | -       | `string`                 | The value of the radio item that should be checked when initially rendered.  |
-| `disabled`     | `false` | `boolean`                | When true, prevents the user from interacting with radio items.              |
-| `modelValue`   | -       | `string`                 | The controlled value of the radio item to check. Can be binded as `v-model`. |
-| `orientation`  | -       | `vertical`, `horizontal` | The orientation of the component.                                            |
-| `items`        | -       | `RadioGroupItem[]`       | The radio items to render.                                                   |
+| Prop             | Default       | Type               | Description                                                                  |
+| ---------------- | ------------- | ------------------ | ---------------------------------------------------------------------------- |
+| `defaultValue`   | -             | `string`           | The value of the radio item that should be checked when initially rendered.  |
+| `disabled`       | `false`       | `boolean`          | When true, prevents the user from interacting with radio items.              |
+| `modelValue`     | -             | `string`           | The controlled value of the radio item to check. Can be binded as `v-model`. |
+| `items`          | -             | `RadioGroupItem[]` | The radio items to render.                                                   |
+| `valueKey`       | `value`       | `string`           | The key of the radio item to use for the `value` attribute.                  |
+| `labelKey`       | `label`       | `string`           | The key of the radio item to use for the `label` attribute.                  |
+| `descriptionKey` | `description` | `string`           | The description of the radio item to use for the `description` attribute.    |
 
 | RadioGroupItem Prop | Default | Type      | Description                                                        |
 | ------------------- | ------- | --------- | ------------------------------------------------------------------ |
@@ -31,6 +33,7 @@ badges:
 | `disabled`          | `false` | `boolean` | When true, prevents the user from interacting with the radio item. |
 | `label`             | -       | `string`  | The label of the radio item.                                       |
 | `icon`              | -       | `string`  | The icon of the radio item.                                        |
+| `description`       | -       | `string`  | The description of the radio item.                                 |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -41,7 +44,22 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.radix-vue.com/components/radio-group#root" title="Radix Radio Group Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/radio-group#root" title="Reka Radio Group Root API." target="_blank"}
+
+### Orientation
+
+| Prop          | Default    | Type                     | Description                                                              |
+| ------------- | ---------- | ------------------------ | ------------------------------------------------------------------------ |
+| `orientation` | `vertical` | `vertical`, `horizontal` | The orientation of the radio group items. Controls the layout direction. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueRadioGroupOrientation
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/radio-group/ExampleVueRadioGroupOrientation.vue
+::
+:::
 
 ### Color
 

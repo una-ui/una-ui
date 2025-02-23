@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { SelectRootEmits } from 'radix-vue'
+import type { SelectRootEmits } from 'reka-ui'
 import type { NSelectRootProps } from '../../../types'
-import { SelectRoot, useForwardPropsEmits } from 'radix-vue'
+import { SelectRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NSelectRootProps>()
@@ -12,6 +12,7 @@ const forwarded = useForwardPropsEmits(props, emits)
 
 <template>
   <SelectRoot
+    v-slot="slotProps"
     :class="cn(
       'select-root',
       props.class,
@@ -19,6 +20,8 @@ const forwarded = useForwardPropsEmits(props, emits)
     )"
     v-bind="forwarded"
   >
-    <slot />
+    <slot
+      v-bind="slotProps"
+    />
   </SelectRoot>
 </template>

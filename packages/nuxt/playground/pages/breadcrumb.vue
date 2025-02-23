@@ -3,26 +3,21 @@ const items = [
   {
     label: 'i-radix-icons-home',
     icon: true,
-    to: '/',
   },
   {
     label: 'Breadcrumb',
-    to: '/test',
   },
   {
     label: 'Navigation',
     children: [
       {
         label: 'Test',
-        to: '/test1',
       },
       {
         label: 'Test2',
-        to: '/test2',
         items: [
           {
             label: 'Test 2 nested',
-            to: '/test2/nested',
           },
           {
             label: 'Test 2 nested disabled',
@@ -40,27 +35,22 @@ const items = [
   {
     leading: 'i-radix-icons-cube',
     label: 'Current Page',
-    to: '/test/test2',
   },
 ]
 
 const items2 = [
   {
     label: 'Home',
-    to: '/',
   },
   {
     label: 'Navigation',
-    to: '/test',
   },
   {
     label: 'Breadcrumb',
-    to: '/test',
     disabled: true,
   },
   {
     label: 'Current Page',
-    to: '/test/test2',
   },
 ]
 </script>

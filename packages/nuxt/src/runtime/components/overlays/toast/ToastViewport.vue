@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NToastViewportProps } from '../../../types'
-import { ToastViewport } from 'radix-vue'
+import { ToastViewport } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 

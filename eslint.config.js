@@ -21,6 +21,10 @@ export default antfu(
       'no-alert': 'off',
       'unocss/order-attributify': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
+      'import-x/consistent-type-specifier-style': [
+        'error',
+        'prefer-top-level',
+      ],
     },
   },
   {

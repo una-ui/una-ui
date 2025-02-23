@@ -1,4 +1,4 @@
-import type { ProgressRootProps } from 'radix-vue'
+import type { ProgressRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 type Extensions = ProgressRootProps & { class?: HTMLAttributes['class'] }
