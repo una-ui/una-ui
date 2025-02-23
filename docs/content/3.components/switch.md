@@ -58,9 +58,10 @@ Notice that when you click on the label, the switch gets toggled.
 
 ### Color
 
-| Prop     | Default   | Type     | Description                     |
-| -------- | --------- | -------- | ------------------------------- |
-| `switch` | `primary` | `string` | Change the color of the switch. |
+| Prop               | Default   | Type     | Description                                    |
+| ------------------ | --------- | -------- | ---------------------------------------------- |
+| `switch-checked`   | `primary` | `string` | Change the color of the switch when checked.   |
+| `switch-unchecked` | `gray`    | `string` | Change the color of the switch when unchecked. |
 
 :::CodeGroup
 ::div{label="Preview" preview}

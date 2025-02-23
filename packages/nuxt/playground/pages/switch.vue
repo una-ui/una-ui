@@ -17,7 +17,6 @@ useIntervalFn(() => {
     <NFormGroup label="Night & Day">
       <NSwitch
         v-model="nightOrDay"
-        switch="primary"
         :loading
         size="lg"
         :una="{
