@@ -1,3 +1,12 @@
+# [0.36.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.35.0-beta.1...v0.36.0-beta.1) (2025-02-23)
+
+
+### Features
+
+* **Button:** update btn-focus preset and remove cursor-pointer ([b35f85e](https://github.com/una-ui/una-ui/commit/b35f85e0670af6f13bdfdd3257b8d12f4418e881))
+
+
+
 # [0.35.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.34.0-beta.1...v0.35.0-beta.1) (2025-01-28)
 
 
