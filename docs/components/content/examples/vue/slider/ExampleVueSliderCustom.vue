@@ -27,7 +27,7 @@ const equalizerValues = ref([
         </NLabel>
         <NSwitch
           id="equalizer"
-          default-checked
+          default-value
           size="xs"
           class="ml-2"
         />
