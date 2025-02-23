@@ -38,58 +38,77 @@ const forwardedProps = useForwardProps(delegatedProps)
 <template>
   <div
     :class="cn(
-      'radio-group-item-wrapper',
-      una?.radioGroupItemWrapper,
+      'radio-group-item-root',
+      una?.radioGroupItemRoot,
     )"
+    :size
     :radio-group="radioGroup"
   >
-    <RadioGroupItem
-      as-child
-      v-bind="forwardedProps"
+    <div
+      :class="cn(
+        'radio-group-item-wrapper',
+        una?.radioGroupItemWrapper,
+      )"
     >
-      <button
-        :id
-        :class="
-          cn(
-            'radio-group-item',
-            una?.radioGroupItem,
-            props.class,
-          )
-        "
-        :square
-        :size
-        :rounded
+      <RadioGroupItem
+        as-child
+        v-bind="forwardedProps"
       >
-        <RadioGroupIndicator
-          :class="cn(
-            'radio-group-indicator',
-            una?.radioGroupIndicator,
-          )"
+        <button
+          :id
+          :class="
+            cn(
+              'radio-group-item',
+              una?.radioGroupItem,
+              props.class,
+            )
+          "
+          :square
+          :rounded
         >
-          <slot name="icon">
-            <Icon
-              :name="icon"
-              :class="cn(
-                'radio-group-indicator-icon-base',
-                una?.radioGroupIndicatorIcon,
-              )"
-            />
-          </slot>
-        </RadioGroupIndicator>
-      </button>
-    </RadioGroupItem>
+          <RadioGroupIndicator
+            :class="cn(
+              'radio-group-indicator',
+              una?.radioGroupIndicator,
+            )"
+          >
+            <slot name="icon">
+              <Icon
+                :name="icon"
+                :class="cn(
+                  'radio-group-indicator-icon-base',
+                  una?.radioGroupIndicatorIcon,
+                )"
+              />
+            </slot>
+          </RadioGroupIndicator>
+        </button>
+      </RadioGroupItem>
 
-    <slot name="label">
       <Label
-        v-if="props.label"
+        v-if="props.label || $slots.default"
         :for="props.id ?? id"
         :class="cn(
           'radio-group-item-label',
           una?.radioGroupItemLabel,
         )"
       >
-        {{ label }}
+        <slot>
+          {{ label }}
+        </slot>
       </Label>
-    </slot>
+    </div>
+
+    <p
+      v-if="description || $slots.description"
+      :class="cn(
+        'radio-group-item-description',
+        una?.radioGroupItemDescription,
+      )"
+    >
+      <slot name="description">
+        {{ description }}
+      </slot>
+    </p>
   </div>
 </template>
