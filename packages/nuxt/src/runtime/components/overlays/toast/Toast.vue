@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { ToastRootEmits } from 'radix-vue'
 import type { NToastProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { ToastRoot, type ToastRootEmits, useForwardPropsEmits } from 'radix-vue'
+import { ToastRoot, useForwardPropsEmits } from 'radix-vue'
 
 import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'

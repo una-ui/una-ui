@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { PaginationRootEmits } from 'radix-vue'
 import type { NPaginationProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { PaginationList, PaginationRoot, type PaginationRootEmits, useForwardPropsEmits } from 'radix-vue'
+import { PaginationList, PaginationRoot, useForwardPropsEmits } from 'radix-vue'
 import { cn } from '../../../utils'
 import PaginationEllipsis from './PaginationEllipsis.vue'
 import PaginationFirst from './PaginationFirst.vue'

@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import type { SelectContentEmits } from 'radix-vue'
 import type { NSelectContentProps } from '../../../types'
 import {
   SelectContent,
-  type SelectContentEmits,
+
   SelectPortal,
   SelectViewport,
   useForwardPropsEmits,
