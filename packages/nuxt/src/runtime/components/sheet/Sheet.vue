@@ -27,7 +27,6 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
     </SheetTrigger>
 
     <SheetContent
-      v-if="$slots.default"
       :_sheet-close
       :_sheet-overlay
       :_sheet-portal
