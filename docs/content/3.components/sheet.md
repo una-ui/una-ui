@@ -89,11 +89,11 @@ You can customize the sheet using the following sub components props and `una` p
 
 :read-more{to="#props" title="Sheet props" }
 
-#### Icon Customization
+#### Size Customization
 
 :::CodeGroup
 ::div{label="Preview" preview}
-:ExampleVueSheetCustomIcon
+:ExampleVueSheetCustomSize
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/sheet/ExampleVueSheetCustomIcon.vue
