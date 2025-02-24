@@ -11,7 +11,9 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NSheetContentProps>()
+const props = withDefaults(defineProps<NSheetContentProps>(), {
+  overlay: true,
+})
 const emits = defineEmits<DialogContentEmits>()
 const contentProps = reactiveOmit(props, ['sheet', 'class', '_sheetClose', '_sheetPortal', '_sheetOverlay'])
 const forwarded = useForwardPropsEmits(contentProps, emits)
@@ -37,6 +39,7 @@ const contentEvents = computed(() => {
     :class="cn('sheet-content-portal', props.una?.sheetContentPortal, props._sheetPortal?.class)"
   >
     <DialogOverlay
+      v-if="overlay"
       v-bind="_sheetOverlay"
       :class="cn('sheet-content-overlay', props.una?.sheetContentOverlay, props._sheetOverlay?.class)"
     />

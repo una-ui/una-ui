@@ -36,6 +36,7 @@ const username = ref('')
       v-for="side in SHEET_SIDES"
       :key="side.sheet"
       :sheet="side.sheet"
+      :overlay="false"
       title="Edit profile"
       description="Make changes to your profile here. Click save when you're done."
       :_sheetClose="{
@@ -74,8 +75,6 @@ const username = ref('')
     <!-- prevent close -->
     <NSheet
       sheet="right"
-      title="You can't close me"
-      description="I'm a teapot"
       prevent-close
     >
       <template #trigger>

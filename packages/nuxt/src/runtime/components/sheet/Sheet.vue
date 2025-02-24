@@ -32,6 +32,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
       :_sheet-portal
       :sheet
       :prevent-close
+      :overlay
       :una
     >
       <slot name="content">
