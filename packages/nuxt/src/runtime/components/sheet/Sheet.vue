@@ -74,6 +74,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
                 {{ title }}
               </slot>
             </SheetTitle>
+
             <SheetDescription
               v-if="$slots.description || description !== DEFAULT_DESCRIPTION"
               v-bind="_sheetDescription"

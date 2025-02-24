@@ -38,12 +38,12 @@ const contentEvents = computed(() => {
 <template>
   <DialogPortal
     v-bind="props._sheetPortal"
-    :class="cn('sheet-content-portal', props.una?.sheetPortal, props._sheetPortal?.class)"
+    :class="cn('sheet-portal', props.una?.sheetPortal, props._sheetPortal?.class)"
   >
     <DialogOverlay
       v-if="props.overlay"
       v-bind="_sheetOverlay"
-      :class="cn('sheet-content-overlay', props.una?.sheetOverlay, props._sheetOverlay?.class)"
+      :class="cn('sheet-overlay', props.una?.sheetOverlay, props._sheetOverlay?.class)"
     />
     <DialogContent
       :sheet
@@ -55,7 +55,7 @@ const contentEvents = computed(() => {
 
       <SheetClose
         v-if="props.showClose"
-        :class="cn('sheet-content-close', props.una?.sheetClose)"
+        :class="cn('sheet-close', props.una?.sheetClose)"
         v-bind="props._sheetClose"
       />
     </DialogContent>

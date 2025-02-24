@@ -41,18 +41,6 @@ export interface NSheetContentProps extends DialogContentProps {
    */
   sheet?: HTMLAttributes['class']
   /**
-   * The close button props.
-   */
-  _sheetClose?: NSheetCloseProps
-  /**
-   * The overlay props.
-   */
-  _sheetOverlay?: NSheetOverlayProps
-  /**
-   * The portal props.
-   */
-  _sheetPortal?: NSheetPortalProps
-  /**
    * Prevent close.
    */
   preventClose?: boolean
@@ -68,6 +56,18 @@ export interface NSheetContentProps extends DialogContentProps {
    * @default true
    */
   overlay?: boolean
+  /**
+   * The close button props.
+   */
+  _sheetClose?: NSheetCloseProps
+  /**
+   * The overlay props.
+   */
+  _sheetOverlay?: NSheetOverlayProps
+  /**
+   * The portal props.
+   */
+  _sheetPortal?: NSheetPortalProps
   /**
    * `UnaUI` preset configuration
    *
