@@ -64,6 +64,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         <DialogClose
           v-if="showClose"
           v-bind="_dialogClose"
+          class="sheet-close"
         />
       </DialogContent>
     </DialogOverlay>
