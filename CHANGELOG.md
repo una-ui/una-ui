@@ -1,3 +1,14 @@
+# [0.37.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.36.1-beta.1...v0.37.0-beta.1) (2025-02-24)
+
+
+### Features
+
+* **Button:** improve accessibility with aria-label config ([828b41c](https://github.com/una-ui/una-ui/commit/828b41cf85de80b0bcf45bdbcfcc230e1ff73e34))
+* **Dialog:** add overlay props and improve accessibility ([c8f673a](https://github.com/una-ui/una-ui/commit/c8f673a9fcf13e58955ada1f049b26153cb53333))
+* **Sheet:** introduce new component and presets ([#340](https://github.com/una-ui/una-ui/issues/340)) ([ece0e89](https://github.com/una-ui/una-ui/commit/ece0e895facbdf0f200850234a98d61d3ed2ee70))
+
+
+
 ## [0.36.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.36.0-beta.1...v0.36.1-beta.1) (2025-02-24)
 
 
