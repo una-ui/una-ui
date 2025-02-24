@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { DialogTriggerProps } from 'reka-ui'
+import type { NSheetTriggerProps } from '../../types'
 import { DialogTrigger } from 'reka-ui'
 
-const props = defineProps<DialogTriggerProps>()
+const props = defineProps<NSheetTriggerProps>()
 </script>
 
 <template>
