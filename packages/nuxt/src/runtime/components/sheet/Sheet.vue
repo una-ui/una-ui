@@ -37,11 +37,21 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
         v-bind="_sheetHeader"
       >
         <slot name="header">
-          <SheetTitle>
-            {{ title }}
+          <SheetTitle
+            v-if="title || $slots.title"
+            v-bind="_sheetTitle"
+          >
+            <slot name="title">
+              {{ title }}
+            </slot>
           </SheetTitle>
-          <SheetDescription>
-            {{ description }}
+          <SheetDescription
+            v-if="description || $slots.description"
+            v-bind="_sheetDescription"
+          >
+            <slot name="description">
+              {{ description }}
+            </slot>
           </SheetDescription>
         </slot>
       </SheetHeader>
