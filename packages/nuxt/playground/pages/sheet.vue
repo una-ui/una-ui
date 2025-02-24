@@ -70,5 +70,19 @@ const username = ref('')
         </NSheetClose>
       </template>
     </NSheet>
+
+    <!-- prevent close -->
+    <NSheet
+      sheet="right"
+      title="You can't close me"
+      description="I'm a teapot"
+      prevent-close
+    >
+      <template #trigger>
+        <NButton btn="outline">
+          Prevent close
+        </NButton>
+      </template>
+    </NSheet>
   </div>
 </template>
