@@ -1,6 +1,22 @@
 <script setup lang="ts">
-const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const
-
+const SHEET_SIDES = [
+  {
+    sheet: 'top',
+    label: 'Top',
+  },
+  {
+    sheet: 'right',
+    label: 'Right',
+  },
+  {
+    sheet: 'bottom',
+    label: 'Bottom',
+  },
+  {
+    sheet: 'left',
+    label: 'Left',
+  },
+] as const
 const username = ref('')
 </script>
 
@@ -9,14 +25,14 @@ const username = ref('')
     <!-- Side variants -->
     <NSheet
       v-for="side in SHEET_SIDES"
-      :key="side"
-      :sheet="side"
+      :key="side.sheet"
+      :sheet="side.sheet"
       title="Edit profile"
       description="Make changes to your profile here. Click save when you're done."
     >
       <template #trigger>
         <NButton btn="outline-gray">
-          Open {{ side }}
+          Open {{ side.label }}
         </NButton>
       </template>
 
