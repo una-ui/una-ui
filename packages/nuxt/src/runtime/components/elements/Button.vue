@@ -63,7 +63,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       props.class,
     )"
     :disabled="to ? null : disabled || loading"
-    :aria-label="icon ? label : null"
+    :aria-label="props.ariaLabel ? props.ariaLabel : props.icon ? props.label : undefined"
     :rounded
     :size
     :square
