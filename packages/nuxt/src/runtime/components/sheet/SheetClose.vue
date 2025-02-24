@@ -7,7 +7,6 @@ const props = withDefaults(defineProps<NSheetCloseProps>(), {
   btn: 'ghost-gray',
   label: 'i-close',
   square: '2em',
-  size: 'md',
   icon: true,
   ariaLabel: 'Close',
 })
