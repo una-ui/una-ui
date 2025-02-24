@@ -5,19 +5,16 @@ const username = ref('')
 
 <template>
   <div class="grid grid-cols-2 gap-2">
-    <NSheet v-for="side in SHEET_SIDES" :key="side" :side>
+    <NSheet
+      v-for="side in SHEET_SIDES" :key="side" :side
+      title="Edit profile"
+      description="Make changes to your profile here. Click save when you're done."
+    >
       <template #trigger>
-        <NButton variant="outline">
+        <NButton btn="outline">
           Open {{ side }}
         </NButton>
       </template>
-
-      <NSheetHeader>
-        <NSheetTitle>Edit profile</NSheetTitle>
-        <NSheetDescription>
-          Make changes to your profile here. Click save when you're done.
-        </NSheetDescription>
-      </NSheetHeader>
 
       <div class="grid gap-4 py-4">
         <div class="grid grid-cols-4 items-center gap-4">
@@ -33,13 +30,14 @@ const username = ref('')
           <NInput id="username" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
         </div>
       </div>
-      <NSheetFooter>
+
+      <template #footer>
         <NSheetClose as-child>
           <NButton type="submit">
             Save changes
           </NButton>
         </NSheetClose>
-      </NSheetFooter>
+      </template>
     </NSheet>
   </div>
 </template>

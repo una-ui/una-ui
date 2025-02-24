@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NSheetFooterProps } from '../../types'
 import { cn } from '../../utils'
 
-const props = defineProps<{ class?: HTMLAttributes['class'] }>()
+const props = defineProps<NSheetFooterProps>()
 </script>
 
 <template>
