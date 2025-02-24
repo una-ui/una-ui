@@ -1,18 +1,18 @@
 <script setup lang="ts">
 const SHEET_SIDES = [{
-  side: 'top',
+  sheet: 'top',
   label: 'Top',
   closeIcon: 'i-lucide-square-chevron-down', // default
 }, {
-  side: 'right',
+  sheet: 'right',
   label: 'Right',
   closeIcon: 'i-close',
 }, {
-  side: 'bottom',
+  sheet: 'bottom',
   label: 'Bottom',
-  closeIcon: 'i-lucide-chevron-down', // default
+  closeIcon: 'i-lucide-chevron-down',
 }, {
-  side: 'left',
+  sheet: 'left',
   label: 'Left',
   closeIcon: 'i-lucide-chevrons-left',
 }] as const
@@ -24,8 +24,8 @@ const username = ref('')
   <div class="grid grid-cols-2 gap-2">
     <NSheet
       v-for="side in SHEET_SIDES"
-      :key="side.side"
-      :side="side.side"
+      :key="side.sheet"
+      :sheet="side.sheet"
       title="Edit profile"
       description="Make changes to your profile here. Click save when you're done."
       :_sheetClose="{

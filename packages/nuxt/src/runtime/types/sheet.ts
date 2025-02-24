@@ -2,7 +2,7 @@ import type { DialogCloseProps, DialogContentProps, DialogDescriptionProps, Dial
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NSheetProps extends DialogRootProps, Pick<NSheetContentProps, 'side'> {
+export interface NSheetProps extends DialogRootProps, Pick<NSheetContentProps, 'sheet'> {
   /**
    * The title of the sheet.
    */
@@ -29,9 +29,12 @@ export interface NSheetContentProps extends DialogContentProps {
   /**
    * The side of the sheet.
    *
-   * @default 'bottom'
+   * By default, preset provided `top`, `right`, `bottom`, `left` variants are available.
+   * You can also pass your own via unocss.config.ts
+   *
+   * @default 'right'
    */
-  side?: 'top' | 'right' | 'bottom' | 'left'
+  sheet?: HTMLAttributes['class']
   /**
    * The close button props.
    */

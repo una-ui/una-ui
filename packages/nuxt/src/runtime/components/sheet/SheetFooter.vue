@@ -9,7 +9,7 @@ const props = defineProps<NSheetFooterProps>()
   <div
     :class="
       cn(
-        'flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-x-2',
+        'sheet-footer',
         props.class,
       )
     "
