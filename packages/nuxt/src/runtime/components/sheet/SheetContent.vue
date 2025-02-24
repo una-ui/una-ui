@@ -14,6 +14,7 @@ defineOptions({
 const props = withDefaults(defineProps<NSheetContentProps>(), {
   sheet: 'right',
   overlay: true,
+  showClose: true,
 })
 const emits = defineEmits<DialogContentEmits>()
 const contentProps = reactiveOmit(props, ['sheet', 'class', '_sheetClose', '_sheetPortal', '_sheetOverlay'])
@@ -36,7 +37,7 @@ const contentEvents = computed(() => {
 
 <template>
   <DialogPortal
-    v-bind="_sheetPortal"
+    v-bind="props._sheetPortal"
     :class="cn('sheet-content-portal', props.una?.sheetPortal, props._sheetPortal?.class)"
   >
     <DialogOverlay
@@ -53,8 +54,9 @@ const contentEvents = computed(() => {
       <slot />
 
       <SheetClose
+        v-if="props.showClose"
         :class="cn('sheet-content-close', props.una?.sheetClose)"
-        v-bind="_sheetClose"
+        v-bind="props._sheetClose"
       />
     </DialogContent>
   </DialogPortal>

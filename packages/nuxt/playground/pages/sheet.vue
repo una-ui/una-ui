@@ -8,9 +8,7 @@ const SHEET_SIDES = [{
   sheet: 'right',
   label: 'Right',
   closeIcon: 'i-close',
-  una: {
-    sheetContent: 'max-w-xl',
-  },
+  una: {},
 }, {
   sheet: 'bottom',
   label: 'Bottom',
@@ -32,6 +30,7 @@ const username = ref('')
 
 <template>
   <div class="grid grid-cols-2 gap-2">
+    <!-- Side variants -->
     <NSheet
       v-for="side in SHEET_SIDES"
       :key="side.sheet"
@@ -71,7 +70,7 @@ const username = ref('')
       </template>
     </NSheet>
 
-    <!-- prevent close -->
+    <!-- Prevent close -->
     <NSheet
       sheet="right"
       prevent-close
@@ -85,11 +84,9 @@ const username = ref('')
       </template>
     </NSheet>
 
-    <!-- disable overlay  -->
+    <!-- Disable overlay  -->
     <NSheet
-      :_sheetContent="{
-        overlay: false,
-      }"
+      :overlay="false"
       title="Disable overlay"
       description="This sheet has no overlay"
     >
@@ -105,6 +102,19 @@ const username = ref('')
       <template #trigger>
         <NButton btn="outline">
           No title and description
+        </NButton>
+      </template>
+    </NSheet>
+
+    <!-- No close button  -->
+    <NSheet
+      :show-close="false"
+      title="No close button"
+      description="This sheet has no close button"
+    >
+      <template #trigger>
+        <NButton btn="outline">
+          No close button
         </NButton>
       </template>
     </NSheet>

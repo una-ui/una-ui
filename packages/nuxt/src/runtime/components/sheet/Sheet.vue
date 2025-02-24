@@ -12,7 +12,10 @@ import SheetHeader from './SheetHeader.vue'
 import SheetTitle from './SheetTitle.vue'
 import SheetTrigger from './SheetTrigger.vue'
 
-const props = defineProps<NSheetProps>()
+const props = withDefaults(defineProps<NSheetProps>(), {
+  showClose: true,
+  overlay: true,
+})
 const emits = defineEmits<DialogRootEmits>()
 
 const DEFAULT_TITLE = randomId('sheet-title')
@@ -40,6 +43,8 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
       :_sheet-portal
       :sheet
       :prevent-close
+      :show-close
+      :overlay
       v-bind="_sheetContent"
       :una
     >
