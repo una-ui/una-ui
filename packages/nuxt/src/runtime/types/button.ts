@@ -12,6 +12,7 @@ interface BaseExtensionProps {
   dropdownMenu?: string
   toggleOn?: string
   toggleOff?: string
+  ariaLabel?: string
 }
 
 export interface NButtonProps extends BaseExtensionProps {

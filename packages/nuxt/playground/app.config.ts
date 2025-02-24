@@ -1,6 +1,6 @@
 export default defineAppConfig({
   una: {
-    gray: 'slate',
-    primary: 'indigo',
+    gray: 'zinc',
+    primary: 'lime',
   },
 })
