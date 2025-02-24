@@ -6,7 +6,7 @@ navBadges:
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/sheet/Sheet.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/sheet/Sheet.vue
     target: _blank
   - value: API reference
     to: https://www.reka-ui.com/docs/components/dialog
