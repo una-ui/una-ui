@@ -1,14 +1,16 @@
---- description: 'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.'
+---
+description: 'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.'
+navBadges:
+  - value: Updated
+    type: lime
 badges:
-
-- value: Source
-  icon: radix-icons:github-logo
-  to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
-  target: _blank
-- value: API reference
-  to: https://www.reka-ui.com/docs/components/dialog
-  target: _blank
-
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/dialog/Dialog.vue
+    target: _blank
+  - value: API reference
+    to: https://www.reka-ui.com/docs/components/dialog
+    target: _blank
 ---
 
 ## Examples
@@ -23,6 +25,7 @@ badges:
 | `defaultOpen` | `false` | `boolean` | The open state of the dialog when it is initially rendered. Use when you do not need to control its open state.                                            |
 | `modal`       | `true`  | `boolean` | The modality of the dialog When set to true, interaction with outside elements will be disabled and only dialog content will be visible to screen readers. |
 | `open`        | -       | `boolean` | The controlled open state of the dialog. Can be binded as `v-model:open`.                                                                                  |
+| `overlay`     | `true`  | `boolean` | Show the overlay.                                                                                                                                          |
 
 :read-more{to="https://www.reka-ui.com/docs/components/dialog#root" title="Reka Dialog Root API" target="_blank"}
 
@@ -69,8 +72,8 @@ badges:
 
 | Name          | Props  | Description                                 |
 | ------------- | ------ | ------------------------------------------- |
-| `default`     | -      | The trigger slot.                           |
-| `content`     | -      | The content slot.                           |
+| `default`     | -      | The body slot.                              |
+| `content`     | -      | The entire content slot.                    |
 | `trigger`     | `open` | The trigger button used to open the dialog. |
 | `header`      | -      | Contains the title and description slots.   |
 | `footer`      | -      | The footer.                                 |

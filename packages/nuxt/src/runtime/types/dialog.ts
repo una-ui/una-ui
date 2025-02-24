@@ -8,22 +8,32 @@ import type {
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NDialogProps extends DialogRootProps {
+export interface NDialogProps extends DialogRootProps, Pick<NDialogContentProps, 'preventClose' | 'showClose' | 'overlay' | '_dialogClose' | '_dialogOverlay'> {
+  /**
+   * The title of the dialog.
+   */
   title?: string
+  /**
+   * The description of the dialog.
+   */
   description?: string
+  /**
+   *
+   */
   scrollable?: boolean
-  showClose?: boolean
-  preventClose?: boolean
 
   // sub-components
   _dialogTitle?: NDialogTitleProps
   _dialogDescription?: NDialogDescriptionProps
   _dialogHeader?: NDialogHeaderProps
   _dialogFooter?: NDialogFooterProps
-  _dialogOverlay?: NDialogOverlayProps
   _dialogContent?: NDialogContentProps
-  _dialogClose?: NDialogCloseProps
 
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/dialog.ts
+   */
   una?: NDialogUnaProps
 }
 
@@ -39,13 +49,36 @@ export interface NDialogDescriptionProps extends DialogDescriptionProps, BaseExt
   una?: NDialogUnaProps['dialogDescription']
 }
 
-export interface NDialogContentProps extends DialogContentProps, BaseExtensions, Pick<NDialogProps, '_dialogOverlay' | '_dialogClose' | 'preventClose' | 'showClose'> {
-  onCloseAutoFocus?: (event: any) => void
-  onEscapeKeyDown?: (event: KeyboardEvent) => void
-  onInteractOutside?: (event: any) => void
-  onOpenAutoFocus?: (event: any) => void
-  onPointerDownOutside?: (event: any) => void
-
+export interface NDialogContentProps extends DialogContentProps, BaseExtensions {
+  /**
+   * Prevent close.
+   */
+  preventClose?: boolean
+  /**
+   * Show close button.
+   *
+   * @default true
+   */
+  showClose?: boolean
+  /**
+   * Show overlay.
+   *
+   * @default true
+   */
+  overlay?: boolean
+  /**
+   * The close button props.
+   */
+  _dialogClose?: NDialogCloseProps
+  /**
+   * The overlay props.
+   */
+  _dialogOverlay?: NDialogOverlayProps
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/dialog.ts
+   */
   una?: NDialogUnaProps['dialogContent']
 }
 
