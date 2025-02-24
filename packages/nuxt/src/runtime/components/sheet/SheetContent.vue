@@ -12,6 +12,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NSheetContentProps>(), {
+  sheet: 'right',
   overlay: true,
 })
 const emits = defineEmits<DialogContentEmits>()
@@ -36,12 +37,12 @@ const contentEvents = computed(() => {
 <template>
   <DialogPortal
     v-bind="_sheetPortal"
-    :class="cn('sheet-content-portal', props.una?.sheetContentPortal, props._sheetPortal?.class)"
+    :class="cn('sheet-content-portal', props.una?.sheetPortal, props._sheetPortal?.class)"
   >
     <DialogOverlay
-      v-if="overlay"
+      v-if="props.overlay"
       v-bind="_sheetOverlay"
-      :class="cn('sheet-content-overlay', props.una?.sheetContentOverlay, props._sheetOverlay?.class)"
+      :class="cn('sheet-content-overlay', props.una?.sheetOverlay, props._sheetOverlay?.class)"
     />
     <DialogContent
       :sheet
@@ -52,7 +53,7 @@ const contentEvents = computed(() => {
       <slot />
 
       <SheetClose
-        :class="cn('sheet-content-close', props.una?.sheetContentClose)"
+        :class="cn('sheet-content-close', props.una?.sheetClose)"
         v-bind="_sheetClose"
       />
     </DialogContent>

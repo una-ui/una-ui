@@ -36,7 +36,6 @@ const username = ref('')
       v-for="side in SHEET_SIDES"
       :key="side.sheet"
       :sheet="side.sheet"
-      :overlay="false"
       title="Edit profile"
       description="Make changes to your profile here. Click save when you're done."
       :_sheetClose="{
@@ -80,6 +79,21 @@ const username = ref('')
       <template #trigger>
         <NButton btn="outline">
           Prevent close
+        </NButton>
+      </template>
+    </NSheet>
+
+    <!-- disable overlay  -->
+    <NSheet
+      :_sheetContent="{
+        overlay: false,
+      }"
+      title="Disable overlay"
+      description="This sheet has no overlay"
+    >
+      <template #trigger>
+        <NButton btn="outline">
+          Disable overlay
         </NButton>
       </template>
     </NSheet>

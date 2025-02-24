@@ -2,7 +2,7 @@ import type { DialogCloseProps, DialogContentProps, DialogDescriptionProps, Dial
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NSheetProps extends DialogRootProps, Pick<NSheetContentProps, 'sheet' | 'preventClose' | 'overlay'> {
+export interface NSheetProps extends DialogRootProps, Pick<NSheetContentProps, 'sheet' | 'preventClose'> {
   /**
    * The title of the sheet.
    */
@@ -65,7 +65,7 @@ export interface NSheetContentProps extends DialogContentProps {
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/sheet.ts
    */
-  una?: Pick<NSheetUnaProps, 'sheetContent' | 'sheetContentPortal' | 'sheetContentOverlay' | 'sheetContentClose'>
+  una?: Pick<NSheetUnaProps, 'sheetContent' | 'sheetPortal' | 'sheetOverlay' | 'sheetClose'>
 }
 
 export interface NSheetTriggerProps extends DialogTriggerProps {
@@ -113,9 +113,7 @@ export interface NSheetPortalProps extends DialogPortalProps {
 export interface NSheetUnaProps {
   sheet?: HTMLAttributes['class']
   sheetContent?: HTMLAttributes['class']
-  sheetContentPortal?: HTMLAttributes['class']
-  sheetContentOverlay?: HTMLAttributes['class']
-  sheetContentClose?: HTMLAttributes['class']
+  sheetClose?: HTMLAttributes['class']
   sheetHeader?: HTMLAttributes['class']
   sheetTitle?: HTMLAttributes['class']
   sheetDescription?: HTMLAttributes['class']
