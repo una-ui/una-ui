@@ -1,24 +1,18 @@
 <script setup lang="ts">
-import type { VariantProps } from 'class-variance-authority'
-import type { DialogContentEmits, DialogContentProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
+import type { DialogContentEmits } from 'reka-ui'
+import type { NSheetContentProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { cva } from 'class-variance-authority'
-import {
-  DialogClose,
-  DialogContent,
-  DialogOverlay,
-  DialogPortal,
-  useForwardPropsEmits,
-} from 'reka-ui'
-import { computed } from 'vue'
+import { DialogContent, DialogOverlay, DialogPortal, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
-import Icon from '../elements/Icon.vue'
+import SheetClose from './SheetClose.vue'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<SheetContentProps>()
+const props = withDefaults(defineProps<NSheetContentProps>(), {
+})
 
 const emits = defineEmits<DialogContentEmits>()
 
@@ -41,24 +35,18 @@ const sheetVariants = cva(
   },
 )
 
-interface SheetContentProps extends DialogContentProps {
-  class?: HTMLAttributes['class']
-  side?: VariantProps<typeof sheetVariants>['side']
-}
+const contentProps = reactiveOmit(props, ['side', 'class', '_sheetClose', '_sheetPortal', '_sheetOverlay'])
 
-const delegatedProps = computed(() => {
-  const { class: _, side, ...delegated } = props
-
-  return delegated
-})
-
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(contentProps, emits)
 </script>
 
 <template>
-  <DialogPortal>
+  <DialogPortal
+    v-bind="_sheetPortal"
+  >
     <DialogOverlay
-      class="fixed inset-0 z-50 data-[state=closed]:animate-out data-[state=open]:animate-in bg-black/80 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0"
+      v-bind="_sheetOverlay"
+      :class="cn('fixed inset-0 z-50 data-[state=closed]:animate-out data-[state=open]:animate-in bg-black/80 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0', props._sheetOverlay?.class)"
     />
     <DialogContent
       :class="cn(sheetVariants({ side }), props.class)"
@@ -66,11 +54,10 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     >
       <slot />
 
-      <DialogClose
-        class="absolute right-4 top-4 rounded-sm data-[state=open]:bg-muted opacity-70 focus:ring-base ring-offset-base transition-opacity disabled:pointer-events-none hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2"
-      >
-        <Icon name="i-close" />
-      </DialogClose>
+      <SheetClose
+        class="absolute right-4 top-4"
+        v-bind="_sheetClose"
+      />
     </DialogContent>
   </DialogPortal>
 </template>

@@ -22,48 +22,51 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
     <SheetTrigger
       v-if="$slots.trigger"
       v-bind="_sheetTrigger"
-      as-child
     >
-      <slot name="trigger" />
+      <slot name="trigger" :open />
     </SheetTrigger>
 
     <SheetContent
       v-if="$slots.default"
-      v-bind="_sheetContent"
+      :_sheet-close
+      :_sheet-overlay
+      :_sheet-portal
       :side
     >
-      <SheetHeader
-        v-if="$slots.header || title || description"
-        v-bind="_sheetHeader"
-      >
-        <slot name="header">
-          <SheetTitle
-            v-if="title || $slots.title"
-            v-bind="_sheetTitle"
-          >
-            <slot name="title">
-              {{ title }}
-            </slot>
-          </SheetTitle>
-          <SheetDescription
-            v-if="description || $slots.description"
-            v-bind="_sheetDescription"
-          >
-            <slot name="description">
-              {{ description }}
-            </slot>
-          </SheetDescription>
-        </slot>
-      </SheetHeader>
+      <slot name="content">
+        <SheetHeader
+          v-if="$slots.header || title || description"
+          v-bind="_sheetHeader"
+        >
+          <slot name="header">
+            <SheetTitle
+              v-if="$slots.title || title"
+              v-bind="_sheetTitle"
+            >
+              <slot name="title">
+                {{ title }}
+              </slot>
+            </SheetTitle>
+            <SheetDescription
+              v-if="$slots.description || description"
+              v-bind="_sheetDescription"
+            >
+              <slot name="description">
+                {{ description }}
+              </slot>
+            </SheetDescription>
+          </slot>
+        </SheetHeader>
 
-      <slot />
+        <slot />
 
-      <SheetFooter
-        v-if="$slots.footer"
-        v-bind="_sheetFooter"
-      >
-        <slot name="footer" />
-      </SheetFooter>
+        <SheetFooter
+          v-if="$slots.footer"
+          v-bind="_sheetFooter"
+        >
+          <slot name="footer" />
+        </SheetFooter>
+      </slot>
     </SheetContent>
   </DialogRoot>
 </template>

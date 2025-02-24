@@ -9,6 +9,9 @@ const username = ref('')
       v-for="side in SHEET_SIDES" :key="side" :side
       title="Edit profile"
       description="Make changes to your profile here. Click save when you're done."
+      :_sheetClose="{
+        label: 'i-check',
+      }"
     >
       <template #trigger>
         <NButton btn="outline">
@@ -32,10 +35,8 @@ const username = ref('')
       </div>
 
       <template #footer>
-        <NSheetClose as-child>
-          <NButton type="submit">
-            Save changes
-          </NButton>
+        <NSheetClose>
+          <NButton type="submit" label="Save changes" />
         </NSheetClose>
       </template>
     </NSheet>
