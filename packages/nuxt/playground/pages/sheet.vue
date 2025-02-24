@@ -75,6 +75,8 @@ const username = ref('')
     <NSheet
       sheet="right"
       prevent-close
+      title="Prevent close"
+      description="This sheet cannot be closed by clicking outside of it"
     >
       <template #trigger>
         <NButton btn="outline">
@@ -94,6 +96,15 @@ const username = ref('')
       <template #trigger>
         <NButton btn="outline">
           Disable overlay
+        </NButton>
+      </template>
+    </NSheet>
+
+    <!-- No title and description  -->
+    <NSheet>
+      <template #trigger>
+        <NButton btn="outline">
+          No title and description
         </NButton>
       </template>
     </NSheet>

@@ -2,7 +2,9 @@
 import type { DialogRootEmits } from 'reka-ui'
 import type { NSheetProps } from '../../types'
 import { reactivePick } from '@vueuse/core'
-import { DialogRoot, useForwardPropsEmits } from 'reka-ui'
+import { DialogRoot, useForwardPropsEmits, VisuallyHidden } from 'reka-ui'
+import { computed } from 'vue'
+import { randomId } from '../../utils'
 import SheetContent from './SheetContent.vue'
 import SheetDescription from './SheetDescription.vue'
 import SheetFooter from './SheetFooter.vue'
@@ -12,6 +14,12 @@ import SheetTrigger from './SheetTrigger.vue'
 
 const props = defineProps<NSheetProps>()
 const emits = defineEmits<DialogRootEmits>()
+
+const DEFAULT_TITLE = randomId('sheet-title')
+const DEFAULT_DESCRIPTION = randomId('sheet-description')
+
+const title = computed(() => props.title || DEFAULT_TITLE)
+const description = computed(() => props.description || DEFAULT_DESCRIPTION)
 
 const rootProps = reactivePick(props, ['open', 'defaultOpen', 'modal'])
 const forwarded = useForwardPropsEmits(rootProps, emits)
@@ -35,15 +43,25 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
       v-bind="_sheetContent"
       :una
     >
+      <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">
+        <SheetTitle v-if="title === DEFAULT_TITLE || !!$slots.title">
+          {{ title }}
+        </SheetTitle>
+
+        <SheetDescription v-if="description === DEFAULT_DESCRIPTION || !!$slots.description">
+          {{ description }}
+        </SheetDescription>
+      </VisuallyHidden>
+
       <slot name="content">
         <SheetHeader
-          v-if="$slots.header || title || description"
+          v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
           v-bind="_sheetHeader"
           :una
         >
           <slot name="header">
             <SheetTitle
-              v-if="$slots.title || title"
+              v-if="$slots.title || title !== DEFAULT_TITLE"
               v-bind="_sheetTitle"
               :una
             >
@@ -52,7 +70,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
               </slot>
             </SheetTitle>
             <SheetDescription
-              v-if="$slots.description || description"
+              v-if="$slots.description || description !== DEFAULT_DESCRIPTION"
               v-bind="_sheetDescription"
               :una
             >
