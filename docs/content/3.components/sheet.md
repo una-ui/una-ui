@@ -1,5 +1,5 @@
 ---
-description: 'A modal dialog that slides in from the edge of the screen.'
+description: 'Extends the Dialog component to display content that complements the main content of the screen.'
 navBadges:
   - value: New
     type: lime
