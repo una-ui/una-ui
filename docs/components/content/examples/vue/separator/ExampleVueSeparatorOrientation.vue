@@ -22,7 +22,7 @@ const textarea = ref('')
     <NToggle
       v-for="icon in icons1"
       :key="icon._id"
-      v-model:pressed="icon.value"
+      v-model="icon.value"
       :label="icon.name"
       size="xs"
     />
@@ -32,7 +32,7 @@ const textarea = ref('')
     <NToggle
       v-for="icon in icons2"
       :key="icon._id"
-      v-model:pressed="icon.value"
+      v-model="icon.value"
       :label="icon.name"
       size="xs"
     />
@@ -42,7 +42,7 @@ const textarea = ref('')
     <NToggle
       v-for="icon in icons3"
       :key="icon._id"
-      v-model:pressed="icon.value"
+      v-model="icon.value"
       :label="icon.name"
       size="xs"
     />

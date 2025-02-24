@@ -18,7 +18,7 @@ badges:
 | -------------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `defaultValue` | -       | `boolean` | The initial pressed state of the toggle when it is first rendered. Use this when you don't need to manage its open state manually. |
 | `disabled`     | `false` | `boolean` | When set to `true`, disables user interaction with the toggle.                                                                     |
-| `pressed`      | -       | `boolean` | The controlled pressed state of the toggle, which can be bound using `v-model`.                                                    |
+| `modelValue`   | -       | `boolean` | The controlled pressed state of the toggle, which can be bound using `v-model`.                                                    |
 
 :read-more{to="/components/button" title="Button component" target="_blank"}
 

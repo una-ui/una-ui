@@ -4,7 +4,7 @@ const toggle = ref(false)
 
 <template>
   <NToggle
-    v-model:pressed="toggle"
+    v-model="toggle"
     square="30"
     toggle-off="soft-gray"
   >
