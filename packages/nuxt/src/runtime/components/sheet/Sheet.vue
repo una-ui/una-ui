@@ -2,6 +2,7 @@
 import type { DialogRootEmits } from 'reka-ui'
 import type { NSheetProps } from '../../types'
 import { DialogRoot, useForwardPropsEmits } from 'reka-ui'
+import SheetContent from './SheetContent.vue'
 import SheetTrigger from './SheetTrigger.vue'
 
 const props = defineProps<NSheetProps>()
@@ -20,6 +21,12 @@ const forwarded = useForwardPropsEmits(props, emits)
       <slot name="trigger" />
     </SheetTrigger>
 
-    <slot />
+    <SheetContent
+      v-if="$slots.default"
+      v-bind="props._sheetContent"
+      :side
+    >
+      <slot />
+    </SheetContent>
   </DialogRoot>
 </template>
