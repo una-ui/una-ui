@@ -3,18 +3,28 @@ const SHEET_SIDES = [{
   sheet: 'top',
   label: 'Top',
   closeIcon: 'i-lucide-square-chevron-down', // default
+  una: {},
 }, {
   sheet: 'right',
   label: 'Right',
   closeIcon: 'i-close',
+  una: {
+    sheetContent: 'max-w-xl',
+  },
 }, {
   sheet: 'bottom',
   label: 'Bottom',
   closeIcon: 'i-lucide-chevron-down',
+  una: {
+    sheetContent: 'h-full',
+  },
 }, {
   sheet: 'left',
   label: 'Left',
   closeIcon: 'i-lucide-chevrons-left',
+  una: {
+    sheetContent: 'max-w-xl',
+  },
 }] as const
 
 const username = ref('')
@@ -31,6 +41,7 @@ const username = ref('')
       :_sheetClose="{
         label: side.closeIcon,
       }"
+      :una="side.una"
     >
       <template #trigger>
         <NButton btn="outline">

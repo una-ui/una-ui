@@ -8,7 +8,7 @@ const props = defineProps<NSheetHeaderProps>()
 <template>
   <div
     :class="
-      cn('sheet-header', props.class)
+      cn('sheet-header', props.una?.sheetHeader, props.class)
     "
   >
     <slot />

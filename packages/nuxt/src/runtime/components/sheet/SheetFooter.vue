@@ -10,6 +10,7 @@ const props = defineProps<NSheetFooterProps>()
     :class="
       cn(
         'sheet-footer',
+        props.una?.sheetFooter,
         props.class,
       )
     "

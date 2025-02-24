@@ -32,16 +32,19 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
       :_sheet-overlay
       :_sheet-portal
       :sheet
+      :una
     >
       <slot name="content">
         <SheetHeader
           v-if="$slots.header || title || description"
           v-bind="_sheetHeader"
+          :una
         >
           <slot name="header">
             <SheetTitle
               v-if="$slots.title || title"
               v-bind="_sheetTitle"
+              :una
             >
               <slot name="title">
                 {{ title }}
@@ -50,6 +53,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
             <SheetDescription
               v-if="$slots.description || description"
               v-bind="_sheetDescription"
+              :una
             >
               <slot name="description">
                 {{ description }}
@@ -63,6 +67,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
         <SheetFooter
           v-if="$slots.footer"
           v-bind="_sheetFooter"
+          :una
         >
           <slot name="footer" />
         </SheetFooter>

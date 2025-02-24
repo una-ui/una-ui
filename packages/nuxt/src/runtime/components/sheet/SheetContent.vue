@@ -23,21 +23,21 @@ const forwarded = useForwardPropsEmits(contentProps, emits)
 <template>
   <DialogPortal
     v-bind="_sheetPortal"
-    :class="cn('sheet-content-portal', props._sheetPortal?.class)"
+    :class="cn('sheet-content-portal', props.una?.sheetContentPortal, props._sheetPortal?.class)"
   >
     <DialogOverlay
       v-bind="_sheetOverlay"
-      :class="cn('sheet-content-overlay', props._sheetOverlay?.class)"
+      :class="cn('sheet-content-overlay', props.una?.sheetContentOverlay, props._sheetOverlay?.class)"
     />
     <DialogContent
       :sheet
-      :class="cn('sheet-content', props.class)"
+      :class="cn('sheet-content', props.una?.sheetContent, props.class)"
       v-bind="{ ...forwarded, ...$attrs }"
     >
       <slot />
 
       <SheetClose
-        class="sheet-content-close"
+        :class="cn('sheet-content-close', props.una?.sheetContentClose)"
         v-bind="_sheetClose"
       />
     </DialogContent>
