@@ -29,6 +29,7 @@ import { radio } from './radio'
 import { radioGroup } from './radio-group'
 import { select } from './select'
 import { separator } from './separator'
+import { sheet } from './sheet'
 import { skeleton } from './skeleton'
 import { slider } from './slider'
 import { _switch } from './switch'
@@ -77,4 +78,5 @@ export const shortcuts = [
   ...collapsible,
   ...radioGroup,
   ...form,
+  ...sheet,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
