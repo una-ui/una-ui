@@ -16,13 +16,13 @@ const items = ref([
     label: 'sm',
     size: 'sm data-[state=checked]:2xl',
     checkbox: 'green',
-    value: true,
+    value: false,
   },
   {
     label: 'md',
     size: 'md data-[state=checked]:2xl',
     checkbox: 'purple',
-    value: true,
+    value: false,
   },
   {
     label: 'lg',

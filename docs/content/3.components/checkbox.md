@@ -81,7 +81,7 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 :ExampleVueCheckboxSize
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/select/ExampleVueCheckboxSize.vue
+@@@ ./components/content/examples/vue/checkbox/ExampleVueCheckboxSize.vue
 ::
 :::
 

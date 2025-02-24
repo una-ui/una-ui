@@ -5,7 +5,7 @@ const toggle = ref(true)
 <template>
   <div class="flex gap-4">
     <NToggle
-      v-model:pressed="toggle"
+      v-model="toggle"
       :label="toggle ? 'i-radix-icons-star-filled' : 'i-radix-icons-star'"
       toggle-on="solid-blue"
       toggle-off="soft-gray"

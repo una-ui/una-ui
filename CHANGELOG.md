@@ -1,3 +1,12 @@
+## [0.36.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.36.0-beta.1...v0.36.1-beta.1) (2025-02-24)
+
+
+### Bug Fixes
+
+* **checkbox:** update size and disabled props config ([#335](https://github.com/una-ui/una-ui/issues/335)) ([96d1e12](https://github.com/una-ui/una-ui/commit/96d1e12765631afe4c3f3954d5ced083930361bd))
+
+
+
 # [0.36.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.35.0-beta.1...v0.36.0-beta.1) (2025-02-23)
 
 
