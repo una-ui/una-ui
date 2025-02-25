@@ -96,7 +96,7 @@ You can customize the sheet using the following sub components props and `una` p
 :ExampleVueSheetCustomSize
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/sheet/ExampleVueSheetCustomIcon.vue
+@@@ ./components/content/examples/vue/sheet/ExampleVueSheetCustomSize.vue
 ::
 :::
 
