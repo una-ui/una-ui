@@ -1,3 +1,14 @@
+## [0.37.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.37.0-beta.1...v0.37.1-beta.1) (2025-02-25)
+
+
+### Bug Fixes
+
+* **Dialog:** set dialog-close preset to scrollable content ([6c536ae](https://github.com/una-ui/una-ui/commit/6c536aee972b3e892106ae5667c3a197c96e3dd2))
+* **Dialog:** update misconfig class preset ([4df43d5](https://github.com/una-ui/una-ui/commit/4df43d52ef0f584a174e617430d0324e5d315ae0))
+* **Sheet:** define open slot value to slot trigger ([9835750](https://github.com/una-ui/una-ui/commit/9835750ad9dcea3036ea157a81a7c4fe2b099baf))
+
+
+
 # [0.37.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.36.1-beta.1...v0.37.0-beta.1) (2025-02-24)
 
 
