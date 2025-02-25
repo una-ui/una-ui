@@ -27,6 +27,7 @@ const components = [
   'Toggle',
   'Tooltip',
   'Sheet',
+  'Sidebar',
 ]
   .map(component => ({
     name: component.replaceAll(' ', ''),
