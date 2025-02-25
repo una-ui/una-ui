@@ -27,7 +27,8 @@ const rootProps = reactiveOmit(props, 'class', 'una')
     </ScrollAreaViewport>
     <ScrollBar
       v-bind="_scrollAreaScrollbar"
-      :orientation="_scrollAreaScrollbar.orientation ?? orientation"
+      :orientation="_scrollAreaScrollbar?.orientation ?? orientation"
+      :una="{ ...una, ..._scrollAreaScrollbar?.una }"
     />
     <ScrollAreaCorner />
   </ScrollAreaRoot>
