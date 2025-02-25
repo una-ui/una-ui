@@ -11,7 +11,7 @@ export interface NSkeletonProps extends Extensions {
    * @example
    * skeleton="green""
    */
-  skeleton?: string
+  skeleton?: HTMLAttributes['class']
   /**
    * Allows you to change the size of the skeleton.
    *
@@ -20,14 +20,21 @@ export interface NSkeletonProps extends Extensions {
    * @example
    * size="sm" | size="2cm" | size="2rem" | size="2px"
    */
-  size?: string
+  size?: HTMLAttributes['class']
+  /**
+   * Allows you to change the shape of the skeleton.
+   * @default rounded
+   *
+   * @example
+   * rounded="none" | rounded="sm" | rounded="md" | rounded="lg" | rounded="full"
+   */
+  rounded?: HTMLAttributes['class']
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/skeleton.ts
    */
   una?: {
-    // base
     skeleton?: HTMLAttributes['class']
   }
 }

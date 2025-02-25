@@ -4,7 +4,7 @@
 <template>
   <NDialog
     title="Unclosable Dialog"
-    :_dialogClose="{
+    :_dialog-close="{
       btn: 'solid-gray',
     }"
     prevent-close

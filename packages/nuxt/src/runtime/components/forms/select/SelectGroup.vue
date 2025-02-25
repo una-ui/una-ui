@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NSelectGroupProps } from '../../../types'
-import { SelectGroup } from 'radix-vue'
+import { SelectGroup } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 

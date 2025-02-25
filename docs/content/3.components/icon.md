@@ -1,60 +1,85 @@
 ---
-description: 'NIcon component - used to display icons.'
+description: 'Displays an icon from a variety of icon libraries.'
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Icon.vue
+    target: _blank
 ---
 
-# 🟢 Icon
+UnaUI integrates [Iconify](https://icones.js.org/) to provide a wide variety of icons from multiple collections. Iconify ensures a consistent icon usage across different collections.
 
----
+By default, UnaUI includes the following icon collections:
 
-## Basic
+- [Lucide](https://icones.js.org/collection/lucide)
+- [Reka Icons](https://icones.js.org/collection/radix-icons)
+- [Tabler Icons](https://icones.js.org/collection/tabler)
 
-::alert{type="info"}
-By default, we use the `radix-icons` `lucide` `heroicons` and `tabler` for the icons, you can use any icon provided by `Iconify` through [icones](https://icones.js.org/){target="_blank"}, refer to [configuration](/getting-started/configuration) for more information.
-::
+To add more icon collections, follow these steps:
 
-use the `NIcon` tag to create a basic icon.
+Install the desired icon collection using your preferred package manager:
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueIconUsage
+
+```bash [pnpm]
+pnpm add -D @iconify-icons/[collection-name]
+```
+
+```bash [yarn]
+yarn add -D @iconify-icons/[collection-name]
+```
+
+```bash [npm]
+npm install -D @iconify-icons/[collection-name]
+```
+
+:::
+
+:read-more{to="https://unocss.dev/presets/icons#install" title="Unocss Icons Preset" target="_blank"}
+
+## Examples
+
+### Basic
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueIconUsage
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/icon/ExampleVueIconUsage.vue
 ::
 :::
 
-## Default Icons
+### Shortcuts
 
-> These icons are configured by default. They are used globally in the components such as `NInput` and `NAlert`.
+These icons are configured by default. They are used globally in the components such as [NInput](#ninput), [NAlert](#nalert), [NButton](#nbutton), and more.
 
 ::alert{type="info"}
-If you want to update or add default icons, you can do so through the [Configuration section](/getting-started/configuration).
+If you want to update or add default icons, you can do so through the [Configuration section](/#getting-started/configuration).
 ::
 
-| Icon Name   | Icon                                        |
-| ----------- | ------------------------------------------- |
-| `i-loading` | `i-tabler-loader-2`           |
-| `i-warning` | `i-heroicons-exclamation-triangle-20-solid` |
-| `i-error`   | `i-heroicons-exclamation-circle-20-solid`   |
-| `i-success` | `i-heroicons-check-circle-20-solid`         |
-| `i-info`    | `i-heroicons-information-circle-20-solid`   |
-| `i-close`   | `i-heroicons-x-20-solid`                    |
+@@@ ../packages/preset/src/_shortcuts/config/icons.ts [shortcuts/config/icons.ts]
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueIconDefault
+::div{label="Preview" preview}
+:ExampleVueIconDefault
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/icon/ExampleVueIconDefault.vue
 ::
 :::
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/icon.ts
-
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/icon.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/icon.ts [shortcuts/icon.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/icon.ts [types/icon.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Icon.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Icon.vue
-
+::

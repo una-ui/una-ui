@@ -1,10 +1,13 @@
 ---
 description: 'NRadio component - use to create a radio input.'
+navBadges:
+  - value: Deprecated
+    type: warning
 ---
 
-# 🟢 Radio
-
----
+::alert{type="warning"}
+This component is deprecated and will be removed in the next major release.
+::
 
 ## Basic
 
@@ -19,10 +22,10 @@ use `NRadio` to create a radio input.
 > To view the full list of attributes, see the [Props](#props) section.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueRadioBasic
+::div{label="Preview" preview}
+:ExampleVueRadioBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioBasic.vue
 ::
 :::
@@ -34,14 +37,14 @@ use `NRadio` to create a radio input.
 > You can use `breakpoints` such as `sm:red, xs:green` to change color based on screen size.
 
 ::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
+You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/#getting-started/configuration).
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueRadioColor
+::div{label="Preview" preview}
+:ExampleVueRadioColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioColor.vue
 ::
 :::
@@ -51,10 +54,10 @@ You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/doc
 `disabled` - disable the radio.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueRadioDisabled
+::div{label="Preview" preview}
+:ExampleVueRadioDisabled
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioDisabled.vue
 ::
 :::
@@ -66,14 +69,14 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 > Read more about the `NFormGroup` component [here](form-group).
 
 ::alert{type="warning"}
-  Remember to set `for` to false to disable `for` behavior on the label since we have a custom implementation for the radio input.
+Remember to set `for` to false to disable `for` behavior on the label since we have a custom implementation for the radio input.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueRadioFormGroup
+::div{label="Preview" preview}
+:ExampleVueRadioFormGroup
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioFormGroup.vue
 ::
 :::
@@ -83,10 +86,10 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 `reverse` - Switch the position of the radio and the label.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueRadioReverse
+::div{label="Preview" preview}
+:ExampleVueRadioReverse
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioReverse.vue
 ::
 :::
@@ -98,10 +101,10 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 > 🚀 You can freely adjust the size of the radio using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueRadioSize
+::div{label="Preview" preview}
+:ExampleVueRadioSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioSize.vue
 ::
 :::
@@ -111,7 +114,7 @@ You can use the `NFormGroup` component to create a radio group for the radio,
 You can use the following rules to customize the radio if it is checked.
 
 ::alert{type="info"}
-  You can also globally customize the radio preset if you want to have a different default style. See [Configuration](/getting-started/configuration) section for more details.
+You can also globally customize the radio preset if you want to have a different default style. See [Configuration](/#getting-started/configuration) section for more details.
 ::
 
 | Rule Name   | Description                                   | Example            |
@@ -119,10 +122,10 @@ You can use the following rules to customize the radio if it is checked.
 | `n-checked` | Only apply the class if the radio is checked. | `n-checked:bg-red` |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueRadioRules
+::div{label="Preview" preview}
+:ExampleVueRadioRules
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioRules.vue
 ::
 :::
@@ -132,10 +135,10 @@ You can use the following rules to customize the radio if it is checked.
 > You can customize the radio using the `una` prop and utility classes.
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueRadioCustom
+::div{label="Preview" preview}
+:ExampleVueRadioCustom
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/radio/ExampleVueRadioCustom.vue
 ::
 :::
@@ -147,11 +150,17 @@ You can use the following rules to customize the radio if it is checked.
 | `label` | Use this slot to customize the label of the radio.                    |
 | `icon`  | Use this slot to customize the icon of the radio when it is `checked` |
 
-## Props
-@@@ ../packages/nuxt/src/runtime/types/radio.ts
-
 ## Presets
-@@@ ../packages/preset/src/_shortcuts/radio.ts
 
-## Component
+@@@ ../packages/preset/src/_shortcuts/radio.ts [shortcuts/radio.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/radio.ts [types/radio.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Radio.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/Radio.vue
+::

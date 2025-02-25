@@ -23,10 +23,15 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert-icon-wrapper': '-mt-0.2em',
   'alert-close-wrapper': 'ml-auto pl-0.2em',
   'alert-close-inner-wrapper': '-mx-1.1 -my-1.1',
+
+  // static variants
+  'alert-solid-white': 'rounded-md text-brand bg-base n-gray-950 dark:n-white border',
+  'alert-solid-black': 'rounded-md text-brand bg-inverted n-white dark:n-gray-950 border border-foreground',
 }
 
 export const dynamicAlert: [RegExp, (params: RegExpExecArray) => string][] = [
   // variants
+  [/^alert-solid(-(\S+))?$/, ([, , c = 'primary']) => `rounded-md text-white bg-${c}-500 dark:bg-${c}-800 n-white dark:n-${c}-400`],
   [/^alert-soft(-(\S+))?$/, ([, , c = 'primary']) => `rounded-md bg-${c}-50 text-${c}-400 dark:text-${c}-300 dark:bg-${c}-950 n-${c}-800 dark:n-${c}-100`],
   [/^alert-outline(-(\S+))?$/, ([, , c = 'primary']) => `rounded-md border border-${c}-600 dark:border-${c}-500 text-brand n-${c}-600 dark:n-${c}-500`],
   [/^alert-border(-(\S+))?$/, ([, , c = 'primary']) => `border-l-4 border-${c}-400 dark:border-${c}-500 bg-${c}-50 dark:bg-${c}-950 text-${c}-400 dark:text-${c}-300 n-${c}-800 dark:n-${c}-100`],

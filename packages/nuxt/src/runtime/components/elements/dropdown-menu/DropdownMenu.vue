@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DropdownMenuContentEmits, DropdownMenuRootEmits } from 'radix-vue'
+import type { DropdownMenuContentEmits, DropdownMenuRootEmits } from 'reka-ui'
 import type { NDropdownMenuProps } from '../../../types'
-import { createReusableTemplate } from '@vueuse/core'
-import { DropdownMenuPortal, useForwardPropsEmits } from 'radix-vue'
-import { omitProps, pickProps } from '../../../utils'
+import { createReusableTemplate, reactivePick } from '@vueuse/core'
+import { DropdownMenuPortal, useForwardPropsEmits } from 'reka-ui'
+import { omitProps } from '../../../utils'
 import DropdownMenuContent from './DropdownMenuContent.vue'
 import DropdownMenuGroup from './DropdownMenuGroup.vue'
 import DropdownMenuItem from './DropdownMenuItem.vue'
@@ -24,88 +24,86 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
 
 <template>
   <DropdownMenuRoot
-    v-bind="pickProps(forwarded, ['defaultOpen', 'open', 'modal', 'dir'])"
+    v-bind="reactivePick(forwarded, ['defaultOpen', 'open', 'modal', 'dir'])"
   >
-    <slot>
-      <slot name="trigger">
-        <DropdownMenuTrigger
-          v-bind="omitProps({ ...forwarded, ...forwarded._dropdownMenuTrigger }, [
-            'dropdownMenuItem',
-            'items',
-            'menuLabel',
+    <DropdownMenuTrigger
+      v-bind="omitProps({ ...forwarded, ...forwarded._dropdownMenuTrigger }, [
+        'dropdownMenuItem',
+        'items',
+        'menuLabel',
+        '_dropdownMenuItem',
+        '_dropdownMenuContent',
+        '_dropdownMenuLabel',
+        '_dropdownMenuSeparator',
+        '_dropdownMenuGroup',
+        '_dropdownMenuTrigger',
+        '_dropdownMenuSubTrigger',
+        '_dropdownMenuSubContent',
+      ])"
+    >
+      <slot />
+    </DropdownMenuTrigger>
 
-            '_dropdownMenuItem',
-            '_dropdownMenuContent',
-            '_dropdownMenuLabel',
-            '_dropdownMenuSeparator',
-            '_dropdownMenuGroup',
-            '_dropdownMenuSubTrigger',
-            '_dropdownMenuSubContent',
-          ])"
-        />
-      </slot>
-
-      <DropdownMenuContent
-        v-bind="forwarded._dropdownMenuContent"
-      >
-        <slot name="content">
-          <template
-            v-if="menuLabel || $slots['menu-label']"
+    <DropdownMenuContent
+      v-bind="forwarded._dropdownMenuContent"
+    >
+      <slot name="content">
+        <template
+          v-if="menuLabel || $slots['menu-label']"
+        >
+          <DropdownMenuLabel
+            :size
+            :inset
+            :una="forwarded.una?.dropdownMenuLabel"
+            v-bind="forwarded._dropdownMenuLabel"
           >
-            <DropdownMenuLabel
-              :size
-              :inset
-              :una="forwarded.una?.dropdownMenuLabel"
-              v-bind="forwarded._dropdownMenuLabel"
-            >
-              <slot name="menu-label">
-                {{ menuLabel }}
-              </slot>
-            </DropdownMenuLabel>
-            <DropdownMenuSeparator
-              :una="forwarded.una?.dropdownMenuSeparator"
-              v-bind="forwarded._dropdownMenuSeparator"
-            />
-          </template>
+            <slot name="menu-label">
+              {{ menuLabel }}
+            </slot>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator
+            :una="forwarded.una?.dropdownMenuSeparator"
+            v-bind="forwarded._dropdownMenuSeparator"
+          />
+        </template>
 
-          <slot name="items" :items>
-            <DropdownMenuGroup
-              :una="forwarded.una?.dropdownMenuGroup"
-              v-bind="forwarded._dropdownMenuGroup"
+        <slot name="items" :items>
+          <DropdownMenuGroup
+            :una="forwarded.una?.dropdownMenuGroup"
+            v-bind="forwarded._dropdownMenuGroup"
+          >
+            <template
+              v-for="item in items"
+              :key="item.label"
             >
-              <template
-                v-for="item in items"
-                :key="item.label"
+              <slot
+                v-if="!item.items && item.label"
+                :name="`item-${item.label}`"
               >
-                <slot
-                  v-if="!item.items && item.label"
-                  :name="`item-${item.label}`"
-                >
-                  <DropdownMenuItem
-                    :size
-                    :inset
-                    :dropdown-menu-item
-                    :una="forwarded.una?.dropdownMenuItem"
-                    v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
-                  />
-                </slot>
-
-                <DropdownMenuSeparator
-                  v-else-if="!item.label && !item.items"
-                  :una="forwarded.una?.dropdownMenuSeparator"
-                  v-bind="{ ...forwarded._dropdownMenuSeparator, ...item._dropdownMenuSeparator }"
+                <DropdownMenuItem
+                  :size
+                  :inset
+                  :dropdown-menu-item
+                  :una="forwarded.una?.dropdownMenuItem"
+                  v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
                 />
+              </slot>
 
-                <ReuseMenuSub
-                  v-else
-                  v-bind="item"
-                />
-              </template>
-            </DropdownMenuGroup>
-          </slot>
+              <DropdownMenuSeparator
+                v-else-if="!item.label && !item.items"
+                :una="forwarded.una?.dropdownMenuSeparator"
+                v-bind="{ ...forwarded._dropdownMenuSeparator, ...item._dropdownMenuSeparator }"
+              />
+
+              <ReuseMenuSub
+                v-else
+                v-bind="item"
+              />
+            </template>
+          </DropdownMenuGroup>
         </slot>
-      </DropdownMenuContent>
-    </slot>
+      </slot>
+    </DropdownMenuContent>
   </DropdownMenuRoot>
 
   <DefineMenuSub

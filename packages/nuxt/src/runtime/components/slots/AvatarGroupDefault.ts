@@ -1,7 +1,7 @@
 import type { PropType, VNode } from 'vue'
 import type { NAvatarGroupProps } from '../../types'
 import { cloneVNode, computed, defineComponent, h } from 'vue'
-import NAvatar from '../elements/Avatar.vue'
+import Avatar from '../elements/avatar/Avatar.vue'
 
 // @unocss-include
 export default defineComponent({
@@ -43,11 +43,12 @@ export default defineComponent({
       if (countChildren.value <= props.max)
         return null
 
-      return h(NAvatar, {
+      return h(Avatar, {
         // TODO: add `more` configuration
         class: 'avatar-(soft group-margin)',
+        size: props.avatar?.size,
         label: `+${countChildren.value - props.max}`,
-        una: { avatarLabel: `${props.avatar?.una?.avatarGroupLabel} avatar-group-label` },
+        una: { avatarLabel: `${props.avatar?.una?.avatarGroupLabel ?? ''} avatar-group-label` },
       })
     })
 

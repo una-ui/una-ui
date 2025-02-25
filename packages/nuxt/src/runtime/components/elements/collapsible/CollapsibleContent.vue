@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NCollapsibleContentProps } from '../../../types'
-import { CollapsibleContent } from 'radix-vue'
+import { CollapsibleContent } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NCollapsibleContentProps>()

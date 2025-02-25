@@ -6,24 +6,28 @@ const currentPage = ref(1)
   <div class="flex flex-col space-y-4">
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       size="xs"
     />
 
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       size="sm"
     />
 
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       size="md"
     />
 
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       size="lg"
     />

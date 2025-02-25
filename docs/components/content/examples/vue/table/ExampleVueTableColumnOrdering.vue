@@ -41,12 +41,13 @@ function randomizeColumns() {
 </script>
 
 <template>
-  <NButton
-    label="Randomize columns"
-    leading="i-radix-icons-shuffle"
-    class="mb-4"
-    @click="randomizeColumns"
-  />
+  <div class="flex justify-end">
+    <NButton
+      label="Randomize columns"
+      class="mb-4"
+      @click="randomizeColumns"
+    />
+  </div>
 
   <!-- table -->
   <NTable

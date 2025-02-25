@@ -1,32 +1,35 @@
 ---
-description: 'NAlert component - display a short, important message in a way that attracts the user''s attention without interrupting the user''s task.'
+description: 'Displays a callout for user attention.'
+badges:
+  - value: Source
+    icon: radix-icons:github-logo
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/elements/Alert.vue
+    target: _blank
 ---
 
-# 🟢 Alert
+## Examples
 
----
+### Basic
 
-## Basic
-
-`NAlert` - display a short, important message in a way that attracts the user's attention without interrupting the user's task.
-
-| Prop          | Description              |
-| ------------- | ------------------------ |
-| `title`       | Title of the alert       |
-| `description` | Description of the alert |
+| Prop          | Default | Type     | Description              |
+| ------------- | ------- | -------- | ------------------------ |
+| `title`       | -       | `string` | Title of the alert       |
+| `description` | -       | `string` | Description of the alert |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertBasic
+::div{label="Preview" preview}
+:ExampleVueAlertBasic
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertBasic.vue
 ::
 :::
 
-## Variants
+### Variant
 
-`alert="{variant}"` - change the alert variant.
+| Prop    | Default   | Type        | Description               |
+| ------- | --------- | ----------- | ------------------------- |
+| `alert` | `outline` | `{variant}` | The variant of the alert. |
 
 | Variant   | Description                 |
 | --------- | --------------------------- |
@@ -34,85 +37,83 @@ description: 'NAlert component - display a short, important message in a way tha
 | `soft`    | The soft variant.           |
 | `~`       | The unstyle or base variant |
 
-::alert{type="info"}
-  If you want to change the default variant or add new variant, you can do so through the [Configuration section](/getting-started/configuration).
-::
-
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertVariant
+::div{label="Preview" preview}
+:ExampleVueAlertVariant
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertVariant.vue
 ::
 :::
 
-## Color
+### Color
 
-`alert="{variant}-{color}"` - change the color of the alert.
-
-::alert{type="info"}
-You can use any color provided by the [Tailwind CSS](https://tailwindcss.com/docs/customizing-colors){target="_blank"} color palette, the default is `primary`. You can also add your own colors to the palette through the [Configuration section](/getting-started/configuration).
-::
+| Prop    | Default             | Type                | Description             |
+| ------- | ------------------- | ------------------- | ----------------------- |
+| `alert` | `{variant}-primary` | `{variant}-{color}` | The color of the alert. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertColor
+::div{label="Preview" preview}
+:ExampleVueAlertColor
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertColor.vue
 ::
 :::
 
-## Icon
+### Icon
 
-`icon` - Automatically add icon to the alert based on the color.
-
-> Supported colors are `success`, `error`, `warning`, `info` eg. `icon="outline-success"`.
-
-`icon="{icon}"` - Customize the icon of the alert.
+| Prop   | Default | Type     | Description                      |
+| ------ | ------- | -------- | -------------------------------- |
+| `icon` | -       | `string` | Customize the icon of the alert. |
 
 ::alert{type="info"}
-  You can customize the default icon status through the [Configuration section](/getting-started/configuration).
+If you provide an icon type such as `success`, `error`, `warning`, or `info`, the alert will automatically use the corresponding color.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertIcon
+::div{label="Preview" preview}
+:ExampleVueAlertIcon
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertIcon.vue
 ::
 :::
 
-## Size
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
 
-`size="{size}"` - change the size of the alert.
+### Size
 
-> 🚀 You can freely adjust the size of the alert using any size imaginable. No limits exist, and you can use `breakpoints` such as `sm:sm, xs:lg` to change size based on screen size or `states` such as `hover:lg, focus:3xl` to change size based on input state and more.
+| Prop   | Default | Type     | Description                                 |
+| ------ | ------- | -------- | ------------------------------------------- |
+| `size` | `sm`    | `string` | Allows you to change the size of the input. |
 
-::alert{type="info"}
-The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`. If you want to change the `text-size` and `padding` simultaneously, you can always customize it using utility classes.
+> 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
+
+::alert{type="warning"}
+The **padding**, **icons**, and **text-size** of the input scale are dynamically adjusted based on the **size** property. To customize the **text-size** and **padding** simultaneously, you can use utility classes.
 ::
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertSize
+::div{label="Preview" preview}
+:ExampleVueAlertSize
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSize.vue
 ::
 :::
 
-## Closable
+### Closable
 
-`closable` - add a close button to the alert.
+| Prop       | Default | Type      | Description                      |
+| ---------- | ------- | --------- | -------------------------------- |
+| `closable` | -       | `boolean` | Add a close button to the alert. |
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertClosable
+::div{label="Preview" preview}
+:ExampleVueAlertClosable
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertClosable.vue
 ::
 :::
@@ -125,52 +126,59 @@ The `padding`, `icons`, and `text-size` of the alert scale depends on the `size`
 
 ## Slots
 
-| Slot          | Description                                |
-| ------------- | ------------------------------------------ |
-| `default`     | Cover the `title` and `description` slots. |
-| `title`       | The title of the alert.                    |
-| `description` | The description of the alert.              |
-| `icon`        | The icon of the alert.                     |
-| `closeIcon`  | The close icon of the alert.               |
+| Name          | Props | Description                                |
+| ------------- | ----- | ------------------------------------------ |
+| `default`     | -     | Cover the `title` and `description` slots. |
+| `title`       | -     | The title of the alert.                    |
+| `description` | -     | The description of the alert.              |
+| `icon`        | -     | The icon of the alert.                     |
+| `closeIcon`   | -     | The close icon of the alert.               |
 
-> Example 1
+### Example 1
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertSlot1
+::div{label="Preview" preview}
+:ExampleVueAlertSlot1
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot1.vue
 ::
 :::
 
-> Example 2
+### Example 2
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertSlot2
+::div{label="Preview" preview}
+:ExampleVueAlertSlot2
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot2.vue
 ::
 :::
 
-> Example 3
+### Example 3
 
 :::CodeGroup
-::code-block{label="Preview" preview}
-  :ExampleVueAlertSlot3
+::div{label="Preview" preview}
+:ExampleVueAlertSlot3
 ::
-::code-block{label="Code"}
+::div{label="Code"}
 @@@ ./components/content/examples/vue/alert/ExampleVueAlertSlot3.vue
 ::
 :::
 
+### Presets
+
+@@@ ../packages/preset/src/_shortcuts/alert.ts [shortcuts/alert.ts]
+
 ## Props
-@@@ ../packages/nuxt/src/runtime/types/alert.ts
 
-## Presets
-@@@ ../packages/preset/src/_shortcuts/alert.ts
+@@@ ../packages/nuxt/src/runtime/types/alert.ts [types/alert.ts]
 
-## Component
+## Components
+
+:::CodeGroup
+::div{label="Alert.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/Alert.vue
+::
+:::

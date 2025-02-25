@@ -16,13 +16,13 @@ const items = ref([
     label: 'sm',
     size: 'sm data-[state=checked]:2xl',
     checkbox: 'green',
-    value: true,
+    value: false,
   },
   {
     label: 'md',
     size: 'md data-[state=checked]:2xl',
     checkbox: 'purple',
-    value: true,
+    value: false,
   },
   {
     label: 'lg',
@@ -34,11 +34,11 @@ const items = ref([
 </script>
 
 <template>
-  <div class="flex gap-4">
+  <div class="flex flex-wrap gap-4">
     <NCheckbox
       v-for="item in items"
       :key="item.size"
-      v-model:checked="item.value as boolean | 'indeterminate'"
+      v-model="item.value as boolean | 'indeterminate'"
       v-bind="{
         size: item.size,
         label: item.label,

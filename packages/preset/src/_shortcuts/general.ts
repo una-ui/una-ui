@@ -1,3 +1,5 @@
+import { staticIcons } from './config/icons'
+
 export const staticGeneral = {
   // text-size
   'text-md': 'text-1rem leading-1.5rem',
@@ -21,9 +23,7 @@ export const staticGeneral = {
 
   // ring
   'ring-base': 'ring-$c-ring',
-  'ring-inverted': 'ring-$c-ring-foreground',
   'ring-offset-base': 'ring-offset-$c-background',
-  'ring-offset-inverted': 'ring-offset-$c-bg-foreground',
 
   // border
   'border-base': 'border-$c-border',
@@ -42,16 +42,6 @@ export const staticGeneral = {
 
   'bg-popover': 'bg-$c-popover',
   'bg-popover-foreground': 'bg-$c-popover-foreground',
-
-  // icon
-  'i-loading': 'i-tabler-loader-2',
-  'i-warning': 'i-radix-icons-exclamation-triangle',
-  'i-error': 'i-radix-icons-cross-circled',
-  'i-success': 'i-radix-icons-check-circled',
-  'i-info': 'i-radix-icons-info-circled',
-  'i-close': 'i-radix-icons-cross-2',
-  'i-check': 'i-radix-icons-check',
-  'i-dot': 'i-tabler-circle-filled',
 
   // transition
   'transition-base': 'transition-all duration-100 ease-out',
@@ -75,4 +65,5 @@ export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
 export const general = [
   ...dynamicGeneral,
   staticGeneral,
+  staticIcons,
 ]

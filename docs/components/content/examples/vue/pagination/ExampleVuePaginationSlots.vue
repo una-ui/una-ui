@@ -1,6 +1,7 @@
 <template>
-  <div class="flex items-start">
+  <div class="flex items-start overflow-auto">
     <NPagination
+      :items-per-page="10"
       :total="100"
       :show-first="false"
       :show-last="false"
@@ -16,7 +17,7 @@
 
       <template #list-item="{ item, page }">
         <NPaginationListItem
-          :square="false"
+          square
           pagination-unselected="ghost-gray"
           pagination-selected="solid-white"
           :value="item.value"

@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { PinInputRootEmits } from 'radix-vue'
 import type { NPinInputRootProps } from '../../../../runtime/types'
 import { reactiveOmit } from '@vueuse/core'
-import { PinInputRoot, type PinInputRootEmits, useForwardPropsEmits } from 'radix-vue'
+import { PinInputRoot, useForwardPropsEmits } from 'radix-vue'
 import { cn } from '../../../../runtime/utils'
 
 const props = defineProps<NPinInputRootProps>()

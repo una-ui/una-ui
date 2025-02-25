@@ -161,6 +161,14 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addComponentsDir({
+      path: resolve(runtimeDir, 'components/forms', 'radio-group'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
       path: resolve(runtimeDir, 'components/forms', 'pin-input'),
       prefix: options.prefix,
       global: options.global,
@@ -200,6 +208,30 @@ export default defineNuxtModule<ModuleOptions>({
       priority: 10,
     })
 
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'overlays'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components/overlays', 'toast'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'sheet'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: nuxt.options.dev,
+      priority: 10,
+    })
+
     // plugins
     if (options.themeable) {
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
@@ -218,8 +250,16 @@ export default defineNuxtModule<ModuleOptions>({
       classSuffix: '',
     })
     await installModule('@vueuse/nuxt')
-    await installModule('radix-vue/nuxt', {
+    await installModule('reka-ui/nuxt', {
       prefix: options.prefix,
+    })
+    await installModule('@vee-validate/nuxt', {
+      componentNames: {
+        Form: `${options.prefix}Form`,
+        // Field: `${options.prefix}FormField`,
+        FieldArray: `${options.prefix}FormFieldArray`,
+        ErrorMessage: `${options.prefix}FormErrorMessage`,
+      },
     })
 
     // composables

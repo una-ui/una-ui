@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import type { NSelectTriggerProps } from '../../../types'
-import { SelectTrigger, useForwardProps } from 'radix-vue'
+import { reactiveOmit } from '@vueuse/core'
+import { SelectIcon, SelectTrigger, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn, randomId } from '../../../utils'
 import Button from '../../elements/Button.vue'
+import Icon from '../../elements/Icon.vue'
 
 const props = defineProps<NSelectTriggerProps>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
-
-const forwardedProps = useForwardProps(delegatedProps)
+const forwardedProps = useForwardProps(reactiveOmit(props, 'class', 'status', 'una'))
 
 const statusClassVariants = computed(() => {
   const btn = {
@@ -24,28 +20,21 @@ const statusClassVariants = computed(() => {
     default: props.select ? `select-${props.select}` : 'select-default-variant',
   }
 
-  const text = {
-    info: 'text-info',
-    success: 'text-success',
-    warning: 'text-warning',
-    error: 'text-error',
-    default: '',
-  }
-
   const icon = {
     info: props.una?.selectTriggerInfoIcon ?? 'select-trigger-info-icon',
     success: props.una?.selectTriggerSuccessIcon ?? 'select-trigger-success-icon',
     warning: props.una?.selectTriggerWarningIcon ?? 'select-trigger-warning-icon',
     error: props.una?.selectTriggerErrorIcon ?? 'select-trigger-error-icon',
-    default: 'select-trigger-trailing-icon',
+    default: props.una?.selectTriggerTrailingIcon ?? 'select-trigger-trailing-icon',
   }
 
   return {
     btn: btn[props.status ?? 'default'],
-    text: text[props.status ?? 'default'],
     icon: icon[props.status ?? 'default'],
   }
 })
+
+const id = computed(() => props.id ?? randomId('select-trigger'))
 </script>
 
 <template>
@@ -54,12 +43,12 @@ const statusClassVariants = computed(() => {
   >
     <Button
       v-bind="forwardedProps"
-      :id="randomId('select-trigger')"
+      :id
+      :data-status="status"
       :class="cn(
         'select-trigger justify-between font-normal',
         props.class,
       )"
-      :trailing="statusClassVariants.icon"
       :una="{
         ...props.una,
         ...{
@@ -67,16 +56,26 @@ const statusClassVariants = computed(() => {
             'select-trigger-leading',
             props.una?.btnLeading,
           ),
-          btnTrailing: cn(
-            'select-trigger-trailing',
-            props.una?.btnTrailing,
-            statusClassVariants.text,
-          ),
           btnDefaultVariant: statusClassVariants.btn,
         },
       }"
     >
       <slot />
+
+      <template #trailing>
+        <SelectIcon
+          as-child
+        >
+          <Icon
+            :data-status="status"
+            :name="statusClassVariants.icon"
+            :class="cn(
+              'select-trigger-trailing',
+              props.una?.btnTrailing,
+            )"
+          />
+        </SelectIcon>
+      </template>
     </Button>
   </SelectTrigger>
 </template>

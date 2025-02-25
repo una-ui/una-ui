@@ -6,6 +6,7 @@ const currentPage = ref(1)
   <div class="flex flex-col">
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       pagination-selected="solid-black"
       pagination-unselected="ghost-gray"
@@ -16,6 +17,7 @@ const currentPage = ref(1)
 
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       pagination-selected="soft-primary"
       pagination-unselected="link-primary"
@@ -27,6 +29,7 @@ const currentPage = ref(1)
 
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       pagination-selected="solid-pink"
       pagination-unselected="outline-pink"
@@ -38,6 +41,7 @@ const currentPage = ref(1)
 
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       pagination-selected="solid-indigo"
       pagination-unselected="soft-indigo"

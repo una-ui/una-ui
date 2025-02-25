@@ -3,7 +3,7 @@ import type { ColumnDef } from '@tanstack/vue-table'
 import type { Person } from './makeData'
 import makeData from './makeData'
 
-const data = ref(makeData(5))
+const data = ref(makeData(50))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -38,7 +38,7 @@ const loading = ref(true)
 <template>
   <div class="flex flex-col space-y-2">
     <NCheckbox
-      v-model:checked="loading"
+      v-model="loading"
       label="Loading"
     />
 

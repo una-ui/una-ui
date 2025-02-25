@@ -5,13 +5,13 @@ const enabled = ref(false)
 <template>
   <div class="flex flex-wrap gap-7 py-24">
     <NSwitch
-      v-model:checked="enabled"
+      v-model="enabled"
       switch-checked="primary"
       rotate-90
     />
 
     <NSwitch
-      v-model:checked="enabled"
+      v-model="enabled"
       switch-checked="rose"
       class="w-4.5em rotate-90"
       :una="{
@@ -20,7 +20,7 @@ const enabled = ref(false)
     />
 
     <NSwitch
-      v-model:checked="enabled"
+      v-model="enabled"
       switch-checked="indigo"
       size="1cm"
       class="rotate-120 rounded-lg"
@@ -30,7 +30,7 @@ const enabled = ref(false)
     />
 
     <NSwitch
-      v-model:checked="enabled"
+      v-model="enabled"
       size="3xl"
       class="rotate-90 rounded-none"
       :una="{
@@ -41,7 +41,7 @@ const enabled = ref(false)
     />
 
     <NSwitch
-      v-model:checked="enabled"
+      v-model="enabled"
       size="4xl"
       :una="{
         switchChecked: 'bg-yellow',

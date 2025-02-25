@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import type { DialogRootEmits } from 'reka-ui'
 import type { NDialogProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { DialogRoot, type DialogRootEmits, DialogTrigger, useForwardPropsEmits } from 'radix-vue'
+import { DialogRoot, DialogTrigger, useForwardPropsEmits, VisuallyHidden } from 'reka-ui'
+import { computed } from 'vue'
+import { randomId } from '../../../utils'
 import DialogContent from './DialogContent.vue'
 import DialogDescription from './DialogDescription.vue'
 import DialogFooter from './DialogFooter.vue'
@@ -15,8 +18,14 @@ defineOptions({
 
 const props = withDefaults(defineProps<NDialogProps>(), {
   showClose: true,
+  overlay: true,
 })
 const emits = defineEmits<DialogRootEmits>()
+const DEFAULT_TITLE = randomId('dialog-title')
+const DEFAULT_DESCRIPTION = randomId('dialog-description')
+
+const title = computed(() => props.title ?? DEFAULT_TITLE)
+const description = computed(() => props.description ?? DEFAULT_DESCRIPTION)
 
 const rootProps = reactivePick(props, [
   'open',
@@ -38,21 +47,30 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
       v-bind="_dialogContent"
       :_dialog-overlay
       :_dialog-close
-      :una
       :scrollable
       :show-close
       :prevent-close
-      :aria-describedby="props.description ? 'dialog-description' : undefined"
+      :una
     >
+      <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">
+        <DialogTitle v-if="title === DEFAULT_TITLE || !!$slots.title">
+          {{ title }}
+        </DialogTitle>
+
+        <DialogDescription v-if="description === DEFAULT_DESCRIPTION || !!$slots.description">
+          {{ description }}
+        </DialogDescription>
+      </VisuallyHidden>
+
       <slot name="content">
         <DialogHeader
-          v-if="props.title || props.description || $slots.header"
+          v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
           v-bind="_dialogHeader"
           :una
         >
           <slot name="header">
             <DialogTitle
-              v-if="props.title"
+              v-if="$slots.title || title !== DEFAULT_TITLE"
               v-bind="_dialogTitle"
               :una
             >
@@ -62,7 +80,7 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
             </DialogTitle>
 
             <DialogDescription
-              v-if="props.description"
+              v-if="$slots.description || description !== DEFAULT_DESCRIPTION"
               v-bind="_dialogDescription"
               :una
             >

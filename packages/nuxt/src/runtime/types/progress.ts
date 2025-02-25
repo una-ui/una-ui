@@ -1,4 +1,4 @@
-import type { ProgressRootProps } from 'radix-vue'
+import type { ProgressRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 type Extensions = ProgressRootProps & { class?: HTMLAttributes['class'] }
@@ -12,7 +12,7 @@ export interface NProgressProps extends Extensions {
    * @example
    * progress="red""
    */
-  progress?: string
+  progress?: HTMLAttributes['class']
   /**
    * Allows you to change the size of the progress.
    *
@@ -21,7 +21,13 @@ export interface NProgressProps extends Extensions {
    * @example
    * size="sm" | size="2cm" | size="2rem" | size="2px"
    */
-  size?: string
+  size?: HTMLAttributes['class']
+  /**
+   * Change the rounded corners of the progress.
+   *
+   * @default full
+   */
+  rounded?: HTMLAttributes['class']
   /**
    * `UnaUI` preset configuration
    *

@@ -31,7 +31,6 @@ const openSourser = [
 ]
 
 function close(name: string) {
-  // eslint-disable-next-line no-alert
   alert(name)
 }
 </script>

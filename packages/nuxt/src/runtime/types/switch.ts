@@ -1,4 +1,4 @@
-import type { SwitchRootProps } from 'radix-vue'
+import type { SwitchRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 export interface NSwitchProps extends SwitchRootProps {

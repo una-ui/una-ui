@@ -9,6 +9,6 @@
 @media (prefers-reduced-motion: reduce) {
   :root {
     -webkit-animation: none !important;
-            animation: none !important;
+    animation: none !important;
   }
 }

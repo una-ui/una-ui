@@ -48,7 +48,7 @@ const colors = ref([
     <NCheckbox
       v-for="color in colors"
       :key="color.checkbox"
-      v-model:checked="color.value"
+      v-model="color.value"
       :label="color.checkbox"
       :checkbox="color.checkbox"
     />

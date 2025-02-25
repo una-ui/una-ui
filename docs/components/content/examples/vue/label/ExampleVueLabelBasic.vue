@@ -1,9 +1,7 @@
 <template>
   <div class="grid gap-2">
     <div class="grid grid-cols-3 items-center gap-4">
-      <NLabel for="width">
-        Width
-      </NLabel>
+      <NLabel for="width" label="Width" />
       <NInput
         id="width"
         type="text"

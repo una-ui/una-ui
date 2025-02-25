@@ -1,4 +1,4 @@
-import type { CheckboxIndicatorProps, CheckboxRootProps } from 'radix-vue'
+import type { CheckboxIndicatorProps, CheckboxRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NLabelProps } from './label'
 
@@ -8,32 +8,10 @@ interface BaseExtensions {
 
 export interface NCheckboxProps extends CheckboxRootProps, NLabelProps, BaseExtensions {
   /**
-   * Disable the checkbox.
-   */
-  disabled?: boolean
-  /**
-   * Switch the position of label and checkbox.
-   */
-  reverse?: boolean
-
-  /**
    * Allows you to add `UnaUI` checkbox preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
    */
   checkbox?: string
-  /**
-   * Add name attribute to the checkbox.
-   *
-   * @default null
-   */
-  name?: string
-  /**
-   * Manually set the id attribute.
-   * By default, the id attribute is generated randomly for accessibility reasons.
-   *
-   * @default randomId
-   */
-  id?: string
   /**
    * Display label text.
    *
@@ -49,6 +27,10 @@ export interface NCheckboxProps extends CheckboxRootProps, NLabelProps, BaseExte
    * size="sm" | size="2cm" | size="2rem" | size="2px"
    */
   size?: string
+  /**
+   * Switch the position of label and checkbox.
+   */
+  reverse?: boolean
   /**
    * `UnaUI` preset configuration
    *

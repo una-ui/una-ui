@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { NDialogOverlayProps } from '../../../types'
-import { DialogOverlay } from 'radix-vue'
+import { DialogOverlay } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NDialogOverlayProps>()
@@ -9,6 +9,7 @@ const props = defineProps<NDialogOverlayProps>()
 <template>
   <DialogOverlay
     :class="cn(
+      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
       !props.scrollable ? 'dialog-overlay' : 'dialog-scroll-overlay',
       props.una?.dialogOverlay,
       props.class,

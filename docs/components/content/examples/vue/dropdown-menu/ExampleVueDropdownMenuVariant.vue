@@ -4,7 +4,6 @@ const items = [
     label: 'Profile',
     shortcut: '⇧⌘P',
     onclick: () => {
-      // eslint-disable-next-line no-alert
       alert('Profile clicked')
     },
   },
@@ -17,7 +16,7 @@ const items = [
     shortcut: '⌘S',
   },
   {
-    label: 'Keyboard shortcuts',
+    label: 'Shortcuts',
     shortcut: '⌘K',
   },
   {}, // to add a separator between items (label or items should be null).

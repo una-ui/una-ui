@@ -13,6 +13,12 @@ import presetUna from './packages/preset/src/index'
 import prefixes from './packages/preset/src/prefixes'
 
 export default defineConfig({
+  safelist: [
+    'i-radix-icons-github-logo',
+    'i-tabler-brand-x',
+    'i-tabler-brand-discord-filled',
+    'i-heroicons-arrow-up-right',
+  ],
   presets: [
     presetUno(),
     presetAttributify(),
@@ -39,6 +45,10 @@ export default defineConfig({
     '../packages/nuxt/src/preset.config.ts',
 
     '../packages/preset/src/_shortcuts/pin-input.ts',
+    '../packages/preset/src/_shortcuts/sheet.ts',
+    '../packages/preset/src/_shortcuts/toast.ts',
+    '../packages/preset/src/_shortcuts/form.ts',
+    '../packages/preset/src/_shortcuts/radio-group.ts',
     '../packages/preset/src/_shortcuts/collapsible.ts',
     '../packages/preset/src/_shortcuts/calendar.ts',
     '../packages/preset/src/_shortcuts/pagination.ts',

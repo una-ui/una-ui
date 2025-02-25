@@ -1,4 +1,4 @@
-import type { ToggleProps } from 'radix-vue'
+import type { ToggleProps } from 'reka-ui'
 import type { NButtonProps } from './button'
 
 export interface NToggleProps extends ToggleProps, NButtonProps {

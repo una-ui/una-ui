@@ -8,6 +8,7 @@ const currentPage = ref(1)
 
     <NPagination
       v-model:page="currentPage"
+      :items-per-page="10"
       :total="100"
       :show-list-item="false"
     />

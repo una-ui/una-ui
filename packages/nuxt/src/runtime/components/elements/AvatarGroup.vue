@@ -2,10 +2,6 @@
 import type { NAvatarGroupProps } from '../../types'
 import NAvatarGroupDefaultSlot from '../slots/AvatarGroupDefault'
 
-defineOptions({
-  inheritAttrs: false,
-})
-
 const props = withDefaults(defineProps<NAvatarGroupProps>(), {
   max: 3,
 })
@@ -14,11 +10,11 @@ const props = withDefaults(defineProps<NAvatarGroupProps>(), {
 <template>
   <div
     avatar-group
-    v-bind="{ ...$attrs, size }"
+    :size
     :class="una?.avatarGroup"
   >
     <NAvatarGroupDefaultSlot
-      :max="max"
+      :max
       :avatar="props"
     >
       <slot />

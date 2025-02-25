@@ -2,10 +2,9 @@ import pkg from '../package.json'
 import unaUI from '../packages/nuxt/src/module'
 
 export default defineNuxtConfig({
-  extends: '@nuxt-themes/docus',
+  extends: '@una-ui/content',
 
   modules: [
-    'nuxt-content-snippet',
     unaUI,
   ],
 
@@ -25,12 +24,7 @@ export default defineNuxtConfig({
     },
   },
 
-  experimental: {
-    payloadExtraction: true,
-  },
-
   routeRules: {
-    // '/': { redirect: process.env.NODE_ENV === 'development' ? '/docs' : undefined, prerender: true },
     '/': { prerender: true },
   },
 

@@ -1,12 +1,12 @@
 <template>
   <div class="flex items-center gap-4">
     <NAvatar
-      size="xs"
+      square="5"
       src="/images/avatar.png"
     />
 
     <NAvatar
-      size="lg"
+      square="10"
       src="/images/avatar.png"
     />
 

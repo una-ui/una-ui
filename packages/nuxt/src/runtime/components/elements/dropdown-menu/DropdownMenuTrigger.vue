@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NDropdownMenuTriggerProps } from '../../../types'
-import { DropdownMenuTrigger, useForwardProps } from 'radix-vue'
+import { DropdownMenuTrigger, useForwardProps } from 'reka-ui'
 import { cn, randomId } from '../../../utils'
 import Button from '../Button.vue'
 
@@ -13,23 +13,21 @@ const forwardedProps = useForwardProps(props)
   <DropdownMenuTrigger
     as-child
   >
-    <Button
-      v-bind="forwardedProps"
-      :id="randomId('dropdown-menu-trigger')"
-      :class="cn(
-        'dropdown-menu-trigger justify-start font-normal',
-        props.class,
-      )"
-      :una="{
-        btnDefaultVariant: 'dropdown-menu-default-variant',
-        btnLeading: cn('dropdown-menu-trigger-leading', forwardedProps.una?.btnLeading),
-        btnTrailing: cn('dropdown-menu-trigger-trailing', forwardedProps.una?.btnTrailing),
-        ...forwardedProps.una,
-      }"
-    >
-      <template v-for="(_, name) in $slots" #[name]="slotData">
-        <slot :name="name" v-bind="slotData" />
-      </template>
-    </Button>
+    <slot>
+      <Button
+        v-bind="forwardedProps"
+        :id="randomId('dropdown-menu-trigger')"
+        :class="cn(
+          'dropdown-menu-trigger',
+          props.class,
+        )"
+        :una="{
+          btnDefaultVariant: 'dropdown-menu-default-variant',
+          btnLeading: cn('dropdown-menu-trigger-leading', forwardedProps.una?.btnLeading),
+          btnTrailing: cn('dropdown-menu-trigger-trailing', forwardedProps.una?.btnTrailing),
+          ...props.una,
+        }"
+      />
+    </slot>
   </DropdownMenuTrigger>
 </template>

@@ -1,22 +1,22 @@
 <template>
   <div class="flex flex-col space-y-4">
     <NProgress
-      :model-value="23"
+      indeterminate
       progress="primary"
     />
 
     <NProgress
-      :model-value="54"
+      indeterminate
       progress="error"
     />
 
     <NProgress
-      :model-value="60"
+      indeterminate
       progress="indigo"
     />
 
     <NProgress
-      :model-value="45"
+      indeterminate
       progress="orange"
     />
   </div>

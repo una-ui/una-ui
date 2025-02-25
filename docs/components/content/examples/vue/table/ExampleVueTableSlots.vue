@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { Person } from './makeData'
 import { NAvatar } from '#components'
+
 import { faker } from '@faker-js/faker'
+import makeData from './makeData'
 
-import makeData, { type Person } from './makeData'
-
-const data = ref(makeData(10))
+const data = ref(makeData(50))
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -109,7 +110,7 @@ const table = useTemplateRef<Table<Person>>('table')
       :columns
       :data
       :global-filter="search"
-      enable-row-selection enable-column-filters enable-sorting
+      enable-column-filters enable-sorting enable-row-selection
       row-id="username"
     >
       <!-- filters -->
@@ -214,7 +215,7 @@ const table = useTemplateRef<Table<Person>>('table')
           :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
           :total="table?.getFilteredRowModel().rows.length"
           :show-list-item="false"
-          :items-per-page="table?.getState().pagination.pageSize"
+          :items-per-page="table?.getState().pagination.pageSize ?? 5"
           @update:page="table?.setPageIndex($event - 1)"
         />
       </div>

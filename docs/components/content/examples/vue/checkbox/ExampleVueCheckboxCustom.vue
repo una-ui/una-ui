@@ -55,7 +55,7 @@ const optionsValue = computed(() => options.value.map(option => option.value))
       <NCheckbox
         v-for="(option, i) in options"
         :key="i"
-        v-model:checked="option.value"
+        v-model="option.value"
         :checkbox="option.checkbox"
         size="15"
         :label="option.label"

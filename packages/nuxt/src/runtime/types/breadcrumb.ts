@@ -3,6 +3,10 @@ import type { NButtonProps } from './button'
 
 interface BaseExtensions { class?: HTMLAttributes['class'] }
 
+type BreadcrumbListItem = NButtonProps & {
+  children?: NButtonProps[]
+}
+
 export interface NBreadcrumbProps extends BaseExtensions, Pick<NBreadcrumbLinkProps, 'breadcrumbActive' | 'breadcrumbInactive'> {
   /**
    * List of items to display in the breadcrumb.
@@ -10,7 +14,7 @@ export interface NBreadcrumbProps extends BaseExtensions, Pick<NBreadcrumbLinkPr
    * @example
    * items: [{ label: 'Home', to: '/' }, { label: 'About', to: '/about' }]
    */
-  items: Partial<NButtonProps>[]
+  items: Partial<BreadcrumbListItem>[]
   separator?: NBreadcrumbSeparatorProps['icon']
   ellipsis?: NBreadcrumbEllipsisProps['icon']
   /**

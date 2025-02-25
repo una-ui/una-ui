@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { NPaginationNextProps } from '../../../types'
-import { PaginationNext, useForwardProps } from 'radix-vue'
+import { PaginationNext, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'

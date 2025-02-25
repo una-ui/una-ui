@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NInputProps } from '../../types'
 import { computed, onMounted, ref } from 'vue'
-import { randomId } from '../../utils'
+import { cn, randomId } from '../../utils'
 import NIcon from '../elements/Icon.vue'
 
 defineOptions({
@@ -21,7 +21,7 @@ const slots = defineSlots<{
   trailing?: any
 }>()
 
-const id = computed(() => props.id ?? randomId('input'))
+const id = props.id ?? randomId('input')
 
 const isLeading = computed(() => props.leading || slots.leading)
 const isTrailing = computed(() => props.trailing || slots.trailing || props.status || props.loading)
@@ -113,9 +113,11 @@ onMounted(() => {
 
 <template>
   <div
-    input="wrapper"
-    :size="size"
-    :class="una?.inputWrapper"
+    :size
+    :class="cn(
+      'input-wrapper',
+      una?.inputWrapper,
+    )"
   >
     <div
       v-if="isLeading"
@@ -129,26 +131,29 @@ onMounted(() => {
         <NIcon
           v-if="leading"
           :name="leading"
-          input="leading"
-          :class="una?.inputLeading"
+          :class="cn(
+            'input-leading',
+            una?.inputLeading,
+          )"
           @click="emit('leading')"
         />
       </slot>
     </div>
 
-    <Component
+    <component
       :is="props.type !== 'textarea' ? 'input' : 'textarea'"
-      :id="id"
+      :id
       ref="textarea"
       :value="modelValue"
       :type="props.type !== 'textarea' ? props.type : undefined"
-      class="input"
-      :class="[
+      :class="cn(
+        'input',
+        type === 'textarea' ? 'input-textarea' : 'input-input',
         statusClassVariants.input,
         reverseClassVariants.input,
         una?.input,
-      ]"
-      :input="input"
+      )"
+      :input
       :resize="type === 'textarea' ? resize : undefined"
       :rows="type === 'textarea' ? rows : undefined"
       :cols="type === 'textarea' ? cols : undefined"
@@ -158,30 +163,36 @@ onMounted(() => {
 
     <div
       v-if="isTrailing"
-      :class="[
+      :class="cn(
         una?.inputTrailingWrapper,
         reverseClassVariants.trailingWrapper,
         statusClassVariants.text,
-      ]"
+      )"
     >
       <NIcon
         v-if="loading"
-        input="loading"
         :name="una?.inputLoadingIcon ?? 'input-loading-icon'"
-        :class="una?.inputLoading"
+        :class="cn(
+          'input-loading',
+          una?.inputLoading,
+        )"
       />
 
       <NIcon
         v-else-if="status"
-        input="status-icon-base"
         :name="statusClassVariants.icon"
+        :class="cn(
+          'input-status-icon-base',
+        )"
       />
 
       <slot v-else name="trailing">
         <NIcon
           v-if="trailing"
-          input="trailing"
-          :class="una?.inputTrailing"
+          :class="cn(
+            'input-trailing',
+            una?.inputTrailing,
+          )"
           :name="trailing"
           @click="emit('trailing')"
         />

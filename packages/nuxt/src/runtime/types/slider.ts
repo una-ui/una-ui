@@ -1,4 +1,4 @@
-import type { SliderRootProps } from 'radix-vue'
+import type { SliderRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 type Extensions = SliderRootProps & { class?: HTMLAttributes['class'] }

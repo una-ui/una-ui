@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { PinInputRootEmits } from 'radix-vue'
 import type { NPinInputProps } from '../../../../runtime/types'
 import { reactivePick } from '@vueuse/core'
-import { PinInputRoot, type PinInputRootEmits, useForwardPropsEmits } from 'radix-vue'
+import { PinInputRoot, useForwardPropsEmits } from 'radix-vue'
 import { computed } from 'vue'
 import { randomId } from '../../../../runtime/utils'
 import PinInputGroup from './PinInputGroup.vue'

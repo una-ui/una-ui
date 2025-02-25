@@ -12,6 +12,7 @@ interface BaseExtensionProps {
   dropdownMenu?: string
   toggleOn?: string
   toggleOff?: string
+  ariaLabel?: string
 }
 
 export interface NButtonProps extends BaseExtensionProps {
@@ -53,7 +54,12 @@ export interface NButtonProps extends BaseExtensionProps {
    * @default false
    */
   loading?: boolean
-
+  /**
+   * Make the button full width.
+   *
+   * @default false
+   */
+  block?: boolean
   /**
    * Change the button tag to `NuxtLink` component,
    * This allows you to use `NuxtLink` available props.

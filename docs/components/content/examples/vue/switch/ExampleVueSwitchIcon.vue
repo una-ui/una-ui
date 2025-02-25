@@ -5,12 +5,12 @@ const enabled = ref(false)
 <template>
   <div class="flex gap-2">
     <NSwitch
-      v-model:checked="enabled"
+      v-model="enabled"
       size="lg"
       icon="i-heroicons-star-20-solid"
     />
     <NSwitch
-      v-model:checked="enabled"
+      v-model="enabled"
       size="lg"
       checked-icon="i-heroicons-sun-20-solid"
       unchecked-icon="i-heroicons-moon-20-solid"

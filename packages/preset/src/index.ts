@@ -20,9 +20,14 @@ export default function presetUna(options: unaUIOptions = {
       container: {
         center: true,
         padding: '2rem',
+        maxWidth: {
+          '2xl': '1400px',
+        },
       },
       colors: {
-        brand: 'rgba(var(--c-brand),%alpha)',
+        background: 'rgba(var(--una-background) / <alpha-value>)',
+        foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
+        brand: 'rgba(var(--una-brand) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
           active: 'rgba(var(--una-primary-active) / <alpha-value>)',
@@ -66,8 +71,8 @@ export default function presetUna(options: unaUIOptions = {
       },
       animation: {
         keyframes: {
-          'collapsible-down': '{from{height: 0}to{height:var(--radix-collapsible-content-height)}}',
-          'collapsible-up': '{from{height:var(--radix-collapsible-content-height)}to{height: 0}}',
+          'collapsible-down': '{from{height: 0}to{height:var(--reka-collapsible-content-height)}}',
+          'collapsible-up': '{from{height:var(--reka-collapsible-content-height)}to{height: 0}}',
         },
         durations: {
           'collapsible-down': '0.2s',
@@ -84,7 +89,7 @@ export default function presetUna(options: unaUIOptions = {
         const color = parseColor(body, theme)
         if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components) {
           return {
-            '--c-brand': `${color.cssColor.components.join(',')}`,
+            '--una-brand': `${color.cssColor.components.join(',')}`,
           }
         }
       }],
@@ -121,6 +126,9 @@ export default function presetUna(options: unaUIOptions = {
             outline: 2px solid rgb(var(--una-primary)); /* 2 */
             border-radius: 0.25rem; /* 1 */
             outline-offset: 0.10rem; /* 1 */
+          }
+          button, input, optgroup, select, textarea  {
+            background-color: transparent; /* 1 */
           }
         `,
       },

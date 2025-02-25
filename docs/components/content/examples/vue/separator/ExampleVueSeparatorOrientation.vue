@@ -18,47 +18,41 @@ const textarea = ref('')
 </script>
 
 <template>
-  <div class="mb-6 h-5 flex items-center gap-1">
-    <NButton
+  <div class="flex items-center gap-1">
+    <NToggle
       v-for="icon in icons1"
       :key="icon._id"
-      :btn="`${icon.value ? 'soft-gray' : 'text-gray'} square`"
-      icon
+      v-model="icon.value"
       :label="icon.name"
-      @click="icon.value = !icon.value"
+      size="xs"
     />
 
-    <NSeparator orientation="vertical" class="mx-2" />
+    <NSeparator orientation="vertical" class="mx-2 h-7" />
 
-    <NButton
+    <NToggle
       v-for="icon in icons2"
       :key="icon._id"
-      :btn="`${icon.value ? 'soft-gray' : 'text-gray'} square`"
-      icon
+      v-model="icon.value"
       :label="icon.name"
-      @click="icon.value = !icon.value"
+      size="xs"
     />
 
-    <NSeparator orientation="vertical" class="mx-2" />
+    <NSeparator orientation="vertical" class="mx-2 h-7" />
 
-    <NButton
+    <NToggle
       v-for="icon in icons3"
       :key="icon._id"
-      :btn="`${icon.value ? 'soft-gray' : 'text-gray'} square`"
-      icon
+      v-model="icon.value"
       :label="icon.name"
-      @click="icon.value = !icon.value"
+      size="xs"
     />
   </div>
-  <div class="flex flex-col">
-    <NInput
-      v-model="textarea"
-      type="textarea"
-      placeholder="Type something..."
-    />
 
-    <NSeparator class="my-10">
-      <NAvatar src="/images/avatar.png" alt="Phojie Rengel" />
-    </NSeparator>
-  </div>
+  <NSeparator />
+
+  <NInput
+    v-model="textarea"
+    type="textarea"
+    placeholder="Type something..."
+  />
 </template>

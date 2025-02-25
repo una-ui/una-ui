@@ -1,4 +1,4 @@
-import type { SeparatorProps } from 'radix-vue'
+import type { SeparatorProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 type Extensions = SeparatorProps & { class?: HTMLAttributes['class'], label?: string }
@@ -12,7 +12,7 @@ export interface NSeparatorProps extends Extensions {
    * @example
    * separator="solid-green"
    */
-  separator?: string
+  separator?: HTMLAttributes['class']
   /**
    * Allows you to change the orientation and position of the separator.
    *
@@ -27,7 +27,7 @@ export interface NSeparatorProps extends Extensions {
    * @example
    * size="sm" | size="2cm" | size="2rem" | size="2px"
    */
-  size?: string
+  size?: HTMLAttributes['class']
   /**
    * `UnaUI` preset configuration
    *

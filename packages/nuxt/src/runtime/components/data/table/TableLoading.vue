@@ -48,7 +48,6 @@ const delegatedProps = computed(() => {
             v-bind="props._tableProgress"
             :class="cn(
               props._tableProgress?.class,
-              'bg-transparent',
             )"
           />
         </slot>

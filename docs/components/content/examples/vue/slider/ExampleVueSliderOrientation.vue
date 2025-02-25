@@ -1,23 +1,31 @@
 <script setup lang="ts">
-const value = ref([40])
+const value = ref([30])
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col items-center space-y-4">
     <NFormGroup
-      class="h-50"
+      label="Vertical Slider"
+      class="h-80"
     >
       <NSlider
         v-model="value"
         orientation="vertical"
+        :min="0"
+        :max="100"
+        :step="5"
       />
     </NFormGroup>
     <NFormGroup
-      class="w-50"
+      label="Horizontal Slider"
+      class="w-80"
     >
       <NSlider
         v-model="value"
         orientation="horizontal"
+        :min="0"
+        :max="100"
+        :step="5"
       />
     </NFormGroup>
   </div>

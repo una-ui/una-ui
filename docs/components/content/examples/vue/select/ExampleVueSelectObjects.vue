@@ -22,20 +22,18 @@ const selected = ref()
 </script>
 
 <template>
-  <div class="space-y-2">
-    <div>
-      Output:
-      <span class="text-primary">
-        {{ selected }}
-      </span>
-    </div>
+  <div class="space-y-4">
+    Output:
+    <span class="text-primary-500">
+      {{ selected }}
+    </span>
 
-    <div class="w-50">
+    <div class="w-64">
       <NSelect
         v-model="selected"
         :items
         placeholder="Select a brand"
-        item-attribute="label"
+        item-key="label"
       />
     </div>
   </div>
