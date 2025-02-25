@@ -53,13 +53,6 @@ export const staticGeneral = {
 export const dynamicGeneral: [RegExp, (params: RegExpExecArray) => string][] = [
   // TODO: una-text-<color><-number><-number>
   // [/^una-text(-(\S+))?$/, ([, , c = 'primary']) => `text-${c}-700 dark:text-${c}-400`],
-
-  /**
-   * Since we override the default `size` utility, we need to provide an alternative for it.
-   * @refer https://tailwindcss.com/docs/size
-   * @example area-100 -> w-100 h-100
-   */
-  [/^square-([^-]+)$/, ([, size]) => `w-${size} h-${size}`],
 ]
 
 export const general = [

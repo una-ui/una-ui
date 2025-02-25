@@ -5,7 +5,7 @@ import type { unaUIOptions } from './types'
 import { theme as unoTheme } from '@unocss/preset-mini'
 import { colors } from '@unocss/preset-mini/colors'
 import { fonts } from '@unocss/preset-mini/rules'
-import { parseColor } from '@unocss/preset-mini/utils'
+import { handler as h, parseColor } from '@unocss/preset-mini/utils'
 import { mergeDeep } from 'unocss'
 import { shortcuts } from './shortcuts'
 
@@ -104,6 +104,10 @@ export default function presetUna(options: unaUIOptions = {
         }
       }],
       [/^size-(.*)$/, fonts[1][1] as any],
+      [/^square-(min-|max-)?(.+)$/, ([, _m, s]) => ({
+        width: h.bracket.cssvar.global.auto.fraction.rem(s),
+        height: h.bracket.cssvar.global.auto.fraction.rem(s),
+      })],
       ['n-disabled', {
         'opacity': 0.5,
         'pointer-events': 'none',
