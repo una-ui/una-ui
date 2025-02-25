@@ -2,9 +2,9 @@
 import type { Component } from 'vue'
 import type { SidebarMenuButtonProps } from './SidebarMenuButtonChild.vue'
 import { computed } from 'vue'
-import { useSidebar } from '../../utils'
-import Tooltip from '../elements/tooltip/Tooltip.vue'
+import { useSidebar } from '../../composables/useSidebar'
 import TooltipContent from '../elements/tooltip/TooltipContent.vue'
+import TooltipRoot from '../elements/tooltip/TooltipRoot.vue'
 import TooltipTrigger from '../elements/tooltip/TooltipTrigger.vue'
 import SidebarMenuButtonChild from './SidebarMenuButtonChild.vue'
 
@@ -33,12 +33,13 @@ const delegatedProps = computed(() => {
     <slot />
   </SidebarMenuButtonChild>
 
-  <Tooltip v-else>
+  <TooltipRoot v-else>
     <TooltipTrigger as-child>
       <SidebarMenuButtonChild v-bind="{ ...delegatedProps, ...$attrs }">
         <slot />
       </SidebarMenuButtonChild>
     </TooltipTrigger>
+
     <TooltipContent
       side="right"
       align="center"
@@ -49,5 +50,5 @@ const delegatedProps = computed(() => {
       </template>
       <component :is="tooltip" v-else />
     </TooltipContent>
-  </Tooltip>
+  </TooltipRoot>
 </template>

@@ -6,7 +6,7 @@ import Sheet from '../sheet/Sheet.vue'
 import SheetContent from '../sheet/SheetContent.vue'
 
 interface SidebarProps {
-  side?: 'left' | 'right'
+  sheet?: 'left' | 'right'
   variant?: 'sidebar' | 'floating' | 'inset'
   collapsible?: 'offcanvas' | 'icon' | 'none'
   class?: HTMLAttributes['class']
@@ -34,19 +34,21 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
   </div>
 
   <Sheet v-else-if="isMobile" :open="openMobile" v-bind="$attrs" @update:open="setOpenMobile">
-    <SheetContent
-      data-sidebar="sidebar"
-      data-mobile="true"
-      :side="side"
-      class="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
-      :style="{
-        '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
-      }"
-    >
-      <div class="h-full w-full flex flex-col">
-        <slot />
-      </div>
-    </SheetContent>
+    <template #root>
+      <SheetContent
+        data-sidebar="sidebar"
+        data-mobile="true"
+        :sheet
+        class="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
+        :style="{
+          '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
+        }"
+      >
+        <div class="h-full w-full flex flex-col">
+          <slot />
+        </div>
+      </SheetContent>
+    </template>
   </Sheet>
 
   <div
@@ -54,7 +56,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
     :data-state="state"
     :data-collapsible="state === 'collapsed' ? collapsible : ''"
     :data-variant="variant"
-    :data-side="side"
+    :data-side="sheet"
   >
     <!-- This is what handles the sidebar gap on desktop  -->
     <div
@@ -70,7 +72,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
     <div
       :class="cn(
         'duration-200 fixed inset-y-0 z-10 hidden h-svh w-[--sidebar-width] transition-[left,right,width] ease-linear md:flex',
-        side === 'left'
+        sheet === 'left'
           ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
           : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
         // Adjust the padding for floating and inset variants.

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
-import type Button from '../elements/Button.vue'
 import { useSidebar } from '../../composables/useSidebar'
 import { cn } from '../../utils'
+import Button from '../elements/Button.vue'
 import Icon from '../elements/Icon.vue'
 
 const props = defineProps<{
@@ -15,8 +15,8 @@ const { toggleSidebar } = useSidebar()
 <template>
   <Button
     data-sidebar="trigger"
-    variant="ghost"
-    size="icon"
+    btn="ghost"
+    square
     :class="cn('h-7 w-7', props.class)"
     @click="toggleSidebar"
   >
