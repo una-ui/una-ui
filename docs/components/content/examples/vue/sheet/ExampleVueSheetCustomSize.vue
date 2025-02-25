@@ -4,7 +4,7 @@
       title="Users"
       description="Manage your users"
       :una="{
-        sheetContent: 'max-w-7xl',
+        sheetContent: 'max-w-7xl overflow-y-auto',
       }"
     >
       <template #trigger>
