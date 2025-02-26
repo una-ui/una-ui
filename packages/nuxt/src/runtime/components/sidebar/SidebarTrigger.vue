@@ -16,8 +16,8 @@ const { toggleSidebar } = useSidebar()
     btn="ghost-white"
     square="7"
     :class="props.class"
-    icon
     label="i-lucide-panel-left"
+    icon
     @click="toggleSidebar"
   />
 </template>
