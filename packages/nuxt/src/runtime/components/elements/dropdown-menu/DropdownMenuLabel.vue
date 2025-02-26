@@ -4,9 +4,7 @@ import { DropdownMenuLabel, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 
-const props = withDefaults(defineProps<NDropdownMenuLabelProps>(), {
-  size: 'sm',
-})
+const props = defineProps<NDropdownMenuLabelProps>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -23,8 +21,8 @@ const forwardedProps = useForwardProps(delegatedProps)
     :class="cn(
       'dropdown-menu-label',
       forwardedProps.inset && 'pl-8',
-      props.class,
       props.una?.dropdownMenuLabel,
+      props.class,
     )"
   >
     <slot />

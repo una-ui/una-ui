@@ -55,6 +55,8 @@ export interface NDropdownMenuProps extends
   _dropdownMenuGroup?: Partial<NDropdownMenuGroupProps>
   /** Props for the dropdown menu sub-trigger */
   _dropdownMenuSubTrigger?: Partial<NDropdownMenuSubTriggerProps>
+  /** Props for the dropdown menu shortcut */
+  _dropdownMenuShortcut?: Partial<NDropdownMenuShortcutProps>
 
   /** Additional properties for the una component */
   una?: NDropdownMenuUnaProps & NButtonProps['una']
@@ -130,6 +132,8 @@ export interface NDropdownMenuItemProps extends NButtonProps {
   inset?: boolean
   /** Shortcut key for the item */
   shortcut?: string
+  /** Props for the dropdown menu shortcut */
+  _dropdownMenuShortcut?: Partial<NDropdownMenuShortcutProps>
   /** Additional properties for the una component */
   una?: NDropdownMenuUnaProps['dropdownMenuItem'] & NButtonProps['una']
 }
