@@ -29,29 +29,28 @@ const { isMobile } = useSidebar()
             align: isMobile ? 'end' : 'start',
             sideOffset: 4,
           }"
+          :items="[
+            {
+              leading: 'i-lucide-folder text-muted',
+              label: 'View Project',
+            },
+            {
+              leading: 'i-lucide-forward text-muted',
+              label: 'Share Project',
+            },
+            {},
+            {
+              leading: 'i-lucide-trash text-muted',
+              label: 'Delete Project',
+            },
+          ]"
         >
           <NSidebarMenuAction show-on-hover>
             <NIcon name="i-lucide-more-horizontal" class="text-sidebar-foreground/70" />
-            <span class="sr-only">More</span>
           </NSidebarMenuAction>
-
-          <template #content>
-            <NDropdownMenuItem>
-              <NIcon name="i-lucide-folder" class="text-muted-foreground" />
-              <span>View Project</span>
-            </NDropdownMenuItem>
-            <NDropdownMenuItem>
-              <NIcon name="i-lucide-forward" class="text-muted-foreground" />
-              <span>Share Project</span>
-            </NDropdownMenuItem>
-            <NDropdownMenuSeparator />
-            <NDropdownMenuItem>
-              <NIcon name="i-lucide-trash" class="text-muted-foreground" />
-              <span>Delete Project</span>
-            </NDropdownMenuItem>
-          </template>
         </NDropdownMenu>
       </NSidebarMenuItem>
+
       <NSidebarMenuItem>
         <NSidebarMenuButton class="text-sidebar-foreground/70">
           <NIcon name="i-lucide-more-horizontal" class="text-sidebar-foreground/70" />
