@@ -2,7 +2,6 @@
 import type { HTMLAttributes } from 'vue'
 import { useSidebar } from '../../composables/useSidebar'
 import Button from '../elements/Button.vue'
-import Icon from '../elements/Icon.vue'
 
 const props = defineProps<{
   class?: HTMLAttributes['class']
@@ -17,9 +16,8 @@ const { toggleSidebar } = useSidebar()
     btn="ghost-white"
     square="7"
     :class="props.class"
+    icon
+    label="i-lucide-panel-left"
     @click="toggleSidebar"
-  >
-    <Icon name="i-lucide-panel-left" />
-    <span class="sr-only">Toggle Sidebar</span>
-  </Button>
+  />
 </template>
