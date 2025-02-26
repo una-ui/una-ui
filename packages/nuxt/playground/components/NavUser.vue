@@ -7,79 +7,81 @@ defineProps<{
   }
 }>()
 
+const navs = [
+  {
+    label: 'Upgrade to Pro',
+    leading: 'i-lucide-sparkles',
+  },
+  {},
+  {
+    label: 'Account',
+    leading: 'i-lucide-badge-check',
+  },
+  {
+    label: 'Billing',
+    leading: 'i-lucide-banknote',
+  },
+  {
+    label: 'Notifications',
+    leading: 'i-lucide-bell',
+  },
+  {
+    label: 'Log out',
+    leading: 'i-lucide-log-out',
+  },
+]
+
 const { isMobile } = useSidebar()
 </script>
 
 <template>
   <NSidebarMenu>
     <NSidebarMenuItem>
-      <NDropdownMenu>
-        <NDropdownMenuTrigger as-child>
-          <NSidebarMenuButton
-            size="lg"
-            class="data-[state=open]:text-sidebar-accent-foreground data-[state=open]:bg-sidebar-accent"
-          >
-            <NAvatar class="h-8 w-8 rounded-lg">
-              <NAvatarImage :src="user.avatar" :alt="user.name" />
-              <NAvatarFallback class="rounded-lg">
-                CN
-              </NAvatarFallback>
-            </NAvatar>
+      <NDropdownMenu
+        :items="navs"
+        :_dropdownMenuContent="{
+          class: 'min-w-56 w-[--reka-dropdown-menu-trigger-width] rounded-lg',
+          align: 'start',
+          side: isMobile ? 'bottom' : 'right',
+          sideOffset: 4,
+        }"
+        :_dropdownMenuLabel="{
+          class: 'p-0 font-normal',
+        }"
+      >
+        <NSidebarMenuButton
+          size="lg"
+          class="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+        >
+          <NAvatar
+            square="8"
+            rounded="lg"
+            :src="user.avatar"
+            label="CN"
+            :alt="user.name"
+          />
+          <div class="grid flex-1 text-left text-sm leading-tight">
+            <span class="truncate font-semibold">{{ user.name }}</span>
+            <span class="truncate text-xs">{{ user.email }}</span>
+          </div>
+          <NIcon name="i-lucide-chevron-down" class="ml-auto size-4" />
+        </NSidebarMenuButton>
+
+        <template #menu-label>
+          <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+            <NAvatar
+              square="8"
+              rounded="lg"
+              :src="user.avatar"
+              label="CN"
+              :alt="user.name"
+            />
             <div class="grid flex-1 text-left text-sm leading-tight">
               <span class="truncate font-semibold">{{ user.name }}</span>
               <span class="truncate text-xs">{{ user.email }}</span>
             </div>
-            <NIcon name="i-lucide-chevron-down" class="ml-auto size-4" />
-          </NSidebarMenuButton>
-        </NDropdownMenuTrigger>
-        <NDropdownMenuContent
-          class="min-w-56 w-[--reka-dropdown-menu-trigger-width] rounded-lg"
-          :side="isMobile ? 'bottom' : 'right'"
-          align="end"
-          :side-offset="4"
-        >
-          <NDropdownMenuLabel class="p-0 font-normal">
-            <div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-              <NAvatar class="h-8 w-8 rounded-lg">
-                <NAvatarImage :src="user.avatar" :alt="user.name" />
-                <NAvatarFallback class="rounded-lg">
-                  CN
-                </NAvatarFallback>
-              </NAvatar>
-              <div class="grid flex-1 text-left text-sm leading-tight">
-                <span class="truncate font-semibold">{{ user.name }}</span>
-                <span class="truncate text-xs">{{ user.email }}</span>
-              </div>
-            </div>
-          </NDropdownMenuLabel>
-          <NDropdownMenuSeparator />
-          <NDropdownMenuGroup>
-            <NDropdownMenuItem>
-              <NIcon name="i-lucide-sparkles" />
-              Upgrade to Pro
-            </NDropdownMenuItem>
-          </NDropdownMenuGroup>
-          <NDropdownMenuSeparator />
-          <NDropdownMenuGroup>
-            <NDropdownMenuItem>
-              <NIcon name="i-lucide-badge-check" />
-              Account
-            </NDropdownMenuItem>
-            <NDropdownMenuItem>
-              <NIcon name="i-lucide-banknote" />
-              Billing
-            </NDropdownMenuItem>
-            <NDropdownMenuItem>
-              <NIcon name="i-lucide-bell" />
-              Notifications
-            </NDropdownMenuItem>
-          </NDropdownMenuGroup>
-          <NDropdownMenuSeparator />
-          <NDropdownMenuItem>
-            <NIcon name="i-lucide-log-out" />
-            Log out
-          </NDropdownMenuItem>
-        </NDropdownMenuContent>
+          </div>
+        </template>
       </NDropdownMenu>
     </NSidebarMenuItem>
   </NSidebarMenu>

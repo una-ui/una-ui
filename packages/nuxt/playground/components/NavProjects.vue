@@ -12,7 +12,7 @@ const { isMobile } = useSidebar()
 
 <template>
   <NSidebarGroup class="group-data-[collapsible=icon]:hidden">
-    <NSidebarGroupLabel class="text-sidebar-primary-foreground">
+    <NSidebarGroupLabel>
       Projects
     </NSidebarGroupLabel>
     <NSidebarMenu>
@@ -23,18 +23,19 @@ const { isMobile } = useSidebar()
             <span>{{ item.name }}</span>
           </a>
         </NSidebarMenuButton>
-        <NDropdownMenu>
-          <NDropdownMenuTrigger as-child>
-            <NSidebarMenuAction show-on-hover>
-              <NIcon name="i-lucide-more-horizontal" class="text-sidebar-foreground/70" />
-              <span class="sr-only">More</span>
-            </NSidebarMenuAction>
-          </NDropdownMenuTrigger>
-          <NDropdownMenuContent
-            class="w-48 rounded-lg"
-            :side="isMobile ? 'bottom' : 'right'"
-            :align="isMobile ? 'end' : 'start'"
-          >
+        <NDropdownMenu
+          :_dropdownMenuContent="{
+            side: isMobile ? 'bottom' : 'right',
+            align: isMobile ? 'end' : 'start',
+            sideOffset: 4,
+          }"
+        >
+          <NSidebarMenuAction show-on-hover>
+            <NIcon name="i-lucide-more-horizontal" class="text-sidebar-foreground/70" />
+            <span class="sr-only">More</span>
+          </NSidebarMenuAction>
+
+          <template #content>
             <NDropdownMenuItem>
               <NIcon name="i-lucide-folder" class="text-muted-foreground" />
               <span>View Project</span>
@@ -48,7 +49,7 @@ const { isMobile } = useSidebar()
               <NIcon name="i-lucide-trash" class="text-muted-foreground" />
               <span>Delete Project</span>
             </NDropdownMenuItem>
-          </NDropdownMenuContent>
+          </template>
         </NDropdownMenu>
       </NSidebarMenuItem>
       <NSidebarMenuItem>
