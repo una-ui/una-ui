@@ -36,7 +36,7 @@ const forwardedProps = useForwardProps(delegatedProps)
         )"
         btn="~"
         :una="{
-          btnLeading: cn('dropdown-menu-item-leading', forwardedProps.una?.btnLeading),
+          btnLeading: cn('dropdown-menu-item-leading ml-0', forwardedProps.una?.btnLeading),
           btnTrailing: cn('dropdown-menu-item-trailing', forwardedProps.una?.btnTrailing),
           ...forwardedProps.una,
         }"
@@ -49,7 +49,9 @@ const forwardedProps = useForwardProps(delegatedProps)
           v-if="forwardedProps.shortcut"
           #trailing
         >
-          <DropdownMenuShortcut>
+          <DropdownMenuShortcut
+            v-bind="_dropdownMenuShortcut"
+          >
             {{ forwardedProps.shortcut }}
           </DropdownMenuShortcut>
         </template>

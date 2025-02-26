@@ -38,7 +38,7 @@ const forwardedProps = useForwardProps(delegatedProps)
         )"
         btn="~"
         :una="{
-          btnLeading: cn('dropdown-menu-sub-trigger-leading', forwardedProps.una?.btnLeading),
+          btnLeading: cn('dropdown-menu-sub-trigger-leading ml-0', forwardedProps.una?.btnLeading),
           btnTrailing: cn('dropdown-menu-sub-trigger-trailing', forwardedProps.una?.btnTrailing),
           ...forwardedProps.una,
         }"

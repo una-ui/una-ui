@@ -19,7 +19,7 @@ export const staticDropdownMenu: Record<`${DropdownMenuPrefix}-${string}` | Drop
   'dropdown-menu-item-trailing': 'ml-auto opacity-75 text-1em',
 
   // dropdown-menu-label
-  'dropdown-menu-label': 'px-2 py-1.5 text-1em font-semibold',
+  'dropdown-menu-label': 'px-2 py-1.5 text-0.875em font-semibold',
 
   // dropdown-menu-separator
   'dropdown-menu-separator-root': 'relative -mx-1',
