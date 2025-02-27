@@ -12,8 +12,6 @@ const props = withDefaults(defineProps<NDropdownMenuSubTriggerProps>(), {
   dropdownMenuItem: '~',
 })
 
-const slots = defineSlots<any>()
-
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
 
@@ -27,23 +25,23 @@ const forwardedProps = useForwardProps(delegatedProps)
   <DropdownMenuSubTrigger
     as-child
   >
-    <slot>
-      <Button
-        v-bind="forwardedProps"
-        :dropdown-menu-item
-        :class="cn(
-          'dropdown-menu-sub-trigger w-full justify-start font-normal rounded-sm px-2',
-          forwardedProps.inset && !(forwardedProps.leading || slots.leading) && 'pl-8',
-          props.class,
-        )"
-        btn="~"
-        :una="{
-          btnLeading: cn('dropdown-menu-sub-trigger-leading ml-0', forwardedProps.una?.btnLeading),
-          btnTrailing: cn('dropdown-menu-sub-trigger-trailing', forwardedProps.una?.btnTrailing),
-          ...forwardedProps.una,
-        }"
-        trailing="dropdown-menu-sub-trigger-trailing-icon"
-      />
-    </slot>
+    <Button
+      v-bind="{ ...forwardedProps, ...$attrs }"
+      :dropdown-menu-item
+      :class="cn(
+        'dropdown-menu-sub-trigger w-full justify-start font-normal rounded-sm px-2',
+        inset && !(forwardedProps.leading || $slots.leading) && 'pl-8',
+        props.class,
+      )"
+      btn="~"
+      :una="{
+        btnLeading: cn('dropdown-menu-sub-trigger-leading ml-0', forwardedProps.una?.btnLeading),
+        btnTrailing: cn('dropdown-menu-sub-trigger-trailing', forwardedProps.una?.btnTrailing),
+        ...forwardedProps.una,
+      }"
+      trailing="dropdown-menu-sub-trigger-trailing-icon"
+    >
+      <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
+    </Button>
   </dropdownmenusubtrigger>
 </template>
