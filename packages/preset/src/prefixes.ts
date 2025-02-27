@@ -77,7 +77,6 @@ export default [
   'popover',
   'popover-content',
   'progress',
-  'radio',
   'radio-group',
   'radio-group-item',
   'resize',

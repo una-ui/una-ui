@@ -66,13 +66,13 @@ const { copy, copied } = useClipboard({ source })
     <!-- right section -->
     <div col="span-1 lg:span-2" order="first lg:last" class="image-container relative grid w-full place-items-center text-center lg:text-right">
       <div
-        class="image-bg absolute z-5 lg:square-85 square-50 rotate-0"
+        class="image-bg absolute z-5 rotate-0 square-50 lg:square-85"
       />
       <div
-        class="image-bg absolute z-5 lg:square-85 square-50 rotate-45"
+        class="image-bg absolute z-5 rotate-45 square-50 lg:square-85"
       />
       <div
-        class="lg:square-85 square-50 -mt-10%"
+        class="square-50 -mt-10% lg:square-85"
       >
         <CommonLogo />
       </div>

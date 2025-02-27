@@ -1,8 +1,5 @@
 ---
 description: 'A control that allows the user to toggle between checked and not checked.'
-navBadges:
-  - value: Updated
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

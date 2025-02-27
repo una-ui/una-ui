@@ -37,7 +37,7 @@ const username = ref('')
       :sheet="side.sheet"
       title="Edit profile"
       description="Make changes to your profile here. Click save when you're done."
-      :_sheetClose="{
+      :_sheet-close="{
         label: side.closeIcon,
       }"
       :una="side.una"
