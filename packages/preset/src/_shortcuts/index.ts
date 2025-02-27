@@ -24,6 +24,7 @@ import { pagination } from './pagination'
 import { popover } from './popover'
 import { progress } from './progress'
 import { radioGroup } from './radio-group'
+import { scrollArea } from './scroll-area'
 import { select } from './select'
 import { separator } from './separator'
 import { sheet } from './sheet'
@@ -73,4 +74,5 @@ export const shortcuts = [
   ...radioGroup,
   ...form,
   ...sheet,
+  ...scrollArea,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

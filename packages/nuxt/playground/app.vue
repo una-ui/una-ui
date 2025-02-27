@@ -26,6 +26,7 @@ const components = [
   'Toggle',
   'Tooltip',
   'Sheet',
+  'Scroll Area',
 ]
   .map(component => ({
     name: component.replaceAll(' ', ''),
@@ -37,19 +38,21 @@ const components = [
 <template>
   <div class="relative h-screen flex gap-4 bg-base p-4 p-6 container">
     <!-- aside -->
-    <div class="no-scrollbar col-span-5 h-full flex flex-col overflow-y-auto border p-6 py-6 pr-12">
-      <p class="mb-4 font-bold">
-        Components
-      </p>
-      <NButton
-        v-for="component in components"
-        :key="component.name"
-        :to="component.to"
-        :label="component.name"
-        :btn="$route.path === component.to ? 'link-black' : 'link-gray'"
-        class="justify-start px-0"
-      />
-    </div>
+    <NScrollArea class="border" type="scroll">
+      <div class="col-span-5 h-full flex flex-col p-6 py-6 pr-12">
+        <p class="mb-4 font-bold">
+          Components
+        </p>
+        <NButton
+          v-for="component in components"
+          :key="component.name"
+          :to="component.to"
+          :label="component.name"
+          :btn="$route.path === component.to ? 'link-black' : 'link-gray'"
+          class="justify-start px-0"
+        />
+      </div>
+    </NScrollArea>
 
     <!-- main -->
     <main class="w-full overflow-y-auto border">

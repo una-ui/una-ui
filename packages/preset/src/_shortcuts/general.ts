@@ -36,6 +36,7 @@ export const staticGeneral = {
   'bg-base': 'bg-$c-background',
   'bg-inverted': 'bg-$c-foreground',
   'bg-muted': 'bg-$c-muted',
+  'bg-border': 'bg-$c-border',
 
   'bg-accent': 'bg-$c-accent',
   'bg-accent-foreground': 'bg-$c-accent-foreground',
