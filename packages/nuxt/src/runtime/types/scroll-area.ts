@@ -27,7 +27,7 @@ export interface NScrollAreaProps extends
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/scroll-area.ts
    */
-  una?: Pick<NScrollAreaUnaProps, 'scrollAreaRoot' | 'scrollAreaScrollbar'>
+  una?: Pick<NScrollAreaUnaProps, 'scrollAreaRoot' | 'scrollAreaScrollbar' | 'scrollAreaThumb'>
 }
 
 export interface NScrollAreaRootProps extends ScrollAreaRootProps, BaseExtension {
