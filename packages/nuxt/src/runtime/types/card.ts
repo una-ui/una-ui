@@ -28,51 +28,40 @@ export interface NCardProps extends BaseExtensions {
   _cardTitle?: Partial<NCardTitleProps>
   _cardDescription?: Partial<NCardDescriptionProps>
   _cardHeader?: Partial<NCardHeaderProps>
-  _cardAbout?: Partial<NCardAboutProps>
   _cardFooter?: Partial<NCardFooterProps>
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/card.ts
    */
-  una?: {
-    cardDefaultVariant: HTMLAttributes['class']
-    card?: HTMLAttributes['class']
-  }
+  una?: NCardUnaProps
 }
 
 export interface NCardContentProps extends BaseExtensions {
-  una?: {
-    cardContent?: HTMLAttributes['class']
-  }
+  una?: Pick<NCardUnaProps, 'cardContent'>
 }
 
 export interface NCardTitleProps extends BaseExtensions {
-  una?: {
-    cardTitle?: HTMLAttributes['class']
-  }
+  una?: Pick<NCardUnaProps, 'cardTitle'>
 }
 
 export interface NCardDescriptionProps extends BaseExtensions {
-  una?: {
-    cardSubtitle?: HTMLAttributes['class']
-  }
+  una?: Pick<NCardUnaProps, 'cardDescription'>
 }
 
 export interface NCardHeaderProps extends BaseExtensions {
-  una?: {
-    cardHeader?: HTMLAttributes['class']
-  }
-}
-
-export interface NCardAboutProps extends BaseExtensions {
-  una?: {
-    cardAbout?: HTMLAttributes['class']
-  }
+  una?: Pick<NCardUnaProps, 'cardHeader'>
 }
 
 export interface NCardFooterProps extends BaseExtensions {
-  una?: {
-    cardFooter?: HTMLAttributes['class']
-  }
+  una?: Pick<NCardUnaProps, 'cardFooter'>
+}
+
+export interface NCardUnaProps {
+  cardDefaultVariant?: HTMLAttributes['class']
+  cardTitle?: HTMLAttributes['class']
+  cardDescription?: HTMLAttributes['class']
+  cardContent?: HTMLAttributes['class']
+  cardHeader?: HTMLAttributes['class']
+  cardFooter?: HTMLAttributes['class']
 }

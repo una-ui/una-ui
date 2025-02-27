@@ -13,7 +13,6 @@ const components = [
   'Pagination',
   'Popover',
   'Progress',
-  'Radio',
   'Radio Group',
   'Select',
   'Separator',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NCardHeaderProps } from '../../../types/card'
+import type { NCardHeaderProps } from '../../../types'
 import { cn } from '../../../utils'
 
 const props = defineProps<NCardHeaderProps>()
@@ -9,8 +9,8 @@ const props = defineProps<NCardHeaderProps>()
   <div
     :class="cn(
       'card-header',
-      props.class,
       props.una?.cardHeader,
+      props.class,
     )"
   >
     <slot />
