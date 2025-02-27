@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/monorepo",
   "type": "module",
-  "version": "0.37.1-beta.1",
+  "version": "0.38.0-beta.1",
   "private": true,
   "packageManager": "pnpm@10.4.1",
   "description": "The Atomic UI Framework",

@@ -4,7 +4,7 @@
       sheet="right"
       title="Custom Icon"
       description="This sheet uses a custom close icon"
-      :_sheetClose="{
+      :_sheet-close="{
         label: 'i-lucide-arrow-right-from-line',
         btn: 'solid-black',
       }"

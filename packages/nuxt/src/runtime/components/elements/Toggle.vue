@@ -14,7 +14,6 @@ const props = withDefaults(defineProps<NToggleProps>(), {
 })
 
 const emits = defineEmits<ToggleEmits>()
-const slots = defineSlots<any>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -36,8 +35,6 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     :toggle-on
     :as="Button"
   >
-    <template v-for="(_, name) in slots" #[name]="slotData">
-      <slot :name="name" v-bind="slotData" />
-    </template>
+    <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
   </Toggle>
 </template>

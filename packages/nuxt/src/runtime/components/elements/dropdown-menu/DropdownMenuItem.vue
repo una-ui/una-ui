@@ -41,9 +41,7 @@ const forwardedProps = useForwardProps(delegatedProps)
           ...forwardedProps.una,
         }"
       >
-        <template v-for="(_, name) in slots" #[name]="slotData">
-          <slot :name="name" v-bind="slotData" />
-        </template>
+        <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
 
         <template
           v-if="forwardedProps.shortcut"

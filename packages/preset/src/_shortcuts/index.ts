@@ -20,12 +20,9 @@ import { input } from './input'
 import { kbd } from './kbd'
 import { label } from './label'
 import { link } from './link'
-import { navLink } from './nav-link'
-import { navLinkGroup } from './nav-link-group'
 import { pagination } from './pagination'
 import { popover } from './popover'
 import { progress } from './progress'
-import { radio } from './radio'
 import { radioGroup } from './radio-group'
 import { select } from './select'
 import { separator } from './separator'
@@ -55,10 +52,7 @@ export const shortcuts = [
   ...avatar,
   ...indicator,
   ...kbd,
-  ...navLink,
-  ...navLinkGroup,
   ...link,
-  ...radio,
   ...checkbox,
   ...slider,
   ...progress,
