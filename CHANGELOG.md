@@ -1,3 +1,14 @@
+# [0.38.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.37.1-beta.1...v0.38.0-beta.1) (2025-02-27)
+
+
+### Bug Fixes
+
+* **DropdownMenu:** update slots and child props config ([8223e5d](https://github.com/una-ui/una-ui/commit/8223e5d2ea52128b853d93314250fb0b757e1d95))
+* **Preset:** enforce square dimensions for icons ([326f22e](https://github.com/una-ui/una-ui/commit/326f22e09574f61a6027d6df32fe73cbf1fdbe7c))
+* **Preset:** improve support for `square` utility ([effbcb1](https://github.com/una-ui/una-ui/commit/effbcb1c4e205ae2528412fd7f648c438ccb3033))
+
+
+
 ## [0.37.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.37.0-beta.1...v0.37.1-beta.1) (2025-02-25)
 
 
