@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NCardFooterProps } from '../../../types/card'
+import type { NCardFooterProps } from '../../../types'
 import { cn } from '../../../utils'
 
 const props = defineProps<NCardFooterProps>()
@@ -9,8 +9,8 @@ const props = defineProps<NCardFooterProps>()
   <div
     :class="cn(
       'card-footer',
-      props.class,
       props.una?.cardFooter,
+      props.class,
     )"
   >
     <slot />

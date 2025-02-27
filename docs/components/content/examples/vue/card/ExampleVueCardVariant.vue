@@ -2,17 +2,19 @@
   <div class="flex flex-col gap-4">
     <NCard
       title="Outline variant"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
+      description="A simple outline variant card with a border. This is the default variant if none is specified."
       card="outline"
     />
+
     <NCard
       title="Soft variant"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
+      description="A soft variant card with a subtle background color and border."
       card="soft"
     />
+
     <NCard
       title="Base variant"
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
+      description="A base variant card without any predefined styles except for the base card styles."
       card="~"
     />
   </div>

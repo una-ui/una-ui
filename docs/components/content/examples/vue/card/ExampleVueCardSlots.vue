@@ -2,78 +2,76 @@
   <div
     class="grid w-full place-items-center"
   >
-    <NCard class="sm:w-100">
+    <NCard
+      class="w-380px overflow-hidden"
+      :_cardHeader="{
+        class: 'p-0',
+      }"
+      :_cardContent="{
+        class: 'mt-4',
+      }"
+    >
       <template #header>
-        <div h-40>
+        <div class="relative">
           <img
             src="https://images.unsplash.com/photo-1700527736181-67795948c0b1?q=80&w=2352&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Card image"
-            class="h-full w-full object-cover"
+            class="h-56 w-full object-cover"
           >
-        </div>
-      </template>
-
-      <template #title>
-        <div class="flex items-center justify-between">
-          Advanced Card
-          <NButton
-            size="sm"
-            icon
-            class="rounded-full"
-            btn="ghost-gray"
-            square
-            label="i-heroicons-ellipsis-vertical"
-          />
-        </div>
-      </template>
-
-      <template #description>
-        This example shows how you can use named templates for customization
-
-        <div class="mt-2 flex items-center space-x-2">
-          <NBadge
-            label="New"
-            badge="soft-success"
-          />
-
-          <NBadge
-            label="Beta"
-          />
+          <div class="absolute inset-0 from-black/60 to-transparent bg-gradient-to-t" />
+          <div class="absolute bottom-0 left-0 p-4">
+            <div class="flex items-center gap-2">
+              <NAvatar
+                src="https://i.pravatar.cc/300"
+                alt="John Doe"
+                size="sm"
+                class="ring-2 ring-white"
+              />
+              <div class="text-white">
+                <p class="font-medium leading-none">
+                  John Doe
+                </p>
+                <p class="text-sm text-white/80">
+                  @johndoe
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </template>
 
       <!-- content -->
       <div class="flex flex-col gap-4">
-        <div class="flex items-center gap-2">
-          <NIcon name="i-heroicons-user-circle-solid" />
-          <span>John Doe</span>
+        <div class="flex items-center gap-4 text-sm text-muted">
+          <div class="flex items-center gap-1">
+            <NIcon name="i-lucide-users" class="text-primary" />
+            <span>2.4k followers</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <NIcon name="i-lucide-map-pin" class="text-error" />
+            <span>San Francisco, CA</span>
+          </div>
         </div>
-        <div class="flex items-baseline gap-2">
-          <NIcon name="i-heroicons-map-pin-solid" />
-          <span>San Francisco, CA</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <NIcon name="i-heroicons-calendar-solid" />
-          <span>Joined on 2021-01-01</span>
-        </div>
+
+        <p class="text-sm">
+          Full-stack developer passionate about building beautiful user interfaces and scalable applications. Always learning and sharing knowledge with the community.
+        </p>
       </div>
 
       <template #footer>
         <div class="w-full flex flex-col">
           <div class="mt-2 w-full flex items-center justify-between gap-4">
             <NButton
-              size="md"
-              btn="ghost-warning"
-              class="-mx-2"
-            >
-              Explore
-            </NButton>
+              btn="solid"
+              leading="i-lucide-user-plus"
+              label="Follow"
+              class="flex-1"
+            />
             <NButton
-              size="md"
-              icon
-              label="i-heroicons-chevron-down-solid"
-              btn="text-gray"
-              class="rounded-full"
+              btn="outline-gray"
+              leading="i-lucide-mail"
+              label="Message"
+              class="flex-1"
             />
           </div>
         </div>
