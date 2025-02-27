@@ -21,6 +21,7 @@ import { kbd } from './kbd'
 import { label } from './label'
 import { link } from './link'
 import { pagination } from './pagination'
+import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { progress } from './progress'
 import { radioGroup } from './radio-group'
@@ -70,6 +71,7 @@ export const shortcuts = [
   ...toast,
   ...toggle,
   ...collapsible,
+  ...pinInput,
   ...radioGroup,
   ...form,
   ...sheet,
