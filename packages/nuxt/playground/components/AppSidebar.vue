@@ -2,8 +2,8 @@
 // This is sample data.
 const data = {
   user: {
-    name: 'shadcn',
-    email: 'm@example.com',
+    name: 'Phojie Rengel',
+    email: 'phojrengel@gmail.com',
     avatar: '/avatars/phojie.png',
   },
   teams: [
@@ -23,24 +23,123 @@ const data = {
       plan: 'Free',
     },
   ],
+  dashboards: [
+    {
+      name: 'Dashboard',
+      url: '/dashboards/default',
+      icon: 'i-lucide-home',
+    },
+  ],
   navMain: [
     {
-      title: 'Playground',
-      url: '#',
+      title: 'Components',
       icon: 'i-lucide-square-terminal',
+      url: '/components',
       isActive: true,
       items: [
         {
-          title: 'History',
-          url: '#',
+          title: 'Accordion',
+          url: '/components/accordion',
         },
         {
-          title: 'Starred',
-          url: '#',
+          title: 'Avatar',
+          url: '/components/avatar',
         },
         {
-          title: 'Settings',
-          url: '#',
+          title: 'Breadcrumb',
+          url: '/components/breadcrumb',
+        },
+        {
+          title: 'Button',
+          url: '/components/button',
+        },
+        {
+          title: 'Card',
+          url: '/components/card',
+        },
+        {
+          title: 'Checkbox',
+          url: '/components/checkbox',
+        },
+        {
+          title: 'Collapsible',
+          url: '/components/collapsible',
+        },
+        {
+          title: 'Dialog',
+          url: '/components/dialog',
+        },
+        {
+          title: 'Dropdown Menu',
+          url: '/components/dropdown-menu',
+        },
+        {
+          title: 'Forms',
+          url: '/components/forms',
+        },
+        {
+          title: 'Pagination',
+          url: '/components/pagination',
+        },
+        {
+          title: 'Popover',
+          url: '/components/popover',
+        },
+        {
+          title: 'Progress',
+          url: '/components/progress',
+        },
+        {
+          title: 'Radio Group',
+          url: '/components/radio-group',
+        },
+        {
+          title: 'Select',
+          url: '/components/select',
+        },
+        {
+          title: 'Separator',
+          url: '/components/separator',
+        },
+        {
+          title: 'Sheet',
+          url: '/components/sheet',
+        },
+        {
+          title: 'Sidebar',
+          url: '/components/sidebar',
+        },
+        {
+          title: 'Skeleton',
+          url: '/components/skeleton',
+        },
+        {
+          title: 'Slider',
+          url: '/components/slider',
+        },
+        {
+          title: 'Switch',
+          url: '/components/switch',
+        },
+        {
+          title: 'Table',
+          url: '/components/table',
+        },
+        {
+          title: 'Tabs',
+          url: '/components/tabs',
+        },
+        {
+          title: 'Toast',
+          url: '/components/toast',
+        },
+        {
+          title: 'Toggle',
+          url: '/components/toggle',
+        },
+        {
+          title: 'Tooltip',
+          url: '/components/tooltip',
         },
       ],
     },
@@ -138,6 +237,7 @@ const data = {
       <TeamSwitcher :teams="data.teams" />
     </NSidebarHeader>
     <NSidebarContent>
+      <NavProjects :projects="data.dashboards" />
       <NavMain :items="data.navMain" />
       <NavProjects :projects="data.projects" />
     </NSidebarContent>

@@ -36,9 +36,9 @@ defineProps<{
             <NSidebarMenuSub>
               <NSidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
                 <NSidebarMenuSubButton as-child>
-                  <a :href="subItem.url">
+                  <NLink :to="subItem.url">
                     <span>{{ subItem.title }}</span>
-                  </a>
+                  </NLink>
                 </NSidebarMenuSubButton>
               </NSidebarMenuSubItem>
             </NSidebarMenuSub>
