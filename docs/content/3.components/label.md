@@ -15,7 +15,7 @@ badges:
 ### Basic
 
 ::alert{type="info"}
-The **Label** component is used already in different components like [Checkbox](checkbox), [Radio](radio), [FormGroup](form-group), etc. but can also be used as a standalone component if you want more customization.
+The **Label** component is used already in different components like [Checkbox](checkbox), [RadioGroup](radio-group), [FormGroup](form-group), etc. but can also be used as a standalone component if you want more customization.
 ::
 
 | Prop      | Default   | Type                 | Description                                                                                                                                       |
