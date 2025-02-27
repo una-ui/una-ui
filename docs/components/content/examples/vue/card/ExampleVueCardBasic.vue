@@ -18,9 +18,9 @@ const notifications = [
 <template>
   <div class="grid w-full place-items-center">
     <NCard
-      title="Create account now"
-      description="Fill in the form below to create an account."
-      class="w-380px"
+      title="Notifications"
+      description="You have 3 unread messages."
+      class="max-w-380px"
       :_card-content="{
         class: 'grid gap-4',
       }"

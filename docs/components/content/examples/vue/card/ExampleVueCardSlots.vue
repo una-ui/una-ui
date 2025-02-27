@@ -3,7 +3,7 @@
     class="grid w-full place-items-center"
   >
     <NCard
-      class="w-380px overflow-hidden"
+      class="max-w-380px overflow-hidden"
       :_card-header="{
         class: 'p-0',
       }"
