@@ -25,8 +25,8 @@ const delegatedProps = computed(() => {
         v-bind="delegatedProps"
         :class="cn(
           'dropdown-menu-separator my-1',
-          props.class,
           props.una?.dropdownMenuSeparator,
+          props.class,
         )"
       />
     </div>

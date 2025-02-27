@@ -48,7 +48,7 @@ const items = ref([
         </NButton>
       </div>
       <div v-if="item.value === 'service'">
-        <ExampleVueRadioFormGroup />
+        <ExampleVueRadioGroupSlot />
       </div>
       <div v-if="item.value === 'reviews'">
         <NFormGroup label="Write your review">

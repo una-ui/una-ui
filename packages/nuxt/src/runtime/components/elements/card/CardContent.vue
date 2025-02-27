@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NCardContentProps } from '../../../types/card'
+import type { NCardContentProps } from '../../../types'
 import { cn } from '../../../utils'
 
 const props = defineProps<NCardContentProps>()
@@ -9,8 +9,8 @@ const props = defineProps<NCardContentProps>()
   <div
     :class="cn(
       'card-content',
-      props.class,
       props.una?.cardContent,
+      props.class,
     )"
   >
     <slot />

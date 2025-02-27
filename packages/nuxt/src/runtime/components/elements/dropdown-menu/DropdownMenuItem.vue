@@ -36,20 +36,20 @@ const forwardedProps = useForwardProps(delegatedProps)
         )"
         btn="~"
         :una="{
-          btnLeading: cn('dropdown-menu-item-leading', forwardedProps.una?.btnLeading),
+          btnLeading: cn('dropdown-menu-item-leading ml-0', forwardedProps.una?.btnLeading),
           btnTrailing: cn('dropdown-menu-item-trailing', forwardedProps.una?.btnTrailing),
           ...forwardedProps.una,
         }"
       >
-        <template v-for="(_, name) in slots" #[name]="slotData">
-          <slot :name="name" v-bind="slotData" />
-        </template>
+        <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
 
         <template
           v-if="forwardedProps.shortcut"
           #trailing
         >
-          <DropdownMenuShortcut>
+          <DropdownMenuShortcut
+            v-bind="_dropdownMenuShortcut"
+          >
             {{ forwardedProps.shortcut }}
           </DropdownMenuShortcut>
         </template>

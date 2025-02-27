@@ -1,5 +1,8 @@
 ---
 description: 'Displays a card with header, content, and footer.'
+navBadges:
+  - value: Updated
+    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
@@ -11,10 +14,10 @@ badges:
 
 ### Basic
 
-| Prop          | Default | Type     | Description           |
-| ------------- | ------- | -------- | --------------------- |
-| `title`       | -       | `string` | The card title.       |
-| `description` | -       | `string` | The card description. |
+| Prop          | Default | Type     | Description                                             |
+| ------------- | ------- | -------- | ------------------------------------------------------- |
+| `title`       | -       | `string` | Sets the main heading text displayed in the card header |
+| `description` | -       | `string` | Provides secondary text shown below the title           |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -27,15 +30,15 @@ badges:
 
 ### Variant
 
-| Prop   | Default   | Type        | Description              |
-| ------ | --------- | ----------- | ------------------------ |
-| `card` | `outline` | `{variant}` | The variant of the card. |
+| Prop   | Default   | Type        | Description                            |
+| ------ | --------- | ----------- | -------------------------------------- |
+| `card` | `outline` | `{variant}` | Controls the visual style of the card. |
 
-| Variant   | Description                 |
-| --------- | --------------------------- |
-| `outline` | The default variant.        |
-| `soft`    | The soft variant.           |
-| `~`       | The unstyle or base variant |
+| Variant   | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| `outline` | Adds a subtle border while maintaining a clean background.     |
+| `soft`    | Applies a light background color with matching border.         |
+| `~`       | Removes all variant styling, keeping only core card structure. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -48,9 +51,13 @@ badges:
 
 ### Color
 
-| Prop   | Default             | Type                | Description            |
-| ------ | ------------------- | ------------------- | ---------------------- |
-| `card` | `{variant}-primary` | `{variant}-{color}` | The color of the card. |
+| Prop   | Default             | Type                | Description                                                                 |
+| ------ | ------------------- | ------------------- | --------------------------------------------------------------------------- |
+| `card` | `{variant}-primary` | `{variant}-{color}` | Combines variant and color to define the card's appearance (e.g. soft-blue) |
+
+::alert{type="info"}
+The color variant only affects the card's background and border colors. Other elements like text and icons maintain their default styling.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -63,13 +70,13 @@ badges:
 
 ### Slots
 
-| Name          | Props | Description           |
-| ------------- | ----- | --------------------- |
-| `header`      | -     | The header slot.      |
-| `default`     | -     | The default slot.     |
-| `title`       | -     | The title slot.       |
-| `description` | -     | The description slot. |
-| `footer`      | -     | The footer slot.      |
+| Name          | Props | Description                                                                      |
+| ------------- | ----- | -------------------------------------------------------------------------------- |
+| `header`      | -     | The header section of the card, typically containing the title and description.  |
+| `default`     | -     | The main content area of the card.                                               |
+| `title`       | -     | Custom title content that overrides the title prop.                              |
+| `description` | -     | Custom description content that overrides the description prop.                  |
+| `footer`      | -     | The footer section of the card, typically for actions or additional information. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -97,10 +104,6 @@ badges:
 ::
 ::div{label="CardContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/card/CardContent.vue
-
-::
-::div{label="CardAbout.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/elements/card/CardAbout.vue
 
 ::
 ::div{label="CardTitle.vue" icon="i-vscode-icons-file-type-vue"}

@@ -20,10 +20,11 @@ function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
       presetUno(),
       presetAttributify(),
       presetIcons({
-        scale: 1.2,
         extraProperties: {
           'display': 'inline-block',
-          'vertical-align': 'middle',
+          'height': '1.2em',
+          'width': '1.2em',
+          'vertical-align': 'text-bottom',
         },
       }),
       presetUna(),

@@ -2,17 +2,15 @@
 import type { NDropdownMenuShortcutProps } from '../../../types/dropdown-menu'
 import { cn } from '../../../utils'
 
-const props = withDefaults(defineProps<NDropdownMenuShortcutProps>(), {
-  size: 'sm',
-})
+const props = defineProps<NDropdownMenuShortcutProps>()
 </script>
 
 <template>
   <span
     :class="cn(
       'dropdown-menu-shortcut',
-      props.class,
       props.una?.dropdownMenuShortcut,
+      props.class,
     )"
   >
     <slot>

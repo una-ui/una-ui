@@ -85,6 +85,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
                   :inset
                   :dropdown-menu-item
                   :una="forwarded.una?.dropdownMenuItem"
+                  :_dropdown-menu-shortcut
                   v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
                 />
               </slot>
@@ -160,6 +161,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
                 :size
                 :inset
                 :dropdown-menu-item
+                :_dropdown-menu-shortcut
                 :una="forwarded.una?.dropdownMenuItem"
                 v-bind="{ ...subItem, ...forwarded._dropdownMenuItem, ...subItem._dropdownMenuItem }"
               >

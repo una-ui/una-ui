@@ -11,7 +11,6 @@ defineOptions({
 })
 
 const props = defineProps<NToasterProps>()
-const slots = defineSlots<any>()
 
 const rootProps = reactivePick(props, ['duration', 'label', 'swipeDirection', 'swipeThreshold'])
 
@@ -22,17 +21,13 @@ const { toasts } = useToast()
   <ToastProvider
     v-bind="rootProps"
   >
-    <slot>
-      <Toast
-        v-for="t in toasts"
-        :key="t.id"
-        v-bind="{ ..._toast, ...$attrs, ...t }"
-      >
-        <template v-for="(_, name) in slots" #[name]="slotData">
-          <slot :name="name" v-bind="slotData" />
-        </template>
-      </Toast>
-    </slot>
+    <Toast
+      v-for="t in toasts"
+      :key="t.id"
+      v-bind="{ ..._toast, ...$attrs, ...t }"
+    >
+      <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
+    </Toast>
 
     <ToastViewport v-bind="_toastViewport" />
   </ToastProvider>

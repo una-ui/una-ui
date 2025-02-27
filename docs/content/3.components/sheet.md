@@ -100,6 +100,17 @@ You can customize the sheet using the following sub components props and `una` p
 ::
 :::
 
+#### Icon Customization
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueSheetCustomIcon
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/sheet/ExampleVueSheetCustomIcon.vue
+::
+:::
+
 #### Overlay Customization
 
 :::CodeGroup
