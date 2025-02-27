@@ -18,7 +18,6 @@ export default [
   'btn',
   'button',
   'card',
-  'card-about',
   'card-content',
   'card-description',
   'card-footer',
