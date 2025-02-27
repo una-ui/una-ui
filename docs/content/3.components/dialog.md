@@ -1,8 +1,5 @@
 ---
 description: 'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.'
-navBadges:
-  - value: Updated
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

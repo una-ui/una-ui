@@ -1,8 +1,5 @@
 ---
 description: 'Displays a list of options for the user to pick from—triggered by a button.'
-navBadges:
-  - value: Updated
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
