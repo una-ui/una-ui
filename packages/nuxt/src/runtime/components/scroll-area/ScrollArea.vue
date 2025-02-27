@@ -1,22 +1,26 @@
 <script setup lang="ts">
 import type { NScrollAreaProps } from '../../types'
-import { reactiveOmit } from '@vueuse/core'
 import {
   ScrollAreaCorner,
   ScrollAreaRoot,
   ScrollAreaViewport,
 } from 'reka-ui'
+import { computed } from 'vue'
 import { cn } from '../../utils'
 import ScrollBar from './ScrollBar.vue'
 
 const props = defineProps<NScrollAreaProps>()
 
-const rootProps = reactiveOmit(props, 'class', 'una')
+const delegatedProps = computed(() => {
+  const { class: _, ...delegated } = props
+
+  return delegated
+})
 </script>
 
 <template>
   <ScrollAreaRoot
-    v-bind="rootProps"
+    v-bind="delegatedProps"
     :class="cn(
       'scroll-area-root',
       props.class,

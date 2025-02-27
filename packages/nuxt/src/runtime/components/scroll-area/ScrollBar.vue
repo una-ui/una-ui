@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { NScrollAreaScrollbarProps } from '../../types'
-import { reactiveOmit } from '@vueuse/core'
 import { ScrollAreaScrollbar, ScrollAreaThumb } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
@@ -9,7 +8,11 @@ const props = withDefaults(defineProps<NScrollAreaScrollbarProps>(), {
   orientation: 'vertical',
 })
 
-const scrollbarProps = reactiveOmit(props, 'class')
+const delegatedProps = computed(() => {
+  const { class: _, ...delegated } = props
+
+  return delegated
+})
 
 const orientationClass = computed(() => {
   return props.orientation === 'vertical' ? 'scroll-area-scrollbar-vertical' : 'scroll-area-scrollbar-horizontal'
@@ -18,7 +21,7 @@ const orientationClass = computed(() => {
 
 <template>
   <ScrollAreaScrollbar
-    v-bind="scrollbarProps"
+    v-bind="delegatedProps"
     :class="
       cn(
         'scroll-area-scrollbar',
