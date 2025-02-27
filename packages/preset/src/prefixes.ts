@@ -61,8 +61,6 @@ export default [
   'kbd',
   'label',
   'link',
-  'nav-link',
-  'nav-link-group',
   'pagination',
   'pagination-ellipsis',
   'pagination-selected',
