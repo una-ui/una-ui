@@ -14,8 +14,6 @@ const props = withDefaults(defineProps<NToastActionProps>(), {
   size: 'xs',
 })
 
-const slots = defineSlots<any>()
-
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
 
@@ -33,9 +31,7 @@ const delegatedProps = computed(() => {
       :id="randomId('toast-action')"
       :class="cn('toast-action', props.class)"
     >
-      <template v-for="(_, name) in slots" #[name]="slotData">
-        <slot :name="name" v-bind="slotData" />
-      </template>
+      <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
     </Button>
   </ToastAction>
 </template>
