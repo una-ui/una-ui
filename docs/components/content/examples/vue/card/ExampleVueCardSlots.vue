@@ -4,10 +4,10 @@
   >
     <NCard
       class="w-380px overflow-hidden"
-      :_cardHeader="{
+      :_card-header="{
         class: 'p-0',
       }"
-      :_cardContent="{
+      :_card-content="{
         class: 'mt-4',
       }"
     >

@@ -21,7 +21,7 @@ const notifications = [
       title="Create account now"
       description="Fill in the form below to create an account."
       class="w-380px"
-      :_cardContent="{
+      :_card-content="{
         class: 'grid gap-4',
       }"
     >
