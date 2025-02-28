@@ -79,6 +79,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
       :status
       :select
       v-bind="props._selectTrigger"
+      :una
     >
       <slot name="trigger" :model-value :open="open">
         <SelectValue
@@ -86,6 +87,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
           v-bind="props._selectValue"
           :aria-label="formatSelectedValue(modelValue)"
           :data-status="status"
+          :una
         >
           <slot name="value" :model-value :open>
             {{ formatSelectedValue(modelValue) || props.placeholder }}
@@ -101,12 +103,14 @@ function isItemSelected(item: unknown, modelValue: unknown) {
         _selectScrollDownButton,
         _selectScrollUpButton,
       }"
+      :una
     >
       <slot name="content" :items="items">
         <template v-if="!group">
           <SelectLabel
             v-if="label"
             v-bind="_selectLabel"
+            :una
           >
             <slot name="label" :label>
               {{ label }}
@@ -119,9 +123,11 @@ function isItemSelected(item: unknown, modelValue: unknown) {
           >
             <SelectItem
               :value="item"
-              :size="size"
+              :size
+              :select-item
               v-bind="props._selectItem"
               :is-selected="isItemSelected(item, modelValue)"
+              :una
             >
               <slot name="item" :item="item">
                 {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
@@ -135,17 +141,20 @@ function isItemSelected(item: unknown, modelValue: unknown) {
             v-for="(group, i) in items as SelectGroupType<T>[]"
             :key="i"
             v-bind="props._selectGroup"
+            :una
           >
             <SelectSeparator
               v-if="i > 0"
               v-bind="props._selectSeparator"
+              :una
             />
 
             <slot name="group" :items="group">
               <SelectLabel
                 v-if="group.label"
-                :size="size"
+                :size
                 v-bind="{ ...props._selectLabel, ...group._selectLabel }"
+                :una
               >
                 <slot name="label" :label="group.label">
                   {{ group.label }}
@@ -158,9 +167,11 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               >
                 <SelectItem
                   :value="item"
-                  :size="size"
+                  :size
+                  :select-item
                   v-bind="{ ..._selectItem, ...group._selectItem }"
                   :is-selected="isItemSelected(item, modelValue)"
+                  :una
                 >
                   <slot name="item" :item="item">
                     {{ props.itemKey ? (item as any)[props.itemKey] : item }}

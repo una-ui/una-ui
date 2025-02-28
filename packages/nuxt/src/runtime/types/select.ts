@@ -66,6 +66,8 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
   _selectTrigger?: Partial<NSelectTriggerProps>
   _selectItem?: Partial<NSelectItemProps>
   _selectLabel?: Partial<NSelectLabelProps>
+
+  una?: NSelectUnaProps
 }
 
 export interface NSelectRootProps extends RootExtensions {
@@ -97,54 +99,32 @@ export interface NSelectTriggerProps extends TriggerExtensions {
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/select.ts
    */
-  una?: {
-    selectTrigger?: HTMLAttributes['class']
-    selectTriggerTrailing?: HTMLAttributes['class']
-    selectTriggerTrailingIcon?: HTMLAttributes['class']
-    selectTriggerLeading?: HTMLAttributes['class']
-    selectTriggerInfoIcon?: HTMLAttributes['class']
-    selectTriggerSuccessIcon?: HTMLAttributes['class']
-    selectTriggerWarningIcon?: HTMLAttributes['class']
-    selectTriggerErrorIcon?: HTMLAttributes['class']
-  } & NButtonProps['una']
+  una?: Pick<NSelectUnaProps, 'selectTrigger' | 'selectTriggerTrailing' | 'selectTriggerTrailingIcon' | 'selectTriggerLeading' | 'selectTriggerInfoIcon' | 'selectTriggerSuccessIcon' | 'selectTriggerWarningIcon' | 'selectTriggerErrorIcon'> & NButtonProps['una']
 }
 
 export interface NSelectValueProps extends ValueExtensions {
-  una?: {
-    selectValue?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectValue'>
 }
 
 export interface NSelectScrollDownButtonProps extends ScrollDownButtonExtensions {
-  una?: {
-    selectScrollDownButton?: HTMLAttributes['class']
-    selectScrollDownButtonIcon?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectScrollDownButton' | 'selectScrollDownButtonIcon'>
 }
 
 export interface NSelectScrollUpButtonProps extends ScrollUpButtonExtensions {
-  una?: {
-    selectScrollUpButton?: HTMLAttributes['class']
-    selectScrollUpButtonIcon?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectScrollUpButton' | 'selectScrollUpButtonIcon'>
 }
 
 export interface NSelectContentProps extends ContentExtensions {
   _selectScrollDownButton?: NSelectScrollDownButtonProps
   _selectScrollUpButton?: NSelectScrollUpButtonProps
   _selectSeparator?: NSelectSeparator
-  una?: {
-    selectContent?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectContent'>
 }
 
 export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps {
   icon?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
-  una?: {
-    selectItemIndicator?: HTMLAttributes['class']
-    selectItemIndicatorIcon?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectItemIndicator' | 'selectItemIndicatorIcon'>
 }
 
 export interface NSelectItemProps extends ItemExtensions {
@@ -152,33 +132,47 @@ export interface NSelectItemProps extends ItemExtensions {
   isSelected?: boolean
   _selectItemText?: NSelectItemTextProps
   _selectItemIndicator?: NSelectItemIndicatorProps
-  una?: {
-    selectItem?: HTMLAttributes['class']
-
-    selectItemIndicatorWrapper?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectItem' | 'selectItemIndicator'>
 }
 
 export interface NSelectItemTextProps extends ItemTextExtensions {
-  una?: {
-    selectItemText?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectItemText'>
 }
 
 export interface NSelectGroupProps extends GroupExtensions {
-  una?: {
-    selectGroup?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectGroup'>
 }
 
 export interface NSelectLabelProps extends LabelExtensions {
-  una?: {
-    selectLabel?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectLabel'>
 }
 
 export interface NSelectSeparator extends SeparatorExtensions {
-  una?: {
-    selectSeparator?: HTMLAttributes['class']
-  }
+  una?: Pick<NSelectUnaProps, 'selectSeparator'>
+}
+
+export interface NSelectUnaProps {
+  select?: HTMLAttributes['class']
+  selectRoot?: HTMLAttributes['class']
+  selectTrigger?: HTMLAttributes['class']
+  selectTriggerTrailing?: HTMLAttributes['class']
+  selectTriggerTrailingIcon?: HTMLAttributes['class']
+  selectTriggerLeading?: HTMLAttributes['class']
+  selectTriggerInfoIcon?: HTMLAttributes['class']
+  selectTriggerSuccessIcon?: HTMLAttributes['class']
+  selectTriggerWarningIcon?: HTMLAttributes['class']
+  selectTriggerErrorIcon?: HTMLAttributes['class']
+  selectValue?: HTMLAttributes['class']
+  selectContent?: HTMLAttributes['class']
+  selectItem?: HTMLAttributes['class']
+  selectItemText?: HTMLAttributes['class']
+  selectItemIndicator?: HTMLAttributes['class']
+  selectItemIndicatorIcon?: HTMLAttributes['class']
+  selectGroup?: HTMLAttributes['class']
+  selectLabel?: HTMLAttributes['class']
+  selectSeparator?: HTMLAttributes['class']
+  selectScrollDownButton?: HTMLAttributes['class']
+  selectScrollDownButtonIcon?: HTMLAttributes['class']
+  selectScrollUpButton?: HTMLAttributes['class']
+  selectScrollUpButtonIcon?: HTMLAttributes['class']
 }

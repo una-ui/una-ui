@@ -15,8 +15,8 @@ const props = withDefaults(defineProps<NSelectItemIndicatorProps>(), {
     v-bind="props"
     :class="cn(
       'select-item-indicator',
-      props.class,
       props.una?.selectItemIndicator,
+      props.class,
     )"
   >
     <slot>

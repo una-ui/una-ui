@@ -51,7 +51,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       <SelectViewport
         :class="cn(
           'select-viewport',
-          position === 'popper' && 'select-viewport-popper')"
+          position === 'popper' && 'select-viewport-popper')
+        "
       >
         <slot />
       </SelectViewport>
