@@ -13,9 +13,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NCardProps>(), {
-  una: () => ({
-    cardDefaultVariant: 'card-default-variant',
-  }),
+  card: 'outline-gray',
 })
 
 const delegatedProps = computed(() => {
@@ -23,10 +21,6 @@ const delegatedProps = computed(() => {
 
   return delegated
 })
-
-const cardVariants = ['soft', 'outline'] as const
-const hasVariant = computed(() => cardVariants.some(cardVariant => props.card?.includes(cardVariant)))
-const isBaseVariant = computed(() => props.card?.includes('~'))
 </script>
 
 <template>
@@ -35,7 +29,6 @@ const isBaseVariant = computed(() => props.card?.includes('~'))
     :card="card"
     :class="cn(
       'card',
-      !hasVariant && !isBaseVariant ? una?.cardDefaultVariant : '',
       props.class,
     )"
   >
