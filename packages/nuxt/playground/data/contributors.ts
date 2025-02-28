@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 
-export interface Person {
+export interface Contributor {
   id: string
   username: string
   email: string
@@ -9,7 +9,7 @@ export interface Person {
   avatar?: string
   progress: number
   status: 'triaged' | 'in-progress' | 'completed' | 'cancelled'
-  subRows?: Person[]
+  subRows?: Contributor[]
 }
 
 function range(len: number) {
@@ -20,7 +20,7 @@ function range(len: number) {
   return arr
 }
 
-function newPerson(): Person {
+function newContributor(): Contributor {
   return {
     id: faker.database.mongodbObjectId(),
     username: faker.internet.username().toLowerCase(),
@@ -29,7 +29,7 @@ function newPerson(): Person {
     lastName: faker.person.lastName(),
     avatar: faker.image.avatarGitHub(),
     progress: faker.number.int(100),
-    status: faker.helpers.shuffle<Person['status']>([
+    status: faker.helpers.shuffle<Contributor['status']>([
       'triaged',
       'in-progress',
       'completed',
@@ -38,18 +38,18 @@ function newPerson(): Person {
   }
 }
 
-export function makeData(...lens: number[]) {
-  const makeDataLevel = (depth = 0): Person[] => {
+export function makeContributor(...lens: number[]) {
+  const makeContributorLevel = (depth = 0): Contributor[] => {
     const len = lens[depth]!
-    return range(len).map((): Person => {
+    return range(len).map((): Contributor => {
       return {
-        ...newPerson(),
-        subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
+        ...newContributor(),
+        subRows: lens[depth + 1] ? makeContributorLevel(depth + 1) : undefined,
       }
     })
   }
 
-  return makeDataLevel()
+  return makeContributorLevel()
 }
 
-export default makeData
+export default makeContributor

@@ -25,9 +25,14 @@ const data = {
   ],
   dashboards: [
     {
-      name: 'Dashboard',
+      name: 'Defaults',
       url: '/dashboards/default',
       icon: 'i-lucide-home',
+    },
+    {
+      name: 'Project Management',
+      url: '/dashboards/project-management',
+      icon: 'i-lucide-folder',
     },
   ],
   navMain: [
@@ -237,7 +242,7 @@ const data = {
       <TeamSwitcher :teams="data.teams" />
     </NSidebarHeader>
     <NSidebarContent>
-      <NavProjects :projects="data.dashboards" />
+      <NavDashboards :dashboards="data.dashboards" />
       <NavMain :items="data.navMain" />
       <NavProjects :projects="data.projects" />
     </NSidebarContent>

@@ -149,7 +149,7 @@ const data = {
     </NSidebar>
 
     <NSidebarInset>
-      <header class="group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 h-16 flex shrink-0 items-center gap-2 transition-[width,height] ease-linear">
+      <header class="h-16 flex shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar_wrapper:h-12">
         <div class="flex items-center gap-2 px-4">
           <NSidebarTrigger class="-ml-1" />
           <NSeparator orientation="vertical" class="mx-0 mr-2 h-4" />

@@ -7,6 +7,15 @@ export default defineNuxtConfig({
     componentIslands: true,
   },
 
+  devtools: {
+    enabled: true,
+    componentInspector: false,
+  },
+
+  app: {
+    keepalive: true,
+  },
+
   nitro: {
     routeRules: {
       '/': {
