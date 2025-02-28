@@ -1,3 +1,7 @@
+import type { Theme } from '@unocss/preset-mini'
+import type { RuleContext } from 'unocss'
+import { parseColor } from '@unocss/preset-mini'
+
 type SelectPrefix = 'select'
 
 export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, string> = {
@@ -47,9 +51,19 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 }
 
 export const dynamicSelect = [
-  [/^select-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'gray']) => `btn-${v}-${c}`],
+  [/^select-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'gray'], { theme }: RuleContext<Theme>) => {
+    const parsedColor = parseColor(c, theme)
+    if ((parsedColor?.cssColor?.type === 'rgb' || parsedColor?.cssColor?.type === 'rgba') && parsedColor.cssColor.components)
+      return `btn-${v}-${c}`
+    return undefined
+  }],
 
-  [/^select-item(-(\S+))?$/, ([, , c = 'gray']) => `focus:bg-${c}-100 focus:text-${c}-800 dark:focus:bg-${c}-800 dark:focus:text-${c}-100`],
+  [/^select-item(-(\S+))?$/, ([, , c = 'gray'], { theme }: RuleContext<Theme>) => {
+    const parsedColor = parseColor(c || 'gray', theme)
+    if ((parsedColor?.cssColor?.type === 'rgb' || parsedColor?.cssColor?.type === 'rgba') && parsedColor.cssColor.components)
+      return `focus:bg-${c || 'gray'}-100 focus:text-${c || 'gray'}-800 dark:focus:bg-${c || 'gray'}-800 dark:focus:text-${c || 'gray'}-100`
+    return undefined
+  }],
 ]
 
 export const select = [

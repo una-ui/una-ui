@@ -6,7 +6,7 @@ export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, st
   'avatar-image': 'aspect-square h-full w-full',
   'avatar-fallback': 'flex h-full w-full items-center justify-center',
 
-  'avatar-label': '',
+  'avatar-label': 'uppercase',
   'avatar-icon': 'text-1em',
 
   // variants

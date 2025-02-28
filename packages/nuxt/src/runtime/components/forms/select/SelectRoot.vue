@@ -15,8 +15,8 @@ const forwarded = useForwardPropsEmits(props, emits)
     v-slot="slotProps"
     :class="cn(
       'select-root',
-      props.class,
       props.una?.selectRoot,
+      props.class,
     )"
     v-bind="forwarded"
   >

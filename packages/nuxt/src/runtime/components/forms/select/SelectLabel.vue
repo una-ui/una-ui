@@ -7,7 +7,13 @@ const props = defineProps<NSelectLabelProps>()
 </script>
 
 <template>
-  <SelectLabel :class="cn('select-label', props.class)">
+  <SelectLabel
+    :class="cn(
+      'select-label',
+      props.una?.selectLabel,
+      props.class,
+    )"
+  >
     <slot />
   </SelectLabel>
 </template>

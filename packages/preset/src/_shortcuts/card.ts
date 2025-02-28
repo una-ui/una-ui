@@ -3,7 +3,6 @@ type CardPrefix = 'card'
 export const staticCard: Record<`${CardPrefix}-${string}` | CardPrefix, string> = {
   // base
   'card': 'rounded-xl shadow text-base',
-  'card-default-variant': 'card-outline-gray',
 
   // components
   'card-header': 'flex flex-col gap-y-1.5 p-6',

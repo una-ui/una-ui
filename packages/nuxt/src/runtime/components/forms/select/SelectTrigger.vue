@@ -51,13 +51,18 @@ const id = computed(() => props.id ?? randomId('select-trigger'))
       )"
       :una="{
         ...props.una,
-        ...{
-          btnLeading: cn(
-            'select-trigger-leading',
-            props.una?.btnLeading,
-          ),
-          btnDefaultVariant: statusClassVariants.btn,
-        },
+        btn: props.una?.selectTrigger,
+        btnLeading: cn(
+          'select-trigger-leading',
+          props.una?.btnLeading,
+          props.una?.selectTriggerLeading,
+        ),
+        btnTrailing: cn(
+          'select-trigger-trailing',
+          props.una?.btnTrailing,
+          props.una?.selectTriggerTrailing,
+        ),
+        btnDefaultVariant: statusClassVariants.btn,
       }"
     >
       <slot />
@@ -72,6 +77,7 @@ const id = computed(() => props.id ?? randomId('select-trigger'))
             :class="cn(
               'select-trigger-trailing',
               props.una?.btnTrailing,
+              props.una?.selectTriggerTrailing,
             )"
           />
         </SelectIcon>
