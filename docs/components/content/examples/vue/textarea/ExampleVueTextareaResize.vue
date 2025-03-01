@@ -9,7 +9,7 @@ const value = ref('')
         v-model="value"
         type="textarea"
         placeholder="Write your message here..."
-        resize
+        resize="none"
       />
     </NFormGroup>
 
