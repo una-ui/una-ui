@@ -17,12 +17,11 @@ badges:
 
 ### Basic
 
-| Prop              | Default    | Type                                | Description                                                                                                                                             |
-| ----------------- | ---------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dir`             | `ltr`      | `ltr`, `rtl`                        | The reading direction of the combobox when applicable. If omitted, inherits globally from `ConfigProvider` or assumes LTR (left-to-right) reading mode. |
-| `scrollHideDelay` | `600`      | `number`                            | Determines the length of time, in milliseconds, before the scrollbars are hidden                                                                        |
-| `type`            | `hover`    | `scroll`, `always`, `auto`, `hover` | Describes the nature of scrollbar visibility, similar to how the scrollbar preferences in MacOS control visibility of native scrollbars.                |
-| `orientation`     | `vertical` | `vertical`, `horizontal`            | The orientation of the scrollbar                                                                                                                        |
+| Prop              | Default | Type                                | Description                                                                                                                                             |
+| ----------------- | ------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dir`             | `ltr`   | `ltr`, `rtl`                        | The reading direction of the combobox when applicable. If omitted, inherits globally from `ConfigProvider` or assumes LTR (left-to-right) reading mode. |
+| `scrollHideDelay` | `600`   | `number`                            | Determines the length of time, in milliseconds, before the scrollbars are hidden                                                                        |
+| `type`            | `hover` | `scroll`, `always`, `auto`, `hover` | Describes the nature of scrollbar visibility, similar to how the scrollbar preferences in MacOS control visibility of native scrollbars.                |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -37,7 +36,7 @@ badges:
 
 ### Orientation
 
-You can configure the orientation of the scroll area (scroll-area) using the `orientation` prop, which can be passed either directly to the `ScrollArea` component or through the `_scrollAreaScrollbar`.
+The `orientation` prop controls the scroll direction and can be set on either the `ScrollArea` component or via `_scrollAreaScrollbar`.
 
 | Prop          | Default    | Type                     | Description                      |
 | ------------- | ---------- | ------------------------ | -------------------------------- |
@@ -53,6 +52,59 @@ You can configure the orientation of the scroll area (scroll-area) using the `or
 :::
 
 :read-more{to="https://www.reka-ui.com/docs/components/scroll-area#scrollbar" title="Reka Scroll Area Scrollbar API." target="_blank"}
+
+### Color
+
+| Prop         | Default | Type     | Description                   |
+| ------------ | ------- | -------- | ----------------------------- |
+| `scrollArea` | `gray`  | `string` | The color of the scroll area. |
+
+::alert
+You can use any color palette you want. Una UI uses [Tailwind CSS Colors](https://tailwindcss.com/docs/customizing-colors) under the hood, But you can also define your own custom theme colors, see [Extending Section](#overriding-and-extending).
+::
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueScrollAreaColor
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/scroll-area/ExampleVueScrollAreaColor.vue
+::
+:::
+
+### Size
+
+| Prop   | Default | Type     | Description                  |
+| ------ | ------- | -------- | ---------------------------- |
+| `size` | `md`    | `string` | The size of the scroll area. |
+
+::alert
+You can you use any number size that you can imagine, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
+::
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueScrollAreaSize
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/scroll-area/ExampleVueScrollAreaSize.vue
+::
+:::
+
+### Rounded
+
+| Prop      | Default | Type     | Description                         |
+| --------- | ------- | -------- | ----------------------------------- |
+| `rounded` | `full`  | `string` | The roundedness of the scroll area. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueScrollAreaRounded
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/scroll-area/ExampleVueScrollAreaRounded.vue
+::
+:::
 
 ### Customization
 
