@@ -8,6 +8,10 @@ const breadcrumbItems = computed(() => {
     to: `/${paths.slice(0, index + 1).join('/')}`,
   }))
 })
+
+// we need this to be reactive to open the popover when the user clicks on the button and not just on the indicator
+const isNotificationsPopoverActive = ref(false)
+const isMessagesPopoverActive = ref(false)
 </script>
 
 <template>
@@ -28,22 +32,25 @@ const breadcrumbItems = computed(() => {
 
         <div class="flex items-center gap-2 px-4">
           <NPopover
+            v-model:open="isMessagesPopoverActive"
             :_popoverContent="{
               align: 'end',
             }"
           >
             <template #trigger>
-              <!-- <NIndicator
+              <NIndicator
                 label="2"
-              > -->
-              <NButton
-                btn="soft-gray"
-                icon
-                rounded="full"
-                square
-                label="i-lucide-message-circle"
-              />
-              <!-- </NIndicator> -->
+                size="sm"
+              >
+                <NButton
+                  btn="text-gray"
+                  icon
+                  rounded="full"
+                  square
+                  label="i-lucide-message-circle"
+                  @click="isMessagesPopoverActive = !isMessagesPopoverActive"
+                />
+              </NIndicator>
             </template>
 
             <h3 class="mb-2 font-medium">
@@ -82,18 +89,25 @@ const breadcrumbItems = computed(() => {
           </NPopover>
 
           <NPopover
+            v-model:open="isNotificationsPopoverActive"
             :_popoverContent="{
               align: 'end',
             }"
           >
             <template #trigger>
-              <NButton
-                btn="text-gray"
-                icon
-                rounded="full"
-                square
-                label="i-lucide-bell"
-              />
+              <NIndicator
+                label="1"
+                size="sm"
+              >
+                <NButton
+                  btn="text-gray"
+                  icon
+                  rounded="full"
+                  square
+                  label="i-lucide-bell"
+                  @click="isNotificationsPopoverActive = !isNotificationsPopoverActive"
+                />
+              </NIndicator>
             </template>
 
             <h3 class="mb-2 font-medium">
