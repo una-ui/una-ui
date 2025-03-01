@@ -28,7 +28,7 @@
             </h4>
             <div class="space-y-3">
               <div class="flex items-start">
-                <div class="mr-3 mt-1 h-3 w-3 rounded-full bg-primary" />
+                <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
                   <span class="text-xs text-accent font-medium">hover</span>
                   <p class="text-xs text-muted">
@@ -37,7 +37,7 @@
                 </div>
               </div>
               <div class="flex items-start">
-                <div class="mr-3 mt-1 h-3 w-3 rounded-full bg-primary" />
+                <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
                   <span class="text-xs text-accent font-medium">always</span>
                   <p class="text-xs text-muted">
@@ -46,7 +46,7 @@
                 </div>
               </div>
               <div class="flex items-start">
-                <div class="mr-3 mt-1 h-3 w-3 rounded-full bg-primary" />
+                <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
                   <span class="text-xs text-accent font-medium">scroll</span>
                   <p class="text-xs text-muted">
