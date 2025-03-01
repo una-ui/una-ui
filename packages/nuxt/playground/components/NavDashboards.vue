@@ -18,10 +18,13 @@ const { isMobile } = useSidebar()
     <NSidebarMenu>
       <NSidebarMenuItem v-for="item in dashboards" :key="item.name">
         <NSidebarMenuButton as-child>
-          <a :href="item.url">
+          <NLink
+            :to="item.url"
+            active-class="bg-accent"
+          >
             <NIcon :name="item.icon" />
             <span>{{ item.name }}</span>
-          </a>
+          </NLink>
         </NSidebarMenuButton>
         <NDropdownMenu
           :_dropdownMenuContent="{
