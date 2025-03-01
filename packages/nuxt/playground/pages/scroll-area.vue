@@ -48,15 +48,11 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     </div>
     <ReuseTemplate
       :data="custom"
-      :_scroll-area-scrollbar="{
-        una: {
-          scrollAreaThumb: 'bg-primary/50',
-        //   scrollAreaScrollbar: 'bg-primary/10',
-        },
-      }"
+      scroll-area="yellow"
       :una="{
-        scrollAreaScrollbar: 'bg-primary/10',
+        scrollAreaScrollbar: 'bg-yellow/10',
       }"
+      rounded="none"
       section="Custom Variant"
       class="h-44 w-full"
     />
