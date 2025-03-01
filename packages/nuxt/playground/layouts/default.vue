@@ -43,9 +43,8 @@ const isMessagesPopoverActive = ref(false)
                 size="sm"
               >
                 <NButton
-                  btn="text-gray"
+                  btn="text-black"
                   icon
-                  rounded="full"
                   square
                   label="i-lucide-message-circle"
                   @click="isMessagesPopoverActive = !isMessagesPopoverActive"
@@ -100,9 +99,8 @@ const isMessagesPopoverActive = ref(false)
                 size="sm"
               >
                 <NButton
-                  btn="text-gray"
+                  btn="text-black"
                   icon
-                  rounded="full"
                   square
                   label="i-lucide-bell"
                   @click="isNotificationsPopoverActive = !isNotificationsPopoverActive"
@@ -158,11 +156,23 @@ const isMessagesPopoverActive = ref(false)
               </div>
             </div>
           </NPopover>
-          <ColorMode
-            btn="text-gray"
-            rounded="full"
-          />
-          <NThemeSwitcher />
+
+          <div class="flex items-center">
+            <NThemeSwitcher>
+              <template #trigger>
+                <NButton
+                  btn="text-black"
+                  icon
+                  square
+                  label="i-lucide-paintbrush"
+                />
+              </template>
+            </NThemeSwitcher>
+
+            <ColorMode
+              btn="text-black"
+            />
+          </div>
         </div>
       </header>
 
