@@ -246,9 +246,11 @@ const data = {
       <TeamSwitcher :teams="data.teams" />
     </NSidebarHeader>
     <NSidebarContent>
-      <NavDashboards :dashboards="data.dashboards" />
-      <NavMain :items="data.navMain" />
-      <NavProjects :projects="data.projects" />
+      <NScrollArea>
+        <NavDashboards :dashboards="data.dashboards" />
+        <NavMain :items="data.navMain" />
+        <NavProjects :projects="data.projects" />
+      </NScrollArea>
     </NSidebarContent>
     <NSidebarFooter>
       <NavUser :user="data.user" />
