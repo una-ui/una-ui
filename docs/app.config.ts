@@ -7,11 +7,14 @@ export default defineAppConfig({
       description: 'The Atomic UI Framework - Experience the power of Unocss Engine, enabling the creation of fast, modern, and lightweight components with ease.',
       ogImage: '/hero.png',
     },
+    theme: {
+      border: 'dashed',
+    },
     header: {
+      border: true,
       darkModeToggle: true,
       showLoadingIndicator: true,
       showLogo: true,
-      border: true,
       links: [
         {
           icon: 'i-radix-icons-github-logo',
@@ -47,10 +50,12 @@ export default defineAppConfig({
       },
     },
     aside: {
+      border: true,
       useLevel: true,
       collapse: false,
     },
     main: {
+      backToTop: true,
       padded: true,
       breadCrumb: true,
       showTitle: true,
