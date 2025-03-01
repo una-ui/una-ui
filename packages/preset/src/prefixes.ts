@@ -78,6 +78,8 @@ export default [
   'radio-group-item',
   'resize',
   'rounded',
+  'scroll-area',
+  'scroll-bar',
   'select',
   'select-content',
   'select-group',
