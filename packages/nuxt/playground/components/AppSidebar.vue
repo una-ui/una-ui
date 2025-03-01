@@ -99,6 +99,10 @@ const data = {
           url: '/components/radio-group',
         },
         {
+          title: 'Scroll Area',
+          url: '/components/scroll-area',
+        },
+        {
           title: 'Select',
           url: '/components/select',
         },
