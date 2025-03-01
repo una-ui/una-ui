@@ -8,7 +8,11 @@ const props = defineProps<NSelectValueProps>()
 
 <template>
   <SelectValue
-    :class="cn('select-value', props.class)"
+    :class="cn(
+      'select-value',
+      props.una?.selectValue,
+      props.class,
+    )"
     v-bind="props"
   >
     <slot />

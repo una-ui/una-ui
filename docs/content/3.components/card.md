@@ -1,8 +1,5 @@
 ---
 description: 'Displays a card with header, content, and footer.'
-navBadges:
-  - value: Updated
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

@@ -26,14 +26,15 @@ const forwardedProps = useForwardProps(delegatedProps)
     :class="
       cn(
         'select-item',
-        props.class,
         props.una?.selectItem,
+        props.class,
       )
     "
     :select-item
   >
     <SelectItemIndicator
       v-if="isSelected"
+      :una
       v-bind="props._selectItemIndicator"
     >
       <slot name="item-indicator" />

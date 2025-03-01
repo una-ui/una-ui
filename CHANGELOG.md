@@ -1,3 +1,13 @@
+# [0.39.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.38.0-beta.1...v0.39.0-beta.1) (2025-03-01)
+
+
+### Features
+
+* **Avatar:** set label preset to capitalize by default ([8f966b5](https://github.com/una-ui/una-ui/commit/8f966b55114540420de8a0846832d64f86119908))
+* **ScrollArea:** introduce new component and presets ([#343](https://github.com/una-ui/una-ui/issues/343)) ([54750ce](https://github.com/una-ui/una-ui/commit/54750cef1303abdc4658d26a2db0529afc925024))
+
+
+
 # [0.38.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.37.1-beta.1...v0.38.0-beta.1) (2025-02-27)
 
 

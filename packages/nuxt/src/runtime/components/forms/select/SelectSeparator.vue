@@ -14,5 +14,12 @@ const delegatedProps = computed(() => {
 </script>
 
 <template>
-  <SelectSeparator v-bind="delegatedProps" :class="cn('select-separator', props.class)" />
+  <SelectSeparator
+    v-bind="delegatedProps"
+    :class="cn(
+      'select-separator',
+      props.una?.selectSeparator,
+      props.class,
+    )"
+  />
 </template>

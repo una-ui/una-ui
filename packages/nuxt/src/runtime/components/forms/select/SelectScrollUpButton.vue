@@ -17,7 +17,14 @@ const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
-  <SelectScrollUpButton v-bind="forwardedProps" :class="cn('select-scroll-up-button', props.class)">
+  <SelectScrollUpButton
+    v-bind="forwardedProps"
+    :class="cn(
+      'select-scroll-up-button',
+      props.una?.selectScrollUpButton,
+      props.class,
+    )"
+  >
     <slot>
       <Icon
         :name="forwardedProps?.una?.selectScrollUpButtonIcon || 'select-scroll-up-button-icon'"
