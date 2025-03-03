@@ -29,6 +29,8 @@ export default function presetUna(options: unaUIOptions = {
         foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
         muted: 'rgba(var(--una-muted) / <alpha-value>)',
         mutedForeground: 'rgba(var(--una-muted-foreground) / <alpha-value>)',
+        accent: 'rgba(var(--una-accent) / <alpha-value>)',
+        accentForeground: 'rgba(var(--una-accent-foreground) / <alpha-value>)',
         brand: 'rgba(var(--una-brand) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',

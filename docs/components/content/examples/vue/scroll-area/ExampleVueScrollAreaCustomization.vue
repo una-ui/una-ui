@@ -16,21 +16,21 @@
             <h3 class="text-2xl text-foreground font-bold">
               Accessible Scrolling
             </h3>
-            <p class="mt-2 text-accent">
+            <p class="mt-2 text-accent-foreground">
               Cross-browser consistent scrollbars that work on all devices with keyboard navigation and screen reader support.
             </p>
           </div>
 
           <!-- Display modes -->
           <div class="border rounded-md bg-muted p-4">
-            <h4 class="mb-3 text-sm text-accent font-semibold">
+            <h4 class="mb-3 text-sm text-accent-foreground font-semibold">
               Display Modes
             </h4>
             <div class="space-y-3">
               <div class="flex items-start">
                 <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
-                  <span class="text-xs text-accent font-medium">hover</span>
+                  <span class="text-xs text-accent-foreground font-medium">hover</span>
                   <p class="text-xs text-muted-foreground">
                     Shows scrollbars when hovering over the scroll area
                   </p>
@@ -39,7 +39,7 @@
               <div class="flex items-start">
                 <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
-                  <span class="text-xs text-accent font-medium">always</span>
+                  <span class="text-xs text-accent-foreground font-medium">always</span>
                   <p class="text-xs text-muted-foreground">
                     Always shows scrollbars regardless of interaction
                   </p>
@@ -48,7 +48,7 @@
               <div class="flex items-start">
                 <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
-                  <span class="text-xs text-accent font-medium">scroll</span>
+                  <span class="text-xs text-accent-foreground font-medium">scroll</span>
                   <p class="text-xs text-muted-foreground">
                     Shows scrollbars during scrolling and hides after
                   </p>
@@ -61,7 +61,7 @@
 
           <!-- Use cases -->
           <div>
-            <h4 class="mb-3 text-sm text-accent font-semibold">
+            <h4 class="mb-3 text-sm text-accent-foreground font-semibold">
               Common Use Cases
             </h4>
             <div class="grid grid-cols-2 gap-3">
@@ -69,7 +69,7 @@
                 <div class="mb-2 h-6 w-6 flex items-center justify-center border rounded bg-white">
                   <div class="h-2 w-2 rounded-full bg-primary" />
                 </div>
-                <h5 class="mb-1 text-xs text-accent font-medium">
+                <h5 class="mb-1 text-xs text-accent-foreground font-medium">
                   Content panels
                 </h5>
                 <p class="text-xs text-muted-foreground">
@@ -80,7 +80,7 @@
                 <div class="mb-2 h-6 w-6 flex items-center justify-center border rounded bg-white">
                   <div class="h-2 w-2 rounded-full bg-primary" />
                 </div>
-                <h5 class="mb-1 text-xs text-accent font-medium">
+                <h5 class="mb-1 text-xs text-accent-foreground font-medium">
                   Long forms
                 </h5>
                 <p class="text-xs text-muted-foreground">
@@ -91,7 +91,7 @@
                 <div class="mb-2 h-6 w-6 flex items-center justify-center border rounded bg-white">
                   <div class="h-2 w-2 rounded-full bg-primary" />
                 </div>
-                <h5 class="mb-1 text-xs text-accent font-medium">
+                <h5 class="mb-1 text-xs text-accent-foreground font-medium">
                   Code blocks
                 </h5>
                 <p class="text-xs text-muted-foreground">
@@ -102,7 +102,7 @@
                 <div class="mb-2 h-6 w-6 flex items-center justify-center border rounded bg-white">
                   <div class="h-2 w-2 rounded-full bg-primary" />
                 </div>
-                <h5 class="mb-1 text-xs text-accent font-medium">
+                <h5 class="mb-1 text-xs text-accent-foreground font-medium">
                   Media galleries
                 </h5>
                 <p class="text-xs text-muted-foreground">
