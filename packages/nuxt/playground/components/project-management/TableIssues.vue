@@ -28,7 +28,7 @@ const columns: ColumnDef<Issue>[] = [
       const number = info.row.original.number
 
       return h('div', {
-        class: 'text-sm font-semibold leading-none',
+        class: 'text-sm leading-none',
       }, [
         h('span', {}, title),
         number
@@ -197,7 +197,7 @@ const columnVisibility = ref({
   author: false,
   assignee: true,
   state: true,
-  repository: true,
+  repository: false,
   priority: true,
   username: false,
   email: false,
@@ -248,7 +248,7 @@ const visibleColumnHeaders = computed({
 
     columnVisibility.value = newVisibility
   },
-})
+}) as unknown as any
 </script>
 
 <template>
@@ -272,7 +272,11 @@ const visibleColumnHeaders = computed({
           multiple
           :items="columns.map(column => column.header!)"
           placeholder="Visible columns"
-        />
+        >
+          <template #value>
+            Columns
+          </template>
+        </NSelect>
 
         <NTooltip
           content="Reload"
@@ -315,7 +319,6 @@ const visibleColumnHeaders = computed({
       }"
       :global-filter="search"
       :column-visibility
-
       enable-row-selection enable-sorting enable-column-filters
       row-id="id"
     >
@@ -364,6 +367,7 @@ const visibleColumnHeaders = computed({
         <div class="flex items-center space-x-2">
           <NInput
             type="number"
+            class="min-w-20"
             placeholder="Min"
             :model-value="column.getFilterValue()?.[0] ?? ''"
             @update:model-value="column?.setFilterValue((old: [number, number]) => [
@@ -374,6 +378,7 @@ const visibleColumnHeaders = computed({
 
           <NInput
             type="number"
+            class="min-w-20"
             placeholder="Max"
             :model-value="column.getFilterValue()?.[1] ?? ''"
             @update:model-value="column?.setFilterValue((old: [number, number]) => [
@@ -446,45 +451,40 @@ const visibleColumnHeaders = computed({
     </NTable>
 
     <!-- footer -->
-    <div
-      class="flex items-center justify-between px-4"
-    >
-      <div
-        class="hidden text-sm text-muted sm:block"
-      >
+    <div class="flex items-center justify-between px-4">
+      <div class="hidden text-sm text-muted sm:block">
         {{ table?.getFilteredSelectedRowModel().rows.length.toLocaleString() }} of
         {{ table?.getFilteredRowModel().rows.length.toLocaleString() }} row(s) selected.
       </div>
-      <div class="flex items-center space-x-6 lg:space-x-8">
-        <div
-          class="hidden items-center justify-center text-sm font-medium sm:flex space-x-2"
-        >
-          <span class="text-nowrap">
-            Rows per page
-          </span>
 
+      <div class="ml-auto flex items-center space-x-6 lg:space-x-8">
+        <div class="hidden items-center text-sm font-medium sm:flex space-x-2">
+          <span class="text-nowrap">Rows per page</span>
           <NSelect
             :items="[5, 10, 20, 30, 40, 50]"
             :default-value="5"
+            :una="{
+              selectTrigger: 'w-16',
+            }"
             :model-value="table?.getState().pagination.pageSize"
             @update:model-value="table?.setPageSize($event as unknown as number)"
           />
         </div>
 
-        <div
-          class="flex items-center justify-center text-sm font-medium"
-        >
-          Page {{ (table?.getState().pagination.pageIndex ?? 0) + 1 }} of
-          {{ table?.getPageCount().toLocaleString() }}
-        </div>
+        <div class="flex items-center gap-4">
+          <div class="whitespace-nowrap text-sm font-medium">
+            Page {{ (table?.getState().pagination.pageIndex ?? 0) + 1 }} of
+            {{ table?.getPageCount().toLocaleString() }}
+          </div>
 
-        <NPagination
-          :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
-          :total="table?.getFilteredRowModel().rows.length"
-          :show-list-item="false"
-          :items-per-page="table?.getState().pagination.pageSize ?? 5"
-          @update:page="table?.setPageIndex($event - 1)"
-        />
+          <NPagination
+            :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
+            :total="table?.getFilteredRowModel().rows.length"
+            :show-list-item="false"
+            :items-per-page="table?.getState().pagination.pageSize ?? 5"
+            @update:page="table?.setPageIndex($event - 1)"
+          />
+        </div>
       </div>
     </div>
   </div>

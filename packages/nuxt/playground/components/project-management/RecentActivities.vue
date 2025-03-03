@@ -49,19 +49,19 @@ const activities = [
 </script>
 
 <template>
-  <div class="grid grid-cols-1 gap-3 lg:grid-cols-3 md:grid-cols-2">
+  <div class="grid grid-cols-1">
     <NCard
       v-for="activity in activities"
       :key="activity.id"
       :una="{
-        cardContent: 'p-3 flex gap-3',
+        cardContent: 'py-4 px-4 flex gap-3',
       }"
-      card="outline hover:soft"
-      class="group relative cursor-pointer overflow-hidden transition"
+      card="~ hover:soft"
+      class="group relative cursor-pointer overflow-hidden border-t rounded-0 transition"
     >
       <!-- Activity icon - positioned absolute to the right -->
       <NIcon
-        :class="`absolute right-2 top-2 opacity-50 group-hover:opacity-100 text-xl
+        :class="`absolute right-3 top-3 opacity-50 group-hover:opacity-100 text-xl
                   ${activity.type === 'Development' ? 'text-info'
                   : activity.type === 'Feedback' ? 'text-success'
                   : activity.type === 'Meeting' ? 'text-warning'
@@ -74,36 +74,33 @@ const activities = [
       <!-- Left side: avatar -->
       <div class="flex-shrink-0">
         <NAvatar
-          avatar="soft"
+          :avatar="activity.type === 'Development' ? 'outline-info'
+            : activity.type === 'Feedback' ? 'outline-success'
+              : activity.type === 'Meeting' ? 'outline-warning'
+                : activity.type === 'Bug' ? 'outline-error'
+                  : activity.type === 'Feature' ? 'outline-success'
+                    : 'outline-info'"
+          class="group-hover:border-2"
           :src="`https://i.pravatar.cc/40?u=${activity.user}`"
           :alt="`${activity.user}`"
-          :class="`ring-2
-                    ${activity.type === 'Development' ? 'ring-info/50 group-hover:ring-info'
-                    : activity.type === 'Feedback' ? 'ring-success/50 group-hover:ring-success'
-                    : activity.type === 'Meeting' ? 'ring-warning/50 group-hover:ring-warning'
-                    : activity.type === 'Bug' ? 'ring-error/50 group-hover:ring-error'
-                    : activity.type === 'Feature' ? 'ring-success/50 group-hover:ring-success'
-          : 'ring-info/50 group-hover:ring-info'}`"
         />
       </div>
 
       <!-- Middle: content -->
       <div class="min-w-0 flex-1">
-        <div class="flex items-start justify-between">
-          <div>
-            <p class="font-semibold">
-              {{ activity.title }}
-            </p>
-            <p class="text-muted-foreground line-clamp-1 text-sm">
-              {{ activity.description }}
-            </p>
-          </div>
+        <div class="flex flex-col">
+          <p class="text-md">
+            {{ activity.title }}
+          </p>
+          <p class="mt-1 text-sm text-muted">
+            {{ activity.description }}
+          </p>
         </div>
 
         <!-- Footer with time and badge -->
-        <div class="mt-2 flex items-center justify-between">
+        <div class="mt-3 flex items-center justify-between">
           <NBadge
-            class="rounded-full px-2 py-0.5 text-xs"
+            class="rounded-full px-2.5 py-0.5 text-xs"
             :badge="activity.type === 'Development' ? 'soft-info'
               : activity.type === 'Feedback' ? 'soft-success'
                 : activity.type === 'Meeting' ? 'soft-warning'
@@ -113,7 +110,7 @@ const activities = [
           >
             {{ activity.type }}
           </NBadge>
-          <span class="text-muted-foreground text-sm">{{ activity.time }}</span>
+          <span class="text-sm text-muted">{{ activity.time }}</span>
         </div>
       </div>
     </NCard>

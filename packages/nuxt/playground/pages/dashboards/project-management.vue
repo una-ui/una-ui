@@ -91,7 +91,7 @@
     </div>
 
     <!-- Issues and Activity Section - Better separated with proper layout -->
-    <div class="flex flex-col gap-6">
+    <div class="grid grid-cols-1 gap-4 lg:grid-cols-4">
       <!-- Project Issues Table Section -->
       <NCard
         title="Project Issues"
@@ -100,23 +100,23 @@
           cardHeader: 'p-4',
           cardContent: 'p-0 pb-4',
         }"
-        class="rounded-lg"
+        class="col-span-full rounded-lg lg:col-span-3"
       >
         <ProjectManagementTableIssues />
       </NCard>
-    </div>
 
-    <!-- Recent Activities Section -->
-    <NCard
-      title="Recent Activities"
-      description="Stay updated with the latest activities"
-      class="rounded-lg"
-      :una="{
-        cardHeader: 'p-4',
-        cardContent: 'px-4 pb-4',
-      }"
-    >
-      <ProjectManagementRecentActivities />
-    </NCard>
+      <!-- Recent Activities Section -->
+      <NCard
+        title="Recent Activities"
+        description="Stay updated with the latest activities"
+        :una="{
+          cardHeader: 'p-4',
+          cardContent: 'p-0',
+        }"
+        class="col-span-full rounded-lg lg:col-span-1"
+      >
+        <ProjectManagementRecentActivities />
+      </NCard>
+    </div>
   </main>
 </template>
