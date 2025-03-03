@@ -4,7 +4,7 @@ export const staticBreadcrumb: Record<`${BreadcrumbPrefix}-${string}` | Breadcru
   // config
   'breadcrumb': '',
   'breadcrumb-active': 'breadcrumb-active-text-primary',
-  'breadcrumb-inactive': 'breadcrumb-inactive-text-muted-foreground',
+  'breadcrumb-inactive': 'breadcrumb-inactive-text-muted',
   'breadcrumb-separator-icon': 'i-radix-icons-chevron-right',
   'breadcrumb-ellipsis-icon': 'i-radix-icons-dots-horizontal',
 
