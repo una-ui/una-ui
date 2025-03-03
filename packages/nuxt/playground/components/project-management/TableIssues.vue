@@ -248,7 +248,7 @@ const visibleColumnHeaders = computed({
 
     columnVisibility.value = newVisibility
   },
-}) as unknown as any
+})
 </script>
 
 <template>
@@ -315,7 +315,7 @@ const visibleColumnHeaders = computed({
       :data="data ?? []"
       :pagination="{
         pageIndex: 0,
-        pageSize: 5,
+        pageSize: 10,
       }"
       :global-filter="search"
       :column-visibility
@@ -462,9 +462,9 @@ const visibleColumnHeaders = computed({
           <span class="text-nowrap">Rows per page</span>
           <NSelect
             :items="[5, 10, 20, 30, 40, 50]"
-            :default-value="5"
+            :default-value="10"
             :una="{
-              selectTrigger: 'w-16',
+              selectTrigger: 'w-20',
             }"
             :model-value="table?.getState().pagination.pageSize"
             @update:model-value="table?.setPageSize($event as unknown as number)"
