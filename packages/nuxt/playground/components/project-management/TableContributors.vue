@@ -244,7 +244,7 @@ const visibleColumnHeaders = computed({
       v-model="select"
       :columns
       :una="{
-        tableRootWrapper: 'border-x-0 border-b-0 rounded-0',
+        tableRoot: 'border-x-0 border-b-0 rounded-0',
       }"
       :data="data ?? []"
       :global-filter="search"
