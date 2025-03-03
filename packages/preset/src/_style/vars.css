@@ -1,4 +1,9 @@
 :root {
+  --una-background: 255, 255, 255;
+  --una-foreground: var(--una-gray-950);
+  --una-muted: var(--una-gray-50);
+  --una-muted-foreground: var(--una-gray-500);
+
   --una-font-size: 16px;
   --una-radius: 0.5rem;
 
@@ -7,11 +12,6 @@
   --una-primary-active: var(--una-primary-500);
   --una-gray: var(--una-gray-600);
   --una-gray-active: var(--una-gray-500);
-  --una-background: 255, 255, 255;
-  --una-foreground: var(--una-gray-950);
-
-  --c-background: rgb(var(--una-background));
-  --c-foreground: rgb(var(--una-foreground));
 
   --c-muted: rgb(var(--una-gray-50));
   --c-muted-foreground: rgb(var(--una-gray-500));
@@ -33,16 +33,14 @@
 }
 
 .dark {
+  --una-background: var(--una-gray-950);
+  --una-foreground: 255, 255, 255;
+
   --una-brand: var(--una-primary-500);
   --una-primary: var(--una-primary-500);
   --una-primary-active: var(--una-primary-400);
   --una-gray: var(--una-gray-500);
   --una-gray-active: var(--una-gray-400);
-  --una-background: var(--una-gray-950);
-  --una-foreground: 255, 255, 255;
-
-  --c-background: rgb(var(--una-background));
-  --c-foreground: rgb(var(--una-foreground));
 
   --c-muted: rgb(var(--una-gray-900));
   --c-muted-foreground: rgb(var(--una-gray-400));

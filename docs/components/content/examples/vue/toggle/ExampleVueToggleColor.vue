@@ -29,7 +29,7 @@ const toggle = ref(true)
       label="i-radix-icons-strikethrough"
       :default-value="true"
       toggle-on="outline-yellow"
-      toggle-off="text-muted"
+      toggle-off="text-muted-foreground"
     />
 
     <NToggle

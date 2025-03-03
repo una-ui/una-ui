@@ -4,13 +4,13 @@ export const staticBreadcrumb: Record<`${BreadcrumbPrefix}-${string}` | Breadcru
   // config
   'breadcrumb': '',
   'breadcrumb-active': 'breadcrumb-active-text-primary',
-  'breadcrumb-inactive': 'breadcrumb-inactive-text-muted',
+  'breadcrumb-inactive': 'breadcrumb-inactive-text-muted-foreground',
   'breadcrumb-separator-icon': 'i-radix-icons-chevron-right',
   'breadcrumb-ellipsis-icon': 'i-radix-icons-dots-horizontal',
 
   // components
   'breadcrumb-root': '',
-  'breadcrumb-list': 'flex flex-wrap items-center break-words text-muted',
+  'breadcrumb-list': 'flex flex-wrap items-center break-words text-muted-foreground',
   'breadcrumb-link': 'transition-colors font-normal px-1.5 sm:px-2.5',
   'breadcrumb-item': 'inline-flex items-center gap-1.5',
   'breadcrumb-separator': 'flex',

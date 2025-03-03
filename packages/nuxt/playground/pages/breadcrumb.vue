@@ -64,7 +64,7 @@ const items2 = [
     <NBreadcrumb
       :items="items2"
       breadcrumb-active="text-black"
-      breadcrumb-inactive="text-muted"
+      breadcrumb-inactive="text-muted-foreground"
     >
       <template #default="{ item, index, isActive }">
         <NBadge :badge="isActive ? 'primary' : 'soft-gray'" class="rounded-full">
@@ -79,7 +79,7 @@ const items2 = [
     <NBreadcrumb
       :items="items2"
       breadcrumb-active="text-black"
-      breadcrumb-inactive="text-muted"
+      breadcrumb-inactive="text-muted-foreground"
       separator="i-heroicons-slash-20-solid"
     />
 

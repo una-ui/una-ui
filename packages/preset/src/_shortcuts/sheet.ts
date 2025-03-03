@@ -9,7 +9,7 @@ export const staticSheet: Record<`${SheetPrefix}-${string}` | SheetPrefix, strin
   'sheet-portal': '',
   'sheet-overlay': 'fixed inset-0 z-50 data-[state=closed]:animate-out data-[state=open]:animate-in bg-black/80 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
   'sheet-close': 'absolute right-4 top-4',
-  'sheet-description': 'text-sm text-muted',
+  'sheet-description': 'text-sm text-muted-foreground',
   'sheet-footer': 'flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-x-2',
   'sheet-header': 'flex flex-col gap-y-2 text-center sm:text-left',
   'sheet-title': 'text-lg font-semibold text-foreground',

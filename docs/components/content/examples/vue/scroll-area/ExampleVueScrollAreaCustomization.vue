@@ -31,7 +31,7 @@
                 <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
                   <span class="text-xs text-accent font-medium">hover</span>
-                  <p class="text-xs text-muted">
+                  <p class="text-xs text-muted-foreground">
                     Shows scrollbars when hovering over the scroll area
                   </p>
                 </div>
@@ -40,7 +40,7 @@
                 <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
                   <span class="text-xs text-accent font-medium">always</span>
-                  <p class="text-xs text-muted">
+                  <p class="text-xs text-muted-foreground">
                     Always shows scrollbars regardless of interaction
                   </p>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="mr-3 mt-2 h-3 w-3 rounded-full bg-primary" />
                 <div>
                   <span class="text-xs text-accent font-medium">scroll</span>
-                  <p class="text-xs text-muted">
+                  <p class="text-xs text-muted-foreground">
                     Shows scrollbars during scrolling and hides after
                   </p>
                 </div>
@@ -72,7 +72,7 @@
                 <h5 class="mb-1 text-xs text-accent font-medium">
                   Content panels
                 </h5>
-                <p class="text-xs text-muted">
+                <p class="text-xs text-muted-foreground">
                   For dashboards, chat interfaces, and document viewers
                 </p>
               </div>
@@ -83,7 +83,7 @@
                 <h5 class="mb-1 text-xs text-accent font-medium">
                   Long forms
                 </h5>
-                <p class="text-xs text-muted">
+                <p class="text-xs text-muted-foreground">
                   For registration flows, surveys, and user settings
                 </p>
               </div>
@@ -94,7 +94,7 @@
                 <h5 class="mb-1 text-xs text-accent font-medium">
                   Code blocks
                 </h5>
-                <p class="text-xs text-muted">
+                <p class="text-xs text-muted-foreground">
                   For documentation, code editors, and technical content
                 </p>
               </div>
@@ -105,7 +105,7 @@
                 <h5 class="mb-1 text-xs text-accent font-medium">
                   Media galleries
                 </h5>
-                <p class="text-xs text-muted">
+                <p class="text-xs text-muted-foreground">
                   For image collections, video libraries, and portfolios
                 </p>
               </div>

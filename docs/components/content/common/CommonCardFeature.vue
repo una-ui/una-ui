@@ -21,7 +21,7 @@ withDefaults(defineProps<{
         {{ title }}
       </h3>
 
-      <p class="mt-2 text-muted">
+      <p class="mt-2 text-muted-foreground">
         {{ description }}
       </p>
     </div>

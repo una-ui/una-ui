@@ -145,8 +145,8 @@
           btn="link-muted"
         />
         <NButton
-          label="text-muted"
-          btn="text-muted"
+          label="text-muted-foreground"
+          btn="text-muted-foreground"
         />
       </div>
       <div class="flex flex-col gap-2 md:flex-row">

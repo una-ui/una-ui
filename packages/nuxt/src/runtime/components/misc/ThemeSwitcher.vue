@@ -66,7 +66,7 @@ function shuffleTheme(): void {
           <h1 class="text-md text-foreground font-semibold">
             Customize
           </h1>
-          <p class="text-xs text-muted">
+          <p class="text-xs text-muted-foreground">
             Pick a style and color for your components.
           </p>
         </div>

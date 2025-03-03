@@ -28,10 +28,10 @@ badges:
 
 ### Variant & Color
 
-| Prop                  | Default        | Type                | Description                                |
-| --------------------- | -------------- | ------------------- | ------------------------------------------ |
-| `breadcrumb-active`   | `text-primary` | `{variant}-{color}` | The active breadcrumb variant and color.   |
-| `breadcrumb-inactive` | `text-muted`   | `{variant}-{color}` | The inactive breadcrumb variant and color. |
+| Prop                  | Default                 | Type                | Description                                |
+| --------------------- | ----------------------- | ------------------- | ------------------------------------------ |
+| `breadcrumb-active`   | `text-primary`          | `{variant}-{color}` | The active breadcrumb variant and color.   |
+| `breadcrumb-inactive` | `text-muted-foreground` | `{variant}-{color}` | The inactive breadcrumb variant and color. |
 
 ::alert{type="info"}
 You can use any variant and color provided by the [Button](button#variants) component. Just use `breadcrumb-active` and `breadcrumb-inactive` as prefixes instead of `btn`.

@@ -7,7 +7,7 @@ export const staticCard: Record<`${CardPrefix}-${string}` | CardPrefix, string> 
   // components
   'card-header': 'flex flex-col gap-y-1.5 p-6',
   'card-title': 'font-semibold leading-none tracking-tight',
-  'card-description': 'text-sm text-muted',
+  'card-description': 'text-sm text-muted-foreground',
   'card-content': 'p-6 pt-0',
   'card-footer': 'flex items-center p-6 pt-0',
 

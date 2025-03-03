@@ -31,7 +31,7 @@ const notifications = [
           <p class="text-sm font-medium leading-none">
             Push Notifications
           </p>
-          <p class="text-muted-foreground text-sm">
+          <p class="text-muted-foreground-foreground text-sm">
             Send notifications to device.
           </p>
         </div>
@@ -47,7 +47,7 @@ const notifications = [
             <p class="text-sm font-medium leading-none">
               {{ notification.title }}
             </p>
-            <p class="text-muted-foreground text-sm">
+            <p class="text-muted-foreground-foreground text-sm">
               {{ notification.description }}
             </p>
           </div>

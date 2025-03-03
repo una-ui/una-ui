@@ -12,7 +12,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-padding': 'pr-2.9em',
 
   // base
-  'input': 'text-foreground text-0.875em leading-6 px-0.8571428571428571em py-0.5em w-full input-disabled ring-base ring-inset placeholder:text-muted block outline-none rounded-md border-0 shadow-sm bg-transparent',
+  'input': 'text-foreground text-0.875em leading-6 px-0.8571428571428571em py-0.5em w-full input-disabled ring-base ring-inset placeholder:text-muted-foreground block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-input': 'h-9', // role='input'
   'input-textarea': '', // role='textarea'
   'input-disabled': 'disabled:(n-disabled)',
@@ -24,8 +24,8 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
 
   // wrappers
   'input-wrapper': 'relative flex items-center',
-  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-muted',
-  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-muted',
+  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-muted-foreground',
+  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-muted-foreground',
 
   // variants
   'input-outline-gray': 'focus:ring-2 ring-1',
