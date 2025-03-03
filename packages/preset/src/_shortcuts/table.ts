@@ -3,11 +3,10 @@ type TablePrefix = 'table'
 export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, string> = {
   // config
   'table-default-variant': 'table-solid-gray',
-  'table': '',
 
   // table-root
-  'table-root-wrapper': 'relative w-full overflow-x-auto overflow-y-hidden border border-base rounded-md',
-  'table-root': 'w-full caption-bottom text-sm',
+  'table-root': 'relative w-full overflow-x-auto overflow-y-hidden border border-base rounded-md',
+  'table': 'w-full caption-bottom text-sm',
   'table-body': '[&_tr:last-child]:border-0',
   'table-caption': 'mt-4 text-sm text-muted',
 
