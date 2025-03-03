@@ -9,6 +9,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NInputProps>(), {
+  size: 'md',
   type: 'text',
   resize: 'none',
   rows: 3,
