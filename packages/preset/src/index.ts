@@ -32,6 +32,8 @@ export default function presetUna(options: unaUIOptions = {
         accent: 'rgba(var(--una-accent) / <alpha-value>)',
         accentForeground: 'rgba(var(--una-accent-foreground) / <alpha-value>)',
         brand: 'rgba(var(--una-brand) / <alpha-value>)',
+        popover: 'rgba(var(--una-popover) / <alpha-value>)',
+        popoverForeground: 'rgba(var(--una-popover-foreground) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
           active: 'rgba(var(--una-primary-active) / <alpha-value>)',

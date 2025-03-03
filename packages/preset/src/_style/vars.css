@@ -5,6 +5,8 @@
   --una-muted-foreground: var(--una-gray-500);
   --una-accent: var(--una-gray-100);
   --una-accent-foreground: var(--una-gray-800);
+  --una-popover: var(--una-gray-950);
+  --una-popover-foreground: var(--una-gray-50);
 
   --una-font-size: 16px;
   --una-radius: 0.5rem;
@@ -35,6 +37,8 @@
   --una-muted-foreground: var(--una-gray-400);
   --una-accent: var(--una-gray-800);
   --una-accent-foreground: var(--una-gray-100);
+  --una-popover: var(--una-gray-950);
+  --una-popover-foreground: var(--una-background);
 
   --una-brand: var(--una-primary-500);
   --una-primary: var(--una-primary-500);

@@ -5,9 +5,6 @@ export const staticGeneral = {
   'text-md': 'text-1rem leading-1.5rem',
   'size-md': 'text-md',
 
-  'text-popover': 'text-$c-popover-foreground',
-  'text-popover-foreground': 'text-$c-popover',
-
   'text-info': 'text-info-600 dark:text-info-500',
   'text-error': 'text-error-600 dark:text-error-500',
   'text-success': 'text-success-600 dark:text-success-500',
