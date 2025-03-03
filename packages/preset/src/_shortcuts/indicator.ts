@@ -23,7 +23,7 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
 }
 
 export const dynamicIndicator = [
-  [/^indicator-solid(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-600 dark:bg-${c}-500 text-inverted`],
+  [/^indicator-solid(-(\S+))?$/, ([, , c = 'primary']) => `bg-${c}-600 dark:bg-${c}-500 text-background`],
 ]
 
 export const indicator = [

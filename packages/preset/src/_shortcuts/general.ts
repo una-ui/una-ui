@@ -6,7 +6,6 @@ export const staticGeneral = {
   'size-md': 'text-md',
 
   // text color
-  'text-inverted': 'text-$c-background',
   'text-muted': 'text-$c-muted-foreground',
 
   'text-accent': 'text-$c-accent-foreground',
