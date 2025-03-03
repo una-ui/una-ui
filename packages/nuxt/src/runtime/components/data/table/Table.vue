@@ -293,7 +293,7 @@ defineExpose({
                 :column="header.column"
               >
                 <Input
-                  class="w-auto text-sm text-base"
+                  class="w-auto"
                   :model-value="header.column.getFilterValue() as string"
                   :placeholder="header.column.columnDef.header"
                   @update:model-value="header.column.setFilterValue($event)"

@@ -4,6 +4,7 @@ import type {
 } from '@tanstack/vue-table'
 import type { HTMLAttributes } from 'vue'
 import type { NProgressProps } from './progress'
+import type { NScrollAreaProps, NScrollAreaUnaProps } from './scroll-area'
 
 export interface NTableProps<TData, TValue> extends NTableRootProps {
   /**
@@ -114,8 +115,9 @@ export interface NTableProps<TData, TValue> extends NTableRootProps {
 
 export interface NTableRootProps {
   class?: HTMLAttributes['class']
+  _scrollArea?: NScrollAreaProps
 
-  una?: Pick<NTableUnaProps, 'tableRoot' | 'tableRootWrapper'>
+  una?: Pick<NTableUnaProps, 'tableRoot' | 'tableRootWrapper'> & NScrollAreaUnaProps
 }
 
 export interface NTableBodyProps {

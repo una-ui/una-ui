@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { NTableRootProps } from '../../../types'
 import { cn } from '../../../utils'
+import ScrollArea from '../../scroll-area/ScrollArea.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -13,15 +14,21 @@ const props = defineProps<NTableRootProps>()
   <div
     :class="cn('table-root-wrapper', props.una?.tableRootWrapper)"
   >
-    <table
-      v-bind="$attrs"
-      :class="cn(
-        'table-root',
-        props.una?.tableRoot,
-        props.class,
-      )"
+    <ScrollArea
+      orientation="horizontal"
+      v-bind="props._scrollArea"
+      :una
     >
-      <slot />
-    </table>
+      <table
+        v-bind="$attrs"
+        :class="cn(
+          'table-root',
+          props.una?.tableRoot,
+          props.class,
+        )"
+      >
+        <slot />
+      </table>
+    </ScrollArea>
   </div>
 </template>
