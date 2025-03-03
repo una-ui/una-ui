@@ -4,8 +4,10 @@ import type {
 } from '@tanstack/vue-table'
 import type { HTMLAttributes } from 'vue'
 import type { NProgressProps } from './progress'
+import type { NScrollAreaProps, NScrollAreaUnaProps } from './scroll-area'
 
-export interface NTableProps<TData, TValue> extends NTableRootProps {
+export interface NTableProps<TData, TValue> {
+  class?: HTMLAttributes['class']
   /**
    * @see https://tanstack.com/table/latest/docs/guide/data
    */
@@ -101,6 +103,7 @@ export interface NTableProps<TData, TValue> extends NTableRootProps {
   _tableCell?: NTableCellProps
   _tableEmpty?: NTableEmptyProps
   _tableLoading?: NTableLoadingProps
+  _scrollArea?: NScrollAreaProps
 
   loading?: boolean
 
@@ -109,13 +112,7 @@ export interface NTableProps<TData, TValue> extends NTableRootProps {
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/table.ts
    */
-  una?: NTableUnaProps
-}
-
-export interface NTableRootProps {
-  class?: HTMLAttributes['class']
-
-  una?: Pick<NTableUnaProps, 'tableRoot' | 'tableRootWrapper'>
+  una?: NTableUnaProps & NScrollAreaUnaProps
 }
 
 export interface NTableBodyProps {
@@ -188,8 +185,8 @@ export interface NTableCaptionProps {
 }
 
 interface NTableUnaProps {
+  table?: HTMLAttributes['class']
   tableRoot?: HTMLAttributes['class']
-  tableRootWrapper?: HTMLAttributes['class']
   tableBody?: HTMLAttributes['class']
   tableHead?: HTMLAttributes['class']
   tableHeader?: HTMLAttributes['class']

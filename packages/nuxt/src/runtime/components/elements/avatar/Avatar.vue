@@ -20,39 +20,33 @@ const props = withDefaults(defineProps<NAvatarProps>(), {
 
 <template>
   <AvatarRoot
-    as-child
+    :class="cn(
+      'avatar',
+      una?.avatarRoot,
+      props.class,
+    )"
+    :size
+    :rounded
+    :square
+    :avatar
+    v-bind="{ ..._avatarRoot, ...$attrs }"
   >
-    <component
-      :is="as"
-      :class="cn(
-        'avatar',
-        una?.avatarRoot,
-        props.class,
-      )"
-      :size
-      :rounded
-      :square
-      :avatar
-      v-bind="{ ..._avatarRoot, ...$attrs }"
-    >
-      <slot :props>
-        <AvatarImage
-          v-if="src"
-          :src
-          :una
-          v-bind="_avatarImage"
-        />
-      </slot>
-
-      <AvatarFallback
-        :avatar
-        :label="label || alt?.split(' ').map(word => word[0]).join('').slice(0, 2)"
-        :icon
-        v-bind="_avatarFallback"
+    <slot>
+      <AvatarImage
+        v-if="src"
+        :src
         :una
-      >
-        <slot name="fallback" />
-      </AvatarFallback>
-    </component>
+        v-bind="_avatarImage"
+      />
+    </slot>
+
+    <AvatarFallback
+      :label="label || alt?.split(' ').map(word => word[0]).join('').slice(0, 2)"
+      :icon
+      v-bind="_avatarFallback"
+      :una
+    >
+      <slot name="fallback" />
+    </AvatarFallback>
   </AvatarRoot>
 </template>
