@@ -12,7 +12,7 @@ export const staticSheet: Record<`${SheetPrefix}-${string}` | SheetPrefix, strin
   'sheet-description': 'text-sm text-muted',
   'sheet-footer': 'flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-x-2',
   'sheet-header': 'flex flex-col gap-y-2 text-center sm:text-left',
-  'sheet-title': 'text-lg font-semibold text-base',
+  'sheet-title': 'text-lg font-semibold text-foreground',
 
   // static variants
   'sheet-top': 'inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',

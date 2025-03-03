@@ -58,7 +58,7 @@ const components = [
     <main class="w-full overflow-y-auto border">
       <div class="flex flex-col items-center gap-2 border-b p-6">
         <h1 class="text-3xl text-primary-active font-bold">
-          <span class="dark:drop-shadow-[0_0_0.1mm_rgb(var(--c-primary))text-nowrap text-base font-bold drop-shadow-lg">
+          <span class="dark:drop-shadow-[0_0_0.1mm_rgb(var(--c-primary))text-nowrap text-foreground font-bold drop-shadow-lg">
             Una
             <span class="text-primary-active">UI</span>
           </span>

@@ -13,7 +13,7 @@
         <div class="space-y-8">
           <!-- Header -->
           <div>
-            <h3 class="text-2xl text-base font-bold">
+            <h3 class="text-2xl text-foreground font-bold">
               Accessible Scrolling
             </h3>
             <p class="mt-2 text-accent">

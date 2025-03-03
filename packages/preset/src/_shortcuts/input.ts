@@ -12,7 +12,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-padding': 'pr-2.9em',
 
   // base
-  'input': 'text-base text-0.875em leading-6 px-0.8571428571428571em py-0.5em w-full input-disabled ring-base ring-inset placeholder:text-muted block outline-none rounded-md border-0 shadow-sm bg-transparent',
+  'input': 'text-foreground text-0.875em leading-6 px-0.8571428571428571em py-0.5em w-full input-disabled ring-base ring-inset placeholder:text-muted block outline-none rounded-md border-0 shadow-sm bg-transparent',
   'input-input': 'h-9', // role='input'
   'input-textarea': '', // role='textarea'
   'input-disabled': 'disabled:(n-disabled)',
