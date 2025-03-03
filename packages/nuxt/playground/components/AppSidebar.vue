@@ -25,7 +25,7 @@ const data = {
   ],
   dashboards: [
     {
-      name: 'Defaults',
+      name: 'Default',
       url: '/dashboards/default',
       icon: 'i-lucide-home',
     },
