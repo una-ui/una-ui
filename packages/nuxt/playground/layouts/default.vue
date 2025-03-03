@@ -35,6 +35,7 @@ const isMessagesPopoverActive = ref(false)
             v-model:open="isMessagesPopoverActive"
             :_popoverContent="{
               align: 'end',
+              class: 'bg-muted',
             }"
           >
             <template #trigger>
@@ -91,6 +92,7 @@ const isMessagesPopoverActive = ref(false)
             v-model:open="isNotificationsPopoverActive"
             :_popoverContent="{
               align: 'end',
+              class: 'bg-muted',
             }"
           >
             <template #trigger>
