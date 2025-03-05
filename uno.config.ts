@@ -1,7 +1,7 @@
 import { mergeConfigs } from '@unocss/core'
 import config from './packages/nuxt/src/una.config.ts'
 
-export default mergeConfigs([config({
+export default mergeConfigs([config(), {
   safelist: [
     'i-radix-icons-github-logo',
     'i-tabler-brand-x',
@@ -50,4 +50,4 @@ export default mergeConfigs([config({
     '../packages/preset/src/_shortcuts/index.ts',
     '../packages/preset/src/index.ts',
   ],
-})])
+}])
