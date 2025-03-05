@@ -15,6 +15,7 @@ import { presetAnimations } from 'unocss-preset-animations'
 function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
   return {
     ...user,
+    nuxtLayers: true,
     preflight: false,
     presets: [
       presetWind3(),

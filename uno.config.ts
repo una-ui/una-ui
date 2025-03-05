@@ -1,48 +1,16 @@
-import {
-  defineConfig,
-  presetAttributify,
-  presetIcons,
-  presetUno,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
-import { presetAnimations } from 'unocss-preset-animations'
+import { mergeConfigs } from '@unocss/core'
+import config from './packages/nuxt/src/una.config.ts'
 
-import extratorUna from './packages/extractor-vue-script/src/index'
-import presetUna from './packages/preset/src/index'
-import prefixes from './packages/preset/src/prefixes'
-
-export default defineConfig({
+export default mergeConfigs([config({
   safelist: [
     'i-radix-icons-github-logo',
     'i-tabler-brand-x',
     'i-tabler-brand-discord-filled',
     'i-heroicons-arrow-up-right',
   ],
-  presets: [
-    presetUno(),
-    presetAttributify(),
-    presetIcons({
-      extraProperties: {
-        'display': 'inline-block',
-        'height': '1.2em',
-        'width': '1.2em',
-        'vertical-align': 'text-bottom',
-      },
-    }),
-    presetUna(),
-    presetAnimations(),
-  ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-  ],
-  extractors: [
-    extratorUna({
-      prefixes,
-    }),
-  ],
+
   configDeps: [
+    '../packages/nuxt/src/una.config.ts',
     '../packages/nuxt/src/preset.config.ts',
 
     '../packages/preset/src/_shortcuts/scroll-area.ts',
@@ -82,5 +50,4 @@ export default defineConfig({
     '../packages/preset/src/_shortcuts/index.ts',
     '../packages/preset/src/index.ts',
   ],
-
-})
+})])
