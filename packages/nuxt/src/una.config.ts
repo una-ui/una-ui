@@ -1,12 +1,11 @@
 import type { UnocssNuxtOptions } from '@unocss/nuxt'
 import extratorUna from '@una-ui/extractor-vue-script'
 import presetUna from '@una-ui/preset'
-
 import prefixes from '@una-ui/preset/prefixes'
 import {
   presetAttributify,
   presetIcons,
-  presetUno,
+  presetWind3,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -17,14 +16,14 @@ function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
     ...user,
     preflight: false,
     presets: [
-      presetUno(),
+      presetWind3(),
       presetAttributify(),
       presetIcons({
         extraProperties: {
           'display': 'inline-block',
           'height': '1.2em',
           'width': '1.2em',
-          'vertical-align': 'text-bottom',
+          'vertical-align': 'middle',
         },
       }),
       presetUna(),
