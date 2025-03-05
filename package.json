@@ -34,7 +34,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "rimraf packages/*/dist && ignore-dependency-scripts \"esno scripts/copy-files.ts\" && pnpm -r --filter=./packages/* run build",
+    "build": "rimraf packages/*/dist && ignore-dependency-scripts \"esno scripts/copy-files.ts\" && pnpm -r build",
     "build:packages": "nr --r prepack",
     "deploy": "nr build && nr docs build",
     "dev": "nr stub && nr -r dev",
