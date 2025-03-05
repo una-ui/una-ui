@@ -1,3 +1,15 @@
+# [0.40.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.39.0-beta.1...v0.40.0-beta.1) (2025-03-05)
+
+
+### Features
+
+* **Input:** provide default prop size value ([ab7c573](https://github.com/una-ui/una-ui/commit/ab7c573abaca9e370c9bb223556aeba6f2468055))
+* **Table:** add `scroll-area` component support ([d6ea0cf](https://github.com/una-ui/una-ui/commit/d6ea0cfb0cc1ea88c5d8e32f054c771186653679))
+* **Unocss:** upgrade to v6.66 and use presetWind3 preset ([75666d2](https://github.com/una-ui/una-ui/commit/75666d284bf97275de98c38c9623fce8ba988cde))
+* upgrade to presetwind3 support configuration ([#350](https://github.com/una-ui/una-ui/issues/350)) ([9fdc6ec](https://github.com/una-ui/una-ui/commit/9fdc6ec1f074fa253e685ecc6a329b4bfd671941))
+
+
+
 # [0.39.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.38.0-beta.1...v0.39.0-beta.1) (2025-03-01)
 
 
