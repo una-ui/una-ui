@@ -1,9 +1,7 @@
 import { mergeConfigs } from '@unocss/core'
-import docsConfig from './docs/.nuxt/uno.config.mjs'
 import config from './packages/nuxt/src/una.config.ts'
 
 export default mergeConfigs([
-  docsConfig,
   config({
     safelist: [
       'i-radix-icons-github-logo',
