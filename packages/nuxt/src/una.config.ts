@@ -25,7 +25,7 @@ function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
           'display': 'inline-block',
           'height': '1.2em',
           'width': '1.2em',
-          'vertical-align': 'text-bottom',
+          'vertical-align': 'middle',
         },
       }),
       presetUna(),
