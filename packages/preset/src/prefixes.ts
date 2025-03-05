@@ -118,7 +118,6 @@ export default [
   'table-head',
   'table-header',
   'table-loading',
-  'table-root',
   'table-row',
   'tabs',
   'tabs-content',
