@@ -35,7 +35,7 @@ const activeTeam = ref(props.teams[0])
             </span>
             <span class="truncate text-xs">{{ activeTeam.plan }}</span>
           </div>
-          <NIcon name="i-lucide-chevron-down" class="ml-auto" />
+          <NIcon name="i-lucide-chevrons-up-down" class="ml-auto" />
         </NSidebarMenuButton>
 
         <template #content>

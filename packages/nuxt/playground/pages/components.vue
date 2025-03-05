@@ -1,5 +1,5 @@
 <template>
-  <div class="grid h-full place-items-center">
+  <main class="grid h-full w-auto place-items-center container">
     <NuxtPage />
-  </div>
+  </main>
 </template>

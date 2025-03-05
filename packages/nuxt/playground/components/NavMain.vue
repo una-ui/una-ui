@@ -8,6 +8,7 @@ defineProps<{
     items?: {
       title: string
       url: string
+      badge?: string
     }[]
   }[]
 }>()
@@ -38,6 +39,14 @@ defineProps<{
                 <NSidebarMenuSubButton as-child>
                   <NLink :to="subItem.url">
                     <span>{{ subItem.title }}</span>
+                    <NBadge
+                      v-if="subItem.badge"
+                      rounded="full"
+                      size="10px"
+                      class="ml-auto capitalize"
+                    >
+                      {{ subItem.badge }}
+                    </NBadge>
                   </NLink>
                 </NSidebarMenuSubButton>
               </NSidebarMenuSubItem>

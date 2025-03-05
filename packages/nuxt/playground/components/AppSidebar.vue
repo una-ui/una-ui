@@ -113,11 +113,12 @@ const data = {
         {
           title: 'Sheet',
           url: '/components/sheet',
+          badge: 'new',
         },
-        {
-          title: 'Sidebar',
-          url: '/components/sidebar',
-        },
+        // {
+        //   title: 'Sidebar',
+        //   url: '/components/sidebar',
+        // },
         {
           title: 'Skeleton',
           url: '/components/skeleton',
