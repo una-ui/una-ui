@@ -45,6 +45,7 @@ const data = {
         {
           title: 'Accordion',
           url: '/components/accordion',
+          badge: 'deprecated' as const,
         },
         {
           title: 'Avatar',
@@ -113,7 +114,7 @@ const data = {
         {
           title: 'Sheet',
           url: '/components/sheet',
-          badge: 'new',
+          badge: 'new' as const,
         },
         // {
         //   title: 'Sidebar',

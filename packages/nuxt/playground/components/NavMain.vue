@@ -8,7 +8,7 @@ defineProps<{
     items?: {
       title: string
       url: string
-      badge?: string
+      badge?: 'new' | 'hot' | 'beta' | 'deprecated'
     }[]
   }[]
 }>()
@@ -41,8 +41,8 @@ defineProps<{
                     <span>{{ subItem.title }}</span>
                     <NBadge
                       v-if="subItem.badge"
-                      rounded="full"
                       size="10px"
+                      :badge="subItem.badge === 'new' ? 'soft-primary' : subItem.badge === 'hot' ? 'soft-orange' : subItem.badge === 'beta' ? 'soft-info' : 'soft-red'"
                       class="ml-auto capitalize"
                     >
                       {{ subItem.badge }}
