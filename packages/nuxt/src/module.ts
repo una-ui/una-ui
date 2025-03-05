@@ -246,14 +246,11 @@ export default defineNuxtModule<ModuleOptions>({
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
     }
 
-    if (!options.dev)
-      nuxt.options.unocss = extendUnocssOptions(nuxt.options.unocss)
-
     // utils
     addImportsDir(resolve(runtimeDir, 'utils', 'cn'))
 
     // modules
-    await installModule('@unocss/nuxt')
+    await installModule('@unocss/nuxt', extendUnocssOptions(nuxt.options.unocss))
     await installModule('@nuxtjs/color-mode', {
       classSuffix: '',
     })
