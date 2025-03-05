@@ -116,10 +116,11 @@ const data = {
           url: '/components/sheet',
           badge: 'new' as const,
         },
-        // {
-        //   title: 'Sidebar',
-        //   url: '/components/sidebar',
-        // },
+        {
+          title: 'Sidebar',
+          url: '/components/sidebar',
+          badge: 'hot' as const,
+        },
         {
           title: 'Skeleton',
           url: '/components/skeleton',
