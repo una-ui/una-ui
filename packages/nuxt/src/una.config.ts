@@ -6,7 +6,7 @@ import prefixes from '@una-ui/preset/prefixes'
 import {
   presetAttributify,
   presetIcons,
-  presetUno,
+  presetWind3,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -17,7 +17,7 @@ function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
     ...user,
     preflight: false,
     presets: [
-      presetUno(),
+      presetWind3(),
       presetAttributify(),
       presetIcons({
         extraProperties: {

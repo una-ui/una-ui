@@ -23,12 +23,12 @@ catalog:
   '@types/markdown-it': ^14.1.2
   '@types/node': ^22.13.8
   '@una-ui/content': ^41.2.0
-  '@unocss/core': ^65.5.0
-  '@unocss/eslint-config': ^65.5.0
-  '@unocss/nuxt': ^65.5.0
-  '@unocss/preset-attributify': ^65.5.0
-  '@unocss/preset-icons': ^65.5.0
-  '@unocss/preset-mini': ^65.5.0
+  '@unocss/core': ^66.0.0
+  '@unocss/eslint-config': ^66.0.0
+  '@unocss/nuxt': ^66.0.0
+  '@unocss/preset-attributify': ^66.0.0
+  '@unocss/preset-icons': ^66.0.0
+  '@unocss/preset-mini': ^66.0.0
   '@vee-validate/nuxt': ^4.15.0
   '@vee-validate/zod': ^4.15.0
   '@vercel/analytics': ^1.5.0
@@ -57,7 +57,7 @@ catalog:
   tailwind-merge: ^3.0.2
   typescript: 5.6.3
   unbuild: ^3.5.0
-  unocss: ^65.5.0
+  unocss: ^66.0.0
   unocss-preset-animations: ^1.1.1
   vitest: ^3.0.7
   vue-tsc: ^2.2.8
