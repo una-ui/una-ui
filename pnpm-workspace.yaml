@@ -22,7 +22,7 @@ catalog:
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
   '@types/node': ^22.13.8
-  '@una-ui/content': ^42.3.0
+  '@una-ui/content': ^43.0.0
   '@unocss/core': ^66.0.0
   '@unocss/eslint-config': ^66.0.0
   '@unocss/nuxt': ^66.0.0
