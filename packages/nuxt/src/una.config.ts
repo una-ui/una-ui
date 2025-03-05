@@ -11,34 +11,32 @@ import {
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
 
-function extendUnocssOptions(user: UnocssNuxtOptions = {}): UnocssNuxtOptions {
+export const defaultConfig = { preflight: true, presets: [
+  presetWind3(),
+  presetAttributify(),
+  presetIcons({
+    extraProperties: {
+      'display': 'inline-block',
+      'height': '1.2em',
+      'width': '1.2em',
+      'vertical-align': 'middle',
+    },
+  }),
+  presetUna(),
+  presetAnimations(),
+], extractors: [
+  extratorUna({
+    prefixes,
+  }),
+], transformers: [
+  transformerDirectives(),
+  transformerVariantGroup(),
+] }
+
+function extendUnocssOptions(options: UnocssNuxtOptions = {}): UnocssNuxtOptions {
   return {
-    ...user,
-    preflight: false,
-    presets: [
-      presetWind3(),
-      presetAttributify(),
-      presetIcons({
-        extraProperties: {
-          'display': 'inline-block',
-          'height': '1.2em',
-          'width': '1.2em',
-          'vertical-align': 'middle',
-        },
-      }),
-      presetUna(),
-      presetAnimations(),
-      ...(user.presets || []),
-    ],
-    extractors: [
-      extratorUna({
-        prefixes,
-      }),
-    ],
-    transformers: [
-      transformerDirectives(),
-      transformerVariantGroup(),
-    ],
+    ...options,
+    ...defaultConfig,
   }
 }
 
