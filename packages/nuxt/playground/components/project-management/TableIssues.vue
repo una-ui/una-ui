@@ -270,6 +270,10 @@ const visibleColumnHeaders = computed({
             selectTrigger: 'max-w-50',
           }"
           multiple
+          :_selectTrigger="{
+            leading: 'i-lucide-settings-2',
+            trailing: 'i-lucide-chevrons-up-down',
+          }"
           :items="columns.map(column => column.header!)"
           placeholder="Visible columns"
         >

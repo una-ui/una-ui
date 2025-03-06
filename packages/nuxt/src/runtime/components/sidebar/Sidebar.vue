@@ -7,7 +7,7 @@ import SheetContent from '../sheet/SheetContent.vue'
 
 interface SidebarProps {
   sheet?: 'left' | 'right'
-  variant?: 'sidebar' | 'floating' | 'inset'
+  sidebar?: 'sidebar' | 'floating' | 'inset'
   collapsible?: 'offcanvas' | 'icon' | 'none'
   class?: HTMLAttributes['class']
 }
@@ -17,7 +17,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<SidebarProps>(), {
   sheet: 'left',
-  variant: 'sidebar',
+  sidebar: 'sidebar',
   collapsible: 'offcanvas',
 })
 
@@ -55,7 +55,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
     v-else class="group peer hidden md:block"
     :data-state="state"
     :data-collapsible="state === 'collapsed' ? collapsible : ''"
-    :data-variant="variant"
+    :data-variant="sidebar"
     :data-side="sheet"
   >
     <!-- This is what handles the sidebar gap on desktop  -->
@@ -64,7 +64,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
         'duration-200 relative h-svh w-[--sidebar-width] bg-transparent transition-[width] ease-linear',
         'group-data-[collapsible=offcanvas]:w-0',
         'group-data-[side=right]:rotate-180',
-        variant === 'floating' || variant === 'inset'
+        sidebar === 'floating' || sidebar === 'inset'
           ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_1rem)]'
           : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon]',
       )"
@@ -76,7 +76,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
           ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
           : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
         // Adjust the padding for floating and inset variants.
-        variant === 'floating' || variant === 'inset'
+        sidebar === 'floating' || sidebar === 'inset'
           ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_1rem_+_2px)]'
           : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon] group-data-[side=left]:border-r group-data-[side=right]:border-l',
         props.class,

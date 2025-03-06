@@ -44,7 +44,7 @@ const isMessagesPopoverActive = ref(false)
                 size="sm"
               >
                 <NButton
-                  btn="text-black"
+                  :btn="isMessagesPopoverActive ? 'text-primary' : 'text-black'"
                   icon
                   square
                   label="i-lucide-message-circle"
@@ -101,7 +101,7 @@ const isMessagesPopoverActive = ref(false)
                 size="sm"
               >
                 <NButton
-                  btn="text-black"
+                  :btn="isNotificationsPopoverActive ? 'text-primary' : 'text-black'"
                   icon
                   square
                   label="i-lucide-bell"
@@ -161,9 +161,9 @@ const isMessagesPopoverActive = ref(false)
 
           <div class="flex items-center">
             <NThemeSwitcher>
-              <template #trigger>
+              <template #trigger="{ open }">
                 <NButton
-                  btn="text-black"
+                  :btn="open ? 'text-primary' : 'text-black'"
                   icon
                   square
                   label="i-lucide-paintbrush"

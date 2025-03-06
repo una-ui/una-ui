@@ -42,7 +42,7 @@ defineProps<{
                     <NBadge
                       v-if="subItem.badge"
                       size="10px"
-                      :badge="subItem.badge === 'new' ? 'soft-primary' : subItem.badge === 'hot' ? 'soft-orange' : subItem.badge === 'beta' ? 'soft-info' : 'soft-red'"
+                      :badge="subItem.badge === 'new' ? 'solid-lime' : subItem.badge === 'hot' ? 'solid-orange' : subItem.badge === 'beta' ? 'solid-blue' : 'solid-red'"
                       class="ml-auto capitalize"
                     >
                       {{ subItem.badge }}
