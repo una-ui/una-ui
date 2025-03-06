@@ -8,6 +8,7 @@ import NLink from '../elements/Link.vue'
 
 const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',
+  size: 'sm',
   loadingPlacement: 'leading',
   square: false,
   una: () => ({

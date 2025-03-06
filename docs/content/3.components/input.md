@@ -69,7 +69,7 @@ badges:
 
 | Prop   | Default | Type     | Description                                 |
 | ------ | ------- | -------- | ------------------------------------------- |
-| `size` | `sm`    | `string` | Allows you to change the size of the input. |
+| `size` | `md`    | `string` | Allows you to change the size of the input. |
 
 > 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 

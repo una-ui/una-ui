@@ -48,9 +48,11 @@ function shuffleTheme(): void {
 </script>
 
 <template>
-  <Popover :_popover-content="{ align: 'end', class: 'w-73 bg-muted' }">
-    <template #trigger>
-      <slot name="trigger">
+  <Popover
+    :_popover-content="{ align: 'end', class: 'w-73 bg-muted' }"
+  >
+    <template #trigger="{ open }">
+      <slot name="trigger" :open="open">
         <Button
           btn="soft"
           square

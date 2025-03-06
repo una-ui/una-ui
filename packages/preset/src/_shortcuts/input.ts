@@ -12,15 +12,15 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-padding': 'pr-2.9em',
 
   // base
-  'input': 'text-base text-0.875em leading-6 px-0.8571428571428571em py-0.5em w-full input-disabled ring-base ring-inset placeholder:text-muted block outline-none rounded-md border-0 shadow-sm bg-transparent',
-  'input-input': 'h-9', // role='input'
+  'input': 'text-base text-0.875em leading-6 px-0.8571428571428571em py-0.2857142857142857em w-full input-disabled ring-base ring-inset placeholder:text-muted block outline-none rounded-md border-0 shadow-sm bg-transparent',
+  'input-input': 'h-2.5714285714285716em', // role='input'
   'input-textarea': '', // role='textarea'
   'input-disabled': 'disabled:(n-disabled)',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
-  'input-status-icon-base': 'text-1.042em',
-  'input-leading': 'text-1.042em',
-  'input-trailing': 'text-1.042em',
-  'input-loading': 'animate-spin text-1.042em',
+  'input-status-icon-base': 'size-1.25em',
+  'input-leading': 'size-1.25em',
+  'input-trailing': 'size-1.25em',
+  'input-loading': 'animate-spin size-1.25em',
 
   // wrappers
   'input-wrapper': 'relative flex items-center',
