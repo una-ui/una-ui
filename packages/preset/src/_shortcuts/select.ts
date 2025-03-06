@@ -17,12 +17,12 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 
   // components
   'select-root': '',
-  'select-trigger': 'w-full [&>span]:truncate',
-  'select-trigger-trailing-icon': 'i-lucide-chevron-down n-disabled',
-  'select-trigger-trailing': 'ml-auto data-[status]:text-1.2em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info',
-  'select-trigger-leading': '',
+  'select-trigger': 'px-0.8571428571428571em w-full [&>span]:truncate',
+  'select-trigger-trailing-icon': 'i-lucide-chevron-down',
+  'select-trigger-trailing': 'ml-auto size-1.4285714285714286em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled size-1.1428571428571428em)',
+  'select-trigger-leading': 'size-1.4285714285714286em',
 
-  'select-value': 'h-1.5em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[placeholder]:n-disabled',
+  'select-value': 'text-1em data-[status=error]:text-error-active data-[status=success]:text-success-active data-[status=warning]:text-warning-active data-[status=info]:text-info-active data-[placeholder]:n-disabled',
 
   'select-content': 'relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border border-base bg-popover text-popover shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
   'select-content-popper': 'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
@@ -33,7 +33,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 
   'select-item': 'select-item-gray relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-1em outline-none data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
 
-  'select-item-indicator': 'absolute left-2 h-0.75em w-0.75em flex items-center justify-center',
+  'select-item-indicator': 'absolute left-2 size-1.1428571428571428em flex items-center justify-center',
   'select-item-indicator-icon': 'i-check',
 
   'select-viewport': 'p-1',

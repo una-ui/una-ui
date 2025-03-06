@@ -25,7 +25,7 @@ const statusClassVariants = computed(() => {
     success: props.una?.selectTriggerSuccessIcon ?? 'select-trigger-success-icon',
     warning: props.una?.selectTriggerWarningIcon ?? 'select-trigger-warning-icon',
     error: props.una?.selectTriggerErrorIcon ?? 'select-trigger-error-icon',
-    default: props.una?.selectTriggerTrailingIcon ?? 'select-trigger-trailing-icon',
+    default: props?.trailing ?? props.una?.selectTriggerTrailingIcon ?? 'select-trigger-trailing-icon',
   }
 
   return {
@@ -35,6 +35,7 @@ const statusClassVariants = computed(() => {
 })
 
 const id = computed(() => props.id ?? randomId('select-trigger'))
+const status = computed(() => props.status ?? 'default')
 </script>
 
 <template>
