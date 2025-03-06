@@ -7,15 +7,15 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-default-radius': 'rounded-md',
 
   // base
-  'btn': 'btn-rectangle px-1em py-0.5em bg-transparent transition-colors text-0.875em leading-5 gap-x-0.5em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium',
+  'btn': 'btn-rectangle px-1.1428571428571428em py-0.5714285714285714em bg-transparent transition-colors leading-1.4285714285714286em gap-x-0.5714285714285714em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
-  'btn-icon-label': 'text-1em',
-  'btn-leading': '-ml-0.14285714285714285em text-1em',
-  'btn-trailing': '-mr-0.14285714285714285em text-1em',
-  'btn-loading': 'animate-spin text-1em',
-  'btn-rectangle': 'h-2.5em',
-  'btn-square': 'w-2.5em h-2.5em',
+  'btn-icon-label': 'square-1.1428571428571428em',
+  'btn-leading': 'size-1.1428571428571428em',
+  'btn-trailing': 'size-1.1428571428571428em',
+  'btn-loading': 'animate-spin size-1.1428571428571428em',
+  'btn-rectangle': 'h-2.5714285714285716em',
+  'btn-square': 'square-2.5714285714285716em',
 
   // options
   'btn-block': 'w-full',
