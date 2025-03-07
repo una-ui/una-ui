@@ -296,6 +296,7 @@ defineExpose({
                   :key="header.id"
                   :una
                   :colspan="header.colSpan"
+                  class="font-normal"
                   :data-pinned="header.column.getIsPinned()"
                   v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
                 >
