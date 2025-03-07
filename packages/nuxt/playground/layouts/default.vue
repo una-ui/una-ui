@@ -30,7 +30,7 @@ const isMessagesPopoverActive = ref(false)
           />
         </div>
 
-        <div class="flex items-center gap-2 px-4">
+        <div class="flex items-center px-4">
           <NPopover
             v-model:open="isMessagesPopoverActive"
             :_popoverContent="{
@@ -159,22 +159,20 @@ const isMessagesPopoverActive = ref(false)
             </div>
           </NPopover>
 
-          <div class="flex items-center">
-            <NThemeSwitcher>
-              <template #trigger="{ open }">
-                <NButton
-                  :btn="open ? 'text-primary' : 'text-black'"
-                  icon
-                  square
-                  label="i-lucide-paintbrush"
-                />
-              </template>
-            </NThemeSwitcher>
+          <NThemeSwitcher>
+            <template #trigger="{ open }">
+              <NButton
+                :btn="open ? 'text-primary' : 'text-black'"
+                icon
+                square
+                label="i-lucide-paintbrush"
+              />
+            </template>
+          </NThemeSwitcher>
 
-            <ColorMode
-              btn="text-black"
-            />
-          </div>
+          <ColorMode
+            btn="text-black"
+          />
         </div>
       </header>
 

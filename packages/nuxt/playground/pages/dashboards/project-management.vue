@@ -26,7 +26,7 @@
 
     <ProjectManagementCardMetrics />
 
-    <div class="grid grid-cols-1 gap-4 xl:grid-cols-4">
+    <div class="grid grid-cols-1 gap-4 xl:grid-cols-6">
       <!-- Project Issues Table Section -->
       <NCard
         title="Project Issues"
@@ -35,7 +35,7 @@
           cardHeader: 'p-4',
           cardContent: 'p-0 pb-4',
         }"
-        class="col-span-4 self-start rounded-lg xl:col-span-3"
+        class="col-span-6 self-start rounded-lg xl:col-span-4"
       >
         <ProjectManagementTableIssues />
       </NCard>
@@ -48,7 +48,7 @@
           cardHeader: 'p-4',
           cardContent: 'p-0',
         }"
-        class="col-span-4 self-start rounded-lg xl:col-span-1"
+        class="col-span-6 self-start rounded-lg xl:col-span-2"
       >
         <ProjectManagementRecentActivities />
       </NCard>
