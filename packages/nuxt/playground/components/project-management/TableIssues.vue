@@ -350,7 +350,7 @@ const visibleColumnHeaders = computed({
           :items="['low', 'medium', 'high', 'critical']"
           multiple
           :una="{
-            selectTrigger: 'w-40 capitalize',
+            selectTrigger: 'max-w-40 capitalize',
             selectItem: 'capitalize',
           }"
           :model-value="column.getFilterValue() || ['low', 'medium', 'high', 'critical']"
@@ -467,9 +467,6 @@ const visibleColumnHeaders = computed({
           <NSelect
             :items="[5, 10, 20, 30, 40, 50]"
             :default-value="10"
-            :una="{
-              selectTrigger: 'w-20',
-            }"
             :model-value="table?.getState().pagination.pageSize"
             @update:model-value="table?.setPageSize($event as unknown as number)"
           />
