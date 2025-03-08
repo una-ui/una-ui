@@ -27,7 +27,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
 <template>
   <div
     v-if="collapsible === 'none'"
-    :class="cn('flex h-full w-[--sidebar-width] flex-col bg-sidebar text-sidebar-foreground', props.class)"
+    :class="cn('sidebar-collapsible-none', props.class)"
     v-bind="$attrs"
   >
     <slot />
@@ -39,12 +39,12 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
         data-sidebar="sidebar"
         data-mobile="true"
         :sheet
-        class="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
+        class="sidebar-mobile"
         :style="{
           '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
         }"
       >
-        <div class="h-full w-full flex flex-col">
+        <div class="sidebar-mobile-inner">
           <slot />
         </div>
       </SheetContent>
@@ -52,7 +52,7 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
   </Sheet>
 
   <div
-    v-else class="group peer hidden md:block"
+    v-else :class="cn('group peer sidebar-desktop')"
     :data-state="state"
     :data-collapsible="state === 'collapsed' ? collapsible : ''"
     :data-variant="sidebar"
@@ -61,31 +61,29 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
     <!-- This is what handles the sidebar gap on desktop  -->
     <div
       :class="cn(
-        'duration-200 relative h-svh w-[--sidebar-width] bg-transparent transition-[width] ease-linear',
-        'group-data-[collapsible=offcanvas]:w-0',
-        'group-data-[side=right]:rotate-180',
+        'sidebar-desktop-gap',
         sidebar === 'floating' || sidebar === 'inset'
-          ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_1rem)]'
-          : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon]',
+          ? 'sidebar-desktop-gap-floating'
+          : 'sidebar-desktop-gap-default',
       )"
     />
     <div
       :class="cn(
-        'duration-200 fixed inset-y-0 z-10 hidden h-svh w-[--sidebar-width] transition-[left,right,width] ease-linear md:flex',
+        'sidebar-desktop-position',
         sheet === 'left'
-          ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
-          : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
+          ? 'sidebar-desktop-position-left'
+          : 'sidebar-desktop-position-right',
         // Adjust the padding for floating and inset variants.
         sidebar === 'floating' || sidebar === 'inset'
-          ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_1rem_+_2px)]'
-          : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon] group-data-[side=left]:border-r group-data-[side=right]:border-l',
+          ? 'sidebar-desktop-padding-floating'
+          : 'sidebar-desktop-padding-default',
         props.class,
       )"
       v-bind="$attrs"
     >
       <div
         data-sidebar="sidebar"
-        class="h-full w-full flex flex-col bg-sidebar text-sidebar-foreground group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow"
+        class="sidebar-desktop-inner"
       >
         <slot />
       </div>

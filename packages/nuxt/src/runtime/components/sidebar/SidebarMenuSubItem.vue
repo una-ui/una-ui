@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  <li>
+  <li
+    class="sidebar-menu-sub-item"
+  >
     <slot />
   </li>
 </template>
