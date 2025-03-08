@@ -2,7 +2,7 @@ type SidebarPrefix = 'sidebar'
 
 export const staticSidebar: Record<`${SidebarPrefix}-${string}` | SidebarPrefix, string> = {
   // @sidebar-provider
-  'sidebar-provider': 'group/sidebar_wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar',
+  'sidebar-provider': 'flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar',
 
   // @sidebar-component
   'sidebar': '',
@@ -64,7 +64,7 @@ export const staticSidebar: Record<`${SidebarPrefix}-${string}` | SidebarPrefix,
   'sidebar-separator': 'mx-2 w-auto bg-sidebar-border',
 
   // @sidebar-menu-item
-  'sidebar-menu-item': 'group/menu_item relative',
+  'sidebar-menu-item': 'relative',
 
   // @sidebar-menu-sub
   'sidebar-menu-sub': 'mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5 group-data-[collapsible=icon]:hidden',
