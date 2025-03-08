@@ -35,9 +35,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "catalog:",
-    "@iconify-json/lucide": "catalog:",
-    "@iconify-json/radix-icons": "catalog:",
-    "@iconify-json/tabler": "catalog:",
+    "@iconify/utils": "catalog:",
     "@nuxt/kit": "catalog:",
     "@nuxtjs/color-mode": "catalog:",
     "@tanstack/vue-table": "catalog:",
@@ -61,6 +59,9 @@
     "unocss-preset-animations": "catalog:"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "catalog:",
+    "@iconify-json/radix-icons": "catalog:",
+    "@iconify-json/tabler": "catalog:",
     "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
     "nuxt": "catalog:",
