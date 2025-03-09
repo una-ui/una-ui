@@ -5,16 +5,16 @@ import extratorUna from '@una-ui/extractor-vue-script'
 import presetUna from '@una-ui/preset'
 import prefixes from '@una-ui/preset/prefixes'
 import {
+  mergeConfigs as mergeUnoConfigs,
   presetAttributify,
   presetIcons,
   presetWind3,
   transformerDirectives,
   transformerVariantGroup,
-
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
 
-export const defaultConfig: UserConfig<object> = {
+export const unaConfig: UserConfig<object> = {
   presets: [
     presetWind3(),
     presetAttributify(),
@@ -45,11 +45,18 @@ export const defaultConfig: UserConfig<object> = {
   ],
 }
 
+export function defaultConfig(...configs: UserConfig<object>[]) {
+  return mergeUnoConfigs([
+    unaConfig,
+    ...configs,
+  ])
+}
+
 function extendUnocssOptions(options: UnocssNuxtOptions = {}): UnocssNuxtOptions {
-  return {
-    ...options,
-    ...defaultConfig,
-  }
+  return mergeUnoConfigs([
+    unaConfig,
+    options,
+  ])
 }
 
 export default extendUnocssOptions
