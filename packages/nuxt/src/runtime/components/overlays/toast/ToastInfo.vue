@@ -9,8 +9,8 @@ const props = defineProps<NToastInfoProps>()
   <div
     :class="cn(
       'toast-info',
-      props.class,
       props.una?.toastInfo,
+      props.class,
     )"
   >
     <slot />
