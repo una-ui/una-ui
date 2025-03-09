@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NButtonProps } from '../../types'
 import { useSidebar } from '../../composables/useSidebar'
 import { cn } from '../../utils'
 import Button from '../elements/Button.vue'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = withDefaults(defineProps<NButtonProps>(), {
+  btn: 'ghost-white',
+  square: '7',
+  label: 'i-lucide-panel-left',
+  icon: true,
+})
 
 const { toggleSidebar } = useSidebar()
 </script>
@@ -14,11 +17,8 @@ const { toggleSidebar } = useSidebar()
 <template>
   <Button
     data-sidebar="trigger"
-    btn="ghost-white"
-    square="7"
+    v-bind="props"
     :class="cn('p-0', props.class)"
-    label="i-lucide-panel-left"
-    icon
     @click="toggleSidebar"
   />
 </template>
