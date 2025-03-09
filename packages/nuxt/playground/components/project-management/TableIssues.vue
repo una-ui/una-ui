@@ -8,15 +8,17 @@ const { toast } = useToast()
 
 const { data, refresh } = await useFetch('/api/issues', {
   query: { limit },
+  onResponse({ response }) {
+    toast({
+      title: 'Issues Added',
+      description: `Successfully added ${response._data.length} new issues.`,
+      leading: 'i-lucide-check-circle text-success',
+    })
+  },
 })
 
 async function addIssues(count: number) {
   limit.value += count
-  toast({
-    title: 'Issues Added',
-    description: `Successfully added ${count} new issues.`,
-    leading: 'i-lucide-check-circle text-success',
-  })
 }
 
 const columns: ColumnDef<Issue>[] = [
