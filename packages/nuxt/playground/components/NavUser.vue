@@ -39,13 +39,13 @@ const { isMobile } = useSidebar()
     <NSidebarMenuItem>
       <NDropdownMenu
         :items="navs"
-        :_dropdownMenuContent="{
+        :_dropdown-menu-content="{
           class: 'min-w-56 w-[--reka-dropdown-menu-trigger-width] rounded-lg',
           align: 'start',
           side: isMobile ? 'bottom' : 'right',
           sideOffset: 4,
         }"
-        :_dropdownMenuLabel="{
+        :_dropdown-menu-label="{
           class: 'p-0 font-normal',
         }"
       >

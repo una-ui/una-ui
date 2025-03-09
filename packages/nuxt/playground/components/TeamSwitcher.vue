@@ -36,7 +36,7 @@ const activeTeam = ref(props.teams[0])
   <NSidebarMenu>
     <NSidebarMenuItem>
       <NDropdownMenu
-        :_dropdownMenuContent="{
+        :_dropdown-menu-content="{
           class: 'min-w-56 w-[--reka-dropdown-menu-trigger-width] rounded-lg',
           align: 'start',
           side: isMobile ? 'bottom' : 'right',

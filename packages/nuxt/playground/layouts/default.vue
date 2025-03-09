@@ -34,7 +34,7 @@ const isMessagesPopoverActive = ref(false)
         <div class="flex items-center px-4">
           <NPopover
             v-model:open="isMessagesPopoverActive"
-            :_popoverContent="{
+            :_popover-content="{
               align: 'end',
               class: 'bg-muted',
             }"
@@ -91,7 +91,7 @@ const isMessagesPopoverActive = ref(false)
 
           <NPopover
             v-model:open="isNotificationsPopoverActive"
-            :_popoverContent="{
+            :_popover-content="{
               align: 'end',
               class: 'bg-muted',
             }"

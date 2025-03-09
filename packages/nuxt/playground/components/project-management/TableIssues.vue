@@ -274,7 +274,7 @@ const visibleColumnHeaders = computed({
             selectTrigger: 'max-w-50',
           }"
           multiple
-          :_selectTrigger="{
+          :_select-trigger="{
             leading: 'i-lucide-settings-2',
             trailing: 'i-lucide-chevrons-up-down',
           }"

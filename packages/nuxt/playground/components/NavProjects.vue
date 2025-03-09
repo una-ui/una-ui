@@ -24,7 +24,7 @@ const { isMobile } = useSidebar()
           </a>
         </NSidebarMenuButton>
         <NDropdownMenu
-          :_dropdownMenuContent="{
+          :_dropdown-menu-content="{
             side: isMobile ? 'bottom' : 'right',
             align: isMobile ? 'end' : 'start',
             sideOffset: 4,
