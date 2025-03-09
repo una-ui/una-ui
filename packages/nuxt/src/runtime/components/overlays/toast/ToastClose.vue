@@ -19,8 +19,8 @@ const delegatedProps = computed(() => {
     v-bind="delegatedProps"
     :class="cn(
       'toast-close',
-      props.class,
       props.una?.toastClose,
+      props.class,
     )"
   >
     <Icon
