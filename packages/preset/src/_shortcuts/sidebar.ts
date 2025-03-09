@@ -44,6 +44,11 @@ export const staticSidebar: Record<`${SidebarPrefix}-${string}` | SidebarPrefix,
   'sidebar-rail': 'absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] hover:after:bg-sidebar-border group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex [[data-side=left]_&]:cursor-w-resize [[data-side=right]_&]:cursor-e-resize [[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full group-data-[collapsible=offcanvas]:hover:bg-sidebar [[data-side=left][data-collapsible=offcanvas]_&]:-right-2 [[data-side=right][data-collapsible=offcanvas]_&]:-left-2',
   'sidebar-menu-badge': 'absolute right-1 flex h-5 min-w-5 items-center justify-center rounded-md px-1 text-xs font-medium tabular-nums text-sidebar-foreground select-none pointer-events-none peer-hover/menu_button:text-sidebar-accent-foreground peer-data-[active=true]/menu_button:text-sidebar-accent-foreground peer-data-[size=sm]/menu_button:top-1 peer-data-[size=default]/menu_button:top-1.5 peer-data-[size=lg]/menu_button:top-2.5 group-data-[collapsible=icon]:hidden',
   'sidebar-footer': 'flex flex-col gap-2 p-2',
+
+  // TODO: Add these to the preset
+  'sidebar-menu-button': '',
+  'sidebar-menu-button-child': '',
+  'sidebar-menu-sub-button': '',
 }
 
 export const dynamicSidebar: [RegExp, (params: RegExpExecArray) => string][] = [
