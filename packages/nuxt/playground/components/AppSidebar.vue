@@ -245,17 +245,16 @@ const data = {
   <NSidebar
     collapsible="icon"
   >
-    <NSidebarHeader>
+    <template #header>
       <TeamSwitcher :teams="data.teams" />
-    </NSidebarHeader>
-    <NSidebarContent>
+    </template>
+    <template #content>
       <NavDashboards :dashboards="data.dashboards" />
       <NavMain :items="data.navMain" />
       <NavProjects :projects="data.projects" />
-    </NSidebarContent>
-    <NSidebarFooter>
+    </template>
+    <template #footer>
       <NavUser :user="data.user" />
-    </NSidebarFooter>
-    <NSidebarRail />
+    </template>
   </NSidebar>
 </template>
