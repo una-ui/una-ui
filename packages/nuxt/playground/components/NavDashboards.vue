@@ -11,12 +11,12 @@ const { isMobile } = useSidebar()
 </script>
 
 <template>
-  <NSidebarGroup class="group-data-[collapsible=icon]:hidden">
-    <NSidebarGroupLabel>
-      Dashboards
-    </NSidebarGroupLabel>
-    <NSidebarMenu>
-      <NSidebarMenuItem v-for="item in dashboards" :key="item.name">
+  <NSidebarGroup
+    class="group-data-[collapsible=icon]:hidden"
+    label="Dashboards"
+  >
+    <NSidebarMenu :items="dashboards">
+      <template #item="{ item }">
         <NSidebarMenuButton as-child>
           <NLink
             :to="item.url"
@@ -26,6 +26,7 @@ const { isMobile } = useSidebar()
             <span>{{ item.name }}</span>
           </NLink>
         </NSidebarMenuButton>
+
         <NDropdownMenu
           :_dropdownMenuContent="{
             side: isMobile ? 'bottom' : 'right',
@@ -52,7 +53,7 @@ const { isMobile } = useSidebar()
             <NIcon name="i-lucide-more-horizontal" class="text-sidebar-foreground/70" />
           </NSidebarMenuAction>
         </NDropdownMenu>
-      </NSidebarMenuItem>
+      </template>
     </NSidebarMenu>
   </NSidebarGroup>
 </template>

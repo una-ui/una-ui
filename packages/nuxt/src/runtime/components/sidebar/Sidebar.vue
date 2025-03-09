@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
+import type { NSheetContentProps } from '../../types'
 import { createReusableTemplate } from '@vueuse/core'
 import { SIDEBAR_WIDTH_MOBILE, useSidebar } from '../../composables/useSidebar'
 import { cn } from '../../utils'
 import Sheet from '../sheet/Sheet.vue'
-import SheetContent from '../sheet/SheetContent.vue'
 import SidebarContent from './SidebarContent.vue'
 import SidebarFooter from './SidebarFooter.vue'
-
 import SidebarHeader from './SidebarHeader.vue'
 
 interface SidebarProps {
@@ -16,6 +15,8 @@ interface SidebarProps {
   collapsible?: 'offcanvas' | 'icon' | 'none'
   class?: HTMLAttributes['class']
   rail?: boolean
+  // eslint-disable-next-line vue/prop-name-casing
+  _sheetContent?: NSheetContentProps
 }
 defineOptions({
   inheritAttrs: false,
@@ -57,22 +58,25 @@ const [DefineSlot, ReuseSlot] = createReusableTemplate()
     <ReuseSlot />
   </div>
 
-  <Sheet v-else-if="isMobile" :open="openMobile" v-bind="$attrs" @update:open="setOpenMobile">
-    <template #root>
-      <SheetContent
-        data-sidebar="sidebar"
-        data-mobile="true"
-        :sheet
-        class="sidebar-mobile"
-        :style="{
-          '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
-        }"
-      >
-        <div class="sidebar-mobile-inner">
-          <ReuseSlot />
-        </div>
-      </SheetContent>
-    </template>
+  <Sheet
+    v-else-if="isMobile"
+    :open="openMobile"
+    v-bind="$attrs"
+    :_sheet-content="{
+      dataSidebar: 'sidebar',
+      dataMobile: true,
+      sheet,
+      class: 'sidebar-mobile',
+      style: {
+        '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
+      },
+      ...props._sheetContent,
+    }"
+    @update:open="setOpenMobile"
+  >
+    <div class="sidebar-mobile-inner">
+      <ReuseSlot />
+    </div>
   </Sheet>
 
   <div

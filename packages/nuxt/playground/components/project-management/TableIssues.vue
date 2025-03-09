@@ -9,11 +9,13 @@ const { toast } = useToast()
 const { data, refresh } = await useFetch('/api/issues', {
   query: { limit },
   onResponse({ response }) {
-    toast({
-      title: 'Issues Added',
-      description: `Successfully added ${response._data.length} new issues.`,
-      leading: 'i-lucide-check-circle text-success',
-    })
+    if (import.meta.client) {
+      toast({
+        title: 'Issues Added',
+        description: `Successfully added ${response._data.length} new issues.`,
+        leading: 'i-lucide-check-circle text-success',
+      })
+    }
   },
 })
 

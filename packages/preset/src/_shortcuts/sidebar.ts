@@ -54,7 +54,7 @@ export const staticSidebar: Record<`${SidebarPrefix}-${string}` | SidebarPrefix,
   'sidebar-menu': 'flex w-full min-w-0 flex-col gap-1',
 
   // @sidebar-menu-action
-  'sidebar-menu-action': 'absolute right-1 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 peer-hover/menu_button:text-sidebar-accent-foreground [&>span[icon-base]]:square-4 [&>svg]:shrink-0 after:absolute after:-inset-2 after:md:hidden peer-data-[size=sm]/menu_button:top-1 peer-data-[size=default]/menu_button:top-1.5 peer-data-[size=lg]/menu_button:top-2.5 group-data-[collapsible=icon]:hidden',
+  'sidebar-menu-action': 'absolute right-1 top-1.5 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground outline-none ring-sidebar-ring transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 peer-hover/menu_button:text-sidebar-accent-foreground [&>svg]:size-4 [&>svg]:shrink-0 after:absolute after:-inset-2 after:md:hidden peer-data-[size=sm]/menu_button:top-1 peer-data-[size=default]/menu_button:top-1.5 peer-data-[size=lg]/menu_button:top-2.5 group-data-[collapsible=icon]:hidden',
   'sidebar-menu-action-show-on-hover': 'group-focus-within/menu_item:opacity-100 group-hover/menu_item:opacity-100 data-[state=open]:opacity-100 peer-data-[active=true]/menu_button:text-sidebar-accent-foreground md:opacity-0',
 
   // @sidebar-menu-skeleton

@@ -30,6 +30,13 @@ export interface NSheetProps extends DialogRootProps, Pick<NSheetContentProps, '
 }
 
 export interface NSheetContentProps extends DialogContentProps {
+  /**
+   * Additional attributes that can be passed to the sheet content element.
+   */
+  [key: string]: any
+  /**
+   * The class of the sheet.
+   */
   class?: HTMLAttributes['class']
   /**
    * The side of the sheet.
@@ -80,41 +87,85 @@ export interface NSheetTriggerProps extends DialogTriggerProps {
 }
 
 export interface NSheetHeaderProps {
+  /**
+   * Additional attributes that can be passed to the sheet header element.
+   */
+  [key: string]: any
+  /**
+   * The class of the sheet header.
+   */
   class?: HTMLAttributes['class']
 
   una?: Pick<NSheetUnaProps, 'sheetHeader'>
 }
 
 export interface NSheetTitleProps extends DialogTitleProps {
+  /**
+   * Additional attributes that can be passed to the sheet title element.
+   */
+  [key: string]: any
+  /**
+   * The class of the sheet title.
+   */
   class?: HTMLAttributes['class']
 
   una?: Pick<NSheetUnaProps, 'sheetTitle'>
 }
 
 export interface NSheetDescriptionProps extends DialogDescriptionProps {
+  /**
+   * Additional attributes that can be passed to the sheet description element.
+   */
+  [key: string]: any
+  /**
+   * The class of the sheet description.
+   */
   class?: HTMLAttributes['class']
-
   una?: Pick<NSheetUnaProps, 'sheetDescription'>
 }
 
 export interface NSheetFooterProps {
+  /**
+   * Additional attributes that can be passed to the sheet footer element.
+   */
+  [key: string]: any
+  /**
+   * The class of the sheet footer.
+   */
   class?: HTMLAttributes['class']
-
   una?: Pick<NSheetUnaProps, 'sheetFooter'>
 }
 
 export interface NSheetCloseProps extends DialogCloseProps, NButtonProps {
+  /**
+   * Additional attributes that can be passed to the sheet close element.
+   */
+  [key: string]: any
+  /**
+   * The class of the sheet close.
+   */
 }
-
 export interface NSheetOverlayProps extends DialogOverlayProps {
+  /**
+   * Additional attributes that can be passed to the sheet overlay element.
+   */
+  [key: string]: any
+  /**
+   * The class of the sheet overlay.
+   */
   class?: HTMLAttributes['class']
-
   una?: Pick<NSheetUnaProps, 'sheetOverlay'>
 }
 
 export interface NSheetPortalProps extends DialogPortalProps {
+  /**
+   * Additional attributes that can be passed to the sheet portal element.
+   */
+  [key: string]: any
+  /**
+   * The class of the sheet portal.
+   */
   class?: HTMLAttributes['class']
-
   una?: Pick<NSheetUnaProps, 'sheetPortal'>
 }
 
