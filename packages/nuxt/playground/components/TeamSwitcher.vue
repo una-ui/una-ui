@@ -6,6 +6,27 @@ const props = defineProps<{
     plan: string
   }[]
 }>()
+const { toast } = useToast()
+const items = [
+  ...props.teams.map(team => ({
+    label: team.name,
+    leading: team.logo,
+  })),
+  {},
+  {
+    label: 'Add New Team',
+    leading: 'i-lucide-plus',
+    onClick: () => {
+      toast({
+        title: 'New Team Added',
+        description: 'Your team has been added successfully',
+        leading: 'i-lucide-plus text-success',
+        showProgress: true,
+        progress: 'success',
+      })
+    },
+  },
+]
 
 const { isMobile } = useSidebar()
 const activeTeam = ref(props.teams[0])
@@ -21,6 +42,7 @@ const activeTeam = ref(props.teams[0])
           side: isMobile ? 'bottom' : 'right',
           sideOffset: 4,
         }"
+        :items
       >
         <NSidebarMenuButton
           size="lg"
@@ -37,35 +59,6 @@ const activeTeam = ref(props.teams[0])
           </div>
           <NIcon name="i-lucide-chevrons-up-down" class="ml-auto" />
         </NSidebarMenuButton>
-
-        <template #content>
-          <NDropdownMenuLabel size="xs" class="text-muted">
-            Teams
-          </NDropdownMenuLabel>
-          <NDropdownMenuItem
-            v-for="(team, index) in teams"
-            :key="team.name"
-            class="gap-2 p-2"
-            @click="activeTeam = team"
-          >
-            <div class="flex items-center justify-center border rounded-sm square-6">
-              <NIcon :name="team.logo" class="shrink-0 square-4" />
-            </div>
-            {{ team.name }}
-            <NDropdownMenuShortcut>⌘{{ index + 1 }}</NDropdownMenuShortcut>
-          </NDropdownMenuItem>
-
-          <NDropdownMenuSeparator />
-
-          <NDropdownMenuItem class="gap-2 p-2">
-            <div class="flex items-center justify-center border rounded-md bg-background square-6">
-              <NIcon name="i-lucide-plus" class="square-4" />
-            </div>
-            <div class="text-muted font-medium">
-              Add team
-            </div>
-          </NDropdownMenuItem>
-        </template>
       </NDropdownMenu>
     </NSidebarMenuItem>
   </NSidebarMenu>
