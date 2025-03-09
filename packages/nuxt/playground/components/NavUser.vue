@@ -57,7 +57,6 @@ const { isMobile } = useSidebar()
             square="8"
             rounded="lg"
             :src="user.avatar"
-            label="CN"
             :alt="user.name"
           />
           <div class="grid flex-1 text-left text-sm leading-tight">
@@ -73,7 +72,6 @@ const { isMobile } = useSidebar()
               square="8"
               rounded="lg"
               :src="user.avatar"
-              label="CN"
               :alt="user.name"
             />
             <div class="grid flex-1 text-left text-sm leading-tight">

@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
     <NuxtPage />
+    <NToaster />
   </NuxtLayout>
-  <NToaster />
 </template>
