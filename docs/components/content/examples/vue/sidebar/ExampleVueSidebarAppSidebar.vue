@@ -1,10 +1,16 @@
 <template>
   <NSidebar>
-    <NSidebarHeader />
+    <NSidebarHeader>
+      <!-- header area -->
+    </NSidebarHeader>
+
     <NSidebarContent>
       <NSidebarGroup />
       <NSidebarGroup />
     </NSidebarContent>
-    <NSidebarFooter />
+
+    <NSidebarFooter>
+      <!-- footer area -->
+    </NSidebarFooter>
   </NSidebar>
 </template>

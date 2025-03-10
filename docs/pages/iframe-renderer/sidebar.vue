@@ -33,9 +33,6 @@ const breadcrumbItems = computed(() => {
           />
         </div>
       </header>
-
-      <!-- add skeleton for the sidebar -->
-      <div class="bg-muted container" />
     </NSidebarInset>
   </NSidebarProvider>
 </template>

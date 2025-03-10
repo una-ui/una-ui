@@ -4,7 +4,7 @@ const data = {
   user: {
     name: 'Phojie Rengel',
     email: 'phojrengel@gmail.com',
-    avatar: '/images/phojie.png',
+    avatar: '/images/avatar.png',
   },
   teams: [
     {

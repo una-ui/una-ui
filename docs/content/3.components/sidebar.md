@@ -43,11 +43,17 @@ A `Sidebar` component is composed of the following parts:
 @@@ ./components/content/examples/vue/sidebar/ExampleVueSidebarUsage.vue
 
 ::
-::div{label="AppSidebar.vue" icon="i-vscode-icons-file-type-vue"}
+::div{label="[AppSidebar.vue] via components" icon="i-vscode-icons-file-type-vue"}
 @@@ ./components/content/examples/vue/sidebar/ExampleVueSidebarAppSidebar.vue
 
 ::
+::div{label="[AppSidebar.vue] via slots" icon="i-vscode-icons-file-type-vue"}
+@@@ ./components/content/examples/vue/sidebar/ExampleVueSidebarAppSidebarSlot.vue
+
+::
 :::
+
+## Examples
 
 ### Basic
 
@@ -87,82 +93,6 @@ A `Sidebar` component is composed of the following parts:
 ::alert{to="/iframe-renderer/sidebar/basic" target="_blank" icon="lucide:link"}
 View the full example in a new tab.
 ::
-
-### Variants
-
-| Prop      | Default   | Type     | Description                                                                 |
-| --------- | --------- | -------- | --------------------------------------------------------------------------- |
-| `sidebar` | `sidebar` | `string` | The variant of the sidebar. Options are `sidebar`, `floating`, and `inset`. |
-
-:::CodeGroup
-::div{label="Preview" preview}
-:CommonBlockPreview{url="/iframe-renderer/sidebar/variants"}
-::
-::div{label="Code"}
-@@@ ./pages/iframe-renderer/sidebar/variants.vue
-::
-:::
-
-### Positioning
-
-| Prop    | Default | Type     | Description                                            |
-| ------- | ------- | -------- | ------------------------------------------------------ |
-| `sheet` | `left`  | `string` | The side of the sheet. Options are `left` and `right`. |
-
-:::CodeGroup
-::div{label="Preview" preview}
-:CommonBlockPreview{url="/iframe-renderer/sidebar/positioning"}
-::
-::div{label="Code"}
-@@@ ./pages/iframe-renderer/sidebar/positioning.vue
-::
-:::
-
-### Collapsible Modes
-
-| Prop          | Default     | Type     | Description                                                            |
-| ------------- | ----------- | -------- | ---------------------------------------------------------------------- |
-| `collapsible` | `offcanvas` | `string` | The collapsible behavior. Options are `offcanvas`, `icon`, and `none`. |
-
-:::CodeGroup
-::div{label="Preview" preview}
-:CommonBlockPreview{url="/iframe-renderer/sidebar/collapsible"}
-::
-::div{label="Code"}
-@@@ ./pages/iframe-renderer/sidebar/collapsible.vue
-::
-:::
-
-## Available Components
-
-The sidebar system includes several components for building complete navigation interfaces:
-
-| Component                | Description                             |
-| ------------------------ | --------------------------------------- |
-| `Sidebar`                | Main sidebar container component        |
-| `SidebarContent`         | Container for sidebar content           |
-| `SidebarHeader`          | Header area of the sidebar              |
-| `SidebarFooter`          | Footer area of the sidebar              |
-| `SidebarGroup`           | Groups related sidebar items            |
-| `SidebarGroupLabel`      | Label for a sidebar group               |
-| `SidebarGroupContent`    | Content container for a sidebar group   |
-| `SidebarGroupAction`     | Action button for a sidebar group       |
-| `SidebarMenu`            | Container for menu items                |
-| `SidebarMenuItem`        | Individual menu item container          |
-| `SidebarMenuButton`      | Interactive button for menu items       |
-| `SidebarMenuButtonChild` | Child menu button for nested structures |
-| `SidebarMenuSub`         | Container for submenu items             |
-| `SidebarMenuSubItem`     | Individual submenu item                 |
-| `SidebarMenuSubButton`   | Interactive button for submenu items    |
-| `SidebarMenuAction`      | Action button for menu items            |
-| `SidebarMenuBadge`       | Badge display for menu items            |
-| `SidebarMenuSkeleton`    | Skeleton loader for menu items          |
-| `SidebarSeparator`       | Visual separator for sidebar sections   |
-| `SidebarRail`            | Resize handle for the sidebar           |
-| `SidebarInset`           | Inset container for the sidebar         |
-| `SidebarInput`           | Input field optimized for sidebar       |
-| `SidebarTrigger`         | Trigger button to show/hide the sidebar |
-| `SidebarProvider`        | Provider component for sidebar context  |
 
 ## Customization
 
@@ -204,17 +134,27 @@ You can customize the sidebar using the following sub components props and `una`
 
 ## Composables
 
-### useSidebar
+### useSidebar()
 
 The `useSidebar` composable provides reactive access to the sidebar's state.
 
-```js
+```vue [Usage.vue]
+<script setup lang="ts">
 const {
   isMobile, // Whether the sidebar is in mobile view
   state, // Current state: 'open', 'closed', or 'collapsed'
   openMobile, // Whether the mobile sidebar is open
   setOpenMobile // Function to set the mobile sidebar open state
 } = useSidebar()
+</script>
+
+<template>
+  <div>
+    <button @click="setOpenMobile(true)">
+      Open Mobile
+    </button>
+  </div>
+</template>
 ```
 
 @@@ ../packages/nuxt/src/runtime/composables/useSidebar.ts [composables/useSidebar.ts]
