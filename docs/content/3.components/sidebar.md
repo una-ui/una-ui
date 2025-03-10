@@ -95,7 +95,7 @@ A `Sidebar` component is composed of the following parts:
 :::
 
 ::alert{to="/blocks-renderer/sidebar" target="_blank" icon="lucide:link"}
-View the full example in a new tab.
+View the full basic example in a new tab.
 ::
 
 ### A collapsible nested sidebar
@@ -120,7 +120,7 @@ View the full example in a new tab.
 :::
 
 ::alert{to="/blocks-renderer/collapsible-nested-sidebar" target="_blank" icon="lucide:link"}
-View the full example in a new tab.
+View the full collapsible nested sidebar example in a new tab.
 ::
 
 ## Customization
