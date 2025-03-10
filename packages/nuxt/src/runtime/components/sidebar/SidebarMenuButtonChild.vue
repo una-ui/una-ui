@@ -2,11 +2,12 @@
 import type { VariantProps } from 'class-variance-authority'
 import type { PrimitiveProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
+import type { NSidebarMenuButtonChildProps } from '../../types'
 import { cva } from 'class-variance-authority'
 import { Primitive } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = withDefaults(defineProps<SidebarMenuButtonProps>(), {
+const props = withDefaults(defineProps<NSidebarMenuButtonChildProps>(), {
   as: 'button',
   variant: 'default',
   size: 'default',

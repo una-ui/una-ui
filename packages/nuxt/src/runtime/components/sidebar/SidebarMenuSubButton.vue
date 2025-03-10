@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import type { PrimitiveProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
+import type { NSidebarMenuSubButtonProps } from '../../types'
 import { Primitive } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = withDefaults(defineProps<PrimitiveProps & {
-  size?: 'sm' | 'md'
-  isActive?: boolean
-  class?: HTMLAttributes['class']
-}>(), {
+const props = withDefaults(defineProps<NSidebarMenuSubButtonProps>(), {
   as: 'a',
   size: 'md',
 })

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { Component } from 'vue'
-import type { SidebarMenuButtonProps } from './SidebarMenuButtonChild.vue'
+import type { NSidebarMenuButtonProps } from '../../types'
 import { computed } from 'vue'
 import { useSidebar } from '../../composables/useSidebar'
 import TooltipContent from '../elements/tooltip/TooltipContent.vue'
@@ -12,9 +11,7 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = withDefaults(defineProps<SidebarMenuButtonProps & {
-  tooltip?: string | Component
-}>(), {
+const props = withDefaults(defineProps<NSidebarMenuButtonProps>(), {
   as: 'button',
   variant: 'default',
   size: 'default',

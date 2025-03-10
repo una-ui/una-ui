@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import type { NSheetContentProps } from '../../types'
+import type { NSidebarProps } from '../../types'
 import { createReusableTemplate } from '@vueuse/core'
 import { SIDEBAR_WIDTH_MOBILE, useSidebar } from '../../composables/useSidebar'
 import { cn } from '../../utils'
@@ -9,20 +8,11 @@ import SidebarContent from './SidebarContent.vue'
 import SidebarFooter from './SidebarFooter.vue'
 import SidebarHeader from './SidebarHeader.vue'
 
-interface SidebarProps {
-  sheet?: 'left' | 'right'
-  sidebar?: 'sidebar' | 'floating' | 'inset'
-  collapsible?: 'offcanvas' | 'icon' | 'none'
-  class?: HTMLAttributes['class']
-  rail?: boolean
-  // eslint-disable-next-line vue/prop-name-casing
-  _sheetContent?: NSheetContentProps
-}
 defineOptions({
   inheritAttrs: false,
 })
 
-const props = withDefaults(defineProps<SidebarProps>(), {
+const props = withDefaults(defineProps<NSidebarProps>(), {
   sheet: 'left',
   sidebar: 'sidebar',
   collapsible: 'offcanvas',

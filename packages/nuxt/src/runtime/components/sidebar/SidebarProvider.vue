@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import type { HTMLAttributes, Ref } from 'vue'
+import type { Ref } from 'vue'
+import type { NSidebarProviderProps } from '../../types'
 import { useEventListener, useMediaQuery, useVModel } from '@vueuse/core'
 import { TooltipProvider } from 'reka-ui'
 import { computed, ref } from 'vue'
 import { provideSidebarContext, SIDEBAR_COOKIE_MAX_AGE, SIDEBAR_COOKIE_NAME, SIDEBAR_KEYBOARD_SHORTCUT, SIDEBAR_WIDTH, SIDEBAR_WIDTH_ICON } from '../../composables/useSidebar'
 import { cn } from '../../utils'
 
-const props = withDefaults(defineProps<{
-  defaultOpen?: boolean
-  open?: boolean
-  class?: HTMLAttributes['class']
-}>(), {
+const props = withDefaults(defineProps<NSidebarProviderProps>(), {
   defaultOpen: true,
   open: undefined,
 })
