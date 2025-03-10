@@ -33,9 +33,9 @@ catalog:
   '@vee-validate/nuxt': ^4.15.0
   '@vee-validate/zod': ^4.15.0
   '@vercel/analytics': ^1.5.0
-  '@vueuse/core': ^12.7.0
-  '@vueuse/integrations': ^12.7.0
-  '@vueuse/nuxt': ^12.7.0
+  '@vueuse/core': ^12.8.2
+  '@vueuse/integrations': ^12.8.2
+  '@vueuse/nuxt': ^12.8.2
   bumpp: ^10.0.3
   chroma-js: ^3.1.2
   clsx: ^2.1.1
