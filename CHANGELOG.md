@@ -1,3 +1,34 @@
+# [0.41.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.40.1-beta.1...v0.41.0-beta.1) (2025-03-10)
+
+
+### Bug Fixes
+
+* access showIcon through props in SidebarMenuSkeleton ([e1e645e](https://github.com/una-ui/una-ui/commit/e1e645e1042f6bd33c7c477e67e7dab955af3e1f))
+
+
+### Features
+
+* add presets configuration ([bb399ab](https://github.com/una-ui/una-ui/commit/bb399ab541653447ef1342473ecfe1db813b4fb4))
+* Add project management components and pages ([9f43fa8](https://github.com/una-ui/una-ui/commit/9f43fa8eda0d0208289c7ca69a254451871337bf))
+* add reactive popover activation logic ([a7376b1](https://github.com/una-ui/una-ui/commit/a7376b138e514ec86effe703ecc47fa2d8d9fbec))
+* add Scroll Area component link ([5f452c4](https://github.com/una-ui/una-ui/commit/5f452c4e95d9048a7feb74ac3814ad3b2a89e8a0))
+* add separate TypeScript type definitions for sidebar components ([34c2061](https://github.com/una-ui/una-ui/commit/34c20611fc4d37e3f14c845d9aca40e21b8b491f))
+* add sidebar attributes for layout customization ([3d5cb7b](https://github.com/una-ui/una-ui/commit/3d5cb7b6095cb8504a0c5d639ae33acabbc88ead))
+* add una props support to all sidebar components ([40bd47e](https://github.com/una-ui/una-ui/commit/40bd47e2218a74eafd8a5326895368fe98ac2860))
+* **AppSidebar:** add scroll area to sidebar content ([8bcbd30](https://github.com/una-ui/una-ui/commit/8bcbd30df76f5a89da33bda125e57cddd4124340))
+* **Link:** add partial match for exactQuery prop and improve types ([93e1f8a](https://github.com/una-ui/una-ui/commit/93e1f8a1ef38e46cba8071545ceb315b8c5b70ff))
+* **Nuxt:** automatically install default collection icons ([fb9215c](https://github.com/una-ui/una-ui/commit/fb9215cd8be4afb6773b95ecf7ed3cd47d3dce66))
+* **playground:** add components page template ([90fa004](https://github.com/una-ui/una-ui/commit/90fa004b72746eb0f8d07d4fd84e2b0aebd50739))
+* **prefixes:** add sidebar component styles and classes ([df7f898](https://github.com/una-ui/una-ui/commit/df7f898b90ad5109439e1eba6aabd78fb8663e7b))
+* **shortcuts:** add sidebar import and config dep ([1fadd70](https://github.com/una-ui/una-ui/commit/1fadd70d430515aee806aa3b14fd71277aab9922))
+* **sidebar:** add badge support to menu items ([aa2ef6f](https://github.com/una-ui/una-ui/commit/aa2ef6f4a8150b7c1155abbc433cfdf7156904c6))
+* **sidebar:** add new sidebar components and previews ([dc31ec1](https://github.com/una-ui/una-ui/commit/dc31ec1b974c2e2171c0d379a9f485e61e9341fc))
+* **sidebar:** add slot to SidebarMenuSkeleton ([44097b1](https://github.com/una-ui/una-ui/commit/44097b1b93e05bea68628e5708d86bd3b67e3679))
+* **ThemeSwither:** bind `open` value to slot trigger ([b69d626](https://github.com/una-ui/una-ui/commit/b69d62628df56dfc1c5c31b60017d613ae0e9848))
+* update all sidebar components to use TypeScript types ([d94ba54](https://github.com/una-ui/una-ui/commit/d94ba5483e3b71646ab046e4da030f26ee04786f))
+
+
+
 ## [0.40.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.40.0-beta.1...v0.40.1-beta.1) (2025-03-05)
 
 
