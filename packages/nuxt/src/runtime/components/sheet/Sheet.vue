@@ -30,73 +30,75 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
 
 <template>
   <DialogRoot v-slot="{ open }" v-bind="forwarded">
-    <SheetTrigger
-      v-if="$slots.trigger"
-      v-bind="_sheetTrigger"
-    >
-      <slot name="trigger" :open />
-    </SheetTrigger>
+    <slot name="root">
+      <SheetTrigger
+        v-if="$slots.trigger"
+        v-bind="_sheetTrigger"
+      >
+        <slot name="trigger" :open />
+      </SheetTrigger>
 
-    <SheetContent
-      :_sheet-close
-      :_sheet-overlay
-      :_sheet-portal
-      :sheet
-      :prevent-close
-      :show-close
-      :overlay
-      v-bind="_sheetContent"
-      :una
-    >
-      <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">
-        <SheetTitle v-if="title === DEFAULT_TITLE || !!$slots.title">
-          {{ title }}
-        </SheetTitle>
+      <SheetContent
+        :_sheet-close
+        :_sheet-overlay
+        :_sheet-portal
+        :sheet
+        :prevent-close
+        :show-close
+        :overlay
+        v-bind="_sheetContent"
+        :una
+      >
+        <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">
+          <SheetTitle v-if="title === DEFAULT_TITLE || !!$slots.title">
+            {{ title }}
+          </SheetTitle>
 
-        <SheetDescription v-if="description === DEFAULT_DESCRIPTION || !!$slots.description">
-          {{ description }}
-        </SheetDescription>
-      </VisuallyHidden>
+          <SheetDescription v-if="description === DEFAULT_DESCRIPTION || !!$slots.description">
+            {{ description }}
+          </SheetDescription>
+        </VisuallyHidden>
 
-      <slot name="content">
-        <SheetHeader
-          v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
-          v-bind="_sheetHeader"
-          :una
-        >
-          <slot name="header">
-            <SheetTitle
-              v-if="$slots.title || title !== DEFAULT_TITLE"
-              v-bind="_sheetTitle"
-              :una
-            >
-              <slot name="title">
-                {{ title }}
-              </slot>
-            </SheetTitle>
+        <slot name="content">
+          <SheetHeader
+            v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
+            v-bind="_sheetHeader"
+            :una
+          >
+            <slot name="header">
+              <SheetTitle
+                v-if="$slots.title || title !== DEFAULT_TITLE"
+                v-bind="_sheetTitle"
+                :una
+              >
+                <slot name="title">
+                  {{ title }}
+                </slot>
+              </SheetTitle>
 
-            <SheetDescription
-              v-if="$slots.description || description !== DEFAULT_DESCRIPTION"
-              v-bind="_sheetDescription"
-              :una
-            >
-              <slot name="description">
-                {{ description }}
-              </slot>
-            </SheetDescription>
-          </slot>
-        </SheetHeader>
+              <SheetDescription
+                v-if="$slots.description || description !== DEFAULT_DESCRIPTION"
+                v-bind="_sheetDescription"
+                :una
+              >
+                <slot name="description">
+                  {{ description }}
+                </slot>
+              </SheetDescription>
+            </slot>
+          </SheetHeader>
 
-        <slot />
+          <slot />
 
-        <SheetFooter
-          v-if="$slots.footer"
-          v-bind="_sheetFooter"
-          :una
-        >
-          <slot name="footer" />
-        </SheetFooter>
-      </slot>
-    </SheetContent>
+          <SheetFooter
+            v-if="$slots.footer"
+            v-bind="_sheetFooter"
+            :una
+          >
+            <slot name="footer" />
+          </SheetFooter>
+        </slot>
+      </SheetContent>
+    </slot>
   </DialogRoot>
 </template>

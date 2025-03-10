@@ -28,6 +28,7 @@ import { scrollArea } from './scroll-area'
 import { select } from './select'
 import { separator } from './separator'
 import { sheet } from './sheet'
+import { sidebar } from './sidebar'
 import { skeleton } from './skeleton'
 import { slider } from './slider'
 import { _switch } from './switch'
@@ -75,4 +76,5 @@ export const shortcuts = [
   ...form,
   ...sheet,
   ...scrollArea,
+  ...sidebar,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

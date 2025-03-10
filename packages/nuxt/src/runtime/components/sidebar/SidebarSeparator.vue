@@ -1,0 +1,18 @@
+<script setup lang="ts">
+import type { HTMLAttributes } from 'vue'
+import { cn } from '../../utils'
+import Separator from '../elements/Separator.vue'
+
+const props = defineProps<{
+  class?: HTMLAttributes['class']
+}>()
+</script>
+
+<template>
+  <Separator
+    data-sidebar="separator"
+    :class="cn('sidebar-separator', props.class)"
+  >
+    <slot />
+  </Separator>
+</template>

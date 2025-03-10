@@ -92,6 +92,13 @@
     "vitest": "catalog:",
     "vue-tsc": "catalog:"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "@parcel/watcher",
+      "esbuild"
+    ]
+  },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
   },
