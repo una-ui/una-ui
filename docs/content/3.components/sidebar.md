@@ -217,6 +217,8 @@ const {
 } = useSidebar()
 ```
 
+@@@ ../packages/nuxt/src/runtime/composables/useSidebar.ts [composables/useSidebar.ts]
+
 ## Props
 
 @@@ ../packages/nuxt/src/runtime/types/sidebar.ts [types/sidebar.ts]
