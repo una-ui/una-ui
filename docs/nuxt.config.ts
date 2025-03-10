@@ -26,6 +26,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/blocks-renderer/**': { prerender: false },
   },
 
   css: [
