@@ -9,7 +9,7 @@ function toggleDark() {
   <NButton
     btn="outline-gray"
     square
-    label="i-radix-icons-sun dark:i-radix-icons-moon"
+    label="i-radix-icons-moon dark:i-radix-icons-sun"
     icon
     @click="toggleDark()"
   />

@@ -24,10 +24,6 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    '/': { prerender: true },
-  },
-
   css: [
     '~/styles/index.css',
   ],
