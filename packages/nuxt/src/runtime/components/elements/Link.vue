@@ -2,7 +2,8 @@
 import type { PropType } from 'vue'
 import type { NLinkProps } from '../../types'
 import { NuxtLink } from '#components'
-import { isEqual } from 'ohash'
+import { useRoute } from '#imports'
+import { diff, isEqual } from 'ohash/utils'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -29,7 +30,7 @@ export default defineComponent({
       default: undefined,
     },
 
-    // preset
+    // TODO: convert to sidebar preset
     navLinkActive: {
       type: String as PropType<NLinkProps['navLinkActive']>,
       default: undefined,
@@ -40,6 +41,8 @@ export default defineComponent({
     },
   },
   setup(props: any) {
+    const route = useRoute()
+
     function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }): string | null {
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.inactiveClass
@@ -85,33 +88,76 @@ export default defineComponent({
       return props.navLinkInactive
     }
 
+    function isPartiallyEqual(item1: any, item2: any) {
+      const diffedKeys = diff(item1, item2).reduce((filtered: Set<string>, q: any) => {
+        if (q.type === 'added') {
+          filtered.add(q.key)
+        }
+        return filtered
+      }, new Set<string>())
+
+      const item1Filtered = Object.fromEntries(Object.entries(item1).filter(([key]) => !diffedKeys.has(key)))
+      const item2Filtered = Object.fromEntries(Object.entries(item2).filter(([key]) => !diffedKeys.has(key)))
+
+      return isEqual(item1Filtered, item2Filtered)
+    }
+
+    function isLinkActive({ route: linkRoute, isActive, isExactActive }: any) {
+      if (props.active !== undefined) {
+        return props.active
+      }
+
+      if (props.exactQuery === 'partial') {
+        if (!isPartiallyEqual(linkRoute.query, route.query))
+          return false
+      }
+      else if (props.exactQuery === true) {
+        if (!isEqual(linkRoute.query, route.query))
+          return false
+      }
+
+      if (props.exactHash && linkRoute.hash !== route.hash) {
+        return false
+      }
+
+      if (props.exact && isExactActive) {
+        return true
+      }
+
+      if (!props.exact && isActive) {
+        return true
+      }
+
+      return false
+    }
+
     return {
       resolveLinkClass,
       resolveNavLinkActive,
       resolveNavLinkInactive,
+      isLinkActive,
     }
   },
 })
 </script>
 
 <template>
-  <!-- eslint-disable vue/no-template-shadow -->
   <NuxtLink
-    v-slot="{ route, href, target, rel, navigate, isActive, isExactActive, isExternal, exact }"
+    v-slot="{ route, href, target, rel, navigate, isActive, isExactActive, isExternal }"
     v-bind="$props"
     custom
   >
     <a
       v-bind="$attrs"
-      :href="href"
-      :rel="rel"
-      :target="target"
+      :href
+      :rel="rel ?? undefined"
+      :target="target ?? undefined"
       :class="resolveLinkClass(route, $route, { isActive, isExactActive })"
       :nav-link-active="resolveNavLinkActive(route, $route, { isActive, isExactActive })"
       :nav-link-inactive="resolveNavLinkInactive(route, $route, { isActive, isExactActive })"
       @click="(e) => !isExternal && navigate(e)"
     >
-      <slot v-bind="{ isActive: exact ? isExactActive : isActive }" />
+      <slot :active="isLinkActive({ route, isActive, isExactActive })" />
     </a>
   </NuxtLink>
 </template>

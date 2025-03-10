@@ -12,7 +12,7 @@ export interface NLinkProps extends NuxtLinkProps {
    *
    * @default false
    */
-  exactQuery?: boolean
+  exactQuery?: boolean | 'partial'
   /**
    * Manually enable/disable the exact match for the hash
    *
