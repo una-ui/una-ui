@@ -152,6 +152,8 @@ You can customize the sidebar using the following sub components props and `una`
 | `_sidebarTrigger`         | `NSidebarTriggerProps`         | Props for the trigger component.                       |
 | `una`                     | `NSidebarUnaProps`             | UnaUI preset configuration for all sidebar components. |
 
+:read-more{to="#props" title="Sheet props" }
+
 ## Slots
 
 | Name      | Props | Description                                                               |
