@@ -69,24 +69,28 @@ A `Sidebar` component is composed of the following parts:
 :CommonBlockPreview{url="/blocks-renderer/sidebar"}
 
 ::
+::div{label="Dashboard.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ./pages/blocks-renderer/sidebar.vue
+
+::
 ::div{label="AppSidebar.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ./pages/blocks-renderer/sidebar/basic.vue
+@@@ ./components/sidebar/basic/AppSidebar.vue
 
 ::
 ::div{label="TeamSwitcher.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ./components/TeamSwitcher.vue
+@@@ ./components/sidebar/basic/TeamSwitcher.vue
 
 ::
 ::div{label="NavMain.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ./components/NavMain.vue
+@@@ ./components/sidebar/basic/NavMain.vue
 
 ::
 ::div{label="NavProjects.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ./components/NavProjects.vue
+@@@ ./components/sidebar/basic/NavProjects.vue
 
 ::
 ::div{label="NavUser.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ./components/NavUser.vue
+@@@ ./components/sidebar/basic/NavUser.vue
 ::
 :::
 
@@ -101,8 +105,16 @@ View the full example in a new tab.
 :CommonBlockPreview{url="/blocks-renderer/collapsible-nested-sidebar"}
 
 ::
-::div{label="AppSidebar.vue" icon="i-vscode-icons-file-type-vue"}
+::div{label="Dashboard.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ./pages/blocks-renderer/collapsible-nested-sidebar.vue
+
+::
+::div{label="AppSidebar.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ./components/sidebar/collapsible-nested/AppSidebar.vue
+
+::
+::div{label="NavUser.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ./components/sidebar/collapsible-nested/NavUser.vue
 
 ::
 :::
