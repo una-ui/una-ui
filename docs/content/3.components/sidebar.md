@@ -127,30 +127,13 @@ View the full collapsible nested sidebar example in a new tab.
 
 You can customize the sidebar using the following sub components props and `una` prop.
 
-| Name                      | Type                           | Description                                            |
-| ------------------------- | ------------------------------ | ------------------------------------------------------ |
-| `_sidebarContent`         | `NSidebarContentProps`         | Props for the content component.                       |
-| `_sidebarHeader`          | `NSidebarHeaderProps`          | Props for the header component.                        |
-| `_sidebarFooter`          | `NSidebarFooterProps`          | Props for the footer component.                        |
-| `_sidebarGroup`           | `NSidebarGroupProps`           | Props for the group component.                         |
-| `_sidebarGroupContent`    | `NSidebarGroupContentProps`    | Props for the group content component.                 |
-| `_sidebarGroupLabel`      | `NSidebarGroupLabelProps`      | Props for the group label component.                   |
-| `_sidebarMenu`            | `NSidebarMenuProps`            | Props for the menu container component.                |
-| `_sidebarMenuItem`        | `NSidebarMenuItemProps`        | Props for the menu item component.                     |
-| `_sidebarMenuButton`      | `NSidebarMenuButtonProps`      | Props for the menu button component.                   |
-| `_sidebarMenuButtonChild` | `NSidebarMenuButtonChildProps` | Props for the menu button child component.             |
-| `_sidebarMenuSub`         | `NSidebarMenuSubProps`         | Props for the menu sub component.                      |
-| `_sidebarMenuSubItem`     | `NSidebarMenuSubItemProps`     | Props for the menu sub item component.                 |
-| `_sidebarMenuSubButton`   | `NSidebarMenuSubButtonProps`   | Props for the menu sub button component.               |
-| `_sidebarMenuAction`      | `NSidebarMenuActionProps`      | Props for the menu action component.                   |
-| `_sidebarMenuBadge`       | `NSidebarMenuBadgeProps`       | Props for the menu badge component.                    |
-| `_sidebarMenuSkeleton`    | `NSidebarMenuSkeletonProps`    | Props for the menu skeleton component.                 |
-| `_sidebarSeparator`       | `NSidebarSeparatorProps`       | Props for the separator component.                     |
-| `_sidebarRail`            | `NSidebarRailProps`            | Props for the rail component.                          |
-| `_sidebarInset`           | `NSidebarInsetProps`           | Props for the inset component.                         |
-| `_sidebarInput`           | `NSidebarInputProps`           | Props for the input component.                         |
-| `_sidebarTrigger`         | `NSidebarTriggerProps`         | Props for the trigger component.                       |
-| `una`                     | `NSidebarUnaProps`             | UnaUI preset configuration for all sidebar components. |
+| Name              | Type                   | Description                                            |
+| ----------------- | ---------------------- | ------------------------------------------------------ |
+| `_sidebarContent` | `NSidebarContentProps` | Props for the content component.                       |
+| `_sidebarHeader`  | `NSidebarHeaderProps`  | Props for the header component.                        |
+| `_sidebarFooter`  | `NSidebarFooterProps`  | Props for the footer component.                        |
+| `_sidebarRail`    | `NSidebarRailProps`    | Props for the rail component.                          |
+| `una`             | `NSidebarUnaProps`     | UnaUI preset configuration for all sidebar components. |
 
 :read-more{to="#props" title="Sheet props" }
 

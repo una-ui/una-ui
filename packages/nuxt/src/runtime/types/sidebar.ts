@@ -49,25 +49,7 @@ export interface NSidebarProps {
   _sidebarContent?: NSidebarContentProps
   _sidebarHeader?: NSidebarHeaderProps
   _sidebarFooter?: NSidebarFooterProps
-  _sidebarGroup?: NSidebarGroupProps
-  _sidebarGroupContent?: NSidebarGroupContentProps
-  _sidebarGroupLabel?: NSidebarGroupLabelProps
-  _sidebarGroupAction?: NSidebarGroupActionProps
-  _sidebarMenu?: NSidebarMenuProps
-  _sidebarMenuItem?: NSidebarMenuItemProps
-  _sidebarMenuButton?: NSidebarMenuButtonProps
-  _sidebarMenuButtonChild?: NSidebarMenuButtonChildProps
-  _sidebarMenuSub?: NSidebarMenuSubProps
-  _sidebarMenuSubItem?: NSidebarMenuSubItemProps
-  _sidebarMenuSubButton?: NSidebarMenuSubButtonProps
-  _sidebarMenuAction?: NSidebarMenuActionProps
-  _sidebarMenuBadge?: NSidebarMenuBadgeProps
-  _sidebarMenuSkeleton?: NSidebarMenuSkeletonProps
-  _sidebarSeparator?: NSidebarSeparatorProps
   _sidebarRail?: NSidebarRailProps
-  _sidebarInset?: NSidebarInsetProps
-  _sidebarInput?: NSidebarInputProps
-  _sidebarTrigger?: NSidebarTriggerProps
 
   /**
    * `UnaUI` preset configuration
