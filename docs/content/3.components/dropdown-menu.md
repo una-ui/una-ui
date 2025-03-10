@@ -89,7 +89,7 @@ Adjust the dropdown-menu size without limits. Use `breakpoints` (e.g., `sm:sm`, 
 ::
 :::
 
-### Slots
+## Slots
 
 | Name          | Props   | Description           |
 | ------------- | ------- | --------------------- |

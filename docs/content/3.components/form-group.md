@@ -138,7 +138,7 @@ Notice that when you change the `status` prop, the `message` prop and the child 
 ::
 :::
 
-### Slots
+## Slots
 
 | Name          | Props | Description                                                        |
 | ------------- | ----- | ------------------------------------------------------------------ |

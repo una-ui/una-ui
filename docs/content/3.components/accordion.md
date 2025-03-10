@@ -157,7 +157,7 @@ If no `trailing` icon is given, it will be used for both open and close states a
 ::
 :::
 
-### Customization
+## Customization
 
 > You can customize the accordion using the `una` prop and utility classes.
 

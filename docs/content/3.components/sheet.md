@@ -70,7 +70,7 @@ badges:
 ::
 :::
 
-### Customization
+## Customization
 
 You can customize the sheet using the following sub components props and `una` prop.
 
@@ -122,7 +122,7 @@ You can customize the sheet using the following sub components props and `una` p
 ::
 :::
 
-### Slots
+## Slots
 
 | Name          | Props  | Description                                                                        |
 | ------------- | ------ | ---------------------------------------------------------------------------------- |

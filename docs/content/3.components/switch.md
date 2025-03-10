@@ -122,7 +122,7 @@ Set the switch to loading state.
 ::
 :::
 
-### Customization
+## Customization
 
 Configure the progress using the `una` prop and utility classes.
 
@@ -139,7 +139,7 @@ Configure the progress using the `una` prop and utility classes.
 
 :read-more{to="#presets" title="Component Presets"}
 
-### Slots
+## Slots
 
 | Name           | Props     | Description                                                             |
 | -------------- | --------- | ----------------------------------------------------------------------- |

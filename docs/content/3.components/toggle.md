@@ -51,7 +51,7 @@ badges:
 
 :read-more{to="/components/button#color" title="Button variant and color section" target="_blank"}
 
-### Slots
+## Slots
 
 :::CodeGroup
 ::div{label="Preview" preview}

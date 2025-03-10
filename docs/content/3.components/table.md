@@ -321,7 +321,7 @@ Allows you to fetch data from the server. This is useful when you want to fetch 
 
 :read-more{to="https://tanstack.com/table/latest/docs/guide/pagination#manual-server-side-pagination" title="Tanstack Table Serve-Side Documentation" target="_blank"}
 
-### Customization
+## Customization
 
 Configure the progress using the `una` prop and utility classes.
 
@@ -349,7 +349,7 @@ Configure the progress using the `una` prop and utility classes.
 ::
 :::
 
-### Slots
+## Slots
 
 | Name              | Props    | Description         |
 | ----------------- | -------- | ------------------- |

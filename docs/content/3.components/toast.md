@@ -121,7 +121,7 @@ Configure the toast provider using the `_toastProvider` prop.
 ::
 :::
 
-### Slots
+## Slots
 
 | Name          | Props | Description           |
 | ------------- | ----- | --------------------- |

@@ -36,7 +36,7 @@ The **Label** component is used already in different components like [Checkbox](
 ::
 :::
 
-### Slots
+## Slots
 
 | Name      | Props | Description       |
 | --------- | ----- | ----------------- |

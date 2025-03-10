@@ -155,7 +155,7 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 ::
 :::
 
-### Slots
+## Slots
 
 | Name      | Props   | Description       |
 | --------- | ------- | ----------------- |

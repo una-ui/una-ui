@@ -111,7 +111,7 @@ Adjust the breadcrumb size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs
 ::
 :::
 
-### Slots
+## Slots
 
 | Name        | Props                     | Description                        |
 | ----------- | ------------------------- | ---------------------------------- |

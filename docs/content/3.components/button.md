@@ -209,7 +209,7 @@ By default, the disabled state is triggered when the button is loading.
 ::
 :::
 
-### Slots
+## Slots
 
 #### Default
 

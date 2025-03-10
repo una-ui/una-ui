@@ -114,7 +114,7 @@ By default we use `heroicons` and `tabler` for the icons, you can use any icon p
 ::
 :::
 
-### Slots
+## Slots
 
 | Name      | Props | Description      |
 | --------- | ----- | ---------------- |

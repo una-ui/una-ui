@@ -133,7 +133,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :read-more{to="/components/indicator" title="Indicator component" target="_blank"}
 
-### Customization
+## Customization
 
 > You can customize the avatar using the `una` prop and utility classes.
 
@@ -146,7 +146,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 ::
 :::
 
-### Slots
+## Slots
 
 | Slot       | Props | Description                         |
 | ---------- | ----- | ----------------------------------- |

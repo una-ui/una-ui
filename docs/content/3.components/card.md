@@ -65,7 +65,7 @@ The color variant only affects the card's background and border colors. Other el
 ::
 :::
 
-### Slots
+## Slots
 
 | Name          | Props | Description                                                                      |
 | ------------- | ----- | -------------------------------------------------------------------------------- |

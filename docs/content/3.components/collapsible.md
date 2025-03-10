@@ -32,7 +32,7 @@ badges:
 ::
 :::
 
-### Slots
+## Slots
 
 | Name      | Props  | Description                   |
 | --------- | ------ | ----------------------------- |

@@ -121,7 +121,7 @@ Adjust the slider size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 ::
 :::
 
-### Customization
+## Customization
 
 Configure the progress using the `una` prop and utility classes.
 
@@ -134,7 +134,7 @@ Configure the progress using the `una` prop and utility classes.
 ::
 :::
 
-### Slots
+## Slots
 
 | Name           | Props | Description              |
 | -------------- | ----- | ------------------------ |
