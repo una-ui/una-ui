@@ -51,12 +51,12 @@ A `Sidebar` component is composed of the following parts:
 
 ### Basic
 
-| Prop          | Default     | Type      | Description                                                                 |
-| ------------- | ----------- | --------- | --------------------------------------------------------------------------- |
-| `sheet`       | `left`      | `string`  | The side of the sheet. Options are `left` and `right`.                      |
-| `sidebar`     | `sidebar`   | `string`  | The variant of the sidebar. Options are `sidebar`, `floating`, and `inset`. |
-| `collapsible` | `offcanvas` | `string`  | Collapsible behavior. Options: `offcanvas`, `icon`, `none`.                 |
-| `rail`        | `true`      | `boolean` | Whether to display the sidebar rail for resizing.                           |
+| Prop          | Default     | Type                         | Description                                            |
+| ------------- | ----------- | ---------------------------- | ------------------------------------------------------ |
+| `sheet`       | `left`      | `left`,`right`               | The side of the sheet. Options are `left` and `right`. |
+| `sidebar`     | `sidebar`   | `sidebar`,`floating`,`inset` | The variant of the sidebar.                            |
+| `collapsible` | `offcanvas` | `offcanvas`,`icon`,`none`    | Collapsible behavior.                                  |
+| `rail`        | `true`      | `boolean`                    | Whether to display the sidebar rail for resizing.      |
 
 :::CodeGroup
 ::div{label="Preview" preview}
