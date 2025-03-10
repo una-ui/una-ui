@@ -1,6 +1,6 @@
 import type { PrimitiveProps } from 'reka-ui'
 import type { Component, HTMLAttributes } from 'vue'
-import type { NButtonProps } from '.'
+import type { NButtonProps, NInputProps } from '.'
 import type { NSheetContentProps } from './sheet'
 
 /**
@@ -584,7 +584,7 @@ export interface NSidebarInsetProps {
 /**
  * Sidebar input component props interface
  */
-export interface NSidebarInputProps {
+export interface NSidebarInputProps extends NInputProps {
   /**
    * Additional attributes that can be passed to the sidebar input element.
    */
@@ -598,7 +598,7 @@ export interface NSidebarInputProps {
   /**
    * `UnaUI` preset configuration
    */
-  una?: Pick<NSidebarUnaProps, 'sidebarInput'>
+  una?: Pick<NSidebarUnaProps, 'sidebarInput'> & NInputProps['una']
 }
 
 /**

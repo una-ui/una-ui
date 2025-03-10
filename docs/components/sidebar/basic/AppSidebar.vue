@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import NavMain from './NavMain.vue'
+import NavProjects from './NavProjects.vue'
+import NavUser from './NavUser.vue'
+import TeamSwitcher from './TeamSwitcher.vue'
+
 // This is sample data.
 const data = {
   user: {

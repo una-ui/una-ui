@@ -66,11 +66,11 @@ A `Sidebar` component is composed of the following parts:
 
 :::CodeGroup
 ::div{label="Preview" preview}
-:CommonBlockPreview{url="/iframe-renderer/sidebar/basic"}
+:CommonBlockPreview{url="/blocks-renderer/sidebar"}
 
 ::
 ::div{label="AppSidebar.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ./pages/iframe-renderer/sidebar/basic.vue
+@@@ ./pages/blocks-renderer/sidebar/basic.vue
 
 ::
 ::div{label="TeamSwitcher.vue" icon="i-vscode-icons-file-type-vue"}
@@ -90,7 +90,24 @@ A `Sidebar` component is composed of the following parts:
 ::
 :::
 
-::alert{to="/iframe-renderer/sidebar/basic" target="_blank" icon="lucide:link"}
+::alert{to="/blocks-renderer/sidebar" target="_blank" icon="lucide:link"}
+View the full example in a new tab.
+::
+
+### A collapsible nested sidebar
+
+:::CodeGroup
+::div{label="Preview" preview}
+:CommonBlockPreview{url="/blocks-renderer/collapsible-nested-sidebar"}
+
+::
+::div{label="AppSidebar.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ./pages/blocks-renderer/collapsible-nested-sidebar.vue
+
+::
+:::
+
+::alert{to="/blocks-renderer/collapsible-nested-sidebar" target="_blank" icon="lucide:link"}
 View the full example in a new tab.
 ::
 

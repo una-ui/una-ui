@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { definePageMeta } from '#imports'
+import AppSidebar from '~/components/sidebar/basic/AppSidebar.vue'
 
 const route = useRoute()
 
@@ -18,7 +18,7 @@ const breadcrumbItems = computed(() => {
 
 <template>
   <NSidebarProvider>
-    <NuxtPage />
+    <AppSidebar />
 
     <NSidebarInset>
       <header class="h-16 flex shrink-0 items-center justify-between gap-2 border-b transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar_wrapper:h-12">
