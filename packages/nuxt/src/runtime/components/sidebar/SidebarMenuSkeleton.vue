@@ -18,7 +18,7 @@ const width = computed(() => {
   >
     <slot>
       <Skeleton
-        v-if="showIcon"
+        v-if="props.showIcon"
         class="rounded-md square-4"
         data-sidebar="menu-skeleton-icon"
       />
