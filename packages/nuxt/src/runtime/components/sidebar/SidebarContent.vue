@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NSidebarContentProps } from '../../types'
 import { cn } from '../../utils'
 import ScrollArea from '../scroll-area/ScrollArea.vue'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<NSidebarContentProps>()
 </script>
 
 <template>

@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NSidebarMenuSkeletonProps } from '../../types'
 import { computed } from 'vue'
 import { cn } from '../../utils'
 import Skeleton from '../elements/Skeleton.vue'
 
-const props = defineProps<{
-  showIcon?: boolean
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<NSidebarMenuSkeletonProps>()
 
 const width = computed(() => {
   return `${Math.floor(Math.random() * 40) + 50}%`

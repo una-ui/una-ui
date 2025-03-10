@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import type { PrimitiveProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
+import type { NSidebarMenuActionProps } from '../../types'
 import { Primitive } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = withDefaults(defineProps<PrimitiveProps & {
-  showOnHover?: boolean
-  class?: HTMLAttributes['class']
-}>(), {
+const props = withDefaults(defineProps<NSidebarMenuActionProps>(), {
   as: 'button',
 })
 </script>

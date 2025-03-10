@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { PrimitiveProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
+import type { NSidebarGroupLabelProps } from '../../types'
 import { Primitive } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<PrimitiveProps & {
-  class?: HTMLAttributes['class']
-}>()
+const props = withDefaults(defineProps<NSidebarGroupLabelProps>(), {
+  as: 'div',
+  asChild: false,
+})
 </script>
 
 <template>

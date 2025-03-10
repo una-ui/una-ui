@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NSidebarSeparatorProps } from '../../types'
 import { cn } from '../../utils'
 import Separator from '../elements/Separator.vue'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<NSidebarSeparatorProps>()
 </script>
 
 <template>

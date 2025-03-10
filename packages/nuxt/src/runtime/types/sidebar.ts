@@ -1,5 +1,6 @@
 import type { PrimitiveProps } from 'reka-ui'
 import type { Component, HTMLAttributes } from 'vue'
+import type { NButtonProps } from '.'
 import type { NSheetContentProps } from './sheet'
 
 /**
@@ -163,6 +164,11 @@ export interface NSidebarFooterProps {
  */
 export interface NSidebarGroupProps {
   /**
+   * The label of the group.
+   */
+  label?: string
+
+  /**
    * Additional attributes that can be passed to the sidebar group element.
    */
   [key: string]: any
@@ -201,7 +207,7 @@ export interface NSidebarGroupContentProps {
 /**
  * Sidebar group label component props interface
  */
-export interface NSidebarGroupLabelProps {
+export interface NSidebarGroupLabelProps extends PrimitiveProps {
   /**
    * Additional attributes that can be passed to the sidebar group label element.
    */
@@ -221,7 +227,7 @@ export interface NSidebarGroupLabelProps {
 /**
  * Sidebar group action component props interface
  */
-export interface NSidebarGroupActionProps {
+export interface NSidebarGroupActionProps extends PrimitiveProps {
   /**
    * Additional attributes that can be passed to the sidebar group action element.
    */
@@ -241,7 +247,19 @@ export interface NSidebarGroupActionProps {
 /**
  * Sidebar menu component props interface
  */
-export interface NSidebarMenuProps {
+export interface NSidebarMenuProps<T extends { id?: string | number } | Record<string, any> = any> {
+  /**
+   * Array of items to render in the menu.
+   */
+  items?: T[]
+
+  /**
+   * Property from each item to use as a key.
+   *
+   * @default 'id'
+   */
+  itemKey?: keyof T
+
   /**
    * Additional attributes that can be passed to the sidebar menu element.
    */
@@ -427,7 +445,14 @@ export interface NSidebarMenuSubButtonProps extends PrimitiveProps {
 /**
  * Sidebar menu action component props interface
  */
-export interface NSidebarMenuActionProps {
+export interface NSidebarMenuActionProps extends PrimitiveProps {
+  /**
+   * Whether to show the action only on hover.
+   *
+   * @default false
+   */
+  showOnHover?: boolean
+
   /**
    * Additional attributes that can be passed to the sidebar menu action element.
    */
@@ -468,6 +493,13 @@ export interface NSidebarMenuBadgeProps {
  * Sidebar menu skeleton component props interface
  */
 export interface NSidebarMenuSkeletonProps {
+  /**
+   * Whether to show the icon in the skeleton.
+   *
+   * @default false
+   */
+  showIcon?: boolean
+
   /**
    * Additional attributes that can be passed to the sidebar menu skeleton element.
    */
@@ -567,7 +599,7 @@ export interface NSidebarInputProps {
 /**
  * Sidebar trigger component props interface
  */
-export interface NSidebarTriggerProps {
+export interface NSidebarTriggerProps extends Omit<NButtonProps, 'una'> {
   /**
    * Additional attributes that can be passed to the sidebar trigger element.
    */
@@ -581,7 +613,7 @@ export interface NSidebarTriggerProps {
   /**
    * `UnaUI` preset configuration
    */
-  una?: Pick<NSidebarUnaProps, 'sidebarTrigger'>
+  una?: Pick<NSidebarUnaProps, 'sidebarTrigger'> & NButtonProps['una']
 }
 
 /**

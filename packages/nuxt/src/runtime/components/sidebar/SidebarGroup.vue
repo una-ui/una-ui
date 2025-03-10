@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NSidebarGroupProps } from '../../types'
 import { cn } from '../../utils'
 import SidebarGroupLabel from './SidebarGroupLabel.vue'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-  label?: string
-}>()
+const props = defineProps<NSidebarGroupProps>()
 </script>
 
 <template>
@@ -15,9 +12,9 @@ const props = defineProps<{
     :class="cn('sidebar-group', props.class)"
   >
     <slot name="root">
-      <SidebarGroupLabel v-if="label">
+      <SidebarGroupLabel v-if="props.label">
         <slot name="label">
-          {{ label }}
+          {{ props.label }}
         </slot>
       </SidebarGroupLabel>
 

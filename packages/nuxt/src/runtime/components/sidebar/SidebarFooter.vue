@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NSidebarFooterProps } from '../../types'
 import { cn } from '../../utils'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<NSidebarFooterProps>()
 </script>
 
 <template>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { NButtonProps } from '../../types'
+import type { NSidebarTriggerProps } from '../../types'
 import { useSidebar } from '../../composables/useSidebar'
 import { cn } from '../../utils'
 import Button from '../elements/Button.vue'
 
-const props = withDefaults(defineProps<NButtonProps>(), {
+const props = withDefaults(defineProps<NSidebarTriggerProps>(), {
   btn: 'ghost-white',
   square: '7',
   label: 'i-lucide-panel-left',

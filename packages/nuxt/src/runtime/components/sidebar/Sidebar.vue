@@ -27,16 +27,16 @@ const [DefineSlot, ReuseSlot] = createReusableTemplate()
 <template>
   <DefineSlot>
     <slot>
-      <SidebarHeader>
+      <SidebarHeader v-bind="props._sidebarHeader">
         <slot name="header" />
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent v-bind="props._sidebarContent">
         <slot name="content" />
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter v-bind="props._sidebarFooter">
         <slot name="footer" />
       </SidebarFooter>
-      <NSidebarRail v-if="rail" />
+      <NSidebarRail v-if="rail" v-bind="props._sidebarRail" />
     </slot>
   </DefineSlot>
 
