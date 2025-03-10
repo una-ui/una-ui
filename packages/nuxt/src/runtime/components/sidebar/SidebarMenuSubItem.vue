@@ -9,6 +9,7 @@ const props = defineProps<NSidebarMenuSubItemProps>()
   <li
     :class="cn(
       'sidebar-menu-sub-item',
+      props.una?.sidebarMenuSubItem,
       props.class,
     )"
   >

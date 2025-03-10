@@ -13,8 +13,8 @@ const props = withDefaults(defineProps<NSidebarMenuActionProps>(), {
     data-sidebar="menu-action"
     :class="cn(
       'sidebar-menu-action',
-      showOnHover
-        && 'sidebar-menu-action-show-on-hover',
+      showOnHover && 'sidebar-menu-action-show-on-hover',
+      props.una?.sidebarMenuAction,
       props.class,
     )"
     :as="as"

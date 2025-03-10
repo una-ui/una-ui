@@ -16,6 +16,7 @@ const props = withDefaults(defineProps<NSidebarGroupActionProps>(), {
     :as-child="asChild"
     :class="cn(
       'sidebar-group-action',
+      props.una?.sidebarGroupAction,
       props.class,
     )"
   >

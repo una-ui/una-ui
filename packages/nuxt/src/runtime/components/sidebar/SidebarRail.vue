@@ -16,6 +16,7 @@ const { toggleSidebar } = useSidebar()
     title="Toggle Sidebar"
     :class="cn(
       'sidebar-rail',
+      props.una?.sidebarRail,
       props.class,
     )"
     @click="toggleSidebar"

@@ -42,7 +42,11 @@ const [DefineSlot, ReuseSlot] = createReusableTemplate()
 
   <div
     v-if="collapsible === 'none'"
-    :class="cn('sidebar-collapsible-none', props.class)"
+    :class="cn(
+      'sidebar-collapsible-none',
+      props.una?.sidebar,
+      props.class,
+    )"
     v-bind="$attrs"
   >
     <ReuseSlot />
@@ -95,6 +99,7 @@ const [DefineSlot, ReuseSlot] = createReusableTemplate()
         sidebar === 'floating' || sidebar === 'inset'
           ? 'sidebar-desktop-padding-floating'
           : 'sidebar-desktop-padding-default',
+        props.una?.sidebar,
         props.class,
       )"
       v-bind="$attrs"

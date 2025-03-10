@@ -11,6 +11,7 @@ const props = defineProps<NSidebarInputProps>()
     data-sidebar="input"
     :class="cn(
       'sidebar-input',
+      props.una?.sidebarInput,
       props.class,
     )"
   >

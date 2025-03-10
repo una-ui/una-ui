@@ -9,7 +9,11 @@ const props = defineProps<NSidebarGroupProps>()
 <template>
   <div
     data-sidebar="group"
-    :class="cn('sidebar-group', props.class)"
+    :class="cn(
+      'sidebar-group',
+      props.una?.sidebarGroup,
+      props.class,
+    )"
   >
     <slot name="root">
       <SidebarGroupLabel v-if="props.label">

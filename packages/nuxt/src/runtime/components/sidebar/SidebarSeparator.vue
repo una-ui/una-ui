@@ -9,7 +9,11 @@ const props = defineProps<NSidebarSeparatorProps>()
 <template>
   <Separator
     data-sidebar="separator"
-    :class="cn('sidebar-separator', props.class)"
+    :class="cn(
+      'sidebar-separator',
+      props.una?.sidebarSeparator,
+      props.class,
+    )"
   >
     <slot />
   </Separator>

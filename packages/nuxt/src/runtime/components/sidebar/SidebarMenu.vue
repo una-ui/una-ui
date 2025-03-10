@@ -15,7 +15,11 @@ function getKey(item: T) {
 <template>
   <ul
     data-sidebar="menu"
-    :class="cn('sidebar-menu', props.class)"
+    :class="cn(
+      'sidebar-menu',
+      props.una?.sidebarMenu,
+      props.class,
+    )"
   >
     <slot>
       <SidebarMenuItem v-for="item in props.items" :key="getKey(item)">

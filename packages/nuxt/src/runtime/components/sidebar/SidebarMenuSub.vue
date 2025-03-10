@@ -10,6 +10,7 @@ const props = defineProps<NSidebarMenuSubProps>()
     data-sidebar="menu-badge"
     :class="cn(
       'sidebar-menu-sub',
+      props.una?.sidebarMenuSub,
       props.class,
     )"
   >

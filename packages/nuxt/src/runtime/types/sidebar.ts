@@ -97,6 +97,11 @@ export interface NSidebarProviderProps {
    * Additional classes to apply to the provider.
    */
   class?: HTMLAttributes['class']
+
+  /**
+   * `UnaUI` preset configuration
+   */
+  una?: Pick<NSidebarUnaProps, 'sidebarProvider'>
 }
 
 /**

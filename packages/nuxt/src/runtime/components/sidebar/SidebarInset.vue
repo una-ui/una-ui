@@ -9,6 +9,7 @@ const props = defineProps<NSidebarInsetProps>()
   <main
     :class="cn(
       'sidebar-inset',
+      props.una?.sidebarInset,
       props.class,
     )"
   >

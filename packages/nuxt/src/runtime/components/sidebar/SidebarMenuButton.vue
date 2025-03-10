@@ -20,19 +20,27 @@ const props = withDefaults(defineProps<NSidebarMenuButtonProps>(), {
 const { isMobile, state } = useSidebar()
 
 const delegatedProps = computed(() => {
-  const { tooltip, ...delegated } = props
+  const { tooltip, una, ...delegated } = props
   return delegated
+})
+
+const unaProps = computed(() => {
+  return {
+    una: {
+      sidebarMenuButtonChild: props.una?.sidebarMenuButtonChild,
+    },
+  }
 })
 </script>
 
 <template>
-  <SidebarMenuButtonChild v-if="!tooltip" v-bind="{ ...delegatedProps, ...$attrs }">
+  <SidebarMenuButtonChild v-if="!tooltip" v-bind="{ ...delegatedProps, ...unaProps, ...$attrs }">
     <slot />
   </SidebarMenuButtonChild>
 
   <TooltipRoot v-else>
     <TooltipTrigger as-child>
-      <SidebarMenuButtonChild v-bind="{ ...delegatedProps, ...$attrs }">
+      <SidebarMenuButtonChild v-bind="{ ...delegatedProps, ...unaProps, ...$attrs }">
         <slot />
       </SidebarMenuButtonChild>
     </TooltipTrigger>

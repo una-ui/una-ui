@@ -22,6 +22,7 @@ const props = withDefaults(defineProps<NSidebarMenuSubButtonProps>(), {
       size === 'sm' && 'text-xs',
       size === 'md' && 'text-sm',
       'group-data-[collapsible=icon]:hidden',
+      props.una?.sidebarMenuSubButton,
       props.class,
     )"
   >

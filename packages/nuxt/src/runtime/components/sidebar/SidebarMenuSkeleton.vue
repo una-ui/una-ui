@@ -14,7 +14,11 @@ const width = computed(() => {
 <template>
   <div
     data-sidebar="menu-skeleton"
-    :class="cn('sidebar-menu-skeleton', props.class)"
+    :class="cn(
+      'sidebar-menu-skeleton',
+      props.una?.sidebarMenuSkeleton,
+      props.class,
+    )"
   >
     <slot>
       <Skeleton

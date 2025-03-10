@@ -16,7 +16,9 @@ const props = withDefaults(defineProps<NSidebarGroupLabelProps>(), {
     :as-child="asChild"
     :class="cn(
       'sidebar-group-label',
-      props.class)"
+      props.una?.sidebarGroupLabel,
+      props.class,
+    )"
   >
     <slot />
   </Primitive>

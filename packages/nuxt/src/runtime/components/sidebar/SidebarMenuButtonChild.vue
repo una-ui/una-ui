@@ -50,7 +50,11 @@ export interface SidebarMenuButtonProps extends PrimitiveProps {
     data-sidebar="menu_button"
     :data-size="size"
     :data-active="isActive"
-    :class="cn(sidebarMenuButtonVariants({ variant, size }), props.class)"
+    :class="cn(
+      sidebarMenuButtonVariants({ variant, size }),
+      props.una?.sidebarMenuButtonChild,
+      props.class,
+    )"
     :as="as"
     :as-child="asChild"
     v-bind="$attrs"

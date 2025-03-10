@@ -8,7 +8,11 @@ const props = defineProps<NSidebarMenuItemProps>()
 <template>
   <li
     data-sidebar="menu-item"
-    :class="cn('group/menu_item sidebar-menu-item', props.class)"
+    :class="cn(
+      'group/menu_item sidebar-menu-item',
+      props.una?.sidebarMenuItem,
+      props.class,
+    )"
   >
     <slot />
   </li>

@@ -18,7 +18,11 @@ const { toggleSidebar } = useSidebar()
   <Button
     data-sidebar="trigger"
     v-bind="props"
-    :class="cn('p-0', props.class)"
+    :class="cn(
+      'p-0',
+      props.una?.sidebarTrigger,
+      props.class,
+    )"
     @click="toggleSidebar"
   />
 </template>

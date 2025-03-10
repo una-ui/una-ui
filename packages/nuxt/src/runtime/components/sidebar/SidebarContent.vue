@@ -9,7 +9,11 @@ const props = defineProps<NSidebarContentProps>()
 <template>
   <div
     data-sidebar="content"
-    :class="cn('sidebar-content', props.class)"
+    :class="cn(
+      'sidebar-content',
+      props.una?.sidebarContent,
+      props.class,
+    )"
   >
     <ScrollArea>
       <slot />
