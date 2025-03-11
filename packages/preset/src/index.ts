@@ -142,9 +142,6 @@ export default function presetUna(options: unaUIOptions = {
             border-radius: 0.25rem; /* 1 */
             outline-offset: 0.10rem; /* 1 */
           }
-          button, input, optgroup, select, textarea  {
-            background-color: transparent; /* 1 */
-          }
         `,
       },
     ],
