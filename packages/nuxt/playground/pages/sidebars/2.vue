@@ -157,7 +157,7 @@ const data = {
       <header class="h-16 flex shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar_wrapper:h-12">
         <div class="flex items-center gap-2 px-4">
           <NSidebarTrigger class="-ml-1" />
-          <NSeparator orientation="vertical" class="mx-0 mr-2 h-4" />
+          <NSeparator orientation="vertical" class="mx-0 h-4" />
           <NBreadcrumb
             breadcrumb-active="text-black"
             :items="[
