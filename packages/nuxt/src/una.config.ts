@@ -26,9 +26,9 @@ export const unaConfig: UserConfig<object> = {
         'vertical-align': 'middle',
       },
       collections: {
-        ...createExternalPackageIconLoader('@iconify-json/lucide'),
-        ...createExternalPackageIconLoader('@iconify-json/radix-icons'),
-        ...createExternalPackageIconLoader('@iconify-json/tabler'),
+        ...createExternalPackageIconLoader('@iconify-json/lucide', true),
+        ...createExternalPackageIconLoader('@iconify-json/radix-icons', true),
+        ...createExternalPackageIconLoader('@iconify-json/tabler', true),
       },
     }),
     presetUna(),
