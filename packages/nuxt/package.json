@@ -50,6 +50,7 @@
     "@vueuse/core": "catalog:",
     "@vueuse/integrations": "catalog:",
     "@vueuse/nuxt": "catalog:",
+    "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "ohash": "catalog:",
     "reka-ui": "catalog:",
