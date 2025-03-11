@@ -10,7 +10,6 @@ const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',
   size: 'sm',
   loadingPlacement: 'leading',
-  square: false,
   una: () => ({
     btnDefaultVariant: 'btn-default-variant',
   }),
@@ -45,6 +44,8 @@ const isBaseVariant = computed(() =>
   ),
 )
 
+const square = computed(() => props.square ?? !!props.icon)
+
 const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
 </script>
 
@@ -57,6 +58,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       (square === '' || square === true) && 'btn-square',
       block && 'btn-block',
       !rounded && 'btn-default-radius',
+      icon && 'p-0',
       !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
       reverse && 'btn-reverse',
       'btn',
