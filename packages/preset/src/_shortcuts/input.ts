@@ -12,7 +12,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-padding': 'pr-2.9em',
 
   // base
-  'input': 'text-base text-0.875em leading-6 px-0.8571428571428571em py-0.2857142857142857em w-full input-disabled ring-base ring-inset placeholder:text-muted block outline-none rounded-md border-0 shadow-sm bg-transparent',
+  'input': 'text-base text-0.875em leading-1.4285714285714286em px-0.8571428571428571em py-0.2857142857142857em w-full focus-visible:outline-none input-disabled placeholder:text-muted block rounded-md shadow-sm bg-transparent transition-colors file:border-0  file:bg-transparent file:text-sm file:font-medium',
   'input-input': 'h-2.5714285714285716em', // role='input'
   'input-textarea': '', // role='textarea'
   'input-disabled': 'disabled:(n-disabled)',
@@ -28,18 +28,18 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-muted',
 
   // variants
-  'input-outline-gray': 'focus:ring-2 ring-1',
-  'input-outline-black': 'ring-1 focus:ring-$c-foreground',
+  'input-outline-gray': 'border border-input focus-visible:ring-input focus-visible:ring-1',
+  'input-outline-black': 'border border-input focus:ring-$c-foreground focus-visible:ring-1',
 }
 
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
   // config
-  [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus:ring-2 focus:ring-${c}-500 dark:focus:ring-${c}-400`],
+  [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:ring-${c}-500 dark:focus-visible:ring-${c}-400 focus-visible:ring-1`],
   [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-500 dark:placeholder-${c}-400`],
 
   // variants
-  [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `ring-1 input-focus-${c}`],
-  [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => ` ring-1 input-focus-${c} ring-${c}-500 dark:ring-${c}-400`],
+  [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `border border-input input-focus-${c}`],
+  [/^input-solid(-(\S+))?$/, ([, , c = 'primary']) => `input-focus-${c} border border-${c}-500 dark:border-${c}-400`],
 ]
 
 export const input = [

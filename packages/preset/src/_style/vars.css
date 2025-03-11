@@ -9,6 +9,7 @@
   --una-gray-active: var(--una-gray-500);
   --una-background: 255, 255, 255;
   --una-foreground: var(--una-gray-950);
+  --una-input: var(--una-gray-200);
 
   --c-background: rgb(var(--una-background));
   --c-foreground: rgb(var(--una-foreground));
@@ -49,6 +50,7 @@
   --una-gray-active: var(--una-gray-400);
   --una-background: var(--una-gray-950);
   --una-foreground: 255, 255, 255;
+  --una-input: var(--una-gray-800);
 
   --c-background: rgb(var(--una-background));
   --c-foreground: rgb(var(--una-foreground));
