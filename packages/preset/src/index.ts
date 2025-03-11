@@ -28,6 +28,7 @@ export default function presetUna(options: unaUIOptions = {
         background: 'rgba(var(--una-background) / <alpha-value>)',
         foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
         brand: 'rgba(var(--una-brand) / <alpha-value>)',
+        input: 'rgba(var(--una-input) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
           active: 'rgba(var(--una-primary-active) / <alpha-value>)',
