@@ -37,7 +37,7 @@ defineProps<{
             <NSidebarMenuSub>
               <NSidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
                 <NSidebarMenuSubButton as-child>
-                  <NLink :to="subItem.url">
+                  <NLink :to="subItem.url" active-class="bg-sidebar-accent text-sidebar-accent-foreground">
                     <span>{{ subItem.title }}</span>
                     <NBadge
                       v-if="subItem.badge"

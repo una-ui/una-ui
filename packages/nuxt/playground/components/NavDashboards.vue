@@ -20,7 +20,7 @@ const { isMobile } = useSidebar()
         <NSidebarMenuButton as-child>
           <NLink
             :to="item.url"
-            active-class="bg-accent"
+            active-class="bg-sidebar-accent text-sidebar-accent-foreground"
           >
             <NIcon :name="item.icon" />
             <span>{{ item.name }}</span>
