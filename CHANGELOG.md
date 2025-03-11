@@ -1,3 +1,12 @@
+## [0.41.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.41.0-beta.1...v0.41.1-beta.1) (2025-03-11)
+
+
+### Features
+
+* **Button:** auto square and set padding to 0 if icon is enabled ([699e2f9](https://github.com/una-ui/una-ui/commit/699e2f965508cd63a3431f451d782e452622a343))
+
+
+
 # [0.41.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.40.1-beta.1...v0.41.0-beta.1) (2025-03-10)
 
 
