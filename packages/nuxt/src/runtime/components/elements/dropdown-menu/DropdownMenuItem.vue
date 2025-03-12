@@ -8,6 +8,7 @@ import DropdownMenuShortcut from './DropdownMenuShortcut.vue'
 
 const props = withDefaults(defineProps<NDropdownMenuItemProps>(), {
   dropdownMenuItem: '~',
+  rounded: 'sm',
 })
 
 const slots = defineSlots<any>()
@@ -30,10 +31,11 @@ const forwardedProps = useForwardProps(delegatedProps)
         v-bind="forwardedProps"
         :dropdown-menu-item
         :class="cn(
-          'dropdown-menu-item-base w-full justify-start font-normal rounded-sm px-2',
+          'dropdown-menu-item-base w-full justify-start font-normal px-2',
           forwardedProps.inset && !(forwardedProps.leading || slots.leading) && 'pl-8',
           props.class,
         )"
+        :rounded
         btn="~"
         :una="{
           btnLeading: cn('dropdown-menu-item-leading ml-0', forwardedProps.una?.btnLeading),

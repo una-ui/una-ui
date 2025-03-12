@@ -14,7 +14,7 @@ export const staticDropdownMenu: Record<`${DropdownMenuPrefix}-${string}` | Drop
   'dropdown-menu-content': 'z-50 min-w-32 overflow-hidden rounded-md border border-base bg-popover p-1 text-popover shadow-md',
 
   // dropdown-menu-item
-  'dropdown-menu-item-base': 'text-left transition-color focus-visible:outline-0',
+  'dropdown-menu-item-base': 'text-left transition-color focus-visible:outline-0 select-none',
   'dropdown-menu-item-leading': 'text-1em',
   'dropdown-menu-item-trailing': 'ml-auto opacity-75 text-1em',
 
@@ -32,7 +32,7 @@ export const staticDropdownMenu: Record<`${DropdownMenuPrefix}-${string}` | Drop
   'dropdown-menu-group': '',
 
   // dropdown-menu-sub
-  'dropdown-menu-sub-trigger': 'transition-color focus-visible:outline-0',
+  'dropdown-menu-sub-trigger': 'transition-color focus-visible:outline-0 select-none',
   'dropdown-menu-sub-trigger-leading': 'text-1em',
   'dropdown-menu-sub-trigger-trailing': 'ml-auto opacity-75 text-1em',
   'dropdown-menu-sub-trigger-trailing-icon': 'i-lucide-chevron-right',
