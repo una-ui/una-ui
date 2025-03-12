@@ -136,6 +136,9 @@ export interface NDropdownMenuItemProps extends NButtonProps {
   _dropdownMenuShortcut?: Partial<NDropdownMenuShortcutProps>
   /** Additional properties for the una component */
   una?: NDropdownMenuUnaProps['dropdownMenuItem'] & NButtonProps['una']
+
+  /** Click event handler */
+  onClick?: () => void
 }
 
 /**
