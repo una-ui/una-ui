@@ -17,7 +17,7 @@ badges:
 | Prop          | Default | Type                      | Description                                                                                                                                                      |
 | ------------- | ------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `items`       | `[]`    | `DropdownMenuItemProps[]` | The items to display in the dropdown-menu.                                                                                                                       |
-| `label`       | -       | `string`                  | The label to display in the dropdown-menu.                                                                                                                       |
+| `menuLabel`   | -       | `string`                  | The label to display in the dropdown-menu.                                                                                                                       |
 | `defaultOpen` | `false` | `boolean`                 | The open state of the dropdown menu when it is initially rendered. Use when you do not need to control its open state.                                           |
 | `dir`         | `ltr`   | `ltr`, `rtl`              | The reading direction of the combobox when applicable. If omitted, inherits globally from ConfigProvider or assumes LTR (left-to-right) reading mode.            |
 | `modal`       | `true`  | `boolean`                 | The modality of the dropdown menu. When set to true, interaction with outside elements will be disabled and only menu content will be visible to screen readers. |
