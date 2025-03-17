@@ -55,7 +55,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :to="to"
     :type="to ? null : type"
     :class="cn(
-      (square === '' || square === true) && 'btn-square',
+      (square === '' || square) && 'btn-square',
       block && 'btn-block',
       !rounded && 'btn-default-radius',
       !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
