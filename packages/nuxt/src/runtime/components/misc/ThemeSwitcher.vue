@@ -37,13 +37,16 @@ function updateGrayTheme(theme: string): void {
 }
 
 function shuffleTheme(): void {
-  const randomPrimaryTheme = primaryThemes[Math.floor(Math.random() * primaryThemes.length)][0]
-  const randomGrayTheme = grayThemes[Math.floor(Math.random() * grayThemes.length)][0]
-  const randomRadius = RADIUS[Math.floor(Math.random() * RADIUS.length)]
-  updatePrimaryTheme(randomPrimaryTheme)
-  updateGrayTheme(randomGrayTheme)
-  settings.value.radius = randomRadius
-  toggle()
+  if (primaryThemes.length > 0 && grayThemes.length > 0 && RADIUS.length > 0) {
+    const randomPrimaryTheme = primaryThemes[Math.floor(Math.random() * primaryThemes.length)][0]
+    const randomGrayTheme = grayThemes[Math.floor(Math.random() * grayThemes.length)][0]
+    const randomRadius = RADIUS[Math.floor(Math.random() * RADIUS.length)]
+
+    updatePrimaryTheme(randomPrimaryTheme)
+    updateGrayTheme(randomGrayTheme)
+    settings.value.radius = randomRadius
+    toggle()
+  }
 }
 </script>
 

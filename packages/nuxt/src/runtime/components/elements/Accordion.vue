@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<NAccordionProps>(), {
 const buttonRefs = ref<(() => void)[]>([])
 
 function closeOthers(index: number): void {
-  if (props.multiple && !props.items[index].closeOthers)
+  if (props.multiple && props.items[index] && !props.items[index].closeOthers)
     return
 
   buttonRefs.value
