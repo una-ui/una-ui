@@ -46,8 +46,8 @@ function shuffleTheme(): void {
     const primaryThemeEntry = primaryThemes[primaryThemeIndex]
     const grayThemeEntry = grayThemes[grayThemeIndex]
 
-    const randomPrimaryTheme = primaryThemeEntry ? primaryThemeEntry[0] : primaryThemes[0][0]
-    const randomGrayTheme = grayThemeEntry ? grayThemeEntry[0] : grayThemes[0][0]
+    const randomPrimaryTheme = primaryThemeEntry ? primaryThemeEntry[0] : primaryThemes[0][0] as string
+    const randomGrayTheme = grayThemeEntry ? grayThemeEntry[0] : grayThemes[0][0] as string
 
     // Ensure radius is definitely a number
     const randomRadius = RADIUS[radiusIndex] !== undefined ? RADIUS[radiusIndex] : RADIUS[0]
