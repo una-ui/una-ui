@@ -38,19 +38,29 @@ function updateGrayTheme(theme: string): void {
 
 function shuffleTheme(): void {
   if (primaryThemes.length > 0 && grayThemes.length > 0 && RADIUS.length > 0) {
-    const primaryThemeIndex = Math.floor(Math.random() * primaryThemes.length)
-    const grayThemeIndex = Math.floor(Math.random() * grayThemes.length)
-    const radiusIndex = Math.floor(Math.random() * RADIUS.length)
+    // Safe way to access random elements with proper typing
+    const safeGetPrimaryTheme = (): string => {
+      const index = Math.floor(Math.random() * primaryThemes.length)
+      // Force type assertion for TypeScript
+      return primaryThemes[index]?.[0] as string
+    }
 
-    // Ensure we have proper values with explicit type assertions
-    const primaryThemeEntry = primaryThemes[primaryThemeIndex]
-    const grayThemeEntry = grayThemes[grayThemeIndex]
+    const safeGetGrayTheme = (): string => {
+      const index = Math.floor(Math.random() * grayThemes.length)
+      // Force type assertion for TypeScript
+      return grayThemes[index]?.[0] as string
+    }
 
-    const randomPrimaryTheme = primaryThemeEntry ? primaryThemeEntry[0] : primaryThemes[0][0] as string
-    const randomGrayTheme = grayThemeEntry ? grayThemeEntry[0] : grayThemes[0][0] as string
+    const safeGetRadius = (): number => {
+      const index = Math.floor(Math.random() * RADIUS.length)
+      // Force type assertion for TypeScript
+      return RADIUS[index] as number
+    }
 
-    // Ensure radius is definitely a number
-    const randomRadius = RADIUS[radiusIndex] !== undefined ? RADIUS[radiusIndex] : RADIUS[0]
+    // Get random values with correct typing
+    const randomPrimaryTheme = safeGetPrimaryTheme()
+    const randomGrayTheme = safeGetGrayTheme()
+    const randomRadius = safeGetRadius()
 
     updatePrimaryTheme(randomPrimaryTheme)
     updateGrayTheme(randomGrayTheme)

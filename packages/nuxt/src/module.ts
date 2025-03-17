@@ -60,10 +60,13 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.unshift('@una-ui/preset/una.css')
 
     nuxt.options.appConfig.una = {
-      primary: 'yellow',
-      gray: 'stone',
-      radius: 0.5,
-      fontSize: 16,
+      ...{
+        primary: 'yellow',
+        gray: 'stone',
+        radius: 0.5,
+        fontSize: 16,
+      },
+      ...(nuxt.options.appConfig.una || {}),
     }
 
     // transpile runtime
