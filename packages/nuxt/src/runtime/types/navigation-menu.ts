@@ -9,7 +9,7 @@ import type {
   NavigationMenuTriggerProps,
   NavigationMenuViewportProps,
 } from 'reka-ui'
-import type { HTMLAttributes, MaybeRefOrGetter } from 'vue'
+import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
 interface BaseExtensions {
@@ -19,13 +19,16 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-export interface NNavigationMenuProps extends Omit<NavigationMenuRootProps, 'class'>, Pick<NNavigationMenuTriggerProps, 'navigationMenu' | 'disabled'>, BaseExtensions {
+export interface NNavigationMenuProps extends Omit<NavigationMenuRootProps, 'class'>, Pick<NNavigationMenuTriggerProps, 'navigationMenu' | 'disabled'>,
+  Pick<NNavigationMenuLinkProps, 'navigationMenuLink'>, BaseExtensions {
   /**
    * The array of items that is passed to the navigation menu.
    *
    * @default []
    */
-  items: MaybeRefOrGetter<NavigationMenuItemProps[]>
+  items?: NNavigationMenuItemProps[]
+  /** Whether to show the indicator or not */
+  indicator?: boolean
 
   /** Props for the navigation menu root */
   _navigationMenuRoot?: Partial<NNavigationMenuRootProps>
@@ -43,6 +46,13 @@ export interface NNavigationMenuProps extends Omit<NavigationMenuRootProps, 'cla
   _navigationMenuLink?: Partial<NNavigationMenuLinkProps>
   /** Props for the navigation menu indicator */
   _navigationMenuIndicator?: Partial<NNavigationMenuIndicatorProps>
+
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/navigation-menu.ts
+   */
+  una?: NNavigationMenuUnaProps
 }
 
 export interface NNavigationMenuRootProps extends NavigationMenuRootProps, Pick<BaseExtensions, 'class'> {
@@ -50,7 +60,7 @@ export interface NNavigationMenuRootProps extends NavigationMenuRootProps, Pick<
   una?: NNavigationMenuUnaProps['navigationMenuRoot']
 }
 
-export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps, Omit<NButtonProps, 'una' | 'size' | 'disabled'>, BaseExtensions {
+export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps, Omit<NButtonProps, 'disabled' | 'size'>, BaseExtensions {
   /**
    * Allows you to add `UnaUI` button preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -69,7 +79,10 @@ export interface NNavigationMenuContentProps extends NavigationMenuContentProps,
   una?: NNavigationMenuUnaProps['navigationMenuContent']
 }
 
-export interface NNavigationMenuItemProps extends NavigationMenuItemProps, BaseExtensions {
+export interface NNavigationMenuItemProps extends NavigationMenuItemProps, BaseExtensions, Omit<NNavigationMenuTriggerProps, 'una'>,
+  Pick<NNavigationMenuProps, '_navigationMenuLink' | '_navigationMenuTrigger'>, Pick<NNavigationMenuLinkProps, 'description'> {
+  /** The array of links that is passed to the navigation menu items. */
+  children?: NNavigationMenuItemProps[]
   /** Additional properties for the una component */
   una?: Pick<NNavigationMenuUnaProps, 'navigationMenuTrigger' | 'navigationMenuContent'>
 }
@@ -79,7 +92,20 @@ export interface NNavigationMenuIndicatorProps extends NavigationMenuIndicatorPr
   una?: NNavigationMenuUnaProps['navigationMenuIndicator']
 }
 
-export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Pick<BaseExtensions, 'class'> {
+export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<NButtonProps, 'una'>, Pick<BaseExtensions, 'class'> {
+  /**
+   * Allows you to add `UnaUI` button preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/navigation-menu.ts
+   * @example
+   * navigation-menu-link="ghost-gray"
+   */
+  navigationMenuLink?: string
+  /** Description of the link. This is only used when `orientation` is `horizontal`. */
+  description?: string
+  /** Whether the link is active or not */
+  active?: boolean
   /** Additional properties for the una component */
   una?: NNavigationMenuUnaProps['navigationMenuLink']
 }
@@ -109,6 +135,8 @@ interface NNavigationMenuUnaProps {
   navigationMenuViewport?: HTMLAttributes['class']
   /** CSS class for the navigation menu list */
   navigationMenuList?: HTMLAttributes['class']
+  /** CSS class for the navigation menu item */
+  navigationMenuItem?: HTMLAttributes['class']
   /** CSS class for the navigation menu link */
   navigationMenuLink?: HTMLAttributes['class']
   /** CSS class for the navigation menu indicator */
