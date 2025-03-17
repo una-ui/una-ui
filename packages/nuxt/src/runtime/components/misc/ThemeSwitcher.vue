@@ -38,9 +38,19 @@ function updateGrayTheme(theme: string): void {
 
 function shuffleTheme(): void {
   if (primaryThemes.length > 0 && grayThemes.length > 0 && RADIUS.length > 0) {
-    const randomPrimaryTheme = primaryThemes[Math.floor(Math.random() * primaryThemes.length)][0]
-    const randomGrayTheme = grayThemes[Math.floor(Math.random() * grayThemes.length)][0]
-    const randomRadius = RADIUS[Math.floor(Math.random() * RADIUS.length)]
+    const primaryThemeIndex = Math.floor(Math.random() * primaryThemes.length)
+    const grayThemeIndex = Math.floor(Math.random() * grayThemes.length)
+    const radiusIndex = Math.floor(Math.random() * RADIUS.length)
+
+    // Ensure we have proper values with explicit type assertions
+    const primaryThemeEntry = primaryThemes[primaryThemeIndex]
+    const grayThemeEntry = grayThemes[grayThemeIndex]
+
+    const randomPrimaryTheme = primaryThemeEntry ? primaryThemeEntry[0] : primaryThemes[0][0]
+    const randomGrayTheme = grayThemeEntry ? grayThemeEntry[0] : grayThemes[0][0]
+
+    // Ensure radius is definitely a number
+    const randomRadius = RADIUS[radiusIndex] !== undefined ? RADIUS[radiusIndex] : RADIUS[0]
 
     updatePrimaryTheme(randomPrimaryTheme)
     updateGrayTheme(randomGrayTheme)
