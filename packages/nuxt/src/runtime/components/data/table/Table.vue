@@ -155,6 +155,7 @@ const table = useVueTable({
   enableColumnFilters: props.enableColumnFilters,
   manualPagination: props.manualPagination,
   manualSorting: props.manualSorting,
+  manualFiltering: props.manualFiltering,
   pageCount: props.pageCount,
   rowCount: props.rowCount,
   autoResetPageIndex: props.autoResetPageIndex,

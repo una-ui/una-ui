@@ -169,9 +169,10 @@ Visibility allows you to show or hide columns in the table. This is useful when 
 
 Global filtering allows you to filter rows based on the value entered in the filter input. This is useful when you want to filter rows in the table.
 
-| Prop           | Default | Type     | Description             |
-| -------------- | ------- | -------- | ----------------------- |
-| `globalFilter` | -       | `string` | The global filter value |
+| Prop              | Default | Type      | Description                                               |
+| ----------------- | ------- | --------- | --------------------------------------------------------- |
+| `globalFilter`    | -       | `string`  | The global filter value                                   |
+| `manualFiltering` | -       | `boolean` | Enable manual filtering. Ideal for server-side filtering. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -217,6 +218,10 @@ Column filtering allows you to filter columns based on the value entered in the 
 ### Column Ordering
 
 Column ordering allows you to reorder columns by dragging and dropping them. This is useful when you want to change the order of columns in the table.
+
+| Prop          | Default | Type    | Description                                       |
+| ------------- | ------- | ------- | ------------------------------------------------- |
+| `columnOrder` | -       | `Array` | Array of column IDs defining column display order |
 
 :::CodeGroup
 ::div{label="Preview"}

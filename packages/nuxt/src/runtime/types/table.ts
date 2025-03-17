@@ -41,6 +41,10 @@ export interface NTableProps<TData, TValue> {
    */
   enableColumnFilters?: boolean
   /**
+   * @see https://tanstack.com/table/latest/docs/api/features/column-filtering#manualfiltering
+   */
+  manualFiltering?: boolean
+  /**
    * @see https://tanstack.com/table/latest/docs/api/features/sorting#enablesorting
    */
   enableSorting?: boolean
