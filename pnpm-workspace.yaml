@@ -3,7 +3,7 @@ packages:
   - packages/**
   - playground/**
 catalog:
-  '@antfu/eslint-config': ^4.8.1
+  '@antfu/eslint-config': ^4.10.1
   '@antfu/ni': ^23.3.1
   '@faker-js/faker': ^9.5.1
   '@headlessui/vue': ^1.7.23
@@ -13,7 +13,7 @@ catalog:
   '@iconify-json/tabler': ^1.2.17
   '@iconify/json': ^2.2.315
   '@iconify/utils': ^2.3.0
-  '@nuxt/devtools': ^2.2.1
+  '@nuxt/devtools': ^2.3.0
   '@nuxt/kit': ^3.16.0
   '@nuxt/module-builder': ^0.8.4
   '@nuxt/schema': ^3.16.0
@@ -36,7 +36,7 @@ catalog:
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
-  bumpp: ^10.0.3
+  bumpp: ^10.1.0
   chroma-js: ^3.1.2
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
@@ -47,11 +47,11 @@ catalog:
   fast-glob: ^3.3.3
   fs-extra: ^11.3.0
   ignore-dependency-scripts: ^1.0.1
-  lint-staged: ^15.4.3
+  lint-staged: ^15.5.0
   nuxt: ^3.16.0
   ohash: ^1.1.6
   pathe: ^2.0.3
-  reka-ui: ^2.0.2
+  reka-ui: ^2.1.0
   rimraf: ^6.0.1
   sass: ^1.85.1
   simple-git: ^3.27.0
