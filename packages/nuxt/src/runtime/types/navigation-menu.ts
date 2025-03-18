@@ -19,14 +19,14 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-export interface NNavigationMenuProps extends Omit<NavigationMenuRootProps, 'class'>, Pick<NNavigationMenuTriggerProps, 'navigationMenu' | 'disabled'>,
+export interface NNavigationMenuProps<T> extends Omit<NavigationMenuRootProps, 'class'>, Pick<NNavigationMenuTriggerProps, 'navigationMenu' | 'disabled'>,
   Pick<NNavigationMenuLinkProps, 'navigationMenuLink'>, BaseExtensions {
   /**
    * The array of items that is passed to the navigation menu.
    *
    * @default []
    */
-  items?: Partial<NNavigationMenuItemProps>[]
+  items?: T
   /** Whether to show the indicator or not */
   indicator?: boolean
 
@@ -80,7 +80,7 @@ export interface NNavigationMenuContentProps extends NavigationMenuContentProps,
 }
 
 export interface NNavigationMenuItemProps extends NavigationMenuItemProps, BaseExtensions, Omit<NNavigationMenuTriggerProps, 'una'>,
-  Pick<NNavigationMenuProps, '_navigationMenuLink' | '_navigationMenuTrigger'> {
+  Pick<NNavigationMenuProps<NNavigationMenuItemProps[]>, '_navigationMenuLink' | '_navigationMenuTrigger'> {
   /** Slot of the navigation menu item */
   slot?: string
   /** The array of links that is passed to the navigation menu items. */
