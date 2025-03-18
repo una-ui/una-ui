@@ -119,11 +119,11 @@ Pagination allows you to paginate rows in the table. This is useful when you wan
 
 Sorting allows you to sort columns in ascending or descending order. This is useful when you want to sort columns in the table.
 
-| Prop                    | Default | Type      | Description                    |
-| ----------------------- | ------- | --------- | ------------------------------ |
-| `enableSorting`         | -       | `boolean` | Enable all column sorting      |
-| `column.enableSorting`  | -       | `boolean` | Enable specific column sorting |
-| `enableMultiColumnSort` | -       | `boolean` | Enable multi-column sorting    |
+| Prop                   | Default | Type      | Description                    |
+| ---------------------- | ------- | --------- | ------------------------------ |
+| `enableMultiSort`      | -       | `boolean` | Enable multi-column sorting    |
+| `enableSorting`        | -       | `boolean` | Enable all column sorting      |
+| `column.enableSorting` | -       | `boolean` | Enable specific column sorting |
 
 :::CodeGroup
 ::div{label="Preview"}
