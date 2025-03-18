@@ -26,7 +26,7 @@ export interface NNavigationMenuProps extends Omit<NavigationMenuRootProps, 'cla
    *
    * @default []
    */
-  items?: NNavigationMenuItemProps[]
+  items?: Partial<NNavigationMenuItemProps>[]
   /** Whether to show the indicator or not */
   indicator?: boolean
 
@@ -80,9 +80,11 @@ export interface NNavigationMenuContentProps extends NavigationMenuContentProps,
 }
 
 export interface NNavigationMenuItemProps extends NavigationMenuItemProps, BaseExtensions, Omit<NNavigationMenuTriggerProps, 'una'>,
-  Pick<NNavigationMenuProps, '_navigationMenuLink' | '_navigationMenuTrigger'>, Pick<NNavigationMenuLinkProps, 'description'> {
+  Pick<NNavigationMenuProps, '_navigationMenuLink' | '_navigationMenuTrigger'> {
+  /** Slot of the navigation menu item */
+  slot?: string
   /** The array of links that is passed to the navigation menu items. */
-  children?: NNavigationMenuItemProps[]
+  children?: NNavigationMenuLinkProps[]
   /** Additional properties for the una component */
   una?: Pick<NNavigationMenuUnaProps, 'navigationMenuTrigger' | 'navigationMenuContent'>
 }
@@ -106,6 +108,8 @@ export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<
   description?: string
   /** Whether the link is active or not */
   active?: boolean
+  /** Event handler called when the link is clicked */
+  onSelect?: (e: Event) => void
   /** Additional properties for the una component */
   una?: NNavigationMenuUnaProps['navigationMenuLink']
 }
