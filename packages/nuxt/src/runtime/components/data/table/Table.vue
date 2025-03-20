@@ -250,10 +250,7 @@ defineExpose({
                   :trailing="header.column.getIsSorted() === 'asc'
                     ? 'i-lucide-arrow-up-wide-narrow' : header.column.getIsSorted() === 'desc'
                       ? 'i-lucide-arrow-down-narrow-wide' : 'i-lucide-arrow-up-down'"
-                  @click="header.column.toggleSorting(
-                    header.column.getIsSorted() === 'asc' ? undefined : header.column.getIsSorted() !== 'desc',
-                    enableMultiSort,
-                  )"
+                  @click="header.column.getToggleSortingHandler()?.($event)"
                 >
                   <slot
                     :name="`${header.id}-header`"
