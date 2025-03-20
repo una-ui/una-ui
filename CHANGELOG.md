@@ -1,3 +1,12 @@
+## [0.42.1](https://github.com/una-ui/una-ui/compare/v0.42.0...v0.42.1) (2025-03-20)
+
+
+### Features
+
+* **Table:** set enable-sorting-removal to true by default ([2f28123](https://github.com/una-ui/una-ui/commit/2f281237521f65e150a76d929c32473d60fc07c9))
+
+
+
 # [0.42.0](https://github.com/una-ui/una-ui/compare/v0.41.1-beta.1...v0.42.0) (2025-03-20)
 
 
