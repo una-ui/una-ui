@@ -1,3 +1,32 @@
+# [0.42.0](https://github.com/una-ui/una-ui/compare/v0.41.1-beta.1...v0.42.0) (2025-03-20)
+
+
+### Bug Fixes
+
+* **Accordion, ThemeSwitcher:** add safety checks in functions ([dc7f03b](https://github.com/una-ui/una-ui/commit/dc7f03b48c24bd4f6615678a3774e15b096fad62))
+* **Nuxt:** add missing dependency ([37252d4](https://github.com/una-ui/una-ui/commit/37252d45cdeb5298f0f8ea5eecfd2640d8ec7cfd))
+* **ThemeSwitcher:** add type assertion to variables ([afae888](https://github.com/una-ui/una-ui/commit/afae888ef95be03fdebcf5986640419fd7669b74))
+* **ThemeSwitcher:** improve typesafety ([cea15f2](https://github.com/una-ui/una-ui/commit/cea15f205a5f83f59d73bab9b0cc0fce2cb38119))
+
+
+### Features
+
+* **Button:** improve square configuration ([8985468](https://github.com/una-ui/una-ui/commit/898546802f62639bf53c1fdc61268d4a06a80cdf))
+* **DropdownMenu:** add default rounded value and set select-none to items ([1cc1af4](https://github.com/una-ui/una-ui/commit/1cc1af43bcccd5c23a4802ee3488afc43da122bd))
+* **DropdownMenu:** add onClick handler to item props ([0536cfd](https://github.com/una-ui/una-ui/commit/0536cfd48605826cc9e47cc1ebe160f85f464748))
+* **DropdownMenu:** add onClick to menu-item props ([a4a72da](https://github.com/una-ui/una-ui/commit/a4a72da9ab33e5738aade7287d0d4f7b1f3d5e53))
+* **Pagination:** improve ellipsis presets ([d131cd6](https://github.com/una-ui/una-ui/commit/d131cd615fffefb248631f377d56eb6ab3e0d04d))
+* **Table:** add manual filtering support ([7d48c55](https://github.com/una-ui/una-ui/commit/7d48c558817726437c3274a4984ae719ae4ded27))
+* **Table:** add table core options required props ([38ee320](https://github.com/una-ui/una-ui/commit/38ee320fc02b9c9eea135fe5ac60762d96be6925))
+* **Table:** add the ability to remove sorting for the table ([0674006](https://github.com/una-ui/una-ui/commit/067400608dcbd9115291d4f18592f8e5b909901f))
+
+
+### Reverts
+
+* **Nuxt:** revert icon collections config ([5c05f64](https://github.com/una-ui/una-ui/commit/5c05f648fb82332d446d927cb03192f85d913d82))
+
+
+
 ## [0.41.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.41.0-beta.1...v0.41.1-beta.1) (2025-03-11)
 
 
