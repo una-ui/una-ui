@@ -40,6 +40,7 @@ import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
+  enableSortingRemoval: true,
 })
 
 const emit = defineEmits(['select', 'selectAll', 'expand'])
