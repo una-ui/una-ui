@@ -79,7 +79,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'elements'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -87,7 +87,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/elements', 'tabs'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -95,7 +95,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/elements', 'card'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -103,7 +103,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/elements', 'dropdown-menu'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -111,7 +111,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/elements', 'popover'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -119,7 +119,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/elements', 'collapsible'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -127,7 +127,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/elements', 'tooltip'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -135,7 +135,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/elements', 'pagination'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -143,7 +143,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/elements', 'dialog'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -151,7 +151,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'forms'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -159,7 +159,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/forms', 'select'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -167,7 +167,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/forms', 'radio-group'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -175,7 +175,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'misc'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -183,7 +183,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'navigation'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -191,7 +191,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/data', 'table'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -199,7 +199,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/navigation', 'breadcrumb'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -207,7 +207,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'overlays'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -215,7 +215,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components/overlays', 'toast'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -223,7 +223,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'sheet'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -231,7 +231,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'sidebar'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
@@ -239,7 +239,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolve(runtimeDir, 'components', 'scroll-area'),
       prefix: options.prefix,
       global: options.global,
-      watch: nuxt.options.dev,
+      watch: options.dev,
       priority: 10,
     })
 
