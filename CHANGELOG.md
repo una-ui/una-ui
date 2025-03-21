@@ -1,3 +1,12 @@
+# [0.43.0](https://github.com/una-ui/una-ui/compare/v0.42.1...v0.43.0) (2025-03-21)
+
+
+### Bug Fixes
+
+* **Nuxt:** update components dir watch option to use module options instead of nuxt options ([#357](https://github.com/una-ui/una-ui/issues/357)) ([73504f4](https://github.com/una-ui/una-ui/commit/73504f452c28b9bd05683730436690bea5f85463))
+
+
+
 ## [0.42.1](https://github.com/una-ui/una-ui/compare/v0.42.0...v0.42.1) (2025-03-20)
 
 
