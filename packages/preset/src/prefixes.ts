@@ -88,7 +88,6 @@ export default [
   'select-item-indicator',
   'select-item-text',
   'select-label',
-  'select-root',
   'select-scroll-down-button',
   'select-scroll-up-button',
   'select-separator',

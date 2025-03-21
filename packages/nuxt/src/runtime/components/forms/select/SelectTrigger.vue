@@ -59,7 +59,7 @@ const status = computed(() => props.status ?? 'default')
           props.una?.selectTriggerLeading,
         ),
         btnTrailing: cn(
-          'select-trigger-trailing',
+          'select-trigger-trailing rtl:mr-auto ltr:ml-auto',
           props.una?.btnTrailing,
           props.una?.selectTriggerTrailing,
         ),

@@ -17,6 +17,7 @@ badges:
 | Name           | Default | Type      | Description                                                                                                     |
 | -------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
 | `items`        | -       | `array`   | Set the select items.                                                                                           |
+| `dir`          | `ltr`   | `string`  | The direction of the select. Values: `ltr`, `rtl`                                                               |
 | `placeholder`  | -       | `string`  | The content that will be rendered inside the `SelectValue` when no `value` or `defaultValue` is set.            |
 | `label`        | -       | `string`  | Set the select items label.                                                                                     |
 | `defaultOpen`  | -       | `boolean` | The open state of the select when it is initially rendered. Use when you do not need to control its open state. |
@@ -157,14 +158,15 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 ## Slots
 
-| Name      | Props   | Description       |
-| --------- | ------- | ----------------- |
-| `trigger` | `value` | The trigger slot. |
-| `value`   | `value` | The value slot.   |
-| `content` | `items` | The content slot. |
-| `label`   | `label` | The label slot.   |
-| `item`    | `item`  | The item slot.    |
-| `group`   | `items` | The group slot.   |
+| Name      | Props   | Description                   |
+| --------- | ------- | ----------------------------- |
+| `root`    | `value` | Overrides all sub-components. |
+| `trigger` | `value` | The trigger slot.             |
+| `value`   | `value` | The value slot.               |
+| `content` | `items` | The content slot.             |
+| `label`   | `label` | The label slot.               |
+| `item`    | `item`  | The item slot.                |
+| `group`   | `items` | The group slot.               |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -210,11 +212,7 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectLabel.vue
 
 ::
-::div{label="SelectRoot.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/forms/select/SelectRoot.vue
-
-::
-::div{label="SelectScrollDownButton.vue" icon="i-vscode-icons-file-type-vue"}
+::div{label="lectScrollDownButton.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/forms/select/SelectScrollDownButton.vue
 
 ::

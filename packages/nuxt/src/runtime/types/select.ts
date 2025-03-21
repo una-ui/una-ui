@@ -7,7 +7,6 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-type RootExtensions = SelectRootProps & BaseExtensions
 type TriggerExtensions = SelectTriggerProps & Omit<NButtonProps, 'una'> & BaseExtensions
 type ValueExtensions = SelectValueProps & BaseExtensions
 type ScrollDownButtonExtensions = SelectScrollDownButtonProps & BaseExtensions
@@ -18,7 +17,7 @@ type ItemTextExtensions = SelectItemTextProps & BaseExtensions
 type GroupExtensions = SelectGroupProps & BaseExtensions
 type LabelExtensions = SelectLabelProps & BaseExtensions
 type SeparatorExtensions = SelectSeparatorProps & BaseExtensions
-type SelectExtensions = NSelectRootProps
+type SelectExtensions = SelectRootProps
   & BaseExtensions
   & Pick<NSelectValueProps, 'placeholder'>
   & Pick<NSelectItemProps, 'selectItem'>
@@ -68,12 +67,6 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
   _selectLabel?: Partial<NSelectLabelProps>
 
   una?: NSelectUnaProps
-}
-
-export interface NSelectRootProps extends RootExtensions {
-  una?: {
-    selectRoot?: HTMLAttributes['class']
-  }
 }
 
 export interface NSelectTriggerProps extends TriggerExtensions {
@@ -153,7 +146,6 @@ export interface NSelectSeparator extends SeparatorExtensions {
 
 export interface NSelectUnaProps {
   select?: HTMLAttributes['class']
-  selectRoot?: HTMLAttributes['class']
   selectTrigger?: HTMLAttributes['class']
   selectTriggerTrailing?: HTMLAttributes['class']
   selectTriggerTrailingIcon?: HTMLAttributes['class']
