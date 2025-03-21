@@ -3,6 +3,10 @@ export default defineNuxtConfig({
     '../src/module',
   ],
 
+  una: {
+    dev: true,
+  },
+
   experimental: {
     componentIslands: true,
   },
