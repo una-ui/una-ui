@@ -184,6 +184,11 @@ const {
 ## Components
 
 :::CodeGroup
+
+::div{label="SidebarProvider.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/sidebar/SidebarProvider.vue
+
+::
 ::div{label="Sidebar.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/sidebar/Sidebar.vue
 
