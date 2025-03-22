@@ -1,3 +1,12 @@
+# [0.44.0](https://github.com/una-ui/una-ui/compare/v0.43.0...v0.44.0) (2025-03-22)
+
+
+### Features
+
+* **Link:** add label prop support ([41a8333](https://github.com/una-ui/una-ui/commit/41a8333726c1efb517966bc9a5b18c622b2872eb))
+
+
+
 # [0.43.0](https://github.com/una-ui/una-ui/compare/v0.42.1...v0.43.0) (2025-03-21)
 
 
