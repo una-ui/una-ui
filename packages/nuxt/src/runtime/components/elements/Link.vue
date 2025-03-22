@@ -11,6 +11,10 @@ export default defineComponent({
   props: {
     ...NuxtLink.props,
     // config
+    label: {
+      type: String as PropType<NLinkProps['label']>,
+      default: undefined,
+    },
     exact: {
       type: Boolean as PropType<NLinkProps['exact']>,
       default: false,
@@ -136,6 +140,7 @@ export default defineComponent({
       resolveNavLinkActive,
       resolveNavLinkInactive,
       isLinkActive,
+      label: props.label,
     }
   },
 })
@@ -157,7 +162,9 @@ export default defineComponent({
       :nav-link-inactive="resolveNavLinkInactive(route, $route, { isActive, isExactActive })"
       @click="(e) => !isExternal && navigate(e)"
     >
-      <slot :active="isLinkActive({ route, isActive, isExactActive })" />
+      <slot :active="isLinkActive({ route, isActive, isExactActive })">
+        {{ label }}
+      </slot>
     </a>
   </NuxtLink>
 </template>

@@ -2,6 +2,10 @@ import type { NuxtLinkProps } from 'nuxt/app'
 
 export interface NLinkProps extends NuxtLinkProps {
   /**
+   * The label of the link
+   */
+  label?: string
+  /**
    * Manually enable/disable the exact match
    *
    * @default false

@@ -16,6 +16,7 @@ badges:
 
 | Prop            | Default | Type      | Description                                                         |
 | --------------- | ------- | --------- | ------------------------------------------------------------------- |
+| `label`         | -       | `string`  | The label of the link.                                              |
 | `inactiveClass` | -       | `string`  | The class to apply when the link is inactive.                       |
 | `exact`         | `false` | `boolean` | Trigger the link active class only on exact matches of the `path`.  |
 | `exactQuery`    | `false` | `boolean` | Trigger the link active class only on exact matches of the `query`. |

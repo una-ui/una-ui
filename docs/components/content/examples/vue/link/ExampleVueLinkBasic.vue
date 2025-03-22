@@ -3,9 +3,8 @@
     <NLink
       to="/components/link"
       active-class="text-success"
-    >
-      Active Link
-    </NLink>
+      label="Active Link"
+    />
 
     <NLink
       to="/components/link/"
