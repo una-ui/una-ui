@@ -1,3 +1,13 @@
+# [0.45.0](https://github.com/una-ui/una-ui/compare/v0.44.2...v0.45.0) (2025-03-24)
+
+
+### Features
+
+* **Nuxt:** improve module configuration and add alias support ([4cc2993](https://github.com/una-ui/una-ui/commit/4cc2993bff1df2a424d17dd80ba524001a1c51a7))
+* **Table:** enable hiding in selection column ([fbe728e](https://github.com/una-ui/una-ui/commit/fbe728ef9da3d74ba2dbaed454e11613df6fb344))
+
+
+
 ## [0.44.2](https://github.com/una-ui/una-ui/compare/v0.44.1...v0.44.2) (2025-03-24)
 
 
