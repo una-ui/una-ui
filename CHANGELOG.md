@@ -1,3 +1,12 @@
+## [0.44.1](https://github.com/una-ui/una-ui/compare/v0.44.0...v0.44.1) (2025-03-24)
+
+
+### Bug Fixes
+
+* **Select:** update select-item trailing classes configuration ([b88dc97](https://github.com/una-ui/una-ui/commit/b88dc9797bf5deb8db854458e69ca946604b73da))
+
+
+
 # [0.44.0](https://github.com/una-ui/una-ui/compare/v0.43.0...v0.44.0) (2025-03-22)
 
 
