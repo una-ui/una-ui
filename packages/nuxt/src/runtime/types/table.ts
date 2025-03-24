@@ -202,7 +202,7 @@ export interface NTableCaptionProps {
   una?: Pick<NTableUnaProps, 'tableCaption'>
 }
 
-interface NTableUnaProps {
+export interface NTableUnaProps {
   table?: HTMLAttributes['class']
   tableRoot?: HTMLAttributes['class']
   tableBody?: HTMLAttributes['class']

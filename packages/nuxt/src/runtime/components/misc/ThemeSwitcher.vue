@@ -10,7 +10,14 @@ import Label from '../elements/Label.vue'
 import Popover from '../elements/popover/Popover.vue'
 import Separator from '../elements/Separator.vue'
 
-const colorMode = useColorMode()
+// Copied from @nuxtjs/color-mode because it doesn't export its runtime types.
+interface ColorModeInstance {
+  preference: string
+  value: string
+  unknown: boolean
+  forced: boolean
+}
+const colorMode: ColorModeInstance = useColorMode()
 
 const [value, toggle] = useToggle()
 const { primaryThemes, grayThemes } = useUnaThemes()
