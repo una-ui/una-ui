@@ -41,7 +41,9 @@ const forwardedProps = useForwardProps(delegatedProps)
       }"
       trailing="dropdown-menu-sub-trigger-trailing-icon"
     >
-      <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
     </Button>
   </dropdownmenusubtrigger>
 </template>
