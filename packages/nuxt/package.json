@@ -13,12 +13,23 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
     "./una.config": {
       "import": "./dist/una.config.mjs"
+    },
+    "./runtime/*": "./dist/runtime/*",
+    "./components/*": "./dist/runtime/components/*",
+    "./composables/*": "./dist/runtime/composables/*",
+    "./utils/*": {
+      "types": "./dist/runtime/utils/*.d.ts",
+      "import": "./dist/runtime/utils/*.js"
     }
+  },
+  "imports": {
+    "#build/una/*": "./.nuxt/una/*.ts"
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
