@@ -30,7 +30,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 
   'select-separator': '-mx-1 my-1 h-px bg-muted',
 
-  'select-item': 'select-item-gray relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-1em outline-none data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
+  'select-item': 'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-1em outline-none data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
 
   'select-item-indicator': 'absolute left-2 size-1.1428571428571428em flex items-center justify-center',
   'select-item-indicator-icon': 'i-check',
