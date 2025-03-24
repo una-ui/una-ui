@@ -90,7 +90,6 @@ const columnsWithMisc = computed(() => {
             'areaLabel': 'Select row',
           }),
           enableSorting: false,
-          enableHiding: false,
         },
         ...props.columns,
       ]
