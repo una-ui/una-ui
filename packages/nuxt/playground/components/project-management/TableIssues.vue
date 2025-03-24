@@ -267,7 +267,7 @@ const visibleColumnHeaders = computed({
         }"
       />
 
-      <div class="flex items-center gap-x-2">
+      <div class="flex shrink-0 grow items-center justify-end gap-x-2">
         <NSelect
           v-model="visibleColumnHeaders"
           :una="{
@@ -293,7 +293,6 @@ const visibleColumnHeaders = computed({
             btn="text-gray"
             label="i-radix-icons-update"
             icon
-            square
             @click="refresh()"
           />
         </NTooltip>
@@ -305,7 +304,6 @@ const visibleColumnHeaders = computed({
             btn="soft-gray"
             label="i-radix-icons-plus"
             icon
-            square
             @click="addIssues(Math.floor(Math.random() * 100))"
           />
         </NTooltip>
