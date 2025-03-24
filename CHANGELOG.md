@@ -1,3 +1,12 @@
+## [0.44.2](https://github.com/una-ui/una-ui/compare/v0.44.1...v0.44.2) (2025-03-24)
+
+
+### Bug Fixes
+
+* **DropdownMenu:** update slot structure ([15474b1](https://github.com/una-ui/una-ui/commit/15474b1469bca9f146f7845e3916da0bb85d718a))
+
+
+
 ## [0.44.1](https://github.com/una-ui/una-ui/compare/v0.44.0...v0.44.1) (2025-03-24)
 
 
