@@ -61,7 +61,7 @@ export interface NPaginationNextProps extends PaginationNextProps, NButtonProps 
 export interface NPaginationLastProps extends PaginationLastProps, NButtonProps {
 }
 
-interface NPaginationUnaProps {
+export interface NPaginationUnaProps {
   paginationRoot?: HTMLAttributes['class']
   paginationList?: HTMLAttributes['class']
   paginationListItem?: HTMLAttributes['class']
