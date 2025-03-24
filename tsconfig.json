@@ -1,5 +1,10 @@
 {
-  "extends": "./packages/nuxt/tsconfig.json",
+  "compilerOptions": {
+    "module": "Preserve",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noEmit": true
+  },
   "exclude": [
     "**/docs",
     "**/node_modules",
