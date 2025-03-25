@@ -1,3 +1,12 @@
+# [0.46.0](https://github.com/una-ui/una-ui/compare/v0.45.0...v0.46.0) (2025-03-25)
+
+
+### Bug Fixes
+
+* **Nuxt:** reconfig slot iteration syntax for some components ([ccaf52a](https://github.com/una-ui/una-ui/commit/ccaf52a024e3edd9a56a985654726f7f464bec8a))
+
+
+
 # [0.45.0](https://github.com/una-ui/una-ui/compare/v0.44.2...v0.45.0) (2025-03-24)
 
 
