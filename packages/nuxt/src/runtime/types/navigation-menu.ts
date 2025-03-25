@@ -42,6 +42,8 @@ export interface NNavigationMenuProps<T> extends Omit<NavigationMenuRootProps, '
   _navigationMenuViewport?: Partial<NNavigationMenuViewportProps>
   /** Props for the navigation menu list */
   _navigationMenuList?: Partial<NNavigationMenuListProps>
+  /** Props for the navigation menu list item */
+  _navigationMenuListItem?: Partial<NNavigationMenuListProps>
   /** Props for the navigation menu link */
   _navigationMenuLink?: Partial<NNavigationMenuLinkProps>
   /** Props for the navigation menu indicator */
@@ -60,7 +62,7 @@ export interface NNavigationMenuRootProps extends NavigationMenuRootProps, Pick<
   una?: NNavigationMenuUnaProps['navigationMenuRoot']
 }
 
-export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps, Omit<NButtonProps, 'disabled' | 'size'>, BaseExtensions {
+export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps, Omit<NButtonProps, 'disabled' | 'size' | 'navigationMenuLink'>, BaseExtensions {
   /**
    * Allows you to add `UnaUI` button preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -94,7 +96,7 @@ export interface NNavigationMenuIndicatorProps extends NavigationMenuIndicatorPr
   una?: NNavigationMenuUnaProps['navigationMenuIndicator']
 }
 
-export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<NButtonProps, 'una'>, Pick<BaseExtensions, 'class'> {
+export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<NButtonProps, 'size'>, BaseExtensions {
   /**
    * Allows you to add `UnaUI` button preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -104,24 +106,29 @@ export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<
    * navigation-menu-link="ghost-gray"
    */
   navigationMenuLink?: string
-  /** Description of the link. This is only used when `orientation` is `horizontal`. */
-  description?: string
   /** Whether the link is active or not */
   active?: boolean
   /** Event handler called when the link is clicked */
   onSelect?: (e: Event) => void
   /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenuLink']
+  una?: NNavigationMenuUnaProps['navigationMenuLink'] & NButtonProps['una']
 }
 
-export interface NNavigationMenuListProps extends NavigationMenuListProps, BaseExtensions {
+export interface NNavigationMenuListProps extends NavigationMenuListProps, Pick<NavigationMenuRootProps, 'orientation'>, BaseExtensions {
   /** Additional properties for the una component */
   una?: NNavigationMenuUnaProps['navigationMenuList']
 }
 
+export interface NNavigationMenuListItemProps extends NNavigationMenuLinkProps {
+  /** Description of the link. This is only used when `orientation` is `horizontal`. */
+  description?: string
+  /** Additional properties for the una component */
+  una?: NNavigationMenuUnaProps['navigationMenuListItem']
+}
+
 export interface NNavigationMenuSubProps extends NavigationMenuSubProps {}
 
-export interface NNavigationMenuViewportProps extends NavigationMenuViewportProps, Pick<BaseExtensions, 'class'> {
+export interface NNavigationMenuViewportProps extends NavigationMenuViewportProps, Pick<NavigationMenuRootProps, 'orientation'>, Pick<BaseExtensions, 'class'> {
   /** Additional properties for the una component */
   una?: NNavigationMenuUnaProps['navigationMenuViewport']
 }
@@ -139,6 +146,8 @@ interface NNavigationMenuUnaProps {
   navigationMenuViewport?: HTMLAttributes['class']
   /** CSS class for the navigation menu list */
   navigationMenuList?: HTMLAttributes['class']
+  /** CSS class for the navigation menu list item */
+  navigationMenuListItem?: HTMLAttributes['class']
   /** CSS class for the navigation menu item */
   navigationMenuItem?: HTMLAttributes['class']
   /** CSS class for the navigation menu link */
