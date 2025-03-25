@@ -7,6 +7,7 @@ import type {
   GroupingState,
   Header,
   PaginationState,
+  RowSelectionState,
   SortingState,
   VisibilityState,
 } from '@tanstack/vue-table'
@@ -47,7 +48,7 @@ const emit = defineEmits(['select', 'selectAll', 'expand'])
 
 const slots = defineSlots()
 
-const rowSelection = defineModel<Record<string, boolean>>('modelValue')
+const rowSelection = defineModel<RowSelectionState>('rowSelection')
 const sorting = defineModel<SortingState>('sorting')
 const columnVisibility = defineModel<VisibilityState>('columnVisibility')
 const columnFilters = defineModel<ColumnFiltersState>('columnFilters')

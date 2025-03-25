@@ -313,7 +313,7 @@ const visibleColumnHeaders = computed({
     <!-- table -->
     <NTable
       ref="table"
-      v-model="select"
+      v-model:row-selection="select"
       :columns
       :una="{
         tableRoot: 'border-x-0 rounded-0',

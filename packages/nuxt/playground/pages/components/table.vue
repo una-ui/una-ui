@@ -100,7 +100,7 @@ const pokemon = computed(() => data.value?.results ?? [])
 
     <NTable
       ref="table"
-      v-model="select"
+      v-model:row-selection="select"
       v-model:sorting="sorting"
       v-model:column-visibility="visibleColumns"
       v-model:column-filters="columnFilters"
