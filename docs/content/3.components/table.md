@@ -19,8 +19,8 @@ badges:
 
 | Prop      | Default | Type    | Description    |
 | --------- | ------- | ------- | -------------- |
-| `columns` | `[]`    | `Array` | Table columns. |
-| `data`    | `[]`    | `Array` | Table data.    |
+| `columns` | `[]`    | `array` | Table columns. |
+| `data`    | `[]`    | `array` | Table data.    |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -43,13 +43,13 @@ Row selection allows you to select rows in the table. This is useful when you wa
 
 | Prop                      | Default | Type      | Description                                       |
 | ------------------------- | ------- | --------- | ------------------------------------------------- |
-| `rowSelection`            | -       | `Array`   | Selected row state, can be binded with `v-model`. |
-| `enableRowSelection`      | `false` | `Boolean` | Enable row selection.                             |
-| `enableMultiRowSelection` | `true`  | `Boolean` | Enable multiple row selection.                    |
-| `rowId`                   | `id`    | `String`  | Row id to uniquely identify each row.             |
-| `enableSubRowSelection`   | `false` | `Boolean` | Enable sub row selection.                         |
-| `@select`                 | -       | `Event`   | Emitted when a row is selected.                   |
-| `@select-all`             | -       | `Event`   | Emitted when all rows are selected.               |
+| `rowSelection`            | -       | `object`  | Selected row state, can be binded with `v-model`. |
+| `enableRowSelection`      | `false` | `boolean` | Enable row selection.                             |
+| `enableMultiRowSelection` | `true`  | `boolean` | Enable multiple row selection.                    |
+| `rowId`                   | `id`    | `string`  | Row id to uniquely identify each row.             |
+| `enableSubRowSelection`   | `false` | `boolean` | Enable sub row selection.                         |
+| `@select`                 | -       | `event`   | Emitted when a row is selected.                   |
+| `@select-all`             | -       | `event`   | Emitted when all rows are selected.               |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -73,7 +73,7 @@ Loading allows you to show a loading progress indicator in the table. This is us
 
 | Prop      | Default | Type      | Description    |
 | --------- | ------- | --------- | -------------- |
-| `loading` | `false` | `Boolean` | Loading state. |
+| `loading` | `false` | `boolean` | Loading state. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -98,7 +98,7 @@ Pagination allows you to paginate rows in the table. This is useful when you wan
 | Prop               | Default                        | Type                                    | Description                                                 |
 | ------------------ | ------------------------------ | --------------------------------------- | ----------------------------------------------------------- |
 | `pagination`       | `{pageIndex: 0, pageSize: 10}` | `{pageIndex: Number, pageSize: Number}` | Pagination state, can be binded with `v-model`.             |
-| `manualPagination` | `false`                        | `Boolean`                               | Enable manual pagination, ideal for server-side pagination. |
+| `manualPagination` | `false`                        | `boolean`                               | Enable manual pagination, ideal for server-side pagination. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -124,7 +124,7 @@ Sorting allows you to sort columns in ascending or descending order. This is use
 
 | Prop                   | Default | Type      | Description                                          |
 | ---------------------- | ------- | --------- | ---------------------------------------------------- |
-| `sorting`              | -       | `Array`   | Sorting state, can be binded with `v-model`.         |
+| `sorting`              | -       | `array`   | Sorting state, can be binded with `v-model`.         |
 | `enableMultiSort`      | -       | `boolean` | Enable multi-column sorting                          |
 | `enableSorting`        | -       | `boolean` | Enable all column sorting                            |
 | `column.enableSorting` | -       | `boolean` | Enable specific column sorting                       |
@@ -201,7 +201,7 @@ Column filtering allows you to filter columns based on the value entered in the 
 
 | Prop                        | Default | Type      | Description                                        |
 | --------------------------- | ------- | --------- | -------------------------------------------------- |
-| `columnFilters`             | -       | `Array`   | Column filter state, can be binded with `v-model`. |
+| `columnFilters`             | -       | `array`   | Column filter state, can be binded with `v-model`. |
 | `enableColumnFilter`        | -       | `boolean` | Enable all column filtering                        |
 | `column.enableColumnFilter` | -       | `boolean` | Enable specific column filtering                   |
 
@@ -227,7 +227,7 @@ Column ordering allows you to reorder columns by dragging and dropping them. Thi
 
 | Prop          | Default | Type    | Description                                       |
 | ------------- | ------- | ------- | ------------------------------------------------- |
-| `columnOrder` | -       | `Array` | Column order state, can be binded with `v-model`. |
+| `columnOrder` | -       | `array` | Column order state, can be binded with `v-model`. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -251,7 +251,7 @@ Column pinning allows you to pin columns to the `left` or `right` of the table. 
 
 | Prop            | Default | Type                            | Description                                         |
 | --------------- | ------- | ------------------------------- | --------------------------------------------------- |
-| `columnPinning` | -       | `{ left: Array, right: Array }` | Column pinning state, can be binded with `v-model`. |
+| `columnPinning` | -       | `{ left: array, right: array }` | Column pinning state, can be binded with `v-model`. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -275,7 +275,7 @@ Expanding allows you to expand rows to show additional information. This is usef
 
 | Prop       | Default | Type    | Description                                   |
 | ---------- | ------- | ------- | --------------------------------------------- |
-| `expanded` | -       | `Array` | Expanded state, can be binded with `v-model`. |
+| `expanded` | -       | `array` | Expanded state, can be binded with `v-model`. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -300,7 +300,7 @@ Grouping allows you to group rows based on a column value. This is useful when y
 
 | Prop       | Default | Type    | Description                                   |
 | ---------- | ------- | ------- | --------------------------------------------- |
-| `grouping` | -       | `Array` | Grouping state, can be binded with `v-model`. |
+| `grouping` | -       | `array` | Grouping state, can be binded with `v-model`. |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -346,8 +346,8 @@ Configure the progress using the `una` prop and utility classes.
 
 | Prop               | Default | Type     | Description           |
 | ------------------ | ------- | -------- | --------------------- |
-| `columns.meta.una` | `{}`    | `Object` | Column Una meta data. |
-| `una`              | `{}`    | `Object` | Global Una attribute. |
+| `columns.meta.una` | `{}`    | `object` | Column Una meta data. |
+| `una`              | `{}`    | `object` | Global Una attribute. |
 
 :read-more{to="#props" title="Component Props API"}
 
