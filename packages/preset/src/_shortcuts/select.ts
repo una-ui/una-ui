@@ -16,10 +16,9 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-trigger-warning-icon': 'i-warning',
 
   // components
-  'select-root': '',
   'select-trigger': 'px-0.8571428571428571em w-full [&>span]:truncate',
   'select-trigger-trailing-icon': 'i-lucide-chevron-down',
-  'select-trigger-trailing': 'ml-auto size-1.4285714285714286em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled size-1.1428571428571428em)',
+  'select-trigger-trailing': 'size-1.4285714285714286em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled size-1.1428571428571428em)',
   'select-trigger-leading': 'size-1.1428571428571428em',
 
   'select-value': 'text-1em data-[status=error]:text-error-active data-[status=success]:text-success-active data-[status=warning]:text-warning-active data-[status=info]:text-info-active data-[placeholder]:n-disabled',
@@ -31,7 +30,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 
   'select-separator': '-mx-1 my-1 h-px bg-muted',
 
-  'select-item': 'select-item-gray relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-1em outline-none data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
+  'select-item': 'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-1em outline-none data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
 
   'select-item-indicator': 'absolute left-2 size-1.1428571428571428em flex items-center justify-center',
   'select-item-indicator-icon': 'i-check',

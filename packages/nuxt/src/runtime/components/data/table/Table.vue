@@ -7,6 +7,7 @@ import type {
   GroupingState,
   Header,
   PaginationState,
+  RowSelectionState,
   SortingState,
   VisibilityState,
 } from '@tanstack/vue-table'
@@ -40,13 +41,14 @@ import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
+  enableSortingRemoval: true,
 })
 
 const emit = defineEmits(['select', 'selectAll', 'expand'])
 
 const slots = defineSlots()
 
-const rowSelection = defineModel<Record<string, boolean>>('modelValue')
+const rowSelection = defineModel<RowSelectionState>('rowSelection')
 const sorting = defineModel<SortingState>('sorting')
 const columnVisibility = defineModel<VisibilityState>('columnVisibility')
 const columnFilters = defineModel<ColumnFiltersState>('columnFilters')
@@ -89,7 +91,6 @@ const columnsWithMisc = computed(() => {
             'areaLabel': 'Select row',
           }),
           enableSorting: false,
-          enableHiding: false,
         },
         ...props.columns,
       ]
@@ -155,6 +156,7 @@ const table = useVueTable({
   enableColumnFilters: props.enableColumnFilters,
   manualPagination: props.manualPagination,
   manualSorting: props.manualSorting,
+  manualFiltering: props.manualFiltering,
   pageCount: props.pageCount,
   rowCount: props.rowCount,
   autoResetPageIndex: props.autoResetPageIndex,
@@ -249,10 +251,7 @@ defineExpose({
                   :trailing="header.column.getIsSorted() === 'asc'
                     ? 'i-lucide-arrow-up-wide-narrow' : header.column.getIsSorted() === 'desc'
                       ? 'i-lucide-arrow-down-narrow-wide' : 'i-lucide-arrow-up-down'"
-                  @click="header.column.toggleSorting(
-                    header.column.getIsSorted() === 'asc' ? undefined : header.column.getIsSorted() !== 'desc',
-                    enableMultiSort,
-                  )"
+                  @click="header.column.getToggleSortingHandler()?.($event)"
                 >
                   <slot
                     :name="`${header.id}-header`"

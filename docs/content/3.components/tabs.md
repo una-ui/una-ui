@@ -83,7 +83,7 @@ badges:
 
 :read-more{to="/components/button#size" title="Button Size" target="_blank"}
 
-### Slots
+## Slots
 
 | Name      | Props   | Description       |
 | --------- | ------- | ----------------- |

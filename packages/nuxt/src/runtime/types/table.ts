@@ -1,13 +1,26 @@
 import type {
   ColumnDef,
+  CoreOptions,
   GroupColumnDef,
 } from '@tanstack/vue-table'
 import type { HTMLAttributes } from 'vue'
 import type { NProgressProps } from './progress'
 import type { NScrollAreaProps, NScrollAreaUnaProps } from './scroll-area'
 
-export interface NTableProps<TData, TValue> {
+export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'data' | 'columns' | 'getCoreRowModel' | 'state' | 'onStateChange' | 'renderFallbackValue'> {
   class?: HTMLAttributes['class']
+  /**
+   * @see https://tanstack.com/table/latest/docs/api/core/table#state
+   */
+  state?: CoreOptions<TData>['state']
+  /**
+   * @see https://tanstack.com/table/latest/docs/api/core/table#onstatechange
+   */
+  onStateChange?: CoreOptions<TData>['onStateChange']
+  /**
+   * @see https://tanstack.com/table/latest/docs/api/core/table#renderfallbackvalue
+   */
+  renderFallbackValue?: CoreOptions<TData>['renderFallbackValue']
   /**
    * @see https://tanstack.com/table/latest/docs/guide/data
    */
@@ -41,6 +54,10 @@ export interface NTableProps<TData, TValue> {
    */
   enableColumnFilters?: boolean
   /**
+   * @see https://tanstack.com/table/latest/docs/api/features/column-filtering#manualfiltering
+   */
+  manualFiltering?: boolean
+  /**
    * @see https://tanstack.com/table/latest/docs/api/features/sorting#enablesorting
    */
   enableSorting?: boolean
@@ -63,6 +80,7 @@ export interface NTableProps<TData, TValue> {
   /**
    * @see https://tanstack.com/table/latest/docs/api/features/sorting#maxmultisortcolcount
    */
+
   maxMultiSortColCount?: number
   /**
    * @see https://tanstack.com/table/latest/docs/api/features/pagination#manualpagination

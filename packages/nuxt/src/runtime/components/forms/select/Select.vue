@@ -4,14 +4,12 @@ import type { NSelectProps, SelectGroup as SelectGroupType } from '../../../type
 </script>
 
 <script setup lang="ts" generic="T extends AcceptableValue">
-import { reactivePick } from '@vueuse/core'
-import { useForwardPropsEmits } from 'reka-ui'
-import { isEqualObject } from '../../../utils'
+import { SelectRoot, useForwardPropsEmits } from 'reka-ui'
+import { cn, isEqualObject } from '../../../utils'
 import SelectContent from './SelectContent.vue'
 import SelectGroup from './SelectGroup.vue'
 import SelectItem from './SelectItem.vue'
 import SelectLabel from './SelectLabel.vue'
-import SelectRoot from './SelectRoot.vue'
 import SelectSeparator from './SelectSeparator.vue'
 import SelectTrigger from './SelectTrigger.vue'
 import SelectValue from './SelectValue.vue'
@@ -22,13 +20,7 @@ const props = withDefaults(defineProps<NSelectProps<T>>(), {
 
 const emits = defineEmits<SelectRootEmits>()
 
-const rootProps = reactivePick(props, [
-  'modelValue',
-  'defaultValue',
-  'multiple',
-  'disabled',
-])
-const forwarded = useForwardPropsEmits(rootProps, emits)
+const forwarded = useForwardPropsEmits(props, emits)
 
 function formatSelectedValue(value: unknown) {
   if (!value || (Array.isArray(value) && value.length === 0))
@@ -71,118 +63,124 @@ function isItemSelected(item: unknown, modelValue: unknown) {
 <template>
   <SelectRoot
     v-slot="{ modelValue, open }"
+    :class="cn(
+      props.una?.select,
+      props.class,
+    )"
     v-bind="forwarded"
   >
-    <SelectTrigger
-      :id
-      :size
-      :status
-      :select
-      v-bind="props._selectTrigger"
-      :una
-    >
-      <slot name="trigger" :model-value :open="open">
-        <SelectValue
-          :placeholder="props.placeholder"
-          v-bind="props._selectValue"
-          :aria-label="formatSelectedValue(modelValue)"
-          :data-status="status"
-          :una
-        >
-          <slot name="value" :model-value :open>
-            {{ formatSelectedValue(modelValue) || props.placeholder }}
-          </slot>
-        </SelectValue>
-      </slot>
-    </SelectTrigger>
-
-    <SelectContent
-      :size
-      v-bind="{
-        ..._selectContent,
-        _selectScrollDownButton,
-        _selectScrollUpButton,
-      }"
-      :una
-    >
-      <slot name="content" :items="items">
-        <template v-if="!group">
-          <SelectLabel
-            v-if="label"
-            v-bind="_selectLabel"
+    <slot name="root" :model-value :open>
+      <SelectTrigger
+        :id
+        :size
+        :status
+        :select
+        v-bind="props._selectTrigger"
+        :una
+      >
+        <slot name="trigger" :model-value :open="open">
+          <SelectValue
+            :placeholder="props.placeholder"
+            v-bind="props._selectValue"
+            :aria-label="formatSelectedValue(modelValue)"
+            :data-status="status"
             :una
           >
-            <slot name="label" :label>
-              {{ label }}
+            <slot name="value" :model-value :open>
+              {{ formatSelectedValue(modelValue) || props.placeholder }}
             </slot>
-          </SelectLabel>
+          </SelectValue>
+        </slot>
+      </SelectTrigger>
 
-          <template
-            v-for="item in items"
-            :key="item"
-          >
-            <SelectItem
-              :value="item"
-              :size
-              :select-item
-              v-bind="props._selectItem"
-              :is-selected="isItemSelected(item, modelValue)"
+      <SelectContent
+        :size
+        v-bind="{
+          ..._selectContent,
+          _selectScrollDownButton,
+          _selectScrollUpButton,
+        }"
+        :una
+      >
+        <slot name="content" :items="items">
+          <template v-if="!group">
+            <SelectLabel
+              v-if="label"
+              v-bind="_selectLabel"
               :una
             >
-              <slot name="item" :item="item">
-                {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
+              <slot name="label" :label>
+                {{ label }}
               </slot>
-            </SelectItem>
-          </template>
-        </template>
+            </SelectLabel>
 
-        <template v-if="group">
-          <SelectGroup
-            v-for="(group, i) in items as SelectGroupType<T>[]"
-            :key="i"
-            v-bind="props._selectGroup"
-            :una
-          >
-            <SelectSeparator
-              v-if="i > 0"
-              v-bind="props._selectSeparator"
-              :una
-            />
-
-            <slot name="group" :items="group">
-              <SelectLabel
-                v-if="group.label"
+            <template
+              v-for="item in items"
+              :key="item"
+            >
+              <SelectItem
+                :value="item"
                 :size
-                v-bind="{ ...props._selectLabel, ...group._selectLabel }"
+                :select-item
+                v-bind="props._selectItem"
+                :is-selected="isItemSelected(item, modelValue)"
                 :una
               >
-                <slot name="label" :label="group.label">
-                  {{ group.label }}
+                <slot name="item" :item="item">
+                  {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
                 </slot>
-              </SelectLabel>
+              </SelectItem>
+            </template>
+          </template>
 
-              <template
-                v-for="item in group.items"
-                :key="item"
-              >
-                <SelectItem
-                  :value="item"
+          <template v-if="group">
+            <SelectGroup
+              v-for="(group, i) in items as SelectGroupType<T>[]"
+              :key="i"
+              v-bind="props._selectGroup"
+              :una
+            >
+              <SelectSeparator
+                v-if="i > 0"
+                v-bind="props._selectSeparator"
+                :una
+              />
+
+              <slot name="group" :items="group">
+                <SelectLabel
+                  v-if="group.label"
                   :size
-                  :select-item
-                  v-bind="{ ..._selectItem, ...group._selectItem }"
-                  :is-selected="isItemSelected(item, modelValue)"
+                  v-bind="{ ...props._selectLabel, ...group._selectLabel }"
                   :una
                 >
-                  <slot name="item" :item="item">
-                    {{ props.itemKey ? (item as any)[props.itemKey] : item }}
+                  <slot name="label" :label="group.label">
+                    {{ group.label }}
                   </slot>
-                </SelectItem>
-              </template>
-            </slot>
-          </SelectGroup>
-        </template>
-        <slot />
-      </slot>
-    </SelectContent>
+                </SelectLabel>
+
+                <template
+                  v-for="item in group.items"
+                  :key="item"
+                >
+                  <SelectItem
+                    :value="item"
+                    :size
+                    :select-item
+                    v-bind="{ ..._selectItem, ...group._selectItem }"
+                    :is-selected="isItemSelected(item, modelValue)"
+                    :una
+                  >
+                    <slot name="item" :item="item">
+                      {{ props.itemKey ? (item as any)[props.itemKey] : item }}
+                    </slot>
+                  </SelectItem>
+                </template>
+              </slot>
+            </SelectGroup>
+          </template>
+          <slot />
+        </slot>
+      </SelectContent>
+    </slot>
   </SelectRoot>
 </template>

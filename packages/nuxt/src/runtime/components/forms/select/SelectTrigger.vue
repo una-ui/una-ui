@@ -58,11 +58,6 @@ const status = computed(() => props.status ?? 'default')
           props.una?.btnLeading,
           props.una?.selectTriggerLeading,
         ),
-        btnTrailing: cn(
-          'select-trigger-trailing',
-          props.una?.btnTrailing,
-          props.una?.selectTriggerTrailing,
-        ),
         btnDefaultVariant: statusClassVariants.btn,
       }"
     >
@@ -76,7 +71,7 @@ const status = computed(() => props.status ?? 'default')
             :data-status="status"
             :name="statusClassVariants.icon"
             :class="cn(
-              'select-trigger-trailing',
+              'select-trigger-trailing rtl:mr-auto ltr:ml-auto',
               props.una?.btnTrailing,
               props.una?.selectTriggerTrailing,
             )"

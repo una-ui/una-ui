@@ -1,8 +1,5 @@
 ---
 description: 'Extends the Dialog component to display content that complements the main content of the screen.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
@@ -70,7 +67,7 @@ badges:
 ::
 :::
 
-### Customization
+## Customization
 
 You can customize the sheet using the following sub components props and `una` prop.
 
@@ -122,7 +119,7 @@ You can customize the sheet using the following sub components props and `una` p
 ::
 :::
 
-### Slots
+## Slots
 
 | Name          | Props  | Description                                                                        |
 | ------------- | ------ | ---------------------------------------------------------------------------------- |

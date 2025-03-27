@@ -14,9 +14,9 @@ const forwarded = useForwardPropsEmits(props, emits)
   <NavigationMenuLink v-bind="forwarded" class="navigation-menu-content-item">
     <slot>
       <div class="navigation-menu-content-item-wrapper">
-        <div class="navigation-menu-content-item-label">
+        <p class="navigation-menu-content-item-label">
           {{ label }}
-        </div>
+        </p>
         <p v-if="description" class="navigation-menu-content-item-description">
           {{ description }}
         </p>

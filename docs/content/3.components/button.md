@@ -106,9 +106,9 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 ### Square
 
-| Prop     | Default | Type                | Description                                                                                                      |
-| -------- | ------- | ------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `square` | `true`  | `boolean`, `string` | Set the button to have the same width and height. If you provide empty value or `true`, it will provide `2.5em`. |
+| Prop     | Default | Type                | Description                                                                                                                               |
+| -------- | ------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `square` | `true`  | `boolean`, `string` | Sets the button to have the same width and height, and removes the padding. If you provide an empty value or `true`, it will use `2.5em`. |
 
 ::alert{type="info"}
 You can also provide a custom value to the `square` prop to set the width and height of the button, e.g., `square="3em"`.
@@ -130,6 +130,10 @@ You can also provide a custom value to the `square` prop to set the width and he
 | `icon`     | -       | `boolean` | Force the `label` to be an icon. |
 | `leading`  | -       | `string`  | Display leading icon.            |
 | `trailing` | -       | `string`  | Display trailing icon.           |
+
+::alert{type="info"}
+If `icon` is `true`, the button will automatically be set to square by default. If you want to disable this behavior, you can set `square` to `false`.
+::
 
 :read-more{to="/components/icon" title="Icon component" target="_blank"}
 
@@ -209,7 +213,7 @@ By default, the disabled state is triggered when the button is loading.
 ::
 :::
 
-### Slots
+## Slots
 
 #### Default
 

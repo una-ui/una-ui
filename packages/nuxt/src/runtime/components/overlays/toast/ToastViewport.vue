@@ -18,8 +18,8 @@ const delegatedProps = computed(() => {
     v-bind="delegatedProps"
     :class="cn(
       'toast-viewport',
-      props.class,
       props.una?.toastViewport,
+      props.class,
     )"
   />
 </template>

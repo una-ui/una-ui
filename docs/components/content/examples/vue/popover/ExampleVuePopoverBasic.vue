@@ -1,71 +1,44 @@
-<template>
-  <div class="grid h-50 place-items-center">
-    <NPopover>
-      <template #trigger>
-        <NButton btn="solid-white">
-          Open popover
-        </NButton>
-      </template>
+<script setup lang="ts">
+import { ref } from 'vue'
 
-      <div class="grid gap-4">
-        <div class="space-y-2">
-          <h4 class="font-medium leading-none">
-            Dimensions
-          </h4>
-          <p class="text-sm text-muted">
-            Set the dimensions for the layer.
-          </p>
-        </div>
-        <div class="grid gap-2">
-          <div class="grid grid-cols-3 items-center gap-4">
-            <NLabel for="width">
-              Width
-            </NLabel>
-            <NInput
-              id="width"
-              model-value="100%"
-              :una="{
-                inputWrapper: 'col-span-2',
-              }"
-            />
-          </div>
-          <div class="grid grid-cols-3 items-center gap-4">
-            <NLabel for="maxWidth">
-              Max. width
-            </NLabel>
-            <NInput
-              id="maxWidth"
-              model-value="300px"
-              :una="{
-                inputWrapper: 'col-span-2',
-              }"
-            />
-          </div>
-          <div class="grid grid-cols-3 items-center gap-4">
-            <NLabel for="height">
-              Height
-            </NLabel>
-            <NInput
-              id="height"
-              type="text"
-              :una="{
-                inputWrapper: 'col-span-2',
-              }"
-            />
-          </div>
-          <div class="grid grid-cols-3 items-center gap-4">
-            <NLabel for="maxHeight">
-              Max. height
-            </NLabel>
-            <NInput
-              id="maxHeight"
-              :una="{
-                inputWrapper: 'col-span-2',
-              }"
-            />
-          </div>
-        </div>
-      </div>
-    </NPopover>
-  </div>
+const isOpen = ref(false)
+
+function togglePopover() {
+  isOpen.value = !isOpen.value
+}
+</script>
+
+<template>
+  <NPopover
+    :open="isOpen"
+    align="center"
+    side="bottom"
+    :avoid-collisions="true"
+    sticky="always"
+    :trap-focus="true"
+  >
+    <template #trigger>
+      <NButton
+        btn="text-gray"
+        icon
+        rounded="full"
+        square
+        label="i-lucide-info"
+        @click="togglePopover"
+      />
+    </template>
+
+    <div class="p-4">
+      <h3 class="mb-2 font-medium">
+        Popover Title
+      </h3>
+      <p class="text-muted-foreground text-sm">
+        This is a more detailed example of a popover with advanced features like collision avoidance and sticky behavior.
+      </p>
+    </div>
+  </NPopover>
 </template>
+
+<style scoped>
+/* Add any additional styles here */
+</style>

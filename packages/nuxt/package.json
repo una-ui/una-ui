@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/nuxt",
   "type": "module",
-  "version": "0.40.1-beta.1",
+  "version": "0.46.0",
   "description": "Nuxt module for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -13,12 +13,23 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
     "./una.config": {
       "import": "./dist/una.config.mjs"
+    },
+    "./runtime/*": "./dist/runtime/*",
+    "./components/*": "./dist/runtime/components/*",
+    "./composables/*": "./dist/runtime/composables/*",
+    "./utils/*": {
+      "types": "./dist/runtime/utils/*.d.ts",
+      "import": "./dist/runtime/utils/*.js"
     }
+  },
+  "imports": {
+    "#build/una/*": "./.nuxt/una/*.ts"
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
@@ -35,9 +46,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "catalog:",
-    "@iconify-json/lucide": "catalog:",
-    "@iconify-json/radix-icons": "catalog:",
-    "@iconify-json/tabler": "catalog:",
+    "@iconify/utils": "catalog:",
     "@nuxt/kit": "catalog:",
     "@nuxtjs/color-mode": "catalog:",
     "@tanstack/vue-table": "catalog:",
@@ -52,6 +61,7 @@
     "@vueuse/core": "catalog:",
     "@vueuse/integrations": "catalog:",
     "@vueuse/nuxt": "catalog:",
+    "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "ohash": "catalog:",
     "reka-ui": "catalog:",
@@ -61,6 +71,9 @@
     "unocss-preset-animations": "catalog:"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "catalog:",
+    "@iconify-json/radix-icons": "catalog:",
+    "@iconify-json/tabler": "catalog:",
     "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
     "nuxt": "catalog:",

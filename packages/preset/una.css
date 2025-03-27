@@ -1,4 +1,4 @@
-@import url(@unocss/reset/tailwind-compat.css);
+@import url(@unocss/reset/tailwind.css);
 :root {
   --una-primary-hex: #ca8a04;
   --una-primary-50: 254, 252, 232;
@@ -66,6 +66,7 @@
   --una-gray-active: var(--una-gray-500);
   --una-background: 255, 255, 255;
   --una-foreground: var(--una-gray-950);
+  --una-input: var(--una-gray-200);
   --c-background: rgb(var(--una-background));
   --c-foreground: rgb(var(--una-foreground));
   --c-muted: rgb(var(--una-gray-50));
@@ -80,6 +81,14 @@
   --c-divider: rgb(var(--una-gray-200));
   --c-bg-selection: rgba(var(--una-primary-600), 0.2);
   --un-default-border-color: var(--c-border);
+  --una-sidebar: var(--una-background);
+  --una-sidebar-foreground: var(--una-foreground);
+  --una-sidebar-primary: var(--una-primary);
+  --una-sidebar-primary-foreground: var(--una-background);
+  --una-sidebar-accent: var(--una-gray-100);
+  --una-sidebar-accent-foreground: var(--una-gray-800);
+  --una-sidebar-border: var(--una-gray-200);
+  --una-sidebar-ring: var(--una-gray-200);
 }
 
 .dark {
@@ -90,6 +99,7 @@
   --una-gray-active: var(--una-gray-400);
   --una-background: var(--una-gray-950);
   --una-foreground: 255, 255, 255;
+  --una-input: var(--una-gray-800);
   --c-background: rgb(var(--una-background));
   --c-foreground: rgb(var(--una-foreground));
   --c-muted: rgb(var(--una-gray-900));
@@ -103,13 +113,16 @@
   --c-ring: rgba(var(--una-gray-700), 0.58);
   --c-divider: rgba(var(--una-gray-700), 0.58);
   --c-bg-selection: rgba(var(--una-primary-500), 0.2);
+  --una-sidebar-accent: var(--una-gray-800);
+  --una-sidebar-accent-foreground: var(--una-gray-100);
+  --una-sidebar-border: var(--una-gray-700);
+  --una-sidebar-ring: var(--una-gray-700);
 }
 
 html {
   font-size: var(--una-font-size, 16px);
   background-color: var(--c-background);
   color: var(--c-foreground);
-  height: 100dvh;
 }
 
 html.dark {

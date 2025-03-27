@@ -51,7 +51,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 ::
 :::
 
-### Customization
+## Customization
 
 Similar to the `size` prop, any available props of the [Avatar](avatar) component can be directly passed to the `AvatarGroup` component. These props will then be automatically forwarded to the individual `Avatar` components within the group.
 

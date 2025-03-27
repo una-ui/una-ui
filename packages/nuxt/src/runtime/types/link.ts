@@ -2,6 +2,10 @@ import type { NuxtLinkProps } from 'nuxt/app'
 
 export interface NLinkProps extends NuxtLinkProps {
   /**
+   * The label of the link
+   */
+  label?: string
+  /**
    * Manually enable/disable the exact match
    *
    * @default false
@@ -12,7 +16,7 @@ export interface NLinkProps extends NuxtLinkProps {
    *
    * @default false
    */
-  exactQuery?: boolean
+  exactQuery?: boolean | 'partial'
   /**
    * Manually enable/disable the exact match for the hash
    *

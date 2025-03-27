@@ -1,8 +1,5 @@
 ---
 description: 'Augments native scroll functionality for custom, cross-browser styling.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
@@ -106,7 +103,7 @@ You can you use any number size that you can imagine, breakpoints (e.g., `sm:sm,
 ::
 :::
 
-### Customization
+## Customization
 
 You can also use the `una` prop to add utility classes, refer to the [Props](#props) and [Presets](#presets) sections for more information.
 

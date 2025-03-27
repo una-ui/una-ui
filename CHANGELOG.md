@@ -1,3 +1,136 @@
+# [0.46.0](https://github.com/una-ui/una-ui/compare/v0.45.0...v0.46.0) (2025-03-25)
+
+
+### Bug Fixes
+
+* **Nuxt:** reconfig slot iteration syntax for some components ([ccaf52a](https://github.com/una-ui/una-ui/commit/ccaf52a024e3edd9a56a985654726f7f464bec8a))
+
+
+
+# [0.45.0](https://github.com/una-ui/una-ui/compare/v0.44.2...v0.45.0) (2025-03-24)
+
+
+### Features
+
+* **Nuxt:** improve module configuration and add alias support ([4cc2993](https://github.com/una-ui/una-ui/commit/4cc2993bff1df2a424d17dd80ba524001a1c51a7))
+* **Table:** enable hiding in selection column ([fbe728e](https://github.com/una-ui/una-ui/commit/fbe728ef9da3d74ba2dbaed454e11613df6fb344))
+
+
+
+## [0.44.2](https://github.com/una-ui/una-ui/compare/v0.44.1...v0.44.2) (2025-03-24)
+
+
+### Bug Fixes
+
+* **DropdownMenu:** update slot structure ([15474b1](https://github.com/una-ui/una-ui/commit/15474b1469bca9f146f7845e3916da0bb85d718a))
+
+
+
+## [0.44.1](https://github.com/una-ui/una-ui/compare/v0.44.0...v0.44.1) (2025-03-24)
+
+
+### Bug Fixes
+
+* **Select:** update select-item trailing classes configuration ([b88dc97](https://github.com/una-ui/una-ui/commit/b88dc9797bf5deb8db854458e69ca946604b73da))
+
+
+
+# [0.44.0](https://github.com/una-ui/una-ui/compare/v0.43.0...v0.44.0) (2025-03-22)
+
+
+### Features
+
+* **Link:** add label prop support ([41a8333](https://github.com/una-ui/una-ui/commit/41a8333726c1efb517966bc9a5b18c622b2872eb))
+
+
+
+# [0.43.0](https://github.com/una-ui/una-ui/compare/v0.42.1...v0.43.0) (2025-03-21)
+
+
+### Bug Fixes
+
+* **Nuxt:** update components dir watch option to use module options instead of nuxt options ([#357](https://github.com/una-ui/una-ui/issues/357)) ([73504f4](https://github.com/una-ui/una-ui/commit/73504f452c28b9bd05683730436690bea5f85463))
+
+
+
+## [0.42.1](https://github.com/una-ui/una-ui/compare/v0.42.0...v0.42.1) (2025-03-20)
+
+
+### Features
+
+* **Table:** set enable-sorting-removal to true by default ([2f28123](https://github.com/una-ui/una-ui/commit/2f281237521f65e150a76d929c32473d60fc07c9))
+
+
+
+# [0.42.0](https://github.com/una-ui/una-ui/compare/v0.41.1-beta.1...v0.42.0) (2025-03-20)
+
+
+### Bug Fixes
+
+* **Accordion, ThemeSwitcher:** add safety checks in functions ([dc7f03b](https://github.com/una-ui/una-ui/commit/dc7f03b48c24bd4f6615678a3774e15b096fad62))
+* **Nuxt:** add missing dependency ([37252d4](https://github.com/una-ui/una-ui/commit/37252d45cdeb5298f0f8ea5eecfd2640d8ec7cfd))
+* **ThemeSwitcher:** add type assertion to variables ([afae888](https://github.com/una-ui/una-ui/commit/afae888ef95be03fdebcf5986640419fd7669b74))
+* **ThemeSwitcher:** improve typesafety ([cea15f2](https://github.com/una-ui/una-ui/commit/cea15f205a5f83f59d73bab9b0cc0fce2cb38119))
+
+
+### Features
+
+* **Button:** improve square configuration ([8985468](https://github.com/una-ui/una-ui/commit/898546802f62639bf53c1fdc61268d4a06a80cdf))
+* **DropdownMenu:** add default rounded value and set select-none to items ([1cc1af4](https://github.com/una-ui/una-ui/commit/1cc1af43bcccd5c23a4802ee3488afc43da122bd))
+* **DropdownMenu:** add onClick handler to item props ([0536cfd](https://github.com/una-ui/una-ui/commit/0536cfd48605826cc9e47cc1ebe160f85f464748))
+* **DropdownMenu:** add onClick to menu-item props ([a4a72da](https://github.com/una-ui/una-ui/commit/a4a72da9ab33e5738aade7287d0d4f7b1f3d5e53))
+* **Pagination:** improve ellipsis presets ([d131cd6](https://github.com/una-ui/una-ui/commit/d131cd615fffefb248631f377d56eb6ab3e0d04d))
+* **Table:** add manual filtering support ([7d48c55](https://github.com/una-ui/una-ui/commit/7d48c558817726437c3274a4984ae719ae4ded27))
+* **Table:** add table core options required props ([38ee320](https://github.com/una-ui/una-ui/commit/38ee320fc02b9c9eea135fe5ac60762d96be6925))
+* **Table:** add the ability to remove sorting for the table ([0674006](https://github.com/una-ui/una-ui/commit/067400608dcbd9115291d4f18592f8e5b909901f))
+
+
+### Reverts
+
+* **Nuxt:** revert icon collections config ([5c05f64](https://github.com/una-ui/una-ui/commit/5c05f648fb82332d446d927cb03192f85d913d82))
+
+
+
+## [0.41.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.41.0-beta.1...v0.41.1-beta.1) (2025-03-11)
+
+
+### Features
+
+* **Button:** auto square and set padding to 0 if icon is enabled ([699e2f9](https://github.com/una-ui/una-ui/commit/699e2f965508cd63a3431f451d782e452622a343))
+
+
+
+# [0.41.0-beta.1](https://github.com/una-ui/una-ui/compare/v0.40.1-beta.1...v0.41.0-beta.1) (2025-03-10)
+
+
+### Bug Fixes
+
+* access showIcon through props in SidebarMenuSkeleton ([e1e645e](https://github.com/una-ui/una-ui/commit/e1e645e1042f6bd33c7c477e67e7dab955af3e1f))
+
+
+### Features
+
+* add presets configuration ([bb399ab](https://github.com/una-ui/una-ui/commit/bb399ab541653447ef1342473ecfe1db813b4fb4))
+* Add project management components and pages ([9f43fa8](https://github.com/una-ui/una-ui/commit/9f43fa8eda0d0208289c7ca69a254451871337bf))
+* add reactive popover activation logic ([a7376b1](https://github.com/una-ui/una-ui/commit/a7376b138e514ec86effe703ecc47fa2d8d9fbec))
+* add Scroll Area component link ([5f452c4](https://github.com/una-ui/una-ui/commit/5f452c4e95d9048a7feb74ac3814ad3b2a89e8a0))
+* add separate TypeScript type definitions for sidebar components ([34c2061](https://github.com/una-ui/una-ui/commit/34c20611fc4d37e3f14c845d9aca40e21b8b491f))
+* add sidebar attributes for layout customization ([3d5cb7b](https://github.com/una-ui/una-ui/commit/3d5cb7b6095cb8504a0c5d639ae33acabbc88ead))
+* add una props support to all sidebar components ([40bd47e](https://github.com/una-ui/una-ui/commit/40bd47e2218a74eafd8a5326895368fe98ac2860))
+* **AppSidebar:** add scroll area to sidebar content ([8bcbd30](https://github.com/una-ui/una-ui/commit/8bcbd30df76f5a89da33bda125e57cddd4124340))
+* **Link:** add partial match for exactQuery prop and improve types ([93e1f8a](https://github.com/una-ui/una-ui/commit/93e1f8a1ef38e46cba8071545ceb315b8c5b70ff))
+* **Nuxt:** automatically install default collection icons ([fb9215c](https://github.com/una-ui/una-ui/commit/fb9215cd8be4afb6773b95ecf7ed3cd47d3dce66))
+* **playground:** add components page template ([90fa004](https://github.com/una-ui/una-ui/commit/90fa004b72746eb0f8d07d4fd84e2b0aebd50739))
+* **prefixes:** add sidebar component styles and classes ([df7f898](https://github.com/una-ui/una-ui/commit/df7f898b90ad5109439e1eba6aabd78fb8663e7b))
+* **shortcuts:** add sidebar import and config dep ([1fadd70](https://github.com/una-ui/una-ui/commit/1fadd70d430515aee806aa3b14fd71277aab9922))
+* **sidebar:** add badge support to menu items ([aa2ef6f](https://github.com/una-ui/una-ui/commit/aa2ef6f4a8150b7c1155abbc433cfdf7156904c6))
+* **sidebar:** add new sidebar components and previews ([dc31ec1](https://github.com/una-ui/una-ui/commit/dc31ec1b974c2e2171c0d379a9f485e61e9341fc))
+* **sidebar:** add slot to SidebarMenuSkeleton ([44097b1](https://github.com/una-ui/una-ui/commit/44097b1b93e05bea68628e5708d86bd3b67e3679))
+* **ThemeSwither:** bind `open` value to slot trigger ([b69d626](https://github.com/una-ui/una-ui/commit/b69d62628df56dfc1c5c31b60017d613ae0e9848))
+* update all sidebar components to use TypeScript types ([d94ba54](https://github.com/una-ui/una-ui/commit/d94ba5483e3b71646ab046e4da030f26ee04786f))
+
+
+
 ## [0.40.1-beta.1](https://github.com/una-ui/una-ui/compare/v0.40.0-beta.1...v0.40.1-beta.1) (2025-03-05)
 
 

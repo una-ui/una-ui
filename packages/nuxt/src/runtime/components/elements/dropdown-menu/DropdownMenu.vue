@@ -67,40 +67,42 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
           />
         </template>
 
-        <slot name="items" :items>
+        <slot name="group" :items>
           <DropdownMenuGroup
             :una="forwarded.una?.dropdownMenuGroup"
             v-bind="forwarded._dropdownMenuGroup"
           >
-            <template
-              v-for="item in items"
-              :key="item.label"
-            >
-              <slot
-                v-if="!item.items && item.label"
-                :name="`item-${item.label}`"
+            <slot name="items" :items>
+              <template
+                v-for="item in items"
+                :key="item.label"
               >
-                <DropdownMenuItem
-                  :size
-                  :inset
-                  :dropdown-menu-item
-                  :una="forwarded.una?.dropdownMenuItem"
-                  :_dropdown-menu-shortcut
-                  v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
+                <slot
+                  v-if="!item.items && item.label"
+                  :name="`item-${item.label}`"
+                >
+                  <DropdownMenuItem
+                    :size
+                    :inset
+                    :dropdown-menu-item
+                    :una="forwarded.una?.dropdownMenuItem"
+                    :_dropdown-menu-shortcut
+                    v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
+                  />
+                </slot>
+
+                <DropdownMenuSeparator
+                  v-else-if="!item.label && !item.items"
+                  :una="forwarded.una?.dropdownMenuSeparator"
+                  v-bind="{ ...forwarded._dropdownMenuSeparator, ...item._dropdownMenuSeparator }"
                 />
-              </slot>
 
-              <DropdownMenuSeparator
-                v-else-if="!item.label && !item.items"
-                :una="forwarded.una?.dropdownMenuSeparator"
-                v-bind="{ ...forwarded._dropdownMenuSeparator, ...item._dropdownMenuSeparator }"
-              />
-
-              <ReuseMenuSub
-                v-else
-                v-bind="item"
-              />
-            </template>
+                <ReuseMenuSub
+                  v-else
+                  v-bind="item"
+                />
+              </template>
+            </slot>
           </DropdownMenuGroup>
         </slot>
       </slot>

@@ -9,8 +9,8 @@ export const staticPagination: Record<`${PaginationPrefix}-${string}` | Paginati
   'pagination-root': '',
   'pagination-list-item': 'pagination',
 
-  'pagination-ellipsis-base': 'btn flex items-center justify-center',
-  'pagination-ellipsis-icon-base': 'w-1em h-1em',
+  'pagination-ellipsis-base': 'btn-(~ square) flex items-center justify-center',
+  'pagination-ellipsis-icon-base': 'square-1.25em',
   'pagination-ellipsis-icon': 'i-lucide-ellipsis',
 
   'pagination-first': 'pagination',

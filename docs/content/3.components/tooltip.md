@@ -114,7 +114,7 @@ Configure the tooltip content using the `_tooltipContent` prop.
 ::
 :::
 
-### Slots
+## Slots
 
 | Name      | Props | Description       |
 | --------- | ----- | ----------------- |

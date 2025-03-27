@@ -106,11 +106,11 @@ const table = useTemplateRef<Table<Person>>('table')
     <!-- table -->
     <NTable
       ref="table"
-      v-model="select"
+      v-model:row-selection="select"
       :columns
       :data
       :global-filter="search"
-      enable-column-filters enable-row-selection enable-sorting
+      enable-row-selection enable-column-filters enable-sorting
       row-id="username"
     >
       <!-- filters -->

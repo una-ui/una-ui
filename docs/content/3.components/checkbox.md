@@ -117,7 +117,7 @@ You can also utilize `data-[state]` to dynamically modify the size of the checkb
 ::
 :::
 
-### Customization
+## Customization
 
 > You can customize the checkbox using the `una` prop and utility classes.
 
@@ -158,7 +158,7 @@ You can also utilize `data-[state]` to dynamically modify the size of the checkb
 ::
 :::
 
-### Slots
+## Slots
 
 | Name      | Description                                                              |
 | --------- | ------------------------------------------------------------------------ |

@@ -3,26 +3,27 @@ packages:
   - packages/**
   - playground/**
 catalog:
-  '@antfu/eslint-config': ^4.3.0
+  '@antfu/eslint-config': ^4.11.0
   '@antfu/ni': ^23.3.1
   '@faker-js/faker': ^9.5.1
   '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.2
-  '@iconify-json/lucide': ^1.2.28
+  '@iconify-json/lucide': ^1.2.32
   '@iconify-json/radix-icons': ^1.2.2
-  '@iconify-json/tabler': ^1.2.16
-  '@iconify/json': ^2.2.312
-  '@nuxt/devtools': ^2.1.1
-  '@nuxt/kit': ^3.15.4
+  '@iconify-json/tabler': ^1.2.17
+  '@iconify/json': ^2.2.319
+  '@iconify/utils': ^2.3.0
+  '@nuxt/devtools': ^2.3.1
+  '@nuxt/kit': ^3.16.1
   '@nuxt/module-builder': ^0.8.4
-  '@nuxt/schema': ^3.15.4
+  '@nuxt/schema': ^3.16.1
   '@nuxtjs/color-mode': ^3.5.2
   '@tanstack/vue-table': ^8.21.2
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.13.8
-  '@una-ui/content': ^43.0.0
+  '@types/node': ^22.13.13
+  '@una-ui/content': ^45.1.0
   '@unocss/core': ^66.0.0
   '@unocss/eslint-config': ^66.0.0
   '@unocss/nuxt': ^66.0.0
@@ -32,33 +33,34 @@ catalog:
   '@vee-validate/nuxt': ^4.15.0
   '@vee-validate/zod': ^4.15.0
   '@vercel/analytics': ^1.5.0
-  '@vueuse/core': ^12.7.0
-  '@vueuse/integrations': ^12.7.0
-  '@vueuse/nuxt': ^12.7.0
-  bumpp: ^10.0.3
+  '@vueuse/core': ^12.8.2
+  '@vueuse/integrations': ^12.8.2
+  '@vueuse/nuxt': ^12.8.2
+  bumpp: ^10.1.0
   chroma-js: ^3.1.2
+  class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.21.0
+  eslint: ^9.23.0
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
   fs-extra: ^11.3.0
   ignore-dependency-scripts: ^1.0.1
-  lint-staged: ^15.4.3
-  nuxt: ^3.15.4
-  ohash: ^1.1.5
+  lint-staged: ^15.5.0
+  nuxt: ^3.16.1
+  ohash: ^1.1.6
   pathe: ^2.0.3
-  reka-ui: ^2.0.2
+  reka-ui: ^2.1.1
   rimraf: ^6.0.1
-  sass: ^1.85.1
+  sass: ^1.86.0
   simple-git: ^3.27.0
-  simple-git-hooks: ^2.11.1
+  simple-git-hooks: ^2.12.1
   tailwind-merge: ^3.0.2
   typescript: 5.6.3
   unbuild: ^3.5.0
   unocss: ^66.0.0
   unocss-preset-animations: ^1.1.1
-  vitest: ^3.0.7
+  vitest: ^3.0.9
   vue-tsc: ^2.2.8
   zod: ^3.24.2

@@ -37,13 +37,36 @@ function updateGrayTheme(theme: string): void {
 }
 
 function shuffleTheme(): void {
-  const randomPrimaryTheme = primaryThemes[Math.floor(Math.random() * primaryThemes.length)][0]
-  const randomGrayTheme = grayThemes[Math.floor(Math.random() * grayThemes.length)][0]
-  const randomRadius = RADIUS[Math.floor(Math.random() * RADIUS.length)]
-  updatePrimaryTheme(randomPrimaryTheme)
-  updateGrayTheme(randomGrayTheme)
-  settings.value.radius = randomRadius
-  toggle()
+  if (primaryThemes.length > 0 && grayThemes.length > 0 && RADIUS.length > 0) {
+    // Safe way to access random elements with proper typing
+    const safeGetPrimaryTheme = (): string => {
+      const index = Math.floor(Math.random() * primaryThemes.length)
+      // Force type assertion for TypeScript
+      return primaryThemes[index]?.[0] as string
+    }
+
+    const safeGetGrayTheme = (): string => {
+      const index = Math.floor(Math.random() * grayThemes.length)
+      // Force type assertion for TypeScript
+      return grayThemes[index]?.[0] as string
+    }
+
+    const safeGetRadius = (): number => {
+      const index = Math.floor(Math.random() * RADIUS.length)
+      // Force type assertion for TypeScript
+      return RADIUS[index] as number
+    }
+
+    // Get random values with correct typing
+    const randomPrimaryTheme = safeGetPrimaryTheme()
+    const randomGrayTheme = safeGetGrayTheme()
+    const randomRadius = safeGetRadius()
+
+    updatePrimaryTheme(randomPrimaryTheme)
+    updateGrayTheme(randomGrayTheme)
+    settings.value.radius = randomRadius
+    toggle()
+  }
 }
 </script>
 

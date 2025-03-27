@@ -6,6 +6,7 @@
 
     <div class="flex flex-row gap-2">
       <NButton
+        :square="false"
         label="i-heroicons-arrow-down-tray-20-solid"
         icon
       />

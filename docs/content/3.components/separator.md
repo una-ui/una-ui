@@ -95,7 +95,7 @@ Allows you to adjust the position of the label content. Here are the available p
 ::
 :::
 
-### Slots
+## Slots
 
 | Name      | Props | Description        |
 | --------- | ----- | ------------------ |

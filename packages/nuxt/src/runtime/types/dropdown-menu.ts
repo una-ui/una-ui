@@ -28,7 +28,7 @@ interface BaseExtensions {
 export interface NDropdownMenuProps extends
   Omit<NDropdownMenuRootProps, 'class' | 'size'>,
   Omit<NDropdownMenuTriggerProps, 'una'>,
-  Pick<NDropdownMenuItemProps, 'shortcut' | 'dropdownMenuItem'> {
+  Pick<NDropdownMenuItemProps, 'shortcut' | 'dropdownMenuItem' | 'onClick'> {
   /** Label for the menu */
   menuLabel?: string
   /** Items in the dropdown menu */
@@ -136,6 +136,9 @@ export interface NDropdownMenuItemProps extends NButtonProps {
   _dropdownMenuShortcut?: Partial<NDropdownMenuShortcutProps>
   /** Additional properties for the una component */
   una?: NDropdownMenuUnaProps['dropdownMenuItem'] & NButtonProps['una']
+
+  /** Click event handler */
+  onClick?: () => void
 }
 
 /**

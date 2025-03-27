@@ -176,7 +176,7 @@ const beachAmenities = [
 </script>
 
 <template>
-  <div class="flex flex-col items-center gap-10">
+  <div class="mt--20 flex flex-col items-center gap-10">
     <div class="flex flex-wrap gap-4">
       <NRadioGroup
         v-model="value"

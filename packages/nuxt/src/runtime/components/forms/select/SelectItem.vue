@@ -9,7 +9,9 @@ import { cn } from '../../../utils'
 import SelectItemIndicator from './SelectItemIndicator.vue'
 import SelectItemText from './SelectItemText.vue'
 
-const props = withDefaults(defineProps<NSelectItemProps>(), {})
+const props = withDefaults(defineProps<NSelectItemProps>(), {
+  selectItem: 'gray',
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

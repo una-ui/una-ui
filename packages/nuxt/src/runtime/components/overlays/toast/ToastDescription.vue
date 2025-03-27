@@ -18,8 +18,8 @@ const delegatedProps = computed(() => {
     v-bind="delegatedProps"
     :class="cn(
       'toast-description',
-      props.class,
       props.una?.toastDescription,
+      props.class,
     )"
   >
     <slot />

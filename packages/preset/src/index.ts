@@ -28,6 +28,7 @@ export default function presetUna(options: unaUIOptions = {
         background: 'rgba(var(--una-background) / <alpha-value>)',
         foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
         brand: 'rgba(var(--una-brand) / <alpha-value>)',
+        input: 'rgba(var(--una-input) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
           active: 'rgba(var(--una-primary-active) / <alpha-value>)',
@@ -57,6 +58,16 @@ export default function presetUna(options: unaUIOptions = {
           800: 'rgba(var(--una-gray-800) / <alpha-value>)',
           900: 'rgba(var(--una-gray-900) / <alpha-value>)',
           950: 'rgba(var(--una-gray-950) / <alpha-value>)',
+        },
+        sidebar: {
+          DEFAULT: 'rgba(var(--una-sidebar) / <alpha-value>)',
+          foreground: 'rgba(var(--una-sidebar-foreground) / <alpha-value>)',
+          primary: 'rgba(var(--una-sidebar-primary) / <alpha-value>)',
+          primaryForeground: 'rgba(var(--una-sidebar-primary-foreground) / <alpha-value>)',
+          accent: 'rgba(var(--una-sidebar-accent) / <alpha-value>)',
+          accentForeground: 'rgba(var(--una-sidebar-accent-foreground) / <alpha-value>)',
+          border: 'rgba(var(--una-sidebar-border) / <alpha-value>)',
+          ring: 'rgba(var(--una-sidebar-ring) / <alpha-value>)',
         },
         error: colors.red,
         success: colors.green,
@@ -136,9 +147,6 @@ export default function presetUna(options: unaUIOptions = {
             outline: 2px solid rgb(var(--una-primary)); /* 2 */
             border-radius: 0.25rem; /* 1 */
             outline-offset: 0.10rem; /* 1 */
-          }
-          button, input, optgroup, select, textarea  {
-            background-color: transparent; /* 1 */
           }
         `,
       },
