@@ -57,7 +57,7 @@ export interface NNavigationMenuProps<T> extends Omit<NavigationMenuRootProps, '
   una?: NNavigationMenuUnaProps
 }
 
-export interface NNavigationMenuRootProps extends NavigationMenuRootProps, Pick<BaseExtensions, 'class'> {
+export interface NNavigationMenuRootProps extends NavigationMenuRootProps, Pick<BaseExtensions, 'class'>, Pick<NNavigationMenuProps<NNavigationMenuItemProps[]>, '_navigationMenuViewport'> {
   /** Additional properties for the una component */
   una?: NNavigationMenuUnaProps['navigationMenuRoot']
 }
@@ -82,7 +82,7 @@ export interface NNavigationMenuContentProps extends NavigationMenuContentProps,
 }
 
 export interface NNavigationMenuItemProps extends NavigationMenuItemProps, BaseExtensions, Omit<NNavigationMenuTriggerProps, 'una'>,
-  Pick<NNavigationMenuProps<NNavigationMenuItemProps[]>, '_navigationMenuLink' | '_navigationMenuTrigger'> {
+  Pick<NNavigationMenuLinkProps, 'active' | 'onSelect'>, Pick<NNavigationMenuProps<NNavigationMenuItemProps[]>, '_navigationMenuLink' | '_navigationMenuTrigger'> {
   /** Slot of the navigation menu item */
   slot?: string
   /** The array of links that is passed to the navigation menu items. */
