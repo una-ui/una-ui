@@ -27,6 +27,7 @@ const components = [
   'Tooltip',
   'Sheet',
   'Scroll Area',
+  'Navigation Menu',
 ]
   .map(component => ({
     name: component.replaceAll(' ', ''),
