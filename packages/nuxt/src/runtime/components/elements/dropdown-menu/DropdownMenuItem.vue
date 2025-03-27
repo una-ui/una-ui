@@ -42,6 +42,7 @@ const forwardedProps = useForwardProps(delegatedProps)
           btnTrailing: cn('dropdown-menu-item-trailing', forwardedProps.una?.btnTrailing),
           ...forwardedProps.una,
         }"
+        @click="forwardedProps.onSelect"
       >
         <template v-for="(_, name) in $slots" #[name]="slotData">
           <slot :name="name" v-bind="slotData" />
