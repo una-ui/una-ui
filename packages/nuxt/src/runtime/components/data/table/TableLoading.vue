@@ -20,7 +20,7 @@ const delegatedProps = computed(() => {
   <TableRow
     :class="cn(
       'table-loading-row',
-      props.una?.tableRow,
+      props.una?.tableLoadingRow,
     )"
     data-loading="true"
     v-bind="delegatedProps._tableRow"
@@ -29,7 +29,7 @@ const delegatedProps = computed(() => {
       :class="
         cn(
           'table-loading-cell',
-          props.una?.tableCell,
+          props.una?.tableLoadingCell,
         )
       "
       :colspan="0"
