@@ -1,27 +1,27 @@
 <script setup lang="ts">
 const itemsDefault = ref([
   {
-    label: 'Composables',
+    label: 'Guide',
     children: [
       {
-        label: 'Test',
-        description:
-      'Alert that interrupts the user with important content and expects a response.',
+        label: 'Introduction',
+        description: 'Una UI is an atomic UI Framework powered by the UNOCSS engine. It provides components and presets for creating stunning user interfaces with ease.',
+        to: '/getting-started/introduction',
       },
       {
-        label: 'Hover Card',
-        description:
-      'For sighted users to preview content available behind a link.',
+        label: 'Installation',
+        description: 'How to install dependencies and structure your application with Una UI.',
+        to: '/getting-started/installation',
       },
       {
-        label: 'Progress',
-        description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
+        label: 'Themes',
+        description: 'Customize the theme of your application.',
+        to: '/api/themes',
       },
       {
-        label: 'Scroll-area',
-        to: '/scroll-area',
-        description: 'Visually or semantically separates content.',
+        label: 'Composables',
+        description: 'Composable functions that can be used in your application.',
+        to: '/api/composables',
       },
     ],
   },
@@ -29,26 +29,24 @@ const itemsDefault = ref([
     label: 'Components',
     children: [
       {
-        label: 'Progress',
-        description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
+        label: 'Dropdown Menu',
+        description: 'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',
+        to: '/components/dropdown-menu',
       },
       {
-        label: 'Scroll-area',
-        to: '/scroll-area',
-        description: 'Visually or semantically separates content.',
+        label: 'Sidebar',
+        description: 'A composable, themeable and customizable sidebar component.',
+        to: '/components/sidebar',
       },
       {
-        label: 'Tabs',
-        to: '/tabs',
-        description:
-      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
+        label: 'Table',
+        description: 'A powerful, responsive table and datagrids built using Tanstack',
+        to: '/components/table',
       },
       {
         label: 'Tooltip',
-        to: '/tooltip',
-        description:
-      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
+        description: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
+        to: '/components/tooltip',
       },
     ],
   },
@@ -65,33 +63,19 @@ const itemsDefault = ref([
 
 const itemsCustom = ref([
   {
-    slot: 'composables',
-    label: 'Composables',
-    leading: 'i-lucide:square-function',
+    slot: 'guide',
+    label: 'Guide',
+    trailing: 'i-lucide-arrow-big-down',
     children: [
       {
-        leading: 'i-lucide-circle-check',
-        label: 'Test',
-        description:
-      'Alert that interrupts the user with important content and expects a response.',
+        label: 'Introduction',
+        description: 'Una UI is an atomic UI Framework powered by the UNOCSS engine. It provides components and presets for creating stunning user interfaces with ease.',
+        to: '/getting-started/introduction',
       },
       {
-        leading: 'i-lucide-circle-check',
-        label: 'Hover Card',
-        description:
-      'For sighted users to preview content available behind a link.',
-      },
-      {
-        leading: 'i-lucide-book-open',
-        label: 'Progress',
-        description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
-      },
-      {
-        leading: 'i-lucide-book-open',
-        label: 'Scroll-area',
-        to: '/scroll-area',
-        description: 'Visually or semantically separates content.',
+        label: 'Installation',
+        description: 'How to install dependencies and structure your application with Una UI.',
+        to: '/getting-started/installation',
       },
     ],
   },
@@ -101,28 +85,27 @@ const itemsCustom = ref([
     children: [
       {
         leading: 'i-lucide-crown',
-        label: 'Progress',
-        description:
-        'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
+        label: 'Dropdown Menu',
+        description: 'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',
+        to: '/components/dropdown-menu',
         una: {
           btnLeading: 'text-red',
         },
       },
       {
         leading: 'i-lucide-crown',
-        label: 'Scroll-area',
-        to: '/scroll-area',
-        description: 'Visually or semantically separates content.',
+        label: 'Sidebar',
+        description: 'A composable, themeable and customizable sidebar component.',
+        to: '/components/sidebar',
         una: {
           btnLeading: 'text-yellow',
         },
       },
       {
         leading: 'i-lucide-crown',
-        label: 'Navigation menu',
-        to: '/navigation-menu',
-        description:
-      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
+        label: 'Table',
+        description: 'A powerful, responsive table and datagrids built using Tanstack',
+        to: '/components/table',
         una: {
           btnLeading: 'text-green',
         },
@@ -130,9 +113,8 @@ const itemsCustom = ref([
       {
         leading: 'i-lucide-crown',
         label: 'Tooltip',
-        to: '/tooltip',
-        description:
-      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
+        description: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
+        to: '/components/tooltip',
         una: {
           btnLeading: 'text-blue',
         },
@@ -155,24 +137,6 @@ const options = ref([
   { label: 'Custom root props', value: 'root' },
 ])
 const value = ref('default')
-
-const beachAmenities = [
-  {
-    label: 'Test',
-    description:
-      'Alert that interrupts the user with important content and expects a response.',
-  },
-  {
-    label: 'Hover Card',
-    description:
-      'For sighted users to preview content available behind a link.',
-  },
-  {
-    label: 'Scroll-area',
-    to: '/scroll-area',
-    description: 'Visually or semantically separates content.',
-  },
-]
 </script>
 
 <template>
@@ -218,8 +182,8 @@ const beachAmenities = [
           <span class="text-primary fw800">{{ item.label }}</span>
         </div>
       </template>
-      <template #composables-content>
-        <div class="grid grid-cols-2 w-[600px] gap-5 p-4">
+      <template #guide-content>
+        <div class="grid grid-cols-2 w-600px gap-5 p-4">
           <img
             src="https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2563.jpg?semt=ais_hybrid"
             alt="Beach"
@@ -227,9 +191,9 @@ const beachAmenities = [
           >
           <ul class="flex flex-col gap-2">
             <NNavigationMenuContentItem
-              v-for="beachAmenity in beachAmenities"
-              :key="beachAmenity.label"
-              v-bind="{ ...beachAmenity }"
+              v-for="item in itemsCustom[0].children"
+              :key="item.label"
+              v-bind="{ ...item }"
             />
           </ul>
         </div>
