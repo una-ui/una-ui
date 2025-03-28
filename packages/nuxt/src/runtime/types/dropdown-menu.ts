@@ -1,6 +1,7 @@
 import type {
   DropdownMenuContentProps,
   DropdownMenuGroupProps,
+  DropdownMenuItemProps,
   DropdownMenuLabelProps,
   DropdownMenuRootProps,
   DropdownMenuSeparatorProps,
@@ -9,6 +10,7 @@ import type {
   DropdownMenuTriggerProps,
 } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
+import type { FocusOutsideEvent, PointerDownOutsideEvent } from './'
 import type { NButtonProps } from './button'
 import type { NSeparatorProps } from './separator'
 
@@ -28,7 +30,7 @@ interface BaseExtensions {
 export interface NDropdownMenuProps extends
   Omit<NDropdownMenuRootProps, 'class' | 'size'>,
   Omit<NDropdownMenuTriggerProps, 'una'>,
-  Pick<NDropdownMenuItemProps, 'shortcut' | 'dropdownMenuItem' | 'onClick'> {
+  Omit<NDropdownMenuItemProps, 'una'> {
   /** Label for the menu */
   menuLabel?: string
   /** Items in the dropdown menu */
@@ -82,6 +84,17 @@ export interface NDropdownMenuTriggerProps extends NButtonProps, DropdownMenuTri
  * Props for the NDropdownMenuContent component.
  */
 export interface NDropdownMenuContentProps extends BaseExtensions, DropdownMenuContentProps {
+  /** Event handler called when auto-focusing on close. Can be prevented. */
+  onCloseAutoFocus?: (e: Event) => void
+  /** Event handler called when the escape key is down. Can be prevented. */
+  onEscapeKeyDown?: (e: KeyboardEvent) => void
+  /** Event handler called when the focus moves outside of the DismissableLayer. Can be prevented. */
+  onFocusOutside?: (e: FocusOutsideEvent) => void
+  /** Event handler called when an interaction happens outside the DismissableLayer. Can be prevented. */
+  onInteractOutside?: (e: PointerDownOutsideEvent | FocusOutsideEvent) => void
+  /** Event handler called when a pointerdown event happens outside of the DismissableLayer. Can be prevented. */
+  onPointerDownOutside?: (e: PointerDownOutsideEvent) => void
+
   /** Additional properties for the una component */
   una?: NDropdownMenuUnaProps['dropdownMenuContent']
 }
@@ -125,7 +138,7 @@ export interface NDropdownMenuSubContentProps extends BaseExtensions, DropdownMe
 /**
  * Props for the NDropdownMenuItem component.
  */
-export interface NDropdownMenuItemProps extends NButtonProps {
+export interface NDropdownMenuItemProps extends DropdownMenuItemProps, NButtonProps {
   /** Dropdown menu item */
   dropdownMenuItem?: HTMLAttributes['class']
   /** Whether the item is inset */
@@ -137,8 +150,8 @@ export interface NDropdownMenuItemProps extends NButtonProps {
   /** Additional properties for the una component */
   una?: NDropdownMenuUnaProps['dropdownMenuItem'] & NButtonProps['una']
 
-  /** Click event handler */
-  onClick?: () => void
+  /** Select event handler */
+  onSelect?: (e: Event) => void
 }
 
 /**
