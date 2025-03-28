@@ -43,6 +43,7 @@ export default defineConfig({
     }),
   ],
   configDeps: [
+    './packages/preset/src/_shortcuts/navigation-menu.ts',
     './packages/preset/src/_shortcuts/sidebar.ts',
     './packages/preset/src/_shortcuts/sheet.ts',
     './packages/preset/src/_shortcuts/toast.ts',

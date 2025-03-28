@@ -84,14 +84,20 @@ export default function presetUna(options: unaUIOptions = {
         keyframes: {
           'collapsible-down': '{from{height: 0}to{height:var(--reka-collapsible-content-height)}}',
           'collapsible-up': '{from{height:var(--reka-collapsible-content-height)}to{height: 0}}',
+          'fadeIn': '{from{ opacity: 0 }to{ opacity: 1 }}',
+          'fadeOut': '{from{ opacity: 1 }to{ opacity: 0 }}',
         },
         durations: {
           'collapsible-down': '0.2s',
           'collapsible-up': '0.2s',
+          'fadeIn': '0.2s',
+          'fadeOut': '0.2s',
         },
         timingFns: {
           'collapsible-down': 'ease-in-out',
           'collapsible-up': 'ease-in-out',
+          'fadeIn': 'ease-out',
+          'fadeOut': 'ease-out',
         },
       },
     }),
