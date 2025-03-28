@@ -63,8 +63,10 @@ export interface UnaSettings {
   radius: number
 }
 
-export type PointerDownOutsideEvent = CustomEvent<{
-  originalEvent: PointerEvent
+export type OutsideEvent<T extends Event> = CustomEvent<{
+  originalEvent: T
 }>
 
-export type FocusOutsideEvent = CustomEvent<{ originalEvent: FocusEvent }>
+export type PointerDownOutsideEvent = OutsideEvent<PointerEvent>
+
+export type FocusOutsideEvent = OutsideEvent<FocusEvent>
