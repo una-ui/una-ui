@@ -193,7 +193,7 @@ export interface NTableLoadingProps {
   _tableRow?: NTableRowProps
   _tableProgress?: NProgressProps
 
-  una?: Pick<NTableUnaProps, 'tableLoading' | 'tableRow' | 'tableCell'>
+  una?: Pick<NTableUnaProps, 'tableLoading' | 'tableLoadingCell' | 'tableLoadingRow'>
 }
 
 export interface NTableCaptionProps {
@@ -214,4 +214,6 @@ interface NTableUnaProps {
   tableCaption?: HTMLAttributes['class']
   tableEmpty?: HTMLAttributes['class']
   tableLoading?: HTMLAttributes['class']
+  tableLoadingRow?: HTMLAttributes['class']
+  tableLoadingCell?: HTMLAttributes['class']
 }
