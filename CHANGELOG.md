@@ -1,3 +1,18 @@
+# [0.47.0](https://github.com/una-ui/una-ui/compare/v0.46.0...v0.47.0) (2025-03-28)
+
+
+### Bug Fixes
+
+* **Table:** isolate una configuration to table-loading components ([86c7d07](https://github.com/una-ui/una-ui/commit/86c7d07f36c5df62785609a5b995145ad2ebb306))
+
+
+### Features
+
+* **DropdownMenu:** add support for event handlers ([#364](https://github.com/una-ui/una-ui/issues/364)) ([a170231](https://github.com/una-ui/una-ui/commit/a170231f176b0a2a64937ca23500cd73fa2f91a0))
+* **Preset:** add  and use  to base html class ([978f7d3](https://github.com/una-ui/una-ui/commit/978f7d34eae12945788ef9cf8423779f07ca5c9c))
+
+
+
 # [0.46.0](https://github.com/una-ui/una-ui/compare/v0.45.0...v0.46.0) (2025-03-25)
 
 
