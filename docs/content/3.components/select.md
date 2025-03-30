@@ -158,15 +158,16 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 ## Slots
 
-| Name      | Props   | Description                   |
-| --------- | ------- | ----------------------------- |
-| `root`    | `value` | Overrides all sub-components. |
-| `trigger` | `value` | The trigger slot.             |
-| `value`   | `value` | The value slot.               |
-| `content` | `items` | The content slot.             |
-| `label`   | `label` | The label slot.               |
-| `item`    | `item`  | The item slot.                |
-| `group`   | `items` | The group slot.               |
+| Name              | Props   | Description                          |
+| ----------------- | ------- | ------------------------------------ |
+| `root`            | `value` | Overrides all sub-components.        |
+| `trigger-wrapper` | `value` | Override the default trigger button. |
+| `trigger`         | `value` | The trigger slot.                    |
+| `value`           | `value` | The value slot.                      |
+| `content`         | `items` | The content slot.                    |
+| `label`           | `label` | The label slot.                      |
+| `item`            | `item`  | The item slot.                       |
+| `group`           | `items` | The group slot.                      |
 
 :::CodeGroup
 ::div{label="Preview"}
