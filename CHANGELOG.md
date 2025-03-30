@@ -1,3 +1,12 @@
+## [0.47.2](https://github.com/una-ui/una-ui/compare/v0.47.1...v0.47.2) (2025-03-30)
+
+
+### Features
+
+* **Pagination:** add `square` prop and add `pagination` preset config ([3bb6bb9](https://github.com/una-ui/una-ui/commit/3bb6bb93a4ef45aa4957d537f1cf86ec3911b884))
+
+
+
 ## [0.47.1](https://github.com/una-ui/una-ui/compare/v0.47.0...v0.47.1) (2025-03-30)
 
 
