@@ -1,3 +1,18 @@
+## [0.47.1](https://github.com/una-ui/una-ui/compare/v0.47.0...v0.47.1) (2025-03-30)
+
+
+### Bug Fixes
+
+* **Button:** update preset and leading configuration ([dd98110](https://github.com/una-ui/una-ui/commit/dd98110b361d6666b715029829a703d9af2fadac))
+* **DropdownMenu:** update sizes, padding, and height config ([d285c91](https://github.com/una-ui/una-ui/commit/d285c91d418e51f36c89b8b6b53def342d612f34))
+
+
+### Features
+
+* **Select:** add trigger-wrapper slot ([2083e5e](https://github.com/una-ui/una-ui/commit/2083e5eddc5bd312418dc5c7fed6a4aeb1a6da19))
+
+
+
 # [0.47.0](https://github.com/una-ui/una-ui/compare/v0.46.0...v0.47.0) (2025-03-28)
 
 
