@@ -29,6 +29,8 @@ const forwardedProps = useForwardProps(delegatedProps)
         v-bind="forwardedProps"
         :class="cn(
           'pagination-last',
+          props.una?.pagination,
+          props.una?.paginationLast,
           props.class,
         )"
       />

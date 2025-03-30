@@ -80,6 +80,10 @@ badges:
 | `listItemSize`  | `sm`    | `string` | Customizes the size of the page list items.      |
 | `ellipsisSize`  | `sm`    | `string` | Customizes the size of the ellipsis indicator.   |
 
+::alert
+By default, the size prop applies to height, width, padding, and font size. If you only want to change the size of the button, use the `square` prop. Refer to the [Button square section](/components/button#square) for more information.
+::
+
 :read-more{to="/components/button#size" title="Button size section" target="_blank"}
 
 :::CodeGroup
