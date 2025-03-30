@@ -89,8 +89,10 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       <NIcon
         v-if="leading"
         :name="leading"
-        :class="una?.btnLeading"
-        btn="leading"
+        :class="cn(
+          'btn-leading',
+          una?.btnLeading,
+        )"
       />
     </slot>
 
