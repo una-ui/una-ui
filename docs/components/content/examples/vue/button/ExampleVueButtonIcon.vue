@@ -15,7 +15,6 @@
         label="i-heroicons-arrow-down-tray-20-solid"
         icon
         btn="soft"
-        square
       />
     </div>
 
@@ -29,14 +28,14 @@
       <NButton
         label="i-heroicons-bell-20-solid group-hover:i-heroicons-bell-alert-20-solid"
         icon
-        btn="square solid-black"
+        btn="solid-black"
         class="group rounded-none"
       />
 
       <NButton
         label="i-heroicons-envelope-20-solid group-focus:i-heroicons-envelope-open-20-solid"
         icon
-        btn="outline-green square focus:outline-yellow"
+        btn="outline-green focus:outline-yellow"
         class="group rounded-full"
       />
     </div>
@@ -49,17 +48,17 @@
 
     <div class="flex flex-col gap-2 sm:flex-row">
       <NButton
-        leading="i-logos-google-icon"
+        trailing="i-logos-google-icon"
         btn="solid-gray"
         label="Sign in with Google"
       />
       <NButton
-        leading="i-logos-facebook text-lg"
+        leading="i-logos-facebook"
         btn="solid-white"
         label="Sign in with Facebook"
       />
       <NButton
-        leading="i-bi-github text-lg"
+        leading="i-logos-github-icon"
         btn="solid-black"
         label="Sign in with Github"
       />

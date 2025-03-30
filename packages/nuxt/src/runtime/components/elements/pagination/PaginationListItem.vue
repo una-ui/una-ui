@@ -35,6 +35,8 @@ const forwardedProps = useForwardProps(delegatedProps)
       :label
       :class="cn(
         'pagination-list-item',
+        props?.una?.pagination,
+        props?.una?.paginationListItem,
         props.class,
       )"
     >

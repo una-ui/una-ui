@@ -7,6 +7,9 @@ const items = [
   {
     label: 'Billing',
     shortcut: '⌘+B',
+    onSelect: () => {
+      alert('selected')
+    },
   },
   {
     label: 'Invite users',
@@ -14,10 +17,16 @@ const items = [
       {
         label: 'Email',
         shortcut: '⌘+E',
+        onSelect: () => {
+          alert('selected')
+        },
       },
       {
         label: 'Message',
         shortcut: '⌘+M',
+        onSelect: () => {
+          alert('selected')
+        },
       },
       {
         // if you want to ad separator between items, just don't provide label and items
@@ -87,6 +96,18 @@ const items = [
       class: 'w-52',
       side: 'right',
       align: 'start',
+      onEscapeKeyDown: () => {
+        console.log('escape')
+      },
+      onFocusOutside: () => {
+        console.log('focus outside')
+      },
+      onInteractOutside: () => {
+        console.log('interact outside')
+      },
+      onPointerDownOutside: () => {
+        console.log('pointer down outside')
+      },
     }"
     label="Open"
   />
