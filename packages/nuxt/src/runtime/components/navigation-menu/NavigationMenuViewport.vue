@@ -22,6 +22,7 @@ const forwardedProps = useForwardProps(delegatedProps)
   <div
     :class="cn(
       'navigation-menu-viewport-wrapper',
+      props.una?.navigationMenuViewportWrapper,
       props.class,
     )"
   >
@@ -30,7 +31,8 @@ const forwardedProps = useForwardProps(delegatedProps)
       :class="
         cn(
           'navigation-menu-viewport',
-          ' data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90',
+          'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90',
+          props.una?.navigationMenuViewport,
         )
       "
     />

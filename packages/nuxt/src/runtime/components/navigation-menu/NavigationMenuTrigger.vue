@@ -20,8 +20,8 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :class="cn(
       'navigation-menu-trigger group',
-      props.class,
       props.una?.navigationMenuTrigger,
+      props.class,
     )"
     :as="Button"
     :trailing="trailing ?? 'navigation-menu-trigger-trailing-default'"

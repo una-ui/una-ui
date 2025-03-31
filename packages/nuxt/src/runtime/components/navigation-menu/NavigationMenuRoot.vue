@@ -17,7 +17,11 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <NavigationMenuRoot
     v-bind="forwarded"
-    :class="cn('navigation-menu-root', props.class, props.una?.navigationMenuRoot)"
+    :class="cn(
+      'navigation-menu-root',
+      props.una?.navigationMenuRoot,
+      props.class,
+    )"
   >
     <slot :model-value />
     <slot name="viewport">

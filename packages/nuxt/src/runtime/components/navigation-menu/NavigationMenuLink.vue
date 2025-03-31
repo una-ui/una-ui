@@ -18,6 +18,7 @@ const forwarded = useForwardPropsEmits(props, emits)
     v-bind="forwarded"
     :class="cn(
       'navigation-menu-link',
+      props.una?.navigationMenuLink,
       props.class,
     )"
     :navigation-menu-link

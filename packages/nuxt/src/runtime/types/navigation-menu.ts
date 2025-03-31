@@ -43,7 +43,7 @@ export interface NNavigationMenuProps<T> extends Omit<NavigationMenuRootProps, '
   /** Props for the navigation menu list */
   _navigationMenuList?: Partial<NNavigationMenuListProps>
   /** Props for the navigation menu list item */
-  _navigationMenuListItem?: Partial<NNavigationMenuListProps>
+  _navigationMenuListItem?: Partial<NNavigationMenuListItemProps>
   /** Props for the navigation menu link */
   _navigationMenuLink?: Partial<NNavigationMenuLinkProps>
   /** Props for the navigation menu indicator */
@@ -123,14 +123,14 @@ export interface NNavigationMenuListItemProps extends NNavigationMenuLinkProps {
   /** Description of the link. This is only used when `orientation` is `horizontal`. */
   description?: string
   /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenuListItem']
+  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuListItem' | 'navigationMenuContentItem' | 'navigationMenuContentItemWrapper' | 'navigationMenuContentItemLabel' | 'navigationMenuContentItemDescription'>
 }
 
 export interface NNavigationMenuSubProps extends NavigationMenuSubProps {}
 
 export interface NNavigationMenuViewportProps extends NavigationMenuViewportProps, Pick<NavigationMenuRootProps, 'orientation'>, Pick<BaseExtensions, 'class'> {
   /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenuViewport']
+  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuViewport' | 'navigationMenuViewportWrapper'>
 }
 
 interface NNavigationMenuUnaProps {
@@ -138,12 +138,18 @@ interface NNavigationMenuUnaProps {
   navigationMenuRoot?: HTMLAttributes['class']
   /** CSS class for the navigation menu content */
   navigationMenuContent?: HTMLAttributes['class']
+  /** CSS class for the navigation menu content item */
+  navigationMenuContentItem?: HTMLAttributes['class']
+  /** CSS class for the navigation menu content item wrapper */
+  navigationMenuContentItemWrapper?: HTMLAttributes['class']
+  /** CSS class for the navigation menu content item label */
+  navigationMenuContentItemLabel?: HTMLAttributes['class']
+  /** CSS class for the navigation menu content item description */
+  navigationMenuContentItemDescription?: HTMLAttributes['class']
   /** CSS class for the navigation menu trigger */
   navigationMenuTrigger?: HTMLAttributes['class']
   /** CSS class for the navigation menu trigger default variant */
   navigationMenuDefaultVariant?: HTMLAttributes['class']
-  /** CSS class for the navigation menu viewport */
-  navigationMenuViewport?: HTMLAttributes['class']
   /** CSS class for the navigation menu list */
   navigationMenuList?: HTMLAttributes['class']
   /** CSS class for the navigation menu list item */
@@ -154,4 +160,10 @@ interface NNavigationMenuUnaProps {
   navigationMenuLink?: HTMLAttributes['class']
   /** CSS class for the navigation menu indicator */
   navigationMenuIndicator?: HTMLAttributes['class']
+  /** CSS class for the navigation menu indicator arrow */
+  navigationMenuIndicatorArrow?: HTMLAttributes['class']
+  /** CSS class for the navigation menu viewport */
+  navigationMenuViewport?: HTMLAttributes['class']
+  /** CSS class for the navigation menu viewport wrapper */
+  navigationMenuViewportWrapper?: HTMLAttributes['class']
 }

@@ -16,11 +16,14 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :class="cn(
       'navigation-menu-indicator',
-      props.class,
       props.una?.navigationMenuIndicator,
+      props.class,
     )"
   >
     <slot />
-    <div class="navigation-menu-indicator-arrow" />
+    <div
+      class="navigation-menu-indicator-arrow"
+      :class="props.una?.navigationMenuIndicatorArrow"
+    />
   </NavigationMenuIndicator>
 </template>

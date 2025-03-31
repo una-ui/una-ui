@@ -21,10 +21,10 @@ const forwardedProps = useForwardProps(delegatedProps)
     :class="
       cn(
         'group',
-        props.class,
         'navigation-menu-list',
         props.orientation === 'vertical' ? 'navigation-menu-list-vertical' : 'navigation-menu-list-horizontal',
         props.una?.navigationMenuList,
+        props.class,
       )
     "
   >
