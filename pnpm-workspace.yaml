@@ -13,7 +13,7 @@ catalog:
   '@iconify-json/tabler': ^1.2.17
   '@iconify/json': ^2.2.319
   '@iconify/utils': ^2.3.0
-  '@nuxt/devtools': ^2.3.1
+  '@nuxt/devtools': ^2.3.2
   '@nuxt/kit': ^3.16.1
   '@nuxt/module-builder': ^0.8.4
   '@nuxt/schema': ^3.16.1
@@ -22,7 +22,7 @@ catalog:
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.13.13
+  '@types/node': ^22.13.14
   '@una-ui/content': ^45.1.0
   '@unocss/core': ^66.0.0
   '@unocss/eslint-config': ^66.0.0
