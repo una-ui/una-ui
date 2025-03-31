@@ -22,9 +22,7 @@ const forwarded = useForwardPropsEmits(props, emits)
       props.class,
     )"
     :navigation-menu-link
-    :una="{
-      ...props.una,
-    }"
+    :una
     :as="Button"
   >
     <slot />
