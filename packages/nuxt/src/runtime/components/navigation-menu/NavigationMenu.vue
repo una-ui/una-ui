@@ -39,7 +39,7 @@ const [DefineLinkTemplate, ReuseLinkTemplate] = createReusableTemplate()
       props.class,
     )"
   >
-    <slot>
+    <slot :items="items">
       <DefineLinkTemplate v-slot="{ link, isList }">
         <component
           :is="isList ? NavigationMenuContentItem : NavigationMenuLink"
