@@ -48,6 +48,11 @@ const data = {
           badge: 'deprecated' as const,
         },
         {
+          title: 'Aspect Ratio',
+          url: '/components/aspect-ratio',
+          badge: 'new' as const,
+        },
+        {
           title: 'Avatar',
           url: '/components/avatar',
         },
