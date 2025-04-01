@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<NNavigationMenuProps<T>>(), {
 })
 const emits = defineEmits<NavigationMenuRootEmits>()
 
-const rootProps = reactiveOmit(props, ['navigationMenu', 'navigationMenuLink', 'una'])
+const rootProps = reactiveOmit(props, ['navigationMenu', 'navigationMenuLink', 'una', 'items'])
 const forwarded = useForwardPropsEmits(rootProps, emits)
 
 const [DefineLinkTemplate, ReuseLinkTemplate] = createReusableTemplate()
@@ -118,7 +118,10 @@ const [DefineLinkTemplate, ReuseLinkTemplate] = createReusableTemplate()
     </slot>
 
     <slot name="viewport">
-      <NavigationMenuViewport v-bind="props._navigationMenuViewport" :orientation="props.orientation" />
+      <NavigationMenuViewport
+        v-bind="props._navigationMenuViewport"
+        :orientation="props.orientation"
+      />
     </slot>
   </NavigationMenuRoot>
 </template>

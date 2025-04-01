@@ -8,7 +8,10 @@ import {
 import { cn } from '../../utils'
 import Button from '../elements/Button.vue'
 
-const props = defineProps<NNavigationMenuTriggerProps>()
+const props = withDefaults(defineProps<NNavigationMenuTriggerProps>(), {
+  btn: 'ghost-white',
+  trailing: 'navigation-menu-trigger-trailing-icon',
+})
 
 const delegatedProps = reactiveOmit(props, 'class')
 
@@ -23,11 +26,10 @@ const forwardedProps = useForwardProps(delegatedProps)
       props.una?.navigationMenuTrigger,
       props.class,
     )"
+    btn="~"
     :as="Button"
-    :trailing="trailing ?? 'navigation-menu-trigger-trailing-default'"
     :una="{
       btnTrailing: cn('navigation-menu-trigger-trailing', forwardedProps.una?.btnTrailing),
-      btnDefaultVariant: cn('navigation-menu-default-variant', forwardedProps.una?.btnDefaultVariant),
       ...props.una,
     }"
   >

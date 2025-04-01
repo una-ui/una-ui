@@ -30,8 +30,6 @@ export interface NNavigationMenuProps<T> extends Omit<NavigationMenuRootProps, '
   /** Whether to show the indicator or not */
   indicator?: boolean
 
-  /** Props for the navigation menu root */
-  _navigationMenuRoot?: Partial<NNavigationMenuRootProps>
   /** Props for the navigation menu trigger */
   _navigationMenuTrigger?: Partial<NNavigationMenuTriggerProps>
   /** Props for the navigation menu content */
@@ -55,11 +53,6 @@ export interface NNavigationMenuProps<T> extends Omit<NavigationMenuRootProps, '
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/navigation-menu.ts
    */
   una?: NNavigationMenuUnaProps
-}
-
-export interface NNavigationMenuRootProps extends NavigationMenuRootProps, Pick<BaseExtensions, 'class'>, Pick<NNavigationMenuProps<NNavigationMenuItemProps[]>, '_navigationMenuViewport'> {
-  /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenu']
 }
 
 export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps, Omit<NButtonProps, 'disabled' | 'size' | 'navigationMenuLink'>, BaseExtensions {

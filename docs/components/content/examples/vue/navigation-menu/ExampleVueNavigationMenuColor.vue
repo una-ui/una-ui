@@ -65,5 +65,21 @@ const items = [
 </script>
 
 <template>
-  <NNavigationMenu :items navigation-menu="ghost-primary" navigation-menu-link="ghost-orange" />
+  <div class="flex flex-col gap-4">
+    <NNavigationMenu
+      :items
+      class="z-20"
+      navigation-menu="solid-gray"
+      navigation-menu-link="solid-white"
+    />
+
+    <NNavigationMenu
+      :items
+      navigation-menu="~"
+      navigation-menu-link="solid-gray"
+      :una="{
+        navigationMenuContentItemDescription: 'text-primary group-hover:text-primary-active',
+      }"
+    />
+  </div>
 </template>

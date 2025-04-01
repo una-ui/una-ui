@@ -14,7 +14,7 @@ export const staticNavigationMenu: Record<`${NavigationMenuPrefix}-${string}` | 
   'navigation-menu-link': '',
   'navigation-menu-trigger': '',
   'navigation-menu-trigger-trailing': 'size-5 transform shrink-0 group-data-[state=open]:rotate-180 transition-transform duration-200',
-  'navigation-menu-trigger-trailing-icon': 'i-lucide-chevron-down ',
+  'navigation-menu-trigger-trailing-icon': 'i-lucide-chevron-down',
 
   'navigation-menu-content-item': 'flex items-start select-none rounded-md p-3 h-unset leading-none no-underline outline-none transition-colors whitespace-normal justify-start',
   'navigation-menu-content-list': 'grid w-400px gap-3 p-4 md:grid-cols-2 lg:w-600px md:w-500px',

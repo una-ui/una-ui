@@ -17,11 +17,13 @@ const forwarded = useForwardPropsEmits(props, emits)
   <NavigationMenuLink
     v-bind="forwarded"
     :class="cn(
-      'navigation-menu-link',
+      'navigation-menu-link group',
       props.una?.navigationMenuLink,
       props.class,
     )"
-    :navigation-menu-link
+    btn="~"
+    :navigation-menu-link="navigationMenu ? undefined : navigationMenuLink"
+    :navigation-menu
     :una
     :as="Button"
   >

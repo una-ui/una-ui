@@ -84,7 +84,11 @@ An optional indicator element that renders below the list, is used to highlight 
 | `navigation-menu`                          | `ghost-white` | `{variant}-{color}` | Set the navigation-menu variant and color.                                      |
 | `navigation-menu-link`                     | `ghost-white` | `{variant}-{color}` | Set the navigation-menu link variant and color.                                 |
 | `_navigationMenuTrigger.navigation-menu`   | `ghost-white` | `{variant}-{color}` | Set the navigation-menu trigger variant and color via `_navigationMenuTrigger`. |
-| `_navigationMenuLink.navigation-menu-link` | `ghot-white`  | `{variant}-{color}` | Set the navigation-menu link variant and color via `_navigationMenuLink`.       |
+| `_navigationMenuLink.navigation-menu-link` | `ghost-white` | `{variant}-{color}` | Set the navigation-menu link variant and color via `_navigationMenuLink`.       |
+
+::alert
+Colors do not apply to the list item descriptions; use the `una.navigationMenuContentItemDescription` prop to customize them.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -94,6 +98,8 @@ An optional indicator element that renders below the list, is used to highlight 
 @@@ ./components/content/examples/vue/navigation-menu/ExampleVueNavigationMenuColor.vue
 ::
 :::
+
+:read-more{to="/components/button#variant" title="Button Variant and Color API."}
 
 ### Size
 
@@ -152,10 +158,6 @@ It is important that you can also use dynamic slots to customize individual part
 :::CodeGroup
 ::div{label="NavigationMenu.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/navigation-menu/NavigationMenu.vue
-
-::
-::div{label="NavigationMenuRoot.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/navigation-menu/NavigationMenuRoot.vue
 
 ::
 ::div{label="NavigationMenuTrigger.vue" icon="i-vscode-icons-file-type-vue"}
