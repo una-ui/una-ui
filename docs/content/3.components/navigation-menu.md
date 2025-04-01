@@ -32,7 +32,7 @@ badges:
 | Item Prop | Default     | Type     | Description                                  |
 | --------- | ----------- | -------- | -------------------------------------------- |
 | `items`   | `[]`        | `T[]`    | The items to display in the navigation-menu. |
-| `slot`    | `undefined` | `string` | The slot of the navigation-menu.             |
+| `slot`    | `undefined` | `string` | The slot name of the navigation-menu item.   |
 
 ::alert
 The `T` generic extends the `NButton` and `NLink` components, which means that you can use all the props from the [Button](/components/button#props) and [Link](/components/link#props) components.
