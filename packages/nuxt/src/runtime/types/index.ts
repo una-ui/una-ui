@@ -1,5 +1,6 @@
 export * from './accordion'
 export * from './alert'
+export * from './aspect-ratio'
 export * from './avatar'
 export * from './avatar-group'
 export * from './badge'
