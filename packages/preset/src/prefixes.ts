@@ -69,7 +69,6 @@ export default [
   'navigation-menu-item',
   'navigation-menu-link',
   'navigation-menu-list',
-  'navigation-menu-root',
   'navigation-menu-trigger',
   'navigation-menu-viewport',
   'pagination',
