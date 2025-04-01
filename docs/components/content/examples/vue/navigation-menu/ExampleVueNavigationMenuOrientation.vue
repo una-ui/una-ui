@@ -80,6 +80,8 @@ const radioValue = ref<'horizontal' | 'vertical'>('horizontal')
       :items="options"
     />
   </div>
-  <NNavigationMenu v-if="radioValue === 'horizontal'" :items orientation="horizontal" />
-  <NNavigationMenu v-else :items orientation="vertical" />
+  <NNavigationMenu
+    :items :orientation="radioValue"
+    indicator
+  />
 </template>

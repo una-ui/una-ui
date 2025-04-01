@@ -25,9 +25,9 @@ export const staticNavigationMenu: Record<`${NavigationMenuPrefix}-${string}` | 
   'navigation-menu-list-horizontal': 'flex flex-1 list-none items-center justify-center gap-x-1',
   'navigation-menu-list-vertical': 'max-w-none list-none flex-col items-start gap-1 space-x-0',
 
-  'navigation-menu-viewport-wrapper': 'absolute left-0 top-full flex justify-center',
-  'navigation-menu-viewport-vertical': 'absolute bottom-full -mt-1.5 flex justify-center -right-2',
-  'navigation-menu-viewport-wrapper-vertical': 'absolute -right-7 bottom-0 flex justify-center',
+  'navigation-menu-viewport-wrapper': '',
+  'navigation-menu-viewport-wrapper-horizontal': 'absolute left-0 top-full flex justify-center',
+  'navigation-menu-viewport-wrapper-vertical': 'absolute top-0 left-full ml-1.5',
 }
 
 export const dynamicNavigationMenu = [
