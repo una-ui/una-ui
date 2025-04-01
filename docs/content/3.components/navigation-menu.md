@@ -29,10 +29,10 @@ badges:
 | `skipDelayDuration`        | `300`   | `number`  | How much time a user has to enter another trigger without incurring a delay again.   |
 | `unmountOnHide`            | `true`  | `boolean` | When true, the element will be unmounted on closed state.                            |
 
-| Item Prop | Default     | Type     | Description                                  |
-| --------- | ----------- | -------- | -------------------------------------------- |
-| `items`   | `[]`        | `T[]`    | The items to display in the navigation-menu. |
-| `slot`    | `undefined` | `string` | The slot name of the navigation-menu item.   |
+| Item Prop | Default     | Type     | Description                                          |
+| --------- | ----------- | -------- | ---------------------------------------------------- |
+| `items`   | `[]`        | `T[]`    | The items to display in the navigation-menu content. |
+| `slot`    | `undefined` | `string` | The slot name of the navigation-menu content.        |
 
 ::alert
 The `T` generic extends the `NButton` and `NLink` components, which means that you can use all the props from the [Button](/components/button#props) and [Link](/components/link#props) components.
