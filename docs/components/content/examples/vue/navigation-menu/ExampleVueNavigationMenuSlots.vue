@@ -8,17 +8,17 @@ const items = [
       {
         label: 'Atomic Design',
         description: 'Consistent, maintainable UI components',
-        to: '/features/atomic-design',
+        to: '#features/atomic-design',
       },
       {
         label: 'Responsive',
         description: 'Works on all device sizes',
-        to: '/features/responsive',
+        to: '#features/responsive',
       },
       {
         label: 'Themeable',
         description: 'Customize with your own themes',
-        to: '/features/themeable',
+        to: '#features/themeable',
       },
     ],
   },
@@ -30,17 +30,17 @@ const items = [
       {
         label: 'Buttons',
         description: 'Interactive button elements',
-        to: '/components/buttons',
+        to: '#components/buttons',
       },
       {
         label: 'Cards',
         description: 'Content containers with various styles',
-        to: '/components/cards',
+        to: '#components/cards',
       },
       {
         label: 'Forms',
         description: 'Input components and validation',
-        to: '/components/forms',
+        to: '#components/forms',
       },
     ],
   },
@@ -52,12 +52,12 @@ const items = [
       {
         label: 'Documentation',
         description: 'Guides and API references',
-        to: '/resources/docs',
+        to: '#resources/docs',
       },
       {
         label: 'Examples',
         description: 'Sample code and demos',
-        to: '/resources/examples',
+        to: '#resources/examples',
       },
     ],
   },
