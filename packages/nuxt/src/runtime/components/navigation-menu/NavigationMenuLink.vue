@@ -5,8 +5,14 @@ import { NavigationMenuLink, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
 import Button from '../elements/Button.vue'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(defineProps<NNavigationMenuLinkProps>(), {
   navigationMenuLink: 'ghost-white',
+  btn: '~',
+  as: Button,
 })
 const emits = defineEmits<NavigationMenuLinkEmits>()
 
@@ -15,18 +21,21 @@ const forwarded = useForwardPropsEmits(props, emits)
 
 <template>
   <NavigationMenuLink
-    v-bind="forwarded"
-    :class="cn(
-      'navigation-menu-link group',
-      props.una?.navigationMenuLink,
-      props.class,
-    )"
-    btn="~"
-    :navigation-menu-link="navigationMenu ? undefined : navigationMenuLink"
-    :navigation-menu
-    :una
-    :as="Button"
+    v-bind="!props.asChild ? {
+      ...$attrs,
+      ...forwarded,
+      class: cn(
+        'navigation-menu-link group',
+        props.una?.navigationMenuLink,
+        props.class,
+      ),
+      navigationMenuLink: btn !== '~' ? undefined : navigationMenuLink,
+      navigationMenu: btn === '~' ? props.navigationMenu : undefined,
+    } : {}"
+    :as-child
+    :as
+    :active
   >
-    <slot />
+    <slot :active="active" />
   </NavigationMenuLink>
 </template>
