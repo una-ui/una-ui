@@ -84,6 +84,10 @@ const data = {
           url: '/components/forms',
         },
         {
+          title: 'Navigation Menu',
+          url: '/components/navigation-menu',
+        },
+        {
           title: 'Pagination',
           url: '/components/pagination',
         },
