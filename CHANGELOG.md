@@ -1,3 +1,12 @@
+# [0.48.0](https://github.com/una-ui/una-ui/compare/v0.47.2...v0.48.0) (2025-04-01)
+
+
+### Features
+
+* **NavigationMenu:** introduce new components and presets ([#363](https://github.com/una-ui/una-ui/issues/363)) ([7097549](https://github.com/una-ui/una-ui/commit/7097549846259d8aeb3452e724ce580f066828b9))
+
+
+
 ## [0.47.2](https://github.com/una-ui/una-ui/compare/v0.47.1...v0.47.2) (2025-03-30)
 
 
