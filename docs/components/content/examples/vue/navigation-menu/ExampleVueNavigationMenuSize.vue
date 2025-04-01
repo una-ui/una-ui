@@ -2,7 +2,7 @@
 const itemsMd = [
   {
     label: 'Guide (Md)',
-    children: [
+    items: [
       {
         label: 'Introduction',
         description: 'Una UI is an atomic UI Framework powered by the UNOCSS engine. It provides components and presets for creating stunning user interfaces with ease.',
@@ -27,7 +27,7 @@ const itemsMd = [
   },
   {
     label: 'Components (Md)',
-    children: [
+    items: [
       {
         label: 'Dropdown Menu',
         description: 'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',
@@ -55,7 +55,7 @@ const itemsMd = [
 const itemsLg = [
   {
     label: 'Guide (Lg)',
-    children: [
+    items: [
       {
         label: 'Introduction',
         description: 'Una UI is an atomic UI Framework powered by the UNOCSS engine. It provides components and presets for creating stunning user interfaces with ease.',
@@ -80,7 +80,7 @@ const itemsLg = [
   },
   {
     label: 'Components (Lg)',
-    children: [
+    items: [
       {
         label: 'Dropdown Menu',
         description: 'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',

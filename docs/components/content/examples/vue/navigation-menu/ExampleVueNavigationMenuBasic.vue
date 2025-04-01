@@ -2,11 +2,12 @@
 const items = [
   {
     label: 'Guide',
-    children: [
+    items: [
       {
         label: 'Introduction',
         description: 'Una UI is an atomic UI Framework powered by the UNOCSS engine. It provides components and presets for creating stunning user interfaces with ease.',
         to: '/getting-started/introduction',
+        active: true,
       },
       {
         label: 'Installation',
@@ -27,7 +28,7 @@ const items = [
   },
   {
     label: 'Components',
-    children: [
+    items: [
       {
         label: 'Dropdown Menu',
         description: 'Displays a menu to the user — such as a set of actions or functions — triggered by a button.',
@@ -65,5 +66,7 @@ const items = [
 </script>
 
 <template>
-  <NNavigationMenu :items />
+  <NNavigationMenu
+    :items
+  />
 </template>

@@ -17,18 +17,26 @@ badges:
 
 ### Basic
 
-| Prop                       | Default | Type                         | Description                                                                                                                                             |
-| -------------------------- | ------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `items`                    | `[]`    | `NNavigationMenuItemProps[]` | The items to display in the navigation-menu.                                                                                                            |
-| `delayDuration`            | `200`   | `number`                     | The duration from when the pointer enters the trigger until the tooltip gets opened.                                                                    |
-| `defaultValue`             | -       | `string`                     | The value of the menu item that should be active when initially rendered.                                                                               |
-| `dir`                      | -       | `ltr`, `rtl`                 | The reading direction of the combobox when applicable. If omitted, inherits globally from `ConfigProvider` or assumes LTR (left-to-right) reading mode. |
-| `disableClickTrigger`      | `false` | `boolean`                    | If `true`, menu cannot be open by click on trigger.                                                                                                     |
-| `disableHoverTrigger`      | `false` | `boolean`                    | If `true`, menu cannot be open by hover on trigger.                                                                                                     |
-| `disablePointerLeaveClose` | -       | `boolean`                    | If true, menu will not close during pointer leave event.                                                                                                |
-| `modelValue`               | -       | `string`                     | The controlled value of the menu item to activate. Can be used as v-model.                                                                              |
-| `skipDelayDuration`        | `300`   | `number`                     | How much time a user has to enter another trigger without incurring a delay again.                                                                      |
-| `unmountOnHide`            | `true`  | `boolean`                    | When true, the element will be unmounted on closed state.                                                                                               |
+| Prop                       | Default | Type      | Description                                                                          |
+| -------------------------- | ------- | --------- | ------------------------------------------------------------------------------------ |
+| `items`                    | `[]`    | `T`       | The items to display in the navigation-menu.                                         |
+| `delayDuration`            | `200`   | `number`  | The duration from when the pointer enters the trigger until the tooltip gets opened. |
+| `defaultValue`             | -       | `string`  | The value of the menu item that should be active when initially rendered.            |
+| `disableClickTrigger`      | `false` | `boolean` | If `true`, menu cannot be open by click on trigger.                                  |
+| `disableHoverTrigger`      | `false` | `boolean` | If `true`, menu cannot be open by hover on trigger.                                  |
+| `disablePointerLeaveClose` | -       | `boolean` | If true, menu will not close during pointer leave event.                             |
+| `modelValue`               | -       | `string`  | The controlled value of the menu item to activate. Can be used as v-model.           |
+| `skipDelayDuration`        | `300`   | `number`  | How much time a user has to enter another trigger without incurring a delay again.   |
+| `unmountOnHide`            | `true`  | `boolean` | When true, the element will be unmounted on closed state.                            |
+
+| Item Prop | Default     | Type      | Description                                  |
+| --------- | ----------- | --------- | -------------------------------------------- |
+| `items`   | `[]`        | `TItem[]` | The items to display in the navigation-menu. |
+| `slot`    | `undefined` | `string`  | The slot of the navigation-menu.             |
+
+::alert
+The `T` generic extends the `NButton` and `NLink` components, which means that you can use all the props from the [Button](/components/button#props) and [Link](/components/link#props) components.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -42,10 +50,6 @@ badges:
 :read-more{to="https://www.reka-ui.com/docs/components/navigation-menu#root" title="Reka Navigation Menu Root API." target="_blank"}
 
 ### Indicator
-
-::alert{type="info"}
-An optional indicator element that renders below the list, is used to highlight the currently active trigger.
-::
 
 | Prop        | Default | Type      | Description                                     |
 | ----------- | ------- | --------- | ----------------------------------------------- |
@@ -123,18 +127,19 @@ Adjust the navigation-menu size without limits. Use `breakpoints` (e.g., `sm:sm`
 
 ## Slots
 
-::alert{type="info"}
+::alert
 It is important that you can also use dynamic slots to customize individual parts of `NavigationMenu`. You also have the option for `item` and `content` to use the slot field in the object itself for further dynamic binding.
 ::
 
-| Name                       | Props                         | Description               |
-| -------------------------- | ----------------------------- | ------------------------- |
-| `list`                     | `items`                       | The list slot.            |
-| `trigger`                  | `item`, `index`, `modelValue` | The trigger slot.         |
-| `item`                     | `item`, `active`              | The item static slot.     |
-| `#{{ item.slot }}`         | `item`, `active`              | The item dynamic slot.    |
-| `item-content`             | `children`, `item`            | The content static slot.  |
-| `#{{ item.slot }}-content` | `children`, `item`            | The content dynamic slot. |
+| Name                       | Props                         | Description                             |
+| -------------------------- | ----------------------------- | --------------------------------------- |
+| `default`                  | `items`                       | The default slot, overrides everything. |
+| `list`                     | `items`                       | The list slot.                          |
+| `trigger`                  | `item`, `index`, `modelValue` | The trigger slot.                       |
+| `item`                     | `item`, `active`              | The item static slot.                   |
+| `#{{ item.slot }}`         | `item`, `active`              | The item dynamic slot.                  |
+| `item-content`             | `items`, `item`               | The content static slot.                |
+| `#{{ item.slot }}-content` | `items`, `item`               | The content dynamic slot.               |
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -142,6 +147,18 @@ It is important that you can also use dynamic slots to customize individual part
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/navigation-menu/ExampleVueNavigationMenuSlots.vue
+::
+:::
+
+> The default slot allows you to completely override the `NavigationMenu` structure, following the same pattern used in shadcn/ui.
+
+:::CodeGroup
+::div{label="Preview"}
+:ExampleVueNavigationMenuDefaultSlot
+
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/navigation-menu/ExampleVueNavigationMenuDefaultSlot.vue
 ::
 :::
 
