@@ -2,36 +2,36 @@
 const components: { title: string, to: string, description: string }[] = [
   {
     title: 'Alert Dialog',
-    to: '/docs/components/alert-dialog',
+    to: '#docs/components/alert-dialog',
     description:
       'A modal dialog that interrupts the user with important content and expects a response.',
   },
   {
     title: 'Hover Card',
-    to: '/docs/components/hover-card',
+    to: '#docs/components/hover-card',
     description:
       'For sighted users to preview content available behind a link.',
   },
   {
     title: 'Progress',
-    to: '/docs/components/progress',
+    to: '#docs/components/progress',
     description:
       'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
   },
   {
     title: 'Scroll-area',
-    to: '/docs/components/scroll-area',
+    to: '#docs/components/scroll-area',
     description: 'Visually or semantically separates content.',
   },
   {
     title: 'Tabs',
-    to: '/docs/components/tabs',
+    to: '#docs/components/tabs',
     description:
       'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
   },
   {
     title: 'Tooltip',
-    to: '/docs/components/tooltip',
+    to: '#docs/components/tooltip',
     description:
       'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
   },
@@ -53,7 +53,7 @@ const components: { title: string, to: string, description: string }[] = [
                 >
                   <NLink
                     class="h-full w-full flex flex-col select-none justify-end rounded-md from-foreground/10 to-foreground/0 bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
-                    to="/"
+                    to="#"
                   >
                     <img src="https://www.reka-ui.com/logo.svg" class="h-6 w-6">
                     <div class="mb-2 mt-4 text-lg font-medium">
@@ -69,7 +69,7 @@ const components: { title: string, to: string, description: string }[] = [
               <li>
                 <NNavigationMenuLink as-child>
                   <NLink
-                    to="/docs/introduction"
+                    to="#/docs/introduction"
                     class="block select-none rounded-md focus:bg-accent hover:bg-accent p-3 focus:text-accent hover:text-accent leading-none no-underline outline-none transition-colors space-y-1"
                   >
                     <div class="text-sm font-medium leading-none">
@@ -84,7 +84,7 @@ const components: { title: string, to: string, description: string }[] = [
               <li>
                 <NNavigationMenuLink as-child>
                   <NLink
-                    to="/docs/installation"
+                    to="#/docs/installation"
                     class="block select-none rounded-md focus:bg-accent hover:bg-accent p-3 focus:text-accent hover:text-accent leading-none no-underline outline-none transition-colors space-y-1"
                   >
                     <div class="text-sm font-medium leading-none">
@@ -99,7 +99,7 @@ const components: { title: string, to: string, description: string }[] = [
               <li>
                 <NNavigationMenuLink as-child>
                   <NLink
-                    to="/docs/typography"
+                    to="#/docs/typography"
                     class="block select-none rounded-md focus:bg-accent hover:bg-accent p-3 focus:text-accent hover:text-accent leading-none no-underline outline-none transition-colors space-y-1"
                   >
                     <div class="text-sm font-medium leading-none">
@@ -135,7 +135,7 @@ const components: { title: string, to: string, description: string }[] = [
           </NNavigationMenuContent>
         </NNavigationMenuItem>
         <NNavigationMenuItem>
-          <NNavigationMenuLink to="/docs/introduction">
+          <NNavigationMenuLink to="#/docs/introduction">
             Documentation
           </NNavigationMenuLink>
         </NNavigationMenuItem>
