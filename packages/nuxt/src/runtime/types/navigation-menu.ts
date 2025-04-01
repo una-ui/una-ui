@@ -55,7 +55,7 @@ export interface NNavigationMenuProps<T> extends Omit<NavigationMenuRootProps, '
   una?: NNavigationMenuUnaProps
 }
 
-export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps, Omit<NButtonProps, 'disabled' | 'size' | 'navigationMenuLink'>, BaseExtensions {
+export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps, Omit<NButtonProps, 'una'> {
   /**
    * Allows you to add `UnaUI` button preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -74,12 +74,12 @@ export interface NNavigationMenuContentProps extends NavigationMenuContentProps,
   una?: NNavigationMenuUnaProps['navigationMenuContent']
 }
 
-export interface NNavigationMenuItemProps extends NavigationMenuItemProps, BaseExtensions, Omit<NNavigationMenuTriggerProps, 'una'>,
+export interface NNavigationMenuItemProps extends NavigationMenuItemProps, Omit<NNavigationMenuTriggerProps, 'una'>,
   Pick<NNavigationMenuLinkProps, 'active' | 'onSelect'>, Pick<NNavigationMenuProps<NNavigationMenuItemProps[]>, '_navigationMenuLink' | '_navigationMenuTrigger'> {
   /** Slot of the navigation menu item */
   slot?: string
   /** The array of links that is passed to the navigation menu items. */
-  children?: NNavigationMenuLinkProps[]
+  items?: NNavigationMenuLinkProps[]
   /** Additional properties for the una component */
   una?: Pick<NNavigationMenuUnaProps, 'navigationMenuTrigger' | 'navigationMenuContent'>
 }
@@ -99,8 +99,6 @@ export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<
    * navigation-menu-link="ghost-gray"
    */
   navigationMenuLink?: string
-  /** Whether the link is active or not */
-  active?: boolean
   /** Event handler called when the link is clicked */
   onSelect?: (e: Event) => void
   /** Additional properties for the una component */

@@ -3,7 +3,7 @@ import type { NavigationMenuRootEmits } from 'reka-ui'
 import type { NNavigationMenuItemProps, NNavigationMenuProps } from '../../types'
 import { createReusableTemplate, reactiveOmit } from '@vueuse/core'
 import { NavigationMenuRoot, useForwardPropsEmits } from 'reka-ui'
-import { cn } from '../../utils'
+import { cn, omitProps } from '../../utils'
 import NavigationMenuContent from './NavigationMenuContent.vue'
 import NavigationMenuContentItem from './NavigationMenuContentItem.vue'
 import NavigationMenuIndicator from './NavigationMenuIndicator.vue'
@@ -61,7 +61,7 @@ const [DefineLinkTemplate, ReuseLinkTemplate] = createReusableTemplate()
             :key="item"
           >
             <NavigationMenuItem
-              v-if="item.children && item.children?.length > 0"
+              v-if="item.items && item.items?.length > 0"
               v-bind="props._navigationMenuItem"
               :value="item.value"
               :una
@@ -72,18 +72,19 @@ const [DefineLinkTemplate, ReuseLinkTemplate] = createReusableTemplate()
                   :una
                   :navigation-menu="item?._navigationMenuTrigger?.navigationMenu ?? item.navigationMenu ?? navigationMenu"
                   :disabled="item?._navigationMenuTrigger?.disabled ?? item.disabled ?? disabled"
-                  v-bind="{ ...(item as Partial<U>), ...props._navigationMenuTrigger, ...item?._navigationMenuTrigger }"
+                  v-bind="{ ...omitProps(item, ['items']), ...props._navigationMenuTrigger, ...item?._navigationMenuTrigger }"
                 >
                   <slot name="trigger" :model-value :item="item" :index="idx" />
                 </NavigationMenuTrigger>
+
                 <NavigationMenuContent
                   v-bind="props._navigationMenuContent"
                   :una
                 >
-                  <slot :name="item.slot ? `${item.slot}-content` : 'item-content'" :children="item.children" :item="item">
+                  <slot :name="item.slot ? `${item.slot}-content` : 'item-content'" :items="item.items" :item="item">
                     <ul class="navigation-menu-content-list">
                       <ReuseLinkTemplate
-                        v-for="(child, childIndex) in item.children"
+                        v-for="(child, childIndex) in item.items"
                         :key="childIndex"
                         :link="child"
                         :is-list="true"
