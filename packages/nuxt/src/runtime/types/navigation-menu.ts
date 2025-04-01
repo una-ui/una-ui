@@ -59,7 +59,7 @@ export interface NNavigationMenuProps<T> extends Omit<NavigationMenuRootProps, '
 
 export interface NNavigationMenuRootProps extends NavigationMenuRootProps, Pick<BaseExtensions, 'class'>, Pick<NNavigationMenuProps<NNavigationMenuItemProps[]>, '_navigationMenuViewport'> {
   /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenuRoot']
+  una?: NNavigationMenuUnaProps['navigationMenu']
 }
 
 export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps, Omit<NButtonProps, 'disabled' | 'size' | 'navigationMenuLink'>, BaseExtensions {
@@ -134,8 +134,8 @@ export interface NNavigationMenuViewportProps extends NavigationMenuViewportProp
 }
 
 interface NNavigationMenuUnaProps {
-  /** CSS class for the navigation menu root */
-  navigationMenuRoot?: HTMLAttributes['class']
+  /** CSS class for the navigation menu */
+  navigationMenu?: HTMLAttributes['class']
   /** CSS class for the navigation menu content */
   navigationMenuContent?: HTMLAttributes['class']
   /** CSS class for the navigation menu content item */

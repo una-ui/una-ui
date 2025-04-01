@@ -2,13 +2,10 @@ type NavigationMenuPrefix = 'navigation-menu'
 
 export const staticNavigationMenu: Record<`${NavigationMenuPrefix}-${string}` | NavigationMenuPrefix, string> = {
   // configurations
-  'navigation-menu': '',
-  'navigation-menu-default-variant': 'navigation-menu-ghost-white',
-  'navigation-menu-link-default-variant': 'navigation-menu-link-ghost-white',
+  'navigation-menu': 'relative z-10 flex max-w-max flex-1 items-center justify-center',
   'navigation-menu-disabled': 'n-disabled',
 
   // components
-  'navigation-menu-root': 'relative z-10 flex max-w-max flex-1 items-center justify-center',
   'navigation-menu-indicator': 'absolute data-[state=hidden]:opacity-0 duration-200 top-full data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut w-[--reka-navigation-menu-indicator-size] translate-x-[--reka-navigation-menu-indicator-position] mt--3px z-100 flex h-10px items-end justify-center overflow-hidden transition-all',
   'navigation-menu-indicator-arrow': 'relative top-70% h-12px w-12px rotate-45deg border bg-base',
   'navigation-menu-content': 'left-0 top-0 w-full md:absolute md:w-auto',
@@ -17,7 +14,7 @@ export const staticNavigationMenu: Record<`${NavigationMenuPrefix}-${string}` | 
   'navigation-menu-link': '',
   'navigation-menu-trigger': '',
   'navigation-menu-trigger-trailing': 'size-5 transform shrink-0 group-data-[state=open]:rotate-180 transition-transform duration-200',
-  'navigation-menu-trigger-trailing-default': 'i-lucide-chevron-down ',
+  'navigation-menu-trigger-trailing-icon': 'i-lucide-chevron-down ',
 
   'navigation-menu-content-item': 'flex items-start select-none rounded-md p-3 h-unset leading-none no-underline outline-none transition-colors whitespace-normal justify-start',
   'navigation-menu-content-list': 'grid w-400px gap-3 p-4 md:grid-cols-2 lg:w-600px md:w-500px',

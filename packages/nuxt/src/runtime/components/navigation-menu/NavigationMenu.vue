@@ -1,7 +1,7 @@
 <script setup lang="ts" generic="T extends U[], U extends NNavigationMenuItemProps">
 import type { NavigationMenuRootEmits } from 'reka-ui'
 import type { NNavigationMenuItemProps, NNavigationMenuProps } from '../../types'
-import { createReusableTemplate } from '@vueuse/core'
+import { createReusableTemplate, reactiveOmit } from '@vueuse/core'
 import { NavigationMenuRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
 import NavigationMenuContent from './NavigationMenuContent.vue'
@@ -23,7 +23,8 @@ const props = withDefaults(defineProps<NNavigationMenuProps<T>>(), {
 })
 const emits = defineEmits<NavigationMenuRootEmits>()
 
-const forwarded = useForwardPropsEmits(props, emits)
+const rootProps = reactiveOmit(props, ['navigationMenu', 'navigationMenuLink', 'una'])
+const forwarded = useForwardPropsEmits(rootProps, emits)
 
 const [DefineLinkTemplate, ReuseLinkTemplate] = createReusableTemplate()
 </script>
@@ -33,8 +34,8 @@ const [DefineLinkTemplate, ReuseLinkTemplate] = createReusableTemplate()
     v-slot="{ modelValue }"
     v-bind="forwarded"
     :class="cn(
-      'navigation-menu-root',
-      props.una?.navigationMenuRoot,
+      'navigation-menu',
+      props.una?.navigationMenu,
       props.class,
     )"
   >
