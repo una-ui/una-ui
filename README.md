@@ -10,9 +10,14 @@
 | Main (Edge) | [![npm-edge][npm-edge-src]][npm-edge-href]          | [![github-status][github-status-src-main]][github-status-href-main]       | [![npm-edge-downloads][npm-edge-downloads-src]][npm-edge-downloads-href] |
 | Release     | [![npm-version][npm-version-src]][npm-version-href] | [![github-status][github-status-src-release]][github-status-href-release] | [![npm-downloads][npm-downloads-src]][npm-downloads-href]                |
 
-## 📙 Documentation
+## 📙 References
 
-Visit https://www.unaui.com for full documentation.
+| Resource         | URL                                                            |
+| ---------------- | -------------------------------------------------------------- |
+| 📚 Documentation | [unaui.com](https://www.unaui.com)                             |
+| 🚀 Starter Kit   | [github.com/una-ui/starter](https://github.com/una-ui/starter) |
+| 🔍 Starter Live  | [starter.unaui.com](https://starter.unaui.com)                 |
+| 🎮 Playground    | [play.unaui.com](https://play.unaui.com)                       |
 
 ## 🌠 Star History
 
