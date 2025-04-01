@@ -17,19 +17,18 @@ badges:
 
 ### Basic
 
-| Prop                       | Default      | Type                         | Description                                                                                                                                             |
-| -------------------------- | ------------ | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `items`                    | `[]`         | `NNavigationMenuItemProps[]` | The items to display in the navigation-menu.                                                                                                            |
-| `delayDuration`            | `200`        | `number`                     | The duration from when the pointer enters the trigger until the tooltip gets opened.                                                                    |
-| `defaultValue`             | -            | `string`                     | The value of the menu item that should be active when initially rendered.                                                                               |
-| `dir`                      | -            | `ltr`, `rtl`                 | The reading direction of the combobox when applicable. If omitted, inherits globally from `ConfigProvider` or assumes LTR (left-to-right) reading mode. |
-| `disableClickTrigger`      | `false`      | `boolean`                    | If `true`, menu cannot be open by click on trigger.                                                                                                     |
-| `disableHoverTrigger`      | `false`      | `boolean`                    | If `true`, menu cannot be open by hover on trigger.                                                                                                     |
-| `disablePointerLeaveClose` | -            | `boolean`                    | If true, menu will not close during pointer leave event.                                                                                                |
-| `modelValue`               | -            | `string`                     | The controlled value of the menu item to activate. Can be used as v-model.                                                                              |
-| `orientation`              | `horizontal` | `horizontal`, `vertical`     | The orientation of the menu.                                                                                                                            |
-| `skipDelayDuration`        | `300`        | `number`                     | How much time a user has to enter another trigger without incurring a delay again.                                                                      |
-| `unmountOnHide`            | `true`       | `boolean`                    | When true, the element will be unmounted on closed state.                                                                                               |
+| Prop                       | Default | Type                         | Description                                                                                                                                             |
+| -------------------------- | ------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `items`                    | `[]`    | `NNavigationMenuItemProps[]` | The items to display in the navigation-menu.                                                                                                            |
+| `delayDuration`            | `200`   | `number`                     | The duration from when the pointer enters the trigger until the tooltip gets opened.                                                                    |
+| `defaultValue`             | -       | `string`                     | The value of the menu item that should be active when initially rendered.                                                                               |
+| `dir`                      | -       | `ltr`, `rtl`                 | The reading direction of the combobox when applicable. If omitted, inherits globally from `ConfigProvider` or assumes LTR (left-to-right) reading mode. |
+| `disableClickTrigger`      | `false` | `boolean`                    | If `true`, menu cannot be open by click on trigger.                                                                                                     |
+| `disableHoverTrigger`      | `false` | `boolean`                    | If `true`, menu cannot be open by hover on trigger.                                                                                                     |
+| `disablePointerLeaveClose` | -       | `boolean`                    | If true, menu will not close during pointer leave event.                                                                                                |
+| `modelValue`               | -       | `string`                     | The controlled value of the menu item to activate. Can be used as v-model.                                                                              |
+| `skipDelayDuration`        | `300`   | `number`                     | How much time a user has to enter another trigger without incurring a delay again.                                                                      |
+| `unmountOnHide`            | `true`  | `boolean`                    | When true, the element will be unmounted on closed state.                                                                                               |
 
 :::CodeGroup
 ::div{label="Preview" preview}
