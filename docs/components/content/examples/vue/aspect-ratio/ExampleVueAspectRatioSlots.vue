@@ -10,7 +10,7 @@
       }"
     >
       <template #header>
-        <NAspectRatio :ratio="4 / 2" class="relative">
+        <NAspectRatio :ratio="5 / 2" class="relative">
           <template #default="{ aspect }">
             <img
               src="https://i.pinimg.com/736x/bd/02/93/bd0293d5ec30a515aa241ec302812187.jpg"

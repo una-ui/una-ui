@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-around gap-4">
+  <div class="flex flex-wrap items-center justify-around gap-4 sm:flex-nowrap">
     <div class="w-full overflow-hidden rounded-lg sm:w-300px">
       <NAspectRatio
         :ratio="16 / 9"
