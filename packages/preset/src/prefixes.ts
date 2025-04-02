@@ -1,6 +1,7 @@
 export default [
   'accordion',
   'alert',
+  'aspect-ratio',
   'avatar',
   'avatar-fallback',
   'avatar-group',
