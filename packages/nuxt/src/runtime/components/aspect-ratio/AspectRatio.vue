@@ -6,6 +6,7 @@ import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NAspectRatioProps>(), {
   aspectRatio: 'soft',
+  rounded: 'md',
 })
 
 const delegatedProps = reactiveOmit(props, 'class')
@@ -21,6 +22,7 @@ const delegatedProps = reactiveOmit(props, 'class')
       props.una?.aspectRatio,
     )"
     :aspect-ratio
+    :rounded
   >
     <slot :aspect />
   </AspectRatio>

@@ -2,7 +2,7 @@ type AspectRatioPrefix = 'aspect-ratio'
 
 export const staticAspectRatio: Record<`${AspectRatioPrefix}-${string}` | AspectRatioPrefix, string> = {
   // base
-  'aspect-ratio': '',
+  'aspect-ratio': 'overflow-hidden',
 
   // static variants
   'aspect-ratio-soft-gray': 'bg-muted border border-base',

@@ -3,6 +3,7 @@ import type { HTMLAttributes } from 'vue'
 
 interface BaseExtensions {
   class?: HTMLAttributes['class']
+  rounded?: HTMLAttributes['class']
 }
 
 export interface NAspectRatioProps extends AspectRatioProps, BaseExtensions {
