@@ -6,7 +6,7 @@ navBadges:
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/AspectRatio.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/aspect-ratio/AspectRatio.vue
     target: _blank
   - value: API reference
     to: https://www.reka-ui.com/docs/components/aspect-ratio
