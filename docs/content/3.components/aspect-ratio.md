@@ -1,5 +1,5 @@
 ---
-description: A composable, themeable and customizable sidebar component.
+description: Displays content within a desired ratio.
 navBadges:
   - value: New
     type: lime
@@ -60,5 +60,21 @@ badges:
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/aspect-ratio/ExampleVueAspectRatioSlots.vue
+::
+:::
+
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/aspect-ratio.ts [shortcuts/aspect-ratio.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/aspect-ratio.ts [types/aspect-ratio.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="AspectRatio.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/aspect-ratio/AspectRatio.vue
 ::
 :::
