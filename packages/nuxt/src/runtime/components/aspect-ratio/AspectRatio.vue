@@ -8,19 +8,19 @@ const props = withDefaults(defineProps<NAspectRatioProps>(), {
   aspectRatio: 'soft',
 })
 
-const rootProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class')
 </script>
 
 <template>
   <AspectRatio
     v-slot="{ aspect }"
-    v-bind="rootProps"
-    :aspect-ratio
+    v-bind="delegatedProps"
     :class="cn(
       'aspect-ratio',
-      props.una?.aspectRatio,
       props.class,
+      props.una?.aspectRatio,
     )"
+    :aspect-ratio
   >
     <slot :aspect />
   </AspectRatio>
