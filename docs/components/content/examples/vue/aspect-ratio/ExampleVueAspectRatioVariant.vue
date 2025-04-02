@@ -76,7 +76,7 @@
         <div class="h-full flex flex-col items-center justify-center p-2 sm:p-4">
           <NIcon name="i-ph-warning" class="opacity-60 square-6 sm:square-8" />
           <p class="mt-1 text-xs sm:mt-2 sm:text-sm">
-            Danger Outline
+            Error Outline
           </p>
         </div>
       </NAspectRatio>
