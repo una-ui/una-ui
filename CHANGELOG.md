@@ -1,3 +1,12 @@
+# [0.49.0](https://github.com/una-ui/una-ui/compare/v0.48.0...v0.49.0) (2025-04-02)
+
+
+### Features
+
+* **AspectRatio:** introduce new components and presets ([#371](https://github.com/una-ui/una-ui/issues/371)) ([2e3b7e5](https://github.com/una-ui/una-ui/commit/2e3b7e5cc22a852083185facdd754f16f65f1651))
+
+
+
 # [0.48.0](https://github.com/una-ui/una-ui/compare/v0.47.2...v0.48.0) (2025-04-01)
 
 
