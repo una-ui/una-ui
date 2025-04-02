@@ -1,7 +1,7 @@
 <template>
   <div class="grid w-full place-items-center">
     <NCard
-      class="w-full sm:w-400px"
+      class="w-full sm:w-300px"
       :_card-header="{
         class: 'p-0',
       }"
