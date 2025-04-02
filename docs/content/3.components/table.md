@@ -1,8 +1,5 @@
 ---
 description: 'A powerful, responsive table and datagrids built using Tanstack'
-navBadges:
-  - value: Updated
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
