@@ -18,8 +18,8 @@ const delegatedProps = reactiveOmit(props, 'class')
     v-bind="delegatedProps"
     :class="cn(
       'aspect-ratio',
-      props.class,
       props.una?.aspectRatio,
+      props.class,
     )"
     :aspect-ratio
     :rounded
