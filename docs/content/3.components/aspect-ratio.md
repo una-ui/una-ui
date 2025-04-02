@@ -33,11 +33,17 @@ badges:
 
 :read-more{to="https://www.reka-ui.com/docs/components/aspect-ratio#root" title="Reka Aspect Ratio Root API." target="_blank"}
 
-### Variant and Color
+### Variants and Colors
 
-| Prop           | Default | Type                | Description                                       |
-| -------------- | ------- | ------------------- | ------------------------------------------------- |
-| `aspect-ratio` | `soft`  | `{variant}-{color}` | Change the variant and color of the aspect-ratio. |
+| Prop           | Default     | Type                | Description                                       |
+| -------------- | ----------- | ------------------- | ------------------------------------------------- |
+| `aspect-ratio` | `soft-gray` | `{variant}-{color}` | Change the styling of the aspect-ratio component. |
+
+| Variant   | Description                                   |
+| --------- | --------------------------------------------- |
+| `soft`    | Adds a light background color                 |
+| `outline` | Adds a border with the specified color        |
+| `~`       | Unstyled variant (no default styling applied) |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -45,6 +51,21 @@ badges:
 ::
 ::div{label="Code"}
 @@@ ./components/content/examples/vue/aspect-ratio/ExampleVueAspectRatioVariant.vue
+::
+:::
+
+### Rounded
+
+| Prop      | Default | Type     | Description                                   |
+| --------- | ------- | -------- | --------------------------------------------- |
+| `rounded` | `md`    | `string` | Set the aspect-ratio to have rounded corners. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueAspectRatioRounded
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/aspect-ratio/ExampleVueAspectRatioRounded.vue
 ::
 :::
 
