@@ -71,7 +71,7 @@
       <!-- Outline Danger -->
       <NAspectRatio
         :ratio="16 / 9"
-        aspect-ratio="outline-danger"
+        aspect-ratio="outline-error"
       >
         <div class="h-full flex flex-col items-center justify-center p-2 sm:p-4">
           <NIcon name="i-ph-warning" class="opacity-60 square-6 sm:square-8" />
