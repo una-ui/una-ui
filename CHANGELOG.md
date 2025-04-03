@@ -1,3 +1,12 @@
+## [0.50.2](https://github.com/una-ui/una-ui/compare/v0.50.1...v0.50.2) (2025-04-03)
+
+
+### Features
+
+* **Avatar:** improve accessibility ([2de98bb](https://github.com/una-ui/una-ui/commit/2de98bbbc369b5f004262b64e2c40bc91b4fe11c))
+
+
+
 ## [0.50.1](https://github.com/una-ui/una-ui/compare/v0.50.0...v0.50.1) (2025-04-03)
 
 
