@@ -7,7 +7,6 @@ import { cn } from '../../utils'
 import Avatar from './avatar/Avatar.vue'
 
 const props = withDefaults(defineProps<NAvatarGroupProps>(), {
-  max: 3,
   as: 'div',
 })
 
@@ -69,7 +68,7 @@ const displayAvatars = computed(() => {
 
     result.unshift(
       h(Avatar, {
-        label: `+${hiddenCount.value}`,
+        label: props.overflowLabel || `+${hiddenCount.value}`,
         class: cn(
           props.una?.avatarGroupCount,
         ),
@@ -89,12 +88,12 @@ const displayAvatars = computed(() => {
   return result
 })
 
-const rootProps = reactiveOmit(props, ['max', 'as', 'asChild'])
+const rootProps = reactiveOmit(props, ['max', 'as', 'asChild', 'overflowLabel'])
 </script>
 
 <template>
   <Primitive
-    :as="as"
+    :as
     :size
     :class="cn(
       'avatar-group',

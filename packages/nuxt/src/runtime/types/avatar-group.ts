@@ -9,10 +9,14 @@ export interface NAvatarGroupProps extends Omit<NAvatarProps, 'src' | 'alt' | 'l
   /**
    * Set the maximum number of avatars to show.
    *
-   * @default 3
    */
-  max: number
-
+  max?: number
+  /**
+   * Override the default overflow label.
+   *
+   * @default +${max}
+   */
+  overflowLabel?: string
   /**
    * `Una
    *
