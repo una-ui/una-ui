@@ -61,7 +61,7 @@ const visibleAvatars = computed(() => {
 const displayAvatars = computed(() => {
   const result = [...visibleAvatars.value]
 
-  if (hiddenCount.value > 0) {
+  if (hiddenCount.value > 0 || props.overflowLabel) {
     const avatarProps = children.value.length > 0
       ? omitProps(children.value[0].props || {}, ['src', 'alt', 'label', 'icon'])
       : {}
