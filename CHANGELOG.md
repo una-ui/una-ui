@@ -1,3 +1,12 @@
+## [0.49.3](https://github.com/una-ui/una-ui/compare/v0.49.2...v0.49.3) (2025-04-03)
+
+
+### Bug Fixes
+
+* **AvatarGroup:** use defineSlots for slot definition ([277567d](https://github.com/una-ui/una-ui/commit/277567d58720a6bcfb674746bdd6b215367e46bd))
+
+
+
 ## [0.49.2](https://github.com/una-ui/una-ui/compare/v0.49.1...v0.49.2) (2025-04-03)
 
 
