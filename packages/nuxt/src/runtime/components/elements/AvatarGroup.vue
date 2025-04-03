@@ -3,7 +3,7 @@ import type { NAvatarGroupProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { Primitive } from 'reka-ui'
 import { computed, h } from 'vue'
-import { cn } from '../../utils'
+import { cn, omitProps } from '../../utils'
 import Avatar from './avatar/Avatar.vue'
 
 const props = withDefaults(defineProps<NAvatarGroupProps>(), {
@@ -63,7 +63,7 @@ const displayAvatars = computed(() => {
 
   if (hiddenCount.value > 0) {
     const avatarProps = children.value.length > 0
-      ? reactiveOmit(children.value[0].props || {}, ['src', 'alt', 'label', 'icon'])
+      ? omitProps(children.value[0].props || {}, ['src', 'alt', 'label', 'icon'])
       : {}
 
     result.unshift(
