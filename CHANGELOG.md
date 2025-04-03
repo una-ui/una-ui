@@ -1,3 +1,12 @@
+# [0.50.0](https://github.com/una-ui/una-ui/compare/v0.49.3...v0.50.0) (2025-04-03)
+
+
+### Features
+
+* **AvatarGroup:** add custom overflow-label support ([fb4b3ef](https://github.com/una-ui/una-ui/commit/fb4b3ef6cb1b05d582d4842c8e08cbea5cd9db60))
+
+
+
 ## [0.49.3](https://github.com/una-ui/una-ui/compare/v0.49.2...v0.49.3) (2025-04-03)
 
 
