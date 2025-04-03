@@ -2,7 +2,7 @@
 import type { NAvatarGroupProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { Primitive } from 'reka-ui'
-import { h } from 'vue'
+import { computed, h } from 'vue'
 import { cn } from '../../utils'
 import Avatar from './avatar/Avatar.vue'
 
