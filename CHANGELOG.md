@@ -1,3 +1,12 @@
+## [0.50.1](https://github.com/una-ui/una-ui/compare/v0.50.0...v0.50.1) (2025-04-03)
+
+
+### Bug Fixes
+
+* **AvatarGroup:** replace reactiveOmit with omitProps ([3759cfa](https://github.com/una-ui/una-ui/commit/3759cfa8863e9984f5945493e5732ec3172fb356))
+
+
+
 # [0.50.0](https://github.com/una-ui/una-ui/compare/v0.49.3...v0.50.0) (2025-04-03)
 
 
