@@ -1,3 +1,12 @@
+## [0.49.1](https://github.com/una-ui/una-ui/compare/v0.49.0...v0.49.1) (2025-04-03)
+
+
+### Bug Fixes
+
+* **Toast:** add bg-base to toast-outline variant ([c932ef1](https://github.com/una-ui/una-ui/commit/c932ef13114c36fb767dc83bd3e48f62ec2c41d7))
+
+
+
 # [0.49.0](https://github.com/una-ui/una-ui/compare/v0.48.0...v0.49.0) (2025-04-02)
 
 
