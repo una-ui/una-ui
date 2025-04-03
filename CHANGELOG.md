@@ -1,3 +1,12 @@
+## [0.50.3](https://github.com/una-ui/una-ui/compare/v0.50.2...v0.50.3) (2025-04-03)
+
+
+### Bug Fixes
+
+* **AvatarGroup:** update overflow label condition ([4a707a5](https://github.com/una-ui/una-ui/commit/4a707a5f5b9e7f6f13f4243ba63df360fa30398d))
+
+
+
 ## [0.50.2](https://github.com/una-ui/una-ui/compare/v0.50.1...v0.50.2) (2025-04-03)
 
 
