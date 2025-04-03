@@ -57,6 +57,10 @@ const data = {
           url: '/components/avatar',
         },
         {
+          title: 'Avatar Group',
+          url: '/components/avatar-group',
+        },
+        {
           title: 'Breadcrumb',
           url: '/components/breadcrumb',
         },

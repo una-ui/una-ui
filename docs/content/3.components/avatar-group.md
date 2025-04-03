@@ -31,10 +31,10 @@ badges:
 
 ### Size and Square
 
-| Prop     | Default  | Type     | Description                                                                                                       |
-| -------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
-| `size`   | `md`     | `string` | Sets the size of the avatar.                                                                                      |
-| `square` | `2.5rem` | `string` | Sets the avatar to a square shape with specified dimensions. This does not affect the size of the fallback value. |
+| Prop     | Default | Type     | Description                                                                                                       |
+| -------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `size`   | `md`    | `string` | Sets the size of the avatar.                                                                                      |
+| `square` | `2.5em` | `string` | Sets the avatar to a square shape with specified dimensions. This does not affect the size of the fallback value. |
 
 > 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 

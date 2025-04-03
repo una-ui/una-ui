@@ -16,41 +16,15 @@ const avatars = [
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
-    <NAvatarGroup
-      :max="6"
-      size="sm"
-    >
-      <NAvatar
-        v-for="(avatar, index) in avatars"
-        :key="index"
-        :src="avatar.src"
-        :alt="avatar.alt"
-      />
-    </NAvatarGroup>
-
-    <NAvatarGroup
-      :max="6"
-      size="md"
-    >
-      <NAvatar
-        v-for="(avatar, index) in avatars"
-        :key="index"
-        :src="avatar.src"
-        :alt="avatar.alt"
-      />
-    </NAvatarGroup>
-
-    <NAvatarGroup
-      :max="6"
-      size="lg"
-    >
-      <NAvatar
-        v-for="(avatar, index) in avatars"
-        :key="index"
-        :src="avatar.src"
-        :alt="avatar.alt"
-      />
-    </NAvatarGroup>
-  </div>
+  <NAvatarGroup
+    :max="5"
+    size="xl"
+  >
+    <NAvatar
+      v-for="(avatar, index) in avatars"
+      :key="index"
+      :src="avatar.src"
+      :alt="avatar.alt"
+    />
+  </NAvatarGroup>
 </template>
