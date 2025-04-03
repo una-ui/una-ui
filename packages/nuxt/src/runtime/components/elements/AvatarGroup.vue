@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<NAvatarGroupProps>(), {
   as: 'div',
 })
 
-const slots = useSlots()
+const slots = defineSlots()
 
 const max = computed(() => typeof props.max === 'string' ? Number.parseInt(props.max, 10) : props.max)
 
