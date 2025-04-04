@@ -45,9 +45,13 @@ Row selection allows you to select rows in the table. This is useful when you wa
 | `enableMultiRowSelection` | `true`  | `boolean`    | Enable multiple row selection.                    |
 | `rowId`                   | `id`    | `string`     | Row id to uniquely identify each row.             |
 | `enableSubRowSelection`   | `false` | `boolean`    | Enable sub row selection.                         |
-| `@select`                 | -       | `event`      | Emitted when a row is selected.                   |
+| `@select`                 | -       | `event,`     | Emitted when a row is selected.                   |
 | `@select-all`             | -       | `event`      | Emitted when all rows are selected.               |
 | `@row`                    | -       | `event, row` | Emitted when a row is clicked.                    |
+
+::alert{type="warning"}
+When using the `@row` event, you should stop propagation if you have interactive elements like buttons or links inside the row to prevent triggering the row click event.
+::
 
 :::CodeGroup
 ::div{label="Preview"}

@@ -7,8 +7,10 @@ import type {
   GroupingState,
   Header,
   PaginationState,
+  Row,
   RowSelectionState,
   SortingState,
+  Table,
   VisibilityState,
 } from '@tanstack/vue-table'
 import type { NTableProps } from '../../../types'
@@ -78,22 +80,28 @@ const columnsWithMisc = computed(() => {
         {
           accessorKey: 'selection',
           header: props.enableMultiRowSelection
-            ? ({ table }: any) => h(Checkbox, {
+            ? ({ table }: { table: Table<TData> }) => h(Checkbox, {
                 'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
                 'onUpdate:modelValue': (value: boolean | 'indeterminate' | null) => {
                   table.toggleAllPageRowsSelected(!!value)
-                  emit('selectAll', table.getRowModel().rows)
+                  emit('selectAll', table.getRowModel().rows.map(row => row.original))
                 },
                 'areaLabel': 'Select all rows',
+                'onClick': (event: Event) => {
+                  event.stopPropagation()
+                },
               })
             : '',
-          cell: ({ row }: any) => h(Checkbox, {
+          cell: ({ row }: { row: Row<TData> }) => h(Checkbox, {
             'modelValue': row.getIsSelected() ?? false,
             'onUpdate:modelValue': (value: boolean | 'indeterminate' | null) => {
               row.toggleSelected(!!value)
-              emit('select', row)
+              emit('select', row.original)
             },
             'areaLabel': 'Select row',
+            'onClick': (event: Event) => {
+              event.stopPropagation()
+            },
           }),
           enableSorting: false,
         },
