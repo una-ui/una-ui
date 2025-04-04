@@ -47,6 +47,7 @@ Row selection allows you to select rows in the table. This is useful when you wa
 | `enableSubRowSelection`   | `false` | `boolean` | Enable sub row selection.                         |
 | `@select`                 | -       | `event`   | Emitted when a row is selected.                   |
 | `@select-all`             | -       | `event`   | Emitted when all rows are selected.               |
+| `@row`                    | -       | `event`   | Emitted when a row is clicked.                    |
 
 :::CodeGroup
 ::div{label="Preview"}

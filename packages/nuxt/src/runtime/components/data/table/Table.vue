@@ -340,6 +340,7 @@ defineExpose({
                   :data-state="row.getIsSelected() && 'selected'"
                   :una
                   v-bind="props._tableRow"
+                  @click="props.onRow?.(row, $event) || props._tableRow?.onClick?.(row, $event)"
                 >
                   <slot
                     name="row"
