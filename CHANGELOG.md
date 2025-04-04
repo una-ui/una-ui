@@ -1,3 +1,12 @@
+## [0.50.4](https://github.com/una-ui/una-ui/compare/v0.50.3...v0.50.4) (2025-04-04)
+
+
+### Features
+
+* **Input:** add expose methods for input manipulation ([6275b83](https://github.com/una-ui/una-ui/commit/6275b831ca53e6df08d32d28861419170f4b9c74))
+
+
+
 ## [0.50.3](https://github.com/una-ui/una-ui/compare/v0.50.2...v0.50.3) (2025-04-03)
 
 
