@@ -1,3 +1,12 @@
+## [0.51.1](https://github.com/una-ui/una-ui/compare/v0.51.0...v0.51.1) (2025-04-04)
+
+
+### Bug Fixes
+
+* **Button:** remove onClick definition ([ee1bd60](https://github.com/una-ui/una-ui/commit/ee1bd6014924094f60b1577495a62220b5ecb8e7))
+
+
+
 # [0.51.0](https://github.com/una-ui/una-ui/compare/v0.50.4...v0.51.0) (2025-04-04)
 
 
