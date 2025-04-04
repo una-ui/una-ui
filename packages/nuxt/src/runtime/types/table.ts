@@ -172,7 +172,7 @@ export interface NTableRowProps<TData = any> {
   /**
    * Trigger when row is clicked
    */
-  onClick?: (row: Row<TData>, e: MouseEvent) => void
+  onClick?: (e: MouseEvent, row: Row<TData>) => void
 }
 
 export interface NTableCellProps {

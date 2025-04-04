@@ -113,7 +113,7 @@ const pokemon = computed(() => data.value?.results ?? [])
       :row-count="data?.results.length"
       :page-count="data?.count"
       enable-row-selection
-      @row="(row) => {
+      @row="(_, row) => {
         console.log('click-row', row)
       }"
     />
