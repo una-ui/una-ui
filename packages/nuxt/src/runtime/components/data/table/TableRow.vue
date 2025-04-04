@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import type { NTableRowProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
+import { Primitive } from 'reka-ui'
 import { cn } from '../../../utils'
 
-const props = defineProps<NTableRowProps>()
+const props = withDefaults(defineProps<NTableRowProps>(), {
+  as: 'tr',
+})
 
 const rootProps = reactiveOmit(props, ['una', 'class'])
 </script>
 
 <template>
-  <tr
+  <Primitive
     :class="cn(
       'table-row',
       props.una?.tableRow,
@@ -18,5 +21,5 @@ const rootProps = reactiveOmit(props, ['una', 'class'])
     v-bind="{ ...rootProps, ...$attrs }"
   >
     <slot />
-  </tr>
+  </Primitive>
 </template>
