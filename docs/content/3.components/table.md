@@ -295,9 +295,10 @@ Expanding allows you to expand rows to show additional information. This is usef
 
 Grouping allows you to group rows based on a column value. This is useful when you want to group rows in the table.
 
-| Prop       | Default | Type    | Description                                   |
-| ---------- | ------- | ------- | --------------------------------------------- |
-| `grouping` | -       | `array` | Grouping state, can be binded with `v-model`. |
+| Prop             | Default | Type      | Description                                   |
+| ---------------- | ------- | --------- | --------------------------------------------- |
+| `grouping`       | -       | `array`   | Grouping state, can be binded with `v-model`. |
+| `manualGrouping` | -       | `boolean` | Enable manual grouping.                       |
 
 :::CodeGroup
 ::div{label="Preview"}
