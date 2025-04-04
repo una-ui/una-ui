@@ -133,10 +133,7 @@ export interface NButtonProps extends BaseExtensionProps {
   }
 
   /**
-   * Allows you to add additional attributes to the button.
-   *
-   * @example
-   * @click="test"
+   * Support for `@click` event.
    */
-  [key: string]: any
+  onClick?: (e: Event) => void
 }
