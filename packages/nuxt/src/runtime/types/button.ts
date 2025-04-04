@@ -131,4 +131,12 @@ export interface NButtonProps extends BaseExtensionProps {
     // icon
     btnLoadingIcon?: string
   }
+
+  /**
+   * Allows you to add additional attributes to the button.
+   *
+   * @example
+   * @click="test"
+   */
+  [key: string]: any
 }
