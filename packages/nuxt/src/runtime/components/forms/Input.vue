@@ -77,28 +77,28 @@ const reverseClassVariants = computed(() => {
 })
 
 // html refs
-const textarea = ref<HTMLTextAreaElement>()
+const inputRef = ref<HTMLTextAreaElement>()
 
 function resizeTextarea(): void {
-  if (!(props.type === 'textarea' && props.autoresize) || !textarea.value)
+  if (!(props.type === 'textarea' && props.autoresize) || !inputRef.value)
     return
 
-  textarea.value.rows = props.rows
+  inputRef.value.rows = props.rows
 
-  const styles = window.getComputedStyle(textarea.value)
+  const styles = window.getComputedStyle(inputRef.value)
   const paddingTop = Number.parseInt(styles.paddingTop)
   const paddingBottom = Number.parseInt(styles.paddingBottom)
   const padding = paddingTop + paddingBottom
   const lineHeight = Number.parseInt(styles.lineHeight)
-  const { scrollHeight } = textarea.value
+  const { scrollHeight } = inputRef.value
   const newRows = (scrollHeight - padding) / lineHeight
 
   if (newRows > props.rows)
-    textarea.value.rows = newRows
+    inputRef.value.rows = newRows
 
   const maxAutoresizeRows = typeof props.autoresize === 'number' ? props.autoresize : Number.POSITIVE_INFINITY
-  if (textarea.value.rows > maxAutoresizeRows)
-    textarea.value.rows = maxAutoresizeRows
+  if (inputRef.value.rows > maxAutoresizeRows)
+    inputRef.value.rows = maxAutoresizeRows
 }
 
 function onInput(event: Event): void {
@@ -109,6 +109,13 @@ function onInput(event: Event): void {
 
 onMounted(() => {
   resizeTextarea()
+})
+
+defineExpose({
+  focus: () => inputRef.value?.focus(),
+  blur: () => inputRef.value?.blur(),
+  select: () => inputRef.value?.select(),
+  inputRef,
 })
 </script>
 
@@ -144,7 +151,7 @@ onMounted(() => {
     <component
       :is="props.type !== 'textarea' ? 'input' : 'textarea'"
       :id
-      ref="textarea"
+      ref="inputRef"
       :value="modelValue"
       :type="props.type !== 'textarea' ? props.type : undefined"
       :class="cn(
