@@ -1,3 +1,15 @@
+# [0.51.0](https://github.com/una-ui/una-ui/compare/v0.50.4...v0.51.0) (2025-04-04)
+
+
+### Features
+
+* add primitives support to table subcomponents ([#374](https://github.com/una-ui/una-ui/issues/374)) ([0d78877](https://github.com/una-ui/una-ui/commit/0d788775c7a64558000acb56cea900dd978af663))
+* **Button:** define type for onClick event ([c804312](https://github.com/una-ui/una-ui/commit/c804312426812c792ec75989f7fb1cb2e08862c6))
+* **Button:** support dynamic prop types ([c92dce0](https://github.com/una-ui/una-ui/commit/c92dce0b7429d0cc676611e46ed25c5a721c30cf))
+* **Table:** add emit functionality on row click; improve types ([#373](https://github.com/una-ui/una-ui/issues/373)) ([aba6efd](https://github.com/una-ui/una-ui/commit/aba6efd89c9a7eb9d2594fce700664a1a6893014))
+
+
+
 ## [0.50.4](https://github.com/una-ui/una-ui/compare/v0.50.3...v0.50.4) (2025-04-04)
 
 
