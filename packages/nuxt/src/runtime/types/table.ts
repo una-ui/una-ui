@@ -161,7 +161,6 @@ export interface NTableFooterProps {
 
 export interface NTableRowProps {
   class?: HTMLAttributes['class']
-
   una?: Pick<NTableUnaProps, 'tableRow'>
 }
 
