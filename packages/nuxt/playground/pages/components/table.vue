@@ -148,9 +148,6 @@ const pokemon = computed(() => data.value?.results ?? [])
           ]"
           size="12px"
           :_dropdown-menu-trigger="{
-            onClick: (e: Event) => {
-              e.stopPropagation()
-            },
             icon: true,
             rounded: 'full',
             btn: 'ghost-gray data-[state=open]:soft-gray',
