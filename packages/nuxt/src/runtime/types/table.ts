@@ -2,7 +2,6 @@ import type {
   ColumnDef,
   CoreOptions,
   GroupColumnDef,
-  Row,
 } from '@tanstack/vue-table'
 import type { HTMLAttributes } from 'vue'
 import type { NProgressProps } from './progress'
@@ -118,7 +117,7 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
   _tableFooter?: NTableFooterProps
   _tableBody?: NTableBodyProps
   _tableCaption?: NTableCaptionProps
-  _tableRow?: NTableRowProps<TData>
+  _tableRow?: NTableRowProps
   _tableCell?: NTableCellProps
   _tableEmpty?: NTableEmptyProps
   _tableLoading?: NTableLoadingProps
@@ -132,11 +131,6 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/table.ts
    */
   una?: NTableUnaProps & NScrollAreaUnaProps
-
-  /**
-   * Trigger when row is clicked
-   */
-  onRow?: NTableRowProps<TData>['onClick']
 }
 
 export interface NTableBodyProps {
@@ -165,14 +159,9 @@ export interface NTableFooterProps {
   una?: Pick<NTableUnaProps, 'tableFooter'>
 }
 
-export interface NTableRowProps<TData = any> {
+export interface NTableRowProps {
   class?: HTMLAttributes['class']
   una?: Pick<NTableUnaProps, 'tableRow'>
-
-  /**
-   * Trigger when row is clicked
-   */
-  onClick?: (e: MouseEvent, row: Row<TData>) => void
 }
 
 export interface NTableCellProps {

@@ -44,7 +44,12 @@ const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableSortingRemoval: true,
 })
 
-const emit = defineEmits(['select', 'selectAll', 'expand'])
+const emit = defineEmits<{
+  select: [row: TData]
+  selectAll: [rows: TData[]]
+  expand: [row: TData]
+  row: [event: Event, row: TData]
+}>()
 
 const slots = defineSlots()
 
@@ -340,10 +345,7 @@ defineExpose({
                   :data-state="row.getIsSelected() && 'selected'"
                   :una
                   v-bind="props._tableRow"
-                  @click="(e) => {
-                    props.onRow?.(e, row);
-                    props._tableRow?.onClick?.(e, row);
-                  }"
+                  @click="emit('row', $event, row.original)"
                 >
                   <slot
                     name="row"
