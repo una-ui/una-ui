@@ -133,7 +133,15 @@ export interface NButtonProps extends BaseExtensionProps {
   }
 
   /**
-   * Support for `@click` event.
+   * Support for `@click` event handler.
+   *
+   * This property is explicitly defined to provide proper TypeScript support when:
+   * 1. Using the component with dynamic properties (e.g., v-bind="props")
+   * 2. Passing event handlers via object syntax in parent components
+   * 3. Using camelCase event handlers in JSX/TSX contexts
+   *
+   * Without this definition, TypeScript would raise type errors when trying to pass
+   * an onClick handler to the component through object properties.
    */
   onClick?: (e: Event) => void
 }
