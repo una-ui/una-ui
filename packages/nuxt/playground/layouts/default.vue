@@ -177,7 +177,7 @@ const isMessagesPopoverActive = ref(false)
         </div>
       </header>
 
-      <NuxtPage />
+      <slot />
     </NSidebarInset>
   </NSidebarProvider>
 </template>

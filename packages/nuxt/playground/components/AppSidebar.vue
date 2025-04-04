@@ -93,6 +93,10 @@ const data = {
           url: '/components/forms',
         },
         {
+          title: 'Input',
+          url: '/components/input',
+        },
+        {
           title: 'Navigation Menu',
           url: '/components/navigation-menu',
         },
