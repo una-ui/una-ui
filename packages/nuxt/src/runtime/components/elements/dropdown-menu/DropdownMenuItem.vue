@@ -6,6 +6,10 @@ import { cn } from '../../../utils'
 import Button from '../Button.vue'
 import DropdownMenuShortcut from './DropdownMenuShortcut.vue'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(defineProps<NDropdownMenuItemProps>(), {
   size: 'sm',
   dropdownMenuItem: '~',
@@ -29,7 +33,7 @@ const forwardedProps = useForwardProps(delegatedProps)
       as-child
     >
       <Button
-        v-bind="forwardedProps"
+        v-bind="{ ...forwardedProps, ...$attrs }"
         :dropdown-menu-item
         :class="cn(
           'dropdown-menu-item-base w-full justify-start font-normal px-0.5714285714285714em py-0.42857142857142855em h-auto',
