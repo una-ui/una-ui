@@ -1,3 +1,12 @@
+## [0.51.2](https://github.com/una-ui/una-ui/compare/v0.51.1...v0.51.2) (2025-04-05)
+
+
+### Bug Fixes
+
+* **DropdownMenuItem:** bind attribute to root component ([91f6e6d](https://github.com/una-ui/una-ui/commit/91f6e6d9db5a10df5a5eeb5ca4a427c13be40ced))
+
+
+
 ## [0.51.1](https://github.com/una-ui/una-ui/compare/v0.51.0...v0.51.1) (2025-04-04)
 
 
