@@ -210,6 +210,13 @@ function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]): numbe
   return count
 }
 
+function getRowAttrs(data?: TData) {
+  if (typeof props._tableRow === 'function') {
+    return props._tableRow(data)
+  }
+  return props._tableRow
+}
+
 defineExpose({
   ...table,
 })
@@ -242,7 +249,7 @@ defineExpose({
               v-for="headerGroup in table.getHeaderGroups()"
               :key="headerGroup.id"
               :una
-              v-bind="props._tableRow"
+              v-bind="getRowAttrs()"
             >
               <!-- headers -->
               <TableHead
@@ -301,7 +308,7 @@ defineExpose({
                 v-if="getHeaderColumnFiltersCount(headerGroup.headers) > 0 || enableColumnFilters"
                 data-filter="true"
                 :una
-                v-bind="props._tableRow"
+                v-bind="getRowAttrs()"
               >
                 <TableHead
                   v-for="header in headerGroup.headers"
@@ -352,7 +359,7 @@ defineExpose({
                 <TableRow
                   :data-state="row.getIsSelected() && 'selected'"
                   :una
-                  v-bind="props._tableRow"
+                  v-bind="getRowAttrs(row.original)"
                   @click="emit('row', $event, row.original)"
                 >
                   <slot
@@ -384,7 +391,7 @@ defineExpose({
                 <TableRow
                   v-if="row.getIsExpanded() && $slots.expanded"
                   :una
-                  v-bind="props._tableRow"
+                  v-bind="getRowAttrs(row.original)"
                 >
                   <TableCell
                     :colspan="row.getAllCells().length"
@@ -422,7 +429,7 @@ defineExpose({
               <TableRow
                 v-if="footerGroup.headers.length > 0"
                 :una
-                v-bind="props._tableRow"
+                v-bind="getRowAttrs()"
               >
                 <template
                   v-for="header in footerGroup.headers"

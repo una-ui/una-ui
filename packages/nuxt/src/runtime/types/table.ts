@@ -118,7 +118,7 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
   _tableFooter?: NTableFooterProps
   _tableBody?: NTableBodyProps
   _tableCaption?: NTableCaptionProps
-  _tableRow?: NTableRowProps
+  _tableRow?: NTableRowProps | ((row?: TData) => NTableRowProps)
   _tableCell?: NTableCellProps
   _tableEmpty?: NTableEmptyProps
   _tableLoading?: NTableLoadingProps
