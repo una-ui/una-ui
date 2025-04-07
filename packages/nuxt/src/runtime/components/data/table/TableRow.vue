@@ -13,6 +13,7 @@ const rootProps = reactiveOmit(props, ['una', 'class'])
 
 <template>
   <Primitive
+    role="row"
     :class="cn(
       'table-row',
       props.una?.tableRow,
@@ -23,3 +24,10 @@ const rootProps = reactiveOmit(props, ['una', 'class'])
     <slot />
   </Primitive>
 </template>
+
+<style>
+/* the builtin unocss utility is overwritten, so it has to be defined here */
+.table-row {
+  display: table-row;
+}
+</style>
