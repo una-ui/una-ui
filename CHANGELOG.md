@@ -1,3 +1,12 @@
+## [0.51.3](https://github.com/una-ui/una-ui/compare/v0.51.2...v0.51.3) (2025-04-07)
+
+
+### Features
+
+* **Table:** enhance `_tableRow` prop to accept a function for dynamic row attributes ([#377](https://github.com/una-ui/una-ui/issues/377)) ([d09b739](https://github.com/una-ui/una-ui/commit/d09b739b1d22b24346f236627853878a7ef2f6bd))
+
+
+
 ## [0.51.2](https://github.com/una-ui/una-ui/compare/v0.51.1...v0.51.2) (2025-04-05)
 
 
