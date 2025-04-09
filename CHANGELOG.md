@@ -1,3 +1,12 @@
+## [0.51.4](https://github.com/una-ui/una-ui/compare/v0.51.3...v0.51.4) (2025-04-09)
+
+
+### Features
+
+* **DropdownMenu:** improve height, rounded, and padding configuration ([0010bbb](https://github.com/una-ui/una-ui/commit/0010bbbf1d80f8d03bbe78c360f2d56ba4ca73c8))
+
+
+
 ## [0.51.3](https://github.com/una-ui/una-ui/compare/v0.51.2...v0.51.3) (2025-04-07)
 
 
