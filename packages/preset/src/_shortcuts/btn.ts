@@ -4,7 +4,6 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   // config
   'btn-default-variant': 'btn-solid',
   'btn-loading-icon': 'i-loading',
-  'btn-default-radius': 'rounded-md',
 
   // base
   'btn': 'btn-rectangle bg-transparent transition-colors leading-1.4285714285714286em gap-x-0.5714285714285714em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium',
