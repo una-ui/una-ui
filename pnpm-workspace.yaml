@@ -4,7 +4,7 @@ packages:
   - playground/**
 catalog:
   '@antfu/eslint-config': ^4.11.0
-  '@antfu/ni': ^23.3.1
+  '@antfu/ni': ^24.3.0
   '@faker-js/faker': ^9.5.1
   '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.2
