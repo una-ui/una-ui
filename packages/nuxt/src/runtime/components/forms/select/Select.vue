@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<NSelectProps<T>>(), {
   size: 'sm',
 })
 
-const emits = defineEmits<SelectRootEmits>()
+const emits = defineEmits<SelectRootEmits<T>>()
 
 const forwarded = useForwardPropsEmits(props, emits)
 
