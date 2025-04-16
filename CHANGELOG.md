@@ -1,3 +1,12 @@
+## [0.51.5](https://github.com/una-ui/una-ui/compare/v0.51.4...v0.51.5) (2025-04-16)
+
+
+### Bug Fixes
+
+* **Select:** pass generic `T` to SelectRootEmits ([#383](https://github.com/una-ui/una-ui/issues/383)) ([b2732a8](https://github.com/una-ui/una-ui/commit/b2732a8dc3885f6b42cfcd224aa72451efba9f26))
+
+
+
 ## [0.51.4](https://github.com/una-ui/una-ui/compare/v0.51.3...v0.51.4) (2025-04-09)
 
 
