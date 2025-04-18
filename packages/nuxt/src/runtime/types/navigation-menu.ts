@@ -86,7 +86,7 @@ export interface NNavigationMenuItemProps extends NavigationMenuItemProps, Omit<
 
 export interface NNavigationMenuIndicatorProps extends NavigationMenuIndicatorProps, BaseExtensions {
   /** Additional properties for the una component */
-  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuIndicator'>
+  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuIndicator' | 'navigationMenuIndicatorArrow'>
 }
 
 export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<NButtonProps, 'size'>, BaseExtensions {
