@@ -79,7 +79,7 @@ export interface NDialogContentProps extends DialogContentProps, BaseExtensions 
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/dialog.ts
    */
-  una?: Pick<NDialogUnaProps, 'dialogContent'>
+  una?: Pick<NDialogUnaProps, 'dialogContent' | 'dialogOverlay'>
 }
 
 export interface NDialogOverlayProps extends BaseExtensions, Pick<NDialogProps, 'scrollable'> {
