@@ -54,7 +54,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
           <DropdownMenuLabel
             :size
             :inset
-            :una="forwarded.una?.dropdownMenuLabel"
+            :una
             v-bind="forwarded._dropdownMenuLabel"
           >
             <slot name="menu-label">
@@ -62,14 +62,14 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
             </slot>
           </DropdownMenuLabel>
           <DropdownMenuSeparator
-            :una="forwarded.una?.dropdownMenuSeparator"
+            :una
             v-bind="forwarded._dropdownMenuSeparator"
           />
         </template>
 
         <slot name="group" :items>
           <DropdownMenuGroup
-            :una="forwarded.una?.dropdownMenuGroup"
+            :una
             v-bind="forwarded._dropdownMenuGroup"
           >
             <slot name="items" :items>
@@ -85,7 +85,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
                     :size
                     :inset
                     :dropdown-menu-item
-                    :una="forwarded.una?.dropdownMenuItem"
+                    :una
                     :_dropdown-menu-shortcut
                     v-bind="{ ...item, ...forwarded._dropdownMenuItem, ...item._dropdownMenuItem }"
                   />
@@ -93,7 +93,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
 
                 <DropdownMenuSeparator
                   v-else-if="!item.label && !item.items"
-                  :una="forwarded.una?.dropdownMenuSeparator"
+                  :una
                   v-bind="{ ...forwarded._dropdownMenuSeparator, ...item._dropdownMenuSeparator }"
                 />
 
@@ -119,26 +119,26 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
       <DropdownMenuLabel
         :size
         :inset
-        :una="forwarded.una?.dropdownMenuLabel"
+        :una
         v-bind="{ ...forwarded._dropdownMenuLabel, ...subProps._dropdownMenuLabel }"
       >
         {{ subProps.menuLabel }}
       </DropdownMenuLabel>
       <DropdownMenuSeparator
-        :una="forwarded.una?.dropdownMenuSeparator"
+        :una
         v-bind="{ ...forwarded._dropdownMenuSeparator, ...subProps._dropdownMenuSeparator }"
       />
     </template>
 
     <DropdownMenuGroup
-      :una="forwarded.una?.dropdownMenuGroup"
+      :una
       v-bind="{ ...forwarded._dropdownMenuGroup, ...subProps._dropdownMenuGroup }"
     >
       <DropdownMenuSub>
         <DropdownMenuSubTrigger
           :size
           :inset
-          :una="forwarded.una?.dropdownMenuSubTrigger"
+          :una
           :dropdown-menu-item
           v-bind="omitProps({
             ...subProps,
@@ -152,7 +152,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
         <DropdownMenuPortal>
           <DropdownMenuSubContent
             v-bind="subProps._dropdownMenuSubContent"
-            :una="forwarded.una?.dropdownMenuSubContent"
+            :una
           >
             <template
               v-for="subItem in subProps.items"
@@ -164,7 +164,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
                 :inset
                 :dropdown-menu-item
                 :_dropdown-menu-shortcut
-                :una="forwarded.una?.dropdownMenuItem"
+                :una
                 v-bind="{ ...subItem, ...forwarded._dropdownMenuItem, ...subItem._dropdownMenuItem }"
               >
                 {{ subItem.label }}
@@ -172,7 +172,7 @@ const [DefineMenuSub, ReuseMenuSub] = createReusableTemplate<NDropdownMenuProps>
 
               <DropdownMenuSeparator
                 v-else-if="!subItem.label && !subItem.items"
-                :una="forwarded.una?.dropdownMenuSeparator"
+                :una
                 v-bind="{ ...forwarded._dropdownMenuSeparator, ...subItem._dropdownMenuSeparator }"
               />
 

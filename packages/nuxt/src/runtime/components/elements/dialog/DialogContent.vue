@@ -62,7 +62,6 @@ const contentEvents = computed(() => {
         v-if="showClose"
         v-bind="_dialogClose"
         class="dialog-close"
-        :una
       />
     </DialogContent>
   </DialogPortal>

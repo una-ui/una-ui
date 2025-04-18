@@ -71,7 +71,7 @@ export interface NNavigationMenuTriggerProps extends NavigationMenuTriggerProps,
 
 export interface NNavigationMenuContentProps extends NavigationMenuContentProps, BaseExtensions {
   /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenuContent']
+  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuContent'>
 }
 
 export interface NNavigationMenuItemProps extends NavigationMenuItemProps, Omit<NNavigationMenuTriggerProps, 'una'>,
@@ -86,7 +86,7 @@ export interface NNavigationMenuItemProps extends NavigationMenuItemProps, Omit<
 
 export interface NNavigationMenuIndicatorProps extends NavigationMenuIndicatorProps, BaseExtensions {
   /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenuIndicator']
+  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuIndicator' | 'navigationMenuIndicatorArrow'>
 }
 
 export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<NButtonProps, 'size'>, BaseExtensions {
@@ -102,19 +102,19 @@ export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<
   /** Event handler called when the link is clicked */
   onSelect?: (e: Event) => void
   /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenuLink'] & NButtonProps['una']
+  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuLink'> & NButtonProps['una']
 }
 
 export interface NNavigationMenuListProps extends NavigationMenuListProps, Pick<NavigationMenuRootProps, 'orientation'>, BaseExtensions {
   /** Additional properties for the una component */
-  una?: NNavigationMenuUnaProps['navigationMenuList']
+  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuList'>
 }
 
 export interface NNavigationMenuListItemProps extends NNavigationMenuLinkProps {
   /** Description of the link. This is only used when `orientation` is `horizontal`. */
   description?: string
   /** Additional properties for the una component */
-  una?: Pick<NNavigationMenuUnaProps, 'navigationMenuListItem' | 'navigationMenuContentItem' | 'navigationMenuContentItemWrapper' | 'navigationMenuContentItemLabel' | 'navigationMenuContentItemDescription'>
+  una?: NNavigationMenuLinkProps['una'] & Pick<NNavigationMenuUnaProps, 'navigationMenuListItem' | 'navigationMenuContentItem' | 'navigationMenuContentItemWrapper' | 'navigationMenuContentItemLabel' | 'navigationMenuContentItemDescription'>
 }
 
 export interface NNavigationMenuSubProps extends NavigationMenuSubProps {}
