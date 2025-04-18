@@ -58,7 +58,7 @@ export interface NTooltipContentProps extends ContentExtensions {
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/tooltip.ts
    */
-  una?: NTooltipUnaProps['tooltipContent']
+  una?: Pick<NTooltipUnaProps, 'tooltipContent'>
 }
 
 interface NTooltipUnaProps {

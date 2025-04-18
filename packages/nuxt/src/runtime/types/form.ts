@@ -71,23 +71,23 @@ export interface NFormFieldProps extends NLabelProps {
 export interface NFormMessageProps {
   class?: HTMLAttributes['class']
 
-  una?: NFormUnaProps['formMessage']
+  una?: Pick<NFormUnaProps, 'formMessage'>
 }
 
 export interface NFormLabelProps extends NLabelProps {
-  una?: NFormUnaProps['formLabel']
+  una?: Pick<NFormUnaProps, 'formLabel'>
 }
 
 export interface NFormItemProps {
   class?: HTMLAttributes['class']
 
-  una?: NFormUnaProps['formItem']
+  una?: Pick<NFormUnaProps, 'formItem'>
 }
 
 export interface NFormDescriptionProps {
   class?: HTMLAttributes['class']
 
-  una?: NFormUnaProps['formDescription']
+  una?: Pick<NFormUnaProps, 'formDescription'>
 }
 
 interface NFormUnaProps {

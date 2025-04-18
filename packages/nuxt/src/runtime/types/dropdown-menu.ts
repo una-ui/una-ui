@@ -69,7 +69,7 @@ export interface NDropdownMenuProps extends
  */
 export interface NDropdownMenuRootProps extends BaseExtensions, DropdownMenuRootProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuRoot']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuRoot'>
 }
 
 /**
@@ -77,7 +77,7 @@ export interface NDropdownMenuRootProps extends BaseExtensions, DropdownMenuRoot
  */
 export interface NDropdownMenuTriggerProps extends NButtonProps, DropdownMenuTriggerProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuTrigger'] & NButtonProps['una']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuTrigger'> & NButtonProps['una']
 }
 
 /**
@@ -96,7 +96,7 @@ export interface NDropdownMenuContentProps extends BaseExtensions, DropdownMenuC
   onPointerDownOutside?: (e: PointerDownOutsideEvent) => void
 
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuContent']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuContent'>
 }
 
 /**
@@ -108,7 +108,7 @@ export interface NDropdownMenuLabelProps extends BaseExtensions, DropdownMenuLab
   /** Size of the label */
   size?: HTMLAttributes['class']
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuLabel']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuLabel'>
 }
 
 /**
@@ -116,7 +116,7 @@ export interface NDropdownMenuLabelProps extends BaseExtensions, DropdownMenuLab
  */
 export interface NDropdownMenuSeparatorProps extends DropdownMenuSeparatorProps, NSeparatorProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuSeparator'] & NSeparatorProps['una']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuSeparator'> & NSeparatorProps['una']
 }
 
 /**
@@ -124,7 +124,7 @@ export interface NDropdownMenuSeparatorProps extends DropdownMenuSeparatorProps,
  */
 export interface NDropdownMenuGroupProps extends BaseExtensions, DropdownMenuGroupProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuGroup']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuGroup'>
 }
 
 /**
@@ -132,7 +132,7 @@ export interface NDropdownMenuGroupProps extends BaseExtensions, DropdownMenuGro
  */
 export interface NDropdownMenuSubContentProps extends BaseExtensions, DropdownMenuSubContentProps {
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuSubContent']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuSubContent'>
 }
 
 /**
@@ -148,7 +148,7 @@ export interface NDropdownMenuItemProps extends DropdownMenuItemProps, NButtonPr
   /** Props for the dropdown menu shortcut */
   _dropdownMenuShortcut?: Partial<NDropdownMenuShortcutProps>
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuItem'] & NButtonProps['una']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuItem'> & NButtonProps['una']
 
   /** Select event handler */
   onSelect?: (e: Event) => void
@@ -171,7 +171,7 @@ export interface NDropdownMenuShortcutProps extends BaseExtensions {
   /** Shortcut key for the item */
   value?: string
   /** Additional properties for the una component */
-  una?: NDropdownMenuUnaProps['dropdownMenuShortcut']
+  una?: Pick<NDropdownMenuUnaProps, 'dropdownMenuShortcut'>
 }
 
 /**

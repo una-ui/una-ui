@@ -42,11 +42,11 @@ interface BaseExtensions {
 }
 
 export interface NDialogTitleProps extends DialogTitleProps, BaseExtensions {
-  una?: NDialogUnaProps['dialogTitle']
+  una?: Pick<NDialogUnaProps, 'dialogTitle'>
 }
 
 export interface NDialogDescriptionProps extends DialogDescriptionProps, BaseExtensions {
-  una?: NDialogUnaProps['dialogDescription']
+  una?: Pick<NDialogUnaProps, 'dialogDescription'>
 }
 
 export interface NDialogContentProps extends DialogContentProps, BaseExtensions {
@@ -79,19 +79,19 @@ export interface NDialogContentProps extends DialogContentProps, BaseExtensions 
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/dialog.ts
    */
-  una?: NDialogUnaProps['dialogContent']
+  una?: Pick<NDialogUnaProps, 'dialogContent'>
 }
 
 export interface NDialogOverlayProps extends BaseExtensions, Pick<NDialogProps, 'scrollable'> {
-  una?: NDialogUnaProps['dialogOverlay']
+  una?: Pick<NDialogUnaProps, 'dialogOverlay'>
 }
 
 export interface NDialogHeaderProps extends BaseExtensions {
-  una?: NDialogUnaProps['dialogHeader']
+  una?: Pick<NDialogUnaProps, 'dialogHeader'>
 }
 
 export interface NDialogFooterProps extends BaseExtensions {
-  una?: NDialogUnaProps['dialogFooter']
+  una?: Pick<NDialogUnaProps, 'dialogFooter'>
 }
 
 export interface NDialogCloseProps extends DialogCloseProps, NButtonProps {
