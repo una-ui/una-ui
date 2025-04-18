@@ -1,3 +1,13 @@
+## [0.51.6](https://github.com/una-ui/una-ui/compare/v0.51.5...v0.51.6) (2025-04-18)
+
+
+### Bug Fixes
+
+* **config:** resolve config paths relative to the current file ([#384](https://github.com/una-ui/una-ui/issues/384)) ([1105e11](https://github.com/una-ui/una-ui/commit/1105e113aefb789d56411e2b81ba6bc9c71c301b)), closes [unocss/unocss#2613](https://github.com/unocss/unocss/issues/2613)
+* **Nuxt:** unify `una` prop type definitions across all subcomponents ([#385](https://github.com/una-ui/una-ui/issues/385)) ([f555db7](https://github.com/una-ui/una-ui/commit/f555db789e560976096a0b8c875c4a0aa817f8ee))
+
+
+
 ## [0.51.5](https://github.com/una-ui/una-ui/compare/v0.51.4...v0.51.5) (2025-04-16)
 
 
