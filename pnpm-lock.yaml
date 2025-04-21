@@ -19,8 +19,8 @@ catalogs:
       specifier: ^1.7.23
       version: 1.7.23
     '@iconify-json/lucide':
-      specifier: ^1.2.35
-      version: 1.2.35
+      specifier: ^1.2.37
+      version: 1.2.37
     '@iconify-json/radix-icons':
       specifier: ^1.2.2
       version: 1.2.2
@@ -28,8 +28,8 @@ catalogs:
       specifier: ^1.2.17
       version: 1.2.17
     '@iconify/json':
-      specifier: ^2.2.326
-      version: 2.2.326
+      specifier: ^2.2.329
+      version: 2.2.329
     '@iconify/utils':
       specifier: ^2.3.0
       version: 2.3.0
@@ -230,7 +230,7 @@ importers:
         version: 9.7.0
       '@iconify/json':
         specifier: 'catalog:'
-        version: 2.2.326
+        version: 2.2.329
       '@types/chroma-js':
         specifier: 'catalog:'
         version: 3.1.1
@@ -390,7 +390,7 @@ importers:
     devDependencies:
       '@iconify-json/lucide':
         specifier: 'catalog:'
-        version: 1.2.35
+        version: 1.2.37
       '@iconify-json/radix-icons':
         specifier: 'catalog:'
         version: 1.2.2
@@ -1371,6 +1371,9 @@ packages:
   '@iconify-json/lucide@1.2.35':
     resolution: {integrity: sha512-q1OFEufIzxaiMuuLOrFmhVPvlj0asriU84w1MsfooeOAB2Tk1DFCuL61HJnb4lGxDhcxhU28m6bjYLW1fwox9Q==}
 
+  '@iconify-json/lucide@1.2.37':
+    resolution: {integrity: sha512-fiI8A8prb0WPvc5YDIbW1SVlRKwJpR3YGBe41U0Gen1/B9I41K9miU2yAk1e6NVLEdkj17hG0hdaQrAIbs+2Pw==}
+
   '@iconify-json/radix-icons@1.2.2':
     resolution: {integrity: sha512-+PPmKWDP7pfJMcEc9Ty1zyo/zzq+9rfKW4EGb2HSZcPu1VUhothDLFzWvBqQNoFIOYCJ2nm0Vmf8kVyYhq9G0Q==}
 
@@ -1386,8 +1389,8 @@ packages:
   '@iconify/collections@1.0.526':
     resolution: {integrity: sha512-TARexcspwMZWRxQGKhaPzrciklhLrGfavfjb+7sxv2vWpdF51WyF8DVJLBC7kMnTQZg8SiT+zqqXwOedKH2gEQ==}
 
-  '@iconify/json@2.2.326':
-    resolution: {integrity: sha512-owN5JS4WajJyZcTDyzedzBcDloCSbYyCDqyRD7NCej2c2kQwF+OWwpclAlw2SYwqZSIoJyMtw0vCCyhfnp5Bgw==}
+  '@iconify/json@2.2.329':
+    resolution: {integrity: sha512-t8h9fj+u5Fjre4jifYaC1SPqzIxZ8OIJefzSlLpjX0+2ejrcXKiYl+slIQ1uv2Eco28c+gzkvrwO7cXr3sELMw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7724,6 +7727,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/lucide@1.2.37':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/radix-icons@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
@@ -7744,7 +7751,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.326':
+  '@iconify/json@2.2.329':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
