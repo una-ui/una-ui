@@ -18,7 +18,7 @@ catalog:
   '@nuxt/module-builder': ^0.8.4
   '@nuxt/schema': ^3.16.2
   '@nuxtjs/color-mode': ^3.5.2
-  '@tanstack/vue-table': ^8.21.2
+  '@tanstack/vue-table': ^8.21.3
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
@@ -41,7 +41,7 @@ catalog:
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.24.0
+  eslint: ^9.25.0
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
@@ -61,6 +61,6 @@ catalog:
   unbuild: ^3.5.0
   unocss: ^66.0.0
   unocss-preset-animations: ^1.1.1
-  vitest: ^3.1.1
+  vitest: ^3.1.2
   vue-tsc: ^2.2.8
-  zod: ^3.24.2
+  zod: ^3.24.3
