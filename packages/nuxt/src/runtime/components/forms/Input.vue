@@ -12,6 +12,7 @@ const props = withDefaults(defineProps<NInputProps>(), {
   size: 'md',
   type: 'text',
   resize: 'none',
+  rows: 0,
 })
 
 const emit = defineEmits(['leading', 'trailing', 'update:modelValue'])
