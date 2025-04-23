@@ -163,6 +163,10 @@ const data = {
           url: '/components/tabs',
         },
         {
+          title: 'Textarea',
+          url: '/components/textarea',
+        },
+        {
           title: 'Toast',
           url: '/components/toast',
         },
