@@ -126,6 +126,7 @@ defineExpose({
       'input-wrapper',
       una?.inputWrapper,
     )"
+    v-bind="_inputWrapper"
   >
     <div
       v-if="isLeading"
