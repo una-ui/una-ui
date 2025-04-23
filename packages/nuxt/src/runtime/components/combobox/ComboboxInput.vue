@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<NComboboxInputProps>(), {
 
 const emits = defineEmits<ComboboxInputEmits>()
 
+// Ensure all properties are correctly passed through
 const forwarded = useForwardPropsEmits(props, emits)
 </script>
 

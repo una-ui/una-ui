@@ -1,11 +1,14 @@
-import type { ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
+import type { AcceptableValue, ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
+import type { NCheckboxProps } from './checkbox'
 import type { NInputProps } from './input'
 
-export interface NCombobox extends ComboboxRootProps {
+export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootProps<T> {
   class?: HTMLAttributes['class']
 
-  items?: NComboboxItem[]
+  items?: T[]
+  labelKey?: keyof T
+  valueKey?: keyof T
 
   _comboboxAnchor?: NComboboxAnchorProps
   _comboboxEmpty?: NComboboxEmptyProps
@@ -17,11 +20,10 @@ export interface NCombobox extends ComboboxRootProps {
   _comboboxSeparator?: NComboboxSeparatorProps
   _comboboxTrigger?: NComboboxTriggerProps
   _comboboxViewport?: NComboboxViewportProps
+  _comboboxCheckbox?: NCheckboxProps
 }
 
-export interface NComboboxItem extends ComboboxItemProps {
-  value: string
-  label: string
+export interface NComboboxItem<T> extends ComboboxItemProps<T> {
 }
 
 export interface NComboboxAnchorProps extends ComboboxAnchorProps {
