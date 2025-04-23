@@ -81,6 +81,10 @@ const data = {
           url: '/components/collapsible',
         },
         {
+          title: 'Combobox',
+          url: '/components/combobox',
+        },
+        {
           title: 'Dialog',
           url: '/components/dialog',
         },
