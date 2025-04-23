@@ -21,8 +21,7 @@ const selectedUser = ref()
 </script>
 
 <template>
-  <div class="flex flex-col items-center gap-4">
-    <div>Debug: {{ selectedFramework }}</div>
+  <div class="flex items-center gap-4">
     <NCombobox
       v-model="selectedFramework"
       :items="frameworks"
@@ -30,10 +29,8 @@ const selectedUser = ref()
         placeholder: 'Select framework...',
       }"
       by="label"
-      class="w-full"
     />
 
-    <div>Debug User ({{ typeof selectedUser }}): {{ selectedUser }}</div>
     <NCombobox
       v-model="selectedUser"
       :items="users"
@@ -41,10 +38,8 @@ const selectedUser = ref()
       :_combobox-input="{
         placeholder: 'Select user...',
       }"
-      class="w-full"
     />
 
-    <div>Debug Frameworks (multiple): {{ selectedFrameworks }}</div>
     <NCombobox
       v-model="selectedFrameworks"
       :items="frameworks"
@@ -59,7 +54,6 @@ const selectedUser = ref()
       }"
       :_combobox-anchor="{
       }"
-      class="w-full"
     >
       <template #trigger>
         <NButton btn="solid-white" class="w-full justify-between">
