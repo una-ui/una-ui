@@ -19,6 +19,7 @@ import ComboboxTrigger from './ComboboxTrigger.vue'
 import ComboboxViewport from './ComboboxViewport.vue'
 
 const props = withDefaults(defineProps<NComboboxProps<T>>(), {
+  textEmpty: 'No items found.',
 })
 const emits = defineEmits<ComboboxRootEmits<T>>()
 
@@ -151,7 +152,7 @@ function isItemSelected(item: T | null | undefined): boolean {
             <ComboboxViewport v-bind="props._comboboxViewport">
               <ComboboxEmpty v-bind="props._comboboxEmpty">
                 <slot name="empty">
-                  No items found.
+                  {{ props.textEmpty }}
                 </slot>
               </ComboboxEmpty>
 

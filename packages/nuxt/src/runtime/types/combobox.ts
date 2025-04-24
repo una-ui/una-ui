@@ -34,6 +34,12 @@ export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootP
    */
   groupSeparator?: boolean
   /**
+   * The text to display when the combobox is empty.
+   *
+   * @default 'No items found.'
+   */
+  textEmpty?: string
+  /**
    * Sub-component configurations
    */
   _comboboxAnchor?: NComboboxAnchorProps
