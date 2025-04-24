@@ -36,6 +36,7 @@ export default [
   'combobox-input',
   'combobox-item',
   'combobox-item-indicator',
+  'combobox-label',
   'combobox-list',
   'combobox-separator',
   'combobox-trigger',
