@@ -97,10 +97,7 @@
       "sharp",
       "@parcel/watcher",
       "esbuild"
-    ],
-    "patchedDependencies": {
-      "@vue/runtime-core": "patches/@vue__runtime-core.patch"
-    }
+    ]
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
