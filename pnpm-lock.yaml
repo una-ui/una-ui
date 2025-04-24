@@ -378,9 +378,6 @@ importers:
       tailwind-merge:
         specifier: 'catalog:'
         version: 3.2.0
-      typescript:
-        specifier: 'catalog:'
-        version: 5.8.3
       unocss:
         specifier: 'catalog:'
         version: 66.0.0(@unocss/webpack@66.0.0(webpack@5.98.0(esbuild@0.25.2)))(postcss@8.5.3)(vite@6.2.5(@types/node@22.14.1)(jiti@2.4.2)(sass@1.86.3)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.3))
