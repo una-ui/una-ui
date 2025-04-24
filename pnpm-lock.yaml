@@ -187,11 +187,6 @@ catalogs:
       specifier: ^3.24.3
       version: 3.24.3
 
-patchedDependencies:
-  '@vue/runtime-core':
-    hash: a91857f487b459f63a6f18f9934266eaa888920b483f4b9f3af5fcb3cb5da982
-    path: patches/@vue__runtime-core.patch
-
 importers:
 
   .:
@@ -9812,7 +9807,7 @@ snapshots:
     dependencies:
       '@vue/shared': 3.5.13
 
-  '@vue/runtime-core@3.5.13(patch_hash=a91857f487b459f63a6f18f9934266eaa888920b483f4b9f3af5fcb3cb5da982)':
+  '@vue/runtime-core@3.5.13':
     dependencies:
       '@vue/reactivity': 3.5.13
       '@vue/shared': 3.5.13
@@ -9820,7 +9815,7 @@ snapshots:
   '@vue/runtime-dom@3.5.13':
     dependencies:
       '@vue/reactivity': 3.5.13
-      '@vue/runtime-core': 3.5.13(patch_hash=a91857f487b459f63a6f18f9934266eaa888920b483f4b9f3af5fcb3cb5da982)
+      '@vue/runtime-core': 3.5.13
       '@vue/shared': 3.5.13
       csstype: 3.1.3
 
