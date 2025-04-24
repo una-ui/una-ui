@@ -6,7 +6,6 @@ import type { NComboboxGroupProps, NComboboxProps } from '../../types'
 <script setup lang="ts" generic="T extends AcceptableValue">
 import { ComboboxRoot, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
-import Checkbox from '../forms/Checkbox.vue'
 import ComboboxAnchor from './ComboboxAnchor.vue'
 import ComboboxEmpty from './ComboboxEmpty.vue'
 import ComboboxGroup from './ComboboxGroup.vue'
@@ -166,33 +165,16 @@ function isItemSelected(item: T | null | undefined): boolean {
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
                       v-bind="props._comboboxItem"
                     >
-                      <slot name="item" :item="item">
-                        <template v-if="multiple">
-                          <slot name="item-checkbox" :item="item">
-                            <Checkbox
-                              v-bind="props._comboboxCheckbox"
-                              class="data-[state=indeterminate]:bg-transparent data-[state=unchecked]:bg-transparent"
-                              :data-selected="isItemSelected(item)"
-                              :model-value="isItemSelected(item)"
-                            />
-                          </slot>
+                      <slot name="item" :item="item" :selected="isItemSelected(item)">
+                        <slot name="item-label" :item="item">
+                          {{ getItemProperty(item, labelKey) }}
+                        </slot>
 
-                          <slot name="item-label" :item="item">
-                            {{ getItemProperty(item, labelKey) }}
+                        <ComboboxItemIndicator v-bind="props._comboboxItemIndicator">
+                          <slot name="item-indicator" :item="item">
+                            <NIcon name="i-lucide-check" />
                           </slot>
-                        </template>
-
-                        <template v-else>
-                          <slot name="item-label" :item="item">
-                            {{ getItemProperty(item, labelKey) }}
-                          </slot>
-
-                          <ComboboxItemIndicator v-bind="props._comboboxItemIndicator">
-                            <slot name="item-indicator" :item="item">
-                              <NIcon name="i-lucide-check" />
-                            </slot>
-                          </ComboboxItemIndicator>
-                        </template>
+                        </ComboboxItemIndicator>
                       </slot>
                     </ComboboxItem>
                   </slot>
@@ -218,33 +200,16 @@ function isItemSelected(item: T | null | undefined): boolean {
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
                       v-bind="{ ...props._comboboxItem, ...group._comboboxItem }"
                     >
-                      <slot name="item" :item="item" :group="group">
-                        <template v-if="multiple">
-                          <slot name="item-checkbox" :item="item">
-                            <Checkbox
-                              v-bind="props._comboboxCheckbox"
-                              class="data-[state=indeterminate]:bg-transparent data-[state=unchecked]:bg-transparent"
-                              :data-selected="isItemSelected(item)"
-                              :model-value="isItemSelected(item)"
-                            />
-                          </slot>
+                      <slot name="item" :item="item" :group="group" :selected="isItemSelected(item)">
+                        <slot name="item-label" :item="item">
+                          {{ getItemProperty(item, labelKey) }}
+                        </slot>
 
-                          <slot name="item-label" :item="item">
-                            {{ getItemProperty(item, labelKey) }}
+                        <ComboboxItemIndicator v-bind="props._comboboxItemIndicator">
+                          <slot name="item-indicator" :item="item">
+                            <NIcon name="i-lucide-check" />
                           </slot>
-                        </template>
-
-                        <template v-else>
-                          <slot name="item-label" :item="item">
-                            {{ getItemProperty(item, labelKey) }}
-                          </slot>
-
-                          <ComboboxItemIndicator v-bind="props._comboboxItemIndicator">
-                            <slot name="item-indicator" :item="item">
-                              <NIcon name="i-lucide-check" />
-                            </slot>
-                          </ComboboxItemIndicator>
-                        </template>
+                        </ComboboxItemIndicator>
                       </slot>
                     </ComboboxItem>
                   </slot>

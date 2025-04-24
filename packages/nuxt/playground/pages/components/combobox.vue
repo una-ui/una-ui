@@ -64,7 +64,11 @@ const selectedTimezone = ref(timezones[0])
 
 <template>
   <div class="flex flex-wrap items-center gap-4">
-    <NCombobox v-model="selectedFramework" by="label">
+    <NCombobox
+      v-model="selectedFramework"
+      multiple
+      by="label"
+    >
       <NComboboxAnchor as-child>
         <NComboboxTrigger>
           {{ selectedFramework?.label ?? 'Select framework...' }}
@@ -129,6 +133,7 @@ const selectedTimezone = ref(timezones[0])
           Select user...
         </template>
       </template>
+
       <template #item-label="{ item }">
         <NAvatar
           square="5"
@@ -214,6 +219,15 @@ const selectedTimezone = ref(timezones[0])
             return framework ? framework.label : val
           }).join(", ")
           : "Select frameworks (multi-select)..." }}
+      </template>
+
+      <template #item="{ item, selected }">
+        <NCheckbox
+          :data-selected="selected"
+          :model-value="selected"
+        />
+
+        {{ item.label }}
       </template>
     </NCombobox>
   </div>
