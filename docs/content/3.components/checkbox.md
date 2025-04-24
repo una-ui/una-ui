@@ -14,16 +14,16 @@ badges:
 
 ### Basic
 
-| Prop             | Default      | Type                       | Description                                                                                                             |
-| ---------------- | ------------ | -------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `checked`        | -            | `boolean`, `indeterminate` | The controlled checked state of the checkbox. Can be binded with `v-model`.                                             |
-| `defaultChecked` | -            | `boolean`                  | The checked state of the checkbox when it is initially rendered. Use when you do not need to control its checked state. |
-| `disabled`       | -            | `boolean`                  | When true, prevents the user from interacting with the checkbox.                                                        |
-| `id`             | `randomId()` | `string`                   | Id of the element.                                                                                                      |
-| `name`           | -            | `string`                   | The name of the checkbox. Submitted with its owning form as part of a name/value pair.                                  |
-| `required`       | -            | `boolean`                  | When true, indicates that the user must check the checkbox before the owning form can be submitted.                     |
-| `value`          | `on`         | `string`                   | The value given as data when submitted with a name.                                                                     |
-| `label`          | -            | `string`                   | Set the label of the checkbox.                                                                                          |
+| Prop           | Default      | Type                       | Description                                                                                                             |
+| -------------- | ------------ | -------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `modelValue`   | -            | `boolean`, `indeterminate` | The controlled checked state of the checkbox. Can be binded with `v-model`.                                             |
+| `defaultValue` | -            | `boolean`                  | The checked state of the checkbox when it is initially rendered. Use when you do not need to control its checked state. |
+| `disabled`     | -            | `boolean`                  | When true, prevents the user from interacting with the checkbox.                                                        |
+| `id`           | `randomId()` | `string`                   | Id of the element.                                                                                                      |
+| `name`         | -            | `string`                   | The name of the checkbox. Submitted with its owning form as part of a name/value pair.                                  |
+| `required`     | -            | `boolean`                  | When true, indicates that the user must check the checkbox before the owning form can be submitted.                     |
+| `value`        | `on`         | `string`                   | The value given as data when submitted with a name.                                                                     |
+| `label`        | -            | `string`                   | Set the label of the checkbox.                                                                                          |
 
 :read-more{to="https://www.reka-ui.com/docs/components/checkbox#root" title="Reka Checkbox Root API." target="_blank"}
 

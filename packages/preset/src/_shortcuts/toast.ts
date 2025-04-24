@@ -23,7 +23,7 @@ export const dynamicToast = [
   // dynamic variants
   [/^toast-solid(-(\S+))?$/, ([, , c = 'primary']) => `alert-solid-${c}`],
   [/^toast-soft(-(\S+))?$/, ([, , c = 'primary']) => `alert-soft-${c}`],
-  [/^toast-outline(-(\S+))?$/, ([, , c = 'primary']) => `alert-outline-${c}`],
+  [/^toast-outline(-(\S+))?$/, ([, , c = 'primary']) => `alert-outline-${c} bg-base`],
   [/^toast-border(-(\S+))?$/, ([, , c = 'primary']) => `alert-border-${c}`],
 
 ]

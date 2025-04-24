@@ -4,13 +4,12 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   // config
   'btn-default-variant': 'btn-solid',
   'btn-loading-icon': 'i-loading',
-  'btn-default-radius': 'rounded-md',
 
   // base
   'btn': 'btn-rectangle bg-transparent transition-colors leading-1.4285714285714286em gap-x-0.5714285714285714em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
-  'btn-icon-label': 'square-1.1428571428571428em',
+  'btn-icon-label': 'size-1.1428571428571428em',
   'btn-leading': 'size-1.1428571428571428em',
   'btn-trailing': 'size-1.1428571428571428em',
   'btn-loading': 'animate-spin size-1.1428571428571428em',

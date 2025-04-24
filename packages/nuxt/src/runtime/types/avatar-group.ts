@@ -1,18 +1,22 @@
+import type { PrimitiveProps } from 'reka-ui'
 import type { NAvatarProps } from './avatar'
-
 /**
  * This extends the `NAvatarProps` interface.
  *
  * @see https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/types/avatar.ts
  */
-export interface NAvatarGroupProps extends Omit<NAvatarProps, 'una'> {
+export interface NAvatarGroupProps extends Omit<NAvatarProps, 'src' | 'alt' | 'label' | 'una'>, PrimitiveProps {
   /**
    * Set the maximum number of avatars to show.
    *
-   * @default 3
    */
-  max: number
-
+  max?: number
+  /**
+   * Override the default overflow label.
+   *
+   * @default +${max}
+   */
+  overflowLabel?: string
   /**
    * `Una
    *
@@ -21,8 +25,6 @@ export interface NAvatarGroupProps extends Omit<NAvatarProps, 'una'> {
    */
   una?: {
     avatarGroup?: string
-    avatarGroupChild?: string
-    avatarGroupMargin?: string
-    avatarGroupLabel?: string
+    avatarGroupCount?: string
   } & NAvatarProps['una']
 }

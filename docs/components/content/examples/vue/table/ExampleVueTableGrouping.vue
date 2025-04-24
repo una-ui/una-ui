@@ -36,19 +36,27 @@ const columns: ColumnDef<Person>[] = [
         accessorKey: 'status',
       },
       {
-        header: 'Profile Progress',
+        header: 'Progress',
         accessorKey: 'progress',
       },
     ],
   },
 ]
 
-const sorting = ref()
+const grouping = ref([
+  'status',
+  'progress',
+  'firstName',
+  'lastName',
+  'age',
+  'visits',
+])
 </script>
 
 <template>
   <NTable
-    v-model:sorting="sorting"
+    v-model:grouping="grouping"
+    manual-grouping
     :columns
     :data
   />

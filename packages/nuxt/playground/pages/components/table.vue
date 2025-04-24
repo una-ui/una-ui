@@ -32,6 +32,10 @@ const columns = [
     enableMultiSort: true,
     enableSorting: true,
   },
+  {
+    accessorKey: 'actions',
+    header: 'Actions',
+  },
 ]
 
 /**
@@ -100,7 +104,7 @@ const pokemon = computed(() => data.value?.results ?? [])
 
     <NTable
       ref="table"
-      v-model="select"
+      v-model:row-selection="select"
       v-model:sorting="sorting"
       v-model:column-visibility="visibleColumns"
       v-model:column-filters="columnFilters"
@@ -113,9 +117,51 @@ const pokemon = computed(() => data.value?.results ?? [])
       :row-count="data?.results.length"
       :page-count="data?.count"
       enable-row-selection
-    />
+      @row="(_, row) => {
+        console.log('click-row', row)
+      }"
+      @select-all="(rows) => {
+        console.log('select-all', rows)
+      }"
+      @select="(row) => {
+        console.log('select', row)
+      }"
+    >
+      <template #actions-cell>
+        <NDropdownMenu
+          :items="[
+            {
+              label: 'View',
+              leading: 'i-lucide-eye',
+            },
+            {
+              label: 'Edit',
+              leading: 'i-lucide-pencil',
+            },
+            {},
+            {
+              label: 'Delete',
+              class: 'text-error',
+              leading: 'i-lucide-trash',
+              dropdownMenuItem: 'error',
+            },
+          ]"
+          size="12px"
+          :_dropdown-menu-trigger="{
+            icon: true,
+            rounded: 'full',
+            btn: 'ghost-gray data-[state=open]:soft-gray',
+            label: 'i-lucide-ellipsis',
+          }"
+          :_dropdown-menu-content="{
+            side: 'bottom',
+            align: 'end',
+          }"
+        />
+      </template>
+    </NTable>
 
-    <div class="flex items-center justify-end py-4 space-x-2">
+    <div class="space-x-2" flex items-center justify-end py-4>
       <NButton
         btn="outline"
         size="sm"

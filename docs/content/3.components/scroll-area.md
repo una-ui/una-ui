@@ -1,8 +1,5 @@
 ---
 description: 'Augments native scroll functionality for custom, cross-browser styling.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

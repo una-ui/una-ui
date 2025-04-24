@@ -3,6 +3,7 @@ import type {
   CoreOptions,
   GroupColumnDef,
 } from '@tanstack/vue-table'
+import type { PrimitiveProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NProgressProps } from './progress'
 import type { NScrollAreaProps, NScrollAreaUnaProps } from './scroll-area'
@@ -117,7 +118,7 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
   _tableFooter?: NTableFooterProps
   _tableBody?: NTableBodyProps
   _tableCaption?: NTableCaptionProps
-  _tableRow?: NTableRowProps
+  _tableRow?: NTableRowProps | ((row?: TData) => NTableRowProps)
   _tableCell?: NTableCellProps
   _tableEmpty?: NTableEmptyProps
   _tableLoading?: NTableLoadingProps
@@ -133,13 +134,13 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
   una?: NTableUnaProps & NScrollAreaUnaProps
 }
 
-export interface NTableBodyProps {
+export interface NTableBodyProps extends PrimitiveProps {
   class?: HTMLAttributes['class']
 
   una?: Pick<NTableUnaProps, 'tableBody'>
 }
 
-export interface NTableHeadProps {
+export interface NTableHeadProps extends PrimitiveProps {
   class?: HTMLAttributes['class']
 
   dataPinned?: 'left' | 'right' | false
@@ -147,25 +148,24 @@ export interface NTableHeadProps {
   una?: Pick<NTableUnaProps, 'tableHead'>
 }
 
-export interface NTableHeaderProps {
+export interface NTableHeaderProps extends PrimitiveProps {
   class?: HTMLAttributes['class']
 
   una?: Pick<NTableUnaProps, 'tableHeader'>
 }
 
-export interface NTableFooterProps {
+export interface NTableFooterProps extends PrimitiveProps {
   class?: HTMLAttributes['class']
 
   una?: Pick<NTableUnaProps, 'tableFooter'>
 }
 
-export interface NTableRowProps {
+export interface NTableRowProps extends PrimitiveProps {
   class?: HTMLAttributes['class']
-
   una?: Pick<NTableUnaProps, 'tableRow'>
 }
 
-export interface NTableCellProps {
+export interface NTableCellProps extends PrimitiveProps {
   class?: HTMLAttributes['class']
 
   dataPinned?: 'left' | 'right' | false
@@ -193,10 +193,10 @@ export interface NTableLoadingProps {
   _tableRow?: NTableRowProps
   _tableProgress?: NProgressProps
 
-  una?: Pick<NTableUnaProps, 'tableLoading' | 'tableRow' | 'tableCell'>
+  una?: Pick<NTableUnaProps, 'tableLoading' | 'tableLoadingCell' | 'tableLoadingRow'>
 }
 
-export interface NTableCaptionProps {
+export interface NTableCaptionProps extends PrimitiveProps {
   class?: HTMLAttributes['class']
 
   una?: Pick<NTableUnaProps, 'tableCaption'>
@@ -214,4 +214,6 @@ export interface NTableUnaProps {
   tableCaption?: HTMLAttributes['class']
   tableEmpty?: HTMLAttributes['class']
   tableLoading?: HTMLAttributes['class']
+  tableLoadingRow?: HTMLAttributes['class']
+  tableLoadingCell?: HTMLAttributes['class']
 }

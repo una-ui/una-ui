@@ -25,6 +25,7 @@ export default antfu(
         'error',
         'prefer-top-level',
       ],
+      'no-console': 'off',
     },
   },
   {

@@ -38,32 +38,43 @@ export interface NPaginationListProps extends PaginationListProps, BaseExtension
   una?: Pick<NPaginationUnaProps, 'paginationList'>
 }
 
-export interface NPaginationListItemProps extends PaginationListItemProps, NButtonProps {
+export interface NPaginationListItemProps extends PaginationListItemProps, Omit<NButtonProps, 'una'> {
   isSelected?: boolean
   page?: PaginationRootProps['page']
+
+  una?: Pick<NPaginationUnaProps, 'paginationListItem' | 'pagination'> & NButtonProps['una']
 }
 
 export interface NPaginationEllipsisProps extends PaginationEllipsisProps, BaseExtensionProps {
   paginationEllipsis?: HTMLAttributes['class']
 
-  una?: Pick<NPaginationUnaProps, 'paginationEllipsis' | 'paginationEllipsisIconBase' | 'paginationEllipsisIcon'>
+  una?: Pick<NPaginationUnaProps, 'paginationEllipsis' | 'paginationEllipsisIconBase' | 'paginationEllipsisIcon' | 'pagination'>
 }
 
-export interface NPaginationFirstProps extends PaginationFirstProps, NButtonProps {
+export interface NPaginationFirstProps extends PaginationFirstProps, Omit<NButtonProps, 'una'> {
+  una?: Pick<NPaginationUnaProps, 'paginationFirst' | 'pagination'> & NButtonProps['una']
 }
 
-export interface NPaginationPrevProps extends PaginationPrevProps, NButtonProps {
+export interface NPaginationPrevProps extends PaginationPrevProps, Omit<NButtonProps, 'una'> {
+  una?: Pick<NPaginationUnaProps, 'paginationPrev' | 'pagination'> & NButtonProps['una']
 }
 
-export interface NPaginationNextProps extends PaginationNextProps, NButtonProps {
+export interface NPaginationNextProps extends PaginationNextProps, Omit<NButtonProps, 'una'> {
+  una?: Pick<NPaginationUnaProps, 'paginationNext' | 'pagination'> & NButtonProps['una']
 }
 
-export interface NPaginationLastProps extends PaginationLastProps, NButtonProps {
+export interface NPaginationLastProps extends PaginationLastProps, Omit<NButtonProps, 'una'> {
+  una?: Pick<NPaginationUnaProps, 'paginationLast' | 'pagination'> & NButtonProps['una']
 }
 
 export interface NPaginationUnaProps {
+  pagination?: HTMLAttributes['class']
   paginationRoot?: HTMLAttributes['class']
   paginationList?: HTMLAttributes['class']
+  paginationNext?: HTMLAttributes['class']
+  paginationPrev?: HTMLAttributes['class']
+  paginationFirst?: HTMLAttributes['class']
+  paginationLast?: HTMLAttributes['class']
   paginationListItem?: HTMLAttributes['class']
   paginationEllipsis?: HTMLAttributes['class']
   paginationEllipsisIconBase?: HTMLAttributes['class']

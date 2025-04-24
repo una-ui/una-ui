@@ -26,7 +26,9 @@ const { toasts } = useToast()
       :key="t.id"
       v-bind="{ ..._toast, ...$attrs, ...t }"
     >
-      <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
     </Toast>
 
     <ToastViewport v-bind="_toastViewport" />

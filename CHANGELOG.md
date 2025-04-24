@@ -1,3 +1,203 @@
+## [0.51.6](https://github.com/una-ui/una-ui/compare/v0.51.5...v0.51.6) (2025-04-18)
+
+
+### Bug Fixes
+
+* **config:** resolve config paths relative to the current file ([#384](https://github.com/una-ui/una-ui/issues/384)) ([1105e11](https://github.com/una-ui/una-ui/commit/1105e113aefb789d56411e2b81ba6bc9c71c301b)), closes [unocss/unocss#2613](https://github.com/unocss/unocss/issues/2613)
+* **Nuxt:** unify `una` prop type definitions across all subcomponents ([#385](https://github.com/una-ui/una-ui/issues/385)) ([f555db7](https://github.com/una-ui/una-ui/commit/f555db789e560976096a0b8c875c4a0aa817f8ee))
+
+
+
+## [0.51.5](https://github.com/una-ui/una-ui/compare/v0.51.4...v0.51.5) (2025-04-16)
+
+
+### Bug Fixes
+
+* **Select:** pass generic `T` to SelectRootEmits ([#383](https://github.com/una-ui/una-ui/issues/383)) ([b2732a8](https://github.com/una-ui/una-ui/commit/b2732a8dc3885f6b42cfcd224aa72451efba9f26))
+
+
+
+## [0.51.4](https://github.com/una-ui/una-ui/compare/v0.51.3...v0.51.4) (2025-04-09)
+
+
+### Features
+
+* **DropdownMenu:** improve height, rounded, and padding configuration ([0010bbb](https://github.com/una-ui/una-ui/commit/0010bbbf1d80f8d03bbe78c360f2d56ba4ca73c8))
+
+
+
+## [0.51.3](https://github.com/una-ui/una-ui/compare/v0.51.2...v0.51.3) (2025-04-07)
+
+
+### Features
+
+* **Table:** enhance `_tableRow` prop to accept a function for dynamic row attributes ([#377](https://github.com/una-ui/una-ui/issues/377)) ([d09b739](https://github.com/una-ui/una-ui/commit/d09b739b1d22b24346f236627853878a7ef2f6bd))
+
+
+
+## [0.51.2](https://github.com/una-ui/una-ui/compare/v0.51.1...v0.51.2) (2025-04-05)
+
+
+### Bug Fixes
+
+* **DropdownMenuItem:** bind attribute to root component ([91f6e6d](https://github.com/una-ui/una-ui/commit/91f6e6d9db5a10df5a5eeb5ca4a427c13be40ced))
+
+
+
+## [0.51.1](https://github.com/una-ui/una-ui/compare/v0.51.0...v0.51.1) (2025-04-04)
+
+
+### Bug Fixes
+
+* **Button:** remove onClick definition ([ee1bd60](https://github.com/una-ui/una-ui/commit/ee1bd6014924094f60b1577495a62220b5ecb8e7))
+
+
+
+# [0.51.0](https://github.com/una-ui/una-ui/compare/v0.50.4...v0.51.0) (2025-04-04)
+
+
+### Features
+
+* add primitives support to table subcomponents ([#374](https://github.com/una-ui/una-ui/issues/374)) ([0d78877](https://github.com/una-ui/una-ui/commit/0d788775c7a64558000acb56cea900dd978af663))
+* **Button:** define type for onClick event ([c804312](https://github.com/una-ui/una-ui/commit/c804312426812c792ec75989f7fb1cb2e08862c6))
+* **Button:** support dynamic prop types ([c92dce0](https://github.com/una-ui/una-ui/commit/c92dce0b7429d0cc676611e46ed25c5a721c30cf))
+* **Table:** add emit functionality on row click; improve types ([#373](https://github.com/una-ui/una-ui/issues/373)) ([aba6efd](https://github.com/una-ui/una-ui/commit/aba6efd89c9a7eb9d2594fce700664a1a6893014))
+
+
+
+## [0.50.4](https://github.com/una-ui/una-ui/compare/v0.50.3...v0.50.4) (2025-04-04)
+
+
+### Features
+
+* **Input:** add expose methods for input manipulation ([6275b83](https://github.com/una-ui/una-ui/commit/6275b831ca53e6df08d32d28861419170f4b9c74))
+
+
+
+## [0.50.3](https://github.com/una-ui/una-ui/compare/v0.50.2...v0.50.3) (2025-04-03)
+
+
+### Bug Fixes
+
+* **AvatarGroup:** update overflow label condition ([4a707a5](https://github.com/una-ui/una-ui/commit/4a707a5f5b9e7f6f13f4243ba63df360fa30398d))
+
+
+
+## [0.50.2](https://github.com/una-ui/una-ui/compare/v0.50.1...v0.50.2) (2025-04-03)
+
+
+### Features
+
+* **Avatar:** improve accessibility ([2de98bb](https://github.com/una-ui/una-ui/commit/2de98bbbc369b5f004262b64e2c40bc91b4fe11c))
+
+
+
+## [0.50.1](https://github.com/una-ui/una-ui/compare/v0.50.0...v0.50.1) (2025-04-03)
+
+
+### Bug Fixes
+
+* **AvatarGroup:** replace reactiveOmit with omitProps ([3759cfa](https://github.com/una-ui/una-ui/commit/3759cfa8863e9984f5945493e5732ec3172fb356))
+
+
+
+# [0.50.0](https://github.com/una-ui/una-ui/compare/v0.49.3...v0.50.0) (2025-04-03)
+
+
+### Features
+
+* **AvatarGroup:** add custom overflow-label support ([fb4b3ef](https://github.com/una-ui/una-ui/commit/fb4b3ef6cb1b05d582d4842c8e08cbea5cd9db60))
+
+
+
+## [0.49.3](https://github.com/una-ui/una-ui/compare/v0.49.2...v0.49.3) (2025-04-03)
+
+
+### Bug Fixes
+
+* **AvatarGroup:** use defineSlots for slot definition ([277567d](https://github.com/una-ui/una-ui/commit/277567d58720a6bcfb674746bdd6b215367e46bd))
+
+
+
+## [0.49.2](https://github.com/una-ui/una-ui/compare/v0.49.1...v0.49.2) (2025-04-03)
+
+
+
+## [0.49.1](https://github.com/una-ui/una-ui/compare/v0.49.0...v0.49.1) (2025-04-03)
+
+
+### Bug Fixes
+
+* **Toast:** add bg-base to toast-outline variant ([c932ef1](https://github.com/una-ui/una-ui/commit/c932ef13114c36fb767dc83bd3e48f62ec2c41d7))
+
+
+
+# [0.49.0](https://github.com/una-ui/una-ui/compare/v0.48.0...v0.49.0) (2025-04-02)
+
+
+### Features
+
+* **AspectRatio:** introduce new components and presets ([#371](https://github.com/una-ui/una-ui/issues/371)) ([2e3b7e5](https://github.com/una-ui/una-ui/commit/2e3b7e5cc22a852083185facdd754f16f65f1651))
+
+
+
+# [0.48.0](https://github.com/una-ui/una-ui/compare/v0.47.2...v0.48.0) (2025-04-01)
+
+
+### Features
+
+* **NavigationMenu:** introduce new components and presets ([#363](https://github.com/una-ui/una-ui/issues/363)) ([7097549](https://github.com/una-ui/una-ui/commit/7097549846259d8aeb3452e724ce580f066828b9))
+
+
+
+## [0.47.2](https://github.com/una-ui/una-ui/compare/v0.47.1...v0.47.2) (2025-03-30)
+
+
+### Features
+
+* **Pagination:** add `square` prop and add `pagination` preset config ([3bb6bb9](https://github.com/una-ui/una-ui/commit/3bb6bb93a4ef45aa4957d537f1cf86ec3911b884))
+
+
+
+## [0.47.1](https://github.com/una-ui/una-ui/compare/v0.47.0...v0.47.1) (2025-03-30)
+
+
+### Bug Fixes
+
+* **Button:** update preset and leading configuration ([dd98110](https://github.com/una-ui/una-ui/commit/dd98110b361d6666b715029829a703d9af2fadac))
+* **DropdownMenu:** update sizes, padding, and height config ([d285c91](https://github.com/una-ui/una-ui/commit/d285c91d418e51f36c89b8b6b53def342d612f34))
+
+
+### Features
+
+* **Select:** add trigger-wrapper slot ([2083e5e](https://github.com/una-ui/una-ui/commit/2083e5eddc5bd312418dc5c7fed6a4aeb1a6da19))
+
+
+
+# [0.47.0](https://github.com/una-ui/una-ui/compare/v0.46.0...v0.47.0) (2025-03-28)
+
+
+### Bug Fixes
+
+* **Table:** isolate una configuration to table-loading components ([86c7d07](https://github.com/una-ui/una-ui/commit/86c7d07f36c5df62785609a5b995145ad2ebb306))
+
+
+### Features
+
+* **DropdownMenu:** add support for event handlers ([#364](https://github.com/una-ui/una-ui/issues/364)) ([a170231](https://github.com/una-ui/una-ui/commit/a170231f176b0a2a64937ca23500cd73fa2f91a0))
+* **Preset:** add  and use  to base html class ([978f7d3](https://github.com/una-ui/una-ui/commit/978f7d34eae12945788ef9cf8423779f07ca5c9c))
+
+
+
+# [0.46.0](https://github.com/una-ui/una-ui/compare/v0.45.0...v0.46.0) (2025-03-25)
+
+
+### Bug Fixes
+
+* **Nuxt:** reconfig slot iteration syntax for some components ([ccaf52a](https://github.com/una-ui/una-ui/commit/ccaf52a024e3edd9a56a985654726f7f464bec8a))
+
+
+
 # [0.45.0](https://github.com/una-ui/una-ui/compare/v0.44.2...v0.45.0) (2025-03-24)
 
 

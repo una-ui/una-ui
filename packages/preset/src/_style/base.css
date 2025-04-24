@@ -1,7 +1,6 @@
 html {
   font-size: var(--una-font-size, 16px);
-  background-color: var(--c-background);
-  color: var(--c-foreground);
+  @apply font-sans antialiased text-foreground bg-background;
 }
 
 html.dark {

@@ -10,6 +10,7 @@ import Button from '../Button.vue'
 
 const props = withDefaults(defineProps<NDropdownMenuSubTriggerProps>(), {
   dropdownMenuItem: '~',
+  rounded: 'sm',
 })
 
 const delegatedProps = computed(() => {
@@ -29,7 +30,7 @@ const forwardedProps = useForwardProps(delegatedProps)
       v-bind="{ ...forwardedProps, ...$attrs }"
       :dropdown-menu-item
       :class="cn(
-        'dropdown-menu-sub-trigger w-full justify-start font-normal rounded-sm px-2',
+        'dropdown-menu-sub-trigger w-full justify-start font-normal px-0.5714285714285714em py-0.42857142857142855em h-auto',
         inset && !(forwardedProps.leading || $slots.leading) && 'pl-8',
         props.class,
       )"
@@ -41,7 +42,9 @@ const forwardedProps = useForwardProps(delegatedProps)
       }"
       trailing="dropdown-menu-sub-trigger-trailing-icon"
     >
-      <slot v-for="(slotContent, slotName) in $slots" :name="slotName" v-bind="slotContent" />
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
     </Button>
   </dropdownmenusubtrigger>
 </template>

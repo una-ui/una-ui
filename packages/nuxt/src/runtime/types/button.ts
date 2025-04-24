@@ -12,6 +12,8 @@ interface BaseExtensionProps {
   dropdownMenu?: string
   toggleOn?: string
   toggleOff?: string
+  navigationMenu?: string
+  navigationMenuLink?: string
   ariaLabel?: string
 }
 

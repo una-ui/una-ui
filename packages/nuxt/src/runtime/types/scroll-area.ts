@@ -47,7 +47,7 @@ export interface NScrollAreaProps extends
 }
 
 export interface NScrollAreaRootProps extends ScrollAreaRootProps, BaseExtension {
-  una?: NScrollAreaUnaProps['scrollAreaRoot']
+  una?: Pick<NScrollAreaUnaProps, 'scrollAreaRoot'>
 }
 
 export interface NScrollAreaScrollbarProps extends ScrollAreaScrollbarProps, Pick<NScrollAreaProps, 'scrollArea'>, BaseExtension {
@@ -55,11 +55,11 @@ export interface NScrollAreaScrollbarProps extends ScrollAreaScrollbarProps, Pic
 }
 
 export interface NScrollAreaThumbProps extends ScrollAreaThumbProps, BaseExtension {
-  una?: NScrollAreaUnaProps['scrollAreaThumb']
+  una?: Pick<NScrollAreaUnaProps, 'scrollAreaThumb'>
 }
 
 export interface NScrollAreaViewportProps extends ScrollAreaViewportProps, Pick<BaseExtension, 'class'> {
-  una?: NScrollAreaUnaProps['scrollAreaViewport']
+  una?: Pick<NScrollAreaUnaProps, 'scrollAreaViewport'>
 }
 
 export interface NScrollAreaUnaProps {

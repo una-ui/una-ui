@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<NSelectProps<T>>(), {
   size: 'sm',
 })
 
-const emits = defineEmits<SelectRootEmits>()
+const emits = defineEmits<SelectRootEmits<T>>()
 
 const forwarded = useForwardPropsEmits(props, emits)
 
@@ -70,28 +70,30 @@ function isItemSelected(item: unknown, modelValue: unknown) {
     v-bind="forwarded"
   >
     <slot name="root" :model-value :open>
-      <SelectTrigger
-        :id
-        :size
-        :status
-        :select
-        v-bind="props._selectTrigger"
-        :una
-      >
-        <slot name="trigger" :model-value :open="open">
-          <SelectValue
-            :placeholder="props.placeholder"
-            v-bind="props._selectValue"
-            :aria-label="formatSelectedValue(modelValue)"
-            :data-status="status"
-            :una
-          >
-            <slot name="value" :model-value :open>
-              {{ formatSelectedValue(modelValue) || props.placeholder }}
-            </slot>
-          </SelectValue>
-        </slot>
-      </SelectTrigger>
+      <slot name="trigger-wrapper">
+        <SelectTrigger
+          :id
+          :size
+          :status
+          :select
+          v-bind="props._selectTrigger"
+          :una
+        >
+          <slot name="trigger" :model-value :open="open">
+            <SelectValue
+              :placeholder="props.placeholder"
+              v-bind="props._selectValue"
+              :aria-label="formatSelectedValue(modelValue)"
+              :data-status="status"
+              :una
+            >
+              <slot name="value" :model-value :open>
+                {{ formatSelectedValue(modelValue) || props.placeholder }}
+              </slot>
+            </SelectValue>
+          </slot>
+        </SelectTrigger>
+      </slot>
 
       <SelectContent
         :size

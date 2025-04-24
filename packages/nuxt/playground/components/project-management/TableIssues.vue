@@ -190,6 +190,12 @@ const columns: ColumnDef<Issue>[] = [
     header: 'Progress',
     accessorKey: 'progress',
   },
+  {
+    header: 'Actions',
+    accessorKey: 'actions',
+    enableSorting: false,
+    enableColumnFilter: false,
+  },
 ]
 const search = ref('')
 const select = ref()
@@ -313,7 +319,7 @@ const visibleColumnHeaders = computed({
     <!-- table -->
     <NTable
       ref="table"
-      v-model="select"
+      v-model:row-selection="select"
       :columns
       :una="{
         tableRoot: 'border-x-0 rounded-0',
@@ -454,6 +460,38 @@ const visibleColumnHeaders = computed({
         </div>
       </template>
       <!-- end cell -->
+
+      <template #actions-cell>
+        <NDropdownMenu
+          :items="[
+            {
+              label: 'View',
+              leading: 'i-lucide-eye',
+            },
+            {
+              label: 'Edit',
+              leading: 'i-lucide-pencil',
+            },
+            {},
+            {
+              label: 'Delete',
+              class: 'text-error',
+              leading: 'i-lucide-trash',
+              dropdownMenuItem: 'error',
+            },
+          ]"
+          :_dropdown-menu-trigger="{
+            icon: true,
+            rounded: 'full',
+            btn: 'ghost-gray data-[state=open]:soft-gray',
+            label: 'i-lucide-ellipsis',
+          }"
+          :_dropdown-menu-content="{
+            side: 'bottom',
+            align: 'end',
+          }"
+        />
+      </template>
     </NTable>
 
     <!-- footer -->

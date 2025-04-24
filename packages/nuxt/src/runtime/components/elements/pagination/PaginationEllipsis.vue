@@ -24,6 +24,7 @@ const forwardedProps = useForwardProps(delegatedProps)
     :pagination-ellipsis
     :class="cn(
       'pagination-ellipsis-base',
+      props.una?.pagination,
       props.una?.paginationEllipsis,
       props.class,
     )"

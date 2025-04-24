@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    keepalive: true,
+    keepalive: false,
   },
 
   nitro: {

@@ -190,6 +190,24 @@ Aad a trailing slot to the input.
 ::
 :::
 
+## Expose
+
+| Name       | Type                       | Description                                                    |
+| ---------- | -------------------------- | -------------------------------------------------------------- |
+| `inputRef` | `Ref<HTMLElement \| null>` | Reference to the native input element for direct manipulation. |
+| `focus`    | `() => void`               | Automatically focus the input.                                 |
+| `blur`     | `() => void`               | Automatically blur the input.                                  |
+| `select`   | `() => void`               | Automatically select the input.                                |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueInputExpose
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/input/ExampleVueInputExpose.vue
+::
+:::
+
 ## Presets
 
 @@@ ../packages/preset/src/_shortcuts/input.ts [shortcuts/input.ts]

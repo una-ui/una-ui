@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import type { NTableCellProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
+import { Primitive } from 'reka-ui'
 import { cn } from '../../../utils'
 
-const props = defineProps<NTableCellProps>()
+const props = withDefaults(defineProps<NTableCellProps>(), {
+  as: 'td',
+})
+
+const rootProps = reactiveOmit(props, ['una', 'class'])
 </script>
 
 <template>
-  <td
+  <Primitive
     :class="
       cn(
         'table-cell',
@@ -16,8 +22,8 @@ const props = defineProps<NTableCellProps>()
         dataPinned === 'left' ? 'table-cell-pinned-left' : 'table-cell-pinned-right',
       )
     "
-    v-bind="$attrs"
+    v-bind="{ ...rootProps, ...$attrs }"
   >
     <slot />
-  </td>
+  </Primitive>
 </template>

@@ -1,6 +1,7 @@
 import type { Preset, StaticShortcutMap } from '@unocss/core'
 import { accordion } from './accordion'
 import { alert } from './alert'
+import { aspectRatio } from './aspect-ratio'
 import { avatar } from './avatar'
 import { avatarGroup } from './avatar-group'
 import { badge } from './badge'
@@ -20,6 +21,7 @@ import { input } from './input'
 import { kbd } from './kbd'
 import { label } from './label'
 import { link } from './link'
+import { navigationMenu } from './navigation-menu'
 import { pagination } from './pagination'
 import { popover } from './popover'
 import { progress } from './progress'
@@ -76,5 +78,7 @@ export const shortcuts = [
   ...form,
   ...sheet,
   ...scrollArea,
+  ...navigationMenu,
   ...sidebar,
+  ...aspectRatio,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

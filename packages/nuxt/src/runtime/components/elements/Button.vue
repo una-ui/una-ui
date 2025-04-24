@@ -9,6 +9,7 @@ import NLink from '../elements/Link.vue'
 const props = withDefaults(defineProps<NButtonProps>(), {
   type: 'button',
   size: 'sm',
+  rounded: 'md',
   loadingPlacement: 'leading',
   una: () => ({
     btnDefaultVariant: 'btn-default-variant',
@@ -25,6 +26,8 @@ const mergeVariants = computed(() => {
     'dropdown-menu': props.dropdownMenu,
     'toggle-on': props.toggleOn,
     'toggle-off': props.toggleOff,
+    'navigation-menu': props.navigationMenu,
+    'navigation-menu-link': props.navigationMenuLink,
   }
 })
 
@@ -57,7 +60,6 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
     :class="cn(
       (square === '' || square) && 'btn-square',
       block && 'btn-block',
-      !rounded && 'btn-default-radius',
       !hasVariant && !isBaseVariant ? una?.btnDefaultVariant : null,
       reverse && 'btn-reverse',
       'btn',
@@ -89,8 +91,10 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       <NIcon
         v-if="leading"
         :name="leading"
-        :class="una?.btnLeading"
-        btn="leading"
+        :class="cn(
+          'btn-leading',
+          una?.btnLeading,
+        )"
       />
     </slot>
 

@@ -48,8 +48,17 @@ const data = {
           badge: 'deprecated' as const,
         },
         {
+          title: 'Aspect Ratio',
+          url: '/components/aspect-ratio',
+          badge: 'new' as const,
+        },
+        {
           title: 'Avatar',
           url: '/components/avatar',
+        },
+        {
+          title: 'Avatar Group',
+          url: '/components/avatar-group',
         },
         {
           title: 'Breadcrumb',
@@ -82,6 +91,14 @@ const data = {
         {
           title: 'Forms',
           url: '/components/forms',
+        },
+        {
+          title: 'Input',
+          url: '/components/input',
+        },
+        {
+          title: 'Navigation Menu',
+          url: '/components/navigation-menu',
         },
         {
           title: 'Pagination',
@@ -140,6 +157,10 @@ const data = {
         {
           title: 'Tabs',
           url: '/components/tabs',
+        },
+        {
+          title: 'Textarea',
+          url: '/components/textarea',
         },
         {
           title: 'Toast',

@@ -36,6 +36,7 @@ const props = withDefaults(defineProps<NAvatarProps>(), {
         v-if="src"
         :src
         :una
+        :alt
         v-bind="_avatarImage"
       />
     </slot>

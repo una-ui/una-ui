@@ -40,7 +40,7 @@ const table = useTemplateRef<Table<Person>>('table')
   <div class="flex flex-col space-y-4">
     <NTable
       ref="table"
-      v-model="select"
+      v-model:row-selection="select"
       :columns
       :data
       enable-row-selection

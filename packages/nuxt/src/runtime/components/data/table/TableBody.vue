@@ -1,19 +1,25 @@
 <script setup lang="ts">
 import type { NTableBodyProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
+import { Primitive } from 'reka-ui'
 import { cn } from '../../../utils'
 
-const props = defineProps<NTableBodyProps>()
+const props = withDefaults(defineProps<NTableBodyProps>(), {
+  as: 'tbody',
+})
+
+const rootProps = reactiveOmit(props, ['una', 'class'])
 </script>
 
 <template>
-  <tbody
+  <Primitive
     :class="cn(
       'table-body',
       props?.una?.tableBody,
       props.class,
     )"
-    v-bind="$attrs"
+    v-bind="{ ...rootProps, ...$attrs }"
   >
     <slot />
-  </tbody>
+  </Primitive>
 </template>

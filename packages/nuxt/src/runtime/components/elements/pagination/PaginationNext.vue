@@ -29,7 +29,10 @@ const forwardedProps = useForwardProps(delegatedProps)
         v-bind="forwardedProps"
         :class="cn(
           'pagination-next',
-          props.class)"
+          props.una?.pagination,
+          props.una?.paginationNext,
+          props.class,
+        )"
       />
     </slot>
   </PaginationNext>

@@ -50,6 +50,8 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
           :pagination-selected
           :pagination-unselected
           v-bind="_paginationFirst"
+          :square
+          :una
         >
           <slot
             name="first"
@@ -63,6 +65,8 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
           :pagination-unselected
           :size
           v-bind="_paginationPrev"
+          :square
+          :una
         >
           <slot
             name="prev"
@@ -85,6 +89,8 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
                 :size
                 :pagination-selected
                 :pagination-unselected
+                :square
+                :una
                 v-bind="_paginationListItem"
               />
             </slot>
@@ -96,6 +102,7 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
               :rounded
               :size
               :pagination-ellipsis
+              :square
               :una
               v-bind="_paginationEllipsis"
             >
@@ -113,6 +120,8 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
           :pagination-selected
           :pagination-unselected
           v-bind="_paginationNext"
+          :square
+          :una
         >
           <slot
             name="next"
@@ -125,6 +134,8 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
           :size
           :pagination-selected
           :pagination-unselected
+          :square
+          :una
           v-bind="_paginationLast"
         >
           <slot

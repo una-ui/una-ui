@@ -1,5 +1,6 @@
 export * from './accordion'
 export * from './alert'
+export * from './aspect-ratio'
 export * from './avatar'
 export * from './avatar-group'
 export * from './badge'
@@ -18,6 +19,7 @@ export * from './input'
 export * from './kbd'
 export * from './label'
 export * from './link'
+export * from './navigation-menu'
 export * from './pagination'
 export * from './popover'
 export * from './progress'
@@ -62,3 +64,11 @@ export interface UnaSettings {
   fontSize: number
   radius: number
 }
+
+export type OutsideEvent<T extends Event> = CustomEvent<{
+  originalEvent: T
+}>
+
+export type PointerDownOutsideEvent = OutsideEvent<PointerEvent>
+
+export type FocusOutsideEvent = OutsideEvent<FocusEvent>

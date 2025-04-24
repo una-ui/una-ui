@@ -131,4 +131,9 @@ export interface NInputProps {
     inputInfoIcon?: string
     inputLoadingIcon?: string
   }
+
+  // Sub-components
+  _inputWrapper?: {
+    [key: string]: string
+  }
 }

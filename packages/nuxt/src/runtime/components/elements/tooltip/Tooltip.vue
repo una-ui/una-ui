@@ -46,7 +46,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
         :size
         :tooltip
         :disabled
-        :una="una?.tooltipContent"
+        :una
       >
         <slot name="content">
           {{ content }}

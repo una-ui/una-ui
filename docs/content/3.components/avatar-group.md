@@ -14,9 +14,9 @@ badges:
 
 ### Basic
 
-| Prop | Default | Description                                                          |
-| ---- | ------- | -------------------------------------------------------------------- |
-| max  | `3`     | The maximum number of avatars to display before the rest are hidden. |
+| Prop  | Default | Type     | Description                                                          |
+| ----- | ------- | -------- | -------------------------------------------------------------------- |
+| `max` |         | `number` | The maximum number of avatars to display before the rest are hidden. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -29,12 +29,29 @@ badges:
 
 :read-more{to="/components/avatar" title="Avatar component" target="_blank"}
 
+### Overflow Label
+
+This feature allows you to customize the overflow-label that appears when there are more avatars than the maximum number set to display.
+
+| Prop             | Default | Type     | Description                          |
+| ---------------- | ------- | -------- | ------------------------------------ |
+| `overflow-label` | `+${N}` | `string` | Override the default overflow label. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueAvatarGroupOverflowLabel
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/avatar-group/ExampleVueAvatarGroupOverflowLabel.vue
+::
+:::
+
 ### Size and Square
 
-| Prop     | Default  | Type     | Description                                                                                                       |
-| -------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
-| `size`   | `md`     | `string` | Sets the size of the avatar.                                                                                      |
-| `square` | `2.5rem` | `string` | Sets the avatar to a square shape with specified dimensions. This does not affect the size of the fallback value. |
+| Prop     | Default | Type     | Description                                                                                                       |
+| -------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `size`   | `md`    | `string` | Sets the size of the avatar.                                                                                      |
+| `square` | `2.5em` | `string` | Sets the avatar to a square shape with specified dimensions. This does not affect the size of the fallback value. |
 
 > 🚀 Adjust input size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
 

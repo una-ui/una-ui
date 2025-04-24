@@ -13,7 +13,6 @@ const { handleSubmit, validate, errors } = useForm({
 })
 
 const onSubmit = handleSubmit((values) => {
-  // eslint-disable-next-line no-console
   console.log('Form submitted!', values)
 })
 

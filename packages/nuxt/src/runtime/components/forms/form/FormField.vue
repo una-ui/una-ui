@@ -38,6 +38,7 @@ const statusClassVariants = computed(() => {
       :class="cn(
         props.class,
       )"
+      :una
     >
       <slot name="top">
         <div
