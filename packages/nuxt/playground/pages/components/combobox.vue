@@ -72,7 +72,10 @@ const selectedTimezone = ref(timezones[0])
       </NComboboxAnchor>
 
       <NComboboxList>
-        <NComboboxInput placeholder="Select framework..." />
+        <NComboboxInput
+          class="border-0 border-b-1 rounded-none placeholder:text-gray-500 focus-visible:ring-0"
+          placeholder="Select framework..."
+        />
 
         <NComboboxEmpty>
           No framework found.
