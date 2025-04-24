@@ -22,7 +22,7 @@ const delegatedProps = computed(() => {
   <ComboboxGroup
     data-slot="combobox-group"
     v-bind="delegatedProps"
-    :class="cn('overflow-hidden p-1 text-foreground', props.class)"
+    :class="cn('combobox-group', props.class)"
   >
     <ComboboxLabel v-if="props.label">
       {{ props.label }}

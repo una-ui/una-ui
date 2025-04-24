@@ -9,7 +9,7 @@ const props = defineProps<NComboboxLabelProps>()
 <template>
   <ComboboxLabel
     :class="cn(
-      'px-2 py-1.5 text-xs text-muted font-medium',
+      'combobox-label',
       props.una?.comboboxLabel,
       props.class,
     )"

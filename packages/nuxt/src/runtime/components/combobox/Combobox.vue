@@ -120,7 +120,6 @@ function isItemSelected(item: T | null | undefined): boolean {
         <slot name="anchor">
           <ComboboxTrigger
             v-if="$slots.trigger"
-            as-child
             v-bind="props._comboboxTrigger"
           >
             <slot name="trigger" />

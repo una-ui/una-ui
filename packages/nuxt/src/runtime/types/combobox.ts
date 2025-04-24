@@ -1,5 +1,6 @@
 import type { AcceptableValue, ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxLabelProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
+import type { NButtonProps } from './button'
 import type { NCheckboxProps } from './checkbox'
 import type { NInputProps } from './input'
 
@@ -95,7 +96,7 @@ export interface NComboboxSeparatorProps extends ComboboxSeparatorProps {
   class?: HTMLAttributes['class']
 }
 
-export interface NComboboxTriggerProps extends ComboboxTriggerProps {
+export interface NComboboxTriggerProps extends ComboboxTriggerProps, NButtonProps {
   class?: HTMLAttributes['class']
 }
 

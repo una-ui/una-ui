@@ -64,6 +64,36 @@ const selectedTimezone = ref(timezones[0])
 
 <template>
   <div class="flex flex-wrap items-center gap-4">
+    <NCombobox v-model="selectedFramework" by="label">
+      <NComboboxAnchor as-child>
+        <NComboboxTrigger>
+          {{ selectedFramework?.label ?? 'Select framework...' }}
+        </NComboboxTrigger>
+      </NComboboxAnchor>
+
+      <NComboboxList>
+        <NComboboxInput placeholder="Select framework..." />
+
+        <NComboboxEmpty>
+          No framework found.
+        </NComboboxEmpty>
+
+        <NComboboxGroup>
+          <NComboboxItem
+            v-for="framework in frameworks"
+            :key="framework.value"
+            :value="framework"
+          >
+            {{ framework.label }}
+
+            <NComboboxItemIndicator>
+              <NIcon name="i-lucide-check" />
+            </NComboboxItemIndicator>
+          </NComboboxItem>
+        </NComboboxGroup>
+      </NComboboxList>
+    </NCombobox>
+
     <NCombobox
       v-model="selectedFramework"
       :items="frameworks"
@@ -82,22 +112,19 @@ const selectedTimezone = ref(timezones[0])
       }"
     >
       <template #trigger>
-        <NButton btn="solid-white" class="w-full justify-between">
-          <template v-if="selectedUser">
-            <div class="flex items-center gap-2">
-              <NAvatar
-                :src="`https://github.com/${selectedUser.username}.png`"
-                :alt="selectedUser.username"
-                square="5"
-              />
-              {{ selectedUser.username }}
-            </div>
-          </template>
-          <template v-else>
-            Select user...
-          </template>
-          <NIcon name="i-lucide-chevrons-up-down" class="ml-2 shrink-0 opacity-50 square-4" />
-        </NButton>
+        <template v-if="selectedUser">
+          <div class="flex items-center gap-2">
+            <NAvatar
+              :src="`https://github.com/${selectedUser.username}.png`"
+              :alt="selectedUser.username"
+              square="5"
+            />
+            {{ selectedUser.username }}
+          </div>
+        </template>
+        <template v-else>
+          Select user...
+        </template>
       </template>
       <template #item-label="{ item }">
         <NAvatar
@@ -133,22 +160,22 @@ const selectedTimezone = ref(timezones[0])
       :_combobox-viewport="{
         class: 'max-h-260px',
       }"
+      :_combobox-trigger="{
+        class: 'h-12 w-200px px-2.5',
+      }"
     >
       <template #trigger>
-        <NButton btn="solid-white" class="h-12 w-200px justify-between px-2.5">
-          <template v-if="selectedTimezone">
-            <div class="flex flex-col items-start gap-0.5">
-              <span class="text-xs font-normal opacity-75">
-                {{ selectedTimezone.group }}
-              </span>
-              <span>{{ selectedTimezone.label }}</span>
-            </div>
-          </template>
-          <template v-else>
-            Select timezone...
-          </template>
-          <NIcon name="i-lucide-chevron-down" class="ml-2 shrink-0 opacity-50 square-4" />
-        </NButton>
+        <template v-if="selectedTimezone">
+          <div class="flex flex-col items-start gap-0.5">
+            <span class="text-xs font-normal opacity-75">
+              {{ selectedTimezone.group }}
+            </span>
+            <span>{{ selectedTimezone.label }}</span>
+          </div>
+        </template>
+        <template v-else>
+          Select timezone...
+        </template>
       </template>
 
       <template #list-footer>
@@ -178,15 +205,12 @@ const selectedTimezone = ref(timezones[0])
       }"
     >
       <template #trigger>
-        <NButton btn="solid-white" class="w-full justify-between">
-          {{ selectedFrameworks?.length > 0
-            ? selectedFrameworks.map(val => {
-              const framework = frameworks.find(f => f.value === val)
-              return framework ? framework.label : val
-            }).join(", ")
-            : "Select frameworks (multi-select)..." }}
-          <NIcon name="i-lucide-chevron-down" class="ml-2 shrink-0 opacity-50 square-4" />
-        </NButton>
+        {{ selectedFrameworks?.length > 0
+          ? selectedFrameworks.map(val => {
+            const framework = frameworks.find(f => f.value === val)
+            return framework ? framework.label : val
+          }).join(", ")
+          : "Select frameworks (multi-select)..." }}
       </template>
     </NCombobox>
   </div>
