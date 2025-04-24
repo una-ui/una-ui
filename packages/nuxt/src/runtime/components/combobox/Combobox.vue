@@ -1,9 +1,9 @@
 <script lang="ts">
 import type { AcceptableValue, ComboboxRootEmits } from 'reka-ui'
+import type { NComboboxGroupProps, NComboboxProps } from '../../types'
 </script>
 
 <script setup lang="ts" generic="T extends AcceptableValue">
-import type { NComboboxProps } from '../../types'
 import { ComboboxRoot, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import Checkbox from '../forms/Checkbox.vue'
@@ -14,9 +14,12 @@ import ComboboxInput from './ComboboxInput.vue'
 import ComboboxItem from './ComboboxItem.vue'
 import ComboboxItemIndicator from './ComboboxItemIndicator.vue'
 import ComboboxList from './ComboboxList.vue'
+import ComboboxSeparator from './ComboboxSeparator.vue'
 import ComboboxTrigger from './ComboboxTrigger.vue'
+import ComboboxViewport from './ComboboxViewport.vue'
 
-const props = withDefaults(defineProps<NComboboxProps<T>>(), {})
+const props = withDefaults(defineProps<NComboboxProps<T>>(), {
+})
 const emits = defineEmits<ComboboxRootEmits<T>>()
 
 const forwarded = useForwardPropsEmits(props, emits)
@@ -24,76 +27,86 @@ const forwarded = useForwardPropsEmits(props, emits)
 const labelKey = computed(() => props.labelKey?.toString() ?? 'label')
 const valueKey = computed(() => props.valueKey?.toString() ?? 'value')
 
+// Check if items are grouped
+const hasGroups = computed(() => {
+  return Array.isArray(props.items) && props.items.length > 0
+    && typeof props.items[0] === 'object' && 'items' in (props.items[0] as any)
+})
+
 // Helper function to safely get a property from an item
 function getItemProperty(item: T | null | undefined, key: string): any {
   if (item == null)
     return ''
 
-  // Handle primitive values (string/number)
-  if (typeof item !== 'object')
-    return item
-
-  // Only access properties on objects
-  return (item as Record<string, any>)[key]
+  return typeof item !== 'object' ? item : (item as Record<string, any>)[key]
 }
 
-// Safe display value function - supports both object and primitive values
-function getDisplayValue(val: any) {
-  if (val == null)
+// Find a matching item from the items list by its value
+function findItemByValue(value: any): T | undefined {
+  if (!props.items)
+    return undefined
+
+  if (hasGroups.value) {
+    // Search in grouped items
+    for (const group of props.items as NComboboxGroupProps<T>[]) {
+      const found = group.items?.find(item => getItemProperty(item, valueKey.value) === value)
+      if (found)
+        return found
+    }
+    return undefined
+  }
+  else {
+    // Search in flat items list
+    return (props.items as T[]).find(item => getItemProperty(item, valueKey.value) === value)
+  }
+}
+
+// Display function that handles both single and multiple selections
+function getDisplayValue(val: unknown): string {
+  // Handle empty values
+  if (!val || (Array.isArray(val) && val.length === 0))
     return ''
 
-  // If multiple selection with array values
+  // Handle multiple selection (array values)
   if (props.multiple && Array.isArray(val)) {
-    // Check if these are primitive values or objects
-    if (val.length > 0 && (typeof val[0] === 'string' || typeof val[0] === 'number')) {
-      // If values are primitives, find matching items to display labels
-      return val.map((v) => {
-        const matchingItem = props.items?.find(item => getItemProperty(item, valueKey.value) === v)
-        return matchingItem ? getItemProperty(matchingItem, labelKey.value) : v
-      }).join(', ')
-    }
+    return val.map((v) => {
+      // For primitive values (string/number), find matching item to get label
+      if (typeof v !== 'object' || v === null) {
+        const item = findItemByValue(v)
+        return item ? getItemProperty(item, labelKey.value) : v
+      }
 
-    // Otherwise process as objects
-    return val.map(item => getItemProperty(item, labelKey.value)).join(', ')
+      // For objects, try to get the label directly
+      return getItemProperty(v, labelKey.value) || getItemProperty(v, valueKey.value) || ''
+    }).filter(Boolean).join(', ')
   }
 
-  // Check if val is a primitive (string/number)
-  if (typeof val === 'string' || typeof val === 'number') {
-    // Find matching item to display its label
-    const matchingItem = props.items?.find(item => getItemProperty(item, valueKey.value) === val)
-    return matchingItem ? getItemProperty(matchingItem, labelKey.value) : val
+  // For single primitive value
+  if (typeof val !== 'object' || val === null) {
+    const item = findItemByValue(val)
+    return item ? getItemProperty(item, labelKey.value) : String(val || '')
   }
 
-  // Process as object
-  return getItemProperty(val as T, labelKey.value)
+  // For single object, get its label
+  return getItemProperty(val as any, labelKey.value) || getItemProperty(val as any, valueKey.value) || ''
 }
 
+// Check if an item is selected in the current modelValue
 function isItemSelected(item: T | null | undefined): boolean {
   if (item == null)
     return false
 
   const itemValue = getItemProperty(item, valueKey.value)
 
-  if (props.multiple) {
-    if (Array.isArray(props.modelValue)) {
-      // For array of objects
-      if (props.modelValue.length > 0 && typeof props.modelValue[0] === 'object') {
-        return props.modelValue.some(i => i && getItemProperty(i, valueKey.value) === itemValue)
-      }
-      // For array of primitives
-      return props.modelValue.includes(itemValue)
-    }
-  }
-  else {
-    // For single object
-    if (typeof props.modelValue === 'object' && props.modelValue !== null) {
-      return getItemProperty(props.modelValue as T, valueKey.value) === itemValue
-    }
-    // For primitive value
-    return props.modelValue === itemValue
+  // For multiple selection
+  if (props.multiple && Array.isArray(props.modelValue)) {
+    return props.modelValue.includes(itemValue)
   }
 
-  return false
+  // For single selection
+  return typeof props.modelValue === 'object' && props.modelValue !== null
+    ? getItemProperty(props.modelValue as T, valueKey.value) === itemValue
+    : props.modelValue === itemValue
 }
 </script>
 
@@ -103,9 +116,7 @@ function isItemSelected(item: T | null | undefined): boolean {
     v-bind="forwarded"
   >
     <slot>
-      <ComboboxAnchor
-        v-bind="props._comboboxAnchor"
-      >
+      <ComboboxAnchor v-bind="props._comboboxAnchor">
         <slot name="anchor">
           <ComboboxTrigger
             v-if="$slots.trigger"
@@ -117,83 +128,129 @@ function isItemSelected(item: T | null | undefined): boolean {
 
           <ComboboxInput
             v-else
-            :display-value="getDisplayValue"
+            :display-value="(val: unknown) => getDisplayValue(val)"
             name="frameworks"
             v-bind="props._comboboxInput"
           />
         </slot>
       </ComboboxAnchor>
 
-      <ComboboxList
-        v-bind="props._comboboxList"
-      >
+      <ComboboxList v-bind="props._comboboxList">
         <slot name="list">
+          <ComboboxInput
+            v-if="$slots.trigger"
+            class="border-0 border-b-1 rounded-none focus-visible:ring-0"
+            :as-child="!!$slots.input"
+            v-bind="props._comboboxInput"
+          >
+            <slot name="input" />
+          </ComboboxInput>
+
           <slot name="list-header" />
 
           <slot name="list-body">
-            <ComboboxInput
-              v-if="$slots.trigger"
-              class="border-0 border-b-1 rounded-none focus-visible:ring-0"
-              :as-child="!!$slots.input"
-              v-bind="props._comboboxInput"
-            >
-              <slot name="input" />
-            </ComboboxInput>
+            <ComboboxViewport v-bind="props._comboboxViewport">
+              <ComboboxEmpty v-bind="props._comboboxEmpty">
+                <slot name="empty">
+                  No items found.
+                </slot>
+              </ComboboxEmpty>
 
-            <ComboboxEmpty
-              v-bind="props._comboboxEmpty"
-            >
-              <slot name="empty">
-                No items found.
-              </slot>
-            </ComboboxEmpty>
-
-            <ComboboxGroup
-              v-bind="props._comboboxGroup"
-            >
-              <slot name="group">
-                <ComboboxItem
-                  v-for="item in items"
-                  :key="getItemProperty(item, valueKey)"
-                  :value="getItemProperty(item, valueKey)"
-                  v-bind="props._comboboxItem"
-                >
-                  <slot name="item" :item="item">
-                    <template
-                      v-if="multiple"
+              <!-- Non-grouped items -->
+              <template v-if="!hasGroups">
+                <ComboboxGroup v-bind="props._comboboxGroup">
+                  <slot name="group">
+                    <ComboboxItem
+                      v-for="item in items as T[]"
+                      :key="getItemProperty(item, valueKey)"
+                      :value="props.multiple ? getItemProperty(item, valueKey) : item"
+                      v-bind="props._comboboxItem"
                     >
-                      <slot name="item-checkbox" :item="item">
-                        <Checkbox
-                          v-bind="props._comboboxCheckbox"
-                          class="data-[state=indeterminate]:bg-transparent data-[state=unchecked]:bg-transparent"
-                          :data-selected="isItemSelected(item)"
-                          tabindex="-1"
-                          :model-value="isItemSelected(item)"
-                        />
-                      </slot>
+                      <slot name="item" :item="item">
+                        <template v-if="multiple">
+                          <slot name="item-checkbox" :item="item">
+                            <Checkbox
+                              v-bind="props._comboboxCheckbox"
+                              class="data-[state=indeterminate]:bg-transparent data-[state=unchecked]:bg-transparent"
+                              :data-selected="isItemSelected(item)"
+                              :model-value="isItemSelected(item)"
+                            />
+                          </slot>
 
-                      <slot name="item-label" :item="item">
-                        {{ getItemProperty(item, labelKey) }}
-                      </slot>
-                    </template>
+                          <slot name="item-label" :item="item">
+                            {{ getItemProperty(item, labelKey) }}
+                          </slot>
+                        </template>
 
-                    <template v-else>
-                      <slot name="item-label" :item="item">
-                        {{ getItemProperty(item, labelKey) }}
-                      </slot>
+                        <template v-else>
+                          <slot name="item-label" :item="item">
+                            {{ getItemProperty(item, labelKey) }}
+                          </slot>
 
-                      <ComboboxItemIndicator
-                        v-bind="props._comboboxItemIndicator"
-                      >
-                        <slot name="item-indicator" :item="item">
-                          <NIcon name="i-lucide-check" />
-                        </slot>
-                      </ComboboxItemIndicator>
-                    </template>
+                          <ComboboxItemIndicator v-bind="props._comboboxItemIndicator">
+                            <slot name="item-indicator" :item="item">
+                              <NIcon name="i-lucide-check" />
+                            </slot>
+                          </ComboboxItemIndicator>
+                        </template>
+                      </slot>
+                    </ComboboxItem>
                   </slot>
-                </ComboboxItem>
-              </slot>
-            </ComboboxGroup>
+                </ComboboxGroup>
+              </template>
+
+              <!-- Grouped items -->
+              <template v-else>
+                <ComboboxGroup
+                  v-for="(group, i) in items as NComboboxGroupProps<T>[]"
+                  :key="i"
+                  v-bind="props._comboboxGroup"
+                >
+                  <ComboboxSeparator
+                    v-if="i > 0 && props.groupSeparator"
+                    v-bind="props._comboboxSeparator"
+                  />
+
+                  <slot name="group" :group="group">
+                    <ComboboxItem
+                      v-for="item in group.items"
+                      :key="getItemProperty(item, valueKey)"
+                      :value="props.multiple ? getItemProperty(item, valueKey) : item"
+                      v-bind="{ ...props._comboboxItem, ...group._comboboxItem }"
+                    >
+                      <slot name="item" :item="item" :group="group">
+                        <template v-if="multiple">
+                          <slot name="item-checkbox" :item="item">
+                            <Checkbox
+                              v-bind="props._comboboxCheckbox"
+                              class="data-[state=indeterminate]:bg-transparent data-[state=unchecked]:bg-transparent"
+                              :data-selected="isItemSelected(item)"
+                              :model-value="isItemSelected(item)"
+                            />
+                          </slot>
+
+                          <slot name="item-label" :item="item">
+                            {{ getItemProperty(item, labelKey) }}
+                          </slot>
+                        </template>
+
+                        <template v-else>
+                          <slot name="item-label" :item="item">
+                            {{ getItemProperty(item, labelKey) }}
+                          </slot>
+
+                          <ComboboxItemIndicator v-bind="props._comboboxItemIndicator">
+                            <slot name="item-indicator" :item="item">
+                              <NIcon name="i-lucide-check" />
+                            </slot>
+                          </ComboboxItemIndicator>
+                        </template>
+                      </slot>
+                    </ComboboxItem>
+                  </slot>
+                </ComboboxGroup>
+              </template>
+            </ComboboxViewport>
           </slot>
 
           <slot name="list-footer" />

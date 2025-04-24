@@ -1,26 +1,58 @@
-import type { AcceptableValue, ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
+import type { AcceptableValue, ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxLabelProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NCheckboxProps } from './checkbox'
 import type { NInputProps } from './input'
 
 export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootProps<T> {
+  /**
+   * The class name to apply to the combobox.
+   */
   class?: HTMLAttributes['class']
-
-  items?: T[]
+  /**
+   * The items to display in the combobox.
+   *
+   * @default []
+   */
+  items?: T[] | NComboboxGroupProps<T>[]
+  /**
+   * The key name to use to display in the select items.
+   *
+   * @default 'label'
+   */
   labelKey?: keyof T
+  /**
+   * The key name to use to display in the selected value.
+   *
+   * @default 'value'
+   */
   valueKey?: keyof T
-
+  /**
+   * Whether to show a separator between groups.
+   *
+   * @default false
+   */
+  groupSeparator?: boolean
+  /**
+   * Sub-component configurations
+   */
   _comboboxAnchor?: NComboboxAnchorProps
   _comboboxEmpty?: NComboboxEmptyProps
-  _comboboxGroup?: NComboboxGroupProps
+  _comboboxGroup?: NComboboxGroupProps<T>
   _comboboxInput?: NComboboxInputProps
   _comboboxItem?: NComboboxItemProps
   _comboboxItemIndicator?: NComboboxItemIndicatorProps
+  _comboboxLabel?: NComboboxLabelProps
   _comboboxList?: NComboboxListProps
   _comboboxSeparator?: NComboboxSeparatorProps
   _comboboxTrigger?: NComboboxTriggerProps
   _comboboxViewport?: NComboboxViewportProps
   _comboboxCheckbox?: NCheckboxProps
+}
+
+export interface NComboboxLabelProps extends ComboboxLabelProps {
+  class?: HTMLAttributes['class']
+  label?: string
+  una?: Pick<NComboboxUnaProps, 'comboboxLabel'>
 }
 
 export interface NComboboxItem<T> extends ComboboxItemProps<T> {
@@ -34,9 +66,12 @@ export interface NComboboxEmptyProps extends ComboboxEmptyProps {
   class?: HTMLAttributes['class']
 }
 
-export interface NComboboxGroupProps extends ComboboxGroupProps {
+export interface NComboboxGroupProps<T extends AcceptableValue> extends ComboboxGroupProps {
   class?: HTMLAttributes['class']
-  heading?: string
+  label?: Pick<NComboboxLabelProps, 'label'>
+  items?: T[]
+  _comboboxItem?: Partial<NComboboxItemProps>
+  _comboboxLabel?: Partial<NComboboxLabelProps>
 }
 
 export interface NComboboxInputProps extends ComboboxInputProps, Omit<NInputProps, 'modelValue'> {
@@ -66,4 +101,8 @@ export interface NComboboxTriggerProps extends ComboboxTriggerProps {
 
 export interface NComboboxViewportProps extends ComboboxViewportProps {
   class?: HTMLAttributes['class']
+}
+
+export interface NComboboxUnaProps {
+  comboboxLabel?: HTMLAttributes['class']
 }

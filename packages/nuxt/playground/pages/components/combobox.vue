@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import { z } from 'zod'
-
 const frameworks = [
   { value: 'next.js', label: 'Next.js' },
   { value: 'sveltekit', label: 'SvelteKit' },
@@ -11,17 +9,61 @@ const frameworks = [
 const selectedFramework = ref()
 const selectedFrameworks = ref([])
 
-// Simple string-based values for clearer debugging
 const users = [
   { id: '1', username: 'shadcn' },
   { id: '2', username: 'leerob' },
   { id: '3', username: 'evilrabbit' },
 ]
 const selectedUser = ref()
+
+const timezoneGroups = [
+  {
+    label: 'Americas',
+    items: [
+      { value: 'America/New_York', label: '(GMT-5) New York' },
+      { value: 'America/Los_Angeles', label: '(GMT-8) Los Angeles' },
+      { value: 'America/Chicago', label: '(GMT-6) Chicago' },
+      { value: 'America/Toronto', label: '(GMT-5) Toronto' },
+      { value: 'America/Vancouver', label: '(GMT-8) Vancouver' },
+      { value: 'America/Sao_Paulo', label: '(GMT-3) São Paulo' },
+    ],
+  },
+  {
+    label: 'Europe',
+    items: [
+      { value: 'Europe/London', label: '(GMT+0) London' },
+      { value: 'Europe/Paris', label: '(GMT+1) Paris' },
+      { value: 'Europe/Berlin', label: '(GMT+1) Berlin' },
+      { value: 'Europe/Rome', label: '(GMT+1) Rome' },
+      { value: 'Europe/Madrid', label: '(GMT+1) Madrid' },
+      { value: 'Europe/Amsterdam', label: '(GMT+1) Amsterdam' },
+    ],
+  },
+  {
+    label: 'Asia/Pacific',
+    items: [
+      { value: 'Asia/Tokyo', label: '(GMT+9) Tokyo' },
+      { value: 'Asia/Shanghai', label: '(GMT+8) Shanghai' },
+      { value: 'Asia/Singapore', label: '(GMT+8) Singapore' },
+      { value: 'Asia/Dubai', label: '(GMT+4) Dubai' },
+      { value: 'Australia/Sydney', label: '(GMT+11) Sydney' },
+      { value: 'Asia/Seoul', label: '(GMT+9) Seoul' },
+    ],
+  },
+]
+
+const timezones = timezoneGroups.flatMap(group =>
+  group.items.map(item => ({
+    ...item,
+    group: group.label,
+  })),
+)
+
+const selectedTimezone = ref(timezones[0])
 </script>
 
 <template>
-  <div class="flex items-center gap-4">
+  <div class="flex flex-wrap items-center gap-4">
     <NCombobox
       v-model="selectedFramework"
       :items="frameworks"
@@ -38,7 +80,87 @@ const selectedUser = ref()
       :_combobox-input="{
         placeholder: 'Select user...',
       }"
-    />
+    >
+      <template #trigger>
+        <NButton btn="solid-white" class="w-full justify-between">
+          <template v-if="selectedUser">
+            <div class="flex items-center gap-2">
+              <NAvatar
+                :src="`https://github.com/${selectedUser.username}.png`"
+                :alt="selectedUser.username"
+                square="5"
+              />
+              {{ selectedUser.username }}
+            </div>
+          </template>
+          <template v-else>
+            Select user...
+          </template>
+          <NIcon name="i-lucide-chevrons-up-down" class="ml-2 shrink-0 opacity-50 square-4" />
+        </NButton>
+      </template>
+      <template #item-label="{ item }">
+        <NAvatar
+          square="5"
+          :src="`https://github.com/${item.username}.png`"
+          :alt="item.username"
+        />
+        {{ item.username }}
+      </template>
+
+      <template #list-footer>
+        <NComboboxSeparator />
+        <NComboboxGroup>
+          <NComboboxItem :value="null">
+            <NIcon name="i-lucide-plus-circle" />
+            Create user
+          </NComboboxItem>
+        </NComboboxGroup>
+      </template>
+    </NCombobox>
+
+    <NCombobox
+      v-model="selectedTimezone"
+      :items="timezones"
+      by="value"
+      :_combobox-input="{
+        placeholder: 'Select timezone...',
+      }"
+      :_combobox-list="{
+        class: 'w-300px',
+        align: 'start',
+      }"
+      :_combobox-viewport="{
+        class: 'max-h-260px',
+      }"
+    >
+      <template #trigger>
+        <NButton btn="solid-white" class="h-12 w-200px justify-between px-2.5">
+          <template v-if="selectedTimezone">
+            <div class="flex flex-col items-start gap-0.5">
+              <span class="text-xs font-normal opacity-75">
+                {{ selectedTimezone.group }}
+              </span>
+              <span>{{ selectedTimezone.label }}</span>
+            </div>
+          </template>
+          <template v-else>
+            Select timezone...
+          </template>
+          <NIcon name="i-lucide-chevron-down" class="ml-2 shrink-0 opacity-50 square-4" />
+        </NButton>
+      </template>
+
+      <template #list-footer>
+        <NComboboxSeparator />
+        <NComboboxGroup>
+          <NComboboxItem :value="null">
+            <NIcon name="i-lucide-plus-circle" size="1.1em" />
+            Create timezone
+          </NComboboxItem>
+        </NComboboxGroup>
+      </template>
+    </NCombobox>
 
     <NCombobox
       v-model="selectedFrameworks"
@@ -67,25 +189,5 @@ const selectedUser = ref()
         </NButton>
       </template>
     </NCombobox>
-
-    <!-- <NCombobox
-      v-model="selectedFrameworks"
-      multiple
-      :items="frameworks"
-      by="label"
-    >
-      <template #list-footer>
-        <NComboboxSeparator />
-
-        <NComboboxGroup>
-          <NComboboxItem :value="null">
-            <slot name="create">
-              <NIcon name="i-lucide-plus-circle" size="1.1em" />
-              Create timezone
-            </slot>
-          </NComboboxItem>
-        </NComboboxGroup>
-      </template>
-    </NCombobox> -->
   </div>
 </template>

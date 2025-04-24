@@ -1,10 +1,15 @@
-<script setup lang="ts">
+<script lang="ts">
+import type { AcceptableValue } from 'reka-ui'
+</script>
+
+<script setup lang="ts" generic="T extends AcceptableValue">
 import type { NComboboxGroupProps } from '../../types'
-import { ComboboxGroup, ComboboxLabel } from 'reka-ui'
+import { ComboboxGroup } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
+import ComboboxLabel from './ComboboxLabel.vue'
 
-const props = defineProps<NComboboxGroupProps>()
+const props = defineProps<NComboboxGroupProps<T>>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -19,8 +24,8 @@ const delegatedProps = computed(() => {
     v-bind="delegatedProps"
     :class="cn('overflow-hidden p-1 text-foreground', props.class)"
   >
-    <ComboboxLabel v-if="heading" class="px-2 py-1.5 text-xs text-muted font-medium">
-      {{ heading }}
+    <ComboboxLabel v-if="props.label">
+      {{ props.label }}
     </ComboboxLabel>
     <slot />
   </ComboboxGroup>
