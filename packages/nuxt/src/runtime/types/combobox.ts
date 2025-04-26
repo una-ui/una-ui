@@ -46,7 +46,7 @@ export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootP
   _comboboxEmpty?: NComboboxEmptyProps
   _comboboxGroup?: NComboboxGroupProps<T>
   _comboboxInput?: NComboboxInputProps
-  _comboboxItem?: NComboboxItemProps
+  _comboboxItem?: NComboboxItemProps<T>
   _comboboxItemIndicator?: NComboboxItemIndicatorProps
   _comboboxLabel?: NComboboxLabelProps
   _comboboxList?: NComboboxListProps
@@ -54,6 +54,12 @@ export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootP
   _comboboxTrigger?: NComboboxTriggerProps
   _comboboxViewport?: NComboboxViewportProps
   _comboboxCheckbox?: NCheckboxProps
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/combobox.ts
+   */
+  una?: NComboboxUnaProps
 }
 
 export interface NComboboxLabelProps extends ComboboxLabelProps {
@@ -62,44 +68,48 @@ export interface NComboboxLabelProps extends ComboboxLabelProps {
   una?: Pick<NComboboxUnaProps, 'comboboxLabel'>
 }
 
-export interface NComboboxItem<T> extends ComboboxItemProps<T> {
+export interface NComboboxItemProps<T> extends ComboboxItemProps<T> {
+  class?: HTMLAttributes['class']
+  una?: Pick<NComboboxUnaProps, 'comboboxItem'>
 }
 
 export interface NComboboxAnchorProps extends ComboboxAnchorProps {
   class?: HTMLAttributes['class']
+  una?: Pick<NComboboxUnaProps, 'comboboxAnchor'>
 }
 
 export interface NComboboxEmptyProps extends ComboboxEmptyProps {
   class?: HTMLAttributes['class']
+  una?: Pick<NComboboxUnaProps, 'comboboxEmpty'>
 }
 
 export interface NComboboxGroupProps<T extends AcceptableValue> extends ComboboxGroupProps {
   class?: HTMLAttributes['class']
   label?: Pick<NComboboxLabelProps, 'label'>
   items?: T[]
-  _comboboxItem?: Partial<NComboboxItemProps>
+  _comboboxItem?: Partial<NComboboxItemProps<T>>
   _comboboxLabel?: Partial<NComboboxLabelProps>
+  una?: Pick<NComboboxUnaProps, 'comboboxGroup' | 'comboboxLabel'>
 }
 
 export interface NComboboxInputProps extends ComboboxInputProps, Omit<NInputProps, 'modelValue'> {
   [key: string]: any
 }
 
-export interface NComboboxItemProps extends ComboboxItemProps {
-  class?: HTMLAttributes['class']
-}
-
 export interface NComboboxItemIndicatorProps extends ComboboxItemIndicatorProps {
   class?: HTMLAttributes['class']
+  una?: Pick<NComboboxUnaProps, 'comboboxItemIndicator'>
 }
 
 export interface NComboboxListProps extends ComboboxContentProps {
   class?: HTMLAttributes['class']
   viewportClass?: HTMLAttributes['class']
+  una?: Pick<NComboboxUnaProps, 'comboboxContent'>
 }
 
 export interface NComboboxSeparatorProps extends ComboboxSeparatorProps {
   class?: HTMLAttributes['class']
+  una?: Pick<NComboboxUnaProps, 'comboboxSeparator'>
 }
 
 export interface NComboboxTriggerProps extends ComboboxTriggerProps, NButtonProps {
@@ -108,8 +118,18 @@ export interface NComboboxTriggerProps extends ComboboxTriggerProps, NButtonProp
 
 export interface NComboboxViewportProps extends ComboboxViewportProps {
   class?: HTMLAttributes['class']
+  una?: Pick<NComboboxUnaProps, 'comboboxViewport'>
 }
 
 export interface NComboboxUnaProps {
+  combobox?: HTMLAttributes['class']
+  comboboxAnchor?: HTMLAttributes['class']
   comboboxLabel?: HTMLAttributes['class']
+  comboboxItem?: HTMLAttributes['class']
+  comboboxItemIndicator?: HTMLAttributes['class']
+  comboboxSeparator?: HTMLAttributes['class']
+  comboboxViewport?: HTMLAttributes['class']
+  comboboxEmpty?: HTMLAttributes['class']
+  comboboxGroup?: HTMLAttributes['class']
+  comboboxContent?: HTMLAttributes['class']
 }

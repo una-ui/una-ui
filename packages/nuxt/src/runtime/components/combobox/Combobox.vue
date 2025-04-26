@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { AcceptableValue, ComboboxRootEmits } from 'reka-ui'
 import type { NComboboxGroupProps, NComboboxProps } from '../../types'
+import { cn } from '../../utils'
 </script>
 
 <script setup lang="ts" generic="T extends AcceptableValue">
@@ -114,9 +115,16 @@ function isItemSelected(item: T | null | undefined): boolean {
   <ComboboxRoot
     data-slot="combobox"
     v-bind="forwarded"
+    :class="cn(
+      'combobox',
+      props.una?.combobox,
+    )"
   >
     <slot>
-      <ComboboxAnchor v-bind="props._comboboxAnchor">
+      <ComboboxAnchor
+        v-bind="props._comboboxAnchor"
+        :una
+      >
         <slot name="anchor">
           <ComboboxTrigger
             v-if="$slots.trigger"
@@ -134,7 +142,10 @@ function isItemSelected(item: T | null | undefined): boolean {
         </slot>
       </ComboboxAnchor>
 
-      <ComboboxList v-bind="props._comboboxList">
+      <ComboboxList
+        v-bind="props._comboboxList"
+        :una
+      >
         <slot name="list">
           <ComboboxInput
             v-if="$slots.trigger"
@@ -148,8 +159,14 @@ function isItemSelected(item: T | null | undefined): boolean {
           <slot name="list-header" />
 
           <slot name="list-body">
-            <ComboboxViewport v-bind="props._comboboxViewport">
-              <ComboboxEmpty v-bind="props._comboboxEmpty">
+            <ComboboxViewport
+              v-bind="props._comboboxViewport"
+              :una
+            >
+              <ComboboxEmpty
+                v-bind="props._comboboxEmpty"
+                :una
+              >
                 <slot name="empty">
                   {{ props.textEmpty }}
                 </slot>
@@ -157,20 +174,27 @@ function isItemSelected(item: T | null | undefined): boolean {
 
               <!-- Non-grouped items -->
               <template v-if="!hasGroups">
-                <ComboboxGroup v-bind="props._comboboxGroup">
+                <ComboboxGroup
+                  v-bind="props._comboboxGroup"
+                  :una
+                >
                   <slot name="group">
                     <ComboboxItem
                       v-for="item in items as T[]"
                       :key="getItemProperty(item, valueKey)"
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
                       v-bind="props._comboboxItem"
+                      :una
                     >
                       <slot name="item" :item="item" :selected="isItemSelected(item)">
                         <slot name="item-label" :item="item">
                           {{ getItemProperty(item, labelKey) }}
                         </slot>
 
-                        <ComboboxItemIndicator v-bind="props._comboboxItemIndicator">
+                        <ComboboxItemIndicator
+                          v-bind="props._comboboxItemIndicator"
+                          :una
+                        >
                           <slot name="item-indicator" :item="item">
                             <NIcon name="i-lucide-check" />
                           </slot>
@@ -187,10 +211,12 @@ function isItemSelected(item: T | null | undefined): boolean {
                   v-for="(group, i) in items as NComboboxGroupProps<T>[]"
                   :key="i"
                   v-bind="props._comboboxGroup"
+                  :una
                 >
                   <ComboboxSeparator
                     v-if="i > 0 && props.groupSeparator"
                     v-bind="props._comboboxSeparator"
+                    :una
                   />
 
                   <slot name="group" :group="group">
@@ -199,13 +225,17 @@ function isItemSelected(item: T | null | undefined): boolean {
                       :key="getItemProperty(item, valueKey)"
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
                       v-bind="{ ...props._comboboxItem, ...group._comboboxItem }"
+                      :una
                     >
                       <slot name="item" :item="item" :group="group" :selected="isItemSelected(item)">
                         <slot name="item-label" :item="item">
                           {{ getItemProperty(item, labelKey) }}
                         </slot>
 
-                        <ComboboxItemIndicator v-bind="props._comboboxItemIndicator">
+                        <ComboboxItemIndicator
+                          v-bind="props._comboboxItemIndicator"
+                          :una
+                        >
                           <slot name="item-indicator" :item="item">
                             <NIcon name="i-lucide-check" />
                           </slot>
@@ -213,7 +243,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                       </slot>
                     </ComboboxItem>
                   </slot>
-                </ComboboxGroup>
+                </ComboboxGroup>a
               </template>
             </ComboboxViewport>
           </slot>

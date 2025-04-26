@@ -28,6 +28,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       :class="cn(
         'origin-(--reka-combobox-content-transform-origin)',
         'combobox-content',
+        props.una?.comboboxContent,
         props.class,
       )"
     >

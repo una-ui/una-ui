@@ -19,7 +19,11 @@ const forwarded = useForwardProps(delegatedProps)
   <ComboboxViewport
     data-slot="combobox-viewport"
     v-bind="forwarded"
-    :class="cn('combobox-viewport', props.class)"
+    :class="cn(
+      'combobox-viewport',
+      props.una?.comboboxViewport,
+      props.class,
+    )"
   >
     <slot />
   </ComboboxViewport>

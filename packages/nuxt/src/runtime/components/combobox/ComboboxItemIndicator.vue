@@ -19,7 +19,11 @@ const forwarded = useForwardProps(delegatedProps)
   <ComboboxItemIndicator
     data-slot="combobox-item-indicator"
     v-bind="forwarded"
-    :class="cn('combobox-item-indicator', props.class)"
+    :class="cn(
+      'combobox-item-indicator',
+      props.una?.comboboxItemIndicator,
+      props.class,
+    )"
   >
     <slot />
   </ComboboxItemIndicator>

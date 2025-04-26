@@ -22,9 +22,16 @@ const delegatedProps = computed(() => {
   <ComboboxGroup
     data-slot="combobox-group"
     v-bind="delegatedProps"
-    :class="cn('combobox-group', props.class)"
+    :class="cn(
+      'combobox-group',
+      props.una?.comboboxGroup,
+      props.class,
+    )"
   >
-    <ComboboxLabel v-if="props.label">
+    <ComboboxLabel
+      v-if="props.label"
+      :una
+    >
       {{ props.label }}
     </ComboboxLabel>
     <slot />
