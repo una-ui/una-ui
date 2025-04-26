@@ -6,6 +6,8 @@ export const staticCombobox: Record<`${ComboboxPrefix}-${string}` | ComboboxPref
 
   'combobox-item': 'data-[highlighted]:bg-accent data-[highlighted]:text-accent relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
   'combobox-item-indicator': 'ml-auto',
+  'combobox-item-indicator-icon': '',
+  'combobox-item-indicator-icon-name': 'i-check',
   'combobox-anchor': 'min-w-200px',
   'combobox-empty': 'py-6 text-center text-sm',
   'combobox-group': 'overflow-hidden p-1 text-foreground',

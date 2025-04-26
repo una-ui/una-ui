@@ -236,9 +236,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                           v-bind="props._comboboxItemIndicator"
                           :una
                         >
-                          <slot name="item-indicator" :item="item">
-                            <NIcon name="i-lucide-check" />
-                          </slot>
+                          <slot name="item-indicator" :item="item" />
                         </ComboboxItemIndicator>
                       </slot>
                     </ComboboxItem>

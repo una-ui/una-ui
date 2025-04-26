@@ -98,7 +98,8 @@ export interface NComboboxInputProps extends ComboboxInputProps, Omit<NInputProp
 
 export interface NComboboxItemIndicatorProps extends ComboboxItemIndicatorProps {
   class?: HTMLAttributes['class']
-  una?: Pick<NComboboxUnaProps, 'comboboxItemIndicator'>
+  icon?: HTMLAttributes['class']
+  una?: Pick<NComboboxUnaProps, 'comboboxItemIndicator' | 'comboboxItemIndicatorIcon'>
 }
 
 export interface NComboboxListProps extends ComboboxContentProps {
@@ -127,6 +128,7 @@ export interface NComboboxUnaProps {
   comboboxLabel?: HTMLAttributes['class']
   comboboxItem?: HTMLAttributes['class']
   comboboxItemIndicator?: HTMLAttributes['class']
+  comboboxItemIndicatorIcon?: HTMLAttributes['class']
   comboboxSeparator?: HTMLAttributes['class']
   comboboxViewport?: HTMLAttributes['class']
   comboboxEmpty?: HTMLAttributes['class']

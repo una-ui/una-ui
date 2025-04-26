@@ -4,7 +4,9 @@ import { ComboboxItemIndicator, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
 
-const props = defineProps<NComboboxItemIndicatorProps>()
+const props = withDefaults(defineProps<NComboboxItemIndicatorProps>(), {
+  icon: 'combobox-item-indicator-icon-name',
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
@@ -25,6 +27,14 @@ const forwarded = useForwardProps(delegatedProps)
       props.class,
     )"
   >
-    <slot />
+    <slot>
+      <NIcon
+        :name="props.icon"
+        :class="cn(
+          'combobox-item-indicator-icon',
+          props.una?.comboboxItemIndicatorIcon,
+        )"
+      />
+    </slot>
   </ComboboxItemIndicator>
 </template>
