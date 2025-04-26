@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { AcceptableValue, ComboboxRootEmits } from 'reka-ui'
 import type { NComboboxGroupProps, NComboboxProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { cn } from '../../utils'
 </script>
 
@@ -23,7 +24,23 @@ const props = withDefaults(defineProps<NComboboxProps<T>>(), {
 })
 const emits = defineEmits<ComboboxRootEmits<T>>()
 
-const forwarded = useForwardPropsEmits(props, emits)
+const rootProps = reactiveOmit(props, [
+  'una',
+  '_comboboxAnchor',
+  '_comboboxEmpty',
+  '_comboboxGroup',
+  '_comboboxInput',
+  '_comboboxItem',
+  '_comboboxItemIndicator',
+  '_comboboxLabel',
+  '_comboboxList',
+  '_comboboxSeparator',
+  '_comboboxTrigger',
+  '_comboboxViewport',
+  '_comboboxCheckbox',
+])
+
+const forwarded = useForwardPropsEmits(rootProps, emits)
 
 const labelKey = computed(() => props.labelKey?.toString() ?? 'label')
 const valueKey = computed(() => props.valueKey?.toString() ?? 'value')
