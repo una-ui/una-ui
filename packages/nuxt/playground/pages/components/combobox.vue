@@ -66,7 +66,6 @@ const selectedTimezone = ref(timezones[0])
   <div class="flex flex-wrap items-center gap-4">
     <NCombobox
       v-model="selectedFramework"
-      multiple
       by="label"
     >
       <NComboboxAnchor as-child>
