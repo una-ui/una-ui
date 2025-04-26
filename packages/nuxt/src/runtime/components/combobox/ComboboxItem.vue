@@ -21,7 +21,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
   <ComboboxItem
     data-slot="combobox-item"
     v-bind="forwarded"
-    :class="cn('combobox-item', props.class)"
+    :class="cn(`combobox-item`, props.class)"
   >
     <slot />
   </ComboboxItem>

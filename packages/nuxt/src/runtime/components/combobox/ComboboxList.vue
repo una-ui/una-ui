@@ -3,7 +3,9 @@ import type { ComboboxContentEmits } from 'reka-ui'
 import type { NComboboxListProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { ComboboxContent, ComboboxPortal, useForwardPropsEmits } from 'reka-ui'
+import { provide } from 'vue'
 import { cn } from '../../utils'
+import { isInComboboxListKey } from '../../utils/injectionKeys'
 
 const props = withDefaults(defineProps<NComboboxListProps>(), {
   position: 'popper',
@@ -11,6 +13,8 @@ const props = withDefaults(defineProps<NComboboxListProps>(), {
   sideOffset: 4,
 })
 const emits = defineEmits<ComboboxContentEmits>()
+
+provide(isInComboboxListKey, true)
 
 const delegatedProps = reactiveOmit(props, 'class', 'viewportClass')
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
