@@ -26,6 +26,11 @@ const emits = defineEmits<ComboboxRootEmits<T>>()
 
 const rootProps = reactiveOmit(props, [
   'una',
+  'label',
+  'labelKey',
+  'valueKey',
+  'groupSeparator',
+  'textEmpty',
   '_comboboxAnchor',
   '_comboboxEmpty',
   '_comboboxGroup',
@@ -193,6 +198,7 @@ function isItemSelected(item: T | null | undefined): boolean {
               <template v-if="!hasGroups">
                 <ComboboxGroup
                   v-bind="props._comboboxGroup"
+                  :label="props.label"
                   :una
                 >
                   <slot name="group">
@@ -228,6 +234,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                   v-for="(group, i) in items as NComboboxGroupProps<T>[]"
                   :key="i"
                   v-bind="props._comboboxGroup"
+                  :label="group.label"
                   :una
                 >
                   <ComboboxSeparator
@@ -258,7 +265,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                       </slot>
                     </ComboboxItem>
                   </slot>
-                </ComboboxGroup>a
+                </ComboboxGroup>
               </template>
             </ComboboxViewport>
           </slot>

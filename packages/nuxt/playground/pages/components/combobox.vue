@@ -16,7 +16,7 @@ const users = [
 ]
 const selectedUser = ref()
 
-const timezoneGroups = [
+const timezones = [
   {
     label: 'Americas',
     items: [
@@ -52,14 +52,9 @@ const timezoneGroups = [
   },
 ]
 
-const timezones = timezoneGroups.flatMap(group =>
-  group.items.map(item => ({
-    ...item,
-    group: group.label,
-  })),
-)
-
-const selectedTimezone = ref(timezones[0])
+type Timezone = typeof timezones[0]
+const selectedTimezone = ref<Timezone['items'][number]>(timezones[0].items[0])
+const selectedGroup = computed(() => timezones.find(group => group.items.find(tz => tz.value === selectedTimezone.value?.value)))
 </script>
 
 <template>
@@ -168,14 +163,14 @@ const selectedTimezone = ref(timezones[0])
         class: 'max-h-260px',
       }"
       :_combobox-trigger="{
-        class: 'h-12 w-200px px-2.5',
+        class: 'h-12 px-2.5',
       }"
     >
       <template #trigger>
         <template v-if="selectedTimezone">
           <div class="flex flex-col items-start gap-0.5">
             <span class="text-xs font-normal opacity-75">
-              {{ selectedTimezone.group }}
+              {{ selectedGroup?.label }}
             </span>
             <span>{{ selectedTimezone.label }}</span>
           </div>
@@ -183,16 +178,6 @@ const selectedTimezone = ref(timezones[0])
         <template v-else>
           Select timezone...
         </template>
-      </template>
-
-      <template #list-footer>
-        <NComboboxSeparator />
-        <NComboboxGroup>
-          <NComboboxItem :value="null">
-            <NIcon name="i-lucide-plus-circle" size="1.1em" />
-            Create timezone
-          </NComboboxItem>
-        </NComboboxGroup>
       </template>
     </NCombobox>
 

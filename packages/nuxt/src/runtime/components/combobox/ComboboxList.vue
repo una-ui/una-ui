@@ -27,8 +27,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       v-bind="forwarded"
       :class="cn(
         'origin-(--reka-combobox-content-transform-origin)',
-        'combobox-content',
-        props.una?.comboboxContent,
+        'combobox-list',
+        props.una?.comboboxList,
         props.class,
       )"
     >

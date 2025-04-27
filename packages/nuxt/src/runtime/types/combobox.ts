@@ -40,6 +40,12 @@ export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootP
    */
   textEmpty?: string
   /**
+   * The heading to display for the grouped item.
+   *
+   * @default ''
+   */
+  label?: string
+  /**
    * Sub-component configurations
    */
   _comboboxAnchor?: NComboboxAnchorProps
@@ -85,7 +91,7 @@ export interface NComboboxEmptyProps extends ComboboxEmptyProps {
 
 export interface NComboboxGroupProps<T extends AcceptableValue> extends ComboboxGroupProps {
   class?: HTMLAttributes['class']
-  label?: Pick<NComboboxLabelProps, 'label'>
+  label?: string
   items?: T[]
   _comboboxItem?: Partial<NComboboxItemProps<T>>
   _comboboxLabel?: Partial<NComboboxLabelProps>
@@ -105,7 +111,7 @@ export interface NComboboxItemIndicatorProps extends ComboboxItemIndicatorProps 
 export interface NComboboxListProps extends ComboboxContentProps {
   class?: HTMLAttributes['class']
   viewportClass?: HTMLAttributes['class']
-  una?: Pick<NComboboxUnaProps, 'comboboxContent'>
+  una?: Pick<NComboboxUnaProps, 'comboboxList'>
 }
 
 export interface NComboboxSeparatorProps extends ComboboxSeparatorProps {
@@ -133,5 +139,5 @@ export interface NComboboxUnaProps {
   comboboxViewport?: HTMLAttributes['class']
   comboboxEmpty?: HTMLAttributes['class']
   comboboxGroup?: HTMLAttributes['class']
-  comboboxContent?: HTMLAttributes['class']
+  comboboxList?: HTMLAttributes['class']
 }
