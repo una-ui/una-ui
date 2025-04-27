@@ -17,20 +17,19 @@ badges:
 
 ### Basic
 
-| Prop            | Default           | Type      | Description                                                                                                          |
-| --------------- | ----------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
-| `defaultOpen`   | `false`           | `boolean` | The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state. |
-| `disabled`      | -                 | `boolean` | When true, prevents the user from interacting with the collapsible.                                                  |
-| `open`          | -                 | `boolean` | The controlled open state of the collapsible. Can be binded with `v-model`.                                          |
-| `label`         | -                 | `string`  | The heading to display for the grouped item.                                                                         |
-| `items`         | -                 | `array`   | The items to display in the collapsible.                                                                             |
-| `labelKey`      | `label`           | `string`  | The key name to use to display in the select items.                                                                  |
-| `valueKey`      | `value`           | `string`  | The key name to use to display in the selected value.                                                                |
-| `textEmpty`     | `No items found.` | `string`  | The text to display when the collapsible is empty.                                                                   |
-| `open`          | -                 | `boolean` | The controlled open state of the collapsible. Can be binded with `v-model`.                                          |
-| `unmountOnHide` | `false`           | `boolean` | Whether to unmount the collapsible when it is hidden.                                                                |
+| Prop          | Default           | Type                                                             | Description                                                                                                                                 |
+| ------------- | ----------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `defaultOpen` | `false`           | `boolean`                                                        | The open state of the combobox when it is initially rendered. Use when you do not need to control its open state.                           |
+| `disabled`    | -                 | `boolean`                                                        | When true, prevents the user from interacting with the combobox.                                                                            |
+| `open`        | -                 | `boolean`                                                        | The controlled open state of the combobox. Can be binded with `v-model`.                                                                    |
+| `label`       | -                 | `string`                                                         | The heading to display for the grouped item.                                                                                                |
+| `items`       | -                 | `array`                                                          | The items to display in the combobox.                                                                                                       |
+| `labelKey`    | `label`           | `string`                                                         | The key name to use to display in the select items.                                                                                         |
+| `valueKey`    | `value`           | `string`                                                         | The key name to use to display in the selected value.                                                                                       |
+| `textEmpty`   | `No items found.` | `string`                                                         | The text to display when the combobox is empty.                                                                                             |
+| `by`          | -                 | `string` `((a: AcceptableValue, b: AcceptableValue) => boolean)` | Use this to compare objects by a particular field, or pass your own comparison function for complete control over how objects are compared. |
 
-:read-more{to="https://www.reka-ui.com/docs/components/collapsible#root" title="Reka Collapsible Root API." target="_blank"}
+:read-more{to="https://www.reka-ui.com/docs/components/combobox#root" title="Reka Combobox Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -97,6 +96,17 @@ Add a custom trigger content.
 :read-more{to="https://reka-ui.com/docs/components/combobox#group" title="Reka Combobox Group Items API" target="_blank"}
 
 ### Form Field
+
+Use the `NFormField` component to create a form field.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueComboboxFormField
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxFormField.vue
+::
+:::
 
 ### Variant and Color
 

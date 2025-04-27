@@ -4,7 +4,7 @@ import type { NButtonProps } from './button'
 import type { NCheckboxProps } from './checkbox'
 import type { NInputProps } from './input'
 
-export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootProps<T> {
+export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootProps<T>, Pick<NComboboxInputProps, 'status' | 'id'> {
   /**
    * The class name to apply to the combobox.
    */
@@ -120,7 +120,20 @@ export interface NComboboxSeparatorProps extends ComboboxSeparatorProps {
 }
 
 export interface NComboboxTriggerProps extends ComboboxTriggerProps, NButtonProps {
-  class?: HTMLAttributes['class']
+  /**
+   * The unique id of the select trigger to be used for the form field.
+   */
+  id?: string
+  /**
+   * The status of the select input.
+   */
+  status?: 'info' | 'success' | 'warning' | 'error'
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/combobox.ts
+   */
+  una?: Pick<NComboboxUnaProps, 'comboboxTrigger' | 'comboboxTriggerLeading' | 'comboboxTriggerTrailing' | 'comboboxTriggerInfoIcon' | 'comboboxTriggerSuccessIcon' | 'comboboxTriggerWarningIcon' | 'comboboxTriggerErrorIcon'> & NButtonProps['una']
 }
 
 export interface NComboboxViewportProps extends ComboboxViewportProps {
@@ -140,4 +153,11 @@ export interface NComboboxUnaProps {
   comboboxEmpty?: HTMLAttributes['class']
   comboboxGroup?: HTMLAttributes['class']
   comboboxList?: HTMLAttributes['class']
+  comboboxTrigger?: HTMLAttributes['class']
+  comboboxTriggerLeading?: HTMLAttributes['class']
+  comboboxTriggerTrailing?: HTMLAttributes['class']
+  comboboxTriggerInfoIcon?: HTMLAttributes['class']
+  comboboxTriggerSuccessIcon?: HTMLAttributes['class']
+  comboboxTriggerWarningIcon?: HTMLAttributes['class']
+  comboboxTriggerErrorIcon?: HTMLAttributes['class']
 }

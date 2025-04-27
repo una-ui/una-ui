@@ -2,7 +2,16 @@ type ComboboxPrefix = 'combobox'
 
 export const staticCombobox: Record<`${ComboboxPrefix}-${string}` | ComboboxPrefix, string> = {
 // base
-  'combobox': '',
+  'combobox': 'flex',
+  'combobox-trigger-info-icon': 'i-info',
+  'combobox-trigger-error-icon': 'i-error',
+  'combobox-trigger-success-icon': 'i-success',
+  'combobox-trigger-warning-icon': 'i-warning',
+  'combobox-trigger-trailing-icon': 'i-lucide-chevrons-up-down',
+
+  'combobox-trigger': 'px-0.8571428571428571em w-full [&>span]:truncate',
+  'combobox-trigger-trailing': 'size-1.4285714285714286em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled size-1.1428571428571428em)',
+  'combobox-trigger-leading': 'size-1.1428571428571428em',
 
   'combobox-item': 'data-[highlighted]:bg-accent data-[highlighted]:text-accent relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
   'combobox-item-indicator': 'ml-auto',

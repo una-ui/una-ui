@@ -2,11 +2,11 @@
 import type { AcceptableValue, ComboboxRootEmits } from 'reka-ui'
 import type { NComboboxGroupProps, NComboboxProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
+import { ComboboxRoot, ComboboxTrigger as ComboboxTriggerRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
 </script>
 
 <script setup lang="ts" generic="T extends AcceptableValue">
-import { ComboboxRoot, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import ComboboxAnchor from './ComboboxAnchor.vue'
 import ComboboxEmpty from './ComboboxEmpty.vue'
@@ -151,16 +151,29 @@ function isItemSelected(item: T | null | undefined): boolean {
           <ComboboxTrigger
             v-if="$slots.trigger"
             v-bind="props._comboboxTrigger"
+            :id
+            :status
           >
-            <slot name="trigger" />
+            <slot name="trigger" :value="modelValue" />
           </ComboboxTrigger>
 
           <ComboboxInput
             v-else
+            :id
             :display-value="(val: unknown) => getDisplayValue(val)"
             name="frameworks"
+            :status
             v-bind="props._comboboxInput"
-          />
+          >
+            <template #trailing>
+              <ComboboxTriggerRoot>
+                <NIcon
+                  :name="props._comboboxInput?.trailing ?? 'combobox-trigger-trailing-icon'"
+                  class="pointer-events-auto cursor-pointer"
+                />
+              </ComboboxTriggerRoot>
+            </template>
+          </ComboboxInput>
         </slot>
       </ComboboxAnchor>
 
