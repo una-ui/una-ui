@@ -114,14 +114,16 @@ Use the `NFormField` component to create a form field.
 
 ## Slots
 
-| Name          | Props                          | Description                                         |
-| ------------- | ------------------------------ | --------------------------------------------------- |
-| `default`     | -                              | Content of the combobox root                        |
-| `trigger`     | `selected`, `open`             | Custom trigger content                              |
-| `item`        | `item`, `selected`, `disabled` | Custom item content (when using `items` prop)       |
-| `item-label`  | `item`, `selected`, `disabled` | Custom item label content (when using `items` prop) |
-| `list-header` | -                              | Content before the item list                        |
-| `list-footer` | -                              | Content after the item list                         |
+| Name          | Props                | Description                  |
+| ------------- | -------------------- | ---------------------------- |
+| `default`     | -                    | Content of the combobox root |
+| `trigger`     | `modelValue`, `open` | Custom trigger content       |
+| `input`       | `modelValue`, `open` | Override the default input   |
+| `item`        | `item`               | Custom item content          |
+| `label`       | `item`               | Custom label content         |
+| `indicator`   | `item`               | Custom indicator content     |
+| `list-header` | -                    | Content before the item list |
+| `list-footer` | -                    | Content after the item list  |
 
 ### Custom Rendering
 

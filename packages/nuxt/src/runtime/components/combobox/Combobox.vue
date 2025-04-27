@@ -136,6 +136,7 @@ function isItemSelected(item: T | null | undefined): boolean {
 
 <template>
   <ComboboxRoot
+    v-slot="{ modelValue, open }"
     data-slot="combobox"
     :class="cn(
       'combobox',
@@ -156,26 +157,29 @@ function isItemSelected(item: T | null | undefined): boolean {
             :id
             :status
           >
-            <slot name="trigger" :value="modelValue" />
+            <slot name="trigger" :model-value :open />
           </ComboboxTrigger>
 
-          <ComboboxInput
-            v-else
-            :id
-            :display-value="(val: unknown) => getDisplayValue(val)"
-            name="frameworks"
-            :status
-            v-bind="props._comboboxInput"
-          >
-            <template #trailing>
-              <ComboboxTriggerRoot>
-                <NIcon
-                  :name="props._comboboxInput?.trailing ?? 'combobox-trigger-trailing-icon'"
-                  class="pointer-events-auto cursor-pointer"
-                />
-              </ComboboxTriggerRoot>
-            </template>
-          </ComboboxInput>
+          <template v-else>
+            <slot name="input" :model-value :open>
+              <ComboboxInput
+                :id
+                :display-value="(val: unknown) => getDisplayValue(val)"
+                name="frameworks"
+                :status
+                v-bind="props._comboboxInput"
+              >
+                <template #trailing>
+                  <ComboboxTriggerRoot>
+                    <NIcon
+                      :name="props._comboboxInput?.trailing ?? 'combobox-trigger-trailing-icon'"
+                      class="pointer-events-auto cursor-pointer"
+                    />
+                  </ComboboxTriggerRoot>
+                </template>
+              </ComboboxInput>
+            </slot>
+          </template>
         </slot>
       </ComboboxAnchor>
 
@@ -184,14 +188,13 @@ function isItemSelected(item: T | null | undefined): boolean {
         :una
       >
         <slot name="list">
-          <ComboboxInput
-            v-if="$slots.trigger"
-            class="border-0 border-b-1 rounded-none focus-visible:ring-0"
-            :as-child="!!$slots.input"
-            v-bind="props._comboboxInput"
-          >
-            <slot name="input" />
-          </ComboboxInput>
+          <slot name="input" :model-value :open>
+            <ComboboxInput
+              v-if="$slots.trigger"
+              class="border-0 border-b-1 rounded-none focus-visible:ring-0"
+              v-bind="props._comboboxInput"
+            />
+          </slot>
 
           <slot name="list-header" />
 
@@ -225,7 +228,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                       :una
                     >
                       <slot name="item" :item="item" :selected="isItemSelected(item)">
-                        <slot name="item-label" :item="item">
+                        <slot name="label" :item="item">
                           {{ getItemProperty(item, labelKey) }}
                         </slot>
 
@@ -267,7 +270,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                       :una
                     >
                       <slot name="item" :item="item" :group="group" :selected="isItemSelected(item)">
-                        <slot name="item-label" :item="item">
+                        <slot name="label" :item="item">
                           {{ getItemProperty(item, labelKey) }}
                         </slot>
 
@@ -275,7 +278,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                           v-bind="props._comboboxItemIndicator"
                           :una
                         >
-                          <slot name="item-indicator" :item="item" />
+                          <slot name="indicator" :item="item" />
                         </ComboboxItemIndicator>
                       </slot>
                     </ComboboxItem>
