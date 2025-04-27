@@ -33,7 +33,7 @@ const selectedUser = ref()
       </template>
     </template>
 
-    <template #item-label="{ item }">
+    <template #label="{ item }">
       <NAvatar
         square="5"
         :src="`https://github.com/${item.username}.png`"
@@ -42,7 +42,7 @@ const selectedUser = ref()
       {{ item.username }}
     </template>
 
-    <template #list-footer>
+    <template #footer>
       <NComboboxSeparator />
       <NComboboxGroup>
         <NComboboxItem :value="null">

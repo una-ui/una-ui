@@ -196,9 +196,9 @@ function isItemSelected(item: T | null | undefined): boolean {
             />
           </slot>
 
-          <slot name="list-header" />
+          <slot name="header" />
 
-          <slot name="list-body">
+          <slot name="body">
             <ComboboxViewport
               v-bind="props._comboboxViewport"
               :una
@@ -288,7 +288,7 @@ function isItemSelected(item: T | null | undefined): boolean {
             </ComboboxViewport>
           </slot>
 
-          <slot name="list-footer" />
+          <slot name="footer" />
         </slot>
       </ComboboxList>
     </slot>

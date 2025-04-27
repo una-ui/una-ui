@@ -128,7 +128,7 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
         </template>
       </template>
 
-      <template #item-label="{ item }">
+      <template #label="{ item }">
         <NAvatar
           square="5"
           :src="`https://github.com/${item.username}.png`"
