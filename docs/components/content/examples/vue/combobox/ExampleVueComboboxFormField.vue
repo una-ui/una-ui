@@ -3,8 +3,10 @@ import { toTypedSchema } from '@vee-validate/zod'
 import * as z from 'zod'
 
 const formSchema = toTypedSchema(z.object({
-  framework: z.string().min(1, 'This field is required'),
-  username: z.string().min(1, 'This field is required'),
+  framework: z.object({
+    value: z.string().min(1, 'This field is required'),
+    label: z.string().min(1, 'This field is required'),
+  }),
 }))
 
 useForm({
@@ -23,14 +25,7 @@ const selectedFramework = ref()
 </script>
 
 <template>
-  <form>
-    <NFormField
-      name="username"
-      label="Username"
-    >
-      <NInput placeholder="username" />
-    </NFormField>
-
+  <form class="flex flex-col gap-2">
     <NFormField
       name="framework"
       label="Framework"
@@ -43,7 +38,6 @@ const selectedFramework = ref()
           placeholder: 'Select framework...',
           autocomplete: 'off',
         }"
-        class="flex"
         by="value"
       />
     </NFormField>

@@ -25,6 +25,7 @@ const props = withDefaults(defineProps<NComboboxProps<T>>(), {
 const emits = defineEmits<ComboboxRootEmits<T>>()
 
 const rootProps = reactiveOmit(props, [
+  'items',
   'una',
   'label',
   'labelKey',
@@ -136,11 +137,12 @@ function isItemSelected(item: T | null | undefined): boolean {
 <template>
   <ComboboxRoot
     data-slot="combobox"
-    v-bind="forwarded"
     :class="cn(
       'combobox',
       props.una?.combobox,
+      props.class,
     )"
+    v-bind="forwarded"
   >
     <slot>
       <ComboboxAnchor
