@@ -1,39 +1,86 @@
 <script setup lang="ts">
 import type { NComboboxTriggerProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { ComboboxTrigger, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
-import { cn } from '../../utils'
+import { cn, randomId } from '../../utils'
 import Button from '../elements/Button.vue'
+import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NComboboxTriggerProps>(), {
   btn: 'solid-white',
-  trailing: 'i-lucide-chevrons-up-down',
 })
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+const forwardedProps = useForwardProps(reactiveOmit(props, 'class', 'status', 'una', 'btn'))
 
-  return delegated
+const statusClassVariants = computed(() => {
+  const btn = {
+    info: 'btn-outline-info',
+    success: 'btn-outline-success',
+    warning: 'btn-outline-warning',
+    error: 'btn-outline-error',
+    default: undefined,
+  }
+
+  const icon = {
+    info: props.una?.comboboxTriggerInfoIcon ?? 'combobox-trigger-info-icon',
+    success: props.una?.comboboxTriggerSuccessIcon ?? 'combobox-trigger-success-icon',
+    warning: props.una?.comboboxTriggerWarningIcon ?? 'combobox-trigger-warning-icon',
+    error: props.una?.comboboxTriggerErrorIcon ?? 'combobox-trigger-error-icon',
+    default: props?.trailing ?? 'combobox-trigger-trailing-icon',
+  }
+
+  return {
+    btn: btn[props.status ?? 'default'],
+    icon: icon[props.status ?? 'default'],
+  }
 })
 
-const forwarded = useForwardProps(delegatedProps)
+const id = computed(() => props.id ?? randomId('combobox-trigger'))
+const status = computed(() => props.status ?? 'default')
 </script>
 
 <template>
   <ComboboxTrigger
     as-child
   >
-    <Button
-      v-bind="forwarded"
-      data-slot="combobox-trigger"
-      :class="cn('w-full justify-between', props.class)"
-      tabindex="0"
-      :una="{
-        btnTrailing: cn('ml-2 shrink-0 opacity-50', props.una?.btnTrailing),
-        ...props.una,
-      }"
-    >
-      <slot />
-    </Button>
+    <slot name="root">
+      <Button
+        v-bind="forwardedProps"
+        :id
+        :btn="statusClassVariants.btn ? undefined : props.btn"
+        :data-status="status"
+        data-slot="combobox-trigger"
+        :class="cn(
+          'combobox-trigger justify-between font-normal',
+          props.class)"
+        tabindex="0"
+        :una="{
+          ...props.una,
+          btn: props.una?.comboboxTrigger,
+          btnLeading: cn(
+            'combobox-trigger-leading',
+            props.una?.btnLeading,
+            props.una?.comboboxTriggerLeading,
+          ),
+          btnDefaultVariant: statusClassVariants.btn,
+        }"
+      >
+        <template v-for="(_, name) in $slots" #[name]="slotData">
+          <slot :name="name" v-bind="slotData" />
+        </template>
+
+        <template #trailing>
+          <Icon
+            :data-status="status"
+            :name="statusClassVariants.icon"
+            :class="cn(
+              'combobox-trigger-trailing rtl:mr-auto ltr:ml-auto',
+              props.una?.btnTrailing,
+            )"
+          />
+        </template>
+      </Button>
+    </slot>
   </ComboboxTrigger>
 </template>

@@ -34,10 +34,14 @@ onMounted(() => {
     <Input
       ref="inputRef"
       data-slot="command-input"
-      v-bind="$attrs"
-      :_inputWrapper="{
+      v-bind="{ ...forwarded, ...$attrs }"
+      :_input-wrapper="{
         'data-slot': 'command-input-wrapper',
       }"
-    />
+    >
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
+    </Input>
   </ComboboxInput>
 </template>

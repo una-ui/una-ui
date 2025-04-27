@@ -13,7 +13,7 @@ export default defineComponent({
       required: false,
     },
     'modelValue': {
-      type: [String, Number, Boolean],
+      type: [String, Number, Boolean, Object, Array],
       required: false,
     },
     'id': {
