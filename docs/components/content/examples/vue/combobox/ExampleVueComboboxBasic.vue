@@ -10,14 +10,14 @@ const selectedFramework = ref()
 </script>
 
 <template>
-  <div class="max-w-xs w-full">
-    <NCombobox
-      v-model="selectedFramework"
-      :items="frameworks"
-      :_combobox-input="{
-        placeholder: 'Select framework...',
-      }"
-      by="value"
-    />
-  </div>
+  <NCombobox
+    v-model="selectedFramework"
+    :items="frameworks"
+    :_combobox-input="{
+      placeholder: 'Select framework...',
+      autocomplete: 'off',
+    }"
+    class="flex"
+    by="value"
+  />
 </template>

@@ -17,7 +17,20 @@ badges:
 
 ### Basic
 
-A simple combobox for selecting an item from a predefined list.
+| Prop            | Default           | Type      | Description                                                                                                          |
+| --------------- | ----------------- | --------- | -------------------------------------------------------------------------------------------------------------------- |
+| `defaultOpen`   | `false`           | `boolean` | The open state of the collapsible when it is initially rendered. Use when you do not need to control its open state. |
+| `disabled`      | -                 | `boolean` | When true, prevents the user from interacting with the collapsible.                                                  |
+| `open`          | -                 | `boolean` | The controlled open state of the collapsible. Can be binded with `v-model`.                                          |
+| `label`         | -                 | `string`  | The heading to display for the grouped item.                                                                         |
+| `items`         | -                 | `array`   | The items to display in the collapsible.                                                                             |
+| `labelKey`      | `label`           | `string`  | The key name to use to display in the select items.                                                                  |
+| `valueKey`      | `value`           | `string`  | The key name to use to display in the selected value.                                                                |
+| `textEmpty`     | `No items found.` | `string`  | The text to display when the collapsible is empty.                                                                   |
+| `open`          | -                 | `boolean` | The controlled open state of the collapsible. Can be binded with `v-model`.                                          |
+| `unmountOnHide` | `false`           | `boolean` | Whether to unmount the collapsible when it is hidden.                                                                |
+
+:read-more{to="https://www.reka-ui.com/docs/components/collapsible#root" title="Reka Collapsible Root API." target="_blank"}
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -28,35 +41,13 @@ A simple combobox for selecting an item from a predefined list.
 ::
 :::
 
-### Custom Rendering
-
-Customize the trigger and item display using slots. This example shows selecting a user with an avatar.
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueComboboxCustomRender
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxCustomRender.vue
-::
-:::
-
-### Grouped Items
-
-Organize combobox items into labeled groups. This example demonstrates selecting a timezone.
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueComboboxGrouped
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxGrouped.vue
-::
-:::
-
 ### Multiple Selection
 
 Allow users to select multiple items from the list.
+
+| Prop       | Default | Type      | Description                                          |
+| ---------- | ------- | --------- | ---------------------------------------------------- |
+| `multiple` | `false` | `boolean` | When true, allows the user to select multiple items. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -66,6 +57,50 @@ Allow users to select multiple items from the list.
 @@@ ./components/content/examples/vue/combobox/ExampleVueComboboxMultiple.vue
 ::
 :::
+
+### With Trigger
+
+Add a custom trigger content.
+
+| Prop               | Default                                                         | Type     | Description                                                                                                     |
+| ------------------ | --------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------- |
+| `_comboboxTrigger` | `{ btn: 'solid-white', trailing: 'i-lucide-chevrons-up-down' }` | `object` | The button props for the trigger, you can refer to the [Button component](/components/button) for more details. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueComboboxTrigger
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxTrigger.vue
+::
+:::
+
+:read-more{to="/components/button" title="Button component" target="_blank"}
+
+:read-more{to="https://reka-ui.com/docs/components/combobox#trigger" title="Reka Combobox Trigger API" target="_blank"}
+
+### Group
+
+| Props            | Default | Type      | Description                                 |
+| ---------------- | ------- | --------- | ------------------------------------------- |
+| `groupSeparator` | `false` | `boolean` | Whether to show a separator between groups. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueComboboxGroup
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxGroup.vue
+::
+:::
+
+:read-more{to="https://reka-ui.com/docs/components/combobox#group" title="Reka Combobox Group Items API" target="_blank"}
+
+### Form Field
+
+### Variant and Color
+
+### Size
 
 ## Slots
 
@@ -77,6 +112,32 @@ Allow users to select multiple items from the list.
 | `item-label`  | `item`, `selected`, `disabled` | Custom item label content (when using `items` prop) |
 | `list-header` | -                              | Content before the item list                        |
 | `list-footer` | -                              | Content after the item list                         |
+
+### Custom Rendering
+
+If you need to replace everything, you can use the `default` slot and use sub-components available in the [Combobox Components](#components) section. Think of it like a `shadcn/ui` structure.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueComboboxSlotDefault
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxSlotDefault.vue
+::
+:::
+
+### Custom Multiple Selection
+
+Customize the multiple selection content.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueComboboxSlotMultiple
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxMultiple.vue
+::
+:::
 
 ## Presets
 
