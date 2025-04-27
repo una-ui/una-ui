@@ -13,7 +13,7 @@ export default defineComponent({
       required: false,
     },
     'modelValue': {
-      type: [String, Number, Boolean, Object, Array],
+      type: [String, Number, Boolean, Object, Array, null, undefined] as any,
       required: false,
     },
     'id': {
@@ -44,14 +44,6 @@ export default defineComponent({
         'onBlur': (event: any) => {
           emit('blur', event)
           node.props?.onBlur?.(event)
-        },
-        'onInput': (event: any) => {
-          emit('input', event)
-          node.props?.onInput?.(event)
-        },
-        'onChange': (event: any) => {
-          emit('change', event)
-          node.props?.onChange?.(event)
         },
         'onUpdate:modelValue': (value: any) => {
           emit('update:modelValue', value)
