@@ -108,6 +108,8 @@ Use the `NFormField` component to create a form field.
 ::
 :::
 
+:read-more{to="/components/form" title="Form component" target="_blank"}
+
 ### Variant and Color
 
 ### Size
