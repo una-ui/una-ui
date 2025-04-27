@@ -7,9 +7,11 @@ import { cn, randomId } from '../../../utils'
 import Button from '../../elements/Button.vue'
 import Icon from '../../elements/Icon.vue'
 
-const props = defineProps<NSelectTriggerProps>()
+const props = withDefaults(defineProps<NSelectTriggerProps>(), {
+  select: 'solid-white',
+})
 
-const forwardedProps = useForwardProps(reactiveOmit(props, 'class', 'status', 'una'))
+const forwardedProps = useForwardProps(reactiveOmit(props, 'class', 'status', 'una', 'select'))
 
 const statusClassVariants = computed(() => {
   const btn = {
@@ -17,7 +19,7 @@ const statusClassVariants = computed(() => {
     success: 'btn-outline-success',
     warning: 'btn-outline-warning',
     error: 'btn-outline-error',
-    default: props.select ? `select-${props.select}` : 'select-default-variant',
+    default: '',
   }
 
   const icon = {
@@ -45,6 +47,7 @@ const status = computed(() => props.status ?? 'default')
     <Button
       v-bind="forwardedProps"
       :id
+      :select="statusClassVariants.btn ? undefined : props.select"
       :data-status="status"
       :class="cn(
         'select-trigger justify-between font-normal',
