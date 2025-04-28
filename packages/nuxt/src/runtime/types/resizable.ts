@@ -6,27 +6,38 @@ interface BaseExtension {
   class?: HTMLAttributes['class']
 }
 
-type RequiredDefaults<T, K extends keyof T> = T & Required<Pick<T, K>>
-
-export interface NResizablePanelGroupProps extends RequiredDefaults<SplitterGroupProps, 'id'>, BaseExtension {
+export interface NResizableProps extends SplitterGroupProps, BaseExtension {
   /** Additional properties for the una component */
   una?: Pick<NResizableUnaProps, 'resizablePanelGroup'>
 }
 
-export interface NResizablePanelProps extends RequiredDefaults<SplitterPanelProps, 'id'>, BaseExtension {
+export interface NResizablePanelProps extends SplitterPanelProps, BaseExtension {
   /** Additional properties for the una component */
   una?: Pick<NResizableUnaProps, 'resizablePanel'>
 }
 
-export interface NResizableHandleProps extends RequiredDefaults<SplitterResizeHandleProps, 'id'>, BaseExtension {
+export interface NResizableHandleProps extends SplitterResizeHandleProps, BaseExtension {
   /**
-   * Show the handle icon
+   * Allows you to add `UnaUI` resizable handle preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/resizable.ts
+   * @example
+   * resizable-handle="outline-yellow"
    */
-  withHandle?: boolean
+  resizableHandle?: string
   /**
    * Custom handle icon
+   * @example
+   * icon="i-lucide-grip-vertical"
    */
-  icon?: string
+  handle?: string
+  /**
+   * Set visibility of the handle
+   *
+   * @default false
+   */
+  withHandle?: boolean
   /** Additional properties for the una component */
   una?: Pick<NResizableUnaProps, 'resizableHandle'>
 }
