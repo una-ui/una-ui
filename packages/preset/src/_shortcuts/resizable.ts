@@ -1,7 +1,7 @@
 type ResizablePrefix = 'resizable'
 
 export const staticResizable: Record<`${ResizablePrefix}-${string}` | ResizablePrefix, string> = {
-// config
+  // config
   'resizable-handle-default-variant': 'resizable-handle-outline-white',
   'resizable-handle-icon': 'i-lucide-grip-vertical',
 

@@ -8,7 +8,9 @@ import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NResizableHandleProps>(), {
   handle: 'resizable-handle-icon',
-  resizableHandle: 'resizable-handle-default-variant',
+  una: () => ({
+    resizableHandle: 'resizable-handle-default-variant',
+  }),
 })
 const emits = defineEmits<SplitterResizeHandleEmits>()
 
