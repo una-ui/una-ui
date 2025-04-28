@@ -26,6 +26,7 @@ import { pagination } from './pagination'
 import { popover } from './popover'
 import { progress } from './progress'
 import { radioGroup } from './radio-group'
+import { resizable } from './resizable'
 import { scrollArea } from './scroll-area'
 import { select } from './select'
 import { separator } from './separator'
@@ -81,4 +82,5 @@ export const shortcuts = [
   ...navigationMenu,
   ...sidebar,
   ...aspectRatio,
+  ...resizable,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

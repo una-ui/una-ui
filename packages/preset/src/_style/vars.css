@@ -64,6 +64,7 @@
   --c-popover: rgb(var(--una-gray-950));
   --c-popover-foreground: rgb(255, 255, 255);
 
+  /* todo: if we change it to --una-gray-800 ok (if no -> go with new --una-resizable-border) */
   --c-border: rgba(var(--una-gray-700), 0.58);
   --c-border-foreground: rgb(var(--una-gray-200));
 
