@@ -64,8 +64,8 @@ catalogs:
       specifier: ^22.15.2
       version: 22.15.2
     '@una-ui/content':
-      specifier: ^46.0.0
-      version: 46.0.0
+      specifier: ^46.1.0
+      version: 46.1.0
     '@unocss/core':
       specifier: ^66.0.0
       version: 66.0.0
@@ -302,7 +302,7 @@ importers:
         version: 2.4.0(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))
       '@una-ui/content':
         specifier: 'catalog:'
-        version: 46.0.0(@parcel/watcher@2.5.1)(@types/node@22.15.2)(@unhead/vue@2.0.5(vue@3.5.13(typescript@5.6.3)))(@unocss/preset-wind3@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0))(change-case@5.4.4)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(fuse.js@7.1.0)(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(postcss@8.5.3)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(unstorage@1.15.0(db0@0.3.1)(ioredis@5.6.0))(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(webpack@5.98.0)(yaml@2.7.0)(zod@3.24.3)
+        version: 46.1.0(@parcel/watcher@2.5.1)(@types/node@22.15.2)(@unhead/vue@2.0.5(vue@3.5.13(typescript@5.6.3)))(@unocss/preset-wind3@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0))(change-case@5.4.4)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(fuse.js@7.1.0)(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(postcss@8.5.3)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(unstorage@1.15.0(db0@0.3.1)(ioredis@5.6.0))(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(webpack@5.98.0)(yaml@2.7.0)(zod@3.24.3)
       nuxt:
         specifier: 'catalog:'
         version: 3.16.2(@parcel/watcher@2.5.1)(@types/node@22.15.2)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.6.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.7.0)
@@ -1368,9 +1368,6 @@ packages:
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
 
-  '@iconify-json/lucide@1.2.37':
-    resolution: {integrity: sha512-fiI8A8prb0WPvc5YDIbW1SVlRKwJpR3YGBe41U0Gen1/B9I41K9miU2yAk1e6NVLEdkj17hG0hdaQrAIbs+2Pw==}
-
   '@iconify-json/lucide@1.2.39':
     resolution: {integrity: sha512-1BKCamEZRvArR7PErYCP4SZo9pAANJy6iQWpynI3GM8QKSQtWQgvw6usqGIFCQeJwFZHPOn2OcbDR4P56DyEaQ==}
 
@@ -2265,9 +2262,6 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.14.1':
-    resolution: {integrity: sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==}
-
   '@types/node@22.15.2':
     resolution: {integrity: sha512-uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A==}
 
@@ -2392,17 +2386,17 @@ packages:
     resolution: {integrity: sha512-RGLh5CRaUEf02viP5c1Vh1cMGffQscyHe7HPAzGpfmfflFg1wUz2rYxd+OZqwpeypYvZ8UxSxuIpF++fmOzEcg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@una-ui/content@46.0.0':
-    resolution: {integrity: sha512-RK7DJgdY2EQInYoSbqDxFLnmtQLYHWlDe5b8wekvgNFMe6QcPYlEL+y2YIyjQXlKHyS69TN14F7xgZQpmZXM0g==}
+  '@una-ui/content@46.1.0':
+    resolution: {integrity: sha512-/3hFfUc3uKhIQISdcbEdT7W6MKIXbi9TKJvJ/wOcEJxgpURdHH0aLt+BnkRXvdHaKNutez5xsVh2SrJ9OaFddg==}
 
-  '@una-ui/extractor-vue-script-edge@0.51.6-29096355.ca4f3ce':
-    resolution: {integrity: sha512-wRAqA3L5WGlqKIDJHbiBPu6Sj18yCIcsN2cUwJzK3Oe0AgmlpiItbQX/k0jGNG0lqmzhREBEBDCx1tWXABk9iQ==}
+  '@una-ui/extractor-vue-script-edge@0.51.6-29098632.be10790':
+    resolution: {integrity: sha512-tTY9fm/nP2Doeh7CBGgiRblNxPVI7RQcYGZIt/7HLMzPrwvRP/7gNdEL7XLnDq9tiL8eWCO1ecfMSGWsDUlYRA==}
 
-  '@una-ui/nuxt-edge@0.51.6-29096355.ca4f3ce':
-    resolution: {integrity: sha512-+0LoZylEdUT42wKnwDq0syDSOVuDJFdXmmjfrYmqOHF4xeidEK9vzgKmiWhC6o1uS1ncnL4BRwoxt3KW0mNLNA==}
+  '@una-ui/nuxt-edge@0.51.6-29098632.be10790':
+    resolution: {integrity: sha512-ZI54eVRyv+doskvGabT/1xDhRO/f2n0Axa1+qVX7Kh+WzDtFhzbX+64kKoTJwfie28ghr3UoPPJCLaifO/O75w==}
 
-  '@una-ui/preset-edge@0.51.6-29096355.ca4f3ce':
-    resolution: {integrity: sha512-KVQ0nXDUSG2KSIs3MMttvVEFVSvzFx/DLvoWnoREWwasX7q2bA4nC0IBZ7q3Q89aQTKeV8nRr+ZEiJEAGSqBxQ==}
+  '@una-ui/preset-edge@0.51.6-29098632.be10790':
+    resolution: {integrity: sha512-TxUetXxY4U8820kOi1dokqfYwGyE0WoUOMcNzbSAIkxnRfG7fxil9SQwKnCHRo/Jk+NMi1bWLYcEO4YxKX6j/Q==}
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
@@ -7719,10 +7713,6 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.37':
-    dependencies:
-      '@iconify/types': 2.0.0
-
   '@iconify-json/lucide@1.2.39':
     dependencies:
       '@iconify/types': 2.0.0
@@ -8102,8 +8092,8 @@ snapshots:
       ohash: 1.1.6
       pathe: 1.1.2
       picomatch: 4.0.2
-      std-env: 3.8.1
-      tinyglobby: 0.2.12
+      std-env: 3.9.0
+      tinyglobby: 0.2.13
     transitivePeerDependencies:
       - magicast
       - supports-color
@@ -8119,7 +8109,7 @@ snapshots:
       image-meta: 0.2.1
       ohash: 1.1.6
       pathe: 2.0.3
-      std-env: 3.8.1
+      std-env: 3.9.0
       ufo: 1.5.4
     optionalDependencies:
       ipx: 2.1.0(db0@0.3.1)(ioredis@5.6.0)
@@ -8952,10 +8942,6 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.14.1':
-    dependencies:
-      undici-types: 6.21.0
-
   '@types/node@22.15.2':
     dependencies:
       undici-types: 6.21.0
@@ -9127,10 +9113,10 @@ snapshots:
       '@typescript-eslint/types': 8.29.1
       eslint-visitor-keys: 4.2.0
 
-  '@una-ui/content@46.0.0(@parcel/watcher@2.5.1)(@types/node@22.15.2)(@unhead/vue@2.0.5(vue@3.5.13(typescript@5.6.3)))(@unocss/preset-wind3@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0))(change-case@5.4.4)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(fuse.js@7.1.0)(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(postcss@8.5.3)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(unstorage@1.15.0(db0@0.3.1)(ioredis@5.6.0))(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(webpack@5.98.0)(yaml@2.7.0)(zod@3.24.3)':
+  '@una-ui/content@46.1.0(@parcel/watcher@2.5.1)(@types/node@22.15.2)(@unhead/vue@2.0.5(vue@3.5.13(typescript@5.6.3)))(@unocss/preset-wind3@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0))(change-case@5.4.4)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(fuse.js@7.1.0)(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(postcss@8.5.3)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(unstorage@1.15.0(db0@0.3.1)(ioredis@5.6.0))(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(webpack@5.98.0)(yaml@2.7.0)(zod@3.24.3)':
     dependencies:
       '@iconify-json/heroicons': 1.2.2
-      '@iconify-json/lucide': 1.2.37
+      '@iconify-json/lucide': 1.2.39
       '@iconify-json/radix-icons': 1.2.2
       '@iconify-json/simple-icons': 1.2.28
       '@iconify-json/tabler': 1.2.17
@@ -9139,7 +9125,7 @@ snapshots:
       '@nuxt/content': 2.13.4(db0@0.3.1)(ioredis@5.6.0)(magicast@0.3.5)(nuxt@3.16.2(@parcel/watcher@2.5.1)(@types/node@22.15.2)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.6.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))
       '@nuxt/icon': 1.10.3(magicast@0.3.5)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))
       '@nuxt/image': 1.9.0(db0@0.3.1)(ioredis@5.6.0)(magicast@0.3.5)
-      '@una-ui/nuxt': '@una-ui/nuxt-edge@0.51.6-29096355.ca4f3ce(@unocss/preset-wind3@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0))(change-case@5.4.4)(fuse.js@7.1.0)(magicast@0.3.5)(nuxt@3.16.2(@parcel/watcher@2.5.1)(@types/node@22.15.2)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.6.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.7.0))(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))(webpack@5.98.0)(zod@3.24.3)'
+      '@una-ui/nuxt': '@una-ui/nuxt-edge@0.51.6-29098632.be10790(@unocss/preset-wind3@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0))(change-case@5.4.4)(fuse.js@7.1.0)(magicast@0.3.5)(nuxt@3.16.2(@parcel/watcher@2.5.1)(@types/node@22.15.2)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.6.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.7.0))(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))(webpack@5.98.0)(zod@3.24.3)'
       class-variance-authority: 0.7.1
       clsx: 2.1.1
       nuxt: 3.16.2(@parcel/watcher@2.5.1)(@types/node@22.15.2)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.6.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.7.0)
@@ -9226,17 +9212,17 @@ snapshots:
       - yaml
       - zod
 
-  '@una-ui/extractor-vue-script-edge@0.51.6-29096355.ca4f3ce': {}
+  '@una-ui/extractor-vue-script-edge@0.51.6-29098632.be10790': {}
 
-  '@una-ui/nuxt-edge@0.51.6-29096355.ca4f3ce(@unocss/preset-wind3@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0))(change-case@5.4.4)(fuse.js@7.1.0)(magicast@0.3.5)(nuxt@3.16.2(@parcel/watcher@2.5.1)(@types/node@22.15.2)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.6.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.7.0))(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))(webpack@5.98.0)(zod@3.24.3)':
+  '@una-ui/nuxt-edge@0.51.6-29098632.be10790(@unocss/preset-wind3@66.0.0)(@unocss/webpack@66.0.0(webpack@5.98.0))(change-case@5.4.4)(fuse.js@7.1.0)(magicast@0.3.5)(nuxt@3.16.2(@parcel/watcher@2.5.1)(@types/node@22.15.2)(db0@0.3.1)(eslint@9.25.1(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(rollup@4.37.0)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(typescript@5.6.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue-tsc@2.2.10(typescript@5.6.3))(yaml@2.7.0))(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))(webpack@5.98.0)(zod@3.24.3)':
     dependencies:
       '@headlessui/vue': 1.7.23(vue@3.5.13(typescript@5.6.3))
       '@iconify/utils': 2.3.0
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
       '@nuxtjs/color-mode': 3.5.2(magicast@0.3.5)
       '@tanstack/vue-table': 8.21.3(vue@3.5.13(typescript@5.6.3))
-      '@una-ui/extractor-vue-script': '@una-ui/extractor-vue-script-edge@0.51.6-29096355.ca4f3ce'
-      '@una-ui/preset': '@una-ui/preset-edge@0.51.6-29096355.ca4f3ce(@unocss/webpack@66.0.0(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))'
+      '@una-ui/extractor-vue-script': '@una-ui/extractor-vue-script-edge@0.51.6-29098632.be10790'
+      '@una-ui/preset': '@una-ui/preset-edge@0.51.6-29098632.be10790(@unocss/webpack@66.0.0(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))'
       '@unocss/core': 66.0.0
       '@unocss/nuxt': 66.0.0(magicast@0.3.5)(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))(webpack@5.98.0)
       '@unocss/preset-attributify': 66.0.0
@@ -9279,7 +9265,7 @@ snapshots:
       - webpack
       - zod
 
-  '@una-ui/preset-edge@0.51.6-29096355.ca4f3ce(@unocss/webpack@66.0.0(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))':
+  '@una-ui/preset-edge@0.51.6-29098632.be10790(@unocss/webpack@66.0.0(webpack@5.98.0))(postcss@8.5.3)(vite@6.2.5(@types/node@22.15.2)(jiti@2.4.2)(sass@1.87.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       '@unocss/core': 66.0.0
       '@unocss/preset-mini': 66.0.0
@@ -10362,7 +10348,7 @@ snapshots:
 
   chrome-launcher@1.1.2:
     dependencies:
-      '@types/node': 22.14.1
+      '@types/node': 22.15.2
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 2.0.1
@@ -12819,7 +12805,7 @@ snapshots:
       satori: 0.12.1
       satori-html: 0.3.2
       sirv: 3.0.1
-      std-env: 3.8.1
+      std-env: 3.9.0
       strip-literal: 3.0.0
       ufo: 1.5.4
       unplugin: 2.2.2
@@ -12837,7 +12823,7 @@ snapshots:
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
       pkg-types: 2.1.0
       site-config-stack: 3.1.4(vue@3.5.13(typescript@5.6.3))
-      std-env: 3.8.1
+      std-env: 3.9.0
       ufo: 1.5.4
     transitivePeerDependencies:
       - magicast
