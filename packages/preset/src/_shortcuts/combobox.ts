@@ -10,8 +10,8 @@ export const staticCombobox: Record<`${ComboboxPrefix}-${string}` | ComboboxPref
   'combobox-trigger-trailing-icon': 'i-lucide-chevrons-up-down',
   'combobox-input-leading-icon': 'i-lucide-search',
 
-  'combobox-trigger': 'px-0.8571428571428571em w-full [&>span]:truncate',
-  'combobox-trigger-trailing': 'size-1.4285714285714286em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled size-1.1428571428571428em)',
+  'combobox-trigger': 'px-0.8571428571428571em w-full justify-between font-normal [&>span]:truncate',
+  'combobox-trigger-trailing': 'size-1.4285714285714286em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled size-1.1428571428571428em) rtl:mr-auto ltr:ml-auto',
   'combobox-trigger-leading': 'size-1.1428571428571428em',
 
   'combobox-item': 'data-[highlighted]:bg-accent data-[highlighted]:text-accent relative flex cursor-default items-center gap-2 rounded-sm px-0.5714285714285714em py-0.42857142857142855em text-sm outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',

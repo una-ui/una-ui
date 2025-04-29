@@ -52,8 +52,9 @@ const status = computed(() => props.status ?? 'default')
         :data-status="status"
         data-slot="combobox-trigger"
         :class="cn(
-          'combobox-trigger justify-between font-normal',
-          props.class)"
+          'combobox-trigger',
+          props.class,
+        )"
         tabindex="0"
         :una="{
           ...props.una,
@@ -75,7 +76,7 @@ const status = computed(() => props.status ?? 'default')
             :data-status="status"
             :name="statusClassVariants.icon"
             :class="cn(
-              'combobox-trigger-trailing rtl:mr-auto ltr:ml-auto',
+              'combobox-trigger-trailing',
               props.una?.btnTrailing,
             )"
           />
