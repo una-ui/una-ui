@@ -32,7 +32,6 @@ export interface SelectGroup<T extends AcceptableValue> {
 
 export interface NSelectProps<T extends AcceptableValue> extends SelectExtensions {
   /**
-   * s
    * The items to display in the select.
    */
   items: T[] | SelectGroup<T>[]
