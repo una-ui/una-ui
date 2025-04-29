@@ -137,7 +137,7 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
         {{ item.username }}
       </template>
 
-      <template #list-footer>
+      <template #footer>
         <NComboboxSeparator />
         <NComboboxGroup>
           <NComboboxItem :value="null">
