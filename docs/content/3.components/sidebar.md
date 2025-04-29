@@ -1,8 +1,5 @@
 ---
 description: A composable, themeable and customizable sidebar component.
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

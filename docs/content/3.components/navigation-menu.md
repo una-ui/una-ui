@@ -1,8 +1,5 @@
 ---
 description: 'Displays a collection of links for navigating websites.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
