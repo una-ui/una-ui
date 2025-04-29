@@ -153,7 +153,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               :una
             >
               <SelectSeparator
-                v-if="i > 0"
+                v-if="i > 0 && props.groupSeparator"
                 v-bind="props._selectSeparator"
                 :una
               />

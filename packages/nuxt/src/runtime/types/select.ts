@@ -49,9 +49,11 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
    */
   label?: string
   /**
-   * Allows for multiple groups within the select.
+   * Whether to show a separator between groups.
+   *
+   * @default false
    */
-  group?: boolean
+  groupSeparator?: boolean
   /**
    * Sub-component configurations
    */

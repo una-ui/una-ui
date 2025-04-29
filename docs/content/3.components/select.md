@@ -71,9 +71,11 @@ badges:
 
 ### Group
 
-| Prop    | Default | Type      | Description                     |
-| ------- | ------- | --------- | ------------------------------- |
-| `group` | -       | `boolean` | Enable support for group items. |
+It will automatically group the items if the `items` prop is an array of objects with an `items` property.
+
+| Props            | Default | Type      | Description                                 |
+| ---------------- | ------- | --------- | ------------------------------------------- |
+| `groupSeparator` | `false` | `boolean` | Whether to show a separator between groups. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
