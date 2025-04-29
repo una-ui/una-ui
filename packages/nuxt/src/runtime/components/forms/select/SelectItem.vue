@@ -39,7 +39,7 @@ const forwardedProps = useForwardProps(delegatedProps)
       :una
       v-bind="props._selectItemIndicator"
     >
-      <slot name="item-indicator" />
+      <slot name="indicator" />
     </SelectItemIndicator>
 
     <SelectItemText

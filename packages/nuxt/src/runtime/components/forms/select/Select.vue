@@ -131,6 +131,9 @@ function isItemSelected(item: unknown, modelValue: unknown) {
                 <slot name="item" :item="item">
                   {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
                 </slot>
+                <template #indicator>
+                  <slot name="indicator" :item="item" />
+                </template>
               </SelectItem>
             </template>
           </template>
@@ -175,6 +178,9 @@ function isItemSelected(item: unknown, modelValue: unknown) {
                     <slot name="item" :item="item">
                       {{ props.itemKey ? (item as any)[props.itemKey] : item }}
                     </slot>
+                    <template #indicator>
+                      <slot name="indicator" :item="item" />
+                    </template>
                   </SelectItem>
                 </template>
               </slot>
