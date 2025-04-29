@@ -30,7 +30,6 @@ onMounted(() => {
 
 <template>
   <ComboboxInput
-    v-bind="forwarded"
     as-child
   >
     <Input
