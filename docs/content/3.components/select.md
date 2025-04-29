@@ -158,16 +158,17 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 ## Slots
 
-| Name              | Props   | Description                          |
-| ----------------- | ------- | ------------------------------------ |
-| `root`            | `value` | Overrides all sub-components.        |
-| `trigger-wrapper` | `value` | Override the default trigger button. |
-| `trigger`         | `value` | The trigger slot.                    |
-| `value`           | `value` | The value slot.                      |
-| `content`         | `items` | The content slot.                    |
-| `label`           | `label` | The label slot.                      |
-| `item`            | `item`  | The item slot.                       |
-| `group`           | `items` | The group slot.                      |
+| Name              | Props                | Description                                                                                                 |
+| ----------------- | -------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `root`            | `modelValue`, `open` | Provides access to the root element and its state for full customization.                                   |
+| `trigger-wrapper` | `modelValue`, `open` | Override the default trigger button.                                                                        |
+| `trigger`         | `modelValue`, `open` | Customize the content of the trigger button (replaces default `SelectValue`).                               |
+| `indicator`       | `item`               | Customize the indicator icon displayed next to a selected item. Receives the specific `item`.               |
+| `value`           | `modelValue`, `open` | Customize the display of the selected value(s) inside the trigger. Receives `modelValue` and `open` state.  |
+| `content`         | `items`              | Customize the entire dropdown content area. Receives the full `items` array.                                |
+| `label`           | `label`              | Customize the display of a group label or the main select label (if provided). Receives the `label` string. |
+| `item`            | `item`               | Customize the display of an individual item within the dropdown. Receives the specific `item` object/value. |
+| `group`           | `group`              | Customize the rendering of a group of items when the `group` prop is true. Receives the `group` object.     |
 
 :::CodeGroup
 ::div{label="Preview"}
