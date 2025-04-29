@@ -25,7 +25,7 @@ const selectedFramework = ref()
 </script>
 
 <template>
-  <form class="flex flex-col gap-2">
+  <form class="flex">
     <NFormField
       name="framework"
       label="Framework"

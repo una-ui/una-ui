@@ -207,7 +207,6 @@ function isItemSelected(item: T | null | undefined): boolean {
             <ComboboxInput
               v-if="$slots.trigger || $slots.triggerRoot"
               :size
-              :leading="props._comboboxInput?.leading ?? 'combobox-input-leading-icon'"
               :class="cn(
                 'border-0 border-b-1 rounded-none text-1em focus-visible:ring-0',
                 props._comboboxInput?.class,

@@ -17,10 +17,6 @@ const selectedFramework = ref()
       placeholder: 'Select framework...',
       autocomplete: 'off',
     }"
-    :_combobox-list="{
-      class: 'w-230px',
-    }"
-    class="flex"
     by="value"
     text-empty="No frameworks found."
   />

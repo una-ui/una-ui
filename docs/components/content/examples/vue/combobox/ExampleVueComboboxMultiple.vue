@@ -18,7 +18,6 @@ const selectedFramework = ref()
       placeholder: 'Select framework...',
       autocomplete: 'off',
     }"
-    class="flex"
     by="value"
   />
 </template>
