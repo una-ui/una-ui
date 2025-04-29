@@ -55,19 +55,19 @@ const valueKey = computed(() => props.valueKey?.toString() ?? 'value')
 // Check if items are grouped
 const hasGroups = computed(() => {
   return Array.isArray(props.items) && props.items.length > 0
-    && typeof props.items[0] === 'object' && 'items' in (props.items[0] as any)
+    && typeof props.items[0] === 'object' && 'items' in (props.items[0] as T[])
 })
 
 // Helper function to safely get a property from an item
-function getItemProperty(item: T | null | undefined, key: string): any {
+function getItemProperty<K extends string>(item: T | null | undefined, key: K): any {
   if (item == null)
     return ''
 
-  return typeof item !== 'object' ? item : (item as Record<string, any>)[key]
+  return typeof item !== 'object' ? item : (item as Record<K, unknown>)[key]
 }
 
 // Find a matching item from the items list by its value
-function findItemByValue(value: any): T | undefined {
+function findItemByValue(value: unknown): T | undefined {
   if (!props.items)
     return undefined
 
