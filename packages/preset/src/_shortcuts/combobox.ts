@@ -8,6 +8,7 @@ export const staticCombobox: Record<`${ComboboxPrefix}-${string}` | ComboboxPref
   'combobox-trigger-success-icon': 'i-success',
   'combobox-trigger-warning-icon': 'i-warning',
   'combobox-trigger-trailing-icon': 'i-lucide-chevrons-up-down',
+  'combobox-input-leading-icon': 'i-lucide-search',
 
   'combobox-trigger': 'px-0.8571428571428571em w-full [&>span]:truncate',
   'combobox-trigger-trailing': 'size-1.4285714285714286em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled size-1.1428571428571428em)',
