@@ -167,7 +167,7 @@ Customize the multiple selection content.
 :ExampleVueComboboxSlotMultiple
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxMultiple.vue
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxSlotMultiple.vue
 ::
 :::
 
