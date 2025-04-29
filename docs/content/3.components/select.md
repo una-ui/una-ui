@@ -71,9 +71,11 @@ badges:
 
 ### Group
 
-| Prop    | Default | Type      | Description                     |
-| ------- | ------- | --------- | ------------------------------- |
-| `group` | -       | `boolean` | Enable support for group items. |
+It will automatically group the items if the `items` prop is an array of objects with an `items` property.
+
+| Props            | Default | Type      | Description                                 |
+| ---------------- | ------- | --------- | ------------------------------------------- |
+| `groupSeparator` | `false` | `boolean` | Whether to show a separator between groups. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -158,16 +160,17 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 ## Slots
 
-| Name              | Props   | Description                          |
-| ----------------- | ------- | ------------------------------------ |
-| `root`            | `value` | Overrides all sub-components.        |
-| `trigger-wrapper` | `value` | Override the default trigger button. |
-| `trigger`         | `value` | The trigger slot.                    |
-| `value`           | `value` | The value slot.                      |
-| `content`         | `items` | The content slot.                    |
-| `label`           | `label` | The label slot.                      |
-| `item`            | `item`  | The item slot.                       |
-| `group`           | `items` | The group slot.                      |
+| Name           | Props                | Description                                         |
+| -------------- | -------------------- | --------------------------------------------------- |
+| `default`      | `modelValue`, `open` | Full access to root element and state.              |
+| `trigger-root` | `modelValue`, `open` | Override trigger button.                            |
+| `trigger`      | `modelValue`, `open` | Customize trigger content (replaces `SelectValue`). |
+| `indicator`    | `item`               | Customize selected item indicator icon.             |
+| `value`        | `modelValue`, `open` | Customize selected value display in trigger.        |
+| `content`      | `items`              | Customize dropdown content area.                    |
+| `label`        | `label`              | Customize group or main select label.               |
+| `item`         | `item`               | Customize individual dropdown item.                 |
+| `group`        | `group`              | Customize group rendering when using groups.        |
 
 :::CodeGroup
 ::div{label="Preview"}
