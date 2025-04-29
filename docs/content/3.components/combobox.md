@@ -110,8 +110,6 @@ Use the `NFormField` component to create a form field.
 
 :read-more{to="/components/form" title="Form component" target="_blank"}
 
-### Variant and Color
-
 ### Size
 
 Adjust the combobox size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
