@@ -180,18 +180,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                 :status
                 v-bind="props._comboboxInput"
                 :size
-              >
-                <template #trailing>
-                  <ComboboxTrigger>
-                    <template #root>
-                      <NIcon
-                        :name="props._comboboxInput?.trailing ?? 'combobox-trigger-trailing-icon'"
-                        class="pointer-events-auto cursor-pointer select-none"
-                      />
-                    </template>
-                  </ComboboxTrigger>
-                </template>
-              </ComboboxInput>
+              />
             </slot>
           </template>
         </slot>
