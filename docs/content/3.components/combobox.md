@@ -114,23 +114,42 @@ Use the `NFormField` component to create a form field.
 
 ### Size
 
+Adjust the combobox size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`) for responsive sizes or `states` (e.g., `hover:lg`, `focus:3xl`) for state-based sizes.
+
+| Prop                    | Default | Type     | Description                                                    |
+| ----------------------- | ------- | -------- | -------------------------------------------------------------- |
+| `size`                  | `sm`    | `string` | Adjusts the overall size of the combobox component.            |
+| `_comboboxInput.size`   | `sm`    | `string` | Customizes the size of the combobox input element.             |
+| `_comboboxItem.size`    | `sm`    | `string` | Customizes the size of each item within the combobox dropdown. |
+| `_comboboxTrigger.size` | `sm`    | `string` | Modifies the size of the combobox trigger element.             |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueComboboxSize
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxSize.vue
+::
+:::
+
 ## Slots
 
-| Name        | Props                | Description                  |
-| ----------- | -------------------- | ---------------------------- |
-| `default`   | -                    | Content of the combobox root |
-| `trigger`   | `modelValue`, `open` | Custom trigger content       |
-| `input`     | `modelValue`, `open` | Override the default input   |
-| `item`      | `item`               | Custom item content          |
-| `label`     | `item`               | Custom label content         |
-| `indicator` | `item`               | Custom indicator content     |
-| `header`    | -                    | Content before the item list |
-| `body`      | -                    | Content of the item list     |
-| `footer`    | -                    | Content after the item list  |
+| Name           | Props                | Description                                                      |
+| -------------- | -------------------- | ---------------------------------------------------------------- |
+| `default`      | -                    | Slot for advanced custom rendering using sub-components.         |
+| `trigger`      | `modelValue`, `open` | Custom content _inside_ the default trigger button.              |
+| `trigger-root` | `modelValue`, `open` | Completely replace the default trigger button/component.         |
+| `input-root`   | `modelValue`, `open` | Completely replace the default input component.                  |
+| `item`         | `item`, `selected`   | Custom rendering for the entire content of each combobox item.   |
+| `label`        | `item`               | Custom rendering for the label text within each item.            |
+| `indicator`    | `item`               | Custom rendering for the selection indicator within each item.   |
+| `header`       | -                    | Content rendered inside the list, before the items.              |
+| `body`         | -                    | Completely replace the default item list container (`Viewport`). |
+| `footer`       | -                    | Content rendered inside the list, after the items.               |
 
 ### Custom Rendering
 
-If you need to replace everything, you can use the `default` slot and use sub-components available in the [Combobox Components](#components) section. Think of it like a `shadcn/ui` structure.
+Use the `default` slot for full control over the combobox's structure. This allows you to compose the combobox using its individual sub-components (like `ComboboxInput`, `ComboboxList`, etc., listed in the [Components](#components) section), similar to libraries like `shadcn/ui`.
 
 :::CodeGroup
 ::div{label="Preview" preview}

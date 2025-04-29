@@ -19,5 +19,6 @@ const selectedFramework = ref()
     }"
     class="flex"
     by="value"
+    text-empty="No frameworks found."
   />
 </template>

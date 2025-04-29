@@ -10,7 +10,9 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NComboboxInputProps>()
+const props = withDefaults(defineProps<NComboboxInputProps>(), {
+  leading: 'i-lucide-search',
+})
 
 const emits = defineEmits<ComboboxInputEmits>()
 

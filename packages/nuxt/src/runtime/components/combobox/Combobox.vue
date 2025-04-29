@@ -2,7 +2,7 @@
 import type { AcceptableValue, ComboboxRootEmits } from 'reka-ui'
 import type { NComboboxGroupProps, NComboboxProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
-import { ComboboxRoot, ComboboxTrigger as ComboboxTriggerRoot, useForwardPropsEmits } from 'reka-ui'
+import { ComboboxRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
 </script>
 
@@ -21,6 +21,7 @@ import ComboboxViewport from './ComboboxViewport.vue'
 
 const props = withDefaults(defineProps<NComboboxProps<T>>(), {
   textEmpty: 'No items found.',
+  size: 'sm',
 })
 const emits = defineEmits<ComboboxRootEmits<T>>()
 
@@ -151,31 +152,44 @@ function isItemSelected(item: T | null | undefined): boolean {
         :una
       >
         <slot name="anchor">
-          <ComboboxTrigger
-            v-if="$slots.trigger"
-            v-bind="props._comboboxTrigger"
-            :id
-            :status
+          <template
+            v-if="$slots.trigger || $slots.triggerRoot"
           >
-            <slot name="trigger" :model-value :open />
-          </ComboboxTrigger>
+            <slot name="trigger-root">
+              <ComboboxTrigger
+                v-bind="props._comboboxTrigger"
+                :id
+                :status
+                :size
+              >
+                <slot name="trigger" :model-value :open />
+              </ComboboxTrigger>
+            </slot>
+          </template>
 
           <template v-else>
-            <slot name="input" :model-value :open>
+            <slot name="input-root" :model-value :open>
               <ComboboxInput
                 :id
                 :display-value="(val: unknown) => getDisplayValue(val)"
                 name="frameworks"
+                :class="cn(
+                  'text-1em',
+                  props._comboboxInput?.class,
+                )"
                 :status
                 v-bind="props._comboboxInput"
+                :size
               >
                 <template #trailing>
-                  <ComboboxTriggerRoot>
-                    <NIcon
-                      :name="props._comboboxInput?.trailing ?? 'combobox-trigger-trailing-icon'"
-                      class="pointer-events-auto cursor-pointer"
-                    />
-                  </ComboboxTriggerRoot>
+                  <ComboboxTrigger>
+                    <template #root>
+                      <NIcon
+                        :name="props._comboboxInput?.trailing ?? 'combobox-trigger-trailing-icon'"
+                        class="pointer-events-auto cursor-pointer select-none"
+                      />
+                    </template>
+                  </ComboboxTrigger>
                 </template>
               </ComboboxInput>
             </slot>
@@ -185,13 +199,18 @@ function isItemSelected(item: T | null | undefined): boolean {
 
       <ComboboxList
         v-bind="props._comboboxList"
+        :size
         :una
       >
         <slot name="list">
-          <slot name="input" :model-value :open>
+          <slot name="input-root" :model-value :open>
             <ComboboxInput
-              v-if="$slots.trigger"
-              class="border-0 border-b-1 rounded-none focus-visible:ring-0"
+              v-if="$slots.trigger || $slots.triggerRoot"
+              :size
+              :class="cn(
+                'border-0 border-b-1 rounded-none text-1em focus-visible:ring-0',
+                props._comboboxInput?.class,
+              )"
               v-bind="props._comboboxInput"
             />
           </slot>
@@ -224,6 +243,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                       v-for="item in items as T[]"
                       :key="getItemProperty(item, valueKey)"
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
+                      :size
                       v-bind="props._comboboxItem"
                       :una
                     >
@@ -266,6 +286,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                       v-for="item in group.items"
                       :key="getItemProperty(item, valueKey)"
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
+                      :size
                       v-bind="{ ...props._comboboxItem, ...group._comboboxItem }"
                       :una
                     >
