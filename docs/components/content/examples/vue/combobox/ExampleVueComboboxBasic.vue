@@ -16,6 +16,10 @@ const selectedFramework = ref()
     :_combobox-input="{
       placeholder: 'Select framework...',
       autocomplete: 'off',
+      leading: 'i-lucide-search',
+    }"
+    :_combobox-list="{
+      class: 'w-230px',
     }"
     class="flex"
     by="value"
