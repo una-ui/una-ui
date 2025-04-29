@@ -160,7 +160,7 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 | Name           | Props                | Description                                         |
 | -------------- | -------------------- | --------------------------------------------------- |
-| `root`         | `modelValue`, `open` | Full access to root element and state.              |
+| `default`      | `modelValue`, `open` | Full access to root element and state.              |
 | `trigger-root` | `modelValue`, `open` | Override trigger button.                            |
 | `trigger`      | `modelValue`, `open` | Customize trigger content (replaces `SelectValue`). |
 | `indicator`    | `item`               | Customize selected item indicator icon.             |
