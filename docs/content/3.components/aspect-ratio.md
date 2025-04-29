@@ -1,8 +1,5 @@
 ---
 description: Displays content within a desired ratio.
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
