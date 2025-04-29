@@ -25,21 +25,48 @@ const selectedFramework = ref()
 </script>
 
 <template>
-  <form class="flex">
-    <NFormField
-      name="framework"
-      label="Framework"
-      description="Select a framework"
-    >
-      <NCombobox
-        v-model="selectedFramework"
-        :items="frameworks"
-        :_combobox-input="{
-          placeholder: 'Select framework...',
-          autocomplete: 'off',
-        }"
-        by="value"
-      />
-    </NFormField>
-  </form>
+  <div
+    class="flex flex-col gap-2"
+  >
+    <form class="flex">
+      <NFormField
+        name="framework"
+        label="Framework"
+        description="Select a framework without a trigger"
+      >
+        <NCombobox
+          v-model="selectedFramework"
+          :items="frameworks"
+          :_combobox-input="{
+            placeholder: 'Select framework...',
+            autocomplete: 'off',
+          }"
+          by="value"
+        />
+      </NFormField>
+    </form>
+
+    <NSeparator />
+
+    <form class="flex">
+      <NFormField
+        name="framework"
+        label="Framework"
+        description="Select a framework with a trigger"
+      >
+        <NCombobox
+          v-model="selectedFramework"
+          :items="frameworks"
+          :_combobox-input="{
+            placeholder: 'Select framework...',
+          }"
+          by="value"
+        >
+          <template #trigger>
+            {{ selectedFramework?.label ?? 'Select framework...' }}
+          </template>
+        </NCombobox>
+      </NFormField>
+    </form>
+  </div>
 </template>
