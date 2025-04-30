@@ -9,7 +9,8 @@ const props = defineProps<NAlertDialogOverlayProps>()
 <template>
   <DialogOverlay
     :class="cn(
-      'data-[state=open]:animate-overlayShow dark:bg-black/50 fixed inset-0 z-30 bg-white/90',
+      'data-[state=open]:animate-overlayShow',
+      'alert-dialog-overlay',
       props.una?.alertDialogOverlay,
       props.class,
     )"
