@@ -2,7 +2,7 @@
 import type { AlertDialogEmits } from 'reka-ui'
 import type { NAlertDialogProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { AlertDialogRoot, useForwardPropsEmits } from 'reka-ui'
+import { AlertDialogRoot, useForwardPropsEmits, VisuallyHidden } from 'reka-ui'
 import { computed } from 'vue'
 import { randomId } from '../../../utils'
 import AlertDialogAction from './AlertDialogAction.vue'
@@ -58,9 +58,19 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
         :prevent-close
         :una
       >
+        <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">
+          <AlertDialogTitle v-if="title === DEFAULT_TITLE || !!$slots.title">
+            {{ title }}
+          </AlertDialogTitle>
+
+          <AlertDialogDescription v-if="description === DEFAULT_DESCRIPTION || !!$slots.description">
+            {{ description }}
+          </AlertDialogDescription>
+        </VisuallyHidden>
+
         <slot name="content">
           <!-- Header -->
-          <AlertDialogHeader>
+          <AlertDialogHeader v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)">
             <slot name="header">
               <AlertDialogTitle
                 v-if="title !== DEFAULT_TITLE || !!$slots.title"
