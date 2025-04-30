@@ -5,6 +5,7 @@ import { AlertDialogAction } from 'reka-ui'
 import Button from '../Button.vue'
 
 const props = withDefaults(defineProps<NAlertDialogActionProps>(), {
+  btn: 'solid-primary',
   label: 'Confirmed',
 })
 

@@ -10,7 +10,7 @@ const props = defineProps<NAlertDialogOverlayProps>()
   <DialogOverlay
     data-slot="alert-dialog-overlay"
     :class="cn(
-      'data-[state=open]:animate-overlayShow',
+      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 ',
       'alert-dialog-overlay',
       props.una?.alertDialogOverlay,
       props.class,
