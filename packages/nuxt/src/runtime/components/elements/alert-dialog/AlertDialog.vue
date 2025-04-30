@@ -30,11 +30,15 @@ const rootProps = reactivePick(props, [
   'defaultOpen',
 ])
 
-const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
+const forwarded = useForwardPropsEmits(rootProps, emits)
 </script>
 
 <template>
-  <AlertDialogRoot v-slot="{ open }" v-bind="rootPropsEmits">
+  <AlertDialogRoot
+    v-slot="{ open }"
+    data-slot="alert-dialog"
+    v-bind="forwarded"
+  >
     <AlertDialogTrigger as-child>
       <slot name="trigger" :open />
     </AlertDialogTrigger>

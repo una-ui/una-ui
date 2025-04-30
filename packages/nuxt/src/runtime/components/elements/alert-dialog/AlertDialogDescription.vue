@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import type { NAlertDialogDescriptionProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
-import { AlertDialogDescription, useForwardProps } from 'reka-ui'
+import { AlertDialogDescription } from 'reka-ui'
 import { cn } from '../../../utils'
 
 const props = defineProps<NAlertDialogDescriptionProps>()
 
 const delegatedProps = reactiveOmit(props, 'class', 'una')
-
-const forwardedProps = useForwardProps(delegatedProps)
 </script>
 
 <template>
   <AlertDialogDescription
-    v-bind="forwardedProps"
+    data-slot="alert-dialog-description"
+    v-bind="delegatedProps"
     :class="cn(
       'alert-dialog-description',
       props.una?.alertDialogDescription,

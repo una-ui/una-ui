@@ -46,6 +46,7 @@ const contentEvents = computed(() => {
     />
 
     <AlertDialogContent
+      data-slot="alert-dialog-content"
       v-bind="{ ...forwarded, ...$attrs }"
       :class="cn(
         'alert-dialog-content',
