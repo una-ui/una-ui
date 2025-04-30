@@ -37,11 +37,11 @@ export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogCo
   /**
    * The action callback.
    */
-  onAction?: () => void
+  onAction?: (e: Event) => void
   /**
    * The cancel callback.
    */
-  onCancel?: () => void
+  onCancel?: (e: Event) => void
 }
 
 interface BaseExtensions {
@@ -100,14 +100,14 @@ export interface NAlertDialogCancelProps extends AlertDialogCancelProps, NButton
   /**
    * The cancel callback.
    */
-  onClick?: () => void
+  onClick?: (e: Event) => void
 }
 
 export interface NAlertDialogActionProps extends AlertDialogActionProps, NButtonProps {
   /**
    * The action callback.
    */
-  onClick?: () => void
+  onClick?: (e: Event) => void
 }
 
 export interface NAlertDialogHeaderProps extends BaseExtensions {
