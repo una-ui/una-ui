@@ -11,7 +11,7 @@ import type {
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogContentProps, 'preventClose' | 'showClose' | 'overlay' | '_alertDialogCancel' | '_alertDialogOverlay'> {
+export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogContentProps, 'preventClose' | 'overlay' | '_alertDialogCancel' | '_alertDialogAction' | '_alertDialogOverlay'> {
   /**
    * The title of the dialog.
    */
@@ -20,10 +20,6 @@ export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogCo
    * The description of the dialog.
    */
   description?: string
-  /**
-   *
-   */
-  scrollable?: boolean
 
   // sub-components
   _alertDialogTitle?: NAlertDialogTitleProps
@@ -53,14 +49,10 @@ export interface NAlertDialogDescriptionProps extends AlertDialogDescriptionProp
 export interface NAlertDialogContentProps extends AlertDialogContentProps, BaseExtensions {
   /**
    * Prevent close.
-   */
-  preventClose?: boolean
-  /**
-   * Show close button.
    *
    * @default true
    */
-  showClose?: boolean
+  preventClose?: boolean
   /**
    * Show overlay.
    *
@@ -68,9 +60,13 @@ export interface NAlertDialogContentProps extends AlertDialogContentProps, BaseE
    */
   overlay?: boolean
   /**
-   * The close button props.
+   * The cancel button props.
    */
   _alertDialogCancel?: NAlertDialogCancelProps
+  /**
+   * The action button props.
+   */
+  _alertDialogAction?: NAlertDialogActionProps
   /**
    * The overlay props.
    */
@@ -80,7 +76,7 @@ export interface NAlertDialogContentProps extends AlertDialogContentProps, BaseE
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/alert-dialog.ts
    */
-  una?: Pick<NAlertDialogUnaProps, 'alertDialogOverlay' | 'alertDialogOverlay'>
+  una?: Pick<NAlertDialogUnaProps, 'alertDialogContent' | 'alertDialogOverlay'>
 }
 
 export interface NAlertDialogOverlayProps extends BaseExtensions, AlertDialogOverlayProps {
@@ -97,5 +93,5 @@ export interface NAlertDialogUnaProps {
   alertDialogTitle?: HTMLAttributes['class']
   alertDialogDescription?: HTMLAttributes['class']
   alertDialogOverlay?: HTMLAttributes['class']
-  alertdialogContent?: HTMLAttributes['class']
+  alertDialogContent?: HTMLAttributes['class']
 }
