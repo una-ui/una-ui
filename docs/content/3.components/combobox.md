@@ -19,7 +19,7 @@ badges:
 
 | Prop          | Default           | Type                                                             | Description                                                                                                                                 |
 | ------------- | ----------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `items`       | -                 | `T[] \| NComboboxGroupProps<T>[]`                                | The items to display in the combobox.                                                                                                       |
+| `items`       | -                 | `T[] \| NComboboxGroupProps<ExtractItemType<T>>[]`               | The items to display in the combobox.                                                                                                       |
 | `defaultOpen` | `false`           | `boolean`                                                        | The open state of the combobox when it is initially rendered. Use when you do not need to control its open state.                           |
 | `disabled`    | -                 | `boolean`                                                        | When true, prevents the user from interacting with the combobox.                                                                            |
 | `open`        | -                 | `boolean`                                                        | The controlled open state of the combobox. Can be binded with `v-model`.                                                                    |
@@ -28,6 +28,10 @@ badges:
 | `valueKey`    | `value`           | `string`                                                         | The key name to use to display in the selected value.                                                                                       |
 | `textEmpty`   | `No items found.` | `string`                                                         | The text to display when the combobox is empty.                                                                                             |
 | `by`          | -                 | `string` `((a: AcceptableValue, b: AcceptableValue) => boolean)` | Use this to compare objects by a particular field, or pass your own comparison function for complete control over how objects are compared. |
+
+::alert
+The `T` generic extends `AcceptableValue` from Reka UI. When using grouped items, the item type is automatically extracted.
+::
 
 :read-more{to="https://www.reka-ui.com/docs/components/combobox#root" title="Reka Combobox Root API." target="_blank"}
 
