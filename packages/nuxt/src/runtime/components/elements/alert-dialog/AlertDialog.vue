@@ -2,14 +2,17 @@
 import type { AlertDialogEmits } from 'reka-ui'
 import type { NAlertDialogProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { AlertDialogRoot, AlertDialogTrigger, useForwardPropsEmits } from 'reka-ui'
+import { AlertDialogRoot, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { randomId } from '../../../utils'
 import AlertDialogAction from './AlertDialogAction.vue'
 import AlertDialogCancel from './AlertDialogCancel.vue'
 import AlertDialogContent from './AlertDialogContent.vue'
 import AlertDialogDescription from './AlertDialogDescription.vue'
+import AlertDialogFooter from './AlertDialogFooter.vue'
+import AlertDialogHeader from './AlertDialogHeader.vue'
 import AlertDialogTitle from './AlertDialogTitle.vue'
+import AlertDialogTrigger from './AlertDialogTrigger.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -39,50 +42,66 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
     data-slot="alert-dialog"
     v-bind="forwarded"
   >
-    <AlertDialogTrigger as-child>
-      <slot name="trigger" :open />
-    </AlertDialogTrigger>
-
-    <AlertDialogContent
-      v-bind="_alertDialogContent"
-      :_alert-dialog-overlay
-      :_alert-dialog-cancel
-      :_alert-dialog-action
-      :prevent-close
-      :una
-    >
-      <slot name="content">
-        <AlertDialogTitle
-          v-if="title !== DEFAULT_TITLE || !!$slots.title"
-          :_alert-dialog-title
-          :una
+    <slot>
+      <slot name="trigger-root" :open>
+        <AlertDialogTrigger
+          v-bind="_alertDialogTrigger"
         >
-          <slot name="title">
-            {{ title }}
-          </slot>
-        </AlertDialogTitle>
-
-        <AlertDialogDescription
-          v-if="description !== DEFAULT_DESCRIPTION || !!$slots.description"
-          :_alert-dialog-description
-          :una
-        >
-          <slot name="description">
-            {{ description }}
-          </slot>
-        </AlertDialogDescription>
+          <slot name="trigger" :open />
+        </AlertDialogTrigger>
       </slot>
 
-      <slot name="controls">
-        <div class="flex justify-end gap-4">
-          <AlertDialogCancel
-            :_alert-dialog-cancel
-          />
-          <AlertDialogAction
-            :_alert-dialog-action
-          />
-        </div>
-      </slot>
-    </AlertDialogContent>
+      <AlertDialogContent
+        v-bind="_alertDialogContent"
+        :_alert-dialog-overlay
+        :_alert-dialog-cancel
+        :_alert-dialog-action
+        :prevent-close
+        :una
+      >
+        <slot name="content">
+          <!-- Header -->
+          <AlertDialogHeader>
+            <slot name="header">
+              <AlertDialogTitle
+                v-if="title !== DEFAULT_TITLE || !!$slots.title"
+                :_alert-dialog-title
+                :una
+              >
+                <slot name="title">
+                  {{ title }}
+                </slot>
+              </AlertDialogTitle>
+
+              <AlertDialogDescription
+                v-if="description !== DEFAULT_DESCRIPTION || !!$slots.description"
+                :_alert-dialog-description
+                :una
+              >
+                <slot name="description">
+                  {{ description }}
+                </slot>
+              </AlertDialogDescription>
+            </slot>
+          </AlertDialogHeader>
+
+          <!-- Footer -->
+          <AlertDialogFooter>
+            <slot name="footer">
+              <AlertDialogCancel
+                :_alert-dialog-cancel
+              >
+                <slot name="cancel" />
+              </AlertDialogCancel>
+              <AlertDialogAction
+                :_alert-dialog-action
+              >
+                <slot name="action" />
+              </AlertDialogAction>
+            </slot>
+          </AlertDialogFooter>
+        </slot>
+      </AlertDialogContent>
+    </slot>
   </AlertDialogRoot>
 </template>

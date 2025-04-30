@@ -6,6 +6,7 @@ import type {
   AlertDialogOverlayProps,
   AlertDialogProps,
   AlertDialogTitleProps,
+  AlertDialogTriggerProps,
 } from 'reka-ui'
 
 import type { HTMLAttributes } from 'vue'
@@ -25,6 +26,7 @@ export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogCo
   _alertDialogTitle?: NAlertDialogTitleProps
   _alertDialogDescription?: NAlertDialogDescriptionProps
   _alertDialogContent?: NAlertDialogContentProps
+  _alertDialogTrigger?: NAlertDialogTriggerProps
 
   /**
    * `UnaUI` preset configuration
@@ -44,6 +46,9 @@ export interface NAlertDialogTitleProps extends AlertDialogTitleProps, BaseExten
 
 export interface NAlertDialogDescriptionProps extends AlertDialogDescriptionProps, BaseExtensions {
   una?: Pick<NAlertDialogUnaProps, 'alertDialogDescription'>
+}
+
+export interface NAlertDialogTriggerProps extends AlertDialogTriggerProps, NButtonProps {
 }
 
 export interface NAlertDialogContentProps extends AlertDialogContentProps, BaseExtensions {

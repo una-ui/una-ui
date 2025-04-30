@@ -5,7 +5,7 @@ import { AlertDialogCancel } from 'reka-ui'
 import Button from '../Button.vue'
 
 const props = withDefaults(defineProps<NAlertDialogCancelProps>(), {
-  btn: 'text-primary',
+  btn: 'solid-gray',
   label: 'Cancel',
 })
 
@@ -17,6 +17,12 @@ const delegatedProps = reactiveOmit(props, 'class', 'una')
     v-bind="delegatedProps"
     as-child
   >
-    <Button />
+    <Button
+      v-bind="props"
+    >
+      <template v-for="(_, name) in $slots" #[name]="slotData">
+        <slot :name="name" v-bind="slotData" />
+      </template>
+    </Button>
   </AlertDialogCancel>
 </template>
