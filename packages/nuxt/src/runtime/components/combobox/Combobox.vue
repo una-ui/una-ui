@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { AcceptableValue, ComboboxRootEmits } from 'reka-ui'
-import type { NComboboxGroupProps, NComboboxProps } from '../../types'
+import type { ExtractItemType, NComboboxGroupProps, NComboboxProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { ComboboxRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
@@ -23,7 +23,7 @@ const props = withDefaults(defineProps<NComboboxProps<T>>(), {
   textEmpty: 'No items found.',
   size: 'sm',
 })
-const emits = defineEmits<ComboboxRootEmits<T>>()
+const emits = defineEmits<ComboboxRootEmits<ExtractItemType<T>>>()
 
 const rootProps = reactiveOmit(props, [
   'items',
@@ -55,11 +55,11 @@ const valueKey = computed(() => props.valueKey?.toString() ?? 'value')
 // Check if items are grouped
 const hasGroups = computed(() => {
   return Array.isArray(props.items) && props.items.length > 0
-    && typeof props.items[0] === 'object' && 'items' in (props.items[0] as T[])
+    && typeof props.items[0] === 'object' && 'items' in (props.items[0] as any)
 })
 
 // Helper function to safely get a property from an item
-function getItemProperty<K extends string>(item: T | null | undefined, key: K): any {
+function getItemProperty<K extends string>(item: ExtractItemType<T> | null | undefined, key: K): any {
   if (item == null)
     return ''
 
@@ -67,13 +67,13 @@ function getItemProperty<K extends string>(item: T | null | undefined, key: K): 
 }
 
 // Find a matching item from the items list by its value
-function findItemByValue(value: unknown): T | undefined {
+function findItemByValue(value: unknown): ExtractItemType<T> | undefined {
   if (!props.items)
     return undefined
 
   if (hasGroups.value) {
     // Search in grouped items
-    for (const group of props.items as NComboboxGroupProps<T>[]) {
+    for (const group of props.items as NComboboxGroupProps<ExtractItemType<T>>[]) {
       const found = group.items?.find(item => getItemProperty(item, valueKey.value) === value)
       if (found)
         return found
@@ -82,7 +82,7 @@ function findItemByValue(value: unknown): T | undefined {
   }
   else {
     // Search in flat items list
-    return (props.items as T[]).find(item => getItemProperty(item, valueKey.value) === value)
+    return (props.items as ExtractItemType<T>[]).find(item => getItemProperty(item, valueKey.value) === value)
   }
 }
 
@@ -117,7 +117,7 @@ function getDisplayValue(val: unknown): string {
 }
 
 // Check if an item is selected in the current modelValue
-function isItemSelected(item: T | null | undefined): boolean {
+function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
   if (item == null)
     return false
 
@@ -130,7 +130,7 @@ function isItemSelected(item: T | null | undefined): boolean {
 
   // For single selection
   return typeof props.modelValue === 'object' && props.modelValue !== null
-    ? getItemProperty(props.modelValue as T, valueKey.value) === itemValue
+    ? getItemProperty(props.modelValue as ExtractItemType<T>, valueKey.value) === itemValue
     : props.modelValue === itemValue
 }
 </script>
@@ -229,7 +229,7 @@ function isItemSelected(item: T | null | undefined): boolean {
                 >
                   <slot name="group">
                     <ComboboxItem
-                      v-for="item in items as T[]"
+                      v-for="item in items as ExtractItemType<T>[]"
                       :key="getItemProperty(item, valueKey)"
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
                       :size
@@ -258,7 +258,7 @@ function isItemSelected(item: T | null | undefined): boolean {
               <!-- Grouped items -->
               <template v-else>
                 <ComboboxGroup
-                  v-for="(group, i) in items as NComboboxGroupProps<T>[]"
+                  v-for="(group, i) in items as NComboboxGroupProps<ExtractItemType<T>>[]"
                   :key="i"
                   v-bind="props._comboboxGroup"
                   :label="group.label"
