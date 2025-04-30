@@ -110,9 +110,19 @@ export interface NAlertDialogActionProps extends AlertDialogActionProps, NButton
   onClick?: () => void
 }
 
+export interface NAlertDialogHeaderProps extends BaseExtensions {
+  una?: Pick<NAlertDialogUnaProps, 'AlertDialogHeader'>
+}
+
+export interface NAlertDialogFooterProps extends BaseExtensions {
+  una?: Pick<NAlertDialogUnaProps, 'AlertDialogFooter'>
+}
+
 export interface NAlertDialogUnaProps {
   alertDialogTitle?: HTMLAttributes['class']
   alertDialogDescription?: HTMLAttributes['class']
   alertDialogOverlay?: HTMLAttributes['class']
   alertDialogContent?: HTMLAttributes['class']
+  AlertDialogHeader?: HTMLAttributes['class']
+  AlertDialogFooter?: HTMLAttributes['class']
 }
