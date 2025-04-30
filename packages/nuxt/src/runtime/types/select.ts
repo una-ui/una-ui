@@ -32,7 +32,6 @@ export interface SelectGroup<T extends AcceptableValue> {
 
 export interface NSelectProps<T extends AcceptableValue> extends SelectExtensions {
   /**
-   * s
    * The items to display in the select.
    */
   items: T[] | SelectGroup<T>[]
@@ -49,9 +48,11 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
    */
   label?: string
   /**
-   * Allows for multiple groups within the select.
+   * Whether to show a separator between groups.
+   *
+   * @default false
    */
-  group?: boolean
+  groupSeparator?: boolean
   /**
    * Sub-component configurations
    */
