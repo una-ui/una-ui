@@ -98,12 +98,14 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
           <AlertDialogFooter>
             <slot name="footer">
               <AlertDialogCancel
-                :_alert-dialog-cancel
+                v-bind="_alertDialogCancel"
+                @click="onCancel"
               >
                 <slot name="cancel" />
               </AlertDialogCancel>
               <AlertDialogAction
-                :_alert-dialog-action
+                v-bind="_alertDialogAction"
+                @click="onAction"
               >
                 <slot name="action" />
               </AlertDialogAction>
