@@ -43,13 +43,12 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
     v-bind="forwarded"
   >
     <slot>
-      <slot name="trigger-root" :open>
-        <AlertDialogTrigger
-          v-bind="_alertDialogTrigger"
-        >
-          <slot name="trigger" :open />
-        </AlertDialogTrigger>
-      </slot>
+      <AlertDialogTrigger
+        v-bind="_alertDialogTrigger"
+        as-child
+      >
+        <slot name="trigger" :open />
+      </AlertDialogTrigger>
 
       <AlertDialogContent
         v-bind="_alertDialogContent"

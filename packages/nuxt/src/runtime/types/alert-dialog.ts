@@ -48,7 +48,7 @@ export interface NAlertDialogDescriptionProps extends AlertDialogDescriptionProp
   una?: Pick<NAlertDialogUnaProps, 'alertDialogDescription'>
 }
 
-export interface NAlertDialogTriggerProps extends AlertDialogTriggerProps, NButtonProps {
+export interface NAlertDialogTriggerProps extends AlertDialogTriggerProps {
 }
 
 export interface NAlertDialogContentProps extends AlertDialogContentProps, BaseExtensions {
