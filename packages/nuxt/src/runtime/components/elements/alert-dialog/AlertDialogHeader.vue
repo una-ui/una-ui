@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NAlertDialogHeaderProps } from '../../../types'
 import { cn } from '../../../utils'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<NAlertDialogHeaderProps>()
 </script>
 
 <template>
   <div
     data-slot="alert-dialog-header"
-    :class="cn('flex flex-col gap-2 text-center sm:text-left', props.class)"
+    :class="cn(
+      'alert-dialog-header',
+      props.una?.AlertDialogHeader,
+      props.class,
+    )"
   >
     <slot />
   </div>
