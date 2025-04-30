@@ -11,6 +11,8 @@ export const staticAlertDialog: Record<`${KbdPrefix}-${string}` | KbdPrefix, str
 
   'alert-dialog-title': 'text-lg font-semibold',
   'alert-dialog-description': 'text-muted text-sm',
+  'alert-dialog-header': 'flex flex-col gap-2 text-center sm:text-left',
+  'alert-dialog-footer': 'flex flex-col gap-2 sm:flex-row sm:justify-end',
 }
 
 export const dynamicAlertDialog: [RegExp, (params: RegExpExecArray) => string][] = [
