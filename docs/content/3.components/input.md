@@ -86,7 +86,7 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 ::
 :::
 
-### Leading and Trailing Icons
+### Icons
 
 | Prop       | Default | Type     | Description            |
 | ---------- | ------- | -------- | ---------------------- |

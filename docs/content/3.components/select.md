@@ -14,17 +14,17 @@ badges:
 
 ### Basic
 
-| Name           | Default | Type      | Description                                                                                                     |
-| -------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
-| `items`        | -       | `array`   | Set the select items.                                                                                           |
-| `dir`          | `ltr`   | `string`  | The direction of the select. Values: `ltr`, `rtl`                                                               |
-| `placeholder`  | -       | `string`  | The content that will be rendered inside the `SelectValue` when no `value` or `defaultValue` is set.            |
-| `label`        | -       | `string`  | Set the select items label.                                                                                     |
-| `defaultOpen`  | -       | `boolean` | The open state of the select when it is initially rendered. Use when you do not need to control its open state. |
-| `defaultValue` | -       | `string`  | The value of the select when initially rendered. Use when you do not need to control the state of the `Select`  |
-| `open`         | -       | `boolean` | The controlled open state of the Select. Can be bind as `v-model:open`.                                         |
-| `modelValue`   | -       | `string`  | The controlled value of the Select. Can be bind as `v-model`.                                                   |
-| `status`       | -       | `string`  | Set the status of the select. Values: `info`, `success`, `warning`, `error`                                     |
+| Name           | Default | Type                      | Description                                                                                                     |
+| -------------- | ------- | ------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `items`        | -       | `T[] \| SelectGroup<T>[]` | Set the select items.                                                                                           |
+| `dir`          | `ltr`   | `string`                  | The direction of the select. Values: `ltr`, `rtl`                                                               |
+| `placeholder`  | -       | `string`                  | The content that will be rendered inside the `SelectValue` when no `value` or `defaultValue` is set.            |
+| `label`        | -       | `string`                  | Set the select items label.                                                                                     |
+| `defaultOpen`  | -       | `boolean`                 | The open state of the select when it is initially rendered. Use when you do not need to control its open state. |
+| `defaultValue` | -       | `string`                  | The value of the select when initially rendered. Use when you do not need to control the state of the `Select`  |
+| `open`         | -       | `boolean`                 | The controlled open state of the Select. Can be bind as `v-model:open`.                                         |
+| `modelValue`   | -       | `string`                  | The controlled value of the Select. Can be bind as `v-model`.                                                   |
+| `status`       | -       | `string`                  | Set the status of the select. Values: `info`, `success`, `warning`, `error`                                     |
 
 :read-more{to="https://www.reka-ui.com/docs/components/select#root" title="Reka Select Root API" target="_blank"}
 
@@ -71,9 +71,11 @@ badges:
 
 ### Group
 
-| Prop    | Default | Type      | Description                     |
-| ------- | ------- | --------- | ------------------------------- |
-| `group` | -       | `boolean` | Enable support for group items. |
+It will automatically group the items if the `items` prop is an array of objects with an `items` property.
+
+| Props            | Default | Type      | Description                                 |
+| ---------------- | ------- | --------- | ------------------------------------------- |
+| `groupSeparator` | `false` | `boolean` | Whether to show a separator between groups. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -158,16 +160,17 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 ## Slots
 
-| Name              | Props   | Description                          |
-| ----------------- | ------- | ------------------------------------ |
-| `root`            | `value` | Overrides all sub-components.        |
-| `trigger-wrapper` | `value` | Override the default trigger button. |
-| `trigger`         | `value` | The trigger slot.                    |
-| `value`           | `value` | The value slot.                      |
-| `content`         | `items` | The content slot.                    |
-| `label`           | `label` | The label slot.                      |
-| `item`            | `item`  | The item slot.                       |
-| `group`           | `items` | The group slot.                      |
+| Name              | Props                | Description                                         |
+| ----------------- | -------------------- | --------------------------------------------------- |
+| `default`         | `modelValue`, `open` | Full access to root element and state.              |
+| `trigger-wrapper` | `modelValue`, `open` | Override trigger button.                            |
+| `trigger`         | `modelValue`, `open` | Customize trigger content (replaces `SelectValue`). |
+| `indicator`       | `item`               | Customize selected item indicator icon.             |
+| `value`           | `modelValue`, `open` | Customize selected value display in trigger.        |
+| `content`         | `items`              | Customize dropdown content area.                    |
+| `label`           | `label`              | Customize group or main select label.               |
+| `item`            | `item`               | Customize individual dropdown item.                 |
+| `group`           | `group`              | Customize group rendering when using groups.        |
 
 :::CodeGroup
 ::div{label="Preview"}

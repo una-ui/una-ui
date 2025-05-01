@@ -105,7 +105,7 @@ function shuffleTheme(): void {
 
         <Separator />
 
-        <div class="space-y-3">
+        <div class="space-y-2">
           <Label for="color" class="text-xs"> Primary Color</Label>
           <div class="grid grid-cols-7 gap-3">
             <button
@@ -126,7 +126,7 @@ function shuffleTheme(): void {
 
         <Separator />
 
-        <div class="space-y-3">
+        <div class="space-y-2">
           <Label for="color" class="text-xs"> Gray Color </Label>
           <div class="grid grid-cols-7 gap-3">
             <button
@@ -147,7 +147,7 @@ function shuffleTheme(): void {
 
         <Separator />
 
-        <div class="space-y-3">
+        <div class="space-y-1">
           <Label for="radius" class="text-xs"> Radius </Label>
           <div class="grid grid-cols-5 gap-2 py-1.5">
             <Button
@@ -169,7 +169,7 @@ function shuffleTheme(): void {
 
         <Separator />
 
-        <div class="space-y-3">
+        <div class="space-y-1">
           <Label for="theme" class="text-xs">Mode</Label>
 
           <div class="flex justify-around py-1.5 space-x-2">
@@ -209,12 +209,14 @@ function shuffleTheme(): void {
 
         <div class="flex space-x-3">
           <Button
+            size="xs"
             btn="solid-gray block"
             label="Reset"
             leading="i-radix-icons-reload"
             @click="reset"
           />
           <Button
+            size="xs"
             btn="solid block"
             class="transition"
             label="Shuffle"

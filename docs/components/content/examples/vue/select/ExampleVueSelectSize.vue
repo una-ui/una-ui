@@ -7,6 +7,15 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
   <div class="grid gap-4 sm:grid-cols-2">
     <NSelect
       v-model="selected"
+      size="xs"
+      :items
+      placeholder="Select Contributor"
+      label="Vue Community"
+    />
+
+    <NSelect
+      v-model="selected"
+      size="sm"
       :items
       placeholder="Select Contributor"
       label="Vue Community"
