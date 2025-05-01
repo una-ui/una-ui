@@ -22,22 +22,18 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs"
     },
     "./shortcuts": {
       "types": "./dist/shortcuts.d.ts",
-      "import": "./dist/shortcuts.mjs",
-      "require": "./dist/shortcuts.cjs"
+      "import": "./dist/shortcuts.mjs"
     },
     "./prefixes": {
       "types": "./dist/prefixes.d.ts",
-      "import": "./dist/prefixes.mjs",
-      "require": "./dist/prefixes.cjs"
+      "import": "./dist/prefixes.mjs"
     },
     "./*": "./*"
   },
-  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
