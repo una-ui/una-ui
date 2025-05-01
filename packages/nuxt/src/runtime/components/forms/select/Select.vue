@@ -1,6 +1,7 @@
 <script lang="ts">
 import type { AcceptableValue, SelectRootEmits } from 'reka-ui'
 import type { NSelectProps, SelectGroup as SelectGroupType } from '../../../types'
+import { computed } from 'vue'
 </script>
 
 <script setup lang="ts" generic="T extends AcceptableValue">
@@ -18,7 +19,13 @@ const props = withDefaults(defineProps<NSelectProps<T>>(), {
   size: 'sm',
 })
 
-const emits = defineEmits<SelectRootEmits>()
+const emits = defineEmits<SelectRootEmits<T>>()
+
+// Check if items are grouped
+const hasGroups = computed(() => {
+  return Array.isArray(props.items) && props.items.length > 0
+    && typeof props.items[0] === 'object' && 'items' in (props.items[0] as any)
+})
 
 const forwarded = useForwardPropsEmits(props, emits)
 
@@ -69,8 +76,8 @@ function isItemSelected(item: unknown, modelValue: unknown) {
     )"
     v-bind="forwarded"
   >
-    <slot name="root" :model-value :open>
-      <slot name="trigger-wrapper">
+    <slot :model-value :open>
+      <slot name="trigger-root" :model-value :open>
         <SelectTrigger
           :id
           :size
@@ -105,7 +112,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
         :una
       >
         <slot name="content" :items="items">
-          <template v-if="!group">
+          <template v-if="!hasGroups">
             <SelectLabel
               v-if="label"
               v-bind="_selectLabel"
@@ -131,11 +138,14 @@ function isItemSelected(item: unknown, modelValue: unknown) {
                 <slot name="item" :item="item">
                   {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
                 </slot>
+                <template #indicator>
+                  <slot name="indicator" :item="item" />
+                </template>
               </SelectItem>
             </template>
           </template>
 
-          <template v-if="group">
+          <template v-if="hasGroups">
             <SelectGroup
               v-for="(group, i) in items as SelectGroupType<T>[]"
               :key="i"
@@ -143,7 +153,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               :una
             >
               <SelectSeparator
-                v-if="i > 0"
+                v-if="i > 0 && props.groupSeparator"
                 v-bind="props._selectSeparator"
                 :una
               />
@@ -175,6 +185,9 @@ function isItemSelected(item: unknown, modelValue: unknown) {
                     <slot name="item" :item="item">
                       {{ props.itemKey ? (item as any)[props.itemKey] : item }}
                     </slot>
+                    <template #indicator>
+                      <slot name="indicator" :item="item" />
+                    </template>
                   </SelectItem>
                 </template>
               </slot>

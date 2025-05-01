@@ -3,27 +3,27 @@ packages:
   - packages/**
   - playground/**
 catalog:
-  '@antfu/eslint-config': ^4.11.0
-  '@antfu/ni': ^23.3.1
-  '@faker-js/faker': ^9.5.1
+  '@antfu/eslint-config': ^4.12.0
+  '@antfu/ni': ^24.3.0
+  '@faker-js/faker': ^9.7.0
   '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.2
-  '@iconify-json/lucide': ^1.2.35
+  '@iconify-json/lucide': ^1.2.39
   '@iconify-json/radix-icons': ^1.2.2
   '@iconify-json/tabler': ^1.2.17
-  '@iconify/json': ^2.2.324
+  '@iconify/json': ^2.2.332
   '@iconify/utils': ^2.3.0
-  '@nuxt/devtools': ^2.3.2
-  '@nuxt/kit': ^3.16.2
+  '@nuxt/devtools': ^2.4.0
+  '@nuxt/kit': ^3.17.1
   '@nuxt/module-builder': ^0.8.4
-  '@nuxt/schema': ^3.16.2
+  '@nuxt/schema': ^3.17.1
   '@nuxtjs/color-mode': ^3.5.2
-  '@tanstack/vue-table': ^8.21.2
+  '@tanstack/vue-table': ^8.21.3
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.13.14
-  '@una-ui/content': ^45.1.0
+  '@types/node': ^22.15.2
+  '@una-ui/content': ^46.1.0
   '@unocss/core': ^66.0.0
   '@unocss/eslint-config': ^66.0.0
   '@unocss/nuxt': ^66.0.0
@@ -41,26 +41,26 @@ catalog:
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.23.0
+  eslint: ^9.25.1
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
   fs-extra: ^11.3.0
   ignore-dependency-scripts: ^1.0.1
-  lint-staged: ^15.5.0
-  nuxt: ^3.16.2
+  lint-staged: ^15.5.1
+  nuxt: ^3.17.1
   ohash: ^1.1.6
   pathe: ^2.0.3
-  reka-ui: ^2.1.1
+  reka-ui: ^2.2.0
   rimraf: ^6.0.1
-  sass: ^1.86.0
+  sass: ^1.87.0
   simple-git: ^3.27.0
-  simple-git-hooks: ^2.12.1
-  tailwind-merge: ^3.0.2
+  simple-git-hooks: ^2.13.0
+  tailwind-merge: ^3.2.0
   typescript: 5.6.3
   unbuild: ^3.5.0
   unocss: ^66.0.0
-  unocss-preset-animations: ^1.1.1
-  vitest: ^3.0.9
-  vue-tsc: ^2.2.8
-  zod: ^3.24.2
+  unocss-preset-animations: ^1.2.1
+  vitest: ^3.1.2
+  vue-tsc: ^2.2.10
+  zod: ^3.24.3

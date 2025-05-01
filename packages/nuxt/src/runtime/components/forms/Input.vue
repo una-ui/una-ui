@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<NInputProps>(), {
   size: 'md',
   type: 'text',
   resize: 'none',
-  rows: 3,
+  rows: 0,
 })
 
 const emit = defineEmits(['leading', 'trailing', 'update:modelValue'])
@@ -126,6 +126,7 @@ defineExpose({
       'input-wrapper',
       una?.inputWrapper,
     )"
+    v-bind="_inputWrapper"
   >
     <div
       v-if="isLeading"

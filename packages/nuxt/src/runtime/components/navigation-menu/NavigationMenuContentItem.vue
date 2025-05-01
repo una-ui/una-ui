@@ -14,6 +14,7 @@ const forwarded = useForwardPropsEmits(props, emits)
 <template>
   <NavigationMenuLink
     v-bind="forwarded"
+    :una
     :class="cn(
       'navigation-menu-content-item',
       props.una?.navigationMenuContentItem,

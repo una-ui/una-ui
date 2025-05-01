@@ -40,7 +40,7 @@ export interface NAvatarRootProps extends AvatarRootProps, BaseProps {
    */
   avatar?: HTMLAttributes['class']
 
-  una?: NAvatarUnaProps['avatarRoot']
+  una?: Pick<NAvatarUnaProps, 'avatarRoot'>
 }
 
 export interface NAvatarAvatarFallbackProps extends AvatarFallbackProps, BaseProps {
@@ -58,13 +58,13 @@ export interface NAvatarAvatarFallbackProps extends AvatarFallbackProps, BasePro
    */
   icon?: boolean
 
-  una?: NAvatarUnaProps['avatarFallback']
+  una?: Pick<NAvatarUnaProps, 'avatarFallback' | 'avatarLabel' | 'avatarIcon'>
 }
 
 export interface NAvatarImageProps extends Omit<AvatarImageProps, 'src'>, BaseProps {
   src?: string
   alt?: string
-  una?: NAvatarUnaProps['avatarImage']
+  una?: Pick<NAvatarUnaProps, 'avatarImage'>
 }
 
 export interface NAvatarUnaProps {

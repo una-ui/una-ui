@@ -8,13 +8,13 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-error-icon': 'i-error',
   'input-success-icon': 'i-success',
   'input-warning-icon': 'i-warning',
-  'input-leading-padding': 'pl-2.9em',
-  'input-trailing-padding': 'pr-2.9em',
+  'input-leading-padding': 'pl-2.857142857142857em',
+  'input-trailing-padding': 'pr-2.857142857142857em',
 
   // base
-  'input': 'text-base text-0.875em leading-1.4285714285714286em px-0.8571428571428571em py-0.2857142857142857em w-full focus-visible:outline-none input-disabled placeholder:text-muted block rounded-md shadow-sm bg-transparent transition-colors file:border-0  file:bg-transparent file:text-sm file:font-medium',
-  'input-input': 'h-2.5714285714285716em', // role='input'
-  'input-textarea': '', // role='textarea'
+  'input': 'text-base text-0.875em leading-1.4285714285714286em px-0.8571428571428571em w-full focus-visible:outline-none input-disabled placeholder:text-muted block rounded-md shadow-sm bg-transparent transition-colors file:border-0  file:bg-transparent file:text-0.875em file:font-medium',
+  'input-input': 'h-2.5714285714285716em py-0.2857142857142857em', // role='input'
+  'input-textarea': 'min-h-4.285714285714286em py-0.5714285714em', // role='textarea'
   'input-disabled': 'disabled:(n-disabled)',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
   'input-status-icon-base': 'size-1.25em',
@@ -24,8 +24,8 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
 
   // wrappers
   'input-wrapper': 'relative flex items-center',
-  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.75em text-muted',
-  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.75em text-muted',
+  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.8571428571428571em text-muted',
+  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.8571428571428571em text-muted',
 
   // variants
   'input-outline-gray': 'border border-input focus-visible:ring-input focus-visible:ring-1',
