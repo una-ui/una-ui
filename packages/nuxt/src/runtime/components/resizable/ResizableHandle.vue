@@ -24,19 +24,21 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     v-bind="forwarded"
     class="resizable-handle-wrapper"
   >
-    <template v-if="withHandle">
-      <div
-        :class="cn(
-          'resizable-handle',
-          props.una?.resizableHandle,
-          props.class,
-        )"
-        :resizable-handle
-      >
-        <slot name="handle-icon">
-          <Icon :name="handle" class="resizable-handle-icon-wrapper" />
-        </slot>
-      </div>
-    </template>
+    <slot>
+      <template v-if="withHandle">
+        <div
+          :class="cn(
+            'resizable-handle',
+            props.una?.resizableHandle,
+            props.class,
+          )"
+          :resizable-handle
+        >
+          <slot name="handle-icon">
+            <Icon :name="handle" class="resizable-handle-icon-wrapper" />
+          </slot>
+        </div>
+      </template>
+    </slot>
   </SplitterResizeHandle>
 </template>
