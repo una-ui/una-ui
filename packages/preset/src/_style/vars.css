@@ -20,7 +20,7 @@
   --c-accent: rgb(var(--una-gray-100));
   --c-accent-foreground: rgb(var(--una-gray-800));
 
-  --c-popover: rgb(255, 255, 255);
+  --c-popover: rgb(var(--una-gray-800));
   --c-popover-foreground: rgb(var(--una-gray-950));
 
   --c-border: rgb(var(--una-gray-200));
@@ -62,7 +62,7 @@
   --c-accent-foreground: rgb(var(--una-gray-100));
 
   --c-popover: rgb(var(--una-gray-950));
-  --c-popover-foreground: rgb(255, 255, 255);
+  --c-popover-foreground: rgb(var(--una-gray-100));
 
   --c-border: rgba(var(--una-gray-700), 0.58);
   --c-border-foreground: rgb(var(--una-gray-200));
