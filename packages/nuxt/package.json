@@ -13,9 +13,8 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
     },
     "./una.config": {
       "import": "./dist/una.config.mjs"
@@ -31,8 +30,8 @@
   "imports": {
     "#build/una/*": "./.nuxt/una/*.ts"
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.mts",
   "files": [
     "dist"
   ],
@@ -66,7 +65,6 @@
     "ohash": "catalog:",
     "reka-ui": "catalog:",
     "tailwind-merge": "catalog:",
-    "typescript": "catalog:",
     "unocss": "catalog:",
     "unocss-preset-animations": "catalog:"
   },
