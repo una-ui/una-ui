@@ -21,13 +21,14 @@ import ComboboxViewport from './ComboboxViewport.vue'
 
 const props = withDefaults(defineProps<NComboboxProps<T>>(), {
   textEmpty: 'No items found.',
-  size: 'sm',
+  size: 'md',
 })
 const emits = defineEmits<ComboboxRootEmits<ExtractItemType<T>>>()
 
 const rootProps = reactiveOmit(props, [
   'items',
   'una',
+  'size',
   'label',
   'labelKey',
   'valueKey',
@@ -155,11 +156,15 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
           <template
             v-if="$slots.trigger || $slots.triggerRoot"
           >
-            <slot name="trigger-root">
+            <slot name="trigger-wrapper">
               <ComboboxTrigger
                 v-bind="props._comboboxTrigger"
                 :id
                 :status
+                :class="cn(
+                  'text-0.875em',
+                  props._comboboxTrigger?.class,
+                )"
                 :size
               >
                 <slot name="trigger" :model-value :open />
@@ -168,15 +173,11 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
           </template>
 
           <template v-else>
-            <slot name="input-root" :model-value :open>
+            <slot name="input-wrapper" :model-value :open>
               <ComboboxInput
                 :id
                 :display-value="(val: unknown) => getDisplayValue(val)"
                 name="frameworks"
-                :class="cn(
-                  'text-1em',
-                  props._comboboxInput?.class,
-                )"
                 :status
                 v-bind="props._comboboxInput"
                 :size
@@ -192,12 +193,12 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
         :una
       >
         <slot name="list">
-          <slot name="input-root" :model-value :open>
+          <slot name="input-wrapper" :model-value :open>
             <ComboboxInput
               v-if="$slots.trigger || $slots.triggerRoot"
               :size
               :class="cn(
-                'border-0 border-b-1 rounded-none text-1em focus-visible:ring-0',
+                'border-0 border-b-1 rounded-none focus-visible:ring-0',
                 props._comboboxInput?.class,
               )"
               v-bind="props._comboboxInput"
@@ -234,6 +235,10 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
                       :size
                       v-bind="props._comboboxItem"
+                      :class="cn(
+                        'text-0.875em',
+                        props._comboboxItem?.class,
+                      )"
                       :una
                     >
                       <slot name="item" :item="item" :selected="isItemSelected(item)">
@@ -277,6 +282,10 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                       :value="props.multiple ? getItemProperty(item, valueKey) : item"
                       :size
                       v-bind="{ ...props._comboboxItem, ...group._comboboxItem }"
+                      :class="cn(
+                        'text-0.875em',
+                        props._comboboxItem?.class,
+                      )"
                       :una
                     >
                       <slot name="item" :item="item" :group="group" :selected="isItemSelected(item)">

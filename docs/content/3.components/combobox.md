@@ -132,18 +132,18 @@ Adjust the combobox size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:l
 
 ## Slots
 
-| Name           | Props                | Description                                                      |
-| -------------- | -------------------- | ---------------------------------------------------------------- |
-| `default`      | -                    | Slot for advanced custom rendering using sub-components.         |
-| `trigger`      | `modelValue`, `open` | Custom content _inside_ the default trigger button.              |
-| `trigger-root` | `modelValue`, `open` | Completely replace the default trigger button/component.         |
-| `input-root`   | `modelValue`, `open` | Completely replace the default input component.                  |
-| `item`         | `item`, `selected`   | Custom rendering for the entire content of each combobox item.   |
-| `label`        | `item`               | Custom rendering for the label text within each item.            |
-| `indicator`    | `item`               | Custom rendering for the selection indicator within each item.   |
-| `header`       | -                    | Content rendered inside the list, before the items.              |
-| `body`         | -                    | Completely replace the default item list container (`Viewport`). |
-| `footer`       | -                    | Content rendered inside the list, after the items.               |
+| Name              | Props                | Description                                                      |
+| ----------------- | -------------------- | ---------------------------------------------------------------- |
+| `default`         | -                    | Slot for advanced custom rendering using sub-components.         |
+| `trigger`         | `modelValue`, `open` | Custom content _inside_ the default trigger button.              |
+| `trigger-wrapper` | `modelValue`, `open` | Completely replace the default trigger button/component.         |
+| `input-wrapper`   | `modelValue`, `open` | Completely replace the default input component.                  |
+| `item`            | `item`, `selected`   | Custom rendering for the entire content of each combobox item.   |
+| `label`           | `item`               | Custom rendering for the label text within each item.            |
+| `indicator`       | `item`               | Custom rendering for the selection indicator within each item.   |
+| `header`          | -                    | Content rendered inside the list, before the items.              |
+| `body`            | -                    | Completely replace the default item list container (`Viewport`). |
+| `footer`          | -                    | Content rendered inside the list, after the items.               |
 
 ### Custom Rendering
 
