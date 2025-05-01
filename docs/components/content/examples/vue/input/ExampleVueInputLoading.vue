@@ -28,7 +28,7 @@
     <NInput
       :una="{
         inputLoading: 'animate-pulse text-yellow',
-        inputLoadingIcon: 'i-heroicons-ellipsis-horizontal-20-solid',
+        inputLoadingIcon: 'i-tabler-brand-github-copilot',
       }"
       loading
       placeholder="This is possible too"
