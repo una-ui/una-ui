@@ -70,6 +70,7 @@ export interface NComboboxProps<T extends AcceptableValue> extends Omit<Combobox
   _comboboxTrigger?: NComboboxTriggerProps
   _comboboxViewport?: NComboboxViewportProps
   _comboboxCheckbox?: NCheckboxProps
+  _comboboxContent?: ComboboxContentProps
   _comboboxPortal?: ComboboxPortalProps
   /**
    * `UnaUI` preset configuration

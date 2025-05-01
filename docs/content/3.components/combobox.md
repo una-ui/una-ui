@@ -44,7 +44,7 @@ The `T` generic extends `AcceptableValue` from Reka UI. When using grouped items
 ::
 :::
 
-### Multiple Selection
+### Multiple
 
 Allow users to select multiple items from the list.
 
@@ -61,13 +61,13 @@ Allow users to select multiple items from the list.
 ::
 :::
 
-### With Trigger
+### Trigger
 
 Add a custom trigger content.
 
-| Prop               | Default                                                         | Type     | Description                                                                                                     |
-| ------------------ | --------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------- |
-| `_comboboxTrigger` | `{ btn: 'solid-white', trailing: 'i-lucide-chevrons-up-down' }` | `object` | The button props for the trigger, you can refer to the [Button component](/components/button) for more details. |
+| Prop               | Default                                                         | Type                    | Description                                                                                                     |
+| ------------------ | --------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `_comboboxTrigger` | `{ btn: 'solid-white', trailing: 'i-lucide-chevrons-up-down' }` | `NComboboxTriggerProps` | The button props for the trigger, you can refer to the [Button component](/components/button) for more details. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -82,11 +82,27 @@ Add a custom trigger content.
 
 :read-more{to="https://reka-ui.com/docs/components/combobox#trigger" title="Reka Combobox Trigger API" target="_blank"}
 
+### List / Content
+
+| Prop            | Default                                                  | Type                 | Description                                                                                                                               |
+| --------------- | -------------------------------------------------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `_comboboxList` | `{ align: 'center', sideOffset: 4, position: 'popper' }` | `NComboboxListProps` | Props for customizing the dropdown list of the combobox. Controls alignment, offset distance from trigger, positioning behavior and more. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueComboboxContent
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxContent.vue
+::
+:::
+
+:read-more{to="https://reka-ui.com/docs/components/combobox#content" title="Reka Combobox Content API" target="_blank"}
+
 ### Group
 
-| Props            | Default | Type      | Description                                 |
-| ---------------- | ------- | --------- | ------------------------------------------- |
-| `groupSeparator` | `false` | `boolean` | Whether to show a separator between groups. |
+| Props | Default | Type | Description |
+| ----- | ------- | ---- | ----------- |
 
 :::CodeGroup
 ::div{label="Preview" preview}

@@ -188,7 +188,7 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
       </ComboboxAnchor>
 
       <ComboboxList
-        v-bind="props._comboboxList"
+        v-bind="{ ...props._comboboxList, ...props._comboboxContent }"
         :_comboboxPortal
         :size
         :una
