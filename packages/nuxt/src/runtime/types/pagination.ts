@@ -67,7 +67,7 @@ export interface NPaginationLastProps extends PaginationLastProps, Omit<NButtonP
   una?: Pick<NPaginationUnaProps, 'paginationLast' | 'pagination'> & NButtonProps['una']
 }
 
-export interface NPaginationUnaProps {
+interface NPaginationUnaProps {
   pagination?: HTMLAttributes['class']
   paginationRoot?: HTMLAttributes['class']
   paginationList?: HTMLAttributes['class']

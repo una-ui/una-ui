@@ -177,7 +177,7 @@ export interface NDropdownMenuShortcutProps extends BaseExtensions {
 /**
  * Props for the NDropdownMenuUna component.
  */
-export interface NDropdownMenuUnaProps {
+interface NDropdownMenuUnaProps {
   /** CSS class for the dropdown menu content */
   dropdownMenuContent?: HTMLAttributes['class']
   /** CSS class for the dropdown menu sub-content */

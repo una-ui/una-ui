@@ -124,7 +124,7 @@ export interface NNavigationMenuViewportProps extends NavigationMenuViewportProp
   una?: Pick<NNavigationMenuUnaProps, 'navigationMenuViewport' | 'navigationMenuViewportWrapper'>
 }
 
-export interface NNavigationMenuUnaProps {
+interface NNavigationMenuUnaProps {
   /** CSS class for the navigation menu */
   navigationMenu?: HTMLAttributes['class']
   /** CSS class for the navigation menu content */

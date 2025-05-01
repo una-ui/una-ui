@@ -202,7 +202,7 @@ export interface NTableCaptionProps extends PrimitiveProps {
   una?: Pick<NTableUnaProps, 'tableCaption'>
 }
 
-export interface NTableUnaProps {
+interface NTableUnaProps {
   table?: HTMLAttributes['class']
   tableRoot?: HTMLAttributes['class']
   tableBody?: HTMLAttributes['class']

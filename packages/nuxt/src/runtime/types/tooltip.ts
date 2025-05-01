@@ -61,7 +61,7 @@ export interface NTooltipContentProps extends ContentExtensions {
   una?: Pick<NTooltipUnaProps, 'tooltipContent'>
 }
 
-export interface NTooltipUnaProps {
+interface NTooltipUnaProps {
   /** CSS class for the tooltip content */
   tooltipContent?: HTMLAttributes['class']
 }
