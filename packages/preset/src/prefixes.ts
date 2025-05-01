@@ -89,8 +89,6 @@ export default [
   'radio-group-item',
   'resizable',
   'resizable-handle',
-  'resizable-handle-icon',
-  'resizable-handle-wrapper',
   'resizable-panel',
   'resize',
   'rounded',
