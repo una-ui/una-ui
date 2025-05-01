@@ -21,7 +21,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
-  <ComboboxPortal>
+  <ComboboxPortal
+    v-bind="props._comboboxPortal"
+  >
     <ComboboxContent
       data-slot="combobox-list"
       v-bind="forwarded"

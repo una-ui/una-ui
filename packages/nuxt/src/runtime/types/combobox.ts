@@ -1,4 +1,4 @@
-import type { AcceptableValue, ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxLabelProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
+import type { AcceptableValue, ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxLabelProps, ComboboxPortalProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 import type { NCheckboxProps } from './checkbox'
@@ -70,6 +70,7 @@ export interface NComboboxProps<T extends AcceptableValue> extends Omit<Combobox
   _comboboxTrigger?: NComboboxTriggerProps
   _comboboxViewport?: NComboboxViewportProps
   _comboboxCheckbox?: NCheckboxProps
+  _comboboxPortal?: ComboboxPortalProps
   /**
    * `UnaUI` preset configuration
    *
@@ -115,6 +116,7 @@ export interface NComboboxItemIndicatorProps extends ComboboxItemIndicatorProps,
 export interface NComboboxListProps extends ComboboxContentProps, BaseExtensions {
   viewportClass?: HTMLAttributes['class']
   una?: Pick<NComboboxUnaProps, 'comboboxList'>
+  _comboboxPortal?: ComboboxPortalProps
 }
 
 export interface NComboboxSeparatorProps extends ComboboxSeparatorProps, BaseExtensions {

@@ -42,11 +42,11 @@ const status = computed(() => props.status ?? 'default')
 
 <template>
   <ComboboxTrigger
+    v-bind="forwardedProps"
     as-child
   >
     <slot name="root">
       <Button
-        v-bind="forwardedProps"
         :id
         :btn="statusClassVariants.btn ? undefined : props.btn"
         :data-status="status"
