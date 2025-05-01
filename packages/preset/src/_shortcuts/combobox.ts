@@ -19,7 +19,7 @@ export const staticCombobox: Record<`${ComboboxPrefix}-${string}` | ComboboxPref
   'combobox-item-indicator-icon': '',
   'combobox-item-indicator-icon-name': 'i-check',
   'combobox-anchor': 'min-w-200px',
-  'combobox-empty': 'py-1.5em text-center text-1em',
+  'combobox-empty': 'py-1.7142857142857142em text-center text-0.8571428571428571em',
   'combobox-group': 'overflow-hidden p-0.2857142857142857em text-foreground',
   'combobox-label': 'px-0.6666666666666666em py-0.5em text-0.8571428571428571em text-muted font-medium',
   'combobox-list': 'z-50 w-[--reka-popper-anchor-width] rounded-md border bg-popover text-popover overflow-hidden shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',

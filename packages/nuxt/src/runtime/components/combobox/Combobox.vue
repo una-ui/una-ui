@@ -179,8 +179,8 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                 :display-value="(val: unknown) => getDisplayValue(val)"
                 name="frameworks"
                 :status
-                v-bind="props._comboboxInput"
                 :size
+                v-bind="props._comboboxInput"
               />
             </slot>
           </template>

@@ -30,6 +30,7 @@ onMounted(() => {
 
 <template>
   <ComboboxInput
+    v-bind="props"
     as-child
   >
     <Input
