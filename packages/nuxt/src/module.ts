@@ -1,6 +1,8 @@
-import type { UnaSettings } from './runtime/types'
+import type { AppUnaConfig, UnaSettings } from './runtime/types'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
+import { defu } from 'defu'
 import { name, version } from '../package.json'
+import { defaultAppConfig } from './config'
 import extendUnocssOptions from './una.config'
 
 export type * from './runtime/types'
@@ -10,7 +12,7 @@ declare module '@nuxt/schema' {
     una?: Partial<Omit<UnaSettings, 'primaryColors' | 'grayColors'>>
   }
   interface AppConfig {
-    una: Omit<UnaSettings, 'primaryColors' | 'grayColors'>
+    una: Omit<AppUnaConfig, 'primaryColors' | 'grayColors'>
   }
 }
 
@@ -63,15 +65,16 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.alias['#una'] = resolve('./runtime')
 
-    nuxt.options.appConfig.una = {
-      ...{
-        primary: 'yellow',
-        gray: 'stone',
-        radius: 0.5,
-        fontSize: 16,
-      },
-      ...(nuxt.options.appConfig.una || {}),
+    // Store the user's config before merging
+    const userConfig = nuxt.options.appConfig.una || {}
+    const defaultConfig = defaultAppConfig()
+
+    // Perform the standard merge first for all properties
+    nuxt.options.appConfig.una = defu(userConfig, defaultConfig)
+    if (userConfig.options?.radius) {
+      nuxt.options.appConfig.una.options.radius = userConfig.options.radius
     }
+    console.log(nuxt.options.appConfig.una)
 
     // Isolate root node from portaled components
     nuxt.options.app.rootAttrs = nuxt.options.app.rootAttrs || {}

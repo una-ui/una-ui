@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { useColorMode } from '#imports'
+import { useAppConfig, useColorMode } from '#imports'
 import { useToggle } from '@vueuse/core'
 import { capitalize, computed } from 'vue'
 import { useUnaSettings } from '../../composables/useUnaSettings'
 import { useUnaThemes } from '../../composables/useUnaThemes'
-import { RADIUS } from '../../constants'
 import Button from '../elements/Button.vue'
 import Label from '../elements/Label.vue'
 import Popover from '../elements/popover/Popover.vue'
@@ -15,6 +14,7 @@ const colorMode = useColorMode()
 const [value, toggle] = useToggle()
 const { primaryThemes, grayThemes } = useUnaThemes()
 const { settings, reset } = useUnaSettings()
+const { una: { options } } = useAppConfig()
 
 const currentPrimaryThemeHex = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
 const currentPrimaryThemeName = computed(() => {
@@ -37,7 +37,7 @@ function updateGrayTheme(theme: string): void {
 }
 
 function shuffleTheme(): void {
-  if (primaryThemes.length > 0 && grayThemes.length > 0 && RADIUS.length > 0) {
+  if (primaryThemes.length > 0 && grayThemes.length > 0 && options.radius.length > 0) {
     // Safe way to access random elements with proper typing
     const safeGetPrimaryTheme = (): string => {
       const index = Math.floor(Math.random() * primaryThemes.length)
@@ -52,9 +52,9 @@ function shuffleTheme(): void {
     }
 
     const safeGetRadius = (): number => {
-      const index = Math.floor(Math.random() * RADIUS.length)
+      const index = Math.floor(Math.random() * options.radius.length)
       // Force type assertion for TypeScript
-      return RADIUS[index] as number
+      return options.radius[index] as number
     }
 
     // Get random values with correct typing
@@ -71,6 +71,7 @@ function shuffleTheme(): void {
 </script>
 
 <template>
+  {{ useAppConfig().una.options }}
   <Popover
     :_popover-content="{ align: 'end', class: 'w-73 bg-muted' }"
   >
@@ -98,7 +99,7 @@ function shuffleTheme(): void {
 
         <Separator />
 
-        <div class="space-y-3">
+        <div class="space-y-2">
           <Label for="color" class="text-xs"> Primary Color</Label>
           <div class="grid grid-cols-7 gap-3">
             <button
@@ -119,7 +120,7 @@ function shuffleTheme(): void {
 
         <Separator />
 
-        <div class="space-y-3">
+        <div class="space-y-2">
           <Label for="color" class="text-xs"> Gray Color </Label>
           <div class="grid grid-cols-7 gap-3">
             <button
@@ -138,31 +139,33 @@ function shuffleTheme(): void {
           </div>
         </div>
 
-        <Separator />
+        <template v-if="options.radius.length > 0">
+          <Separator />
 
-        <div class="space-y-3">
-          <Label for="radius" class="text-xs"> Radius </Label>
-          <div class="grid grid-cols-5 gap-2 py-1.5">
-            <Button
-              v-for="r in RADIUS"
-              :key="r"
-              btn="solid-gray"
-              size="xs"
-              :class="
-                r === settings.radius
-                  ? 'ring-2 ring-primary'
-                  : ''
-              "
-              @click="settings.radius = r"
-            >
-              {{ r }}
-            </Button>
+          <div class="space-y-1">
+            <Label for="radius" class="text-xs"> Radius </Label>
+            <div class="grid grid-cols-3 gap-2 py-1.5">
+              <Button
+                v-for="r in options.radius"
+                :key="r"
+                btn="solid-gray"
+                size="xs"
+                :class="
+                  r === settings.radius
+                    ? 'ring-2 ring-primary'
+                    : ''
+                "
+                @click="settings.radius = r"
+              >
+                {{ r }}
+              </Button>
+            </div>
           </div>
-        </div>
+        </template>
 
         <Separator />
 
-        <div class="space-y-3">
+        <div class="space-y-1">
           <Label for="theme" class="text-xs">Mode</Label>
 
           <div class="flex justify-around py-1.5 space-x-2">
@@ -200,11 +203,12 @@ function shuffleTheme(): void {
 
         <Separator />
 
-        <div class="flex space-x-3">
+        <div class="flex space-x-2">
           <Button
             btn="solid-gray block"
             label="Reset"
             leading="i-radix-icons-reload"
+            size="xs"
             @click="reset"
           />
           <Button
@@ -212,6 +216,7 @@ function shuffleTheme(): void {
             class="transition"
             label="Shuffle"
             leading="i-lucide-paintbrush"
+            size="xs"
             :una="{
               btnLeading: value ? 'rotate-6 transform' : '-rotate-6',
             }"

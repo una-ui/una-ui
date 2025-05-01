@@ -1,6 +1,6 @@
 :root {
   --una-font-size: 16px;
-  --una-radius: 0.5rem;
+  --una-radius: 0.625rem;
 
   --una-brand: var(--una-primary-600);
   --una-primary: var(--una-primary-600);

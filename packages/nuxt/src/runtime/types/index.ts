@@ -66,6 +66,12 @@ export interface UnaSettings {
   radius: number
 }
 
+export interface AppUnaConfig extends Omit<UnaSettings, 'primaryColors' | 'grayColors'> {
+  options: {
+    radius: UnaSettings['radius'][]
+  }
+}
+
 export type OutsideEvent<T extends Event> = CustomEvent<{
   originalEvent: T
 }>
