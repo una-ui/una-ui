@@ -77,7 +77,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
     v-bind="forwarded"
   >
     <slot :model-value :open>
-      <slot name="trigger-root" :model-value :open>
+      <slot name="trigger-wrapper" :model-value :open>
         <SelectTrigger
           :id
           :size

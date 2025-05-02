@@ -8,6 +8,10 @@ import { cn, randomId } from '../../utils'
 import Icon from '../elements/Icon.vue'
 import Label from '../elements/Label.vue'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(defineProps<NCheckboxProps>(), {
   forceMount: true,
 })
@@ -36,7 +40,7 @@ const id = computed(() => props.id ?? randomId('checkbox'))
     )"
   >
     <CheckboxRoot
-      v-bind="forwarded"
+      v-bind="{ ...forwarded, ...$attrs }"
       :id="id"
       :class="
         cn(
