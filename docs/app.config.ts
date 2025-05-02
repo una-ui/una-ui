@@ -126,27 +126,49 @@ export default defineAppConfig({
     toc: {
       enable: true,
       title: 'On This Page',
-      links: [{
-        title: 'Star on GitHub',
-        icon: 'lucide:star',
-        to: 'https://github.com/una-ui/una-ui',
-        target: '_blank',
-      }, {
-        title: 'Create Issues',
-        icon: 'lucide:circle-dot',
-        to: 'https://github.com/una-ui/una-ui/issues',
-        target: '_blank',
-      }, {
-        title: 'Release Notes',
-        icon: 'lucide:book',
-        to: 'https://github.com/una-ui/una-ui/releases',
-        target: '_blank',
-      }, {
-        title: 'Become a Sponsor',
-        icon: 'lucide:heart',
-        to: 'https://github.com/sponsors/phojie',
-        target: '_blank',
-      }],
+      links: [
+        {
+          title: 'Examples',
+          icon: 'lucide:globe',
+          to: 'https://play.unaui.com/dashboards/project-management',
+          target: '_blank',
+        },
+        {
+          title: 'Starter Template',
+          icon: 'lucide:folder',
+          to: 'https://github.com/una-ui/starter',
+          target: '_blank',
+        },
+        {
+          title: 'Stackblitz Playground',
+          icon: 'simple-icons:stackblitz',
+          to: 'https://stackblitz.com/github/una-ui/starter',
+        },
+        {
+          title: 'Star on GitHub',
+          icon: 'lucide:star',
+          to: 'https://github.com/una-ui/una-ui',
+          target: '_blank',
+        },
+        {
+          title: 'Create Issues',
+          icon: 'lucide:circle-dot',
+          to: 'https://github.com/una-ui/una-ui/issues',
+          target: '_blank',
+        },
+        {
+          title: 'Release Notes',
+          icon: 'lucide:book',
+          to: 'https://github.com/una-ui/una-ui/releases',
+          target: '_blank',
+        },
+        {
+          title: 'Become a Sponsor',
+          icon: 'lucide:heart',
+          to: 'https://github.com/sponsors/phojie',
+          target: '_blank',
+        },
+      ],
     },
     search: {
       enable: true,

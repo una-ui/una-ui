@@ -2,14 +2,14 @@
   <div class="grid cols-1 gap-4 sm:cols-2">
     <div class="sm:col-span-1">
       <NInput
-        leading="i-heroicons-magnifying-glass-20-solid"
+        leading="i-lucide-search"
         placeholder="This is leading icon"
       />
     </div>
 
     <div class="sm:col-span-1">
       <NInput
-        trailing="i-heroicons-question-mark-circle-20-solid text-primary"
+        trailing="i-tabler-help-circle-filled text-primary"
         placeholder="This is trailing icon with custom class"
       />
     </div>
@@ -18,8 +18,8 @@
       <NInput
         input="outline-purple"
         size="1.3rem"
-        leading="i-heroicons-paper-clip-20-solid"
-        trailing="i-heroicons-chat-bubble-left-ellipsis-20-solid"
+        leading="i-tabler-paperclip"
+        trailing="i-tabler-message-circle-filled"
         :una="{
           inputLeading: 'text-yellow',
           inputTrailing: 'text-blue',

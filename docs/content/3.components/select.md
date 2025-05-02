@@ -160,17 +160,17 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 
 ## Slots
 
-| Name           | Props                | Description                                         |
-| -------------- | -------------------- | --------------------------------------------------- |
-| `default`      | `modelValue`, `open` | Full access to root element and state.              |
-| `trigger-root` | `modelValue`, `open` | Override trigger button.                            |
-| `trigger`      | `modelValue`, `open` | Customize trigger content (replaces `SelectValue`). |
-| `indicator`    | `item`               | Customize selected item indicator icon.             |
-| `value`        | `modelValue`, `open` | Customize selected value display in trigger.        |
-| `content`      | `items`              | Customize dropdown content area.                    |
-| `label`        | `label`              | Customize group or main select label.               |
-| `item`         | `item`               | Customize individual dropdown item.                 |
-| `group`        | `group`              | Customize group rendering when using groups.        |
+| Name              | Props                | Description                                         |
+| ----------------- | -------------------- | --------------------------------------------------- |
+| `default`         | `modelValue`, `open` | Full access to root element and state.              |
+| `trigger-wrapper` | `modelValue`, `open` | Override trigger button.                            |
+| `trigger`         | `modelValue`, `open` | Customize trigger content (replaces `SelectValue`). |
+| `indicator`       | `item`               | Customize selected item indicator icon.             |
+| `value`           | `modelValue`, `open` | Customize selected value display in trigger.        |
+| `content`         | `items`              | Customize dropdown content area.                    |
+| `label`           | `label`              | Customize group or main select label.               |
+| `item`            | `item`               | Customize individual dropdown item.                 |
+| `group`           | `group`              | Customize group rendering when using groups.        |
 
 :::CodeGroup
 ::div{label="Preview"}

@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <NInput
-      leading="i-heroicons-currency-dollar-20-solid"
+      leading="i-lucide-circle-dollar-sign"
       placeholder="Search"
       class="pr-12"
     >

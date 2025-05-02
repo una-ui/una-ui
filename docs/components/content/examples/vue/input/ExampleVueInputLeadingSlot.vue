@@ -2,7 +2,7 @@
   <div class="flex">
     <NInput
       placeholder="Search"
-      trailing="i-heroicons-chat-bubble-left-right-20-solid"
+      trailing="i-tabler-message-chatbot-filled"
       class="pl-12"
     >
       <template #leading>
