@@ -55,15 +55,15 @@ badges:
 
 ## Slots
 
-| Name          | Props  | Description                                       |
-| ------------- | ------ | ------------------------------------------------- |
-| `default`     | -      | The body slot.                                    |
-| `content`     | -      | The entire content slot.                          |
-| `trigger`     | `open` | The trigger button used to open the alert dialog. |
-| `header`      | -      | Contains the title and description slots.         |
-| `footer`      | -      | The footer.                                       |
-| `title`       | -      | The title displayed in the alert dialog.          |
-| `description` | -      | The description displayed below the title.        |
+| Name          | Props  | Description                                                                          |
+| ------------- | ------ | ------------------------------------------------------------------------------------ |
+| `default`     | -      | Allows advanced customization using sub-components, replacing the default structure. |
+| `content`     | -      | Replaces the entire default content container within the dialog popup.               |
+| `trigger`     | `open` | The trigger button used to open the dialog.                                          |
+| `header`      | -      | Contains the title and description slots.                                            |
+| `footer`      | -      | The footer.                                                                          |
+| `title`       | -      | The title displayed in the dialog.                                                   |
+| `description` | -      | The description displayed below the title.                                           |
 
 #### Custom Size
 
