@@ -8,21 +8,21 @@ const { copy, copied } = useClipboard({ source })
 </script>
 
 <template>
-  <div grid="~ cols-1 lg:cols-5" class="my-15 gap-x-30 gap-y-5 lg:my-30 md:my-20 sm:my-15">
+  <div grid="~ cols-1 lg:cols-5" class="my-10 gap-x-30 gap-y-5 lg:my-30 md:my-20 sm:my-15">
     <!-- left section -->
-    <div col="lg:span-3 span-1" class="flex flex-col items-center gap-y-6 lg:items-start sm:gap-y-8 lg:px-0 sm:px-25">
+    <div col="lg:span-3 span-1" class="flex flex-col items-center gap-y-3 lg:items-start sm:gap-y-8 lg:px-0 sm:px-25">
       <NButton
         to="https://github.com/una-ui/una-ui/releases"
         target="blank"
         btn="soft-gray"
-        size="10px sm:xs"
+        size="xs"
         rounded="lg"
       >
         <NIcon name="i-heroicons-sparkles-solid" mr-1 text-sm text-primary />
         v{{ version }}
       </NButton>
 
-      <div flex="~ col" class="text-center space-y-2 lg:text-left">
+      <div flex="~ col" class="text-center space-y-1 lg:text-left lg:space-y-2">
         <h1 class="text-5xl font-bold lg:text-7xl">
           <span class="from-$c-brand-next to-primary bg-gradient-to-r bg-clip-text text-transparent">
             Una UI
@@ -31,29 +31,32 @@ const { copy, copied } = useClipboard({ source })
         <h2 class="text-4xl text-accent font-bold lg:text-6xl">
           The Atomic UI Framework
         </h2>
-        <p class="text-xl text-muted md:text-2xl">
-          Experience the power of Unocss Engine, enabling the creation of fast, modern, and lightweight components with ease.
+        <p class="text-md text-muted md:text-2xl">
+          Build fast, modern, and lightweight components powered by the Unocss Engine.
         </p>
       </div>
 
-      <div flex="~ wrap" class="mt-4 justify-center gap-4 lg:justify-start">
+      <div flex="~ wrap" class="justify-center gap-4 md:mt-4 lg:justify-start">
         <NButton
           to="/getting-started/introduction"
           btn="solid"
-          class="p-5.5 font-bold"
+          class="font-bold"
           rounded="full"
+          p="5 sm:5.5"
           label="Getting Started"
         />
         <NButton
           to="/components/accordion"
           btn="solid-gray"
-          class="p-5.5 font-bold"
+          class="font-bold"
           rounded="full"
+          p="5 sm:5.5"
           label="View Components"
         />
         <NButton
           btn="solid-gray"
-          class="p-5.5 font-bold"
+          class="font-bold"
+          p="5 sm:5.5"
           rounded="full"
           :class="{ 'text-$c-brand-next': copied }"
           :label="source"
