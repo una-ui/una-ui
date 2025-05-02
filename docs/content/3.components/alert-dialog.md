@@ -38,7 +38,7 @@ badges:
 
 :read-more{to="https://www.reka-ui.com/docs/components/alert-dialog#root" title="Reka Alert Dialog Root API" target="_blank"}
 
-### Custom Buttons
+### Buttons
 
 | Prop                 | Default                                      | Type                     | Description              |
 | -------------------- | -------------------------------------------- | ------------------------ | ------------------------ |
