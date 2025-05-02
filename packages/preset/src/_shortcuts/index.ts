@@ -11,6 +11,7 @@ import { btn } from './btn'
 import { card } from './card'
 import { checkbox } from './checkbox'
 import { collapsible } from './collapsible'
+import { combobox } from './combobox'
 import { dialog } from './dialog'
 import { dropdowMenu } from './dropdown-menu'
 import { form } from './form'
@@ -83,4 +84,5 @@ export const shortcuts = [
   ...sidebar,
   ...aspectRatio,
   ...alertDialog,
+  ...combobox,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

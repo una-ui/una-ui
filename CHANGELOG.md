@@ -1,3 +1,32 @@
+## [0.52.1](https://github.com/una-ui/una-ui/compare/v0.52.0...v0.52.1) (2025-05-01)
+
+
+
+# [0.52.0](https://github.com/una-ui/una-ui/compare/v0.51.6...v0.52.0) (2025-05-01)
+
+
+### Bug Fixes
+
+* **Dialog:** add missing animation preset to content component ([03ee219](https://github.com/una-ui/una-ui/commit/03ee2194c6fb5b656633a444bb01e594465935ca))
+* **Form:** reconfig event handlers and update model-value type to any ([ca4f3ce](https://github.com/una-ui/una-ui/commit/ca4f3cedbcf93cc613ced2c7bc82b02701c8df34))
+* **Input:** reconfig default paddings and sizes ([fa3ff01](https://github.com/una-ui/una-ui/commit/fa3ff01cfad4b024433cab9991ce8e9d149c2c4a))
+* **Select:** reconfig default paddings and sizes ([23df4a1](https://github.com/una-ui/una-ui/commit/23df4a1da3ab31139ba61c1e228e1ee07d9077b9))
+* **Select:** reconfig trigger status-class-variants ([1bb207d](https://github.com/una-ui/una-ui/commit/1bb207daf5012dbe1202a04265423da7c6bb3167))
+* **Select:** remove padding to `select-group` preset ([be10790](https://github.com/una-ui/una-ui/commit/be10790bf2b5b36cee3a89da35186c550b000715))
+
+
+### Features
+
+* **Combobox:** introduce new components and presets ([#388](https://github.com/una-ui/una-ui/issues/388)) ([14c4532](https://github.com/una-ui/una-ui/commit/14c4532b313cf17d3f919abde62e2952b1ec1fa3))
+* **Inpiut:** update text-area default padding, height, and config ([a07c2c8](https://github.com/una-ui/una-ui/commit/a07c2c8bfc244333bb8cb77a02bc40391571aded))
+* **Input:** add _inputWrapper sub-component prop ([43c2f27](https://github.com/una-ui/una-ui/commit/43c2f272bd9b8719f1a33db6167da9ade45a656c))
+* **Input:** update default icon sizes and paddings preset ([#397](https://github.com/una-ui/una-ui/issues/397)) ([623926c](https://github.com/una-ui/una-ui/commit/623926c91b515fbfac2b74d839d0353d681101c0))
+* **Select:** add dynamic group-separator support ([8b672fd](https://github.com/una-ui/una-ui/commit/8b672fde2d4ccac7d431cb66af1d65632279d3ec))
+* **Select:** add indicator slot support ([a3ee840](https://github.com/una-ui/una-ui/commit/a3ee8408aae52b05273f8266de82d8fa99622052))
+* **ThemeSwither:** improve button sizes and spacing ([0e488a0](https://github.com/una-ui/una-ui/commit/0e488a037d0d834992d5ca2500ac0691173edadc))
+
+
+
 ## [0.51.6](https://github.com/una-ui/una-ui/compare/v0.51.5...v0.51.6) (2025-04-18)
 
 

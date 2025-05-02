@@ -1,4 +1,4 @@
-import type { AcceptableValue, ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxLabelProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
+import type { AcceptableValue, ComboboxAnchorProps, ComboboxContentProps, ComboboxEmptyProps, ComboboxGroupProps, ComboboxInputProps, ComboboxItemIndicatorProps, ComboboxItemProps, ComboboxLabelProps, ComboboxPortalProps, ComboboxRootProps, ComboboxSeparatorProps, ComboboxTriggerProps, ComboboxViewportProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 import type { NCheckboxProps } from './checkbox'
@@ -9,25 +9,34 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootProps<T>, Pick<NComboboxInputProps, 'status' | 'id'>, BaseExtensions {
+// Extract the actual item type when dealing with grouped items
+export type ExtractItemType<T> = T extends { items: infer I extends AcceptableValue[] } ? I[number] : T
+
+export interface NComboboxProps<T extends AcceptableValue> extends Omit<ComboboxRootProps<ExtractItemType<T>>, 'modelValue'>, Pick<NComboboxInputProps, 'status' | 'id'>, BaseExtensions {
+  /**
+   * The model value for the combobox.
+   * When using grouped items, this will be the item type from within the groups.
+   */
+  modelValue?: ExtractItemType<T> | ExtractItemType<T>[] | null | undefined
+
   /**
    * The items to display in the combobox.
    *
    * @default []
    */
-  items?: T[] | NComboboxGroupProps<T>[]
+  items?: T[] | NComboboxGroupProps<ExtractItemType<T>>[]
   /**
    * The key name to use to display in the select items.
    *
    * @default 'label'
    */
-  labelKey?: keyof T
+  labelKey?: keyof ExtractItemType<T>
   /**
    * The key name to use to display in the selected value.
    *
    * @default 'value'
    */
-  valueKey?: keyof T
+  valueKey?: keyof ExtractItemType<T>
   /**
    * Whether to show a separator between groups.
    *
@@ -51,9 +60,9 @@ export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootP
    */
   _comboboxAnchor?: NComboboxAnchorProps
   _comboboxEmpty?: NComboboxEmptyProps
-  _comboboxGroup?: NComboboxGroupProps<T>
+  _comboboxGroup?: NComboboxGroupProps<ExtractItemType<T>>
   _comboboxInput?: NComboboxInputProps
-  _comboboxItem?: NComboboxItemProps<T>
+  _comboboxItem?: NComboboxItemProps<ExtractItemType<T>>
   _comboboxItemIndicator?: NComboboxItemIndicatorProps
   _comboboxLabel?: NComboboxLabelProps
   _comboboxList?: NComboboxListProps
@@ -61,6 +70,8 @@ export interface NComboboxProps<T extends AcceptableValue> extends ComboboxRootP
   _comboboxTrigger?: NComboboxTriggerProps
   _comboboxViewport?: NComboboxViewportProps
   _comboboxCheckbox?: NCheckboxProps
+  _comboboxContent?: ComboboxContentProps
+  _comboboxPortal?: ComboboxPortalProps
   /**
    * `UnaUI` preset configuration
    *
@@ -106,6 +117,7 @@ export interface NComboboxItemIndicatorProps extends ComboboxItemIndicatorProps,
 export interface NComboboxListProps extends ComboboxContentProps, BaseExtensions {
   viewportClass?: HTMLAttributes['class']
   una?: Pick<NComboboxUnaProps, 'comboboxList'>
+  _comboboxPortal?: ComboboxPortalProps
 }
 
 export interface NComboboxSeparatorProps extends ComboboxSeparatorProps, BaseExtensions {

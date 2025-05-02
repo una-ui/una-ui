@@ -1,6 +1,6 @@
 {
   "name": "@una-ui/extractor-vue-script",
-  "version": "0.51.6",
+  "version": "0.52.1",
   "description": "Unocss extractor for Vue script",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -23,11 +23,9 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs"
     }
   },
-  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [

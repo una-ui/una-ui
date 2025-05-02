@@ -8,8 +8,8 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-error-icon': 'i-error',
   'input-success-icon': 'i-success',
   'input-warning-icon': 'i-warning',
-  'input-leading-padding': 'pl-2.857142857142857em',
-  'input-trailing-padding': 'pr-2.857142857142857em',
+  'input-leading-padding': 'pl-2.5714285714285716em',
+  'input-trailing-padding': 'pr-2.5714285714285716em',
 
   // base
   'input': 'text-base text-0.875em leading-1.4285714285714286em px-0.8571428571428571em w-full focus-visible:outline-none input-disabled placeholder:text-muted block rounded-md shadow-sm bg-transparent transition-colors file:border-0  file:bg-transparent file:text-0.875em file:font-medium',
@@ -17,15 +17,15 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-textarea': 'min-h-4.285714285714286em py-0.5714285714em', // role='textarea'
   'input-disabled': 'disabled:(n-disabled)',
   'input-status-ring': 'ring-opacity-50 dark:ring-opacity-40',
-  'input-status-icon-base': 'size-1.25em',
-  'input-leading': 'size-1.25em',
-  'input-trailing': 'size-1.25em',
-  'input-loading': 'animate-spin size-1.25em',
+  'input-status-icon-base': 'square-1em',
+  'input-leading': 'square-1em',
+  'input-trailing': 'square-1em',
+  'input-loading': 'animate-spin square-1em',
 
   // wrappers
   'input-wrapper': 'relative flex items-center',
-  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 left-0 flex items-center pl-0.8571428571428571em text-muted',
-  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 right-0 flex items-center pr-0.8571428571428571em text-muted',
+  'input-leading-wrapper': 'pointer-events-none absolute inset-y-0 start-0 flex items-center px-0.8571428571428571em text-muted',
+  'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 end-0 flex items-center px-0.8571428571428571em text-muted',
 
   // variants
   'input-outline-gray': 'border border-input focus-visible:ring-input focus-visible:ring-1',

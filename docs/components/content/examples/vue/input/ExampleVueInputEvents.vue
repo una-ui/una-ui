@@ -10,7 +10,7 @@ const isPasswordVisible = ref(false)
   <div class="grid cols-1 gap-4 sm:cols-2">
     <NInput
       :type="isPasswordVisible ? 'text' : 'password'"
-      :trailing="isPasswordVisible ? 'i-heroicons-eye-20-solid' : 'i-heroicons-eye-slash-20-solid'"
+      :trailing="isPasswordVisible ? 'i-lucide-eye' : 'i-lucide-eye-off'"
       :una="{
         inputTrailing: 'pointer-events-auto cursor-pointer',
       }"
@@ -20,8 +20,8 @@ const isPasswordVisible = ref(false)
 
     <NInput
       input="outline-purple"
-      leading="i-heroicons-hand-thumb-up-20-solid"
-      trailing="i-heroicons-arrow-down-tray-20-solid "
+      leading="i-tabler-thumb-up-filled"
+      trailing="i-tabler-thumb-down-filled"
       :una="{
         inputLeading: 'active:scale-120 text-blue pointer-events-auto cursor-pointer active:text-green',
         inputTrailing: 'active:scale-90 text-yellow pointer-events-auto cursor-pointer active:text-lime',
