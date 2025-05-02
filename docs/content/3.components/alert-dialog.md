@@ -100,7 +100,7 @@ Use the `default` slot for full control over the alert dialog's structure. This 
 ::
 :::
 
-#### Custom Size
+### Custom Width
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -111,7 +111,7 @@ Use the `default` slot for full control over the alert dialog's structure. This 
 ::
 :::
 
-#### Custom Animation
+### Custom Animation
 
 :::CodeGroup
 ::div{label="Preview" preview}
