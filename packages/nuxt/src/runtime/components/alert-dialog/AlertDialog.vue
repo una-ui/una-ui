@@ -53,8 +53,6 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
       <AlertDialogContent
         v-bind="_alertDialogContent"
         :_alert-dialog-overlay
-        :_alert-dialog-cancel
-        :_alert-dialog-action
         :prevent-close
         :una
       >
@@ -74,7 +72,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
             <slot name="header">
               <AlertDialogTitle
                 v-if="title !== DEFAULT_TITLE || !!$slots.title"
-                :_alert-dialog-title
+                v-bind="_alertDialogTitle"
                 :una
               >
                 <slot name="title">
@@ -84,7 +82,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
 
               <AlertDialogDescription
                 v-if="description !== DEFAULT_DESCRIPTION || !!$slots.description"
-                :_alert-dialog-description
+                v-bind="_alertDialogDescription"
                 :una
               >
                 <slot name="description">
