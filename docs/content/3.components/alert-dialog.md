@@ -1,5 +1,8 @@
 ---
-description: 'An alert dialog is a modal window that captures the user attention to communicate important information or require a decision, temporarily disabling interaction with the rest of the application.'
+description: 'A modal dialog that interrupts the user with important content and expects a response.'
+navBadges:
+  - value: New
+    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
@@ -21,8 +24,8 @@ badges:
 | `defaultOpen` | `false` | `boolean` | The open state of the alert dialog when it is initially rendered. Use when you do not need to control its open state. |
 | `open`        | -       | `boolean` | The controlled open state of the dialog. Can be bind as `v-model:open`.                                               |
 | `overlay`     | `true`  | `boolean` | Show the overlay.                                                                                                     |
-| `@action`     | `void`  | `event`   | Callback function triggered when the action button is clicked.                                                        |
-| `@cancel`     | `void`  | `event`   | Callback function triggered when the cancel button is clicked.                                                        |
+| `@action`     | `-`     | `event`   | Event emitted when the action button is clicked, typically used for confirming destructive actions.                   |
+| `@cancel`     | `-`     | `event`   | Event emitted when the cancel button is clicked or dialog is dismissed, used for aborting the proposed action.        |
 
 :read-more{to="https://www.reka-ui.com/docs/components/alert-dialog#root" title="Reka Alert Dialog Root API" target="_blank"}
 
