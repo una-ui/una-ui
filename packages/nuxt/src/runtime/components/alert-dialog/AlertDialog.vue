@@ -105,18 +105,23 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
             :una
           >
             <slot name="footer">
-              <AlertDialogCancel
-                v-bind="_alertDialogCancel"
-                @click="emits('cancel', $event)"
-              >
-                <slot name="cancel" />
-              </AlertDialogCancel>
-              <AlertDialogAction
-                v-bind="_alertDialogAction"
-                @click="emits('action', $event)"
-              >
-                <slot name="action" />
-              </AlertDialogAction>
+              <slot name="cancel-wrapper">
+                <AlertDialogCancel
+                  v-bind="_alertDialogCancel"
+                  @click="emits('cancel', $event)"
+                >
+                  <slot name="cancel" />
+                </AlertDialogCancel>
+              </slot>
+
+              <slot name="action-wrapper">
+                <AlertDialogAction
+                  v-bind="_alertDialogAction"
+                  @click="emits('action', $event)"
+                >
+                  <slot name="action" />
+                </AlertDialogAction>
+              </slot>
             </slot>
           </AlertDialogFooter>
         </slot>

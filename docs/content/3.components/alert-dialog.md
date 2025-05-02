@@ -77,15 +77,19 @@ The `AlertDialogActionProps` and `AlertDialogCancelProps` extends the `NButton` 
 
 ## Slots
 
-| Name          | Props  | Description                                                                          |
-| ------------- | ------ | ------------------------------------------------------------------------------------ |
-| `default`     | -      | Allows advanced customization using sub-components, replacing the default structure. |
-| `content`     | -      | Replaces the entire default content container within the dialog popup.               |
-| `trigger`     | `open` | The trigger button used to open the dialog.                                          |
-| `header`      | -      | Contains the title and description slots.                                            |
-| `footer`      | -      | The footer.                                                                          |
-| `title`       | -      | The title displayed in the dialog.                                                   |
-| `description` | -      | The description displayed below the title.                                           |
+| Name             | Props  | Description                                                                          |
+| ---------------- | ------ | ------------------------------------------------------------------------------------ |
+| `default`        | -      | Allows advanced customization using sub-components, replacing the default structure. |
+| `content`        | -      | Replaces the entire default content container within the dialog popup.               |
+| `trigger`        | `open` | The trigger button used to open the dialog.                                          |
+| `cancel`         | -      | Custom content for the cancel button that aborts the proposed action.                |
+| `action`         | -      | Custom content for the action button that confirms the destructive action.           |
+| `cancel-wrapper` | -      | Override the entire default cancel button.                                           |
+| `action-wrapper` | -      | Override the entire default action button.                                           |
+| `header`         | -      | Custom content for the header section containing title and description.              |
+| `footer`         | -      | Custom content for the footer section containing action and cancel buttons.          |
+| `title`          | -      | Custom content for the dialog title, replacing the default title prop.               |
+| `description`    | -      | Custom content for the dialog description, replacing the default description prop.   |
 
 ### Custom Rendering
 
