@@ -11,7 +11,7 @@ const props = defineProps<NAlertDialogFooterProps>()
     :class="
       cn(
         'alert-dialog-footer',
-        props.una?.AlertDialogFooter,
+        props.una?.alertDialogFooter,
         props.class,
       )
     "

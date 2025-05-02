@@ -10,7 +10,7 @@ const props = defineProps<NAlertDialogHeaderProps>()
     data-slot="alert-dialog-header"
     :class="cn(
       'alert-dialog-header',
-      props.una?.AlertDialogHeader,
+      props.una?.alertDialogHeader,
       props.class,
     )"
   >

@@ -26,6 +26,8 @@ export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogCo
   _alertDialogDescription?: NAlertDialogDescriptionProps
   _alertDialogContent?: NAlertDialogContentProps
   _alertDialogTrigger?: NAlertDialogTriggerProps
+  _alertDialogHeader?: NAlertDialogHeaderProps
+  _alertDialogFooter?: NAlertDialogFooterProps
   /**
    * `UnaUI` preset configuration
    *
@@ -109,11 +111,11 @@ export interface NAlertDialogActionProps extends AlertDialogActionProps, NButton
 }
 
 export interface NAlertDialogHeaderProps extends BaseExtensions {
-  una?: Pick<NAlertDialogUnaProps, 'AlertDialogHeader'>
+  una?: Pick<NAlertDialogUnaProps, 'alertDialogHeader'>
 }
 
 export interface NAlertDialogFooterProps extends BaseExtensions {
-  una?: Pick<NAlertDialogUnaProps, 'AlertDialogFooter'>
+  una?: Pick<NAlertDialogUnaProps, 'alertDialogFooter'>
 }
 
 export interface NAlertDialogUnaProps {
@@ -121,6 +123,6 @@ export interface NAlertDialogUnaProps {
   alertDialogDescription?: HTMLAttributes['class']
   alertDialogOverlay?: HTMLAttributes['class']
   alertDialogContent?: HTMLAttributes['class']
-  AlertDialogHeader?: HTMLAttributes['class']
-  AlertDialogFooter?: HTMLAttributes['class']
+  alertDialogHeader?: HTMLAttributes['class']
+  alertDialogFooter?: HTMLAttributes['class']
 }

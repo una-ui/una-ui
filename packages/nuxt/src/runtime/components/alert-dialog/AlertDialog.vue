@@ -68,7 +68,11 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
 
         <slot name="content">
           <!-- Header -->
-          <AlertDialogHeader v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)">
+          <AlertDialogHeader
+            v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
+            v-bind="_alertDialogHeader"
+            :una
+          >
             <slot name="header">
               <AlertDialogTitle
                 v-if="title !== DEFAULT_TITLE || !!$slots.title"
@@ -93,7 +97,10 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
           </AlertDialogHeader>
 
           <!-- Footer -->
-          <AlertDialogFooter>
+          <AlertDialogFooter
+            v-bind="_alertDialogFooter"
+            :una
+          >
             <slot name="footer">
               <AlertDialogCancel
                 v-bind="_alertDialogCancel"
