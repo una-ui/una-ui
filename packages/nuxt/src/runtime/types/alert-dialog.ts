@@ -21,13 +21,11 @@ export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogCo
    * The description of the dialog.
    */
   description?: string
-
   // sub-components
   _alertDialogTitle?: NAlertDialogTitleProps
   _alertDialogDescription?: NAlertDialogDescriptionProps
   _alertDialogContent?: NAlertDialogContentProps
   _alertDialogTrigger?: NAlertDialogTriggerProps
-
   /**
    * `UnaUI` preset configuration
    *
