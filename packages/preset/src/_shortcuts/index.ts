@@ -1,6 +1,7 @@
 import type { Preset, StaticShortcutMap } from '@unocss/core'
 import { accordion } from './accordion'
 import { alert } from './alert'
+import { alertDialog } from './alert-dialog'
 import { aspectRatio } from './aspect-ratio'
 import { avatar } from './avatar'
 import { avatarGroup } from './avatar-group'
@@ -84,5 +85,6 @@ export const shortcuts = [
   ...sidebar,
   ...aspectRatio,
   ...resizable,
+  ...alertDialog,
   ...combobox,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

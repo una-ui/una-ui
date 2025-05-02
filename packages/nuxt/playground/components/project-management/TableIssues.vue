@@ -259,6 +259,14 @@ const visibleColumnHeaders = computed({
     columnVisibility.value = newVisibility
   },
 })
+
+const alertDialogData = reactive<{
+  open: boolean
+  meta: Issue | null
+}>({
+  open: false,
+  meta: null,
+})
 </script>
 
 <template>
@@ -461,7 +469,7 @@ const visibleColumnHeaders = computed({
       </template>
       <!-- end cell -->
 
-      <template #actions-cell>
+      <template #actions-cell="{ cell }">
         <NDropdownMenu
           :items="[
             {
@@ -478,6 +486,10 @@ const visibleColumnHeaders = computed({
               class: 'text-error',
               leading: 'i-lucide-trash',
               dropdownMenuItem: 'error',
+              onSelect: () => {
+                alertDialogData.open = true
+                alertDialogData.meta = cell.row.original
+              },
             },
           ]"
           :_dropdown-menu-trigger="{
@@ -529,4 +541,21 @@ const visibleColumnHeaders = computed({
       </div>
     </div>
   </div>
+
+  <!-- confirm delete dialog -->
+  <NAlertDialog
+    v-model:open="alertDialogData.open"
+    description="This action cannot be undone."
+    :_alert-dialog-action="{
+      btn: 'soft-error',
+    }"
+    @action="console.log('issue deleted', alertDialogData.meta?.id)"
+  >
+    <template #title>
+      Delete Issue
+      <span class="text-error">
+        #{{ alertDialogData.meta?.number }}: {{ alertDialogData.meta?.title }}?
+      </span>
+    </template>
+  </NAlertDialog>
 </template>
