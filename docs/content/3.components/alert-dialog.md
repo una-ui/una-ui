@@ -27,8 +27,6 @@ badges:
 | `@action`     | `-`     | `event`   | Event emitted when the action button is clicked, typically used for confirming destructive actions.                   |
 | `@cancel`     | `-`     | `event`   | Event emitted when the cancel button is clicked or dialog is dismissed, used for aborting the proposed action.        |
 
-:read-more{to="https://www.reka-ui.com/docs/components/alert-dialog#root" title="Reka Alert Dialog Root API" target="_blank"}
-
 :::CodeGroup
 ::div{label="Preview" preview}
 :ExampleVueAlertDialogBasic
@@ -37,6 +35,8 @@ badges:
 @@@ ./components/content/examples/vue/alert-dialog/ExampleVueAlertDialogBasic.vue
 ::
 :::
+
+:read-more{to="https://www.reka-ui.com/docs/components/alert-dialog#root" title="Reka Alert Dialog Root API" target="_blank"}
 
 ## Prevent Closing
 
