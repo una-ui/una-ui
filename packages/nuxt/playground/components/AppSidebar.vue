@@ -48,6 +48,11 @@ const data = {
           badge: 'deprecated' as const,
         },
         {
+          title: 'Alert Dialog',
+          url: '/components/alert-dialog',
+          badge: 'new' as const,
+        },
+        {
           title: 'Aspect Ratio',
           url: '/components/aspect-ratio',
           badge: 'new' as const,
