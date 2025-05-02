@@ -4,15 +4,15 @@
     description="This action cannot be undone. This will permanently delete your account and remove your data from our servers."
     :_alert-dialog-cancel="{
       btn: 'solid-white',
-      label: 'Return',
-      leading: 'i-lucide-arrow-left',
+      label: 'Nevermind',
+      leading: 'i-lucide-corner-up-left',
       onClick: () => {
         console.log('cancel')
       },
     }"
     :_alert-dialog-action="{
       btn: 'soft-red',
-      label: 'Continue',
+      label: 'Delete',
       leading: 'i-lucide-trash',
       onClick: () => {
         console.log('action')
