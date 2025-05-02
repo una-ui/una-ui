@@ -11,14 +11,14 @@ badges:
 
 ### Basic
 
-| Prop         | Default      | Type                                                                      | Description                                                                                                  |
-| ------------ | ------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `type`       | -            | `text`, `password`, `email`, `number`, `tel`, `url`, `search`, `textarea` | The type of input field.                                                                                     |
-| `reverse`    | `false`      | `boolean`                                                                 | Swap the position of the leading and trailing icons.                                                         |
-| `modelValue` | -            | `any`                                                                     | Value of the input. Can be a string or a number.                                                             |
-| `id`         | `randomId()` | `string`                                                                  | Manually set the id attribute. By default, the id attribute is generated randomly for accessibility reasons. |
-| `readonly`   | `false`      | `boolean`                                                                 | Make the input readonly.                                                                                     |
-| `disabled`   | `false`      | `boolean`                                                                 | Disable the input.                                                                                           |
+| Prop         | Default      | Type                                     | Description                                                                                                  |
+| ------------ | ------------ | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `type`       | -            | `HTMLInputElement['type']` \| `textarea` |                                                                                                              |
+| `reverse`    | `false`      | `boolean`                                | Swap the position of the leading and trailing icons.                                                         |
+| `modelValue` | -            | `any`                                    | Value of the input. Can be a string or a number.                                                             |
+| `id`         | `randomId()` | `string`                                 | Manually set the id attribute. By default, the id attribute is generated randomly for accessibility reasons. |
+| `readonly`   | `false`      | `boolean`                                | Make the input readonly.                                                                                     |
+| `disabled`   | `false`      | `boolean`                                | Disable the input.                                                                                           |
 
 :::CodeGroup
 ::div{label="Preview" preview}
