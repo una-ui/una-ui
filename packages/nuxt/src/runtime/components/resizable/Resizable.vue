@@ -18,7 +18,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     v-slot="{ layout }"
     v-bind="forwarded"
     :class="cn(
-      'resizable-panel',
+      'resizable',
       props.una?.resizablePanelGroup,
       props.class,
     )"
