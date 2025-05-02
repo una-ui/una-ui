@@ -38,7 +38,7 @@ The Resizable follows a strict pattern using reusable components (`NResizable`, 
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/splitter#root" title="Reka Splitter Root API." target="_blank"}
+:read-more{to="https://reka-ui.com/docs/components/splitter#group" title="Reka Splitter Root API." target="_blank"}
 
 ::alert
 We can use the `autoSaveId` prop to persist the layout data into the `localStorage`. Try changing the layout and then refresh the page to see the layout persist.
@@ -62,7 +62,7 @@ We can use the `autoSaveId` prop to persist the layout data into the `localStora
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/splitter#handle" title="Reka Splitter Handle API." target="_blank"}
+:read-more{to="https://reka-ui.com/docs/components/splitter#resize-handle" title="Reka Splitter Handle API." target="_blank"}
 
 ### Panel
 
@@ -85,7 +85,7 @@ We can use the `autoSaveId` prop to persist the layout data into the `localStora
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/splitter#panel" title="Reka Splitter Panel API." target="_blank"}
+:read-more{to="https://reka-ui.com/docs/components/splitter#panel" title="Reka Splitter Panel API." target="_blank"}
 
 ## Presets
 
