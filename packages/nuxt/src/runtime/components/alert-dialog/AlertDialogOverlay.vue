@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { NAlertDialogOverlayProps } from '../../../types'
+import type { NAlertDialogOverlayProps } from '../../types'
 import { DialogOverlay } from 'reka-ui'
-import { cn } from '../../../utils'
+import { cn } from '../../utils'
 
 const props = defineProps<NAlertDialogOverlayProps>()
 </script>

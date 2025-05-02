@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { NAlertDialogHeaderProps } from '../../../types'
-import { cn } from '../../../utils'
+import type { NAlertDialogHeaderProps } from '../../types'
+import { cn } from '../../utils'
 
 const props = defineProps<NAlertDialogHeaderProps>()
 </script>

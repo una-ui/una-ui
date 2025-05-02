@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { NAlertDialogActionProps } from '../../../types'
+import type { NAlertDialogActionProps } from '../../types'
 import { AlertDialogAction } from 'reka-ui'
-import Button from '../Button.vue'
+import Button from '../elements/Button.vue'
 
 const props = withDefaults(defineProps<NAlertDialogActionProps>(), {
   btn: 'solid-primary',
-  label: 'Confirmed',
+  label: 'Continue',
 })
 </script>
 

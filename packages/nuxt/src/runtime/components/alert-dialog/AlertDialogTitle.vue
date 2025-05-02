@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { NAlertDialogTitleProps } from '../../../types'
+import type { NAlertDialogTitleProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { AlertDialogTitle } from 'reka-ui'
-import { cn } from '../../../utils'
+import { cn } from '../../utils'
 
 const props = defineProps<NAlertDialogTitleProps>()
 

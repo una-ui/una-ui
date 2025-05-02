@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NAlertDialogTriggerProps } from '../../../types'
+import type { NAlertDialogTriggerProps } from '../../types'
 import { AlertDialogTrigger } from 'reka-ui'
 
 const props = defineProps<NAlertDialogTriggerProps>()

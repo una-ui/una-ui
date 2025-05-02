@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { AlertDialogContentEmits } from 'reka-ui'
-import type { NAlertDialogContentProps } from '../../../types'
+import type { NAlertDialogContentProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import {
   AlertDialogContent,
@@ -8,7 +8,7 @@ import {
   useForwardPropsEmits,
 } from 'reka-ui'
 import { computed } from 'vue'
-import { cn } from '../../../utils'
+import { cn } from '../../utils'
 import AlertDialogOverlay from './AlertDialogOverlay.vue'
 
 defineOptions({

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { NAlertDialogFooterProps } from '../../../types'
-import { cn } from '../../../utils'
+import type { NAlertDialogFooterProps } from '../../types'
+import { cn } from '../../utils'
 
 const props = defineProps<NAlertDialogFooterProps>()
 </script>

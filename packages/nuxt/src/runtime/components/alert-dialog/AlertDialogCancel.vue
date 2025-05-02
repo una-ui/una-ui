@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { NAlertDialogCancelProps } from '../../../types'
+import type { NAlertDialogCancelProps } from '../../types'
 import { AlertDialogCancel } from 'reka-ui'
-import { cn } from '../../../utils'
-import Button from '../Button.vue'
+import { cn } from '../../utils'
+import Button from '../elements/Button.vue'
 
 const props = withDefaults(defineProps<NAlertDialogCancelProps>(), {
   btn: 'solid-gray',

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { AlertDialogEmits } from 'reka-ui'
-import type { NAlertDialogProps } from '../../../types'
+import type { NAlertDialogProps } from '../../types'
 import { reactivePick } from '@vueuse/core'
 import { AlertDialogRoot, useForwardPropsEmits, VisuallyHidden } from 'reka-ui'
 import { computed } from 'vue'
-import { randomId } from '../../../utils'
+import { randomId } from '../../utils'
 import AlertDialogAction from './AlertDialogAction.vue'
 import AlertDialogCancel from './AlertDialogCancel.vue'
 import AlertDialogContent from './AlertDialogContent.vue'
