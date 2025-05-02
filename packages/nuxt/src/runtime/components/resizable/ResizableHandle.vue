@@ -7,7 +7,7 @@ import { cn } from '../../utils'
 import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NResizableHandleProps>(), {
-  handle: 'resizable-handle-icon',
+  icon: 'resizable-handle-icon',
   una: () => ({
     resizableHandle: 'resizable-handle-default-variant',
   }),
@@ -35,7 +35,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           :resizable-handle
         >
           <slot name="handle-icon">
-            <Icon :name="handle" class="resizable-handle-icon-wrapper" />
+            <Icon :name="icon" class="resizable-handle-icon-wrapper" />
           </slot>
         </div>
       </template>

@@ -31,7 +31,7 @@ export interface NResizableHandleProps extends SplitterResizeHandleProps, BaseEx
    * @example
    * icon="i-lucide-grip-vertical"
    */
-  handle?: string
+  icon?: string
   /**
    * Set visibility of the handle
    *
