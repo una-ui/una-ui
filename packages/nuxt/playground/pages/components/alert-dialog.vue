@@ -37,11 +37,11 @@
   <NAlertDialog
     title="Are you absolutely sure?"
     description="This action cannot be undone. This will permanently delete youraccount and remove your data from our servers."
-    @action="() => {
-      console.log('action')
+    @action="($event) => {
+      console.log('action', $event)
     }"
-    @cancel="() => {
-      console.log('cancel')
+    @cancel="($event) => {
+      console.log('cancel', $event)
     }"
   >
     <template #trigger>

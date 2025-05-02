@@ -31,17 +31,9 @@ export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogCo
   /**
    * `UnaUI` preset configuration
    *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/dialog.ts
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/alert-dialog.ts
    */
   una?: NAlertDialogUnaProps
-  /**
-   * The action callback.
-   */
-  onAction?: (e: Event) => void
-  /**
-   * The cancel callback.
-   */
-  onCancel?: (e: Event) => void
 }
 
 interface BaseExtensions {
@@ -98,14 +90,14 @@ export interface NAlertDialogOverlayProps extends BaseExtensions, AlertDialogOve
 
 export interface NAlertDialogCancelProps extends AlertDialogCancelProps, NButtonProps {
   /**
-   * The cancel callback.
+   * The cancel callback, triggered when the cancel button is clicked.
    */
   onClick?: (e: Event) => void
 }
 
 export interface NAlertDialogActionProps extends AlertDialogActionProps, NButtonProps {
   /**
-   * The action callback.
+   * The action callback, triggered when the action button is clicked.
    */
   onClick?: (e: Event) => void
 }

@@ -21,7 +21,10 @@ defineOptions({
 const props = withDefaults(defineProps<NAlertDialogProps>(), {
   overlay: true,
 })
-const emits = defineEmits<AlertDialogEmits>()
+const emits = defineEmits<AlertDialogEmits & {
+  cancel: [Event]
+  action: [Event]
+}>()
 const DEFAULT_TITLE = randomId('alert-dialog-title')
 const DEFAULT_DESCRIPTION = randomId('alert-dialog-description')
 
@@ -104,13 +107,13 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
             <slot name="footer">
               <AlertDialogCancel
                 v-bind="_alertDialogCancel"
-                @click="onCancel"
+                @click="emits('cancel', $event)"
               >
                 <slot name="cancel" />
               </AlertDialogCancel>
               <AlertDialogAction
                 v-bind="_alertDialogAction"
-                @click="onAction"
+                @click="emits('action', $event)"
               >
                 <slot name="action" />
               </AlertDialogAction>
