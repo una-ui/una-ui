@@ -45,7 +45,7 @@ const status = computed(() => props.status ?? 'default')
     v-bind="forwardedProps"
     as-child
   >
-    <slot name="root">
+    <slot name="wrapper">
       <Button
         :id
         :btn="statusClassVariants.btn ? undefined : props.btn"
