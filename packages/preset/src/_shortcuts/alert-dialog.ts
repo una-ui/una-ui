@@ -1,6 +1,6 @@
-type KbdPrefix = 'alert-dialog'
+type AlertDialogPrefix = 'alert-dialog'
 
-export const staticAlertDialog: Record<`${KbdPrefix}-${string}` | KbdPrefix, string> = {
+export const staticAlertDialog: Record<`${AlertDialogPrefix}-${string}` | AlertDialogPrefix, string> = {
   // base
   'alert-dialog': '',
 
