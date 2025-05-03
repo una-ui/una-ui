@@ -124,6 +124,10 @@ const data = {
           url: '/components/radio-group',
         },
         {
+          title: 'Resizable',
+          url: '/components/resizable',
+        },
+        {
           title: 'Scroll Area',
           url: '/components/scroll-area',
         },
