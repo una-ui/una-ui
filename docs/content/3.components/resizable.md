@@ -46,12 +46,12 @@ You can use the `autoSaveId` prop to persist the layout data in `localStorage`. 
 
 ### Handle
 
-| Prop              | Default                  | Type                | Description                                                                                 |
-| ----------------- | ------------------------ | ------------------- | ------------------------------------------------------------------------------------------- |
-| `icon`            | `i-lucide-grip-vertical` | `boolean`, `string` | Custom handle icon of resizable handle, falls back to `i-lucide-grip-vertical` when `true`. |
-| `resizableHandle` | `solid-gray`             | `{variant}-{color}` | Custom handle color of resizable handle. Note that this does not apply to the icon.         |
-| `disabled`        | -                        | `boolean`           | Disable drag handle                                                                         |
-| `id`              | -                        | `string`            | Resize handle id (unique within group); falls back to `useId` when not provided.            |
+| Prop              | Default                  | Type                | Description                                                                              |
+| ----------------- | ------------------------ | ------------------- | ---------------------------------------------------------------------------------------- |
+| `icon`            | `i-lucide-grip-vertical` | `boolean`, `string` | Add an icon to the resizable handle, falls back to `i-lucide-grip-vertical` when `true`. |
+| `resizableHandle` | `solid-gray`             | `{variant}-{color}` | Custom handle color of resizable handle. Note that this does not apply to the icon.      |
+| `disabled`        | -                        | `boolean`           | Disable drag handle                                                                      |
+| `id`              | -                        | `string`            | Resize handle id (unique within group); falls back to `useId` when not provided.         |
 
 | Variant   | Description                            |
 | --------- | -------------------------------------- |
