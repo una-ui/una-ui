@@ -15,7 +15,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <SplitterPanel
-    v-slot="{ isCollapsed, isExpanded }"
+    data-slot="resizable-panel"
     v-bind="forwarded"
     :class="cn(
       'resizable-panel',
@@ -23,6 +23,6 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
       props.class,
     )"
   >
-    <slot :is-collapsed :is-expanded />
+    <slot />
   </SplitterPanel>
 </template>

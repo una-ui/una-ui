@@ -1,5 +1,5 @@
 <template>
-  <NResizable
+  <NResizablePanelGroup
     id="group"
     direction="horizontal"
     class="mx-auto max-w-lg min-h-260px border rounded-lg"
@@ -19,11 +19,11 @@
         <NSkeleton class="mt-auto h-5 w-full" rounded="sm" />
       </div>
     </NResizablePanel>
-    <NResizableHandle id="group-handle" with-handle />
+    <NResizableHandle id="group-handle" icon />
     <NResizablePanel id="group-panel-2" :default-size="70" :min-size="60">
       <div class="h-full flex items-center justify-center p-6">
         <span class="font-semibold">Main</span>
       </div>
     </NResizablePanel>
-  </NResizable>
+  </NResizablePanelGroup>
 </template>

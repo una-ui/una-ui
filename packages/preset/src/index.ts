@@ -79,6 +79,7 @@ export default function presetUna(options: unaUIOptions = {
         lg: 'var(--una-radius)',
         md: 'calc(var(--una-radius) - 2px)',
         sm: 'calc(var(--una-radius) - 4px)',
+        xs: 'calc(var(--una-radius) - 6px)',
       },
       animation: {
         keyframes: {

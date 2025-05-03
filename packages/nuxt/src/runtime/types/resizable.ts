@@ -6,7 +6,7 @@ interface BaseExtension {
   class?: HTMLAttributes['class']
 }
 
-export interface NResizableProps extends SplitterGroupProps, BaseExtension {
+export interface NResizablePanelGroupProps extends SplitterGroupProps, BaseExtension {
   /** Additional properties for the una component */
   una?: Pick<NResizableUnaProps, 'resizablePanelGroup'>
 }
@@ -31,15 +31,9 @@ export interface NResizableHandleProps extends SplitterResizeHandleProps, BaseEx
    * @example
    * icon="i-lucide-grip-vertical"
    */
-  icon?: string
-  /**
-   * Set visibility of the handle
-   *
-   * @default false
-   */
-  withHandle?: boolean
+  icon?: boolean | HTMLAttributes['class']
   /** Additional properties for the una component */
-  una?: Pick<NResizableUnaProps, 'resizableHandle'>
+  una?: Pick<NResizableUnaProps, 'resizableHandle' | 'resizableHandleIconWrapper' | 'resizableHandleIcon'>
 }
 
 interface NResizableUnaProps {
@@ -49,4 +43,8 @@ interface NResizableUnaProps {
   resizablePanelGroup?: HTMLAttributes['class']
   /** CSS class for the resizable handle */
   resizableHandle?: HTMLAttributes['class']
+  /** CSS class for the resizable handle icon wrapper */
+  resizableHandleIconWrapper?: HTMLAttributes['class']
+  /** CSS class for the resizable handle icon */
+  resizableHandleIcon?: HTMLAttributes['class']
 }

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { SplitterGroupEmits } from 'reka-ui'
-import type { NResizableProps } from '../../types'
+import type { NResizablePanelGroupProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { SplitterGroup, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<NResizableProps>()
+const props = defineProps<NResizablePanelGroupProps>()
 const emits = defineEmits<SplitterGroupEmits>()
 
 const delegatedProps = reactiveOmit(props, ['class', 'una'])
@@ -15,14 +15,14 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 <template>
   <SplitterGroup
-    v-slot="{ layout }"
+    data-slot="resizable-panel-group"
     v-bind="forwarded"
     :class="cn(
-      'resizable',
+      'resizable-panel-group',
       props.una?.resizablePanelGroup,
       props.class,
     )"
   >
-    <slot :layout />
+    <slot />
   </SplitterGroup>
 </template>

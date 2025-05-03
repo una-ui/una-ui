@@ -1,5 +1,5 @@
 <template>
-  <NResizable
+  <NResizablePanelGroup
     id="group-1"
     direction="horizontal"
     class="mx-auto max-w-lg min-h-260px border rounded-lg"
@@ -11,7 +11,7 @@
     </NResizablePanel>
     <NResizableHandle id="group-1-handle" />
     <NResizablePanel id="group-1-panel-2" :default-size="70">
-      <NResizable id="group-2" direction="vertical">
+      <NResizablePanelGroup id="group-2" direction="vertical">
         <NResizablePanel id="group-2-panel-1" :default-size="20">
           <div class="h-full flex items-center justify-center p-4">
             <span class="font-semibold">Header</span>
@@ -23,7 +23,7 @@
             <span class="font-semibold">Content</span>
           </div>
         </NResizablePanel>
-      </NResizable>
+      </NResizablePanelGroup>
     </NResizablePanel>
-  </NResizable>
+  </NResizablePanelGroup>
 </template>

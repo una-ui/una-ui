@@ -29,6 +29,10 @@ The Resizable follows a strict pattern using reusable components (`NResizable`, 
 | `keyboardResizeBy` | `10`             | `number`, `null`         | Step size when arrow key was pressed.                             |
 | `storage`          | `defaultStorage` | `PanelGroupStorage`      | Custom storage API; defaults to localStorage                      |
 
+::alert{type="info"}
+You can use the `autoSaveId` prop to persist the layout data in `localStorage`. Try changing the layout and then refresh the page to see the layout persist.
+::
+
 :::CodeGroup
 ::div{label="Preview" preview}
 :ExampleVueResizableBasic
@@ -40,18 +44,20 @@ The Resizable follows a strict pattern using reusable components (`NResizable`, 
 
 :read-more{to="https://reka-ui.com/docs/components/splitter#group" title="Reka Splitter Root API." target="_blank"}
 
-::alert
-We can use the `autoSaveId` prop to persist the layout data into the `localStorage`. Try changing the layout and then refresh the page to see the layout persist.
-::
-
 ### Handle
 
-| Prop               | Default                  | Type                | Description                                                                      |
-| ------------------ | ------------------------ | ------------------- | -------------------------------------------------------------------------------- |
-| `icon`             | `i-lucide-grip-vertical` | `string`            | Custom handle icon of resizable handle                                           |
-| `resizable-handle` | `outline-white`          | `{variant}-{color}` | The color of the handle.                                                         |
-| `disabled`         | -                        | `boolean`           | Disable drag handle                                                              |
-| `id`               | -                        | `string`            | Resize handle id (unique within group); falls back to `useId` when not provided. |
+| Prop              | Default                  | Type                | Description                                                                                 |
+| ----------------- | ------------------------ | ------------------- | ------------------------------------------------------------------------------------------- |
+| `icon`            | `i-lucide-grip-vertical` | `boolean`, `string` | Custom handle icon of resizable handle, falls back to `i-lucide-grip-vertical` when `true`. |
+| `resizableHandle` | `solid-gray`             | `{variant}-{color}` | Custom handle color of resizable handle. Note that this does not apply to the icon.         |
+| `disabled`        | -                        | `boolean`           | Disable drag handle                                                                         |
+| `id`              | -                        | `string`            | Resize handle id (unique within group); falls back to `useId` when not provided.            |
+
+| Variant   | Description                            |
+| --------- | -------------------------------------- |
+| `solid`   | Uses border to create a solid handle.  |
+| `outline` | Uses ring to create an outline handle. |
+| `~`       | The unstyle or base variant            |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -98,8 +104,8 @@ We can use the `autoSaveId` prop to persist the layout data into the `localStora
 ## Components
 
 :::CodeGroup
-::div{label="Resizable.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/resizable/Resizable.vue
+::div{label="ResizablePanelGroup.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/resizable/ResizablePanelGroup.vue
 
 ::
 ::div{label="ResizableHandle.vue" icon="i-vscode-icons-file-type-vue"}
