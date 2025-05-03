@@ -6,15 +6,15 @@ navBadges:
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/resizable/Resizable.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/resizable/ResizablePanelGroup.vue
     target: _blank
   - value: API reference
-    to: https://www.reka-ui.com/docs/components/resizable
+    to: https://www.reka-ui.com/docs/components/splitter
     target: _blank
 ---
 
 ::alert
-The Resizable follows a strict pattern using reusable components (`NResizable`, `NResizablePanel`, `NResizableHandle`) listed in the [Components](#components) section, similar to libraries like `shadcn/ui`. This atomic way is necessary due to complex nesting requirements of resizable layers.
+The Resizable follows a strict pattern using reusable components (`NResizablePanelGroup`, `NResizablePanel`, `NResizableHandle`) listed in the [Components](#components) section, similar to libraries like `shadcn/ui`. This atomic way is necessary due to complex nesting requirements of resizable layers.
 ::
 
 ## Examples
