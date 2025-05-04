@@ -210,6 +210,7 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                 'border-0 border-b-1 rounded-none text-1em focus-visible:ring-0',
                 props._comboboxInput?.class,
               )"
+              leading="combobox-input-leading-icon"
               :una="defu(props._comboboxInput?.una, {
                 inputLeading: 'text-1.1428571428571428em',
                 inputTrailing: 'text-1.1428571428571428em',
