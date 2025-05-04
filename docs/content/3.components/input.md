@@ -13,7 +13,7 @@ badges:
 
 | Prop         | Default      | Type                                     | Description                                                                                                  |
 | ------------ | ------------ | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `type`       | -            | `HTMLInputElement['type']` \| `textarea` |                                                                                                              |
+| `type`       | -            | `HTMLInputElement['type']` \| `textarea` | The type of the input. Can be any valid HTML input type or 'textarea' to render a textarea element instead.  |
 | `reverse`    | `false`      | `boolean`                                | Swap the position of the leading and trailing icons.                                                         |
 | `modelValue` | -            | `any`                                    | Value of the input. Can be a string or a number.                                                             |
 | `id`         | `randomId()` | `string`                                 | Manually set the id attribute. By default, the id attribute is generated randomly for accessibility reasons. |

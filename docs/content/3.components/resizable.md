@@ -24,7 +24,7 @@ The Resizable follows a strict pattern using reusable components (`NResizablePan
 | Prop               | Default          | Type                     | Description                                                       |
 | ------------------ | ---------------- | ------------------------ | ----------------------------------------------------------------- |
 | `autoSaveId`       | `null`           | `string`, `null`         | Unique id used to auto-save group arrangement via `localStorage`. |
-| `direction*`       |                  | `vertical`, `horizontal` | The group orientation of resizable; required prop                 |
+| `direction*`       | -                | `vertical`, `horizontal` | The group orientation of resizable; required prop                 |
 | `id`               | -                | `string`, `null`         | Group id; falls back to `useId` when not provided.                |
 | `keyboardResizeBy` | `10`             | `number`, `null`         | Step size when arrow key was pressed.                             |
 | `storage`          | `defaultStorage` | `PanelGroupStorage`      | Custom storage API; defaults to localStorage                      |
