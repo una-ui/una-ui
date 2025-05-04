@@ -32,6 +32,20 @@ const props = defineProps({
   expect(result).toStrictEqual(['[size~=\"md\"]'])
 })
 
-// TODO: Support double quotes
+it.todo('test extractor quote agnostic', async () => {
+  const code = `
+defineProps({
+    size: {type: String, default: "md"}
+})
+`
+  const result = await extract(code)
+  expect(result).toStrictEqual(['[size~=\"md\"]'])
+})
 
-// TODO: Support prop destructure
+it.todo('test extractor prop destructure', async () => {
+  const code = `
+const {size = "md"} = defineProps<{size?: string}>()
+`
+  const result = await extract(code)
+  expect(result).toStrictEqual(['[size~=\"md\"]'])
+})
