@@ -12,11 +12,7 @@ const formSchema = toTypedSchema(z.object({
     label: z.string().min(1, 'This field is required'),
   }),
   theme: z.string(),
-  notifications: z.array(z.object({
-    label: z.string().min(1, 'This field is required'),
-    value: z.boolean(),
-    checkbox: z.string(),
-  })),
+  notifications: z.boolean(),
   enabled: z.boolean(),
   slider: z.array(z.number().max(40, { message: 'Must be less than 40' })),
 }))
@@ -24,7 +20,6 @@ const formSchema = toTypedSchema(z.object({
 const { handleSubmit, validate, errors } = useForm({
   validationSchema: formSchema,
 })
-
 const onSubmit = handleSubmit((values) => {
   alert(JSON.stringify(values, null, 2))
 })
@@ -118,26 +113,11 @@ async function onValidating() {
 
     <NFormField
       name="notifications"
-      label="Participating, @mentions and custom"
+      label="Notifications"
+      description="Participating, @mentions and custom"
     >
       <NCheckbox
-        v-for="option in [
-          {
-            label: 'On github',
-            value: false,
-          },
-          {
-            label: 'Email',
-            value: false,
-          },
-          {
-            label: 'Discord',
-            value: false,
-          },
-        ]"
-        :key="option.label"
-        v-model="option.value"
-        :label="option.label"
+        label="On github"
       />
     </NFormField>
 
