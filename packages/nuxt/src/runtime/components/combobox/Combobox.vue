@@ -186,7 +186,7 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                 :una="defu(props._comboboxInput?.una, {
                   inputLeading: 'text-1.1428571428571428em',
                   inputTrailing: 'text-1.1428571428571428em',
-                  inputStatus: 'text-1.1428571428571428em',
+                  inputStatusIconBase: 'text-1.1428571428571428em',
                 })"
                 :size
                 v-bind="props._comboboxInput"
@@ -213,7 +213,7 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
               :una="defu(props._comboboxInput?.una, {
                 inputLeading: 'text-1.1428571428571428em',
                 inputTrailing: 'text-1.1428571428571428em',
-                inputStatus: 'text-1.1428571428571428em',
+                inputStatusIconBase: 'text-1.1428571428571428em',
               })"
               :size
               v-bind="props._comboboxInput"
