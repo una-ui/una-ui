@@ -19,6 +19,12 @@ export interface NCheckboxProps extends CheckboxRootProps, NLabelProps, BaseExte
    */
   label?: string
   /**
+   * Display description text.
+   *
+   * @default null
+   */
+  description?: string
+  /**
    * Allows you to change the size of the checkbox.
    *
    * @default size="sm"
@@ -45,12 +51,13 @@ export interface NCheckboxProps extends CheckboxRootProps, NLabelProps, BaseExte
 
   // subcomponents
   _checkboxIndicator?: CheckboxIndicatorProps
-  _label?: NLabelProps
+  _checkboxLabel?: NLabelProps
 
   una?: {
     checkbox?: HTMLAttributes['class']
     checkboxWrapper?: HTMLAttributes['class']
     checkboxLabel?: HTMLAttributes['class']
+    checkboxDescription?: HTMLAttributes['class']
     checkboxIndicator?: HTMLAttributes['class']
     checkboxIconBase?: HTMLAttributes['class']
 

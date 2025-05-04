@@ -4,7 +4,9 @@ import { reactiveOmit } from '@vueuse/core'
 import { Label } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<NLabelProps>()
+const props = withDefaults(defineProps<NLabelProps>(), {
+  size: 'md',
+})
 
 const rootProps = reactiveOmit(props, ['label', 'class'])
 </script>

@@ -68,6 +68,7 @@ function getItemDescription(item: NonNullable<T | NRadioGroupItemProps>): string
 <template>
   <RadioGroupRoot
     v-slot="{ modelValue }"
+    data-slot="radio-group"
     :class="cn(
       'radio-group',
       orientation === 'horizontal' ? 'radio-group-orientation-horizontal' : 'radio-group-orientation-vertical',

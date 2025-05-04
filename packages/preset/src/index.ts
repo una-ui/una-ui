@@ -81,6 +81,9 @@ export default function presetUna(options: unaUIOptions = {
         sm: 'calc(var(--una-radius) - 4px)',
         xs: 'calc(var(--una-radius) - 6px)',
       },
+      boxShadow: {
+        xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+      },
       animation: {
         keyframes: {
           'collapsible-down': '{from{height: 0}to{height:var(--reka-collapsible-content-height)}}',

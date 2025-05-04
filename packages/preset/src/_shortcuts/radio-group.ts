@@ -6,19 +6,20 @@ type RadioGroupPrefix = 'radio-group'
 
 export const staticRadioGroup: Record<`${RadioGroupPrefix}-${string}` | RadioGroupPrefix, string> = {
   // configurations
-  'radio-group': 'gap-2 flex flex-wrap',
-  'radio-group-orientation-vertical': 'flex-col',
-  'radio-group-orientation-horizontal': 'flex-row',
+  'radio-group': 'grid gap-3',
+  'radio-group-orientation-vertical': 'grid-flow-row',
+  'radio-group-orientation-horizontal': 'grid-flow-col',
 
   // components
-  'radio-group-item-root': 'flex flex-col',
-  'radio-group-item-wrapper': 'flex items-center gap-2',
-  'radio-group-item': 'aspect-square rounded-full border border-brand text-brand shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-base disabled:n-disabled',
-  'radio-group-item-label': 'text-0.875em font-medium',
-  'radio-group-item-description': 'text-0.875em text-muted ml-[calc(1.1em+0.5rem)]',
+  'radio-group-item': 'flex items-start gap-3',
+  'radio-group-item-content': 'grid gap-2',
+  // TODO: V4, add missing configurations when presetwind4 is released
+  'radio-group-item-button': 'aspect-square rounded-full border border-brand text-brand shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-base disabled:n-disabled',
+  'radio-group-item-label': '',
+  'radio-group-item-description': 'text-0.875em leading-1.4285714285714286em text-muted',
 
-  'radio-group-indicator': 'flex items-center justify-center',
-  'radio-group-indicator-icon-base': 'h-0.875em w-0.875em fill-brand',
+  'radio-group-indicator': 'relative flex items-center justify-center',
+  'radio-group-indicator-icon-base': 'fill-brand absolute top-1/2 left-1/2 square-0.625em -translate-x-1/2 -translate-y-1/2',
   'radio-group-indicator-icon': 'i-dot',
 }
 

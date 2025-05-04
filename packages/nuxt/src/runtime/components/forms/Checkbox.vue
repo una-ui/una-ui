@@ -24,6 +24,11 @@ const rootProps = reactivePick(props, [
   'value',
   'modelValue',
   'defaultValue',
+  'id',
+  'name',
+  'required',
+  'asChild',
+  'as',
 ])
 
 const forwarded = useForwardPropsEmits(rootProps, emits)
@@ -34,8 +39,8 @@ const id = computed(() => props.id ?? randomId('checkbox'))
 <template>
   <div
     :class="cn(
-      'checkbox-wrapper flex',
-      una?.checkboxWrapper,
+      'checkbox-root',
+      //    una?.checkboxRoot,
       reverse && 'checkbox-reverse',
     )"
   >
@@ -59,9 +64,9 @@ const id = computed(() => props.id ?? randomId('checkbox'))
       >
         <slot name="icon">
           <Icon
-            :name="slotProps.modelValue === 'indeterminate'
+            :name="slotProps.modelValue || slotProps.state === 'indeterminate'
               ? props.una?.checkboxIndeterminateIcon ?? 'checkbox-indeterminate-icon'
-              : slotProps.modelValue
+              : slotProps.modelValue || slotProps.state
                 ? props.una?.checkboxCheckedIcon ?? 'checkbox-checked-icon'
                 : props.una?.checkboxUncheckedIcon ?? 'checkbox-unchecked-icon'"
             :class="cn('checkbox-icon-base', una?.checkboxIconBase)"
@@ -70,15 +75,34 @@ const id = computed(() => props.id ?? randomId('checkbox'))
       </CheckboxIndicator>
     </CheckboxRoot>
 
-    <Label
-      v-if="$slots.default || label"
-      :for="props.for || id"
-      :class="cn('checkbox-label', una?.checkboxLabel)"
-      v-bind="props._label"
+    <div
+      :class="cn(
+        'checkbox-container',
+        una?.checkboxWrapper,
+      )"
     >
-      <slot>
-        {{ label }}
-      </slot>
-    </Label>
+      <Label
+        v-if="$slots.default || label"
+        :for="props.for || id"
+        :class="cn('checkbox-label', una?.checkboxLabel)"
+        v-bind="props._checkboxLabel"
+      >
+        <slot>
+          {{ label }}
+        </slot>
+      </Label>
+
+      <p
+        v-if="description || $slots.description"
+        :class="cn(
+          'checkbox-description',
+          una?.checkboxDescription,
+        )"
+      >
+        <slot name="description">
+          {{ description }}
+        </slot>
+      </p>
+    </div>
   </div>
 </template>

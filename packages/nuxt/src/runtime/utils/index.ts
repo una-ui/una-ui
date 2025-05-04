@@ -39,6 +39,34 @@ export function pickProps<T extends Record<string, any>>(obj: T, propsToPick: Ar
 }
 
 /**
+ * Get a value from an object by path
+ * @param object - object to get value from
+ * @param path - path to get value from
+ * @param defaultValue - default value to return if path is not found
+ * @returns value from object by path
+ */
+export function getValue(object: Record<string, any> | undefined, path: (string | number)[] | string, defaultValue?: any): any {
+  if (typeof path === 'string') {
+    path = path.split('.').map((key) => {
+      const numKey = Number(key)
+      return Number.isNaN(numKey) ? key : numKey
+    })
+  }
+
+  let result: any = object
+
+  for (const key of path) {
+    if (result === undefined || result === null) {
+      return defaultValue
+    }
+
+    result = result[key]
+  }
+
+  return result !== undefined ? result : defaultValue
+}
+
+/**
  * We want to get the first non-undefined value,
  * useful for arguments with multiple sources (local, global, default),
  * this is basically an alternative for `local ?? global ?? default`.

@@ -12,12 +12,12 @@ const formSchema = toTypedSchema(z.object({
     label: z.string().min(1, 'This field is required'),
   }),
   theme: z.string(),
-  notifications: z.boolean(),
+  notifications: z.array(z.string()),
   enabled: z.boolean(),
   slider: z.array(z.number().max(40, { message: 'Must be less than 40' })),
 }))
 
-const { handleSubmit, validate, errors } = useForm({
+const { handleSubmit, validate, errors, values } = useForm({
   validationSchema: formSchema,
 })
 const onSubmit = handleSubmit((values) => {
@@ -111,13 +111,18 @@ async function onValidating() {
       />
     </NFormField>
 
+    {{ values.notifications }}
     <NFormField
       name="notifications"
       label="Notifications"
       description="Participating, @mentions and custom"
     >
-      <NCheckbox
-        label="On github"
+      <NCheckboxGroup
+        :items="[
+          { label: 'On github', value: 'github', description: 'Get notifications on GitHub' },
+          { label: 'On twitter', value: 'twitter', description: 'Get notifications on Twitter' },
+          { label: 'On facebook', value: 'facebook', description: 'Get notifications on Facebook' },
+        ]"
       />
     </NFormField>
 
