@@ -1,3 +1,17 @@
+# [0.54.0](https://github.com/una-ui/una-ui/compare/v0.53.0...v0.54.0) (2025-05-04)
+
+
+### Features
+
+* **Label:** update styling presets and components to v4 ([6ed7bf0](https://github.com/una-ui/una-ui/commit/6ed7bf0f1b6712b44c349a3c0c06f2f7f9299f50))
+
+
+### Reverts
+
+* Revert "build(Nuxt): update @nuxt/module-builder to 1.0.1 (#362)" ([149024a](https://github.com/una-ui/una-ui/commit/149024ac7512f3dd2d096b34acc900da9cffec50)), closes [#362](https://github.com/una-ui/una-ui/issues/362)
+
+
+
 # [0.53.0](https://github.com/una-ui/una-ui/compare/v0.52.1...v0.53.0) (2025-05-04)
 
 
