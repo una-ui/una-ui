@@ -1,3 +1,25 @@
+# [0.53.0](https://github.com/una-ui/una-ui/compare/v0.52.1...v0.53.0) (2025-05-04)
+
+
+### Bug Fixes
+
+* **Input:** reconfig leading-wrapper; add status-icon-base to una prop ([0180283](https://github.com/una-ui/una-ui/commit/0180283a2b8ac0da097314dc75bb81f3593cb181))
+* **Progress:** use v-slot to access modelValue ([1a6c83c](https://github.com/una-ui/una-ui/commit/1a6c83cda131c35b319fc536d2ac1e94e8dc682b))
+* **Resizable:** update size configuration; update style presets ([ac8d4b2](https://github.com/una-ui/una-ui/commit/ac8d4b203a7b03f5526e456ed4bd0b8e3a353f6f))
+* **Slider:** pass the correct model-value properly ([0d36f01](https://github.com/una-ui/una-ui/commit/0d36f010b5c634eecaf477d4fe1fd72e2d2af0c4))
+
+
+### Features
+
+* **AlertDialog:** improve dialog content & footer style presets ([3151a32](https://github.com/una-ui/una-ui/commit/3151a322ad117a22961f65aefcdb83c1bd7f9a4b))
+* **AlertDialog:** introduces new components and presets ([#394](https://github.com/una-ui/una-ui/issues/394)) ([b22816b](https://github.com/una-ui/una-ui/commit/b22816b4d3611b9f2d1f5a3a0be62a4f4e4f153d))
+* **Dialog:** improve dialog-content style presets ([cf63789](https://github.com/una-ui/una-ui/commit/cf637897fbc89fcc3a62c2b51cce9823995b0b14))
+* **RadioGroup:** bind the modelValue to default slot ([c7fe395](https://github.com/una-ui/una-ui/commit/c7fe3959b234301a161e6a5c3a11f9e607b9ec35))
+* **Resizable:** introduces new components and presets ([#398](https://github.com/una-ui/una-ui/issues/398)) ([8ec031b](https://github.com/una-ui/una-ui/commit/8ec031b6013f46f3a14d24b20da640019eaec9ac))
+* **ResizablePanel:** bind props in default slot ([cc3382e](https://github.com/una-ui/una-ui/commit/cc3382e562aee790b1fae9416dce74b75628405f))
+
+
+
 ## [0.52.1](https://github.com/una-ui/una-ui/compare/v0.52.0...v0.52.1) (2025-05-01)
 
 
