@@ -11,6 +11,7 @@ const rootProps = reactiveOmit(props, ['label', 'class'])
 
 <template>
   <Label
+    data-slot="label"
     v-bind="rootProps"
     :class="
       cn(
