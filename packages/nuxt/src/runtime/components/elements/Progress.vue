@@ -24,6 +24,7 @@ const delegatedProps = computed(() => {
 
 <template>
   <ProgressRoot
+    v-slot="{ modelValue }"
     v-bind="delegatedProps"
     :class="
       cn(
@@ -35,14 +36,14 @@ const delegatedProps = computed(() => {
     :rounded
     :progress
   >
-    <slot>
+    <slot :model-value>
       <ProgressIndicator
-        v-if="props.modelValue !== undefined || props.modelValue === null"
+        v-if="modelValue !== undefined || modelValue === null"
         :class="cn(
           'progress-indicator',
           props.una?.progressIndicator,
         )"
-        :style="`transform: translateX(-${100 - (props.modelValue ?? 0)}%);`"
+        :style="`transform: translateX(-${100 - (modelValue ?? 0)}%);`"
       />
       <template
         v-else
