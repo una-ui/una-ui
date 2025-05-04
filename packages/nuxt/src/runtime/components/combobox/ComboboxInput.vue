@@ -10,9 +10,7 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = withDefaults(defineProps<NComboboxInputProps>(), {
-  leading: 'combobox-input-leading-icon',
-})
+const props = defineProps<NComboboxInputProps>()
 
 const emits = defineEmits<ComboboxInputEmits>()
 
