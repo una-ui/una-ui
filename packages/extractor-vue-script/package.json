@@ -1,6 +1,6 @@
 {
   "name": "@una-ui/extractor-vue-script",
-  "version": "0.52.1",
+  "version": "0.54.0",
   "description": "Unocss extractor for Vue script",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -40,6 +40,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@unocss/core": "catalog:"
+    "@unocss/core": "catalog:",
+    "vitest": "catalog:"
   }
 }

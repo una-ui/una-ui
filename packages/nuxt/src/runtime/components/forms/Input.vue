@@ -130,11 +130,11 @@ defineExpose({
   >
     <div
       v-if="isLeading"
-      :class="[
+      :class="cn(
         una?.inputLeadingWrapper,
         reverseClassVariants.leadingWrapper,
         statusClassVariants.text,
-      ]"
+      )"
     >
       <slot name="leading">
         <NIcon
@@ -192,6 +192,7 @@ defineExpose({
         :name="statusClassVariants.icon"
         :class="cn(
           'input-status-icon-base',
+          una?.inputStatusIconBase,
         )"
       />
 

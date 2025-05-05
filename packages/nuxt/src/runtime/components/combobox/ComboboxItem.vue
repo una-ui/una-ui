@@ -5,7 +5,9 @@ import { ComboboxItem, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
 
-const props = defineProps<NComboboxItemProps<T>>()
+const props = withDefaults(defineProps<NComboboxItemProps<T>>(), {
+  size: 'sm',
+})
 const emits = defineEmits<ComboboxItemEmits>()
 
 const delegatedProps = computed(() => {

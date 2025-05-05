@@ -116,6 +116,7 @@ export interface NInputProps {
     // base
     input?: string
     inputLoading?: string
+    inputStatusIconBase?: string
     inputTrailing?: string
     inputLeading?: string
 

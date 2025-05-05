@@ -45,12 +45,15 @@ const data = {
         {
           title: 'Accordion',
           url: '/components/accordion',
-          badge: 'deprecated' as const,
+        },
+        {
+          title: 'Alert Dialog',
+          url: '/components/alert-dialog',
+          badge: 'new' as const,
         },
         {
           title: 'Aspect Ratio',
           url: '/components/aspect-ratio',
-          badge: 'new' as const,
         },
         {
           title: 'Avatar',
@@ -121,6 +124,10 @@ const data = {
           url: '/components/radio-group',
         },
         {
+          title: 'Resizable',
+          url: '/components/resizable',
+        },
+        {
           title: 'Scroll Area',
           url: '/components/scroll-area',
         },
@@ -135,7 +142,6 @@ const data = {
         {
           title: 'Sheet',
           url: '/components/sheet',
-          badge: 'new' as const,
         },
         {
           title: 'Sidebar',

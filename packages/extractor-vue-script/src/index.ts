@@ -22,17 +22,17 @@ function splitCodeWithArbitraryVariants(code: string, prefixes: string[]): strin
   const result: string[] = []
   const camelCasePrefixes = prefixes.map(prefix => prefix.replace(/-([a-z])/g, (_, c) => c.toUpperCase()))
 
-  prefixes = [...prefixes, ...camelCasePrefixes]
+  prefixes = [...new Set([...prefixes, ...camelCasePrefixes])]
 
   for (const prefix of prefixes) {
-    const regex = new RegExp(`\\b${prefix}\\s*:\\s*'([^']*)'`, 'g')
+    const regex = new RegExp(`\\b${prefix}\\s*:\\s*(?:'([^']*)'|{[^}]*\\bdefault\\s*:\\s*'([^']*)'\\s*,?.*?})`, 'gms')
     let match: RegExpExecArray | null
 
     while (true) {
       match = regex.exec(code)
       if (match === null)
         break
-      const values = match[1].split(defaultSplitRE)
+      const values = (match[1] ?? match[2]).split(defaultSplitRE)
       const selectors = generateSelectors(prefix, values)
 
       result.push(...selectors)
