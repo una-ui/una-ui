@@ -42,6 +42,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@unocss/core": "catalog:"
+    "@unocss/core": "catalog:",
+    "vitest": "catalog:"
   }
 }
