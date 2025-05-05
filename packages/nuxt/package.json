@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/nuxt",
   "type": "module",
-  "version": "0.52.1",
+  "version": "0.54.0",
   "description": "Nuxt module for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -13,8 +13,9 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/types.d.mts",
-      "import": "./dist/module.mjs"
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
     },
     "./una.config": {
       "import": "./dist/una.config.mjs"
@@ -30,8 +31,8 @@
   "imports": {
     "#build/una/*": "./.nuxt/una/*.ts"
   },
-  "module": "./dist/module.mjs",
-  "types": "./dist/types.d.mts",
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
@@ -65,6 +66,7 @@
     "ohash": "catalog:",
     "reka-ui": "catalog:",
     "tailwind-merge": "catalog:",
+    "typescript": "catalog:",
     "unocss": "catalog:",
     "unocss-preset-animations": "catalog:",
     "vaul-vue": "catalog:"

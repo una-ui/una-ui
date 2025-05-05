@@ -40,7 +40,7 @@ const backgroundStyle = computed(() => {
 
 <template>
   <NCard
-    class="group relative h-full w-full flex overflow-hidden border rounded-xl space-y-6" card="soft" :class="[
+    class="group relative h-full w-full flex overflow-hidden border rounded-xl pt-5 space-y-6" card="soft" :class="[
       $props.class,
     ]"
     @mousemove="handleMouseMove"

@@ -6,6 +6,7 @@ import {
   defineConfig,
   presetAttributify,
   presetIcons,
+  presetWebFonts,
   presetWind3,
   transformerDirectives,
   transformerVariantGroup,
@@ -51,6 +52,13 @@ export default defineConfig({
     }),
     presetUna(),
     presetAnimations(),
+    presetWebFonts({
+      provider: 'none',
+      fonts: {
+        sans: 'Geist',
+        mono: 'GeistMono',
+      },
+    }),
   ],
   transformers: [
     transformerDirectives(),

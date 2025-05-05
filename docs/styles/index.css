@@ -1,2 +1,15 @@
 @import './color-transition.css';
 @import './transition.css';
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist[wght].ttf');
+}
+@font-face {
+  font-family: 'GeistMono';
+  src: url('/fonts/GeistMono[wght].ttf');
+}
+
+html {
+  @apply font-sans;
+}

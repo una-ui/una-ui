@@ -2,6 +2,7 @@
 import type { AcceptableValue, ComboboxRootEmits } from 'reka-ui'
 import type { ExtractItemType, NComboboxGroupProps, NComboboxProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
+import { defu } from 'defu'
 import { ComboboxRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
 </script>
@@ -21,7 +22,7 @@ import ComboboxViewport from './ComboboxViewport.vue'
 
 const props = withDefaults(defineProps<NComboboxProps<T>>(), {
   textEmpty: 'No items found.',
-  size: 'md',
+  size: 'sm',
 })
 const emits = defineEmits<ComboboxRootEmits<ExtractItemType<T>>>()
 
@@ -162,7 +163,6 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                 :id
                 :status
                 :class="cn(
-                  'text-0.875em',
                   props._comboboxTrigger?.class,
                 )"
                 :size
@@ -179,6 +179,15 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                 :display-value="(val: unknown) => getDisplayValue(val)"
                 name="frameworks"
                 :status
+                :class="cn(
+                  'text-1em',
+                  props._comboboxInput?.class,
+                )"
+                :una="defu(props._comboboxInput?.una, {
+                  inputLeading: 'text-1.1428571428571428em',
+                  inputTrailing: 'text-1.1428571428571428em',
+                  inputStatusIconBase: 'text-1.1428571428571428em',
+                })"
                 :size
                 v-bind="props._comboboxInput"
               />
@@ -197,11 +206,17 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
           <slot name="input-wrapper" :model-value :open>
             <ComboboxInput
               v-if="$slots.trigger || $slots.triggerRoot"
-              :size
               :class="cn(
-                'border-0 border-b-1 rounded-none focus-visible:ring-0',
+                'border-0 border-b-1 rounded-none text-1em focus-visible:ring-0',
                 props._comboboxInput?.class,
               )"
+              leading="combobox-input-leading-icon"
+              :una="defu(props._comboboxInput?.una, {
+                inputLeading: 'text-1.1428571428571428em',
+                inputTrailing: 'text-1.1428571428571428em',
+                inputStatusIconBase: 'text-1.1428571428571428em',
+              })"
+              :size
               v-bind="props._comboboxInput"
             />
           </slot>
@@ -215,6 +230,9 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
             >
               <ComboboxEmpty
                 v-bind="props._comboboxEmpty"
+                :class="cn(
+                  props._comboboxEmpty?.class,
+                )"
                 :una
               >
                 <slot name="empty">
@@ -237,7 +255,6 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                       :size
                       v-bind="props._comboboxItem"
                       :class="cn(
-                        'text-0.875em',
                         props._comboboxItem?.class,
                       )"
                       :una
@@ -284,7 +301,6 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                       :size
                       v-bind="{ ...props._comboboxItem, ...group._comboboxItem }"
                       :class="cn(
-                        'text-0.875em',
                         props._comboboxItem?.class,
                       )"
                       :una
