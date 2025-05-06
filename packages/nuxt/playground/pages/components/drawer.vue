@@ -47,21 +47,7 @@ const goal = ref(350)
                 @click="goal += 10"
               />
             </div>
-            <div class="mt-3 h-[120px]">
-              <!-- <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data}>
-                  <Bar
-                    dataKey="goal"
-                    style={
-                      {
-                        fill: "hsl(var(--foreground))",
-                        opacity: 0.9,
-                      } as React.CSSProperties
-                    }
-                  />
-                </BarChart>
-              </ResponsiveContainer> -->
-            </div>
+            <div class="mt-3 h-[120px]" />
           </div>
           <NDrawerFooter>
             <NButton>Submit</NButton>

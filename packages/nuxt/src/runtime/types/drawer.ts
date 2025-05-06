@@ -20,6 +20,12 @@ export interface NDrawerProps extends DrawerRootProps, Pick<NDrawerContentProps,
   _drawerTrigger?: NDrawerTriggerProps
   _drawerHeader?: NDrawerHeaderProps
   _drawerFooter?: NDrawerFooterProps
+  /**
+   * `UnaUI` preset configuration
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/drawer  .ts
+   */
+  una?: NDrawerUnaProps
 }
 
 export interface NDrawerTitleProps extends DrawerTitleProps, BaseExtensions {
@@ -58,7 +64,7 @@ export interface NDrawerContentProps extends DialogContentProps, BaseExtensions 
   /**
    * `UnaUI` preset configuration
    *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/alert-dialog.ts
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/drawer.ts
    */
   una?: Pick<NDrawerUnaProps, 'drawerContent' | 'drawerOverlay'>
 }
