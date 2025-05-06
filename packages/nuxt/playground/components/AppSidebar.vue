@@ -92,6 +92,10 @@ const data = {
           url: '/components/dialog',
         },
         {
+          title: 'Drawer',
+          url: '/components/drawer',
+        },
+        {
           title: 'Dropdown Menu',
           url: '/components/dropdown-menu',
         },
