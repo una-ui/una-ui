@@ -27,7 +27,7 @@ export interface NDrawerProps extends Omit<DrawerRootProps, 'fadeFromIndex'>, Pi
   /**
    * `UnaUI` preset configuration
    *
-   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/drawer  .ts
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/drawer.ts
    */
   una?: NDrawerUnaProps
 }
