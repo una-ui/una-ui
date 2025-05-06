@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { DrawerTriggerProps } from 'vaul-vue'
+import type { NDrawerTriggerProps } from '../../types'
 import { DrawerTrigger } from 'vaul-vue'
 
-const props = defineProps<DrawerTriggerProps>()
+const props = defineProps<NDrawerTriggerProps>()
 </script>
 
 <template>

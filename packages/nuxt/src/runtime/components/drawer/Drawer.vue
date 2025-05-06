@@ -9,7 +9,25 @@ const props = withDefaults(defineProps<DrawerRootProps>(), {
 })
 
 const emits = defineEmits<DrawerRootEmits>()
-const rootProps = useForwardPropsEmits(reactivePick(props, 'activeSnapPoint', 'closeThreshold', 'shouldScaleBackground', 'setBackgroundColorOnScale', 'scrollLockTimeout', 'fixed', 'dismissible', 'modal', 'open', 'defaultOpen', 'nested', 'direction', 'noBodyStyles', 'handleOnly', 'preventScrollRestoration', 'snapPoints'), emits)
+const rootProps = useForwardPropsEmits(reactivePick(
+  props,
+  'activeSnapPoint',
+  'closeThreshold',
+  'shouldScaleBackground',
+  'setBackgroundColorOnScale',
+  'scrollLockTimeout',
+  'fixed',
+  'dismissible',
+  'modal',
+  'open',
+  'defaultOpen',
+  'nested',
+  'direction',
+  'noBodyStyles',
+  'handleOnly',
+  'preventScrollRestoration',
+  'snapPoints',
+), emits)
 </script>
 
 <template>

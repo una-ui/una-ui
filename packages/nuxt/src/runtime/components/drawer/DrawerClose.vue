@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { DrawerCloseProps } from 'vaul-vue'
+import type { NDrawerCloseProps } from '../../types'
 import { DrawerClose } from 'vaul-vue'
 
-const props = defineProps<DrawerCloseProps>()
+const props = defineProps<NDrawerCloseProps>()
 </script>
 
 <template>

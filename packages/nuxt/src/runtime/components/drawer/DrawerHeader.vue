@@ -1,16 +1,14 @@
 <script lang="ts" setup>
-import type { HtmlHTMLAttributes } from 'vue'
+import type { NDrawerHeaderProps } from '../../types'
 import { cn } from '../../utils'
 
-const props = defineProps<{
-  class?: HtmlHTMLAttributes['class']
-}>()
+const props = defineProps<NDrawerHeaderProps>()
 </script>
 
 <template>
   <div
     data-slot="drawer-header"
-    :class="cn('flex flex-col gap-1.5 p-4', props.class)"
+    :class="cn('drawer-header', props.class)"
   >
     <slot />
   </div>
