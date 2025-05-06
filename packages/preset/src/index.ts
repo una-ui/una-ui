@@ -1,12 +1,8 @@
-import type { RuleContext } from '@unocss/core'
-import type { Theme } from '@unocss/preset-uno'
 import type { Preset } from 'unocss'
 import type { unaUIOptions } from './types'
-import { theme as unoTheme } from '@unocss/preset-mini'
-import { colors } from '@unocss/preset-mini/colors'
-import { fonts } from '@unocss/preset-mini/rules'
-import { handler as h, parseColor } from '@unocss/preset-mini/utils'
-import { mergeDeep } from 'unocss'
+import { colors } from '@unocss/preset-wind4/colors'
+import { fonts } from '@unocss/preset-wind4/rules'
+import { handler as h } from '@unocss/preset-wind4/utils'
 import { shortcuts } from './shortcuts'
 
 export default function presetUna(options: unaUIOptions = {
@@ -16,101 +12,101 @@ export default function presetUna(options: unaUIOptions = {
     name: '@una-ui/preset',
     options,
     shortcuts,
-    theme: mergeDeep<Theme>(unoTheme, {
-      container: {
-        center: true,
-        padding: '2rem',
-        maxWidth: {
-          '2xl': '1400px',
-        },
-      },
+    theme: {
+      // container: {
+      //   center: true,
+      //   padding: '2rem',
+      //   maxWidth: {
+      //     '2xl': '1400px',
+      //   },
+      // },
       colors: {
-        background: 'rgba(var(--una-background) / <alpha-value>)',
-        foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
-        brand: 'rgba(var(--una-brand) / <alpha-value>)',
-        input: 'rgba(var(--una-input) / <alpha-value>)',
+        // background: 'var(--una-background)',
+        // foreground: 'var(--una-foreground)',
+        // brand: 'var(--una-brand)',
+        // input: 'var(--una-input)',
         primary: {
-          DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
-          active: 'rgba(var(--una-primary-active) / <alpha-value>)',
-          50: 'rgba(var(--una-primary-50) / <alpha-value>)',
-          100: 'rgba(var(--una-primary-100) / <alpha-value>)',
-          200: 'rgba(var(--una-primary-200) / <alpha-value>)',
-          300: 'rgba(var(--una-primary-300) / <alpha-value>)',
-          400: 'rgba(var(--una-primary-400) / <alpha-value>)',
-          500: 'rgba(var(--una-primary-500) / <alpha-value>)',
-          600: 'rgba(var(--una-primary-600) / <alpha-value>)',
-          700: 'rgba(var(--una-primary-700) / <alpha-value>)',
-          800: 'rgba(var(--una-primary-800) / <alpha-value>)',
-          900: 'rgba(var(--una-primary-900) / <alpha-value>)',
-          950: 'rgba(var(--una-primary-950) / <alpha-value>)',
+          DEFAULT: 'var(--una-primary)',
+          active: 'var(--una-primary-active)',
+          50: 'var(--una-primary-50)',
+          100: 'var(--una-primary-100)',
+          200: 'var(--una-primary-200)',
+          300: 'var(--una-primary-300)',
+          400: 'var(--una-primary-400)',
+          500: 'var(--una-primary-500)',
+          600: 'var(--una-primary-600)',
+          700: 'var(--una-primary-700)',
+          800: 'var(--una-primary-800)',
+          900: 'var(--una-primary-900)',
+          950: 'var(--una-primary-950)',
         },
         gray: {
-          DEFAULT: 'rgba(var(--una-gray) / <alpha-value>)',
-          active: 'rgba(var(--una-gray-active) / <alpha-value>)',
-          50: 'rgba(var(--una-gray-50) / <alpha-value>)',
-          100: 'rgba(var(--una-gray-100) / <alpha-value>)',
-          200: 'rgba(var(--una-gray-200) / <alpha-value>)',
-          300: 'rgba(var(--una-gray-300) / <alpha-value>)',
-          400: 'rgba(var(--una-gray-400) / <alpha-value>)',
-          500: 'rgba(var(--una-gray-500) / <alpha-value>)',
-          600: 'rgba(var(--una-gray-600) / <alpha-value>)',
-          700: 'rgba(var(--una-gray-700) / <alpha-value>)',
-          800: 'rgba(var(--una-gray-800) / <alpha-value>)',
-          900: 'rgba(var(--una-gray-900) / <alpha-value>)',
-          950: 'rgba(var(--una-gray-950) / <alpha-value>)',
+          DEFAULT: 'var(--una-gray)',
+          active: 'var(--una-gray-active)',
+          50: 'var(--una-gray-50)',
+          100: 'var(--una-gray-100)',
+          200: 'var(--una-gray-200)',
+          300: 'var(--una-gray-300)',
+          400: 'var(--una-gray-400)',
+          500: 'var(--una-gray-500)',
+          600: 'var(--una-gray-600)',
+          700: 'var(--una-gray-700)',
+          800: 'var(--una-gray-800)',
+          900: 'var(--una-gray-900)',
+          950: 'var(--una-gray-950)',
         },
-        sidebar: {
-          DEFAULT: 'rgba(var(--una-sidebar) / <alpha-value>)',
-          foreground: 'rgba(var(--una-sidebar-foreground) / <alpha-value>)',
-          primary: 'rgba(var(--una-sidebar-primary) / <alpha-value>)',
-          primaryForeground: 'rgba(var(--una-sidebar-primary-foreground) / <alpha-value>)',
-          accent: 'rgba(var(--una-sidebar-accent) / <alpha-value>)',
-          accentForeground: 'rgba(var(--una-sidebar-accent-foreground) / <alpha-value>)',
-          border: 'rgba(var(--una-sidebar-border) / <alpha-value>)',
-          ring: 'rgba(var(--una-sidebar-ring) / <alpha-value>)',
-        },
+        // sidebar: {
+        //   DEFAULT: 'var(--una-sidebar)',
+        //   foreground: 'var(--una-sidebar-foreground)',
+        //   primary: 'var(--una-sidebar-primary)',
+        //   primaryForeground: 'var(--una-sidebar-primary-foreground)',
+        //   accent: 'var(--una-sidebar-accent)',
+        //   accentForeground: 'var(--una-sidebar-accent-foreground)',
+        //   border: 'var(--una-sidebar-border)',
+        //   ring: 'var(--una-sidebar-ring)',
+        // },
         error: colors.red,
         success: colors.green,
         warning: colors.amber,
         info: colors.blue,
       },
-      borderRadius: {
-        xl: 'calc(var(--una-radius) + 4px)',
-        lg: 'var(--una-radius)',
-        md: 'calc(var(--una-radius) - 2px)',
-        sm: 'calc(var(--una-radius) - 4px)',
-        xs: 'calc(var(--una-radius) - 6px)',
-      },
-      animation: {
-        keyframes: {
-          'collapsible-down': '{from{height: 0}to{height:var(--reka-collapsible-content-height)}}',
-          'collapsible-up': '{from{height:var(--reka-collapsible-content-height)}to{height: 0}}',
-          'fadeIn': '{from{ opacity: 0 }to{ opacity: 1 }}',
-          'fadeOut': '{from{ opacity: 1 }to{ opacity: 0 }}',
-        },
-        durations: {
-          'collapsible-down': '0.2s',
-          'collapsible-up': '0.2s',
-          'fadeIn': '0.2s',
-          'fadeOut': '0.2s',
-        },
-        timingFns: {
-          'collapsible-down': 'ease-in-out',
-          'collapsible-up': 'ease-in-out',
-          'fadeIn': 'ease-out',
-          'fadeOut': 'ease-out',
-        },
-      },
-    }),
+      // radius: {
+      //   xl: 'calc(var(--una-radius) + 4px)',
+      //   lg: 'var(--una-radius)',
+      //   md: 'calc(var(--una-radius) - 2px)',
+      //   sm: 'calc(var(--una-radius) - 4px)',
+      //   xs: 'calc(var(--una-radius) - 6px)',
+      // },
+      // animation: {
+      //   keyframes: {
+      //     'collapsible-down': '{from{height: 0}to{height:var(--reka-collapsible-content-height)}}',
+      //     'collapsible-up': '{from{height:var(--reka-collapsible-content-height)}to{height: 0}}',
+      //     'fadeIn': '{from{ opacity: 0 }to{ opacity: 1 }}',
+      //     'fadeOut': '{from{ opacity: 1 }to{ opacity: 0 }}',
+      //   },
+      //   durations: {
+      //     'collapsible-down': '0.2s',
+      //     'collapsible-up': '0.2s',
+      //     'fadeIn': '0.2s',
+      //     'fadeOut': '0.2s',
+      //   },
+      //   timingFns: {
+      //     'collapsible-down': 'ease-in-out',
+      //     'collapsible-up': 'ease-in-out',
+      //     'fadeIn': 'ease-out',
+      //     'fadeOut': 'ease-out',
+      //   },
+      // },
+    },
     rules: [
-      [/^n-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
-        const color = parseColor(body, theme)
-        if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components) {
-          return {
-            '--una-brand': `${color.cssColor.components.join(',')}`,
-          }
-        }
-      }],
+      // [/^n-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
+      //   const color = parseColor(body, theme)
+      //   if ((color?.cssColor?.type === 'hsl' || color?.cssColor?.type === 'hsla') && color.cssColor.components) {
+      //     return {
+      //       '--una-brand': `${color.cssColor.components.join(',')}`,
+      //     }
+      //   }
+      // }],
       [/^size-(.*)$/, fonts[1][1] as any],
       [/^square-(min-|max-)?(.+)$/, ([, _m, s]) => ({
         width: h.bracket.cssvar.global.auto.fraction.rem(s),

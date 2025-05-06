@@ -1,0 +1,67 @@
+:root,
+:host {
+  --color-primary-hex: var(--una-primary-hex);
+  --colors-primary: var(--una-primary);
+  --color-primary-50: var(--una-primary-50);
+  --color-primary-100: var(--una-primary-100);
+  --color-primary-200: var(--una-primary-200);
+  --color-primary-300: var(--una-primary-300);
+  --color-primary-400: var(--una-primary-400);
+  --color-primary-500: var(--una-primary-500);
+  --color-primary-600: var(--una-primary-600);
+  --color-primary-700: var(--una-primary-700);
+  --color-primary-800: var(--una-primary-800);
+  --color-primary-900: var(--una-primary-900);
+  --color-primary-950: var(--una-primary-950);
+
+  --color-gray-hex: var(--una-gray-hex);
+  --color-gray: var(--una-gray);
+  --color-gray-50: var(--una-gray-50);
+  --color-gray-100: var(--una-gray-100);
+  --color-gray-200: var(--una-gray-200);
+  --color-gray-300: var(--una-gray-300);
+  --color-gray-400: var(--una-gray-400);
+  --color-gray-500: var(--una-gray-500);
+  --color-gray-600: var(--una-gray-600);
+  --color-gray-700: var(--una-gray-700);
+  --color-gray-800: var(--una-gray-800);
+  --color-gray-900: var(--una-gray-900);
+  --color-gray-950: var(--una-gray-950);
+
+  --color-background: var(--una-background);
+  --color-foreground: var(--una-foreground);
+  --color-card: var(--una-card);
+  --color-card-foreground: var(--una-card-foreground);
+  --color-popover: var(--una-popover);
+  --color-popover-foreground: var(--una-popover-foreground);
+  --color-primary: var(--una-primary);
+  --color-primary-foreground: var(--una-primary-foreground);
+  --color-secondary: var(--una-secondary);
+  --color-secondary-foreground: var(--una-secondary-foreground);
+  --color-muted: var(--una-muted);
+  --color-muted-foreground: var(--una-muted-foreground);
+  --color-accent: var(--una-accent);
+  --color-accent-foreground: var(--una-accent-foreground);
+  --color-destructive: var(--una-destructive);
+  --color-destructive-foreground: var(--una-destructive-foreground);
+  --color-border: var(--una-border);
+  --color-input: var(--una-input);
+  --color-ring: var(--una-ring);
+  --color-chart-1: var(--una-chart-1);
+  --color-chart-2: var(--una-chart-2);
+  --color-chart-3: var(--una-chart-3);
+  --color-chart-4: var(--una-chart-4);
+  --color-chart-5: var(--una-chart-5);
+  --radius-sm: calc(var(--una-radius) - 4px);
+  --radius-md: calc(var(--una-radius) - 2px);
+  --radius-lg: var(--una-radius);
+  --radius-xl: calc(var(--una-radius) + 4px);
+  --color-sidebar: var(--una-sidebar);
+  --color-sidebar-foreground: var(--una-sidebar-foreground);
+  --color-sidebar-primary: var(--una-sidebar-primary);
+  --color-sidebar-primary-foreground: var(--una-sidebar-primary-foreground);
+  --color-sidebar-accent: var(--una-sidebar-accent);
+  --color-sidebar-accent-foreground: var(--una-sidebar-accent-foreground);
+  --color-sidebar-border: var(--una-sidebar-border);
+  --color-sidebar-ring: var(--una-sidebar-ring);
+}

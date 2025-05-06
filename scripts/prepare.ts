@@ -1,9 +1,5 @@
 import { basename, dirname, extname, relative } from 'node:path'
 
-// import {resolve} from 'node:path'
-// import { copyFileSync } from 'node:fs'
-// import { fileURLToPath } from 'node:url'
-
 import fg from 'fast-glob'
 import fs from 'fs-extra'
 
@@ -41,10 +37,6 @@ const filteredGrayThemes = grayThemes.filter(([color]) => ['stone'].includes(col
 // generate default theme
 await fs.writeFile('./packages/preset/src/_style/theme.css', `:root {\n${Object.entries(filteredPrimaryThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}
 ${Object.entries(filteredGrayThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')}\n}\n`, { encoding: 'utf-8' })
-
-// copy color-themes.ts
-// const _filename = fileURLToPath(import.meta.url)
-// copyFileSync(resolve(_filename, '..', '../config/color-themes.ts'), resolve(_filename, '..', '../packages/preset/src/_theme/color-themes.ts'))
 
 // generate all prefixes from shortcuts filenames without extension
 const prefixFiles = await fg('packages/nuxt/src/runtime/components/**/*.vue', {

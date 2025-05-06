@@ -7,7 +7,7 @@ import {
   presetAttributify,
   presetIcons,
   presetWebFonts,
-  presetWind3,
+  presetWind4,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -40,7 +40,13 @@ export default defineConfig({
     'i-heroicons-arrow-up-right',
   ],
   presets: [
-    presetWind3(),
+    presetWind4({
+      preflights: {
+        theme: {
+          mode: true, // Default by 'on-demand'
+        },
+      },
+    }),
     presetAttributify(),
     presetIcons({
       extraProperties: {

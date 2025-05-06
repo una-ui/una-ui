@@ -100,7 +100,7 @@ function shuffleTheme(): void {
 
         <div class="space-y-2">
           <Label for="color" class="text-xs"> Primary Color</Label>
-          <div class="grid grid-cols-7 gap-3">
+          <div class="gap-3 grid grid-cols-7">
             <button
               v-for="[key, theme] in primaryThemes"
               :key="key"
@@ -110,7 +110,7 @@ function shuffleTheme(): void {
               rounded="full"
               square="6.5"
               :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
-              ring="primary offset-4 offset-base"
+              ring="primary offset-4 offset-transparent"
               :aria-label="`Primary Color: ${key}`"
               @click="updatePrimaryTheme(key)"
             />
@@ -121,7 +121,7 @@ function shuffleTheme(): void {
 
         <div class="space-y-2">
           <Label for="color" class="text-xs"> Gray Color </Label>
-          <div class="grid grid-cols-7 gap-3">
+          <div class="gap-3 grid grid-cols-7">
             <button
               v-for="[key, theme] in grayThemes"
               :key="key"
@@ -142,7 +142,7 @@ function shuffleTheme(): void {
 
         <div class="space-y-1">
           <Label for="radius" class="text-xs"> Radius </Label>
-          <div class="grid grid-cols-5 gap-2 py-1.5">
+          <div class="py-1.5 gap-2 grid grid-cols-5">
             <Button
               v-for="r in RADIUS"
               :key="r"
@@ -165,7 +165,7 @@ function shuffleTheme(): void {
         <div class="space-y-1">
           <Label for="theme" class="text-xs">Mode</Label>
 
-          <div class="flex justify-around py-1.5 space-x-2">
+          <div class="py-1.5 flex justify-around space-x-2">
             <Button
               btn="solid-gray block"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'system' }"

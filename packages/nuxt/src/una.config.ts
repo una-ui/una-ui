@@ -8,7 +8,7 @@ import {
   mergeConfigs as mergeUnoConfigs,
   presetAttributify,
   presetIcons,
-  presetWind3,
+  presetWind4,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -16,7 +16,13 @@ import { presetAnimations } from 'unocss-preset-animations'
 
 export const unaConfig: UserConfig<object> = {
   presets: [
-    presetWind3(),
+    presetWind4({
+      preflights: {
+        theme: {
+          mode: true, // Default by 'on-demand'
+        },
+      },
+    }),
     presetAttributify(),
     presetIcons({
       extraProperties: {
