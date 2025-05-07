@@ -1,3 +1,12 @@
+## [0.54.2](https://github.com/una-ui/una-ui/compare/v0.54.1...v0.54.2) (2025-05-07)
+
+
+### Bug Fixes
+
+* **ExtractorVueScript:** add support for double quotes ([#407](https://github.com/una-ui/una-ui/issues/407)) ([8bb65da](https://github.com/una-ui/una-ui/commit/8bb65da8ebcf5328b775d753562f91f4d8ce7b35))
+
+
+
 ## [0.54.1](https://github.com/una-ui/una-ui/compare/v0.54.0...v0.54.1) (2025-05-07)
 
 
