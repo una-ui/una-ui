@@ -1,3 +1,13 @@
+## [0.54.3](https://github.com/una-ui/una-ui/compare/v0.54.2...v0.54.3) (2025-05-12)
+
+
+### Bug Fixes
+
+* **Combobox:** add size configuration to combobox-empty component ([efa48b8](https://github.com/una-ui/una-ui/commit/efa48b86fd415e08fdc75f42d7f86f8ae4ede6da))
+* **Preset:** update popover colors ([853412d](https://github.com/una-ui/una-ui/commit/853412d20d6f847ce1fbf653740f2068925a2671))
+
+
+
 ## [0.54.2](https://github.com/una-ui/una-ui/compare/v0.54.1...v0.54.2) (2025-05-07)
 
 
