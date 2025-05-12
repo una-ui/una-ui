@@ -4,7 +4,9 @@ import { ComboboxEmpty } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
 
-const props = defineProps<NComboboxEmptyProps>()
+const props = withDefaults(defineProps<NComboboxEmptyProps>(), {
+  size: 'sm',
+})
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

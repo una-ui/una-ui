@@ -233,6 +233,7 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                 :class="cn(
                   props._comboboxEmpty?.class,
                 )"
+                :size
                 :una
               >
                 <slot name="empty">
