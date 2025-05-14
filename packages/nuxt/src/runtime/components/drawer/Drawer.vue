@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { DrawerRootEmits } from 'vaul-vue'
 import type { NDrawerProps } from '../../types'
 import { reactivePick } from '@vueuse/core'

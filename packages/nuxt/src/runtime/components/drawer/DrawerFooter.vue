@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { NDrawerFooterProps } from '../../types'
 import { cn } from '../../utils'
 

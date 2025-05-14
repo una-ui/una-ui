@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { DialogContentEmits } from 'reka-ui'
 import type { NDrawerContentProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'

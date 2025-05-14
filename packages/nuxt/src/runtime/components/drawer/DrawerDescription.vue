@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import type { NDrawerDescriptionProps } from '../../types'
 import { DrawerDescription } from 'vaul-vue'
 import { computed } from 'vue'

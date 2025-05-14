@@ -46,30 +46,6 @@ badges:
 ::
 :::
 
-:read-more{to="https://www.reka-ui.com/docs/components/alert-dialog#root" title="Reka Alert Dialog Root API" target="_blank"}
-
-### Buttons
-
-| Prop                 | Default                                      | Type                     | Description              |
-| -------------------- | -------------------------------------------- | ------------------------ | ------------------------ |
-| `_alertDialogCancel` | `{ btn: 'solid-gray', label: 'Cancel'`       | `AlertDialogCancelProps` | The cancel button props. |
-| `_alertDialogAction` | `{ btn: 'soft-primary', label: 'Continue' }` | `AlertDialogActionProps` | The action button props. |
-
-::alert{type="info"}
-The `AlertDialogActionProps` and `AlertDialogCancelProps` extends the `NButton` and `NLink` components, which means that you can use all the props from the [Button](/components/button#props) and [Link](/components/link#props) components.
-::
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueAlertDialogCustomButtons
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/alert-dialog/ExampleVueAlertDialogCustomButtons.vue
-::
-:::
-
-:read-more{to="/components/button" title="Button component" target="_blank"}
-
 ### Prevent Closing
 
 | Prop           | Default | Type      | Description                                                |
