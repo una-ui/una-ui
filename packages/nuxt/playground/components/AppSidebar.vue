@@ -94,6 +94,7 @@ const data = {
         {
           title: 'Drawer',
           url: '/components/drawer',
+          badge: 'new' as const,
         },
         {
           title: 'Dropdown Menu',

@@ -2,45 +2,6 @@
 'use client'
 
 const goal = ref(350)
-
-/*
-  TODO:
-  - Add props
-    - [X] Active Snap Point
-    - [] Close Threshold
-    - [] Should Scale Background
-    - [] Set Background Color On Scale
-    - [] Scroll Lock Timeout
-    - [] Fixed
-    - [] Dismissible
-    - [] Modal
-    - [] Open
-    - [] Default Open
-    - [] Nested
-    - [] Direction
-    - [] No Body Styles
-    - [] Handle Only
-    - [] Prevent Scroll Restoration
-    - [] Snap Points
-  - Add Slots
-    - [] Default
-    - [] Trigger
-    - [] Content
-    - [] Header
-    - [] Title
-    - [] Description
-    - [] Footer
-    - [] Close Wrapper
-    - [] Cancel
-  - Add examples
-    - [] Basic
-    - [] Prevent Close
-    - [] Custom Rendering #default (shadcn/ui)
-    - [] Custom Animation
-    - [] Custom #Trigger
-    - [] Custom #Content
-    - [] Custom #Footer
-*/
 </script>
 
 <template>
