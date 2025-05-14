@@ -25,7 +25,7 @@ function splitCodeWithArbitraryVariants(code: string, prefixes: string[]): strin
   prefixes = [...new Set([...prefixes, ...camelCasePrefixes])]
 
   for (const prefix of prefixes) {
-    const regex = new RegExp(`\\b${prefix}\\s*:\\s*(?:'([^']*)'|{[^}]*\\bdefault\\s*:\\s*'([^']*)'\\s*,?.*?})`, 'gms')
+    const regex = new RegExp(`\\b${prefix}\\s*:\\s*(?:['"]([^'"]*)['"]|{[^}]*\\bdefault\\s*:\\s*['"]([^'"]*)['"]\\s*,?.*?})`, 'gms')
     let match: RegExpExecArray | null
 
     while (true) {

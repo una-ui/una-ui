@@ -1,3 +1,38 @@
+## [0.54.3](https://github.com/una-ui/una-ui/compare/v0.54.2...v0.54.3) (2025-05-12)
+
+
+### Bug Fixes
+
+* **Combobox:** add size configuration to combobox-empty component ([efa48b8](https://github.com/una-ui/una-ui/commit/efa48b86fd415e08fdc75f42d7f86f8ae4ede6da))
+* **Preset:** update popover colors ([853412d](https://github.com/una-ui/una-ui/commit/853412d20d6f847ce1fbf653740f2068925a2671))
+
+
+
+## [0.54.2](https://github.com/una-ui/una-ui/compare/v0.54.1...v0.54.2) (2025-05-07)
+
+
+### Bug Fixes
+
+* **ExtractorVueScript:** add support for double quotes ([#407](https://github.com/una-ui/una-ui/issues/407)) ([8bb65da](https://github.com/una-ui/una-ui/commit/8bb65da8ebcf5328b775d753562f91f4d8ce7b35))
+
+
+
+## [0.54.1](https://github.com/una-ui/una-ui/compare/v0.54.0...v0.54.1) (2025-05-07)
+
+
+### Bug Fixes
+
+* **SelectTrigger:** add configuration for select-trigger class ([c7c0073](https://github.com/una-ui/una-ui/commit/c7c0073506fb7f803bd1d7bf2870771cda8822e1))
+
+
+### Features
+
+* **Combobox:** add default leading icon for trigger input search ([818a6e5](https://github.com/una-ui/una-ui/commit/818a6e5040e10c6baf9108a85570166dc7c5150b))
+* **ExtractorVueScript:** add support for `non-<script setup>` ([#402](https://github.com/una-ui/una-ui/issues/402)) ([3da2345](https://github.com/una-ui/una-ui/commit/3da23452909bbf7b61607ac61bfb769b41c2a6f5))
+* **Nuxt:** update @nuxt/module-builder to 1.0.1 (v2) ([#406](https://github.com/una-ui/una-ui/issues/406)) ([0a5d5ec](https://github.com/una-ui/una-ui/commit/0a5d5ec0a1facdf2879908048b04ede0615d8c0f))
+
+
+
 # [0.54.0](https://github.com/una-ui/una-ui/compare/v0.53.0...v0.54.0) (2025-05-04)
 
 
