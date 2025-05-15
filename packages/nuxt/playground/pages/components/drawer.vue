@@ -7,21 +7,21 @@ const goal = ref(350)
   TODO:
   - Add props
     - [X] Active Snap Point
-    - [] Close Threshold
-    - [] Should Scale Background
-    - [] Set Background Color On Scale
-    - [] Scroll Lock Timeout
-    - [] Fixed
-    - [] Dismissible
-    - [] Modal
-    - [] Open
-    - [] Default Open
-    - [] Nested
-    - [] Direction
-    - [] No Body Styles
-    - [] Handle Only
-    - [] Prevent Scroll Restoration
-    - [] Snap Points
+    - [X] Close Threshold
+    - [x] Should Scale Background
+    - [x] Set Background Color On Scale
+    - [x] Scroll Lock Timeout
+    - [x] Fixed
+    - [x] Dismissible
+    - [x] Modal
+    - [x] Open
+    - [x] Default Open
+    - [x] Nested
+    - [x] Direction
+    - [x] No Body Styles
+    - [x] Handle Only
+    - [x] Prevent Scroll Restoration
+    - [x] Snap Points
   - Add Slots
     - [] Default
     - [] Trigger
@@ -33,7 +33,7 @@ const goal = ref(350)
     - [] Close Wrapper
     - [] Cancel
   - Add examples
-    - [] Basic
+    - [X] Basic
     - [] Prevent Close
     - [] Custom Rendering #default (shadcn/ui)
     - [] Custom Animation
@@ -45,7 +45,9 @@ const goal = ref(350)
 
 <template>
   <div class="flex flex-wrap items-start gap-4">
-    <NDrawer>
+    <NDrawer
+      :snap-points="[0.2, 0.5, 0.8]"
+    >
       <NDrawerTrigger as-child>
         <NButton btn="solid-gray">
           Open Drawer
