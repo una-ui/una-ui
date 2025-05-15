@@ -27,7 +27,10 @@ export default defineComponent({
       type: Boolean as PropType<NLinkProps['exactHash']>,
       default: false,
     },
-
+    disabled: {
+      type: Boolean as PropType<NLinkProps['disabled']>,
+      default: false,
+    },
     // styling
     inactiveClass: {
       type: String as PropType<NLinkProps['inactiveClass']>,
@@ -141,6 +144,7 @@ export default defineComponent({
       resolveNavLinkInactive,
       isLinkActive,
       label: props.label,
+      disabled: props.disabled,
     }
   },
 })
@@ -154,10 +158,14 @@ export default defineComponent({
   >
     <a
       v-bind="$attrs"
-      :href
+      :href="disabled ? undefined : href"
       :rel="rel ?? undefined"
+      :aria-disabled="disabled ? 'true' : undefined"
       :target="target ?? undefined"
-      :class="resolveLinkClass(route, $route, { isActive, isExactActive })"
+      :class="[
+        { '_link-disabled': disabled },
+        resolveLinkClass(route, $route, { isActive, isExactActive }),
+      ]"
       :nav-link-active="resolveNavLinkActive(route, $route, { isActive, isExactActive })"
       :nav-link-inactive="resolveNavLinkInactive(route, $route, { isActive, isExactActive })"
       @click="(e) => !isExternal && navigate(e)"

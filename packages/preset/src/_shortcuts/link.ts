@@ -1,8 +1,8 @@
-type LinkPrefix = 'link'
+type LinkPrefix = '_link'
 
-export const staticLink: Record<LinkPrefix, string> = {
+export const staticLink: Record<`${LinkPrefix}-${string}`, string> = {
   // base
-  link: '',
+  '_link-disabled': 'n-disabled',
 }
 
 export const dynamicLink: [RegExp, (params: RegExpExecArray) => string][] = [
