@@ -46,7 +46,7 @@ const goal = ref(350)
 <template>
   <div class="flex flex-wrap items-start gap-4">
     <NDrawer
-      :snap-points="[0.2, 0.5, 0.8]"
+      handle-only
     >
       <NDrawerTrigger as-child>
         <NButton btn="solid-gray">
