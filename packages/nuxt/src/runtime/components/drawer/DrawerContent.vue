@@ -52,12 +52,19 @@ const contentEvents = computed(() => {
         'drawer-content-bottom',
         'drawer-content-right',
         'drawer-content-left',
+        'group',
         props.una?.drawerContent,
         props.class,
       )"
       v-on="contentEvents"
     >
-      <div :class="cn('drawer-content-handle')" />
+      <div
+        v-if="props.una?.drawerHandle"
+        :class="cn(
+          'drawer-content-handle',
+          props.una?.drawerHandle,
+        )"
+      />
       <slot />
     </DrawerContent>
   </DrawerPortal>

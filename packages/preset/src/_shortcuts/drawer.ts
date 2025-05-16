@@ -12,7 +12,7 @@ export const staticDrawer: Record<`${KbdPrefix}-${string}` | KbdPrefix, string> 
   'drawer-content-bottom': 'data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-lg',
   'drawer-content-right': 'data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-3/4 data-[vaul-drawer-direction=right]:sm:max-w-sm',
   'drawer-content-left': 'data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-3/4 data-[vaul-drawer-direction=left]:sm:max-w-sm',
-  'drawer-content-handle': 'mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted cursor-grab',
+  'drawer-content-handle': 'mx-auto mt-4 hidden h-2 w-[100px] shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]:block',
 
   'drawer-header': 'flex flex-col gap-1.5 p-4',
   'drawer-title': 'text-foreground font-semibold',
