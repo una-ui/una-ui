@@ -23,14 +23,18 @@ export interface NLinkProps extends NuxtLinkProps {
    * @default false
    */
   exactHash?: boolean
-
+  /**
+   * Disable the link
+   *
+   * @default false
+   */
+  disabled?: boolean
   /**
    * Active classes to apply when the link is inactive
    *
    * @example 'text-primary'
    */
   inactiveClass?: string
-
   /**
    * Useful in combination with `NavLink` to apply the active class to the parent element
    *

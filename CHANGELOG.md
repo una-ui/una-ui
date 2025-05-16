@@ -1,3 +1,12 @@
+## [0.54.4](https://github.com/una-ui/una-ui/compare/v0.54.3...v0.54.4) (2025-05-15)
+
+
+### Features
+
+* **Link:** add disabled prop and preset support ([f863bbf](https://github.com/una-ui/una-ui/commit/f863bbf694638aee2c5f87a93fa1c7cb33666d16))
+
+
+
 ## [0.54.3](https://github.com/una-ui/una-ui/compare/v0.54.2...v0.54.3) (2025-05-12)
 
 

@@ -33,6 +33,21 @@ badges:
 ::
 :::
 
+### Disabled
+
+| Prop       | Default | Type      | Description                   |
+| ---------- | ------- | --------- | ----------------------------- |
+| `disabled` | `false` | `boolean` | Whether the link is disabled. |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueLinkDisabled
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/link/ExampleVueLinkDisabled.vue
+::
+:::
+
 ## Slots
 
 | Name      | Props | Description              |
