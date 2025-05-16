@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const goal = ref(350)
+
+const directions = ['top', 'right', 'bottom', 'left'] as const
 </script>
 
 <template>
@@ -10,7 +12,6 @@ const goal = ref(350)
           Open Drawer
         </NButton>
       </template>
-
       <template #content>
         <div class="mx-auto max-w-sm w-full">
           <NDrawerHeader>
@@ -57,6 +58,78 @@ const goal = ref(350)
             </NDrawerClose>
           </NDrawerFooter>
         </div>
+      </template>
+    </NDrawer>
+
+    <NDrawer direction="right">
+      <template #trigger>
+        <NButton btn="solid-gray">
+          Scrollable Content
+        </NButton>
+      </template>
+      <template #content>
+        <NDrawerHeader>
+          <NDrawerTitle>Move Goal</NDrawerTitle>
+          <NDrawerDescription>Set your daily activity goal.</NDrawerDescription>
+        </NDrawerHeader>
+        <div class="overflow-y-auto px-4 text-sm">
+          <h4 class="mb-4 text-lg font-medium leading-none">
+            Lorem Ipsum
+          </h4>
+          <p v-for="index in 10" :key="index" class="mb-4 leading-normal">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <NDrawerFooter>
+          <NButton>Submit</NButton>
+          <NDrawerClose as-child>
+            <NButton btn="solid-gray">
+              Cancel
+            </NButton>
+          </NDrawerClose>
+        </NDrawerFooter>
+      </template>
+    </NDrawer>
+
+    <NDrawer v-for="direction in directions" :key="direction" :direction>
+      <template #trigger>
+        <NButton btn="solid-gray" class="capitalize">
+          {{ direction }}
+        </NButton>
+      </template>
+      <template #content>
+        <NDrawerHeader>
+          <NDrawerTitle>Move Goal</NDrawerTitle>
+          <NDrawerDescription>
+            Set your daily activity goal.
+          </NDrawerDescription>
+        </NDrawerHeader>
+        <div class="overflow-y-auto px-4 text-sm">
+          <p v-for="index in 10" :key="index" class="mb-4 leading-normal">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </div>
+        <NDrawerFooter>
+          <NButton>Submit</NButton>
+          <NDrawerClose as-child>
+            <NButton btn="solid-gray">
+              Cancel
+            </NButton>
+          </NDrawerClose>
+        </NDrawerFooter>
       </template>
     </NDrawer>
   </div>
