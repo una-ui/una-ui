@@ -70,7 +70,7 @@ export interface NDrawerContentProps extends DialogContentProps, BaseExtensions 
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/drawer.ts
    */
-  una?: Pick<NDrawerUnaProps, 'drawerContent' | 'drawerOverlay'>
+  una?: Pick<NDrawerUnaProps, 'drawerContent' | 'drawerOverlay' | 'drawerHandle'>
 }
 
 export interface NDrawerCloseProps extends DrawerCloseProps, NButtonProps {
@@ -96,6 +96,7 @@ export interface NDrawerUnaProps {
   drawerDescription?: HTMLAttributes['class']
   drawerOverlay?: HTMLAttributes['class']
   drawerContent?: HTMLAttributes['class']
+  drawerHandle?: HTMLAttributes['class']
   drawerHeader?: HTMLAttributes['class']
   drawerFooter?: HTMLAttributes['class']
 }
