@@ -1,5 +1,5 @@
 ---
-description: 'A sliding panel that comes in from the edge of the screen to display additional content or options without navigating away from the current page.'
+description: 'A drawer component for Vue.'
 navBadges:
   - value: New
     type: lime
@@ -33,7 +33,6 @@ badges:
 | `nested`                    | -        | `boolean`                              | Enables nested drawers.                                                                                                                                   |
 | `direction`                 | `bottom` | `top` \| `bottom` \| `left` \| `right` | Specifies the direction of the drawer.                                                                                                                    |
 | `noBodyStyles`              | -        | `boolean`                              | When `true`, the `body` does not get any styles assigned from Vaul.                                                                                       |
-| `handleOnly`                | `false`  | `boolean`                              | When `true`, allows the drawer to be dragged only by the drawer handle.                                                                                   |
 | `preventScrollRestoration`  | -        | `boolean`                              | Prevents the browser from restoring the scroll position when the drawer is closed.                                                                        |
 | `snapPoints`                | -        | `number` \| `string`                   | Array of numbers (0 to 100) representing the percentage of the screen a given snap point should take up. Example: `[0.2, 0.5, 0.8]`.                      |
 

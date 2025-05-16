@@ -1,18 +1,17 @@
 <script setup lang="ts">
-'use client'
-
 const goal = ref(350)
 </script>
 
 <template>
   <div class="flex flex-wrap items-start gap-4">
     <NDrawer>
-      <NDrawerTrigger as-child>
+      <template #trigger>
         <NButton btn="solid-gray">
           Open Drawer
         </NButton>
-      </NDrawerTrigger>
-      <NDrawerContent>
+      </template>
+
+      <template #content>
         <div class="mx-auto max-w-sm w-full">
           <NDrawerHeader>
             <NDrawerTitle>Move Goal</NDrawerTitle>
@@ -47,7 +46,7 @@ const goal = ref(350)
                 @click="goal += 10"
               />
             </div>
-            <div class="mt-3 h-[120px]" />
+            <div class="mt-3 h-[120px] border rounded" />
           </div>
           <NDrawerFooter>
             <NButton>Submit</NButton>
@@ -58,7 +57,7 @@ const goal = ref(350)
             </NDrawerClose>
           </NDrawerFooter>
         </div>
-      </NDrawerContent>
+      </template>
     </NDrawer>
   </div>
 </template>
