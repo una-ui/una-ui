@@ -59,7 +59,6 @@ const contentEvents = computed(() => {
       v-on="contentEvents"
     >
       <div
-        v-if="props.una?.drawerHandle"
         :class="cn(
           'drawer-content-handle',
           props.una?.drawerHandle,
