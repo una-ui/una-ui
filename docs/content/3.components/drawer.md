@@ -46,69 +46,29 @@ badges:
 ::
 :::
 
-### Prevent Closing
-
-| Prop           | Default | Type      | Description                                                |
-| -------------- | ------- | --------- | ---------------------------------------------------------- |
-| `preventClose` | -       | `boolean` | If true, the alert dialog will not close escape key press. |
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueAlertDialogPreventClose
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/alert-dialog/ExampleVueAlertDialogPreventClose.vue
-::
-:::
-
 ## Slots
 
-| Name             | Props  | Description                                                                          |
-| ---------------- | ------ | ------------------------------------------------------------------------------------ |
-| `default`        | -      | Allows advanced customization using sub-components, replacing the default structure. |
-| `content`        | -      | Replaces the entire default content container within the dialog popup.               |
-| `trigger`        | `open` | The trigger button used to open the dialog.                                          |
-| `cancel`         | -      | Custom content for the cancel button that aborts the proposed action.                |
-| `action`         | -      | Custom content for the action button that confirms the destructive action.           |
-| `cancel-wrapper` | -      | Override the entire default cancel button.                                           |
-| `action-wrapper` | -      | Override the entire default action button.                                           |
-| `header`         | -      | Custom content for the header section containing title and description.              |
-| `footer`         | -      | Custom content for the footer section containing action and cancel buttons.          |
-| `title`          | -      | Custom content for the dialog title, replacing the default title prop.               |
-| `description`    | -      | Custom content for the dialog description, replacing the default description prop.   |
+| Name          | Props  | Description                                                                          |
+| ------------- | ------ | ------------------------------------------------------------------------------------ |
+| `default`     | -      | Allows advanced customization using sub-components, replacing the default structure. |
+| `content`     | -      | Replaces the entire default content container within the drawer component.           |
+| `trigger`     | `open` | The trigger button used to open the drawer.                                          |
+| `close`       | -      | Custom content for the close button that dismisses the drawer.                       |
+| `header`      | -      | Custom content for the header section containing title and description.              |
+| `footer`      | -      | Custom content for the footer section containing close button.                       |
+| `title`       | -      | Custom content for the drawer title, replacing the default title prop.               |
+| `description` | -      | Custom content for the drawer description, replacing the default description prop.   |
 
 ### Custom Rendering
 
-Use the `default` slot for full control over the alert dialog's structure. This allows you to compose the alert dialog using its individual sub-components (like `AlertDialogAction`, `AlertDialogCancel`, etc., listed in the [Components](#components) section), similar to libraries like `shadcn/ui`.
+Use the `default` slot for full control over the drawer's structure. This allows you to compose the drawer using its individual sub-components (like `DrawerContent`, `DrawerClose`, etc., listed in the [Components](#components) section), similar to libraries like `shadcn/ui`.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-:ExampleVueAlertDialogCustomRendering
+:ExampleVueDrawerCustomRendering
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/alert-dialog/ExampleVueAlertDialogCustomRendering.vue
-::
-:::
-
-### Custom Width
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueAlertDialogCustomSize
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/alert-dialog/ExampleVueAlertDialogCustomSize.vue
-::
-:::
-
-### Custom Animation
-
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueAlertDialogCustomAnimation
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/alert-dialog/ExampleVueAlertDialogCustomAnimation.vue
+@@@ ./components/content/examples/vue/drawer/ExampleVueDrawerCustomRendering.vue
 ::
 :::
 
