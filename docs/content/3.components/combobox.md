@@ -1,8 +1,5 @@
 ---
 description: Autocomplete input and command palette with a list of suggestions.
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

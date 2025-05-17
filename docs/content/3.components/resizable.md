@@ -1,8 +1,5 @@
 ---
 description: 'Accessible resizable panel groups and layouts with keyboard support.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
