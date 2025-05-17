@@ -6,72 +6,76 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
 
 <template>
   <div class="flex flex-wrap items-start gap-4">
-    <NDrawer>
+    <NDrawer
+      title="Move Goal"
+      description="Set your daily activity goal."
+      :una="{
+        drawerContentWrapper: 'mx-auto w-full max-w-sm',
+      }"
+    >
       <template #trigger>
         <NButton btn="solid-gray">
           Open Drawer
         </NButton>
       </template>
-      <template #content>
-        <div class="mx-auto max-w-sm w-full">
-          <NDrawerHeader>
-            <NDrawerTitle>Move Goal</NDrawerTitle>
-            <NDrawerDescription>Set your daily activity goal.</NDrawerDescription>
-          </NDrawerHeader>
-          <div class="p-4 pb-0">
-            <div class="flex items-center justify-center space-x-2">
-              <NButton
-                btn="solid-gray"
-                square="8"
-                icon
-                label="i-lucide-minus"
-                rounded="full"
-                :disabled="goal <= 200"
-                @click="goal -= 10"
-              />
-              <div class="flex-1 text-center">
-                <div class="text-7xl font-bold tracking-tighter">
-                  {{ goal }}
-                </div>
-                <div class="text-[0.70rem] text-muted uppercase">
-                  Calories/day
-                </div>
+
+      <template #body>
+        <div class="p-4 pb-0">
+          <div class="flex items-center justify-center space-x-2">
+            <NButton
+              btn="solid-gray"
+              square="8"
+              icon
+              label="i-lucide-minus"
+              rounded="full"
+              :disabled="goal <= 200"
+              @click="goal -= 10"
+            />
+            <div class="flex-1 text-center">
+              <div class="text-7xl font-bold tracking-tighter">
+                {{ goal }}
               </div>
-              <NButton
-                btn="solid-gray"
-                square="8"
-                icon
-                label="i-lucide-plus"
-                rounded="full"
-                :disabled="goal >= 400"
-                @click="goal += 10"
-              />
+              <div class="text-[0.70rem] text-muted uppercase">
+                Calories/day
+              </div>
             </div>
-            <div class="mt-3 h-[120px] border rounded" />
+            <NButton
+              btn="solid-gray"
+              square="8"
+              icon
+              label="i-lucide-plus"
+              rounded="full"
+              :disabled="goal >= 400"
+              @click="goal += 10"
+            />
           </div>
-          <NDrawerFooter>
-            <NButton>Submit</NButton>
-            <NDrawerClose as-child>
-              <NButton btn="solid-gray">
-                Cancel
-              </NButton>
-            </NDrawerClose>
-          </NDrawerFooter>
+          <div class="mt-3 h-[120px] border rounded" />
         </div>
+      </template>
+
+      <template #footer>
+        <NButton>Submit</NButton>
+
+        <NDrawerClose as-child>
+          <NButton btn="solid-gray">
+            Cancel
+          </NButton>
+        </NDrawerClose>
       </template>
     </NDrawer>
 
-    <NDrawer direction="right">
+    <NDrawer
+      direction="right"
+      title="Move Goal"
+      description="Set your daily activity goal."
+    >
       <template #trigger>
         <NButton btn="solid-gray">
           Scrollable Content
         </NButton>
       </template>
-      <template #content>
-        <NDrawerHeader>
-          <NDrawerTitle>Move Goal</NDrawerTitle>
-          <NDrawerDescription>Set your daily activity goal.</NDrawerDescription>
-        </NDrawerHeader>
+
+      <template #body>
         <div class="overflow-y-auto px-4 text-sm">
           <h4 class="mb-4 text-lg font-medium leading-none">
             Lorem Ipsum
@@ -86,30 +90,32 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
             sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <NDrawerFooter>
-          <NButton>Submit</NButton>
-          <NDrawerClose as-child>
-            <NButton btn="solid-gray">
-              Cancel
-            </NButton>
-          </NDrawerClose>
-        </NDrawerFooter>
+      </template>
+
+      <template #footer>
+        <NButton>Submit</NButton>
+        <NDrawerClose as-child>
+          <NButton btn="solid-gray">
+            Cancel
+          </NButton>
+        </NDrawerClose>
       </template>
     </NDrawer>
 
-    <NDrawer v-for="direction in directions" :key="direction" :direction>
+    <NDrawer
+      v-for="direction in directions"
+      :key="direction"
+      :direction="direction"
+      title="Move Goal"
+      description="Set your daily activity goal."
+    >
       <template #trigger>
         <NButton btn="solid-gray" class="capitalize">
           {{ direction }}
         </NButton>
       </template>
-      <template #content>
-        <NDrawerHeader>
-          <NDrawerTitle>Move Goal</NDrawerTitle>
-          <NDrawerDescription>
-            Set your daily activity goal.
-          </NDrawerDescription>
-        </NDrawerHeader>
+
+      <template #body>
         <div class="overflow-y-auto px-4 text-sm">
           <p v-for="index in 10" :key="index" class="mb-4 leading-normal">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -122,14 +128,15 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
             mollit anim id est laborum.
           </p>
         </div>
-        <NDrawerFooter>
-          <NButton>Submit</NButton>
-          <NDrawerClose as-child>
-            <NButton btn="solid-gray">
-              Cancel
-            </NButton>
-          </NDrawerClose>
-        </NDrawerFooter>
+      </template>
+
+      <template #footer>
+        <NButton>Submit</NButton>
+        <NDrawerClose as-child>
+          <NButton btn="solid-gray">
+            Cancel
+          </NButton>
+        </NDrawerClose>
       </template>
     </NDrawer>
   </div>
