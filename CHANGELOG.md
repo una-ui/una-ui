@@ -1,3 +1,13 @@
+# [0.55.0](https://github.com/una-ui/una-ui/compare/v0.54.4...v0.55.0) (2025-05-17)
+
+
+### Features
+
+* **Drawer:** introduces new components and presets ([#400](https://github.com/una-ui/una-ui/issues/400)) ([8dc0bb4](https://github.com/una-ui/una-ui/commit/8dc0bb4b75846128e21a0745bf389b66bfd1f6d3))
+* **Preset:** update default muted and accent color configuration ([a3132a8](https://github.com/una-ui/una-ui/commit/a3132a81763192528b2c8e133c51e29a16ae213c))
+
+
+
 ## [0.54.4](https://github.com/una-ui/una-ui/compare/v0.54.3...v0.54.4) (2025-05-15)
 
 
