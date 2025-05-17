@@ -92,7 +92,6 @@ export interface NDrawerUnaProps {
   drawerDescription?: HTMLAttributes['class']
   drawerOverlay?: HTMLAttributes['class']
   drawerContent?: HTMLAttributes['class']
-  drawerContentWrapper?: HTMLAttributes['class']
   drawerHandle?: HTMLAttributes['class']
   drawerHeader?: HTMLAttributes['class']
   drawerFooter?: HTMLAttributes['class']

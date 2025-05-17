@@ -8,7 +8,11 @@ const props = defineProps<NDrawerFooterProps>()
 <template>
   <div
     data-slot="drawer-footer"
-    :class="cn('drawer-footer', props.class)"
+    :class="cn(
+      'drawer-footer',
+      props.una?.drawerFooter,
+      props.class,
+    )"
   >
     <slot />
   </div>

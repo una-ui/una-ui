@@ -17,7 +17,11 @@ const delegatedProps = computed(() => {
   <DrawerTitle
     data-slot="drawer-title"
     v-bind="delegatedProps"
-    :class="cn('drawer-title', props.class)"
+    :class="cn(
+      'drawer-title',
+      props.una?.drawerTitle,
+      props.class,
+    )"
   >
     <slot />
   </DrawerTitle>

@@ -8,7 +8,11 @@ const props = defineProps<NDrawerHeaderProps>()
 <template>
   <div
     data-slot="drawer-header"
-    :class="cn('drawer-header', props.class)"
+    :class="cn(
+      'drawer-header',
+      props.una?.drawerHeader,
+      props.class,
+    )"
   >
     <slot />
   </div>

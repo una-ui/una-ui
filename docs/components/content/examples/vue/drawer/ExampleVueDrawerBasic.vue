@@ -10,7 +10,8 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
       title="Move Goal"
       description="Set your daily activity goal."
       :una="{
-        drawerContentWrapper: 'mx-auto w-full max-w-sm',
+        drawerHeader: 'mx-auto max-w-sm w-full',
+        drawerFooter: 'mx-auto max-w-sm w-full',
       }"
     >
       <template #trigger>
@@ -20,36 +21,38 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
       </template>
 
       <template #body>
-        <div class="p-4 pb-0">
-          <div class="flex items-center justify-center space-x-2">
-            <NButton
-              btn="solid-gray"
-              square="8"
-              icon
-              label="i-lucide-minus"
-              rounded="full"
-              :disabled="goal <= 200"
-              @click="goal -= 10"
-            />
-            <div class="flex-1 text-center">
-              <div class="text-7xl font-bold tracking-tighter">
-                {{ goal }}
+        <div class="mx-auto max-w-sm w-full">
+          <div class="p-4 pb-0">
+            <div class="flex items-center justify-center space-x-2">
+              <NButton
+                btn="solid-gray"
+                square="8"
+                icon
+                label="i-lucide-minus"
+                rounded="full"
+                :disabled="goal <= 200"
+                @click="goal -= 10"
+              />
+              <div class="flex-1 text-center">
+                <div class="text-7xl font-bold tracking-tighter">
+                  {{ goal }}
+                </div>
+                <div class="text-[0.70rem] text-muted uppercase">
+                  Calories/day
+                </div>
               </div>
-              <div class="text-[0.70rem] text-muted uppercase">
-                Calories/day
-              </div>
+              <NButton
+                btn="solid-gray"
+                square="8"
+                icon
+                label="i-lucide-plus"
+                rounded="full"
+                :disabled="goal >= 400"
+                @click="goal += 10"
+              />
             </div>
-            <NButton
-              btn="solid-gray"
-              square="8"
-              icon
-              label="i-lucide-plus"
-              rounded="full"
-              :disabled="goal >= 400"
-              @click="goal += 10"
-            />
+            <div class="mt-3 h-[120px] border rounded" />
           </div>
-          <div class="mt-3 h-[120px] border rounded" />
         </div>
       </template>
 

@@ -5,7 +5,7 @@ import { reactivePick } from '@vueuse/core'
 import { useForwardPropsEmits, VisuallyHidden } from 'reka-ui'
 import { DrawerRoot } from 'vaul-vue'
 import { computed } from 'vue'
-import { cn, randomId } from '../../utils'
+import { randomId } from '../../utils'
 import DrawerClose from './DrawerClose.vue'
 import DrawerContent from './DrawerContent.vue'
 import DrawerDescription from './DrawerDescription.vue'
@@ -80,58 +80,51 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
         </VisuallyHidden>
 
         <slot name="content">
-          <div
-            :class="cn(
-              'content-wrapper',
-              una?.drawerContentWrapper,
-            )"
+          <!-- Header -->
+          <DrawerHeader
+            v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
+            v-bind="_drawerHeader"
+            :una
           >
-            <!-- Header -->
-            <DrawerHeader
-              v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
-              v-bind="_drawerHeader"
-              :una
-            >
-              <slot name="header">
-                <DrawerTitle
-                  v-if="title !== DEFAULT_TITLE || !!$slots.title"
-                  v-bind="_drawerTitle"
-                  :una
-                >
-                  <slot name="title">
-                    {{ title }}
-                  </slot>
-                </DrawerTitle>
+            <slot name="header">
+              <DrawerTitle
+                v-if="title !== DEFAULT_TITLE || !!$slots.title"
+                v-bind="_drawerTitle"
+                :una
+              >
+                <slot name="title">
+                  {{ title }}
+                </slot>
+              </DrawerTitle>
 
-                <DrawerDescription
-                  v-if="description !== DEFAULT_DESCRIPTION || !!$slots.description"
-                  v-bind="_drawerDescription"
-                  :una
-                >
-                  <slot name="description">
-                    {{ description }}
-                  </slot>
-                </DrawerDescription>
-              </slot>
-            </DrawerHeader>
+              <DrawerDescription
+                v-if="description !== DEFAULT_DESCRIPTION || !!$slots.description"
+                v-bind="_drawerDescription"
+                :una
+              >
+                <slot name="description">
+                  {{ description }}
+                </slot>
+              </DrawerDescription>
+            </slot>
+          </DrawerHeader>
 
-            <!-- Body -->
-            <slot name="body" />
+          <!-- Body -->
+          <slot name="body" />
 
-            <!-- Footer -->
-            <DrawerFooter
-              v-bind="_drawerFooter"
-              :una
-            >
-              <slot name="footer">
-                <DrawerClose
-                  v-bind="_drawerClose"
-                >
-                  <slot name="close" />
-                </DrawerClose>
-              </slot>
-            </DrawerFooter>
-          </div>
+          <!-- Footer -->
+          <DrawerFooter
+            v-bind="_drawerFooter"
+            :una
+          >
+            <slot name="footer">
+              <DrawerClose
+                v-bind="_drawerClose"
+              >
+                <slot name="close" />
+              </DrawerClose>
+            </slot>
+          </DrawerFooter>
         </slot>
       </DrawerContent>
     </slot>
