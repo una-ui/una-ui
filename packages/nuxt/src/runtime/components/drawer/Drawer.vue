@@ -67,7 +67,6 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
       <DrawerContent
         v-bind="_drawerContent"
         :_drawer-overlay
-        :prevent-close
         :una
       >
         <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">

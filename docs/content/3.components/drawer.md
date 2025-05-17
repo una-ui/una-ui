@@ -6,10 +6,10 @@ navBadges:
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/alert-dialog/Drawer.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/drawer/Drawer.vue
     target: _blank
   - value: API reference
-    to: https://www.shadcn-vue.com/docs/components/drawer
+    to: https://github.com/unovue/vaul-vue
     target: _blank
 ---
 

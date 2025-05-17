@@ -4,7 +4,7 @@ import type { DrawerCloseProps, DrawerDescriptionProps, DrawerRootProps, DrawerT
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NDrawerProps extends Omit<DrawerRootProps, 'fadeFromIndex'>, Pick<NDrawerContentProps, 'preventClose' | 'showClose' | 'overlay' | '_drawerClose' | '_drawerOverlay'> {
+export interface NDrawerProps extends Omit<DrawerRootProps, 'fadeFromIndex'>, Pick<NDrawerContentProps, 'showClose' | 'overlay' | '_drawerClose' | '_drawerOverlay'> {
   /**
    * The title of the dialog.
    */
@@ -41,10 +41,6 @@ export interface NDrawerDescriptionProps extends DrawerDescriptionProps, BaseExt
 }
 
 export interface NDrawerContentProps extends DialogContentProps, BaseExtensions {
-  /**
-   * Prevent close.
-   */
-  preventClose?: boolean
   /**
    * Show close button.
    *
