@@ -47,16 +47,17 @@ badges:
 
 ## Slots
 
-| Name            | Props  | Description                                                                          |
-| --------------- | ------ | ------------------------------------------------------------------------------------ |
-| `default`       | -      | Allows advanced customization using sub-components, replacing the default structure. |
-| `content`       | -      | Replaces the entire default content container within the drawer component.           |
-| `trigger`       | `open` | The trigger button used to open the drawer.                                          |
-| `close-wrapper` | -      | Custom content for the close button that dismisses the drawer.                       |
-| `header`        | -      | Custom content for the header section containing title and description.              |
-| `footer`        | -      | Custom content for the footer section containing close button.                       |
-| `title`         | -      | Custom content for the drawer title, replacing the default title prop.               |
-| `description`   | -      | Custom content for the drawer description, replacing the default description prop.   |
+| Name          | Props  | Description                                                                                       |
+| ------------- | ------ | ------------------------------------------------------------------------------------------------- |
+| `default`     | -      | Allows advanced customization using sub-components, replacing the default drawer structure.       |
+| `trigger`     | `open` | The trigger button used to open the drawer. Receives the current open state.                      |
+| `content`     | -      | Replaces the entire content container, including header, body, and footer.                        |
+| `header`      | -      | Custom content for the header section, replacing both title and description.                      |
+| `title`       | -      | Custom content for the drawer title, replacing the default title prop.                            |
+| `description` | -      | Custom content for the drawer description, replacing the default description prop.                |
+| `body`        | -      | Content to display in the main section of the drawer, between header and footer.                  |
+| `footer`      | -      | Custom content for the drawer footer. By default contains a close button.                         |
+| `close`       | -      | Custom content for the close button that dismisses the drawer. Used within DrawerClose component. |
 
 ### Custom Rendering
 
