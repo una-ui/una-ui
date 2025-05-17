@@ -13,6 +13,7 @@ import { checkbox } from './checkbox'
 import { collapsible } from './collapsible'
 import { combobox } from './combobox'
 import { dialog } from './dialog'
+import { drawer } from './drawer'
 import { dropdowMenu } from './dropdown-menu'
 import { form } from './form'
 import { formGroup } from './form-group'
@@ -87,4 +88,5 @@ export const shortcuts = [
   ...resizable,
   ...alertDialog,
   ...combobox,
+  ...drawer,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

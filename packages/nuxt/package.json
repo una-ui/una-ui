@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/una-ui/una-ui.git"
   },
+  "imports": {
+    "#build/una/*": "./.nuxt/una/*.ts"
+  },
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",
@@ -26,9 +29,6 @@
       "types": "./dist/runtime/utils/*.d.ts",
       "import": "./dist/runtime/utils/*.js"
     }
-  },
-  "imports": {
-    "#build/una/*": "./.nuxt/una/*.ts"
   },
   "module": "./dist/module.mjs",
   "types": "./dist/types.d.mts",
@@ -66,7 +66,8 @@
     "reka-ui": "catalog:",
     "tailwind-merge": "catalog:",
     "unocss": "catalog:",
-    "unocss-preset-animations": "catalog:"
+    "unocss-preset-animations": "catalog:",
+    "vaul-vue": "catalog:"
   },
   "devDependencies": {
     "@iconify-json/lucide": "catalog:",

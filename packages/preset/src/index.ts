@@ -123,6 +123,7 @@ export default function presetUna(options: unaUIOptions = {
     ],
     variants: [
       (input: string) => {
+        // Support for n-disabled: variants
         const prefix = 'n-disabled:'
         if (input.startsWith(prefix)) {
           return {
@@ -132,11 +133,24 @@ export default function presetUna(options: unaUIOptions = {
         }
       },
       (input: string) => {
+        // Support for n-checked: variants
         const prefix = 'n-checked:'
         if (input.startsWith(prefix)) {
           return {
             matcher: input.slice(prefix.length),
             selector: input => `[checked] ${input}, ${input}[checked]`,
+          }
+        }
+      },
+      (matcher) => {
+        // Support for data-[vaul-drawer-direction=*] variants
+        const dataVaulRegex = /^group-data-\[vaul-drawer-direction=([\w-]+)\]:/
+        const match = matcher.match(dataVaulRegex)
+
+        if (match) {
+          return {
+            matcher: matcher.slice(match[0].length),
+            selector: s => `.group[data-vaul-drawer-direction="${match[1]}"] ${s}`,
           }
         }
       },
