@@ -1,3 +1,12 @@
+## [0.55.1](https://github.com/una-ui/una-ui/compare/v0.55.0...v0.55.1) (2025-05-17)
+
+
+### Bug Fixes
+
+* **Drawer:** update and add missing una presets configuration ([b605486](https://github.com/una-ui/una-ui/commit/b605486e78a389198c40283a4b684da0f57b7fa5))
+
+
+
 # [0.55.0](https://github.com/una-ui/una-ui/compare/v0.54.4...v0.55.0) (2025-05-17)
 
 
