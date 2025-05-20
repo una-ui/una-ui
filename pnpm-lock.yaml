@@ -19,17 +19,17 @@ catalogs:
       specifier: ^1.7.23
       version: 1.7.23
     '@iconify-json/lucide':
-      specifier: ^1.2.42
-      version: 1.2.42
+      specifier: ^1.2.44
+      version: 1.2.44
     '@iconify-json/radix-icons':
       specifier: ^1.2.2
       version: 1.2.2
     '@iconify-json/tabler':
-      specifier: ^1.2.17
-      version: 1.2.17
+      specifier: ^1.2.18
+      version: 1.2.18
     '@iconify/json':
-      specifier: ^2.2.337
-      version: 2.2.337
+      specifier: ^2.2.339
+      version: 2.2.339
     '@iconify/utils':
       specifier: ^2.3.0
       version: 2.3.0
@@ -233,7 +233,7 @@ importers:
         version: 9.8.0
       '@iconify/json':
         specifier: 'catalog:'
-        version: 2.2.337
+        version: 2.2.339
       '@types/chroma-js':
         specifier: 'catalog:'
         version: 3.1.1
@@ -396,13 +396,13 @@ importers:
     devDependencies:
       '@iconify-json/lucide':
         specifier: 'catalog:'
-        version: 1.2.42
+        version: 1.2.44
       '@iconify-json/radix-icons':
         specifier: 'catalog:'
         version: 1.2.2
       '@iconify-json/tabler':
         specifier: 'catalog:'
-        version: 1.2.17
+        version: 1.2.18
       '@nuxt/module-builder':
         specifier: 'catalog:'
         version: 1.0.1(@nuxt/cli@3.25.1(magicast@0.3.5))(@vue/compiler-core@3.5.13)(esbuild@0.25.4)(sass@1.89.0)(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))(vue@3.5.13(typescript@5.8.3))
@@ -1085,8 +1085,8 @@ packages:
   '@iconify-json/lucide@1.2.40':
     resolution: {integrity: sha512-xW5FchzgE4TPIToKFQhA0W3GkazWV+Ce1edLbGamOjYVLdXGUTDVufbtRqNKOrfHFMPuriAtiIhN32gW+klCXQ==}
 
-  '@iconify-json/lucide@1.2.42':
-    resolution: {integrity: sha512-exkRygF4yd6e5q966TXJQc/b+MAu3iQb8LeExCjl2JoP4/RlpudkYpg1AIZVCVCjAiElDYmVJYDWiJXPLkFN/g==}
+  '@iconify-json/lucide@1.2.44':
+    resolution: {integrity: sha512-lOwXoOtkFm4Zj1duPj5xqhPKKMUvxVRMfIHi0YDfwLjEEgrhzsJZ4JCpE119L8P8p6zi4on4b9cPZdVXCUuDoQ==}
 
   '@iconify-json/radix-icons@1.2.2':
     resolution: {integrity: sha512-+PPmKWDP7pfJMcEc9Ty1zyo/zzq+9rfKW4EGb2HSZcPu1VUhothDLFzWvBqQNoFIOYCJ2nm0Vmf8kVyYhq9G0Q==}
@@ -1097,14 +1097,17 @@ packages:
   '@iconify-json/tabler@1.2.17':
     resolution: {integrity: sha512-Jfk20IC/n7UOQQSXM600BUhAwEfg8KU1dNUF+kg4eRhbET5w1Ktyax7CDx8Z8y0H6+J/8//AXpJOEgG8YoP8rw==}
 
+  '@iconify-json/tabler@1.2.18':
+    resolution: {integrity: sha512-W+8qiJhJpb4dmBw3P7JSM9QhGsFG8GIS3BJWAmrJ/92rzK6NPGUOPfGmswoO+/MuPzQV96ColY9lcUktUKv0pg==}
+
   '@iconify-json/vscode-icons@1.2.20':
     resolution: {integrity: sha512-xuWqr/SrckUoFi6kpSH/NrNGK+CuZ8LNnBY8qkRdkQvHmhirXvwsLfTKHoFndTsOlxfsHahlOLVCCb523kdqMA==}
 
   '@iconify/collections@1.0.545':
     resolution: {integrity: sha512-LQprSmX6Wp69insYYSHM6bj5ZF4gT4ZwoqX9UXdCxGxRMzRpaNzQZUZ++2kP0wnOg3lX2ocMla8ns8oRPzxO2g==}
 
-  '@iconify/json@2.2.337':
-    resolution: {integrity: sha512-+Z4wwoHHhqebbQ4v+s9GJ2fxS82zWd79SnjXlg4B4WCXTMdV2sXmNXs6P7NzfzbZugITwK6rPeyr6cgoH/bHmw==}
+  '@iconify/json@2.2.339':
+    resolution: {integrity: sha512-8p+IZcJuic2CW8saJb6bktV5Tl0G4QqnhLfaof1v9hFpMI3KVSv8isN198Wu5sDVdFGAzXJ8uDsNEUyc6W1VDg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7874,7 +7877,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.42':
+  '@iconify-json/lucide@1.2.44':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7890,6 +7893,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/tabler@1.2.18':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/vscode-icons@1.2.20':
     dependencies:
       '@iconify/types': 2.0.0
@@ -7898,7 +7905,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.337':
+  '@iconify/json@2.2.339':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
@@ -12605,7 +12612,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.15.18
+      '@types/node': 22.15.19
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
