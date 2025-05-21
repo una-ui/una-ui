@@ -1,3 +1,12 @@
+## [0.55.2](https://github.com/una-ui/una-ui/compare/v0.55.1...v0.55.2) (2025-05-21)
+
+
+### Features
+
+* **Link:** add active prop support ([e966982](https://github.com/una-ui/una-ui/commit/e96698272707401c23da0c92837a62c1aa6d77b5))
+
+
+
 ## [0.55.1](https://github.com/una-ui/una-ui/compare/v0.55.0...v0.55.1) (2025-05-17)
 
 
