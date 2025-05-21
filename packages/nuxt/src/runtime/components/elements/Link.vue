@@ -15,6 +15,11 @@ export default defineComponent({
       type: String as PropType<NLinkProps['label']>,
       default: undefined,
     },
+    /** Force the link to be active independent of the current route. */
+    active: {
+      type: Boolean as PropType<NLinkProps['active']>,
+      default: undefined,
+    },
     exact: {
       type: Boolean as PropType<NLinkProps['exact']>,
       default: false,
@@ -51,6 +56,14 @@ export default defineComponent({
     const route = useRoute()
 
     function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }): string | null {
+      if (props.active === true) {
+        return props.activeClass
+      }
+
+      if (props.active === false) {
+        return props.inactiveClass
+      }
+
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.inactiveClass
 

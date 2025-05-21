@@ -30,6 +30,12 @@ export interface NLinkProps extends NuxtLinkProps {
    */
   disabled?: boolean
   /**
+   * Force the link to be active independent of the current route.
+   *
+   * @default false
+   */
+  active?: boolean
+  /**
    * Active classes to apply when the link is inactive
    *
    * @example 'text-primary'

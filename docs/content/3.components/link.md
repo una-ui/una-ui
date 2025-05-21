@@ -14,13 +14,15 @@ badges:
 
 ### Basic
 
-| Prop            | Default | Type      | Description                                                         |
-| --------------- | ------- | --------- | ------------------------------------------------------------------- |
-| `label`         | -       | `string`  | The label of the link.                                              |
-| `inactiveClass` | -       | `string`  | The class to apply when the link is inactive.                       |
-| `exact`         | `false` | `boolean` | Trigger the link active class only on exact matches of the `path`.  |
-| `exactQuery`    | `false` | `boolean` | Trigger the link active class only on exact matches of the `query`. |
-| `exactHash`     | `false` | `boolean` | Trigger the link active class only on exact matches of the `hash`.  |
+| Prop            | Default | Type      | Description                                                                              |
+| --------------- | ------- | --------- | ---------------------------------------------------------------------------------------- |
+| `label`         | -       | `string`  | The label of the link.                                                                   |
+| `activeClass`   | -       | `string`  | The class to apply when the link is active.                                              |
+| `inactiveClass` | -       | `string`  | The class to apply when the link is inactive.                                            |
+| `exact`         | `false` | `boolean` | Trigger the link active class only on exact matches of the `path`.                       |
+| `exactQuery`    | `false` | `boolean` | Trigger the link active class only on exact matches of the `query`.                      |
+| `exactHash`     | `false` | `boolean` | Trigger the link active class only on exact matches of the `hash`.                       |
+| `active`        | -       | `boolean` | Force the link to be active regardless of the current route, applying the `activeClass`. |
 
 :read-more{to="https://nuxt.com/docs/api/components/nuxt-link#props" title="Nuxt Link Props" target="_blank"}
 

@@ -37,5 +37,13 @@
     >
       Exact Hash
     </NLink>
+
+    <NLink
+      to="/components"
+      active-class="text-blue"
+      active
+    >
+      Active (Force)
+    </NLink>
   </div>
 </template>
