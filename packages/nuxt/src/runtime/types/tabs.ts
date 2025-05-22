@@ -13,7 +13,7 @@ export interface NTabsProps extends TabsRootProps, BaseExtensions, Pick<NTabsTri
    *
    * @default []
    */
-  items: any[]
+  items?: any[]
 
   // sub-components
   _tabsContent?: Partial<NTabsContentProps>
