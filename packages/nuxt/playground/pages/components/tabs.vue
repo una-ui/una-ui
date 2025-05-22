@@ -22,7 +22,12 @@ const items = ref([
 </script>
 
 <template>
-  <NTabs default-value="tab1" :items="items" class="w-[400px]">
+  <NTabs
+    default-value="tab1"
+    :items="items"
+    class="w-[400px]"
+    size="xs"
+  >
     <template #content="{ item }">
       <span>{{ item.content }} test</span>
     </template>

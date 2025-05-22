@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import type { TabsRootEmits } from 'reka-ui'
 import type { NTabsProps } from '../../../types/tabs'
+import { reactiveOmit } from '@vueuse/core'
 import { useForwardPropsEmits } from 'reka-ui'
-import { computed } from 'vue'
-import { omitProps } from '../../../utils'
 import TabsContent from './TabsContent.vue'
 import TabsList from './TabsList.vue'
 import TabsRoot from './TabsRoot.vue'
@@ -12,18 +11,14 @@ import TabsTrigger from './TabsTrigger.vue'
 const props = defineProps<NTabsProps>()
 const emits = defineEmits<TabsRootEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class', 'items', 'tabs', 'disabled', 'size'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
   <TabsRoot
-    v-bind="omitProps(forwarded, ['items', 'tabs', 'disabled'])"
+    v-bind="forwarded"
     :default-value="defaultValue"
   >
     <TabsList v-bind="forwarded._tabsList">
@@ -34,11 +29,12 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         >
           <TabsTrigger
             :tabs="item?._tabsTrigger?.tabs || item.tabs || props.tabs"
-            :disabled="item?._tabsTrigger?.disabled ?? item.disabled ?? props.disabled"
+            :disabled="item?._tabsTrigger?.disabled || item.disabled || props.disabled"
             :value="item.value"
+            :size="item?._tabsTrigger?.size ?? props.size"
             v-bind="{ ...forwarded._tabsTrigger, ...item?._tabsTrigger }"
           >
-            <slot name="trigger" :item="item" :disabled="item?._tabsTrigger?.disabled ?? item.disabled ?? props.disabled ?? false">
+            <slot name="trigger" :item="item" :disabled="item?._tabsTrigger?.disabled || item.disabled || props.disabled">
               {{ item.name }}
             </slot>
           </TabsTrigger>

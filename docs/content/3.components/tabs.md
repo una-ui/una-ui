@@ -68,9 +68,8 @@ badges:
 
 | Prop                | Default | Type     | Description           |
 | ------------------- | ------- | -------- | --------------------- |
-| `size`              | -       | `string` | Set the tabs size.    |
-| `_tabsTrigger.size` | -       | `string` | Set the trigger size. |
-| `_tabsContent.size` | -       | `string` | Set the content size. |
+| `size`              | `sm`    | `string` | Set the tabs size.    |
+| `_tabsTrigger.size` | `sm`    | `string` | Set the trigger size. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
