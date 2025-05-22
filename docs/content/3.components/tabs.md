@@ -32,11 +32,12 @@ badges:
 
 ### Variant and Color
 
-| Prop                | Default      | Type     | Description                                        |
-| ------------------- | ------------ | -------- | -------------------------------------------------- |
-| `tabs-active`       | `soft-black` | `string` | Set the tabs active variant and color.             |
-| `tabs-inactive`     | -            | `string` | Set the tabs inactive variant and color.           |
-| `_tabsTrigger.tabs` | -            | `string` | Set the tabs variant and color via `_tabsTrigger`. |
+| Prop                         | Default      | Type     | Description                                                          |
+| ---------------------------- | ------------ | -------- | -------------------------------------------------------------------- |
+| `tabs-active`                | `soft-black` | `string` | Controls the appearance of active tabs by setting variant and color. |
+| `tabs-inactive`              | -            | `string` | Defines the variant and color styling for inactive tabs.             |
+| `_tabsTrigger.tabs-active`   | `soft-black` | `string` | Overrides the active tab styling at the individual trigger level.    |
+| `_tabsTrigger.tabs-inactive` | -            | `string` | Overrides the inactive tab styling at the individual trigger level.  |
 
 :::CodeGroup
 ::div{label="Preview" preview}
