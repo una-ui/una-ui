@@ -2,16 +2,18 @@
 import type { TabsRootEmits } from 'reka-ui'
 import type { NTabsProps } from '../../../types/tabs'
 import { reactiveOmit } from '@vueuse/core'
-import { useForwardPropsEmits } from 'reka-ui'
+import { TabsRoot, useForwardPropsEmits } from 'reka-ui'
+import { cn } from '../../../utils'
 import TabsContent from './TabsContent.vue'
 import TabsList from './TabsList.vue'
-import TabsRoot from './TabsRoot.vue'
 import TabsTrigger from './TabsTrigger.vue'
 
-const props = defineProps<NTabsProps>()
+const props = withDefaults(defineProps<NTabsProps>(), {
+  size: 'sm',
+})
 const emits = defineEmits<TabsRootEmits>()
 
-const delegatedProps = reactiveOmit(props, ['class', 'items', 'tabs', 'disabled', 'size'])
+const delegatedProps = reactiveOmit(props, ['class', 'items', 'tabsActive', 'tabsInactive', 'disabled', 'size', 'una'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
@@ -19,39 +21,55 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <TabsRoot
     v-bind="forwarded"
-    :default-value="defaultValue"
+    :class="cn(
+      'tabs',
+      props.una?.tabs,
+      props.class,
+    )"
   >
-    <TabsList v-bind="forwarded._tabsList">
-      <slot name="list" :items="items">
-        <template
-          v-for="item in items"
-          :key="item.value"
-        >
-          <TabsTrigger
-            :tabs="item?._tabsTrigger?.tabs || item.tabs || props.tabs"
-            :disabled="item?._tabsTrigger?.disabled || item.disabled || props.disabled"
-            :value="item.value"
-            :size="item?._tabsTrigger?.size ?? props.size"
-            v-bind="{ ...forwarded._tabsTrigger, ...item?._tabsTrigger }"
+    <slot>
+      <TabsList
+        v-bind="forwarded._tabsList"
+        :una
+        :size
+      >
+        <slot name="list" :items="items">
+          <template
+            v-for="item in items"
+            :key="item.value"
           >
-            <slot name="trigger" :item="item" :disabled="item?._tabsTrigger?.disabled || item.disabled || props.disabled">
-              {{ item.name }}
-            </slot>
-          </TabsTrigger>
-        </template>
-      </slot>
-    </TabsList>
-    <template
-      v-for="item in items"
-      :key="item.value"
-    >
-      <TabsContent v-bind="forwarded._tabsContent" :value="item.value">
-        <slot name="content" :item="item">
-          <component :is="typeof item.content === 'string' ? 'span' : item.content">
-            {{ typeof item.content === 'string' ? item.content : '' }}
-          </component>
+            <TabsTrigger
+              :tabs-active="item?._tabsTrigger?.tabsActive || item.tabsActive || props.tabsActive"
+              :tabs-inactive="item?._tabsTrigger?.tabsInactive || item.tabsInactive || props.tabsInactive"
+              :disabled="item?._tabsTrigger?.disabled || item.disabled || props.disabled"
+              :value="item.value"
+              :size
+              v-bind="{ ...forwarded._tabsTrigger, ...item?._tabsTrigger }"
+              :una
+            >
+              <slot name="trigger" :item="item" :disabled="item?._tabsTrigger?.disabled || item.disabled || props.disabled">
+                {{ item.name }}
+              </slot>
+            </TabsTrigger>
+          </template>
         </slot>
-      </TabsContent>
-    </template>
+      </TabsList>
+      <template
+        v-for="item in items"
+        :key="item.value"
+      >
+        <TabsContent
+          v-bind="forwarded._tabsContent"
+          :value="item.value"
+          :una
+        >
+          <slot name="content" :item="item">
+            <component :is="typeof item.content === 'string' ? 'span' : item.content">
+              {{ typeof item.content === 'string' ? item.content : '' }}
+            </component>
+          </slot>
+        </TabsContent>
+      </template>
+    </slot>
   </TabsRoot>
 </template>

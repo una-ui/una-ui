@@ -34,7 +34,8 @@ badges:
 
 | Prop                | Default      | Type     | Description                                        |
 | ------------------- | ------------ | -------- | -------------------------------------------------- |
-| `tabs`              | `soft-black` | `string` | Set the tabs variant and color.                    |
+| `tabs-active`       | `soft-black` | `string` | Set the tabs active variant and color.             |
+| `tabs-inactive`     | -            | `string` | Set the tabs inactive variant and color.           |
 | `_tabsTrigger.tabs` | -            | `string` | Set the tabs variant and color via `_tabsTrigger`. |
 
 :::CodeGroup
@@ -84,11 +85,25 @@ badges:
 
 ## Slots
 
-| Name      | Props   | Description       |
-| --------- | ------- | ----------------- |
-| `list`    | `items` | The list slot.    |
-| `trigger` | -       | The trigger slot. |
-| `content` | `item`  | The content slot. |
+| Name      | Props   | Description                                                                               |
+| --------- | ------- | ----------------------------------------------------------------------------------------- |
+| `default` | -       | Allows advanced customization using sub-components, replacing the default tabs structure. |
+| `list`    | `items` | The container for tab triggers/buttons that users can click to switch between tabs.       |
+| `trigger` | `value` | The clickable tab button that activates its corresponding content panel.                  |
+| `content` | `value` | The content panel that displays when its corresponding trigger is selected.               |
+
+### Custom Rendering
+
+Use the `default` slot for full control over the tabs's structure. This allows you to compose the tabs using its individual sub-components (like `TabsList`, `TabsTrigger`, etc., listed in the [Components](#components) section), similar to libraries like `shadcn/ui`.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueTabsCustomRendering
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/tabs/ExampleVueTabsCustomRendering.vue
+::
+:::
 
 ## Presets
 
@@ -103,10 +118,6 @@ badges:
 :::CodeGroup
 ::div{label="Tabs.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/Tabs.vue
-
-::
-::div{label="TabsRoot.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsRoot.vue
 
 ::
 ::div{label="TabsList.vue" icon="i-vscode-icons-file-type-vue"}
