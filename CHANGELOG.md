@@ -1,3 +1,12 @@
+## [0.55.4](https://github.com/una-ui/una-ui/compare/v0.55.3...v0.55.4) (2025-05-22)
+
+
+### Bug Fixes
+
+* **Tabs:** update size logic; refactor props logic ([8689523](https://github.com/una-ui/una-ui/commit/868952310142b402c7038de29598d0369b2bd5b6))
+
+
+
 ## [0.55.3](https://github.com/una-ui/una-ui/compare/v0.55.2...v0.55.3) (2025-05-22)
 
 
