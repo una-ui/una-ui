@@ -26,6 +26,8 @@ const mergeVariants = computed(() => {
     'dropdown-menu': props.dropdownMenu,
     'toggle-on': props.toggleOn,
     'toggle-off': props.toggleOff,
+    'tabs-active': props.tabsActive,
+    'tabs-inactive': props.tabsInactive,
     'navigation-menu': props.navigationMenu,
     'navigation-menu-link': props.navigationMenuLink,
   }

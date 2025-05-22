@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <div class="flex flex-col gap-6">
     <NTabs default-value="account" class="max-w-[400px]">

@@ -18,6 +18,7 @@ const delegatedProps = computed(() => {
 
 <template>
   <TabsContent
+    data-slot="tabs-content"
     v-bind="{ ...delegatedProps, ...$attrs }"
     :class="cn(
       'tabs-content',
