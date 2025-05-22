@@ -66,7 +66,7 @@ const [DefineTemplate, ReuseTemplate] = createReusableTemplate()
       una?.btn,
       props.class,
     )"
-    :disabled="to ? null : disabled || loading"
+    :disabled="disabled || loading"
     :aria-label="props.ariaLabel ? props.ariaLabel : props.icon ? props.label : undefined"
     :rounded
     :size
