@@ -1,3 +1,12 @@
+## [0.55.3](https://github.com/una-ui/una-ui/compare/v0.55.2...v0.55.3) (2025-05-22)
+
+
+### Bug Fixes
+
+* **Button:** correct disabled logic ([2748519](https://github.com/una-ui/una-ui/commit/2748519f856f0525d1f1d5716b40274c77ddc8be))
+
+
+
 ## [0.55.2](https://github.com/una-ui/una-ui/compare/v0.55.1...v0.55.2) (2025-05-21)
 
 
