@@ -120,10 +120,6 @@ Use the `default` slot for full control over the tabs's structure. This allows y
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/Tabs.vue
 
 ::
-::div{label="TabsRoot.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsRoot.vue
-
-::
 ::div{label="TabsList.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/tabs/TabsList.vue
 
