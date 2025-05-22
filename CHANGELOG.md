@@ -1,3 +1,7 @@
+# [0.56.0](https://github.com/una-ui/una-ui/compare/v0.55.4...v0.56.0) (2025-05-22)
+
+
+
 ## [0.55.4](https://github.com/una-ui/una-ui/compare/v0.55.3...v0.55.4) (2025-05-22)
 
 
