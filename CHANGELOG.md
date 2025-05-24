@@ -1,3 +1,18 @@
+## [0.56.1](https://github.com/una-ui/una-ui/compare/v0.56.0...v0.56.1) (2025-05-24)
+
+
+### Bug Fixes
+
+* **Form:** enhance label-required preset ([b6b1fea](https://github.com/una-ui/una-ui/commit/b6b1fea0ba656031c86dd1e960be81ac64f26332))
+* **Form:** remove redundancy in defining blocks ([4b8d928](https://github.com/una-ui/una-ui/commit/4b8d928760e1f7247d3a810c074d009bc548add5))
+
+
+### Reverts
+
+* Revert "chore(deps): update nuxt framework to ^3.17.4 (#413)" (#415) ([8c67214](https://github.com/una-ui/una-ui/commit/8c6721464e98c7c5413e270cb221f84a808c9d53)), closes [#413](https://github.com/una-ui/una-ui/issues/413) [#415](https://github.com/una-ui/una-ui/issues/415)
+
+
+
 # [0.56.0](https://github.com/una-ui/una-ui/compare/v0.55.4...v0.56.0) (2025-05-22)
 
 
