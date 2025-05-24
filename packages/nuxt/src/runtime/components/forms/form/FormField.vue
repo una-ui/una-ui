@@ -42,72 +42,65 @@ const statusClassVariants = computed(() => {
     >
       <slot name="top">
         <div
+          v-if="label || hint || description || $slots.label || $slots.hint || $slots.description"
           :class="cn(
             'form-field-top-wrapper',
             una?.formFieldTopWrapper,
           )"
         >
           <div
-            v-if="label || hint || description"
+            v-if="label || hint"
             :class="cn(
-              'form-field-top-wrapper',
-              una?.formFieldTopWrapper,
+              'form-field-top-wrapper-inner',
+              una?.formFieldTopWrapperInner,
             )"
           >
             <div
-              v-if="label || hint"
               :class="cn(
-                'form-field-top-wrapper-inner',
-                una?.formFieldTopWrapperInner,
+                'form-field-label-wrapper',
+                una?.formFieldLabelWrapper,
               )"
             >
-              <div
-                :class="cn(
-                  'form-field-label-wrapper',
-                  una?.formFieldLabelWrapper,
-                )"
-              >
-                <slot name="label">
-                  <FormLabel
-                    :una
-                  >
-                    <span>
-                      {{ label }}
-                    </span>
-
-                    <span
-                      v-if="required"
-                      :class="cn(
-                        'form-field-label-required',
-                        una?.formFieldLabelRequired,
-                      )"
-                    />
-                  </FormLabel>
-                </slot>
-              </div>
-
-              <slot name="hint">
-                <span
-                  v-if="hint"
-                  :class="cn(
-                    'form-field-hint',
-                    una?.formFieldHint,
-                  )"
+              <slot name="label">
+                <FormLabel
+                  :una
                 >
-                  {{ hint }}
-                </span>
+                  <span>
+                    {{ label }}
+                  </span>
+
+                  <span
+                    v-if="required"
+                    :class="cn(
+                      'form-field-label-required',
+                      una?.formFieldLabelRequired,
+                    )"
+                  />
+                </FormLabel>
               </slot>
             </div>
 
-            <slot name="description">
-              <FormDescription
-                v-if="description"
-                :una
+            <slot name="hint">
+              <span
+                v-if="hint"
+                :class="cn(
+                  'form-field-hint',
+                  una?.formFieldHint,
+                )"
               >
-                {{ description }}
-              </FormDescription>
+                {{ hint }}
+              </span>
             </slot>
           </div>
+
+          <slot name="description">
+            <FormDescription
+              v-if="description"
+              :una
+            >
+              {{ description }}
+            </FormDescription>
+          </slot>
         </div>
       </slot>
 
@@ -122,6 +115,7 @@ const statusClassVariants = computed(() => {
 
       <slot name="bottom">
         <div
+          v-if="$slots.message || message || errorMessage"
           :class="cn(
             'form-field-bottom-wrapper',
             una?.formFieldBottomWrapper,
