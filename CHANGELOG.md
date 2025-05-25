@@ -1,3 +1,12 @@
+## [0.56.2](https://github.com/una-ui/una-ui/compare/v0.56.1...v0.56.2) (2025-05-25)
+
+
+### Bug Fixes
+
+* **Button:** add shrink-0 to btn preset ([3965f48](https://github.com/una-ui/una-ui/commit/3965f488b24e5f5e2617dec4f138aaf4ee072ce9))
+
+
+
 ## [0.56.1](https://github.com/una-ui/una-ui/compare/v0.56.0...v0.56.1) (2025-05-24)
 
 
