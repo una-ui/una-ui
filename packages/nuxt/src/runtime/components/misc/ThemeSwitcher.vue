@@ -72,7 +72,7 @@ function shuffleTheme(): void {
 
 <template>
   <Popover
-    :_popover-content="{ align: 'end', class: 'w-73 bg-muted' }"
+    :_popover-content="{ align: 'end', class: 'w-73' }"
   >
     <template #trigger="{ open }">
       <slot name="trigger" :open="open">
@@ -142,7 +142,7 @@ function shuffleTheme(): void {
 
         <div class="space-y-1">
           <Label for="radius" class="text-xs"> Radius </Label>
-          <div class="grid grid-cols-5 gap-2 py-1.5">
+          <div class="grid grid-cols-3 gap-2 py-1.5">
             <Button
               v-for="r in RADIUS"
               :key="r"
@@ -167,7 +167,7 @@ function shuffleTheme(): void {
 
           <div class="flex justify-around py-1.5 space-x-2">
             <Button
-              btn="solid-gray block"
+              btn="solid-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'system' }"
               leading="i-radix-icons-desktop"
               class="px-3"
@@ -177,7 +177,7 @@ function shuffleTheme(): void {
             />
 
             <Button
-              btn="solid-gray block"
+              btn="solid-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'light' }"
               leading="i-radix-icons-sun"
               class="px-3"
@@ -187,7 +187,7 @@ function shuffleTheme(): void {
             />
 
             <Button
-              btn="solid-gray block"
+              btn="solid-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'dark' }"
               leading="i-radix-icons-moon"
               class="px-3"
@@ -200,17 +200,17 @@ function shuffleTheme(): void {
 
         <Separator />
 
-        <div class="flex space-x-3">
+        <div class="grid grid-cols-2 gap-2">
           <Button
             size="xs"
-            btn="solid-gray block"
+            btn="solid-gray"
             label="Reset"
             leading="i-radix-icons-reload"
             @click="reset"
           />
           <Button
             size="xs"
-            btn="solid block"
+            btn="solid"
             class="transition"
             label="Shuffle"
             leading="i-lucide-paintbrush"
