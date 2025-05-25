@@ -16,7 +16,7 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-trigger-warning-icon': 'i-warning',
 
   // components
-  'select-trigger': 'px-0.8571428571428571em w-full [&>span]:truncate',
+  'select-trigger': 'px-0.8571428571428571em w-full shrink [&>span]:truncate',
   'select-trigger-trailing-icon': 'i-lucide-chevron-down',
   'select-trigger-trailing': 'size-1.1428571428571428em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled) rtl:mr-auto ltr:ml-auto',
   'select-trigger-leading': 'size-1.1428571428571428em',
