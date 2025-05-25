@@ -1,3 +1,12 @@
+## [0.56.3](https://github.com/una-ui/una-ui/compare/v0.56.2...v0.56.3) (2025-05-25)
+
+
+### Bug Fixes
+
+* **SelectTrigger:** add shrink class to select-trigger preset ([9d28802](https://github.com/una-ui/una-ui/commit/9d28802460954af68f643c89ab1956a80c290795))
+
+
+
 ## [0.56.2](https://github.com/una-ui/una-ui/compare/v0.56.1...v0.56.2) (2025-05-25)
 
 
