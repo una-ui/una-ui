@@ -8,10 +8,9 @@ const items = [
     label: 'Breadcrumb',
   },
   {
-    label: 'Navigation',
     children: [
       {
-        label: 'Test',
+        label: 'Navigation',
       },
       {
         label: 'Test2',
@@ -59,6 +58,12 @@ const items2 = [
   <div class="flex flex-col gap-4">
     <NBreadcrumb
       :items
+      :_dropdownMenu="{
+        _dropdownMenuContent: {
+          align: 'end',
+          side: 'bottom',
+        },
+      }"
     />
 
     <NBreadcrumb

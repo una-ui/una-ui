@@ -1,5 +1,6 @@
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
+import type { NDropdownMenuProps } from './dropdown-menu'
 
 interface BaseExtensions { class?: HTMLAttributes['class'] }
 
@@ -36,6 +37,7 @@ export interface NBreadcrumbProps extends BaseExtensions, Pick<NBreadcrumbLinkPr
   _breadcrumbList?: Partial<NBreadcrumbListProps>
   _breadcrumbLink?: Partial<NBreadcrumbLinkProps>
   _breadcrumbEllipsis?: Partial<NBreadcrumbEllipsisProps>
+  _dropdownMenu?: Partial<NDropdownMenuProps>
 
   /**
    * `UnaUI` preset configuration
