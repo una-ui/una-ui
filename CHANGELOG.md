@@ -1,3 +1,13 @@
+## [0.56.4](https://github.com/una-ui/una-ui/compare/v0.56.3...v0.56.4) (2025-05-25)
+
+
+### Features
+
+* **ThemeSwither:** add additional radius options ([34ec47d](https://github.com/una-ui/una-ui/commit/34ec47d2af9c65008d56c70978d48b2ad1fe8e5e))
+* **ThemeSwither:** improve styles and configuration ([b7fc5c6](https://github.com/una-ui/una-ui/commit/b7fc5c685557442d119138eb68c88cee52ac90d3))
+
+
+
 ## [0.56.3](https://github.com/una-ui/una-ui/compare/v0.56.2...v0.56.3) (2025-05-25)
 
 
