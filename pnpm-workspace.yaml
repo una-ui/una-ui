@@ -3,7 +3,7 @@ packages:
   - packages/**
   - playground/**
 catalog:
-  '@antfu/eslint-config': ^4.13.1
+  '@antfu/eslint-config': ^4.13.2
   '@antfu/ni': ^24.4.0
   '@faker-js/faker': ^9.8.0
   '@headlessui/vue': ^1.7.23
@@ -22,7 +22,7 @@ catalog:
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.15.19
+  '@types/node': ^22.15.23
   '@una-ui/content': ^48.2.0
   '@unocss/core': ^66.0.0
   '@unocss/eslint-config': ^66.0.0
@@ -51,7 +51,7 @@ catalog:
   nuxt: ^3.17.4
   ohash: ^1.1.6
   pathe: ^2.0.3
-  reka-ui: ^2.2.1
+  reka-ui: ^2.3.0
   rimraf: ^6.0.1
   sass: ^1.89.0
   simple-git: ^3.27.0
@@ -64,4 +64,4 @@ catalog:
   vaul-vue: ^0.4.1
   vitest: ^3.1.4
   vue-tsc: ^2.2.10
-  zod: ^3.25.7
+  zod: ^3.25.30
