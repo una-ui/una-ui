@@ -1,3 +1,12 @@
+# [0.57.0](https://github.com/una-ui/una-ui/compare/v0.56.5...v0.57.0) (2025-05-27)
+
+
+### Bug Fixes
+
+* **Nuxt:** use reactiveOmit instead of computed to delegate props ([#419](https://github.com/una-ui/una-ui/issues/419)) ([e4b72d7](https://github.com/una-ui/una-ui/commit/e4b72d7ef2325949cda514b9fcc6f92b46d4d636))
+
+
+
 ## [0.56.5](https://github.com/una-ui/una-ui/compare/v0.56.4...v0.56.5) (2025-05-27)
 
 
