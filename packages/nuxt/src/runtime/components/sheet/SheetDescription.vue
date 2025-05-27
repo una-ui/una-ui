@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import type { NSheetDescriptionProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { DialogDescription } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../utils'
 
 const props = defineProps<NSheetDescriptionProps>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

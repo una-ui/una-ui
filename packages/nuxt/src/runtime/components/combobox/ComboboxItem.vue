@@ -1,20 +1,16 @@
 <script setup lang="ts" generic="T">
 import type { ComboboxItemEmits } from 'reka-ui'
 import type { NComboboxItemProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { ComboboxItem, useForwardPropsEmits } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NComboboxItemProps<T>>(), {
   size: 'sm',
 })
 const emits = defineEmits<ComboboxItemEmits>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>

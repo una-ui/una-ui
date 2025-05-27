@@ -1,23 +1,19 @@
 <script setup lang="ts">
 import type { NDropdownMenuSubTriggerProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import {
   DropdownMenuSubTrigger,
   useForwardProps,
 } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../../utils'
+
 import Button from '../Button.vue'
 
 const props = withDefaults(defineProps<NDropdownMenuSubTriggerProps>(), {
   dropdownMenuItem: '~',
   rounded: 'sm',
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { NPaginationPrevProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { PaginationPrev, useForwardProps } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../../utils'
+
 import Button from '../../elements/Button.vue'
 
 const props = withDefaults(defineProps<NPaginationPrevProps>(), {
@@ -11,12 +12,7 @@ const props = withDefaults(defineProps<NPaginationPrevProps>(), {
   icon: true,
   label: 'pagination-prev-icon',
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>

@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import type { NSelectSeparator } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { SelectSeparator } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../../utils'
 
 const props = defineProps<NSelectSeparator>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>
