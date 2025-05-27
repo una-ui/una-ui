@@ -1,3 +1,14 @@
+## [0.56.5](https://github.com/una-ui/una-ui/compare/v0.56.4...v0.56.5) (2025-05-27)
+
+
+### Features
+
+* **Breadcrumb:** add dropdown-menu props support ([a43d024](https://github.com/una-ui/una-ui/commit/a43d024fbe9629e4b210999331fe774cff08364a))
+* **Dialog:** improve dialog-footer spacing ([88ad8d5](https://github.com/una-ui/una-ui/commit/88ad8d537a8c4039636f315a9cb25484d19ff522))
+* **Tabs:** improve style presets ([6ddcb8e](https://github.com/una-ui/una-ui/commit/6ddcb8eb1de2286865634f4b10a99bddd5eb1c46))
+
+
+
 ## [0.56.4](https://github.com/una-ui/una-ui/compare/v0.56.3...v0.56.4) (2025-05-25)
 
 
