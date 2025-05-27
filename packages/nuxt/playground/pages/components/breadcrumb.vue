@@ -58,7 +58,7 @@ const items2 = [
   <div class="flex flex-col gap-4">
     <NBreadcrumb
       :items
-      :_dropdownMenu="{
+      :_dropdown-menu="{
         _dropdownMenuContent: {
           align: 'end',
           side: 'bottom',

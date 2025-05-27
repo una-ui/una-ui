@@ -14,10 +14,10 @@ badges:
 
 ### Basic
 
-| Prop       | Default | Type      | Description                 |
-| ---------- | ------- | --------- | --------------------------- |
-| `content`  | -       | `string`  | Set the tooltip content.    |
-| `disabled` | -       | `boolean` | Set to disable the tooltip. |
+| Prop       | Default | Type      | Description              |
+| ---------- | ------- | --------- | ------------------------ |
+| `content`  | -       | `string`  | Set the tabs content.    |
+| `disabled` | -       | `boolean` | Set to disable the tabs. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
