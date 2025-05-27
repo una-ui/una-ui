@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import type { NSelectGroupProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { SelectGroup } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../../utils'
 
 const props = defineProps<NSelectGroupProps>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

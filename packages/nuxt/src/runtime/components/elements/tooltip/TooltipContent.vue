@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { TooltipContentEmits } from 'reka-ui'
 import type { NTooltipContentProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { TooltipContent, TooltipPortal, useForwardPropsEmits } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../../utils'
 
 defineOptions({
@@ -16,11 +16,7 @@ const props = withDefaults(defineProps<NTooltipContentProps>(), {
 
 const emits = defineEmits<TooltipContentEmits>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>

@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import type { NDrawerTitleProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { DrawerTitle } from 'vaul-vue'
-import { computed } from 'vue'
+
 import { cn } from '../../utils'
 
 const props = defineProps<NDrawerTitleProps>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

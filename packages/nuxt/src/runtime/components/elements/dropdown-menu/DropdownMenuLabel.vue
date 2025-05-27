@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import type { NDropdownMenuLabelProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { DropdownMenuLabel, useForwardProps } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../../utils'
 
 const props = defineProps<NDropdownMenuLabelProps>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>

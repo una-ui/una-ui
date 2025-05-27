@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import type { NComboboxViewportProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { ComboboxViewport, useForwardProps } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../utils'
 
 const props = defineProps<NComboboxViewportProps>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwarded = useForwardProps(delegatedProps)
 </script>

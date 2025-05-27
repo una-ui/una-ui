@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { NToastActionProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { ToastAction } from 'reka-ui'
-import { computed } from 'vue'
 import { cn, omitProps, randomId } from '../../../utils'
+
 import Button from '../../elements/Button.vue'
 
 defineOptions({
@@ -13,12 +14,7 @@ const props = withDefaults(defineProps<NToastActionProps>(), {
   btn: 'solid-white',
   size: 'xs',
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

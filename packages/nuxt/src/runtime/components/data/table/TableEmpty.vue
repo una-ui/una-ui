@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import type { NTableEmptyProps } from '../../../types'
-import { computed } from 'vue'
+import { reactiveOmit } from '@vueuse/core'
 import { cn, omitProps } from '../../../utils'
 import TableCell from './TableCell.vue'
+
 import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<NTableEmptyProps>(), {
   colspan: 1,
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

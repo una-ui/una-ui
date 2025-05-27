@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import type { NCardProps } from '../../../types/card'
-import { computed } from 'vue'
+import { reactiveOmit } from '@vueuse/core'
 import { cn } from '../../../utils'
 import CardContent from './CardContent.vue'
 import CardDescription from './CardDescription.vue'
 import CardFooter from './CardFooter.vue'
 import CardHeader from './CardHeader.vue'
+
 import CardTitle from './CardTitle.vue'
 
 defineOptions({
@@ -15,12 +16,7 @@ defineOptions({
 const props = withDefaults(defineProps<NCardProps>(), {
   card: 'outline-gray',
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

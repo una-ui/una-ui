@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import type { NPaginationEllipsisProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { PaginationEllipsis, useForwardProps } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../../utils'
+
 import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NPaginationEllipsisProps>(), {
   paginationEllipsis: '~',
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>

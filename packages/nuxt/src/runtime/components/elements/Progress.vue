@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { NProgressProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import {
   ProgressIndicator,
   ProgressRoot,
 } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../utils'
 
 const props = withDefaults(
@@ -14,12 +15,7 @@ const props = withDefaults(
     rounded: 'full',
   },
 )
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

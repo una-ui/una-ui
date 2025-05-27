@@ -4,18 +4,14 @@ import type { AcceptableValue } from 'reka-ui'
 
 <script setup lang="ts" generic="T extends AcceptableValue">
 import type { NComboboxGroupProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { ComboboxGroup } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../utils'
+
 import ComboboxLabel from './ComboboxLabel.vue'
 
 const props = defineProps<NComboboxGroupProps<T>>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>
