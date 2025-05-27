@@ -5,7 +5,7 @@ const items = ref([
     name: 'Account',
     tabsActive: 'solid-primary',
     _tabsTrigger: {
-      leading: 'i-heroicons-user-20-solid',
+      leading: 'i-lucide-user',
     },
   },
   {
@@ -13,7 +13,7 @@ const items = ref([
     name: 'Service Provider',
     _tabsTrigger: {
       tabsActive: 'soft-pink',
-      trailing: 'i-heroicons-chevron-right-20-solid',
+      leading: 'i-lucide-atom',
     },
   },
   {
@@ -21,6 +21,7 @@ const items = ref([
     name: 'Reviews',
     _tabsTrigger: {
       tabsActive: 'outline-orange',
+      leading: 'i-lucide-star',
     },
   },
 ])
@@ -30,6 +31,12 @@ const items = ref([
   <NTabs
     :items="items"
     default-value="account"
+    :_tabs-list="{
+      class: 'grid grid-cols-3 w-full',
+    }"
+    :_tabs-content="{
+      class: 'py-6 w-full',
+    }"
   >
     <template #content="{ item }">
       <div v-if="item.value === 'account'" class="flex flex-col items-start">

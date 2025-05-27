@@ -6,7 +6,7 @@ export const staticTabs: Record<`${TabsPrefix}-${string}` | TabsPrefix, string> 
   'tabs-disabled': 'n-disabled',
 
   // components
-  'tabs-trigger': '',
+  'tabs-trigger': 'py-0.25em h-[calc(100%-1px)]',
   'tabs-list': 'bg-muted text-muted inline-flex h-2.5714285714285716em w-fit items-center justify-center rounded-lg p-[3px]',
   'tabs-content': 'flex-1 outline-none',
 }

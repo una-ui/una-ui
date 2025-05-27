@@ -1,14 +1,11 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <div class="flex flex-col gap-6">
     <NTabs default-value="account" class="max-w-[400px]">
-      <NTabsList class="w-full">
-        <NTabsTrigger value="account" class="w-full" leading="i-lucide-user">
+      <NTabsList class="grid grid-cols-2 w-full">
+        <NTabsTrigger value="account" leading="i-lucide-user">
           Account
         </NTabsTrigger>
-        <NTabsTrigger value="password" class="w-full" leading="i-lucide-lock">
+        <NTabsTrigger value="password" leading="i-lucide-lock">
           Password
         </NTabsTrigger>
       </NTabsList>

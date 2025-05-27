@@ -19,7 +19,7 @@ const delegatedProps = reactiveOmit(props, ['class', 'size'])
     :size
     data-slot="tabs-trigger"
     :class="cn(
-      'tabs-trigger h-[calc(100%-1px)]',
+      'tabs-trigger',
       props.una?.tabsTrigger,
       props.class,
     )"
