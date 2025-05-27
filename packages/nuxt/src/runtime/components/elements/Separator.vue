@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import type { NSeparatorProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { Separator } from 'reka-ui'
-import { cn, omitProps } from '../../utils'
+import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NSeparatorProps>(), {
   orientation: 'horizontal',
 })
 
-const delegatedProps = reactiveOmit(props, ['una'])
+const delegatedProps = reactiveOmit(props, ['una', 'separatorPosition'])
 </script>
 
 <template>
   <Separator
-    v-bind="omitProps(delegatedProps, ['una', 'separatorPosition'])"
+    v-bind="delegatedProps"
     :class="
       cn(
         'separator',
