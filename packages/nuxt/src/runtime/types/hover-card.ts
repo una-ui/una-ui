@@ -9,16 +9,16 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-export interface NHoverCardProps extends HoverCardRootProps, BaseExtensions {
+export interface NHoverCardProps extends HoverCardRootProps, Omit<NHoverCardTriggerProps, 'una' | 'size'>, BaseExtensions {
   /**
    * Allows you to add `UnaUI` hover-card preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/hover-card.ts
    * @example
-   * hover-card="gray"
+   * hovercard="outline-gray"
    */
-  hoverCard?: HTMLAttributes['class']
+  hovercard?: HTMLAttributes['class']
   /** Whether to show the arrow or not */
   indicator?: boolean
 
@@ -37,7 +37,7 @@ export interface NHoverCardProps extends HoverCardRootProps, BaseExtensions {
   una?: NHoverCardUnaProps
 }
 
-export interface NHoverCardContentProps extends HoverCardContentProps, BaseExtensions {
+export interface NHoverCardContentProps extends HoverCardContentProps, Pick<NHoverCardProps, 'hovercard'>, BaseExtensions {
   /** Additional properties for the una component */
   una?: Pick<NHoverCardUnaProps, 'hoverCardContent'>
 }
@@ -47,7 +47,7 @@ export interface NHoverCardTriggerProps extends HoverCardTriggerProps, Omit<NBut
   una?: Pick<NHoverCardUnaProps, 'hoverCardTrigger'> & NButtonProps['una']
 }
 
-export interface NHoverCardArrowProps extends HoverCardArrowProps, BaseExtensions {
+export interface NHoverCardArrowProps extends HoverCardArrowProps, Pick<NHoverCardProps, 'hovercard'>, BaseExtensions {
   /** Additional properties for the una component */
   una?: Pick<NHoverCardUnaProps, 'hoverCardArrow'>
 }
