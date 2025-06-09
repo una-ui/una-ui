@@ -77,3 +77,8 @@ export function isEqualObject(...objects: Record<string, any>[]): boolean {
     return JSON.stringify(obj) === JSON.stringify(objects[i - 1])
   })
 }
+
+export function looseToNumber(val: any): any {
+  const n = Number.parseFloat(val)
+  return Number.isNaN(n) ? val : n
+}
