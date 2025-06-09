@@ -1,3 +1,13 @@
+# [0.58.0](https://github.com/una-ui/una-ui/compare/v0.57.0...v0.58.0) (2025-06-09)
+
+
+### Features
+
+* add support for model modifiers ([#423](https://github.com/una-ui/una-ui/issues/423)) ([7b23ff2](https://github.com/una-ui/una-ui/commit/7b23ff2cf8e374fbd7f8fd31b5aef14c872c0980))
+* **Table:** update and improve types ([1cbf091](https://github.com/una-ui/una-ui/commit/1cbf09153761ead6e39aa7aa738837283b785a92))
+
+
+
 # [0.57.0](https://github.com/una-ui/una-ui/compare/v0.56.5...v0.57.0) (2025-05-27)
 
 
