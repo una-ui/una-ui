@@ -27,16 +27,16 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
     v-slot="{ open }"
     v-bind="forwarded"
   >
-    <HoverCardTrigger
-      as-child
-      :una
-      v-bind="_hoverCardTrigger"
-    >
-      <slot name="trigger" :open />
-    </HoverCardTrigger>
-    <slot name="content">
+    <slot>
+      <HoverCardTrigger
+        as-child
+        :una
+        v-bind="_hoverCardTrigger"
+      >
+        <slot name="trigger" :open />
+      </HoverCardTrigger>
       <HoverCardContent v-bind="_hoverCardContent" :hovercard :una>
-        <slot />
+        <slot name="content" />
         <HoverCardArrow v-if="props.arrow" v-bind="_hoverCardArrow" :hovercard :una />
       </HoverCardContent>
     </slot>

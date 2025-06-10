@@ -8,7 +8,9 @@ const [DefineContent, ReuseContent] = createReusableTemplate()
       <template #trigger>
         <NAvatar src="https://github.com/vuejs.png" class="cursor-pointer" />
       </template>
-      <ReuseContent />
+      <template #content>
+        <ReuseContent />
+      </template>
     </NHoverCard>
     <NHoverCard hovercard="soft-primary" arrow>
       <template #trigger>
@@ -16,7 +18,9 @@ const [DefineContent, ReuseContent] = createReusableTemplate()
           With color
         </NButton>
       </template>
-      <ReuseContent />
+      <template #content>
+        <ReuseContent />
+      </template>
     </NHoverCard>
   </div>
 
