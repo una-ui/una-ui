@@ -37,7 +37,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
     <slot name="content">
       <HoverCardContent v-bind="_hoverCardContent" :hovercard :una>
         <slot />
-        <HoverCardArrow v-if="props.indicator" v-bind="_hoverCardArrow" :hovercard :una />
+        <HoverCardArrow v-if="props.arrow" v-bind="_hoverCardArrow" :hovercard :una />
       </HoverCardContent>
     </slot>
   </HoverCardRoot>

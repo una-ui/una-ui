@@ -20,7 +20,7 @@ export interface NHoverCardProps extends HoverCardRootProps, Omit<NHoverCardTrig
    */
   hovercard?: HTMLAttributes['class']
   /** Whether to show the arrow or not */
-  indicator?: boolean
+  arrow?: boolean
 
   /** Props for the hover card content */
   _hoverCardContent?: Partial<NHoverCardContentProps>

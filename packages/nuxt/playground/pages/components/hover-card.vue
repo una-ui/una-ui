@@ -4,13 +4,13 @@ const [DefineContent, ReuseContent] = createReusableTemplate()
 
 <template>
   <div class="flex items-center space-x-8">
-    <NHoverCard indicator>
+    <NHoverCard arrow>
       <template #trigger>
         <NAvatar src="https://github.com/vuejs.png" class="cursor-pointer" />
       </template>
       <ReuseContent />
     </NHoverCard>
-    <NHoverCard hovercard="soft-primary" indicator>
+    <NHoverCard hovercard="soft-primary" arrow>
       <template #trigger>
         <NButton btn="soft-primary" class="cursor-pointer">
           With color
