@@ -135,48 +135,47 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
 }
 
 export interface NTableBodyProps extends PrimitiveProps {
+  [key: string]: any
   class?: HTMLAttributes['class']
-
   una?: Pick<NTableUnaProps, 'tableBody'>
 }
 
 export interface NTableHeadProps extends PrimitiveProps {
+  [key: string]: any
   class?: HTMLAttributes['class']
-
   dataPinned?: 'left' | 'right' | false
-
   una?: Pick<NTableUnaProps, 'tableHead'>
 }
 
 export interface NTableHeaderProps extends PrimitiveProps {
+  [key: string]: any
   class?: HTMLAttributes['class']
-
   una?: Pick<NTableUnaProps, 'tableHeader'>
 }
 
 export interface NTableFooterProps extends PrimitiveProps {
+  [key: string]: any
   class?: HTMLAttributes['class']
-
   una?: Pick<NTableUnaProps, 'tableFooter'>
 }
 
 export interface NTableRowProps extends PrimitiveProps {
+  [key: string]: any
   class?: HTMLAttributes['class']
   una?: Pick<NTableUnaProps, 'tableRow'>
 }
 
 export interface NTableCellProps extends PrimitiveProps {
+  [key: string]: any
   class?: HTMLAttributes['class']
-
   dataPinned?: 'left' | 'right' | false
-
   una?: Pick<NTableUnaProps, 'tableCell'>
 }
 
 export interface NTableEmptyProps {
+  [key: string]: any
   class?: HTMLAttributes['class']
   colspan?: number
-
   _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
 
@@ -184,21 +183,20 @@ export interface NTableEmptyProps {
 }
 
 export interface NTableLoadingProps {
+  [key: string]: any
   size?: HTMLAttributes['class']
   enabled?: boolean
   class?: HTMLAttributes['class']
   colspan?: number
-
   _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
   _tableProgress?: NProgressProps
-
   una?: Pick<NTableUnaProps, 'tableLoading' | 'tableLoadingCell' | 'tableLoadingRow'>
 }
 
 export interface NTableCaptionProps extends PrimitiveProps {
+  [key: string]: any
   class?: HTMLAttributes['class']
-
   una?: Pick<NTableUnaProps, 'tableCaption'>
 }
 
