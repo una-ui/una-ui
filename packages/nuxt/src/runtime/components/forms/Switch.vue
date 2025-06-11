@@ -12,8 +12,8 @@ import NIcon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NSwitchProps>(), {
   size: 'md',
-  switchChecked: '~',
-  switchUnchecked: '~',
+  switchChecked: 'primary',
+  switchUnchecked: 'gray',
 })
 
 const emit = defineEmits<SwitchRootEmits>()

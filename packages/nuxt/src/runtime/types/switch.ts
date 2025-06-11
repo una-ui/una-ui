@@ -2,6 +2,7 @@ import type { SwitchRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 export interface NSwitchProps extends SwitchRootProps {
+  class?: HTMLAttributes['class']
   /**
    * Add a loading indicator to the switch.
    * This will also disable the switch.
