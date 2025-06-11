@@ -39,7 +39,7 @@ const rootPropsEmits = useForwardPropsEmits(reactivePick(props, 'as', 'asChild',
   >
     <SwitchThumb
       :class="cn(
-        'switch-thumb',
+        'peer switch-thumb',
         una?.switchThumb,
         modelValue
           ? 'switch-thumb-checked'
