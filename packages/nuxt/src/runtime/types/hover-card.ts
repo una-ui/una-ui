@@ -16,9 +16,9 @@ export interface NHoverCardProps extends HoverCardRootProps, Omit<NHoverCardTrig
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/hover-card.ts
    * @example
-   * hovercard="outline-gray"
+   * hover-card="outline-gray"
    */
-  hovercard?: HTMLAttributes['class']
+  hoverCard?: HTMLAttributes['class']
   /** Whether to show the arrow or not */
   arrow?: boolean
 
@@ -37,7 +37,7 @@ export interface NHoverCardProps extends HoverCardRootProps, Omit<NHoverCardTrig
   una?: NHoverCardUnaProps
 }
 
-export interface NHoverCardContentProps extends HoverCardContentProps, Pick<NHoverCardProps, 'hovercard'>, BaseExtensions {
+export interface NHoverCardContentProps extends HoverCardContentProps, Pick<NHoverCardProps, 'hoverCard'>, BaseExtensions {
   /** Additional properties for the una component */
   una?: Pick<NHoverCardUnaProps, 'hoverCardContent'>
 }
@@ -47,7 +47,7 @@ export interface NHoverCardTriggerProps extends HoverCardTriggerProps, Omit<NBut
   una?: Pick<NHoverCardUnaProps, 'hoverCardTrigger'> & NButtonProps['una']
 }
 
-export interface NHoverCardArrowProps extends HoverCardArrowProps, Pick<NHoverCardProps, 'hovercard'>, BaseExtensions {
+export interface NHoverCardArrowProps extends HoverCardArrowProps, Pick<NHoverCardProps, 'hoverCard'>, BaseExtensions {
   /** Additional properties for the una component */
   una?: Pick<NHoverCardUnaProps, 'hoverCardArrow'>
 }
