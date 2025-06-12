@@ -28,8 +28,8 @@ const forwarded = useForwardProps(delegatedProps)
       :class="
         cn(
           'hover-card-content',
-          props.class,
           props.una?.hoverCardContent,
+          props.class,
         )
       "
       :hover-card

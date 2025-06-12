@@ -17,8 +17,8 @@ const forwarded = reactiveOmit(props, 'class', 'una')
     data-slot="hover-card-arrow"
     :class="cn(
       'hover-card-arrow',
-      props.class,
       props.una?.hoverCardArrow,
+      props.class,
     )"
     :hover-card
   />
