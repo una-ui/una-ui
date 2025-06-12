@@ -101,3 +101,34 @@ Use the `default` slot for full control over the hover-card's structure. This al
 @@@ ./components/content/examples/vue/hover-card/ExampleVueHoverCardCustomRendering.vue
 ::
 :::
+
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/hover-card.ts [shortcuts/hover-card.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/hover-card.ts [types/hover-card.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="HoverCard.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/hover-card/HoverCard.vue
+
+::
+::div{label="HoverCardContent.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/hover-card/HoverCardContent.vue
+
+::
+::div{label="HoverCardArrow.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/hover-card/HoverCardArrow.vue
+
+::
+::div{label="HoverCardContent.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/hover-card/HoverCardContent.vue
+
+::
+::div{label="HoverCardTrigger.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/hover-card/HoverCardTrigger.vue
+:::
