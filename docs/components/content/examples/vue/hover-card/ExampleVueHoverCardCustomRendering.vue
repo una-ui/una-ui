@@ -1,17 +1,36 @@
 <template>
   <div class="grid h-28 place-items-center">
     <NHoverCard>
-      <NHoverCardTrigger>
-        <NAvatar src="https://avatars.githubusercontent.com/u/140925492?s=200&v=4" class="cursor-pointer" />
+      <NHoverCardTrigger as-child>
+        <NButton btn="link-black">
+          @nuxt
+        </NButton>
       </NHoverCardTrigger>
-      <NHoverCardContent side="right" class="w-fit px-4 py-1.5">
-        <div class="flex items-center space-x-2">
-          <NAvatar avatar="~" square="8" src="https://avatars.githubusercontent.com/u/140925492?s=200&v=4" />
-          <h4 class="text-sm font-semibold">
-            una-ui
-          </h4>
+      <NHoverCardContent class="w-80" side="right">
+        <div class="flex justify-between gap-4">
+          <NAvatar
+            src="https://github.com/nuxt.png"
+            alt="Vercel"
+            label="VC"
+          />
+          <div class="flex flex-col gap-1">
+            <h4 class="text-sm font-semibold">
+              @nuxt
+            </h4>
+            <p class="text-sm">
+              The Intuitive Vue Framework - created and maintained by @nuxt.
+            </p>
+            <div class="mt-1 flex items-center gap-2">
+              <NIcon
+                name="i-lucide-calendar"
+                class="text-muted"
+              />
+              <span class="text-xs text-muted">
+                Joined December 2021
+              </span>
+            </div>
+          </div>
         </div>
-        <NHoverCardArrow />
       </NHoverCardContent>
     </NHoverCard>
   </div>
