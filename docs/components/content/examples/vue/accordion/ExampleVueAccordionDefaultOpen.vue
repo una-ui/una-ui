@@ -19,7 +19,7 @@ const items = [
 <template>
   <NAccordion
     :items="items"
-    multiple
-    default-open
+
+    default-open multiple
   />
 </template>
