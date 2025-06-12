@@ -16,6 +16,7 @@ export default function presetUna(options: unaUIOptions = {
     name: '@una-ui/preset',
     options,
     shortcuts,
+    separators: [':'],
     theme: mergeDeep<Theme>(unoTheme, {
       container: {
         center: true,
