@@ -35,7 +35,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
 export const dynamicInput: [RegExp, (params: RegExpExecArray) => string][] = [
   // config
   [/^input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:ring-${c}-500 dark:focus-visible:ring-${c}-400 focus-visible:ring-1`],
-  [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder-${c}-500 dark:placeholder-${c}-400`],
+  [/^input-status(-(\S+))?$/, ([, , c = 'info']) => `text-${c}-700 dark:text-${c}-200 placeholder:text-${c}-500 dark:placeholder:text-${c}-400`],
 
   // variants
   [/^input-outline(-(\S+))?$/, ([, , c = 'primary']) => `border border-input input-focus-${c}`],
