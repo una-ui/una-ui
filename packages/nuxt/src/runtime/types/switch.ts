@@ -68,8 +68,8 @@ export interface NSwitchProps extends SwitchRootProps, BaseExtensions {
    */
   una?: {
     switch?: HTMLAttributes['class']
-    switchChecked?: HTMLAttributes['class']
-    switchUnchecked?: HTMLAttributes['class']
+    switchCheckedBase?: HTMLAttributes['class']
+    switchUncheckedBase?: HTMLAttributes['class']
 
     switchThumb?: HTMLAttributes['class']
     switchThumbChecked?: HTMLAttributes['class']
