@@ -12,7 +12,7 @@ const [DefineContent, ReuseContent] = createReusableTemplate()
         <ReuseContent />
       </template>
     </NHoverCard>
-    <NHoverCard hovercard="soft-primary" arrow>
+    <NHoverCard hover-card="soft-primary" arrow>
       <template #trigger>
         <NButton btn="soft-primary" class="cursor-pointer">
           With color

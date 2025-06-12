@@ -4,7 +4,7 @@ const [DefineContent, ReuseContent] = createReusableTemplate()
 
 <template>
   <div class="h-28 flex flex-wrap items-center justify-around gap-4">
-    <NHoverCard hovercard="soft-primary">
+    <NHoverCard hover-card="soft-primary">
       <template #trigger>
         <NButton btn="soft-primary">
           soft-primary
@@ -14,7 +14,7 @@ const [DefineContent, ReuseContent] = createReusableTemplate()
         <ReuseContent />
       </template>
     </NHoverCard>
-    <NHoverCard hovercard="outline-green">
+    <NHoverCard hover-card="outline-green">
       <template #trigger>
         <NButton btn="outline-green">
           outline-green
@@ -24,7 +24,7 @@ const [DefineContent, ReuseContent] = createReusableTemplate()
         <ReuseContent />
       </template>
     </NHoverCard>
-    <NHoverCard hovercard="soft-indigo">
+    <NHoverCard hover-card="soft-indigo">
       <template #trigger>
         <NButton btn="soft-indigo">
           soft-indigo
