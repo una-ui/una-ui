@@ -8,7 +8,11 @@
       </template>
       <template #content>
         <div class="flex justify-between space-x-4">
-          <NAvatar src="https://avatars.githubusercontent.com/u/140925492?s=200&v=4" />
+          <NAvatar
+            src="https://github.com/una-ui.png"
+            label="UNA"
+            avatar="~"
+          />
           <div class="space-y-1">
             <h4 class="text-sm font-semibold">
               @una-ui
