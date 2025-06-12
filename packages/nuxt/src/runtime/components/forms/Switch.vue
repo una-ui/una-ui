@@ -29,8 +29,8 @@ const rootPropsEmits = useForwardPropsEmits(reactivePick(props, 'as', 'asChild',
       'peer switch',
       una?.switch,
       modelValue
-        ? una?.switchChecked
-        : una?.switchUnchecked,
+        ? una?.switchCheckedBase
+        : una?.switchUncheckedBase,
     )"
     :disabled="disabled || loading"
     :switch-checked
