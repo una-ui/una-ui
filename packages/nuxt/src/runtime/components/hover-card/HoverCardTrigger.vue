@@ -15,7 +15,7 @@ const forwarded = useForwardProps(delegatedProps)
     data-slot="hover-card-trigger"
     v-bind="forwarded"
     :class="cn(
-      'hovercard-trigger',
+      'hover-card-trigger',
       props.una?.hoverCardTrigger,
       props.class,
     )"

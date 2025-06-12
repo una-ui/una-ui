@@ -14,12 +14,12 @@ const forwarded = reactiveOmit(props, 'class', 'una')
 <template>
   <HoverCardArrow
     v-bind="forwarded"
-    data-slot="hovercard-arrow"
+    data-slot="hover-card-arrow"
     :class="cn(
-      'hovercard-arrow',
+      'hover-card-arrow',
       props.class,
       props.una?.hoverCardArrow,
     )"
-    :hovercard
+    :hover-card
   />
 </template>

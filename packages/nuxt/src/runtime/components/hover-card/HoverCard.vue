@@ -8,7 +8,7 @@ import HoverCardContent from './HoverCardContent.vue'
 import HoverCardTrigger from './HoverCardTrigger.vue'
 
 const props = withDefaults(defineProps<NHoverCardProps>(), {
-  hovercard: 'outline-gray',
+  hoverCard: 'outline-gray',
 })
 const emits = defineEmits<HoverCardRootEmits>()
 
@@ -35,9 +35,9 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
       >
         <slot name="trigger" :open />
       </HoverCardTrigger>
-      <HoverCardContent v-bind="_hoverCardContent" :hovercard :una>
+      <HoverCardContent v-bind="_hoverCardContent" :hover-card :una>
         <slot name="content" />
-        <HoverCardArrow v-if="props.arrow" v-bind="_hoverCardArrow" :hovercard :una />
+        <HoverCardArrow v-if="props.arrow" v-bind="_hoverCardArrow" :hover-card :una />
       </HoverCardContent>
     </slot>
   </HoverCardRoot>

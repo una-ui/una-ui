@@ -27,12 +27,12 @@ const forwarded = useForwardProps(delegatedProps)
       v-bind="{ ...forwarded, ...$attrs }"
       :class="
         cn(
-          'hovercard-content',
+          'hover-card-content',
           props.class,
           props.una?.hoverCardContent,
         )
       "
-      :hovercard
+      :hover-card
     >
       <slot />
     </HoverCardContent>
