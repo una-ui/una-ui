@@ -18,17 +18,15 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   // loading
   'switch-loading-icon': 'text-gray animate-spin text-0.8em',
   'switch-loading-icon-name': 'i-loading',
-
-  'switch-focus-gray': 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
 }
 
 export const dynamicSwitch = [
   // base
-  [/^switch-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-${c}-600 dark:focus-visible:ring-${c}-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background`],
+  [/^switch-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:ring-3px focus-visible:outline-none focus-visible:border focus-visible:border-${c}-200 dark:focus-visible:border-${c}-800 focus-visible:ring-${c}-200/50 dark:focus-visible:ring-${c}-800/50`],
 
   // variants
   [/^switch-checked(-(\S+))?$/, ([, , c = 'primary']) => `data-[state=checked]:switch-focus-${c} data-[state=checked]:bg-${c}-600 dark:data-[state=checked]:bg-${c}-500`],
-  [/^switch-unchecked(-(\S+))?$/, ([, , c = 'gray']) => `data-[state=unchecked]:switch-focus-${c} data-[state=unchecked]:bg-${c}-200 dark:data-[state=unchecked]:bg-${c}-700/58`],
+  [/^switch-unchecked(-(\S+))?$/, ([, , c = 'gray']) => `data-[state=unchecked]:switch-focus-${c} data-[state=unchecked]:bg-${c}-200 dark:data-[state=unchecked]:bg-${c}-800/80`],
 ]
 
 export const _switch = [
