@@ -11,7 +11,7 @@ export const staticDropdownMenu: Record<`${DropdownMenuPrefix}-${string}` | Drop
   'dropdown-menu-trigger-trailing': 'ml-auto',
 
   // dropdown-menu-content
-  'dropdown-menu-content': 'z-50 min-w-32 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover shadow-md',
+  'dropdown-menu-content': 'z-50 min-w-32 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-md',
 
   // dropdown-menu-item
   'dropdown-menu-item-base': 'text-left transition-color focus-visible:outline-0 select-none',
@@ -36,7 +36,7 @@ export const staticDropdownMenu: Record<`${DropdownMenuPrefix}-${string}` | Drop
   'dropdown-menu-sub-trigger-leading': '',
   'dropdown-menu-sub-trigger-trailing': 'ml-auto opacity-75',
   'dropdown-menu-sub-trigger-trailing-icon': 'i-lucide-chevron-right',
-  'dropdown-menu-sub-content': 'z-50 min-w-32 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover shadow-lg',
+  'dropdown-menu-sub-content': 'z-50 min-w-32 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-lg',
 
 }
 
