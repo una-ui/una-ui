@@ -13,7 +13,7 @@ export const staticProgress: Record<`${ProgressPrefix}-${string}`, string> = {
   'progress-indicator': 'h-full w-full flex-1 bg-brand transition-all',
 
   // static
-  'progress-white': 'bg-inverted',
+  'progress-white': 'bg-foreground',
   'progress-black': 'bg-background',
 }
 

@@ -13,7 +13,7 @@ export const staticResizable: Record<`${ResizablePrefix}-${string}`, string> = {
 
   // static variants
   'resizable-handle-solid-gray': 'bg-border focus-visible:ring-foreground/58',
-  'resizable-handle-solid-black': 'bg-inverted focus-visible:ring-foreground/58',
+  'resizable-handle-solid-black': 'bg-foreground focus-visible:ring-foreground/58',
   'resizable-handle-outline-gray': 'ring-1 ring-ring focus-visible:ring-foreground/58',
 }
 

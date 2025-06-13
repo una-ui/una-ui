@@ -13,7 +13,7 @@ export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, strin
 
   // variants
   'badge-soft-gray': 'bg-muted text-muted-foreground n-gray-900 dark:n-gray-50 ring-1 ring-gray-700/10 dark:ring-gray-400/30',
-  'badge-solid-black': 'bg-inverted text-inverted n-gray-300 dark:n-gray-600',
+  'badge-solid-black': 'bg-foreground text-inverted n-gray-300 dark:n-gray-600',
   'badge-outline-white': 'bg-background text-foreground ring-1 ring-ring n-gray-600 dark:n-gray-300',
 }
 
