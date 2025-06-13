@@ -27,36 +27,6 @@
 }
 
 :root {
-  --c-gray-0: rgb(255 255 255);
-  --c-gray-50: rgb(var(--una-gray-50));
-  --c-gray-100: rgb(var(--una-gray-100));
-  --c-gray-200: rgb(var(--una-gray-200));
-  --c-gray-300: rgb(var(--una-gray-300));
-  --c-gray-400: rgb(var(--una-gray-400));
-  --c-gray-500: rgb(var(--una-gray-500));
-  --c-gray-600: rgb(var(--una-gray-600));
-  --c-gray-700: rgb(var(--una-gray-700));
-  --c-gray-800: rgb(var(--una-gray-800));
-  --c-gray-900: rgb(var(--una-gray-900));
-  --c-gray-950: rgb(var(--una-gray-950));
-}
-
-.dark {
-  --c-gray-0: rgb(var(--una-gray-950));
-  --c-gray-50: rgb(var(--una-gray-900));
-  --c-gray-100: rgb(var(--una-gray-800));
-  --c-gray-200: rgb(var(--una-gray-700));
-  --c-gray-300: rgb(var(--una-gray-600));
-  --c-gray-400: rgb(var(--una-gray-500));
-  --c-gray-500: rgb(var(--una-gray-400));
-  --c-gray-600: rgb(var(--una-gray-300));
-  --c-gray-700: rgb(var(--una-gray-200));
-  --c-gray-800: rgb(var(--una-gray-100));
-  --c-gray-900: rgb(var(--una-gray-50));
-  --c-gray-950: rgb(255 255 255);
-}
-
-:root {
   --una-font-size: 16px;
   --una-radius: 0.5rem;
   --una-brand: var(--una-primary-600);
@@ -73,9 +43,9 @@
   --una-accent: var(--una-gray-50);
   --una-accent-foreground: var(--una-gray-700);
   --una-input: var(--una-gray-200);
-  --una-ring: var(--una-gray-200);
+  --una-ring: var(--una-gray-400);
   --una-border: var(--una-gray-200);
-  --una-popover: var(--una-gray-50);
+  --una-popover: 255, 255, 255;
   --una-popover-foreground: var(--una-gray-950);
   --una-sidebar: var(--una-background);
   --una-sidebar-foreground: var(--una-foreground);
@@ -87,6 +57,9 @@
   --una-sidebar-ring: var(--una-gray-200);
   --un-default-border-color: rgb(var(--una-border));
   --c-bg-selection: rgba(var(--una-primary-600), 0.2);
+  --c-border: rgb(var(--una-border));
+  --c-muted-foreground: rgb(var(--una-muted-foreground));
+  --c-muted: rgb(var(--una-muted));
 }
 
 .dark {
@@ -104,15 +77,17 @@
   --una-accent: var(--una-gray-700);
   --una-accent-foreground: var(--una-gray-50);
   --una-input: var(--una-gray-800);
-  --una-ring: var(--una-gray-800);
+  --una-ring: var(--una-gray-500);
   --una-border: var(--una-gray-800);
-  --una-popover: var(--una-gray-800);
+  --una-popover: var(--una-gray-900);
   --una-popover-foreground: var(--una-gray-50);
   --una-sidebar-accent: var(--una-gray-800);
   --una-sidebar-accent-foreground: var(--una-gray-100);
   --una-sidebar-border: var(--una-gray-800);
   --una-sidebar-ring: var(--una-gray-800);
   --c-bg-selection: rgba(var(--una-primary-500), 0.2);
+  /* --selection: oklch(.922 0 0);
+  --selection-foreground: oklch(.205 0 0); */
 }
 
 html {
