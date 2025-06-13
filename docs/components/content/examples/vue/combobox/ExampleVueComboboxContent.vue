@@ -35,7 +35,7 @@ const selectedFramework = ref()
       </template>
     </NCombobox>
     <p className="text-sm font-medium leading-none">
-      <span v-if="selectedFramework" className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-inverted">
+      <span v-if="selectedFramework" className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-background">
         {{ selectedFramework.label }}
       </span>
       <span className="text-muted-foreground">Create a new project</span>

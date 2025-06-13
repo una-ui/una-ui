@@ -11,12 +11,12 @@ export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, st
 
   // variants
   'avatar-solid-white': 'bg-background text-foreground border border-base',
-  'avatar-solid-black': 'bg-foreground text-inverted',
+  'avatar-solid-black': 'bg-foreground text-background',
 }
 
 export const dynamicAvatar: [RegExp, (params: RegExpExecArray) => string][] = [
   // variants
-  [/^avatar-solid(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-600 dark:bg-${c}-500 text-inverted`],
+  [/^avatar-solid(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-600 dark:bg-${c}-500 text-background`],
   [/^avatar-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 text-${c}-700 dark:text-${c}-400 dark:bg-${c}-900`],
   [/^avatar-outline(-(\S+))?$/, ([, , c = 'gray']) => `bg-transparent text-${c}-500 dark:text-${c}-400 border border-${c}-500 dark:border-${c}-400`],
 ]
