@@ -26,6 +26,7 @@ export default function presetUna(options: unaUIOptions = {
         },
       },
       colors: {
+        brand: 'rgba(var(--una-brand) / <alpha-value>)',
         background: 'rgba(var(--una-background) / <alpha-value>)',
         foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
         muted: 'rgba(var(--una-muted) / <alpha-value>)',
@@ -34,7 +35,8 @@ export default function presetUna(options: unaUIOptions = {
         accentForeground: 'rgba(var(--una-accent-foreground) / <alpha-value>)',
         secondary: 'rgba(var(--una-secondary) / <alpha-value>)',
         secondaryForeground: 'rgba(var(--una-secondary-foreground) / <alpha-value>)',
-        brand: 'rgba(var(--una-brand) / <alpha-value>)',
+        popover: 'rgba(var(--una-popover) / <alpha-value>)',
+        popoverForeground: 'rgba(var(--una-popover-foreground) / <alpha-value>)',
         input: 'rgba(var(--una-input) / <alpha-value>)',
         border: 'rgba(var(--una-border) / <alpha-value>)',
         ring: 'rgba(var(--una-ring) / <alpha-value>)',

@@ -5,9 +5,6 @@ export const staticGeneral = {
   'text-md': 'text-1rem leading-1.5rem',
   'size-md': 'text-md',
 
-  'text-popover': 'text-$c-popover-foreground',
-  'text-popover-foreground': 'text-$c-popover',
-
   'text-info': 'text-info-600 dark:text-info-500',
   'text-info-active': 'text-info-500 dark:text-info-400',
   'text-error': 'text-error-600 dark:text-error-500',
@@ -16,9 +13,6 @@ export const staticGeneral = {
   'text-success-active': 'text-success-500 dark:text-success-400',
   'text-warning': 'text-warning-600 dark:text-warning-500',
   'text-warning-active': 'text-warning-500 dark:text-warning-400',
-
-  'bg-popover': 'bg-$c-popover',
-  'bg-popover-foreground': 'bg-$c-popover-foreground',
 
   // transition
   'transition-base': 'transition-all duration-100 ease-out',
