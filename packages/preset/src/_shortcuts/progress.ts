@@ -14,7 +14,7 @@ export const staticProgress: Record<`${ProgressPrefix}-${string}`, string> = {
 
   // static
   'progress-white': 'bg-inverted',
-  'progress-black': 'bg-base',
+  'progress-black': 'bg-background',
 }
 
 export const dynamicProgress = [

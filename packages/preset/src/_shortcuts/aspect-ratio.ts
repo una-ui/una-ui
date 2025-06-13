@@ -6,7 +6,7 @@ export const staticAspectRatio: Record<`${AspectRatioPrefix}-${string}` | Aspect
 
   // static variants
   'aspect-ratio-soft-gray': 'bg-muted border border-base',
-  'aspect-ratio-outline-gray': 'bg-base border border-base',
+  'aspect-ratio-outline-gray': 'bg-background border border-base',
 }
 
 export const dynamicAspectRatio: [RegExp, (params: RegExpExecArray) => string][] = [

@@ -21,7 +21,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-reverse': 'flex-row-reverse',
 
   // variants
-  'btn-solid-white': 'bg-base text-foreground ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-muted',
+  'btn-solid-white': 'bg-background text-foreground ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-muted',
   'btn-ghost-white': 'text-foreground btn-focus hover:bg-$c-gray-50',
   'btn-outline-white': 'text-foreground ring-1 ring-base ring-inset btn-focus hover:bg-$c-gray-50',
 
@@ -35,7 +35,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-solid-black': 'bg-inverted text-inverted shadow-sm btn-focus',
   'btn-link-black': 'text-foreground btn-focus hover:underline underline-offset-4',
   'btn-text-black': 'text-foreground btn-focus',
-  'btn-soft-black': 'text-foreground bg-base btn-focus shadow-sm',
+  'btn-soft-black': 'text-foreground bg-background btn-focus shadow-sm',
 
   'btn-text-muted': 'text-muted btn-focus hover:text-accent',
   'btn-link-muted': 'text-muted btn-focus hover:underline underline-offset-4',
