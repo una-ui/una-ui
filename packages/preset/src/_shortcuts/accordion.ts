@@ -12,7 +12,7 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion': 'flex-(~ col) relative w-full',
   'accordion-item': 'w-full',
   'accordion-button': 'justify-start',
-  'accordion-panel': 'text-(muted 0.875em) border-(t $c-divider) accordion-button-padding',
+  'accordion-panel': 'text-(muted 0.875em) border-(t border) accordion-button-padding',
   'accordion-leading': 'text-1.2em',
   'accordion-trailing': 'flex transition items-center text-1em duration-300',
   'accordion-label': 'flex w-full text-1em',
