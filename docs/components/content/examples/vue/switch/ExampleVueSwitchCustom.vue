@@ -44,8 +44,8 @@ const enabled = ref(false)
       v-model="enabled"
       size="4xl"
       :una="{
-        switchChecked: 'bg-yellow',
-        switchUnchecked: 'bg-blue',
+        switchCheckedBase: 'bg-yellow',
+        switchUncheckedBase: 'bg-blue',
         switchThumbChecked: 'rounded-l-lg',
         switchThumbUnchecked: 'rounded-r-lg',
       }"

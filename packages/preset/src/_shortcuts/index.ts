@@ -18,6 +18,7 @@ import { dropdowMenu } from './dropdown-menu'
 import { form } from './form'
 import { formGroup } from './form-group'
 import { general } from './general'
+import { hoverCard } from './hover-card'
 import { icon } from './icon'
 import { indicator } from './indicator'
 import { input } from './input'
@@ -89,4 +90,5 @@ export const shortcuts = [
   ...alertDialog,
   ...combobox,
   ...drawer,
+  ...hoverCard,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

@@ -1,3 +1,20 @@
+# [0.59.0](https://github.com/una-ui/una-ui/compare/v0.58.0...v0.59.0) (2025-06-12)
+
+
+### Bug Fixes
+
+* **Input:** correct placeholder color preset sytanx, related to [#427](https://github.com/una-ui/una-ui/issues/427) ([ff628e9](https://github.com/una-ui/una-ui/commit/ff628e9a3cbcb6f1bfef87a993e52a104d69fe47))
+* **Switch:** add missing types ([caabb14](https://github.com/una-ui/una-ui/commit/caabb146be7bce277531fec7cc9f2367f55f3cd7))
+* **Switch:** prevent color flickering and enhance default presets ([#425](https://github.com/una-ui/una-ui/issues/425)) ([a68b03f](https://github.com/una-ui/una-ui/commit/a68b03f5b5a576d91289848a34e27ef90f40ead1))
+* **Switch:** rename una class properties to avoid duplicate unocss warning ([91e2cf7](https://github.com/una-ui/una-ui/commit/91e2cf7c54627a0a2e4e51a871935274f691f468))
+
+
+### Features
+
+* **HoverCard:** introduces new components and presets  ([#424](https://github.com/una-ui/una-ui/issues/424)) ([be17640](https://github.com/una-ui/una-ui/commit/be17640eca61f6ff64c8498de2d9791a2f867035))
+
+
+
 # [0.58.0](https://github.com/una-ui/una-ui/compare/v0.57.0...v0.58.0) (2025-06-09)
 
 

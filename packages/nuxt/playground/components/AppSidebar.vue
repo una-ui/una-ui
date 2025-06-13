@@ -105,6 +105,10 @@ const data = {
           url: '/components/forms',
         },
         {
+          title: 'Hover Card',
+          url: '/components/hover-card',
+        },
+        {
           title: 'Input',
           url: '/components/input',
         },
