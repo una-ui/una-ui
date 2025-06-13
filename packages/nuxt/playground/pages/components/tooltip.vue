@@ -4,7 +4,7 @@
       content="Add to library"
       tooltip="primary"
     >
-      <NButton btn="solid-white">
+      <NButton btn="solid-gray">
         Hover
       </NButton>
     </NTooltip>

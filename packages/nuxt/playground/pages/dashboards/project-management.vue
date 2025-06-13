@@ -12,12 +12,12 @@
       </div>
       <div class="flex items-center gap-3">
         <NButton
-          btn="solid-white"
+          btn="solid-gray"
           leading="i-lucide-git-pull-request-create text-lg"
           label="30 Pull Request"
         />
         <NButton
-          btn="solid-white"
+          btn="solid-gray"
           leading="i-lucide-folder-git-2 text-lg"
           label="230 Issues"
         />
