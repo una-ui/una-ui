@@ -28,7 +28,7 @@ const { copy, copied } = useClipboard({ source })
             Una UI
           </span>
         </h1>
-        <h2 class="text-4xl text-accent font-bold lg:text-6xl">
+        <h2 class="text-4xl text-accent-foreground font-bold lg:text-6xl">
           The Atomic UI Framework
         </h2>
         <p class="text-md text-muted-foreground md:text-2xl">

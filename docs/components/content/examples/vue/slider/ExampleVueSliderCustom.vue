@@ -63,7 +63,7 @@ const equalizerValues = ref([
             }"
           />
 
-          <small class="text-accent">
+          <small class="text-accent-foreground">
             {{ _[0] }}
           </small>
         </div>

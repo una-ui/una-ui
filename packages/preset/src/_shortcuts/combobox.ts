@@ -14,7 +14,7 @@ export const staticCombobox: Record<`${ComboboxPrefix}-${string}` | ComboboxPref
   'combobox-trigger-trailing': 'size-1.1428571428571428em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled) rtl:mr-auto ltr:ml-auto',
   'combobox-trigger-leading': 'size-1.1428571428571428em',
 
-  'combobox-item': 'data-[highlighted]:bg-accent data-[highlighted]:text-accent relative flex cursor-default items-center gap-2 rounded-sm px-0.5em py-0.375em text-1em outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
+  'combobox-item': 'data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex cursor-default items-center gap-2 rounded-sm px-0.5em py-0.375em text-1em outline-none select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
   'combobox-item-indicator': 'ml-auto',
   'combobox-item-indicator-icon': '',
   'combobox-item-indicator-icon-name': 'i-check',

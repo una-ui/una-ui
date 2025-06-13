@@ -21,7 +21,7 @@ export const staticFormGroup: Record<`${FormGroupPrefix}-${string}` | FormGroupP
   // counter
   'form-group-counter-wrapper': 'text-0.8em',
   'form-group-counter-error': 'text-error',
-  'form-group-counter-current': 'text-accent',
+  'form-group-counter-current': 'text-accent-foreground',
   'form-group-counter-separator': 'text-muted',
   'form-group-counter-max': 'text-muted',
 }

@@ -6,7 +6,7 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
   'indicator-default-placement': 'indicator-top-right',
 
   // base
-  'indicator': 'absolute min-h-1.5em min-w-1.5em flex items-center justify-center rounded-full font-medium py-none px-0.3em ring-2 ring-$c-background',
+  'indicator': 'absolute min-h-1.5em min-w-1.5em flex items-center justify-center rounded-full font-medium py-none px-0.3em ring-2 ring-background',
 
   // indicator type sizes
   'indicator-dot': 'size-0.45em',

@@ -14,7 +14,7 @@
 
       <template #menu-label>
         <div class="flex flex-col items-start">
-          <span class="text-accent font-semibold leading-5">Evan You</span>
+          <span class="text-accent-foreground font-semibold leading-5">Evan You</span>
           <span class="text-xs text-muted-foreground">evan@vuejs.org</span>
         </div>
       </template>
