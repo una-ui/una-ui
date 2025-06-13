@@ -16,7 +16,7 @@ export const staticSlider: Record<`${SliderPrefix}-${string}`, string> = {
   'slider-root': 'relative flex w-full touch-none select-none items-center',
   'slider-track': 'h-0.5em relative w-full grow overflow-hidden rounded-full bg-muted',
   'slider-range': 'absolute h-full bg-brand',
-  'slider-thumb': 'w-1.25em h-1.25em block border-2 border-brand rounded-full bg-background focus-visible:ring-ring ring-offset-base transition-colors disabled:slider-disabled focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+  'slider-thumb': 'w-1.25em h-1.25em block border-2 border-brand rounded-full bg-background focus-visible:ring-ring ring-offset-background transition-colors disabled:slider-disabled focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
 
   'slider-accent': 'n-gray-300 dark:n-gray-800',
 }
