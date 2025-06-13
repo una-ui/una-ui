@@ -19,7 +19,7 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-loading-icon': 'text-gray animate-spin text-0.8em',
   'switch-loading-icon-name': 'i-loading',
 
-  'switch-focus-gray': 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-base focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+  'switch-focus-gray': 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
 }
 
 export const dynamicSwitch = [

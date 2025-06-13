@@ -67,6 +67,7 @@
   --una-background: 255, 255, 255;
   --una-foreground: var(--una-gray-950);
   --una-input: var(--una-gray-200);
+  --una-ring: var(--una-gray-200);
   --c-background: rgb(var(--una-background));
   --c-foreground: rgb(var(--una-foreground));
   --c-muted: rgb(var(--una-gray-100));
@@ -77,7 +78,6 @@
   --c-popover-foreground: rgb(var(--una-gray-950));
   --c-border: rgb(var(--una-gray-200));
   --c-border-foreground: rgba(var(--una-gray-700), 0.58);
-  --c-ring: rgb(var(--una-gray-200));
   --c-divider: rgb(var(--una-gray-200));
   --c-bg-selection: rgba(var(--una-primary-600), 0.2);
   --un-default-border-color: var(--c-border);
@@ -100,6 +100,7 @@
   --una-background: var(--una-gray-950);
   --una-foreground: 255, 255, 255;
   --una-input: var(--una-gray-800);
+  --una-ring: var(--una-gray-700);
   --c-background: rgb(var(--una-background));
   --c-foreground: rgb(var(--una-foreground));
   --c-muted: rgb(var(--una-gray-800));
@@ -110,7 +111,6 @@
   --c-popover-foreground: rgb(255, 255, 255);
   --c-border: rgba(var(--una-gray-700), 0.58);
   --c-border-foreground: rgb(var(--una-gray-200));
-  --c-ring: rgba(var(--una-gray-700), 0.58);
   --c-divider: rgba(var(--una-gray-700), 0.58);
   --c-bg-selection: rgba(var(--una-primary-500), 0.2);
   --una-sidebar-accent: var(--una-gray-800);

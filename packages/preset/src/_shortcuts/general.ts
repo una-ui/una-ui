@@ -26,7 +26,6 @@ export const staticGeneral = {
   'text-warning-active': 'text-warning-500 dark:text-warning-400',
 
   // ring
-  'ring-base': 'ring-$c-ring',
   'ring-offset-base': 'ring-offset-$c-background',
 
   // border
