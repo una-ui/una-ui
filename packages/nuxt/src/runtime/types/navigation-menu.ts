@@ -99,6 +99,8 @@ export interface NNavigationMenuLinkProps extends NavigationMenuLinkProps, Omit<
    * navigation-menu-link="ghost-gray"
    */
   navigationMenuLink?: string
+  /** Description of the link. This is only used when `orientation` is `horizontal`. */
+  description?: string
   /** Event handler called when the link is clicked */
   onSelect?: (e: Event) => void
   /** Additional properties for the una component */
@@ -111,8 +113,6 @@ export interface NNavigationMenuListProps extends NavigationMenuListProps, Pick<
 }
 
 export interface NNavigationMenuListItemProps extends NNavigationMenuLinkProps {
-  /** Description of the link. This is only used when `orientation` is `horizontal`. */
-  description?: string
   /** Additional properties for the una component */
   una?: NNavigationMenuLinkProps['una'] & Pick<NNavigationMenuUnaProps, 'navigationMenuListItem' | 'navigationMenuContentItem' | 'navigationMenuContentItemWrapper' | 'navigationMenuContentItemLabel' | 'navigationMenuContentItemDescription'>
 }
