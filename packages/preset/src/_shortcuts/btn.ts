@@ -21,14 +21,14 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-reverse': 'flex-row-reverse',
 
   // variants
-  'btn-solid-white': 'bg-background text-foreground ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-muted',
+  'btn-solid-white': 'bg-background text-foreground ring-1 ring-ring ring-inset shadow-sm btn-focus hover:bg-muted',
   'btn-ghost-white': 'text-foreground btn-focus hover:bg-$c-gray-50',
-  'btn-outline-white': 'text-foreground ring-1 ring-base ring-inset btn-focus hover:bg-$c-gray-50',
+  'btn-outline-white': 'text-foreground ring-1 ring-ring ring-inset btn-focus hover:bg-$c-gray-50',
 
-  'btn-solid-gray': 'bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-$c-gray-100',
+  'btn-solid-gray': 'bg-$c-gray-50 text-$c-gray-800 ring-1 ring-ring ring-inset shadow-sm btn-focus hover:bg-$c-gray-100',
   'btn-ghost-gray': 'text-$c-gray-600 btn-focus hover:bg-$c-gray-100',
   'btn-soft-gray': 'text-$c-gray-600 bg-$c-gray-50 btn-focus hover:bg-$c-gray-100',
-  'btn-outline-gray': 'text-muted hover:text-$c-gray-600 ring-1 ring-base ring-inset btn-focus hover:bg-$c-gray-50',
+  'btn-outline-gray': 'text-muted hover:text-$c-gray-600 ring-1 ring-ring ring-inset btn-focus hover:bg-$c-gray-50',
   'btn-link-gray': 'text-muted btn-focus hover:text-foreground hover:underline underline-offset-4',
   'btn-text-gray': 'text-$c-gray-600 btn-focus hover:text-$c-gray-900',
 
@@ -48,7 +48,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
 
 export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
   // base
-  [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-${c}-600 dark:focus-visible:ring-${c}-500`],
+  [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:ring-3px focus-visible:outline-none focus-visible:border focus-visible:border-${c}-400 dark:focus-visible:border-${c}-800 focus-visible:ring-${c}-400/50 dark:focus-visible:ring-${c}-800/50`],
 
   // variants
   [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-inverted shadow-sm bg-${c}-600 hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
