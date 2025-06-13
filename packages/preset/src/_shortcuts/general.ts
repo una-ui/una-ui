@@ -5,9 +5,6 @@ export const staticGeneral = {
   'text-md': 'text-1rem leading-1.5rem',
   'size-md': 'text-md',
 
-  // text color
-  'text-background': 'text-$c-background',
-
   'text-accent': 'text-$c-accent-foreground',
   'text-accent-foreground': 'text-$c-accent',
 
@@ -23,25 +20,11 @@ export const staticGeneral = {
   'text-warning': 'text-warning-600 dark:text-warning-500',
   'text-warning-active': 'text-warning-500 dark:text-warning-400',
 
-  // border
-  'border-base': 'border-$c-border',
-  'border-foreground': 'border-$c-border-foreground',
-
-  // divide
-  'divide-base': 'divide-$c-divider',
-
-  // bg
-  'bg-foreground': 'bg-$c-foreground',
-  'bg-border': 'bg-$c-border',
-
   'bg-accent': 'bg-$c-accent',
   'bg-accent-foreground': 'bg-$c-accent-foreground',
 
   'bg-popover': 'bg-$c-popover',
   'bg-popover-foreground': 'bg-$c-popover-foreground',
-
-  'fill-base': 'fill-$c-background',
-  'stroke-base': 'stroke-$c-border',
 
   // transition
   'transition-base': 'transition-all duration-100 ease-out',

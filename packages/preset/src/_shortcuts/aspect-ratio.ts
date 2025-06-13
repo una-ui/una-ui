@@ -5,8 +5,8 @@ export const staticAspectRatio: Record<`${AspectRatioPrefix}-${string}` | Aspect
   'aspect-ratio': 'overflow-hidden',
 
   // static variants
-  'aspect-ratio-soft-gray': 'bg-muted border border-base',
-  'aspect-ratio-outline-gray': 'bg-background border border-base',
+  'aspect-ratio-soft-gray': 'bg-muted border border-border',
+  'aspect-ratio-outline-gray': 'bg-background border border-border',
 }
 
 export const dynamicAspectRatio: [RegExp, (params: RegExpExecArray) => string][] = [

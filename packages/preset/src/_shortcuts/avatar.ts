@@ -10,7 +10,7 @@ export const staticAvatar: Record<`${AvatarPrefix}-${string}` | AvatarPrefix, st
   'avatar-icon': 'text-1em',
 
   // variants
-  'avatar-solid-white': 'bg-background text-foreground border border-base',
+  'avatar-solid-white': 'bg-background text-foreground border border-border',
   'avatar-solid-black': 'bg-foreground text-background',
 }
 

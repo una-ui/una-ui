@@ -5,7 +5,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-default-variant': 'table-solid-gray',
 
   // table-root
-  'table-root': 'relative w-full overflow-x-auto overflow-y-hidden border border-base rounded-md',
+  'table-root': 'relative w-full overflow-x-auto overflow-y-hidden border border-border rounded-md',
   'table': 'w-full caption-bottom text-sm',
   'table-body': '[&_tr:last-child]:border-0',
   'table-caption': 'mt-4 text-sm text-muted-foreground',
@@ -17,10 +17,10 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-head-pinned-right': 'right-0',
 
   // table-header
-  'table-header': '[&_tr]:border-b [&_tr]:border-base',
+  'table-header': '[&_tr]:border-b [&_tr]:border-border',
 
   // table-row
-  'table-row': 'border-b border-base transition-colors hover:bg-muted/50 data-[filter=true]:hover:bg-background data-[state=selected]:bg-muted',
+  'table-row': 'border-b border-border transition-colors hover:bg-muted/50 data-[filter=true]:hover:bg-background data-[state=selected]:bg-muted',
 
   // table-cell
   'table-cell': 'p-4 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-0.5',
@@ -41,7 +41,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-loading': 'absolute inset-x-0 overflow-hidden p-0',
 
   // table-footer
-  'table-footer': 'border-t border-base bg-muted font-medium [&>tr]:last:border-b-0',
+  'table-footer': 'border-t border-border bg-muted font-medium [&>tr]:last:border-b-0',
 }
 
 export const dynamicTable: [RegExp, (params: RegExpExecArray) => string][] = [

@@ -11,8 +11,8 @@ export const staticHoverCard: Record<`${HoverCardPrefix}-${string}` | HoverCardP
   'hover-card-arrow': '!bg-transparent !border-none -mt-1px fill-base stroke-base',
 
   // static variants
-  'hover-card-soft-gray': 'bg-muted border border-base',
-  'hover-card-outline-gray': 'bg-background border border-base',
+  'hover-card-soft-gray': 'bg-muted border border-border',
+  'hover-card-outline-gray': 'bg-background border border-border',
 }
 
 export const dynamicHoverCard = [
