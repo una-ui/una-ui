@@ -81,12 +81,19 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
   /**
    * @see https://tanstack.com/table/latest/docs/api/features/sorting#maxmultisortcolcount
    */
-
   maxMultiSortColCount?: number
+  /**
+   * @see https://tanstack.com/table/latest/docs/api/features/expanding#manualexpanding
+   */
+  manualExpanding?: boolean
   /**
    * @see https://tanstack.com/table/latest/docs/api/features/pagination#manualpagination
    */
   manualPagination?: boolean
+  /**
+   * @see https://tanstack.com/table/latest/docs/api/features/expanding#paginateexpandedrows
+   */
+  paginateExpandedRows?: boolean
   /**
    * @see https://tanstack.com/table/latest/docs/api/features/pagination#pagecount
    */

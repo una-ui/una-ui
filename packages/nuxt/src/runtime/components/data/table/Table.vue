@@ -172,6 +172,8 @@ const table = useVueTable({
   manualFiltering: props.manualFiltering,
   pageCount: props.pageCount,
   rowCount: props.rowCount,
+  manualExpanding: props.manualExpanding,
+  paginateExpandedRows: props.paginateExpandedRows,
   autoResetPageIndex: props.autoResetPageIndex,
   enableSorting: props.enableSorting,
   enableSortingRemoval: props.enableSortingRemoval,
