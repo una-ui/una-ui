@@ -107,8 +107,8 @@
   --c-bg-selection: rgba(var(--una-primary-500), 0.2);
   --una-sidebar-accent: var(--una-gray-800);
   --una-sidebar-accent-foreground: var(--una-gray-100);
-  --una-sidebar-border: var(--una-gray-700);
-  --una-sidebar-ring: var(--una-gray-700);
+  --una-sidebar-border: var(--una-gray-800);
+  --una-sidebar-ring: var(--una-gray-800);
 }
 
 html {
