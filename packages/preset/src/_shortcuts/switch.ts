@@ -12,8 +12,8 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
 
   // icons
   'switch-icon': 'text-0.7em',
-  'switch-icon-unchecked': 'text-muted',
-  'switch-icon-checked': 'text-muted',
+  'switch-icon-unchecked': 'text-muted-foreground',
+  'switch-icon-checked': 'text-muted-foreground',
 
   // loading
   'switch-loading-icon': 'text-gray animate-spin text-0.8em',

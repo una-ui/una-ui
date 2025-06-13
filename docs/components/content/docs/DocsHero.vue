@@ -31,7 +31,7 @@ const { copy, copied } = useClipboard({ source })
         <h2 class="text-4xl text-accent font-bold lg:text-6xl">
           The Atomic UI Framework
         </h2>
-        <p class="text-md text-muted md:text-2xl">
+        <p class="text-md text-muted-foreground md:text-2xl">
           Build fast, modern, and lightweight components powered by the Unocss Engine.
         </p>
       </div>

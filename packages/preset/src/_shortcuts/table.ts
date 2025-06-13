@@ -8,10 +8,10 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-root': 'relative w-full overflow-x-auto overflow-y-hidden border border-base rounded-md',
   'table': 'w-full caption-bottom text-sm',
   'table-body': '[&_tr:last-child]:border-0',
-  'table-caption': 'mt-4 text-sm text-muted',
+  'table-caption': 'mt-4 text-sm text-muted-foreground',
 
   // table-head
-  'table-head': 'h-12 px-4 text-left align-middle font-medium text-muted [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-0.5',
+  'table-head': 'h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-0.5',
   'table-head-pinned': 'sticky bg-background',
   'table-head-pinned-left': 'left-0',
   'table-head-pinned-right': 'right-0',
@@ -20,7 +20,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-header': '[&_tr]:border-b [&_tr]:border-base',
 
   // table-row
-  'table-row': 'border-b border-base transition-colors hover:bg-muted data-[filter=true]:hover:bg-background data-[state=selected]:bg-muted',
+  'table-row': 'border-b border-base transition-colors hover:bg-muted/50 data-[filter=true]:hover:bg-background data-[state=selected]:bg-muted',
 
   // table-cell
   'table-cell': 'p-4 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-0.5',
@@ -30,7 +30,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
 
   // table-empty
   'table-empty-row': '',
-  'table-empty-cell': 'p-4 whitespace-nowrap align-middle text-sm text-muted bg-background',
+  'table-empty-cell': 'p-4 whitespace-nowrap align-middle text-sm text-muted-foreground bg-background',
   'table-empty': 'flex items-center justify-center py-10',
 
   // table-loading

@@ -51,7 +51,7 @@ const cards: Card[] = [
         <p class="mt-2 text-3xl font-bold">
           {{ card.value }}
         </p>
-        <p class="mt-1 text-sm text-muted">
+        <p class="mt-1 text-sm text-muted-foreground">
           {{ card.description }}
         </p>
       </template>

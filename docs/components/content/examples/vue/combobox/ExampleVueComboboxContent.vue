@@ -38,7 +38,7 @@ const selectedFramework = ref()
       <span v-if="selectedFramework" className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-inverted">
         {{ selectedFramework.label }}
       </span>
-      <span className="text-muted">Create a new project</span>
+      <span className="text-muted-foreground">Create a new project</span>
     </p>
   </div>
 </template>

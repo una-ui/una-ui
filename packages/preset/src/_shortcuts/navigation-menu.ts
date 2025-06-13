@@ -20,7 +20,7 @@ export const staticNavigationMenu: Record<`${NavigationMenuPrefix}-${string}` | 
   'navigation-menu-content-list': 'grid w-400px gap-3 p-4 md:grid-cols-2 lg:w-600px md:w-500px',
   'navigation-menu-content-item-wrapper': 'flex flex-col items-start gap-1',
   'navigation-menu-content-item-label': 'font-semibold leading-none',
-  'navigation-menu-content-item-description': 'line-clamp-2 text-left text-muted leading-5',
+  'navigation-menu-content-item-description': 'line-clamp-2 text-left text-muted-foreground leading-5',
 
   'navigation-menu-list-horizontal': 'flex flex-1 list-none items-center justify-center gap-x-1',
   'navigation-menu-list-vertical': 'max-w-none list-none flex-col items-start gap-1 space-x-0',

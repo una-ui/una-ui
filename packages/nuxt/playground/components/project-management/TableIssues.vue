@@ -37,7 +37,7 @@ const columns: ColumnDef<Issue>[] = [
         h('span', {}, title),
         number
           ? h('span', {
-              class: 'text-sm text-muted ml-2',
+              class: 'text-sm text-muted-foreground ml-2',
             }, `#${number}`)
           : null,
       ])
@@ -50,7 +50,7 @@ const columns: ColumnDef<Issue>[] = [
       const value = info.getValue()
       if (!value) {
         return h('span', {
-          class: 'text-muted text-sm',
+          class: 'text-muted-foreground text-sm',
         }, 'Unknown')
       }
 
@@ -73,7 +73,7 @@ const columns: ColumnDef<Issue>[] = [
               class: 'text-sm font-semibold leading-none',
             }, username),
             h('div', {
-              class: 'text-xs text-muted',
+              class: 'text-xs text-muted-foreground',
             }, email),
           ]),
         ],
@@ -96,7 +96,7 @@ const columns: ColumnDef<Issue>[] = [
       const value = info.getValue()
       if (!value) {
         return h('span', {
-          class: 'text-muted text-sm',
+          class: 'text-muted-foreground text-sm',
         }, 'Unassigned')
       }
 
@@ -119,7 +119,7 @@ const columns: ColumnDef<Issue>[] = [
               class: 'text-sm font-semibold leading-none',
             }, username),
             h('div', {
-              class: 'text-xs text-muted',
+              class: 'text-xs text-muted-foreground',
             }, email),
           ]),
         ],
@@ -464,7 +464,7 @@ const alertDialogData = reactive<{
                   ? 'progress-info' : cell.row.original.progress >= 55
                     ? 'progress-warning' : 'progress-error' }"
           />
-          <span class="ml-2 text-sm text-muted">{{ cell.row.original.progress }}%</span>
+          <span class="ml-2 text-sm text-muted-foreground">{{ cell.row.original.progress }}%</span>
         </div>
       </template>
       <!-- end cell -->
@@ -508,7 +508,7 @@ const alertDialogData = reactive<{
 
     <!-- footer -->
     <div class="flex items-center justify-between px-4">
-      <div class="hidden text-sm text-muted sm:block">
+      <div class="hidden text-sm text-muted-foreground sm:block">
         {{ table?.getFilteredSelectedRowModel().rows.length.toLocaleString() }} of
         {{ table?.getFilteredRowModel().rows.length.toLocaleString() }} row(s) selected.
       </div>

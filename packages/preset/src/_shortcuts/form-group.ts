@@ -3,8 +3,8 @@ type FormGroupPrefix = 'form-group'
 export const staticFormGroup: Record<`${FormGroupPrefix}-${string}` | FormGroupPrefix, string> = {
   // base
   'form-group': 'space-y-2',
-  'form-group-description': 'text-0.8rem text-muted',
-  'form-group-hint': 'text-sm leading-none text-muted',
+  'form-group-description': 'text-0.8rem text-muted-foreground',
+  'form-group-hint': 'text-sm leading-none text-muted-foreground',
   'form-group-message': 'text-0.8em transition-all duration-1000 ease-in-out',
 
   // wrappers

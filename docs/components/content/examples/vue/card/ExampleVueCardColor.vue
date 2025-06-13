@@ -13,7 +13,7 @@
     >
       <div class="flex items-center justify-between">
         <span class="text-3xl font-bold">$0</span>
-        <span class="text-sm text-muted">/month</span>
+        <span class="text-sm text-muted-foreground">/month</span>
       </div>
 
       <ul class="space-y-2">
@@ -85,7 +85,7 @@
     >
       <div class="flex items-center justify-between">
         <span class="text-3xl font-bold">$99</span>
-        <span class="text-sm text-muted">/month</span>
+        <span class="text-sm text-muted-foreground">/month</span>
       </div>
 
       <ul class="space-y-2">

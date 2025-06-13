@@ -13,7 +13,7 @@ export const staticDialog: Record<`${KbdPrefix}-${string}` | KbdPrefix, string> 
 
   'dialog-header': 'flex flex-col gap-y-1.5 text-center sm:text-left',
   'dialog-title': 'text-lg font-semibold leading-none tracking-tight',
-  'dialog-description': 'text-sm text-muted',
+  'dialog-description': 'text-sm text-muted-foreground',
   'dialog-close': 'absolute right-4 top-4',
   'dialog-footer': 'flex flex-col-reverse sm:flex-row sm:justify-end gap-2',
 }

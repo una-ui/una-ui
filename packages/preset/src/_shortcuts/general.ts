@@ -6,9 +6,7 @@ export const staticGeneral = {
   'size-md': 'text-md',
 
   // text color
-  'text-foreground': 'text-$c-foreground',
   'text-inverted': 'text-$c-background',
-  'text-muted': 'text-$c-muted-foreground',
 
   'text-accent': 'text-$c-accent-foreground',
   'text-accent-foreground': 'text-$c-accent',
@@ -25,9 +23,6 @@ export const staticGeneral = {
   'text-warning': 'text-warning-600 dark:text-warning-500',
   'text-warning-active': 'text-warning-500 dark:text-warning-400',
 
-  // ring
-  'ring-offset-base': 'ring-offset-$c-background',
-
   // border
   'border-base': 'border-$c-border',
   'border-foreground': 'border-$c-border-foreground',
@@ -36,9 +31,7 @@ export const staticGeneral = {
   'divide-base': 'divide-$c-divider',
 
   // bg
-  'bg-background': 'bg-$c-background',
   'bg-inverted': 'bg-$c-foreground',
-  'bg-muted': 'bg-$c-muted',
   'bg-border': 'bg-$c-border',
 
   'bg-accent': 'bg-$c-accent',

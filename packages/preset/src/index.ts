@@ -28,9 +28,11 @@ export default function presetUna(options: unaUIOptions = {
       colors: {
         background: 'rgba(var(--una-background) / <alpha-value>)',
         foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
-        ring: 'rgba(var(--una-ring) / <alpha-value>)',
+        muted: 'rgba(var(--una-muted) / <alpha-value>)',
+        mutedForeground: 'rgba(var(--una-muted-foreground) / <alpha-value>)',
         brand: 'rgba(var(--una-brand) / <alpha-value>)',
         input: 'rgba(var(--una-input) / <alpha-value>)',
+        ring: 'rgba(var(--una-ring) / <alpha-value>)',
         primary: {
           DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
           active: 'rgba(var(--una-primary-active) / <alpha-value>)',

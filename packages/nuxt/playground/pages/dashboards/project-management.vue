@@ -6,7 +6,7 @@
         <h1 class="text-2xl font-bold">
           Dashboard
         </h1>
-        <p class="text-sm text-muted">
+        <p class="text-sm text-muted-foreground">
           Welcome back to your dashboard overview.
         </p>
       </div>
