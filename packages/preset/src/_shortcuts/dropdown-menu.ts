@@ -3,7 +3,7 @@ type DropdownMenuPrefix = 'dropdown-menu'
 export const staticDropdownMenu: Record<`${DropdownMenuPrefix}-${string}` | DropdownMenuPrefix, string> = {
   // configurations
   'dropdown-menu': '',
-  'dropdown-menu-default-variant': 'btn-solid-white',
+  'dropdown-menu-default-variant': 'btn-solid-gray',
 
   // dropdown-menu-trigger
   'dropdown-menu-trigger': '',
