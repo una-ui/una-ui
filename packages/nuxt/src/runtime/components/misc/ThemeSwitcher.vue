@@ -110,7 +110,7 @@ function shuffleTheme(): void {
               rounded="full"
               square="6.5"
               :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
-              ring="primary offset-4 offset-base"
+              ring="primary offset-4 offset-background"
               :aria-label="`Primary Color: ${key}`"
               @click="updatePrimaryTheme(key)"
             />
@@ -132,7 +132,7 @@ function shuffleTheme(): void {
               rounded="full"
               square="6.5"
               :aria-label="`Gray Color: ${key}`"
-              ring="gray offset-4 offset-base"
+              ring="gray offset-4 offset-background"
               @click="updateGrayTheme(key)"
             />
           </div>
