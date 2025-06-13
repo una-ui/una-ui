@@ -146,7 +146,7 @@ const items = [
                   v-bind="item"
                   class="rounded-md hover:bg-accent p-2.5 transition-colors"
                   :una="{
-                    navigationMenuContentItemLabel: 'font-medium text-base',
+                    navigationMenuContentItemLabel: 'font-medium text-foreground',
                     navigationMenuContentItemDescription: 'text-sm text-muted-foreground mt-0.5',
                   }"
                 />

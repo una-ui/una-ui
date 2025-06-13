@@ -88,7 +88,7 @@ function shuffleTheme(): void {
     <slot name="content">
       <div class="flex flex-col">
         <div class="grid space-y-1">
-          <h1 class="text-md text-base font-semibold">
+          <h1 class="text-md text-foreground font-semibold">
             Customize
           </h1>
           <p class="text-xs text-muted">

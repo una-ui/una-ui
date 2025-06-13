@@ -46,7 +46,7 @@ const expanded = ref<Record<string, boolean>>({})
         <p class="text-sm text-muted">
           Object:
         </p>
-        <p class="text-base">
+        <p class="text-foreground">
           {{ row }}
         </p>
       </div>
