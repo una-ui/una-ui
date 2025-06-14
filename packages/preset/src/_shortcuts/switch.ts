@@ -2,11 +2,11 @@ type SwitchPrefix = 'switch'
 
 export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, string> = {
   // base
-  'switch': 'h-1.25em w-2.25em switch-disabled inline-flex shrink-0 cursor-pointer items-center border-2 border-transparent rounded-full shadow-sm transition-colors',
+  'switch': 'h-1.25em w-2.25em switch-disabled inline-flex shrink-0 cursor-pointer items-center border-2 border-transparent rounded-full shadow-xs transition-colors',
   'switch-disabled': 'data-[disabled]:n-disabled',
 
   // thumb
-  'switch-thumb': 'square-1em flex items-center justify-center pointer-events-none block rounded-full bg-background shadow-lg ring-0 transition-transform',
+  'switch-thumb': 'square-1em flex items-center justify-center pointer-events-none block rounded-full bg-background ring-0 transition-transform',
   'switch-thumb-checked': 'translate-x-1.01em',
   'switch-thumb-unchecked': 'translate-x-0.03em',
 
