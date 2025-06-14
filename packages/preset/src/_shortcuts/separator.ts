@@ -27,9 +27,9 @@ export const staticSeparator: Record<`${SeparatorPrefix}-${string}` | SeparatorP
 
 export const dynamicSeparator = [
   // dynamic variants
-  [/^separator-solid(-(\S+))?$/, ([, , c = 'gray']) => `border-solid border-${c}-200 dark:border-${c}-700/58`],
-  [/^separator-dashed(-(\S+))?$/, ([, , c = 'gray']) => `border-dashed border-${c}-200 dark:border-${c}-700/58`],
-  [/^separator-dotted(-(\S+))?$/, ([, , c = 'gray']) => `border-dotted border-${c}-200 dark:border-${c}-700/58`],
+  [/^separator-solid(-(\S+))?$/, ([, , c = 'gray']) => `border-solid border-${c}-200 dark:border-${c}-800`],
+  [/^separator-dashed(-(\S+))?$/, ([, , c = 'gray']) => `border-dashed border-${c}-200 dark:border-${c}-800`],
+  [/^separator-dotted(-(\S+))?$/, ([, , c = 'gray']) => `border-dotted border-${c}-200 dark:border-${c}-800`],
 ]
 
 export const separator = [

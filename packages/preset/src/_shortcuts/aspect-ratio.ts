@@ -10,8 +10,8 @@ export const staticAspectRatio: Record<`${AspectRatioPrefix}-${string}` | Aspect
 }
 
 export const dynamicAspectRatio: [RegExp, (params: RegExpExecArray) => string][] = [
-  [/^aspect-ratio-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 dark:bg-${c}-900 border-${c}-200 dark:border-${c}-700/58`],
-  [/^aspect-ratio-outline(-(\S+))?$/, ([, , c = 'gray']) => `border border-${c}-200 dark:border-${c}-700/58`],
+  [/^aspect-ratio-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 dark:bg-${c}-900 border-${c}-200 dark:border-${c}-800`],
+  [/^aspect-ratio-outline(-(\S+))?$/, ([, , c = 'gray']) => `border border-${c}-200 dark:border-${c}-800`],
 ]
 
 export const aspectRatio = [

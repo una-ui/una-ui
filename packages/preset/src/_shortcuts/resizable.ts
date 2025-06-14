@@ -18,8 +18,8 @@ export const staticResizable: Record<`${ResizablePrefix}-${string}`, string> = {
 }
 
 export const dynamicResizable: [RegExp, (params: RegExpExecArray) => string][] = [
-  [/^resizable-handle-solid(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-200 dark:bg-${c}-700/58 focus-visible:ring-${c}-200 dark:focus-visible:ring-${c}-700/58`],
-  [/^resizable-handle-outline(-(\S+))?$/, ([, , c = 'gray']) => `ring-1 ring-${c}-200 dark:ring-${c}-700/58 focus-visible:ring-${c}-200 dark:focus-visible:ring-${c}-700/58`],
+  [/^resizable-handle-solid(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-200 dark:bg-${c}-800 focus-visible:ring-${c}-200 dark:focus-visible:ring-${c}-800`],
+  [/^resizable-handle-outline(-(\S+))?$/, ([, , c = 'gray']) => `ring-1 ring-${c}-200 dark:ring-${c}-800 focus-visible:ring-${c}-200 dark:focus-visible:ring-${c}-800`],
 ]
 
 export const resizable = [

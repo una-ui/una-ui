@@ -16,8 +16,8 @@ export const staticHoverCard: Record<`${HoverCardPrefix}-${string}` | HoverCardP
 }
 
 export const dynamicHoverCard = [
-  [/^hover-card-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 fill-${c}-50 stroke-${c}-200 border-${c}-200 dark:(bg-${c}-900 border-${c}-700/58 fill-${c}-900 stroke-${c}-700/58)`],
-  [/^hover-card-outline(-(\S+))?$/, ([, , c = 'gray']) => `border stroke-${c}-200 border-${c}-200 dark:(border-${c}-700/58 stroke-${c}-700/58)`],
+  [/^hover-card-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 fill-${c}-50 stroke-${c}-200 border-${c}-200 dark:(bg-${c}-900 border-${c}-800 fill-${c}-900 stroke-${c}-800)`],
+  [/^hover-card-outline(-(\S+))?$/, ([, , c = 'gray']) => `border stroke-${c}-200 border-${c}-200 dark:(border-${c}-800 stroke-${c}-800)`],
 ]
 
 export const hoverCard = [
