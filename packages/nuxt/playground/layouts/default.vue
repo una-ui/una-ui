@@ -15,7 +15,12 @@ const isMessagesPopoverActive = ref(false)
 </script>
 
 <template>
-  <NSidebarProvider>
+  <NSidebarProvider
+    :style="{
+      '--sidebar-width': 'calc(0.25rem * 72)',
+      '--header-height': 'calc(0.25rem * 12)',
+    }"
+  >
     <AppSidebar />
 
     <NSidebarInset>
