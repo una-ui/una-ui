@@ -42,7 +42,7 @@
 
       <!-- content -->
       <div class="flex flex-col gap-4">
-        <div class="flex items-center gap-4 text-sm text-muted">
+        <div class="flex items-center gap-4 text-sm text-muted-foreground">
           <div class="flex items-center gap-1">
             <NIcon name="i-lucide-users" class="text-primary" />
             <span>2.4k followers</span>

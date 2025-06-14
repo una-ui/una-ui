@@ -284,6 +284,9 @@ const data = {
 <template>
   <NSidebar
     collapsible="icon"
+    sidebar="inset"
+    sheet="left"
+    rail
   >
     <template #header>
       <TeamSwitcher :teams="data.teams" />
