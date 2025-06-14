@@ -1,29 +1,62 @@
 @import url(@unocss/reset/tailwind.css);
+html {
+  font-size: var(--una-font-size, 16px);
+  @apply font-sans antialiased text-foreground bg-background;
+}
+
+* {
+  @apply border-border outline-ring/50;
+}
+
+::selection {
+  @apply bg-selection text-selection-foreground;
+}
+
+body {
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  [data-wrapper] {
+    @apply min-[1800px]:border-t;
+  }
+}
+a:active,
+button:active {
+  @apply opacity-60 md:opacity-100;
+}
+
+* {
+  scrollbar-color: oklch(var(--una-border)) transparent;
+  scrollbar-width: thin;
+}
+
 :root {
-  --una-primary-hex: #ca8a04;
-  --una-primary-50: 254, 252, 232;
-  --una-primary-100: 254, 249, 195;
-  --una-primary-200: 254, 240, 138;
-  --una-primary-300: 253, 224, 71;
-  --una-primary-400: 250, 204, 21;
-  --una-primary-500: 234, 179, 8;
-  --una-primary-600: 202, 138, 4;
-  --una-primary-700: 161, 98, 7;
-  --una-primary-800: 133, 77, 14;
-  --una-primary-900: 113, 63, 18;
-  --una-primary-950: 66, 32, 6;
-  --una-gray-hex: #57534e;
-  --una-gray-50: 250, 250, 249;
-  --una-gray-100: 245, 245, 244;
-  --una-gray-200: 231, 229, 228;
-  --una-gray-300: 214, 211, 209;
-  --una-gray-400: 168, 162, 158;
-  --una-gray-500: 120, 113, 108;
-  --una-gray-600: 87, 83, 78;
-  --una-gray-700: 68, 64, 60;
-  --una-gray-800: 41, 37, 36;
-  --una-gray-900: 28, 25, 23;
-  --una-gray-950: 12, 10, 9;
+  --una-primary-hex: #d08700;
+  --una-primary-50: 98.7% 0.026 102.212;
+  --una-primary-100: 97.3% 0.071 103.193;
+  --una-primary-200: 94.5% 0.129 101.54;
+  --una-primary-300: 90.5% 0.182 98.111;
+  --una-primary-400: 85.2% 0.199 91.936;
+  --una-primary-500: 79.5% 0.184 86.047;
+  --una-primary-600: 68.1% 0.162 75.834;
+  --una-primary-700: 55.4% 0.135 66.442;
+  --una-primary-800: 47.6% 0.114 61.907;
+  --una-primary-900: 42.1% 0.095 57.708;
+  --una-primary-950: 28.6% 0.066 53.813;
+  --una-gray-hex: #57534d;
+  --una-gray-50: 98.5% 0.001 106.423;
+  --una-gray-100: 97% 0.001 106.424;
+  --una-gray-200: 92.3% 0.003 48.717;
+  --una-gray-300: 86.9% 0.005 56.366;
+  --una-gray-400: 70.9% 0.01 56.259;
+  --una-gray-500: 55.3% 0.013 58.071;
+  --una-gray-600: 44.4% 0.011 73.639;
+  --una-gray-700: 37.4% 0.01 67.558;
+  --una-gray-800: 26.8% 0.007 34.298;
+  --una-gray-900: 21.6% 0.006 56.043;
+  --una-gray-950: 14.7% 0.004 49.25;
 }
 
 :root {
@@ -36,7 +69,7 @@
   --una-gray-active: var(--una-gray-500);
   --una-secondary: var(--una-gray-100);
   --una-secondary-foreground: var(--una-gray-900);
-  --una-background: 255, 255, 255;
+  --una-background: 1 0 0;
   --una-foreground: var(--una-gray-950);
   --una-muted: var(--una-gray-100);
   --una-muted-foreground: var(--una-gray-500);
@@ -45,7 +78,7 @@
   --una-input: var(--una-gray-200);
   --una-ring: var(--una-gray-400);
   --una-border: var(--una-gray-200);
-  --una-popover: 255, 255, 255;
+  --una-popover: 1 0 0;
   --una-popover-foreground: var(--una-gray-950);
   --una-sidebar: var(--una-background);
   --una-sidebar-foreground: var(--una-foreground);
@@ -55,11 +88,8 @@
   --una-sidebar-accent-foreground: var(--una-gray-800);
   --una-sidebar-border: var(--una-gray-200);
   --una-sidebar-ring: var(--una-gray-200);
-  --un-default-border-color: rgb(var(--una-border));
-  --c-bg-selection: rgba(var(--una-primary-600), 0.2);
-  --c-border: rgb(var(--una-border));
-  --c-muted-foreground: rgb(var(--una-muted-foreground));
-  --c-muted: rgb(var(--una-muted));
+  --una-selection: var(--una-primary-50);
+  --una-selection-foreground: var(--una-primary-900);
 }
 
 .dark {
@@ -71,7 +101,7 @@
   --una-secondary: var(--una-gray-800);
   --una-secondary-foreground: var(--una-gray-50);
   --una-background: var(--una-gray-950);
-  --una-foreground: 255, 255, 255;
+  --una-foreground: 1 0 0;
   --una-muted: var(--una-gray-800);
   --una-muted-foreground: var(--una-gray-400);
   --una-accent: var(--una-gray-700);
@@ -85,54 +115,6 @@
   --una-sidebar-accent-foreground: var(--una-gray-100);
   --una-sidebar-border: var(--una-gray-800);
   --una-sidebar-ring: var(--una-gray-800);
-  --c-bg-selection: rgba(var(--una-primary-500), 0.2);
-  /* --selection: oklch(.922 0 0);
-  --selection-foreground: oklch(.205 0 0); */
-}
-
-html {
-  font-size: var(--una-font-size, 16px);
-  @apply font-sans antialiased text-foreground bg-background;
-}
-
-html.dark {
-  color-scheme: dark;
-}
-
-::-moz-selection {
-  background: var(--c-bg-selection);
-}
-
-::selection {
-  background: var(--c-bg-selection);
-}
-
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-* {
-  scrollbar-color: rgba(136, 136, 136, 0.3333333333) var(--c-border);
-}
-
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-::-webkit-scrollbar:horizontal {
-  height: 0.5rem;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--c-border);
-  border-radius: var(--una-radius);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--c-muted-foreground);
-  border-radius: calc(var(--una-radius) - 4px);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--c-muted) !important;
+  --una-selection: var(--una-primary-900);
+  --una-selection-foreground: var(--una-primary-50);
 }
