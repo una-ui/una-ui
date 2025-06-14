@@ -13,7 +13,6 @@ export default defineNuxtConfig({
 
   devtools: {
     enabled: true,
-    componentInspector: false,
   },
 
   app: {
@@ -29,9 +28,6 @@ export default defineNuxtConfig({
     },
     '/components': {
       redirect: '/components/accordion',
-    },
-    '/components/**': {
-      prerender: true,
     },
   },
 
