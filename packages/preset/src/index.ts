@@ -1,4 +1,4 @@
-import type { Theme } from '@unocss/preset-wind3'
+import type { Theme } from '@unocss/preset-mini'
 import type { Preset, RuleContext } from 'unocss'
 import type { unaUIOptions } from './types'
 import { fonts } from '@unocss/preset-mini/rules'
