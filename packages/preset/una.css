@@ -29,7 +29,6 @@ button:active {
 
 * {
   scrollbar-color: oklch(var(--una-border)) transparent;
-  scrollbar-width: thin;
 }
 
 :root {
