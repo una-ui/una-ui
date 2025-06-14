@@ -20,7 +20,7 @@ export const staticProgress: Record<`${ProgressPrefix}-${string}`, string> = {
 export const dynamicProgress = [
   [/^progress-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
     const color = parseColor(body, theme)
-    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
+    if (color?.color)
       return `n-${body}-600 dark:n-${body}-500`
   }],
 ]

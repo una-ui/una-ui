@@ -52,14 +52,14 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 export const dynamicSelect = [
   [/^select-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'gray'], { theme }: RuleContext<Theme>) => {
     const parsedColor = parseColor(c, theme)
-    if ((parsedColor?.cssColor?.type === 'rgb' || parsedColor?.cssColor?.type === 'rgba') && parsedColor.cssColor.components)
+    if (parsedColor?.color)
       return `btn-${v}-${c}`
     return undefined
   }],
 
   [/^select-item(-(\S+))?$/, ([, , c = 'gray'], { theme }: RuleContext<Theme>) => {
     const parsedColor = parseColor(c || 'gray', theme)
-    if ((parsedColor?.cssColor?.type === 'rgb' || parsedColor?.cssColor?.type === 'rgba') && parsedColor.cssColor.components)
+    if (parsedColor?.color)
       return `focus:bg-${c || 'gray'}-100 focus:text-${c || 'gray'}-800 dark:focus:bg-${c || 'gray'}-800 dark:focus:text-${c || 'gray'}-100`
     return undefined
   }],

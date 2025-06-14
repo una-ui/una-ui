@@ -25,7 +25,7 @@ export const staticRadioGroup: Record<`${RadioGroupPrefix}-${string}` | RadioGro
 export const dynamicRadioGroup = [
   [/^radio-group-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
     const color = parseColor(body, theme)
-    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
+    if (color?.color)
       return `n-${body}-600 dark:n-${body}-500`
   }],
 ]
