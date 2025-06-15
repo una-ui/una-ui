@@ -163,6 +163,13 @@
           btn="link-accent"
         />
       </div>
+
+      <div class="flex flex-col gap-2 md:flex-row">
+        <NButton
+          label="solid-secondary"
+          btn="solid-secondary"
+        />
+      </div>
     </div>
   </div>
 </template>

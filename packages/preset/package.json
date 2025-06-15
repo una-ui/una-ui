@@ -52,6 +52,7 @@
   "dependencies": {
     "@unocss/core": "catalog:",
     "@unocss/preset-mini": "catalog:",
+    "@unocss/preset-wind4": "catalog:",
     "unocss": "catalog:"
   }
 }

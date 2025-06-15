@@ -20,7 +20,7 @@
               alt="Nature landscape image"
               class="h-full w-full object-cover"
             >
-            <span class="absolute bottom-2 right-2 text-base fw500">{{ aspect }}%</span>
+            <span class="absolute bottom-2 right-2 text-foreground fw500">{{ aspect }}%</span>
           </template>
         </NAspectRatio>
       </template>

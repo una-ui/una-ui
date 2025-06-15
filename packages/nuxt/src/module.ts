@@ -67,7 +67,7 @@ export default defineNuxtModule<ModuleOptions>({
       ...{
         primary: 'yellow',
         gray: 'stone',
-        radius: 0.5,
+        radius: 0.625,
         fontSize: 16,
       },
       ...(nuxt.options.appConfig.una || {}),

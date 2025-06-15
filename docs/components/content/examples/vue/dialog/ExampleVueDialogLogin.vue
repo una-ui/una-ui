@@ -73,7 +73,7 @@ async function submitLogin() {
           <div class="text-end">
             <NPopover>
               <template #trigger>
-                <NButton btn="link-muted" class="text-xs text-muted">
+                <NButton btn="link-muted" class="text-xs text-muted-foreground">
                   Forgot password?
                 </NButton>
               </template>

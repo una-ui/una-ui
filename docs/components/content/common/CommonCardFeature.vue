@@ -17,11 +17,11 @@ withDefaults(defineProps<{
     />
 
     <div>
-      <h3 class="text-accent font-bold group-hover:text-$c-brand-light">
+      <h3 class="text-accent-foreground font-bold group-hover:text-$c-brand-light">
         {{ title }}
       </h3>
 
-      <p class="mt-2 text-muted">
+      <p class="mt-2 text-muted-foreground">
         {{ description }}
       </p>
     </div>

@@ -92,7 +92,7 @@ const activities = [
           <p class="text-md">
             {{ activity.title }}
           </p>
-          <p class="mt-1 text-sm text-muted">
+          <p class="mt-1 text-sm text-muted-foreground">
             {{ activity.description }}
           </p>
         </div>
@@ -110,7 +110,7 @@ const activities = [
           >
             {{ activity.type }}
           </NBadge>
-          <span class="text-sm text-muted">{{ activity.time }}</span>
+          <span class="text-sm text-muted-foreground">{{ activity.time }}</span>
         </div>
       </div>
     </NCard>

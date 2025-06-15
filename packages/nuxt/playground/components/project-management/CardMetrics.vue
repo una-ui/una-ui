@@ -39,7 +39,7 @@ const cards: Card[] = [
     <NCard
       v-for="(card, index) in cards"
       :key="index"
-      class="rounded-lg p-4"
+      class="from-primary/5 bg-gradient-to-t p-4 shadow-xs"
     >
       <template #root>
         <div class="flex items-center gap-2">
@@ -51,7 +51,7 @@ const cards: Card[] = [
         <p class="mt-2 text-3xl font-bold">
           {{ card.value }}
         </p>
-        <p class="mt-1 text-sm text-muted">
+        <p class="mt-1 text-sm text-muted-foreground">
           {{ card.description }}
         </p>
       </template>

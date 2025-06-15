@@ -15,7 +15,12 @@ const isMessagesPopoverActive = ref(false)
 </script>
 
 <template>
-  <NSidebarProvider>
+  <NSidebarProvider
+    :style="{
+      '--sidebar-width': 'calc(0.25rem * 72)',
+      '--header-height': 'calc(0.25rem * 12)',
+    }"
+  >
     <AppSidebar />
 
     <NSidebarInset>
@@ -36,7 +41,6 @@ const isMessagesPopoverActive = ref(false)
             v-model:open="isMessagesPopoverActive"
             :_popover-content="{
               align: 'end',
-              class: 'bg-muted',
             }"
           >
             <template #trigger>
@@ -66,11 +70,11 @@ const isMessagesPopoverActive = ref(false)
                   <p class="text-sm font-medium">
                     John Doe
                   </p>
-                  <p class="text-muted-foreground text-xs">
+                  <p class="text-xs text-muted-foreground">
                     Hey, can we schedule a meeting?
                   </p>
                 </div>
-                <span class="text-muted-foreground ml-auto text-xs">2m</span>
+                <span class="ml-auto text-xs text-muted-foreground">2m</span>
               </div>
               <div class="flex items-center gap-3">
                 <div class="h-8 w-8 flex items-center justify-center rounded-full bg-primary/10">
@@ -80,11 +84,11 @@ const isMessagesPopoverActive = ref(false)
                   <p class="text-sm font-medium">
                     Jane Smith
                   </p>
-                  <p class="text-muted-foreground text-xs">
+                  <p class="text-xs text-muted-foreground">
                     The project files are ready for review
                   </p>
                 </div>
-                <span class="text-muted-foreground ml-auto text-xs">1h</span>
+                <span class="ml-auto text-xs text-muted-foreground">1h</span>
               </div>
             </div>
           </NPopover>
@@ -93,7 +97,6 @@ const isMessagesPopoverActive = ref(false)
             v-model:open="isNotificationsPopoverActive"
             :_popover-content="{
               align: 'end',
-              class: 'bg-muted',
             }"
           >
             <template #trigger>
@@ -123,11 +126,11 @@ const isMessagesPopoverActive = ref(false)
                   <p class="truncate text-sm font-medium">
                     New Pull Request
                   </p>
-                  <p class="text-muted-foreground truncate text-xs">
+                  <p class="truncate text-xs text-muted-foreground">
                     feat: add dashboard components #123
                   </p>
                 </div>
-                <span class="text-muted-foreground shrink-0 text-xs">2m</span>
+                <span class="shrink-0 text-xs text-muted-foreground">2m</span>
               </div>
               <div class="flex items-center gap-3">
                 <div class="h-8 w-8 flex items-center justify-center rounded-full bg-primary/10">
@@ -137,11 +140,11 @@ const isMessagesPopoverActive = ref(false)
                   <p class="truncate text-sm font-medium">
                     Commit pushed to main
                   </p>
-                  <p class="text-muted-foreground truncate text-xs">
+                  <p class="truncate text-xs text-muted-foreground">
                     fix: resolve card styling issues
                   </p>
                 </div>
-                <span class="text-muted-foreground shrink-0 text-xs">1h</span>
+                <span class="shrink-0 text-xs text-muted-foreground">1h</span>
               </div>
               <div class="flex items-center gap-3">
                 <div class="h-8 w-8 flex items-center justify-center rounded-full bg-primary/10">
@@ -151,11 +154,11 @@ const isMessagesPopoverActive = ref(false)
                   <p class="truncate text-sm font-medium">
                     Project milestone reached
                   </p>
-                  <p class="text-muted-foreground truncate text-xs">
+                  <p class="truncate text-xs text-muted-foreground">
                     Dashboard v1.0.0 released 🎉
                   </p>
                 </div>
-                <span class="text-muted-foreground shrink-0 text-xs">3h</span>
+                <span class="shrink-0 text-xs text-muted-foreground">3h</span>
               </div>
             </div>
           </NPopover>
