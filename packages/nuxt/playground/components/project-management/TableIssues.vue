@@ -20,7 +20,7 @@ const { data, refresh } = await useFetch('/api/issues', {
 })
 
 async function addIssues() {
-  limit.value = Math.floor(Math.random() * 100)
+  limit.value += Math.floor(Math.random() * 100)
   await refresh()
 }
 
