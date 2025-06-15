@@ -127,7 +127,7 @@ export default function presetUna(options: unaUIOptions = {
         const color = parseColor(body, theme)
         if (color?.color && color.cssColor?.components) {
           return {
-            '--una-brand': `${color.cssColor.components.join(',')}`,
+            '--una-brand': `${color.cssColor.components.join(' ')}`,
           }
         }
       }],
