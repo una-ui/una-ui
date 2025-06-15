@@ -4,7 +4,6 @@ import type { Issue } from '../../data'
 import { NAvatar } from '#components'
 
 const limit = ref(50)
-const { toast } = useToast()
 
 const { data, refresh } = await useFetch('/api/issues', {
   query: { limit },
@@ -17,10 +16,12 @@ const { data, refresh } = await useFetch('/api/issues', {
       })
     }
   },
+  watch: false,
 })
 
-async function addIssues(count: number) {
-  limit.value += count
+async function addIssues() {
+  limit.value = Math.floor(Math.random() * 100)
+  await refresh()
 }
 
 const columns: ColumnDef<Issue>[] = [
@@ -318,7 +319,7 @@ const alertDialogData = reactive<{
             btn="soft-gray"
             label="i-radix-icons-plus"
             icon
-            @click="addIssues(Math.floor(Math.random() * 100))"
+            @click="addIssues()"
           />
         </NTooltip>
       </div>
