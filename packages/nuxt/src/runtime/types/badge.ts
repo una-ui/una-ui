@@ -1,4 +1,13 @@
+import type { HTMLAttributes } from 'vue'
+
 export interface NBadgeProps {
+  class?: HTMLAttributes['class']
+  /**
+   * The size of the badge.
+   *
+   * @default 'md'
+   */
+  size?: HTMLAttributes['class']
   /**
    * Allows you to add `UnaUI` badge preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.

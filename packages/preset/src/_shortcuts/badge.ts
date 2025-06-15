@@ -2,12 +2,12 @@ type BadgePrefix = 'badge'
 
 export const staticBadge: Record<`${BadgePrefix}-${string}` | BadgePrefix, string> = {
   // config
-  'badge-default-variant': 'badge-soft',
   'badge-close-icon': 'i-close',
 
   // base
-  'badge': 'text-xs leading-tight py-0.3333333333333333em px-0.6666666666666666em gap-x-0.25em inline-flex items-center rounded-md font-medium text-brand',
-  'badge-icon-base': 'text-1em',
+  'badge': 'px-2 py-0.5 font-medium overflow-hidden transition-[color,box-shadow] inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium text-brand gap-1 w-fit shrink-0',
+  'badge-label': 'text-0.75em',
+  'badge-icon-base': 'square-0.75em',
   'badge-close': 'relative rounded-sm h-1.16em w-1.16em grid place-items-center -mr-0.375em hover:bg-brand/20 bg-transparent',
   'badge-close-icon-base': 'text-brand/75 group-hover:text-brand/90',
 

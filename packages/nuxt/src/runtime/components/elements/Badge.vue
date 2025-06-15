@@ -1,46 +1,46 @@
 <script setup lang="ts">
 import type { NBadgeProps } from '../../types'
 
-import { computed } from 'vue'
+import { cn } from '../../utils'
 import NIcon from './Icon.vue'
 
 const props = withDefaults(defineProps<NBadgeProps>(), {
-  una: () => ({
-    badgeDefaultVariant: 'badge-default-variant',
-  }),
+  size: 'md',
+  badge: 'soft-gray',
 })
 
 const emit = defineEmits(['close'])
-
-const badgeVariants = ['solid', 'soft', 'outline'] as const
-const hasVariant = computed(() => badgeVariants.some(badgeVariants => props.badge?.includes(badgeVariants)))
-const isBaseVariant = computed(() => props.badge?.includes('~'))
 </script>
 
 <template>
   <span
-    :badge="badge"
-    class="badge"
-    :class="[
-      !hasVariant && !isBaseVariant ? una?.badgeDefaultVariant : '',
+    :badge
+    :class="cn(
+      'badge',
       una?.badge,
-    ]"
+      props.class,
+    )"
+    :size
   >
     <NIcon
       v-if="icon"
       badge="icon-base"
       :class="una?.badgeIconBase"
       :name="icon"
+      :size
     />
 
     <slot>
-      {{ label }}
+      <span class="badge-label">
+        {{ label }}
+      </span>
     </slot>
 
     <button
       v-if="closable"
       badge="close"
       :class="una?.badgeClose"
+      :size
       group
       @click="emit('close')"
     >

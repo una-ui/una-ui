@@ -47,6 +47,10 @@ const cards: Card[] = [
           <h3 class="font-semibold">
             {{ card.title }}
           </h3>
+
+          <div class="ml-auto">
+            <NBadge icon="i-lucide-trending-up" label="12%" />
+          </div>
         </div>
         <p class="mt-2 text-3xl font-bold">
           {{ card.value }}
