@@ -1,7 +1,6 @@
 import type { Theme } from '@unocss/preset-wind4'
 import type { Colors } from '../types'
 import { colors } from '@unocss/preset-wind4/colors'
-import chroma from 'chroma-js'
 
 // filter out the primary colors from the color palette
 const filteredPrimaryColors = Object.fromEntries(
@@ -97,31 +96,41 @@ export function useUnaThemes(): UseUnaThemesReturn {
   ]) as [string, Colors][]
 
   function getColors(color: string, prefix: string): Colors {
-    const colorPalette: Theme['colors'] = filteredColors[color]
+    const colorPalette = filteredColors[color] as Colors
 
     if (!colorPalette)
       throw new Error(`Invalid primary color: ${color}`)
 
-    const colors = {} as Required<Colors> // Initialize an empty object to store the theme colors
-
-    colors[`--una-${prefix}-hex`] = chroma(colorPalette[600] as string).hex() // Assign the primary color hex code to the corresponding theme variable
+    // Initialize an empty object to store the theme colors
+    const colors: Colors = {}
 
     // Iterate over each shade in the color palette and assign it to the corresponding theme variable
-    for (const shade of Object.keys(colorPalette) as unknown as (keyof Theme['colors'])[]) {
-      colors[`--una-${prefix}-${shade}`] = colorPalette[shade] as string
-      // remove the oklch()
-      colors[`--una-${prefix}-${shade}`] = colors[`--una-${prefix}-${shade}`].replace('oklch(', '').replace(')', '')
+    for (const shade of Object.keys(colorPalette)) {
+      const value = colorPalette[shade] as string
+      if (value.startsWith('oklch('))
+        colors[`--una-${prefix}-${shade}`] = value.replace('oklch(', '').replace(')', '')
     }
+
+    // Assign the primary color hex code to the corresponding theme variable
+    colors[`--una-${prefix}-hex`] = colorPalette[600]
 
     return colors
   }
 
   function getPrimaryColors(color: string): Colors {
-    return primaryThemes.filter(([colorName, _]) => colorName === color)[0][1]
+    const theme = primaryThemes.find(([colorName, _]) => colorName === color)
+    if (!theme)
+      throw new Error(`Primary color "${color}" not found in available themes`)
+
+    return theme[1]
   }
 
   function getGrayColors(color: string): Colors {
-    return grayThemes.filter(([colorName, _]) => colorName === color)[0][1]
+    const theme = grayThemes.find(([colorName, _]) => colorName === color)
+    if (!theme)
+      throw new Error(`Gray color "${color}" not found in available themes`)
+
+    return theme[1]
   }
 
   return {
