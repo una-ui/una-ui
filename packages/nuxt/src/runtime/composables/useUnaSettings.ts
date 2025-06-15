@@ -30,8 +30,8 @@ export function useUnaSettings(): UseUnaSettingsReturn {
   })
 
   watchEffect(() => {
-    settings.value.primaryColors = getPrimaryColors(settings.value.primary || una.primary)
-    settings.value.grayColors = getGrayColors(settings.value.gray || una.gray)
+    settings.value.primaryColors = getPrimaryColors(settings.value.primary, una.primary)
+    settings.value.grayColors = getGrayColors(settings.value.gray, una.gray)
   })
 
   function reset(): void {

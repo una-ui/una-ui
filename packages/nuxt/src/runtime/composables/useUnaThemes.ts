@@ -2,35 +2,66 @@ import type { Theme } from '@unocss/preset-wind4'
 import type { Colors } from '../types'
 import { colors } from '@unocss/preset-wind4/colors'
 
-// filter out the primary colors from the color palette
-const filteredPrimaryColors = Object.fromEntries(
-  Object.entries(colors)
-    .filter(([key]) => [
-      'blue',
-      'cyan',
-      'sky',
-      'amber',
-      'yellow',
-      'emerald',
-      'lime',
-      'orange',
-      'purple',
-      'indigo',
-      'pink',
-      'tomato',
-      'green',
-      'fuchsia',
-      'violet',
-      'rose',
-      'amber',
-      'red',
-      'teal',
-    ].includes(key))
-    .map(([key, value]) => [key, Object.fromEntries(
-      Object.entries(value)
-        .filter(([key]) => ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', '950'].includes(key)),
-    )]),
-)
+// filter out the primary colors from the color palette + insert 0 and 1000 for each color
+const filteredPrimaryColors = (() => {
+  const primaryColors = Object.fromEntries(
+    Object.entries(colors)
+      .filter(([key]) => [
+        'black',
+        'blue',
+        'cyan',
+        'sky',
+        'amber',
+        'yellow',
+        'emerald',
+        'lime',
+        'orange',
+        'purple',
+        'indigo',
+        'pink',
+        'tomato',
+        'green',
+        'fuchsia',
+        'violet',
+        'rose',
+        'amber',
+        'red',
+        'teal',
+      ].includes(key))
+      .map(([key, value]) => [
+        key,
+        Object.fromEntries(
+          Object.entries(value as Record<string, string>)
+            .filter(([key]) => ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', '950'].includes(key)),
+        ),
+      ]),
+  )
+
+  // insert 0 and 1000 for each color
+  for (const color of Object.keys(primaryColors)) {
+    primaryColors[color][0] = '1 0 0'
+    primaryColors[color][1000] = '0 0 0'
+  }
+
+  return primaryColors
+})()
+
+// insert white to primary colors
+filteredPrimaryColors.black = {
+  0: 'oklch(1 0 0)',
+  50: 'oklch(1 0 0)',
+  100: 'oklch(1 0 0)',
+  200: 'oklch(1 0 0)',
+  300: 'oklch(1 0 0)',
+  400: 'oklch(1 0 0)',
+  500: 'oklch(1 0 0)',
+  600: 'oklch(1 0 0)',
+  700: 'oklch(1 0 0)',
+  800: 'oklch(1 0 0)',
+  900: 'oklch(1 0 0)',
+  950: 'oklch(1 0 0)',
+  1000: 'oklch(0 0 0)',
+}
 
 // insert your custom primary colors here
 // filteredPrimaryColors.tomato = {
@@ -80,8 +111,8 @@ const filteredColors = {
 export interface UseUnaThemesReturn {
   primaryThemes: [string, Colors][]
   grayThemes: [string, Colors][]
-  getPrimaryColors: (color: string) => Colors
-  getGrayColors: (color: string) => Colors
+  getPrimaryColors: (color: string, defaultColor?: string) => Colors
+  getGrayColors: (color: string, defaultColor?: string) => Colors
 }
 
 export function useUnaThemes(): UseUnaThemesReturn {
@@ -117,18 +148,18 @@ export function useUnaThemes(): UseUnaThemesReturn {
     return colors
   }
 
-  function getPrimaryColors(color: string): Colors {
+  function getPrimaryColors(color: string, defaultColor: string = 'yellow'): Colors {
     const theme = primaryThemes.find(([colorName, _]) => colorName === color)
     if (!theme)
-      throw new Error(`Primary color "${color}" not found in available themes`)
+      return getPrimaryColors(defaultColor)
 
     return theme[1]
   }
 
-  function getGrayColors(color: string): Colors {
+  function getGrayColors(color: string, defaultColor: string = 'stone'): Colors {
     const theme = grayThemes.find(([colorName, _]) => colorName === color)
     if (!theme)
-      throw new Error(`Gray color "${color}" not found in available themes`)
+      return getGrayColors(defaultColor)
 
     return theme[1]
   }
