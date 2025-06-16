@@ -26,6 +26,7 @@ import { kbd } from './kbd'
 import { label } from './label'
 import { link } from './link'
 import { navigationMenu } from './navigation-menu'
+import { numberField } from './number-field'
 import { pagination } from './pagination'
 import { popover } from './popover'
 import { progress } from './progress'
@@ -84,6 +85,7 @@ export const shortcuts = [
   ...sheet,
   ...scrollArea,
   ...navigationMenu,
+  ...numberField,
   ...sidebar,
   ...aspectRatio,
   ...resizable,
