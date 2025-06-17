@@ -18,7 +18,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
   <NumberFieldRoot v-bind="forwarded" :class="cn('number-field-root', props.class)">
     <slot>
       <slot name="header">
-        <NLabel v-if="label" :label />
+        <NLabel v-if="label" :for="props.id" :label />
       </slot>
       <NumberFieldContent>
         <slot name="content">
