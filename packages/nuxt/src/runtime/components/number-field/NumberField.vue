@@ -25,7 +25,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           <NNumberFieldDecrement
             v-bind="forwarded._numberFieldDecrement"
             :una
-          />
+          >
+            <slot name="decrement" />
+          </NNumberFieldDecrement>
           <NNumberFieldInput
             v-bind="forwarded._numberFieldInput"
             :una
@@ -33,7 +35,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           <NNumberFieldIncrement
             v-bind="forwarded._numberFieldIncrement"
             :una
-          />
+          >
+            <slot name="increment" />
+          </NNumberFieldIncrement>
         </slot>
       </NumberFieldContent>
     </slot>
