@@ -3,7 +3,7 @@ packages:
   - packages/**
   - playground/**
 catalog:
-  '@antfu/eslint-config': ^4.13.2
+  '@antfu/eslint-config': ^4.14.1
   '@antfu/ni': ^24.4.0
   '@faker-js/faker': ^9.8.0
   '@headlessui/vue': ^1.7.23
@@ -13,7 +13,7 @@ catalog:
   '@iconify-json/tabler': ^1.2.19
   '@iconify/json': ^2.2.349
   '@iconify/utils': ^2.3.0
-  '@nuxt/devtools': ^2.4.1
+  '@nuxt/devtools': ^2.5.0
   '@nuxt/kit': ^3.17.5
   '@nuxt/module-builder': ^1.0.1
   '@nuxt/schema': ^3.17.5
@@ -22,7 +22,7 @@ catalog:
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.15.23
+  '@types/node': ^22.15.32
   '@una-ui/content': ^48.2.0
   '@unocss/core': ^66.0.0
   '@unocss/eslint-config': ^66.0.0
@@ -30,18 +30,18 @@ catalog:
   '@unocss/preset-attributify': ^66.0.0
   '@unocss/preset-icons': ^66.0.0
   '@unocss/preset-mini': ^66.0.0
-  '@vee-validate/nuxt': ^4.15.0
-  '@vee-validate/zod': ^4.15.0
+  '@vee-validate/nuxt': ^4.15.1
+  '@vee-validate/zod': ^4.15.1
   '@vercel/analytics': ^1.5.0
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
-  bumpp: ^10.1.1
+  bumpp: ^10.2.0
   chroma-js: ^3.1.2
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.27.0
+  eslint: ^9.29.0
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
@@ -51,17 +51,17 @@ catalog:
   nuxt: ^3.17.5
   ohash: ^1.1.6
   pathe: ^2.0.3
-  reka-ui: ^2.3.0
+  reka-ui: ^2.3.1
   rimraf: ^6.0.1
-  sass: ^1.89.0
-  simple-git: ^3.27.0
+  sass: ^1.89.2
+  simple-git: ^3.28.0
   simple-git-hooks: ^2.13.0
-  tailwind-merge: ^3.3.0
+  tailwind-merge: ^3.3.1
   typescript: ^5.8.3
   unbuild: ^3.5.0
   unocss: ^66.0.0
   unocss-preset-animations: ^1.2.1
   vaul-vue: ^0.4.1
-  vitest: ^3.1.4
+  vitest: ^3.2.4
   vue-tsc: ^2.2.10
-  zod: ^3.25.30
+  zod: ^3.25.67
