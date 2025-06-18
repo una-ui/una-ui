@@ -5,6 +5,7 @@ html {
 
 * {
   @apply border-border outline-ring/50;
+  scrollbar-color: oklch(var(--una-border)) transparent;
 }
 
 ::selection {

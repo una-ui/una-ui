@@ -6,6 +6,7 @@ html {
 
 * {
   @apply border-border outline-ring/50;
+  scrollbar-color: oklch(var(--una-border)) transparent;
 }
 
 ::selection {
@@ -25,10 +26,6 @@ body {
 a:active,
 button:active {
   @apply opacity-60 md:opacity-100;
-}
-
-* {
-  scrollbar-color: oklch(var(--una-border)) transparent;
 }
 
 :root {
@@ -63,6 +60,7 @@ button:active {
   --una-radius: 0.5rem;
   --una-brand: var(--una-primary-600);
   --una-primary: var(--una-primary-600);
+  --una-primary-foreground: 1 0 0;
   --una-primary-active: var(--una-primary-500);
   --una-gray: var(--una-gray-600);
   --una-gray-active: var(--una-gray-500);
@@ -75,7 +73,7 @@ button:active {
   --una-accent: var(--una-gray-50);
   --una-accent-foreground: var(--una-gray-700);
   --una-input: var(--una-gray-200);
-  --una-ring: var(--una-gray-400);
+  --una-ring: var(--una-primary-400);
   --una-border: var(--una-gray-200);
   --una-popover: 1 0 0;
   --una-popover-foreground: var(--una-gray-950);
@@ -94,6 +92,7 @@ button:active {
 .dark {
   --una-brand: var(--una-primary-500);
   --una-primary: var(--una-primary-500);
+  --una-primary-foreground: 0 0 0;
   --una-primary-active: var(--una-primary-400);
   --una-gray: var(--una-gray-500);
   --una-gray-active: var(--una-gray-400);
@@ -106,7 +105,7 @@ button:active {
   --una-accent: var(--una-gray-700);
   --una-accent-foreground: var(--una-gray-50);
   --una-input: var(--una-gray-800);
-  --una-ring: var(--una-gray-500);
+  --una-ring: var(--una-primary-500);
   --una-border: var(--una-gray-800);
   --una-popover: var(--una-gray-900);
   --una-popover-foreground: var(--una-gray-50);
