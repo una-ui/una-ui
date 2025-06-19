@@ -16,8 +16,13 @@ export const staticSwitch: Record<`${SwitchPrefix}-${string}` | SwitchPrefix, st
   'switch-icon-checked': 'text-muted-foreground',
 
   // loading
-  'switch-loading-icon': 'text-gray animate-spin text-0.8em',
+  'switch-loading-icon': 'text-muted-foreground animate-spin text-0.8em',
   'switch-loading-icon-name': 'i-loading',
+
+  'switch-checked-primary': 'data-[state=checked]:bg-primary',
+  'switch-checked': 'switch-checked-primary',
+  'switch-unchecked-gray': 'data-[state=unchecked]:bg-input dark:data-[state=unchecked]:bg-input/80',
+  'switch-unchecked': 'switch-unchecked-gray',
 }
 
 export const dynamicSwitch = [

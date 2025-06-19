@@ -20,6 +20,11 @@ export const staticRadioGroup: Record<`${RadioGroupPrefix}-${string}` | RadioGro
   'radio-group-indicator': 'flex items-center justify-center',
   'radio-group-indicator-icon-base': 'h-0.875em w-0.875em fill-brand',
   'radio-group-indicator-icon': 'i-dot',
+
+  'radio-group-primary': 'n-primary',
+  'radio-group-secondary': 'n-secondary',
+  'radio-group-accent': 'n-accent',
+  'radio-group-muted': 'n-muted',
 }
 
 export const dynamicRadioGroup = [

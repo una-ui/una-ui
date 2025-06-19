@@ -12,8 +12,8 @@ export const staticTabs: Record<`${TabsPrefix}-${string}` | TabsPrefix, string> 
 }
 
 export const dynamicTabs = [
-  [/^tabs-active-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[state=active]:btn-${v}-${c}`],
-  [/^tabs-inactive-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[state=inactive]:btn-${v}-${c}`],
+  [/^tabs-active-([^-]+)-([^-]+)$/, ([, v = 'outline', c = 'gray']) => `data-[state=active]:btn-${v}-${c}`],
+  [/^tabs-inactive-([^-]+)-([^-]+)$/, ([, v = 'outline', c = 'gray']) => `data-[state=inactive]:btn-${v}-${c}`],
 ]
 
 export const tabs = [
