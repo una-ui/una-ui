@@ -5,20 +5,16 @@ import { parseColor } from '@unocss/preset-mini/utils'
 type SliderPrefix = 'slider'
 
 export const staticSlider: Record<`${SliderPrefix}-${string}`, string> = {
-  // configurations
-  'slider-disabled': 'n-disabled',
-  'slider-root-vertical': 'flex-col w-1em h-full',
-  'slider-track-vertical': 'w-0.5em h-full',
-  'slider-range-vertical': 'w-full',
-  'slider-thumb-vertical': 'w-1.25em h-1.25em',
-
   // components
-  'slider-root': 'relative flex w-full touch-none select-none items-center',
-  'slider-track': 'h-0.5em relative w-full grow overflow-hidden rounded-full bg-muted',
-  'slider-range': 'absolute h-full bg-brand',
-  'slider-thumb': 'w-1.25em h-1.25em block border-2 border-brand rounded-full bg-background focus-visible:ring-ring ring-offset-background transition-colors disabled:slider-disabled focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+  'slider-root': 'relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col',
+  'slider-track': 'bg-muted relative grow overflow-hidden rounded-full data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5',
+  'slider-range': 'bg-brand absolute data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full',
+  'slider-thumb': 'square-1em border-brand bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-none disabled:n-disabled',
 
-  'slider-accent': 'n-gray-300 dark:n-gray-800',
+  'slider-primary': 'n-primary',
+  'slider-secondary': 'n-secondary',
+  'slider-accent': 'n-accent',
+  'slider-muted': 'n-muted',
 }
 
 export const dynamicSlider = [

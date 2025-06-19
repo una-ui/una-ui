@@ -3,44 +3,46 @@ import type { SliderRootEmits } from 'reka-ui'
 import type { NSliderProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack, useForwardPropsEmits } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NSliderProps>(), {
   slider: 'primary',
+  size: 'md',
 })
 const emits = defineEmits<SliderRootEmits>()
-const rootProps = reactiveOmit(props, ['class', 'una', 'slider', 'una'])
+const rootProps = reactiveOmit(props, ['class', 'una', 'slider'])
 const forwarded = useForwardPropsEmits(rootProps, emits)
-const isVertical = computed(() => props.orientation === 'vertical')
 </script>
 
 <template>
   <SliderRoot
     v-slot="{ modelValue }"
+    data-slot="slider-root"
     :class="cn(
-      'slider-root',
-      isVertical && 'slider-root-vertical',
+      'relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col',
+      // 'slider-root',
       props.class,
       props.una?.sliderRoot,
-      disabled && 'slider-disabled',
     )"
     v-bind="forwarded"
     :slider="slider"
+    :size="size"
   >
     <slot name="slider-track">
       <SliderTrack
+        data-slot="slider-track"
         :class="cn(
           'slider-track',
-          isVertical && 'slider-track-vertical',
           props.una?.sliderTrack,
         )"
+        :size
       >
         <slot name="slider-range">
           <SliderRange
+            data-slot="slider-range"
+            :size
             :class="cn(
               'slider-range',
-              isVertical && 'slider-range-vertical',
               props.una?.sliderRange,
             )"
           />
@@ -52,9 +54,10 @@ const isVertical = computed(() => props.orientation === 'vertical')
       <SliderThumb
         v-for="(_, key) in modelValue"
         :key="key"
+        data-slot="slider-thumb"
+        :size
         :class="cn(
           'slider-thumb',
-          isVertical && 'slider-thumb-vertical',
           props.una?.sliderThumb,
         )"
       />
