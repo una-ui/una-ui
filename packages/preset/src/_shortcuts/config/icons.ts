@@ -7,6 +7,4 @@ export const staticIcons = {
   'i-close': 'i-tabler-x',
   'i-check': 'i-tabler-check',
   'i-dot': 'i-tabler-circle-filled',
-  'i-minus': 'i-tabler-minus',
-  'i-plus': 'i-tabler-plus',
 }

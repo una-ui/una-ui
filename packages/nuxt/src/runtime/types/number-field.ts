@@ -1,13 +1,15 @@
 import type { NumberFieldDecrementProps, NumberFieldIncrementProps, NumberFieldInputProps, NumberFieldRootProps } from 'reka-ui'
 
 import type { HTMLAttributes } from 'vue'
+import type { NInputProps } from './input'
 
-export interface NNumberFieldProps extends NumberFieldRootProps, BaseExtensions {
+export interface NNumberFieldProps extends NumberFieldRootProps, Pick<NInputProps, 'leading' | 'trailing'>, BaseExtensions {
 
   label?: string
   /**
    * The description of the number field.
    */
+
   _numberFieldContent?: NNumberFieldContentProps
   _numberFieldDecrement?: NNumberFieldDecrementProps
   _numberFieldIncrement?: NNumberFieldIncrementProps
@@ -24,10 +26,12 @@ export interface NNumberFieldContentProps extends BaseExtensions {
 }
 
 export interface NNumberFieldDecrementProps extends NumberFieldDecrementProps, BaseExtensions {
+  icon: string
   una?: Pick<NNumberFieldUnaProps, 'numberFieldDecrement'>
 }
 
 export interface NNumberFieldIncrementProps extends NumberFieldIncrementProps, BaseExtensions {
+  icon: string
   una?: Pick<NNumberFieldUnaProps, 'numberFieldIncrement'>
 }
 

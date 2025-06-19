@@ -3,8 +3,11 @@ import type { NNumberFieldDecrementProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { NumberFieldDecrement, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
+import Icon from '../elements/Icon.vue'
 
-const props = defineProps<NNumberFieldDecrementProps>()
+const props = withDefaults(defineProps<NNumberFieldDecrementProps>(), {
+  icon: 'i-lucide-minus',
+})
 
 const delegatedProps = reactiveOmit(props, 'class')
 
@@ -22,7 +25,7 @@ const forwarded = useForwardProps(delegatedProps)
     )"
   >
     <slot>
-      <NIcon name="i-minus" />
+      <Icon :name="icon" />
     </slot>
   </NumberFieldDecrement>
 </template>

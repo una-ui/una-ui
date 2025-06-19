@@ -3,9 +3,11 @@ import type { NNumberFieldIncrementProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { NumberFieldIncrement, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
+import Icon from '../elements/Icon.vue'
 
-const props = defineProps<NNumberFieldIncrementProps>()
-
+const props = withDefaults(defineProps<NNumberFieldIncrementProps>(), {
+  icon: 'i-lucide-plus',
+})
 const delegatedProps = reactiveOmit(props, 'class')
 
 const forwarded = useForwardProps(delegatedProps)
@@ -22,7 +24,7 @@ const forwarded = useForwardProps(delegatedProps)
     )"
   >
     <slot>
-      <NIcon name="i-plus" />
+      <Icon :name="icon" />
     </slot>
   </NumberFieldIncrement>
 </template>
