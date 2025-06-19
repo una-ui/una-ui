@@ -3,7 +3,7 @@ description: 'A number field lets users enter and adjust numeric values with opt
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/drawer/Number-Field.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/number-field/Number-Field.vue
     target: _blank
   - value: API reference
     to: https://www.reka-ui.com/docs/components/number-field
@@ -43,7 +43,7 @@ badges:
 ::
 :::
 
-:read-more{to="https://reka-ui.com/docs/components/number-field#root" title="Reka Alert Number Field API" target="_blank"}
+:read-more{to="https://reka-ui.com/docs/components/number-field#root" title="Reka Number Field API" target="_blank"}
 
 ## Slots
 
