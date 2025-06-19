@@ -1,9 +1,8 @@
 import type { Ref } from 'vue'
 import type { UnaSettings } from '../types'
-import { useAppConfig } from '#imports'
+import { useAppConfig, watch } from '#imports'
 import { useStorage } from '@vueuse/core'
 import { defu } from 'defu'
-import { watchEffect } from 'vue'
 import { useUnaThemes } from './useUnaThemes'
 
 export interface UseUnaSettingsReturn {
@@ -30,10 +29,14 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     mergeDefaults: defu,
   })
 
-  watchEffect(() => {
-    settings.value.primaryColors = getPrimaryColors(settings.value.primary, una.primary)
-    settings.value.grayColors = getGrayColors(settings.value.gray, una.gray)
-  })
+  watch(
+    () => [settings.value.primary, settings.value.gray],
+    ([primary, gray]) => {
+      settings.value.primaryColors = getPrimaryColors(primary, una.primary)
+      settings.value.grayColors = getGrayColors(gray, una.gray)
+    },
+    { immediate: true },
+  )
 
   function reset(): void {
     settings.value.primary = defaultSettings.primary

@@ -23,7 +23,6 @@ const filteredPrimaryColors = (() => {
         'fuchsia',
         'violet',
         'rose',
-        'amber',
         'red',
         'teal',
       ].includes(key))
