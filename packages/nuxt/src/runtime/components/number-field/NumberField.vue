@@ -8,6 +8,8 @@ import NumberFieldContent from './NumberFieldContent.vue'
 
 const props = withDefaults(defineProps<NNumberFieldProps>(), {
   size: 'md',
+  leading: 'i-lucide-minus',
+  trailing: 'i-lucide-plus',
 })
 const emits = defineEmits<NumberFieldRootEmits>()
 
@@ -23,7 +25,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         <slot name="content">
           <NNumberFieldDecrement
             v-bind="forwarded._numberFieldDecrement"
-            :icon="leading"
+            :icon="props.leading"
             :size
             :una
           >
@@ -36,7 +38,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           />
           <NNumberFieldIncrement
             v-bind="forwarded._numberFieldIncrement"
-            :icon="trailing"
+            :icon="props.trailing"
             :size
             :una
           >
