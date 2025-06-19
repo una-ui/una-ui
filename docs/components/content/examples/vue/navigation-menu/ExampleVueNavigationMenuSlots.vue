@@ -110,7 +110,7 @@ const items = [
 
       <!-- Components content -->
       <template #components-content="{ items: componentItems }">
-        <div class="bg-card w-[500px] rounded-md p-6 shadow-md">
+        <div class="w-[500px] rounded-md bg-card p-6 shadow-md">
           <div class="mb-5">
             <h3 class="mb-2 text-xl text-primary font-semibold">
               UI Components
