@@ -4,7 +4,7 @@
 <template>
   <NPopover :_popover-content="{ class: 'w-80', align: 'start', side: 'right' }">
     <template #trigger>
-      <NButton btn="solid-gray">
+      <NButton btn="outline-gray">
         Open popover
       </NButton>
     </template>

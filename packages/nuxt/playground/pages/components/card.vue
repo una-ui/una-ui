@@ -21,7 +21,7 @@
     </div>
     <template #footer>
       <div mt-2 w-full flex="~ justify-between">
-        <NButton btn="solid-gray">
+        <NButton btn="outline-gray">
           Submit
         </NButton>
         <NButton btn="solid-primary">
