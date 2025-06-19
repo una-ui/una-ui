@@ -18,6 +18,15 @@ export default defineNuxtPlugin(() => {
           const html = document.documentElement
           ${process.dev ? 'console.log({ settings })' : ''}
 
+          if (settings.theme) {
+            Object.entries(settings.theme.cssVars.light).map(i => html.style.setProperty(i[0], i[1])) 
+            Object.entries(settings.theme.cssVars.dark).map(i => html.style.setProperty(i[0], i[1]))
+
+            html.style.setProperty('--una-radius', settings.radius + 'rem')
+            html.style.setProperty('--una-font-size', settings.fontSize + 'px')
+            return
+          }
+
           if (settings.primary)
             Object.entries(settings.primaryColors).map(i => html.style.setProperty(i[0], i[1]))
           if (settings.gray)
