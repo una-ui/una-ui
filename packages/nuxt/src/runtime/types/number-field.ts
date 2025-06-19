@@ -4,12 +4,6 @@ import type { HTMLAttributes } from 'vue'
 import type { NInputProps } from './input'
 
 export interface NNumberFieldProps extends NumberFieldRootProps, Pick<NInputProps, 'leading' | 'trailing'>, BaseExtensions {
-
-  label?: string
-  /**
-   * The description of the number field.
-   */
-
   _numberFieldContent?: NNumberFieldContentProps
   _numberFieldDecrement?: NNumberFieldDecrementProps
   _numberFieldIncrement?: NNumberFieldIncrementProps
@@ -48,4 +42,5 @@ export interface NNumberFieldUnaProps {
 
 interface BaseExtensions {
   class?: HTMLAttributes['class']
+  size?: HTMLAttributes['class']
 }

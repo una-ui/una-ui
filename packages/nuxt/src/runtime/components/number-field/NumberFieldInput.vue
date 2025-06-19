@@ -3,7 +3,9 @@ import type { NNumberFieldInputProps } from '../../types'
 import { NumberFieldInput } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<NNumberFieldInputProps>()
+const props = withDefaults(defineProps<NNumberFieldInputProps>(), {
+  size: 'md',
+})
 </script>
 
 <template>
@@ -14,5 +16,6 @@ const props = defineProps<NNumberFieldInputProps>()
       props.una?.numberFieldInput,
       props.class,
     )"
+    :size
   />
 </template>

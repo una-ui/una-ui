@@ -7,6 +7,7 @@ import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NNumberFieldIncrementProps>(), {
   icon: 'i-lucide-plus',
+  size: 'md',
 })
 const delegatedProps = reactiveOmit(props, 'class')
 
