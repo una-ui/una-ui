@@ -1,5 +1,6 @@
 import type { PrimitiveProps } from 'reka-ui'
 import type { NAvatarProps } from './avatar'
+
 /**
  * This extends the `NAvatarProps` interface.
  *
