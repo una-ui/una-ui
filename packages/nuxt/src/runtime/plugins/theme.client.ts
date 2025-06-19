@@ -17,7 +17,7 @@ export default defineNuxtPlugin(() => {
 
   // created a computed property for styles
   const computedStyles = computed(() => {
-    if (settings.value.theme !== null) {
+    if (settings.value.theme) {
       return `
       :root {
         ${Object.entries(settings.value.theme.cssVars.light).map(([k, v]) => `${k}: ${v};`).join('\n')}
