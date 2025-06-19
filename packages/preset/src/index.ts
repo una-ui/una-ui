@@ -40,6 +40,8 @@ export default function presetUna(options: unaUIOptions = {
         input: 'oklch(var(--una-input) / <alpha-value>)',
         border: 'oklch(var(--una-border) / <alpha-value>)',
         ring: 'oklch(var(--una-ring) / <alpha-value>)',
+        card: 'oklch(var(--una-card) / <alpha-value>)',
+        cardForeground: 'oklch(var(--una-card-foreground) / <alpha-value>)',
         primary: {
           DEFAULT: 'oklch(var(--una-primary) / <alpha-value>)',
           active: 'oklch(var(--una-primary-active) / <alpha-value>)',

@@ -24,6 +24,9 @@
   --una-accent: var(--una-gray-50);
   --una-accent-foreground: var(--una-gray-700);
 
+  --una-card: 1 0 0;
+  --una-card-foreground: var(--una-gray-950);
+
   --una-input: var(--una-gray-200);
   --una-ring: var(--una-primary-400);
   --una-border: var(--una-gray-200);
@@ -69,6 +72,9 @@
 
   --una-accent: var(--una-gray-700);
   --una-accent-foreground: var(--una-gray-50);
+
+  --una-card: var(--una-gray-900);
+  --una-card-foreground: var(--una-gray-50);
 
   --una-input: var(--una-gray-700);
   --una-ring: var(--una-primary-500);
