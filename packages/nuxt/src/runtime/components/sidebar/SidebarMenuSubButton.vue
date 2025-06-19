@@ -2,9 +2,10 @@
 import type { NSidebarMenuSubButtonProps } from '../../types'
 import { Primitive } from 'reka-ui'
 import { cn } from '../../utils'
+import NLink from '../elements/Link.vue'
 
 const props = withDefaults(defineProps<NSidebarMenuSubButtonProps>(), {
-  as: 'a',
+  as: NLink,
   size: 'md',
 })
 </script>
