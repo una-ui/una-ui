@@ -21,13 +21,6 @@ const value = ref([10])
 </script>
 
 <template>
-  <!-- <NFormField
-    name="volume"
-    label="Volume"
-    hint="Adjust the volume"
-    message="Volume is too high"
-    class="w-1/2"
-  > -->
   <div class="w-1/2">
     <NSlider
       v-model="value"
@@ -36,5 +29,4 @@ const value = ref([10])
       :max="100"
     />
   </div>
-  <!-- </NFormField> -->
 </template>
