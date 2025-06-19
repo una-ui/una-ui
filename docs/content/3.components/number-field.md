@@ -3,7 +3,7 @@ description: 'A number field lets users enter and adjust numeric values with opt
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/number-field/Number-Field.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/number-field/NumberField.vue
     target: _blank
   - value: API reference
     to: https://www.reka-ui.com/docs/components/number-field
@@ -24,7 +24,7 @@ badges:
 | `formatOptions`      | —       | `NumberFormatOptions` | Formatting options for the value displayed in the number field. This also affects what characters are allowed to be typed by the user. Read more about [formatOptions](https://reka-ui.com/docs/components/number-field#example). |
 | `id`                 | —       | `string`              | Id of the element                                                                                                                                                                                                                 |
 | `invertWheelChange`  | —       | `boolean`             | When true, inverts the direction of the wheel change.                                                                                                                                                                             |
-| `locale`             | —       | `string`              | The locale to use for formatting dates                                                                                                                                                                                            |
+| `locale`             | —       | `string`              | The locale to use for formatting numeric values                                                                                                                                                                                   |
 | `leading`            | —       | `string`              | Change decrement icon                                                                                                                                                                                                             |
 | `trailing`           | —       | `string`              | Change increment icon                                                                                                                                                                                                             |
 | `size`               | —       | `string`              | Change number field size                                                                                                                                                                                                          |
