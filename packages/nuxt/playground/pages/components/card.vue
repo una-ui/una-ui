@@ -24,7 +24,7 @@
         <NButton btn="solid-gray">
           Submit
         </NButton>
-        <NButton btn="soft-gray">
+        <NButton btn="solid-primary">
           Cancel
         </NButton>
       </div>

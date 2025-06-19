@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const value = ref([0])
+const value = ref([10])
 /**
  * @name NSlider
  *
@@ -21,20 +21,20 @@ const value = ref([0])
 </script>
 
 <template>
-  <NFormGroup
+  <!-- <NFormField
+    name="volume"
     label="Volume"
     hint="Adjust the volume"
     message="Volume is too high"
     class="w-1/2"
-    :counter="{
-      value: value[0],
-      max: 80,
-    }"
-  >
+  > -->
+  <div class="w-1/2">
     <NSlider
       v-model="value"
       :min="0"
+      :default-value="[50]"
       :max="100"
     />
-  </NFormGroup>
+  </div>
+  <!-- </NFormField> -->
 </template>

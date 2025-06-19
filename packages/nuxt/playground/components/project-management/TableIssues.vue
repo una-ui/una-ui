@@ -305,7 +305,7 @@ const alertDialogData = reactive<{
           content="Reload"
         >
           <NButton
-            btn="text-gray"
+            btn="outline-gray"
             label="i-radix-icons-update"
             icon
             @click="refresh()"
@@ -316,7 +316,7 @@ const alertDialogData = reactive<{
           content="Add Issues"
         >
           <NButton
-            btn="soft-gray"
+            btn="outline-gray"
             label="i-radix-icons-plus"
             icon
             @click="addIssues()"
