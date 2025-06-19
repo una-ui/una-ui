@@ -43,6 +43,7 @@ export default function presetUna(options: unaUIOptions = {
         primary: {
           DEFAULT: 'oklch(var(--una-primary) / <alpha-value>)',
           active: 'oklch(var(--una-primary-active) / <alpha-value>)',
+          foreground: 'oklch(var(--una-primary-foreground) / <alpha-value>)',
           50: 'oklch(var(--una-primary-50) / <alpha-value>)',
           100: 'oklch(var(--una-primary-100) / <alpha-value>)',
           200: 'oklch(var(--una-primary-200) / <alpha-value>)',
@@ -179,7 +180,7 @@ export default function presetUna(options: unaUIOptions = {
       {
         getCSS: () => `
           *:focus-visible {
-            outline: 2px solid rgb(var(--una-primary)); /* 2 */
+            outline: 2px solid oklch(var(--una-primary)); /* 2 */
             border-radius: 0.25rem; /* 1 */
             outline-offset: 0.10rem; /* 1 */
           }

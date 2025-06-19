@@ -20,6 +20,9 @@ export const staticIndicator: Record<`${IndicatorPrefix}-${string}` | IndicatorP
   'indicator-bottom-right': 'bottom-0 -ml-1.3em -mb-0.1em',
   'indicator-top-left': 'top-0 left-0 -mr-1.3em -mt-0.1em',
   'indicator-bottom-left': 'bottom-0 left-0 -mr-1.3em -mb-0.1em',
+
+  'indicator-solid-primary': 'bg-primary text-primary-foreground',
+  'indicator-solid': 'indicator-solid-primary',
 }
 
 export const dynamicIndicator = [
