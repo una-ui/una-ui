@@ -25,7 +25,9 @@ badges:
 | `id`                 | —       | `string`              | Id of the element                                                                                                                                                                                                                 |
 | `invertWheelChange`  | —       | `boolean`             | When true, inverts the direction of the wheel change.                                                                                                                                                                             |
 | `locale`             | —       | `string`              | The locale to use for formatting dates                                                                                                                                                                                            |
-| `label`              | —       | `string`              | Add text on top of number field                                                                                                                                                                                                   |
+| `leading`            | —       | `string`              | Change decrement icon                                                                                                                                                                                                             |
+| `trailing`           | —       | `string`              | Change increment icon                                                                                                                                                                                                             |
+| `size`               | —       | `string`              | Change number field size                                                                                                                                                                                                          |
 | `max`                | —       | `number`              | The largest value allowed for the input.                                                                                                                                                                                          |
 | `min`                | —       | `number`              | The smallest value allowed for the input.                                                                                                                                                                                         |
 | `modelValue`         | —       | `number \| null`      | —                                                                                                                                                                                                                                 |
@@ -51,7 +53,6 @@ badges:
 | ----------- | ----- | ------------------------------------------------------------------------------------------------- |
 | `default`   | -     | Allows advanced customization using sub-components, replacing the default number field structure. |
 | `content`   | -     | Replaces the entire content container, including increment, decrement and input.                  |
-| `header`    | -     | Custom content for the header section, replacing label.                                           |
 | `increment` | -     | Custom content for the number field increment.                                                    |
 | `decrement` | -     | Custom content for the number field decrement.                                                    |
 
