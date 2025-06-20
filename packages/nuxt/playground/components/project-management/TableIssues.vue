@@ -273,20 +273,56 @@ const alertDialogData = reactive<{
 <template>
   <div class="flex flex-col space-y-4">
     <!-- header -->
-    <div class="flex flex-row items-center justify-between gap-4 px-4">
-      <NInput
-        v-model="search"
-        placeholder="Search Issues..."
-        :una="{
-          inputWrapper: 'w-full md:w-80',
-        }"
-      />
+    <div class="flex flex-row items-center justify-between gap-4">
+      <div>
+        <NTabs
+          default-value="all"
+          :items="[
+            {
+              value: 'all',
+              name: 'All Issues',
+              _tabsTrigger: {
+                leading: 'i-lucide-list',
+              },
+            },
+            {
+              value: 'open',
+              name: 'Open',
+              _tabsTrigger: {
+                leading: 'i-lucide-circle-dot',
+              },
+            },
+            {
+              value: 'in-progress',
+              name: 'In Progress',
+              _tabsTrigger: {
+                leading: 'i-lucide-loader',
+              },
+            },
+            {
+              value: 'completed',
+              name: 'Completed',
+              _tabsTrigger: {
+                leading: 'i-lucide-check-circle',
+              },
+            },
+          ]"
+        />
+      </div>
 
       <div class="flex shrink-0 grow items-center justify-end gap-x-2">
+        <NInput
+          v-model="search"
+          placeholder="Search Issues..."
+          class="h-8"
+          :una="{
+            inputWrapper: 'w-full md:w-80',
+          }"
+        />
         <NSelect
           v-model="visibleColumnHeaders"
           :una="{
-            selectTrigger: 'max-w-50',
+            selectTrigger: 'max-w-50 h-8',
           }"
           multiple
           :_select-trigger="{
@@ -307,6 +343,7 @@ const alertDialogData = reactive<{
           <NButton
             btn="outline-gray"
             label="i-radix-icons-update"
+            square="8"
             icon
             @click="refresh()"
           />
@@ -318,6 +355,7 @@ const alertDialogData = reactive<{
           <NButton
             btn="outline-gray"
             label="i-radix-icons-plus"
+            square="8"
             icon
             @click="addIssues()"
           />
@@ -330,17 +368,18 @@ const alertDialogData = reactive<{
       ref="table"
       v-model:row-selection="select"
       :columns
-      :una="{
-        tableRoot: 'border-x-0 rounded-0',
-      }"
       :data="data ?? []"
       :pagination="{
         pageIndex: 0,
         pageSize: 10,
       }"
       :global-filter="search"
+      :una="{
+        tableCell: 'py-2',
+        tableHead: 'h-10 bg-muted',
+      }"
       :column-visibility
-      enable-row-selection enable-sorting enable-column-filters
+      enable-row-selection enable-sorting
       row-id="id"
     >
       <!-- filters -->
@@ -495,9 +534,9 @@ const alertDialogData = reactive<{
           ]"
           :_dropdown-menu-trigger="{
             icon: true,
-            rounded: 'full',
             btn: 'ghost-gray data-[state=open]:soft-gray',
             label: 'i-lucide-ellipsis',
+            square: 8,
           }"
           :_dropdown-menu-content="{
             side: 'bottom',
@@ -519,6 +558,9 @@ const alertDialogData = reactive<{
           <span class="text-nowrap">Rows per page</span>
           <NSelect
             :items="[5, 10, 20, 30, 40, 50]"
+            :_select-trigger="{
+              class: 'h-8',
+            }"
             :default-value="10"
             :model-value="table?.getState().pagination.pageSize"
             @update:model-value="table?.setPageSize($event as unknown as number)"
@@ -532,6 +574,7 @@ const alertDialogData = reactive<{
           </div>
 
           <NPagination
+            square="8"
             :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
             :total="table?.getFilteredRowModel().rows.length"
             :show-list-item="false"

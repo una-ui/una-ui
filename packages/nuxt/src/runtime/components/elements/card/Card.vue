@@ -14,7 +14,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NCardProps>(), {
-  card: 'solid-gray',
+  card: 'outline-gray',
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 </script>
@@ -66,7 +66,7 @@ const delegatedProps = reactiveOmit(props, ['class'])
       </CardHeader>
 
       <CardContent
-        v-if="$slots.default"
+        v-if="$slots.content"
         v-bind="delegatedProps._cardContent"
         :una
       >
