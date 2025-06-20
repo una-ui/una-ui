@@ -10,7 +10,7 @@ html {
 }
 
 ::selection {
-  @apply bg-selection text-selection-foreground;
+  @apply bg-selection/80 text-selection-foreground;
 }
 
 body {
@@ -87,8 +87,8 @@ button:active {
   --una-sidebar-accent-foreground: var(--una-gray-900);
   --una-sidebar-border: var(--una-gray-200);
   --una-sidebar-ring: var(--una-gray-400);
-  --una-selection: var(--una-primary-50);
-  --una-selection-foreground: var(--una-primary-900);
+  --una-selection: var(--una-primary);
+  --una-selection-foreground: var(--una-primary-foreground);
 }
 
 .dark {
@@ -120,6 +120,4 @@ button:active {
   --una-sidebar-accent-foreground: var(--una-gray-50);
   --una-sidebar-border: var(--una-gray-800);
   --una-sidebar-ring: var(--una-gray-600);
-  --una-selection: var(--una-primary-900);
-  --una-selection-foreground: var(--una-primary-50);
 }

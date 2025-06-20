@@ -9,7 +9,7 @@ html {
 }
 
 ::selection {
-  @apply bg-selection text-selection-foreground;
+  @apply bg-selection/80 text-selection-foreground;
 }
 
 body {
