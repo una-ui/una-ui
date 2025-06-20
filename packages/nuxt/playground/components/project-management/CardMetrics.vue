@@ -1,12 +1,5 @@
 <script setup lang="ts">
-interface Card {
-  icon: string
-  title: string
-  value: string
-  description: string
-}
-
-const cards: Card[] = [
+const cards = [
   {
     icon: 'i-lucide-users',
     title: 'Total Users',
@@ -39,9 +32,9 @@ const cards: Card[] = [
     <NCard
       v-for="(card, index) in cards"
       :key="index"
-      class="from-primary/5 bg-gradient-to-t p-4 shadow-xs"
+      class="from-primary/5 bg-gradient-to-t shadow-xs"
     >
-      <template #root>
+      <template #content>
         <div class="flex items-center gap-2">
           <NIcon :name="card.icon" class="text-2xl text-primary" />
           <h3 class="font-semibold">

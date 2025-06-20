@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { toast } = useToast()
-
 /**
  * @name NToast
  *

@@ -30,6 +30,7 @@ export default [
   'btn',
   'button',
   'card',
+  'card-action',
   'card-content',
   'card-description',
   'card-footer',

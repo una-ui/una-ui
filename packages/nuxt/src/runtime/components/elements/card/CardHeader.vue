@@ -7,6 +7,7 @@ const props = defineProps<NCardHeaderProps>()
 
 <template>
   <div
+    data-slot="card-header"
     :class="cn(
       'card-header',
       props.una?.cardHeader,

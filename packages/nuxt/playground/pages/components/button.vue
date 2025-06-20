@@ -80,7 +80,7 @@
       <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="solid-gray"
-          btn="outline-gray"
+          btn="solid-gray"
         />
         <NButton
           label="soft-gray"
