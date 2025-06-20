@@ -14,7 +14,7 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NCardProps>(), {
-  card: 'outline-gray',
+  card: 'solid-gray',
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 </script>

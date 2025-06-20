@@ -13,13 +13,16 @@ export const staticCard: Record<`${CardPrefix}-${string}` | CardPrefix, string> 
   'card-action': 'col-start-2 row-span-2 row-start-1 self-start justify-self-end',
 
   // static variants
+  'card-solid-gray': 'bg-card border',
+  'card-solid': 'card-solid-gray',
   'card-soft-gray': 'bg-card',
   'card-soft': 'card-soft-gray',
-  'card-outline-gray': 'bg-card border',
+  'card-outline-gray': 'bg-background border',
   'card-outline': 'card-outline-gray',
 }
 
 export const dynamicCard = [
+  [/^card-solid(-(\S+))?$/, ([, , c = 'gray']) => `border bg-background dark:bg-${c}-900 border-${c}-200 dark:border-${c}-800`],
   [/^card-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 dark:bg-${c}-900`],
   [/^card-outline(-(\S+))?$/, ([, , c = 'gray']) => `border bg-background dark:bg-${c}-900 border-${c}-200 dark:border-${c}-800`],
 ]
