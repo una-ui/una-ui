@@ -20,7 +20,7 @@ const { settings, reset } = useUnaSettings()
 
 const currentPrimaryThemeHex = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
 const currentPrimaryThemeName = computed(() => {
-  if (settings.value.theme !== null) {
+  if (settings.value.theme) {
     return settings.value.theme.name
   }
 

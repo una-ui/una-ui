@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { toast } = useToast()
-
 /**
  * @name NToast
  *
@@ -23,7 +21,7 @@ const { toast } = useToast()
 <template>
   <div class="space-x-2">
     <NButton
-      btn="solid-gray"
+      btn="outline-gray"
       label="Show toast"
       @click="toast(
         {
@@ -46,7 +44,7 @@ const { toast } = useToast()
     />
 
     <NButton
-      btn="solid-gray"
+      btn="outline-gray"
       label="Show toast"
       @click="toast(
         {
@@ -66,7 +64,7 @@ const { toast } = useToast()
     />
 
     <NButton
-      btn="solid-gray"
+      btn="outline-gray"
       label="Show toast"
       @click="toast(
         {
