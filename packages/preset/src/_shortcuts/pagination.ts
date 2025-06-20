@@ -40,7 +40,7 @@ export const dynamicPagination = [
   ],
   [
     /^pagination-unselected(?:-([^-]+))?(?:-([^-]+))?$/,
-    ([, variant = 'solid', color = 'gray']) =>
+    ([, variant = 'outline', color = 'gray']) =>
       `data-[selected=false]:btn-${variant}-${color}`,
   ],
 
