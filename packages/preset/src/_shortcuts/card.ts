@@ -5,11 +5,11 @@ export const staticCard: Record<`${CardPrefix}-${string}` | CardPrefix, string> 
   'card': 'text-card-foreground flex flex-col gap-6 rounded-xl py-6 shadow-sm',
 
   // components
-  'card-header': '[@container/card-header]:grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-[[data-slot=card-action]]:grid-cols-[1fr_auto] [.border-b_&]:pb-6',
+  'card-header': '[@container/card-header]:grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-[[data-slot=card-action]]:grid-cols-[1fr_auto] [&.border-b]:pb-6',
   'card-title': 'leading-none font-semibold',
   'card-description': 'text-muted-foreground text-sm',
   'card-content': 'px-6',
-  'card-footer': 'flex items-center px-6 [.border-t_&]:pt-6',
+  'card-footer': 'flex items-center px-6 [&.border-t]:pt-6',
   'card-action': 'col-start-2 row-span-2 row-start-1 self-start justify-self-end',
 
   // static variants

@@ -21,6 +21,7 @@ const delegatedProps = reactiveOmit(props, ['class'])
 
 <template>
   <div
+    data-slot="card"
     v-bind="{ ...$attrs, delegatedProps }"
     :card="card"
     :class="cn(
