@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { UnaSettings } from '../../types'
 import { useColorMode } from '#imports'
 import { useToggle } from '@vueuse/core'
 import { capitalize, computed } from 'vue'
@@ -6,6 +7,7 @@ import { useUnaSettings } from '../../composables/useUnaSettings'
 import { useUnaThemes } from '../../composables/useUnaThemes'
 import { RADIUS } from '../../constants'
 import Button from '../elements/Button.vue'
+import Icon from '../elements/Icon.vue'
 import Label from '../elements/Label.vue'
 import Popover from '../elements/popover/Popover.vue'
 import Separator from '../elements/Separator.vue'
@@ -13,26 +15,44 @@ import Separator from '../elements/Separator.vue'
 const colorMode = useColorMode()
 
 const [value, toggle] = useToggle()
-const { primaryThemes, grayThemes } = useUnaThemes()
+const { primaryThemes, grayThemes, predefinedThemes } = useUnaThemes()
 const { settings, reset } = useUnaSettings()
 
 const currentPrimaryThemeHex = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
 const currentPrimaryThemeName = computed(() => {
+  if (settings.value.theme) {
+    return settings.value.theme.name
+  }
+
   const theme = primaryThemes.find(([, theme]) => theme['--una-primary-hex'] === currentPrimaryThemeHex.value)
   return theme ? theme[0] : ''
 })
+
 const currentGrayThemeHex = computed(() => settings.value.grayColors?.['--una-gray-hex'])
+
 const currentGrayThemeName = computed(() => {
+  if (settings.value.theme !== null) {
+    return false
+  }
+
   const theme = grayThemes.find(([, theme]) => theme['--una-gray-hex'] === currentGrayThemeHex.value)
   return theme ? theme[0] : ''
 })
 
+function updateColor(theme: UnaSettings['theme']): void {
+  settings.value.theme = theme
+  settings.value.primary = ''
+  settings.value.gray = ''
+}
+
 // update theme in storage
 function updatePrimaryTheme(theme: string): void {
+  settings.value.theme = null
   settings.value.primary = theme
 }
 
 function updateGrayTheme(theme: string): void {
+  settings.value.theme = null
   settings.value.gray = theme
 }
 
@@ -78,8 +98,7 @@ function shuffleTheme(): void {
       <slot name="trigger" :open="open">
         <Button
           btn="soft"
-          square
-          icon
+          icon square
           label="i-lucide-paintbrush"
         />
       </slot>
@@ -88,10 +107,10 @@ function shuffleTheme(): void {
     <slot name="content">
       <div class="flex flex-col">
         <div class="grid space-y-1">
-          <h1 class="text-md text-base font-semibold">
+          <h1 class="text-md text-foreground font-semibold">
             Customize
           </h1>
-          <p class="text-xs text-muted">
+          <p class="text-xs text-muted-foreground">
             Pick a style and color for your components.
           </p>
         </div>
@@ -99,21 +118,66 @@ function shuffleTheme(): void {
         <Separator />
 
         <div class="space-y-2">
+          <Label for="color" class="text-xs"> Themes</Label>
+          <div class="grid grid-cols-2 gap-3">
+            <template
+              v-for="theme in predefinedThemes"
+              :key="theme.name"
+            >
+              <Button
+                v-if="theme"
+                btn="solid-gray"
+                size="xs"
+                :title="capitalize(theme?.name)"
+                class="justify-start gap-2 ring-primary"
+                :aria-label="`Theme: ${theme.name}`"
+                :class="currentPrimaryThemeName === theme?.name && 'ring-2'"
+                @click="updateColor(theme)"
+              >
+                <template #leading>
+                  <Icon
+                    name="i-tabler-circle-filled"
+                    square="4.5"
+                    :style="{
+                      '--c-primary': `oklch(${theme?.cssVars.dark['--una-primary']})`,
+                      '--c-primary-foreground': `oklch(${theme?.cssVars.dark['--una-background']})`,
+                    }"
+                    class="shrink-0 rounded-full from-$c-primary to-$c-primary-foreground from-20% bg-gradient-to-b"
+                  />
+                </template>
+
+                <span class="truncate text-xs">
+                  {{ theme.name }}
+                </span>
+              </Button>
+            </template>
+          </div>
+        </div>
+
+        <Separator />
+
+        <div class="space-y-2">
           <Label for="color" class="text-xs"> Primary Color</Label>
           <div class="grid grid-cols-7 gap-3">
-            <button
+            <template
               v-for="[key, theme] in primaryThemes"
               :key="key"
-              :title="capitalize(key)"
-              :style="{ background: theme['--una-primary-hex'] }"
-              class="transition-all"
-              rounded="full"
-              square="6.5"
-              :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
-              ring="primary offset-4 offset-base"
-              :aria-label="`Primary Color: ${key}`"
-              @click="updatePrimaryTheme(key)"
-            />
+            >
+              <button
+                :title="capitalize(key)"
+                :style="{
+                  '--c-primary': `oklch(${theme['--una-primary-600']})`,
+                  '--c-primary-foreground': `oklch(${theme['--una-primary-500']})`,
+                }"
+                class="bg-$c-primary transition-all dark:bg-$c-primary-foreground"
+                rounded="full"
+                square="6.5"
+                :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
+                ring="primary offset-4 offset-background"
+                :aria-label="`Primary Color: ${key}`"
+                @click="updatePrimaryTheme(key)"
+              />
+            </template>
           </div>
         </div>
 
@@ -132,7 +196,7 @@ function shuffleTheme(): void {
               rounded="full"
               square="6.5"
               :aria-label="`Gray Color: ${key}`"
-              ring="gray offset-4 offset-base"
+              ring="gray offset-4 offset-background"
               @click="updateGrayTheme(key)"
             />
           </div>

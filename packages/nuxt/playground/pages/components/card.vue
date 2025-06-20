@@ -21,10 +21,10 @@
     </div>
     <template #footer>
       <div mt-2 w-full flex="~ justify-between">
-        <NButton btn="solid-gray">
+        <NButton btn="outline-gray">
           Submit
         </NButton>
-        <NButton btn="soft-gray">
+        <NButton btn="solid-primary">
           Cancel
         </NButton>
       </div>

@@ -40,7 +40,7 @@
     "stub": "nuxt-build-module build --stub && pnpm nuxt-module-build prepare",
     "dev": "nuxi dev playground",
     "prepack": "nr build",
-    "playground:build": "nuxi generate playground",
+    "playground:build": "nuxi build playground",
     "playground:preview": "nuxi preview playground"
   },
   "dependencies": {

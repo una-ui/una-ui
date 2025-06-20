@@ -124,7 +124,7 @@ const events = [
                 </p>
                 <span
                   class="text-xs"
-                  :class="task.priority === 'Critical' ? 'text-error' : task.priority === 'High' ? 'text-warning' : 'text-muted'"
+                  :class="task.priority === 'Critical' ? 'text-error' : task.priority === 'High' ? 'text-warning' : 'text-muted-foreground'"
                 >
                   {{ task.priority }}
                 </span>

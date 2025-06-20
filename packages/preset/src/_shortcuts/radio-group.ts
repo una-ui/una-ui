@@ -13,19 +13,24 @@ export const staticRadioGroup: Record<`${RadioGroupPrefix}-${string}` | RadioGro
   // components
   'radio-group-item-root': 'flex flex-col',
   'radio-group-item-wrapper': 'flex items-center gap-2',
-  'radio-group-item': 'aspect-square rounded-full border border-brand text-brand shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-base disabled:n-disabled',
+  'radio-group-item': 'aspect-square rounded-full border border-brand text-brand shadow-xs focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:n-disabled',
   'radio-group-item-label': 'text-0.875em font-medium',
-  'radio-group-item-description': 'text-0.875em text-muted ml-[calc(1.1em+0.5rem)]',
+  'radio-group-item-description': 'text-0.875em text-muted-foreground ml-[calc(1.1em+0.5rem)]',
 
   'radio-group-indicator': 'flex items-center justify-center',
   'radio-group-indicator-icon-base': 'h-0.875em w-0.875em fill-brand',
   'radio-group-indicator-icon': 'i-dot',
+
+  'radio-group-primary': 'n-primary',
+  'radio-group-secondary': 'n-secondary',
+  'radio-group-accent': 'n-accent',
+  'radio-group-muted': 'n-muted',
 }
 
 export const dynamicRadioGroup = [
   [/^radio-group-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
     const color = parseColor(body, theme)
-    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
+    if (color?.color)
       return `n-${body}-600 dark:n-${body}-500`
   }],
 ]

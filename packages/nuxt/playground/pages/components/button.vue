@@ -6,23 +6,26 @@
       <div class="flex flex-col gap-4 md:flex-row">
         <NButton
           label="solid-primary"
-          btn="solid-primary"
         />
         <NButton
-          label="outline-lime"
-          btn="outline-lime"
+          label="outline"
+          btn="outline"
         />
         <NButton
-          label="link-yellow"
-          btn="link-yellow"
+          label="link"
+          btn="link"
         />
         <NButton
-          label="soft-red"
-          btn="soft-red"
+          label="soft"
+          btn="soft"
         />
         <NButton
-          label="ghost-orange"
-          btn="ghost-orange"
+          label="ghost"
+          btn="ghost"
+        />
+        <NButton
+          label="text"
+          btn="text"
         />
       </div>
 
@@ -77,7 +80,7 @@
       <div class="flex flex-col gap-2 md:flex-row">
         <NButton
           label="solid-gray"
-          btn="solid-gray"
+          btn="outline-gray"
         />
         <NButton
           label="soft-gray"
@@ -161,6 +164,13 @@
         <NButton
           label="link-accent"
           btn="link-accent"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2 md:flex-row">
+        <NButton
+          label="solid-secondary"
+          btn="solid-secondary"
         />
       </div>
     </div>

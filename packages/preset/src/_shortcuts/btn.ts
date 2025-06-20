@@ -6,7 +6,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-loading-icon': 'i-loading',
 
   // base
-  'btn': 'btn-rectangle bg-transparent transition-colors leading-1.4285714285714286em shrink-0 gap-x-0.5714285714285714em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium',
+  'btn': 'text-foreground btn-rectangle bg-transparent transition-colors leading-1.4285714285714286em shrink-0 gap-x-0.5714285714285714em rounded-md whitespace-nowrap inline-flex justify-center items-center btn-disabled font-medium outline-none',
   'btn-disabled': 'disabled:n-disabled',
   'btn-label': '',
   'btn-icon-label': 'size-1.1428571428571428em',
@@ -21,39 +21,58 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-reverse': 'flex-row-reverse',
 
   // variants
-  'btn-solid-white': 'bg-base text-base ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-muted',
-  'btn-ghost-white': 'text-base btn-focus hover:bg-$c-gray-50',
-  'btn-outline-white': 'text-base ring-1 ring-base ring-inset btn-focus hover:bg-$c-gray-50',
+  'btn-solid-primary': 'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 btn-focus',
+  'btn-solid': 'btn-solid-primary',
+  'btn-solid-gray': 'border bg-background dark:bg-input/50 shadow-xs bg-accent dark:hover:bg-input btn-focus',
+  'btn-solid-secondary': 'btn-solid-gray',
+  'btn-solid-white': 'border bg-background shadow-xs hover:bg-accent dark:border-input dark:hover:bg-input btn-focus',
+  'btn-solid-black': 'bg-foreground text-background shadow-xs btn-focus',
 
-  'btn-solid-gray': 'bg-$c-gray-50 text-$c-gray-800 ring-1 ring-base ring-inset shadow-sm btn-focus hover:bg-$c-gray-100',
-  'btn-ghost-gray': 'text-$c-gray-600 btn-focus hover:bg-$c-gray-100',
-  'btn-soft-gray': 'text-$c-gray-600 bg-$c-gray-50 btn-focus hover:bg-$c-gray-100',
-  'btn-outline-gray': 'text-muted hover:text-$c-gray-600 ring-1 ring-base ring-inset btn-focus hover:bg-$c-gray-50',
-  'btn-link-gray': 'text-muted btn-focus hover:text-base hover:underline underline-offset-4',
-  'btn-text-gray': 'text-$c-gray-600 btn-focus hover:text-$c-gray-900',
+  'btn-outline-primary': 'shadow-xs text-primary bg-background dark:bg-input/30 border border-primary hover:bg-primary/10 btn-focus',
+  'btn-outline': 'btn-outline-primary',
+  'btn-outline-gray': 'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 btn-focus',
+  'btn-outline-white': 'text-foreground border shadow-xs hover:bg-input/50 btn-focus',
 
-  'btn-solid-black': 'bg-inverted text-inverted shadow-sm btn-focus',
-  'btn-link-black': 'text-base btn-focus hover:underline underline-offset-4',
-  'btn-text-black': 'text-base btn-focus',
-  'btn-soft-black': 'text-base bg-base btn-focus shadow-sm',
+  'btn-link-primary': 'text-primary hover:underline underline-offset-4 btn-focus',
+  'btn-link': 'btn-link-primary',
+  'btn-link-gray': 'text-muted-foreground hover:text-foreground hover:underline underline-offset-4 btn-focus',
+  'btn-link-black': 'text-foreground hover:underline underline-offset-4 btn-focus',
+  'btn-link-muted': 'text-muted-foreground hover:underline underline-offset-4 btn-focus',
+  'btn-link-accent': 'text-accent-foreground hover:underline underline-offset-4 btn-focus',
 
-  'btn-text-muted': 'text-muted btn-focus hover:text-accent',
-  'btn-link-muted': 'text-muted btn-focus hover:underline underline-offset-4',
-  'btn-ghost-muted': 'text-accent hover:text-muted btn-focus hover:bg-muted',
+  'btn-text-primary': 'text-primary btn-focus',
+  'btn-text': 'btn-text-primary',
+  'btn-text-gray': 'text-muted-foreground hover:text-foreground btn-focus',
+  'btn-text-black': 'text-foreground btn-focus',
+  'btn-text-muted': 'text-muted-foreground btn-focus',
+  'btn-text-accent': 'text-accent-foreground hover:text-accent-foreground/80 btn-focus',
 
-  'btn-soft-accent': 'text-accent bg-accent btn-focus',
-  'btn-text-accent': 'text-accent btn-focus',
-  'btn-link-accent': 'text-accent btn-focus hover:underline underline-offset-4',
+  'btn-soft-primary': 'bg-primary/10 text-primary shadow-xs hover:bg-primary/15 btn-focus',
+  'btn-soft': 'btn-soft-primary',
+  'btn-soft-gray': 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 btn-focus',
+  'btn-soft-secondary': 'btn-soft-gray',
+  'btn-soft-black': 'text-foreground bg-background shadow-xs btn-focus',
+  'btn-soft-accent': 'text-accent-foreground bg-accent btn-focus',
+
+  'btn-ghost-primary': 'hover:bg-primary/10 text-primary dark:hover:bg-primary/15 btn-focus',
+  'btn-ghost': 'btn-ghost-primary',
+  'btn-ghost-gray': 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 btn-focus',
+
+  'btn-ghost-muted': 'hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50 btn-focus',
+  'btn-ghost-white': 'text-foreground hover:bg-secondary/50 btn-focus',
+
+  'btn-focus-primary': 'focus-visible:ring-3px focus-visible:border focus-visible:border-ring focus-visible:ring-ring/50',
+  'btn-focus': 'btn-focus-primary',
 }
 
 export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
   // base
-  [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-${c}-600 dark:focus-visible:ring-${c}-500`],
+  [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:ring-3px focus-visible:border focus-visible:border-${c}-400 dark:focus-visible:border-${c}-800 focus-visible:ring-${c}-400/50 dark:focus-visible:ring-${c}-800/50`],
 
   // variants
-  [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-inverted shadow-sm bg-${c}-600 hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
+  [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-background shadow-xs bg-${c}-600 hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
   [/^btn-text(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-500 hover:text-${c}-500 dark:hover:text-${c}-400`],
-  [/^btn-outline(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-500 dark:text-${c}-400 ring-1 ring-inset ring-${c}-500 dark:ring-${c}-400 hover:bg-${c}-50 dark:hover:bg-${c}-950`],
+  [/^btn-outline(-(\S+))?$/, ([, , c = 'primary']) => `shadow-xs btn-focus-${c} text-${c}-500 dark:text-${c}-400 bg-background dark:bg-input/30 border border-${c}-500 dark:border-${c}-400 hover:bg-${c}-50 dark:hover:bg-${c}-950`],
   [/^btn-soft(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-400 bg-${c}-50 dark:bg-${c}-950 hover:bg-${c}-100 dark:hover:bg-${c}-900`],
   [/^btn-ghost(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-400 hover:bg-${c}-100 dark:hover:bg-${c}-900`],
   [/^btn-link(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-500 hover:underline underline-offset-4`],

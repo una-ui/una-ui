@@ -23,7 +23,7 @@ const { toast } = useToast()
 <template>
   <div class="space-x-2">
     <NButton
-      btn="solid-white"
+      btn="outline-gray"
       label="Show toast"
       @click="toast(
         {
@@ -46,7 +46,7 @@ const { toast } = useToast()
     />
 
     <NButton
-      btn="solid-white"
+      btn="outline-gray"
       label="Show toast"
       @click="toast(
         {
@@ -66,7 +66,7 @@ const { toast } = useToast()
     />
 
     <NButton
-      btn="solid-white"
+      btn="outline-gray"
       label="Show toast"
       @click="toast(
         {

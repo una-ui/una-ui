@@ -25,8 +25,8 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert-close-inner-wrapper': '-mx-1.1 -my-1.1',
 
   // static variants
-  'alert-solid-white': 'rounded-md text-brand bg-base n-gray-950 dark:n-white border',
-  'alert-solid-black': 'rounded-md text-brand bg-inverted n-white dark:n-gray-950 border border-foreground',
+  'alert-solid-white': 'rounded-md text-brand bg-background n-foreground border',
+  'alert-solid-black': 'rounded-md text-brand bg-foreground n-background dark:n-gray-950 border border-foreground',
 }
 
 export const dynamicAlert: [RegExp, (params: RegExpExecArray) => string][] = [

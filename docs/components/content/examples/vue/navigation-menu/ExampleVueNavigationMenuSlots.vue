@@ -110,12 +110,12 @@ const items = [
 
       <!-- Components content -->
       <template #components-content="{ items: componentItems }">
-        <div class="bg-card w-[500px] rounded-md p-6 shadow-md">
+        <div class="w-[500px] rounded-md bg-card p-6 shadow-md">
           <div class="mb-5">
             <h3 class="mb-2 text-xl text-primary font-semibold">
               UI Components
             </h3>
-            <p class="text-muted-foreground text-sm">
+            <p class="text-sm text-muted-foreground">
               Explore our comprehensive collection of customizable, accessible components.
             </p>
           </div>
@@ -129,14 +129,14 @@ const items = [
               >
               <div class="rounded-md bg-primary/10 p-3">
                 <span class="mb-1 block text-xs text-primary font-medium">New Release</span>
-                <p class="text-muted-foreground text-xs">
+                <p class="text-xs text-muted-foreground">
                   Check out our latest components with improved accessibility and animations.
                 </p>
               </div>
             </div>
 
             <div class="flex-1 space-y-3.5">
-              <h4 class="text-muted-foreground text-sm font-medium tracking-wide uppercase">
+              <h4 class="text-sm text-muted-foreground font-medium tracking-wide uppercase">
                 Core Components
               </h4>
               <div class="grid grid-cols-1 gap-2">
@@ -144,15 +144,15 @@ const items = [
                   v-for="item in componentItems"
                   :key="item.label"
                   v-bind="item"
-                  class="rounded-md hover:bg-accent p-2.5 transition-colors"
+                  class="rounded-md p-2.5 transition-colors hover:bg-accent"
                   :una="{
-                    navigationMenuContentItemLabel: 'font-medium text-base',
+                    navigationMenuContentItemLabel: 'font-medium text-foreground',
                     navigationMenuContentItemDescription: 'text-sm text-muted-foreground mt-0.5',
                   }"
                 />
               </div>
 
-              <div class="border-border mt-2 border-t pt-2">
+              <div class="mt-2 border-t border-border pt-2">
                 <NLink class="mt-1 inline-flex items-center text-sm text-primary font-medium hover:underline" to="/components">
                   <span>View all components</span>
                   <span class="i-lucide-arrow-right ml-1 h-3.5 w-3.5" />

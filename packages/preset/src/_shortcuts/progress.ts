@@ -13,14 +13,19 @@ export const staticProgress: Record<`${ProgressPrefix}-${string}`, string> = {
   'progress-indicator': 'h-full w-full flex-1 bg-brand transition-all',
 
   // static
-  'progress-white': 'bg-inverted',
-  'progress-black': 'bg-base',
+  'progress-foreground': 'n-foreground',
+  'progress-background': 'n-background',
+  'progress-primary': 'n-primary',
+  'progress-secondary': 'n-secondary',
+  'progress-accent': 'n-accent',
+  'progress-destructive': 'n-destructive',
+  'progress-muted': 'n-muted',
 }
 
 export const dynamicProgress = [
   [/^progress-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
     const color = parseColor(body, theme)
-    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
+    if (color?.color)
       return `n-${body}-600 dark:n-${body}-500`
   }],
 ]

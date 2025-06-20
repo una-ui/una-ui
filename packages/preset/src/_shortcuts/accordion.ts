@@ -5,14 +5,14 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-trailing-icon': 'i-lucide-chevron-up',
   'accordion-button-padding': 'p-(x-3 y-4)',
   'accordion-button-default-variant': 'btn-text',
-  'accordion-divider': 'divide-(y base)',
-  'accordion-border': 'border-(~ base) rounded-md',
+  'accordion-divider': 'divide-(y border)',
+  'accordion-border': 'border-(~ border) rounded-md',
 
   // base
   'accordion': 'flex-(~ col) relative w-full',
   'accordion-item': 'w-full',
   'accordion-button': 'justify-start',
-  'accordion-panel': 'text-(muted 0.875em) border-(t $c-divider) accordion-button-padding',
+  'accordion-panel': 'text-(muted-foreground 0.875em) border-(t border) accordion-button-padding',
   'accordion-leading': 'text-1.2em',
   'accordion-trailing': 'flex transition items-center text-1em duration-300',
   'accordion-label': 'flex w-full text-1em',

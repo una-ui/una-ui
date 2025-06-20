@@ -2,7 +2,9 @@
 import type { NSkeletonProps } from '../../types'
 import { cn } from '../../utils'
 
-const props = defineProps<NSkeletonProps>()
+const props = withDefaults(defineProps<NSkeletonProps>(), {
+  skeleton: 'gray',
+})
 </script>
 
 <template>
