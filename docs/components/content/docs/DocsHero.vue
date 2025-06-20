@@ -92,7 +92,7 @@ const { copy, copied } = useClipboard({ source })
 .image-bg {
   opacity: 0.5;
   transition: opacity 2s ease;
-  background-image: linear-gradient(-80deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
+  background-image: linear-gradient(-80deg, oklch(var(--una-primary) / 0.5) 40%, var(--c-brand-next));
   filter: blur(120px);
 }
 </style>
