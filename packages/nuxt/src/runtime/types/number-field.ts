@@ -20,12 +20,12 @@ export interface NNumberFieldContentProps extends BaseExtensions {
 }
 
 export interface NNumberFieldDecrementProps extends NumberFieldDecrementProps, BaseExtensions {
-  icon: string
+  icon?: string
   una?: Pick<NNumberFieldUnaProps, 'numberFieldDecrement'>
 }
 
 export interface NNumberFieldIncrementProps extends NumberFieldIncrementProps, BaseExtensions {
-  icon: string
+  icon?: string
   una?: Pick<NNumberFieldUnaProps, 'numberFieldIncrement'>
 }
 
