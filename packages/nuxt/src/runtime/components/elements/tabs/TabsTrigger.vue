@@ -7,6 +7,7 @@ import Button from '../Button.vue'
 
 const props = withDefaults(defineProps<NTabsTriggerProps>(), {
   tabsActive: 'outline-gray',
+  tabsInactive: 'text-muted',
   size: 'sm',
 })
 
