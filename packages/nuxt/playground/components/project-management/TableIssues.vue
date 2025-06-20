@@ -281,9 +281,6 @@ const alertDialogData = reactive<{
             {
               value: 'all',
               name: 'All Issues',
-              _tabsTrigger: {
-                leading: 'i-lucide-list',
-              },
             },
             {
               value: 'open',
@@ -378,6 +375,7 @@ const alertDialogData = reactive<{
         tableCell: 'py-2',
         tableHead: 'h-10 bg-muted',
       }"
+      class="overflow-x-auto"
       :column-visibility
       enable-row-selection enable-sorting
       row-id="id"
