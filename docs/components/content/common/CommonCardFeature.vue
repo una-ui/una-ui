@@ -15,7 +15,6 @@ withDefaults(defineProps<{
       :size="28"
       :name="icon"
     />
-
     <div>
       <h3 class="text-accent-foreground font-bold group-hover:text-$c-brand-light">
         {{ title }}
