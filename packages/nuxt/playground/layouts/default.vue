@@ -18,14 +18,13 @@ const isMessagesPopoverActive = ref(false)
   <NSidebarProvider
     :style="{
       '--sidebar-width': 'calc(0.25rem * 72)',
-      '--header-height': 'calc(0.25rem * 12)',
     }"
   >
     <AppSidebar />
 
     <NSidebarInset class="overflow-hidden">
       <header class="h-16 flex shrink-0 items-center justify-between gap-2 border-b transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar_wrapper:h-12">
-        <div class="flex items-center gap-2 px-4">
+        <div class="flex items-center gap-2 px-4 lg:px-6">
           <NSidebarTrigger class="-ml-1" />
           <NSeparator orientation="vertical" icon class="mx-0 h-4" />
           <NBreadcrumb
@@ -36,7 +35,7 @@ const isMessagesPopoverActive = ref(false)
           />
         </div>
 
-        <div class="flex items-center px-4">
+        <div class="flex items-center px-4 lg:px-6">
           <NPopover
             v-model:open="isMessagesPopoverActive"
             :_popover-content="{
@@ -180,7 +179,9 @@ const isMessagesPopoverActive = ref(false)
         </div>
       </header>
 
-      <slot />
+      <div class="flex flex-1 flex-col">
+        <slot />
+      </div>
     </NSidebarInset>
   </NSidebarProvider>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col gap-6 p-4">
+  <main class="flex flex-col gap-6 p-4 lg:p-6">
     <!-- Header -->
     <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <div class="flex flex-col">
@@ -25,6 +25,8 @@
     </div>
 
     <ProjectManagementCardMetrics />
+
+    <ProjectManagementChartInteractive />
 
     <ProjectManagementTableIssues />
   </main>

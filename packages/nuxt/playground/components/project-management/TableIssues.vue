@@ -64,7 +64,7 @@ const columns: ColumnDef<Issue>[] = [
         h(NAvatar, {
           src: value.avatar,
           alt: username,
-          size: 'sm',
+          size: 'xs',
         }),
         [
           h('div', {
@@ -110,7 +110,7 @@ const columns: ColumnDef<Issue>[] = [
         h(NAvatar, {
           src: value.avatar,
           alt: username,
-          size: 'sm',
+          size: 'xs',
         }),
         [
           h('div', {
@@ -274,7 +274,7 @@ const alertDialogData = reactive<{
   <div class="flex flex-col space-y-4">
     <!-- header -->
     <div class="flex flex-row items-center justify-between gap-4">
-      <div>
+      <div class="hidden lg:block">
         <NTabs
           default-value="all"
           :items="[
@@ -307,7 +307,7 @@ const alertDialogData = reactive<{
         />
       </div>
 
-      <div class="flex shrink-0 grow items-center justify-end gap-x-2">
+      <div class="flex grow flex-wrap items-center justify-end gap-4 lg:gap-2">
         <NInput
           v-model="search"
           placeholder="Search Issues..."
@@ -319,7 +319,7 @@ const alertDialogData = reactive<{
         <NSelect
           v-model="visibleColumnHeaders"
           :una="{
-            selectTrigger: 'max-w-50 h-8',
+            selectTrigger: 'max-w-50 h-8 mr-auto lg:mr-0',
           }"
           multiple
           :_select-trigger="{
