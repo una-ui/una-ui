@@ -22,7 +22,6 @@ export default antfu(
       'unocss/order-attributify': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
       'no-console': 'off',
-      'vue/no-parsing-error': 'off',
     },
   },
   {
