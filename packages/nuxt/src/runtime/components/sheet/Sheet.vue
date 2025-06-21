@@ -29,7 +29,11 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
 </script>
 
 <template>
-  <DialogRoot v-slot="{ open }" v-bind="forwarded">
+  <DialogRoot
+    v-slot="{ open }"
+    data-slot="sheet"
+    v-bind="forwarded"
+  >
     <slot>
       <SheetTrigger
         v-if="$slots.trigger"

@@ -2,10 +2,11 @@
 import type { DialogContentEmits } from 'reka-ui'
 import type { NSheetContentProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
-import { DialogContent, DialogOverlay, DialogPortal, useForwardPropsEmits } from 'reka-ui'
+import { DialogContent, DialogPortal, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
 import SheetClose from './SheetClose.vue'
+import SheetOverlay from './SheetOverlay.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -40,12 +41,12 @@ const contentEvents = computed(() => {
     v-bind="props._sheetPortal"
     :class="cn('sheet-portal', props.una?.sheetPortal, props._sheetPortal?.class)"
   >
-    <DialogOverlay
+    <SheetOverlay
       v-if="props.overlay"
       v-bind="_sheetOverlay"
-      :class="cn('sheet-overlay', props.una?.sheetOverlay, props._sheetOverlay?.class)"
     />
     <DialogContent
+      data-slot="sheet-content"
       v-bind="{ ...forwarded, ...$attrs }"
       :sheet
       :class="cn('sheet-content', props.una?.sheetContent, props.class)"
