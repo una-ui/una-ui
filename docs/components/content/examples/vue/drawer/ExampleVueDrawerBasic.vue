@@ -15,7 +15,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
       }"
     >
       <template #trigger>
-        <NButton btn="solid-gray">
+        <NButton btn="outline-gray">
           Open Drawer
         </NButton>
       </template>
@@ -25,7 +25,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
           <div class="p-4 pb-0">
             <div class="flex items-center justify-center space-x-2">
               <NButton
-                btn="solid-gray"
+                btn="outline-gray"
                 square="8"
                 icon
                 label="i-lucide-minus"
@@ -42,7 +42,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
                 </div>
               </div>
               <NButton
-                btn="solid-gray"
+                btn="outline-gray"
                 square="8"
                 icon
                 label="i-lucide-plus"
@@ -60,7 +60,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
         <NButton>Submit</NButton>
 
         <NDrawerClose as-child>
-          <NButton btn="solid-gray">
+          <NButton btn="outline-gray">
             Cancel
           </NButton>
         </NDrawerClose>
@@ -73,7 +73,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
       description="Set your daily activity goal."
     >
       <template #trigger>
-        <NButton btn="solid-gray">
+        <NButton btn="outline-gray">
           Scrollable Content
         </NButton>
       </template>
@@ -98,7 +98,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
       <template #footer>
         <NButton>Submit</NButton>
         <NDrawerClose as-child>
-          <NButton btn="solid-gray">
+          <NButton btn="outline-gray">
             Cancel
           </NButton>
         </NDrawerClose>
@@ -113,7 +113,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
       description="Set your daily activity goal."
     >
       <template #trigger>
-        <NButton btn="solid-gray" class="capitalize">
+        <NButton btn="outline-gray" class="capitalize">
           {{ direction }}
         </NButton>
       </template>
@@ -136,7 +136,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
       <template #footer>
         <NButton>Submit</NButton>
         <NDrawerClose as-child>
-          <NButton btn="solid-gray">
+          <NButton btn="outline-gray">
             Cancel
           </NButton>
         </NDrawerClose>

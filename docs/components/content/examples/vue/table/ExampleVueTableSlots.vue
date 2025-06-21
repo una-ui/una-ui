@@ -87,7 +87,7 @@ const table = useTemplateRef<Table<Person>>('table')
       <div class="flex items-center gap-x-2 sm:ml-auto">
         <NButton
           label="Rerender"
-          btn="solid-gray"
+          btn="outline-gray"
           leading="i-radix-icons-update"
           class="w-full sm:w-auto sm:shrink-0 active:translate-y-0.5"
           @click="data = makeData(20_000)"

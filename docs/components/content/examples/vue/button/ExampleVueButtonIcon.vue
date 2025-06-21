@@ -49,7 +49,7 @@
     <div class="flex flex-col gap-2 sm:flex-row">
       <NButton
         trailing="i-logos-google-icon"
-        btn="solid-gray"
+        btn="outline-gray"
         label="Sign in with Google"
       />
       <NButton

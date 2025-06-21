@@ -47,14 +47,14 @@ const { copy, copied } = useClipboard({ source })
         />
         <NButton
           to="/components/accordion"
-          btn="solid-gray"
+          btn="outline-gray"
           class="font-bold"
           rounded="full"
           p="5 sm:5.5"
           label="View Components"
         />
         <NButton
-          btn="solid-gray"
+          btn="outline-gray"
           class="font-bold"
           p="5 sm:5.5"
           rounded="full"

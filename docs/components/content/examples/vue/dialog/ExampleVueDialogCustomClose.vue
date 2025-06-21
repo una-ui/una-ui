@@ -14,7 +14,7 @@ const { copy, copied } = useClipboard({ source })
     }"
   >
     <template #trigger>
-      <NButton btn="solid-gray">
+      <NButton btn="outline-gray">
         Open Dialog
       </NButton>
     </template>

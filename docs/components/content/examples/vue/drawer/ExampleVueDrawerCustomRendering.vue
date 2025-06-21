@@ -8,7 +8,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
   <div class="flex flex-wrap items-start gap-4">
     <NDrawer>
       <NDrawerTrigger as-child>
-        <NButton btn="solid-gray">
+        <NButton btn="outline-gray">
           Open Drawer
         </NButton>
       </NDrawerTrigger>
@@ -21,7 +21,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
           <div class="p-4 pb-0">
             <div class="flex items-center justify-center space-x-2">
               <NButton
-                btn="solid-gray"
+                btn="outline-gray"
                 square="8"
                 icon
                 label="i-lucide-minus"
@@ -38,7 +38,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
                 </div>
               </div>
               <NButton
-                btn="solid-gray"
+                btn="outline-gray"
                 square="8"
                 icon
                 label="i-lucide-plus"
@@ -52,7 +52,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
           <NDrawerFooter>
             <NButton>Submit</NButton>
             <NDrawerClose as-child>
-              <NButton btn="solid-gray">
+              <NButton btn="outline-gray">
                 Cancel
               </NButton>
             </NDrawerClose>
@@ -63,7 +63,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
 
     <NDrawer direction="right">
       <NDrawerTrigger as-child>
-        <NButton btn="solid-gray">
+        <NButton btn="outline-gray">
           Scrollable Content
         </NButton>
       </NDrawerTrigger>
@@ -89,7 +89,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
         <NDrawerFooter>
           <NButton>Submit</NButton>
           <NDrawerClose as-child>
-            <NButton btn="solid-gray">
+            <NButton btn="outline-gray">
               Cancel
             </NButton>
           </NDrawerClose>
@@ -99,7 +99,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
 
     <NDrawer v-for="direction in directions" :key="direction" :direction>
       <NDrawerTrigger as-child>
-        <NButton btn="solid-gray" class="capitalize">
+        <NButton btn="outline-gray" class="capitalize">
           {{ direction }}
         </NButton>
       </NDrawerTrigger>
@@ -125,7 +125,7 @@ const directions = ['top', 'right', 'bottom', 'left'] as const
         <NDrawerFooter>
           <NButton>Submit</NButton>
           <NDrawerClose as-child>
-            <NButton btn="solid-gray">
+            <NButton btn="outline-gray">
               Cancel
             </NButton>
           </NDrawerClose>

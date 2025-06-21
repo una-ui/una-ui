@@ -58,7 +58,7 @@ const items = [
 
         <div class="mt-5 text-right">
           <NButton
-            btn="solid-gray"
+            btn="outline-gray"
             class="mt-3"
             label="Close"
             @click="close"

@@ -25,7 +25,7 @@
       content="The color is gray"
     >
       <NButton
-        btn="solid-gray"
+        btn="outline-gray"
         label="Gray"
       />
     </NTooltip>

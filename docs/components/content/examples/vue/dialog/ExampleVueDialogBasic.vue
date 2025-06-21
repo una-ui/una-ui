@@ -4,7 +4,7 @@
     description="Edit your profile information"
   >
     <template #trigger>
-      <NButton btn="solid-gray">
+      <NButton btn="outline-gray">
         Open Dialog
       </NButton>
     </template>

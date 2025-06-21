@@ -48,7 +48,7 @@ async function submitLogin() {
     description="Please log in with your username and password"
   >
     <template #trigger>
-      <NButton btn="solid-gray" label="Login" leading="i-mdi:login" />
+      <NButton btn="outline-gray" label="Login" leading="i-mdi:login" />
     </template>
     <template #default>
       <form

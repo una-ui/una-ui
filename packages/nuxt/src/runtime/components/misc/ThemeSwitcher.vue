@@ -126,7 +126,7 @@ function shuffleTheme(): void {
             >
               <Button
                 v-if="theme"
-                btn="solid-gray"
+                btn="outline-gray"
                 size="xs"
                 :title="capitalize(theme?.name)"
                 class="justify-start gap-2 ring-primary"
@@ -210,7 +210,7 @@ function shuffleTheme(): void {
             <Button
               v-for="r in RADIUS"
               :key="r"
-              btn="solid-gray"
+              btn="outline-gray"
               size="xs"
               :class="
                 r === settings.radius
@@ -231,7 +231,7 @@ function shuffleTheme(): void {
 
           <div class="flex justify-around py-1.5 space-x-2">
             <Button
-              btn="solid-gray"
+              btn="outline-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'system' }"
               leading="i-radix-icons-desktop"
               class="px-3"
@@ -241,7 +241,7 @@ function shuffleTheme(): void {
             />
 
             <Button
-              btn="solid-gray"
+              btn="outline-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'light' }"
               leading="i-radix-icons-sun"
               class="px-3"
@@ -251,7 +251,7 @@ function shuffleTheme(): void {
             />
 
             <Button
-              btn="solid-gray"
+              btn="outline-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'dark' }"
               leading="i-radix-icons-moon"
               class="px-3"
@@ -267,7 +267,7 @@ function shuffleTheme(): void {
         <div class="grid grid-cols-2 gap-2">
           <Button
             size="xs"
-            btn="solid-gray"
+            btn="outline-gray"
             label="Reset"
             leading="i-radix-icons-reload"
             @click="reset"
