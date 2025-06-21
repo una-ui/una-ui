@@ -1,124 +1,92 @@
 <script setup lang="ts">
-const SHEET_SIDES = [{
-  sheet: 'top',
-  label: 'Top',
-  closeIcon: 'i-lucide-square-chevron-down', // default
-  una: {},
-}, {
-  sheet: 'right',
-  label: 'Right',
-  closeIcon: 'i-close',
-  una: {},
-}, {
-  sheet: 'bottom',
-  label: 'Bottom',
-  closeIcon: 'i-lucide-chevron-down',
-  una: {
-    sheetContent: 'h-full',
-  },
-}, {
-  sheet: 'left',
-  label: 'Left',
-  closeIcon: 'i-lucide-chevrons-left',
-  una: {
-    sheetContent: 'max-w-xl',
-  },
-}] as const
-
-const username = ref('')
+const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const
 </script>
 
 <template>
-  <div class="grid grid-cols-2 gap-2">
-    <!-- Side variants -->
-    <NSheet
-      v-for="side in SHEET_SIDES"
-      :key="side.sheet"
-      :sheet="side.sheet"
-      title="Edit profile"
-      description="Make changes to your profile here. Click save when you're done."
-      :_sheet-close="{
-        label: side.closeIcon,
-      }"
-      :una="side.una"
-    >
-      <template #trigger>
+  <div class="flex flex-col gap-6 md:flex-row">
+    <NSheet>
+      <NSheetTrigger as-child>
         <NButton btn="outline-gray">
-          Open {{ side.label }}
+          Open
         </NButton>
-      </template>
-
-      <template #body>
-        <div class="grid gap-4 py-4">
-          <div class="grid grid-cols-4 items-center gap-4">
-            <NLabel for="name" class="text-right">
+      </NSheetTrigger>
+      <NSheetContent>
+        <NSheetHeader>
+          <NSheetTitle>Edit profile</NSheetTitle>
+          <NSheetDescription>
+            Make changes to your profile here. Click save when you're
+            done.
+          </NSheetDescription>
+        </NSheetHeader>
+        <div class="grid auto-rows-min flex-1 gap-6 px-4">
+          <div class="grid gap-3">
+            <NLabel for="sheet-demo-name">
               Name
             </NLabel>
-            <NInput id="name" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
+            <NInput id="sheet-demo-name" default-value="Pedro Duarte" />
           </div>
-          <div class="grid grid-cols-4 items-center gap-4">
-            <NLabel for="username" class="text-right">
+          <div class="grid gap-3">
+            <NLabel for="sheet-demo-username">
               Username
             </NLabel>
-            <NInput id="username" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
+            <NInput id="sheet-demo-username" default-value="@peduarte" />
           </div>
         </div>
-      </template>
-
-      <template #footer>
-        <NSheetClose>
-          <NButton type="submit" label="Save changes" />
-        </NSheetClose>
-      </template>
+        <NSheetFooter>
+          <NButton type="submit">
+            Save changes
+          </NButton>
+          <NSheetClose as-child>
+            <NButton btn="outline-gray">
+              Close
+            </NButton>
+          </NSheetClose>
+        </NSheetFooter>
+      </NSheetContent>
     </NSheet>
 
-    <!-- Prevent close -->
-    <NSheet
-      sheet="right"
-      prevent-close
-      title="Prevent close"
-      description="This sheet cannot be closed by clicking outside of it"
-    >
-      <template #trigger>
-        <NButton btn="outline-gray">
-          Prevent close
-        </NButton>
-      </template>
-    </NSheet>
-
-    <!-- Disable overlay  -->
-    <NSheet
-      :overlay="false"
-      title="Disable overlay"
-      description="This sheet has no overlay"
-    >
-      <template #trigger>
-        <NButton btn="outline-gray">
-          Disable overlay
-        </NButton>
-      </template>
-    </NSheet>
-
-    <!-- No title and description  -->
-    <NSheet>
-      <template #trigger>
-        <NButton btn="outline-gray">
-          No title and description
-        </NButton>
-      </template>
-    </NSheet>
-
-    <!-- No close button  -->
-    <NSheet
-      :show-close="false"
-      title="No close button"
-      description="This sheet has no close button"
-    >
-      <template #trigger>
-        <NButton btn="outline-gray">
-          No close button
-        </NButton>
-      </template>
-    </NSheet>
+    <div class="flex gap-2">
+      <NSheet v-for="side in SHEET_SIDES" :key="side">
+        <NSheetTrigger as-child>
+          <NButton btn="outline-gray" class="capitalize">
+            {{ side }}
+          </NButton>
+        </NSheetTrigger>
+        <NSheetContent :sheet="side">
+          <NSheetHeader>
+            <NSheetTitle>Edit profile</NSheetTitle>
+            <NSheetDescription>
+              Make changes to your profile here. Click save when you're
+              done.
+            </NSheetDescription>
+          </NSheetHeader>
+          <div class="overflow-y-auto px-4 text-sm">
+            <h4 class="mb-4 text-lg font-medium leading-none">
+              Lorem Ipsum
+            </h4>
+            <p v-for="index in 10" :key="index" class="mb-4 leading-normal">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+              occaecat cupidatat non proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <NSheetFooter>
+            <NButton type="submit">
+              Save changes
+            </NButton>
+            <NSheetClose as-child>
+              <NButton btn="outline-gray">
+                Cancel
+              </NButton>
+            </NSheetClose>
+          </NSheetFooter>
+        </NSheetContent>
+      </NSheet>
+    </div>
   </div>
 </template>

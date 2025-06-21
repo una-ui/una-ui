@@ -52,7 +52,7 @@ const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const
             {{ side }}
           </NButton>
         </NSheetTrigger>
-        <NSheetContent :side>
+        <NSheetContent :sheet="side">
           <NSheetHeader>
             <NSheetTitle>Edit profile</NSheetTitle>
             <NSheetDescription>
