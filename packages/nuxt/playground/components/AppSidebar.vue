@@ -183,6 +183,10 @@ const data = {
           url: '/components/tabs',
         },
         {
+          title: 'Tag Input',
+          url: '/components/tag-input',
+        },
+        {
           title: 'Textarea',
           url: '/components/textarea',
         },
