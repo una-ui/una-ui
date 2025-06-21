@@ -14,7 +14,7 @@
       </template>
 
       <template #body>
-        <div class="overflow-auto py-6">
+        <div class="overflow-auto p-4">
           <ExampleVueTableSlots />
         </div>
       </template>

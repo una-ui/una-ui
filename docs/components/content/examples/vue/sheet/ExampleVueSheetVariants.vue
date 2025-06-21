@@ -37,7 +37,7 @@ const username = ref('')
       </template>
 
       <template #body>
-        <div class="grid gap-4 py-4">
+        <div class="grid gap-4 p-4">
           <div class="grid grid-cols-4 items-center gap-4">
             <NLabel for="name" class="text-right">
               Name

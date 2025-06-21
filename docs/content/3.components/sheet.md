@@ -86,7 +86,7 @@ You can customize the sheet using the following sub components props and `una` p
 
 :read-more{to="#props" title="Sheet props" }
 
-#### Size Customization
+### Size Customization
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -97,7 +97,7 @@ You can customize the sheet using the following sub components props and `una` p
 ::
 :::
 
-#### Icon Customization
+### Icon Customization
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -108,7 +108,7 @@ You can customize the sheet using the following sub components props and `una` p
 ::
 :::
 
-#### Overlay Customization
+### Overlay Customization
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -121,15 +121,30 @@ You can customize the sheet using the following sub components props and `una` p
 
 ## Slots
 
-| Name          | Props  | Description                                                                        |
-| ------------- | ------ | ---------------------------------------------------------------------------------- |
-| `default`     | -      | The body slot.                                                                     |
-| `content`     | -      | The entire content slot, includes the header, title, description, footer and body. |
-| `trigger`     | `open` | The trigger button used to open the sheet.                                         |
-| `header`      | -      | Contains the title and description slots.                                          |
-| `title`       | -      | The title displayed in the sheet.                                                  |
-| `description` | -      | The description displayed below the title.                                         |
-| `footer`      | -      | The footer.                                                                        |
+| Name          | Props  | Description                                                                                |
+| ------------- | ------ | ------------------------------------------------------------------------------------------ |
+| `default`     | -      | Allows advanced customization using sub-components, replacing the default sheet structure. |
+| `content`     | -      | The entire content slot, includes the header, title, description, footer and body.         |
+| `trigger`     | `open` | The trigger button used to open the sheet.                                                 |
+| `header`      | -      | Contains the title and description slots.                                                  |
+| `title`       | -      | The title displayed in the sheet.                                                          |
+| `description` | -      | The description displayed below the title.                                                 |
+| `body`        | -      | The body slot.                                                                             |
+| `footer`      | -      | The footer.                                                                                |
+
+### Custom Rendering
+
+Use the `default` slot for full control over the sheet's structure. This allows you to compose the sheet using its individual sub-components (like `NSheetContent`, `NSheetTrigger`, etc., listed in the [Components](#components) section), similar to libraries like `shadcn/ui`.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueSheetCustomRendering
+::
+::div{label="Code"}
+
+@@@ ./components/content/examples/vue/sheet/ExampleVueSheetCustomRendering.vue
+::
+:::
 
 ## Presets
 
