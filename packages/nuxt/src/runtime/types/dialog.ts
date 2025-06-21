@@ -8,7 +8,7 @@ import type {
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NDialogProps extends DialogRootProps, Pick<NDialogContentProps, 'preventClose' | 'showClose' | 'overlay' | '_dialogClose' | '_dialogOverlay'> {
+export interface NDialogProps extends DialogRootProps, Pick<NDialogContentProps, 'dismissible' | 'showClose' | 'overlay' | '_dialogClose' | '_dialogOverlay'> {
   /**
    * The title of the dialog.
    */
@@ -53,7 +53,7 @@ export interface NDialogContentProps extends DialogContentProps, BaseExtensions 
   /**
    * Prevent close.
    */
-  preventClose?: boolean
+  dismissible?: boolean
   /**
    * Show close button.
    *

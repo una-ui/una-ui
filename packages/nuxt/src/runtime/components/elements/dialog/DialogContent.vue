@@ -24,7 +24,7 @@ const emits = defineEmits<DialogContentEmits>()
 const delegatedProps = reactiveOmit(props, ['class', 'una', '_dialogOverlay', '_dialogClose'])
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 const contentEvents = computed(() => {
-  if (props.preventClose) {
+  if (props.dismissible) {
     return {
       pointerDownOutside: (e: Event) => e.preventDefault(),
       interactOutside: (e: Event) => e.preventDefault(),

@@ -56,7 +56,7 @@ const DIALOG_VARIANTS = [{
 
     <!-- Prevent close -->
     <NDialog
-      prevent-close
+      dismissible
       title="Prevent close"
       description="This dialog cannot be closed by clicking outside of it"
     >

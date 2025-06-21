@@ -5,9 +5,9 @@
   <NDialog
     title="Unclosable Dialog"
     :_dialog-close="{
-      btn: 'solid-gray',
+      btn: 'outline-gray',
     }"
-    prevent-close
+    dismissible
   >
     <template #trigger>
       <NButton btn="outline-gray">
