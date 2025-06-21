@@ -1,8 +1,5 @@
 ---
 description: 'For sighted users to preview content available behind a link.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
