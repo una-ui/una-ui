@@ -29,7 +29,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
 
   // variants
   'input-outline-gray': 'border bg-transparent dark:bg-input/30 border-input focus-visible:ring-input/50 focus-visible:ring-3px',
-  'input-outline-black': 'border border-foreground focus-visible:ring-foreground/50 focus-visible:ring-3px',
+  'input-outline-black': 'border bg-transparent dark:bg-input/30 border-foreground focus-visible:ring-foreground/50 focus-visible:ring-3px',
 
   'input-solid-primary': 'bg-transparent dark:bg-input/30 border border-ring input-focus',
   'input-solid': 'input-solid-primary',
