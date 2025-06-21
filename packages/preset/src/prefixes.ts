@@ -155,6 +155,7 @@ export default [
   'sheet-description',
   'sheet-footer',
   'sheet-header',
+  'sheet-overlay',
   'sheet-title',
   'sheet-trigger',
   'sidebar',
