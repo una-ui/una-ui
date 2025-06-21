@@ -1,10 +1,38 @@
+<script setup lang="ts">
+const value = ref(1)
+</script>
+
 <template>
-  <NFormField name="numberfield" size="100px" label="Numberfield" description="A number field component with increment and decrement buttons.">
+  <div class="grid grid-cols-2 gap-4">
+    <NNumberField v-model="value" />
+
     <NNumberField
-      :min="0"
-      :max="10"
+      id="number"
       :default-value="5"
-      :step="2"
+      :format-options="{
+        signDisplay: 'exceptZero',
+        minimumFractionDigits: 1,
+      }"
     />
-  </NFormField>
+
+    <NNumberField
+      id="percent"
+      :default-value="0.05"
+      :step="0.01"
+      :format-options="{
+        style: 'percent',
+      }"
+    />
+
+    <NNumberField
+      id="balance"
+      :default-value="1500"
+      :format-options="{
+        style: 'currency',
+        currency: 'EUR',
+        currencyDisplay: 'code',
+        currencySign: 'accounting',
+      }"
+    />
+  </div>
 </template>
