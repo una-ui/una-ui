@@ -27,9 +27,9 @@ badges:
 
 ### Variant
 
-| Prop   | Default   | Type        | Description                            |
-| ------ | --------- | ----------- | -------------------------------------- |
-| `card` | `outline` | `{variant}` | Controls the visual style of the card. |
+| Prop   | Default | Type        | Description                            |
+| ------ | ------- | ----------- | -------------------------------------- |
+| `card` | `solid` | `{variant}` | Controls the visual style of the card. |
 
 | Variant   | Description                                                    |
 | --------- | -------------------------------------------------------------- |
