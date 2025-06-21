@@ -28,7 +28,7 @@ export const staticInput: Record<`${InputPrefix}-${string}` | InputPrefix, strin
   'input-trailing-wrapper': 'pointer-events-none absolute inset-y-0 end-0 flex items-center px-0.8571428571428571em text-muted-foreground',
 
   // variants
-  'input-outline-gray': 'border border-input input-focus',
+  'input-outline-gray': 'border bg-transparent dark:bg-input/30 border-input focus-visible:ring-input/50 focus-visible:ring-3px',
   'input-outline-black': 'border border-foreground focus-visible:ring-foreground/50 focus-visible:ring-3px',
 
   'input-solid-primary': 'bg-transparent dark:bg-input/30 border border-ring input-focus',
