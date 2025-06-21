@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const
+const SHEET_SIDES = [
+  { sheet: 'top' },
+  { sheet: 'right' },
+  { sheet: 'bottom' },
+  { sheet: 'left' },
+] as const
 </script>
 
 <template>
@@ -46,13 +51,13 @@ const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const
     </NSheet>
 
     <div class="flex gap-2">
-      <NSheet v-for="side in SHEET_SIDES" :key="side">
+      <NSheet v-for="{ sheet } in SHEET_SIDES" :key="sheet">
         <NSheetTrigger as-child>
           <NButton btn="outline-gray" class="capitalize">
-            {{ side }}
+            {{ sheet }}
           </NButton>
         </NSheetTrigger>
-        <NSheetContent :sheet="side">
+        <NSheetContent :sheet="sheet">
           <NSheetHeader>
             <NSheetTitle>Edit profile</NSheetTitle>
             <NSheetDescription>

@@ -2,7 +2,7 @@
   <div>
     <NSheet
       sheet="bottom"
-      prevent-close
+      :dismissible="false"
       title="Prevent close"
       description="This sheet cannot be closed by clicking outside of it"
     >

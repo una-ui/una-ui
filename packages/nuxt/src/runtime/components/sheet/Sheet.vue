@@ -15,6 +15,7 @@ import SheetTrigger from './SheetTrigger.vue'
 const props = withDefaults(defineProps<NSheetProps>(), {
   showClose: true,
   overlay: true,
+  dismissible: true,
 })
 const emits = defineEmits<DialogRootEmits>()
 
@@ -47,7 +48,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
         :_sheet-overlay
         :_sheet-portal
         :sheet
-        :prevent-close
+        :dismissible
         :show-close
         :overlay
         v-bind="_sheetContent"

@@ -54,9 +54,9 @@ badges:
 
 ### Prevent Closing
 
-| Prop           | Default | Type      | Description                                                             |
-| -------------- | ------- | --------- | ----------------------------------------------------------------------- |
-| `preventClose` | -       | `boolean` | If true, the sheet will not close on overlay click or escape key press. |
+| Prop          | Default | Type      | Description                                                                |
+| ------------- | ------- | --------- | -------------------------------------------------------------------------- |
+| `dismissible` | `true`  | `boolean` | If `false`, the sheet will not close on overlay click or escape key press. |
 
 :::CodeGroup
 ::div{label="Preview" preview}

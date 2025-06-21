@@ -16,12 +16,13 @@ const props = withDefaults(defineProps<NSheetContentProps>(), {
   sheet: 'right',
   overlay: true,
   showClose: true,
+  dismissible: true,
 })
 const emits = defineEmits<DialogContentEmits>()
 const contentProps = reactiveOmit(props, ['sheet', 'class', '_sheetClose', '_sheetPortal', '_sheetOverlay'])
 const forwarded = useForwardPropsEmits(contentProps, emits)
 const contentEvents = computed(() => {
-  if (props.preventClose) {
+  if (!props.dismissible) {
     return {
       pointerDownOutside: (e: Event) => e.preventDefault(),
       interactOutside: (e: Event) => e.preventDefault(),
