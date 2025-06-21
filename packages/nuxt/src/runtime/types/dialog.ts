@@ -19,7 +19,9 @@ export interface NDialogProps extends DialogRootProps, Pick<NDialogContentProps,
    */
   description?: string
   /**
+   * If `true`, the dialog will have a scrollable body.
    *
+   * @default false
    */
   scrollable?: boolean
 
