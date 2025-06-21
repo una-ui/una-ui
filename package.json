@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/monorepo",
   "type": "module",
-  "version": "0.60.0",
+  "version": "1.0.0-alpha.0",
   "private": true,
   "packageManager": "pnpm@10.12.1",
   "description": "The Atomic UI Framework",
@@ -47,6 +47,7 @@
     "release": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release.ts",
     "start": "echo 'No start script defined'",
     "test": "vitest",
+    "tweak-converter": "esno scripts/tweak-converter.ts",
     "typecheck": "vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
     "reset": "pnpm store prune && rm -rf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules} && ni",

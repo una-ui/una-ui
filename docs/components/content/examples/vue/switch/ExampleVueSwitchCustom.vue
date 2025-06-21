@@ -25,7 +25,7 @@ const enabled = ref(false)
       size="1cm"
       class="rotate-120 rounded-lg"
       :una="{
-        switchThumb: 'bg-inverted',
+        switchThumb: 'bg-foreground',
       }"
     />
 

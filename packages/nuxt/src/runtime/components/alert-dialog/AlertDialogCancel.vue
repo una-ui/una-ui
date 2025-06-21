@@ -5,7 +5,7 @@ import { cn } from '../../utils'
 import Button from '../elements/Button.vue'
 
 const props = withDefaults(defineProps<NAlertDialogCancelProps>(), {
-  btn: 'solid-gray',
+  btn: 'outline-gray',
   label: 'Cancel',
 })
 </script>

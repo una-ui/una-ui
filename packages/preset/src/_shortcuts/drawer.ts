@@ -15,7 +15,7 @@ export const staticDrawer: Record<`${KbdPrefix}-${string}` | KbdPrefix, string> 
 
   'drawer-header': 'flex flex-col gap-1.5 p-4',
   'drawer-title': 'text-foreground font-semibold',
-  'drawer-description': 'text-muted text-sm',
+  'drawer-description': 'text-muted-foreground text-sm',
   'drawer-footer': 'mt-auto flex flex-col gap-2 p-4',
 }
 
