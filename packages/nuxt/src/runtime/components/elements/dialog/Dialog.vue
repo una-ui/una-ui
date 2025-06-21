@@ -50,7 +50,7 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
         :_dialog-close
         :scrollable
         :show-close
-        :prevent-close
+        :dismissible
         :una
       >
         <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">
