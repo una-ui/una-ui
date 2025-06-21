@@ -37,9 +37,9 @@ badges:
 
 ### Scrollable Content
 
-| Prop         | Default | Type      | Description                                      |
-| ------------ | ------- | --------- | ------------------------------------------------ |
-| `scrollable` | `false` | `boolean` | If true, the dialog will have a scrollable body. |
+| Prop         | Default | Type      | Description                                        |
+| ------------ | ------- | --------- | -------------------------------------------------- |
+| `scrollable` | `false` | `boolean` | If `true`, the dialog will have a scrollable body. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -52,9 +52,9 @@ badges:
 
 ### Prevent Closing
 
-| Prop          | Default | Type      | Description                                                              |
-| ------------- | ------- | --------- | ------------------------------------------------------------------------ |
-| `dismissible` | -       | `boolean` | If true, the dialog will not close on overlay click or escape key press. |
+| Prop          | Default | Type      | Description                                                                 |
+| ------------- | ------- | --------- | --------------------------------------------------------------------------- |
+| `dismissible` | `true`  | `boolean` | If `false`, the dialog will not close on overlay click or escape key press. |
 
 :::CodeGroup
 ::div{label="Preview" preview}

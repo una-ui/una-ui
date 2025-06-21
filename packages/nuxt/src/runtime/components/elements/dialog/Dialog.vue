@@ -20,6 +20,7 @@ defineOptions({
 const props = withDefaults(defineProps<NDialogProps>(), {
   showClose: true,
   overlay: true,
+  dismissible: true,
 })
 const emits = defineEmits<DialogRootEmits>()
 const DEFAULT_TITLE = randomId('dialog-title')
