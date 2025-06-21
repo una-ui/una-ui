@@ -2,7 +2,7 @@ type CheckboxPrefix = 'checkbox'
 
 export const staticCheckbox: Record<`${CheckboxPrefix}-${string}` | CheckboxPrefix, string> = {
   // base
-  'checkbox': 'square-1em shrink-0 rounded-4px shadow-xs transition-shadow outline-none disabled:n-disabled border border-input dark:border-input',
+  'checkbox': 'dark:bg-input/30 square-1em shrink-0 rounded-4px shadow-xs transition-shadow outline-none disabled:n-disabled border border-input dark:border-input',
   'checkbox-label': 'block',
   'checkbox-reverse': 'flex-row-reverse',
 
