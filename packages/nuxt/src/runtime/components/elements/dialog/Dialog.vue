@@ -38,70 +38,72 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
 
 <template>
   <DialogRoot v-slot="{ open }" v-bind="rootPropsEmits">
-    <DialogTrigger as-child>
-      <slot name="trigger" :open />
-    </DialogTrigger>
+    <slot>
+      <DialogTrigger as-child>
+        <slot name="trigger" :open />
+      </DialogTrigger>
 
-    <component
-      :is="!scrollable ? DialogContent : DialogScrollContent"
-      v-bind="_dialogContent"
-      :_dialog-overlay
-      :_dialog-close
-      :scrollable
-      :show-close
-      :prevent-close
-      :una
-    >
-      <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">
-        <DialogTitle v-if="title === DEFAULT_TITLE || !!$slots.title">
-          {{ title }}
-        </DialogTitle>
+      <component
+        :is="!scrollable ? DialogContent : DialogScrollContent"
+        v-bind="_dialogContent"
+        :_dialog-overlay
+        :_dialog-close
+        :scrollable
+        :show-close
+        :prevent-close
+        :una
+      >
+        <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">
+          <DialogTitle v-if="title === DEFAULT_TITLE || !!$slots.title">
+            {{ title }}
+          </DialogTitle>
 
-        <DialogDescription v-if="description === DEFAULT_DESCRIPTION || !!$slots.description">
-          {{ description }}
-        </DialogDescription>
-      </VisuallyHidden>
+          <DialogDescription v-if="description === DEFAULT_DESCRIPTION || !!$slots.description">
+            {{ description }}
+          </DialogDescription>
+        </VisuallyHidden>
 
-      <slot name="content">
-        <DialogHeader
-          v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
-          v-bind="_dialogHeader"
-          :una
-        >
-          <slot name="header">
-            <DialogTitle
-              v-if="$slots.title || title !== DEFAULT_TITLE"
-              v-bind="_dialogTitle"
-              :una
-            >
-              <slot name="title">
-                {{ title }}
-              </slot>
-            </DialogTitle>
+        <slot name="content">
+          <DialogHeader
+            v-if="!!$slots.header || (title !== DEFAULT_TITLE || !!$slots.title) || (description !== DEFAULT_DESCRIPTION || !!$slots.description)"
+            v-bind="_dialogHeader"
+            :una
+          >
+            <slot name="header">
+              <DialogTitle
+                v-if="$slots.title || title !== DEFAULT_TITLE"
+                v-bind="_dialogTitle"
+                :una
+              >
+                <slot name="title">
+                  {{ title }}
+                </slot>
+              </DialogTitle>
 
-            <DialogDescription
-              v-if="$slots.description || description !== DEFAULT_DESCRIPTION"
-              v-bind="_dialogDescription"
-              :una
-            >
-              <slot name="description">
-                {{ description }}
-              </slot>
-            </DialogDescription>
-          </slot>
-        </DialogHeader>
+              <DialogDescription
+                v-if="$slots.description || description !== DEFAULT_DESCRIPTION"
+                v-bind="_dialogDescription"
+                :una
+              >
+                <slot name="description">
+                  {{ description }}
+                </slot>
+              </DialogDescription>
+            </slot>
+          </DialogHeader>
 
-        <!-- body -->
-        <slot />
+          <!-- body -->
+          <slot name="body" />
 
-        <DialogFooter
-          v-if="$slots.footer"
-          v-bind="_dialogFooter"
-          :una
-        >
-          <slot name="footer" />
-        </DialogFooter>
-      </slot>
-    </component>
+          <DialogFooter
+            v-if="$slots.footer"
+            v-bind="_dialogFooter"
+            :una
+          >
+            <slot name="footer" />
+          </DialogFooter>
+        </slot>
+      </component>
+    </slot>
   </DialogRoot>
 </template>

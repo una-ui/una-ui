@@ -15,8 +15,10 @@
       </NButton>
     </template>
 
-    <div>
-      This dialog will stay open and not close until the close button is pressed.
-    </div>
+    <template #body>
+      <div>
+        This dialog will stay open and not close until the close button is pressed.
+      </div>
+    </template>
   </NDialog>
 </template>
