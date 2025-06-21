@@ -2,7 +2,7 @@
 import type { DialogRootEmits } from 'reka-ui'
 import type { NDialogProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
-import { DialogRoot, DialogTrigger, useForwardPropsEmits, VisuallyHidden } from 'reka-ui'
+import { DialogRoot, useForwardPropsEmits, VisuallyHidden } from 'reka-ui'
 import { computed } from 'vue'
 import { randomId } from '../../../utils'
 import DialogContent from './DialogContent.vue'
@@ -11,6 +11,7 @@ import DialogFooter from './DialogFooter.vue'
 import DialogHeader from './DialogHeader.vue'
 import DialogScrollContent from './DialogScrollContent.vue'
 import DialogTitle from './DialogTitle.vue'
+import DialogTrigger from './DialogTrigger.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -37,9 +38,16 @@ const rootPropsEmits = useForwardPropsEmits(rootProps, emits)
 </script>
 
 <template>
-  <DialogRoot v-slot="{ open }" v-bind="rootPropsEmits">
+  <DialogRoot
+    v-slot="{ open }"
+    data-slot="dialog"
+    v-bind="rootPropsEmits"
+  >
     <slot>
-      <DialogTrigger as-child>
+      <DialogTrigger
+        v-bind="_dialogTrigger"
+        as-child
+      >
         <slot name="trigger" :open />
       </DialogTrigger>
 
