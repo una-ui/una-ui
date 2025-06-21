@@ -4,6 +4,17 @@ import type { HTMLAttributes } from 'vue'
 import type { NInputProps } from './input'
 
 export interface NNumberFieldProps extends NumberFieldRootProps, Pick<NInputProps, 'leading' | 'trailing'>, BaseExtensions {
+  /**
+   * Allows you to add `UnaUI` input preset properties,
+   * Think of it as a shortcut for adding options or variants to the preset if available.
+   *
+   * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/number-field.ts
+   * @example
+   * numberField="solid-green"
+   */
+  numberField?: HTMLAttributes['class']
+
+  // subcomponents
   _numberFieldContent?: NNumberFieldContentProps
   _numberFieldDecrement?: NNumberFieldDecrementProps
   _numberFieldIncrement?: NNumberFieldIncrementProps
@@ -29,7 +40,7 @@ export interface NNumberFieldIncrementProps extends NumberFieldIncrementProps, B
   una?: Pick<NNumberFieldUnaProps, 'numberFieldIncrement'>
 }
 
-export interface NNumberFieldInputProps extends NumberFieldInputProps, BaseExtensions {
+export interface NNumberFieldInputProps extends NumberFieldInputProps, BaseExtensions, Pick<NNumberFieldProps, 'numberField'> {
   una?: Pick<NNumberFieldUnaProps, 'numberFieldInput'>
 }
 

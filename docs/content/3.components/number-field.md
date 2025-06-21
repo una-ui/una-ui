@@ -1,5 +1,8 @@
 ---
 description: 'A number field lets users enter and adjust numeric values with optional increment and decrement controls.'
+navBadges:
+  - value: New
+    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
@@ -14,27 +17,17 @@ badges:
 
 ### Basic
 
-| Prop                 | Default | Type                  | Description                                                                                                                                                                                                                       |
-| -------------------- | ------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `as`                 | `'div'` | `AsTag \| Component`  | The element or component this component should render as. Can be overwritten by `asChild`.                                                                                                                                        |
-| `asChild`            | —       | `boolean`             | Change the default rendered element for the one passed as a child, merging their props and behavior.                                                                                                                              |
-| `defaultValue`       | —       | `number`              | —                                                                                                                                                                                                                                 |
-| `disabled`           | —       | `boolean`             | When true, prevents the user from interacting with the Number Field.                                                                                                                                                              |
-| `disableWheelChange` | —       | `boolean`             | When true, prevents the value from changing on wheel scroll.                                                                                                                                                                      |
-| `formatOptions`      | —       | `NumberFormatOptions` | Formatting options for the value displayed in the number field. This also affects what characters are allowed to be typed by the user. Read more about [formatOptions](https://reka-ui.com/docs/components/number-field#example). |
-| `id`                 | —       | `string`              | Id of the element                                                                                                                                                                                                                 |
-| `invertWheelChange`  | —       | `boolean`             | When true, inverts the direction of the wheel change.                                                                                                                                                                             |
-| `locale`             | —       | `string`              | The locale to use for formatting numeric values                                                                                                                                                                                   |
-| `leading`            | —       | `string`              | Change decrement icon                                                                                                                                                                                                             |
-| `trailing`           | —       | `string`              | Change increment icon                                                                                                                                                                                                             |
-| `size`               | —       | `string`              | Change number field size                                                                                                                                                                                                          |
-| `max`                | —       | `number`              | The largest value allowed for the input.                                                                                                                                                                                          |
-| `min`                | —       | `number`              | The smallest value allowed for the input.                                                                                                                                                                                         |
-| `modelValue`         | —       | `number \| null`      | —                                                                                                                                                                                                                                 |
-| `name`               | —       | `string`              | The name of the field. Submitted with its owning form as part of a name/value pair.                                                                                                                                               |
-| `required`           | —       | `boolean`             | When true, indicates that the user must set the value before the owning form can be submitted.                                                                                                                                    |
-| `step`               | `1`     | `number`              | The amount that the input value changes with each increment or decrement "tick".                                                                                                                                                  |
-| `stepSnapping`       | `true`  | `boolean`             | When false, prevents the value from snapping to the nearest increment of the step value.                                                                                                                                          |
+| Prop                 | Default | Type             | Description                                                                              |
+| -------------------- | ------- | ---------------- | ---------------------------------------------------------------------------------------- |
+| `disabled`           | -       | `boolean`        | When true, prevents the user from interacting with the Number Field.                     |
+| `disableWheelChange` | -       | `boolean`        | When true, prevents the value from changing on wheel scroll.                             |
+| `invertWheelChange`  | -       | `boolean`        | When true, inverts the direction of the wheel change.                                    |
+| `locale`             | -       | `string`         | The locale to use for formatting numeric values                                          |
+| `max`                | -       | `number`         | The largest value allowed for the input.                                                 |
+| `min`                | -       | `number`         | The smallest value allowed for the input.                                                |
+| `modelValue`         | -       | `number \| null` | Value of the input. Can be binded as `v-model`.                                          |
+| `step`               | `1`     | `number`         | The amount that the input value changes with each increment or decrement "tick".         |
+| `stepSnapping`       | `true`  | `boolean`        | When false, prevents the value from snapping to the nearest increment of the step value. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -46,6 +39,79 @@ badges:
 :::
 
 :read-more{to="https://reka-ui.com/docs/components/number-field#root" title="Reka Number Field API" target="_blank"}
+
+### Variant & Color
+
+| Prop           | Default           | Type                | Description                                    |
+| -------------- | ----------------- | ------------------- | ---------------------------------------------- |
+| `number-field` | `outline-primary` | `{variant}-{color}` | Controls the visual style of the number field. |
+
+| Variant   | Description                 |
+| --------- | --------------------------- |
+| `outline` | The default variant.        |
+| `solid`   | The solid variant.          |
+| `~`       | The unstyle or base variant |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueNumberFieldVariant
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/number-field/ExampleVueNumberFieldVariant.vue
+::
+:::
+
+### Size
+
+| Prop   | Default | Type     | Description                                        |
+| ------ | ------- | -------- | -------------------------------------------------- |
+| `size` | `md`    | `string` | Allows you to change the size of the number-field. |
+
+> 🚀 Adjust number-field size freely using any size, breakpoints (e.g., `sm:sm, xs:lg`), or states (e.g., `hover:lg, focus:3xl`).
+
+::alert{type="warning"}
+The **padding**, **icons**, and **text-size** of the number-field scale are dynamically adjusted based on the **size** property. To customize the **text-size** and **padding** simultaneously, you can use utility classes.
+::
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueNumberFieldSize
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/number-field/ExampleVueNumberFieldSize.vue
+::
+:::
+
+### Icons
+
+| Prop       | Default | Type     | Description                           |
+| ---------- | ------- | -------- | ------------------------------------- |
+| `leading`  | -       | `string` | The icon to display before the input. |
+| `trailing` | -       | `string` | The icon to display after the input.  |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueNumberFieldLeadingAndTrailing
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/number-field/ExampleVueNumberFieldLeadingAndTrailing.vue
+::
+:::
+
+### Form Field
+
+The `NNumberField` component can be easily embedded within the `NFormField` component.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueNumberFieldForm
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/number-field/ExampleVueNumberFieldForm.vue
+::
+:::
+
+:read-more{to="/components/form" title="Form component" target="_blank"}
 
 ## Slots
 

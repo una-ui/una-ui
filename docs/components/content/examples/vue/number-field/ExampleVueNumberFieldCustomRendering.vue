@@ -1,5 +1,5 @@
 <template>
-  <NNumberField :default-value="18" :min="0">
+  <NNumberField class="w-fit" :default-value="18" :min="0">
     <NNumberFieldContent>
       <NNumberFieldDecrement />
       <NNumberFieldInput />

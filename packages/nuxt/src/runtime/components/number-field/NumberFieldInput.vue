@@ -4,7 +4,7 @@ import { NumberFieldInput } from 'reka-ui'
 import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NNumberFieldInputProps>(), {
-  size: 'md',
+  numberField: 'outline-primary',
 })
 </script>
 
@@ -16,6 +16,6 @@ const props = withDefaults(defineProps<NNumberFieldInputProps>(), {
       props.una?.numberFieldInput,
       props.class,
     )"
-    :size
+    :number-field
   />
 </template>

@@ -10,16 +10,20 @@ const props = withDefaults(defineProps<NNumberFieldProps>(), {
   size: 'md',
   leading: 'i-lucide-minus',
   trailing: 'i-lucide-plus',
+  numberField: 'outline-primary',
 })
 const emits = defineEmits<NumberFieldRootEmits>()
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class', 'numberField')
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
-  <NumberFieldRoot v-bind="forwarded" :class="cn('number-field-root', props.class)">
+  <NumberFieldRoot
+    v-bind="forwarded"
+    :class="cn('number-field', props.class)"
+  >
     <slot>
       <NumberFieldContent :size>
         <slot name="content">
@@ -34,6 +38,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
           <NNumberFieldInput
             v-bind="forwarded._numberFieldInput"
             :size
+            :number-field
             :una
           />
           <NNumberFieldIncrement
