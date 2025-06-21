@@ -37,9 +37,9 @@ badges:
 
 ### Scrollable Content
 
-| Prop         | Default | Type      | Description                                      |
-| ------------ | ------- | --------- | ------------------------------------------------ |
-| `scrollable` | `false` | `boolean` | If true, the dialog will have a scrollable body. |
+| Prop         | Default | Type      | Description                                        |
+| ------------ | ------- | --------- | -------------------------------------------------- |
+| `scrollable` | `false` | `boolean` | If `true`, the dialog will have a scrollable body. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -52,9 +52,9 @@ badges:
 
 ### Prevent Closing
 
-| Prop           | Default | Type      | Description                                                              |
-| -------------- | ------- | --------- | ------------------------------------------------------------------------ |
-| `preventClose` | -       | `boolean` | If true, the dialog will not close on overlay click or escape key press. |
+| Prop          | Default | Type      | Description                                                                 |
+| ------------- | ------- | --------- | --------------------------------------------------------------------------- |
+| `dismissible` | `true`  | `boolean` | If `false`, the dialog will not close on overlay click or escape key press. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -77,7 +77,20 @@ badges:
 | `title`       | -      | The title displayed in the dialog.          |
 | `description` | -      | The description displayed below the title.  |
 
-#### Custom Close Button
+### Custom Rendering
+
+Use the `default` slot for full control over the dialog's structure. This allows you to compose the dialog using its individual sub-components (like `DialogContent`, `DialogClose`, etc., listed in the [Components](#components) section), similar to libraries like `shadcn/ui`.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueDialogCustomRendering
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/dialog/ExampleVueDialogCustomRendering.vue
+::
+:::
+
+### Custom Close Button
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -88,7 +101,7 @@ badges:
 ::
 :::
 
-#### Scrollable Body
+### Scrollable Body
 
 :::CodeGroup
 ::div{label=Preview preview}
@@ -99,7 +112,7 @@ badges:
 ::
 :::
 
-#### Login Prompt
+### Login Prompt
 
 A login dialog with state which closes itself after a successful login.
 
@@ -112,7 +125,7 @@ A login dialog with state which closes itself after a successful login.
 ::
 :::
 
-#### Blurred Background
+### Blurred Background
 
 A dialog whose overlay blurs the background content.
 
@@ -170,6 +183,10 @@ A dialog whose overlay blurs the background content.
 ::
 ::div{label="DialogScrollContent.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogScrollContent.vue
+
+::
+::div{label="DialogTrigger.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/dialog/DialogTrigger.vue
 
 ::
 :::

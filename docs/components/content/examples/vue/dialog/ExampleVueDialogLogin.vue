@@ -50,7 +50,7 @@ async function submitLogin() {
     <template #trigger>
       <NButton btn="outline-gray" label="Login" leading="i-mdi:login" />
     </template>
-    <template #default>
+    <template #body>
       <form
         id="login-form" class="grid space-y-4"
         @submit.prevent="submitLogin()"

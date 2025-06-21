@@ -61,6 +61,7 @@ export default [
   'dialog-overlay',
   'dialog-scroll-content',
   'dialog-title',
+  'dialog-trigger',
   'drawer',
   'drawer-close',
   'drawer-content',
