@@ -13,9 +13,11 @@
         </NButton>
       </template>
 
-      <div class="overflow-auto py-6">
-        <ExampleVueTableSlots />
-      </div>
+      <template #body>
+        <div class="overflow-auto py-6">
+          <ExampleVueTableSlots />
+        </div>
+      </template>
     </NSheet>
   </div>
 </template>

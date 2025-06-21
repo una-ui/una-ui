@@ -36,20 +36,22 @@ const username = ref('')
         </NButton>
       </template>
 
-      <div class="grid gap-4 py-4">
-        <div class="grid grid-cols-4 items-center gap-4">
-          <NLabel for="name" class="text-right">
-            Name
-          </NLabel>
-          <NInput id="name" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
+      <template #body>
+        <div class="grid gap-4 py-4">
+          <div class="grid grid-cols-4 items-center gap-4">
+            <NLabel for="name" class="text-right">
+              Name
+            </NLabel>
+            <NInput id="name" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
+          </div>
+          <div class="grid grid-cols-4 items-center gap-4">
+            <NLabel for="username" class="text-right">
+              Username
+            </NLabel>
+            <NInput id="username" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
+          </div>
         </div>
-        <div class="grid grid-cols-4 items-center gap-4">
-          <NLabel for="username" class="text-right">
-            Username
-          </NLabel>
-          <NInput id="username" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
-        </div>
-      </div>
+      </template>
 
       <template #footer>
         <NSheetClose>

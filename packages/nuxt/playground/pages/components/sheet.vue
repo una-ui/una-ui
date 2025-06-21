@@ -43,25 +43,27 @@ const username = ref('')
       :una="side.una"
     >
       <template #trigger>
-        <NButton btn="outline">
+        <NButton btn="outline-gray">
           Open {{ side.label }}
         </NButton>
       </template>
 
-      <div class="grid gap-4 py-4">
-        <div class="grid grid-cols-4 items-center gap-4">
-          <NLabel for="name" class="text-right">
-            Name
-          </NLabel>
-          <NInput id="name" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
+      <template #body>
+        <div class="grid gap-4 py-4">
+          <div class="grid grid-cols-4 items-center gap-4">
+            <NLabel for="name" class="text-right">
+              Name
+            </NLabel>
+            <NInput id="name" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
+          </div>
+          <div class="grid grid-cols-4 items-center gap-4">
+            <NLabel for="username" class="text-right">
+              Username
+            </NLabel>
+            <NInput id="username" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
+          </div>
         </div>
-        <div class="grid grid-cols-4 items-center gap-4">
-          <NLabel for="username" class="text-right">
-            Username
-          </NLabel>
-          <NInput id="username" v-model="username" :una="{ inputWrapper: 'col-span-3' }" />
-        </div>
-      </div>
+      </template>
 
       <template #footer>
         <NSheetClose>
@@ -78,7 +80,7 @@ const username = ref('')
       description="This sheet cannot be closed by clicking outside of it"
     >
       <template #trigger>
-        <NButton btn="outline">
+        <NButton btn="outline-gray">
           Prevent close
         </NButton>
       </template>
@@ -91,7 +93,7 @@ const username = ref('')
       description="This sheet has no overlay"
     >
       <template #trigger>
-        <NButton btn="outline">
+        <NButton btn="outline-gray">
           Disable overlay
         </NButton>
       </template>
@@ -100,7 +102,7 @@ const username = ref('')
     <!-- No title and description  -->
     <NSheet>
       <template #trigger>
-        <NButton btn="outline">
+        <NButton btn="outline-gray">
           No title and description
         </NButton>
       </template>
@@ -113,7 +115,7 @@ const username = ref('')
       description="This sheet has no close button"
     >
       <template #trigger>
-        <NButton btn="outline">
+        <NButton btn="outline-gray">
           No close button
         </NButton>
       </template>
