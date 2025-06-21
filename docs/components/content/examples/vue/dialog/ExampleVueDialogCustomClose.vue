@@ -46,7 +46,7 @@ const { copy, copied } = useClipboard({ source })
     <template #footer>
       <NDialogClose>
         <NButton
-          btn="soft-gray"
+          btn="outline-gray"
         >
           Close
         </NButton>
