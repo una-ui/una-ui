@@ -30,7 +30,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
 
 <template>
   <DialogRoot v-slot="{ open }" v-bind="forwarded">
-    <slot name="root">
+    <slot>
       <SheetTrigger
         v-if="$slots.trigger"
         v-bind="_sheetTrigger"
@@ -88,7 +88,9 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
             </slot>
           </SheetHeader>
 
-          <slot />
+          <slot name="body">
+            <slot />
+          </slot>
 
           <SheetFooter
             v-if="$slots.footer"
