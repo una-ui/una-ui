@@ -15,6 +15,8 @@ export const staticProgress: Record<`${ProgressPrefix}-${string}`, string> = {
   // static
   'progress-foreground': 'n-foreground',
   'progress-background': 'n-background',
+  'progress-white': 'progress-background',
+  'progress-black': 'progress-foreground',
   'progress-primary': 'n-primary',
   'progress-secondary': 'n-secondary',
   'progress-accent': 'n-accent',
