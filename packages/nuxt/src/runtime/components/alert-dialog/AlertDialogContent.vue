@@ -17,12 +17,13 @@ defineOptions({
 
 const props = withDefaults(defineProps<NAlertDialogContentProps>(), {
   overlay: true,
+  dismissible: true,
 })
 const emits = defineEmits<AlertDialogContentEmits>()
 const delegatedProps = reactiveOmit(props, ['class', 'una', '_alertDialogOverlay'])
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 const contentEvents = computed(() => {
-  if (props.preventClose) {
+  if (!props.dismissible) {
     return {
       pointerDownOutside: (e: Event) => e.preventDefault(),
       interactOutside: (e: Event) => e.preventDefault(),

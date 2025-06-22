@@ -59,9 +59,9 @@ The `AlertDialogActionProps` and `AlertDialogCancelProps` extends the `NButton` 
 
 ### Prevent Closing
 
-| Prop           | Default | Type      | Description                                                |
-| -------------- | ------- | --------- | ---------------------------------------------------------- |
-| `preventClose` | -       | `boolean` | If true, the alert dialog will not close escape key press. |
+| Prop          | Default | Type      | Description                                                      |
+| ------------- | ------- | --------- | ---------------------------------------------------------------- |
+| `dismissible` | `true`  | `boolean` | If `false`, the alert dialog will not close on escape key press. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
