@@ -15,6 +15,10 @@ const forwardedProps = useForwardProps(delegatedProps)
   <PinInputInput
     data-slot="pin-input-slot"
     v-bind="forwardedProps"
-    :class="cn('pin-input-slot', props.class)"
+    :class="cn(
+      'pin-input-slot',
+      props.una?.pinInputSlots,
+      props.class,
+    )"
   />
 </template>

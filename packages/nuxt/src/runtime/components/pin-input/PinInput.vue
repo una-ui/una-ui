@@ -4,8 +4,13 @@ import type { NPinInputProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { PinInputRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
+import PinInputGroup from './PinInputGroup.vue'
+import PinInputSeparator from './PinInputSeparator.vue'
+import PinInputSlot from './PinInputSlot.vue'
 
 const props = withDefaults(defineProps<NPinInputProps>(), {
+  length: 6,
+  size: 'md',
   modelValue: () => [],
 })
 const emits = defineEmits<PinInputRootEmits>()
@@ -18,8 +23,34 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <PinInputRoot
     data-slot="pin-input"
-    v-bind="forwarded" :class="cn('flex items-center gap-2 has-disabled:opacity-50 disabled:cursor-not-allowed', props.class)"
+    v-bind="forwarded" :class="cn('pin-input', props.pinInput, props.class)"
   >
-    <slot />
+    <slot>
+      <PinInputGroup
+        :una
+        :size
+      >
+        <slot name="group">
+          <template v-for="(id, index) in length" :key="id">
+            <slot name="input">
+              <PinInputSlot
+                :index="index"
+                :size
+                :una
+              />
+            </slot>
+            <template v-if="separator && index !== length - 1">
+              <slot name="separator">
+                <PinInputSeparator
+                  :separator="separator"
+                  :size
+                  :una
+                />
+              </slot>
+            </template>
+          </template>
+        </slot>
+      </PinInputGroup>
+    </slot>
   </PinInputRoot>
 </template>

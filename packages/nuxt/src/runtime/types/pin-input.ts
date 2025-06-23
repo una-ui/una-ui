@@ -2,7 +2,17 @@ import type { PinInputInputProps, PinInputRootProps, PrimitiveProps } from 'reka
 import type { HTMLAttributes, HtmlHTMLAttributes } from 'vue'
 
 export interface NPinInputProps extends PinInputRootProps, BaseExtensions {
-
+  length?: number
+  /**
+   * The number of characters in the pin input.
+   * @default 6
+   */
+  separator?: string
+  /**
+   * The separator to use between pin input fields.
+   *
+   */
+  pinInput?: HTMLAttributes['class']
   _pinInputGroup?: NPinInputGroupProps
   _pinInputSeparator?: NPinInputSeparatorProps
   _pinInputSlots?: NPinInputSlotProps
@@ -23,6 +33,7 @@ export interface NPinInputSlotProps extends PinInputInputProps, BaseExtensions {
 }
 
 export interface NPinInputSeparatorProps extends PrimitiveProps, BaseExtensions {
+  separator?: string
   una?: Pick<NPinInputUnaProps, 'pinInputSeparator'>
 }
 
@@ -34,4 +45,5 @@ export interface NPinInputUnaProps {
 
 interface BaseExtensions {
   class?: HTMLAttributes['class']
+  size?: HTMLAttributes['class']
 }

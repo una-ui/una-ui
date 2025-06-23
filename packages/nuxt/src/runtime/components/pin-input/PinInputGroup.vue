@@ -13,7 +13,11 @@ const forwardedProps = useForwardProps(delegatedProps)
   <Primitive
     data-slot="pin-input-group"
     v-bind="forwardedProps"
-    :class="cn('pin-input-group', props.class)"
+    :class="cn(
+      'pin-input-group',
+      props.una?.pinInputGroup,
+      props.class,
+    )"
   >
     <slot />
   </Primitive>
