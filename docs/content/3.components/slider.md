@@ -70,9 +70,9 @@ To avoid the thumbs from overlapping, you can set the `minStepsBetweenThumbs` pr
 ::
 :::
 
-### Form Group
+### Form Field
 
-You can use the `slider` component inside the `form-group` component, or you can use it with the `label` component.
+You can use the `slider` component inside the `form-field` component, or you can use it with the `label` component.
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -83,7 +83,7 @@ You can use the `slider` component inside the `form-group` component, or you can
 ::
 :::
 
-:read-more{to="/components/form-group" title="Form-group component" target="_blank"}
+:read-more{to="/components/form" title="Form component" target="_blank"}
 
 :read-more{to="/components/label" title="Label component" target="_blank"}
 
