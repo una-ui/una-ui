@@ -35,17 +35,17 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
 
   'btn-link-primary': 'text-primary hover:underline underline-offset-4 btn-focus',
   'btn-link': 'btn-link-primary',
-  'btn-link-gray': 'text-muted-foreground hover:text-foreground hover:underline underline-offset-4 btn-focus',
+  'btn-link-gray': 'text-muted-foreground hover:underline underline-offset-4 btn-focus',
   'btn-link-black': 'text-foreground hover:underline underline-offset-4 btn-focus',
   'btn-link-muted': 'text-muted-foreground hover:underline underline-offset-4 btn-focus',
   'btn-link-accent': 'text-accent-foreground hover:underline underline-offset-4 btn-focus',
 
-  'btn-text-primary': 'text-primary btn-focus',
+  'btn-text-primary': 'hover:text-primary text-primary/90 btn-focus',
   'btn-text': 'btn-text-primary',
-  'btn-text-gray': 'text-muted-foreground hover:text-foreground btn-focus',
-  'btn-text-black': 'text-foreground btn-focus',
-  'btn-text-muted': 'text-muted-foreground btn-focus',
-  'btn-text-accent': 'text-accent-foreground hover:text-accent-foreground/80 btn-focus',
+  'btn-text-gray': 'hover:text-foreground text-foreground/90 btn-focus',
+  'btn-text-black': 'hover:text-foreground text-foreground/90 btn-focus',
+  'btn-text-muted': 'hover:text-foreground text-foreground/90 btn-focus',
+  'btn-text-accent': 'hover:text-accent-foreground text-accent-foreground/90 btn-focus',
 
   'btn-soft-primary': 'bg-primary/10 text-primary shadow-xs hover:bg-primary/15 btn-focus',
   'btn-soft': 'btn-soft-primary',
@@ -56,10 +56,10 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
 
   'btn-ghost-primary': 'hover:bg-primary/10 text-primary dark:hover:bg-primary/15 btn-focus',
   'btn-ghost': 'btn-ghost-primary',
-  'btn-ghost-gray': 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 btn-focus',
+  'btn-ghost-gray': 'hover:text-accent-foreground hover:bg-accent/50 btn-focus',
 
-  'btn-ghost-muted': 'hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50 btn-focus',
-  'btn-ghost-white': 'text-foreground hover:bg-secondary/50 btn-focus',
+  'btn-ghost-muted': 'text-muted-foreground hover:bg-muted/15 btn-focus',
+  'btn-ghost-white': 'text-foreground hover:bg-accent/50 btn-focus',
 
   'btn-focus-primary': 'focus-visible:ring-3px focus-visible:border focus-visible:border-ring focus-visible:ring-ring/50',
   'btn-focus': 'btn-focus-primary',
@@ -70,11 +70,11 @@ export const dynamicBtn: [RegExp, (params: RegExpExecArray) => string][] = [
   [/^btn-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:ring-3px focus-visible:border focus-visible:border-${c}-400 dark:focus-visible:border-${c}-800 focus-visible:ring-${c}-400/50 dark:focus-visible:ring-${c}-800/50`],
 
   // variants
-  [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-background shadow-xs bg-${c}-600 hover:bg-${c}-500 dark:bg-${c}-500 dark:hover:bg-${c}-400`],
-  [/^btn-text(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-500 hover:text-${c}-500 dark:hover:text-${c}-400`],
-  [/^btn-outline(-(\S+))?$/, ([, , c = 'primary']) => `shadow-xs btn-focus-${c} text-${c}-500 dark:text-${c}-400 bg-background dark:bg-input/30 border border-${c}-500 dark:border-${c}-400 hover:bg-${c}-50 dark:hover:bg-${c}-950`],
-  [/^btn-soft(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-400 bg-${c}-50 dark:bg-${c}-950 hover:bg-${c}-100 dark:hover:bg-${c}-900`],
-  [/^btn-ghost(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-400 hover:bg-${c}-100 dark:hover:bg-${c}-900`],
+  [/^btn-solid(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-background shadow-xs bg-${c}-600 dark:bg-${c}-500 hover:bg-${c}-600/90 dark:hover:bg-${c}-500/90`],
+  [/^btn-text(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} hover:text-${c}-600 hover:dark:text-${c}-500 text-${c}-600/90 dark:text-${c}-500/90`],
+  [/^btn-outline(-(\S+))?$/, ([, , c = 'primary']) => `shadow-xs btn-focus-${c} text-${c}-600 dark:text-${c}-500 bg-background dark:bg-input/30 border border-${c}-500 dark:border-${c}-400 hover:bg-${c}-50 dark:hover:bg-${c}-950`],
+  [/^btn-soft(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 bg-${c}-600/10 hover:bg-${c}-600/15 dark:text-${c}-500 dark:bg-${c}-500/10 dark:hover:bg-${c}-500/15`],
+  [/^btn-ghost(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-500 hover:bg-${c}-600/10 dark:hover:bg-${c}-500/15`],
   [/^btn-link(-(\S+))?$/, ([, , c = 'primary']) => `btn-focus-${c} text-${c}-600 dark:text-${c}-500 hover:underline underline-offset-4`],
 ]
 
