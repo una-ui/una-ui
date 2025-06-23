@@ -117,6 +117,11 @@ const data = {
           url: '/components/navigation-menu',
         },
         {
+          title: 'Number Field',
+          url: '/components/number-field',
+          badge: 'new' as const,
+        },
+        {
           title: 'Pagination',
           url: '/components/pagination',
         },

@@ -1,3 +1,17 @@
+# [0.60.0](https://github.com/una-ui/una-ui/compare/v0.59.0...v0.60.0) (2025-06-21)
+
+
+### Bug Fixes
+
+* **NavigationMenu:** resolve link and list types ([#428](https://github.com/una-ui/una-ui/issues/428)) ([025f305](https://github.com/una-ui/una-ui/commit/025f305afa75c65a6f77468e48af48bc3d09f7a8))
+
+
+### Features
+
+* **NumberField:** introduce new components and presets ([#432](https://github.com/una-ui/una-ui/issues/432)) ([d0efbbc](https://github.com/una-ui/una-ui/commit/d0efbbc0c276c92d3734f4d71020397a1b221ab9))
+
+
+
 # [0.59.0](https://github.com/una-ui/una-ui/compare/v0.58.0...v0.59.0) (2025-06-12)
 
 
