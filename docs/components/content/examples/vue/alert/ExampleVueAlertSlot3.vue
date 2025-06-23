@@ -9,10 +9,12 @@
       </div>
       <div class="mt-4">
         <div class="flex -mx-2.5 -my-1.5">
-          <NButton leading="i-heroicons-document-text-20-solid" btn="ghost-success">
+          <NButton
+            leading="i-heroicons-document-text-20-solid" btn="ghost-success" class="text-success-700 dark:text-success-200"
+          >
             View receipt
           </NButton>
-          <NButton btn="ghost-success">
+          <NButton btn="ghost-success" class="text-success-700 dark:text-success-200">
             Dismiss
           </NButton>
         </div>
