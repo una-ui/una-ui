@@ -1,4 +1,8 @@
+import type { HTMLAttributes } from 'vue'
+import type { NButtonProps } from './button'
+
 export interface NAlertProps {
+  class?: HTMLAttributes['class']
   /**
    * Allows you to add `UnaUI` alert preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -7,7 +11,7 @@ export interface NAlertProps {
    * @example
    * alert="outline-pink"
    */
-  alert?: string
+  alert?: HTMLAttributes['class']
   /**
    * Add icon to the alert,
    * If this is true, the icon will be automatically generated based on the color.
@@ -34,28 +38,35 @@ export interface NAlertProps {
    */
   description?: string
 
+  // subcomponents
+  _dialogClose?: NAlertCloseProps
+
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/alert.ts
    */
-  una?: {
-    // base
-    alert?: string
-    alertTitle?: string
-    alertDescription?: string
-    alertIconBase?: string
-    alertClose?: string
-    alertCloseIconBase?: string
+  una?: NAlertUnaProps
+}
 
-    // wrappers
-    alertInnerWrapper?: string
-    alertContentWrapper?: string
-    alertIconWrapper?: string
-    alertCloseWrapper?: string
-    alertCloseInnerWrapper?: string
+export interface NAlertTitleProps {
+  class?: HTMLAttributes['class']
+  una?: Pick<NAlertUnaProps, 'alertTitle'>
+}
 
-    // icons
-    alertCloseIcon?: string
-  }
+export interface NAlertDescriptionProps {
+  class?: HTMLAttributes['class']
+  una?: Pick<NAlertUnaProps, 'alertDescription'>
+}
+
+export interface NAlertCloseProps extends Omit<NButtonProps, 'una'> {
+  class?: HTMLAttributes['class']
+  una?: Pick<NAlertUnaProps, 'alertCloseWrapper'> & NButtonProps['una']
+}
+
+export interface NAlertUnaProps {
+  alert?: HTMLAttributes['class']
+  alertTitle?: HTMLAttributes['class']
+  alertDescription?: HTMLAttributes['class']
+  alertCloseWrapper?: HTMLAttributes['class']
 }

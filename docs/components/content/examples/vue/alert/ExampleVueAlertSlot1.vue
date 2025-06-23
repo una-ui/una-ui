@@ -5,7 +5,7 @@
   >
     <template #title>
       <div class="flex-1 md:flex md:justify-between space-y-3 md:space-y-0">
-        <p class="text-brand">
+        <p class="text-current">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vel optio aliquam autem dolorem enim! Quo, nesciunt deleniti. Natus quisquam quae quis quam ipsa reiciendis at alias molestiae voluptate repudiandae.
         </p>
         <NButton

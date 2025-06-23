@@ -1,6 +1,8 @@
 export default [
   'accordion',
   'alert',
+  'alert-close',
+  'alert-description',
   'alert-dialog',
   'alert-dialog-action',
   'alert-dialog-cancel',
@@ -11,6 +13,7 @@ export default [
   'alert-dialog-overlay',
   'alert-dialog-title',
   'alert-dialog-trigger',
+  'alert-title',
   'aspect-ratio',
   'avatar',
   'avatar-fallback',
