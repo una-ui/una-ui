@@ -27,6 +27,7 @@ import { label } from './label'
 import { link } from './link'
 import { navigationMenu } from './navigation-menu'
 import { pagination } from './pagination'
+import { pinInput } from './pin-input'
 import { popover } from './popover'
 import { progress } from './progress'
 import { radioGroup } from './radio-group'
@@ -76,6 +77,7 @@ export const shortcuts = [
   ...popover,
   ...tooltip,
   ...pagination,
+  ...pinInput,
   ...toast,
   ...toggle,
   ...collapsible,
