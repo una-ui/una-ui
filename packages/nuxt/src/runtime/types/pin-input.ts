@@ -2,6 +2,7 @@ import type { PinInputInputProps, PinInputRootProps, PrimitiveProps } from 'reka
 import type { HTMLAttributes, HtmlHTMLAttributes } from 'vue'
 
 export interface NPinInputProps extends PinInputRootProps, BaseExtensions {
+
   _pinInputGroup?: NPinInputGroupProps
   _pinInputSeparator?: NPinInputSeparatorProps
   _pinInputSlots?: NPinInputSlotProps
