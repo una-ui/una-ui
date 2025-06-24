@@ -64,6 +64,7 @@ const icon = computed(() => {
         v-if="title || $slots.title"
         :size
         :una
+        v-bind="props._alertTitle"
       >
         <slot name="title">
           {{ title }}
@@ -74,6 +75,7 @@ const icon = computed(() => {
         v-if="description || $slots.description"
         :size
         :una
+        v-bind="props._alertDescription"
       >
         <slot name="description">
           {{ description }}
@@ -83,7 +85,7 @@ const icon = computed(() => {
       <AlertClose
         v-if="$slots.close || props.closable"
         :size
-        v-bind="props._dialogClose"
+        v-bind="props._alertClose"
         :una
         @click="emit('close')"
       >

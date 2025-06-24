@@ -182,6 +182,19 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Alert.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/elements/Alert.vue
+@@@ ../packages/nuxt/src/runtime/components/alert/Alert.vue
+
+::
+::div{label="AlertTitle.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/alert/AlertTitle.vue
+
+::
+::div{label="AlertDescription.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/alert/AlertDescription.vue
+
+::
+::div{label="AlertClose.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/alert/AlertClose.vue
+
 ::
 :::

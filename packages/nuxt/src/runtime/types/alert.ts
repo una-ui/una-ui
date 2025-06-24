@@ -40,7 +40,9 @@ export interface NAlertProps {
   description?: string
 
   // subcomponents
-  _dialogClose?: NAlertCloseProps
+  _alertTitle?: NAlertTitleProps
+  _alertDescription?: NAlertDescriptionProps
+  _alertClose?: NAlertCloseProps
 
   /**
    * `UnaUI` preset configuration
