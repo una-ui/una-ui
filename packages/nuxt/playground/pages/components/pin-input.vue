@@ -8,9 +8,8 @@ const handleComplete = (e: string[]) => alert(e.join(''))
     id="pin-input"
     v-model="value"
     placeholder="○"
-    separator="i-ph-star"
+    separator="i-ph-star-fill text-primary"
     size="2xl"
-    pin-input="outline-blue"
     @complete="handleComplete"
   />
 </template>
