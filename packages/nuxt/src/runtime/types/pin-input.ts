@@ -1,5 +1,5 @@
 import type { PinInputInputProps, PinInputRootProps, PrimitiveProps } from 'reka-ui'
-import type { HTMLAttributes, HtmlHTMLAttributes } from 'vue'
+import type { HTMLAttributes } from 'vue'
 
 interface BaseExtensions {
   /** CSS class for the component */
@@ -75,5 +75,5 @@ interface NPinInputUnaProps {
   /** CSS class for the pin input separator */
   pinInputSeparator?: HTMLAttributes['class']
   /** CSS class for the pin input slots */
-  pinInputSlot?: HtmlHTMLAttributes['class']
+  pinInputSlot?: HTMLAttributes['class']
 }
