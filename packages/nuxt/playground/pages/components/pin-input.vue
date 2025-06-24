@@ -7,7 +7,6 @@ const handleComplete = (e: string[]) => alert(e.join(''))
 
 <template>
   <NPinInput
-    id="pin-input"
     v-model="value"
     placeholder="○"
     separator="i-ph-star-fill text-primary"
