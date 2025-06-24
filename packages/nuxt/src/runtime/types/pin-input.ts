@@ -8,7 +8,7 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-export interface NPinInputProps extends PinInputRootProps, Pick<NPinInputSeparatorProps, 'separator'>,
+export interface NPinInputProps extends Omit<NPinInputRootProps, 'size' | 'class'>, Pick<NPinInputSeparatorProps, 'separator'>,
   Pick<NPinInputSlotProps, 'pinInput'>, BaseExtensions {
   /**
    * The number of characters in the pin input.
@@ -16,6 +16,8 @@ export interface NPinInputProps extends PinInputRootProps, Pick<NPinInputSeparat
    */
   length?: number
 
+  /** Props for the pin input root */
+  _pinInputRoot?: Partial<NPinInputRootProps>
   /** Props for the pin input group */
   _pinInputGroup?: Partial<NPinInputGroupProps>
   /** Props for the pin input separator */
@@ -30,12 +32,17 @@ export interface NPinInputProps extends PinInputRootProps, Pick<NPinInputSeparat
   una?: NPinInputUnaProps
 }
 
+export interface NPinInputRootProps extends PinInputRootProps, BaseExtensions {
+  /** Additional properties for the una component */
+  una?: Pick<NPinInputUnaProps, 'pinInputRoot'>
+}
+
 export interface NPinInputGroupProps extends PrimitiveProps, BaseExtensions {
   /** Additional properties for the una component */
   una?: Pick<NPinInputUnaProps, 'pinInputGroup'>
 }
 
-export interface NPinInputSlotProps extends PinInputInputProps, BaseExtensions {
+export interface NPinInputSlotProps extends PinInputInputProps, Pick<NPinInputSeparatorProps, 'separator'>, BaseExtensions {
   /**
    * Allows you to add `UnaUI` pin-input preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -61,6 +68,8 @@ export interface NPinInputSeparatorProps extends PrimitiveProps, BaseExtensions 
 }
 
 interface NPinInputUnaProps {
+  /** CSS class for the pin input root */
+  pinInputRoot?: HTMLAttributes['class']
   /** CSS class for the pin input group */
   pinInputGroup?: HTMLAttributes['class']
   /** CSS class for the pin input separator */
