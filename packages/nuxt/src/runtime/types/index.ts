@@ -65,17 +65,18 @@ export interface ColorPalette {
 export interface UnaSettings {
   primaryColors: Colors
   grayColors: Colors
-  theme: {
+  theme: string | null | false | undefined
+  primary: string
+  gray: string
+  fontSize: number
+  radius: number
+  themes: {
     name: string
     cssVars: {
       light: Colors
       dark: Colors
     }
-  } | null | false | undefined
-  primary: string
-  gray: string
-  fontSize: number
-  radius: number
+  }[]
 }
 
 export type OutsideEvent<T extends Event> = CustomEvent<{

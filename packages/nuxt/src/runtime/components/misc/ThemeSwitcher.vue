@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { UnaSettings } from '../../types'
-import { useColorMode } from '#imports'
+import { useAppConfig, useColorMode } from '#imports'
 import { useToggle } from '@vueuse/core'
 import { capitalize, computed } from 'vue'
 import { useUnaSettings } from '../../composables/useUnaSettings'
@@ -15,13 +15,16 @@ import Separator from '../elements/Separator.vue'
 const colorMode = useColorMode()
 
 const [value, toggle] = useToggle()
-const { primaryThemes, grayThemes, predefinedThemes } = useUnaThemes()
+const { primaryThemes, grayThemes } = useUnaThemes()
+
+const { una: { themes } } = useAppConfig()
+
 const { settings, reset } = useUnaSettings()
 
 const currentPrimaryThemeHex = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
 const currentPrimaryThemeName = computed(() => {
   if (settings.value.theme) {
-    return settings.value.theme.name
+    return settings.value.theme
   }
 
   const theme = primaryThemes.find(([, theme]) => theme['--una-primary-hex'] === currentPrimaryThemeHex.value)
@@ -115,44 +118,48 @@ function shuffleTheme(): void {
           </p>
         </div>
 
-        <Separator />
+        <template v-if="themes.length > 0">
+          <Separator />
 
-        <div class="space-y-2">
-          <Label for="color" class="text-xs"> Themes</Label>
-          <div class="grid grid-cols-2 gap-3">
-            <template
-              v-for="theme in predefinedThemes"
-              :key="theme.name"
-            >
-              <Button
-                v-if="theme"
-                btn="outline-gray"
-                size="xs"
-                :title="capitalize(theme?.name)"
-                class="justify-start gap-2 ring-primary"
-                :aria-label="`Theme: ${theme.name}`"
-                :class="currentPrimaryThemeName === theme?.name && 'ring-2'"
-                @click="updateColor(theme)"
+          <div
+            class="space-y-2"
+          >
+            <Label for="color" class="text-xs"> Themes</Label>
+            <div class="grid grid-cols-2 gap-3">
+              <template
+                v-for="theme in themes"
+                :key="theme"
               >
-                <template #leading>
-                  <Icon
-                    name="i-tabler-circle-filled"
-                    square="4.5"
-                    :style="{
-                      '--c-primary': `oklch(${theme?.cssVars.dark['--una-primary']})`,
-                      '--c-primary-foreground': `oklch(${theme?.cssVars.dark['--una-background']})`,
-                    }"
-                    class="shrink-0 rounded-full from-$c-primary to-$c-primary-foreground from-20% bg-gradient-to-b"
-                  />
-                </template>
+                <Button
+                  v-if="theme"
+                  btn="outline-gray"
+                  size="xs"
+                  :title="capitalize(theme?.name)"
+                  class="justify-start gap-2 ring-primary"
+                  :aria-label="`Theme: ${theme.name}`"
+                  :class="currentPrimaryThemeName === theme?.name && 'ring-2'"
+                  @click="updateColor(theme.name)"
+                >
+                  <template #leading>
+                    <Icon
+                      name="i-tabler-circle-filled"
+                      square="4.5"
+                      :style="{
+                        '--c-primary': `oklch(${theme?.cssVars.dark['--una-primary']})`,
+                        '--c-primary-foreground': `oklch(${theme?.cssVars.dark['--una-background']})`,
+                      }"
+                      class="shrink-0 rounded-full from-$c-primary to-$c-primary-foreground from-20% bg-gradient-to-b"
+                    />
+                  </template>
 
-                <span class="truncate text-xs">
-                  {{ theme.name }}
-                </span>
-              </Button>
-            </template>
+                  <span class="truncate text-xs">
+                    {{ theme.name }}
+                  </span>
+                </Button>
+              </template>
+            </div>
           </div>
-        </div>
+        </template>
 
         <Separator />
 

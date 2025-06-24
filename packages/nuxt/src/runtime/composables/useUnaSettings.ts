@@ -22,7 +22,8 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     gray: una.gray,
     radius: una.radius,
     fontSize: una.fontSize,
-    theme: null,
+    theme: una.theme,
+    themes: una.themes,
   } as const
 
   const settings = useStorage<UnaSettings>('una-settings', defaultSettings, undefined, {
@@ -39,6 +40,12 @@ export function useUnaSettings(): UseUnaSettingsReturn {
   )
 
   function reset(): void {
+    if (una.theme) {
+      settings.value.theme = una.theme
+
+      return
+    }
+
     settings.value.primary = defaultSettings.primary
     settings.value.gray = defaultSettings.gray
     settings.value.fontSize = defaultSettings.fontSize

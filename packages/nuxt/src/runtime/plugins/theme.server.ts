@@ -19,8 +19,11 @@ export default defineNuxtPlugin(() => {
           ${process.dev ? 'console.log({ settings })' : ''}
 
           if (settings.theme) {
-            Object.entries(settings.theme.cssVars.light).map(i => html.style.setProperty(i[0], i[1])) 
-            Object.entries(settings.theme.cssVars.dark).map(i => html.style.setProperty(i[0], i[1]))
+            const theme = settings.themes.find(t => t.name === settings.theme)  
+            if (theme) {
+              Object.entries(theme.cssVars.light).map(i => html.style.setProperty(i[0], i[1]))
+              Object.entries(theme.cssVars.dark).map(i => html.style.setProperty(i[0], i[1]))
+            }
 
             html.style.setProperty('--una-radius', settings.radius + 'rem')
             html.style.setProperty('--una-font-size', settings.fontSize + 'px')

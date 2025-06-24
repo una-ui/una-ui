@@ -17,15 +17,16 @@ export default defineNuxtPlugin(() => {
 
   // created a computed property for styles
   const computedStyles = computed(() => {
-    if (settings.value.theme) {
+    const theme = settings.value.themes.find(t => t.name === settings.value.theme)
+    if (settings.value.theme && theme) {
       return `
       :root {
-        ${Object.entries(settings.value.theme.cssVars.light).map(([k, v]) => `${k}: ${v};`).join('\n')}
+        ${Object.entries(theme.cssVars.light).map(([k, v]) => `${k}: ${v};`).join('\n')}
         --una-radius: ${settings.value.radius}rem;
         --una-font-size: ${settings.value.fontSize}px;
       }
       .dark {
-        ${Object.entries(settings.value.theme.cssVars.dark).map(([k, v]) => `${k}: ${v};`).join('\n')}
+        ${Object.entries(theme.cssVars.dark).map(([k, v]) => `${k}: ${v};`).join('\n')}
       }
       `
     }
