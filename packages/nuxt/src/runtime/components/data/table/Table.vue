@@ -186,6 +186,7 @@ const table = useVueTable({
   getFilteredRowModel: getFilteredRowModel(),
   getPaginationRowModel: getPaginationRowModel(),
   getRowId: (row: any) => props.rowId ? row[props.rowId] : row.id,
+  getSubRows: (row: any) => row.subRows,
   getExpandedRowModel: getExpandedRowModel(),
 
   onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
