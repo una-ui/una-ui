@@ -27,15 +27,17 @@ badges:
 
 ### Variant
 
-| Prop    | Default   | Type        | Description               |
-| ------- | --------- | ----------- | ------------------------- |
-| `alert` | `outline` | `{variant}` | The variant of the alert. |
+| Prop    | Default | Type        | Description               |
+| ------- | ------- | ----------- | ------------------------- |
+| `alert` | `text`  | `{variant}` | The variant of the alert. |
 
-| Variant   | Description                 |
-| --------- | --------------------------- |
-| `outline` | The default variant.        |
-| `soft`    | The soft variant.           |
-| `~`       | The unstyle or base variant |
+| Variant   | Description          |
+| --------- | -------------------- |
+| `text`    | The text variant.    |
+| `solid`   | The solid variant.   |
+| `outline` | The outline variant. |
+| `soft`    | The soft variant.    |
+| `border`  | The border variant.  |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -48,9 +50,9 @@ badges:
 
 ### Color
 
-| Prop    | Default             | Type                | Description             |
-| ------- | ------------------- | ------------------- | ----------------------- |
-| `alert` | `{variant}-primary` | `{variant}-{color}` | The color of the alert. |
+| Prop    | Default          | Type                | Description             |
+| ------- | ---------------- | ------------------- | ----------------------- |
+| `alert` | `{variant}-gray` | `{variant}-{color}` | The color of the alert. |
 
 :::CodeGroup
 ::div{label="Preview" preview}

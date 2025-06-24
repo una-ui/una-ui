@@ -11,14 +11,14 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   // base
   'alert': 'rounded-lg relative grid grid-cols-[0_1fr] w-full items-start gap-y-0.14285714285714285em px-4 py-3 text-0.875em leading-1.4285714285714286em has-[>span[icon-base]]:grid-cols-[calc(var(--spacing)*4)_1fr] [&>span[icon-base]]:translate-y-0.5 has-[>span[icon-base]]:gap-x-0.8571428571428571em [&>span[icon-base]]:text-current [&>span[icon-base]]:square-1.1428571428571428em',
   'alert-title': 'col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight',
-  'alert-description': 'text-muted-foreground col-start-2 grid justify-items-start gap-1 text-0.875em leading-1.4285714285714286em [&_p]:leading-relaxed',
+  'alert-description': 'text-muted-foreground col-start-2 grid justify-items-start gap-0.017857142857142856em text-0.875em leading-1.4285714285714286em [&_p]:leading-relaxed',
   'alert-close-wrapper': 'absolute right-3 top-3',
 
   // static variants
   'alert-solid-primary': ' bg-primary text-primary-foreground [&_[data-slot="alert-description"]]:text-primary-foreground/90',
-  'alert-solid-gray': ' bg-card border text-card-foreground [&_[data-slot="alert-description"]]:text-card-foreground/90',
-  'alert-solid-white': ' border text-foreground bg-background [&_[data-slot="alert-description"]]:text-foreground/90',
-  'alert-solid-black': ' text-background bg-foreground [&_[data-slot="alert-description"]]:text-background/90',
+  'alert-solid-gray': ' bg-secondary border text-secondary-foreground [&_[data-slot="alert-description"]]:text-secondary-foreground/90',
+  'alert-solid-white': ' border text-foreground bg-background [&_[data-slot="alert-description"]]:text-foreground',
+  'alert-solid-black': ' text-background bg-foreground [&_[data-slot="alert-description"]]:text-background',
 
   'alert-soft-gray': ' border bg-card text-card-foreground [&_[data-slot="alert-description"]]:text-card-foreground/90',
   'alert-soft-primary': ' bg-primary/10 text-primary [&_[data-slot="alert-description"]]:text-primary/90',
@@ -26,7 +26,7 @@ export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, strin
   'alert-outline-gray': ' bg-background border text-card-foreground [&_[data-slot="alert-description"]]:text-card-foreground/90',
   'alert-outline-primary': 'bg-background border border-primary/90 text-primary [&_[data-slot="alert-description"]]:text-primary/90',
 
-  'alert-text-gray': ' border bg-card text-card-foreground [&_[data-slot="alert-description"]]:text-card-foreground/90',
+  'alert-text-gray': ' border bg-card text-card-foreground',
   'alert-text-primary': 'border border-border bg-card text-primary [&_[data-slot="alert-description"]]:text-primary/90',
 
   'alert-border-gray': 'border-l-4 rounded-none bg-card text-card-foreground [&_[data-slot="alert-description"]]:text-card-foreground/90',

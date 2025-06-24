@@ -8,7 +8,7 @@ import AlertDescription from './AlertDescription.vue'
 import AlertTitle from './AlertTitle.vue'
 
 const props = withDefaults(defineProps<NAlertProps>(), {
-  alert: 'solid-gray',
+  alert: 'text-gray',
   icon: false,
   closable: false,
   size: 'sm',
