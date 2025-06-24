@@ -11,6 +11,7 @@ const props = withDefaults(defineProps<NSidebarGroupLabelProps>(), {
 
 <template>
   <Primitive
+    data-slot="sidebar-group-label"
     data-sidebar="group-label"
     :as="as"
     :as-child="asChild"

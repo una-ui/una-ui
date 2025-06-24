@@ -8,6 +8,7 @@ const props = defineProps<NSidebarContentProps>()
 
 <template>
   <div
+    data-slot="sidebar-content"
     data-sidebar="content"
     :class="cn(
       'sidebar-content',
