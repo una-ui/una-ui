@@ -56,6 +56,7 @@ button:active {
 }
 
 :root {
+  --spacing: 0.25rem;
   --una-font-size: 16px;
   --una-radius: 0.5rem;
   --una-brand: var(--una-primary-600);

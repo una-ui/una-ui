@@ -27,15 +27,17 @@ badges:
 
 ### Variant
 
-| Prop    | Default   | Type        | Description               |
-| ------- | --------- | ----------- | ------------------------- |
-| `alert` | `outline` | `{variant}` | The variant of the alert. |
+| Prop    | Default | Type        | Description               |
+| ------- | ------- | ----------- | ------------------------- |
+| `alert` | `text`  | `{variant}` | The variant of the alert. |
 
-| Variant   | Description                 |
-| --------- | --------------------------- |
-| `outline` | The default variant.        |
-| `soft`    | The soft variant.           |
-| `~`       | The unstyle or base variant |
+| Variant   | Description          |
+| --------- | -------------------- |
+| `text`    | The text variant.    |
+| `solid`   | The solid variant.   |
+| `outline` | The outline variant. |
+| `soft`    | The soft variant.    |
+| `border`  | The border variant.  |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -48,9 +50,9 @@ badges:
 
 ### Color
 
-| Prop    | Default             | Type                | Description             |
-| ------- | ------------------- | ------------------- | ----------------------- |
-| `alert` | `{variant}-primary` | `{variant}-{color}` | The color of the alert. |
+| Prop    | Default          | Type                | Description             |
+| ------- | ---------------- | ------------------- | ----------------------- |
+| `alert` | `{variant}-gray` | `{variant}-{color}` | The color of the alert. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -132,7 +134,8 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 | `title`       | -     | The title of the alert.                    |
 | `description` | -     | The description of the alert.              |
 | `icon`        | -     | The icon of the alert.                     |
-| `closeIcon`   | -     | The close icon of the alert.               |
+| `actions`     | -     | The actions of the alert.                  |
+| `close`       | -     | The close icon of the alert.               |
 
 ### Example 1
 
@@ -179,6 +182,19 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 
 :::CodeGroup
 ::div{label="Alert.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/elements/Alert.vue
+@@@ ../packages/nuxt/src/runtime/components/alert/Alert.vue
+
+::
+::div{label="AlertTitle.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/alert/AlertTitle.vue
+
+::
+::div{label="AlertDescription.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/alert/AlertDescription.vue
+
+::
+::div{label="AlertClose.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/alert/AlertClose.vue
+
 ::
 :::

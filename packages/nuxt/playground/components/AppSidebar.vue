@@ -47,6 +47,10 @@ const data = {
           url: '/components/accordion',
         },
         {
+          title: 'Alert',
+          url: '/components/alert',
+        },
+        {
           title: 'Alert Dialog',
           url: '/components/alert-dialog',
           badge: 'new' as const,
