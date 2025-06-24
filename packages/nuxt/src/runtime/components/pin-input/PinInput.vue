@@ -37,7 +37,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
               <PinInputSlot
                 :index="index"
                 :size
-                :una="props.una?.pinInputSlots"
+                :una="props.una?.pinInputSlot"
                 :pin-input
               />
             </slot>
