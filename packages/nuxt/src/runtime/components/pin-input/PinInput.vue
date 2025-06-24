@@ -28,7 +28,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
   >
     <slot>
       <PinInputGroup
-        :una
+        :una="props.una?.pinInputGroup"
         :size
       >
         <slot name="group">
@@ -37,7 +37,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
               <PinInputSlot
                 :index="index"
                 :size
-                :una
+                :una="props.una?.pinInputSlots"
                 :pin-input
               />
             </slot>
@@ -46,7 +46,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
                 <PinInputSeparator
                   :separator="separator"
                   :size
-                  :una
+                  :una="props.una?.pinInputSeparator"
                 />
               </slot>
             </template>

@@ -22,6 +22,6 @@ const forwardedProps = useForwardProps(delegatedProps)
       props.una?.pinInputSlots,
       props.class,
     )"
-    :pin-input
+    :pin-input="pinInput"
   />
 </template>
