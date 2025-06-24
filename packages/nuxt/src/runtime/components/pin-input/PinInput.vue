@@ -1,54 +1,70 @@
 <script setup lang="ts">
 import type { PinInputRootEmits } from 'reka-ui'
 import type { NPinInputProps } from '../../types'
-import { reactiveOmit } from '@vueuse/core'
-import { PinInputRoot, useForwardPropsEmits } from 'reka-ui'
-import { cn } from '../../utils'
+import { reactivePick } from '@vueuse/core'
+import { useForwardPropsEmits } from 'reka-ui'
+import { computed } from 'vue'
+import { randomId } from '../../utils'
 import PinInputGroup from './PinInputGroup.vue'
+import PinInputRoot from './PinInputRoot.vue'
 import PinInputSeparator from './PinInputSeparator.vue'
 import PinInputSlot from './PinInputSlot.vue'
 
 const props = withDefaults(defineProps<NPinInputProps>(), {
   length: 6,
-  size: 'md',
   pinInput: 'outline-primary',
   modelValue: () => [],
 })
+
 const emits = defineEmits<PinInputRootEmits>()
 
-const delegatedProps = reactiveOmit(props, 'class', 'pinInput')
+const rootProps = reactivePick(props, [
+  'modelValue',
+  'defaultValue',
+  'placeholder',
+  'disabled',
+  'required',
+  'dir',
+  'mask',
+  'otp',
+  'type',
+])
 
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const forwarded = useForwardPropsEmits(rootProps, emits)
+
+const id = computed(() => props.id ?? randomId('pin-input'))
 </script>
 
 <template>
   <PinInputRoot
-    data-slot="pin-input"
-    v-bind="forwarded" :class="cn('pin-input', props.class)"
+    v-bind="{ ...forwarded, ..._pinInputRoot }"
+    :id
   >
     <slot>
       <PinInputGroup
-        :una="props.una?.pinInputGroup"
-        :size
+        v-bind="_pinInputGroup"
+        :una
       >
         <slot name="group">
-          <template v-for="(id, index) in length" :key="id">
+          <template v-for="(_, index) in length" :key="index">
             <slot name="input">
               <PinInputSlot
                 :index="index"
+                :una
                 :size
-                :una="props.una?.pinInputSlot"
                 :pin-input
+                :separator
+                v-bind="_pinInputSlot"
               />
             </slot>
-            <template v-if="separator && index !== length - 1">
-              <slot name="separator">
-                <PinInputSeparator
-                  :separator="separator"
-                  :size
-                  :una="props.una?.pinInputSeparator"
-                />
-              </slot>
+            <template v-if="($slots.separator || separator) && index !== length - 1">
+              <PinInputSeparator
+                :separator
+                :size
+                :una
+              >
+                <slot name="separator" />
+              </PinInputSeparator>
             </template>
           </template>
         </slot>
