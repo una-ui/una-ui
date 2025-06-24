@@ -12,7 +12,7 @@ function handleComplete(e: string[]) {
   <NPinInput v-model="value" placeholder="○" @complete="handleComplete">
     <NPinInputGroup>
       <template v-for="index in 6" :key="index">
-        <NPinInputSlot :index="index - 1" />
+        <NPinInputSlot class="border !rounded" :index="index - 1" />
         <NPinInputSeparator v-if="index !== 6" separator="i-lucide-minus" />
       </template>
     </NPinInputGroup>
