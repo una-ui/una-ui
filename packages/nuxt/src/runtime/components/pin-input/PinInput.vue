@@ -11,11 +11,12 @@ import PinInputSlot from './PinInputSlot.vue'
 const props = withDefaults(defineProps<NPinInputProps>(), {
   length: 6,
   size: 'md',
+  pinInput: 'outline-primary',
   modelValue: () => [],
 })
 const emits = defineEmits<PinInputRootEmits>()
 
-const delegatedProps = reactiveOmit(props, 'class')
+const delegatedProps = reactiveOmit(props, 'class', 'pinInput')
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
@@ -23,7 +24,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 <template>
   <PinInputRoot
     data-slot="pin-input"
-    v-bind="forwarded" :class="cn('pin-input', props.pinInput, props.class)"
+    v-bind="forwarded" :class="cn('pin-input', props.class)"
   >
     <slot>
       <PinInputGroup
@@ -37,6 +38,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
                 :index="index"
                 :size
                 :una
+                :pin-input
               />
             </slot>
             <template v-if="separator && index !== length - 1">

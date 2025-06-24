@@ -28,7 +28,7 @@ export interface NPinInputGroupProps extends PrimitiveProps, BaseExtensions {
   una?: Pick<NPinInputUnaProps, 'pinInputGroup'>
 }
 
-export interface NPinInputSlotProps extends PinInputInputProps, BaseExtensions {
+export interface NPinInputSlotProps extends PinInputInputProps, BaseExtensions, Pick<NPinInputProps, 'pinInput'> {
   una?: Pick<NPinInputUnaProps, 'pinInputSlots'>
 }
 

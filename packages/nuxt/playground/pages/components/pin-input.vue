@@ -10,6 +10,7 @@ const handleComplete = (e: string[]) => alert(e.join(''))
     placeholder="○"
     separator="i-ph-star"
     size="2xl"
+    pin-input="outline-blue"
     @complete="handleComplete"
   />
 </template>
