@@ -1,3 +1,12 @@
+## [0.60.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v0.60.1) (2025-06-24)
+
+
+### Features
+
+* **Table:** add support for getSubRows method ([#449](https://github.com/una-ui/una-ui/issues/449)) ([6f38118](https://github.com/una-ui/una-ui/commit/6f381187b3e2843aa782832811af1fbd17406309))
+
+
+
 # [0.60.0](https://github.com/una-ui/una-ui/compare/v0.59.0...v0.60.0) (2025-06-21)
 
 
