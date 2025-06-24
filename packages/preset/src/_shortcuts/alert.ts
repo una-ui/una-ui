@@ -2,11 +2,11 @@ type AlertPrefix = 'alert'
 
 export const staticAlert: Record<`${AlertPrefix}-${string}` | AlertPrefix, string> = {
   // config
-  'alert-info-icon': 'i-info',
-  'alert-error-icon': 'i-error',
-  'alert-success-icon': 'i-success',
-  'alert-warning-icon': 'i-warning',
-  'alert-close-icon': 'i-close',
+  'alert-info-icon': 'i-lucide-info',
+  'alert-error-icon': 'i-lucide-circle-alert',
+  'alert-success-icon': 'i-lucide-circle-check',
+  'alert-warning-icon': 'i-lucide-triangle-alert',
+  'alert-close-icon': 'i-lucide-x',
 
   // base
   'alert': 'rounded-lg relative grid grid-cols-[0_1fr] w-full items-start gap-y-0.14285714285714285em px-4 py-3 text-0.875em leading-1.4285714285714286em has-[>span[icon-base]]:grid-cols-[calc(var(--spacing)*4)_1fr] [&>span[icon-base]]:translate-y-0.5 has-[>span[icon-base]]:gap-x-0.8571428571428571em [&>span[icon-base]]:text-current [&>span[icon-base]]:square-1.1428571428571428em',
