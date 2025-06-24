@@ -8,7 +8,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<NAlertCloseProps>(), {
   label: 'alert-close-icon',
-  square: '5',
+  square: '1.4285714285714286em',
   btn: '~',
   icon: true,
 })
@@ -25,6 +25,7 @@ const props = withDefaults(defineProps<NAlertCloseProps>(), {
     <slot>
       <NButton
         v-bind="{ ...props, ...$attrs }"
+        :size
         :class="cn(
           props.btn === '~' && 'text-current hover:ring-1 hover:ring-current',
           props.class,

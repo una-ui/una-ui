@@ -2,12 +2,15 @@
 import type { NAlertDescriptionProps } from '../../types'
 import { cn } from '../../utils'
 
-const props = defineProps<NAlertDescriptionProps>()
+const props = withDefaults(defineProps<NAlertDescriptionProps>(), {
+  size: 'sm',
+})
 </script>
 
 <template>
   <div
     data-slot="alert-description"
+    :size
     :class="cn(
       'alert-description',
       props.una?.alertDescription,

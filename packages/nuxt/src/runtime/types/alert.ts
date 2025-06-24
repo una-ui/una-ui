@@ -2,6 +2,7 @@ import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
 export interface NAlertProps {
+  size?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
   /**
    * Allows you to add `UnaUI` alert preset properties,
@@ -50,16 +51,19 @@ export interface NAlertProps {
 }
 
 export interface NAlertTitleProps {
+  size?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
   una?: Pick<NAlertUnaProps, 'alertTitle'>
 }
 
 export interface NAlertDescriptionProps {
+  size?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
   una?: Pick<NAlertUnaProps, 'alertDescription'>
 }
 
 export interface NAlertCloseProps extends Omit<NButtonProps, 'una'> {
+  size?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
   una?: Pick<NAlertUnaProps, 'alertCloseWrapper'> & NButtonProps['una']
 }

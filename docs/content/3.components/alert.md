@@ -132,7 +132,8 @@ The **padding**, **icons**, and **text-size** of the input scale are dynamically
 | `title`       | -     | The title of the alert.                    |
 | `description` | -     | The description of the alert.              |
 | `icon`        | -     | The icon of the alert.                     |
-| `closeIcon`   | -     | The close icon of the alert.               |
+| `actions`     | -     | The actions of the alert.                  |
+| `close`       | -     | The close icon of the alert.               |
 
 ### Example 1
 

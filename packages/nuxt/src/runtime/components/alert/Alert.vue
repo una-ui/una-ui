@@ -11,6 +11,7 @@ const props = withDefaults(defineProps<NAlertProps>(), {
   alert: 'solid-gray',
   icon: false,
   closable: false,
+  size: 'sm',
 })
 
 const emit = defineEmits<{
@@ -46,6 +47,7 @@ const icon = computed(() => {
   <div
     data-slot="alert"
     role="alert"
+    :size
     :class="cn(
       'alert',
       props.una?.alert,
@@ -60,6 +62,7 @@ const icon = computed(() => {
 
       <AlertTitle
         v-if="title || $slots.title"
+        :size
         :una
       >
         <slot name="title">
@@ -69,6 +72,7 @@ const icon = computed(() => {
 
       <AlertDescription
         v-if="description || $slots.description"
+        :size
         :una
       >
         <slot name="description">
@@ -78,6 +82,7 @@ const icon = computed(() => {
 
       <AlertClose
         v-if="$slots.close || props.closable"
+        :size
         v-bind="props._dialogClose"
         :una
         @click="emit('close')"
