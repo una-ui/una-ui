@@ -45,6 +45,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "release": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release.ts",
+    "release:v1": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release-v1.ts",
     "start": "echo 'No start script defined'",
     "test": "vitest",
     "tweak-converter": "esno scripts/tweak-converter.ts",
