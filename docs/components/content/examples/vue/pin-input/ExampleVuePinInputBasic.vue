@@ -9,7 +9,7 @@ function handleComplete(e: string[]) {
 </script>
 
 <template>
-  <div class="flex gap-4">
+  <div class="flex flex-wrap gap-4 overflow-x-auto">
     <NPinInput
       v-model="value1"
       placeholder="○"

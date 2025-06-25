@@ -3,7 +3,7 @@ const value = ref<string[]>([])
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4 overflow-x-auto">
     <NPinInput
       v-model="value"
       placeholder="○"

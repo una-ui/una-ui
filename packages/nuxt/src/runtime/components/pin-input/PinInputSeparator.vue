@@ -19,7 +19,7 @@ const forwardedProps = useForwardProps(props)
     )"
   >
     <slot>
-      <Icon :name="props.separator" />
+      <Icon :name="props.icon" />
     </slot>
   </Primitive>
 </template>

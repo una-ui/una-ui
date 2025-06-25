@@ -44,7 +44,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
             <template v-if="separator && index !== length - 1">
               <slot name="separator">
                 <PinInputSeparator
-                  :separator="separator"
+                  :icon="separator"
                   :size
                   :una="props.una?.pinInputSeparator"
                 />

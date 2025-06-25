@@ -33,7 +33,7 @@ export interface NPinInputSlotProps extends PinInputInputProps, BaseExtensions, 
 }
 
 export interface NPinInputSeparatorProps extends PrimitiveProps, BaseExtensions {
-  separator?: string
+  icon?: string
   una?: Pick<NPinInputUnaProps, 'pinInputSeparator'>
 }
 
