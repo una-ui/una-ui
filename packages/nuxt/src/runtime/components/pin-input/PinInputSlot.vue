@@ -4,9 +4,7 @@ import { reactiveOmit } from '@vueuse/core'
 import { PinInputInput, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = withDefaults(defineProps<NPinInputSlotProps>(), {
-  pinInput: 'outline-primary',
-})
+const props = defineProps<NPinInputSlotProps>()
 
 const delegatedProps = reactiveOmit(props, 'class')
 
@@ -19,9 +17,10 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :class="cn(
       'pin-input-slot',
-      props.una?.pinInputSlots,
       props.class,
+      separator && 'pin-input-slot-with-separator',
+      props.una?.pinInputSlot,
     )"
-    :pin-input="pinInput"
+    :pin-input
   />
 </template>

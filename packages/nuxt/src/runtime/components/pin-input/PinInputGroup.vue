@@ -5,6 +5,7 @@ import { Primitive, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 
 const props = defineProps<NPinInputGroupProps>()
+
 const delegatedProps = reactiveOmit(props, 'class')
 const forwardedProps = useForwardProps(delegatedProps)
 </script>
@@ -15,8 +16,8 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :class="cn(
       'pin-input-group',
-      props.una?.pinInputGroup,
       props.class,
+      props.una?.pinInputGroup,
     )"
   >
     <slot />

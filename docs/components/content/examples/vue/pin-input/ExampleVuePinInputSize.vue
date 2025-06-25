@@ -31,14 +31,7 @@ const value = ref<string[]>([])
     <NPinInput
       v-model="value"
       placeholder="○"
-      size="4xl"
-    />
-
-    <NPinInput
-      v-model="value"
-      placeholder="○"
-      pin-input="~"
-      size="50px"
+      size="2xl"
     />
   </div>
 </template>
