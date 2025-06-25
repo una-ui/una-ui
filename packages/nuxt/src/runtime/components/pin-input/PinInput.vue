@@ -53,13 +53,13 @@ const id = computed(() => props.id ?? randomId('pin-input'))
                 :una
                 :size
                 :pin-input
-                :separator
+                :icon="separator"
                 v-bind="_pinInputSlot"
               />
             </slot>
             <template v-if="($slots.separator || separator) && index !== length - 1">
               <PinInputSeparator
-                :separator
+                :icon="separator"
                 :size
                 :una
               >

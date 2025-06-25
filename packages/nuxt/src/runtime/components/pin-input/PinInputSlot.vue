@@ -18,7 +18,7 @@ const forwardedProps = useForwardProps(delegatedProps)
     :class="cn(
       'pin-input-slot',
       props.class,
-      separator && 'pin-input-slot-with-separator',
+      icon && 'pin-input-slot-with-separator',
       props.una?.pinInputSlot,
     )"
     :pin-input
