@@ -1,3 +1,12 @@
+# [0.61.0](https://github.com/una-ui/una-ui/compare/v0.60.1...v0.61.0) (2025-06-26)
+
+
+### Features
+
+* **PinInput:** introduce new components and presets ([#450](https://github.com/una-ui/una-ui/issues/450)) ([2fe0c0f](https://github.com/una-ui/una-ui/commit/2fe0c0fb34fd13b00f225445d5dda1e6a5a70fdf))
+
+
+
 ## [0.60.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v0.60.1) (2025-06-24)
 
 
