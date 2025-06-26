@@ -16,8 +16,8 @@ const forwardedProps = useForwardProps(delegatedProps)
     v-bind="forwardedProps"
     :class="cn(
       'pin-input-group',
-      props.class,
       props.una?.pinInputGroup,
+      props.class,
     )"
   >
     <slot />

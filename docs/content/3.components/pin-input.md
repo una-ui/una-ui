@@ -23,7 +23,7 @@ badges:
 | `dir`          | `Direction`                   | `ltr`   | Sets the reading direction of the pin input. If not provided, defaults to left-to-right (LTR).       |
 | `disabled`     | `boolean`                     | -       | Disables the pin input, preventing user interaction when set to `true`.                              |
 | `id`           | `string`                      | -       | Assigns a unique identifier to the pin input element.                                                |
-| `length`       | `number`                      | `6`     | Specifies the number of input fields for the pin input, determining the required PIN or code length. |
+| `maxLength`    | `number`                      | -       | Specifies the number of input fields for the pin input, determining the required PIN or code length. |
 | `mask`         | `boolean`                     | -       | Masks the pin input values as password fields when enabled.                                          |
 | `modelValue`   | `PinInputValue<Type> \| null` | -       | Controls the value of the pin input. Supports two-way binding with `v-model`.                        |
 | `otp`          | `boolean`                     | -       | Enables OTP auto-detection and autocomplete on supported mobile devices when set to `true`.          |
@@ -83,9 +83,9 @@ The **padding**, **icons**, and **text-size** of the pin-input scale are dynamic
 
 ### Separator
 
-| Prop        | Default | Type     | Description                        |
-| ----------- | ------- | -------- | ---------------------------------- |
-| `separator` | -       | `string` | The icon to display between input. |
+| Prop        | Default | Type                | Description                                                                                                                 |
+| ----------- | ------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `separator` | `false` | `boolean \| string` | Controls separators between input groups: `false` for none, `true` for default icon (minus), or provide a custom icon name. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -95,6 +95,23 @@ The **padding**, **icons**, and **text-size** of the pin-input scale are dynamic
 @@@ ./components/content/examples/vue/pin-input/ExampleVuePinInputSeparator.vue
 ::
 :::
+
+:read-more{to="/components/icon" title="Icon component" target="_blank"}
+
+### Form Field
+
+The `NPinInput` component can be easily embedded within the `NFormField` component.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVuePinInputForm
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/pin-input/ExampleVuePinInputForm.vue
+::
+:::
+
+:read-more{to="/components/form" title="Form component" target="_blank"}
 
 ## Slots
 

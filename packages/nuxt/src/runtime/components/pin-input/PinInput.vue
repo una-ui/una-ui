@@ -1,74 +1,126 @@
-<script setup lang="ts">
+<script lang="ts">
+import type { NPinInputProps, PinInputType } from '../../types'
+</script>
+
+<script setup lang="ts" generic="T extends PinInputType = 'text'">
 import type { PinInputRootEmits } from 'reka-ui'
-import type { NPinInputProps } from '../../types'
 import { reactivePick } from '@vueuse/core'
-import { useForwardPropsEmits } from 'reka-ui'
+import { PinInputRoot, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
-import { randomId } from '../../utils'
+import { cn, randomId } from '../../utils'
 import PinInputGroup from './PinInputGroup.vue'
-import PinInputRoot from './PinInputRoot.vue'
 import PinInputSeparator from './PinInputSeparator.vue'
 import PinInputSlot from './PinInputSlot.vue'
 
-const props = withDefaults(defineProps<NPinInputProps>(), {
-  length: 6,
+const props = withDefaults(defineProps<NPinInputProps<T>>(), {
+  type: 'text' as never,
   pinInput: 'outline-primary',
-  modelValue: () => [],
+  groupBy: 0,
+  size: 'md',
+  separator: false,
 })
 
 const emits = defineEmits<PinInputRootEmits>()
 
 const rootProps = reactivePick(props, [
-  'modelValue',
-  'defaultValue',
-  'placeholder',
-  'disabled',
-  'required',
+  'as',
+  'asChild',
   'dir',
+  'defaultValue',
+  'disabled',
+  'id',
   'mask',
+  'modelValue',
+  'name',
   'otp',
+  'placeholder',
   'type',
+  'required',
 ])
 
 const forwarded = useForwardPropsEmits(rootProps, emits)
 
 const id = computed(() => props.id ?? randomId('pin-input'))
+
+const separator = computed(() => {
+  if (props.separator === true) {
+    return 'pin-input-separator-icon'
+  }
+
+  return props.separator
+})
+
+const maxLength = computed(() => {
+  if (typeof props.maxLength !== 'number') {
+    return props.modelValue?.length ?? 0
+  }
+
+  return props.maxLength
+})
 </script>
 
 <template>
   <PinInputRoot
-    v-bind="{ ...forwarded, ..._pinInputRoot }"
+    v-bind="forwarded"
     :id
+    data-slot="pin-input"
+    :class="cn(
+      'pin-input',
+      props.una?.pinInput,
+      props.class,
+    )"
+    :size
   >
     <slot>
-      <PinInputGroup
-        v-bind="_pinInputGroup"
-        :una
-      >
-        <slot name="group">
-          <template v-for="(_, index) in length" :key="index">
-            <slot name="input">
+      <template v-if="groupBy === 0">
+        <PinInputGroup
+          v-bind="_pinInputGroup"
+          :una
+        >
+          <template v-for="index in maxLength" :key="index">
+            <slot name="slot" :index="index - 1">
               <PinInputSlot
-                :index="index"
+                :index="index - 1"
                 :una
-                :size
+                :status
                 :pin-input
-                :icon="separator"
                 v-bind="_pinInputSlot"
               />
             </slot>
-            <template v-if="($slots.separator || separator) && index !== length - 1">
-              <PinInputSeparator
-                :icon="separator"
-                :size
-                :una
-              >
-                <slot name="separator" />
-              </PinInputSeparator>
-            </template>
           </template>
-        </slot>
-      </PinInputGroup>
+        </PinInputGroup>
+      </template>
+
+      <template v-else>
+        <template v-for="(groupIndex) in Math.ceil(maxLength / groupBy)" :key="groupIndex">
+          <PinInputGroup
+            v-bind="_pinInputGroup"
+            :una
+          >
+            <template v-for="slotInGroup in Math.min(groupBy, maxLength - (groupIndex - 1) * groupBy)" :key="slotInGroup">
+              <slot name="slot" :index="(groupIndex - 1) * groupBy + slotInGroup - 1">
+                <PinInputSlot
+                  :index="(groupIndex - 1) * groupBy + slotInGroup - 1"
+                  :una
+                  :pin-input
+                  :status
+                  v-bind="_pinInputSlot"
+                />
+              </slot>
+            </template>
+          </PinInputGroup>
+
+          <template v-if="separator !== false && (separator || $slots.separator) && groupIndex < Math.ceil(maxLength / groupBy)">
+            <PinInputSeparator
+              :icon="separator"
+              :una
+              v-bind="_pinInputSeparator"
+            >
+              <slot name="separator" />
+            </PinInputSeparator>
+          </template>
+        </template>
+      </template>
     </slot>
   </PinInputRoot>
 </template>

@@ -4,7 +4,10 @@ import { Primitive, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 import Icon from '../elements/Icon.vue'
 
-const props = defineProps<NPinInputSeparatorProps>()
+const props = withDefaults(defineProps<NPinInputSeparatorProps>(), {
+  icon: 'i-lucide-minus',
+})
+
 const forwardedProps = useForwardProps(props)
 </script>
 
@@ -19,7 +22,7 @@ const forwardedProps = useForwardProps(props)
     )"
   >
     <slot>
-      <Icon :name="props.icon" />
+      <Icon :name="icon" />
     </slot>
   </Primitive>
 </template>

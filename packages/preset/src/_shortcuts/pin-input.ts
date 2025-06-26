@@ -3,18 +3,20 @@ type PinInputPrefix = 'pin-input'
 export const staticPinInput: Record<`${PinInputPrefix}-${string}` | PinInputPrefix, string> = {
   // configurations
   'pin-input': 'flex items-center gap-2 has-disabled:opacity-50 disabled:cursor-not-allowed',
+  'pin-input-separator-icon': 'i-lucide-minus',
 
   // components
-  'pin-input-slot': 'border-input focus:border-input focus:ring-input/50 focus:invalid:ring-error/20 dark:bg-input/30 dark:focus:invalid:ring-error/40 invalid:border-error focus:invalid:border-error relative flex h-2.25em w-2.25em items-center justify-center border-y border-r text-sm shadow-sm transition-all outline-none text-center first:rounded-l-md first:border-l last:rounded-r-md focus:z-10 focus:ring-3px',
+  'pin-input-slot': 'relative flex square-2.5714285714285716em items-center justify-center bg-transparent shadow-sm border-y border-r first:rounded-l-md first:border-l last:rounded-r-md text-0.875em leading-1.4285714285714286em transition-all outline-none text-center',
   'pin-input-group': 'flex items-center',
-  'pin-input-separator': 'flex items-center mx-0.25em text-muted',
-
-  'pin-input-slot-with-separator': 'rounded-md',
+  'pin-input-separator': 'grid',
 }
 
 export const dynamicPinInput: [RegExp, (params: RegExpExecArray) => string][] = [
+  [/^pin-input-focus(-(\S+))?$/, ([, , c = 'primary']) => `focus-visible:ring-${c}-500 dark:focus-visible:ring-${c}-400 focus:z-10 focus:ring-1`],
+
   // dynamic preset
-  [/^pin-input-([^-]+)-([^-]+)$/, ([, v = 'outline', c = 'primary']) => `input-${v}-${c}`],
+  [/^pin-input-outline(-(\S+))?$/, ([, , c = 'primary']) => `border-input  pin-input-focus-${c}`],
+  [/^pin-input-solid(-(\S+))?$/, ([, , c = 'primary']) => `border-${c}-500 focus:border dark:border-${c}-400 pin-input-focus-${c}`],
 ]
 
 export const pinInput = [

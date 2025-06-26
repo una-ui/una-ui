@@ -8,19 +8,29 @@ interface BaseExtensions {
   size?: HTMLAttributes['class']
 }
 
-export interface NPinInputProps extends Omit<NPinInputRootProps, 'size' | 'class'>,
-  Pick<NPinInputSlotProps, 'pinInput'>, BaseExtensions {
+export type PinInputType = 'text' | 'number'
+export type PinInputValueType<T extends PinInputType> = T extends 'text' ? string : number
+
+export interface NPinInputProps<T extends PinInputType = 'text'> extends Omit<PinInputRootProps<T>, 'defaultValue'>, Pick<NPinInputSlotProps, 'pinInput' | 'status'>, BaseExtensions {
   /**
-   * The number of characters in the pin input.
-   * @default 6
+   * The default value of the pin input.
+   * @default []
    */
-  length?: number
+  defaultValue?: PinInputValueType<T>[]
   /**
-   * The separator to use between pin input fields.
+   * The maximum number of slots to render.
    */
-  separator?: string
-  /** Props for the pin input root */
-  _pinInputRoot?: Partial<NPinInputRootProps>
+  maxLength?: number
+  /**
+   * The icon to use as a separator between pin-input groups.
+   */
+  separator?: boolean | string
+  /**
+   * The number of slots to group together.
+   *
+   * @default 0
+   */
+  groupBy?: number
   /** Props for the pin input group */
   _pinInputGroup?: Partial<NPinInputGroupProps>
   /** Props for the pin input separator */
@@ -33,11 +43,6 @@ export interface NPinInputProps extends Omit<NPinInputRootProps, 'size' | 'class
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/pin-input.ts
    */
   una?: NPinInputUnaProps
-}
-
-export interface NPinInputRootProps extends PinInputRootProps, BaseExtensions {
-  /** Additional properties for the una component */
-  una?: Pick<NPinInputUnaProps, 'pinInputRoot'>
 }
 
 export interface NPinInputGroupProps extends PrimitiveProps, BaseExtensions {
@@ -55,6 +60,13 @@ export interface NPinInputSlotProps extends PinInputInputProps, Pick<NPinInputSe
    * pin-input="outline-indigo"
    */
   pinInput?: HTMLAttributes['class']
+  /**
+   * Update the pin input status.
+   * Useful for validations.
+   *
+   * @default null
+   */
+  status?: 'info' | 'success' | 'warning' | 'error'
   /** Additional properties for the una component */
   una?: Pick<NPinInputUnaProps, 'pinInputSlot'>
 }
@@ -72,7 +84,7 @@ export interface NPinInputSeparatorProps extends PrimitiveProps, BaseExtensions 
 
 interface NPinInputUnaProps {
   /** CSS class for the pin input root */
-  pinInputRoot?: HTMLAttributes['class']
+  pinInput?: HTMLAttributes['class']
   /** CSS class for the pin input group */
   pinInputGroup?: HTMLAttributes['class']
   /** CSS class for the pin input separator */
