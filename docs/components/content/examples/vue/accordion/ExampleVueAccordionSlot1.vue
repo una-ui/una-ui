@@ -30,7 +30,7 @@ const items = [
         :label="`${item.label}`"
       >
         <template #leading>
-          <div class="h-6 w-6 flex items-center justify-center rounded-full bg-inverted">
+          <div class="h-6 w-6 flex items-center justify-center rounded-full bg-foreground">
             <span text="inverted sm">{{ index + 1 }}</span>
           </div>
         </template>
@@ -58,7 +58,7 @@ const items = [
 
         <div class="mt-5 text-right">
           <NButton
-            btn="solid-gray"
+            btn="outline-gray"
             class="mt-3"
             label="Close"
             @click="close"

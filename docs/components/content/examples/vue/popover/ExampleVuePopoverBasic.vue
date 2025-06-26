@@ -32,7 +32,7 @@ function togglePopover() {
       <h3 class="mb-2 font-medium">
         Popover Title
       </h3>
-      <p class="text-muted-foreground text-sm">
+      <p class="text-sm text-muted-foreground">
         This is a more detailed example of a popover with advanced features like collision avoidance and sticky behavior.
       </p>
     </div>

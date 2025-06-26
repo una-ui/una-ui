@@ -7,6 +7,7 @@ const props = defineProps<NDialogHeaderProps>()
 
 <template>
   <div
+    data-slot="dialog-header"
     :class="cn(
       'dialog-header',
       props.una?.dialogHeader,

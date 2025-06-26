@@ -7,6 +7,7 @@ const props = defineProps<NSidebarHeaderProps>()
 
 <template>
   <div
+    data-slot="sidebar-header"
     data-sidebar="header"
     :class="cn(
       'sidebar-header',

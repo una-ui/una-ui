@@ -7,9 +7,9 @@ export const staticNavigationMenu: Record<`${NavigationMenuPrefix}-${string}` | 
 
   // components
   'navigation-menu-indicator': 'absolute data-[state=hidden]:opacity-0 duration-200 top-full data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut w-[--reka-navigation-menu-indicator-size] translate-x-[--reka-navigation-menu-indicator-position] mt--3px z-100 flex h-10px items-end justify-center overflow-hidden transition-all',
-  'navigation-menu-indicator-arrow': 'relative top-70% h-12px w-12px rotate-45deg border bg-base',
+  'navigation-menu-indicator-arrow': 'relative top-70% h-12px w-12px rotate-45deg border bg-background',
   'navigation-menu-content': 'left-0 top-0 w-full md:absolute md:w-auto',
-  'navigation-menu-viewport': 'origin-top-center relative mt-1.5 h-[--reka-navigation-menu-viewport-height] w-full overflow-hidden rounded-md border bg-popover text-popover shadow md:w-[--reka-navigation-menu-viewport-width]',
+  'navigation-menu-viewport': 'origin-top-center relative mt-1.5 h-[--reka-navigation-menu-viewport-height] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow md:w-[--reka-navigation-menu-viewport-width]',
 
   'navigation-menu-link': '',
   'navigation-menu-trigger': '',
@@ -20,7 +20,7 @@ export const staticNavigationMenu: Record<`${NavigationMenuPrefix}-${string}` | 
   'navigation-menu-content-list': 'grid w-400px gap-3 p-4 md:grid-cols-2 lg:w-600px md:w-500px',
   'navigation-menu-content-item-wrapper': 'flex flex-col items-start gap-1',
   'navigation-menu-content-item-label': 'font-semibold leading-none',
-  'navigation-menu-content-item-description': 'line-clamp-2 text-left text-muted leading-5',
+  'navigation-menu-content-item-description': 'line-clamp-2 text-left text-muted-foreground leading-5',
 
   'navigation-menu-list-horizontal': 'flex flex-1 list-none items-center justify-center gap-x-1',
   'navigation-menu-list-vertical': 'max-w-none list-none flex-col items-start gap-1 space-x-0',

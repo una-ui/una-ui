@@ -8,6 +8,7 @@ const props = defineProps<NSidebarSeparatorProps>()
 
 <template>
   <Separator
+    data-slot="sidebar-separator"
     data-sidebar="separator"
     :class="cn(
       'sidebar-separator',
