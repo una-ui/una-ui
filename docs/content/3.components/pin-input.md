@@ -19,10 +19,8 @@ badges:
 
 | Prop           | Type                          | Default | Description                                                                                          |
 | -------------- | ----------------------------- | ------- | ---------------------------------------------------------------------------------------------------- |
-| `defaultValue` | `PinInputValue<Type>[]`       | -       | Sets the initial values of the pin inputs when rendered. Use this for uncontrolled pin input state.  |
-| `dir`          | `Direction`                   | `ltr`   | Sets the reading direction of the pin input. If not provided, defaults to left-to-right (LTR).       |
+| `defaultValue` | `PinInputValue<Type>`         | -       | Sets the initial values of the pin inputs when rendered. Use this for uncontrolled pin input state.  |
 | `disabled`     | `boolean`                     | -       | Disables the pin input, preventing user interaction when set to `true`.                              |
-| `id`           | `string`                      | -       | Assigns a unique identifier to the pin input element.                                                |
 | `maxLength`    | `number`                      | -       | Specifies the number of input fields for the pin input, determining the required PIN or code length. |
 | `mask`         | `boolean`                     | -       | Masks the pin input values as password fields when enabled.                                          |
 | `modelValue`   | `PinInputValue<Type> \| null` | -       | Controls the value of the pin input. Supports two-way binding with `v-model`.                        |
@@ -119,7 +117,7 @@ The `NPinInput` component can be easily embedded within the `NFormField` compone
 | ----------- | ----- | ---------------------------------------------------------------------------------------------- |
 | `default`   | -     | Allows advanced customization using sub-components, replacing the default pin-input structure. |
 | `group`     | -     | Replaces the entire group container, including input and separator.                            |
-| `input`     | -     | Custom input slot                                                                              |
+| `slot`      | -     | Custom input slot                                                                              |
 | `separator` | -     | Custom separator for the pin-input.                                                            |
 
 ### Custom Rendering

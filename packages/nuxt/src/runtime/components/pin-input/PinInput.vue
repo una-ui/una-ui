@@ -77,17 +77,19 @@ const maxLength = computed(() => {
           v-bind="_pinInputGroup"
           :una
         >
-          <template v-for="index in maxLength" :key="index">
-            <slot name="slot" :index="index - 1">
-              <PinInputSlot
-                :index="index - 1"
-                :una
-                :status
-                :pin-input
-                v-bind="_pinInputSlot"
-              />
-            </slot>
-          </template>
+          <slot name="group">
+            <template v-for="index in maxLength" :key="index">
+              <slot name="slot" :index="index - 1">
+                <PinInputSlot
+                  :index="index - 1"
+                  :una
+                  :status
+                  :pin-input
+                  v-bind="_pinInputSlot"
+                />
+              </slot>
+            </template>
+          </slot>
         </PinInputGroup>
       </template>
 
@@ -97,17 +99,19 @@ const maxLength = computed(() => {
             v-bind="_pinInputGroup"
             :una
           >
-            <template v-for="slotInGroup in Math.min(groupBy, maxLength - (groupIndex - 1) * groupBy)" :key="slotInGroup">
-              <slot name="slot" :index="(groupIndex - 1) * groupBy + slotInGroup - 1">
-                <PinInputSlot
-                  :index="(groupIndex - 1) * groupBy + slotInGroup - 1"
-                  :una
-                  :pin-input
-                  :status
-                  v-bind="_pinInputSlot"
-                />
-              </slot>
-            </template>
+            <slot name="group">
+              <template v-for="slotInGroup in Math.min(groupBy, maxLength - (groupIndex - 1) * groupBy)" :key="slotInGroup">
+                <slot name="slot" :index="(groupIndex - 1) * groupBy + slotInGroup - 1">
+                  <PinInputSlot
+                    :index="(groupIndex - 1) * groupBy + slotInGroup - 1"
+                    :una
+                    :pin-input
+                    :status
+                    v-bind="_pinInputSlot"
+                  />
+                </slot>
+              </template>
+            </slot>
           </PinInputGroup>
 
           <template v-if="separator !== false && (separator || $slots.separator) && groupIndex < Math.ceil(maxLength / groupBy)">
