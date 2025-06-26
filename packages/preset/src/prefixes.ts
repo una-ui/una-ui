@@ -124,7 +124,6 @@ export default [
   'pagination-prev',
   'pin-input',
   'pin-input-group',
-  'pin-input-root',
   'pin-input-separator',
   'pin-input-slot',
   'popover',
