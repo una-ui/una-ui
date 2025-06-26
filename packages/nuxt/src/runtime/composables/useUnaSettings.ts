@@ -31,9 +31,6 @@ export function useUnaSettings(): UseUnaSettingsReturn {
   })
 
   watch(settings, () => {
-    // console.log('settings', settings)
-    console.log('settings.value.primary', settings.value.primary)
-    console.log('settings.value.gray', settings.value.gray)
     if (settings.value.primary) {
       settings.value.primaryColors = getPrimaryColors(settings.value.primary)
     }
