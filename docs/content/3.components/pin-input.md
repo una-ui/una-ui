@@ -27,6 +27,7 @@ badges:
 | `otp`          | `boolean`                     | -       | Enables OTP auto-detection and autocomplete on supported mobile devices when set to `true`.          |
 | `placeholder`  | `string`                      | -       | Specifies the placeholder character to display in empty pin input fields.                            |
 | `type`         | `Type`                        | `text`  | Sets the input type for the pin input fields.                                                        |
+| `groupBy`      | `number`                      | `0`     | Specifies the number of input fields to group together.                                              |
 
 :::CodeGroup
 ::div{label="Preview" preview}
