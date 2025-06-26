@@ -30,14 +30,14 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     mergeDefaults: defu,
   })
 
-  watch(settings, () => {
-    if (settings.value.primary) {
-      settings.value.primaryColors = getPrimaryColors(settings.value.primary)
-    }
-    if (settings.value.gray) {
-      settings.value.grayColors = getGrayColors(settings.value.gray)
-    }
-  }, { immediate: true, deep: true })
+  watch(
+    () => [settings.value.primary, settings.value.gray],
+    ([primary, gray]) => {
+      settings.value.primaryColors = primary ? getPrimaryColors(primary) : {}
+      settings.value.grayColors = gray ? getGrayColors(gray) : {}
+    },
+    { immediate: true },
+  )
 
   function reset(): void {
     if (una.theme) {
