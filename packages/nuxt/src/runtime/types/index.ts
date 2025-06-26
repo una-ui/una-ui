@@ -66,9 +66,9 @@ export interface ColorPalette {
 export interface UnaSettings {
   primaryColors: Colors
   grayColors: Colors
-  theme: string | null | false | undefined
-  primary: string
-  gray: string
+  theme: string | false
+  primary: string | false
+  gray: string | false
   fontSize: number
   radius: number
   themes: {

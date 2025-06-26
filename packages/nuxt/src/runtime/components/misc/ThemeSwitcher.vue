@@ -32,30 +32,29 @@ const currentPrimaryThemeName = computed(() => {
 })
 
 const currentGrayThemeHex = computed(() => settings.value.grayColors?.['--una-gray-hex'])
-
 const currentGrayThemeName = computed(() => {
-  if (settings.value.theme !== null) {
-    return false
+  if (settings.value.theme) {
+    return settings.value.theme
   }
 
   const theme = grayThemes.find(([, theme]) => theme['--una-gray-hex'] === currentGrayThemeHex.value)
   return theme ? theme[0] : ''
 })
 
-function updateColor(theme: UnaSettings['theme']): void {
+function updateTheme(theme: UnaSettings['theme']): void {
   settings.value.theme = theme
-  settings.value.primary = ''
-  settings.value.gray = ''
+  settings.value.primary = false
+  settings.value.gray = false
 }
 
 // update theme in storage
 function updatePrimaryTheme(theme: string): void {
-  settings.value.theme = null
+  settings.value.theme = false
   settings.value.primary = theme
 }
 
 function updateGrayTheme(theme: string): void {
-  settings.value.theme = null
+  settings.value.theme = false
   settings.value.gray = theme
 }
 
@@ -138,7 +137,7 @@ function shuffleTheme(): void {
                   class="justify-start gap-2 ring-primary"
                   :aria-label="`Theme: ${theme.name}`"
                   :class="currentPrimaryThemeName === theme?.name && 'ring-2'"
-                  @click="updateColor(theme.name)"
+                  @click="updateTheme(theme.name)"
                 >
                   <template #leading>
                     <Icon
@@ -193,19 +192,25 @@ function shuffleTheme(): void {
         <div class="space-y-2">
           <Label for="color" class="text-xs"> Gray Color </Label>
           <div class="grid grid-cols-7 gap-3">
-            <button
+            <template
               v-for="[key, theme] in grayThemes"
               :key="key"
-              :title="capitalize(key)"
-              :style="{ background: theme['--una-gray-hex'] }"
-              :class="currentGrayThemeName === key ? 'ring-2' : 'scale-93'"
-              class="transition-all"
-              rounded="full"
-              square="6.5"
-              :aria-label="`Gray Color: ${key}`"
-              ring="gray offset-4 offset-background"
-              @click="updateGrayTheme(key)"
-            />
+            >
+              <button
+                :title="capitalize(key)"
+                :style="{
+                  '--c-gray': `oklch(${theme['--una-gray-600']})`,
+                  '--c-gray-foreground': `oklch(${theme['--una-gray-500']})`,
+                }"
+                class="bg-$c-gray transition-all dark:bg-$c-gray-foreground"
+                rounded="full"
+                square="6.5"
+                :class="[currentGrayThemeName === key ? 'ring-2' : 'scale-93']"
+                ring="gray offset-4 offset-background"
+                :aria-label="`Gray Color: ${key}`"
+                @click="updateGrayTheme(key)"
+              />
+            </template>
           </div>
         </div>
 

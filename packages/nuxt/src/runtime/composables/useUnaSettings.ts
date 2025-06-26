@@ -16,8 +16,8 @@ export function useUnaSettings(): UseUnaSettingsReturn {
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 
   const defaultSettings: UnaSettings = {
-    primaryColors: getPrimaryColors(una.primary),
-    grayColors: getGrayColors(una.gray),
+    primaryColors: una.primary ? getPrimaryColors(una.primary) : {},
+    grayColors: una.gray ? getGrayColors(una.gray) : {},
     primary: una.primary,
     gray: una.gray,
     radius: una.radius,
@@ -30,18 +30,23 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     mergeDefaults: defu,
   })
 
-  watch(
-    () => [settings.value.primary, settings.value.gray],
-    ([primary, gray]) => {
-      settings.value.primaryColors = getPrimaryColors(primary, una.primary)
-      settings.value.grayColors = getGrayColors(gray, una.gray)
-    },
-    { immediate: true },
-  )
+  watch(settings, () => {
+    // console.log('settings', settings)
+    console.log('settings.value.primary', settings.value.primary)
+    console.log('settings.value.gray', settings.value.gray)
+    if (settings.value.primary) {
+      settings.value.primaryColors = getPrimaryColors(settings.value.primary)
+    }
+    if (settings.value.gray) {
+      settings.value.grayColors = getGrayColors(settings.value.gray)
+    }
+  }, { immediate: true, deep: true })
 
   function reset(): void {
     if (una.theme) {
       settings.value.theme = una.theme
+      settings.value.primary = false
+      settings.value.gray = false
 
       return
     }
