@@ -37,6 +37,8 @@ badges:
 ::
 :::
 
+:read-more{to="https://reka-ui.com/docs/components/pin-input#root" title="Pin Input Root API" target="_blank"}
+
 ### Variant & Color
 
 | Prop        | Default           | Type                | Description                                 |
