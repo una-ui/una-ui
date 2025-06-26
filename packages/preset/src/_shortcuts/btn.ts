@@ -44,7 +44,7 @@ export const staticBtn: Record<`${BtnPrefix}-${string}` | BtnPrefix, string> = {
   'btn-text': 'btn-text-primary',
   'btn-text-gray': 'hover:text-secondary-foreground text-secondary-foreground/90 btn-focus',
   'btn-text-black': 'hover:text-foreground text-foreground/90 btn-focus',
-  'btn-text-muted': 'hover:text-foreground text-foreground/90 btn-focus',
+  'btn-text-muted': 'hover:text-muted-foreground text-muted-foreground/90 btn-focus',
   'btn-text-accent': 'hover:text-accent-foreground text-accent-foreground/90 btn-focus',
 
   'btn-soft-primary': 'bg-primary/10 text-primary shadow-xs hover:bg-primary/15 btn-focus',
