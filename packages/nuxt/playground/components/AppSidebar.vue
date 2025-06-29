@@ -171,6 +171,10 @@ const data = {
           url: '/components/slider',
         },
         {
+          title: 'Stepper',
+          url: '/components/stepper',
+        },
+        {
           title: 'Switch',
           url: '/components/switch',
         },
