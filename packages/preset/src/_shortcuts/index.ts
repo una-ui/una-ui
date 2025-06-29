@@ -39,6 +39,7 @@ import { sheet } from './sheet'
 import { sidebar } from './sidebar'
 import { skeleton } from './skeleton'
 import { slider } from './slider'
+import { stepper } from './stepper'
 import { _switch } from './switch'
 import { table } from './table'
 import { tabs } from './tabs'
@@ -93,4 +94,5 @@ export const shortcuts = [
   ...combobox,
   ...drawer,
   ...hoverCard,
+  ...stepper,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
