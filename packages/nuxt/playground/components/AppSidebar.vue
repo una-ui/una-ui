@@ -126,6 +126,12 @@ const data = {
           url: '/components/pagination',
         },
         {
+          title: 'PIN Input',
+          url: '/components/pin-input',
+          badge: 'new' as const,
+
+        },
+        {
           title: 'Popover',
           url: '/components/popover',
         },
