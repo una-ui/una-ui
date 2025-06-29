@@ -1,8 +1,9 @@
 <script lang="ts" setup generic="T extends Partial<NStepperItemProps>">
+import type { ComputedRef } from 'vue'
 import type { NStepperEmits, NStepperItemProps, NStepperProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { StepperRoot, useForwardPropsEmits } from 'reka-ui'
-import { computed, type ComputedRef, useTemplateRef } from 'vue'
+import { computed, useTemplateRef } from 'vue'
 import { cn } from '../../utils'
 import Icon from '../elements/Icon.vue'
 import StepperContainer from './StepperContainer.vue'
