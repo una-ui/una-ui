@@ -13,7 +13,7 @@ catalog:
   '@iconify-json/tabler': ^1.2.19
   '@iconify/json': ^2.2.351
   '@iconify/utils': ^2.3.0
-  '@nuxt/devtools': ^2.5.0
+  '@nuxt/devtools': ^2.6.0
   '@nuxt/kit': ^3.17.5
   '@nuxt/module-builder': ^1.0.1
   '@nuxt/schema': ^3.17.5
@@ -22,7 +22,7 @@ catalog:
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.15.32
+  '@types/node': ^22.15.34
   '@una-ui/content': ^48.2.0
   '@unocss/core': ^66.0.0
   '@unocss/eslint-config': ^66.0.0
@@ -41,7 +41,7 @@ catalog:
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.29.0
+  eslint: ^9.30.0
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
