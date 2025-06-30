@@ -54,7 +54,7 @@ The `T` generic extends the `Partial<NStepperItemProps>`, which means that you c
 
 | Prop          | Default      | Type                       | Description                         |
 | ------------- | ------------ | -------------------------- | ----------------------------------- |
-| `orientation` | `horizontal` | `horizontal` \| `vertical` | Set the orientation of the ыеуззук. |
+| `orientation` | `horizontal` | `horizontal` \| `vertical` | Set the orientation of the stepper. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
