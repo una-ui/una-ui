@@ -21,7 +21,7 @@ badges:
 | -------------- | ------------ | -------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `items`        | `[]`         | `T`                        | The array of steps that is passed to the stepper.                                                                    |
 | `defaultValue` | `1`          | `number`                   | The value of the step that should be active when initially rendered.                                                 |
-| `dir`          | -            | `lrt` \| `rtl`             | The reading direction of the combobox when applicable.                                                               |
+| `dir`          | -            | `ltr` \| `rtl`             | Sets the reading direction of the stepper.                                                                           |
 | `linear`       | `true`       | `boolean`                  | Whether or not the steps must be completed in order.                                                                 |
 | `modelValue`   | -            | `number`                   | The controlled value of the step to activate. Can be bound as `v-model`.                                             |
 | `orientation`  | `horizontal` | `horizontal` \| `vertical` | The orientation the steps are laid out. Mainly so arrow navigation is done accordingly (left & right vs. up & down). |
