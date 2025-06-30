@@ -33,7 +33,7 @@ export const staticStepper: Record<`${StepperPrefix}-${string}` | StepperPrefix,
 }
 
 export const dynamicStepper: [RegExp, (params: RegExpExecArray) => string][] = [
-  // dynamic preset\
+  // dynamic presets
   [/^stepper-solid(-(\S+))?$/, ([, , c = 'primary']) => `group-data-[state=completed]:bg-${c}-600 group-data-[state=active]:bg-${c}-600 focus-visible:ring-${c}-600 dark:(group-data-[state=completed]:bg-${c}-500 group-data-[state=active]:bg-${c}-500 focus-visible:ring-${c}-500)`],
 ]
 
