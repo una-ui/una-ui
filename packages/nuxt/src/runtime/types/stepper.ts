@@ -67,7 +67,7 @@ export type NStepperEmits<T> = StepperRootEmits & {
 }
 
 export interface NStepperItemProps extends StepperItemProps, Pick<NStepperProps<NStepperItemProps>, 'orientation'>,
-  Pick<BaseExtensions, 'class'> {
+  BaseExtensions {
   /** Slot of the stepper item */
   slot?: string
   /** Title of the stepper item. */

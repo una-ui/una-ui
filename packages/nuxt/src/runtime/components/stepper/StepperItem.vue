@@ -4,7 +4,9 @@ import { reactiveOmit } from '@vueuse/core'
 import { StepperItem, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<NStepperItemProps>()
+const props = withDefaults(defineProps<NStepperItemProps>(), {
+  orientation: 'horizontal',
+})
 
 const delegatedProps = reactiveOmit(props, [
   'class',

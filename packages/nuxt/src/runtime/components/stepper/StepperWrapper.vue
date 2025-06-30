@@ -2,7 +2,9 @@
 import type { NStepperWrapperProps } from '../../types'
 import { cn } from '../../utils'
 
-const props = defineProps<NStepperWrapperProps>()
+const props = withDefaults(defineProps<NStepperWrapperProps>(), {
+  orientation: 'horizontal',
+})
 </script>
 
 <template>

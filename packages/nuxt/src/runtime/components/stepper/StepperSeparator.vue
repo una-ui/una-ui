@@ -4,7 +4,10 @@ import { reactiveOmit } from '@vueuse/core'
 import { StepperSeparator, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<NStepperSeparatorProps>()
+const props = withDefaults(defineProps<NStepperSeparatorProps>(), {
+  stepper: 'solid-primary',
+  orientation: 'horizontal',
+})
 
 const delegatedProps = reactiveOmit(props, 'class', 'una')
 const forwarded = useForwardProps(delegatedProps)

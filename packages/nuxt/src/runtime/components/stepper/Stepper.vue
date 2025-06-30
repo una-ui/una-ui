@@ -88,55 +88,61 @@ defineExpose({
   >
     <slot v-bind="slotProps">
       <StepperWrapper :una v-bind="props._stepperWrapper" :orientation>
-        <StepperItem
-          v-for="(item, idx) in items"
-          :key="isEveryItemHasStep ? item.step : idx"
-          :step="isEveryItemHasStep ? item.step! : idx"
-          :disabled="item.disabled ?? props.disabled"
-          :una
-          v-bind="props._stepperItem"
-          :orientation
-        >
-          <StepperContainer :orientation :una v-bind="props._stepperContainer">
-            <StepperTrigger v-bind="props._stepperTrigger" :una :stepper="props.stepper" :size>
-              <slot name="trigger">
-                <StepperIndicator
-                  v-slot="{ step }"
-                  v-bind="props._stepperIndicator"
-                  :una
-                  :size
-                  :stepper="props.stepper"
-                >
-                  <slot name="indicator" :item :step>
-                    <Icon v-if="item.icon" :name="item.icon" :size />
-                    <template v-else>
-                      {{ idx + 1 }}
-                    </template>
+        <slot name="wrapper" :items>
+          <StepperItem
+            v-for="(item, idx) in items"
+            :key="isEveryItemHasStep ? item.step : idx"
+            :step="isEveryItemHasStep ? item.step! : idx"
+            :disabled="item.disabled ?? props.disabled"
+            :una
+            v-bind="props._stepperItem"
+            :orientation
+          >
+            <slot name="item" :item="item" :step="isEveryItemHasStep ? item.step! : idx">
+              <StepperContainer :orientation :una v-bind="props._stepperContainer">
+                <StepperTrigger v-bind="props._stepperTrigger" :una :stepper="props.stepper" :size="size ?? item.size">
+                  <slot name="trigger" :item="item">
+                    <StepperIndicator
+                      v-slot="{ step }"
+                      v-bind="props._stepperIndicator"
+                      :una
+                      :size="size ?? item.size"
+                      :stepper="props.stepper"
+                    >
+                      <slot name="indicator" :item :step>
+                        <Icon v-if="item.icon" :name="item.icon" :size="size ?? item.size" />
+                        <template v-else>
+                          {{ idx + 1 }}
+                        </template>
+                      </slot>
+                    </StepperIndicator>
                   </slot>
-                </StepperIndicator>
-              </slot>
-            </StepperTrigger>
-            <StepperSeparator
-              v-if="items && idx < items.length - 1"
-              v-bind="props._stepperSeparator"
-              :una
-              :stepper="props.stepper"
-              :orientation
-            />
-          </StepperContainer>
-          <StepperHeader :una v-bind="props._stepperHeader" :orientation>
-            <StepperTitle v-if="item.title" :una v-bind="props._stepperTitle" :size>
-              <slot name="title" :item="item">
-                {{ item.title }}
-              </slot>
-            </StepperTitle>
-            <StepperDescription v-if="item.description" :una v-bind="props._stepperDescription" :size>
-              <slot name="description" :item="item">
-                {{ item.description }}
-              </slot>
-            </StepperDescription>
-          </StepperHeader>
-        </StepperItem>
+                </StepperTrigger>
+                <StepperSeparator
+                  v-if="items && idx < items.length - 1"
+                  v-bind="props._stepperSeparator"
+                  :una
+                  :stepper="props.stepper"
+                  :orientation
+                />
+              </StepperContainer>
+              <StepperHeader :una v-bind="props._stepperHeader" :orientation>
+                <slot name="header" :item="item">
+                  <StepperTitle v-if="item.title" :una v-bind="props._stepperTitle" :size="size ?? item.size">
+                    <slot name="title" :item="item">
+                      {{ item.title }}
+                    </slot>
+                  </StepperTitle>
+                  <StepperDescription v-if="item.description" :una v-bind="props._stepperDescription" :size="size ?? item.size">
+                    <slot name="description" :item="item">
+                      {{ item.description }}
+                    </slot>
+                  </StepperDescription>
+                </slot>
+              </StepperHeader>
+            </slot>
+          </StepperItem>
+        </slot>
       </StepperWrapper>
       <slot
         v-if="!!$slots.content || currentStep?.slot"

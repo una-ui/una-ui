@@ -4,7 +4,9 @@ import { reactiveOmit } from '@vueuse/core'
 import { StepperIndicator, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<NStepperIndicatorProps>()
+const props = withDefaults(defineProps<NStepperIndicatorProps>(), {
+  stepper: 'solid-primary',
+})
 
 const delegatedProps = reactiveOmit(props, [
   'class',

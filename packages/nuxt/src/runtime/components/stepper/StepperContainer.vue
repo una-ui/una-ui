@@ -2,7 +2,9 @@
 import type { NStepperContainerProps } from '../../types'
 import { cn } from '../../utils'
 
-const props = defineProps<NStepperContainerProps>()
+const props = withDefaults(defineProps<NStepperContainerProps>(), {
+  orientation: 'horizontal',
+})
 </script>
 
 <template>

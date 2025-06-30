@@ -4,7 +4,9 @@ import { reactiveOmit } from '@vueuse/core'
 import { StepperTrigger, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<NStepperTriggerProps>()
+const props = withDefaults(defineProps<NStepperTriggerProps>(), {
+  stepper: 'solid-primary',
+})
 
 const delegatedProps = reactiveOmit(props, 'class', 'una')
 const forwarded = useForwardProps(delegatedProps)
