@@ -70,7 +70,7 @@ const components: { title: string, to: string, description: string }[] = [
                 <NNavigationMenuLink as-child>
                   <NLink
                     to="#/docs/introduction"
-                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent hover:text-accent"
+                    class="block select-none rounded-md focus:bg-accent hover:bg-accent p-3 focus:text-accent hover:text-accent leading-none no-underline outline-none transition-colors space-y-1"
                   >
                     <div class="text-sm font-medium leading-none">
                       Introduction
@@ -85,7 +85,7 @@ const components: { title: string, to: string, description: string }[] = [
                 <NNavigationMenuLink as-child>
                   <NLink
                     to="#/docs/installation"
-                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent hover:text-accent"
+                    class="block select-none rounded-md focus:bg-accent hover:bg-accent p-3 focus:text-accent hover:text-accent leading-none no-underline outline-none transition-colors space-y-1"
                   >
                     <div class="text-sm font-medium leading-none">
                       Installation
@@ -100,7 +100,7 @@ const components: { title: string, to: string, description: string }[] = [
                 <NNavigationMenuLink as-child>
                   <NLink
                     to="#/docs/typography"
-                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent hover:text-accent"
+                    class="block select-none rounded-md focus:bg-accent hover:bg-accent p-3 focus:text-accent hover:text-accent leading-none no-underline outline-none transition-colors space-y-1"
                   >
                     <div class="text-sm font-medium leading-none">
                       Typography
@@ -122,7 +122,7 @@ const components: { title: string, to: string, description: string }[] = [
                 <NNavigationMenuLink as-child>
                   <a
                     :to="component.to"
-                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent hover:text-accent"
+                    class="block select-none rounded-md focus:bg-accent hover:bg-accent p-3 focus:text-accent hover:text-accent leading-none no-underline outline-none transition-colors space-y-1"
                   >
                     <div class="text-sm font-medium leading-none">{{ component.title }}</div>
                     <p class="line-clamp-2 text-sm text-muted leading-snug">

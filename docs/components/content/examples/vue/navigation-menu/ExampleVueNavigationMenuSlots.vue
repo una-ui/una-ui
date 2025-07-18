@@ -144,7 +144,7 @@ const items = [
                   v-for="item in componentItems"
                   :key="item.label"
                   v-bind="item"
-                  class="rounded-md p-2.5 transition-colors hover:bg-accent"
+                  class="rounded-md hover:bg-accent p-2.5 transition-colors"
                   :una="{
                     navigationMenuContentItemLabel: 'font-medium text-base',
                     navigationMenuContentItemDescription: 'text-sm text-muted-foreground mt-0.5',
