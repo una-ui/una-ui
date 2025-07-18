@@ -1,3 +1,12 @@
+# [0.62.0](https://github.com/una-ui/una-ui/compare/v0.61.0...v0.62.0) (2025-07-18)
+
+
+### Features
+
+* **Table:** add empty-text and empty-icon preset and prop configuration ([#462](https://github.com/una-ui/una-ui/issues/462)) ([b8ef868](https://github.com/una-ui/una-ui/commit/b8ef868bb4abd5e8130e2330dee78aad669aa7ce))
+
+
+
 # [0.61.0](https://github.com/una-ui/una-ui/compare/v0.60.1...v0.61.0) (2025-06-26)
 
 
