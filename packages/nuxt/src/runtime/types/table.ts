@@ -176,6 +176,7 @@ export interface NTableEmptyProps {
   [key: string]: any
   class?: HTMLAttributes['class']
   colspan?: number
+  emptyText?: string
   _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
 

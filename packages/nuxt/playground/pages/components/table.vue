@@ -117,6 +117,9 @@ const pokemon = computed(() => data.value?.results ?? [])
       :row-count="data?.results.length"
       :page-count="data?.count"
       enable-row-selection
+      :_table-empty="{
+        emptyText: 'No experience added yet. Share your work history to show your background and expertise.',
+      }"
       @row="(_, row) => {
         console.log('click-row', row)
       }"

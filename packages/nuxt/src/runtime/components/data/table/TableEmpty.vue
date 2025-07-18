@@ -8,6 +8,7 @@ import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<NTableEmptyProps>(), {
   colspan: 1,
+  emptyText: 'No results.',
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 </script>
@@ -45,8 +46,8 @@ const delegatedProps = reactiveOmit(props, ['class'])
               size="2xl"
             />
 
-            <span>
-              No results.
+            <span class="text-center text-wrap">
+              {{ props.emptyText }}
             </span>
           </div>
         </slot>
