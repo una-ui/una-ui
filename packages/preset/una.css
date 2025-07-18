@@ -121,7 +121,7 @@
 
 html {
   font-size: var(--una-font-size, 16px);
-  @apply font-sans antialiased text-foreground bg-background;
+  --at-apply: font-sans antialiased text-foreground bg-background;
 }
 
 html.dark {
