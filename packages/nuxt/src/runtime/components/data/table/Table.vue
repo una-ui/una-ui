@@ -409,6 +409,8 @@ defineExpose({
               v-else
               :colspan="table.getAllLeafColumns().length"
               :una
+              :empty-text="props.emptyText"
+              :empty-icon="props.emptyIcon"
               v-bind="props._tableEmpty"
             >
               <slot name="empty" />

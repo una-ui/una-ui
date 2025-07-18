@@ -8,7 +8,7 @@ import type { HTMLAttributes } from 'vue'
 import type { NProgressProps } from './progress'
 import type { NScrollAreaProps, NScrollAreaUnaProps } from './scroll-area'
 
-export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'data' | 'columns' | 'getCoreRowModel' | 'state' | 'onStateChange' | 'renderFallbackValue'> {
+export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'data' | 'columns' | 'getCoreRowModel' | 'state' | 'onStateChange' | 'renderFallbackValue'>, Pick<NTableEmptyProps, 'emptyText' | 'emptyIcon'> {
   class?: HTMLAttributes['class']
   /**
    * @see https://tanstack.com/table/latest/docs/api/core/table#state
@@ -124,8 +124,10 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
   _tableLoading?: NTableLoadingProps
   _scrollArea?: NScrollAreaProps
 
+  /**
+   * Whether the table is loading.
+   */
   loading?: boolean
-
   /**
    * `UnaUI` preset configuration
    *
@@ -176,11 +178,18 @@ export interface NTableEmptyProps {
   [key: string]: any
   class?: HTMLAttributes['class']
   colspan?: number
+  /**
+   * The text to display when the table is empty.
+   */
   emptyText?: string
+  /**
+   * The icon to display when the table is empty.
+   */
+  emptyIcon?: string
   _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
 
-  una?: Pick<NTableUnaProps, 'tableEmpty' | 'tableRow' | 'tableCell'>
+  una?: Pick<NTableUnaProps, 'tableEmpty' | 'tableRow' | 'tableCell' | 'tableEmptyContent' | 'tableEmptyText' | 'tableEmptyIcon'>
 }
 
 export interface NTableLoadingProps {
@@ -211,8 +220,11 @@ interface NTableUnaProps {
   tableRow?: HTMLAttributes['class']
   tableCell?: HTMLAttributes['class']
   tableCaption?: HTMLAttributes['class']
-  tableEmpty?: HTMLAttributes['class']
   tableLoading?: HTMLAttributes['class']
   tableLoadingRow?: HTMLAttributes['class']
   tableLoadingCell?: HTMLAttributes['class']
+  tableEmpty?: HTMLAttributes['class']
+  tableEmptyContent?: HTMLAttributes['class']
+  tableEmptyText?: HTMLAttributes['class']
+  tableEmptyIcon?: HTMLAttributes['class']
 }
