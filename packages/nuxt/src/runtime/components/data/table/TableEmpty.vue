@@ -8,6 +8,8 @@ import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<NTableEmptyProps>(), {
   colspan: 1,
+  emptyText: 'No results.',
+  emptyIcon: 'table-empty-icon-name',
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 </script>
@@ -39,16 +41,22 @@ const delegatedProps = reactiveOmit(props, ['class'])
         v-bind="omitProps(delegatedProps, ['_tableRow', '_tableCell', 'colspan'])"
       >
         <slot>
-          <div class="grid place-items-center gap-4">
-            <NIcon
-              name="i-tabler-database-x"
-              size="2xl"
-            />
+          <NIcon
+            :name="props.emptyIcon"
+            :class="cn(
+              'table-empty-icon',
+              props.una?.tableEmptyIcon,
+            )"
+          />
 
-            <span>
-              No results.
-            </span>
-          </div>
+          <span
+            :class="cn(
+              'table-empty-text',
+              props.una?.tableEmptyText,
+            )"
+          >
+            {{ props.emptyText }}
+          </span>
         </slot>
       </div>
     </TableCell>
