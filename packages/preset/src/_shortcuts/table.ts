@@ -33,7 +33,7 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-empty-cell': 'p-4 whitespace-nowrap align-middle text-sm text-muted bg-base',
   'table-empty': 'flex items-center flex-col justify-center py-10 gap-4',
   'table-empty-text': 'text-center text-wrap',
-  'table-empty-icon-name': 'i-tabler-database-x',
+  'table-empty-icon-name': 'i-tabler-database-x size-2xl',
 
   // table-loading
   'table-loading-icon': 'animate-spin text-lg', // TODO: to add

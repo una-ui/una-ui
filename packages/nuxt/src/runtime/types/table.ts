@@ -224,7 +224,6 @@ interface NTableUnaProps {
   tableLoadingRow?: HTMLAttributes['class']
   tableLoadingCell?: HTMLAttributes['class']
   tableEmpty?: HTMLAttributes['class']
-  tableEmptyContent?: HTMLAttributes['class']
   tableEmptyText?: HTMLAttributes['class']
   tableEmptyIcon?: HTMLAttributes['class']
 }

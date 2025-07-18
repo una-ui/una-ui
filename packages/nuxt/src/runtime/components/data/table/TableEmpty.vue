@@ -47,7 +47,6 @@ const delegatedProps = reactiveOmit(props, ['class'])
               'table-empty-icon',
               props.una?.tableEmptyIcon,
             )"
-            size="2xl"
           />
 
           <span
