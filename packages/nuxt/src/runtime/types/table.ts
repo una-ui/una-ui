@@ -189,7 +189,7 @@ export interface NTableEmptyProps {
   _tableCell?: NTableCellProps
   _tableRow?: NTableRowProps
 
-  una?: Pick<NTableUnaProps, 'tableEmpty' | 'tableRow' | 'tableCell' | 'tableEmptyContent' | 'tableEmptyText' | 'tableEmptyIcon'>
+  una?: Pick<NTableUnaProps, 'tableEmpty' | 'tableRow' | 'tableCell' | 'tableEmptyText' | 'tableEmptyIcon'>
 }
 
 export interface NTableLoadingProps {
