@@ -69,6 +69,29 @@ When using the `@row` event, you should stop propagation if you have interactive
 
 :read-more{to="https://tanstack.com/table/latest/docs/guide/row-selection" title="Tanstack Row Selection Documentation" target="_blank"}
 
+### Empty
+
+Empty allows you to show a message when the table is empty. This is useful when you want to show a message when the table is empty.
+
+| Prop         | Default               | Type     | Description |
+| ------------ | --------------------- | -------- | ----------- |
+| `empty-text` | `No results.`         | `string` | Empty text. |
+| `empty-icon` | `i-tabler-database-x` | `string` | Empty icon. |
+
+:::CodeGroup
+::div{label="Preview"}
+:ExampleVueTableEmpty
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/table/ExampleVueTableEmpty.vue
+
+::
+::div{label="Data"}
+@@@ ./components/content/examples/vue/table/makeData.ts [makeData.ts]
+
+::
+:::
+
 ### Loading
 
 Loading allows you to show a loading progress indicator in the table. This is useful when you want to show a loading progress indicator in the table.
