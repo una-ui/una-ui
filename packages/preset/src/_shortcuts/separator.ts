@@ -4,7 +4,7 @@ export const staticSeparator: Record<`${SeparatorPrefix}-${string}` | SeparatorP
   // base
   'separator': 'text-md shrink-0 relative',
   'separator-default-variant': 'separator-solid-gray',
-  'separator-content': 'text-0.75em text-muted bg-base absolute flex justify-center items-center',
+  'separator-content': 'text-0.75em text-muted-foreground bg-background absolute flex justify-center items-center',
 
   // orientation states
   'separator-horizontal': 'h-px my-4 w-full border-t-0.0625em',
@@ -22,14 +22,14 @@ export const staticSeparator: Record<`${SeparatorPrefix}-${string}` | SeparatorP
   'separator-position-top': 'top-4 left-1/2 -translate-x-1/2',
 
   // static variants
-  'separator-solid-gray': 'border-base',
+  'separator-solid-gray': 'border-border',
 }
 
 export const dynamicSeparator = [
   // dynamic variants
-  [/^separator-solid(-(\S+))?$/, ([, , c = 'gray']) => `border-solid border-${c}-200 dark:border-${c}-700/58`],
-  [/^separator-dashed(-(\S+))?$/, ([, , c = 'gray']) => `border-dashed border-${c}-200 dark:border-${c}-700/58`],
-  [/^separator-dotted(-(\S+))?$/, ([, , c = 'gray']) => `border-dotted border-${c}-200 dark:border-${c}-700/58`],
+  [/^separator-solid(-(\S+))?$/, ([, , c = 'gray']) => `border-solid border-${c}-200 dark:border-${c}-800`],
+  [/^separator-dashed(-(\S+))?$/, ([, , c = 'gray']) => `border-dashed border-${c}-200 dark:border-${c}-800`],
+  [/^separator-dotted(-(\S+))?$/, ([, , c = 'gray']) => `border-dotted border-${c}-200 dark:border-${c}-800`],
 ]
 
 export const separator = [

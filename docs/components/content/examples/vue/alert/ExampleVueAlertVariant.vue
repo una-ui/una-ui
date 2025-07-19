@@ -1,20 +1,32 @@
 <template>
   <div class="flex flex-col space-y-4">
     <NAlert
-      alert="outline"
-      title="Outline variant (default)"
+      alert="solid-primary"
+      title="Solid primary"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
     />
 
     <NAlert
-      alert="soft"
-      title="Soft variant"
+      alert="text-primary"
+      title="Text primary"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
     />
 
     <NAlert
-      alert="border"
-      title="Border variant"
+      alert="outline-primary"
+      title="Outline primary"
+      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
+    />
+
+    <NAlert
+      alert="soft-primary"
+      title="Soft primary"
+      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
+    />
+
+    <NAlert
+      alert="border-primary"
+      title="Border primary"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
     />
   </div>
