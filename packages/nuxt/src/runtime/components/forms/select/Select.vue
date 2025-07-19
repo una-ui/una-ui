@@ -1,10 +1,10 @@
 <script lang="ts">
 import type { AcceptableValue, SelectRootEmits } from 'reka-ui'
-import type { NSelectProps, SelectGroup as SelectGroupType } from '../../../types'
+import type { NSelectProps, NSelectSlots, SelectGroup as SelectGroupType } from '../../../types'
 import { computed } from 'vue'
 </script>
 
-<script setup lang="ts" generic="T extends AcceptableValue">
+<script setup lang="ts" generic="T extends AcceptableValue, I extends Array<T | SelectGroupType<T>>, M extends boolean = false">
 import { SelectRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn, isEqualObject } from '../../../utils'
 import SelectContent from './SelectContent.vue'
@@ -15,11 +15,15 @@ import SelectSeparator from './SelectSeparator.vue'
 import SelectTrigger from './SelectTrigger.vue'
 import SelectValue from './SelectValue.vue'
 
-const props = withDefaults(defineProps<NSelectProps<T>>(), {
+type ModelType = (true extends M ? T[] : T) | null | undefined
+
+const props = withDefaults(defineProps<NSelectProps<T, I, M>>(), {
   size: 'sm',
 })
 
 const emits = defineEmits<SelectRootEmits<T>>()
+
+defineSlots<NSelectSlots<T, I, M>>()
 
 // Check if items are grouped
 const hasGroups = computed(() => {
@@ -76,8 +80,8 @@ function isItemSelected(item: unknown, modelValue: unknown) {
     )"
     v-bind="forwarded"
   >
-    <slot :model-value :open>
-      <slot name="trigger-wrapper" :model-value :open>
+    <slot :model-value="(modelValue as ModelType)" :open>
+      <slot name="trigger-wrapper" :model-value="(modelValue as ModelType)" :open>
         <SelectTrigger
           :id
           :size
@@ -86,7 +90,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
           v-bind="props._selectTrigger"
           :una
         >
-          <slot name="trigger" :model-value :open="open">
+          <slot name="trigger" :model-value="(modelValue as ModelType)" :open="open">
             <SelectValue
               :placeholder="props.placeholder"
               v-bind="props._selectValue"
@@ -94,7 +98,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               :data-status="status"
               :una
             >
-              <slot name="value" :model-value :open>
+              <slot name="value" :model-value="(modelValue as ModelType)" :open>
                 {{ formatSelectedValue(modelValue) || props.placeholder }}
               </slot>
             </SelectValue>
@@ -193,7 +197,6 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               </slot>
             </SelectGroup>
           </template>
-          <slot />
         </slot>
       </SelectContent>
     </slot>
