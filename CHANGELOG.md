@@ -1,3 +1,65 @@
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
+
+
+### Bug Fixes
+
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
+
+
+### Features
+
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
+
+
+
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
 # [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
 
 
