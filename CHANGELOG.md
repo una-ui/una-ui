@@ -1,3 +1,12 @@
+## [0.62.2](https://github.com/una-ui/una-ui/compare/v0.62.1...v0.62.2) (2025-07-19)
+
+
+### Features
+
+* **Select:** improve generics to allow better typesafety ([#466](https://github.com/una-ui/una-ui/issues/466)) ([fe1f7f0](https://github.com/una-ui/una-ui/commit/fe1f7f097e5aa3e4b63ad0b9ed173774ac4b918a))
+
+
+
 ## [0.62.1](https://github.com/una-ui/una-ui/compare/v0.62.0...v0.62.1) (2025-07-18)
 
 
