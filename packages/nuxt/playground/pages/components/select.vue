@@ -11,11 +11,11 @@ useForm({
 })
 
 const selected = ref<string>()
-const selected2 = ref()
-const selected3 = ref()
-const selectedMultiple = ref([])
-const selectedMultipleObj = ref([])
-const selectedStatus = ref()
+const selected2 = ref<string>()
+const selected3 = ref<string>()
+const selectedMultiple = ref<string[]>([])
+const selectedMultipleObj = ref<{ id: number, name: string, role: string }[]>()
+const selectedStatus = ref<string>()
 
 const alphabetItems = [
   {
@@ -86,7 +86,14 @@ const objectItems = [
         placeholder="Select Contributors"
         label="Vue Community"
         multiple
-      />
+      >
+        <template #trigger="{ modelValue }">
+          {{ modelValue }}
+        </template>
+        <template #item="{ item }">
+          {{ item }}
+        </template>
+      </NSelect>
       <pre class="mt-2">{{ selectedMultiple }}</pre>
     </div>
 
@@ -99,7 +106,11 @@ const objectItems = [
         :items="simpleItems"
         placeholder="Select Contributor"
         label="Vue Community"
-      />
+      >
+        <template #trigger="{ modelValue }">
+          {{ modelValue }}
+        </template>
+      </NSelect>
       <pre class="mt-2">{{ selected }}</pre>
     </div>
 

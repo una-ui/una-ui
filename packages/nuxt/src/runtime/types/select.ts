@@ -17,7 +17,7 @@ type ItemTextExtensions = SelectItemTextProps & BaseExtensions
 type GroupExtensions = SelectGroupProps & BaseExtensions
 type LabelExtensions = SelectLabelProps & BaseExtensions
 type SeparatorExtensions = SelectSeparatorProps & BaseExtensions
-type SelectExtensions = SelectRootProps
+type SelectExtensions<T extends AcceptableValue> = SelectRootProps<T>
   & BaseExtensions
   & Pick<NSelectValueProps, 'placeholder'>
   & Pick<NSelectItemProps, 'selectItem'>
@@ -30,11 +30,17 @@ export interface SelectGroup<T extends AcceptableValue> {
   _selectItem?: Partial<NSelectItemProps>
 }
 
-export interface NSelectProps<T extends AcceptableValue> extends SelectExtensions {
+type SelectModelType<T extends AcceptableValue, M extends boolean> = true extends M ? T[] : T
+
+export interface NSelectProps<
+  T extends AcceptableValue,
+  Items extends Array<T | SelectGroup<T>>,
+  M extends boolean = false,
+> extends SelectExtensions<T> {
   /**
    * The items to display in the select.
    */
-  items: T[] | SelectGroup<T>[]
+  items: Items
   /**
    * The key name to use to display in the select items.
    */
@@ -53,6 +59,13 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
    * @default false
    */
   groupSeparator?: boolean
+
+  defaultValue?: SelectModelType<T, M>
+
+  modelValue?: SelectModelType<T, M>
+
+  multiple?: M
+
   /**
    * Sub-component configurations
    */
@@ -68,6 +81,43 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
   _selectLabel?: Partial<NSelectLabelProps>
 
   una?: NSelectUnaProps
+}
+
+interface SelectModelSlotProps<T extends AcceptableValue, M extends boolean> {
+  modelValue: SelectModelType<T, M> | null | undefined
+  open: boolean
+}
+
+interface SelectContentSlotProps<T extends AcceptableValue, I extends Array<T | SelectGroup<T>>> {
+  items: I
+}
+
+interface SelectLabelSlotProps {
+  label: string | undefined
+}
+
+interface SelectItemSlotProps<T extends AcceptableValue, I extends Array<T | SelectGroup<T>>> {
+  item: I[number]
+}
+
+interface SelectGroupSlotProps<T extends AcceptableValue> {
+  items: SelectGroup<T>
+}
+
+export interface NSelectSlots<
+  T extends AcceptableValue,
+  I extends Array<T | SelectGroup<T>>,
+  M extends boolean = false,
+> {
+  'default': (props: SelectModelSlotProps<T, M>) => any
+  'trigger-wrapper': (props: SelectModelSlotProps<T, M>) => any
+  'trigger': (props: SelectModelSlotProps<T, M>) => any
+  'value': (props: SelectModelSlotProps<T, M>) => any
+  'content': (props: SelectContentSlotProps<T, I>) => any
+  'label': (props: SelectLabelSlotProps) => any
+  'item': (props: SelectItemSlotProps<T, I>) => any
+  'indicator': (props: SelectItemSlotProps<T, I>) => any
+  'group': (props: SelectGroupSlotProps<T>) => any
 }
 
 export interface NSelectTriggerProps extends TriggerExtensions {
