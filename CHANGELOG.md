@@ -1,3 +1,12 @@
+## [0.62.1](https://github.com/una-ui/una-ui/compare/v0.62.0...v0.62.1) (2025-07-18)
+
+
+### Features
+
+* **Preset:** replace [@apply](https://github.com/apply) with --at-apply for better compatibility ([#465](https://github.com/una-ui/una-ui/issues/465)) ([824114d](https://github.com/una-ui/una-ui/commit/824114d9fb4e366a8817ed67d2c8c1da1a081c20))
+
+
+
 # [0.62.0](https://github.com/una-ui/una-ui/compare/v0.61.0...v0.62.0) (2025-07-18)
 
 
