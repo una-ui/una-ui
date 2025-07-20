@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { AcceptableValue, SelectRootEmits } from 'reka-ui'
-import type { NSelectProps, NSelectSlots, SelectGroup as SelectGroupType } from '../../../types'
+import type { NSelectProps, SelectGroup as SelectGroupType } from '../../../types'
 import { computed } from 'vue'
 </script>
 
@@ -15,15 +15,11 @@ import SelectSeparator from './SelectSeparator.vue'
 import SelectTrigger from './SelectTrigger.vue'
 import SelectValue from './SelectValue.vue'
 
-type ModelType = (true extends M ? T[] : T) | null | undefined
-
 const props = withDefaults(defineProps<NSelectProps<T, I, M>>(), {
   size: 'sm',
 })
 
 const emits = defineEmits<SelectRootEmits<T>>()
-
-defineSlots<NSelectSlots<T, I, M>>()
 
 // Check if items are grouped
 const hasGroups = computed(() => {
@@ -73,15 +69,14 @@ function isItemSelected(item: unknown, modelValue: unknown) {
 
 <template>
   <SelectRoot
-    v-slot="{ modelValue, open }"
     :class="cn(
       props.una?.select,
       props.class,
     )"
     v-bind="forwarded"
   >
-    <slot :model-value="(modelValue as ModelType)" :open>
-      <slot name="trigger-wrapper" :model-value="(modelValue as ModelType)" :open>
+    <slot :model-value :open>
+      <slot name="trigger-wrapper" :model-value :open>
         <SelectTrigger
           :id
           :size
@@ -90,7 +85,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
           v-bind="props._selectTrigger"
           :una
         >
-          <slot name="trigger" :model-value="(modelValue as ModelType)" :open="open">
+          <slot name="trigger" :model-value :open="open">
             <SelectValue
               :placeholder="props.placeholder"
               v-bind="props._selectValue"
@@ -98,7 +93,7 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               :data-status="status"
               :una
             >
-              <slot name="value" :model-value="(modelValue as ModelType)" :open>
+              <slot name="value" :model-value :open>
                 {{ formatSelectedValue(modelValue) || props.placeholder }}
               </slot>
             </SelectValue>

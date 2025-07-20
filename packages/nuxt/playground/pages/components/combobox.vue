@@ -6,15 +6,15 @@ const frameworks = [
   { value: 'remix', label: 'Remix' },
   { value: 'astro', label: 'Astro' },
 ]
-const selectedFramework = ref()
-const selectedFrameworks = ref([])
+const selectedFramework = ref<typeof frameworks[number]>()
+const selectedFrameworks = ref<typeof frameworks[number][]>([])
 
 const users = [
   { id: '1', username: 'shadcn' },
   { id: '2', username: 'leerob' },
   { id: '3', username: 'evilrabbit' },
 ]
-const selectedUser = ref()
+const selectedUser = ref<typeof users[number]>()
 
 const timezones = [
   {
@@ -112,15 +112,15 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
         placeholder: 'Select user...',
       }"
     >
-      <template #trigger>
-        <template v-if="selectedUser">
+      <template #trigger="{ modelValue }">
+        <template v-if="modelValue">
           <div class="flex items-center gap-2">
             <NAvatar
-              :src="`https://github.com/${selectedUser.username}.png`"
-              :alt="selectedUser.username"
+              :src="`https://github.com/${modelValue.username}.png`"
+              :alt="modelValue.username"
               square="5"
             />
-            {{ selectedUser.username }}
+            {{ modelValue.username }}
           </div>
         </template>
         <template v-else>
@@ -166,13 +166,13 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
         class: 'h-12 px-2.5',
       }"
     >
-      <template #trigger>
-        <template v-if="selectedTimezone">
+      <template #trigger="{ modelValue }">
+        <template v-if="modelValue">
           <div class="flex flex-col items-start gap-0.5">
             <span class="text-xs font-normal opacity-75">
               {{ selectedGroup?.label }}
             </span>
-            <span>{{ selectedTimezone.label }}</span>
+            <span>{{ modelValue.label }}</span>
           </div>
         </template>
         <template v-else>
@@ -196,10 +196,10 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
       :_combobox-anchor="{
       }"
     >
-      <template #trigger>
-        {{ selectedFrameworks?.length > 0
-          ? selectedFrameworks.map(val => {
-            const framework = frameworks.find(f => f.value === val)
+      <template #trigger="{ modelValue }">
+        {{ modelValue?.length
+          ? modelValue.map(val => {
+            const framework = frameworks.find(f => f.value === val.value)
             return framework ? framework.label : val
           }).join(", ")
           : "Select frameworks (multi-select)..." }}

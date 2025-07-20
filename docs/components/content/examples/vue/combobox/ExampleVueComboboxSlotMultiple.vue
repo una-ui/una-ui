@@ -6,7 +6,7 @@ const frameworks = [
   { value: 'remix', label: 'Remix' },
   { value: 'astro', label: 'Astro' },
 ]
-const selectedFrameworks = ref([])
+const selectedFrameworks = ref<typeof frameworks[number][]>([])
 </script>
 
 <template>
@@ -24,10 +24,10 @@ const selectedFrameworks = ref([])
         align: 'start',
       }"
     >
-      <template #trigger>
-        {{ selectedFrameworks?.length > 0
-          ? selectedFrameworks.map(val => {
-            const framework = frameworks.find(f => f.value === val)
+      <template #trigger="{ modelValue }">
+        {{ modelValue?.length
+          ? modelValue.map(val => {
+            const framework = frameworks.find(f => f.value === val.value)
             return framework ? framework.label : val
           }).join(", ")
           : "Select frameworks..." }}
