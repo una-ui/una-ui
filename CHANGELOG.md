@@ -1,3 +1,13 @@
+# [0.63.0](https://github.com/una-ui/una-ui/compare/v0.62.2...v0.63.0) (2025-07-20)
+
+
+### Features
+
+* **Combobox, Select, RadioGroup:** improve generic typing ([#467](https://github.com/una-ui/una-ui/issues/467)) ([0ff4176](https://github.com/una-ui/una-ui/commit/0ff4176e708271706118edb7c48c44551995b93e))
+* **ExtractorVueScript:** add support for ternary patterns ([#463](https://github.com/una-ui/una-ui/issues/463)) ([fb25376](https://github.com/una-ui/una-ui/commit/fb25376015f9ed8e84a8ed2954d7b8da9274ae79))
+
+
+
 ## [0.62.2](https://github.com/una-ui/una-ui/compare/v0.62.1...v0.62.2) (2025-07-19)
 
 
