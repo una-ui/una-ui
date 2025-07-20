@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { ColumnDef, RowSelectionState, Table } from '@tanstack/vue-table'
 import type { Issue } from '../../data'
 import { NAvatar } from '#components'
 
@@ -23,7 +23,7 @@ async function addIssues(count: number) {
   limit.value += count
 }
 
-const columns: ColumnDef<Issue>[] = [
+const columns = [
   {
     header: 'Title',
     accessorKey: 'title',
@@ -196,9 +196,9 @@ const columns: ColumnDef<Issue>[] = [
     enableSorting: false,
     enableColumnFilter: false,
   },
-]
+] satisfies ColumnDef<Issue>[]
 const search = ref('')
-const select = ref()
+const select = ref<RowSelectionState>()
 const table = useTemplateRef<Table<Issue>>('table')
 
 // Set initial column visibility
@@ -235,7 +235,7 @@ const visibleColumnHeaders = computed({
         const col = columns.find(col =>
           ('accessorKey' in col && col.accessorKey === key),
         )
-        return col?.header
+        return col?.header as string
       })
       .filter(Boolean)
   },

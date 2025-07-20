@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { ColumnDef, RowSelectionState, Table } from '@tanstack/vue-table'
 import type { Person } from './makeData'
 import makeData from './makeData'
 
@@ -32,7 +32,7 @@ const columns: ColumnDef<Person>[] = [
   },
 ]
 
-const select = ref()
+const select = ref<RowSelectionState>()
 const table = useTemplateRef<Table<Person>>('table')
 </script>
 

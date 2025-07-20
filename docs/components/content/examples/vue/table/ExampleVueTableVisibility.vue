@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { ColumnDef, Table, VisibilityState } from '@tanstack/vue-table'
 import type { Person } from './makeData'
 import makeData from './makeData'
 
 const data = ref(makeData(5))
 
-const columns: ColumnDef<Person>[] = [
+const columns = [
   {
     header: 'First Name',
     accessorKey: 'firstName',
@@ -30,11 +30,11 @@ const columns: ColumnDef<Person>[] = [
     header: 'Profile Progress',
     accessorKey: 'progress',
   },
-]
+] satisfies ColumnDef<Person>[]
 
 const table = useTemplateRef<Table<Person>>('table')
 
-const columnVisibility = ref({})
+const columnVisibility = ref<VisibilityState>({})
 </script>
 
 <template>

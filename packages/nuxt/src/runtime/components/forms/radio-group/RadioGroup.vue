@@ -3,13 +3,13 @@ import type { AcceptableValue, RadioGroupRootEmits } from 'reka-ui'
 import type { NRadioGroupItemProps, NRadioGroupProps } from '../../../types'
 </script>
 
-<script setup lang="ts" generic="T extends AcceptableValue">
+<script setup lang="ts" generic="T extends AcceptableValue, Item extends T | NRadioGroupItemProps<T>">
 import { reactivePick } from '@vueuse/core'
 import { RadioGroupRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../../utils'
 import RadioGroupItem from './RadioGroupItem.vue'
 
-const props = withDefaults(defineProps<NRadioGroupProps<T>>(), {
+const props = withDefaults(defineProps<NRadioGroupProps<T, Item>>(), {
   radioGroup: 'primary',
   size: 'md',
   square: '1em',
@@ -67,7 +67,6 @@ function getItemDescription(item: NonNullable<T | NRadioGroupItemProps>): string
 
 <template>
   <RadioGroupRoot
-    v-slot="{ modelValue }"
     :class="cn(
       'radio-group',
       orientation === 'horizontal' ? 'radio-group-orientation-horizontal' : 'radio-group-orientation-vertical',

@@ -24,11 +24,12 @@ interface BaseProps {
   icon?: HTMLAttributes['class']
 }
 
-export interface NRadioGroupProps<T extends AcceptableValue> extends BaseProps, RadioGroupRootProps {
+export interface NRadioGroupProps<T extends AcceptableValue, Item extends T | NRadioGroupItemProps<T>> extends BaseProps, RadioGroupRootProps {
+  modelValue: T
   /**
    * The items to display in the radio group.
    */
-  items?: T[] | NRadioGroupItemProps[]
+  items?: Item[]
   /**
    * The key name to use to display in the radio items.
    */
@@ -64,7 +65,8 @@ export interface NRadioGroupProps<T extends AcceptableValue> extends BaseProps, 
   una?: NRadioGroupUnaProps
 }
 
-export interface NRadioGroupItemProps extends BaseProps, RadioGroupItemProps {
+export interface NRadioGroupItemProps<T extends AcceptableValue = any> extends BaseProps, RadioGroupItemProps {
+  value: T
   /**
    * The label to display in the radio item.
    */
