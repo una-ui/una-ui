@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const selected = ref([])
+const selected = ref<string[]>([])
 const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastien Chopin', 'Alexander Lichter']
 </script>
 

@@ -6,7 +6,7 @@ const frameworks = [
   { value: 'remix', label: 'Remix' },
   { value: 'astro', label: 'Astro' },
 ]
-const selectedFramework = ref()
+const selectedFramework = ref<typeof frameworks[number]>()
 </script>
 
 <template>

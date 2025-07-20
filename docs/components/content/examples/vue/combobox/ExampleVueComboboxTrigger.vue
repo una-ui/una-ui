@@ -4,7 +4,7 @@ const users = [
   { id: '2', username: 'leerob' },
   { id: '3', username: 'evilrabbit' },
 ]
-const selectedUser = ref()
+const selectedUser = ref<typeof users[number]>()
 </script>
 
 <template>
@@ -17,15 +17,15 @@ const selectedUser = ref()
         placeholder: 'Select user...',
       }"
     >
-      <template #trigger>
-        <template v-if="selectedUser">
+      <template #trigger="{ modelValue }">
+        <template v-if="modelValue">
           <div class="flex items-center gap-2">
             <NAvatar
-              :src="`https://github.com/${selectedUser.username}.png`"
-              :alt="selectedUser.username"
+              :src="`https://github.com/${modelValue.username}.png`"
+              :alt="modelValue.username"
               square="5"
             />
-            {{ selectedUser.username }}
+            {{ modelValue.username }}
           </div>
         </template>
         <template v-else>

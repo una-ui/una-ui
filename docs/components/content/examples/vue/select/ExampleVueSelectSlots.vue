@@ -47,14 +47,14 @@ const selected = ref(items[0])
         </div>
       </template>
 
-      <template #value>
+      <template #value="{ modelValue }">
         <div class="flex items-center space-x-2">
           <img
-            :src="selected?.avatar"
-            :alt="selected?.name"
+            :src="modelValue?.avatar"
+            :alt="modelValue?.name"
             class="h-6 w-6 rounded-full"
           >
-          <span>{{ selected?.name }}</span>
+          <span>{{ modelValue?.name }}</span>
         </div>
       </template>
     </NSelect>

@@ -7,7 +7,7 @@ import { ComboboxRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../utils'
 </script>
 
-<script setup lang="ts" generic="T extends AcceptableValue">
+<script setup lang="ts" generic="T extends AcceptableValue, M extends boolean = false">
 import { computed } from 'vue'
 import ComboboxAnchor from './ComboboxAnchor.vue'
 import ComboboxEmpty from './ComboboxEmpty.vue'
@@ -20,7 +20,7 @@ import ComboboxSeparator from './ComboboxSeparator.vue'
 import ComboboxTrigger from './ComboboxTrigger.vue'
 import ComboboxViewport from './ComboboxViewport.vue'
 
-const props = withDefaults(defineProps<NComboboxProps<T>>(), {
+const props = withDefaults(defineProps<NComboboxProps<T, M>>(), {
   textEmpty: 'No items found.',
   size: 'sm',
 })
@@ -139,7 +139,6 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
 
 <template>
   <ComboboxRoot
-    v-slot="{ modelValue, open }"
     data-slot="combobox"
     :class="cn(
       'combobox',
