@@ -12,12 +12,12 @@ interface BaseExtensions {
 // Extract the actual item type when dealing with grouped items
 export type ExtractItemType<T> = T extends { items: infer I extends AcceptableValue[] } ? I[number] : T
 
-export interface NComboboxProps<T extends AcceptableValue> extends Omit<ComboboxRootProps<ExtractItemType<T>>, 'modelValue'>, Pick<NComboboxInputProps, 'status' | 'id'>, BaseExtensions {
+export interface NComboboxProps<T extends AcceptableValue, M extends boolean> extends Omit<ComboboxRootProps<ExtractItemType<T>>, 'modelValue'>, Pick<NComboboxInputProps, 'status' | 'id'>, BaseExtensions {
   /**
    * The model value for the combobox.
    * When using grouped items, this will be the item type from within the groups.
    */
-  modelValue?: ExtractItemType<T> | ExtractItemType<T>[] | null | undefined
+  modelValue?: (M extends true ? ExtractItemType<T>[] : ExtractItemType<T>) | null
 
   /**
    * The items to display in the combobox.
@@ -55,6 +55,9 @@ export interface NComboboxProps<T extends AcceptableValue> extends Omit<Combobox
    * @default ''
    */
   label?: string
+
+  multiple?: M
+
   /**
    * Sub-component configurations
    */

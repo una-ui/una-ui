@@ -30,8 +30,6 @@ export interface SelectGroup<T extends AcceptableValue> {
   _selectItem?: Partial<NSelectItemProps>
 }
 
-type SelectModelType<T extends AcceptableValue, M extends boolean> = true extends M ? T[] : T
-
 export interface NSelectProps<
   T extends AcceptableValue,
   Items extends Array<T | SelectGroup<T>>,
@@ -60,9 +58,9 @@ export interface NSelectProps<
    */
   groupSeparator?: boolean
 
-  defaultValue?: SelectModelType<T, M>
+  defaultValue?: M extends true ? T[] : T
 
-  modelValue?: SelectModelType<T, M>
+  modelValue?: M extends true ? T[] : T
 
   multiple?: M
 
@@ -81,43 +79,6 @@ export interface NSelectProps<
   _selectLabel?: Partial<NSelectLabelProps>
 
   una?: NSelectUnaProps
-}
-
-interface SelectModelSlotProps<T extends AcceptableValue, M extends boolean> {
-  modelValue: SelectModelType<T, M> | null | undefined
-  open: boolean
-}
-
-interface SelectContentSlotProps<T extends AcceptableValue, I extends Array<T | SelectGroup<T>>> {
-  items: I
-}
-
-interface SelectLabelSlotProps {
-  label: string | undefined
-}
-
-interface SelectItemSlotProps<T extends AcceptableValue, I extends Array<T | SelectGroup<T>>> {
-  item: I[number]
-}
-
-interface SelectGroupSlotProps<T extends AcceptableValue> {
-  items: SelectGroup<T>
-}
-
-export interface NSelectSlots<
-  T extends AcceptableValue,
-  I extends Array<T | SelectGroup<T>>,
-  M extends boolean = false,
-> {
-  'default': (props: SelectModelSlotProps<T, M>) => any
-  'trigger-wrapper': (props: SelectModelSlotProps<T, M>) => any
-  'trigger': (props: SelectModelSlotProps<T, M>) => any
-  'value': (props: SelectModelSlotProps<T, M>) => any
-  'content': (props: SelectContentSlotProps<T, I>) => any
-  'label': (props: SelectLabelSlotProps) => any
-  'item': (props: SelectItemSlotProps<T, I>) => any
-  'indicator': (props: SelectItemSlotProps<T, I>) => any
-  'group': (props: SelectGroupSlotProps<T>) => any
 }
 
 export interface NSelectTriggerProps extends TriggerExtensions {

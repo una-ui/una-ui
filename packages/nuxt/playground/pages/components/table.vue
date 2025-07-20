@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import type { Table } from '@tanstack/vue-table'
+import type { ColumnDef, ColumnFiltersState, RowSelectionState, SortingState } from '@tanstack/vue-table'
 
 const autoReset = ref(false)
-const select = ref()
-const sorting = ref()
+const select = ref<RowSelectionState>()
+const sorting = ref<SortingState>()
 const visibleColumns = ref({
   selection: true,
   age: true,
   lastName: true,
   firstName: true,
 })
-const filter = ref()
-const columnFilters = ref()
+const filter = ref<string>()
+const columnFilters = ref<ColumnFiltersState>()
 const pagination = ref({
   pageIndex: 0,
   pageSize: 5,
 })
-const table = ref<Table<any>>()
+const table = useTemplateRef('table')
 
 const columns = [
   // Types issue
@@ -36,7 +36,7 @@ const columns = [
     accessorKey: 'actions',
     header: 'Actions',
   },
-]
+] satisfies ColumnDef<ResourceMeta['results'][number]>[]
 
 /**
  * @name NTable
