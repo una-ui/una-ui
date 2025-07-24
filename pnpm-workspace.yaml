@@ -3,7 +3,7 @@ packages:
   - packages/**
   - playground/**
 catalog:
-  '@antfu/eslint-config': ^4.17.0
+  '@antfu/eslint-config': ^4.19.0
   '@antfu/ni': ^24.4.0
   '@faker-js/faker': ^9.9.0
   '@headlessui/vue': ^1.7.23
@@ -22,7 +22,7 @@ catalog:
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.16.3
+  '@types/node': ^22.16.5
   '@una-ui/content': ^48.2.0
   '@unocss/core': ^66.0.0
   '@unocss/eslint-config': ^66.0.0
@@ -51,14 +51,14 @@ catalog:
   nuxt: ^3.17.7
   ohash: ^1.1.6
   pathe: ^2.0.3
-  reka-ui: ^2.3.2
+  reka-ui: ^2.4.0
   rimraf: ^6.0.1
   sass: ^1.89.2
   simple-git: ^3.28.0
   simple-git-hooks: ^2.13.0
   tailwind-merge: ^3.3.1
   typescript: ^5.8.3
-  unbuild: ^3.5.0
+  unbuild: ^3.6.0
   unocss: ^66.0.0
   unocss-preset-animations: ^1.2.1
   vaul-vue: ^0.4.1
