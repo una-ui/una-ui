@@ -2,11 +2,11 @@
 import type { NCardProps } from '../../../types/card'
 import { reactiveOmit } from '@vueuse/core'
 import { cn } from '../../../utils'
+import CardAction from './CardAction.vue'
 import CardContent from './CardContent.vue'
 import CardDescription from './CardDescription.vue'
 import CardFooter from './CardFooter.vue'
 import CardHeader from './CardHeader.vue'
-
 import CardTitle from './CardTitle.vue'
 
 defineOptions({
@@ -14,13 +14,14 @@ defineOptions({
 })
 
 const props = withDefaults(defineProps<NCardProps>(), {
-  card: 'outline-gray',
+  card: 'solid-gray',
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>
   <div
+    data-slot="card"
     v-bind="{ ...$attrs, delegatedProps }"
     :card="card"
     :class="cn(
@@ -28,7 +29,7 @@ const delegatedProps = reactiveOmit(props, ['class'])
       props.class,
     )"
   >
-    <slot name="root">
+    <slot>
       <CardHeader
         v-if="$slots.header || $slots.title || $slots.description || title || description"
         v-bind="delegatedProps._cardHeader"
@@ -54,15 +55,23 @@ const delegatedProps = reactiveOmit(props, ['class'])
               {{ description }}
             </slot>
           </CardDescription>
+
+          <CardAction
+            v-if="$slots.action"
+            v-bind="delegatedProps._cardAction"
+            :una
+          >
+            <slot name="action" />
+          </CardAction>
         </slot>
       </CardHeader>
 
       <CardContent
-        v-if="$slots.default"
+        v-if="$slots.content"
         v-bind="delegatedProps._cardContent"
         :una
       >
-        <slot />
+        <slot name="content" />
       </CardContent>
 
       <CardFooter

@@ -23,7 +23,7 @@ const items = [
     reverse
     trailing-open="i-heroicons-chevron-right"
     :una="{
-      accordionPanel: 'bg-base',
+      accordionPanel: 'bg-background',
       accordionTrailingClose: 'rotate-90',
       accordionTrailingOpen: 'rotate-0',
     }"

@@ -31,16 +31,16 @@ const { isMobile } = useSidebar()
           }"
           :items="[
             {
-              leading: 'i-lucide-folder text-muted',
+              leading: 'i-lucide-folder text-muted-foreground',
               label: 'View Project',
             },
             {
-              leading: 'i-lucide-forward text-muted',
+              leading: 'i-lucide-forward text-muted-foreground',
               label: 'Share Project',
             },
             {},
             {
-              leading: 'i-lucide-trash text-muted',
+              leading: 'i-lucide-trash text-muted-foreground',
               label: 'Delete Project',
             },
           ]"
