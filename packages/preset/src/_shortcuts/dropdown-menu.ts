@@ -37,7 +37,6 @@ export const staticDropdownMenu: Record<`${DropdownMenuPrefix}-${string}` | Drop
   'dropdown-menu-sub-trigger-trailing': 'ml-auto opacity-75',
   'dropdown-menu-sub-trigger-trailing-icon': 'i-lucide-chevron-right',
   'dropdown-menu-sub-content': 'z-50 min-w-32 overflow-hidden rounded-md border border-border bg-popover p-1 text-popover-foreground shadow-lg',
-
 }
 
 export const dynamicDropdownMenu = [

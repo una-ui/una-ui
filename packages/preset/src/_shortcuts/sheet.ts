@@ -5,9 +5,9 @@ export const staticSheet: Record<`${SheetPrefix}-${string}` | SheetPrefix, strin
   'sheet': '',
 
   // sub components
-  'sheet-content': 'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+  'sheet-content': 'bg-background fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out',
   'sheet-portal': '',
-  'sheet-overlay': 'fixed inset-0 z-50 data-[state=closed]:animate-out data-[state=open]:animate-in bg-black/80 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
+  'sheet-overlay': 'fixed inset-0 z-50 bg-black/80',
   'sheet-close': 'absolute right-4 top-4',
   'sheet-description': 'text-sm text-muted-foreground',
   'sheet-footer': 'mt-auto flex flex-col gap-2 p-4',

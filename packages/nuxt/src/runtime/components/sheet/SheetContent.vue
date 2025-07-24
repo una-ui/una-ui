@@ -50,7 +50,12 @@ const contentEvents = computed(() => {
       data-slot="sheet-content"
       v-bind="{ ...forwarded, ...$attrs }"
       :sheet
-      :class="cn('sheet-content', props.una?.sheetContent, props.class)"
+      :class="cn(
+        'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+        'sheet-content',
+        props.una?.sheetContent,
+        props.class,
+      )"
       v-on="contentEvents"
     >
       <slot />

@@ -4,7 +4,7 @@ export const staticDrawer: Record<`${KbdPrefix}-${string}` | KbdPrefix, string> 
   // base
   'drawer': '',
 
-  'drawer-overlay': 'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80',
+  'drawer-overlay': 'fixed inset-0 z-50 bg-black/80',
 
   'drawer-content': 'bg-background fixed z-50 flex h-auto flex-col',
   'drawer-content-top': 'data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-lg',
