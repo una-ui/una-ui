@@ -31,6 +31,7 @@ const forwardedProps = useForwardProps(delegatedProps)
         cn(
           'navigation-menu-viewport',
           'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90',
+          'data-[state=closed]:fade-out data-[state=open]:fade-in',
           props.una?.navigationMenuViewport,
         )
       "

@@ -10,6 +10,7 @@ const props = defineProps<NCollapsibleContentProps>()
   <CollapsibleContent
     v-bind="props"
     :class="cn(
+      'data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down',
       'collapsible-content',
       props.class,
     )"

@@ -26,6 +26,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <TooltipContent
       v-bind="{ ...forwarded, ...$attrs }"
       :class="cn(
+        'animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95',
         'tooltip-content',
         props.class,
         props.una?.tooltipContent,

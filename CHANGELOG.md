@@ -1,3 +1,12 @@
+## [0.63.1](https://github.com/una-ui/una-ui/compare/v0.63.0...v0.63.1) (2025-07-24)
+
+
+### Bug Fixes
+
+* **Preset:** resolve undetected date-state classes animations ([#475](https://github.com/una-ui/una-ui/issues/475)) ([58df226](https://github.com/una-ui/una-ui/commit/58df2265daa3a6f81d8a145e12f49a96bd7c19fa))
+
+
+
 # [0.63.0](https://github.com/una-ui/una-ui/compare/v0.62.2...v0.63.0) (2025-07-20)
 
 
