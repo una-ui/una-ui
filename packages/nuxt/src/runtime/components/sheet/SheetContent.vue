@@ -43,12 +43,22 @@ const contentEvents = computed(() => {
     <DialogOverlay
       v-if="props.overlay"
       v-bind="_sheetOverlay"
-      :class="cn('sheet-overlay', props.una?.sheetOverlay, props._sheetOverlay?.class)"
+      :class="cn(
+        'data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
+        'sheet-overlay',
+        props.una?.sheetOverlay,
+        props._sheetOverlay?.class,
+      )"
     />
     <DialogContent
       v-bind="{ ...forwarded, ...$attrs }"
       :sheet
-      :class="cn('sheet-content', props.una?.sheetContent, props.class)"
+      :class="cn(
+        'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+        'sheet-content',
+        props.una?.sheetContent,
+        props.class,
+      )"
       v-on="contentEvents"
     >
       <slot />
