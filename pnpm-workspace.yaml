@@ -36,7 +36,7 @@ catalog:
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
-  bumpp: ^10.2.1
+  bumpp: ^10.2.2
   chroma-js: ^3.1.2
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
@@ -51,11 +51,11 @@ catalog:
   nuxt: ^3.18.1
   ohash: ^1.1.6
   pathe: ^2.0.3
-  reka-ui: ^2.4.0
+  reka-ui: ^2.4.1
   rimraf: ^6.0.1
   sass: ^1.89.2
   simple-git: ^3.28.0
-  simple-git-hooks: ^2.13.0
+  simple-git-hooks: ^2.13.1
   tailwind-merge: ^3.3.1
   typescript: ^5.8.3
   unbuild: ^3.6.0

@@ -103,8 +103,8 @@ catalogs:
       specifier: ^12.8.2
       version: 12.8.2
     bumpp:
-      specifier: ^10.2.1
-      version: 10.2.1
+      specifier: ^10.2.2
+      version: 10.2.2
     chroma-js:
       specifier: ^3.1.2
       version: 3.1.2
@@ -148,8 +148,8 @@ catalogs:
       specifier: ^2.0.3
       version: 2.0.3
     reka-ui:
-      specifier: ^2.4.0
-      version: 2.4.0
+      specifier: ^2.4.1
+      version: 2.4.1
     rimraf:
       specifier: ^6.0.1
       version: 6.0.1
@@ -160,8 +160,8 @@ catalogs:
       specifier: ^3.28.0
       version: 3.28.0
     simple-git-hooks:
-      specifier: ^2.13.0
-      version: 2.13.0
+      specifier: ^2.13.1
+      version: 2.13.1
     tailwind-merge:
       specifier: ^3.3.1
       version: 3.3.1
@@ -251,7 +251,7 @@ importers:
         version: 66.3.3(eslint@9.32.0(jiti@2.5.1))(typescript@5.8.3)
       bumpp:
         specifier: 'catalog:'
-        version: 10.2.1(magicast@0.3.5)
+        version: 10.2.2(magicast@0.3.5)
       conventional-changelog-cli:
         specifier: 'catalog:'
         version: 5.0.0(conventional-commits-filter@5.0.0)
@@ -284,7 +284,7 @@ importers:
         version: 1.89.2
       simple-git-hooks:
         specifier: 'catalog:'
-        version: 2.13.0
+        version: 2.13.1
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -380,7 +380,7 @@ importers:
         version: 1.1.6
       reka-ui:
         specifier: 'catalog:'
-        version: 2.4.0(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3))
+        version: 2.4.1(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3))
       tailwind-merge:
         specifier: 'catalog:'
         version: 3.3.1
@@ -392,7 +392,7 @@ importers:
         version: 1.2.1(@unocss/preset-wind3@66.3.3)(unocss@66.3.3(@unocss/webpack@66.3.3(webpack@5.99.9(esbuild@0.25.8)))(postcss@8.5.6)(vite@7.0.6(@types/node@22.17.0)(jiti@2.5.1)(sass@1.89.2)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.0))(vue@3.5.15(typescript@5.8.3)))
       vaul-vue:
         specifier: 'catalog:'
-        version: 0.4.1(reka-ui@2.4.0(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3)))(vue@3.5.15(typescript@5.8.3))
+        version: 0.4.1(reka-ui@2.4.1(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3)))(vue@3.5.15(typescript@5.8.3))
     devDependencies:
       '@iconify-json/lucide':
         specifier: 'catalog:'
@@ -3219,22 +3219,14 @@ packages:
     resolution: {integrity: sha512-bkXY9WsVpY7CvMhKSR6pZilZu9Ln5WDrKVBUXf2S443etkmEO4V58heTecXcUIsNsi4Rx8JUO4NfX1IcQl4deg==}
     engines: {node: '>=18.20'}
 
-  bumpp@10.2.1:
-    resolution: {integrity: sha512-Dhgao1WhrcMg+1R3GU+57e6grUNNIGORN53YllDFurNEVGWmkD/z63R3xX4Sl9IqEw//1/UxbrvmK8V1pcJDHw==}
+  bumpp@10.2.2:
+    resolution: {integrity: sha512-b6LpQOuXqhejTfNV8r1XkdPQiPWS09l+k+W8raTV2YaFeIqCA76D81G22ac/2jhVTCWXwbEMgvxbQtHriOIPkw==}
     engines: {node: '>=18'}
     hasBin: true
 
   bundle-name@4.1.0:
     resolution: {integrity: sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q==}
     engines: {node: '>=18'}
-
-  c12@3.1.0:
-    resolution: {integrity: sha512-uWoS8OU1MEIsOv8p/5a82c3H31LsWVR5qiyXVfBNOzfffjUWtPnhAb4BYI2uG2HfGmZmFjCtui5XNWaps+iFuw==}
-    peerDependencies:
-      magicast: ^0.3.5
-    peerDependenciesMeta:
-      magicast:
-        optional: true
 
   c12@3.2.0:
     resolution: {integrity: sha512-ixkEtbYafL56E6HiFuonMm1ZjoKtIo7TH68/uiEq4DAwv9NcUX2nJ95F8TrbMeNjqIkZpruo3ojXQJ+MGG5gcQ==}
@@ -6242,6 +6234,11 @@ packages:
     peerDependencies:
       vue: '>= 3.2.0'
 
+  reka-ui@2.4.1:
+    resolution: {integrity: sha512-NB7DrCsODN8MH02BWtgiExygfFcuuZ5/PTn6fMgjppmFHqePvNhmSn1LEuF35nel6PFbA4v+gdj0IoGN1yZ+vw==}
+    peerDependencies:
+      vue: '>= 3.2.0'
+
   remark-emoji@5.0.1:
     resolution: {integrity: sha512-QCqTSvcZ65Ym+P+VyBKd4JfJfh7icMl7cIOGVmPMzWkDtdD8pQ0nQG7yxGolVIiMzSx90EZ7SwNiVpYpfTxn7w==}
     engines: {node: '>=18'}
@@ -6458,8 +6455,8 @@ packages:
   simple-get@4.0.1:
     resolution: {integrity: sha512-brv7p5WgH0jmQJr1ZDDfKDOSeWWg+OVypG99A/5vYGPqJ6pxiaHLy8nxtFjBA7oMa01ebA9gfh1uMCFqOuXxvA==}
 
-  simple-git-hooks@2.13.0:
-    resolution: {integrity: sha512-N+goiLxlkHJlyaYEglFypzVNMaNplPAk5syu0+OPp/Bk6dwVoXF6FfOw2vO0Dp+JHsBaI+w6cm8TnFl2Hw6tDA==}
+  simple-git-hooks@2.13.1:
+    resolution: {integrity: sha512-WszCLXwT4h2k1ufIXAgsbiTOazqqevFCIncOuUBZJ91DdvWcC5+OFkluWRQPrcuSYd8fjq+o2y1QfWqYMoAToQ==}
     hasBin: true
 
   simple-git@3.28.0:
@@ -8726,7 +8723,7 @@ snapshots:
 
   '@nuxt/kit@3.18.0(magicast@0.3.5)':
     dependencies:
-      c12: 3.1.0(magicast@0.3.5)
+      c12: 3.2.0(magicast@0.3.5)
       consola: 3.4.2
       defu: 6.1.4
       destr: 2.0.5
@@ -9927,7 +9924,7 @@ snapshots:
     dependencies:
       '@headlessui/vue': 1.7.23(vue@3.5.15(typescript@5.6.3))
       '@iconify/utils': 2.3.0
-      '@nuxt/kit': 3.18.0(magicast@0.3.5)
+      '@nuxt/kit': 3.18.1(magicast@0.3.5)
       '@nuxtjs/color-mode': 3.5.2(magicast@0.3.5)
       '@tanstack/vue-table': 8.21.3(vue@3.5.15(typescript@5.6.3))
       '@una-ui/extractor-vue-script': '@una-ui/extractor-vue-script-edge@0.63.1-29238838.f262ced'
@@ -11476,11 +11473,11 @@ snapshots:
 
   builtin-modules@5.0.0: {}
 
-  bumpp@10.2.1(magicast@0.3.5):
+  bumpp@10.2.2(magicast@0.3.5):
     dependencies:
       ansis: 4.1.0
       args-tokenizer: 0.3.0
-      c12: 3.1.0(magicast@0.3.5)
+      c12: 3.2.0(magicast@0.3.5)
       cac: 6.7.14
       escalade: 3.2.0
       jsonc-parser: 3.3.1
@@ -11495,23 +11492,6 @@ snapshots:
   bundle-name@4.1.0:
     dependencies:
       run-applescript: 7.0.0
-
-  c12@3.1.0(magicast@0.3.5):
-    dependencies:
-      chokidar: 4.0.3
-      confbox: 0.2.2
-      defu: 6.1.4
-      dotenv: 16.6.1
-      exsolve: 1.0.7
-      giget: 2.0.0
-      jiti: 2.5.1
-      ohash: 2.0.11
-      pathe: 2.0.3
-      perfect-debounce: 1.0.0
-      pkg-types: 2.2.0
-      rc9: 2.1.2
-    optionalDependencies:
-      magicast: 0.3.5
 
   c12@3.2.0(magicast@0.3.5):
     dependencies:
@@ -14330,7 +14310,7 @@ snapshots:
 
   nuxt-site-config-kit@3.2.0(magicast@0.3.5)(vue@3.5.15(typescript@5.6.3)):
     dependencies:
-      '@nuxt/kit': 3.18.0(magicast@0.3.5)
+      '@nuxt/kit': 3.18.1(magicast@0.3.5)
       pkg-types: 2.2.0
       site-config-stack: 3.2.0(vue@3.5.15(typescript@5.6.3))
       std-env: 3.9.0
@@ -14341,7 +14321,7 @@ snapshots:
 
   nuxt-site-config@3.2.0(magicast@0.3.5)(vue@3.5.15(typescript@5.6.3)):
     dependencies:
-      '@nuxt/kit': 3.18.0(magicast@0.3.5)
+      '@nuxt/kit': 3.18.1(magicast@0.3.5)
       nuxt-site-config-kit: 3.2.0(magicast@0.3.5)(vue@3.5.15(typescript@5.6.3))
       pathe: 2.0.3
       pkg-types: 2.2.0
@@ -15373,7 +15353,7 @@ snapshots:
       - '@vue/composition-api'
       - typescript
 
-  reka-ui@2.4.0(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3)):
+  reka-ui@2.4.1(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3)):
     dependencies:
       '@floating-ui/dom': 1.7.0
       '@floating-ui/vue': 1.1.6(vue@3.5.15(typescript@5.8.3))
@@ -15733,7 +15713,7 @@ snapshots:
       simple-concat: 1.0.1
     optional: true
 
-  simple-git-hooks@2.13.0: {}
+  simple-git-hooks@2.13.1: {}
 
   simple-git@3.28.0:
     dependencies:
@@ -16583,10 +16563,10 @@ snapshots:
     transitivePeerDependencies:
       - '@vue/composition-api'
 
-  vaul-vue@0.4.1(reka-ui@2.4.0(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3)))(vue@3.5.15(typescript@5.8.3)):
+  vaul-vue@0.4.1(reka-ui@2.4.1(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3)))(vue@3.5.15(typescript@5.8.3)):
     dependencies:
       '@vueuse/core': 10.11.1(vue@3.5.15(typescript@5.8.3))
-      reka-ui: 2.4.0(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3))
+      reka-ui: 2.4.1(typescript@5.8.3)(vue@3.5.15(typescript@5.8.3))
       vue: 3.5.15(typescript@5.8.3)
     transitivePeerDependencies:
       - '@vue/composition-api'
