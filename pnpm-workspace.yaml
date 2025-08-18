@@ -22,7 +22,7 @@ catalog:
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.17.0
+  '@types/node': ^22.17.2
   '@una-ui/content': ^48.2.0
   '@unocss/core': ^66.4.2
   '@unocss/eslint-config': ^66.4.2
@@ -36,16 +36,16 @@ catalog:
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
-  bumpp: ^10.2.2
+  bumpp: ^10.2.3
   chroma-js: ^3.1.2
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.32.0
+  eslint: ^9.33.0
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
-  fs-extra: ^11.3.0
+  fs-extra: ^11.3.1
   ignore-dependency-scripts: ^1.0.1
   lint-staged: ^15.5.2
   nuxt: ^3.18.1
@@ -53,12 +53,12 @@ catalog:
   pathe: ^2.0.3
   reka-ui: ^2.4.1
   rimraf: ^6.0.1
-  sass: ^1.89.2
+  sass: ^1.90.0
   simple-git: ^3.28.0
   simple-git-hooks: ^2.13.1
   tailwind-merge: ^3.3.1
   typescript: ^5.8.3
-  unbuild: ^3.6.0
+  unbuild: ^3.6.1
   unocss: ^66.4.2
   unocss-preset-animations: ^1.2.1
   vaul-vue: ^0.4.1
