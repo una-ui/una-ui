@@ -29,7 +29,7 @@ export const staticStepper: Record<`${StepperPrefix}-${string}` | StepperPrefix,
   'stepper-container-horizontal': 'flex justify-center',
 
   // static variants
-  'stepper-solid-gray': 'group-data-[state=active]:bg-inverted group-data-[state=completed]:bg-inverted',
+  'stepper-solid-black': 'group-data-[state=active]:bg-inverted group-data-[state=completed]:bg-inverted focus-visible:ring-$c-foreground',
 }
 
 export const dynamicStepper: [RegExp, (params: RegExpExecArray) => string][] = [

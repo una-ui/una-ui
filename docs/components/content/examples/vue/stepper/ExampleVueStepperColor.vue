@@ -20,7 +20,7 @@ const items = [
 
 <template>
   <div class="flex flex-col gap-6">
-    <NStepper :items stepper="solid-gray" />
+    <NStepper :items stepper="solid-black" />
 
     <NStepper :items stepper="solid-indigo" />
   </div>
