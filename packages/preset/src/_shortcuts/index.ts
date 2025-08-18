@@ -46,6 +46,7 @@ import { table } from './table'
 import { tabs } from './tabs'
 import { toast } from './toast'
 import { toggle } from './toggle'
+import { toggleGroup } from './toggle-group'
 import { tooltip } from './tooltip'
 
 export const shortcuts = [
@@ -97,4 +98,5 @@ export const shortcuts = [
   ...drawer,
   ...hoverCard,
   ...stepper,
+  ...toggleGroup,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>

@@ -205,6 +205,10 @@ const data = {
           url: '/components/toggle',
         },
         {
+          title: 'Toggle Group',
+          url: '/components/toggle-group',
+        },
+        {
           title: 'Tooltip',
           url: '/components/tooltip',
         },

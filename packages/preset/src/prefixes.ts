@@ -229,6 +229,8 @@ export default [
   'toggle',
   'toggle-off',
   'toggle-on',
+  'toggle-group',
+  'toggle-group-item',
   'tooltip',
   'tooltip-content',
   'tooltip-provider',
