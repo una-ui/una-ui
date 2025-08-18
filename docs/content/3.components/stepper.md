@@ -27,14 +27,6 @@ badges:
 | `orientation`  | `horizontal` | `horizontal` \| `vertical` | The orientation the steps are laid out. Mainly so arrow navigation is done accordingly (left & right vs. up & down). |
 | `disabled`     | `false`      | `boolean`                  | When true, prevents the user from interacting with the stepper.                                                      |
 
-| Exposed Method | Type                     | Description                                   |
-| -------------- | ------------------------ | --------------------------------------------- |
-| `goToStep`     | `(step: number) => void` | Navigates to the specified step by its index. |
-| `nextStep`     | `() => void`             | Moves to the next step (if available).        |
-| `prevStep`     | `() => void`             | Moves to the previous step (if available).    |
-| `hasNext`      | `() => boolean`          | Checks if there is a next step available.     |
-| `hasPrev`      | `() => boolean`          | Checks if there is a previous step available. |
-
 ::alert
 The `T` generic extends the `Partial<NStepperItemProps>`, which means that you can use all the props from the `NStepperItemProps`.
 ::
@@ -101,6 +93,16 @@ Adjust the stepper size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg
 @@@ ./components/content/examples/vue/stepper/ExampleVueStepperSize.vue
 ::
 :::
+
+### Exposed
+
+| Name       | Type                     | Description                                   |
+| ---------- | ------------------------ | --------------------------------------------- |
+| `goToStep` | `(step: number) => void` | Navigates to the specified step by its index. |
+| `nextStep` | `() => void`             | Moves to the next step (if available).        |
+| `prevStep` | `() => void`             | Moves to the previous step (if available).    |
+| `hasNext`  | `() => boolean`          | Checks if there is a next step available.     |
+| `hasPrev`  | `() => boolean`          | Checks if there is a previous step available. |
 
 ## Slots
 

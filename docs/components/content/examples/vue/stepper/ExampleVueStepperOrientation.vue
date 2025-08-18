@@ -18,23 +18,21 @@ const items = [
 ]
 
 const options = [
-  { label: 'Horizontal', value: 'horizontal' },
-  { label: 'Vertical', value: 'vertical' },
+  { label: 'Horizontal', value: 'horizontal' as const },
+  { label: 'Vertical', value: 'vertical' as const },
 ]
 
-const radioValue = ref<'horizontal' | 'vertical'>('horizontal')
+const radioValue = ref<'horizontal' | 'vertical'>('vertical')
 </script>
 
 <template>
-  <div class="flex flex-col flex-wrap gap-4">
+  <div class="flex flex-col flex-wrap gap-8">
     <NRadioGroup
       v-model="radioValue"
-      radio-group="yellow"
-      orientation="horizontal"
       :items="options"
     />
     <NStepper
-      :items
+      :items="items"
       :orientation="radioValue"
     />
   </div>
