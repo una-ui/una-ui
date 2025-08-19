@@ -144,3 +144,56 @@ Use the `default` slot for full control over the steppers's structure. This allo
 @@@ ./components/content/examples/vue/stepper/ExampleVueStepperCustomRendering.vue
 ::
 :::
+
+## Presets
+
+@@@ ../packages/preset/src/_shortcuts/stepper.ts [shortcuts/stepper.ts]
+
+## Props
+
+@@@ ../packages/nuxt/src/runtime/types/stepper.ts [types/stepper.ts]
+
+## Components
+
+:::CodeGroup
+::div{label="Stepper.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/Stepper.vue
+
+::
+::div{label="StepperContainer.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperContainer.vue
+
+::
+::div{label="StepperDescription.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperDescription.vue
+
+::
+::div{label="StepperHeader.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperHeader.vue
+
+::
+::div{label="StepperIndicator.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperIndicator.vue
+
+::
+::div{label="StepperItem.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperItem.vue
+
+::
+::div{label="StepperSeparator.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperSeparator.vue
+
+::
+::div{label="StepperTitle.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperTitle.vue
+
+::
+::div{label="StepperTrigger.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperTrigger.vue
+
+::
+::div{label="StepperWrapper.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/stepper/StepperWrapper.vue
+
+::
+:::
