@@ -1,3 +1,13 @@
+# [0.64.0](https://github.com/una-ui/una-ui/compare/v0.63.1...v0.64.0) (2025-08-19)
+
+
+### Features
+
+* **Stepper:** introduce new components and presets ([#451](https://github.com/una-ui/una-ui/issues/451)) ([416d95a](https://github.com/una-ui/una-ui/commit/416d95ad976b4169530860600efaabfc65d08c49))
+* **ToggleGroup:** introduce new components and presets ([#485](https://github.com/una-ui/una-ui/issues/485)) ([735a951](https://github.com/una-ui/una-ui/commit/735a951d2df41ef664f2412909380530aae0e5cf))
+
+
+
 ## [0.63.1](https://github.com/una-ui/una-ui/compare/v0.63.0...v0.63.1) (2025-07-24)
 
 
