@@ -181,6 +181,10 @@ const data = {
           url: '/components/slider',
         },
         {
+          title: 'Stepper',
+          url: '/components/stepper',
+        },
+        {
           title: 'Switch',
           url: '/components/switch',
         },
@@ -203,6 +207,10 @@ const data = {
         {
           title: 'Toggle',
           url: '/components/toggle',
+        },
+        {
+          title: 'Toggle Group',
+          url: '/components/toggle-group',
         },
         {
           title: 'Tooltip',

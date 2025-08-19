@@ -38,11 +38,13 @@ export * from './sheet'
 export * from './sidebar'
 export * from './skeleton'
 export * from './slider'
+export * from './stepper'
 export * from './switch'
 export * from './table'
 export * from './tabs'
 export * from './toast'
 export * from './toggle'
+export * from './toggle-group'
 export * from './tooltip'
 
 export interface Colors {
