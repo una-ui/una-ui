@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import type { DialogRootEmits, DialogRootProps } from 'reka-ui'
+import type { DialogRootEmits } from 'reka-ui'
+import type { NDialogProps } from '../../types'
 import { useForwardPropsEmits } from 'reka-ui'
 import Dialog from '../elements/dialog/Dialog.vue'
 import DialogContent from '../elements/dialog/DialogContent.vue'
 import CommandRoot from './CommandRoot.vue'
 
-const props = defineProps<DialogRootProps>()
+const props = defineProps<NDialogProps>()
 const emits = defineEmits<DialogRootEmits>()
 
 const forwarded = useForwardPropsEmits(props, emits)
