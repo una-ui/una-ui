@@ -10,8 +10,14 @@ const prefixes = [
 const extractor = extractorVueScript({ prefixes })
 
 async function extract(code: string, id?: string): Promise<string[]> {
-  /* @ts-expect-error extract accepts {code} and returns string[] */
-  return await extractor.extract!({ code, id })
+  const extracted = new Set<string>()
+  const result = await extractor.extract!({ original: code, code, id, extracted })
+  if (result) {
+    for (const v of result) {
+      extracted.add(v)
+    }
+  }
+  return [...extracted]
 }
 
 it('test extractor typescript with defaults', async () => {

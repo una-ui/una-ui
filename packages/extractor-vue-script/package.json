@@ -42,7 +42,7 @@
   "dependencies": {
     "@babel/parser": "catalog:",
     "@babel/traverse": "catalog:",
-    "@vue/language-core": "catalog:",
+    "@vue/compiler-sfc": "catalog:",
     "magicast": "catalog:"
   },
   "devDependencies": {

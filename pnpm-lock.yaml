@@ -105,9 +105,9 @@ catalogs:
     '@vercel/analytics':
       specifier: ^1.5.0
       version: 1.5.0
-    '@vue/language-core':
-      specifier: ^3.0.5
-      version: 3.0.5
+    '@vue/compiler-sfc':
+      specifier: ^3.5.18
+      version: 3.5.18
     '@vueuse/core':
       specifier: ^12.8.2
       version: 12.8.2
@@ -336,9 +336,9 @@ importers:
       '@babel/traverse':
         specifier: 'catalog:'
         version: 7.28.3
-      '@vue/language-core':
+      '@vue/compiler-sfc':
         specifier: 'catalog:'
-        version: 3.0.5(typescript@5.8.3)
+        version: 3.5.18
       magicast:
         specifier: 'catalog:'
         version: 0.3.5

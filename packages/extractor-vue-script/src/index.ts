@@ -2,7 +2,7 @@ import type { Expression, Identifier, Node, ObjectExpression, PatternLike } from
 import type { Extractor } from '@unocss/core'
 import traverseDefault from '@babel/traverse'
 import { defaultSplitRE } from '@unocss/core'
-import { parse } from '@vue/language-core'
+import { parse as parseSFC } from '@vue/compiler-sfc'
 import { parseModule } from 'magicast'
 import { parsePath } from 'ufo'
 
@@ -121,7 +121,9 @@ function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
       // the id can contain query parameters, so we need to clean it up
       const cleanPath = parsePath(id).pathname
       if (cleanPath.endsWith('.vue')) {
-        const sfc = parse(code)
+        const sfc = parseSFC(code, {
+          filename: cleanPath,
+        })
         code = sfc.descriptor.scriptSetup?.content || sfc.descriptor.script?.content || ''
       }
       const { $ast: node } = parseModule(code, {
