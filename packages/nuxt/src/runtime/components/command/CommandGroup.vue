@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import type { ListboxGroupProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
+import type { NCommandGroupProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { ListboxGroup, ListboxGroupLabel, useId } from 'reka-ui'
 import { computed, onMounted, onUnmounted } from 'vue'
 import { provideCommandGroupContext, useCommand } from '.'
 import { cn } from '../../utils'
 
-const props = defineProps<ListboxGroupProps & {
-  class?: HTMLAttributes['class']
-  heading?: string
-}>()
+const props = defineProps<NCommandGroupProps>()
 
 const delegatedProps = reactiveOmit(props, 'class')
 

@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
+import type { NCommandShortcutProps } from '../../types'
 import { cn } from '../../utils'
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<NCommandShortcutProps>()
 </script>
 
 <template>
-  <span :class="cn('ml-auto text-xs tracking-widest text-muted-foreground', props.class)">
+  <span :class="cn('ml-auto text-xs tracking-widest text-muted', props.class)">
     <slot />
   </span>
 </template>

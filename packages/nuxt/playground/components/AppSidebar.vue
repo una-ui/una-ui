@@ -88,6 +88,11 @@ const data = {
           url: '/components/combobox',
         },
         {
+          title: 'Command',
+          url: '/components/command',
+          badge: 'new' as const,
+        },
+        {
           title: 'Dialog',
           url: '/components/dialog',
         },

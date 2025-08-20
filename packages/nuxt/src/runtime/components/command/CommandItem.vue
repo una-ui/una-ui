@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { ListboxItemEmits, ListboxItemProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
+import type { ListboxItemEmits } from 'reka-ui'
+import type { NCommandItemProps } from '../../types'
 import { reactiveOmit, useCurrentElement } from '@vueuse/core'
 import { ListboxItem, useForwardPropsEmits, useId } from 'reka-ui'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useCommand, useCommandGroup } from '.'
 import { cn } from '../../utils'
 
-const props = defineProps<ListboxItemProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NCommandItemProps>()
 const emits = defineEmits<ListboxItemEmits>()
 
 const delegatedProps = reactiveOmit(props, 'class')

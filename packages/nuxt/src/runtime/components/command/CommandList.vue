@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import type { ListboxContentProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
+import type { NCommandListProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { ListboxContent, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<ListboxContentProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NCommandListProps>()
 
 const delegatedProps = reactiveOmit(props, 'class')
 

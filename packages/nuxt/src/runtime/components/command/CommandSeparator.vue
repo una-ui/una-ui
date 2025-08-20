@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import type { SeparatorProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
+import type { NCommandSeparatorProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { Separator } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<SeparatorProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<NCommandSeparatorProps>()
 
 const delegatedProps = reactiveOmit(props, 'class')
 </script>
