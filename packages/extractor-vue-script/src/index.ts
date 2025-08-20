@@ -1,9 +1,15 @@
 import type { Expression, Identifier, Node, ObjectExpression, PatternLike } from '@babel/types'
 import type { Extractor } from '@unocss/core'
-import traverse from '@babel/traverse'
+import traverseDefault from '@babel/traverse'
 import { defaultSplitRE } from '@unocss/core'
 import { parse } from '@vue/language-core'
 import { parseModule } from 'magicast'
+import { parsePath } from 'ufo'
+
+// esm interop
+const traverse = 'default' in traverseDefault
+  ? (traverseDefault as any).default as typeof traverseDefault
+  : traverseDefault
 
 interface ExtractorVueScriptOptions {
   /**
@@ -60,6 +66,7 @@ function getObjectLiteralValue(node: ObjectExpression): object {
 function discoverVariants(node: Node, prefixes: string[]): string[] {
   const result: [string, string][] = []
   traverse(node, {
+    noScope: true, // scope doesn't work for some reason.
     enter({ node }) {
       // standard object properties
       if (node.type === 'ObjectExpression') {
@@ -111,8 +118,9 @@ function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
     name: '@una-ui/extractor-vue-script',
     order: 0,
     async extract({ code, id }) {
-      console.log(id)
-      if (id?.endsWith('.vue')) {
+      // the id can contain query parameters, so we need to clean it up
+      const cleanPath = parsePath(id).pathname
+      if (cleanPath.endsWith('.vue')) {
         const sfc = parse(code)
         code = sfc.descriptor.scriptSetup?.content || sfc.descriptor.script?.content || ''
       }
