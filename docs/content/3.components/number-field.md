@@ -1,8 +1,5 @@
 ---
 description: 'A number field lets users enter and adjust numeric values with optional increment and decrement controls.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
