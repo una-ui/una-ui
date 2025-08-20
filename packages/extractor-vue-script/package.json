@@ -43,7 +43,8 @@
     "@babel/parser": "catalog:",
     "@babel/traverse": "catalog:",
     "@vue/compiler-sfc": "catalog:",
-    "magicast": "catalog:"
+    "magicast": "catalog:",
+    "ufo": "catalog:"
   },
   "devDependencies": {
     "@babel/types": "catalog:",
