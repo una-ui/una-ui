@@ -1,5 +1,9 @@
+import type { Expression, Identifier, Node, ObjectExpression, PatternLike } from '@babel/types'
 import type { Extractor } from '@unocss/core'
+import traverse from '@babel/traverse'
 import { defaultSplitRE } from '@unocss/core'
+import { parse } from '@vue/language-core'
+import { parseModule } from 'magicast'
 
 interface ExtractorVueScriptOptions {
   /**
@@ -23,66 +27,104 @@ function normalizePrefixes(prefixes: string[]): string[] {
   return [...new Set([...prefixes, ...camelCasePrefixes])]
 }
 
-function splitCodeWithArbitraryVariants(code: string, prefixes: string[]): string[] {
-  const result: string[] = []
-  const normalizedPrefixes = normalizePrefixes(prefixes)
-
-  for (const prefix of normalizedPrefixes) {
-    const regex = new RegExp(`\\b${prefix}\\s*:\\s*(?:['"]([^'"]*)['"]|{[^}]*\\bdefault\\s*:\\s*['"]([^'"]*)['"]\\s*,?.*?})`, 'gms')
-    let match: RegExpExecArray | null
-
-    // eslint-disable-next-line no-cond-assign
-    while ((match = regex.exec(code)) !== null) {
-      const values = (match[1] ?? match[2]).split(defaultSplitRE)
-      const selectors = generateSelectors(prefix, values)
-      result.push(...selectors)
-    }
+function getLiteralValue(node: Expression | PatternLike): any {
+  if (node.type === 'ConditionalExpression') {
+    return [node.consequent, node.alternate].map(getLiteralValue)
   }
-
-  return result
+  if (node.type === 'StringLiteral') {
+    return node.value
+  }
+  if (node.type === 'TemplateLiteral') {
+    if (node.expressions.length > 0) {
+      return undefined // template literals with expressions are not supported
+    }
+    return node.quasis.map(q => q.value.cooked).join('')
+  }
+  if (node.type === 'ObjectExpression') {
+    return getObjectLiteralValue(node)
+  }
+  return undefined
 }
 
-function extractConditionalStatements(code: string, prefixes: string[]): string[] {
-  const result: string[] = []
-  const normalizedPrefixes = normalizePrefixes(prefixes)
+function getObjectLiteralValue(node: ObjectExpression): object {
+  return Object.fromEntries(
+    node.properties.filter(prop => prop.type === 'ObjectProperty')
+      .filter((prop): prop is typeof prop & { key: Identifier } => prop.key.type === 'Identifier')
+      .map((prop) => {
+        const key = prop.key.name
+        return [key, getLiteralValue(prop.value)]
+      }),
+  )
+}
 
-  for (const prefix of normalizedPrefixes) {
-    // Match ternary operators: prefix: condition ? 'value1' : 'value2'
-    // Also handles template literals and computed properties
-    const ternaryRegex = new RegExp(
-      `\\b${prefix}\\s*:\\s*[^?]*?\\?\\s*['"\`]([^'"\`]*?)['"\`]\\s*:\\s*['"\`]([^'"\`]*?)['"\`]`,
-      'gms',
-    )
-    let match: RegExpExecArray | null
+function discoverVariants(node: Node, prefixes: string[]): string[] {
+  const result: [string, string][] = []
+  traverse(node, {
+    enter({ node }) {
+      // standard object properties
+      if (node.type === 'ObjectExpression') {
+        const object = getObjectLiteralValue(node)
 
-    // eslint-disable-next-line no-cond-assign
-    while ((match = ternaryRegex.exec(code)) !== null) {
-      const [, trueValue, falseValue] = match
+        for (let [key, value] of Object.entries(object)) {
+          if (prefixes.includes(key) && value) {
+            if (!Array.isArray(value)) {
+              value = [value]
+            }
+            for (let v of value) {
+              if (typeof v === 'object' && v !== null && 'default' in v) {
+                v = v.default
+              }
+              if (typeof v !== 'string') {
+                continue // only string values are supported
+              }
+              result.push([key, v])
+            }
+          }
+        }
+      }
 
-      const allValues = [
-        ...trueValue.split(defaultSplitRE),
-        ...falseValue.split(defaultSplitRE),
-      ]
+      // props unpacking
+      if (node.type === 'AssignmentPattern') {
+        const { left, right } = node
+        if (
+          left.type === 'Identifier'
+          && right.type === 'StringLiteral'
+        ) {
+          const prefix = left.name
+          const value = right.value
+          if (prefixes.includes(prefix)) {
+            result.push([prefix, value])
+          }
+        }
+      }
+    },
+  })
 
-      const selectors = generateSelectors(prefix, allValues)
-      result.push(...selectors)
-    }
-  }
-
-  return result
+  return result.flatMap(([key, v]) => {
+    const values = v.split(defaultSplitRE)
+    return generateSelectors(key, values)
+  })
 }
 
 function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
   return {
     name: '@una-ui/extractor-vue-script',
     order: 0,
-    async extract({ code }) {
-      const prefixes = options?.prefixes ?? []
+    async extract({ code, id }) {
+      console.log(id)
+      if (id?.endsWith('.vue')) {
+        const sfc = parse(code)
+        code = sfc.descriptor.scriptSetup?.content || sfc.descriptor.script?.content || ''
+      }
+      const { $ast: node } = parseModule(code, {
+        sourceFileName: id,
+      })
 
-      const regularResults = splitCodeWithArbitraryVariants(code, prefixes)
-      const conditionalResults = extractConditionalStatements(code, prefixes)
+      const prefixes = normalizePrefixes(options?.prefixes ?? [])
 
-      return [...new Set([...regularResults, ...conditionalResults])]
+      const regularResults = discoverVariants(node, prefixes)
+
+      return [...new Set(regularResults)]
     },
   }
 }
