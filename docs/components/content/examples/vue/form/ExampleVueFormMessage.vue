@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <NFormGroup
+    <NFormField
       label="Email"
       name="email"
       message="We'll never share your email with anyone else."
@@ -9,6 +9,6 @@
         placeholder="phojrengel@gmail.com"
         leading="i-heroicons-envelope-20-solid"
       />
-    </NFormGroup>
+    </NFormField>
   </div>
 </template>

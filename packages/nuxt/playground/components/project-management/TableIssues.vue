@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { ColumnDef, RowSelectionState, Table } from '@tanstack/vue-table'
 import type { Issue } from '../../data'
 import { NAvatar } from '#components'
 
@@ -23,7 +23,7 @@ async function addIssues(count: number) {
   limit.value += count
 }
 
-const columns: ColumnDef<Issue>[] = [
+const columns = [
   {
     header: 'Title',
     accessorKey: 'title',
@@ -196,9 +196,9 @@ const columns: ColumnDef<Issue>[] = [
     enableSorting: false,
     enableColumnFilter: false,
   },
-]
+] satisfies ColumnDef<Issue>[]
 const search = ref('')
-const select = ref()
+const select = ref<RowSelectionState>()
 const table = useTemplateRef<Table<Issue>>('table')
 
 // Set initial column visibility
@@ -235,7 +235,7 @@ const visibleColumnHeaders = computed({
         const col = columns.find(col =>
           ('accessorKey' in col && col.accessorKey === key),
         )
-        return col?.header
+        return col?.header as string
       })
       .filter(Boolean)
   },
@@ -258,6 +258,14 @@ const visibleColumnHeaders = computed({
 
     columnVisibility.value = newVisibility
   },
+})
+
+const alertDialogData = reactive<{
+  open: boolean
+  meta: Issue | null
+}>({
+  open: false,
+  meta: null,
 })
 </script>
 
@@ -461,7 +469,7 @@ const visibleColumnHeaders = computed({
       </template>
       <!-- end cell -->
 
-      <template #actions-cell>
+      <template #actions-cell="{ cell }">
         <NDropdownMenu
           :items="[
             {
@@ -478,6 +486,10 @@ const visibleColumnHeaders = computed({
               class: 'text-error',
               leading: 'i-lucide-trash',
               dropdownMenuItem: 'error',
+              onSelect: () => {
+                alertDialogData.open = true
+                alertDialogData.meta = cell.row.original
+              },
             },
           ]"
           :_dropdown-menu-trigger="{
@@ -529,4 +541,21 @@ const visibleColumnHeaders = computed({
       </div>
     </div>
   </div>
+
+  <!-- confirm delete dialog -->
+  <NAlertDialog
+    v-model:open="alertDialogData.open"
+    description="This action cannot be undone."
+    :_alert-dialog-action="{
+      btn: 'soft-error',
+    }"
+    @action="console.log('issue deleted', alertDialogData.meta?.id)"
+  >
+    <template #title>
+      Delete Issue
+      <span class="text-error">
+        #{{ alertDialogData.meta?.number }}: {{ alertDialogData.meta?.title }}?
+      </span>
+    </template>
+  </NAlertDialog>
 </template>

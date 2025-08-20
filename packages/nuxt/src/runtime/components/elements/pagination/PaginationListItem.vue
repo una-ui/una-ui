@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NPaginationListItemProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { PaginationListItem, useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
@@ -11,11 +12,7 @@ const props = withDefaults(defineProps<NPaginationListItemProps>(), {
   square: true,
 })
 
-const delegatedProps = computed(() => {
-  const { value: __, class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['value'])
 
 const label = computed(() => {
   return props.label || props.value.toString()

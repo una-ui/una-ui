@@ -19,6 +19,9 @@ const items = ref([
   <NTabs
     :items="items"
     default-value="account"
+    :_tabs-content="{
+      class: 'py-4',
+    }"
   >
     <template #content="{ item }">
       <div v-if="item.value === 'account'" class="flex flex-col items-start">

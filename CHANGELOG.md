@@ -1,3 +1,325 @@
+# [0.64.0](https://github.com/una-ui/una-ui/compare/v0.63.1...v0.64.0) (2025-08-19)
+
+
+### Features
+
+* **Stepper:** introduce new components and presets ([#451](https://github.com/una-ui/una-ui/issues/451)) ([416d95a](https://github.com/una-ui/una-ui/commit/416d95ad976b4169530860600efaabfc65d08c49))
+* **ToggleGroup:** introduce new components and presets ([#485](https://github.com/una-ui/una-ui/issues/485)) ([735a951](https://github.com/una-ui/una-ui/commit/735a951d2df41ef664f2412909380530aae0e5cf))
+
+
+
+## [0.63.1](https://github.com/una-ui/una-ui/compare/v0.63.0...v0.63.1) (2025-07-24)
+
+
+### Bug Fixes
+
+* **Preset:** resolve undetected date-state classes animations ([#475](https://github.com/una-ui/una-ui/issues/475)) ([58df226](https://github.com/una-ui/una-ui/commit/58df2265daa3a6f81d8a145e12f49a96bd7c19fa))
+
+
+
+# [0.63.0](https://github.com/una-ui/una-ui/compare/v0.62.2...v0.63.0) (2025-07-20)
+
+
+### Features
+
+* **Combobox, Select, RadioGroup:** improve generic typing ([#467](https://github.com/una-ui/una-ui/issues/467)) ([0ff4176](https://github.com/una-ui/una-ui/commit/0ff4176e708271706118edb7c48c44551995b93e))
+* **ExtractorVueScript:** add support for ternary patterns ([#463](https://github.com/una-ui/una-ui/issues/463)) ([fb25376](https://github.com/una-ui/una-ui/commit/fb25376015f9ed8e84a8ed2954d7b8da9274ae79))
+
+
+
+## [0.62.2](https://github.com/una-ui/una-ui/compare/v0.62.1...v0.62.2) (2025-07-19)
+
+
+### Features
+
+* **Select:** improve generics to allow better typesafety ([#466](https://github.com/una-ui/una-ui/issues/466)) ([fe1f7f0](https://github.com/una-ui/una-ui/commit/fe1f7f097e5aa3e4b63ad0b9ed173774ac4b918a))
+
+
+
+## [0.62.1](https://github.com/una-ui/una-ui/compare/v0.62.0...v0.62.1) (2025-07-18)
+
+
+### Features
+
+* **Preset:** replace [@apply](https://github.com/apply) with --at-apply for better compatibility ([#465](https://github.com/una-ui/una-ui/issues/465)) ([824114d](https://github.com/una-ui/una-ui/commit/824114d9fb4e366a8817ed67d2c8c1da1a081c20))
+
+
+
+# [0.62.0](https://github.com/una-ui/una-ui/compare/v0.61.0...v0.62.0) (2025-07-18)
+
+
+### Features
+
+* **Table:** add empty-text and empty-icon preset and prop configuration ([#462](https://github.com/una-ui/una-ui/issues/462)) ([b8ef868](https://github.com/una-ui/una-ui/commit/b8ef868bb4abd5e8130e2330dee78aad669aa7ce))
+
+
+
+# [0.61.0](https://github.com/una-ui/una-ui/compare/v0.60.1...v0.61.0) (2025-06-26)
+
+
+### Features
+
+* **PinInput:** introduce new components and presets ([#450](https://github.com/una-ui/una-ui/issues/450)) ([2fe0c0f](https://github.com/una-ui/una-ui/commit/2fe0c0fb34fd13b00f225445d5dda1e6a5a70fdf))
+
+
+
+## [0.60.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v0.60.1) (2025-06-24)
+
+
+### Features
+
+* **Table:** add support for getSubRows method ([#449](https://github.com/una-ui/una-ui/issues/449)) ([6f38118](https://github.com/una-ui/una-ui/commit/6f381187b3e2843aa782832811af1fbd17406309))
+
+
+
+# [0.60.0](https://github.com/una-ui/una-ui/compare/v0.59.0...v0.60.0) (2025-06-21)
+
+
+### Bug Fixes
+
+* **NavigationMenu:** resolve link and list types ([#428](https://github.com/una-ui/una-ui/issues/428)) ([025f305](https://github.com/una-ui/una-ui/commit/025f305afa75c65a6f77468e48af48bc3d09f7a8))
+
+
+### Features
+
+* **NumberField:** introduce new components and presets ([#432](https://github.com/una-ui/una-ui/issues/432)) ([d0efbbc](https://github.com/una-ui/una-ui/commit/d0efbbc0c276c92d3734f4d71020397a1b221ab9))
+
+
+
+# [0.59.0](https://github.com/una-ui/una-ui/compare/v0.58.0...v0.59.0) (2025-06-12)
+
+
+### Bug Fixes
+
+* **Input:** correct placeholder color preset sytanx, related to [#427](https://github.com/una-ui/una-ui/issues/427) ([ff628e9](https://github.com/una-ui/una-ui/commit/ff628e9a3cbcb6f1bfef87a993e52a104d69fe47))
+* **Switch:** add missing types ([caabb14](https://github.com/una-ui/una-ui/commit/caabb146be7bce277531fec7cc9f2367f55f3cd7))
+* **Switch:** prevent color flickering and enhance default presets ([#425](https://github.com/una-ui/una-ui/issues/425)) ([a68b03f](https://github.com/una-ui/una-ui/commit/a68b03f5b5a576d91289848a34e27ef90f40ead1))
+* **Switch:** rename una class properties to avoid duplicate unocss warning ([91e2cf7](https://github.com/una-ui/una-ui/commit/91e2cf7c54627a0a2e4e51a871935274f691f468))
+
+
+### Features
+
+* **HoverCard:** introduces new components and presets  ([#424](https://github.com/una-ui/una-ui/issues/424)) ([be17640](https://github.com/una-ui/una-ui/commit/be17640eca61f6ff64c8498de2d9791a2f867035))
+
+
+
+# [0.58.0](https://github.com/una-ui/una-ui/compare/v0.57.0...v0.58.0) (2025-06-09)
+
+
+### Features
+
+* add support for model modifiers ([#423](https://github.com/una-ui/una-ui/issues/423)) ([7b23ff2](https://github.com/una-ui/una-ui/commit/7b23ff2cf8e374fbd7f8fd31b5aef14c872c0980))
+* **Table:** update and improve types ([1cbf091](https://github.com/una-ui/una-ui/commit/1cbf09153761ead6e39aa7aa738837283b785a92))
+
+
+
+# [0.57.0](https://github.com/una-ui/una-ui/compare/v0.56.5...v0.57.0) (2025-05-27)
+
+
+### Bug Fixes
+
+* **Nuxt:** use reactiveOmit instead of computed to delegate props ([#419](https://github.com/una-ui/una-ui/issues/419)) ([e4b72d7](https://github.com/una-ui/una-ui/commit/e4b72d7ef2325949cda514b9fcc6f92b46d4d636))
+
+
+
+## [0.56.5](https://github.com/una-ui/una-ui/compare/v0.56.4...v0.56.5) (2025-05-27)
+
+
+### Features
+
+* **Breadcrumb:** add dropdown-menu props support ([a43d024](https://github.com/una-ui/una-ui/commit/a43d024fbe9629e4b210999331fe774cff08364a))
+* **Dialog:** improve dialog-footer spacing ([88ad8d5](https://github.com/una-ui/una-ui/commit/88ad8d537a8c4039636f315a9cb25484d19ff522))
+* **Tabs:** improve style presets ([6ddcb8e](https://github.com/una-ui/una-ui/commit/6ddcb8eb1de2286865634f4b10a99bddd5eb1c46))
+
+
+
+## [0.56.4](https://github.com/una-ui/una-ui/compare/v0.56.3...v0.56.4) (2025-05-25)
+
+
+### Features
+
+* **ThemeSwither:** add additional radius options ([34ec47d](https://github.com/una-ui/una-ui/commit/34ec47d2af9c65008d56c70978d48b2ad1fe8e5e))
+* **ThemeSwither:** improve styles and configuration ([b7fc5c6](https://github.com/una-ui/una-ui/commit/b7fc5c685557442d119138eb68c88cee52ac90d3))
+
+
+
+## [0.56.3](https://github.com/una-ui/una-ui/compare/v0.56.2...v0.56.3) (2025-05-25)
+
+
+### Bug Fixes
+
+* **SelectTrigger:** add shrink class to select-trigger preset ([9d28802](https://github.com/una-ui/una-ui/commit/9d28802460954af68f643c89ab1956a80c290795))
+
+
+
+## [0.56.2](https://github.com/una-ui/una-ui/compare/v0.56.1...v0.56.2) (2025-05-25)
+
+
+### Bug Fixes
+
+* **Button:** add shrink-0 to btn preset ([3965f48](https://github.com/una-ui/una-ui/commit/3965f488b24e5f5e2617dec4f138aaf4ee072ce9))
+
+
+
+## [0.56.1](https://github.com/una-ui/una-ui/compare/v0.56.0...v0.56.1) (2025-05-24)
+
+
+### Bug Fixes
+
+* **Form:** enhance label-required preset ([b6b1fea](https://github.com/una-ui/una-ui/commit/b6b1fea0ba656031c86dd1e960be81ac64f26332))
+* **Form:** remove redundancy in defining blocks ([4b8d928](https://github.com/una-ui/una-ui/commit/4b8d928760e1f7247d3a810c074d009bc548add5))
+
+
+### Reverts
+
+* Revert "chore(deps): update nuxt framework to ^3.17.4 (#413)" (#415) ([8c67214](https://github.com/una-ui/una-ui/commit/8c6721464e98c7c5413e270cb221f84a808c9d53)), closes [#413](https://github.com/una-ui/una-ui/issues/413) [#415](https://github.com/una-ui/una-ui/issues/415)
+
+
+
+# [0.56.0](https://github.com/una-ui/una-ui/compare/v0.55.4...v0.56.0) (2025-05-22)
+
+
+
+## [0.55.4](https://github.com/una-ui/una-ui/compare/v0.55.3...v0.55.4) (2025-05-22)
+
+
+### Bug Fixes
+
+* **Tabs:** update size logic; refactor props logic ([8689523](https://github.com/una-ui/una-ui/commit/868952310142b402c7038de29598d0369b2bd5b6))
+
+
+
+## [0.55.3](https://github.com/una-ui/una-ui/compare/v0.55.2...v0.55.3) (2025-05-22)
+
+
+### Bug Fixes
+
+* **Button:** correct disabled logic ([2748519](https://github.com/una-ui/una-ui/commit/2748519f856f0525d1f1d5716b40274c77ddc8be))
+
+
+
+## [0.55.2](https://github.com/una-ui/una-ui/compare/v0.55.1...v0.55.2) (2025-05-21)
+
+
+### Features
+
+* **Link:** add active prop support ([e966982](https://github.com/una-ui/una-ui/commit/e96698272707401c23da0c92837a62c1aa6d77b5))
+
+
+
+## [0.55.1](https://github.com/una-ui/una-ui/compare/v0.55.0...v0.55.1) (2025-05-17)
+
+
+### Bug Fixes
+
+* **Drawer:** update and add missing una presets configuration ([b605486](https://github.com/una-ui/una-ui/commit/b605486e78a389198c40283a4b684da0f57b7fa5))
+
+
+
+# [0.55.0](https://github.com/una-ui/una-ui/compare/v0.54.4...v0.55.0) (2025-05-17)
+
+
+### Features
+
+* **Drawer:** introduces new components and presets ([#400](https://github.com/una-ui/una-ui/issues/400)) ([8dc0bb4](https://github.com/una-ui/una-ui/commit/8dc0bb4b75846128e21a0745bf389b66bfd1f6d3))
+* **Preset:** update default muted and accent color configuration ([a3132a8](https://github.com/una-ui/una-ui/commit/a3132a81763192528b2c8e133c51e29a16ae213c))
+
+
+
+## [0.54.4](https://github.com/una-ui/una-ui/compare/v0.54.3...v0.54.4) (2025-05-15)
+
+
+### Features
+
+* **Link:** add disabled prop and preset support ([f863bbf](https://github.com/una-ui/una-ui/commit/f863bbf694638aee2c5f87a93fa1c7cb33666d16))
+
+
+
+## [0.54.3](https://github.com/una-ui/una-ui/compare/v0.54.2...v0.54.3) (2025-05-12)
+
+
+### Bug Fixes
+
+* **Combobox:** add size configuration to combobox-empty component ([efa48b8](https://github.com/una-ui/una-ui/commit/efa48b86fd415e08fdc75f42d7f86f8ae4ede6da))
+* **Preset:** update popover colors ([853412d](https://github.com/una-ui/una-ui/commit/853412d20d6f847ce1fbf653740f2068925a2671))
+
+
+
+## [0.54.2](https://github.com/una-ui/una-ui/compare/v0.54.1...v0.54.2) (2025-05-07)
+
+
+### Bug Fixes
+
+* **ExtractorVueScript:** add support for double quotes ([#407](https://github.com/una-ui/una-ui/issues/407)) ([8bb65da](https://github.com/una-ui/una-ui/commit/8bb65da8ebcf5328b775d753562f91f4d8ce7b35))
+
+
+
+## [0.54.1](https://github.com/una-ui/una-ui/compare/v0.54.0...v0.54.1) (2025-05-07)
+
+
+### Bug Fixes
+
+* **SelectTrigger:** add configuration for select-trigger class ([c7c0073](https://github.com/una-ui/una-ui/commit/c7c0073506fb7f803bd1d7bf2870771cda8822e1))
+
+
+### Features
+
+* **Combobox:** add default leading icon for trigger input search ([818a6e5](https://github.com/una-ui/una-ui/commit/818a6e5040e10c6baf9108a85570166dc7c5150b))
+* **ExtractorVueScript:** add support for `non-<script setup>` ([#402](https://github.com/una-ui/una-ui/issues/402)) ([3da2345](https://github.com/una-ui/una-ui/commit/3da23452909bbf7b61607ac61bfb769b41c2a6f5))
+* **Nuxt:** update @nuxt/module-builder to 1.0.1 (v2) ([#406](https://github.com/una-ui/una-ui/issues/406)) ([0a5d5ec](https://github.com/una-ui/una-ui/commit/0a5d5ec0a1facdf2879908048b04ede0615d8c0f))
+
+
+
+# [0.54.0](https://github.com/una-ui/una-ui/compare/v0.53.0...v0.54.0) (2025-05-04)
+
+
+### Features
+
+* **Label:** update styling presets and components to v4 ([6ed7bf0](https://github.com/una-ui/una-ui/commit/6ed7bf0f1b6712b44c349a3c0c06f2f7f9299f50))
+
+
+### Reverts
+
+* Revert "build(Nuxt): update @nuxt/module-builder to 1.0.1 (#362)" ([149024a](https://github.com/una-ui/una-ui/commit/149024ac7512f3dd2d096b34acc900da9cffec50)), closes [#362](https://github.com/una-ui/una-ui/issues/362)
+
+
+
+# [0.54.0](https://github.com/una-ui/una-ui/compare/v0.53.0...v0.54.0) (2025-05-04)
+
+
+### Features
+
+* **Label:** update styling presets and components to v4 ([6ed7bf0](https://github.com/una-ui/una-ui/commit/6ed7bf0f1b6712b44c349a3c0c06f2f7f9299f50))
+
+
+### Reverts
+
+* Revert "build(Nuxt): update @nuxt/module-builder to 1.0.1 (#362)" ([149024a](https://github.com/una-ui/una-ui/commit/149024ac7512f3dd2d096b34acc900da9cffec50)), closes [#362](https://github.com/una-ui/una-ui/issues/362)
+
+
+
+# [0.53.0](https://github.com/una-ui/una-ui/compare/v0.52.1...v0.53.0) (2025-05-04)
+
+
+### Bug Fixes
+
+* **Input:** reconfig leading-wrapper; add status-icon-base to una prop ([0180283](https://github.com/una-ui/una-ui/commit/0180283a2b8ac0da097314dc75bb81f3593cb181))
+* **Progress:** use v-slot to access modelValue ([1a6c83c](https://github.com/una-ui/una-ui/commit/1a6c83cda131c35b319fc536d2ac1e94e8dc682b))
+* **Resizable:** update size configuration; update style presets ([ac8d4b2](https://github.com/una-ui/una-ui/commit/ac8d4b203a7b03f5526e456ed4bd0b8e3a353f6f))
+* **Slider:** pass the correct model-value properly ([0d36f01](https://github.com/una-ui/una-ui/commit/0d36f010b5c634eecaf477d4fe1fd72e2d2af0c4))
+
+
+### Features
+
+* **AlertDialog:** improve dialog content & footer style presets ([3151a32](https://github.com/una-ui/una-ui/commit/3151a322ad117a22961f65aefcdb83c1bd7f9a4b))
+* **AlertDialog:** introduces new components and presets ([#394](https://github.com/una-ui/una-ui/issues/394)) ([b22816b](https://github.com/una-ui/una-ui/commit/b22816b4d3611b9f2d1f5a3a0be62a4f4e4f153d))
+* **Dialog:** improve dialog-content style presets ([cf63789](https://github.com/una-ui/una-ui/commit/cf637897fbc89fcc3a62c2b51cce9823995b0b14))
+* **RadioGroup:** bind the modelValue to default slot ([c7fe395](https://github.com/una-ui/una-ui/commit/c7fe3959b234301a161e6a5c3a11f9e607b9ec35))
+* **Resizable:** introduces new components and presets ([#398](https://github.com/una-ui/una-ui/issues/398)) ([8ec031b](https://github.com/una-ui/una-ui/commit/8ec031b6013f46f3a14d24b20da640019eaec9ac))
+* **ResizablePanel:** bind props in default slot ([cc3382e](https://github.com/una-ui/una-ui/commit/cc3382e562aee790b1fae9416dce74b75628405f))
+
+
+
 ## [0.52.1](https://github.com/una-ui/una-ui/compare/v0.52.0...v0.52.1) (2025-05-01)
 
 

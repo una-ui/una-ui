@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import type { NSheetTitleProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { DialogTitle } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../utils'
 
 const props = defineProps<NSheetTitleProps>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

@@ -186,6 +186,7 @@ const table = useVueTable({
   getFilteredRowModel: getFilteredRowModel(),
   getPaginationRowModel: getPaginationRowModel(),
   getRowId: (row: any) => props.rowId ? row[props.rowId] : row.id,
+  getSubRows: (row: any) => row.subRows,
   getExpandedRowModel: getExpandedRowModel(),
 
   onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
@@ -408,6 +409,8 @@ defineExpose({
               v-else
               :colspan="table.getAllLeafColumns().length"
               :una
+              :empty-text="props.emptyText"
+              :empty-icon="props.emptyIcon"
               v-bind="props._tableEmpty"
             >
               <slot name="empty" />

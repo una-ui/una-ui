@@ -1,19 +1,15 @@
 <script setup lang="ts">
 import type { NTableLoadingProps } from '../../../types'
-import { computed } from 'vue'
+import { reactiveOmit } from '@vueuse/core'
 import { cn } from '../../../utils'
 import Progress from '../../elements/Progress.vue'
+
 import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<NTableLoadingProps>(), {
   size: '2.5px',
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

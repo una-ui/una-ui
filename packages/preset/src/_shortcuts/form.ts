@@ -18,7 +18,7 @@ export const staticForm: Record<`${FormPrefix}-${string}` | FormPrefix, string> 
   // label
   'form-field-label-wrapper': 'flex',
   'form-field-label': 'block',
-  'form-field-label-required': 'after:content-[\'*\'] after:ms-0.5 after:text-error',
+  'form-field-label-required': 'after:content-[\'*\'] after:-ms-0.9 after:text-error',
 
   'form-message': 'text-0.8rem font-medium transition-all duration-1000 ease-in-out text-error',
   'form-label': '',

@@ -1,6 +1,9 @@
 import pkg from './package.json'
 
 export default defineAppConfig({
+  una: {
+    radius: 0.625,
+  },
   unaContent: {
     site: {
       name: 'Una UI',

@@ -4,7 +4,6 @@ export interface NInputProps {
    * @default null
    */
   type?: HTMLInputElement['type'] | 'textarea'
-
   /**
    * Update the input status.
    * Useful for validations.
@@ -12,7 +11,6 @@ export interface NInputProps {
    * @default null
    */
   status?: 'info' | 'success' | 'warning' | 'error'
-
   /**
    * Add loading state to the input.
    *
@@ -25,13 +23,18 @@ export interface NInputProps {
    * @default false
    */
   reverse?: boolean
-
   /**
-   * Value of the input.
+   * Automatically focus the input when the component is mounted.
    *
-   * @default null
+   * @default false
    */
-  modelValue?: string | number
+  autofocus?: boolean
+  /**
+   * Delay the autofocus of the input when the component is mounted.
+   *
+   * @default 0
+   */
+  autofocusDelay?: number
   /**
    * Display leading icon.
    *
@@ -62,7 +65,6 @@ export interface NInputProps {
    * size="sm" | size="2cm" | size="2rem" | size="2px"
    */
   size?: string
-
   /**
    * Manually set the id attribute.
    *
@@ -73,7 +75,6 @@ export interface NInputProps {
    * id="email"
    */
   id?: string
-
   /**
    * Automatically resize the textarea to fit the content.
    * This property only works with the `textarea` type.
@@ -81,7 +82,6 @@ export interface NInputProps {
    * @default false
    */
   autoresize?: boolean | number
-
   /**
    * This property only works with the `textarea` type.
    * You can add your own resize preset or use the default one.
@@ -92,14 +92,12 @@ export interface NInputProps {
    * resize="x" | resize="y" | resize="none" | null
    */
   resize?: string | null
-
   /**
    * This property only works with the `textarea` type.
    *
    * @default 3
    */
   rows?: number
-
   /**
    * This property only works with the `textarea` type.
    *
@@ -116,6 +114,7 @@ export interface NInputProps {
     // base
     input?: string
     inputLoading?: string
+    inputStatusIconBase?: string
     inputTrailing?: string
     inputLeading?: string
 

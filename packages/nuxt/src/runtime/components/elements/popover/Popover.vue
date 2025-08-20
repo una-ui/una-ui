@@ -1,18 +1,14 @@
 <script setup lang="ts">
 import type { PopoverRootEmits } from 'reka-ui'
 import type { NPopoverProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { PopoverRoot, PopoverTrigger, useForwardPropsEmits } from 'reka-ui'
-import { computed } from 'vue'
 import NPopoverContent from './PopoverContent.vue'
 
 const props = defineProps<NPopoverProps>()
 const emits = defineEmits<PopoverRootEmits>()
 
-const delegatedProps = computed(() => {
-  const { _popoverContent, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['_popoverContent'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>

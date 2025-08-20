@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NTabsContentProps } from '../../../types/tabs'
+import { reactiveOmit } from '@vueuse/core'
 import { TabsContent } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../../utils'
 
 defineOptions({
@@ -10,14 +10,12 @@ defineOptions({
 
 const props = defineProps<NTabsContentProps>()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>
   <TabsContent
+    data-slot="tabs-content"
     v-bind="{ ...delegatedProps, ...$attrs }"
     :class="cn(
       'tabs-content',

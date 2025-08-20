@@ -18,7 +18,7 @@ const items = [
   },
 ]
 
-const selected = ref()
+const selected = ref<typeof items[number]>()
 </script>
 
 <template>

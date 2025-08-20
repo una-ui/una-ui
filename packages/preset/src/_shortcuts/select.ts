@@ -16,14 +16,14 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
   'select-trigger-warning-icon': 'i-warning',
 
   // components
-  'select-trigger': 'px-0.8571428571428571em w-full [&>span]:truncate',
+  'select-trigger': 'px-0.8571428571428571em w-full shrink [&>span]:truncate',
   'select-trigger-trailing-icon': 'i-lucide-chevron-down',
-  'select-trigger-trailing': 'size-1.1428571428571428em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled size-1.1428571428571428em) rtl:mr-auto ltr:ml-auto',
+  'select-trigger-trailing': 'size-1.1428571428571428em data-[status=error]:text-error data-[status=success]:text-success data-[status=warning]:text-warning data-[status=info]:text-info data-[status=default]:(n-disabled) rtl:mr-auto ltr:ml-auto',
   'select-trigger-leading': 'size-1.1428571428571428em',
 
   'select-value': 'text-1em data-[status=error]:text-error-active data-[status=success]:text-success-active data-[status=warning]:text-warning-active data-[status=info]:text-info-active data-[placeholder]:n-disabled',
 
-  'select-content': 'relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border border-base bg-popover text-popover shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+  'select-content': 'relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border border-base bg-popover text-popover shadow-md data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
   'select-content-popper': 'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
 
   'select-group': 'w-full',

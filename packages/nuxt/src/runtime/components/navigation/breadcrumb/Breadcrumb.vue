@@ -58,8 +58,10 @@ const props = defineProps<NBreadcrumbProps>()
                     <DropdownMenu
                       :size
                       :modal="false"
+                      v-bind="_dropdownMenu"
                       :items="item.children"
                       :_dropdown-menu-item="{
+                        ..._dropdownMenu?._dropdownMenuItem,
                         ..._breadcrumbLink,
                       }"
                     >

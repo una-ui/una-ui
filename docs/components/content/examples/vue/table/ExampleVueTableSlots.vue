@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColumnDef, Table } from '@tanstack/vue-table'
+import type { ColumnDef, RowSelectionState, Table } from '@tanstack/vue-table'
 import type { Person } from './makeData'
 import { NAvatar } from '#components'
 
@@ -66,7 +66,7 @@ const columns: ColumnDef<Person>[] = [
 ]
 
 const search = ref('')
-const select = ref()
+const select = ref<RowSelectionState>()
 
 const table = useTemplateRef<Table<Person>>('table')
 </script>
@@ -110,7 +110,7 @@ const table = useTemplateRef<Table<Person>>('table')
       :columns
       :data
       :global-filter="search"
-      enable-column-filters enable-row-selection enable-sorting
+      enable-row-selection enable-column-filters enable-sorting
       row-id="username"
     >
       <!-- filters -->

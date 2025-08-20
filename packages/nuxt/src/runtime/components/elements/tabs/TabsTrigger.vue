@@ -1,32 +1,32 @@
 <script setup lang="ts">
 import type { NTabsTriggerProps } from '../../../types/tabs'
+import { reactiveOmit } from '@vueuse/core'
 import { TabsTrigger } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../Button.vue'
 
-const props = defineProps<NTabsTriggerProps>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
+const props = withDefaults(defineProps<NTabsTriggerProps>(), {
+  tabsActive: 'soft-black',
+  size: 'sm',
 })
+
+const delegatedProps = reactiveOmit(props, ['class', 'size'])
 </script>
 
 <template>
   <TabsTrigger
     v-bind="delegatedProps"
+    :size
+    data-slot="tabs-trigger"
     :class="cn(
       'tabs-trigger',
+      props.una?.tabsTrigger,
       props.class,
     )"
-    :una="{
-      ...props.una,
-      btnDefaultVariant: props.tabs ? `tabs-${props.tabs}` : 'tabs-default-variant',
-    }"
     :as="Button"
   >
-    <slot />
+    <template v-for="(_, name) in $slots" #[name]="slotData">
+      <slot :name="name" v-bind="slotData" />
+    </template>
   </TabsTrigger>
 </template>

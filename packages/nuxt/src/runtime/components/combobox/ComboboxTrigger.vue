@@ -56,6 +56,7 @@ const status = computed(() => props.status ?? 'default')
           props.class,
         )"
         tabindex="0"
+        :size
         :una="{
           ...props.una,
           btn: props.una?.comboboxTrigger,

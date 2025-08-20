@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import type { ToggleEmits } from 'reka-ui'
 import type { NToggleProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { Toggle, useForwardPropsEmits } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../utils'
+
 import Button from './Button.vue'
 
 const props = withDefaults(defineProps<NToggleProps>(), {
@@ -14,12 +15,7 @@ const props = withDefaults(defineProps<NToggleProps>(), {
 })
 
 const emits = defineEmits<ToggleEmits>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>

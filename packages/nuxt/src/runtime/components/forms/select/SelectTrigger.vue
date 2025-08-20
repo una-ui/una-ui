@@ -51,6 +51,7 @@ const status = computed(() => props.status ?? 'default')
       :data-status="status"
       :class="cn(
         'select-trigger justify-between font-normal',
+        props.una?.selectTrigger,
         props.class,
       )"
       :una="{

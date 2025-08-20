@@ -1,7 +1,20 @@
 import type { SwitchRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
-export interface NSwitchProps extends SwitchRootProps {
+interface BaseExtensions {
+  class?: HTMLAttributes['class']
+  /**
+   * Allows you to change the size of the input.
+   *
+   * @default md
+   *
+   * @example
+   * size="sm" | size="2cm" | size="2rem" | size="2px"
+   */
+  size?: HTMLAttributes['class']
+}
+
+export interface NSwitchProps extends SwitchRootProps, BaseExtensions {
   /**
    * Add a loading indicator to the switch.
    * This will also disable the switch.
@@ -33,15 +46,6 @@ export interface NSwitchProps extends SwitchRootProps {
    */
   uncheckedIcon?: HTMLAttributes['class']
   /**
-   * Allows you to change the size of the input.
-   *
-   * @default md
-   *
-   * @example
-   * size="sm" | size="2cm" | size="2rem" | size="2px"
-   */
-  size?: HTMLAttributes['class']
-  /**
    * Allows you to add `UnaUI` switch preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
    *
@@ -64,8 +68,8 @@ export interface NSwitchProps extends SwitchRootProps {
    */
   una?: {
     switch?: HTMLAttributes['class']
-    switchChecked?: HTMLAttributes['class']
-    switchUnchecked?: HTMLAttributes['class']
+    switchCheckedBase?: HTMLAttributes['class']
+    switchUncheckedBase?: HTMLAttributes['class']
 
     switchThumb?: HTMLAttributes['class']
     switchThumbChecked?: HTMLAttributes['class']

@@ -1,18 +1,14 @@
 <script setup lang="ts">
 import type { NComboboxItemIndicatorProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { ComboboxItemIndicator, useForwardProps } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NComboboxItemIndicatorProps>(), {
   icon: 'combobox-item-indicator-icon-name',
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwarded = useForwardProps(delegatedProps)
 </script>

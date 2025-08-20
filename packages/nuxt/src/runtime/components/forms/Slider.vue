@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { SliderRootEmits } from 'reka-ui'
 import type { NSliderProps } from '../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
@@ -9,17 +10,14 @@ const props = withDefaults(defineProps<NSliderProps>(), {
   slider: 'primary',
 })
 const emits = defineEmits<SliderRootEmits>()
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
-const forwarded = useForwardPropsEmits(delegatedProps, emits)
+const rootProps = reactiveOmit(props, ['class', 'una', 'slider', 'una'])
+const forwarded = useForwardPropsEmits(rootProps, emits)
 const isVertical = computed(() => props.orientation === 'vertical')
 </script>
 
 <template>
   <SliderRoot
+    v-slot="{ modelValue }"
     :class="cn(
       'slider-root',
       isVertical && 'slider-root-vertical',

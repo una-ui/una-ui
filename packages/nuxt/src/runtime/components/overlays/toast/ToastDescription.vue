@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import type { NToastDescriptionProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import { ToastDescription } from 'reka-ui'
-import { computed } from 'vue'
+
 import { cn } from '../../../utils'
 
 const props = defineProps<NToastDescriptionProps>()
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 </script>
 
 <template>

@@ -4,7 +4,7 @@ import type { NSelectProps, SelectGroup as SelectGroupType } from '../../../type
 import { computed } from 'vue'
 </script>
 
-<script setup lang="ts" generic="T extends AcceptableValue">
+<script setup lang="ts" generic="T extends AcceptableValue, I extends Array<T | SelectGroupType<T>>, M extends boolean = false">
 import { SelectRoot, useForwardPropsEmits } from 'reka-ui'
 import { cn, isEqualObject } from '../../../utils'
 import SelectContent from './SelectContent.vue'
@@ -15,7 +15,7 @@ import SelectSeparator from './SelectSeparator.vue'
 import SelectTrigger from './SelectTrigger.vue'
 import SelectValue from './SelectValue.vue'
 
-const props = withDefaults(defineProps<NSelectProps<T>>(), {
+const props = withDefaults(defineProps<NSelectProps<T, I, M>>(), {
   size: 'sm',
 })
 
@@ -69,7 +69,6 @@ function isItemSelected(item: unknown, modelValue: unknown) {
 
 <template>
   <SelectRoot
-    v-slot="{ modelValue, open }"
     :class="cn(
       props.una?.select,
       props.class,
@@ -193,7 +192,6 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               </slot>
             </SelectGroup>
           </template>
-          <slot />
         </slot>
       </SelectContent>
     </slot>

@@ -6,18 +6,20 @@ const frameworks = [
   { value: 'remix', label: 'Remix' },
   { value: 'astro', label: 'Astro' },
 ]
-const selectedFramework = ref()
+const selectedFramework = ref<typeof frameworks[number][]>()
 </script>
 
 <template>
-  <NCombobox
-    v-model="selectedFramework"
-    multiple
-    :items="frameworks"
-    :_combobox-input="{
-      placeholder: 'Select framework...',
-      autocomplete: 'off',
-    }"
-    by="value"
-  />
+  <div class="flex">
+    <NCombobox
+      v-model="selectedFramework"
+      multiple
+      :items="frameworks"
+      :_combobox-input="{
+        placeholder: 'Select framework...',
+        autocomplete: 'off',
+      }"
+      by="value"
+    />
+  </div>
 </template>

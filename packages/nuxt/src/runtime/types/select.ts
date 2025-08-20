@@ -17,7 +17,7 @@ type ItemTextExtensions = SelectItemTextProps & BaseExtensions
 type GroupExtensions = SelectGroupProps & BaseExtensions
 type LabelExtensions = SelectLabelProps & BaseExtensions
 type SeparatorExtensions = SelectSeparatorProps & BaseExtensions
-type SelectExtensions = SelectRootProps
+type SelectExtensions<T extends AcceptableValue> = SelectRootProps<T>
   & BaseExtensions
   & Pick<NSelectValueProps, 'placeholder'>
   & Pick<NSelectItemProps, 'selectItem'>
@@ -30,11 +30,15 @@ export interface SelectGroup<T extends AcceptableValue> {
   _selectItem?: Partial<NSelectItemProps>
 }
 
-export interface NSelectProps<T extends AcceptableValue> extends SelectExtensions {
+export interface NSelectProps<
+  T extends AcceptableValue,
+  Items extends Array<T | SelectGroup<T>>,
+  M extends boolean = false,
+> extends SelectExtensions<T> {
   /**
    * The items to display in the select.
    */
-  items: T[] | SelectGroup<T>[]
+  items: Items
   /**
    * The key name to use to display in the select items.
    */
@@ -53,6 +57,13 @@ export interface NSelectProps<T extends AcceptableValue> extends SelectExtension
    * @default false
    */
   groupSeparator?: boolean
+
+  defaultValue?: M extends true ? T[] : T
+
+  modelValue?: M extends true ? T[] : T
+
+  multiple?: M
+
   /**
    * Sub-component configurations
    */

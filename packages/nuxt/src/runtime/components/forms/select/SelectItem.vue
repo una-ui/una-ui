@@ -1,23 +1,19 @@
 <script setup lang="ts">
 import type { NSelectItemProps } from '../../../types'
+import { reactiveOmit } from '@vueuse/core'
 import {
   SelectItem,
   useForwardProps,
 } from 'reka-ui'
-import { computed } from 'vue'
 import { cn } from '../../../utils'
 import SelectItemIndicator from './SelectItemIndicator.vue'
+
 import SelectItemText from './SelectItemText.vue'
 
 const props = withDefaults(defineProps<NSelectItemProps>(), {
   selectItem: 'gray',
 })
-
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, ['class'])
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>

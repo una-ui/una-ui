@@ -12,8 +12,8 @@ import NIcon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NSwitchProps>(), {
   size: 'md',
-  switchChecked: '~',
-  switchUnchecked: '~',
+  switchChecked: 'primary',
+  switchUnchecked: 'gray',
 })
 
 const emit = defineEmits<SwitchRootEmits>()
@@ -29,8 +29,8 @@ const rootPropsEmits = useForwardPropsEmits(reactivePick(props, 'as', 'asChild',
       'peer switch',
       una?.switch,
       modelValue
-        ? una?.switchChecked
-        : una?.switchUnchecked,
+        ? una?.switchCheckedBase
+        : una?.switchUncheckedBase,
     )"
     :disabled="disabled || loading"
     :switch-checked
@@ -39,7 +39,7 @@ const rootPropsEmits = useForwardPropsEmits(reactivePick(props, 'as', 'asChild',
   >
     <SwitchThumb
       :class="cn(
-        'switch-thumb',
+        'peer switch-thumb',
         una?.switchThumb,
         modelValue
           ? 'switch-thumb-checked'

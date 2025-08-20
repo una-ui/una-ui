@@ -45,12 +45,15 @@ const data = {
         {
           title: 'Accordion',
           url: '/components/accordion',
-          badge: 'deprecated' as const,
+        },
+        {
+          title: 'Alert Dialog',
+          url: '/components/alert-dialog',
+          badge: 'new' as const,
         },
         {
           title: 'Aspect Ratio',
           url: '/components/aspect-ratio',
-          badge: 'new' as const,
         },
         {
           title: 'Avatar',
@@ -89,12 +92,21 @@ const data = {
           url: '/components/dialog',
         },
         {
+          title: 'Drawer',
+          url: '/components/drawer',
+          badge: 'new' as const,
+        },
+        {
           title: 'Dropdown Menu',
           url: '/components/dropdown-menu',
         },
         {
           title: 'Forms',
           url: '/components/forms',
+        },
+        {
+          title: 'Hover Card',
+          url: '/components/hover-card',
         },
         {
           title: 'Input',
@@ -105,8 +117,19 @@ const data = {
           url: '/components/navigation-menu',
         },
         {
+          title: 'Number Field',
+          url: '/components/number-field',
+          badge: 'new' as const,
+        },
+        {
           title: 'Pagination',
           url: '/components/pagination',
+        },
+        {
+          title: 'PIN Input',
+          url: '/components/pin-input',
+          badge: 'new' as const,
+
         },
         {
           title: 'Popover',
@@ -119,6 +142,10 @@ const data = {
         {
           title: 'Radio Group',
           url: '/components/radio-group',
+        },
+        {
+          title: 'Resizable',
+          url: '/components/resizable',
         },
         {
           title: 'Scroll Area',
@@ -135,7 +162,6 @@ const data = {
         {
           title: 'Sheet',
           url: '/components/sheet',
-          badge: 'new' as const,
         },
         {
           title: 'Sidebar',
@@ -149,6 +175,10 @@ const data = {
         {
           title: 'Slider',
           url: '/components/slider',
+        },
+        {
+          title: 'Stepper',
+          url: '/components/stepper',
         },
         {
           title: 'Switch',
@@ -177,6 +207,10 @@ const data = {
         {
           title: 'Toggle',
           url: '/components/toggle',
+        },
+        {
+          title: 'Toggle Group',
+          url: '/components/toggle-group',
         },
         {
           title: 'Tooltip',

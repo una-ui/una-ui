@@ -15,6 +15,11 @@ export default defineComponent({
       type: String as PropType<NLinkProps['label']>,
       default: undefined,
     },
+    /** Force the link to be active independent of the current route. */
+    active: {
+      type: Boolean as PropType<NLinkProps['active']>,
+      default: undefined,
+    },
     exact: {
       type: Boolean as PropType<NLinkProps['exact']>,
       default: false,
@@ -27,7 +32,10 @@ export default defineComponent({
       type: Boolean as PropType<NLinkProps['exactHash']>,
       default: false,
     },
-
+    disabled: {
+      type: Boolean as PropType<NLinkProps['disabled']>,
+      default: false,
+    },
     // styling
     inactiveClass: {
       type: String as PropType<NLinkProps['inactiveClass']>,
@@ -48,6 +56,14 @@ export default defineComponent({
     const route = useRoute()
 
     function resolveLinkClass(route: any, $route: any, { isActive, isExactActive }: { isActive: boolean, isExactActive: boolean }): string | null {
+      if (props.active === true) {
+        return props.activeClass
+      }
+
+      if (props.active === false) {
+        return props.inactiveClass
+      }
+
       if (props.exactQuery && !isEqual(route.query, $route.query))
         return props.inactiveClass
 
@@ -141,6 +157,7 @@ export default defineComponent({
       resolveNavLinkInactive,
       isLinkActive,
       label: props.label,
+      disabled: props.disabled,
     }
   },
 })
@@ -154,10 +171,14 @@ export default defineComponent({
   >
     <a
       v-bind="$attrs"
-      :href
+      :href="disabled ? undefined : href"
       :rel="rel ?? undefined"
+      :aria-disabled="disabled ? 'true' : undefined"
       :target="target ?? undefined"
-      :class="resolveLinkClass(route, $route, { isActive, isExactActive })"
+      :class="[
+        { '_link-disabled': disabled },
+        resolveLinkClass(route, $route, { isActive, isExactActive }),
+      ]"
       :nav-link-active="resolveNavLinkActive(route, $route, { isActive, isExactActive })"
       :nav-link-inactive="resolveNavLinkInactive(route, $route, { isActive, isExactActive })"
       @click="(e) => !isExternal && navigate(e)"

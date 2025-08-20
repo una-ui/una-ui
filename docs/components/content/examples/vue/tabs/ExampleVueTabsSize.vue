@@ -23,6 +23,8 @@ const items = ref([
 
 <template>
   <div class="space-y-8">
+    <NTabs :items="items" default-value="tab1" size="xs" class="mb-4" />
+    <NTabs :items="items" default-value="tab1" size="sm" class="mb-4" />
     <NTabs :items="items" default-value="tab1" size="md" class="mb-4" />
     <NTabs
       :items="items" default-value="tab2" size="xl" :_tabs-trigger="{

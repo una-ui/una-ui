@@ -2,19 +2,18 @@ type TabsPrefix = 'tabs'
 
 export const staticTabs: Record<`${TabsPrefix}-${string}` | TabsPrefix, string> = {
   // configurations
-  'tabs': 'transition-colors duration-200 ease-out',
-  'tabs-default-variant': 'tabs-soft-black',
+  'tabs': 'flex flex-col gap-2',
   'tabs-disabled': 'n-disabled',
 
   // components
-  'tabs-root': 'flex flex-col w-full',
-  'tabs-trigger': 'w-full focus-visible:z-10',
-  'tabs-list': 'flex bg-muted items-center justify-center rounded-md p-1 w-full',
-  'tabs-content': 'mt-4 text-base',
+  'tabs-trigger': 'py-0.25em h-[calc(100%-1px)]',
+  'tabs-list': 'bg-muted text-muted inline-flex h-2.5714285714285716em w-fit items-center justify-center rounded-lg p-[3px]',
+  'tabs-content': 'flex-1 outline-none',
 }
 
 export const dynamicTabs = [
-  [/^tabs-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[state=active]:btn-${v}-${c}`],
+  [/^tabs-active-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[state=active]:btn-${v}-${c}`],
+  [/^tabs-inactive-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[state=inactive]:btn-${v}-${c}`],
 ]
 
 export const tabs = [

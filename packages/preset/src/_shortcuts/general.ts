@@ -48,6 +48,9 @@ export const staticGeneral = {
   'bg-popover': 'bg-$c-popover',
   'bg-popover-foreground': 'bg-$c-popover-foreground',
 
+  'fill-base': 'fill-$c-background',
+  'stroke-base': 'stroke-$c-border',
+
   // transition
   'transition-base': 'transition-all duration-100 ease-out',
 
