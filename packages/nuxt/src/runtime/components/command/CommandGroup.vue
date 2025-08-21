@@ -3,7 +3,7 @@ import type { NCommandGroupProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { ListboxGroup, ListboxGroupLabel, useId } from 'reka-ui'
 import { computed, onMounted, onUnmounted } from 'vue'
-import { provideCommandGroupContext, useCommand } from '.'
+import { provideCommandGroupContext, useCommand } from '../../composables/useCommand'
 import { cn } from '../../utils'
 
 const props = defineProps<NCommandGroupProps>()

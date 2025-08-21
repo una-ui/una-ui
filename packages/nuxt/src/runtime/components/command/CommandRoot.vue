@@ -4,7 +4,7 @@ import type { NCommandProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { ListboxRoot, useFilter, useForwardPropsEmits } from 'reka-ui'
 import { reactive, ref, watch } from 'vue'
-import { provideCommandContext } from '.'
+import { provideCommandContext } from '../../composables/useCommand'
 import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NCommandProps>(), {

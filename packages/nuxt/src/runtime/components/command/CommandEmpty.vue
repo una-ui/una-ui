@@ -3,7 +3,7 @@ import type { NCommandEmptyProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { Primitive } from 'reka-ui'
 import { computed } from 'vue'
-import { useCommand } from '.'
+import { useCommand } from '../../composables/useCommand'
 import { cn } from '../../utils'
 
 const props = defineProps<NCommandEmptyProps>()

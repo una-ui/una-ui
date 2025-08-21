@@ -4,7 +4,7 @@ import type { NCommandItemProps } from '../../types'
 import { reactiveOmit, useCurrentElement } from '@vueuse/core'
 import { ListboxItem, useForwardPropsEmits, useId } from 'reka-ui'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
-import { useCommand, useCommandGroup } from '.'
+import { useCommand, useCommandGroup } from '../../composables/useCommand'
 import { cn } from '../../utils'
 
 const props = defineProps<NCommandItemProps>()

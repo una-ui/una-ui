@@ -2,7 +2,7 @@
 import type { NCommandInputProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { ListboxFilter, useForwardProps } from 'reka-ui'
-import { useCommand } from '.'
+import { useCommand } from '../../composables/useCommand'
 import { cn } from '../../utils'
 import Icon from '../elements/Icon.vue'
 
