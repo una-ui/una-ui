@@ -2,15 +2,17 @@
 import type { NSidebarMenuSubButtonProps } from '../../types'
 import { Primitive } from 'reka-ui'
 import { cn } from '../../utils'
+import NLink from '../elements/Link.vue'
 
 const props = withDefaults(defineProps<NSidebarMenuSubButtonProps>(), {
-  as: 'a',
+  as: NLink,
   size: 'md',
 })
 </script>
 
 <template>
   <Primitive
+    data-slot="sidebar-menu-sub-button"
     data-sidebar="menu-sub-button"
     :as="as"
     :as-child="asChild"

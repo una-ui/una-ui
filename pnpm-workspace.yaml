@@ -27,13 +27,14 @@ catalog:
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
   '@types/node': ^22.17.2
-  '@una-ui/content': ^48.2.0
+  '@una-ui/content': ^49.0.0-beta.3
   '@unocss/core': ^66.4.2
   '@unocss/eslint-config': ^66.4.2
   '@unocss/nuxt': ^66.4.2
   '@unocss/preset-attributify': ^66.4.2
   '@unocss/preset-icons': ^66.4.2
   '@unocss/preset-mini': ^66.4.2
+  '@unocss/preset-wind4': ^66.4.2
   '@vee-validate/nuxt': ^4.15.1
   '@vee-validate/zod': ^4.15.1
   '@vercel/analytics': ^1.5.0

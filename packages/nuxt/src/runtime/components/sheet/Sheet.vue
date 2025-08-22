@@ -15,6 +15,7 @@ import SheetTrigger from './SheetTrigger.vue'
 const props = withDefaults(defineProps<NSheetProps>(), {
   showClose: true,
   overlay: true,
+  dismissible: true,
 })
 const emits = defineEmits<DialogRootEmits>()
 
@@ -29,8 +30,12 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
 </script>
 
 <template>
-  <DialogRoot v-slot="{ open }" v-bind="forwarded">
-    <slot name="root">
+  <DialogRoot
+    v-slot="{ open }"
+    data-slot="sheet"
+    v-bind="forwarded"
+  >
+    <slot>
       <SheetTrigger
         v-if="$slots.trigger"
         v-bind="_sheetTrigger"
@@ -43,7 +48,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
         :_sheet-overlay
         :_sheet-portal
         :sheet
-        :prevent-close
+        :dismissible
         :show-close
         :overlay
         v-bind="_sheetContent"
@@ -88,7 +93,9 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
             </slot>
           </SheetHeader>
 
-          <slot />
+          <slot name="body">
+            <slot />
+          </slot>
 
           <SheetFooter
             v-if="$slots.footer"
