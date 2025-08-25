@@ -6,7 +6,7 @@ const props = defineProps<NCommandShortcutProps>()
 </script>
 
 <template>
-  <span :class="cn('ml-auto text-xs tracking-widest text-muted', props.class)">
+  <span :class="cn('command-shortcut', props.class)">
     <slot />
   </span>
 </template>

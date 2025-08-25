@@ -10,7 +10,9 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NCommandInputProps>()
+const props = withDefaults(defineProps<NCommandInputProps>(), {
+  icon: 'i-lucide-search',
+})
 
 const delegatedProps = reactiveOmit(props, 'class')
 
@@ -20,13 +22,13 @@ const { filterState } = useCommand()
 </script>
 
 <template>
-  <div class="flex items-center border-b px-3" cmdk-input-wrapper>
-    <Icon class="mr-2 h-4 w-4 shrink-0 opacity-50" name="i-lucide-search" />
+  <div class="command-input-wrapper" cmdk-input-wrapper>
+    <Icon class="command-input-icon" :name="props.icon" />
     <ListboxFilter
       v-bind="{ ...forwardedProps, ...$attrs }"
       v-model="filterState.search"
       auto-focus
-      :class="cn('flex h-15 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50', props.class)"
+      :class="cn('command-input', props.class)"
     />
   </div>
 </template>

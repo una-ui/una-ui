@@ -65,7 +65,7 @@ onUnmounted(() => {
     v-bind="forwarded"
     :id="id"
     ref="itemRef"
-    :class="cn('relative flex cursor-default gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[highlighted]:bg-primary data-[highlighted]:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0', props.class)"
+    :class="cn('command-item', ' data-[highlighted]:bg-primary data-[highlighted]:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0', props.class)"
     @select="() => {
       filterState.search = ''
     }"
