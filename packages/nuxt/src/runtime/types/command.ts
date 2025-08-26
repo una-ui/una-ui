@@ -42,8 +42,6 @@ export interface NCommandGroupProps extends ListboxGroupProps, BaseExtensions {
 }
 
 export interface NCommandInputProps extends ListboxFilterProps, BaseExtensions {
-  /** Icon name for the command input */
-  icon?: string
   /** Additional properties for the una component */
   una?: Pick<NCommandUnaProps, 'commandInput'>
 }

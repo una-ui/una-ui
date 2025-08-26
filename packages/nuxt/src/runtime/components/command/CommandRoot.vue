@@ -6,6 +6,11 @@ import { ListboxRoot, useFilter, useForwardPropsEmits } from 'reka-ui'
 import { reactive, ref, watch } from 'vue'
 import { provideCommandContext } from '../../composables/useCommand'
 import { cn } from '../../utils'
+import CommandEmpty from './CommandEmpty.vue'
+import CommandGroup from './CommandGroup.vue'
+import CommandInput from './CommandInput.vue'
+import CommandItem from './CommandItem.vue'
+import CommandList from './CommandList.vue'
 
 const props = withDefaults(defineProps<NCommandProps>(), {
   modelValue: '',
@@ -81,6 +86,39 @@ provideCommandContext({
     v-bind="forwarded"
     :class="cn('command-root', props.class)"
   >
-    <slot />
+    <slot>
+      <slot name="input">
+        <CommandInput
+          v-bind="_commandInput"
+          :una
+        />
+      </slot>
+      <slot name="list">
+        <CommandList
+          v-bind="_commandList"
+          :una
+        >
+          <slot name="empty">
+            <CommandEmpty
+              v-bind="_commandEmpty"
+              :una
+            />
+          </slot>
+          <slot name="group">
+            <CommandGroup
+              v-bind="_commandGroup"
+              :una
+            >
+              <CommandItem
+                value="value"
+                v-bind="_commandItem"
+                :una
+              />
+            </CommandGroup>
+            <slot />
+          </slot>
+        </CommandList>
+      </slot>
+    </slot>
   </ListboxRoot>
 </template>
