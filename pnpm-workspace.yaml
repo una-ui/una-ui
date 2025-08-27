@@ -16,7 +16,7 @@ catalog:
   '@iconify-json/tabler': ^1.2.22
   '@iconify/json': ^2.2.378
   '@iconify/utils': ^2.3.0
-  '@nuxt/devtools': ^2.6.2
+  '@nuxt/devtools': ^2.6.3
   '@nuxt/kit': ^3.18.1
   '@nuxt/module-builder': ^1.0.2
   '@nuxt/schema': ^3.18.1
@@ -26,7 +26,7 @@ catalog:
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.17.2
+  '@types/node': ^22.18.0
   '@una-ui/content': ^48.2.0
   '@unocss/core': ^66.4.2
   '@unocss/eslint-config': ^66.4.2
@@ -37,7 +37,7 @@ catalog:
   '@vee-validate/nuxt': ^4.15.1
   '@vee-validate/zod': ^4.15.1
   '@vercel/analytics': ^1.5.0
-  '@vue/compiler-sfc': ^3.5.18
+  '@vue/compiler-sfc': ^3.5.20
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
@@ -46,7 +46,7 @@ catalog:
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.33.0
+  eslint: ^9.34.0
   eslint-plugin-format: ^1.0.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
@@ -57,9 +57,9 @@ catalog:
   nuxt: ^3.18.1
   ohash: ^1.1.6
   pathe: ^2.0.3
-  reka-ui: ^2.4.1
+  reka-ui: ^2.5.0
   rimraf: ^6.0.1
-  sass: ^1.90.0
+  sass: ^1.91.0
   simple-git: ^3.28.0
   simple-git-hooks: ^2.13.1
   tailwind-merge: ^3.3.1
