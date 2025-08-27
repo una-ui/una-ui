@@ -5,13 +5,16 @@ packages:
 catalog:
   '@antfu/eslint-config': ^4.19.0
   '@antfu/ni': ^24.4.0
+  '@babel/parser': ^7.28.3
+  '@babel/traverse': ^7.28.3
+  '@babel/types': ^7.28.2
   '@faker-js/faker': ^9.9.0
   '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.2
-  '@iconify-json/lucide': ^1.2.62
+  '@iconify-json/lucide': ^1.2.64
   '@iconify-json/radix-icons': ^1.2.4
   '@iconify-json/tabler': ^1.2.22
-  '@iconify/json': ^2.2.375
+  '@iconify/json': ^2.2.378
   '@iconify/utils': ^2.3.0
   '@nuxt/devtools': ^2.6.2
   '@nuxt/kit': ^3.18.1
@@ -19,6 +22,7 @@ catalog:
   '@nuxt/schema': ^3.18.1
   '@nuxtjs/color-mode': ^3.5.2
   '@tanstack/vue-table': ^8.21.3
+  '@types/babel__traverse': ^7.28.0
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
@@ -33,6 +37,7 @@ catalog:
   '@vee-validate/nuxt': ^4.15.1
   '@vee-validate/zod': ^4.15.1
   '@vercel/analytics': ^1.5.0
+  '@vue/compiler-sfc': ^3.5.18
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
@@ -48,6 +53,7 @@ catalog:
   fs-extra: ^11.3.1
   ignore-dependency-scripts: ^1.0.1
   lint-staged: ^15.5.2
+  magicast: ^0.3.5
   nuxt: ^3.18.1
   ohash: ^1.1.6
   pathe: ^2.0.3
@@ -58,6 +64,7 @@ catalog:
   simple-git-hooks: ^2.13.1
   tailwind-merge: ^3.3.1
   typescript: ^5.8.3
+  ufo: ^1.6.1
   unbuild: ^3.6.1
   unocss: ^66.4.2
   unocss-preset-animations: ^1.2.1

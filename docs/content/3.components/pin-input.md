@@ -1,8 +1,5 @@
 ---
 description: 'Pin Input is a component for entering short sequences of numbers or characters, commonly used for verification codes or PINs.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
