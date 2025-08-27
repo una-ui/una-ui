@@ -6,7 +6,9 @@ import { computed } from 'vue'
 import { useCommand } from '../../composables/useCommand'
 import { cn } from '../../utils'
 
-const props = defineProps<NCommandEmptyProps>()
+const props = withDefaults(defineProps<NCommandEmptyProps>(), {
+  emptyText: 'No results found.',
+})
 
 const delegatedProps = reactiveOmit(props, 'class')
 
@@ -17,6 +19,8 @@ const isRender = computed(() => !!filterState.search && filterState.filtered.cou
 
 <template>
   <Primitive v-if="isRender" v-bind="delegatedProps" :class="cn('command-empty', props.class)">
-    <slot />
+    <slot>
+      {{ emptyText }}
+    </slot>
   </Primitive>
 </template>

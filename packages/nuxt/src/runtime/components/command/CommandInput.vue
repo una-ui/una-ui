@@ -12,6 +12,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<NCommandInputProps>(), {
   icon: 'i-lucide-search',
+  placeholder: 'Type a command or search...',
 })
 
 const delegatedProps = reactiveOmit(props, 'class')
@@ -23,7 +24,7 @@ const { filterState } = useCommand()
 
 <template>
   <div class="command-input-wrapper" cmdk-input-wrapper>
-    <Icon class="command-input-icon" :name="props.icon" />
+    <Icon class="command-icon" :name="props.icon" />
     <ListboxFilter
       v-bind="{ ...forwardedProps, ...$attrs }"
       v-model="filterState.search"

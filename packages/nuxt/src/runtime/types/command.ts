@@ -6,7 +6,23 @@ interface BaseExtensions {
   class?: HTMLAttributes['class']
 }
 
+interface CollectionProps {
+  heading?: string
+  items?: ItemProps[]
+}
+
+interface ItemProps {
+  value: string
+  label: string
+  icon?: string
+  shortcut?: string
+}
+
 export interface NCommandProps extends ListboxRootProps, BaseExtensions {
+  /** Items for the command */
+  collections?: CollectionProps[]
+  /** Whether the command is inside a dialog */
+  isDialog?: boolean
   /** Props for CommandEmpty */
   _commandEmpty?: Partial<NCommandEmptyProps>
   /** Props for CommandGroup */
@@ -30,6 +46,8 @@ export interface NCommandProps extends ListboxRootProps, BaseExtensions {
 }
 
 export interface NCommandEmptyProps extends PrimitiveProps, BaseExtensions {
+  /** Text to display when no results are found */
+  emptyText?: string
   /** Additional properties for the una component */
   una?: Pick<NCommandUnaProps, 'commandEmpty'>
 }
@@ -42,6 +60,8 @@ export interface NCommandGroupProps extends ListboxGroupProps, BaseExtensions {
 }
 
 export interface NCommandInputProps extends ListboxFilterProps, BaseExtensions {
+  /** Icon to display in the command input */
+  icon?: string
   /** Additional properties for the una component */
   una?: Pick<NCommandUnaProps, 'commandInput'>
 }

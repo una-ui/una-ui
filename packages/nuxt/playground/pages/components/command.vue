@@ -21,6 +21,25 @@ watch([Meta_J, Ctrl_J], (v) => {
 function handleOpenChange() {
   open.value = !open.value
 }
+
+const items = [
+  {
+    value: 'Calendar',
+    label: 'Calendar',
+    icon: 'i-ph-calendar',
+  },
+  {
+    value: 'Search Emoji',
+    label: 'Search Emoji',
+    icon: 'i-lucide-smile',
+    shortcut: 'P',
+  },
+  {
+    value: 'Calculator',
+    label: 'Calculator',
+    icon: 'i-ph-calculator',
+  },
+]
 </script>
 
 <template>
@@ -34,7 +53,7 @@ function handleOpenChange() {
       </kbd>
     </p>
     <NCommandDialog v-model:open="open">
-      <NCommandInput placeholder="Type a command or search..." />
+      <NCommandInput placeholder="" />
       <NCommandList>
         <NCommandEmpty>No results found.</NCommandEmpty>
         <NCommandGroup heading="Suggestions">
@@ -103,4 +122,6 @@ function handleOpenChange() {
       </NCommandGroup>
     </NCommandList>
   </NCommandRoot>
+
+  <NCommandRoot :items />
 </template>

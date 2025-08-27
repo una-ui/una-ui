@@ -14,7 +14,7 @@ export const staticCommand: Record<`${KbdPrefix}-${string}` | KbdPrefix, string>
   'command-item': 'relative flex cursor-default gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none',
   'command-input': 'flex h-15 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted text-base disabled:cursor-not-allowed disabled:opacity-50',
   'command-input-wrapper': 'flex items-center border-b px-3',
-  'command-input-icon': 'mr-2 h-4 w-4 shrink-0 opacity-50',
+  'command-icon': 'mr-2 h-4 w-4 shrink-0 opacity-50',
   'command-shortcut': 'ml-auto text-xs tracking-widest text-muted',
   'command-separator': '-mx-1 h-px bg-border',
 
