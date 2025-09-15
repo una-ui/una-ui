@@ -55,11 +55,7 @@
     "@unocss/nuxt": "catalog:",
     "@unocss/preset-attributify": "catalog:",
     "@unocss/preset-icons": "catalog:",
-    "@vee-validate/nuxt": "catalog:",
-    "@vee-validate/zod": "catalog:",
     "@vueuse/core": "catalog:",
-    "@vueuse/integrations": "catalog:",
-    "@vueuse/nuxt": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "ohash": "catalog:",
@@ -67,7 +63,8 @@
     "tailwind-merge": "catalog:",
     "unocss": "catalog:",
     "unocss-preset-animations": "catalog:",
-    "vaul-vue": "catalog:"
+    "vaul-vue": "catalog:",
+    "vee-validate": "catalog:"
   },
   "devDependencies": {
     "@iconify-json/lucide": "catalog:",
@@ -75,6 +72,9 @@
     "@iconify-json/tabler": "catalog:",
     "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
+    "@vee-validate/nuxt": "catalog:",
+    "@vee-validate/zod": "catalog:",
+    "@vueuse/nuxt": "catalog:",
     "nuxt": "catalog:",
     "zod": "catalog:"
   },

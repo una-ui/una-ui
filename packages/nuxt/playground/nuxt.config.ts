@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
   modules: [
+    'reka-ui/nuxt',
+    '@vueuse/nuxt',
+    '@vee-validate/nuxt',
     '../src/module',
   ],
 

@@ -17,9 +17,9 @@ catalog:
   '@iconify/json': ^2.2.382
   '@iconify/utils': ^2.3.0
   '@nuxt/devtools': ^2.6.3
-  '@nuxt/kit': ^3.18.1
+  '@nuxt/kit': ^3.19.2
   '@nuxt/module-builder': ^1.0.2
-  '@nuxt/schema': ^3.18.1
+  '@nuxt/schema': ^3.19.2
   '@nuxtjs/color-mode': ^3.5.2
   '@tanstack/vue-table': ^8.21.3
   '@types/babel__traverse': ^7.28.0
@@ -54,7 +54,7 @@ catalog:
   ignore-dependency-scripts: ^1.0.1
   lint-staged: ^15.5.2
   magicast: ^0.3.5
-  nuxt: ^3.18.1
+  nuxt: ^3.19.2
   ohash: ^1.1.6
   pathe: ^2.0.3
   reka-ui: ^2.5.0
@@ -69,6 +69,7 @@ catalog:
   unocss: ^66.5.1
   unocss-preset-animations: ^1.2.1
   vaul-vue: ^0.4.1
+  vee-validate: ^4.15.1
   vitest: ^3.2.4
   vue-tsc: ^2.2.12
   zod: ^3.25.76
