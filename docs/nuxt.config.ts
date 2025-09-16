@@ -1,12 +1,7 @@
 import pkg from '../package.json'
-import unaUI from '../packages/nuxt/src/module'
 
 export default defineNuxtConfig({
   extends: '@una-ui/content',
-
-  modules: [
-    unaUI,
-  ],
 
   devtools: {
     enabled: true,

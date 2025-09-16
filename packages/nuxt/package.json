@@ -76,6 +76,8 @@
     "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
     "nuxt": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:",
     "zod": "catalog:"
   },
   "publishConfig": {
