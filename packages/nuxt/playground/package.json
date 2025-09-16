@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@una-ui/nuxt": "workspace:^",
-    "@vee-validate/nuxt": "catalog:",
     "@vee-validate/zod": "catalog:",
     "@vueuse/nuxt": "catalog:",
-    "nuxt": "catalog:"
+    "nuxt": "catalog:",
+    "zod": "catalog:"
   }
 }

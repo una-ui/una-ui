@@ -50,6 +50,7 @@
     "@nuxtjs/color-mode": "catalog:",
     "@tanstack/vue-table": "catalog:",
     "@una-ui/extractor-vue-script": "workspace:^",
+    "@una-ui/nuxt": "workspace:^",
     "@una-ui/preset": "workspace:^",
     "@unocss/core": "catalog:",
     "@unocss/nuxt": "catalog:",
