@@ -5,6 +5,7 @@ packages:
 
 overrides:
   '@una-ui/nuxt': workspace:^
+  unocss-preset-animations: github:mattmess1221/unocss-preset-animations
 catalog:
   '@antfu/eslint-config': ^4.19.0
   '@antfu/ni': ^24.4.0
