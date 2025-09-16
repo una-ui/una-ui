@@ -260,6 +260,9 @@ importers:
       '@una-ui/preset':
         specifier: workspace:^
         version: link:packages/preset
+      '@unocss/core':
+        specifier: 'catalog:'
+        version: 66.5.1
       '@unocss/eslint-config':
         specifier: 'catalog:'
         version: 66.5.1(eslint@9.34.0(jiti@2.5.1))(typescript@5.8.3)

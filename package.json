@@ -65,6 +65,7 @@
     "@types/node": "catalog:",
     "@una-ui/extractor-vue-script": "workspace:^",
     "@una-ui/preset": "workspace:^",
+    "@unocss/core": "catalog:",
     "@unocss/eslint-config": "catalog:",
     "@unocss/preset-mini": "catalog:",
     "@vercel/analytics": "catalog:",
