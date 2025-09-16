@@ -1,6 +1,7 @@
+import type { AccordionItemProps, AccordionRootProps } from 'reka-ui'
 import type { NButtonProps } from './button'
 
-export interface NAccordionProps extends Omit<NButtonProps, 'una'> {
+export interface NAccordionProps extends AccordionRootProps {
   /**
    * Allows you to add `UnaUI` accordion preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.
@@ -9,43 +10,6 @@ export interface NAccordionProps extends Omit<NButtonProps, 'una'> {
    * But you can add your own in the configuration file.
    */
   accordion?: string
-  /**
-   * Update leading icon when accordion button item is open,
-   * Accepts icon name and utility classes
-   */
-  trailingOpen?: string
-  /**
-   * Update leading icon when accordion button item is closed,
-   * Accepts icon name and utility classes
-   */
-  trailingClose?: string
-
-  /**
-   * Allow multiple accordion items to be open at the same time
-   *
-   * @default false
-   */
-  multiple?: boolean
-  /**
-   * Allow accordion item to be open by default
-   *
-   * @default false
-   */
-  defaultOpen?: boolean
-  /**
-   * Removes border and divider from accordion
-   *
-   * @default false
-   */
-  unstyle?: boolean
-  /**
-   * By default, the accordion is unmounted for performance reasons,
-   * This means that the accordion will not be rendered until it is opened,
-   * If you want to render the accordion when the page loads, you can use the `mounted` prop.
-   *
-   * @default false
-   */
-  mounted?: boolean
 
   /**
    * List of items to be rendered,
@@ -54,6 +18,8 @@ export interface NAccordionProps extends Omit<NButtonProps, 'una'> {
    * @see https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/types/button.ts
    */
   items: NAccordionItemProps[]
+
+  _itemDefaults?: NAccordionItemProps
 
   /**
    * `UnaUI` preset configuration
@@ -74,7 +40,7 @@ export interface NAccordionProps extends Omit<NButtonProps, 'una'> {
   } & NButtonProps['una']
 }
 
-export interface NAccordionItemProps extends NButtonProps {
+export interface NAccordionItemProps extends AccordionItemProps, NButtonProps {
   /**
    * Accordion item content
    */
@@ -95,12 +61,6 @@ export interface NAccordionItemProps extends NButtonProps {
    * trailingClose='i-heroicons-information-circle text-info'
    */
   trailingClose?: string
-  /**
-   * Allow accordion item to be open by default
-   *
-   * @default false
-   */
-  defaultOpen?: boolean
   /**
    * Close other accordion items when item is open
    *

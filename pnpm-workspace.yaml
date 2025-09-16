@@ -9,7 +9,6 @@ catalog:
   '@babel/traverse': ^7.28.3
   '@babel/types': ^7.28.2
   '@faker-js/faker': ^9.9.0
-  '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.2
   '@iconify-json/lucide': ^1.2.66
   '@iconify-json/radix-icons': ^1.2.4
