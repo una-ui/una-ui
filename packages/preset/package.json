@@ -52,6 +52,11 @@
   "dependencies": {
     "@unocss/core": "catalog:",
     "@unocss/preset-mini": "catalog:",
+    "@unocss/preset-uno": "catalog:",
+    "@unocss/reset": "catalog:",
     "unocss": "catalog:"
+  },
+  "devDependencies": {
+    "sass": "catalog:"
   }
 }

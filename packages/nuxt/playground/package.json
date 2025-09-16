@@ -1,0 +1,18 @@
+{
+  "name": "@una-ui/nuxt-play",
+  "version": "0.64.0",
+  "private": true,
+  "description": "Playground for @una-ui/nuxt",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@una-ui/nuxt": "workspace:^",
+    "@vee-validate/zod": "catalog:",
+    "@vueuse/nuxt": "catalog:",
+    "nuxt": "catalog:",
+    "zod": "catalog:"
+  }
+}
