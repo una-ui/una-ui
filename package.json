@@ -80,6 +80,7 @@
     "ignore-dependency-scripts": "catalog:",
     "lint-staged": "catalog:",
     "pathe": "catalog:",
+    "pkg-types": "catalog:",
     "rimraf": "catalog:",
     "simple-git": "catalog:",
     "simple-git-hooks": "catalog:",
