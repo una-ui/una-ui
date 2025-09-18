@@ -1,5 +1,9 @@
 export default [
   'accordion',
+  'accordion-content',
+  'accordion-header',
+  'accordion-item',
+  'accordion-trigger',
   'alert',
   'alert-dialog',
   'alert-dialog-action',

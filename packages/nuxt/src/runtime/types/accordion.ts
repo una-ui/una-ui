@@ -1,4 +1,4 @@
-import type { AccordionItemProps, AccordionRootProps } from 'reka-ui'
+import type { AccordionContentProps, AccordionHeaderProps, AccordionItemProps, AccordionRootProps, AccordionTriggerProps } from 'reka-ui'
 import type { NButtonProps } from './button'
 
 export interface NAccordionProps extends AccordionRootProps {
@@ -17,66 +17,52 @@ export interface NAccordionProps extends AccordionRootProps {
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/types/button.ts
    */
-  items: NAccordionItemProps[]
-
-  _itemDefaults?: NAccordionItemProps
+  items?: NAccordionItemProps[]
 
   /**
    * `UnaUI` preset configuration
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/accordion.ts
    */
-  una?: {
-    accordion?: string
-    accordionItem?: string
-    accordionButton?: string
-    accordionPanel?: string
-    accordionLeading?: string
-    accordionTrailing?: string
-    accordionTrailingOpen?: string
-    accordionTrailingClose?: string
-    accordionEnterActive?: string
-    accordionLeaveActive?: string
-  } & NButtonProps['una']
+  una?: NAccordionUnaProps
+
+  _accordionItem?: NAccordionItemProps
+  _accordionHeader?: NAccordionHeaderProps
+  _accordionTrigger?: NButtonProps
+  _accordionContent?: NAccordionContentProps
 }
 
-export interface NAccordionItemProps extends AccordionItemProps, NButtonProps {
+export interface NAccordionContentProps extends AccordionContentProps {
+  una?: Pick<NAccordionUnaProps, 'accordionContent' | 'accordionPanel'>
+}
+
+export interface NAccordionHeaderProps extends AccordionHeaderProps {
+  una?: Pick<NAccordionUnaProps, 'accordionHeader' | 'accordionTrigger'>
+}
+
+export interface NAccordionTriggerProps extends AccordionTriggerProps, NButtonProps {
+  una?: Pick<NAccordionUnaProps, 'accordionTrigger'> & NButtonProps['una']
+}
+
+export interface NAccordionItemProps extends AccordionItemProps {
+  label?: string
   /**
    * Accordion item content
    */
   content?: string
-  /**
-   * Update item leading icon when accordion button item is open,
-   * Accepts icon name and utility classes
-   *
-   * @example
-   * trailingOpen='i-heroicons-information-circle text-info'
-   */
-  trailingOpen?: string
-  /**
-   * Update item leading icon when accordion button item is closed,
-   * Accepts icon name and utility classes
-   *
-   * @example
-   * trailingClose='i-heroicons-information-circle text-info'
-   */
-  trailingClose?: string
-  /**
-   * Close other accordion items when item is open
-   *
-   * @default false
-   */
-  closeOthers?: boolean
-  /**
-   * By default, all the accordion item is unmounted for performance reasons,
-   * You can use the `mounted` prop to render the accordion specific on item.
-   *
-   * @default false
-   */
-  mounted?: boolean
-  /**
-   * Allow dynamic attributes to be added to the accordion item,
-   *
-   */
-  [key: string]: any
+
+  una?: Omit<NAccordionUnaProps & NButtonProps['una'], 'accordion'>
+
+  _accordionHeader?: NAccordionHeaderProps
+  _accordionTrigger?: NAccordionTriggerProps
+  _accordionContent?: NAccordionContentProps
+}
+
+interface NAccordionUnaProps {
+  accordion?: string
+  accordionItem?: string
+  accordionHeader?: string
+  accordionTrigger?: string
+  accordionContent?: string
+  accordionPanel?: string
 }
