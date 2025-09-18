@@ -1,7 +1,8 @@
+import type { ModuleDependencyMeta } from '@nuxt/schema'
 import type { UnaSettings } from './runtime/types'
-import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
+import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
-import extendUnocssOptions from './una.config'
+import { unaConfig } from './una.config'
 
 export type * from './runtime/types'
 
@@ -46,7 +47,7 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'una',
     version,
     compatibility: {
-      nuxt: '>=3.0.0',
+      nuxt: '^3.19.0 || >=4.1.0',
     },
   },
   defaults: {
@@ -54,6 +55,20 @@ export default defineNuxtModule<ModuleOptions>({
     themeable: true,
     global: true,
     dev: false,
+  },
+  moduleDependencies: {
+    '@unocss/nuxt': <ModuleDependencyMeta<import('@unocss/nuxt').UnocssNuxtOptions>>{
+      version: '>=66.5.0',
+      defaults: unaConfig,
+    },
+    '@nuxtjs/color-mode': <ModuleDependencyMeta<import('@nuxtjs/color-mode').ModuleOptions>>{
+      overrides: {
+        classSuffix: '',
+      },
+      defaults: {
+        disableTransition: true,
+      },
+    },
   },
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
@@ -81,25 +96,6 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = resolve('./runtime')
     nuxt.options.build.transpile.push(runtimeDir)
     nuxt.options.build.transpile.push('@headlessui/vue')
-
-    // modules
-    await installModule('@unocss/nuxt', extendUnocssOptions(nuxt.options.unocss))
-    await installModule('@nuxtjs/color-mode', {
-      classSuffix: '',
-      disableTransition: true,
-    })
-    await installModule('@vueuse/nuxt')
-    await installModule('reka-ui/nuxt', {
-      prefix: options.prefix,
-    })
-    await installModule('@vee-validate/nuxt', {
-      componentNames: {
-        Form: `${options.prefix}Form`,
-        // Field: `${options.prefix}FormField`,
-        FieldArray: `${options.prefix}FormFieldArray`,
-        ErrorMessage: `${options.prefix}FormErrorMessage`,
-      },
-    })
 
     // components
     addComponentsDir({

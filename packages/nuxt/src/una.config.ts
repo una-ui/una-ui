@@ -1,4 +1,3 @@
-import type { UnocssNuxtOptions } from '@unocss/nuxt'
 import type { UserConfig } from 'unocss'
 import { createExternalPackageIconLoader } from '@iconify/utils/lib/loader/external-pkg'
 import extratorUna from '@una-ui/extractor-vue-script'
@@ -51,12 +50,3 @@ export function defaultConfig(...configs: UserConfig<object>[]) {
     ...configs,
   ])
 }
-
-function extendUnocssOptions(options: UnocssNuxtOptions = {}): UnocssNuxtOptions {
-  return mergeUnoConfigs([
-    unaConfig,
-    options,
-  ])
-}
-
-export default extendUnocssOptions
