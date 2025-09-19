@@ -24,12 +24,12 @@ export interface NAccordionProps extends AccordionRootProps {
    *
    * @see https://github.com/una-ui/una-ui/blob/main/packages/preset/src/_shortcuts/accordion.ts
    */
-  una?: NAccordionUnaProps
+  una?: NAccordionUnaProps & NButtonProps['una']
 
-  _accordionItem?: NAccordionItemProps
-  _accordionHeader?: NAccordionHeaderProps
-  _accordionTrigger?: NButtonProps
-  _accordionContent?: NAccordionContentProps
+  _accordionItem?: Omit<NAccordionItemProps, 'una'>
+  _accordionHeader?: Omit<NAccordionHeaderProps, 'una'>
+  _accordionTrigger?: Omit<NButtonProps, 'una'>
+  _accordionContent?: Omit<NAccordionContentProps, 'una'>
 }
 
 export interface NAccordionContentProps extends AccordionContentProps {
@@ -53,9 +53,9 @@ export interface NAccordionItemProps extends AccordionItemProps {
 
   una?: Omit<NAccordionUnaProps & NButtonProps['una'], 'accordion'>
 
-  _accordionHeader?: NAccordionHeaderProps
-  _accordionTrigger?: NAccordionTriggerProps
-  _accordionContent?: NAccordionContentProps
+  _accordionHeader?: Omit<NAccordionHeaderProps, 'una'>
+  _accordionTrigger?: Omit<NAccordionTriggerProps, 'una'>
+  _accordionContent?: Omit<NAccordionContentProps, 'una'>
 }
 
 interface NAccordionUnaProps {

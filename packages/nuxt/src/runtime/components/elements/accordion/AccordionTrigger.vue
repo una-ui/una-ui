@@ -4,23 +4,26 @@ import { reactiveOmit } from '@vueuse/core'
 import { AccordionTrigger, useForwardProps } from 'reka-ui'
 import { cn } from '../../../utils'
 
-const props = defineProps<NAccordionTriggerProps>()
-const forwardProps = useForwardProps(reactiveOmit(props, ['una', 'btn']))
+const props = withDefaults(defineProps<NAccordionTriggerProps>(), {
+  btn: '~ text',
+  trailing: 'accordion-trailing-icon',
+})
+const forwardProps = useForwardProps(reactiveOmit(props, ['una']))
 </script>
 
 <template>
   <AccordionTrigger
-    :class="cn('accordion-trigger group/accordion-trigger', una?.accordionTrigger)"
-    :btn="btn || '~ text'"
+    class="group/accordion-trigger accordion-trigger"
     v-bind="forwardProps"
     as-child
     :una="{
       ...una,
       btn: cn('accordion-button', una?.btn),
+      btnLabel: cn('accordion-button-label', una?.btnLabel),
     }"
   >
     <slot>
-      <NButton trailing="accordion-trailing-icon" />
+      <NButton />
     </slot>
   </AccordionTrigger>
 </template>

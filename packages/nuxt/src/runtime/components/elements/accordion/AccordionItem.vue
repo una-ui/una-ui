@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import type { NAccordionItemProps } from '../../../types/accordion'
 import { reactiveOmit } from '@vueuse/core'
-import { AccordionItem, useForwardProps } from 'reka-ui'
+import { AccordionItem, Primitive, useForwardProps } from 'reka-ui'
 import { cn } from '../../../utils'
 import NAccordionContent from './AccordionContent.vue'
 import NAccordionHeader from './AccordionHeader.vue'
 import NAccordionTrigger from './AccordionTrigger.vue'
 
 const props = defineProps<NAccordionItemProps>()
-const forwardProps = useForwardProps(reactiveOmit(props, ['una']))
+const forwardProps = useForwardProps(reactiveOmit(props, ['una', 'label', 'content']))
 </script>
 
 <template>
@@ -17,15 +17,17 @@ const forwardProps = useForwardProps(reactiveOmit(props, ['una']))
     v-bind="forwardProps"
     :class="cn('accordion-item', una?.accordionItem)"
   >
-    <slot>
-      <NAccordionHeader v-bind="_accordionHeader" :una>
-        <slot name="header" :open>
-          <NAccordionTrigger v-bind="_accordionTrigger" :una :label>
-            <slot name="trigger" :open />
-          </NAccordionTrigger>
-        </slot>
+    <slot :open>
+      <NAccordionHeader :una v-bind="_accordionHeader">
+        <Primitive as-child :una :label v-bind="_accordionTrigger">
+          <slot name="header" :open>
+            <NAccordionTrigger>
+              <slot name="trigger" :open />
+            </NAccordionTrigger>
+          </slot>
+        </Primitive>
       </NAccordionHeader>
-      <NAccordionContent v-bind="_accordionContent" :una>
+      <NAccordionContent :una v-bind="_accordionContent">
         <slot name="content" :open>
           {{ content }}
         </slot>
