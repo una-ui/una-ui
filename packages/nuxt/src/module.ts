@@ -80,7 +80,6 @@ export default defineNuxtModule<ModuleOptions>({
     // transpile runtime
     const runtimeDir = resolve('./runtime')
     nuxt.options.build.transpile.push(runtimeDir)
-    nuxt.options.build.transpile.push('@headlessui/vue')
 
     // modules
     await installModule('@unocss/nuxt', extendUnocssOptions(nuxt.options.unocss))

@@ -24,9 +24,6 @@ catalogs:
     '@faker-js/faker':
       specifier: ^9.9.0
       version: 9.9.0
-    '@headlessui/vue':
-      specifier: ^1.7.23
-      version: 1.7.23
     '@iconify-json/lucide':
       specifier: ^1.2.68
       version: 1.2.68
@@ -367,9 +364,6 @@ importers:
 
   packages/nuxt:
     dependencies:
-      '@headlessui/vue':
-        specifier: 'catalog:'
-        version: 1.7.23(vue@3.5.18(typescript@5.8.3))
       '@iconify/utils':
         specifier: 'catalog:'
         version: 2.3.0
@@ -1120,12 +1114,6 @@ packages:
   '@floating-ui/vue@1.1.6':
     resolution: {integrity: sha512-XFlUzGHGv12zbgHNk5FN2mUB7ROul3oG2ENdTpWdE+qMFxyNxWSRmsoyhiEnpmabNm6WnUvR1OvJfUfN4ojC1A==}
 
-  '@headlessui/vue@1.7.23':
-    resolution: {integrity: sha512-JzdCNqurrtuu0YW6QaDtR2PIYCKPUWq28csDyMvN4zmGccmE7lz40Is6hc3LA4HFeCI7sekZ/PQMTNmn9I/4Wg==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      vue: ^3.2.0
-
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -1153,14 +1141,8 @@ packages:
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
 
-  '@iconify-json/lucide@1.2.66':
-    resolution: {integrity: sha512-TrhmfThWY2FHJIckjz7g34gUx3+cmja61DcHNdmu0rVDBQHIjPMYO1O8mMjoDSqIXEllz9wDZxCqT3lFuI+f/A==}
-
   '@iconify-json/lucide@1.2.68':
     resolution: {integrity: sha512-lR5xNJdn2CT0iR7lM25G4SewBO4G2hbr3fTWOc3AE9BspflEcneh02E3l9TBaCU/JOHozTJevWLrxBGypD7Tng==}
-
-  '@iconify-json/radix-icons@1.2.4':
-    resolution: {integrity: sha512-QgqVl1q+FfEVcVhMFR0ySeM3Rzz3I/ZH1eepktEwGLMazeIbh4ucGdnsSQBurOi0WMBtZdYaju7RsHTEfQxY5g==}
 
   '@iconify-json/radix-icons@1.2.5':
     resolution: {integrity: sha512-HkUt+ydCivK/S/aFsgaiZRvs7zDEcO07PKkuEuu2EFBWCuC+Pi1mDdXPX0U3qjRr7JknmnoR4sAg53C+Ig35ow==}
@@ -7783,11 +7765,6 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@headlessui/vue@1.7.23(vue@3.5.18(typescript@5.8.3))':
-    dependencies:
-      '@tanstack/vue-virtual': 3.13.9(vue@3.5.18(typescript@5.8.3))
-      vue: 3.5.18(typescript@5.8.3)
-
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -7807,15 +7784,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.66':
-    dependencies:
-      '@iconify/types': 2.0.0
-
   '@iconify-json/lucide@1.2.68':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@iconify-json/radix-icons@1.2.4':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -9320,8 +9289,8 @@ snapshots:
   '@una-ui/content@48.2.0(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.18.0)(@unhead/vue@2.0.14(vue@3.5.18(typescript@5.6.3)))(@unocss/webpack@66.5.1(webpack@5.99.9(esbuild@0.25.9)))(@vue/compiler-sfc@3.5.20)(db0@0.3.2)(eslint@9.34.0(jiti@2.5.1))(ioredis@5.6.1)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(postcss@8.5.6)(rollup@4.46.2)(sass@1.91.0)(terser@5.40.0)(tsx@4.19.4)(unstorage@1.16.1(@netlify/blobs@9.1.2)(db0@0.3.2)(ioredis@5.6.1))(vite@7.0.6(@types/node@22.18.0)(jiti@2.5.1)(sass@1.91.0)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))(vue-tsc@2.2.12(typescript@5.6.3))(yaml@2.8.1)':
     dependencies:
       '@iconify-json/heroicons': 1.2.2
-      '@iconify-json/lucide': 1.2.66
-      '@iconify-json/radix-icons': 1.2.4
+      '@iconify-json/lucide': 1.2.68
+      '@iconify-json/radix-icons': 1.2.5
       '@iconify-json/simple-icons': 1.2.36
       '@iconify-json/tabler': 1.2.22
       '@iconify-json/vscode-icons': 1.2.21

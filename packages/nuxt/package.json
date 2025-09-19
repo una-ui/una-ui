@@ -44,7 +44,6 @@
     "playground:preview": "nuxi preview playground"
   },
   "dependencies": {
-    "@headlessui/vue": "catalog:",
     "@iconify/utils": "catalog:",
     "@nuxt/kit": "catalog:",
     "@nuxtjs/color-mode": "catalog:",
