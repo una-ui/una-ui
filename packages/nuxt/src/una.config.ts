@@ -4,8 +4,9 @@ import { createExternalPackageIconLoader } from '@iconify/utils/lib/loader/exter
 import extratorUna from '@una-ui/extractor-vue-script'
 import presetUna from '@una-ui/preset'
 import prefixes from '@una-ui/preset/prefixes'
+import { mergeConfigs } from '@unocss/core'
+
 import {
-  mergeConfigs as mergeUnoConfigs,
   presetAttributify,
   presetIcons,
   presetWind3,
@@ -46,14 +47,14 @@ export const unaConfig: UserConfig<object> = {
 }
 
 export function defaultConfig(...configs: UserConfig<object>[]) {
-  return mergeUnoConfigs([
+  return mergeConfigs([
     unaConfig,
     ...configs,
   ])
 }
 
 function extendUnocssOptions(options: UnocssNuxtOptions = {}): UnocssNuxtOptions {
-  return mergeUnoConfigs([
+  return mergeConfigs([
     unaConfig,
     options,
   ])
