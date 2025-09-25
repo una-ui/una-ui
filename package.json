@@ -74,6 +74,7 @@
     "@types/fs-extra": "catalog:",
     "@types/markdown-it": "catalog:",
     "@types/node": "catalog:",
+    "@unocss/core": "catalog:",
     "@unocss/eslint-config": "catalog:",
     "@unocss/preset-mini": "catalog:",
     "bumpp": "catalog:",
