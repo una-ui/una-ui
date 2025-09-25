@@ -100,7 +100,10 @@
       "sharp",
       "@parcel/watcher",
       "esbuild"
-    ]
+    ],
+    "patchedDependencies": {
+      "nitropack": "patches/nitropack.patch"
+    }
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"

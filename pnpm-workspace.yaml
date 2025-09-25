@@ -6,9 +6,6 @@ packages:
 overrides:
   '@una-ui/content>@una-ui/nuxt': 'workspace:./packages/nuxt'
 
-patchedDependencies:
-  nitropack: patches/nitropack.patch
-
 catalog:
   '@antfu/eslint-config': ^4.19.0
   '@antfu/ni': ^24.4.0
