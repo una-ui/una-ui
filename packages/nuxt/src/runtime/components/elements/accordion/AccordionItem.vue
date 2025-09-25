@@ -8,7 +8,7 @@ import NAccordionHeader from './AccordionHeader.vue'
 import NAccordionTrigger from './AccordionTrigger.vue'
 
 const props = defineProps<NAccordionItemProps>()
-const forwardProps = useForwardProps(reactiveOmit(props, ['una', 'label', 'content']))
+const forwardProps = useForwardProps(reactiveOmit(props, ['una', 'label', 'content', '_accordionContent', '_accordionHeader', '_accordionTrigger']))
 </script>
 
 <template>
@@ -19,7 +19,21 @@ const forwardProps = useForwardProps(reactiveOmit(props, ['una', 'label', 'conte
   >
     <slot :open>
       <NAccordionHeader :una v-bind="_accordionHeader">
-        <Primitive as-child :una :label v-bind="_accordionTrigger">
+        <Primitive
+          as-child
+          :label
+          v-bind="_accordionTrigger"
+          :una="{
+            btnLeading: cn('accordion-leading', una?.accordionLeading),
+            btnTrailing: cn(
+              'accordion-trailing',
+              una?.accordionTrailing,
+              open
+                ? cn('accordion-trailing-open', una?.accordionTrailingOpen)
+                : cn('accordion-trailing-close', una?.accordionTrailingClose),
+            ),
+          }"
+        >
           <slot name="header" :open>
             <NAccordionTrigger>
               <slot name="trigger" :open />

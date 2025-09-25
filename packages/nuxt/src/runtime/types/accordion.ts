@@ -26,7 +26,7 @@ export interface NAccordionProps extends AccordionRootProps {
    */
   una?: NAccordionUnaProps & NButtonProps['una']
 
-  _accordionItem?: Omit<NAccordionItemProps, 'una'>
+  _accordionItem?: Omit<NAccordionItemProps, 'una' | 'value'>
   _accordionHeader?: Omit<NAccordionHeaderProps, 'una'>
   _accordionTrigger?: Omit<NButtonProps, 'una'>
   _accordionContent?: Omit<NAccordionContentProps, 'una'>
@@ -37,11 +37,11 @@ export interface NAccordionContentProps extends AccordionContentProps {
 }
 
 export interface NAccordionHeaderProps extends AccordionHeaderProps {
-  una?: Pick<NAccordionUnaProps, 'accordionHeader' | 'accordionTrigger'>
+  una?: Pick<NAccordionUnaProps, 'accordionHeader' | 'accordionTrigger' | 'accordionTrailing' | 'accordionTrailingClose' | 'accordionTrailingOpen' | 'accordionLeading'>
 }
 
 export interface NAccordionTriggerProps extends AccordionTriggerProps, NButtonProps {
-  una?: Pick<NAccordionUnaProps, 'accordionTrigger'> & NButtonProps['una']
+  una?: Pick<NAccordionUnaProps, 'accordionTrigger' | 'accordionTrailing' | 'accordionTrailingClose' | 'accordionTrailingOpen' | 'accordionLeading'> & NButtonProps['una']
 }
 
 export interface NAccordionItemProps extends AccordionItemProps {
@@ -51,7 +51,7 @@ export interface NAccordionItemProps extends AccordionItemProps {
    */
   content?: string
 
-  una?: Omit<NAccordionUnaProps & NButtonProps['una'], 'accordion'>
+  una?: Omit<NAccordionUnaProps, 'accordion'> & NButtonProps['una']
 
   _accordionHeader?: Omit<NAccordionHeaderProps, 'una'>
   _accordionTrigger?: Omit<NAccordionTriggerProps, 'una'>
@@ -61,6 +61,10 @@ export interface NAccordionItemProps extends AccordionItemProps {
 interface NAccordionUnaProps {
   accordion?: string
   accordionItem?: string
+  accordionTrailing?: string
+  accordionTrailingOpen?: string
+  accordionTrailingClose?: string
+  accordionLeading?: string
   accordionHeader?: string
   accordionTrigger?: string
   accordionContent?: string

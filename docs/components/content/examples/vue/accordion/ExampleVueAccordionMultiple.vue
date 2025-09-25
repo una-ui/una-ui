@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { NAccordionItemProps } from '#una/types'
+
 const items = [
   {
     value: 'getting-started',
@@ -15,7 +17,7 @@ const items = [
     label: 'Can I exchange an item?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
-]
+] satisfies NAccordionItemProps[]
 </script>
 
 <template>

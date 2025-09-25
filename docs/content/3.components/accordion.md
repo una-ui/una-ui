@@ -145,11 +145,17 @@ Use the unocss variants `group-data-[state=open]/accordion-trigger` and `group-d
 ::
 :::
 
-### Unstyle mode
+### Variant
 
-| Prop      | Default | Type      | Description                                                       |
-| --------- | ------- | --------- | ----------------------------------------------------------------- |
-| `unstyle` | -       | `boolean` | Remove the default border, padding, and divider of the accordion. |
+| Prop        | Default           | Type        | Description                   |
+| ----------- | ----------------- | ----------- | ----------------------------- |
+| `accordion` | `border divide-y` | `{variant}` | The variant of the accordion. |
+
+| Variant    | Description                               |
+| ---------- | ----------------------------------------- |
+| `border`   | A bordered accordion.                     |
+| `divide-y` | An accordion with dividers between items. |
+| `~`        | An unstyled accordion.                    |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -197,18 +203,24 @@ Use the unocss variants `group-data-[state=open]/accordion-trigger` and `group-d
 
 ## Slots
 
-| Name      | Props            | Description                                        |
-| --------- | ---------------- | -------------------------------------------------- |
-| `default` | `{ modelValue }` | Fill with `AccordionItem` components               |
-| `item`    | `{ open }`       | The item of the accordion.                         |
-| `header`  | `{ open }`       | The header of the accordion containing the trigger |
-| `trigger` | `{ open }`       | The trigger button.                                |
-| `content` | `{ open }`       | The content of the accordion.                      |
+| Name      | Props                   | Description                                        |
+| --------- | ----------------------- | -------------------------------------------------- |
+| `default` | `{ modelValue }`        | Fill with `AccordionItem` components               |
+| `item`    | `{ open, item, index }` | The item of the accordion.                         |
+| `header`  | `{ open, item, index }` | The header of the accordion containing the trigger |
+| `trigger` | `{ open, item, index }` | The trigger button.                                |
+| `content` | `{ open, item, index }` | The content of the accordion.                      |
 
-| Slot prop    | Description                                      |
-| ------------ | ------------------------------------------------ |
-| `modelValue` | the value of the item(s) currently open          |
-| `open`       | allows you to access the open state of the item. |
+| Slot prop    | Description                                                                               |
+| ------------ | ----------------------------------------------------------------------------------------- |
+| `modelValue` | the value of the item(s) currently open                                                   |
+| `open`       | allows you to access the open state of the item.                                          |
+| `item`       | allows you to access the item object.                                                     |
+| `index`      | allows you to access the index of the item. To identify items, prefer using `item.value`. |
+
+::alert{type="info"}
+All slots can be prefixed with the value of an item to target a specific item. For example, to customize the content of the item with the value `1`, use the `1-content` slot.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
