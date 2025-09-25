@@ -1,15 +1,13 @@
 diff --git a/dist/core/index.mjs b/dist/core/index.mjs
-index 7b0074a58e7dc780c6e7f9240e1874e89454d9d2..bd01463d343ab9f4f3f6628e3b8a5baabba6c87b 100644
+index 7b0074a58e7dc780c6e7f9240e1874e89454d9d2..75c2fe0bbe77ab9fc23092f376131086644f5e50 100644
 --- a/dist/core/index.mjs
 +++ b/dist/core/index.mjs
-@@ -2201,6 +2201,10 @@ async function prerender(nitro) {
-       parents?.size ? `
- ${[...parents.values()].map((link) => colors.gray(`  \u2502 \u2514\u2500\u2500 Linked from ${link}`)).join("\n")}` : "";
-       nitro.logger.log(formatPrerenderRoute(route));
-+      if (route.error) {
-+        nitro.logger.error(route.error);
-+        nitro.logger.error("route contents:", route.contents);
-+      }
+@@ -2131,6 +2131,8 @@ async function prerender(nitro) {
+       _route.error = new Error(`[${res.status}] ${res.statusText}`);
+       _route.error.statusCode = res.status;
+       _route.error.statusMessage = res.statusText;
++      nitro.logger.error(`Error prerendering ${route}:`, _route.error);
++      nitro.logger.error(dataBuf.toString('utf-8'))
      }
-     nitro.logger.log("");
-     throw new Error("Exiting due to prerender errors.");
+     _route.generateTimeMS = Date.now() - start;
+     const contentType = res.headers.get("content-type") || "";
