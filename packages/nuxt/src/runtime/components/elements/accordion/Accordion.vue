@@ -35,7 +35,7 @@ const rootProps = useForwardPropsEmits(reactiveOmit(props, ['una', 'items', '_ac
         :_accordion-trigger="defu(item._accordionTrigger, _accordionTrigger)"
         :_accordion-content="defu(item._accordionContent, _accordionContent)"
         :_accordion-header="defu(item._accordionHeader, _accordionHeader)"
-        :una
+        :una="defu(item.una, una)"
       >
         <template #default="{ open }">
           <slot :name="`${item.value}-item`" :open :item :index>
