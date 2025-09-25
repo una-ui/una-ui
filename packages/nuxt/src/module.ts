@@ -59,7 +59,10 @@ export default defineNuxtModule<ModuleOptions>({
     const { resolve } = createResolver(import.meta.url)
 
     // css
-    nuxt.options.css.unshift(import.meta.resolve('@una-ui/preset/una.css'))
+    nuxt.options.css.unshift(
+      import.meta.resolve('@unocss/reset/tailwind.css'),
+      import.meta.resolve('@una-ui/preset/una.css'),
+    )
 
     nuxt.options.alias['#una'] = resolve('./runtime')
 
