@@ -147,15 +147,15 @@ Use the unocss variants `group-data-[state=open]/accordion-trigger` and `group-d
 
 ### Variant
 
-| Prop        | Default           | Type        | Description                   |
-| ----------- | ----------------- | ----------- | ----------------------------- |
-| `accordion` | `border divide-y` | `{variant}` | The variant of the accordion. |
+| Prop        | Default          | Type        | Description                   |
+| ----------- | ---------------- | ----------- | ----------------------------- |
+| `accordion` | `border divider` | `{variant}` | The variant of the accordion. |
 
-| Variant    | Description                               |
-| ---------- | ----------------------------------------- |
-| `border`   | A bordered accordion.                     |
-| `divide-y` | An accordion with dividers between items. |
-| `~`        | An unstyled accordion.                    |
+| Variant   | Description                               |
+| --------- | ----------------------------------------- |
+| `border`  | A bordered accordion.                     |
+| `divider` | An accordion with dividers between items. |
+| `~`       | An unstyled accordion.                    |
 
 :::CodeGroup
 ::div{label="Preview" preview}
