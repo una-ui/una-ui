@@ -225,7 +225,7 @@ overrides:
 
 patchedDependencies:
   nitropack:
-    hash: e9f6965ac380b4734b9c923ba935e5c6b76b588f07db4eef4dffb187d53c88aa
+    hash: f9e64d60926a83527bbfc6f6eed8fa83d657b03e52e38f5d6fcfc8d8b2a8ccbd
     path: patches/nitropack.patch
 
 importers:
@@ -13056,7 +13056,7 @@ snapshots:
       p-wait-for: 5.0.2
       qs: 6.14.0
 
-  nitropack@2.12.4(patch_hash=e9f6965ac380b4734b9c923ba935e5c6b76b588f07db4eef4dffb187d53c88aa)(@netlify/blobs@9.1.2):
+  nitropack@2.12.4(patch_hash=f9e64d60926a83527bbfc6f6eed8fa83d657b03e52e38f5d6fcfc8d8b2a8ccbd)(@netlify/blobs@9.1.2):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
       '@netlify/functions': 3.1.10(rollup@4.46.2)
@@ -13335,7 +13335,7 @@ snapshots:
       mlly: 1.7.4
       mocked-exports: 0.1.1
       nanotar: 0.2.0
-      nitropack: 2.12.4(patch_hash=e9f6965ac380b4734b9c923ba935e5c6b76b588f07db4eef4dffb187d53c88aa)(@netlify/blobs@9.1.2)
+      nitropack: 2.12.4(patch_hash=f9e64d60926a83527bbfc6f6eed8fa83d657b03e52e38f5d6fcfc8d8b2a8ccbd)(@netlify/blobs@9.1.2)
       nypm: 0.6.1
       ofetch: 1.4.1
       ohash: 2.0.11
@@ -13458,7 +13458,7 @@ snapshots:
       mlly: 1.7.4
       mocked-exports: 0.1.1
       nanotar: 0.2.0
-      nitropack: 2.12.4(patch_hash=e9f6965ac380b4734b9c923ba935e5c6b76b588f07db4eef4dffb187d53c88aa)(@netlify/blobs@9.1.2)
+      nitropack: 2.12.4(patch_hash=f9e64d60926a83527bbfc6f6eed8fa83d657b03e52e38f5d6fcfc8d8b2a8ccbd)(@netlify/blobs@9.1.2)
       nypm: 0.6.1
       ofetch: 1.4.1
       ohash: 2.0.11

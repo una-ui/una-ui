@@ -1,5 +1,5 @@
 diff --git a/dist/core/index.mjs b/dist/core/index.mjs
-index 7b0074a58e7dc780c6e7f9240e1874e89454d9d2..a7f4c48195ae2f9a7fcaa5e7796bd199517a0ef1 100644
+index 7b0074a58e7dc780c6e7f9240e1874e89454d9d2..02e46000b5e7cf898129e279d1b16a73cffd1ba7 100644
 --- a/dist/core/index.mjs
 +++ b/dist/core/index.mjs
 @@ -2131,6 +2131,8 @@ async function prerender(nitro) {
@@ -7,7 +7,7 @@ index 7b0074a58e7dc780c6e7f9240e1874e89454d9d2..a7f4c48195ae2f9a7fcaa5e7796bd199
        _route.error.statusCode = res.status;
        _route.error.statusMessage = res.statusText;
 +      nitro.logger.error(`Error prerendering ${route}:`, _route.error);
-+      nitro.logger.error(dataBuff.toString('utf-8'))
++      nitro.logger.error(dataBuff.toString('utf-8').split(/(.{120})/g).join('\n'));
      }
      _route.generateTimeMS = Date.now() - start;
      const contentType = res.headers.get("content-type") || "";
