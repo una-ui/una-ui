@@ -365,6 +365,9 @@ importers:
       '@vee-validate/zod':
         specifier: 'catalog:'
         version: 4.15.1(vue@3.5.18(typescript@5.6.3))(zod@3.25.76)
+      '@vueuse/core':
+        specifier: 'catalog:'
+        version: 12.8.2(typescript@5.6.3)
       nuxt:
         specifier: 'catalog:'
         version: 3.18.1(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.18.0)(@vue/compiler-sfc@3.5.20)(db0@0.3.2)(eslint@9.34.0(jiti@2.5.1))(ioredis@5.6.1)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(rollup@4.46.2)(sass@1.91.0)(terser@5.40.0)(tsx@4.19.4)(typescript@5.6.3)(vite@7.0.6(@types/node@22.18.0)(jiti@2.5.1)(sass@1.91.0)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))(vue-tsc@2.2.12(typescript@5.6.3))(yaml@2.8.1)
@@ -10108,6 +10111,15 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
+  '@vueuse/core@12.8.2(typescript@5.6.3)':
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 12.8.2
+      '@vueuse/shared': 12.8.2(typescript@5.6.3)
+      vue: 3.5.18(typescript@5.6.3)
+    transitivePeerDependencies:
+      - typescript
+
   '@vueuse/core@12.8.2(typescript@5.8.3)':
     dependencies:
       '@types/web-bluetooth': 0.0.21
@@ -10188,6 +10200,12 @@ snapshots:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  '@vueuse/shared@12.8.2(typescript@5.6.3)':
+    dependencies:
+      vue: 3.5.18(typescript@5.6.3)
+    transitivePeerDependencies:
+      - typescript
 
   '@vueuse/shared@12.8.2(typescript@5.8.3)':
     dependencies:

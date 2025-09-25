@@ -41,6 +41,7 @@
     "@nuxt/devtools": "catalog:",
     "@una-ui/content": "catalog:",
     "@vee-validate/zod": "catalog:",
+    "@vueuse/core": "catalog:",
     "nuxt": "catalog:"
   }
 }
