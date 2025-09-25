@@ -75,6 +75,7 @@
     "@types/markdown-it": "catalog:",
     "@types/node": "catalog:",
     "@unocss/eslint-config": "catalog:",
+    "@unocss/preset-mini": "catalog:",
     "bumpp": "catalog:",
     "conventional-changelog-cli": "catalog:",
     "eslint": "catalog:",
