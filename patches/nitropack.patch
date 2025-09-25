@@ -1,0 +1,14 @@
+diff --git a/dist/core/index.mjs b/dist/core/index.mjs
+index 7b0074a58e7dc780c6e7f9240e1874e89454d9d2..b173e1820f8f56158b1d9cae177791ea7fe5e7d0 100644
+--- a/dist/core/index.mjs
++++ b/dist/core/index.mjs
+@@ -2201,6 +2201,9 @@ async function prerender(nitro) {
+       parents?.size ? `
+ ${[...parents.values()].map((link) => colors.gray(`  \u2502 \u2514\u2500\u2500 Linked from ${link}`)).join("\n")}` : "";
+       nitro.logger.log(formatPrerenderRoute(route));
++      if (route.error) {
++        nitro.logger.error(route.error);
++      }
+     }
+     nitro.logger.log("");
+     throw new Error("Exiting due to prerender errors.");
