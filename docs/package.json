@@ -37,6 +37,7 @@
   "devDependencies": {
     "@nuxt/devtools": "catalog:",
     "@una-ui/content": "catalog:",
+    "@vee-validate/zod": "catalog:",
     "nuxt": "catalog:"
   }
 }
