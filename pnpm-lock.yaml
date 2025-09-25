@@ -162,6 +162,9 @@ catalogs:
     pathe:
       specifier: ^2.0.3
       version: 2.0.3
+    pkg-types:
+      specifier: ^2.3.0
+      version: 2.3.0
     reka-ui:
       specifier: ^2.5.0
       version: 2.5.0
@@ -300,6 +303,9 @@ importers:
       pathe:
         specifier: 'catalog:'
         version: 2.0.3
+      pkg-types:
+        specifier: 'catalog:'
+        version: 2.3.0
       rimraf:
         specifier: 'catalog:'
         version: 6.0.1
