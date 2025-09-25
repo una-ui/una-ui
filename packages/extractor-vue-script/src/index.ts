@@ -168,7 +168,6 @@ function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
       return Array.from(astExprs
         .map((node) => {
           const regularResults = discoverVariants(node, prefixes)
-          console.log(regularResults)
           return new Set(regularResults)
         })
         .reduce((a, b) => a.union(b), new Set()),
