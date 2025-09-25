@@ -93,6 +93,9 @@ catalogs:
     '@unocss/preset-mini':
       specifier: ^66.5.1
       version: 66.5.1
+    '@unocss/reset':
+      specifier: ^66.5.1
+      version: 66.5.1
     '@vee-validate/nuxt':
       specifier: ^4.15.1
       version: 4.15.1
@@ -404,6 +407,9 @@ importers:
         specifier: 'catalog:'
         version: 66.5.1
       '@unocss/preset-icons':
+        specifier: 'catalog:'
+        version: 66.5.1
+      '@unocss/reset':
         specifier: 'catalog:'
         version: 66.5.1
       '@vee-validate/nuxt':
