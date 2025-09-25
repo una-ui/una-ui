@@ -26,7 +26,7 @@ const items = [
 <template>
   <NAccordion
     :items="items"
-    default-item="reversed-1"
+    default-value="reversed-1"
     :_accordion-trigger="{
       leading: 'i-heroicons-question-mark-circle',
       reverse: true,
