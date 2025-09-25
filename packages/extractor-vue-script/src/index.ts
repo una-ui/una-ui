@@ -165,13 +165,9 @@ function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
       }
 
       const prefixes = normalizePrefixes(options?.prefixes ?? [])
-      return Array.from(astExprs
-        .map((node) => {
-          const regularResults = discoverVariants(node, prefixes)
-          return new Set(regularResults)
-        })
-        .reduce((a, b) => a.union(b), new Set()),
-      )
+      return [...new Set(astExprs
+        .flatMap(node => discoverVariants(node, prefixes)),
+      )]
     },
   }
 }
