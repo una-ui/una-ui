@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
   modules: [
+    '@vueuse/nuxt',
+    '@vee-validate/nuxt',
     '../src/module',
   ],
 
