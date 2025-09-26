@@ -40,15 +40,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/parser": "catalog:",
-    "@babel/traverse": "catalog:",
+    "@babel/types": "catalog:",
+    "@vue/compiler-core": "catalog:",
     "@vue/compiler-sfc": "catalog:",
     "magicast": "catalog:",
     "ufo": "catalog:"
   },
   "devDependencies": {
-    "@babel/types": "catalog:",
-    "@types/babel__traverse": "catalog:",
     "@unocss/core": "catalog:",
     "vitest": "catalog:"
   }
