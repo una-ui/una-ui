@@ -29,7 +29,7 @@ catalog:
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
   '@types/node': ^22.18.0
-  '@una-ui/content': ^48.2.0
+  '@una-ui/content': ^48.3.0
   '@unocss/core': ^66.5.1
   '@unocss/eslint-config': ^66.5.1
   '@unocss/nuxt': ^66.5.1
