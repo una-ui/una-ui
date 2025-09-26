@@ -74,7 +74,10 @@ export default defineNuxtModule<ModuleOptions>({
     const { resolve } = createResolver(import.meta.url)
 
     // css
-    nuxt.options.css.unshift('@una-ui/preset/una.css')
+    nuxt.options.css.unshift(
+      import.meta.resolve('@unocss/reset/tailwind.css'),
+      import.meta.resolve('@una-ui/preset/una.css'),
+    )
 
     nuxt.options.alias['#una'] = resolve('./runtime')
 
@@ -95,7 +98,6 @@ export default defineNuxtModule<ModuleOptions>({
     // transpile runtime
     const runtimeDir = resolve('./runtime')
     nuxt.options.build.transpile.push(runtimeDir)
-    nuxt.options.build.transpile.push('@headlessui/vue')
 
     // components
     addComponentsDir({

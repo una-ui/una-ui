@@ -55,6 +55,7 @@
     "@unocss/nuxt": "catalog:",
     "@unocss/preset-attributify": "catalog:",
     "@unocss/preset-icons": "catalog:",
+    "@unocss/reset": "catalog:",
     "@vueuse/core": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
