@@ -2,18 +2,21 @@ packages:
   - docs
   - packages/**
   - playground/**
+
 overrides:
   '@una-ui/content>@una-ui/nuxt': 'workspace:./packages/nuxt'
+
 catalog:
   '@antfu/eslint-config': ^4.19.0
   '@antfu/ni': ^24.4.0
   '@babel/types': ^7.28.2
   '@faker-js/faker': ^9.9.0
-  '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.3
   '@iconify-json/lucide': ^1.2.68
   '@iconify-json/radix-icons': ^1.2.5
+  '@iconify-json/simple-icons': ^1.2.53
   '@iconify-json/tabler': ^1.2.23
+  '@iconify-json/vscode-icons': ^1.2.30
   '@iconify/json': ^2.2.388
   '@iconify/utils': ^2.3.0
   '@nuxt/devtools': ^2.6.3
@@ -33,6 +36,7 @@ catalog:
   '@unocss/preset-attributify': ^66.5.1
   '@unocss/preset-icons': ^66.5.1
   '@unocss/preset-mini': ^66.5.1
+  '@unocss/reset': ^66.5.1
   '@vee-validate/nuxt': ^4.15.1
   '@vee-validate/zod': ^4.15.1
   '@vercel/analytics': ^1.5.0
@@ -57,6 +61,7 @@ catalog:
   nuxt: ^3.18.1
   ohash: ^1.1.6
   pathe: ^2.0.3
+  pkg-types: ^2.3.0
   reka-ui: ^2.5.0
   rimraf: ^6.0.1
   sass: ^1.91.0

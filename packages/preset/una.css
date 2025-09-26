@@ -1,4 +1,3 @@
-@import url(@unocss/reset/tailwind.css);
 :root {
   --una-primary-hex: #ca8a04;
   --una-primary-50: 254, 252, 232;

@@ -35,8 +35,13 @@
     "f": "esno scripts/file-creator.ts"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "catalog:",
+    "@iconify-json/simple-icons": "catalog:",
+    "@iconify-json/vscode-icons": "catalog:",
     "@nuxt/devtools": "catalog:",
     "@una-ui/content": "catalog:",
+    "@vee-validate/zod": "catalog:",
+    "@vueuse/core": "catalog:",
     "nuxt": "catalog:"
   }
 }
