@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   extends: '@una-ui/content',
 
   modules: [
+    '@vueuse/nuxt',
+    '@vee-validate/nuxt',
     unaUI,
   ],
 
