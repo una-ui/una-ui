@@ -59,7 +59,10 @@ export default defineNuxtModule<ModuleOptions>({
     const { resolve } = createResolver(import.meta.url)
 
     // css
-    nuxt.options.css.unshift('@una-ui/preset/una.css')
+    nuxt.options.css.unshift(
+      import.meta.resolve('@unocss/reset/tailwind.css'),
+      import.meta.resolve('@una-ui/preset/una.css'),
+    )
 
     nuxt.options.alias['#una'] = resolve('./runtime')
 
@@ -80,19 +83,18 @@ export default defineNuxtModule<ModuleOptions>({
     // transpile runtime
     const runtimeDir = resolve('./runtime')
     nuxt.options.build.transpile.push(runtimeDir)
-    nuxt.options.build.transpile.push('@headlessui/vue')
 
     // modules
-    await installModule('@unocss/nuxt', extendUnocssOptions(nuxt.options.unocss))
-    await installModule('@nuxtjs/color-mode', {
+    await installModule(import.meta.resolve('@unocss/nuxt'), extendUnocssOptions(nuxt.options.unocss))
+    await installModule(import.meta.resolve('@nuxtjs/color-mode'), {
       classSuffix: '',
       disableTransition: true,
     })
-    await installModule('@vueuse/nuxt')
-    await installModule('reka-ui/nuxt', {
+    await installModule(import.meta.resolve('@vueuse/nuxt'))
+    await installModule(import.meta.resolve('reka-ui/nuxt'), {
       prefix: options.prefix,
     })
-    await installModule('@vee-validate/nuxt', {
+    await installModule(import.meta.resolve('@vee-validate/nuxt'), {
       componentNames: {
         Form: `${options.prefix}Form`,
         // Field: `${options.prefix}FormField`,

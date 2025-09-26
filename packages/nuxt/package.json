@@ -55,6 +55,7 @@
     "@unocss/nuxt": "catalog:",
     "@unocss/preset-attributify": "catalog:",
     "@unocss/preset-icons": "catalog:",
+    "@unocss/reset": "catalog:",
     "@vee-validate/nuxt": "catalog:",
     "@vee-validate/zod": "catalog:",
     "@vueuse/core": "catalog:",
