@@ -1,3 +1,20 @@
+# [0.65.0](https://github.com/una-ui/una-ui/compare/v0.64.0...v0.65.0) (2025-09-27)
+
+
+### Bug Fixes
+
+* **deps:** Add override to prevent @una-ui/nuxt-edge from being installed ([#505](https://github.com/una-ui/una-ui/issues/505)) ([edfdb66](https://github.com/una-ui/una-ui/commit/edfdb66d7c3f0027d28e82efd5042b325f83b2d1))
+* **ExtractorVueScript:** properly parse vue template directive expressions ([#512](https://github.com/una-ui/una-ui/issues/512)) ([f2c5220](https://github.com/una-ui/una-ui/commit/f2c5220c7b705d0662103c85aa61557079d28c1b))
+* **Stepper:** hasNext and hasPrev exposed the underlying RekaUI StepperRoot methods that had an offset of 1. ([#508](https://github.com/una-ui/una-ui/issues/508)) ([1d98fb4](https://github.com/una-ui/una-ui/commit/1d98fb46dde24a2dd2529f62f6b2f9b14ba0a600))
+
+
+### Features
+
+* **deps:** upgrade @una-ui/content to 48.3.0 ([2809825](https://github.com/una-ui/una-ui/commit/280982534d54f9dbc1ab1c949f403e73698d9b63))
+* **ExtractorVueScript:** refactor extractor to use babel ast and vue/compiler-sfc to parse code ([#494](https://github.com/una-ui/una-ui/issues/494)) ([1cb0816](https://github.com/una-ui/una-ui/commit/1cb08167d05ff249d773b242138d5cef13f04a5c))
+
+
+
 # [0.64.0](https://github.com/una-ui/una-ui/compare/v0.63.1...v0.64.0) (2025-08-19)
 
 
