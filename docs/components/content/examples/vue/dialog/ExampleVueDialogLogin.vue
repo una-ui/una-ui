@@ -48,9 +48,9 @@ async function submitLogin() {
     description="Please log in with your username and password"
   >
     <template #trigger>
-      <NButton btn="solid-gray" label="Login" leading="i-mdi:login" />
+      <NButton btn="outline-gray" label="Login" leading="i-mdi:login" />
     </template>
-    <template #default>
+    <template #body>
       <form
         id="login-form" class="grid space-y-4"
         @submit.prevent="submitLogin()"
@@ -73,7 +73,7 @@ async function submitLogin() {
           <div class="text-end">
             <NPopover>
               <template #trigger>
-                <NButton btn="link-muted" class="text-xs text-muted">
+                <NButton btn="link-muted" class="text-xs text-muted-foreground">
                   Forgot password?
                 </NButton>
               </template>

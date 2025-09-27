@@ -100,7 +100,7 @@ By default, the size prop applies to height, width, padding, and font size. If y
 | Prop                    | Default         | Type                | Description                       |
 | ----------------------- | --------------- | ------------------- | --------------------------------- |
 | `pagination-selected`   | `solid-primary` | `{variant}-{color}` | The color of the selected page.   |
-| `pagination-unselected` | `solid-white`   | `{variant}-{color}` | The color of the unselected page. |
+| `pagination-unselected` | `solid-gray`    | `{variant}-{color}` | The color of the unselected page. |
 | `pagination-ellipsis`   | `text-black`    | `{variant}-{color}` | The color of the ellipsis.        |
 
 :read-more{to="/components/button#color" title="Button variant and color section" target="_blank"}

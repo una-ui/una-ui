@@ -7,6 +7,7 @@ const props = defineProps<NCardTitleProps>()
 
 <template>
   <h3
+    data-slot="card-title"
     :class="
       cn(
         'card-title',
