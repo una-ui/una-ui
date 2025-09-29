@@ -112,10 +112,15 @@ function discoverVariants(node: babel.Node, prefixes: string[]): string[] {
 }
 
 function parseCodeAst(code: string, id?: string) {
-  const { $ast: node } = parseModule(code, {
-    sourceFileName: id,
-  })
-  return node
+  try {
+    const { $ast: node } = parseModule(code, {
+      sourceFileName: id,
+    })
+    return node
+  }
+  catch (e) {
+    throw new SyntaxError(`Failed to parse code ast${id ? ` (file: ${id})` : ''}`, { cause: e })
+  }
 }
 
 function extractTemplateExpressions(node: RootNode): babel.Node[] {
