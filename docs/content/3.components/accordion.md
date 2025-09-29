@@ -11,9 +11,16 @@ badges:
 
 ### Basic
 
-| Prop    | Default | Type    | Description              |
-| ------- | ------- | ------- | ------------------------ |
-| `items` | -       | `array` | Set the accordion items. |
+| Prop           | Default | Type     | Description                                                        |
+| -------------- | ------- | -------- | ------------------------------------------------------------------ |
+| `items`        | `[]`    | `array`  | Set the accordion items.                                           |
+| `item.value`   | -       | `string` | The unique value of the item used for rendering and state tracking |
+| `item.label`   | -       | `string` | The label of the accordion item                                    |
+| `item.content` | -       | `string` | The content of the accordion item                                  |
+
+::alert{type="warning"}
+To avoid conflicts, please do not the use reserved values `header`, `trigger`, `content`, `item`, and `default` for the `value` of an accordion item. Doing so may cause slot conflicts.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -218,10 +225,6 @@ Use the unocss variants `group-data-[state=open]/accordion-trigger` and `group-d
 | `item`       | allows you to access the item object.                                                     |
 | `index`      | allows you to access the index of the item. To identify items, prefer using `item.value`. |
 
-::alert{type="info"}
-All slots can be prefixed with the value of an item to target a specific item. For example, to customize the content of the item with the value `1`, use the `1-content` slot.
-::
-
 :::CodeGroup
 ::div{label="Preview" preview}
 :ExampleVueAccordionSlot1
@@ -233,11 +236,14 @@ All slots can be prefixed with the value of an item to target a specific item. F
 
 ---
 
-`index number` - allows you to customize the specific item of the accordion. See the example below.
+All slots can be prefixed with the value of an item to target a specific item. For example, to customize the content of the item with the value `1`, use the `1-content` slot.
 
-::alert{type="warning"}
-If you want to customize the content of a specific item, make sure not to provide a `content` slot.
-::
+| Slot name          | Description                                                                       |
+| ------------------ | --------------------------------------------------------------------------------- |
+| `${value}`         | The render slot of a specific item. Default value renders the other item's slots. |
+| `${value}-header`  | The header of a specific item                                                     |
+| `${value}-trigger` | The trigger of a specific item                                                    |
+| `${value}-content` | The content of a specific item                                                    |
 
 :::CodeGroup
 ::div{label="Preview" preview}

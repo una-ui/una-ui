@@ -5,6 +5,7 @@ import type { NAccordionProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { defu } from 'defu'
 import { AccordionRoot, useForwardPropsEmits } from 'reka-ui'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
 import NAccordionItem from './AccordionItem.vue'
 
@@ -17,6 +18,18 @@ const props = withDefaults(defineProps<NAccordionProps>(), {
 const emits = defineEmits<AccordionRootEmits>()
 
 const rootProps = useForwardPropsEmits(reactiveOmit(props, ['una', 'items', '_accordionTrigger', '_accordionContent', '_accordionHeader', '_accordionItem']), emits)
+
+const items = computed(() => {
+  if (import.meta.dev) {
+    const reservedValues = ['header', 'trigger', 'content', 'item', 'default']
+    for (const item of props.items ?? []) {
+      if (reservedValues.includes(item.value)) {
+        console.warn(`[AccordionItem]: The value '${item.value}' is reserved and may cause unexpected behavior. Please choose a different value.`)
+      }
+    }
+  }
+  return props.items
+})
 </script>
 
 <template>
