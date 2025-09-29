@@ -9,7 +9,7 @@ const prefixes = [
 
 const extractor = extractorVueScript({ prefixes })
 
-async function extract(code: string, id?: string): Promise<string[]> {
+async function extract(code: string, id: string = 'index.js'): Promise<string[]> {
   const extracted = new Set<string>()
   const result = await extractor.extract!({ original: code, code, id, extracted })
   if (result) {
@@ -233,4 +233,14 @@ const config = {
   expect(result).toContain('[badge~="solid-blue"]')
   expect(result).toContain('[badge~="outline-primary"]')
   expect(result).toContain('[btn~="ghost-lime"]')
+})
+
+it('unsupported filetypes should be ignored', async () => {
+  const code = `
+# Index
+
+Hello, world!
+`
+  const result = await extract(code, 'index.md')
+  expect(result).toStrictEqual([])
 })
