@@ -82,7 +82,9 @@ const items2 = [
         trailing: 'i-heroicons-chevron-left',
       }"
       :una="{
-        btnTrailing: 'group-data-[state=closed]/accordion-trigger:-rotate-90 group-data-[state=open]/accordion-trigger:rotate-0',
+        accordionTrailing: 'transition-transform duration-300',
+        accordionTrailingOpen: '-rotate-90',
+        accordionTrailingClose: 'rotate-0',
       }"
     />
 

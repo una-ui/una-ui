@@ -2,7 +2,7 @@ type AccordionPrefix = 'accordion'
 
 export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionPrefix, string> = {
   // config
-  'accordion-trailing-icon': 'i-lucide-chevron-up',
+  'accordion-trailing-icon': 'i-lucide-chevron-up group-data-[state=open]/accordion-trigger:-rotate-180 group-data-[state=closed]/accordion-trigger:rotate-0 transition-transform duration-300',
   'accordion-divider': 'divide-(y base)',
   'accordion-border': 'border-(~ base) rounded-md',
 
@@ -17,10 +17,6 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-panel': 'text-(muted 0.875em) border-(t $c-divider) accordion-trigger-padding',
   'accordion-leading': 'text-1.2em',
   'accordion-trailing': 'flex transition items-center text-1em duration-300',
-
-  // trailing transition
-  'accordion-trailing-open': '-rotate-180',
-  'accordion-trailing-close': 'rotate-0',
 }
 
 export const dynamicAccordion = [

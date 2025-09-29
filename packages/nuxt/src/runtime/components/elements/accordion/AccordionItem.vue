@@ -28,9 +28,7 @@ const forwardProps = useForwardProps(reactiveOmit(props, ['una', 'label', 'conte
             btnTrailing: cn(
               'accordion-trailing',
               una?.accordionTrailing,
-              open
-                ? cn('accordion-trailing-open', una?.accordionTrailingOpen)
-                : cn('accordion-trailing-close', una?.accordionTrailingClose),
+              open ? una?.accordionTrailingOpen : una?.accordionTrailingClose,
             ),
           }"
         >
