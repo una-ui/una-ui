@@ -18,8 +18,8 @@ const forwardProps = useForwardProps(reactiveOmit(props, ['una']))
     as-child
     :una="{
       ...una,
-      btn: cn('accordion-button', una?.btn),
-      btnLabel: cn('accordion-button-label', una?.btnLabel),
+      btn: cn('accordion-trigger-padding', una?.btn),
+      btnLabel: cn('accordion-trigger-label', una?.btnLabel),
     }"
   >
     <slot>
