@@ -1,15 +1,11 @@
-import type { Expression, Identifier, Node, ObjectExpression, PatternLike } from '@babel/types'
 import type { Extractor } from '@unocss/core'
-import traverseDefault from '@babel/traverse'
+import type { RootNode } from '@vue/compiler-core'
+import * as babel from '@babel/types'
 import { defaultSplitRE } from '@unocss/core'
+import { NodeTypes, transform as transformVueTemplate } from '@vue/compiler-core'
 import { parse as parseSFC } from '@vue/compiler-sfc'
 import { parseModule } from 'magicast'
 import { parsePath } from 'ufo'
-
-// esm interop
-const traverse = 'default' in traverseDefault
-  ? (traverseDefault as any).default as typeof traverseDefault
-  : traverseDefault
 
 interface ExtractorVueScriptOptions {
   /**
@@ -33,7 +29,7 @@ function normalizePrefixes(prefixes: string[]): string[] {
   return [...new Set([...prefixes, ...camelCasePrefixes])]
 }
 
-function getLiteralValue(node: Expression | PatternLike): any {
+function getLiteralValue(node: babel.Expression | babel.PatternLike): any {
   if (node.type === 'ConditionalExpression') {
     return [node.consequent, node.alternate].map(getLiteralValue)
   }
@@ -52,22 +48,24 @@ function getLiteralValue(node: Expression | PatternLike): any {
   return undefined
 }
 
-function getObjectLiteralValue(node: ObjectExpression): object {
+function getObjectLiteralValue(node: babel.ObjectExpression): object {
   return Object.fromEntries(
-    node.properties.filter(prop => prop.type === 'ObjectProperty')
-      .filter((prop): prop is typeof prop & { key: Identifier } => prop.key.type === 'Identifier')
-      .map((prop) => {
-        const key = prop.key.name
-        return [key, getLiteralValue(prop.value)]
+    node.properties
+      .filter(prop => prop.type === 'ObjectProperty')
+      .flatMap((prop) => {
+        const key = prop.key.type === 'Identifier' ? prop.key.name : prop.key.type === 'StringLiteral' ? prop.key.value : null
+        if (!key) {
+          return []
+        }
+        return [[key, getLiteralValue(prop.value)]]
       }),
   )
 }
 
-function discoverVariants(node: Node, prefixes: string[]): string[] {
+function discoverVariants(node: babel.Node, prefixes: string[]): string[] {
   const result: [string, string][] = []
-  traverse(node, {
-    noScope: true, // scope doesn't work for some reason.
-    enter({ node }) {
+  babel.traverse(node, {
+    enter(node) {
       // standard object properties
       if (node.type === 'ObjectExpression') {
         const object = getObjectLiteralValue(node)
@@ -113,6 +111,40 @@ function discoverVariants(node: Node, prefixes: string[]): string[] {
   })
 }
 
+function parseCodeAst(code: string, id?: string) {
+  try {
+    const { $ast: node } = parseModule(code, {
+      sourceFileName: id,
+    })
+    return node
+  }
+  catch (e) {
+    throw new SyntaxError(`Failed to parse code ast${id ? ` (file: ${id})` : ''}`, { cause: e })
+  }
+}
+
+function extractTemplateExpressions(node: RootNode): babel.Node[] {
+  const expressions: babel.Node[] = []
+  transformVueTemplate(node as any, {
+    nodeTransforms: [
+      // readonly "transformer", doesn't do any changes
+      (node) => {
+        if (node.type === NodeTypes.ELEMENT) {
+          node.props.forEach((prop) => {
+            if (prop.type === NodeTypes.DIRECTIVE && prop.exp?.ast) {
+              expressions.push(prop.exp.ast)
+            }
+          })
+        }
+      },
+    ],
+  })
+  return expressions
+}
+
+// only process supported filetypes
+const SUPPORTED_EXTENSION_IDS = /\.(?:[mc]?[jt]sx?|vue)$/
+
 function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
   return {
     name: '@una-ui/extractor-vue-script',
@@ -120,21 +152,34 @@ function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
     async extract({ code, id }) {
       // the id can contain query parameters, so we need to clean it up
       const cleanPath = parsePath(id).pathname
+      // only process supported file extensions
+      if (!SUPPORTED_EXTENSION_IDS.test(cleanPath)) {
+        return undefined
+      }
+      const astExprs = []
       if (cleanPath.endsWith('.vue')) {
         const sfc = parseSFC(code, {
           filename: cleanPath,
         })
-        code = sfc.descriptor.scriptSetup?.content || sfc.descriptor.script?.content || ''
+        if (sfc.descriptor.script) {
+          astExprs.push(parseCodeAst(sfc.descriptor.script.content))
+        }
+        if (sfc.descriptor.scriptSetup) {
+          astExprs.push(parseCodeAst(sfc.descriptor.scriptSetup.content))
+        }
+        if (sfc.descriptor.template?.ast) {
+          // parse template bindings
+          astExprs.push(...extractTemplateExpressions(sfc.descriptor.template.ast))
+        }
       }
-      const { $ast: node } = parseModule(code, {
-        sourceFileName: id,
-      })
+      else {
+        astExprs.push(parseCodeAst(code, id))
+      }
 
       const prefixes = normalizePrefixes(options?.prefixes ?? [])
-
-      const regularResults = discoverVariants(node, prefixes)
-
-      return [...new Set(regularResults)]
+      return [...new Set(astExprs
+        .flatMap(node => discoverVariants(node, prefixes)),
+      )]
     },
   }
 }

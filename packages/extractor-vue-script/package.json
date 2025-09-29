@@ -1,6 +1,6 @@
 {
   "name": "@una-ui/extractor-vue-script",
-  "version": "0.64.0",
+  "version": "0.65.0",
   "description": "Unocss extractor for Vue script",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -40,15 +40,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/parser": "catalog:",
-    "@babel/traverse": "catalog:",
+    "@babel/types": "catalog:",
+    "@vue/compiler-core": "catalog:",
     "@vue/compiler-sfc": "catalog:",
     "magicast": "catalog:",
     "ufo": "catalog:"
   },
   "devDependencies": {
-    "@babel/types": "catalog:",
-    "@types/babel__traverse": "catalog:",
     "@unocss/core": "catalog:",
     "vitest": "catalog:"
   }

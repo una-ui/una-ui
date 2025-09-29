@@ -18,6 +18,9 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: lts/*
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.17.1
       - run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

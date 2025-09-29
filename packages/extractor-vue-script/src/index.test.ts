@@ -9,7 +9,7 @@ const prefixes = [
 
 const extractor = extractorVueScript({ prefixes })
 
-async function extract(code: string, id?: string): Promise<string[]> {
+async function extract(code: string, id: string = 'index.js'): Promise<string[]> {
   const extracted = new Set<string>()
   const result = await extractor.extract!({ original: code, code, id, extracted })
   if (result) {
@@ -189,4 +189,58 @@ const props = withDefaults(defineProps<{size?: string}>(), {
 `
   const result = await extract(code, 'index.vue')
   expect(result).toStrictEqual(['[size~="md"]'])
+})
+
+it('test vue sfc template directives are not ignored', async () => {
+  const code = `
+<template>
+  <div :_foo="{'btn': 'ghost-lime'}"/>
+</template>
+`
+  const result = await extract(code, 'index.vue')
+  expect(result).toContain('[btn~="ghost-lime"]')
+})
+
+it('test vue sfc with nested v-bind directive', async () => {
+  const code = `
+<template>
+  <div v-bind="{ _foo: { btn: 'solid-red' } }">Content</div>
+</template>
+`
+  const result = await extract(code, 'index.vue')
+  expect(result).toContain('[btn~="solid-red"]')
+})
+
+it('test all vue sfc script and template bindings are parsed', async () => {
+  const code = `
+<script lang="ts">
+const DEFAULT_PROPS = {
+  size: 'md'
+}
+</script>
+<script setup lang="ts">
+const props = withDefaults(defineProps<{size?: string}>(), DEFAULT_PROPS)
+const config = {
+  badge: isActive ? 'solid-blue' : 'outline-primary'
+}
+</script>
+<template>
+  <div :size :_foo="{'btn': 'ghost-lime'}"/>
+</template>
+`
+  const result = await extract(code, 'index.vue')
+  expect(result).toContain('[size~="md"]')
+  expect(result).toContain('[badge~="solid-blue"]')
+  expect(result).toContain('[badge~="outline-primary"]')
+  expect(result).toContain('[btn~="ghost-lime"]')
+})
+
+it('unsupported filetypes should be ignored', async () => {
+  const code = `
+# Index
+
+Hello, world!
+`
+  const result = await extract(code, 'index.md')
+  expect(result).toStrictEqual([])
 })

@@ -1,6 +1,6 @@
 {
   "name": "@una-ui/docs",
-  "version": "0.64.0",
+  "version": "0.65.0",
   "private": true,
   "description": "The Atomic UI Framework",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
@@ -35,8 +35,14 @@
     "f": "esno scripts/file-creator.ts"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "catalog:",
+    "@iconify-json/vscode-icons": "catalog:",
     "@nuxt/devtools": "catalog:",
     "@una-ui/content": "catalog:",
-    "nuxt": "catalog:"
+    "@vee-validate/nuxt": "catalog:",
+    "@vee-validate/zod": "catalog:",
+    "@vueuse/core": "catalog:",
+    "nuxt": "catalog:",
+    "zod": "catalog:"
   }
 }

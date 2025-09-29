@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/nuxt",
   "type": "module",
-  "version": "0.64.0",
+  "version": "0.65.0",
   "description": "Nuxt module for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -54,6 +54,7 @@
     "@unocss/nuxt": "catalog:",
     "@unocss/preset-attributify": "catalog:",
     "@unocss/preset-icons": "catalog:",
+    "@unocss/reset": "catalog:",
     "@vee-validate/nuxt": "catalog:",
     "@vee-validate/zod": "catalog:",
     "@vueuse/core": "catalog:",
