@@ -38,7 +38,7 @@ export interface NSelectProps<
   /**
    * The items to display in the select.
    */
-  items: Items
+  items?: Items
   /**
    * The key name to use to display in the select items.
    */
@@ -134,7 +134,6 @@ export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps {
 
 export interface NSelectItemProps extends ItemExtensions {
   selectItem?: HTMLAttributes['class']
-  isSelected?: boolean
   _selectItemText?: NSelectItemTextProps
   _selectItemIndicator?: NSelectItemIndicatorProps
   una?: Pick<NSelectUnaProps, 'selectItem' | 'selectItemIndicator'>

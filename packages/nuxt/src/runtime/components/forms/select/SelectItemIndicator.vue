@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import type { NSelectItemIndicatorProps } from '../../../types'
-import { Primitive } from 'reka-ui'
+import { SelectItemIndicator } from 'reka-ui'
 import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'
 
-const props = withDefaults(defineProps<NSelectItemIndicatorProps>(), {
-  as: 'span',
-})
+const props = defineProps<NSelectItemIndicatorProps>()
 </script>
 
 <template>
-  <Primitive
-    aria-hidden
+  <SelectItemIndicator
     v-bind="props"
     :class="cn(
       'select-item-indicator',
@@ -27,5 +24,5 @@ const props = withDefaults(defineProps<NSelectItemIndicatorProps>(), {
         )"
       />
     </slot>
-  </Primitive>
+  </SelectItemIndicator>
 </template>
