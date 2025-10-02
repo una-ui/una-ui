@@ -197,7 +197,7 @@ const objectItems = [
       <NLabel>
         Custom Content Items
       </NLabel>
-      <div clas="space-y-2">
+      <div class="space-y-2">
         <NSelect v-model="selectedCustom">
           <template #content>
             <NSelectItem value="custom-1">
