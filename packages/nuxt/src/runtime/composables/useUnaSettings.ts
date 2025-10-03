@@ -6,8 +6,8 @@ import { defu } from 'defu'
 import { useUnaThemes } from './useUnaThemes'
 
 export interface UseUnaSettingsReturn {
-  defaultSettings: UnaSettings
-  settings: Ref<UnaSettings>
+  defaultSettings: Omit<UnaSettings, 'themes'>
+  settings: Ref<Omit<UnaSettings, 'themes'>>
   reset: () => void
 }
 
@@ -15,7 +15,7 @@ export function useUnaSettings(): UseUnaSettingsReturn {
   const { una } = useAppConfig()
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 
-  const defaultSettings: UnaSettings = {
+  const defaultSettings: Omit<UnaSettings, 'themes'> = {
     primaryColors: una.primary ? getPrimaryColors(una.primary) : {},
     grayColors: una.gray ? getGrayColors(una.gray) : {},
     primary: una.primary,
@@ -23,10 +23,9 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     radius: una.radius,
     fontSize: una.fontSize,
     theme: una.theme,
-    themes: una.themes,
   } as const
 
-  const settings = useStorage<UnaSettings>('una-settings', defaultSettings, undefined, {
+  const settings = useStorage<Omit<UnaSettings, 'themes'>>('una-settings', defaultSettings, undefined, {
     mergeDefaults: defu,
   })
 
