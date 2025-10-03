@@ -12,6 +12,7 @@ import { card } from './card'
 import { checkbox } from './checkbox'
 import { collapsible } from './collapsible'
 import { combobox } from './combobox'
+import { command } from './command'
 import { dialog } from './dialog'
 import { drawer } from './drawer'
 import { dropdowMenu } from './dropdown-menu'
@@ -99,4 +100,5 @@ export const shortcuts = [
   ...hoverCard,
   ...stepper,
   ...toggleGroup,
+  ...command,
 ] as Exclude<Preset['shortcuts'], undefined | StaticShortcutMap>
