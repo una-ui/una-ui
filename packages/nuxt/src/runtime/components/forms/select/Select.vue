@@ -6,7 +6,7 @@ import { computed } from 'vue'
 
 <script setup lang="ts" generic="T extends AcceptableValue, I extends Array<T | SelectGroupType<T>>, M extends boolean = false">
 import { SelectRoot, useForwardPropsEmits } from 'reka-ui'
-import { cn, isEqualObject } from '../../../utils'
+import { cn } from '../../../utils'
 import SelectContent from './SelectContent.vue'
 import SelectGroup from './SelectGroup.vue'
 import SelectItem from './SelectItem.vue'
@@ -47,23 +47,6 @@ function formatSelectedValue(value: unknown) {
   }
 
   return value
-}
-
-function isItemSelected(item: unknown, modelValue: unknown) {
-  if (!modelValue)
-    return false
-
-  if (props.multiple && Array.isArray(modelValue)) {
-    return modelValue.some((val) => {
-      const valObj = typeof val === 'object' && val ? val : { value: val }
-      const itemObj = typeof item === 'object' && item ? item : { value: item }
-      return isEqualObject(valObj, itemObj)
-    })
-  }
-
-  const modelObj = typeof modelValue === 'object' && modelValue ? modelValue : { value: modelValue }
-  const itemObj = typeof item === 'object' && item ? item : { value: item }
-  return isEqualObject(modelObj, itemObj)
 }
 </script>
 
@@ -131,7 +114,6 @@ function isItemSelected(item: unknown, modelValue: unknown) {
                 :size
                 :select-item
                 v-bind="props._selectItem"
-                :is-selected="isItemSelected(item, modelValue)"
                 :una
               >
                 <slot name="item" :item="item">
@@ -178,7 +160,6 @@ function isItemSelected(item: unknown, modelValue: unknown) {
                     :size
                     :select-item
                     v-bind="{ ..._selectItem, ...group._selectItem }"
-                    :is-selected="isItemSelected(item, modelValue)"
                     :una
                   >
                     <slot name="item" :item="item">
