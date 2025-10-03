@@ -1,10 +1,11 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin, useAppConfig } from '#app'
 import { computed, watchEffect } from 'vue'
 import { useUnaSettings } from '../composables/useUnaSettings'
 
 let unaUIStyle: HTMLStyleElement
 
 export default defineNuxtPlugin(() => {
+  const { una: { themes } } = useAppConfig()
   const { settings } = useUnaSettings()
 
   unaUIStyle = document.createElement('style')
@@ -17,7 +18,7 @@ export default defineNuxtPlugin(() => {
 
   // created a computed property for styles
   const computedStyles = computed(() => {
-    const theme = settings.value.themes.find(t => t.name === settings.value.theme)
+    const theme = themes.find(t => t.name === settings.value.theme)
     if (settings.value.theme && theme) {
       return `
       :root {

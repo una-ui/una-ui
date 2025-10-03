@@ -1,14 +1,16 @@
-import { defineNuxtPlugin, useHead } from '#app'
+import { defineNuxtPlugin, useAppConfig, useHead } from '#app'
 
 import { useUnaSettings } from '../composables/useUnaSettings'
 
 export default defineNuxtPlugin(() => {
+  const { una: { themes } } = useAppConfig()
   const { defaultSettings } = useUnaSettings()
   useHead({
     script: [
       {
         innerHTML: `
         ;(function() {
+          const themes = ${JSON.stringify(themes)}
           let settings = JSON.parse(localStorage.getItem('una-settings'))
 
           if (!settings) {
@@ -19,7 +21,7 @@ export default defineNuxtPlugin(() => {
           ${process.dev ? 'console.log({ settings })' : ''}
 
           if (settings.theme) {
-            const theme = settings.themes.find(t => t.name === settings.theme)  
+            const theme = themes.find(t => t.name === settings.theme)
             if (theme) {
               Object.entries(theme.cssVars.light).map(i => html.style.setProperty(i[0], i[1]))
               Object.entries(theme.cssVars.dark).map(i => html.style.setProperty(i[0], i[1]))
