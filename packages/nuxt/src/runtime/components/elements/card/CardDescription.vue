@@ -7,6 +7,7 @@ const props = defineProps<NCardDescriptionProps>()
 
 <template>
   <p
+    data-slot="card-description"
     :class="cn(
       'card-description',
       props.una?.cardDescription,

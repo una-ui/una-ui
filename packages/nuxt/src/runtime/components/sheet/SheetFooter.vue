@@ -7,6 +7,7 @@ const props = defineProps<NSheetFooterProps>()
 
 <template>
   <div
+    data-slot="sheet-footer"
     :class="
       cn(
         'sheet-footer',
