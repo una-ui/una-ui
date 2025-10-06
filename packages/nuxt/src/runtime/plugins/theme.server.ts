@@ -2,6 +2,7 @@ import { defineNuxtPlugin, useAppConfig, useHead } from '#app'
 
 export default defineNuxtPlugin(() => {
   const { una: settings } = useAppConfig()
+
   useHead({
     script: [
       {
@@ -22,6 +23,7 @@ export default defineNuxtPlugin(() => {
           async function applyColors(color, prefix) {
             const res = await fetch('/_una/colors/' + prefix + '/' + color + '.json', {
               cache: 'force-cache',
+              priority: 'high'
             })
             if (!res.ok) return
 
