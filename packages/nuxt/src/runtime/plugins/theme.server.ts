@@ -1,32 +1,47 @@
-import { defineNuxtPlugin, useHead } from '#app'
-
-import { useUnaSettings } from '../composables/useUnaSettings'
+import { defineNuxtPlugin, useAppConfig, useHead } from '#app'
 
 export default defineNuxtPlugin(() => {
-  const { defaultSettings } = useUnaSettings()
+  const { una: settings } = useAppConfig()
   useHead({
     script: [
       {
+        // not available on firefox
+        // https://bugzil.la/1751383
+        blocking: 'render',
+        type: 'module',
+        async: true,
         innerHTML: `
-        ;(function() {
+        "use strict";
+        await (async function() {
           let settings = JSON.parse(localStorage.getItem('una-settings'))
 
           if (!settings) {
-            settings = ${JSON.stringify(defaultSettings)}
+            settings = ${JSON.stringify(settings)}
+          }
+
+          async function applyColors(color, prefix) {
+            const res = await fetch('/_una/colors/' + prefix + '/' + color + '.json', {
+              cache: 'force-cache',
+            })
+            if (!res.ok) return
+
+            for (const [k, v] of Object.entries(await res.json())) {
+              document.documentElement.style.setProperty(k, v)
+            }
           }
 
           const html = document.documentElement
           ${process.dev ? 'console.log({ settings })' : ''}
 
-          if (settings.primary)
-            Object.entries(settings.primaryColors).map(i => html.style.setProperty(i[0], i[1]))
-          if (settings.gray)
-            Object.entries(settings.grayColors).map(i => html.style.setProperty(i[0], i[1]))
+          await Promise.all([
+            settings.primary && applyColors(settings.primary, 'primary'),
+            settings.gray && applyColors(settings.gray, 'gray'),
+          ])
           if (settings.radius)
             html.style.setProperty('--una-radius', settings.radius + 'rem')
           if (settings.fontSize)
             html.style.setProperty('--una-font-size', settings.fontSize + 'px')
-        })()`.trim().replace(/\s*\n\s*/g, ';'),
+        })()`.trim(),
       },
     ],
   })

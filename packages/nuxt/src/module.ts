@@ -1,16 +1,17 @@
 import type { UnaSettings } from './runtime/types'
-import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
+import { addComponentsDir, addImportsDir, addPlugin, addServerHandler, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
+import { grayThemes, primaryThemes } from './runtime/utils/colors'
 import extendUnocssOptions from './una.config'
 
 export type * from './runtime/types'
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
-    una?: Partial<Omit<UnaSettings, 'primaryColors' | 'grayColors'>>
+    una?: Partial<UnaSettings>
   }
   interface AppConfig {
-    una: Omit<UnaSettings, 'primaryColors' | 'grayColors'>
+    una: UnaSettings
   }
 }
 
@@ -67,13 +68,10 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.alias['#una'] = resolve('./runtime')
 
     nuxt.options.appConfig.una = {
-      ...{
-        primary: 'yellow',
-        gray: 'stone',
-        radius: 0.5,
-        fontSize: 16,
-      },
-      ...(nuxt.options.appConfig.una || {}),
+      primary: 'yellow',
+      gray: 'stone',
+      radius: 0.5,
+      fontSize: 16,
     }
 
     // Isolate root node from portaled components
@@ -118,6 +116,15 @@ export default defineNuxtModule<ModuleOptions>({
     if (options.themeable) {
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
+      addServerHandler({ route: '/_una/colors/:prefix/:color', method: 'get', handler: resolve(runtimeDir, 'server', 'colors') })
+      nuxt.hook('prerender:routes', (ctx) => {
+        for (const [color] of primaryThemes) {
+          ctx.routes.add(`/_una/colors/primary/${color}.json`)
+        }
+        for (const [color] of grayThemes) {
+          ctx.routes.add(`/_una/colors/gray/${color}.json`)
+        }
+      })
     }
 
     // utils
