@@ -17,7 +17,7 @@ catalog:
   '@iconify-json/radix-icons': ^1.2.5
   '@iconify-json/tabler': ^1.2.23
   '@iconify-json/vscode-icons': ^1.2.30
-  '@iconify/json': ^2.2.390
+  '@iconify/json': ^2.2.392
   '@iconify/utils': ^2.3.0
   '@nuxt/devtools': ^2.6.5
   '@nuxt/kit': ^3.19.2
