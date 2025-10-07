@@ -1,14 +1,23 @@
 import type { Ref } from 'vue'
-import type { UnaSettings } from '../types'
-import { useAppConfig } from '#imports'
+import type { Colors, UnaSettings } from '../types'
+import { themeStorageName, themeStorageType } from '#build/una-theme.config'
+import { useAppConfig, useCookie } from '#imports'
 import { useStorage } from '@vueuse/core'
 import { defu } from 'defu'
-import { watchEffect } from 'vue'
+import { computed, watchEffect } from 'vue'
 import { useUnaThemes } from './useUnaThemes'
 
+export interface UnaUserSettings extends UnaSettings {
+  // These are added automatically, but only when using localStorage.
+  primaryColors?: Colors
+  grayColors?: Colors
+}
+
 export interface UseUnaSettingsReturn {
-  defaultSettings: UnaSettings
-  settings: Ref<UnaSettings>
+  defaultSettings: UnaUserSettings
+  settings: Ref<UnaUserSettings>
+  primaryColors: Ref<Colors>
+  grayColors: Ref<Colors>
   reset: () => void
 }
 
@@ -16,23 +25,36 @@ export function useUnaSettings(): UseUnaSettingsReturn {
   const { una } = useAppConfig()
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 
-  const defaultSettings: UnaSettings = {
-    primaryColors: getPrimaryColors(una.primary),
-    grayColors: getGrayColors(una.gray),
+  const defaultSettings = {
+    ...themeStorageType === 'localStorage'
+      ? {
+          primaryColors: getPrimaryColors(una.primary),
+          grayColors: getGrayColors(una.gray),
+        }
+      : {},
     primary: una.primary,
     gray: una.gray,
     radius: una.radius,
     fontSize: una.fontSize,
-  } as const
+  } as const satisfies UnaUserSettings
 
-  const settings = useStorage<UnaSettings>('una-settings', defaultSettings, undefined, {
-    mergeDefaults: defu,
-  })
+  const settings = themeStorageType === 'cookie'
+    ? useCookie<UnaUserSettings>(themeStorageName, {
+        default: () => defaultSettings,
+      })
+    : useStorage<UnaUserSettings>(themeStorageName, defaultSettings, undefined, {
+        mergeDefaults: defu,
+      })
 
-  watchEffect(() => {
-    settings.value.primaryColors = getPrimaryColors(settings.value.primary || una.primary)
-    settings.value.grayColors = getGrayColors(settings.value.gray || una.gray)
-  })
+  const primaryColors = computed(() => getPrimaryColors(settings.value.primary || una.primary))
+  const grayColors = computed(() => getGrayColors(settings.value.gray || una.gray))
+
+  if (themeStorageType === 'localStorage') {
+    watchEffect(() => {
+      settings.value.primaryColors = primaryColors.value
+      settings.value.grayColors = grayColors.value
+    })
+  }
 
   function reset(): void {
     settings.value.primary = defaultSettings.primary
@@ -44,6 +66,8 @@ export function useUnaSettings(): UseUnaSettingsReturn {
   return {
     defaultSettings,
     settings,
+    primaryColors,
+    grayColors,
     reset,
   }
 }
