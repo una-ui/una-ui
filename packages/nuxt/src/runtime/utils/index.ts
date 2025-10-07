@@ -82,3 +82,33 @@ export function looseToNumber(val: any): any {
   const n = Number.parseFloat(val)
   return Number.isNaN(n) ? val : n
 }
+
+/**
+ * Create a struct-like object which only allows defined fields.
+ *
+ * Fields which are not defined will be silently ignored when reading and writing.
+ * If no fields are provided, only fields from the original object are allowed.
+ *
+ * @param obj The object to create a struct from.
+ * @param fields Fields to include in the struct.
+ * @returns A struct-like object that only includes the specified fields.
+ */
+export function struct<T extends object>(obj: T, fields?: (keyof T | ((string) & {}) | symbol)[]): T {
+  if (!fields) {
+    fields = Object.keys(obj) as (keyof T)[]
+  }
+  return new Proxy(obj, {
+    get(target, prop) {
+      return fields.includes(prop) ? Reflect.get(target, prop) : undefined
+    },
+    set(target, prop, value) {
+      return fields.includes(prop) && Reflect.set(target, prop, value)
+    },
+    has(_, prop) {
+      return fields.includes(prop) && Reflect.has(_, prop)
+    },
+    ownKeys() {
+      return fields as (string | symbol)[]
+    },
+  })
+}

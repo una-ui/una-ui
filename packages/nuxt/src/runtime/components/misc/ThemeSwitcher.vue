@@ -14,14 +14,14 @@ const colorMode = useColorMode()
 
 const [value, toggle] = useToggle()
 const { primaryThemes, grayThemes } = useUnaThemes()
-const { settings, reset } = useUnaSettings()
+const { settings, primaryColors, grayColors, reset } = useUnaSettings()
 
-const currentPrimaryThemeHex = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
+const currentPrimaryThemeHex = computed(() => primaryColors.value?.['--una-primary-hex'])
 const currentPrimaryThemeName = computed(() => {
   const theme = primaryThemes.find(([, theme]) => theme['--una-primary-hex'] === currentPrimaryThemeHex.value)
   return theme ? theme[0] : ''
 })
-const currentGrayThemeHex = computed(() => settings.value.grayColors?.['--una-gray-hex'])
+const currentGrayThemeHex = computed(() => grayColors.value?.['--una-gray-hex'])
 const currentGrayThemeName = computed(() => {
   const theme = grayThemes.find(([, theme]) => theme['--una-gray-hex'] === currentGrayThemeHex.value)
   return theme ? theme[0] : ''

@@ -21,6 +21,15 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/dashboards/default',
+      ],
+      failOnError: false,
+    },
+
     routeRules: {
       '/': {
         redirect: '/dashboards/default',
