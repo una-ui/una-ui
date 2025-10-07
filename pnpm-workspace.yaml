@@ -8,7 +8,7 @@ overrides:
 
 catalog:
   '@antfu/eslint-config': ^4.19.0
-  '@antfu/ni': ^24.4.0
+  '@antfu/ni': ^26.1.0
   '@babel/types': ^7.28.4
   '@faker-js/faker': ^9.9.0
   '@headlessui/vue': ^1.7.23
