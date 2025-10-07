@@ -153,7 +153,7 @@ export default defineNuxtModule<ModuleOptions>({
       }
 
       if ((!nuxt.options.ssr || nuxt.options._generate) && storage?.type === 'cookie') {
-        logger.warn('[una] Using localStorage for theming because no server runtime is targetted')
+        logger.warn('[una] Using localStorage for theming because no server runtime is targeted')
         storage.type = 'localStorage'
       }
 
