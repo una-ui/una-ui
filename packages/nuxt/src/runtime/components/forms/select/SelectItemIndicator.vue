@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import type { NSelectItemIndicatorProps } from '../../../types'
-import { Primitive } from 'reka-ui'
+import { reactiveOmit } from '@vueuse/core'
+import { SelectItemIndicator, useForwardProps } from 'reka-ui'
 import { cn } from '../../../utils'
 import Icon from '../../elements/Icon.vue'
 
-const props = withDefaults(defineProps<NSelectItemIndicatorProps>(), {
-  as: 'span',
-})
+const props = defineProps<NSelectItemIndicatorProps>()
+
+const forwardProps = useForwardProps(reactiveOmit(props, ['icon', 'una']))
 </script>
 
 <template>
-  <Primitive
-    aria-hidden
-    v-bind="props"
+  <SelectItemIndicator
+    v-bind="forwardProps"
     :class="cn(
       'select-item-indicator',
       props.una?.selectItemIndicator,
@@ -27,5 +27,5 @@ const props = withDefaults(defineProps<NSelectItemIndicatorProps>(), {
         )"
       />
     </slot>
-  </Primitive>
+  </SelectItemIndicator>
 </template>

@@ -8,7 +8,7 @@ overrides:
 
 catalog:
   '@antfu/eslint-config': ^4.19.0
-  '@antfu/ni': ^24.4.0
+  '@antfu/ni': ^26.1.0
   '@babel/types': ^7.28.4
   '@faker-js/faker': ^9.9.0
   '@iconify-json/heroicons': ^1.2.3
@@ -16,7 +16,7 @@ catalog:
   '@iconify-json/radix-icons': ^1.2.5
   '@iconify-json/tabler': ^1.2.23
   '@iconify-json/vscode-icons': ^1.2.30
-  '@iconify/json': ^2.2.390
+  '@iconify/json': ^2.2.392
   '@iconify/utils': ^2.3.0
   '@nuxt/devtools': ^2.6.5
   '@nuxt/kit': ^3.19.2
@@ -27,7 +27,7 @@ catalog:
   '@types/chroma-js': ^3.1.1
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.18.6
+  '@types/node': ^22.18.8
   '@una-ui/content': ^48.3.0
   '@unocss/core': ^66.5.1
   '@unocss/eslint-config': ^66.5.1
@@ -45,12 +45,12 @@ catalog:
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
-  bumpp: ^10.2.3
+  bumpp: ^10.3.1
   chroma-js: ^3.1.2
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.36.0
+  eslint: ^9.37.0
   eslint-plugin-format: ^1.0.2
   esno: ^4.8.0
   fast-glob: ^3.3.3
