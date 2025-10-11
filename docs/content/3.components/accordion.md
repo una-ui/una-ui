@@ -11,9 +11,16 @@ badges:
 
 ### Basic
 
-| Prop    | Default | Type    | Description              |
-| ------- | ------- | ------- | ------------------------ |
-| `items` | -       | `array` | Set the accordion items. |
+| Prop           | Default | Type     | Description                                                        |
+| -------------- | ------- | -------- | ------------------------------------------------------------------ |
+| `items`        | `[]`    | `array`  | Set the accordion items.                                           |
+| `item.value`   | -       | `string` | The unique value of the item used for rendering and state tracking |
+| `item.label`   | -       | `string` | The label of the accordion item                                    |
+| `item.content` | -       | `string` | The content of the accordion item                                  |
+
+::alert{type="warning"}
+To avoid conflicts, please do not the use reserved values `header`, `trigger`, `content`, `item`, and `default` for the `value` of an accordion item. Doing so may cause slot conflicts.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -26,12 +33,12 @@ badges:
 
 ### Mounted
 
-| Prop         | Default | Type      | Description                                                                                |
-| ------------ | ------- | --------- | ------------------------------------------------------------------------------------------ |
-| `mounted`    | `false` | `boolean` | Mount the content of the accordion when the page loads, even if the accordion is closed.   |
-| `item.mount` | `false` | `boolean` | Mount the content of a specific item when the page loads, even if the accordion is closed. |
+| Prop                 | Default | Type      | Description                                                                                       |
+| -------------------- | ------- | --------- | ------------------------------------------------------------------------------------------------- |
+| `unmountOnHide`      | `true`  | `boolean` | Set to `false` to keep the content of the accordion mounted, even if the accordion is closed.     |
+| `item.unmountOnHide` | `true`  | `boolean` | Like `unmountOnHide`, but applies to a specific item. Has no effect if `unmountOnHide` is `false` |
 
-> ⚡ By default, the accordion's content is not rendered until it is opened for performance reasons. To render the content when the page loads, even if the accordion is closed for SEO purposes, use the `mounted` prop.
+> ⚡ By default, the accordion's content is not rendered until it is opened for performance reasons. To render the content when the page loads, even if the accordion is closed for SEO purposes, set the `unmountOnHide` prop to `false`.
 
 ::alert{type="warning"}
 If you have a lot of accordion items, it is not recommended to use the `mounted` prop because it affects the performance of the page, instead use the `item.mount` prop to mount the content of a specific item if needed.
@@ -48,9 +55,9 @@ If you have a lot of accordion items, it is not recommended to use the `mounted`
 
 ### Multiple
 
-| Prop       | Default | Type      | Description            |
-| ---------- | ------- | --------- | ---------------------- |
-| `multiple` | `false` | `boolean` | Expand multiple items. |
+| Prop   | Default  | Type                     | Description                                      |
+| ------ | -------- | ------------------------ | ------------------------------------------------ |
+| `type` | `single` | `'single' \| 'multiple'` | Expand a single item or multiple items at a time |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -63,13 +70,12 @@ If you have a lot of accordion items, it is not recommended to use the `mounted`
 
 ### Default open
 
-| Prop               | Default | Type      | Description                      |
-| ------------------ | ------- | --------- | -------------------------------- |
-| `defaultOpen`      | `false` | `boolean` | Open all items by default.       |
-| `item.defaultOpen` | `false` | `boolean` | Open a specific item by default. |
+| Prop           | Default | Type                 | Description                                             |
+| -------------- | ------- | -------------------- | ------------------------------------------------------- |
+| `defaultValue` | -       | `string \| string[]` | Open the specified items whose value matches the input. |
 
 ::alert{type="warning"}
-Use `multiple` prop when using `default-open` to open multiple items by default.
+Use `type="multiple"` prop when using `default-value` to open multiple items by default.
 ::
 
 :::CodeGroup
@@ -83,10 +89,10 @@ Use `multiple` prop when using `default-open` to open multiple items by default.
 
 ### Color
 
-Since we use the [Button](button) component for the accordion label, you can use the `btn` prop to change the color of the label. See [Button](button) for more information.
+Since we use the [Button](button) component for the accordion label, you can use `_accordionTrigger` prop to pass button props, like `btn` to change the color of the label. See [Button](button) for more information.
 
 ::alert{type="info"}
-`btn="text-{color}"` prop is basically from [Button](button) component. You can use it to change the color of the label.
+`:_accordion-trigger="{ btn: 'text-{color}' }"` prop is basically from [Button](button) component. You can use it to change the color of the label.
 ::
 
 :::CodeGroup
@@ -100,15 +106,19 @@ Since we use the [Button](button) component for the accordion label, you can use
 
 ### Icon
 
-| Prop            | Default | Type     | Description                                       |
-| --------------- | ------- | -------- | ------------------------------------------------- |
-| `leading`       | -       | `string` | Add leading icon to the label.                    |
-| `item.leading`  | -       | `string` | Add leading icon to the label of a specific item. |
-| `trailingOpen`  | -       | `string` | Customize trailing open icon.                     |
-| `trailingClose` | -       | `string` | Customize trailing close icon.                    |
+| Prop                              | Default | Type     | Description                                     |
+| --------------------------------- | ------- | -------- | ----------------------------------------------- |
+| `_accordionTrigger.leading`       | -       | `string` | Set a custom leading icon for the accordion.    |
+| `_accordionTrigger.trailing`      | -       | `string` | Set a custom trailing icon for the accordion.   |
+| `item._accordionTrigger.leading`  | -       | `string` | Set a custom leading icon for a specific item.  |
+| `item._accordionTrigger.trailing` | -       | `string` | Set a custom trailing icon for a specific item. |
 
 ::alert{type="success"}
 If no `trailing` icon is given, it will be used for both open and close states and will animate upside down automatically.
+::
+
+::alert{type="info"}
+Use the unocss variants `group-data-[state=open]/accordion-trigger` and `group-data-[state=closed]/accordion-trigger` to select the icon based on the open/close state of the accordion item.
 ::
 
 :::CodeGroup
@@ -124,10 +134,10 @@ If no `trailing` icon is given, it will be used for both open and close states a
 
 ### Reverse
 
-| Prop           | Default | Type      | Description                                                               |
-| -------------- | ------- | --------- | ------------------------------------------------------------------------- |
-| `reverse`      | -       | `boolean` | Switch the position of the trailing and leading icons.                    |
-| `item.reverse` | -       | `boolean` | Switch the position of the trailing and leading icons of a specific item. |
+| Prop                             | Default | Type      | Description                                                               |
+| -------------------------------- | ------- | --------- | ------------------------------------------------------------------------- |
+| `_accordionTrigger.reverse`      | -       | `boolean` | Switch the position of the trailing and leading icons.                    |
+| `item._accordionTrigger.reverse` | -       | `boolean` | Switch the position of the trailing and leading icons of a specific item. |
 
 ::alert{type="info"}
 `reverse` prop is basically from [Button](button) component. You can use it to switch the position of the trailing and leading icons.
@@ -142,11 +152,17 @@ If no `trailing` icon is given, it will be used for both open and close states a
 ::
 :::
 
-### Unstyle mode
+### Variant
 
-| Prop      | Default | Type      | Description                                                       |
-| --------- | ------- | --------- | ----------------------------------------------------------------- |
-| `unstyle` | -       | `boolean` | Remove the default border, padding, and divider of the accordion. |
+| Prop        | Default          | Type        | Description                   |
+| ----------- | ---------------- | ----------- | ----------------------------- |
+| `accordion` | `border divider` | `{variant}` | The variant of the accordion. |
+
+| Variant   | Description                               |
+| --------- | ----------------------------------------- |
+| `border`  | A bordered accordion.                     |
+| `divider` | An accordion with dividers between items. |
+| `~`       | An unstyled accordion.                    |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -194,17 +210,20 @@ If no `trailing` icon is given, it will be used for both open and close states a
 
 ## Slots
 
-| Name      | Props    | Description                   |
-| --------- | -------- | ----------------------------- |
-| `label`   | `{prop}` | The label of the accordion.   |
-| `content` | `{prop}` | The content of the accordion. |
+| Name      | Props                   | Description                                        |
+| --------- | ----------------------- | -------------------------------------------------- |
+| `default` | `{ modelValue }`        | Fill with `AccordionItem` components               |
+| `item`    | `{ open, item, index }` | The item of the accordion.                         |
+| `header`  | `{ open, item, index }` | The header of the accordion containing the trigger |
+| `trigger` | `{ open, item, index }` | The trigger button.                                |
+| `content` | `{ open, item, index }` | The content of the accordion.                      |
 
-| Slot prop | Description                                       |
-| --------- | ------------------------------------------------- |
-| `index`   | allows you to access index of the item.           |
-| `item`    | allows you to access the item properties.         |
-| `open`    | allows you to access the open state of the item.  |
-| `close`   | allows you to access the close state of the item. |
+| Slot prop    | Description                                                                               |
+| ------------ | ----------------------------------------------------------------------------------------- |
+| `modelValue` | the value of the item(s) currently open                                                   |
+| `open`       | allows you to access the open state of the item.                                          |
+| `item`       | allows you to access the item object.                                                     |
+| `index`      | allows you to access the index of the item. To identify items, prefer using `item.value`. |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -217,11 +236,14 @@ If no `trailing` icon is given, it will be used for both open and close states a
 
 ---
 
-`index number` - allows you to customize the specific item of the accordion. See the example below.
+All slots can be prefixed with the value of an item to target a specific item. For example, to customize the content of the item with the value `1`, use the `1-content` slot.
 
-::alert{type="warning"}
-If you want to customize the content of a specific item, make sure not to provide a `content` slot.
-::
+| Slot name          | Description                                                                       |
+| ------------------ | --------------------------------------------------------------------------------- |
+| `${value}`         | The render slot of a specific item. Default value renders the other item's slots. |
+| `${value}-header`  | The header of a specific item                                                     |
+| `${value}-trigger` | The trigger of a specific item                                                    |
+| `${value}-content` | The content of a specific item                                                    |
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -244,6 +266,18 @@ If you want to customize the content of a specific item, make sure not to provid
 
 :::CodeGroup
 ::div{label="Accordion.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/elements/Accordion.vue
+@@@ ../packages/nuxt/src/runtime/components/elements/accordion/Accordion.vue
+::
+::div{label="AccordionItem.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/accordion/AccordionItem.vue
+::
+::div{label="AccordionHeader.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/accordion/AccordionHeader.vue
+::
+::div{label="AccordionTrigger.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/accordion/AccordionTrigger.vue
+::
+::div{label="AccordionContent.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/elements/accordion/AccordionContent.vue
 ::
 :::
