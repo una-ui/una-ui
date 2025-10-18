@@ -11,7 +11,6 @@ catalog:
   '@antfu/ni': ^26.1.0
   '@babel/types': ^7.28.4
   '@faker-js/faker': ^9.9.0
-  '@headlessui/vue': ^1.7.23
   '@iconify-json/heroicons': ^1.2.3
   '@iconify-json/lucide': ^1.2.69
   '@iconify-json/radix-icons': ^1.2.5

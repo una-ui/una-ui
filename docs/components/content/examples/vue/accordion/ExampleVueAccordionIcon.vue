@@ -1,36 +1,50 @@
 <script setup lang="ts">
+import type { NAccordionItemProps } from '#una/types'
+
 const items1 = [
   {
+    value: 'getting-started',
     label: 'How do I get started?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
   {
+    value: 'return-policy',
     label: 'What is your return policy?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
   {
+    value: 'exchange-item',
     label: 'Can I exchange an item?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
-]
+] satisfies NAccordionItemProps[]
 
 const items2 = [
   {
+    value: 'getting-started',
     label: 'How do I get started?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
-    leading: 'i-heroicons-information-circle text-info',
+    _accordionTrigger: {
+      leading: 'i-heroicons-information-circle text-info',
+    },
   },
   {
+    value: 'return-policy',
     label: 'What is your return policy?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
-    leading: 'i-heroicons-shield-check text-green-600',
+    _accordionTrigger: {
+      leading: 'i-heroicons-shield-check text-green-600',
+    },
   },
   {
+    value: 'exchange-item',
     label: 'Can I exchange an item?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
-    leading: 'i-heroicons-shopping-cart text-amber',
+    _accordionTrigger: {
+      leading: 'i-heroicons-shopping-cart text-amber',
+    },
   },
-]
+] satisfies NAccordionItemProps[]
 </script>
 
 <template>
@@ -41,7 +55,9 @@ const items2 = [
 
     <NAccordion
       :items="items1"
-      leading="i-heroicons-question-mark-circle"
+      :_accordion-trigger="{
+        leading: 'i-heroicons-question-mark-circle',
+      }"
     />
 
     <NSeparator />
@@ -62,10 +78,13 @@ const items2 = [
 
     <NAccordion
       :items="items1"
-      trailing-open="i-heroicons-chevron-left"
+      :_accordion-trigger="{
+        trailing: 'i-heroicons-chevron-left',
+      }"
       :una="{
-        accordionTrailingClose: '-rotate-90',
-        accordionTrailingOpen: 'rotate-0',
+        accordionTrailing: 'transition-transform duration-300',
+        accordionTrailingOpen: '-rotate-90',
+        accordionTrailingClose: 'rotate-0',
       }"
     />
 
@@ -77,8 +96,10 @@ const items2 = [
 
     <NAccordion
       :items="items1"
-      trailing-open="i-twemoji-smiling-face-with-sunglasses"
-      trailing-close="i-twemoji-loudly-crying-face"
-    />
+    >
+      <template #header="{ open }">
+        <NAccordionTrigger :trailing="open ? 'i-twemoji-smiling-face-with-sunglasses' : 'i-twemoji-loudly-crying-face'" />
+      </template>
+    </NAccordion>
   </div>
 </template>
