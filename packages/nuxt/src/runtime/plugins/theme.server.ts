@@ -1,15 +1,29 @@
 import { defineNuxtPlugin, useHead } from '#app'
+import { themeStorageName, themeStorageType } from '#build/una-theme.config'
 
 import { useUnaSettings } from '../composables/useUnaSettings'
 
 export default defineNuxtPlugin(() => {
-  const { defaultSettings } = useUnaSettings()
+  const { defaultSettings, settings, primaryColors, grayColors } = useUnaSettings()
+  if (themeStorageType === 'cookie') {
+    useHead({
+      htmlAttrs: {
+        style: {
+          ...primaryColors.value,
+          ...grayColors.value,
+          '--una-radius': settings.value.radius ? `${settings.value.radius}rem` : undefined,
+          '--una-font-size': settings.value.fontSize ? `${settings.value.fontSize}px` : undefined,
+        },
+      },
+    })
+    return
+  }
   useHead({
     script: [
       {
         innerHTML: `
         ;(function() {
-          let settings = JSON.parse(localStorage.getItem('una-settings'))
+          let settings = JSON.parse(localStorage.getItem(${JSON.stringify(themeStorageName)}))
 
           if (!settings) {
             settings = ${JSON.stringify(defaultSettings)}
