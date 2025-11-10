@@ -66,6 +66,10 @@ export interface NSidebarProviderProps {
   /**
    * Default open state.
    *
+   * After the component is mounted, the current open state will be persisted in a
+   * cookie. The saved value will be used as the initial value for the open prop,
+   * and this prop will be ignored.
+   *
    * @default true
    */
   defaultOpen?: boolean
