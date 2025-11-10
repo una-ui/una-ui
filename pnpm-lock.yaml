@@ -19,8 +19,8 @@ catalogs:
       specifier: ^9.9.0
       version: 9.9.0
     '@iconify-json/lucide':
-      specifier: ^1.2.72
-      version: 1.2.72
+      specifier: ^1.2.73
+      version: 1.2.73
     '@iconify-json/radix-icons':
       specifier: ^1.2.5
       version: 1.2.5
@@ -31,8 +31,8 @@ catalogs:
       specifier: ^1.2.33
       version: 1.2.33
     '@iconify/json':
-      specifier: ^2.2.404
-      version: 2.2.404
+      specifier: ^2.2.405
+      version: 2.2.405
     '@iconify/utils':
       specifier: ^2.3.0
       version: 2.3.0
@@ -260,7 +260,7 @@ importers:
         version: 9.9.0
       '@iconify/json':
         specifier: 'catalog:'
-        version: 2.2.404
+        version: 2.2.405
       '@types/chroma-js':
         specifier: 'catalog:'
         version: 3.1.2
@@ -341,7 +341,7 @@ importers:
     devDependencies:
       '@iconify-json/lucide':
         specifier: 'catalog:'
-        version: 1.2.72
+        version: 1.2.73
       '@iconify-json/vscode-icons':
         specifier: 'catalog:'
         version: 1.2.33
@@ -469,7 +469,7 @@ importers:
     devDependencies:
       '@iconify-json/lucide':
         specifier: 'catalog:'
-        version: 1.2.72
+        version: 1.2.73
       '@iconify-json/radix-icons':
         specifier: 'catalog:'
         version: 1.2.5
@@ -1041,8 +1041,8 @@ packages:
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
 
-  '@iconify-json/lucide@1.2.72':
-    resolution: {integrity: sha512-kq/ZDUtCdBfjGxIMaUI+Ctt3dC/0sHmrUyTU1i04+8ehlo3/PUGKqrJd4C9J/kQl1jfcHpaUPqGUFvgZ9orhQg==}
+  '@iconify-json/lucide@1.2.73':
+    resolution: {integrity: sha512-++HFkqDNu4jqG5+vYT+OcVj9OiuPCw9wQuh8G5QWQnBRSJ9eKwSStiU8ORgOoK07xJsm/0VIHySMniXUUXP9Gw==}
 
   '@iconify-json/radix-icons@1.2.5':
     resolution: {integrity: sha512-HkUt+ydCivK/S/aFsgaiZRvs7zDEcO07PKkuEuu2EFBWCuC+Pi1mDdXPX0U3qjRr7JknmnoR4sAg53C+Ig35ow==}
@@ -1059,8 +1059,8 @@ packages:
   '@iconify/collections@1.0.552':
     resolution: {integrity: sha512-WOTWOBS89MK6aZb2DfCUsivNWEkubVIoJnBa74xgqlzmTXgMfo+PvPNQMcDP6XXAX0MibhsSJuAj3hbMb/AwfA==}
 
-  '@iconify/json@2.2.404':
-    resolution: {integrity: sha512-K11bUBMW7gb/PhzJNZvDDJDq3hEVXoJArsdbr+9LQQqd2TrWEd5+PtctNcfJLu4epgjwDppaLJnN6AEPI1BL9w==}
+  '@iconify/json@2.2.405':
+    resolution: {integrity: sha512-wpZMsZoqt6tHbipJ/JmkhRK1TWkmRrTBfL2pi48qXyqUxF56+OEUVB61VkcQ1hMKj/tDAIicFSirkaRZkMwliw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7759,7 +7759,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.72':
+  '@iconify-json/lucide@1.2.73':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7783,7 +7783,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.404':
+  '@iconify/json@2.2.405':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 2.0.3
@@ -9450,7 +9450,7 @@ snapshots:
   '@una-ui/content@48.3.0(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.19.0)(@unhead/vue@2.0.14(vue@3.5.21(typescript@5.6.3)))(@unocss/webpack@66.5.3(webpack@5.99.9(esbuild@0.25.9)))(@vue/compiler-sfc@3.5.23)(db0@0.3.2)(eslint@9.39.1(jiti@2.6.1))(ioredis@5.8.0)(magicast@0.3.5)(meow@13.2.0)(optionator@0.9.4)(postcss@8.5.6)(rollup@4.52.2)(sass@1.93.3)(terser@5.40.0)(tsx@4.19.4)(unstorage@1.17.1(@netlify/blobs@9.1.2)(db0@0.3.2)(ioredis@5.8.0))(vite@7.1.7(@types/node@22.19.0)(jiti@2.6.1)(sass@1.93.3)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.1))(vue-tsc@2.2.12(typescript@5.6.3))(yaml@2.8.1)':
     dependencies:
       '@iconify-json/heroicons': 1.2.2
-      '@iconify-json/lucide': 1.2.72
+      '@iconify-json/lucide': 1.2.73
       '@iconify-json/radix-icons': 1.2.5
       '@iconify-json/simple-icons': 1.2.36
       '@iconify-json/tabler': 1.2.23
@@ -9946,7 +9946,7 @@ snapshots:
       '@unocss/config': 66.5.3
       '@unocss/core': 66.5.3
       chokidar: 3.6.0
-      magic-string: 0.30.19
+      magic-string: 0.30.21
       pathe: 2.0.3
       tinyglobby: 0.2.15
       unplugin: 2.3.10
@@ -12619,7 +12619,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.18.10
+      '@types/node': 22.19.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
