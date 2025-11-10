@@ -20,7 +20,7 @@ jobs:
           node-version: lts/*
       - uses: pnpm/action-setup@v4
         with:
-          version: 10.20.0
+          version: 10.21.0
       - run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

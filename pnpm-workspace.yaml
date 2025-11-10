@@ -40,8 +40,8 @@ catalog:
   '@vee-validate/nuxt': ^4.15.1
   '@vee-validate/zod': ^4.15.1
   '@vercel/analytics': ^1.5.0
-  '@vue/compiler-core': ^3.5.23
-  '@vue/compiler-sfc': ^3.5.23
+  '@vue/compiler-core': ^3.5.24
+  '@vue/compiler-sfc': ^3.5.24
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
@@ -67,7 +67,7 @@ catalog:
   sass: ^1.93.3
   simple-git: ^3.30.0
   simple-git-hooks: ^2.13.1
-  tailwind-merge: ^3.3.1
+  tailwind-merge: ^3.4.0
   typescript: ^5.8.3
   ufo: ^1.6.1
   unbuild: ^3.6.1
