@@ -26,7 +26,7 @@ export function randomId(prefix: string): string {
   return `una-${prefix}-${useId()}`
 }
 
-export function omitProps<T extends Record<string, any>>(obj: T, propsToOmit: Array<keyof T>): Partial<T> {
+export function omitProps<T extends Record<string, any>, K extends keyof T>(obj: T, propsToOmit: Array<K>): Omit<T, K> {
   const newObj = { ...obj }
   propsToOmit.forEach(prop => delete newObj[prop])
   return newObj

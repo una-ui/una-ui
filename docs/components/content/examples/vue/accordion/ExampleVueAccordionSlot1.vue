@@ -1,26 +1,38 @@
 <script setup lang="ts">
+import type { NAccordionItemProps } from '#una/types'
+
 const items = [
   {
+    value: 'get-started',
     label: 'How do I get started?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
   {
+    value: 'return-policy',
     label: 'What is your return policy?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
   {
+    value: 'exchange-item',
     label: 'Can I exchange an item?',
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel urna vitae lectus aliquet mollis et eget risus.',
   },
-]
+] satisfies NAccordionItemProps[]
+
+const openItems = ref<string>()
 </script>
 
 <template>
   <NAccordion
+    v-model="openItems"
     :items="items"
-    unstyle
+    accordion="~"
+    class="space-y-3"
+    :una="{
+      accordionContent: 'data-[state=open]:(border border-t-0 border-primary)',
+    }"
   >
-    <template #label="{ item, index, open }">
+    <template #trigger="{ item, index, open }">
       <NButton
         btn="solid-gray block"
         :class="[
@@ -44,24 +56,17 @@ const items = [
         </template>
       </NButton>
     </template>
-
-    <template #content="{ item, open, close }">
-      <div
-        class="flex flex-col px-4 py-6"
-        :class="[
-          open ? 'border border-primary border-t-0' : '',
-        ]"
-      >
+    <template #content="{ item }">
+      <div class="flex flex-col px-4 py-6">
         <p>
           {{ item.content }}
         </p>
-
         <div class="mt-5 text-right">
           <NButton
             btn="outline-gray"
             class="mt-3"
             label="Close"
-            @click="close"
+            @click="openItems = undefined"
           />
         </div>
       </div>

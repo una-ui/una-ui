@@ -16,6 +16,7 @@ const selected3 = ref<string>()
 const selectedMultiple = ref<string[]>([])
 const selectedMultipleObj = ref<{ id: number, name: string, role: string }[]>()
 const selectedStatus = ref<string>()
+const selectedCustom = ref<string>()
 
 const alphabetItems = [
   {
@@ -189,6 +190,27 @@ const objectItems = [
           label="Vue Community"
           status="error"
         />
+      </div>
+    </div>
+
+    <div class="max-w-50 flex flex-col space-y-2">
+      <NLabel>
+        Custom Content Items
+      </NLabel>
+      <div class="space-y-2">
+        <NSelect v-model="selectedCustom">
+          <template #content>
+            <NSelectItem value="custom-1">
+              Custom Item 1
+            </NSelectItem>
+            <NSelectItem value="custom-2" disabled>
+              Custom Item 2 (Disabled)
+            </NSelectItem>
+            <NSelectItem value="custom-3">
+              Custom Item 3
+            </NSelectItem>
+          </template>
+        </NSelect>
       </div>
     </div>
   </div>

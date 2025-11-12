@@ -66,6 +66,11 @@ export interface NSidebarProviderProps {
   /**
    * Default open state.
    *
+   * Sets the initial sidebar state when no persisted value exists.
+   *
+   * The sidebar state is automatically persisted in a cookie. On subsequent loads,
+   * the persisted cookie value takes precedence over this prop.
+   *
    * @default true
    */
   defaultOpen?: boolean

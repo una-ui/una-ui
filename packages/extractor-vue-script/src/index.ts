@@ -112,10 +112,15 @@ function discoverVariants(node: babel.Node, prefixes: string[]): string[] {
 }
 
 function parseCodeAst(code: string, id?: string) {
-  const { $ast: node } = parseModule(code, {
-    sourceFileName: id,
-  })
-  return node
+  try {
+    const { $ast: node } = parseModule(code, {
+      sourceFileName: id,
+    })
+    return node
+  }
+  catch (e) {
+    throw new SyntaxError(`Failed to parse code ast${id ? ` (file: ${id})` : ''}`, { cause: e })
+  }
 }
 
 function extractTemplateExpressions(node: RootNode): babel.Node[] {
@@ -137,14 +142,21 @@ function extractTemplateExpressions(node: RootNode): babel.Node[] {
   return expressions
 }
 
+// only process supported filetypes
+const SUPPORTED_EXTENSION_IDS = /\.(?:[mc]?[jt]sx?|vue)$/
+
 function extractorVueScript(options?: ExtractorVueScriptOptions): Extractor {
   return {
     name: '@una-ui/extractor-vue-script',
     order: 0,
     async extract({ code, id }) {
       // the id can contain query parameters, so we need to clean it up
-      const astExprs = []
       const cleanPath = parsePath(id).pathname
+      // only process supported file extensions
+      if (!SUPPORTED_EXTENSION_IDS.test(cleanPath)) {
+        return undefined
+      }
+      const astExprs = []
       if (cleanPath.endsWith('.vue')) {
         const sfc = parseSFC(code, {
           filename: cleanPath,
