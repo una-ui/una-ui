@@ -7,10 +7,9 @@ on:
   push:
     tags:
       - 'v*'
-    tags-ignore:
-      - 'v*-alpha*'
-      - 'v*-beta*'
-      - 'v*-rc*'
+      - '!v*-alpha*'
+      - '!v*-beta*'
+      - '!v*-rc*'
 
 jobs:
   release:
