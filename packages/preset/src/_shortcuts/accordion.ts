@@ -14,7 +14,7 @@ export const staticAccordion: Record<`${AccordionPrefix}-${string}` | AccordionP
   'accordion-trigger': 'w-full flex justify-between items-center accordion-trigger-padding',
   'accordion-trigger-padding': 'p-(x-3 y-4) is-[.btn]:h-auto',
   'accordion-trigger-label': 'flex-1 text-left',
-  'accordion-panel': 'text-(muted 0.875em) border-(t $c-divider) accordion-trigger-padding',
+  'accordion-panel': 'w-full text-(muted 0.875em) border-(t $c-divider) accordion-trigger-padding',
   'accordion-leading': 'text-1.2em',
   'accordion-trailing': 'flex transition items-center text-1em duration-300',
 }
