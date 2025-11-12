@@ -1,3 +1,124 @@
+## 1.0.0-alpha.11 (2025-11-12)
+
+* ci: init ([1049b57](https://github.com/una-ui/una-ui/commit/1049b57))
+* ci: resolve release configuration [skip] ([a36f7d8](https://github.com/una-ui/una-ui/commit/a36f7d8))
+* feat(Accordion): improve default accordion-panel preset ([8375068](https://github.com/una-ui/una-ui/commit/8375068))
+* fix(Nuxt): omit 'themes' from una-settings local storage to prevent memory leaked (#521) ([527f261](https://github.com/una-ui/una-ui/commit/527f261)), closes [#521](https://github.com/una-ui/una-ui/issues/521) [#519](https://github.com/una-ui/una-ui/issues/519)
+* chore: override typescript version to 5.8.3 ([7d23fe4](https://github.com/una-ui/una-ui/commit/7d23fe4))
+* chore(deps): stale ([61bf7fc](https://github.com/una-ui/una-ui/commit/61bf7fc))
+* chore(deps): upgrade @una-ui-content to latest ([7bb47cf](https://github.com/una-ui/una-ui/commit/7bb47cf))
+
+
+
+## 1.0.0-alpha.10 (2025-09-27)
+
+* chore: release v1.0.0-alpha.10 ([950a52a](https://github.com/una-ui/una-ui/commit/950a52a))
+
+
+
+## 1.0.0-alpha.9 (2025-08-19)
+
+* chore: release v1.0.0-alpha.9 ([ba342b4](https://github.com/una-ui/una-ui/commit/ba342b4))
+
+
+
+## 1.0.0-alpha.8 (2025-07-24)
+
+* chore: release v1.0.0-alpha.8 ([3118413](https://github.com/una-ui/una-ui/commit/3118413))
+* ci: remove release edge to alphas ([e540ac6](https://github.com/una-ui/una-ui/commit/e540ac6))
+
+
+
+## 1.0.0-alpha.7 (2025-07-20)
+
+* chore: release v1.0.0-alpha.7 ([cedd832](https://github.com/una-ui/una-ui/commit/cedd832))
+
+
+
+## 1.0.0-alpha.6 (2025-07-19)
+
+* chore: release v1.0.0-alpha.6 ([441f53f](https://github.com/una-ui/una-ui/commit/441f53f))
+* ci: ignore pre-release tags in workflow [skip] ([505693e](https://github.com/una-ui/una-ui/commit/505693e))
+
+
+
+## 1.0.0-alpha.5 (2025-07-18)
+
+* chore: release v1.0.0-alpha.5 ([15fe8d1](https://github.com/una-ui/una-ui/commit/15fe8d1))
+
+
+
+## 1.0.0-alpha.4 (2025-07-18)
+
+* chore: release v1.0.0-alpha.4 ([6625d3c](https://github.com/una-ui/una-ui/commit/6625d3c))
+* feat(Input): improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332b))
+* feat(Preset): update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc878))
+* fix(Input): add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97c))
+
+
+
+## 1.0.0-alpha.3 (2025-06-26)
+
+* chore: release v1.0.0-alpha.3 ([cb72369](https://github.com/una-ui/una-ui/commit/cb72369))
+* refactor(useUnaSettings): optimize settings watch logic ([420c911](https://github.com/una-ui/una-ui/commit/420c911))
+* [autofix.ci] apply automated fixes ([68e0e15](https://github.com/una-ui/una-ui/commit/68e0e15))
+* chore:init ([8776d77](https://github.com/una-ui/una-ui/commit/8776d77))
+
+
+
+## 1.0.0-alpha.2 (2025-06-26)
+
+* chore: lint ([4fd173f](https://github.com/una-ui/una-ui/commit/4fd173f))
+* chore: release v1.0.0-alpha.2 ([ca57775](https://github.com/una-ui/una-ui/commit/ca57775))
+* chore: stale ([ff2e5a6](https://github.com/una-ui/una-ui/commit/ff2e5a6))
+* feat(Button): improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdf))
+* feat(Input): improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe))
+* feat(PinInput): update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d2))
+* feat(ThemeSwitcher): improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0d))
+* [autofix.ci] apply automated fixes ([ce98054](https://github.com/una-ui/una-ui/commit/ce98054))
+
+
+
+## 1.0.0-alpha.1 (2025-06-24)
+
+* chore: add v1 initial configuration ([c5fd9aa](https://github.com/una-ui/una-ui/commit/c5fd9aa))
+* chore: release v1.0.0-alpha.1 ([9635ef5](https://github.com/una-ui/una-ui/commit/9635ef5))
+* chore(deps): upgrade @una-ui/content to latest ([9a27d45](https://github.com/una-ui/una-ui/commit/9a27d45))
+* chore(deps): upgrade @una-ui/content to latest ([4caf3b7](https://github.com/una-ui/una-ui/commit/4caf3b7))
+* ci: add release script for v1 ([eb71b00](https://github.com/una-ui/una-ui/commit/eb71b00))
+* feat: add data-slot value to all components; fix sheet usage (#446) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fe)), closes [#446](https://github.com/una-ui/una-ui/issues/446)
+* feat(Alert): update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af))
+* feat(Button): update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7))
+* feat(Checkbox): improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653))
+* feat(Dialog): improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa796))
+* feat(Input): improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d))
+* feat(Input): update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990f))
+* feat(Input): update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d))
+* feat(Pagination): update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9da))
+* feat(Preset): update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb42))
+* feat(Presset): improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5d))
+* feat(Progress): set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c006))
+* feat(Slider): improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35))
+* feat(Tabs): update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b))
+* feat(ThemeSwitcher): add ability to configure cssVarThemes, closes #447 ([6286913](https://github.com/una-ui/una-ui/commit/6286913)), closes [#447](https://github.com/una-ui/una-ui/issues/447)
+* feat(Alert)!: update presets and components configuration (#445) ([d117979](https://github.com/una-ui/una-ui/commit/d117979)), closes [#445](https://github.com/una-ui/una-ui/issues/445)
+* feat(AlertDialog)!: rename `preventClose` prop to `dismissible` (#442) ([c6828ac](https://github.com/una-ui/una-ui/commit/c6828ac)), closes [#442](https://github.com/una-ui/una-ui/issues/442)
+* feat(Card)!: update presets and components configuration (#433) ([f2aabc4](https://github.com/una-ui/una-ui/commit/f2aabc4)), closes [#433](https://github.com/una-ui/una-ui/issues/433)
+* feat(Dialog)!: update components and props configuration (#439) ([89a0eef](https://github.com/una-ui/una-ui/commit/89a0eef)), closes [#439](https://github.com/una-ui/una-ui/issues/439)
+* feat(Presets)!: update to shadcn-ui+tailwind4 configuration (#429) ([b6a8c03](https://github.com/una-ui/una-ui/commit/b6a8c03)), closes [#429](https://github.com/una-ui/una-ui/issues/429)
+* feat(Sheet)!: update components and props configuration (#440) ([d3dde76](https://github.com/una-ui/una-ui/commit/d3dde76)), closes [#440](https://github.com/una-ui/una-ui/issues/440)
+* docs: fix card usage in the example ([6298f9b](https://github.com/una-ui/una-ui/commit/6298f9b))
+* docs: improve landing page ([f2b46e8](https://github.com/una-ui/una-ui/commit/f2b46e8))
+* docs: improve landing page ([e3e682b](https://github.com/una-ui/una-ui/commit/e3e682b))
+* docs: init ([e793d15](https://github.com/una-ui/una-ui/commit/e793d15))
+* docs: init ([3206b75](https://github.com/una-ui/una-ui/commit/3206b75))
+* docs: remove new badge from hover-card nav ([a8be6b4](https://github.com/una-ui/una-ui/commit/a8be6b4))
+* docs: update from btn variants from solid-gray to outline-gray ([640b0f9](https://github.com/una-ui/una-ui/commit/640b0f9))
+* docs(Card): update variants section ([609b8a4](https://github.com/una-ui/una-ui/commit/609b8a4))
+* refactor(Input): update shadows handling across the variants ([ab64a26](https://github.com/una-ui/una-ui/commit/ab64a26))
+
+
+
 # [1.0.0-alpha.10](https://github.com/una-ui/una-ui/compare/v0.65.0...v1.0.0-alpha.10) (2025-09-27)
 
 
