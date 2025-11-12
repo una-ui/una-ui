@@ -1,3 +1,14 @@
+# [0.66.0](https://github.com/una-ui/una-ui/compare/v0.65.0...v0.66.0) (2025-11-12)
+
+
+### Bug Fixes
+
+* **ExtractorVueScript:** ignore unsupported filetypes ([#517](https://github.com/una-ui/una-ui/issues/517)) ([db3315c](https://github.com/una-ui/una-ui/commit/db3315c9840494426aa582962da88ed85d9fa4fb)), closes [#516](https://github.com/una-ui/una-ui/issues/516)
+* **Select:** set support indicators when items are provided via content slot ([#520](https://github.com/una-ui/una-ui/issues/520)) ([8fe6cd7](https://github.com/una-ui/una-ui/commit/8fe6cd755481777c95a65fce13cb10efa17d8e84))
+* **Sidebar:** load persisted sidebar open state from cookie ([#541](https://github.com/una-ui/una-ui/issues/541)) ([21ab153](https://github.com/una-ui/una-ui/commit/21ab153809c798331e8a7be1cc8fca0f423a1e4f))
+
+
+
 # [0.65.0](https://github.com/una-ui/una-ui/compare/v0.64.0...v0.65.0) (2025-09-27)
 
 
