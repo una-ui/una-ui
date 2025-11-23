@@ -44,7 +44,7 @@ const id = computed(() => props.id ?? randomId('checkbox'))
     <CheckboxRoot
       v-bind="{ ...forwarded, ...$attrs }"
       :id="id"
-      v-slot="{ ...slotProps }"
+      v-slot="slotProps"
       :class="
         cn(
           'peer checkbox',
@@ -59,11 +59,13 @@ const id = computed(() => props.id ?? randomId('checkbox'))
         :class="cn('checkbox-indicator', una?.checkboxIndicator)"
         v-bind="props._checkboxIndicator"
       >
-        <slot name="icon">
+        <slot
+          name="icon" v-bind="slotProps"
+        >
           <Icon
-            :name="slotProps.modelValue === 'indeterminate'
+            :name="slotProps.state === 'indeterminate'
               ? props.una?.checkboxIndeterminateIcon ?? 'checkbox-indeterminate-icon'
-              : slotProps.modelValue
+              : slotProps.state
                 ? props.una?.checkboxCheckedIcon ?? 'checkbox-checked-icon'
                 : props.una?.checkboxUncheckedIcon ?? 'checkbox-unchecked-icon'"
             :class="cn('checkbox-icon-base', una?.checkboxIconBase)"
