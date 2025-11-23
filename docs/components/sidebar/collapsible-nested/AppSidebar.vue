@@ -190,7 +190,7 @@ const { setOpen } = useSidebar()
     <NSidebar collapsible="none" class="hidden flex-1 md:flex">
       <NSidebarHeader class="gap-3.5 border-b p-4">
         <div class="w-full flex items-center justify-between">
-          <div class="text-base text-foreground font-medium">
+          <div class="text-foreground text-foreground font-medium">
             {{ activeItem.title }}
           </div>
           <NLabel class="flex items-center gap-2 text-sm">

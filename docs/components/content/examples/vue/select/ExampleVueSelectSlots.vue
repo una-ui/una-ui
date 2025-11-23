@@ -32,7 +32,7 @@ const selected = ref(items[0])
       <template #label="{ label }">
         <div class="flex flex-col space-y-0.5">
           <span class="text-primary">{{ label }}</span>
-          <span class="text-xs text-muted">Mini example list of contributors</span>
+          <span class="text-xs text-muted-foreground">Mini example list of contributors</span>
         </div>
       </template>
 

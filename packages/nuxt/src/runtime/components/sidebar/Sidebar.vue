@@ -42,6 +42,7 @@ const [DefineSlot, ReuseSlot] = createReusableTemplate()
 
   <div
     v-if="collapsible === 'none'"
+    data-slot="sidebar"
     :class="cn(
       'sidebar-collapsible-none',
       props.una?.sidebar,
@@ -57,6 +58,7 @@ const [DefineSlot, ReuseSlot] = createReusableTemplate()
     :open="openMobile"
     v-bind="$attrs"
     :_sheet-content="{
+      dataSlot: 'sidebar',
       dataSidebar: 'sidebar',
       dataMobile: true,
       sheet,
@@ -68,13 +70,16 @@ const [DefineSlot, ReuseSlot] = createReusableTemplate()
     }"
     @update:open="setOpenMobile"
   >
-    <div class="sidebar-mobile-inner">
-      <ReuseSlot />
-    </div>
+    <template #body>
+      <div class="sidebar-mobile-inner">
+        <ReuseSlot />
+      </div>
+    </template>
   </Sheet>
 
   <div
     v-else :class="cn('group peer sidebar-desktop')"
+    data-slot="sidebar"
     :data-state="state"
     :data-collapsible="state === 'collapsed' ? collapsible : ''"
     :data-variant="sidebar"

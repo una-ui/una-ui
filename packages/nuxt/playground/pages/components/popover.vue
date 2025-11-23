@@ -4,7 +4,7 @@
 <template>
   <NPopover :_popover-content="{ class: 'w-80', align: 'start', side: 'right' }">
     <template #trigger>
-      <NButton btn="solid-white">
+      <NButton btn="outline-gray">
         Open popover
       </NButton>
     </template>
@@ -13,7 +13,7 @@
         <h4 class="font-medium leading-none">
           Dimensions
         </h4>
-        <p class="text-sm text-muted">
+        <p class="text-sm text-muted-foreground">
           Set the dimensions for the layer.
         </p>
       </div>
