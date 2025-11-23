@@ -1,3 +1,12 @@
+# [1.0.0-alpha.12](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2025-11-23)
+
+
+### Bug Fixes
+
+* **Checkbox:** use state value instead of modelValue in icon; add props to icon slot ([1041cfc](https://github.com/una-ui/una-ui/commit/1041cfc4a8863bcb195a4cfdb5ae0f0cc294da8f))
+
+
+
 ## 1.0.0-alpha.11 (2025-11-12)
 
 * ci: init ([1049b57](https://github.com/una-ui/una-ui/commit/1049b57))
