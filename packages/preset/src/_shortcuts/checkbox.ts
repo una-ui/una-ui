@@ -4,6 +4,9 @@ import { parseColor } from '@unocss/preset-mini/utils'
 
 type CheckboxPrefix = 'checkbox'
 
+// Una UI custom color aliases that should be treated as valid colors
+const unaColorAliases = new Set(['primary', 'error', 'warning', 'success', 'info', 'gray'])
+
 export const staticCheckbox: Record<`${CheckboxPrefix}-${string}` | CheckboxPrefix, string> = {
   // base
   'checkbox': 'checkbox-primary text-md w-1em h-1em shrink-0 rounded-sm ring-offset-base focus-visible:outline-none disabled:n-disabled border border-brand bg-brand text-inverted focus-visible:(ring-2 ring-brand ring-offset-2) data-[state=unchecked]:(bg-base text-base)',
@@ -23,6 +26,11 @@ export const staticCheckbox: Record<`${CheckboxPrefix}-${string}` | CheckboxPref
 
 export const dynamicCheckbox = [
   [/^checkbox-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
+    // Check if it's a Una UI custom color alias
+    if (unaColorAliases.has(body))
+      return `n-${body}-600 dark:n-${body}-500`
+
+    // Check if it's a valid CSS color
     const color = parseColor(body, theme)
     if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
       return `n-${body}-600 dark:n-${body}-500`
