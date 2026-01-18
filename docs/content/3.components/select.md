@@ -99,7 +99,7 @@ Control the attribute value to be displayed in the select and the item. When usi
 | `labelKey` | `'label'` | `string` | The key name to be displayed in the item.      |
 | `valueKey` | `'value'` | `string` | The key name to extract for the v-model value. |
 
-::callout{icon="i-lucide-info" color="blue"}
+::callout
 **Important Behavior:** The `v-model` stores the extracted value based on `valueKey`, not the full object.
 
 **Example:**
