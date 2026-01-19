@@ -25,6 +25,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <NPopoverContent v-bind="_popoverContent" :una>
       <slot :close />
       <PopoverClose
+        v-if="_popoverClose !== false"
         v-bind="_popoverClose"
         :class="cn('popover-close', una?.popoverClose)"
       >
@@ -33,6 +34,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         </slot>
       </PopoverClose>
       <PopoverArrow
+        v-if="_popoverArrow !== false"
         v-bind="_popoverArrow"
         :class="cn('popover-arrow', una?.popoverArrow)"
       />
