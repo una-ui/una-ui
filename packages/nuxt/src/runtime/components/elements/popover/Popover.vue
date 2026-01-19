@@ -19,11 +19,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <PopoverTrigger v-if="$slots.trigger" as-child>
       <slot name="trigger" :open :close />
     </PopoverTrigger>
-    <PopoverAnchor
-      v-if="$slots.anchor" as-child
-      v-bind="_popoverAnchor"
-      :class="cn('popover-anchor', una?.popoverAnchor)"
-    >
+    <PopoverAnchor v-if="$slots.anchor || _popoverAnchor?.reference" v-bind="_popoverAnchor">
       <slot name="anchor" :open :close />
     </PopoverAnchor>
     <NPopoverContent v-bind="_popoverContent" :una>
