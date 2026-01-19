@@ -18,7 +18,6 @@ export interface NPopoverContentProps extends PopoverContentProps, BaseExtension
 }
 
 interface NPopoverUnaProps {
-  popoverRoot?: string
   popoverTrigger?: string
   popoverContent?: string
   popoverClose?: string

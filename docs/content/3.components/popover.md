@@ -37,6 +37,8 @@ badges:
 | ----------------- | ------- | -------- | ----------------------------------------------------- |
 | `_popoverContent` | -       | `object` | The component that pops out when the popover is open. |
 | `_popoverAnchor`  | -       | `object` | Props for `<PopoverAnchor>` component.                |
+| `_popoverClose`   | -       | `object` | Props for `<PopoverClose>` component.                 |
+| `_popoverArrow`   | -       | `object` | Props for `<PopoverArrow>` component.                 |
 
 | Options                       | Default   | Type                             | Description                                                                                                                                                                                                                                          |
 | ----------------------------- | --------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

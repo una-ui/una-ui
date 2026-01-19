@@ -15,7 +15,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
 
 <template>
-  <PopoverRoot v-slot="{ open, close }" v-bind="forwarded" :class="una?.popoverRoot">
+  <PopoverRoot v-slot="{ open, close }" v-bind="forwarded">
     <PopoverTrigger v-if="$slots.trigger" as-child>
       <slot name="trigger" :open :close />
     </PopoverTrigger>
@@ -33,7 +33,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         :class="cn('popover-close', una?.popoverClose)"
       >
         <slot name="close" :close>
-          <NIcon :name="cn('popover-close-icon', una?.popoverCloseIcon)" />
+          <NIcon :name="una?.popoverCloseIcon ?? 'popover-close-icon'" />
         </slot>
       </PopoverClose>
       <PopoverArrow
