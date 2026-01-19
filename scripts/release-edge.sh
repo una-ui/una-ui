@@ -10,8 +10,9 @@ pnpm jiti ./scripts/bump-edge
 
 # Update token
 if [[ ! -z ${NODE_AUTH_TOKEN} ]] ; then
-  npm config set //registry.npmjs.org/:_authToken "${NODE_AUTH_TOKEN}" --location=global
-  npm whoami --registry=https://registry.npmjs.org/
+  echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc.auth
+  export NPM_CONFIG_USERCONFIG=.npmrc.auth
+  npm whoami
 fi
 
 # List package directories and store them in an array
