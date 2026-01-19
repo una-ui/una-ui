@@ -5,7 +5,7 @@ import { useUnaSettings } from '../composables/useUnaSettings'
 let unaUIStyle: HTMLStyleElement
 
 export default defineNuxtPlugin(() => {
-  const { settings } = useUnaSettings()
+  const { settings, primaryColors, grayColors } = useUnaSettings()
 
   unaUIStyle = document.createElement('style')
   unaUIStyle.id = 'una-ui-theme'
@@ -19,8 +19,8 @@ export default defineNuxtPlugin(() => {
   const computedStyles = computed(() => {
     return `
     :root {
-        ${Object.entries(settings.value.primaryColors).map(([k, v]) => `${k}: ${v};`).join('\n')}
-        ${Object.entries(settings.value.grayColors).map(([k, v]) => `${k}: ${v};`).join('\n')}
+        ${Object.entries(primaryColors.value).map(([k, v]) => `${k}: ${v};`).join('\n')}
+        ${Object.entries(grayColors.value).map(([k, v]) => `${k}: ${v};`).join('\n')}
         --una-radius: ${settings.value.radius}rem;
         --una-font-size: ${settings.value.fontSize}px;
     }

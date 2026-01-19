@@ -5,6 +5,11 @@ export default defineNuxtConfig({
 
   una: {
     dev: true,
+    themeable: {
+      storage: {
+        type: 'cookie',
+      },
+    },
   },
 
   experimental: {

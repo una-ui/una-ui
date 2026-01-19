@@ -1,5 +1,5 @@
 import type { UnaSettings } from './runtime/types'
-import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
+import { addComponentsDir, addImportsDir, addPlugin, addTemplate, createResolver, defineNuxtModule, installModule, useLogger } from '@nuxt/kit'
 import { name, version } from '../package.json'
 import extendUnocssOptions from './una.config'
 
@@ -7,10 +7,10 @@ export type * from './runtime/types'
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
-    una?: Partial<Omit<UnaSettings, 'primaryColors' | 'grayColors'>>
+    una?: Partial<UnaSettings>
   }
   interface AppConfig {
-    una: Omit<UnaSettings, 'primaryColors' | 'grayColors'>
+    una: UnaSettings
   }
 }
 
@@ -26,7 +26,30 @@ export interface ModuleOptions {
    * @description Enable themeable ui
    *
    */
-  themeable?: boolean
+  themeable?: boolean | {
+    storage?: {
+      /**
+       * The name of the storage object to use
+       *
+       * @default 'una-settings'
+       */
+      name?: string
+      /**
+       * The type of storage to use.
+       *
+       * - `localStorage`: the default, compatible with static generation. Saves the
+       * current theme color values in the browser storage in order to prevent flashing
+       * the default theme during reloads. A script is injected in the head of the document
+       * to read the values from localStorage and apply them before the app is loaded.
+       *
+       * - `cookie`: themes can be read by the server and inlines the current theme values
+       * in the HTML. Not compatible with static generation.
+       *
+       * @default 'localStorage'
+       */
+      type?: 'localStorage' | 'cookie'
+    }
+  }
 
   /**
    * @default true
@@ -56,6 +79,7 @@ export default defineNuxtModule<ModuleOptions>({
     dev: false,
   },
   async setup(options, nuxt) {
+    const logger = useLogger('una')
     const { resolve } = createResolver(import.meta.url)
 
     // css
@@ -118,6 +142,35 @@ export default defineNuxtModule<ModuleOptions>({
     if (options.themeable) {
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
       addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
+
+      const { storage } = typeof options.themeable === 'boolean'
+        ? {}
+        : options.themeable
+
+      if (storage?.type && !['cookie', 'localStorage'].includes(storage.type)) {
+        logger.warn(`[una] The theming storage type '${storage?.type}' is not supported. Falling back to 'localStorage'.`)
+        storage.type = 'localStorage'
+      }
+
+      if ((!nuxt.options.ssr || nuxt.options._generate) && storage?.type === 'cookie') {
+        logger.warn('[una] Using localStorage for theming because no server runtime is targeted')
+        storage.type = 'localStorage'
+      }
+
+      addTemplate({
+        filename: 'una-theme.config.mjs',
+        getContents: () => `\
+export const themeStorageType = ${JSON.stringify(storage?.type || 'localStorage')}
+export const themeStorageName = ${JSON.stringify(storage?.name || 'una-settings')}
+`,
+      })
+      addTemplate({
+        filename: 'una-theme.config.d.ts',
+        getContents: () => `\
+export declare const themeStorageType: 'localStorage' | 'cookie' 
+export declare const themeStorageName: string
+`,
+      })
     }
 
     // utils
