@@ -1,3 +1,20 @@
+# [0.67.0](https://github.com/una-ui/una-ui/compare/v0.66.0...v0.67.0) (2026-01-19)
+
+
+### Bug Fixes
+
+* **Checkbox:** use state value instead of modelValue in icon; add props to icon slot ([1041cfc](https://github.com/una-ui/una-ui/commit/1041cfc4a8863bcb195a4cfdb5ae0f0cc294da8f))
+* **CI:** resolve whoami auth issue ([857eb80](https://github.com/una-ui/una-ui/commit/857eb80eb7027590f1784069e121a87eb75bb458))
+* **CI:** resolve whoami auth issue ([5b5da44](https://github.com/una-ui/una-ui/commit/5b5da448374f9b208808a1624254a51db021bb9b))
+* **CI:** resolve whoami auth issue ([4b0113e](https://github.com/una-ui/una-ui/commit/4b0113ec4324d6ccbe57518eb58d0893619f875d))
+
+
+### Features
+
+* **Accordion:** improve default accordion-panel preset ([8375068](https://github.com/una-ui/una-ui/commit/8375068da6033fefc58f51019da3af3d6fca171e))
+
+
+
 # [0.66.0](https://github.com/una-ui/una-ui/compare/v0.65.0...v0.66.0) (2025-11-12)
 
 
