@@ -4,6 +4,7 @@ import type { NPopoverProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { PopoverAnchor, PopoverArrow, PopoverClose, PopoverRoot, PopoverTrigger, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../../utils'
+import NIcon from '../Icon.vue'
 import NPopoverContent from './PopoverContent.vue'
 
 const props = defineProps<NPopoverProps>()
