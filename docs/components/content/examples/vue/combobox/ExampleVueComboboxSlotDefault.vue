@@ -12,7 +12,7 @@ const selectedFramework = ref<typeof frameworks[number]>()
 <template>
   <NCombobox
     v-model="selectedFramework"
-    by="label"
+    by="value"
   >
     <NComboboxAnchor as-child>
       <NComboboxTrigger class="w-[200px]">

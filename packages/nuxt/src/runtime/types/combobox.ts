@@ -12,12 +12,18 @@ interface BaseExtensions {
 // Extract the actual item type when dealing with grouped items
 export type ExtractItemType<T> = T extends { items: infer I extends AcceptableValue[] } ? I[number] : T
 
-export interface NComboboxProps<T extends AcceptableValue, M extends boolean> extends Omit<ComboboxRootProps<ExtractItemType<T>>, 'modelValue'>, Pick<NComboboxInputProps, 'status' | 'id'>, BaseExtensions {
+export interface NComboboxProps<T extends AcceptableValue, M extends boolean> extends Omit<ComboboxRootProps<ExtractItemType<T>>, 'modelValue' | 'defaultValue'>, Pick<NComboboxInputProps, 'status' | 'id'>, BaseExtensions {
   /**
    * The model value for the combobox.
-   * When using grouped items, this will be the item type from within the groups.
+   * Stores the full item object(s), not extracted values.
    */
-  modelValue?: (M extends true ? ExtractItemType<T>[] : ExtractItemType<T>) | null
+  modelValue?: M extends true ? ExtractItemType<T>[] : ExtractItemType<T>
+
+  /**
+   * The default value for the combobox.
+   * Should be the full item object(s), not extracted values.
+   */
+  defaultValue?: M extends true ? ExtractItemType<T>[] : ExtractItemType<T>
 
   /**
    * The items to display in the combobox.
@@ -26,17 +32,17 @@ export interface NComboboxProps<T extends AcceptableValue, M extends boolean> ex
    */
   items?: T[] | NComboboxGroupProps<ExtractItemType<T>>[]
   /**
-   * The key name to use to display in the select items.
+   * The key name to use to display in the combobox items.
    *
    * @default 'label'
    */
-  labelKey?: keyof ExtractItemType<T>
+  labelKey?: keyof ExtractItemType<T> | string
   /**
-   * The key name to use to display in the selected value.
+   * The key name to use for comparing items (used for selection matching).
    *
    * @default 'value'
    */
-  valueKey?: keyof ExtractItemType<T>
+  valueKey?: keyof ExtractItemType<T> | string
   /**
    * Whether to show a separator between groups.
    *
