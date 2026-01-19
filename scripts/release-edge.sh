@@ -13,7 +13,7 @@ if [[ ! -z ${NODE_AUTH_TOKEN} ]] ; then
   echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
   echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
   echo "always-auth=true" >> ~/.npmrc
-  pnpm whoami
+  npm whoami
 fi
 
 # List package directories and store them in an array

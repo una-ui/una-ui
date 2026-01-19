@@ -23,6 +23,8 @@ import ComboboxViewport from './ComboboxViewport.vue'
 const props = withDefaults(defineProps<NComboboxProps<T, M>>(), {
   textEmpty: 'No items found.',
   size: 'sm',
+  labelKey: 'label',
+  valueKey: 'value',
 })
 const emits = defineEmits<ComboboxRootEmits<ExtractItemType<T>>>()
 
@@ -51,9 +53,6 @@ const rootProps = reactiveOmit(props, [
 
 const forwarded = useForwardPropsEmits(rootProps, emits)
 
-const labelKey = computed(() => props.labelKey?.toString() ?? 'label')
-const valueKey = computed(() => props.valueKey?.toString() ?? 'value')
-
 // Check if items are grouped
 const hasGroups = computed(() => {
   return Array.isArray(props.items) && props.items.length > 0
@@ -68,72 +67,68 @@ function getItemProperty<K extends string>(item: ExtractItemType<T> | null | und
   return typeof item !== 'object' ? item : (item as Record<K, unknown>)[key]
 }
 
-// Find a matching item from the items list by its value
-function findItemByValue(value: unknown): ExtractItemType<T> | undefined {
-  if (!props.items)
-    return undefined
-
-  if (hasGroups.value) {
-    // Search in grouped items
-    for (const group of props.items as NComboboxGroupProps<ExtractItemType<T>>[]) {
-      const found = group.items?.find(item => getItemProperty(item, valueKey.value) === value)
-      if (found)
-        return found
-    }
-    return undefined
-  }
-  else {
-    // Search in flat items list
-    return (props.items as ExtractItemType<T>[]).find(item => getItemProperty(item, valueKey.value) === value)
-  }
-}
-
 // Display function that handles both single and multiple selections
 function getDisplayValue(val: unknown): string {
-  // Handle empty values
-  if (!val || (Array.isArray(val) && val.length === 0))
+  // Handle empty values (only null/undefined)
+  if (val == null || (Array.isArray(val) && val.length === 0))
     return ''
 
   // Handle multiple selection (array values)
-  if (props.multiple && Array.isArray(val)) {
-    return val.map((v) => {
-      // For primitive values (string/number), find matching item to get label
-      if (typeof v !== 'object' || v === null) {
-        const item = findItemByValue(v)
-        return item ? getItemProperty(item, labelKey.value) : v
-      }
-
-      // For objects, try to get the label directly
-      return getItemProperty(v, labelKey.value) || getItemProperty(v, valueKey.value) || ''
-    }).filter(Boolean).join(', ')
+  if (Array.isArray(val)) {
+    return val
+      .map((v) => {
+        // For primitive values (string/number/boolean), convert to string
+        if (typeof v !== 'object' || v === null) {
+          return String(v)
+        }
+        // For objects, try to get the label
+        return getItemProperty(v, props.labelKey as string) || getItemProperty(v, props.valueKey as string) || ''
+      })
+      .filter(v => v !== null && v !== undefined)
+      .join(', ')
   }
 
-  // For single primitive value
+  // For single primitive value (preserve 0, false, '')
   if (typeof val !== 'object' || val === null) {
-    const item = findItemByValue(val)
-    return item ? getItemProperty(item, labelKey.value) : String(val || '')
+    return String(val)
   }
 
   // For single object, get its label
-  return getItemProperty(val as any, labelKey.value) || getItemProperty(val as any, valueKey.value) || ''
+  return getItemProperty(val as any, props.labelKey as string) || getItemProperty(val as any, props.valueKey as string) || ''
 }
 
 // Check if an item is selected in the current modelValue
 function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
-  if (item == null)
+  if (item == null || !props.modelValue)
     return false
 
-  const itemValue = getItemProperty(item, valueKey.value)
+  // For primitive items (strings/numbers)
+  if (typeof item !== 'object') {
+    if (Array.isArray(props.modelValue)) {
+      return props.modelValue.includes(item as any)
+    }
+    return props.modelValue === item
+  }
+
+  // For object items, compare by valueKey
+  const itemValue = getItemProperty(item, props.valueKey as string)
 
   // For multiple selection
-  if (props.multiple && Array.isArray(props.modelValue)) {
-    return props.modelValue.includes(itemValue)
+  if (Array.isArray(props.modelValue)) {
+    return props.modelValue.some((v: any) => {
+      if (typeof v !== 'object' || v === null) {
+        return v === itemValue
+      }
+      return getItemProperty(v as ExtractItemType<T>, props.valueKey as string) === itemValue
+    })
   }
 
   // For single selection
-  return typeof props.modelValue === 'object' && props.modelValue !== null
-    ? getItemProperty(props.modelValue as ExtractItemType<T>, valueKey.value) === itemValue
-    : props.modelValue === itemValue
+  if (typeof props.modelValue !== 'object' || props.modelValue === null) {
+    return props.modelValue === itemValue
+  }
+
+  return getItemProperty(props.modelValue as ExtractItemType<T>, props.valueKey as string) === itemValue
 }
 </script>
 
@@ -251,8 +246,8 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                   <slot name="group">
                     <ComboboxItem
                       v-for="item in items as ExtractItemType<T>[]"
-                      :key="getItemProperty(item, valueKey)"
-                      :value="props.multiple ? getItemProperty(item, valueKey) : item"
+                      :key="getItemProperty(item, props.valueKey as string)"
+                      :value="item"
                       :size
                       v-bind="props._comboboxItem"
                       :class="cn(
@@ -262,7 +257,7 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                     >
                       <slot name="item" :item="item" :selected="isItemSelected(item)">
                         <slot name="label" :item="item">
-                          {{ getItemProperty(item, labelKey) }}
+                          {{ getItemProperty(item, props.labelKey as string) }}
                         </slot>
 
                         <ComboboxItemIndicator
@@ -297,8 +292,8 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                   <slot name="group" :group="group">
                     <ComboboxItem
                       v-for="item in group.items"
-                      :key="getItemProperty(item, valueKey)"
-                      :value="props.multiple ? getItemProperty(item, valueKey) : item"
+                      :key="getItemProperty(item, props.valueKey as string)"
+                      :value="item"
                       :size
                       v-bind="{ ...props._comboboxItem, ...group._comboboxItem }"
                       :class="cn(
@@ -308,7 +303,7 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
                     >
                       <slot name="item" :item="item" :group="group" :selected="isItemSelected(item)">
                         <slot name="label" :item="item">
-                          {{ getItemProperty(item, labelKey) }}
+                          {{ getItemProperty(item, props.labelKey as string) }}
                         </slot>
 
                         <ComboboxItemIndicator

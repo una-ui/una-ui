@@ -6,7 +6,8 @@ const frameworks = [
   { value: 'remix', label: 'Remix' },
   { value: 'astro', label: 'Astro' },
 ]
-const selectedFramework = ref<typeof frameworks[number]>()
+// v-model now stores FULL OBJECTS, not extracted values
+const selectedFramework = ref<typeof frameworks[number][]>([])
 const selectedFrameworks = ref<typeof frameworks[number][]>([])
 
 const users = [
@@ -14,6 +15,7 @@ const users = [
   { id: '2', username: 'leerob' },
   { id: '3', username: 'evilrabbit' },
 ]
+// v-model stores the full user object
 const selectedUser = ref<typeof users[number]>()
 
 const timezones = [
@@ -53,19 +55,23 @@ const timezones = [
 ]
 
 type Timezone = typeof timezones[0]
+// v-model stores the full timezone object
 const selectedTimezone = ref<Timezone['items'][number]>(timezones[0].items[0])
-const selectedGroup = computed(() => timezones.find(group => group.items.find(tz => tz.value === selectedTimezone.value?.value)))
+const selectedGroup = computed(() => timezones.find(group => group.items.some(tz => tz.value === selectedTimezone.value?.value)))
 </script>
 
 <template>
   <div class="flex flex-wrap items-center gap-4">
+    <!-- Custom manual example -->
     <NCombobox
       v-model="selectedFramework"
-      by="label"
+      label-key="label"
+      value-key="value"
+      multiple
     >
       <NComboboxAnchor as-child>
         <NComboboxTrigger>
-          {{ selectedFramework?.label ?? 'Select framework...' }}
+          {{ selectedFramework.length > 0 ? selectedFramework.map(f => f.label).join(', ') : 'Select framework...' }}
         </NComboboxTrigger>
       </NComboboxAnchor>
 
@@ -96,32 +102,37 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
       </NComboboxList>
     </NCombobox>
 
+    <!-- Simple auto-generated example -->
     <NCombobox
       v-model="selectedFramework"
       :items="frameworks"
+      label-key="label"
+      value-key="value"
+      multiple
       :_combobox-input="{
         placeholder: 'Select framework...',
       }"
-      by="label"
     />
 
+    <!-- Custom slots example with users -->
     <NCombobox
       v-model="selectedUser"
       :items="users"
-      by="username"
+      label-key="username"
+      value-key="id"
       :_combobox-input="{
         placeholder: 'Select user...',
       }"
     >
-      <template #trigger="{ modelValue }">
-        <template v-if="modelValue">
+      <template #trigger>
+        <template v-if="selectedUser">
           <div class="flex items-center gap-2">
             <NAvatar
-              :src="`https://github.com/${modelValue.username}.png`"
-              :alt="modelValue.username"
+              :src="`https://github.com/${selectedUser.username}.png`"
+              :alt="selectedUser.username"
               square="5"
             />
-            {{ modelValue.username }}
+            {{ selectedUser.username }}
           </div>
         </template>
         <template v-else>
@@ -137,22 +148,14 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
         />
         {{ item.username }}
       </template>
-
-      <template #footer>
-        <NComboboxSeparator />
-        <NComboboxGroup>
-          <NComboboxItem :value="null">
-            <NIcon name="i-lucide-plus-circle" />
-            Create user
-          </NComboboxItem>
-        </NComboboxGroup>
-      </template>
     </NCombobox>
 
+    <!-- Grouped items example -->
     <NCombobox
       v-model="selectedTimezone"
       :items="timezones"
-      by="value"
+      label-key="label"
+      value-key="value"
       :_combobox-input="{
         placeholder: 'Select timezone...',
       }"
@@ -167,13 +170,13 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
         class: 'h-12 px-2.5',
       }"
     >
-      <template #trigger="{ modelValue }">
-        <template v-if="modelValue">
+      <template #trigger>
+        <template v-if="selectedTimezone">
           <div class="flex flex-col items-start gap-0.5">
             <span class="text-xs font-normal opacity-75">
               {{ selectedGroup?.label }}
             </span>
-            <span>{{ modelValue.label }}</span>
+            <span>{{ selectedTimezone.label }}</span>
           </div>
         </template>
         <template v-else>
@@ -182,10 +185,12 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
       </template>
     </NCombobox>
 
+    <!-- Multiple selection example -->
     <NCombobox
       v-model="selectedFrameworks"
       :items="frameworks"
-      by="label"
+      label-key="label"
+      value-key="value"
       multiple
       :_combobox-input="{
         placeholder: 'Select frameworks (multi-select)...',
@@ -194,21 +199,15 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
         class: 'w-300px',
         align: 'start',
       }"
-      :_combobox-anchor="{
-      }"
     >
-      <template #trigger="{ modelValue }">
-        {{ modelValue?.length
-          ? modelValue.map(val => {
-            const framework = frameworks.find(f => f.value === val.value)
-            return framework ? framework.label : val
-          }).join(", ")
+      <template #trigger>
+        {{ selectedFrameworks.length
+          ? selectedFrameworks.map(f => f.label).join(", ")
           : "Select frameworks (multi-select)..." }}
       </template>
 
       <template #item="{ item, selected }">
         <NCheckbox
-          :data-selected="selected"
           :model-value="selected"
         />
 

@@ -14,17 +14,17 @@ badges:
 
 ### Basic
 
-| Prop         | Default           | Type                                                              | Description                                                                                                                                 |
-| ------------ | ----------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `items`      | -                 | `T[]` \| `NComboboxGroupProps<ExtractItemType<T>>[]`              | The items to display in the combobox.                                                                                                       |
-| `modelValue` | -                 | `AcceptableValue` \| `AcceptableValue[]`                          | The controlled value of the listbox. Can be binded with with `v-model`.                                                                     |
-| `disabled`   | -                 | `boolean`                                                         | When true, prevents the user from interacting with the combobox.                                                                            |
-| `open`       | -                 | `boolean`                                                         | The controlled open state of the combobox. Can be binded with `v-model`.                                                                    |
-| `label`      | -                 | `string`                                                          | The heading to display for the grouped item.                                                                                                |
-| `labelKey`   | `label`           | `string`                                                          | The key name to use to display in the select items.                                                                                         |
-| `valueKey`   | `value`           | `string`                                                          | The key name to use to display in the selected value.                                                                                       |
-| `textEmpty`  | `No items found.` | `string`                                                          | The text to display when the combobox is empty.                                                                                             |
-| `by`         | -                 | `string`, `((a: AcceptableValue, b: AcceptableValue) => boolean)` | Use this to compare objects by a particular field, or pass your own comparison function for complete control over how objects are compared. |
+| Prop         | Default           | Type                                                                | Description                                                                                         |
+| ------------ | ----------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `items`      | -                 | `T[]` \| `NComboboxGroupProps<ExtractItemType<T>>[]`                | The items to display in the combobox.                                                               |
+| `modelValue` | -                 | `AcceptableValue` \| `AcceptableValue[]`                            | The controlled value of the combobox. Stores the full item object(s). Can be binded with `v-model`. |
+| `disabled`   | -                 | `boolean`                                                           | When true, prevents the user from interacting with the combobox.                                    |
+| `open`       | -                 | `boolean`                                                           | The controlled open state of the combobox. Can be binded with `v-model`.                            |
+| `label`      | -                 | `string`                                                            | The heading to display for the grouped item.                                                        |
+| `labelKey`   | `label`           | `string`                                                            | The key name to use to display in the combobox items.                                               |
+| `valueKey`   | `value`           | `string`                                                            | The key name to use for comparing items (used for selection matching).                              |
+| `by`         | -                 | `string` \| `((a: AcceptableValue, b: AcceptableValue) => boolean)` | Compare objects by a field or custom function. Use this to determine equality when selecting items. |
+| `textEmpty`  | `No items found.` | `string`                                                            | The text to display when the combobox is empty.                                                     |
 
 ::alert{type="info"}
 The `T` generic extends `AcceptableValue` from Reka UI. When using grouped items, the item type is automatically extracted.
