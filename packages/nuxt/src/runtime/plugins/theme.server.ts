@@ -2,6 +2,17 @@ import { defineNuxtPlugin, useHead } from '#app'
 
 import { useUnaSettings } from '../composables/useUnaSettings'
 
+/**
+ * Server-side theme plugin
+ *
+ * Injects a script that applies theme settings from localStorage before hydration
+ * to prevent flash of unstyled content (FOUC).
+ *
+ * TODO: Add SSR support for dark/light mode theme variables (#435, #522)
+ * Currently, only primary/gray colors are applied. The dark/light mode
+ * CSS variables should also be handled to prevent flickering on page reload
+ * when using custom themes.
+ */
 export default defineNuxtPlugin(() => {
   const { defaultSettings } = useUnaSettings()
   useHead({

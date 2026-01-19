@@ -35,8 +35,9 @@ const alertClassVariants = computed(() => {
     default: '',
   }
 
-  // TODO: simplify and optimize this
-  const alertType = props.alert ? (props.alert.includes('info') ? 'info' : (props.alert.includes('success') ? 'success' : (props.alert.includes('warning') ? 'warning' : (props.alert.includes('error') ? 'error' : 'default')))) : 'default'
+  // Determine alert type from the alert prop
+  const alertTypes = ['info', 'success', 'warning', 'error'] as const
+  const alertType = alertTypes.find(type => props.alert?.includes(type)) ?? 'default'
 
   return {
     icon: icon[alertType],
