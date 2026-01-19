@@ -17,13 +17,13 @@ export interface NComboboxProps<T extends AcceptableValue, M extends boolean> ex
    * The model value for the combobox.
    * Stores the full item object(s), not extracted values.
    */
-  modelValue?: M extends true ? ExtractItemType<T>[] : ExtractItemType<T>
+  modelValue?: M extends true ? ExtractItemType<T>[] | null : ExtractItemType<T> | null
 
   /**
    * The default value for the combobox.
    * Should be the full item object(s), not extracted values.
    */
-  defaultValue?: M extends true ? ExtractItemType<T>[] : ExtractItemType<T>
+  defaultValue?: M extends true ? ExtractItemType<T>[] | null : ExtractItemType<T> | null
 
   /**
    * The items to display in the combobox.

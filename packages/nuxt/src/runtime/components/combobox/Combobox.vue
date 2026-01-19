@@ -69,25 +69,28 @@ function getItemProperty<K extends string>(item: ExtractItemType<T> | null | und
 
 // Display function that handles both single and multiple selections
 function getDisplayValue(val: unknown): string {
-  // Handle empty values
-  if (!val || (Array.isArray(val) && val.length === 0))
+  // Handle empty values (only null/undefined)
+  if (val == null || (Array.isArray(val) && val.length === 0))
     return ''
 
   // Handle multiple selection (array values)
   if (Array.isArray(val)) {
-    return val.map((v) => {
-      // For primitive values (string/number), return as-is
-      if (typeof v !== 'object' || v === null) {
-        return v
-      }
-      // For objects, try to get the label
-      return getItemProperty(v, props.labelKey as string) || getItemProperty(v, props.valueKey as string) || ''
-    }).filter(Boolean).join(', ')
+    return val
+      .map((v) => {
+        // For primitive values (string/number/boolean), convert to string
+        if (typeof v !== 'object' || v === null) {
+          return String(v)
+        }
+        // For objects, try to get the label
+        return getItemProperty(v, props.labelKey as string) || getItemProperty(v, props.valueKey as string) || ''
+      })
+      .filter(v => v !== null && v !== undefined)
+      .join(', ')
   }
 
-  // For single primitive value
+  // For single primitive value (preserve 0, false, '')
   if (typeof val !== 'object' || val === null) {
-    return String(val || '')
+    return String(val)
   }
 
   // For single object, get its label
