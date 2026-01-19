@@ -18,22 +18,25 @@ const items = [
   },
 ]
 
-const selected = ref<typeof items[number]>()
+const selected = ref<string>()
 </script>
 
 <template>
   <div class="space-y-4">
-    Output:
-    <span class="text-primary-500">
-      {{ selected }}
-    </span>
+    <div class="text-sm">
+      Selected value:
+      <span class="text-primary-500 font-mono">
+        {{ selected }}
+      </span>
+    </div>
 
     <div class="w-64">
       <NSelect
         v-model="selected"
         :items
         placeholder="Select a brand"
-        item-key="label"
+        label-key="label"
+        value-key="code"
       />
     </div>
   </div>
