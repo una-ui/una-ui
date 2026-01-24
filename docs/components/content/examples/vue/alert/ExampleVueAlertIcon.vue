@@ -7,28 +7,28 @@
     />
 
     <NAlert
-      alert="outline-info"
+      alert="text-info"
       title="Info icon"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
       icon
     />
 
     <NAlert
-      alert="outline-success"
+      alert="text-success"
       title="Success icon"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
       icon
     />
 
     <NAlert
-      alert="outline-warning"
+      alert="text-warning"
       title="Warning icon"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
       icon
     />
 
     <NAlert
-      alert="outline-error"
+      alert="text-error"
       title="Error icon"
       description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum."
       icon
