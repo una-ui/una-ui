@@ -39,7 +39,7 @@ const delegatedProps = reactiveOmit(props, ['class'])
           'progress-indicator',
           props.una?.progressIndicator,
         )"
-        :style="`transform: translateX(-${100 - (modelValue ?? 0)}%);`"
+        :style="`transform: translateX(-${100 - ((modelValue ?? 0) / (props.max || 100)) * 100}%)`"
       />
       <template
         v-else
