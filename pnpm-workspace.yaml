@@ -8,7 +8,7 @@ overrides:
 
 catalog:
   '@antfu/eslint-config': ^5.4.1
-  '@antfu/ni': ^26.2.0
+  '@antfu/ni': ^28.2.0
   '@babel/types': ^7.28.5
   '@faker-js/faker': ^10.2.0
   '@iconify-json/heroicons': ^1.2.3
