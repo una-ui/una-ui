@@ -1,5 +1,6 @@
+import type { ModuleDependencyMeta } from '@nuxt/schema'
 import type { UnaSettings } from './runtime/types'
-import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
+import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, hasNuxtCompatibility, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
 import extendUnocssOptions from './una.config'
 
@@ -55,6 +56,17 @@ export default defineNuxtModule<ModuleOptions>({
     global: true,
     dev: false,
   },
+  moduleDependencies: {
+    '@unocss/nuxt': <ModuleDependencyMeta<import('@unocss/nuxt').UnocssNuxtOptions>>{
+      defaults: extendUnocssOptions(),
+    },
+    '@nuxtjs/color-mode': <ModuleDependencyMeta<import('@nuxtjs/color-mode').ModuleOptions>>{
+      defaults: {
+        classSuffix: '',
+        disableTransition: true,
+      },
+    },
+  },
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
@@ -85,23 +97,14 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.build.transpile.push(runtimeDir)
 
     // modules
-    await installModule(import.meta.resolve('@unocss/nuxt'), extendUnocssOptions(nuxt.options.unocss))
-    await installModule(import.meta.resolve('@nuxtjs/color-mode'), {
-      classSuffix: '',
-      disableTransition: true,
-    })
-    await installModule(import.meta.resolve('@vueuse/nuxt'))
-    await installModule(import.meta.resolve('reka-ui/nuxt'), {
-      prefix: options.prefix,
-    })
-    await installModule(import.meta.resolve('@vee-validate/nuxt'), {
-      componentNames: {
-        Form: `${options.prefix}Form`,
-        // Field: `${options.prefix}FormField`,
-        FieldArray: `${options.prefix}FormFieldArray`,
-        ErrorMessage: `${options.prefix}FormErrorMessage`,
-      },
-    })
+    // For nuxt versions that doesn't support moduleDependencies
+    if (!await hasNuxtCompatibility({ nuxt: '^3.19.0 || >=4.1.0' })) {
+      await installModule(import.meta.resolve('@unocss/nuxt'), extendUnocssOptions(nuxt.options.unocss))
+      await installModule(import.meta.resolve('@nuxtjs/color-mode'), {
+        classSuffix: '',
+        disableTransition: true,
+      })
+    }
 
     // components
     addComponentsDir({
