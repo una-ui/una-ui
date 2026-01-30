@@ -188,6 +188,25 @@ Customize the multiple selection content.
 ::
 :::
 
+## Expose
+
+| Name          | Type                          | Description                                          |
+| ------------- | ----------------------------- | ---------------------------------------------------- |
+| `viewportRef` | `Ref<HTMLDivElement \| null>` | Reference to the ComboboxViewport wrapper component. |
+
+### Infinite Scroll
+
+Implement infinite scrolling to load more items as the user scrolls. Access the scrollable viewport element using the `viewportRef` exposed property.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueComboboxInfinityScroll
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/combobox/ExampleVueComboboxInfinityScroll.vue
+::
+:::
+
 ## Presets
 
 @@@ ../packages/preset/src/_shortcuts/combobox.ts [shortcuts/combobox.ts]

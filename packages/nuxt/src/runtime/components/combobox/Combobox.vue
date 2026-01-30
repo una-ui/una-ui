@@ -8,7 +8,7 @@ import { cn } from '../../utils'
 </script>
 
 <script setup lang="ts" generic="T extends AcceptableValue, M extends boolean = false">
-import { computed } from 'vue'
+import { computed, toRef, useTemplateRef } from 'vue'
 import ComboboxAnchor from './ComboboxAnchor.vue'
 import ComboboxEmpty from './ComboboxEmpty.vue'
 import ComboboxGroup from './ComboboxGroup.vue'
@@ -130,6 +130,12 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
 
   return getItemProperty(props.modelValue as ExtractItemType<T>, props.valueKey as string) === itemValue
 }
+
+const viewportRef = useTemplateRef('viewportRef')
+
+defineExpose({
+  viewportRef: toRef(() => viewportRef.value?.viewportRef),
+})
 </script>
 
 <template>
@@ -221,6 +227,7 @@ function isItemSelected(item: ExtractItemType<T> | null | undefined): boolean {
           <slot name="body">
             <ComboboxViewport
               v-bind="props._comboboxViewport"
+              ref="viewportRef"
               :una
             >
               <ComboboxEmpty
