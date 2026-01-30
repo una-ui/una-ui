@@ -1,110 +1,942 @@
-## [0.67.3](https://github.com/una-ui/una-ui/compare/v0.67.2...v0.67.3) (2026-01-30)
+# [1.0.0-alpha.16](https://github.com/una-ui/una-ui/compare/v0.67.3...v1.0.0-alpha.16) (2026-01-30)
+
+
+
+# [1.0.0-alpha.15](https://github.com/una-ui/una-ui/compare/v0.67.2...v1.0.0-alpha.15) (2026-01-30)
+
+
+
+# [1.0.0-alpha.14](https://github.com/una-ui/una-ui/compare/v0.67.1...v1.0.0-alpha.14) (2026-01-24)
+
+
+
+# [1.0.0-alpha.13](https://github.com/una-ui/una-ui/compare/v0.67.0...v1.0.0-alpha.13) (2026-01-19)
+
+
+
+# [1.0.0-alpha.12](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2025-11-23)
+
+
+
+# [1.0.0-alpha.11](https://github.com/una-ui/una-ui/compare/v0.66.0...v1.0.0-alpha.11) (2025-11-12)
 
 
 ### Bug Fixes
 
-* **FormField:** preserve refs after cloning the node ([6e4c889](https://github.com/una-ui/una-ui/commit/6e4c889e3196145cddc1f257504ebc6cc8f8011e))
+* **Nuxt:** omit 'themes' from una-settings local storage to prevent memory leaked ([#521](https://github.com/una-ui/una-ui/issues/521)) ([527f261](https://github.com/una-ui/una-ui/commit/527f261881a4b670f49dc3e81788b0f9269a6e83)), closes [#519](https://github.com/una-ui/una-ui/issues/519)
 
 
 
-## [0.67.2](https://github.com/una-ui/una-ui/compare/v0.67.1...v0.67.2) (2026-01-30)
+# [1.0.0-alpha.10](https://github.com/una-ui/una-ui/compare/v0.65.0...v1.0.0-alpha.10) (2025-09-27)
+
+
+
+# [1.0.0-alpha.9](https://github.com/una-ui/una-ui/compare/v0.64.0...v1.0.0-alpha.9) (2025-08-19)
+
+
+
+# [1.0.0-alpha.8](https://github.com/una-ui/una-ui/compare/v0.63.1...v1.0.0-alpha.8) (2025-07-24)
+
+
+
+# [1.0.0-alpha.7](https://github.com/una-ui/una-ui/compare/v0.63.0...v1.0.0-alpha.7) (2025-07-20)
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
+
+
+### Bug Fixes
+
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
 
 
 ### Features
 
-* **Combobox:** add viewportRef expose; add example to infinity scroll ([2533395](https://github.com/una-ui/una-ui/commit/25333954c632bdedec46bfe4a4e9b25c0899026e))
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
 
 
 
-## [0.67.1](https://github.com/una-ui/una-ui/compare/v0.67.0...v0.67.1) (2026-01-24)
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.15](https://github.com/una-ui/una-ui/compare/v0.67.2...v1.0.0-alpha.15) (2026-01-30)
+
+
+
+# [1.0.0-alpha.14](https://github.com/una-ui/una-ui/compare/v0.67.1...v1.0.0-alpha.14) (2026-01-24)
+
+
+
+# [1.0.0-alpha.13](https://github.com/una-ui/una-ui/compare/v0.67.0...v1.0.0-alpha.13) (2026-01-19)
+
+
+
+# [1.0.0-alpha.12](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2025-11-23)
+
+
+
+# [1.0.0-alpha.11](https://github.com/una-ui/una-ui/compare/v0.66.0...v1.0.0-alpha.11) (2025-11-12)
 
 
 ### Bug Fixes
 
-* **Progress:** resolve issue with max prop functionality; closes [#564](https://github.com/una-ui/una-ui/issues/564) ([c59981d](https://github.com/una-ui/una-ui/commit/c59981d65fa395f4fe39092f2a948fd68afa81f4))
+* **Nuxt:** omit 'themes' from una-settings local storage to prevent memory leaked ([#521](https://github.com/una-ui/una-ui/issues/521)) ([527f261](https://github.com/una-ui/una-ui/commit/527f261881a4b670f49dc3e81788b0f9269a6e83)), closes [#519](https://github.com/una-ui/una-ui/issues/519)
 
 
 
-# [0.67.0](https://github.com/una-ui/una-ui/compare/v0.66.0...v0.67.0) (2026-01-19)
+# [1.0.0-alpha.10](https://github.com/una-ui/una-ui/compare/v0.65.0...v1.0.0-alpha.10) (2025-09-27)
+
+
+
+# [1.0.0-alpha.9](https://github.com/una-ui/una-ui/compare/v0.64.0...v1.0.0-alpha.9) (2025-08-19)
+
+
+
+# [1.0.0-alpha.8](https://github.com/una-ui/una-ui/compare/v0.63.1...v1.0.0-alpha.8) (2025-07-24)
+
+
+
+# [1.0.0-alpha.7](https://github.com/una-ui/una-ui/compare/v0.63.0...v1.0.0-alpha.7) (2025-07-20)
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
+
+
+### Bug Fixes
+
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
+
+
+### Features
+
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
+
+
+
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.14](https://github.com/una-ui/una-ui/compare/v0.67.1...v1.0.0-alpha.14) (2026-01-24)
+
+
+
+# [1.0.0-alpha.13](https://github.com/una-ui/una-ui/compare/v0.67.0...v1.0.0-alpha.13) (2026-01-19)
+
+
+
+# [1.0.0-alpha.12](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2025-11-23)
+
+
+
+# [1.0.0-alpha.11](https://github.com/una-ui/una-ui/compare/v0.66.0...v1.0.0-alpha.11) (2025-11-12)
+
+
+### Bug Fixes
+
+* **Nuxt:** omit 'themes' from una-settings local storage to prevent memory leaked ([#521](https://github.com/una-ui/una-ui/issues/521)) ([527f261](https://github.com/una-ui/una-ui/commit/527f261881a4b670f49dc3e81788b0f9269a6e83)), closes [#519](https://github.com/una-ui/una-ui/issues/519)
+
+
+
+# [1.0.0-alpha.10](https://github.com/una-ui/una-ui/compare/v0.65.0...v1.0.0-alpha.10) (2025-09-27)
+
+
+
+# [1.0.0-alpha.9](https://github.com/una-ui/una-ui/compare/v0.64.0...v1.0.0-alpha.9) (2025-08-19)
+
+
+
+# [1.0.0-alpha.8](https://github.com/una-ui/una-ui/compare/v0.63.1...v1.0.0-alpha.8) (2025-07-24)
+
+
+
+# [1.0.0-alpha.7](https://github.com/una-ui/una-ui/compare/v0.63.0...v1.0.0-alpha.7) (2025-07-20)
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
+
+
+### Bug Fixes
+
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
+
+
+### Features
+
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
+
+
+
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.13](https://github.com/una-ui/una-ui/compare/v0.67.0...v1.0.0-alpha.13) (2026-01-19)
+
+
+
+# [1.0.0-alpha.12](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2025-11-23)
+
+
+
+# [1.0.0-alpha.11](https://github.com/una-ui/una-ui/compare/v0.66.0...v1.0.0-alpha.11) (2025-11-12)
+
+
+### Bug Fixes
+
+* **Nuxt:** omit 'themes' from una-settings local storage to prevent memory leaked ([#521](https://github.com/una-ui/una-ui/issues/521)) ([527f261](https://github.com/una-ui/una-ui/commit/527f261881a4b670f49dc3e81788b0f9269a6e83)), closes [#519](https://github.com/una-ui/una-ui/issues/519)
+
+
+
+# [1.0.0-alpha.10](https://github.com/una-ui/una-ui/compare/v0.65.0...v1.0.0-alpha.10) (2025-09-27)
+
+
+
+# [1.0.0-alpha.9](https://github.com/una-ui/una-ui/compare/v0.64.0...v1.0.0-alpha.9) (2025-08-19)
+
+
+
+# [1.0.0-alpha.8](https://github.com/una-ui/una-ui/compare/v0.63.1...v1.0.0-alpha.8) (2025-07-24)
+
+
+
+# [1.0.0-alpha.7](https://github.com/una-ui/una-ui/compare/v0.63.0...v1.0.0-alpha.7) (2025-07-20)
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
+
+
+### Bug Fixes
+
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
+
+
+### Features
+
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
+
+
+
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.12](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2025-11-23)
 
 
 ### Bug Fixes
 
 * **Checkbox:** use state value instead of modelValue in icon; add props to icon slot ([1041cfc](https://github.com/una-ui/una-ui/commit/1041cfc4a8863bcb195a4cfdb5ae0f0cc294da8f))
-* **CI:** resolve whoami auth issue ([857eb80](https://github.com/una-ui/una-ui/commit/857eb80eb7027590f1784069e121a87eb75bb458))
-* **CI:** resolve whoami auth issue ([5b5da44](https://github.com/una-ui/una-ui/commit/5b5da448374f9b208808a1624254a51db021bb9b))
-* **CI:** resolve whoami auth issue ([4b0113e](https://github.com/una-ui/una-ui/commit/4b0113ec4324d6ccbe57518eb58d0893619f875d))
-
-
-### Features
-
-* **Accordion:** improve default accordion-panel preset ([8375068](https://github.com/una-ui/una-ui/commit/8375068da6033fefc58f51019da3af3d6fca171e))
 
 
 
-# [0.66.0](https://github.com/una-ui/una-ui/compare/v0.65.0...v0.66.0) (2025-11-12)
+## 1.0.0-alpha.11 (2025-11-12)
+
+* ci: init ([1049b57](https://github.com/una-ui/una-ui/commit/1049b57))
+* ci: resolve release configuration [skip] ([a36f7d8](https://github.com/una-ui/una-ui/commit/a36f7d8))
+* feat(Accordion): improve default accordion-panel preset ([8375068](https://github.com/una-ui/una-ui/commit/8375068))
+* fix(Nuxt): omit 'themes' from una-settings local storage to prevent memory leaked (#521) ([527f261](https://github.com/una-ui/una-ui/commit/527f261)), closes [#521](https://github.com/una-ui/una-ui/issues/521) [#519](https://github.com/una-ui/una-ui/issues/519)
+* chore: override typescript version to 5.8.3 ([7d23fe4](https://github.com/una-ui/una-ui/commit/7d23fe4))
+* chore(deps): stale ([61bf7fc](https://github.com/una-ui/una-ui/commit/61bf7fc))
+* chore(deps): upgrade @una-ui-content to latest ([7bb47cf](https://github.com/una-ui/una-ui/commit/7bb47cf))
+
+
+
+## 1.0.0-alpha.10 (2025-09-27)
+
+* chore: release v1.0.0-alpha.10 ([950a52a](https://github.com/una-ui/una-ui/commit/950a52a))
+
+
+
+## 1.0.0-alpha.9 (2025-08-19)
+
+* chore: release v1.0.0-alpha.9 ([ba342b4](https://github.com/una-ui/una-ui/commit/ba342b4))
+
+
+
+## 1.0.0-alpha.8 (2025-07-24)
+
+* chore: release v1.0.0-alpha.8 ([3118413](https://github.com/una-ui/una-ui/commit/3118413))
+* ci: remove release edge to alphas ([e540ac6](https://github.com/una-ui/una-ui/commit/e540ac6))
+
+
+
+## 1.0.0-alpha.7 (2025-07-20)
+
+* chore: release v1.0.0-alpha.7 ([cedd832](https://github.com/una-ui/una-ui/commit/cedd832))
+
+
+
+## 1.0.0-alpha.6 (2025-07-19)
+
+* chore: release v1.0.0-alpha.6 ([441f53f](https://github.com/una-ui/una-ui/commit/441f53f))
+* ci: ignore pre-release tags in workflow [skip] ([505693e](https://github.com/una-ui/una-ui/commit/505693e))
+
+
+
+## 1.0.0-alpha.5 (2025-07-18)
+
+* chore: release v1.0.0-alpha.5 ([15fe8d1](https://github.com/una-ui/una-ui/commit/15fe8d1))
+
+
+
+## 1.0.0-alpha.4 (2025-07-18)
+
+* chore: release v1.0.0-alpha.4 ([6625d3c](https://github.com/una-ui/una-ui/commit/6625d3c))
+* feat(Input): improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332b))
+* feat(Preset): update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc878))
+* fix(Input): add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97c))
+
+
+
+## 1.0.0-alpha.3 (2025-06-26)
+
+* chore: release v1.0.0-alpha.3 ([cb72369](https://github.com/una-ui/una-ui/commit/cb72369))
+* refactor(useUnaSettings): optimize settings watch logic ([420c911](https://github.com/una-ui/una-ui/commit/420c911))
+* [autofix.ci] apply automated fixes ([68e0e15](https://github.com/una-ui/una-ui/commit/68e0e15))
+* chore:init ([8776d77](https://github.com/una-ui/una-ui/commit/8776d77))
+
+
+
+## 1.0.0-alpha.2 (2025-06-26)
+
+* chore: lint ([4fd173f](https://github.com/una-ui/una-ui/commit/4fd173f))
+* chore: release v1.0.0-alpha.2 ([ca57775](https://github.com/una-ui/una-ui/commit/ca57775))
+* chore: stale ([ff2e5a6](https://github.com/una-ui/una-ui/commit/ff2e5a6))
+* feat(Button): improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdf))
+* feat(Input): improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe))
+* feat(PinInput): update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d2))
+* feat(ThemeSwitcher): improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0d))
+* [autofix.ci] apply automated fixes ([ce98054](https://github.com/una-ui/una-ui/commit/ce98054))
+
+
+
+## 1.0.0-alpha.1 (2025-06-24)
+
+* chore: add v1 initial configuration ([c5fd9aa](https://github.com/una-ui/una-ui/commit/c5fd9aa))
+* chore: release v1.0.0-alpha.1 ([9635ef5](https://github.com/una-ui/una-ui/commit/9635ef5))
+* chore(deps): upgrade @una-ui/content to latest ([9a27d45](https://github.com/una-ui/una-ui/commit/9a27d45))
+* chore(deps): upgrade @una-ui/content to latest ([4caf3b7](https://github.com/una-ui/una-ui/commit/4caf3b7))
+* ci: add release script for v1 ([eb71b00](https://github.com/una-ui/una-ui/commit/eb71b00))
+* feat: add data-slot value to all components; fix sheet usage (#446) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fe)), closes [#446](https://github.com/una-ui/una-ui/issues/446)
+* feat(Alert): update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af))
+* feat(Button): update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7))
+* feat(Checkbox): improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653))
+* feat(Dialog): improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa796))
+* feat(Input): improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d))
+* feat(Input): update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990f))
+* feat(Input): update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d))
+* feat(Pagination): update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9da))
+* feat(Preset): update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb42))
+* feat(Presset): improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5d))
+* feat(Progress): set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c006))
+* feat(Slider): improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35))
+* feat(Tabs): update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b))
+* feat(ThemeSwitcher): add ability to configure cssVarThemes, closes #447 ([6286913](https://github.com/una-ui/una-ui/commit/6286913)), closes [#447](https://github.com/una-ui/una-ui/issues/447)
+* feat(Alert)!: update presets and components configuration (#445) ([d117979](https://github.com/una-ui/una-ui/commit/d117979)), closes [#445](https://github.com/una-ui/una-ui/issues/445)
+* feat(AlertDialog)!: rename `preventClose` prop to `dismissible` (#442) ([c6828ac](https://github.com/una-ui/una-ui/commit/c6828ac)), closes [#442](https://github.com/una-ui/una-ui/issues/442)
+* feat(Card)!: update presets and components configuration (#433) ([f2aabc4](https://github.com/una-ui/una-ui/commit/f2aabc4)), closes [#433](https://github.com/una-ui/una-ui/issues/433)
+* feat(Dialog)!: update components and props configuration (#439) ([89a0eef](https://github.com/una-ui/una-ui/commit/89a0eef)), closes [#439](https://github.com/una-ui/una-ui/issues/439)
+* feat(Presets)!: update to shadcn-ui+tailwind4 configuration (#429) ([b6a8c03](https://github.com/una-ui/una-ui/commit/b6a8c03)), closes [#429](https://github.com/una-ui/una-ui/issues/429)
+* feat(Sheet)!: update components and props configuration (#440) ([d3dde76](https://github.com/una-ui/una-ui/commit/d3dde76)), closes [#440](https://github.com/una-ui/una-ui/issues/440)
+* docs: fix card usage in the example ([6298f9b](https://github.com/una-ui/una-ui/commit/6298f9b))
+* docs: improve landing page ([f2b46e8](https://github.com/una-ui/una-ui/commit/f2b46e8))
+* docs: improve landing page ([e3e682b](https://github.com/una-ui/una-ui/commit/e3e682b))
+* docs: init ([e793d15](https://github.com/una-ui/una-ui/commit/e793d15))
+* docs: init ([3206b75](https://github.com/una-ui/una-ui/commit/3206b75))
+* docs: remove new badge from hover-card nav ([a8be6b4](https://github.com/una-ui/una-ui/commit/a8be6b4))
+* docs: update from btn variants from solid-gray to outline-gray ([640b0f9](https://github.com/una-ui/una-ui/commit/640b0f9))
+* docs(Card): update variants section ([609b8a4](https://github.com/una-ui/una-ui/commit/609b8a4))
+* refactor(Input): update shadows handling across the variants ([ab64a26](https://github.com/una-ui/una-ui/commit/ab64a26))
+
+
+
+# [1.0.0-alpha.10](https://github.com/una-ui/una-ui/compare/v0.65.0...v1.0.0-alpha.10) (2025-09-27)
+
+
+
+# [1.0.0-alpha.9](https://github.com/una-ui/una-ui/compare/v0.64.0...v1.0.0-alpha.9) (2025-08-19)
+
+
+
+# [1.0.0-alpha.8](https://github.com/una-ui/una-ui/compare/v0.63.1...v1.0.0-alpha.8) (2025-07-24)
+
+
+
+# [1.0.0-alpha.7](https://github.com/una-ui/una-ui/compare/v0.63.0...v1.0.0-alpha.7) (2025-07-20)
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
 
 
 ### Bug Fixes
 
-* **ExtractorVueScript:** ignore unsupported filetypes ([#517](https://github.com/una-ui/una-ui/issues/517)) ([db3315c](https://github.com/una-ui/una-ui/commit/db3315c9840494426aa582962da88ed85d9fa4fb)), closes [#516](https://github.com/una-ui/una-ui/issues/516)
-* **Select:** set support indicators when items are provided via content slot ([#520](https://github.com/una-ui/una-ui/issues/520)) ([8fe6cd7](https://github.com/una-ui/una-ui/commit/8fe6cd755481777c95a65fce13cb10efa17d8e84))
-* **Sidebar:** load persisted sidebar open state from cookie ([#541](https://github.com/una-ui/una-ui/issues/541)) ([21ab153](https://github.com/una-ui/una-ui/commit/21ab153809c798331e8a7be1cc8fca0f423a1e4f))
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
+
+
+### Features
+
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
 
 
 
-# [0.65.0](https://github.com/una-ui/una-ui/compare/v0.64.0...v0.65.0) (2025-09-27)
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.9](https://github.com/una-ui/una-ui/compare/v0.64.0...v1.0.0-alpha.9) (2025-08-19)
+
+
+
+# [1.0.0-alpha.8](https://github.com/una-ui/una-ui/compare/v0.63.1...v1.0.0-alpha.8) (2025-07-24)
+
+
+
+# [1.0.0-alpha.7](https://github.com/una-ui/una-ui/compare/v0.63.0...v1.0.0-alpha.7) (2025-07-20)
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
 
 
 ### Bug Fixes
 
-* **deps:** Add override to prevent @una-ui/nuxt-edge from being installed ([#505](https://github.com/una-ui/una-ui/issues/505)) ([edfdb66](https://github.com/una-ui/una-ui/commit/edfdb66d7c3f0027d28e82efd5042b325f83b2d1))
-* **ExtractorVueScript:** properly parse vue template directive expressions ([#512](https://github.com/una-ui/una-ui/issues/512)) ([f2c5220](https://github.com/una-ui/una-ui/commit/f2c5220c7b705d0662103c85aa61557079d28c1b))
-* **Stepper:** hasNext and hasPrev exposed the underlying RekaUI StepperRoot methods that had an offset of 1. ([#508](https://github.com/una-ui/una-ui/issues/508)) ([1d98fb4](https://github.com/una-ui/una-ui/commit/1d98fb46dde24a2dd2529f62f6b2f9b14ba0a600))
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
 
 
 ### Features
 
-* **deps:** upgrade @una-ui/content to 48.3.0 ([2809825](https://github.com/una-ui/una-ui/commit/280982534d54f9dbc1ab1c949f403e73698d9b63))
-* **ExtractorVueScript:** refactor extractor to use babel ast and vue/compiler-sfc to parse code ([#494](https://github.com/una-ui/una-ui/issues/494)) ([1cb0816](https://github.com/una-ui/una-ui/commit/1cb08167d05ff249d773b242138d5cef13f04a5c))
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
 
 
 
-# [0.64.0](https://github.com/una-ui/una-ui/compare/v0.63.1...v0.64.0) (2025-08-19)
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
 
 
 ### Features
 
-* **Stepper:** introduce new components and presets ([#451](https://github.com/una-ui/una-ui/issues/451)) ([416d95a](https://github.com/una-ui/una-ui/commit/416d95ad976b4169530860600efaabfc65d08c49))
-* **ToggleGroup:** introduce new components and presets ([#485](https://github.com/una-ui/una-ui/issues/485)) ([735a951](https://github.com/una-ui/una-ui/commit/735a951d2df41ef664f2412909380530aae0e5cf))
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
 
 
 
-## [0.63.1](https://github.com/una-ui/una-ui/compare/v0.63.0...v0.63.1) (2025-07-24)
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.8](https://github.com/una-ui/una-ui/compare/v0.63.1...v1.0.0-alpha.8) (2025-07-24)
+
+
+
+# [1.0.0-alpha.7](https://github.com/una-ui/una-ui/compare/v0.63.0...v1.0.0-alpha.7) (2025-07-20)
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
 
 
 ### Bug Fixes
 
-* **Preset:** resolve undetected date-state classes animations ([#475](https://github.com/una-ui/una-ui/issues/475)) ([58df226](https://github.com/una-ui/una-ui/commit/58df2265daa3a6f81d8a145e12f49a96bd7c19fa))
-
-
-
-# [0.63.0](https://github.com/una-ui/una-ui/compare/v0.62.2...v0.63.0) (2025-07-20)
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
 
 
 ### Features
 
-* **Combobox, Select, RadioGroup:** improve generic typing ([#467](https://github.com/una-ui/una-ui/issues/467)) ([0ff4176](https://github.com/una-ui/una-ui/commit/0ff4176e708271706118edb7c48c44551995b93e))
-* **ExtractorVueScript:** add support for ternary patterns ([#463](https://github.com/una-ui/una-ui/issues/463)) ([fb25376](https://github.com/una-ui/una-ui/commit/fb25376015f9ed8e84a8ed2954d7b8da9274ae79))
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
 
 
 
-## [0.62.2](https://github.com/una-ui/una-ui/compare/v0.62.1...v0.62.2) (2025-07-19)
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
 
 
 ### Features
 
-* **Select:** improve generics to allow better typesafety ([#466](https://github.com/una-ui/una-ui/issues/466)) ([fe1f7f0](https://github.com/una-ui/una-ui/commit/fe1f7f097e5aa3e4b63ad0b9ed173774ac4b918a))
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.7](https://github.com/una-ui/una-ui/compare/v0.63.0...v1.0.0-alpha.7) (2025-07-20)
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
+
+
+### Bug Fixes
+
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
+
+
+### Features
+
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
+
+
+
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.6](https://github.com/una-ui/una-ui/compare/v0.62.2...v1.0.0-alpha.6) (2025-07-19)
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
+
+
+### Bug Fixes
+
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
+
+
+### Features
+
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
+
+
+
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.5](https://github.com/una-ui/una-ui/compare/v0.62.1...v1.0.0-alpha.5) (2025-07-18)
+
+
+
+# [1.0.0-alpha.4](https://github.com/una-ui/una-ui/compare/v0.62.0...v1.0.0-alpha.4) (2025-07-18)
+
+
+### Bug Fixes
+
+* **Input:** add color to file text ([943c97c](https://github.com/una-ui/una-ui/commit/943c97cec0451e73ef7224324121bfa22556403c))
+
+
+### Features
+
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
+
+
+
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
 
 
 
@@ -122,25 +954,110 @@
 
 ### Features
 
-* **Table:** add empty-text and empty-icon preset and prop configuration ([#462](https://github.com/una-ui/una-ui/issues/462)) ([b8ef868](https://github.com/una-ui/una-ui/commit/b8ef868bb4abd5e8130e2330dee78aad669aa7ce))
+* **Input:** improve base style preset ([4db332b](https://github.com/una-ui/una-ui/commit/4db332bee112f95e3b3888ba57ea0130df26e700))
+* **Preset:** update default static icons to lucide ([c0fc878](https://github.com/una-ui/una-ui/commit/c0fc8783a47c248f22f6a741a5451d661e708d49))
 
 
 
-# [0.61.0](https://github.com/una-ui/una-ui/compare/v0.60.1...v0.61.0) (2025-06-26)
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v0.61.0...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
 
 
 ### Features
 
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.3](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2025-06-26)
+
+
+
+# [1.0.0-alpha.2](https://github.com/una-ui/una-ui/compare/v0.60.1...v1.0.0-alpha.2) (2025-06-26)
+
+
+### Features
+
+* **Button:** improve text-muted variant preset ([a4a9bdf](https://github.com/una-ui/una-ui/commit/a4a9bdfec90edf860d8a747d29d318233937849e))
+* **Input:** improve focus style preset ([ec3b1fe](https://github.com/una-ui/una-ui/commit/ec3b1fe9eee7f8266a4baa1cf1c7a12d7f77af62))
 * **PinInput:** introduce new components and presets ([#450](https://github.com/una-ui/una-ui/issues/450)) ([2fe0c0f](https://github.com/una-ui/una-ui/commit/2fe0c0fb34fd13b00f225445d5dda1e6a5a70fdf))
+* **PinInput:** update default presets to v1 ([6d828d2](https://github.com/una-ui/una-ui/commit/6d828d251164579206be570f862149511d3cb47b))
+* **ThemeSwitcher:** improve types and theme handler ([c34eb0d](https://github.com/una-ui/una-ui/commit/c34eb0db3f0f622ee0104efd8302efa22589d758))
 
 
 
-## [0.60.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v0.60.1) (2025-06-24)
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
 
 
 ### Features
 
-* **Table:** add support for getSubRows method ([#449](https://github.com/una-ui/una-ui/issues/449)) ([6f38118](https://github.com/una-ui/una-ui/commit/6f381187b3e2843aa782832811af1fbd17406309))
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
+
+
+
+# [1.0.0-alpha.1](https://github.com/una-ui/una-ui/compare/v0.60.0...v1.0.0-alpha.1) (2025-06-24)
+
+
+### Features
+
+* add data-slot value to all components; fix sheet usage ([#446](https://github.com/una-ui/una-ui/issues/446)) ([ef166fe](https://github.com/una-ui/una-ui/commit/ef166fee3d4f0813a60137ece8544bf20972d98e))
+* **Alert:** update default icons ([ef4e1af](https://github.com/una-ui/una-ui/commit/ef4e1af09684bb77d9eaa77f91a3a20bf2f8fc58))
+* **Button:** update default variant styling presets ([0ec16d7](https://github.com/una-ui/una-ui/commit/0ec16d7a387df1cad68e184c9e152bc665131a97))
+* **Checkbox:** improve default style presets ([e2e5653](https://github.com/una-ui/una-ui/commit/e2e5653069943066cf97cc31ab95c59f5b035328))
+* **Dialog:** improve dialog-overlay style preset ([6ffa796](https://github.com/una-ui/una-ui/commit/6ffa7968d9638f5e3e6a2b97961b5d0cfb8b9b07))
+* **Input:** improve variant presets ([cc2ce8d](https://github.com/una-ui/una-ui/commit/cc2ce8d8dabc15624879a5dd3a5e32e27cf5af94))
+* **Input:** update outline-black variant preset ([f2c990f](https://github.com/una-ui/una-ui/commit/f2c990fdd5455ecb69632aa4923cebf87ae07b93))
+* **Input:** update outline-gray variant preset ([4fb7d9d](https://github.com/una-ui/una-ui/commit/4fb7d9d4e62be7752a9f8a615970fd0877e7ea25))
+* **Pagination:** update and improve default pagination list variant ([a72c9da](https://github.com/una-ui/una-ui/commit/a72c9dacc0f4d769f1c9a181135034b6ae170926))
+* **Preset:** update selection cssVars config ([205cb42](https://github.com/una-ui/una-ui/commit/205cb423f986fa30a864c28f7add5f0c93955fd6))
+* **Presset:** improve outline-black variant preset ([0e26b5d](https://github.com/una-ui/una-ui/commit/0e26b5db0084dfb5611cff1e2c1daa7831f28635))
+* **Progress:** set alias for foreground and black variant ([d51c006](https://github.com/una-ui/una-ui/commit/d51c0061d4983259694aaee6296c44f5d3eb8159))
+* **Slider:** improve component and presets configuration ([13f2e35](https://github.com/una-ui/una-ui/commit/13f2e35ac7ff95a10cc7c579054171b34ed3ec53))
+* **Tabs:** update and improve default tabsInactive variant ([d85104b](https://github.com/una-ui/una-ui/commit/d85104b3c171b38fd91b73552d694d9b08599777))
+* **ThemeSwitcher:** add ability to configure cssVarThemes, closes [#447](https://github.com/una-ui/una-ui/issues/447) ([6286913](https://github.com/una-ui/una-ui/commit/62869136f7495aa85c25ab7b28995a742a8cdc10))
 
 
 

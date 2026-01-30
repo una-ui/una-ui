@@ -29,6 +29,7 @@ export interface NCardProps extends BaseExtensions {
   _cardDescription?: Partial<NCardDescriptionProps>
   _cardHeader?: Partial<NCardHeaderProps>
   _cardFooter?: Partial<NCardFooterProps>
+  _cardAction?: Partial<NCardActionProps>
   /**
    * `UnaUI` preset configuration
    *
@@ -57,6 +58,10 @@ export interface NCardFooterProps extends BaseExtensions {
   una?: Pick<NCardUnaProps, 'cardFooter'>
 }
 
+export interface NCardActionProps extends BaseExtensions {
+  una?: Pick<NCardUnaProps, 'cardAction'>
+}
+
 export interface NCardUnaProps {
   cardDefaultVariant?: HTMLAttributes['class']
   cardTitle?: HTMLAttributes['class']
@@ -64,4 +69,5 @@ export interface NCardUnaProps {
   cardContent?: HTMLAttributes['class']
   cardHeader?: HTMLAttributes['class']
   cardFooter?: HTMLAttributes['class']
+  cardAction?: HTMLAttributes['class']
 }

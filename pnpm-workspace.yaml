@@ -27,8 +27,8 @@ catalog:
   '@types/chroma-js': ^3.1.2
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.19.1
-  '@una-ui/content': ^48.3.0
+  '@types/node': ^22.19.0
+  '@una-ui/content': ^49.0.0-beta.5
   '@unocss/core': ^66.5.10
   '@unocss/eslint-config': ^66.5.10
   '@unocss/nuxt': ^66.5.10
@@ -36,6 +36,7 @@ catalog:
   '@unocss/preset-icons': ^66.5.10
   '@unocss/preset-mini': ^66.5.10
   '@unocss/preset-uno': ^66.5.10
+  '@unocss/preset-wind4': ^66.5.10
   '@unocss/reset': ^66.5.10
   '@vee-validate/nuxt': ^4.15.1
   '@vee-validate/zod': ^4.15.1

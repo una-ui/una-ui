@@ -1,6 +1,6 @@
 {
   "name": "@una-ui/preset",
-  "version": "0.67.3",
+  "version": "1.0.0-alpha.16",
   "description": "The default preset for @una-ui",
   "author": "Phojie Rengel <phojrengel@gmail.com>",
   "license": "MIT",
@@ -53,6 +53,7 @@
     "@unocss/core": "catalog:",
     "@unocss/preset-mini": "catalog:",
     "@unocss/preset-uno": "catalog:",
+    "@unocss/preset-wind4": "catalog:",
     "unocss": "catalog:"
   }
 }

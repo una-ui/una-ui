@@ -18,7 +18,6 @@ useIntervalFn(() => {
       <NSwitch
         v-model="nightOrDay"
         :loading
-        size="lg"
         :una="{
           switchThumb: 'duration-500',
         }"

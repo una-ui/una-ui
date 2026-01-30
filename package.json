@@ -1,7 +1,7 @@
 {
   "name": "@una-ui/monorepo",
   "type": "module",
-  "version": "0.67.3",
+  "version": "1.0.0-alpha.16",
   "private": true,
   "packageManager": "pnpm@10.23.0",
   "description": "The Atomic UI Framework",
@@ -45,8 +45,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "release": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release.ts",
+    "release:v1": "pnpm test && bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release-v1.ts",
     "start": "echo 'No start script defined'",
     "test": "vitest",
+    "tweak-converter": "esno scripts/tweak-converter.ts",
     "typecheck": "vue-tsc --noEmit",
     "clear": "rimraf packages/*/{dist,es,lib}",
     "reset": "pnpm store prune && rm -rf docs/.nuxt docs/node_modules node_modules pnpm-lock.yaml packages/**/{node_modules} && ni",
@@ -97,6 +99,9 @@
     "vue-tsc": "catalog:"
   },
   "pnpm": {
+    "overrides": {
+      "typescript": "5.8.3"
+    },
     "onlyBuiltDependencies": [
       "sharp",
       "@parcel/watcher",

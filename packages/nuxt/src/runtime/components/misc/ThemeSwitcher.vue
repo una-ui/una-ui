@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { useColorMode } from '#imports'
+import type { UnaSettings } from '../../types'
+import { useAppConfig, useColorMode } from '#imports'
 import { useToggle } from '@vueuse/core'
 import { capitalize, computed } from 'vue'
 import { useUnaSettings } from '../../composables/useUnaSettings'
 import { useUnaThemes } from '../../composables/useUnaThemes'
 import { RADIUS } from '../../constants'
 import Button from '../elements/Button.vue'
+import Icon from '../elements/Icon.vue'
 import Label from '../elements/Label.vue'
 import Popover from '../elements/popover/Popover.vue'
 import Separator from '../elements/Separator.vue'
@@ -14,25 +16,45 @@ const colorMode = useColorMode()
 
 const [value, toggle] = useToggle()
 const { primaryThemes, grayThemes } = useUnaThemes()
+
+const { una: { themes } } = useAppConfig()
+
 const { settings, reset } = useUnaSettings()
 
 const currentPrimaryThemeHex = computed(() => settings.value.primaryColors?.['--una-primary-hex'])
 const currentPrimaryThemeName = computed(() => {
+  if (settings.value.theme) {
+    return settings.value.theme
+  }
+
   const theme = primaryThemes.find(([, theme]) => theme['--una-primary-hex'] === currentPrimaryThemeHex.value)
   return theme ? theme[0] : ''
 })
+
 const currentGrayThemeHex = computed(() => settings.value.grayColors?.['--una-gray-hex'])
 const currentGrayThemeName = computed(() => {
+  if (settings.value.theme) {
+    return settings.value.theme
+  }
+
   const theme = grayThemes.find(([, theme]) => theme['--una-gray-hex'] === currentGrayThemeHex.value)
   return theme ? theme[0] : ''
 })
 
+function updateTheme(theme: UnaSettings['theme']): void {
+  settings.value.theme = theme
+  settings.value.primary = false
+  settings.value.gray = false
+}
+
 // update theme in storage
 function updatePrimaryTheme(theme: string): void {
+  settings.value.theme = false
   settings.value.primary = theme
 }
 
 function updateGrayTheme(theme: string): void {
+  settings.value.theme = false
   settings.value.gray = theme
 }
 
@@ -78,8 +100,7 @@ function shuffleTheme(): void {
       <slot name="trigger" :open="open">
         <Button
           btn="soft"
-          square
-          icon
+          icon square
           label="i-lucide-paintbrush"
         />
       </slot>
@@ -88,32 +109,81 @@ function shuffleTheme(): void {
     <slot name="content">
       <div class="flex flex-col">
         <div class="grid space-y-1">
-          <h1 class="text-md text-base font-semibold">
+          <h1 class="text-md text-foreground font-semibold">
             Customize
           </h1>
-          <p class="text-xs text-muted">
+          <p class="text-xs text-muted-foreground">
             Pick a style and color for your components.
           </p>
         </div>
+
+        <template v-if="themes.length > 0">
+          <Separator />
+
+          <div
+            class="space-y-2"
+          >
+            <Label for="color" class="text-xs"> Themes</Label>
+            <div class="grid grid-cols-2 gap-3">
+              <template
+                v-for="theme in themes"
+                :key="theme"
+              >
+                <Button
+                  v-if="theme"
+                  btn="outline-gray"
+                  size="xs"
+                  :title="capitalize(theme?.name)"
+                  class="justify-start gap-2 ring-primary"
+                  :aria-label="`Theme: ${theme.name}`"
+                  :class="currentPrimaryThemeName === theme?.name && 'ring-2'"
+                  @click="updateTheme(theme.name)"
+                >
+                  <template #leading>
+                    <Icon
+                      name="i-tabler-circle-filled"
+                      square="4.5"
+                      :style="{
+                        '--c-primary': `oklch(${theme?.cssVars.dark['--una-primary']})`,
+                        '--c-primary-foreground': `oklch(${theme?.cssVars.dark['--una-background']})`,
+                      }"
+                      class="shrink-0 rounded-full from-$c-primary to-$c-primary-foreground from-20% bg-gradient-to-b"
+                    />
+                  </template>
+
+                  <span class="truncate text-xs">
+                    {{ theme.name }}
+                  </span>
+                </Button>
+              </template>
+            </div>
+          </div>
+        </template>
 
         <Separator />
 
         <div class="space-y-2">
           <Label for="color" class="text-xs"> Primary Color</Label>
           <div class="grid grid-cols-7 gap-3">
-            <button
+            <template
               v-for="[key, theme] in primaryThemes"
               :key="key"
-              :title="capitalize(key)"
-              :style="{ background: theme['--una-primary-hex'] }"
-              class="transition-all"
-              rounded="full"
-              square="6.5"
-              :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
-              ring="primary offset-4 offset-base"
-              :aria-label="`Primary Color: ${key}`"
-              @click="updatePrimaryTheme(key)"
-            />
+            >
+              <button
+                :title="capitalize(key)"
+                :style="{
+                  '--c-primary': `oklch(${theme['--una-primary-600']})`,
+                  '--c-primary-foreground': `oklch(${theme['--una-primary-500']})`,
+                }"
+                class="bg-$c-primary transition-all dark:bg-$c-primary-foreground"
+                rounded="full"
+                square="6.5"
+                :class="[currentPrimaryThemeName === key ? 'ring-2' : 'scale-93']"
+                ring="primary offset-4 offset-background"
+                :aria-label="`Primary Color: ${key}`"
+                @click="updatePrimaryTheme(key)"
+              />
+            </template>
           </div>
         </div>
 
@@ -122,19 +192,25 @@ function shuffleTheme(): void {
         <div class="space-y-2">
           <Label for="color" class="text-xs"> Gray Color </Label>
           <div class="grid grid-cols-7 gap-3">
-            <button
+            <template
               v-for="[key, theme] in grayThemes"
               :key="key"
-              :title="capitalize(key)"
-              :style="{ background: theme['--una-gray-hex'] }"
-              :class="currentGrayThemeName === key ? 'ring-2' : 'scale-93'"
-              class="transition-all"
-              rounded="full"
-              square="6.5"
-              :aria-label="`Gray Color: ${key}`"
-              ring="gray offset-4 offset-base"
-              @click="updateGrayTheme(key)"
-            />
+            >
+              <button
+                :title="capitalize(key)"
+                :style="{
+                  '--c-gray': `oklch(${theme['--una-gray-600']})`,
+                  '--c-gray-foreground': `oklch(${theme['--una-gray-500']})`,
+                }"
+                class="bg-$c-gray transition-all dark:bg-$c-gray-foreground"
+                rounded="full"
+                square="6.5"
+                :class="[currentGrayThemeName === key ? 'ring-2' : 'scale-93']"
+                ring="gray offset-4 offset-background"
+                :aria-label="`Gray Color: ${key}`"
+                @click="updateGrayTheme(key)"
+              />
+            </template>
           </div>
         </div>
 
@@ -146,7 +222,7 @@ function shuffleTheme(): void {
             <Button
               v-for="r in RADIUS"
               :key="r"
-              btn="solid-gray"
+              btn="outline-gray"
               size="xs"
               :class="
                 r === settings.radius
@@ -167,7 +243,7 @@ function shuffleTheme(): void {
 
           <div class="flex justify-around py-1.5 space-x-2">
             <Button
-              btn="solid-gray"
+              btn="outline-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'system' }"
               leading="i-radix-icons-desktop"
               class="px-3"
@@ -177,7 +253,7 @@ function shuffleTheme(): void {
             />
 
             <Button
-              btn="solid-gray"
+              btn="outline-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'light' }"
               leading="i-radix-icons-sun"
               class="px-3"
@@ -187,7 +263,7 @@ function shuffleTheme(): void {
             />
 
             <Button
-              btn="solid-gray"
+              btn="outline-gray"
               :class="{ 'ring-2 ring-primary': colorMode.preference === 'dark' }"
               leading="i-radix-icons-moon"
               class="px-3"
@@ -203,7 +279,7 @@ function shuffleTheme(): void {
         <div class="grid grid-cols-2 gap-2">
           <Button
             size="xs"
-            btn="solid-gray"
+            btn="outline-gray"
             label="Reset"
             leading="i-radix-icons-reload"
             @click="reset"
