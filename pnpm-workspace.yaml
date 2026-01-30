@@ -7,7 +7,7 @@ overrides:
   '@una-ui/content>@una-ui/nuxt': 'workspace:./packages/nuxt'
 
 catalog:
-  '@antfu/eslint-config': ^5.4.1
+  '@antfu/eslint-config': ^7.2.0
   '@antfu/ni': ^26.2.0
   '@babel/types': ^7.28.5
   '@faker-js/faker': ^10.2.0
