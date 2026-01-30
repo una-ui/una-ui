@@ -1,3 +1,12 @@
+## [0.67.3](https://github.com/una-ui/una-ui/compare/v0.67.2...v0.67.3) (2026-01-30)
+
+
+### Bug Fixes
+
+* **FormField:** preserve refs after cloning the node ([6e4c889](https://github.com/una-ui/una-ui/commit/6e4c889e3196145cddc1f257504ebc6cc8f8011e))
+
+
+
 ## [0.67.2](https://github.com/una-ui/una-ui/compare/v0.67.1...v0.67.2) (2026-01-30)
 
 
