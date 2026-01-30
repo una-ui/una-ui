@@ -1,3 +1,12 @@
+## [0.67.1](https://github.com/una-ui/una-ui/compare/v0.67.0...v0.67.1) (2026-01-24)
+
+
+### Bug Fixes
+
+* **Progress:** resolve issue with max prop functionality; closes [#564](https://github.com/una-ui/una-ui/issues/564) ([c59981d](https://github.com/una-ui/una-ui/commit/c59981d65fa395f4fe39092f2a948fd68afa81f4))
+
+
+
 # [0.67.0](https://github.com/una-ui/una-ui/compare/v0.66.0...v0.67.0) (2026-01-19)
 
 
