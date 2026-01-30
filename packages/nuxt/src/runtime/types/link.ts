@@ -51,4 +51,11 @@ export interface NLinkProps extends NuxtLinkProps {
    * Useful in combination with `NavLink` to apply the inactive class to the parent element
    */
   navLinkInactive?: string
+
+  /**
+   * Value of `aria-current` attribute when the link is exactly active
+   *
+   * @default 'page'
+   */
+  ariaCurrentValue?: 'page' | 'step' | 'location' | 'date' | 'time' | 'true' | 'false'
 }
