@@ -1,3 +1,12 @@
+## [0.67.2](https://github.com/una-ui/una-ui/compare/v0.67.1...v0.67.2) (2026-01-30)
+
+
+### Features
+
+* **Combobox:** add viewportRef expose; add example to infinity scroll ([2533395](https://github.com/una-ui/una-ui/commit/25333954c632bdedec46bfe4a4e9b25c0899026e))
+
+
+
 ## [0.67.1](https://github.com/una-ui/una-ui/compare/v0.67.0...v0.67.1) (2026-01-24)
 
 
