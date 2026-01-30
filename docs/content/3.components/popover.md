@@ -36,6 +36,9 @@ badges:
 | Prop              | Default | Type     | Description                                           |
 | ----------------- | ------- | -------- | ----------------------------------------------------- |
 | `_popoverContent` | -       | `object` | The component that pops out when the popover is open. |
+| `_popoverAnchor`  | -       | `object` | Props for `<PopoverAnchor>` component.                |
+| `_popoverClose`   | -       | `object` | Props for `<PopoverClose>` component.                 |
+| `_popoverArrow`   | -       | `object` | Props for `<PopoverArrow>` component.                 |
 
 | Options                       | Default   | Type                             | Description                                                                                                                                                                                                                                          |
 | ----------------------------- | --------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,6 +54,7 @@ badges:
 | `sticky`                      | `partial` | `partial`, `always`              | The sticky behavior on the align axis. partial will keep the content in the boundary as long as the trigger is at least partially in the boundary whilst "always" will keep the content in the boundary regardless.                                  |
 | `trapFocus`                   | `false`   | `boolean`                        | Whether focus should be trapped within the MenuContent                                                                                                                                                                                               |
 | `updatePositionStrategy`      | -         | `always`, `optimized`            | Strategy to update the position of the floating element on every animation frame.                                                                                                                                                                    |
+| `una`                         | -         | `object`                         | An object containing classes for styling various parts of the popover component.                                                                                                                                                                     |
 
 :read-more{to="https://www.reka-ui.com/docs/components/popover#content" title="Reka Popover Content API." target="_blank"}
 
@@ -65,10 +69,11 @@ badges:
 
 ## Slots
 
-| Name      | Props  | Description          |
-| --------- | ------ | -------------------- |
-| `trigger` | `open` | The button trigger.  |
-| `default` | -      | The popover content. |
+| Name      | Props           | Description                          |
+| --------- | --------------- | ------------------------------------ |
+| `trigger` | `open`, `close` | The button trigger.                  |
+| `anchor`  | `open`, `close` | The optional anchor for the popover. |
+| `default` | `close`         | The popover content.                 |
 
 ## Presets
 
