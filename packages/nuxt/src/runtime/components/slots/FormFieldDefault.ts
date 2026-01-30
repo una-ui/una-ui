@@ -50,7 +50,14 @@ export default defineComponent({
           node.props?.['onUpdate:modelValue']?.(value)
         },
       }
-      return cloneVNode(node, mergeProps)
+
+      // Preserve the ref from the original node
+      const cloned = cloneVNode(node, mergeProps)
+      if (node.ref) {
+        cloned.ref = node.ref
+      }
+
+      return cloned
     }))
 
     return () => clones.value
