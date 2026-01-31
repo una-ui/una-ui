@@ -9,7 +9,7 @@ overrides:
 catalog:
   '@antfu/eslint-config': ^5.4.1
   '@antfu/ni': ^26.2.0
-  '@babel/types': ^7.28.5
+  '@babel/types': ^7.29.0
   '@faker-js/faker': ^10.2.0
   '@iconify-json/heroicons': ^1.2.3
   '@iconify-json/lucide': ^1.2.86
@@ -27,7 +27,7 @@ catalog:
   '@types/chroma-js': ^3.1.2
   '@types/fs-extra': ^11.0.4
   '@types/markdown-it': ^14.1.2
-  '@types/node': ^22.19.1
+  '@types/node': ^22.19.7
   '@una-ui/content': ^48.3.0
   '@unocss/core': ^66.5.10
   '@unocss/eslint-config': ^66.5.10
@@ -39,22 +39,22 @@ catalog:
   '@unocss/reset': ^66.5.10
   '@vee-validate/nuxt': ^4.15.1
   '@vee-validate/zod': ^4.15.1
-  '@vercel/analytics': ^1.5.0
-  '@vue/compiler-core': ^3.5.24
-  '@vue/compiler-sfc': ^3.5.24
+  '@vercel/analytics': ^1.6.1
+  '@vue/compiler-core': ^3.5.27
+  '@vue/compiler-sfc': ^3.5.27
   '@vueuse/core': ^12.8.2
   '@vueuse/integrations': ^12.8.2
   '@vueuse/nuxt': ^12.8.2
-  bumpp: ^10.3.1
-  chroma-js: ^3.1.2
+  bumpp: ^10.4.0
+  chroma-js: ^3.2.0
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
-  eslint: ^9.39.1
-  eslint-plugin-format: ^1.0.2
+  eslint: ^9.39.2
+  eslint-plugin-format: ^1.3.1
   esno: ^4.8.0
   fast-glob: ^3.3.3
-  fs-extra: ^11.3.2
+  fs-extra: ^11.3.3
   ignore-dependency-scripts: ^1.0.1
   lint-staged: ^15.5.2
   magicast: ^0.5.1
@@ -62,14 +62,14 @@ catalog:
   ohash: ^1.1.6
   pathe: ^2.0.3
   pkg-types: ^1.3.1
-  reka-ui: ^2.6.0
+  reka-ui: ^2.8.0
   rimraf: ^6.1.2
-  sass: ^1.94.2
+  sass: ^1.97.3
   simple-git: ^3.30.0
   simple-git-hooks: ^2.13.1
   tailwind-merge: ^3.4.0
   typescript: ^5.8.3
-  ufo: ^1.6.1
+  ufo: ^1.6.3
   unbuild: ^3.6.1
   unocss: ^66.5.10
   unocss-preset-animations: ^1.3.0
