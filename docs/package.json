@@ -42,6 +42,7 @@
     "@vee-validate/nuxt": "catalog:",
     "@vee-validate/zod": "catalog:",
     "@vueuse/core": "catalog:",
+    "@vueuse/nuxt": "catalog:",
     "nuxt": "catalog:",
     "zod": "catalog:"
   }
