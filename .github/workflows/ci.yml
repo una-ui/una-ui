@@ -31,5 +31,5 @@ jobs:
           !contains(github.event.head_commit.message, '[skip]')
         run: ./scripts/release-edge.sh
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true

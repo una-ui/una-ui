@@ -26,10 +26,7 @@ const selectedFrameworks = ref<typeof frameworks[number][]>([])
     >
       <template #trigger="{ modelValue }">
         {{ modelValue?.length
-          ? modelValue.map(val => {
-            const framework = frameworks.find(f => f.value === val.value)
-            return framework ? framework.label : val
-          }).join(", ")
+          ? modelValue.map(f => f.label).join(", ")
           : "Select frameworks..." }}
       </template>
 

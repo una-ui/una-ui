@@ -1,4 +1,6 @@
 <script setup lang="ts">
+type Item = typeof items[number]
+
 const items = [
   {
     name: 'Evan You',
@@ -13,7 +15,9 @@ const items = [
     avatar: 'https://avatars.githubusercontent.com/u/28706372?v=4',
   },
 ]
-const selected = ref(items[0])
+
+const selected = ref<string>()
+const selectedItem = computed(() => items.find(item => item.name === selected.value))
 </script>
 
 <template>
@@ -23,6 +27,8 @@ const selected = ref(items[0])
       :items
       placeholder="Select Contributor"
       label="Vue Community"
+      label-key="name"
+      value-key="name"
       :_select-trigger="{
         una: {
           selectTriggerTrailingIcon: 'i-lucide-chevrons-up-down',
@@ -37,24 +43,27 @@ const selected = ref(items[0])
       </template>
 
       <template #item="{ item }">
-        <div class="flex items-center space-x-2">
+        <div class="flex items-center gap-2">
           <img
-            :src="item.avatar"
-            :alt="item.name"
-            class="h-6 w-6 rounded-full"
+            :src="(item as Item).avatar"
+            :alt="(item as Item).name"
+            class="rounded-full size-6"
           >
-          <span>{{ item.name }}</span>
+          <span>{{ (item as Item).name }}</span>
         </div>
       </template>
 
-      <template #value="{ modelValue }">
-        <div class="flex items-center space-x-2">
+      <template #value>
+        <div
+          v-if="selectedItem"
+          class="flex items-center gap-2"
+        >
           <img
-            :src="modelValue?.avatar"
-            :alt="modelValue?.name"
-            class="h-6 w-6 rounded-full"
+            :src="selectedItem.avatar"
+            :alt="selectedItem.name"
+            class="rounded-full size-6"
           >
-          <span>{{ modelValue?.name }}</span>
+          <span>{{ selectedItem.name }}</span>
         </div>
       </template>
     </NSelect>

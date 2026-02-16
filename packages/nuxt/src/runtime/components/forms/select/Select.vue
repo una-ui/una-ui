@@ -17,6 +17,8 @@ import SelectValue from './SelectValue.vue'
 
 const props = withDefaults(defineProps<NSelectProps<T, I, M>>(), {
   size: 'sm',
+  labelKey: 'label',
+  valueKey: 'value',
 })
 
 const emits = defineEmits<SelectRootEmits<T>>()
@@ -33,17 +35,35 @@ function formatSelectedValue(value: unknown) {
   if (!value || (Array.isArray(value) && value.length === 0))
     return null
 
-  if (props.multiple && Array.isArray(value)) {
+  // Helper to find item by value
+  const findItemByValue = (val: unknown) => {
+    const allItems = hasGroups.value
+      ? (props.items as SelectGroupType<T>[]).flatMap(group => group.items)
+      : (props.items as T[])
+
+    return allItems?.find((item) => {
+      const itemValue = props.valueKey && typeof item === 'object'
+        ? (item as Record<string, any>)[props.valueKey as string]
+        : item
+      return itemValue === val
+    })
+  }
+
+  // Handle array values (multiple selection)
+  if (Array.isArray(value)) {
     return value.map((val) => {
-      if (props.valueKey && typeof val === 'object') {
-        return (val as Record<string, any>)[props.valueKey as string]
+      const item = findItemByValue(val)
+      if (item && props.labelKey && typeof item === 'object') {
+        return (item as Record<string, any>)[props.labelKey as string]
       }
       return val
     }).join(', ')
   }
 
-  if (props.valueKey && typeof value === 'object') {
-    return (value as Record<string, any>)[props.valueKey as string]
+  // Handle single value
+  const item = findItemByValue(value)
+  if (item && props.labelKey && typeof item === 'object') {
+    return (item as Record<string, any>)[props.labelKey as string]
   }
 
   return value
@@ -52,6 +72,7 @@ function formatSelectedValue(value: unknown) {
 
 <template>
   <SelectRoot
+    v-slot="{ modelValue, open }"
     :class="cn(
       props.una?.select,
       props.class,
@@ -110,14 +131,14 @@ function formatSelectedValue(value: unknown) {
               :key="item"
             >
               <SelectItem
-                :value="item"
+                :value="props.valueKey && typeof item === 'object' ? (item as any)[props.valueKey] : item"
                 :size
                 :select-item
                 v-bind="props._selectItem"
                 :una
               >
                 <slot name="item" :item="item">
-                  {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
+                  {{ props.labelKey && typeof item === 'object' ? (item as any)[props.labelKey] : item }}
                 </slot>
                 <template #indicator>
                   <slot name="indicator" :item="item" />
@@ -156,14 +177,14 @@ function formatSelectedValue(value: unknown) {
                   :key="item"
                 >
                   <SelectItem
-                    :value="item"
+                    :value="props.valueKey && typeof item === 'object' ? (item as any)[props.valueKey] : item"
                     :size
                     :select-item
                     v-bind="{ ..._selectItem, ...group._selectItem }"
                     :una
                   >
                     <slot name="item" :item="item">
-                      {{ props.itemKey ? (item as any)[props.itemKey] : item }}
+                      {{ props.labelKey && typeof item === 'object' ? (item as any)[props.labelKey] : item }}
                     </slot>
                     <template #indicator>
                       <slot name="indicator" :item="item" />

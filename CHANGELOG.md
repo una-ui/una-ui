@@ -1,3 +1,47 @@
+## [0.67.3](https://github.com/una-ui/una-ui/compare/v0.67.2...v0.67.3) (2026-01-30)
+
+
+### Bug Fixes
+
+* **FormField:** preserve refs after cloning the node ([6e4c889](https://github.com/una-ui/una-ui/commit/6e4c889e3196145cddc1f257504ebc6cc8f8011e))
+
+
+
+## [0.67.2](https://github.com/una-ui/una-ui/compare/v0.67.1...v0.67.2) (2026-01-30)
+
+
+### Features
+
+* **Combobox:** add viewportRef expose; add example to infinity scroll ([2533395](https://github.com/una-ui/una-ui/commit/25333954c632bdedec46bfe4a4e9b25c0899026e))
+
+
+
+## [0.67.1](https://github.com/una-ui/una-ui/compare/v0.67.0...v0.67.1) (2026-01-24)
+
+
+### Bug Fixes
+
+* **Progress:** resolve issue with max prop functionality; closes [#564](https://github.com/una-ui/una-ui/issues/564) ([c59981d](https://github.com/una-ui/una-ui/commit/c59981d65fa395f4fe39092f2a948fd68afa81f4))
+
+
+
+# [0.67.0](https://github.com/una-ui/una-ui/compare/v0.66.0...v0.67.0) (2026-01-19)
+
+
+### Bug Fixes
+
+* **Checkbox:** use state value instead of modelValue in icon; add props to icon slot ([1041cfc](https://github.com/una-ui/una-ui/commit/1041cfc4a8863bcb195a4cfdb5ae0f0cc294da8f))
+* **CI:** resolve whoami auth issue ([857eb80](https://github.com/una-ui/una-ui/commit/857eb80eb7027590f1784069e121a87eb75bb458))
+* **CI:** resolve whoami auth issue ([5b5da44](https://github.com/una-ui/una-ui/commit/5b5da448374f9b208808a1624254a51db021bb9b))
+* **CI:** resolve whoami auth issue ([4b0113e](https://github.com/una-ui/una-ui/commit/4b0113ec4324d6ccbe57518eb58d0893619f875d))
+
+
+### Features
+
+* **Accordion:** improve default accordion-panel preset ([8375068](https://github.com/una-ui/una-ui/commit/8375068da6033fefc58f51019da3af3d6fca171e))
+
+
+
 # [0.66.0](https://github.com/una-ui/una-ui/compare/v0.65.0...v0.66.0) (2025-11-12)
 
 
