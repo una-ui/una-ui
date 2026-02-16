@@ -34,19 +34,19 @@ export interface NSelectProps<
   T extends AcceptableValue,
   Items extends Array<T | SelectGroup<T>>,
   M extends boolean = false,
-> extends SelectExtensions<T> {
+> extends Omit<SelectExtensions<T>, 'modelValue' | 'defaultValue'> {
   /**
    * The items to display in the select.
    */
-  items: Items
+  items?: Items
   /**
    * The key name to use to display in the select items.
    */
-  itemKey?: keyof T
+  labelKey?: keyof T | string
   /**
    * The key name to use to display in the selected value.
    */
-  valueKey?: keyof T
+  valueKey?: keyof T | string
   /**
    * The label to display above the select items.
    */
@@ -58,9 +58,9 @@ export interface NSelectProps<
    */
   groupSeparator?: boolean
 
-  defaultValue?: M extends true ? T[] : T
+  defaultValue?: M extends true ? any[] : any
 
-  modelValue?: M extends true ? T[] : T
+  modelValue?: M extends true ? any[] : any
 
   multiple?: M
 
@@ -134,7 +134,6 @@ export interface NSelectItemIndicatorProps extends SelectItemIndicatorProps {
 
 export interface NSelectItemProps extends ItemExtensions {
   selectItem?: HTMLAttributes['class']
-  isSelected?: boolean
   _selectItemText?: NSelectItemTextProps
   _selectItemIndicator?: NSelectItemIndicatorProps
   una?: Pick<NSelectUnaProps, 'selectItem' | 'selectItemIndicator'>

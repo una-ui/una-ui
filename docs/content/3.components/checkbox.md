@@ -160,10 +160,10 @@ You can also utilize `data-[state]` to dynamically modify the size of the checkb
 
 ## Slots
 
-| Name      | Description                                                              |
-| --------- | ------------------------------------------------------------------------ |
-| `default` | Use this slot to customize the label of the checkbox.                    |
-| `icon`    | Use this slot to customize the icon of the checkbox when it is `checked` |
+| Name      | Props                 | Description                                           |
+| --------- | --------------------- | ----------------------------------------------------- |
+| `default` | -                     | Use this slot to customize the label of the checkbox. |
+| `icon`    | `state`, `modelValue` | Use this slot to customize the icon of the checkbox.  |
 
 ## Presets
 

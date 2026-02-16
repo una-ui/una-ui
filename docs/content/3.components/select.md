@@ -45,6 +45,8 @@ badges:
 | ---------- | ------- | --------- | ------------------------------- |
 | `multiple` | `false` | `boolean` | Enable multiple selection mode. |
 
+When using multiple selection with objects, the `v-model` will contain an array of extracted values. For example, with `valueKey="value"`, selecting multiple items will result in `v-model` being `['value1', 'value2']` instead of the full objects.
+
 :::CodeGroup
 ::div{label="Preview" preview}
 :ExampleVueSelectMultiple
@@ -90,12 +92,24 @@ It will automatically group the items if the `items` prop is an array of objects
 
 ### Objects
 
-Control the attribute value to be displayed in the select and the item.
+Control the attribute value to be displayed in the select and the item. When using objects with `labelKey` and `valueKey`, the `v-model` will contain the extracted value (not the full object).
 
-| Prop       | Default | Type     | Description                                         |
-| ---------- | ------- | -------- | --------------------------------------------------- |
-| `valueKey` | -       | `string` | The key name to be displayed in the selected value. |
-| `itemKey`  | -       | `string` | The key name to be displayed in the item.           |
+| Prop       | Default   | Type     | Description                                    |
+| ---------- | --------- | -------- | ---------------------------------------------- |
+| `labelKey` | `'label'` | `string` | The key name to be displayed in the item.      |
+| `valueKey` | `'value'` | `string` | The key name to extract for the v-model value. |
+
+::callout
+**Important Behavior:** The `v-model` stores the extracted value based on `valueKey`, not the full object.
+
+**Example:**
+
+- Items: `[{ label: 'Ford', code: '81253' }]`
+- Props: `labelKey="label"` and `valueKey="code"`
+- Result: `v-model` = `'81253'` (the code), Display = `'Ford'` (the label)
+
+If you need access to the full object in custom slots, create a computed property that finds the item by matching the v-model value.
+::
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -171,6 +185,10 @@ Adjust the select size without limits. Use `breakpoints` (e.g., `sm:sm`, `xs:lg`
 | `label`           | `label`              | Customize group or main select label.               |
 | `item`            | `item`               | Customize individual dropdown item.                 |
 | `group`           | `group`              | Customize group rendering when using groups.        |
+
+::callout{icon="i-lucide-lightbulb" color="amber"}
+**Note on `modelValue` in slots:** When using objects with `valueKey`, the `modelValue` contains the extracted value (e.g., a string or number), not the full object. If you need the full object in the `value` slot, create a computed property to find the item by matching the `modelValue` against your items array.
+::
 
 :::CodeGroup
 ::div{label="Preview"}

@@ -31,7 +31,6 @@ const forwardedProps = useForwardProps(delegatedProps)
     :select-item
   >
     <SelectItemIndicator
-      v-if="isSelected"
       :una
       v-bind="props._selectItemIndicator"
     >

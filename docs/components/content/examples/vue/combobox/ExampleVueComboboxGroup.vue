@@ -41,37 +41,39 @@ const selectedGroup = computed(() => timezones.find(group => group.items.find(tz
 </script>
 
 <template>
-  <NCombobox
-    v-model="selectedTimezone"
-    :items="timezones"
-    by="value"
-    :_combobox-input="{
-      placeholder: 'Select timezone...',
-    }"
-    :_combobox-list="{
-      class: 'w-300px',
-      align: 'start',
-    }"
-    :_combobox-viewport="{
-      class: 'max-h-260px',
-    }"
-    :_combobox-trigger="{
-      class: 'h-12 px-2.5',
-    }"
-    class="flex"
-  >
-    <template #trigger>
-      <template v-if="selectedTimezone">
-        <div class="flex flex-col items-start gap-0.5">
-          <span class="text-xs font-normal opacity-75">
-            {{ selectedGroup?.label }}
-          </span>
-          <span>{{ selectedTimezone.label }}</span>
-        </div>
+  <div class="flex">
+    <NCombobox
+      v-model="selectedTimezone"
+      :items="timezones"
+      by="value"
+      :_combobox-input="{
+        placeholder: 'Select timezone...',
+      }"
+      :_combobox-list="{
+        class: 'w-300px',
+        align: 'start',
+      }"
+      :_combobox-viewport="{
+        class: 'max-h-260px',
+      }"
+      :_combobox-trigger="{
+        class: 'h-12 px-2.5',
+      }"
+      class="flex"
+    >
+      <template #trigger>
+        <template v-if="selectedTimezone">
+          <div class="flex flex-col items-start gap-0.5">
+            <span class="text-xs font-normal opacity-75">
+              {{ selectedGroup?.label }}
+            </span>
+            <span>{{ selectedTimezone.label }}</span>
+          </div>
+        </template>
+        <template v-else>
+          Select timezone...
+        </template>
       </template>
-      <template v-else>
-        Select timezone...
-      </template>
-    </template>
-  </NCombobox>
+    </NCombobox>
+  </div>
 </template>

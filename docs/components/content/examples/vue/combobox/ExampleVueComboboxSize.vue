@@ -24,7 +24,7 @@ const selectedFramework = ref<typeof frameworks[number]>()
     >
       <template #trigger="{ modelValue }">
         <template v-if="modelValue">
-          {{ modelValue }}
+          {{ modelValue.label }}
         </template>
         <template v-else>
           Select Framework
@@ -45,7 +45,7 @@ const selectedFramework = ref<typeof frameworks[number]>()
     >
       <template #trigger="{ modelValue }">
         <template v-if="modelValue">
-          {{ modelValue }}
+          {{ modelValue.label }}
         </template>
         <template v-else>
           Select Framework
@@ -66,7 +66,7 @@ const selectedFramework = ref<typeof frameworks[number]>()
     >
       <template #trigger="{ modelValue }">
         <template v-if="modelValue">
-          {{ modelValue }}
+          {{ modelValue.label }}
         </template>
         <template v-else>
           Select Framework

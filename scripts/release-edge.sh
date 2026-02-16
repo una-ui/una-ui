@@ -29,6 +29,6 @@ for ((i=${#package_dirs[@]}-1; i>=0; i--)) ; do
   echo "Publishing $p"
   cp ../../LICENSE .
   cp ../../README.md .
-  pnpm publish --access public --no-git-checks
+  pnpm publish --access public --no-git-checks --tag edge
   popd
 done

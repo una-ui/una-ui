@@ -6,7 +6,7 @@ import { computed } from 'vue'
 
 <script setup lang="ts" generic="T extends AcceptableValue, I extends Array<T | SelectGroupType<T>>, M extends boolean = false">
 import { SelectRoot, useForwardPropsEmits } from 'reka-ui'
-import { cn, isEqualObject } from '../../../utils'
+import { cn } from '../../../utils'
 import SelectContent from './SelectContent.vue'
 import SelectGroup from './SelectGroup.vue'
 import SelectItem from './SelectItem.vue'
@@ -17,6 +17,8 @@ import SelectValue from './SelectValue.vue'
 
 const props = withDefaults(defineProps<NSelectProps<T, I, M>>(), {
   size: 'sm',
+  labelKey: 'label',
+  valueKey: 'value',
 })
 
 const emits = defineEmits<SelectRootEmits<T>>()
@@ -33,42 +35,44 @@ function formatSelectedValue(value: unknown) {
   if (!value || (Array.isArray(value) && value.length === 0))
     return null
 
-  if (props.multiple && Array.isArray(value)) {
+  // Helper to find item by value
+  const findItemByValue = (val: unknown) => {
+    const allItems = hasGroups.value
+      ? (props.items as SelectGroupType<T>[]).flatMap(group => group.items)
+      : (props.items as T[])
+
+    return allItems?.find((item) => {
+      const itemValue = props.valueKey && typeof item === 'object'
+        ? (item as Record<string, any>)[props.valueKey as string]
+        : item
+      return itemValue === val
+    })
+  }
+
+  // Handle array values (multiple selection)
+  if (Array.isArray(value)) {
     return value.map((val) => {
-      if (props.valueKey && typeof val === 'object') {
-        return (val as Record<string, any>)[props.valueKey as string]
+      const item = findItemByValue(val)
+      if (item && props.labelKey && typeof item === 'object') {
+        return (item as Record<string, any>)[props.labelKey as string]
       }
       return val
     }).join(', ')
   }
 
-  if (props.valueKey && typeof value === 'object') {
-    return (value as Record<string, any>)[props.valueKey as string]
+  // Handle single value
+  const item = findItemByValue(value)
+  if (item && props.labelKey && typeof item === 'object') {
+    return (item as Record<string, any>)[props.labelKey as string]
   }
 
   return value
-}
-
-function isItemSelected(item: unknown, modelValue: unknown) {
-  if (!modelValue)
-    return false
-
-  if (props.multiple && Array.isArray(modelValue)) {
-    return modelValue.some((val) => {
-      const valObj = typeof val === 'object' && val ? val : { value: val }
-      const itemObj = typeof item === 'object' && item ? item : { value: item }
-      return isEqualObject(valObj, itemObj)
-    })
-  }
-
-  const modelObj = typeof modelValue === 'object' && modelValue ? modelValue : { value: modelValue }
-  const itemObj = typeof item === 'object' && item ? item : { value: item }
-  return isEqualObject(modelObj, itemObj)
 }
 </script>
 
 <template>
   <SelectRoot
+    v-slot="{ modelValue, open }"
     :class="cn(
       props.una?.select,
       props.class,
@@ -127,15 +131,14 @@ function isItemSelected(item: unknown, modelValue: unknown) {
               :key="item"
             >
               <SelectItem
-                :value="item"
+                :value="props.valueKey && typeof item === 'object' ? (item as any)[props.valueKey] : item"
                 :size
                 :select-item
                 v-bind="props._selectItem"
-                :is-selected="isItemSelected(item, modelValue)"
                 :una
               >
                 <slot name="item" :item="item">
-                  {{ props.itemKey && item ? (item as any)[props.itemKey] : item }}
+                  {{ props.labelKey && typeof item === 'object' ? (item as any)[props.labelKey] : item }}
                 </slot>
                 <template #indicator>
                   <slot name="indicator" :item="item" />
@@ -174,15 +177,14 @@ function isItemSelected(item: unknown, modelValue: unknown) {
                   :key="item"
                 >
                   <SelectItem
-                    :value="item"
+                    :value="props.valueKey && typeof item === 'object' ? (item as any)[props.valueKey] : item"
                     :size
                     :select-item
                     v-bind="{ ..._selectItem, ...group._selectItem }"
-                    :is-selected="isItemSelected(item, modelValue)"
                     :una
                   >
                     <slot name="item" :item="item">
-                      {{ props.itemKey ? (item as any)[props.itemKey] : item }}
+                      {{ props.labelKey && typeof item === 'object' ? (item as any)[props.labelKey] : item }}
                     </slot>
                     <template #indicator>
                       <slot name="indicator" :item="item" />

@@ -10,7 +10,9 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<NComboboxInputProps>()
+const props = withDefaults(defineProps<NComboboxInputProps>(), {
+  displayValue: () => '',
+})
 
 const emits = defineEmits<ComboboxInputEmits>()
 

@@ -68,8 +68,8 @@ defineExpose({
     stepper.value?.prevStep()
     emits('prev', currentStep.value)
   },
-  hasNext: () => stepper.value?.hasNext(),
-  hasPrev: () => stepper.value?.hasPrev(),
+  hasNext: () => hasNextStep.value,
+  hasPrev: () => hasPrevStep.value,
 })
 </script>
 

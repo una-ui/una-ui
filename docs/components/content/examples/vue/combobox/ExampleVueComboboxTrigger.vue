@@ -12,7 +12,7 @@ const selectedUser = ref<typeof users[number]>()
     <NCombobox
       v-model="selectedUser"
       :items="users"
-      by="username"
+      by="id"
       :_combobox-input="{
         placeholder: 'Select user...',
       }"
