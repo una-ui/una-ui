@@ -21,11 +21,6 @@
 # [1.0.0-alpha.11](https://github.com/una-ui/una-ui/compare/v0.66.0...v1.0.0-alpha.11) (2025-11-12)
 
 
-### Bug Fixes
-
-* **Nuxt:** omit 'themes' from una-settings local storage to prevent memory leaked ([#521](https://github.com/una-ui/una-ui/issues/521)) ([527f261](https://github.com/una-ui/una-ui/commit/527f261881a4b670f49dc3e81788b0f9269a6e83)), closes [#519](https://github.com/una-ui/una-ui/issues/519)
-
-
 
 # [1.0.0-alpha.10](https://github.com/una-ui/una-ui/compare/v0.65.0...v1.0.0-alpha.10) (2025-09-27)
 
