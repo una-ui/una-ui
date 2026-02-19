@@ -1,3 +1,12 @@
+## [0.67.4](https://github.com/una-ui/una-ui/compare/v0.67.3...v0.67.4) (2026-02-19)
+
+
+### Bug Fixes
+
+* **Select:** resolve and improve type safety ([7dbcea8](https://github.com/una-ui/una-ui/commit/7dbcea866134c3e7241191c9ade882b0ca9b3665))
+
+
+
 ## [0.67.3](https://github.com/una-ui/una-ui/compare/v0.67.2...v0.67.3) (2026-01-30)
 
 
