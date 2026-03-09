@@ -17,7 +17,7 @@ catalog:
   '@iconify-json/tabler': ^1.2.26
   '@iconify-json/vscode-icons': ^1.2.40
   '@iconify/json': ^2.2.429
-  '@iconify/utils': ^2.3.0
+  '@iconify/utils': ^3.1.0
   '@nuxt/devtools': ^2.7.0
   '@nuxt/kit': ^3.19.2
   '@nuxt/module-builder': ^1.0.2
