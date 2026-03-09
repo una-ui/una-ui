@@ -136,6 +136,7 @@ export default [
   'pin-input-separator',
   'pin-input-slot',
   'popover',
+  'popover-close',
   'popover-content',
   'progress',
   'radio-group',

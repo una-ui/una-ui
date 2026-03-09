@@ -135,6 +135,9 @@ catalogs:
     conventional-changelog-cli:
       specifier: ^5.0.0
       version: 5.0.0
+    defu:
+      specifier: ^6.1.4
+      version: 6.1.4
     eslint:
       specifier: ^9.39.2
       version: 9.39.2
@@ -448,6 +451,9 @@ importers:
       clsx:
         specifier: 'catalog:'
         version: 2.1.1
+      defu:
+        specifier: 'catalog:'
+        version: 6.1.4
       ohash:
         specifier: 'catalog:'
         version: 1.1.6

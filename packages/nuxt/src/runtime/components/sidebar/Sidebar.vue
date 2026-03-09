@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { NSidebarProps } from '../../types'
+import { useAppConfig } from '#app'
 import { createReusableTemplate } from '@vueuse/core'
-import { SIDEBAR_WIDTH_MOBILE, useSidebar } from '../../composables/useSidebar'
+import { useSidebar } from '../../composables/useSidebar'
 import { cn } from '../../utils'
 import Sheet from '../sheet/Sheet.vue'
 import SidebarContent from './SidebarContent.vue'
@@ -19,6 +20,7 @@ const props = withDefaults(defineProps<NSidebarProps>(), {
   rail: true,
 })
 
+const { una } = useAppConfig()
 const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
 
 const [DefineSlot, ReuseSlot] = createReusableTemplate()
@@ -64,7 +66,7 @@ const [DefineSlot, ReuseSlot] = createReusableTemplate()
       sheet,
       class: 'sidebar-mobile',
       style: {
-        '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
+        '--sidebar-width': una.sidebar.widthMobile,
       },
       ...props._sheetContent,
     }"
