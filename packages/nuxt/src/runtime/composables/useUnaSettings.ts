@@ -4,6 +4,7 @@ import { useAppConfig } from '#imports'
 import { useStorage } from '@vueuse/core'
 import { defu } from 'defu'
 import { watchEffect } from 'vue'
+import { SIDEBAR_DEFAULTS } from './useSidebar'
 import { useUnaThemes } from './useUnaThemes'
 
 export interface UseUnaSettingsReturn {
@@ -23,6 +24,7 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     gray: una.gray,
     radius: una.radius,
     fontSize: una.fontSize,
+    sidebar: { ...SIDEBAR_DEFAULTS },
   } as const
 
   const settings = useStorage<UnaSettings>('una-settings', defaultSettings, undefined, {
@@ -39,6 +41,7 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     settings.value.gray = defaultSettings.gray
     settings.value.fontSize = defaultSettings.fontSize
     settings.value.radius = defaultSettings.radius
+    settings.value.sidebar = { ...defaultSettings.sidebar }
   }
 
   return {
