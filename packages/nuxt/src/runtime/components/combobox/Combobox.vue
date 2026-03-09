@@ -206,8 +206,9 @@ defineExpose({
           <slot name="input-wrapper" :model-value :open>
             <ComboboxInput
               v-if="$slots.trigger || $slots.triggerRoot"
+              input="~"
               :class="cn(
-                'border-0 border-b-1 rounded-none text-1em focus-visible:ring-0',
+                'border-b-1 rounded-none text-1em',
                 props._comboboxInput?.class,
               )"
               leading="combobox-input-leading-icon"

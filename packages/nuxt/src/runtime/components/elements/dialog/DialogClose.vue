@@ -13,6 +13,7 @@ const props = withDefaults(defineProps<NDialogCloseProps>(), {
 
 <template>
   <DialogClose
+    data-slot="dialog-close"
     as-child
   >
     <slot>

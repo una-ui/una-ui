@@ -74,6 +74,7 @@ provideSidebarContext({
 <template>
   <TooltipProvider :delay-duration="0">
     <div
+      data-slot="sidebar-wrapper"
       :style="{
         '--sidebar-width': sidebarConfig.width,
         '--sidebar-width-icon': sidebarConfig.widthIcon,

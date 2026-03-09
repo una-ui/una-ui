@@ -8,10 +8,10 @@ export type * from './runtime/types'
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
-    una?: Partial<Omit<UnaSettings, 'primaryColors' | 'grayColors'>>
+    una?: Partial<UnaSettings>
   }
   interface AppConfig {
-    una: Omit<UnaSettings, 'primaryColors' | 'grayColors'>
+    una: UnaSettings
   }
 }
 
@@ -72,8 +72,10 @@ export default defineNuxtModule<ModuleOptions>({
       {
         primary: 'yellow',
         gray: 'stone',
-        radius: 0.5,
+        radius: 0.625,
         fontSize: 16,
+        theme: null,
+        themes: [],
         sidebar: {
           cookieName: 'sidebar:state',
           cookieMaxAge: 60 * 60 * 24 * 7,
