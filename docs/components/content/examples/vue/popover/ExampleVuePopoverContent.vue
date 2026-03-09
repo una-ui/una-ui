@@ -8,7 +8,7 @@
       }"
     >
       <template #trigger>
-        <NButton btn="solid-white">
+        <NButton btn="outline-gray">
           Open popover
         </NButton>
       </template>
