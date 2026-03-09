@@ -62,6 +62,7 @@
     "@vueuse/nuxt": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
+    "defu": "catalog:",
     "ohash": "catalog:",
     "reka-ui": "catalog:",
     "tailwind-merge": "catalog:",
