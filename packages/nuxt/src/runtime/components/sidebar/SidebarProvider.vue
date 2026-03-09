@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import type { NSidebarProviderProps } from '../../types'
-import { useCookie } from '#app'
+import { useAppConfig, useCookie } from '#app'
 import { useEventListener, useMediaQuery, useVModel } from '@vueuse/core'
 import { TooltipProvider } from 'reka-ui'
 import { computed, ref } from 'vue'
-import { provideSidebarContext, SIDEBAR_COOKIE_MAX_AGE, SIDEBAR_COOKIE_NAME, SIDEBAR_KEYBOARD_SHORTCUT, SIDEBAR_WIDTH, SIDEBAR_WIDTH_ICON } from '../../composables/useSidebar'
+import { provideSidebarContext } from '../../composables/useSidebar'
 import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NSidebarProviderProps>(), {
@@ -17,11 +17,14 @@ const emits = defineEmits<{
   'update:open': [open: boolean]
 }>()
 
+const { una } = useAppConfig()
+const sidebarConfig = computed(() => una.sidebar)
+
 const isMobile = useMediaQuery('(max-width: 768px)')
 const openMobile = ref(false)
 
-const openCookie = useCookie(SIDEBAR_COOKIE_NAME, {
-  maxAge: SIDEBAR_COOKIE_MAX_AGE,
+const openCookie = useCookie(sidebarConfig.value.cookieName, {
+  maxAge: sidebarConfig.value.cookieMaxAge,
   default: () => props.defaultOpen ?? false,
 })
 
@@ -47,7 +50,7 @@ function toggleSidebar() {
 }
 
 useEventListener('keydown', (event: KeyboardEvent) => {
-  if (event.key === SIDEBAR_KEYBOARD_SHORTCUT && (event.metaKey || event.ctrlKey)) {
+  if (event.key === sidebarConfig.value.keyboardShortcut && (event.metaKey || event.ctrlKey)) {
     event.preventDefault()
     toggleSidebar()
   }
@@ -72,8 +75,8 @@ provideSidebarContext({
   <TooltipProvider :delay-duration="0">
     <div
       :style="{
-        '--sidebar-width': SIDEBAR_WIDTH,
-        '--sidebar-width-icon': SIDEBAR_WIDTH_ICON,
+        '--sidebar-width': sidebarConfig.width,
+        '--sidebar-width-icon': sidebarConfig.widthIcon,
       }"
       :class="cn(
         'group/sidebar_wrapper sidebar-provider',
