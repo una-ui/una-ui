@@ -1,12 +1,15 @@
 import type { ComputedRef, Ref } from 'vue'
+import type { UnaSidebarConfig } from '../types'
 import { createContext } from 'reka-ui'
 
-export const SIDEBAR_COOKIE_NAME = 'sidebar:state'
-export const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
-export const SIDEBAR_WIDTH = '16rem'
-export const SIDEBAR_WIDTH_MOBILE = '18rem'
-export const SIDEBAR_WIDTH_ICON = '3rem'
-export const SIDEBAR_KEYBOARD_SHORTCUT = 'b'
+export const SIDEBAR_DEFAULTS: UnaSidebarConfig = {
+  cookieName: 'sidebar:state',
+  cookieMaxAge: 60 * 60 * 24 * 7,
+  width: '16rem',
+  widthMobile: '18rem',
+  widthIcon: '3rem',
+  keyboardShortcut: 'b',
+} as const
 
 export const [useSidebar, provideSidebarContext] = createContext<{
   state: ComputedRef<'expanded' | 'collapsed'>

@@ -65,6 +65,15 @@ export interface ColorPalette {
   950: string
 }
 
+export interface UnaSidebarConfig {
+  cookieName: string
+  cookieMaxAge: number
+  width: string
+  widthMobile: string
+  widthIcon: string
+  keyboardShortcut: string
+}
+
 export interface UnaSettings {
   primaryColors: Colors
   grayColors: Colors
@@ -72,6 +81,7 @@ export interface UnaSettings {
   gray: string
   fontSize: number
   radius: number
+  sidebar: UnaSidebarConfig
 }
 
 export type OutsideEvent<T extends Event> = CustomEvent<{
