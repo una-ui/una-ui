@@ -67,6 +67,22 @@ badges:
 ::
 :::
 
+### Close & Arrow
+
+| Prop        | Default | Type      | Description                       |
+| ----------- | ------- | --------- | --------------------------------- |
+| `showClose` | `false` | `boolean` | Whether to show the close button. |
+| `arrow`     | `false` | `boolean` | Whether to show the arrow.        |
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVuePopoverCloseArrow
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/popover/ExampleVuePopoverCloseArrow.vue
+::
+:::
+
 ## Slots
 
 | Name      | Props           | Description                          |

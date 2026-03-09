@@ -22,7 +22,7 @@ const props = withDefaults(
 )
 const emits = defineEmits<PopoverContentEmits>()
 
-const delegatedProps = reactiveOmit(props, ['class'])
+const delegatedProps = reactiveOmit(props, ['class', 'una'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>

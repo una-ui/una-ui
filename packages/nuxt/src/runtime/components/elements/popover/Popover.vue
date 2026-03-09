@@ -2,15 +2,15 @@
 import type { PopoverRootEmits } from 'reka-ui'
 import type { NPopoverProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
-import { PopoverAnchor, PopoverArrow, PopoverClose, PopoverRoot, PopoverTrigger, useForwardPropsEmits } from 'reka-ui'
+import { PopoverAnchor, PopoverArrow, PopoverRoot, PopoverTrigger, useForwardPropsEmits } from 'reka-ui'
 import { cn } from '../../../utils'
-import NIcon from '../Icon.vue'
+import NPopoverClose from './PopoverClose.vue'
 import NPopoverContent from './PopoverContent.vue'
 
 const props = defineProps<NPopoverProps>()
 const emits = defineEmits<PopoverRootEmits>()
 
-const delegatedProps = reactiveOmit(props, ['una', '_popoverContent', '_popoverAnchor', '_popoverArrow', '_popoverClose'])
+const delegatedProps = reactiveOmit(props, ['una', 'showClose', 'arrow', '_popoverContent', '_popoverAnchor', '_popoverArrow', '_popoverClose'])
 
 const forwarded = useForwardPropsEmits(delegatedProps, emits)
 </script>
@@ -20,22 +20,26 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     <PopoverTrigger v-if="$slots.trigger" as-child>
       <slot name="trigger" :open :close />
     </PopoverTrigger>
-    <PopoverAnchor v-if="$slots.anchor || _popoverAnchor?.reference" v-bind="_popoverAnchor">
+    <PopoverAnchor
+      v-if="$slots.anchor || _popoverAnchor?.reference"
+      data-slot="popover-anchor"
+      v-bind="_popoverAnchor"
+    >
       <slot name="anchor" :open :close />
     </PopoverAnchor>
     <NPopoverContent v-bind="_popoverContent" :una>
       <slot :close />
-      <PopoverClose
-        v-if="_popoverClose !== false"
+      <NPopoverClose
+        v-if="showClose"
+        data-slot="popover-close"
         v-bind="_popoverClose"
-        :class="cn('popover-close', una?.popoverClose)"
+        class="popover-close"
       >
-        <slot name="close" :close>
-          <NIcon :name="una?.popoverCloseIcon ?? 'popover-close-icon'" />
-        </slot>
-      </PopoverClose>
+        <slot name="close" :close />
+      </NPopoverClose>
       <PopoverArrow
-        v-if="_popoverArrow !== false"
+        v-if="arrow"
+        data-slot="popover-arrow"
         v-bind="_popoverArrow"
         :class="cn('popover-arrow', una?.popoverArrow)"
       />
