@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import * as z from 'zod'
 
-const formSchema = toTypedSchema(z.object({
+const formSchema = z.object({
   framework: z.object({
     value: z.string().min(1, 'This field is required'),
     label: z.string().min(1, 'This field is required'),
   }),
-}))
+})
 
 useForm({
   validationSchema: formSchema,
