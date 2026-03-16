@@ -10,6 +10,11 @@ badges:
     target: _blank
 ---
 
+::alert{type="tip"}
+Remember to install your chosen validator as a dependency. Zod is recommended, but you
+can use any validation library implementing [standardschemas](https://standardschema.dev/).
+::
+
 ## Examples
 
 ### Basic
