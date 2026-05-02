@@ -19,20 +19,20 @@ catalogs:
       specifier: ^10.3.0
       version: 10.3.0
     '@iconify-json/lucide':
-      specifier: ^1.2.86
-      version: 1.2.86
+      specifier: ^1.2.105
+      version: 1.2.105
     '@iconify-json/radix-icons':
       specifier: ^1.2.6
       version: 1.2.6
     '@iconify-json/tabler':
-      specifier: ^1.2.26
-      version: 1.2.26
+      specifier: ^1.2.33
+      version: 1.2.33
     '@iconify-json/vscode-icons':
-      specifier: ^1.2.40
-      version: 1.2.40
+      specifier: ^1.2.48
+      version: 1.2.48
     '@iconify/json':
-      specifier: ^2.2.429
-      version: 2.2.429
+      specifier: ^2.2.469
+      version: 2.2.469
     '@iconify/utils':
       specifier: ^2.3.0
       version: 2.3.0
@@ -263,7 +263,7 @@ importers:
         version: 10.3.0
       '@iconify/json':
         specifier: 'catalog:'
-        version: 2.2.429
+        version: 2.2.469
       '@types/chroma-js':
         specifier: 'catalog:'
         version: 3.1.2
@@ -344,10 +344,10 @@ importers:
     devDependencies:
       '@iconify-json/lucide':
         specifier: 'catalog:'
-        version: 1.2.86
+        version: 1.2.105
       '@iconify-json/vscode-icons':
         specifier: 'catalog:'
-        version: 1.2.40
+        version: 1.2.48
       '@nuxt/devtools':
         specifier: 'catalog:'
         version: 2.7.0(vite@7.1.7(@types/node@22.19.11)(jiti@2.6.1)(sass@1.97.3)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.2))(vue@3.5.21(typescript@5.6.3))
@@ -475,13 +475,13 @@ importers:
     devDependencies:
       '@iconify-json/lucide':
         specifier: 'catalog:'
-        version: 1.2.86
+        version: 1.2.105
       '@iconify-json/radix-icons':
         specifier: 'catalog:'
         version: 1.2.6
       '@iconify-json/tabler':
         specifier: 'catalog:'
-        version: 1.2.26
+        version: 1.2.33
       '@nuxt/module-builder':
         specifier: 'catalog:'
         version: 1.0.2(@nuxt/cli@3.28.0(magicast@0.3.5))(@vue/compiler-core@3.5.28)(esbuild@0.25.9)(sass@1.97.3)(typescript@5.8.3)(vue-tsc@2.2.12(typescript@5.8.3))(vue@3.5.21(typescript@5.8.3))
@@ -1030,8 +1030,8 @@ packages:
   '@iconify-json/heroicons@1.2.2':
     resolution: {integrity: sha512-qoW4pXr5kTTL6juEjgTs83OJIwpePu7q1tdtKVEdj+i0zyyVHgg/dd9grsXJQnpTpBt6/VwNjrXBvFjRsKPENg==}
 
-  '@iconify-json/lucide@1.2.86':
-    resolution: {integrity: sha512-W/Jz7/gGOkI9u43r+UHmQtZtcyw2YLvMwiHa01WV6V4DYltrPNXiD+bCa+djV8LZB1uwF8CiympOMIbgiQ74nA==}
+  '@iconify-json/lucide@1.2.105':
+    resolution: {integrity: sha512-tbE+cGEixWcRFtW8xkzX1HaGRqp7CDhZb01uPBh7PnRoxXzVET9E73rHOXDdsLKUGoTuYGZKhhX6oirvoy5NDg==}
 
   '@iconify-json/radix-icons@1.2.6':
     resolution: {integrity: sha512-izgVBJwk37dSvsma1QsRMfCWQ4FIImbBmJId1WUURzRZA5fFyKlCcG/nZC8se0KhOBWszo2mYgLmhKJv/DFPoA==}
@@ -1039,17 +1039,17 @@ packages:
   '@iconify-json/simple-icons@1.2.36':
     resolution: {integrity: sha512-ZMpVdoW/7hhbt2aHVSvudjH8eSVNNjKkAAjwAQHgiuPUiIfbvNakVin+H9uhUz4N9TbDT/nanzV/4Slb+6dDXw==}
 
-  '@iconify-json/tabler@1.2.26':
-    resolution: {integrity: sha512-92G+ZD70AZgeJf07JfQzH+isnai6DwPcMBuF/qL1F+xAxdXCJzGd3w2RmsRvOmB+w1ImmWEEDms50QivQIjd6g==}
+  '@iconify-json/tabler@1.2.33':
+    resolution: {integrity: sha512-q9nUQfE/cjIrGh5bAKHTphitAZpT0kX9SxDgZo3Sx8ofeDTsaHVdRwrn+CfKiJ5vQ1b1btqVwizXzIgz9KEPjA==}
 
-  '@iconify-json/vscode-icons@1.2.40':
-    resolution: {integrity: sha512-Q7JIWAxENwmcRg4EGRY+u16gBwrAj6mWeuSmuyuPvNvoTJHh8Ss8qoeDhrFYNgtWqNkzH5hSf4b2T9XLK5MsrA==}
+  '@iconify-json/vscode-icons@1.2.48':
+    resolution: {integrity: sha512-343rDF9S3G4hB9k/5jJz3EzrNxwY4L086eNQ0LCPiqisPub8Q5lrPu+DOE2MtRaYA80JlF0GJWN7H1XVNeEkSQ==}
 
   '@iconify/collections@1.0.552':
     resolution: {integrity: sha512-WOTWOBS89MK6aZb2DfCUsivNWEkubVIoJnBa74xgqlzmTXgMfo+PvPNQMcDP6XXAX0MibhsSJuAj3hbMb/AwfA==}
 
-  '@iconify/json@2.2.429':
-    resolution: {integrity: sha512-flKhqq7z2I2iHwJxJuNbD9HpVJhOOj1uLs7iFwMnOES3s2TXgfMHcIASvXRsaxbivX/2j6MfXbDmbU0mpGFdQQ==}
+  '@iconify/json@2.2.469':
+    resolution: {integrity: sha512-ARAC23HXrR1QpoR/z+tjGqI3kWgkYsYKJwezWLc8m47dvGpuvZTmQYXSIJVpnHGtUPKylC3jqWb0udXfoDLWeg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3146,6 +3146,7 @@ packages:
   conventional-changelog-cli@5.0.0:
     resolution: {integrity: sha512-9Y8fucJe18/6ef6ZlyIlT2YQUbczvoQZZuYmDLaGvcSBP+M6h+LAvf7ON7waRxKJemcCII8Yqu5/8HEfskTxJQ==}
     engines: {node: '>=18'}
+    deprecated: This package is no longer maintained. Please use the conventional-changelog package instead.
     hasBin: true
 
   conventional-changelog-codemirror@5.0.0:
@@ -4047,11 +4048,13 @@ packages:
   git-raw-commits@5.0.0:
     resolution: {integrity: sha512-I2ZXrXeOc0KrCvC7swqtIFXFN+rbjnC7b2T943tvemIOVNl+XP8YnA9UVwqFhzzLClnSA60KR/qEjLpXzs73Qg==}
     engines: {node: '>=18'}
+    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-semver-tags@8.0.0:
     resolution: {integrity: sha512-N7YRIklvPH3wYWAR2vysaqGLPRcpwQ0GKdlqTiVN5w1UmCdaeY3K8s6DMKRCh54DDdzyt/OAB6C8jgVtb7Y2Fg==}
     engines: {node: '>=18'}
+    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-up@8.1.1:
@@ -5495,6 +5498,7 @@ packages:
   prebuild-install@7.1.3:
     resolution: {integrity: sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==}
     engines: {node: '>=10'}
+    deprecated: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
     hasBin: true
 
   prelude-ls@1.2.1:
@@ -6361,6 +6365,7 @@ packages:
 
   unplugin-vue-router@0.15.0:
     resolution: {integrity: sha512-PyGehCjd9Ny9h+Uer4McbBjjib3lHihcyUEILa7pHKl6+rh8N7sFyw4ZkV+N30Oq2zmIUG7iKs3qpL0r+gXAaQ==}
+    deprecated: 'Merged into vuejs/router. Migrate: https://router.vuejs.org/guide/migration/v4-to-v5.html'
     peerDependencies:
       '@vue/compiler-sfc': ^3.5.17
       vue-router: ^4.5.1
@@ -7386,7 +7391,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.86':
+  '@iconify-json/lucide@1.2.105':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7398,11 +7403,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/tabler@1.2.26':
+  '@iconify-json/tabler@1.2.33':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/vscode-icons@1.2.40':
+  '@iconify-json/vscode-icons@1.2.48':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7410,7 +7415,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/json@2.2.429':
+  '@iconify/json@2.2.469':
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 2.0.3
@@ -8964,11 +8969,11 @@ snapshots:
   '@una-ui/content@48.3.0(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.19.11)(@unhead/vue@2.0.14(vue@3.5.21(typescript@5.6.3)))(@unocss/webpack@66.5.10(webpack@5.99.9(esbuild@0.25.9)))(@vue/compiler-sfc@3.5.28)(db0@0.3.2)(eslint@9.39.2(jiti@2.6.1))(ioredis@5.8.0)(magicast@0.5.2)(meow@13.2.0)(optionator@0.9.4)(postcss@8.5.6)(rollup@4.52.2)(sass@1.97.3)(terser@5.40.0)(tsx@4.19.4)(unstorage@1.17.1(@netlify/blobs@9.1.2)(db0@0.3.2)(ioredis@5.8.0))(vite@7.1.7(@types/node@22.19.11)(jiti@2.6.1)(sass@1.97.3)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.2))(vue-tsc@2.2.12(typescript@5.6.3))(yaml@2.8.2)':
     dependencies:
       '@iconify-json/heroicons': 1.2.2
-      '@iconify-json/lucide': 1.2.86
+      '@iconify-json/lucide': 1.2.105
       '@iconify-json/radix-icons': 1.2.6
       '@iconify-json/simple-icons': 1.2.36
-      '@iconify-json/tabler': 1.2.26
-      '@iconify-json/vscode-icons': 1.2.40
+      '@iconify-json/tabler': 1.2.33
+      '@iconify-json/vscode-icons': 1.2.48
       '@iconify/utils': 2.3.0
       '@nuxt/content': 2.13.4(@netlify/blobs@9.1.2)(db0@0.3.2)(ioredis@5.8.0)(magicast@0.5.2)(nuxt@3.19.2(@netlify/blobs@9.1.2)(@parcel/watcher@2.5.1)(@types/node@22.19.11)(@vue/compiler-sfc@3.5.28)(db0@0.3.2)(eslint@9.39.2(jiti@2.6.1))(ioredis@5.8.0)(magicast@0.5.2)(meow@13.2.0)(optionator@0.9.4)(rollup@4.52.2)(sass@1.97.3)(terser@5.40.0)(tsx@4.19.4)(typescript@5.6.3)(vite@7.1.7(@types/node@22.19.11)(jiti@2.6.1)(sass@1.97.3)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.2))(vue-tsc@2.2.12(typescript@5.6.3))(yaml@2.8.2))(vue@3.5.21(typescript@5.6.3))
       '@nuxt/icon': 1.13.0(magicast@0.5.2)(vite@7.1.7(@types/node@22.19.11)(jiti@2.6.1)(sass@1.97.3)(terser@5.40.0)(tsx@4.19.4)(yaml@2.8.2))(vue@3.5.21(typescript@5.6.3))
