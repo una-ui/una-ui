@@ -113,6 +113,10 @@ const data = {
           url: '/components/input',
         },
         {
+          title: 'Link',
+          url: '/components/link',
+        },
+        {
           title: 'Navigation Menu',
           url: '/components/navigation-menu',
         },
