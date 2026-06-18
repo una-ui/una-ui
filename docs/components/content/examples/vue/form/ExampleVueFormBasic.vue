@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/zod'
 import * as z from 'zod'
 
-const formSchema = toTypedSchema(z.object({
+const formSchema = z.object({
   username: z.string().min(2).max(50),
   password: z.string().min(6).max(50),
   note: z.string(),
@@ -15,7 +14,7 @@ const formSchema = toTypedSchema(z.object({
   notifications: z.boolean(),
   enabled: z.boolean(),
   slider: z.array(z.number().max(40, { message: 'Must be less than 40' })),
-}))
+})
 
 const { handleSubmit, validate, errors } = useForm({
   validationSchema: formSchema,
