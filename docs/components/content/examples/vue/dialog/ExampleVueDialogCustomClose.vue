@@ -14,37 +14,39 @@ const { copy, copied } = useClipboard({ source })
     }"
   >
     <template #trigger>
-      <NButton btn="solid-gray">
+      <NButton btn="outline-gray">
         Open Dialog
       </NButton>
     </template>
 
-    <form
-      class="flex gap-2"
-      @submit.prevent="copy(source)"
-    >
-      <NInput
-        v-model="source"
-        leading="i-radix-icons-link-2"
-        :una="{
-          inputWrapper: 'w-full',
-        }"
-        read-only
-      />
+    <template #body>
+      <form
+        class="flex gap-2"
+        @submit.prevent="copy(source)"
+      >
+        <NInput
+          v-model="source"
+          leading="i-radix-icons-link-2"
+          :una="{
+            inputWrapper: 'w-full',
+          }"
+          read-only
+        />
 
-      <NButton
-        icon
-        square
-        type="submit"
-        :btn="copied ? 'outline' : 'solid'"
-        :label="!copied ? 'i-radix-icons-copy' : 'i-radix-icons-check'"
-      />
-    </form>
+        <NButton
+          icon
+          square
+          type="submit"
+          :btn="copied ? 'outline' : 'solid'"
+          :label="!copied ? 'i-radix-icons-copy' : 'i-radix-icons-check'"
+        />
+      </form>
+    </template>
 
     <template #footer>
       <NDialogClose>
         <NButton
-          btn="soft-gray"
+          btn="outline-gray"
         >
           Close
         </NButton>

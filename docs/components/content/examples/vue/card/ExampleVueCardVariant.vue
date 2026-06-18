@@ -1,8 +1,14 @@
 <template>
   <div class="flex flex-col gap-4">
     <NCard
+      title="Solid variant"
+      description="A simple solid variant card with a border. This is the default variant if none is specified."
+      card="solid"
+    />
+
+    <NCard
       title="Outline variant"
-      description="A simple outline variant card with a border. This is the default variant if none is specified."
+      description="A simple outline variant card without a border. This is the default variant if none is specified."
       card="outline"
     />
 

@@ -77,7 +77,8 @@ const selectedGroup = computed(() => timezones.find(group => group.items.some(tz
 
       <NComboboxList>
         <NComboboxInput
-          class="border-0 border-b-1 rounded-none placeholder:text-gray-500 focus-visible:ring-0"
+          input="~"
+          class="border-b-1 rounded-none"
           placeholder="Select framework..."
         />
 

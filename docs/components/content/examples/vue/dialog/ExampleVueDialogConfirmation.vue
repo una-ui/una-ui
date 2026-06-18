@@ -26,9 +26,11 @@ function onCancel() {
       <NButton btn="solid-green" label="Confirmation Dialog" leading="i-mdi:check" />
     </template>
 
-    <div>
-      Please confirm that you want to proceed with this action.
-    </div>
+    <template #body>
+      <div>
+        Please confirm that you want to proceed with this action.
+      </div>
+    </template>
 
     <template #footer>
       <NButton

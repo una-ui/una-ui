@@ -37,7 +37,7 @@ const works: Artwork[] = [
                 class="aspect-[3/4] h-56 w-36 object-cover"
               >
             </div>
-            <figcaption class="text-muted-foreground pt-2 text-xs">
+            <figcaption class="pt-2 text-xs text-muted-foreground">
               Photo by
               <span class="text-foreground font-semibold">
                 {{ artwork.artist }}

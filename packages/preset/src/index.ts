@@ -1,23 +1,20 @@
-import type { RuleContext } from '@unocss/core'
-import type { Theme } from '@unocss/preset-uno'
-import type { Preset } from 'unocss'
+import type { Theme } from '@unocss/preset-mini'
+import type { Preset, RuleContext } from 'unocss'
 import type { unaUIOptions } from './types'
-import { theme as unoTheme } from '@unocss/preset-mini'
-import { colors } from '@unocss/preset-mini/colors'
 import { fonts } from '@unocss/preset-mini/rules'
 import { handler as h, parseColor } from '@unocss/preset-mini/utils'
-import { mergeDeep } from 'unocss'
+import { colors } from '@unocss/preset-wind4/colors'
 import { shortcuts } from './shortcuts'
 
 export default function presetUna(options: unaUIOptions = {
   // TODO: add options
-}): Preset {
+}): Preset<Theme> {
   return {
     name: '@una-ui/preset',
     options,
     shortcuts,
     separators: [':'],
-    theme: mergeDeep<Theme>(unoTheme, {
+    theme: {
       container: {
         center: true,
         padding: '2rem',
@@ -26,54 +23,79 @@ export default function presetUna(options: unaUIOptions = {
         },
       },
       colors: {
-        background: 'rgba(var(--una-background) / <alpha-value>)',
-        foreground: 'rgba(var(--una-foreground) / <alpha-value>)',
-        brand: 'rgba(var(--una-brand) / <alpha-value>)',
-        input: 'rgba(var(--una-input) / <alpha-value>)',
+        ...colors,
+        brand: 'oklch(var(--una-brand) / <alpha-value>)',
+        background: 'oklch(var(--una-background) / <alpha-value>)',
+        foreground: 'oklch(var(--una-foreground) / <alpha-value>)',
+        muted: 'oklch(var(--una-muted) / <alpha-value>)',
+        mutedForeground: 'oklch(var(--una-muted-foreground) / <alpha-value>)',
+        accent: 'oklch(var(--una-accent) / <alpha-value>)',
+        accentForeground: 'oklch(var(--una-accent-foreground) / <alpha-value>)',
+        secondary: 'oklch(var(--una-secondary) / <alpha-value>)',
+        secondaryForeground: 'oklch(var(--una-secondary-foreground) / <alpha-value>)',
+        popover: 'oklch(var(--una-popover) / <alpha-value>)',
+        popoverForeground: 'oklch(var(--una-popover-foreground) / <alpha-value>)',
+        selection: 'oklch(var(--una-selection) / <alpha-value>)',
+        selectionForeground: 'oklch(var(--una-selection-foreground) / <alpha-value>)',
+        input: 'oklch(var(--una-input) / <alpha-value>)',
+        border: 'oklch(var(--una-border) / <alpha-value>)',
+        ring: 'oklch(var(--una-ring) / <alpha-value>)',
+        card: 'oklch(var(--una-card) / <alpha-value>)',
+        cardForeground: 'oklch(var(--una-card-foreground) / <alpha-value>)',
         primary: {
-          DEFAULT: 'rgba(var(--una-primary) / <alpha-value>)',
-          active: 'rgba(var(--una-primary-active) / <alpha-value>)',
-          50: 'rgba(var(--una-primary-50) / <alpha-value>)',
-          100: 'rgba(var(--una-primary-100) / <alpha-value>)',
-          200: 'rgba(var(--una-primary-200) / <alpha-value>)',
-          300: 'rgba(var(--una-primary-300) / <alpha-value>)',
-          400: 'rgba(var(--una-primary-400) / <alpha-value>)',
-          500: 'rgba(var(--una-primary-500) / <alpha-value>)',
-          600: 'rgba(var(--una-primary-600) / <alpha-value>)',
-          700: 'rgba(var(--una-primary-700) / <alpha-value>)',
-          800: 'rgba(var(--una-primary-800) / <alpha-value>)',
-          900: 'rgba(var(--una-primary-900) / <alpha-value>)',
-          950: 'rgba(var(--una-primary-950) / <alpha-value>)',
+          DEFAULT: 'oklch(var(--una-primary) / <alpha-value>)',
+          active: 'oklch(var(--una-primary-active) / <alpha-value>)',
+          foreground: 'oklch(var(--una-primary-foreground) / <alpha-value>)',
+          50: 'oklch(var(--una-primary-50) / <alpha-value>)',
+          100: 'oklch(var(--una-primary-100) / <alpha-value>)',
+          200: 'oklch(var(--una-primary-200) / <alpha-value>)',
+          300: 'oklch(var(--una-primary-300) / <alpha-value>)',
+          400: 'oklch(var(--una-primary-400) / <alpha-value>)',
+          500: 'oklch(var(--una-primary-500) / <alpha-value>)',
+          600: 'oklch(var(--una-primary-600) / <alpha-value>)',
+          700: 'oklch(var(--una-primary-700) / <alpha-value>)',
+          800: 'oklch(var(--una-primary-800) / <alpha-value>)',
+          900: 'oklch(var(--una-primary-900) / <alpha-value>)',
+          950: 'oklch(var(--una-primary-950) / <alpha-value>)',
         },
         gray: {
-          DEFAULT: 'rgba(var(--una-gray) / <alpha-value>)',
-          active: 'rgba(var(--una-gray-active) / <alpha-value>)',
-          50: 'rgba(var(--una-gray-50) / <alpha-value>)',
-          100: 'rgba(var(--una-gray-100) / <alpha-value>)',
-          200: 'rgba(var(--una-gray-200) / <alpha-value>)',
-          300: 'rgba(var(--una-gray-300) / <alpha-value>)',
-          400: 'rgba(var(--una-gray-400) / <alpha-value>)',
-          500: 'rgba(var(--una-gray-500) / <alpha-value>)',
-          600: 'rgba(var(--una-gray-600) / <alpha-value>)',
-          700: 'rgba(var(--una-gray-700) / <alpha-value>)',
-          800: 'rgba(var(--una-gray-800) / <alpha-value>)',
-          900: 'rgba(var(--una-gray-900) / <alpha-value>)',
-          950: 'rgba(var(--una-gray-950) / <alpha-value>)',
+          DEFAULT: 'oklch(var(--una-gray) / <alpha-value>)',
+          active: 'oklch(var(--una-gray-active) / <alpha-value>)',
+          50: 'oklch(var(--una-gray-50) / <alpha-value>)',
+          100: 'oklch(var(--una-gray-100) / <alpha-value>)',
+          200: 'oklch(var(--una-gray-200) / <alpha-value>)',
+          300: 'oklch(var(--una-gray-300) / <alpha-value>)',
+          400: 'oklch(var(--una-gray-400) / <alpha-value>)',
+          500: 'oklch(var(--una-gray-500) / <alpha-value>)',
+          600: 'oklch(var(--una-gray-600) / <alpha-value>)',
+          700: 'oklch(var(--una-gray-700) / <alpha-value>)',
+          800: 'oklch(var(--una-gray-800) / <alpha-value>)',
+          900: 'oklch(var(--una-gray-900) / <alpha-value>)',
+          950: 'oklch(var(--una-gray-950) / <alpha-value>)',
         },
         sidebar: {
-          DEFAULT: 'rgba(var(--una-sidebar) / <alpha-value>)',
-          foreground: 'rgba(var(--una-sidebar-foreground) / <alpha-value>)',
-          primary: 'rgba(var(--una-sidebar-primary) / <alpha-value>)',
-          primaryForeground: 'rgba(var(--una-sidebar-primary-foreground) / <alpha-value>)',
-          accent: 'rgba(var(--una-sidebar-accent) / <alpha-value>)',
-          accentForeground: 'rgba(var(--una-sidebar-accent-foreground) / <alpha-value>)',
-          border: 'rgba(var(--una-sidebar-border) / <alpha-value>)',
-          ring: 'rgba(var(--una-sidebar-ring) / <alpha-value>)',
+          DEFAULT: 'oklch(var(--una-sidebar) / <alpha-value>)',
+          foreground: 'oklch(var(--una-sidebar-foreground) / <alpha-value>)',
+          primary: 'oklch(var(--una-sidebar-primary) / <alpha-value>)',
+          primaryForeground: 'oklch(var(--una-sidebar-primary-foreground) / <alpha-value>)',
+          accent: 'oklch(var(--una-sidebar-accent) / <alpha-value>)',
+          accentForeground: 'oklch(var(--una-sidebar-accent-foreground) / <alpha-value>)',
+          border: 'oklch(var(--una-sidebar-border) / <alpha-value>)',
+          ring: 'oklch(var(--una-sidebar-ring) / <alpha-value>)',
         },
         error: colors.red,
         success: colors.green,
         warning: colors.amber,
         info: colors.blue,
+      },
+      boxShadow: {
+        '2xs': '0 1px rgb(0 0 0 / 0.05)',
+        'xs': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'sm': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+        'md': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        'lg': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        'xl': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+        '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
       },
       borderRadius: {
         xl: 'calc(var(--una-radius) + 4px)',
@@ -102,13 +124,13 @@ export default function presetUna(options: unaUIOptions = {
           'fadeOut': 'ease-out',
         },
       },
-    }),
+    },
     rules: [
       [/^n-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
         const color = parseColor(body, theme)
-        if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components) {
+        if (color?.color && color.cssColor?.components) {
           return {
-            '--una-brand': `${color.cssColor.components.join(',')}`,
+            '--una-brand': `${color.cssColor.components.join(' ')}`,
           }
         }
       }],
@@ -160,7 +182,7 @@ export default function presetUna(options: unaUIOptions = {
       {
         getCSS: () => `
           *:focus-visible {
-            outline: 2px solid rgb(var(--una-primary)); /* 2 */
+            outline: 2px solid oklch(var(--una-primary)); /* 2 */
             border-radius: 0.25rem; /* 1 */
             outline-offset: 0.10rem; /* 1 */
           }

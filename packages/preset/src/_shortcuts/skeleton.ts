@@ -6,13 +6,13 @@ type SkeletonPrefix = 'skeleton'
 
 export const staticSkeleton: Record<`${SkeletonPrefix}-${string}` | SkeletonPrefix, string> = {
   // base
-  skeleton: 'skeleton-gray text-md animate-pulse rounded-md w-full h-0.5em bg-brand',
+  skeleton: 'text-md animate-pulse rounded-md w-full h-0.5em bg-brand',
 }
 
 export const dynamicSkeleton = [
   [/^skeleton-(.*)$/, ([, body]: string[], { theme }: RuleContext<Theme>) => {
     const color = parseColor(body, theme)
-    if ((color?.cssColor?.type === 'rgb' || color?.cssColor?.type === 'rgba') && color.cssColor.components)
+    if (color?.color)
       return `n-${body}-100 dark:n-${body}-800`
   }],
 ]

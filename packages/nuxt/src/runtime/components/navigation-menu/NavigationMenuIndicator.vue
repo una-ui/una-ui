@@ -15,7 +15,7 @@ const forwardedProps = useForwardProps(delegatedProps)
   <NavigationMenuIndicator
     v-bind="forwardedProps"
     :class="cn(
-      'data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut',
+      'data-[state=hidden]:opacity-0 data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut',
       'navigation-menu-indicator',
       props.una?.navigationMenuIndicator,
       props.class,

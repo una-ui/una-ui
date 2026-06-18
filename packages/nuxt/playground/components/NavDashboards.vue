@@ -35,16 +35,16 @@ const { isMobile } = useSidebar()
           }"
           :items="[
             {
-              leading: 'i-lucide-folder text-muted',
+              leading: 'i-lucide-folder text-muted-foreground',
               label: 'View Dashboard',
             },
             {
-              leading: 'i-lucide-forward text-muted',
+              leading: 'i-lucide-forward text-muted-foreground',
               label: 'Share Dashboard',
             },
             {},
             {
-              leading: 'i-lucide-trash text-muted',
+              leading: 'i-lucide-trash text-muted-foreground',
               label: 'Delete Dashboard',
             },
           ]"

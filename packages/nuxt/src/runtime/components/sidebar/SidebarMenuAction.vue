@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<NSidebarMenuActionProps>(), {
 
 <template>
   <Primitive
+    data-slot="sidebar-menu-action"
     data-sidebar="menu-action"
     :class="cn(
       'sidebar-menu-action',

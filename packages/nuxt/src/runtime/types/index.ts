@@ -77,10 +77,18 @@ export interface UnaSidebarConfig {
 export interface UnaSettings {
   primaryColors: Colors
   grayColors: Colors
-  primary: string
-  gray: string
+  theme: string | false
+  primary: string | false
+  gray: string | false
   fontSize: number
   radius: number
+  themes: {
+    name: string
+    cssVars: {
+      light: Colors
+      dark: Colors
+    }
+  }[]
   sidebar: UnaSidebarConfig
 }
 

@@ -7,6 +7,7 @@ const props = defineProps<NSidebarMenuSubProps>()
 
 <template>
   <ul
+    data-slot="sidebar-menu-sub"
     data-sidebar="menu-badge"
     :class="cn(
       'sidebar-menu-sub',

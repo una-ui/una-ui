@@ -14,6 +14,8 @@ defineOptions({
 
 const props = withDefaults(defineProps<NCheckboxProps>(), {
   forceMount: true,
+  checkbox: 'primary',
+  size: 'md',
 })
 
 const emits = defineEmits<CheckboxRootEmits>()
