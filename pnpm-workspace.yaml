@@ -12,11 +12,11 @@ catalog:
   '@babel/types': ^7.29.0
   '@faker-js/faker': ^10.3.0
   '@iconify-json/heroicons': ^1.2.3
-  '@iconify-json/lucide': ^1.2.112
+  '@iconify-json/lucide': ^1.2.115
   '@iconify-json/radix-icons': ^1.2.6
   '@iconify-json/tabler': ^1.2.35
-  '@iconify-json/vscode-icons': ^1.2.57
-  '@iconify/json': ^2.2.486
+  '@iconify-json/vscode-icons': ^1.2.63
+  '@iconify/json': ^2.2.493
   '@iconify/utils': ^2.3.0
   '@nuxt/devtools': ^2.7.0
   '@nuxt/kit': ^3.19.2
