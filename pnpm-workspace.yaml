@@ -37,8 +37,7 @@ catalog:
   '@unocss/preset-mini': ^66.5.10
   '@unocss/preset-uno': ^66.5.10
   '@unocss/reset': ^66.5.10
-  '@vee-validate/nuxt': ^4.15.1
-  '@vee-validate/zod': ^4.15.1
+  '@vee-validate/nuxt': ^5.0.0-beta.1
   '@vercel/analytics': ^1.6.1
   '@vue/compiler-core': ^3.5.28
   '@vue/compiler-sfc': ^3.5.28
@@ -77,4 +76,4 @@ catalog:
   vaul-vue: ^0.4.1
   vitest: ^3.2.4
   vue-tsc: ^2.2.12
-  zod: ^3.25.76
+  zod: ^4.3.6

@@ -6,9 +6,14 @@ badges:
     to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/forms/form.vue
     target: _blank
   - value: API reference
-    to: https://vee-validate.logaretm.com/v4/guide/overview
+    to: https://vee-validate.logaretm.com/v5/guide/overview
     target: _blank
 ---
+
+::alert{type="tip"}
+Remember to install your chosen validator as a dependency. Zod is recommended, but you
+can use any validation library implementing [standardschemas](https://standardschema.dev/).
+::
 
 ## Examples
 
