@@ -18,7 +18,6 @@ const filteredPrimaryColors = (() => {
         'purple',
         'indigo',
         'pink',
-        'tomato',
         'green',
         'fuchsia',
         'violet',
