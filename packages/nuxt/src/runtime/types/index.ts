@@ -92,6 +92,16 @@ export interface UnaSettings {
   sidebar: UnaSidebarConfig
 }
 
+export interface UnaFontSizePreset {
+  label: string
+  value: number
+}
+
+export interface UnaConfig extends Omit<UnaSettings, 'primaryColors' | 'grayColors'> {
+  /** Font size presets offered by the theme switcher. Falls back to DEFAULT_FONT_SIZE_PRESETS when unset. */
+  fontSizes?: UnaFontSizePreset[]
+}
+
 export type OutsideEvent<T extends Event> = CustomEvent<{
   originalEvent: T
 }>

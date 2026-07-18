@@ -25,7 +25,7 @@ interface BaseProps {
 }
 
 export interface NRadioGroupProps<T extends AcceptableValue, Item extends T | NRadioGroupItemProps<T>> extends BaseProps, RadioGroupRootProps {
-  modelValue: T
+  modelValue?: T
   /**
    * The items to display in the radio group.
    */

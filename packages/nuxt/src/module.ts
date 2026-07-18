@@ -1,4 +1,4 @@
-import type { UnaSettings } from './runtime/types'
+import type { UnaConfig } from './runtime/types'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { defu } from 'defu'
 import { name, version } from '../package.json'
@@ -8,10 +8,10 @@ export type * from './runtime/types'
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
-    una?: Partial<UnaSettings>
+    una?: Partial<UnaConfig>
   }
   interface AppConfig {
-    una: UnaSettings
+    una: UnaConfig
   }
 }
 
@@ -67,6 +67,10 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.alias['#una'] = resolve('./runtime')
 
+    // `fontSizes` presets are intentionally omitted from these defaults: defu (and the
+    // app.config.ts merge via defuFn) concatenates arrays, so a baked-in default would be
+    // appended to — never replaced by — a user list. The ThemeSwitcher falls back to
+    // DEFAULT_FONT_SIZE_PRESETS when `una.fontSizes` is unset, keeping user overrides clean.
     nuxt.options.appConfig.una = defu(
       nuxt.options.appConfig.una || {},
       {
@@ -84,7 +88,7 @@ export default defineNuxtModule<ModuleOptions>({
           widthIcon: '3rem',
           keyboardShortcut: 'b',
         },
-      } satisfies Omit<UnaSettings, 'primaryColors' | 'grayColors'>,
+      } satisfies UnaConfig,
     )
 
     // Isolate root node from portaled components

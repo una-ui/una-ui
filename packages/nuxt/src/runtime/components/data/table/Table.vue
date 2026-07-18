@@ -170,6 +170,8 @@ const table = useVueTable({
   manualPagination: props.manualPagination,
   manualSorting: props.manualSorting,
   manualFiltering: props.manualFiltering,
+  globalFilterFn: props.globalFilterFn,
+  filterFns: props.filterFns,
   pageCount: props.pageCount,
   rowCount: props.rowCount,
   autoResetPageIndex: props.autoResetPageIndex,

@@ -2,17 +2,20 @@
 import type { UnaSettings } from '../../types'
 import { useAppConfig, useColorMode } from '#imports'
 import { useToggle } from '@vueuse/core'
+import { SliderRange, SliderThumb, SliderTrack } from 'reka-ui'
 import { capitalize, computed } from 'vue'
 import { useUnaSettings } from '../../composables/useUnaSettings'
 import { useUnaThemes } from '../../composables/useUnaThemes'
-import { RADIUS } from '../../constants'
+import { DEFAULT_FONT_SIZE_PRESETS, RADIUS } from '../../constants'
 import Button from '../elements/Button.vue'
 import Icon from '../elements/Icon.vue'
 import Label from '../elements/Label.vue'
 import Popover from '../elements/popover/Popover.vue'
 import Separator from '../elements/Separator.vue'
+import Slider from '../forms/Slider.vue'
 
 const colorMode = useColorMode()
+const { una } = useAppConfig()
 
 const [value, toggle] = useToggle()
 const { primaryThemes, grayThemes } = useUnaThemes()
@@ -57,6 +60,52 @@ function updateGrayTheme(theme: string): void {
   settings.value.theme = false
   settings.value.gray = theme
 }
+
+// custom values (e.g. set via app.config) snap the thumb to the closest stop
+function closestIndex(values: readonly number[], target: number): number {
+  let closest = 0
+  values.forEach((value, index) => {
+    const best = values[closest]
+    if (best !== undefined && Math.abs(value - target) < Math.abs(best - target))
+      closest = index
+  })
+  return closest
+}
+
+const fontSizePresets = computed(() => una.fontSizes ?? DEFAULT_FONT_SIZE_PRESETS)
+
+// slider stops are preset indexes, so unevenly spaced preset values still sit evenly on the track
+const fontSizeIndex = computed<number[]>({
+  get: () => {
+    const presets = fontSizePresets.value
+    const exact = presets.findIndex(preset => preset.value === settings.value.fontSize)
+    return [exact !== -1 ? exact : closestIndex(presets.map(preset => preset.value), settings.value.fontSize)]
+  },
+  set: (value) => {
+    const preset = fontSizePresets.value[value[0] ?? 0]
+    if (preset)
+      settings.value.fontSize = preset.value
+  },
+})
+
+const currentFontSizeLabel = computed(() => {
+  const preset = fontSizePresets.value.find(preset => preset.value === settings.value.fontSize)
+  return preset ? preset.label : `${settings.value.fontSize}px`
+})
+
+const radiusIndex = computed<number[]>({
+  get: () => {
+    const exact = RADIUS.findIndex(radius => radius === settings.value.radius)
+    return [exact !== -1 ? exact : closestIndex(RADIUS, settings.value.radius)]
+  },
+  set: (value) => {
+    const radius = RADIUS[value[0] ?? 0]
+    if (radius !== undefined)
+      settings.value.radius = radius
+  },
+})
+
+const currentRadiusLabel = computed(() => `${settings.value.radius}`)
 
 function shuffleTheme(): void {
   if (primaryThemes.length > 0 && grayThemes.length > 0 && RADIUS.length > 0) {
@@ -217,24 +266,64 @@ function shuffleTheme(): void {
         <Separator />
 
         <div class="space-y-1">
-          <Label for="radius" class="text-xs"> Radius </Label>
-          <div class="grid grid-cols-3 gap-2 py-1.5">
-            <Button
-              v-for="r in RADIUS"
-              :key="r"
-              btn="outline-gray"
-              size="xs"
-              :class="
-                r === settings.radius
-                  ? 'ring-2 ring-primary'
-                  : ''
-              "
-              @click="settings.radius = r"
+          <div class="flex items-center justify-between">
+            <Label class="text-xs"> Radius </Label>
+            <span class="text-xs text-muted">{{ currentRadiusLabel }}</span>
+          </div>
+          <div class="px-1 py-2.5">
+            <Slider
+              v-model="radiusIndex"
+              :min="0"
+              :max="RADIUS.length - 1"
+              :step="1"
+              aria-label="Radius"
             >
-              {{ r }}
-            </Button>
+              <template #slider-track>
+                <SliderTrack class="slider-track">
+                  <SliderRange class="slider-range" />
+                  <div class="pointer-events-none absolute inset-0 flex items-center justify-between px-2">
+                    <span v-for="(_, i) in RADIUS" :key="i" class="bg-base rounded-full size-1" />
+                  </div>
+                </SliderTrack>
+              </template>
+              <template #slider-thumb>
+                <SliderThumb class="slider-thumb" :aria-valuetext="currentRadiusLabel" />
+              </template>
+            </Slider>
           </div>
         </div>
+
+        <template v-if="fontSizePresets.length > 1">
+          <Separator />
+
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <Label class="text-xs"> Font Size </Label>
+              <span class="text-xs text-muted">{{ currentFontSizeLabel }}</span>
+            </div>
+            <div class="px-1 py-2.5">
+              <Slider
+                v-model="fontSizeIndex"
+                :min="0"
+                :max="fontSizePresets.length - 1"
+                :step="1"
+                aria-label="Font Size"
+              >
+                <template #slider-track>
+                  <SliderTrack class="slider-track">
+                    <SliderRange class="slider-range" />
+                    <div class="pointer-events-none absolute inset-0 flex items-center justify-between px-2">
+                      <span v-for="(_, i) in fontSizePresets" :key="i" class="bg-base rounded-full size-1" />
+                    </div>
+                  </SliderTrack>
+                </template>
+                <template #slider-thumb>
+                  <SliderThumb class="slider-thumb" :aria-valuetext="currentFontSizeLabel" />
+                </template>
+              </Slider>
+            </div>
+          </div>
+        </template>
 
         <Separator />
 

@@ -1,6 +1,8 @@
 import type {
   ColumnDef,
   CoreOptions,
+  FilterFn,
+  FilterFnOption,
   GroupColumnDef,
 } from '@tanstack/vue-table'
 import type { PrimitiveProps } from 'reka-ui'
@@ -58,6 +60,19 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
    * @see https://tanstack.com/table/latest/docs/api/features/column-filtering#manualfiltering
    */
   manualFiltering?: boolean
+  /**
+   * The filter function to use for global filtering.
+   * Can be a built-in filter function name or a custom filter function.
+   *
+   * @see https://tanstack.com/table/latest/docs/api/features/global-filtering#globalfilterfn
+   */
+  globalFilterFn?: FilterFnOption<TData>
+  /**
+   * Custom filter functions that can be referenced by columns or globalFilterFn by string key.
+   *
+   * @see https://tanstack.com/table/latest/docs/api/features/column-filtering#filterfns
+   */
+  filterFns?: Record<string, FilterFn<TData>>
   /**
    * @see https://tanstack.com/table/latest/docs/api/features/sorting#enablesorting
    */
