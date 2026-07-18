@@ -84,6 +84,15 @@ export interface UnaSettings {
   sidebar: UnaSidebarConfig
 }
 
+export interface UnaFontSizePreset {
+  label: string
+  value: number
+}
+
+export interface UnaConfig extends Omit<UnaSettings, 'primaryColors' | 'grayColors'> {
+  fontSizes: UnaFontSizePreset[]
+}
+
 export type OutsideEvent<T extends Event> = CustomEvent<{
   originalEvent: T
 }>
