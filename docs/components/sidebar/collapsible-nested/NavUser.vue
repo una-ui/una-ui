@@ -63,7 +63,7 @@ const { isMobile } = useSidebar()
             <span class="truncate font-semibold">{{ user.name }}</span>
             <span class="truncate text-xs">{{ user.email }}</span>
           </div>
-          <NIcon name="i-lucide-chevron-down" class="ml-auto size-4" />
+          <NIcon name="i-lucide-chevron-down" class="ml-auto square-4" />
         </NSidebarMenuButton>
 
         <template #menu-label>

@@ -126,6 +126,15 @@
 
 
 
+## [0.67.6](https://github.com/una-ui/una-ui/compare/v0.67.5...v0.67.6) (2026-07-18)
+
+
+### Bug Fixes
+
+* **Preset:** use square-* for width/height instead of size-* ([bea65a3](https://github.com/una-ui/una-ui/commit/bea65a3079c158cd4f35054ec79e3570f86b1a28))
+
+
+
 ## [0.67.5](https://github.com/una-ui/una-ui/compare/v0.67.4...v0.67.5) (2026-07-18)
 
 

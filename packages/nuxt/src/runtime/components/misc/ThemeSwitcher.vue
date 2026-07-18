@@ -282,7 +282,7 @@ function shuffleTheme(): void {
                 <SliderTrack class="slider-track">
                   <SliderRange class="slider-range" />
                   <div class="pointer-events-none absolute inset-0 flex items-center justify-between px-2">
-                    <span v-for="(_, i) in RADIUS" :key="i" class="bg-base rounded-full size-1" />
+                    <span v-for="(_, i) in RADIUS" :key="i" class="bg-base rounded-full square-1" />
                   </div>
                 </SliderTrack>
               </template>
@@ -313,7 +313,7 @@ function shuffleTheme(): void {
                   <SliderTrack class="slider-track">
                     <SliderRange class="slider-range" />
                     <div class="pointer-events-none absolute inset-0 flex items-center justify-between px-2">
-                      <span v-for="(_, i) in fontSizePresets" :key="i" class="bg-base rounded-full size-1" />
+                      <span v-for="(_, i) in fontSizePresets" :key="i" class="bg-base rounded-full square-1" />
                     </div>
                   </SliderTrack>
                 </template>

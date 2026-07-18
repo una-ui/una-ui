@@ -55,7 +55,7 @@ const components: { title: string, to: string, description: string }[] = [
                     class="h-full w-full flex flex-col select-none justify-end rounded-md from-foreground/10 to-foreground/0 bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
                     to="#"
                   >
-                    <img src="https://www.reka-ui.com/logo.svg" class="h-6 w-6">
+                    <img src="https://www.reka-ui.com/logo.svg" class="square-6">
                     <div class="mb-2 mt-4 text-lg font-medium">
                       shadcn/ui test
                     </div>

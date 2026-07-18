@@ -47,7 +47,7 @@ const selectedItem = computed(() => items.find(item => item.name === selected.va
           <img
             :src="(item as Item).avatar"
             :alt="(item as Item).name"
-            class="rounded-full size-6"
+            class="rounded-full square-6"
           >
           <span>{{ (item as Item).name }}</span>
         </div>
@@ -61,7 +61,7 @@ const selectedItem = computed(() => items.find(item => item.name === selected.va
           <img
             :src="selectedItem.avatar"
             :alt="selectedItem.name"
-            class="rounded-full size-6"
+            class="rounded-full square-6"
           >
           <span>{{ selectedItem.name }}</span>
         </div>
