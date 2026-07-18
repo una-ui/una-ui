@@ -1,3 +1,12 @@
+# [1.0.0-alpha.22](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2026-07-18)
+
+
+### Features
+
+* **preset:** add Tailwind v4.3 grays (taupe, mauve, mist, olive) ([#591](https://github.com/una-ui/una-ui/issues/591)) ([9bfaa29](https://github.com/una-ui/una-ui/commit/9bfaa29fc36492fc26a9a371fd2ecfd14b1a3312)), closes [#588](https://github.com/una-ui/una-ui/issues/588) [#589](https://github.com/una-ui/una-ui/issues/589)
+
+
+
 # [1.0.0-alpha.21](https://github.com/una-ui/una-ui/compare/v0.67.8...v1.0.0-alpha.21) (2026-07-18)
 
 
