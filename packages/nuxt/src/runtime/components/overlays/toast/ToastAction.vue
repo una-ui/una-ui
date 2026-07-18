@@ -13,6 +13,7 @@ defineOptions({
 const props = withDefaults(defineProps<NToastActionProps>(), {
   btn: 'solid-white',
   size: 'xs',
+  square: undefined,
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 </script>

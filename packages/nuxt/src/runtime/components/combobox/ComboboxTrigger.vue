@@ -9,6 +9,7 @@ import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NComboboxTriggerProps>(), {
   btn: 'outline-gray',
+  square: undefined,
 })
 
 const forwardedProps = useForwardProps(reactiveOmit(props, 'class', 'status', 'una', 'btn'))

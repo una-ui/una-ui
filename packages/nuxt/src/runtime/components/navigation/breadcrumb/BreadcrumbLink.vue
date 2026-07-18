@@ -9,6 +9,7 @@ const props = withDefaults(defineProps<NBreadcrumbLinkProps>(), {
   breadcrumbActive: '~',
   breadcrumbInactive: '~',
   size: 'sm',
+  square: undefined,
 })
 
 const activeAttrs = computed(() => {

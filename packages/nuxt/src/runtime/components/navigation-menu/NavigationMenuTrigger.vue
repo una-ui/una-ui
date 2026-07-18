@@ -17,6 +17,7 @@ const props = withDefaults(defineProps<NNavigationMenuTriggerProps>(), {
   navigationMenu: 'ghost-white',
   trailing: 'navigation-menu-trigger-trailing-icon',
   as: Button,
+  square: undefined,
 })
 
 const delegatedProps = reactiveOmit(props, 'class')

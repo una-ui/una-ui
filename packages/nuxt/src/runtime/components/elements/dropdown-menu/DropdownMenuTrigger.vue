@@ -4,7 +4,9 @@ import { DropdownMenuTrigger, useForwardProps } from 'reka-ui'
 import { cn, randomId } from '../../../utils'
 import Button from '../Button.vue'
 
-const props = defineProps<NDropdownMenuTriggerProps>()
+const props = withDefaults(defineProps<NDropdownMenuTriggerProps>(), {
+  square: undefined,
+})
 
 const forwardedProps = useForwardProps(props)
 </script>

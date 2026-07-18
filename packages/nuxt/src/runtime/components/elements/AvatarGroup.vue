@@ -1,13 +1,15 @@
 <script setup lang="ts">
+import type { VNode } from 'vue'
 import type { NAvatarGroupProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { Primitive } from 'reka-ui'
-import { computed, h } from 'vue'
+import { cloneVNode, computed, h } from 'vue'
 import { cn, omitProps } from '../../utils'
 import Avatar from './avatar/Avatar.vue'
 
 const props = withDefaults(defineProps<NAvatarGroupProps>(), {
   as: 'div',
+  square: undefined,
 })
 
 const slots = defineSlots()
@@ -58,16 +60,29 @@ const visibleAvatars = computed(() => {
   return [...children.value].slice(0, maxVisibleCount.value).reverse()
 })
 
+const rootProps = reactiveOmit(props, ['max', 'as', 'asChild', 'overflowLabel', 'class', 'size'])
+
+// Only the group's explicitly-set style props cascade to children; unset/false
+// booleans (square, icon) are dropped so children keep their own defaults.
+const forwardedProps = computed(() =>
+  Object.fromEntries(
+    Object.entries(rootProps).filter(([, value]) => value !== undefined && value !== false),
+  ),
+)
+
 const displayAvatars = computed(() => {
   const result = [...visibleAvatars.value]
+  const groupProps = forwardedProps.value
 
   if (hiddenCount.value > 0 || props.overflowLabel) {
     const avatarProps = children.value.length > 0
-      ? omitProps(children.value[0].props || {}, ['src', 'alt', 'label', 'icon'])
+      ? omitProps(children.value[0].props || {}, ['src', 'alt', 'label', 'icon', 'size'])
       : {}
 
     result.unshift(
       h(Avatar, {
+        ...groupProps,
+        ...avatarProps,
         label: props.overflowLabel || `+${hiddenCount.value}`,
         class: cn(
           props.una?.avatarGroupCount,
@@ -80,7 +95,6 @@ const displayAvatars = computed(() => {
           ),
           ...avatarProps.una,
         },
-        ...avatarProps,
       }),
     )
   }
@@ -88,7 +102,28 @@ const displayAvatars = computed(() => {
   return result
 })
 
-const rootProps = reactiveOmit(props, ['max', 'as', 'asChild', 'overflowLabel'])
+const clonedAvatars = computed(() => {
+  const groupProps = forwardedProps.value
+
+  return displayAvatars.value.map((avatar: VNode) => {
+    const ownProps = avatar.props || {}
+    // Cascade group props only where the child hasn't set its own. cloneVNode already
+    // merges `ownProps`, so re-spreading them would duplicate the child's class tokens.
+    const inherited = Object.fromEntries(
+      Object.entries(groupProps).filter(([key]) => !(key in ownProps)),
+    )
+
+    const cloned = cloneVNode(avatar, {
+      ...inherited,
+      class: cn('avatar-group-item', props.class),
+    })
+
+    if (avatar.ref)
+      cloned.ref = avatar.ref
+
+    return cloned
+  })
+})
 </script>
 
 <template>
@@ -103,13 +138,8 @@ const rootProps = reactiveOmit(props, ['max', 'as', 'asChild', 'overflowLabel'])
   >
     <component
       :is="avatar"
-      v-for="(avatar, count) in displayAvatars"
-      v-bind="{ ...rootProps, ...avatar.props }"
+      v-for="(avatar, count) in clonedAvatars"
       :key="count"
-      :class="cn(
-        'avatar-group-item',
-        props.class,
-      )"
     />
   </Primitive>
 </template>

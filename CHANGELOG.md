@@ -259,6 +259,15 @@
 
 
 
+## [0.67.8](https://github.com/una-ui/una-ui/compare/v0.67.7...v0.67.8) (2026-07-18)
+
+
+### Bug Fixes
+
+* AvatarGroup size cascade and icon-only square across all Button wrappers ([#587](https://github.com/una-ui/una-ui/issues/587)) ([b9ee4ad](https://github.com/una-ui/una-ui/commit/b9ee4ad42e964dab0c8c06bcc5c3f181d3ea34ef)), closes [#586](https://github.com/una-ui/una-ui/issues/586)
+
+
+
 ## [0.67.7](https://github.com/una-ui/una-ui/compare/v0.67.6...v0.67.7) (2026-07-18)
 
 

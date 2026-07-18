@@ -6,6 +6,7 @@ import Button from '../elements/Button.vue'
 const props = withDefaults(defineProps<NAlertDialogActionProps>(), {
   btn: 'solid-primary',
   label: 'Continue',
+  square: undefined,
 })
 </script>
 

@@ -2,7 +2,9 @@
 import type { NTooltipTriggerProps } from '../../../types'
 import { TooltipTrigger } from 'reka-ui'
 
-const props = defineProps<NTooltipTriggerProps>()
+const props = withDefaults(defineProps<NTooltipTriggerProps>(), {
+  square: undefined,
+})
 </script>
 
 <template>

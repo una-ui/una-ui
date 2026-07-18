@@ -9,6 +9,7 @@ const props = withDefaults(defineProps<NTabsTriggerProps>(), {
   tabsActive: 'outline-gray',
   tabsInactive: 'text-muted',
   size: 'sm',
+  square: undefined,
 })
 
 const delegatedProps = reactiveOmit(props, ['class', 'size'])
