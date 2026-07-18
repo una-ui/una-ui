@@ -1,3 +1,22 @@
+## [0.67.5](https://github.com/una-ui/una-ui/compare/v0.67.4...v0.67.5) (2026-07-18)
+
+
+### Bug Fixes
+
+* **Button:** resolve type issues in square prop; closes [#569](https://github.com/una-ui/una-ui/issues/569) ([8e641c9](https://github.com/una-ui/una-ui/commit/8e641c968d011fe477ec141749b0a3048f25fb89))
+* **RadioGroup:** make modelValue optional for uncontrolled usage ([3220cc8](https://github.com/una-ui/una-ui/commit/3220cc865e0f8e0f28b1b8e4b1030791a6f4ce8c))
+* **Sidebar:** refine sidebar-inset layout and inset variant styles ([de1e371](https://github.com/una-ui/una-ui/commit/de1e37177a15da49be7b98d2152feb335c46ac17))
+
+
+### Features
+
+* **Popover:** add close, arrow, and anchor support ([#563](https://github.com/una-ui/una-ui/issues/563)) ([82e05bb](https://github.com/una-ui/una-ui/commit/82e05bbd907f2f8cb90e64bddd74b5554d55f7ed))
+* **Sidebar:** add `useSidebar()` configuration via app.config.ts ([#572](https://github.com/una-ui/una-ui/issues/572)) ([f3cda3c](https://github.com/una-ui/una-ui/commit/f3cda3c69edbb5adc051e6653e4180b1f3984aaf))
+* **Table:** wire globalFilterFn and filterFns to TanStack Table ([c515c7e](https://github.com/una-ui/una-ui/commit/c515c7e62e1d2a52952d46ef4c46563451dee48f))
+* **ThemeSwitcher:** configurable font size presets with slider control ([#585](https://github.com/una-ui/una-ui/issues/585)) ([2d4aea8](https://github.com/una-ui/una-ui/commit/2d4aea85f43c14a22cb228c4dc6a8e87e1488d47)), closes [#584](https://github.com/una-ui/una-ui/issues/584)
+
+
+
 ## [0.67.4](https://github.com/una-ui/una-ui/compare/v0.67.3...v0.67.4) (2026-02-19)
 
 
