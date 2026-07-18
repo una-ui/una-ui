@@ -67,21 +67,17 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.alias['#una'] = resolve('./runtime')
 
-    const userUna = nuxt.options.appConfig.una || {}
+    // `fontSizes` presets are intentionally omitted from these defaults: defu (and the
+    // app.config.ts merge via defuFn) concatenates arrays, so a baked-in default would be
+    // appended to — never replaced by — a user list. The ThemeSwitcher falls back to
+    // DEFAULT_FONT_SIZE_PRESETS when `una.fontSizes` is unset, keeping user overrides clean.
     nuxt.options.appConfig.una = defu(
-      userUna,
+      nuxt.options.appConfig.una || {},
       {
         primary: 'yellow',
         gray: 'stone',
         radius: 0.5,
         fontSize: 16,
-        fontSizes: [
-          { label: 'Smaller', value: 14 },
-          { label: 'Small', value: 15 },
-          { label: 'Default', value: 16 },
-          { label: 'Large', value: 17 },
-          { label: 'Larger', value: 18 },
-        ],
         sidebar: {
           cookieName: 'sidebar:state',
           cookieMaxAge: 60 * 60 * 24 * 7,
@@ -92,9 +88,6 @@ export default defineNuxtModule<ModuleOptions>({
         },
       } satisfies UnaConfig,
     )
-    // defu concatenates arrays; a user-provided preset list must replace the default, not extend it
-    if (userUna.fontSizes)
-      nuxt.options.appConfig.una.fontSizes = userUna.fontSizes
 
     // Isolate root node from portaled components
     nuxt.options.app.rootAttrs = nuxt.options.app.rootAttrs || {}

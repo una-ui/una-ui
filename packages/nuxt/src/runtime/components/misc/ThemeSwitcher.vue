@@ -5,7 +5,7 @@ import { SliderRange, SliderThumb, SliderTrack } from 'reka-ui'
 import { capitalize, computed } from 'vue'
 import { useUnaSettings } from '../../composables/useUnaSettings'
 import { useUnaThemes } from '../../composables/useUnaThemes'
-import { RADIUS } from '../../constants'
+import { DEFAULT_FONT_SIZE_PRESETS, RADIUS } from '../../constants'
 import Button from '../elements/Button.vue'
 import Label from '../elements/Label.vue'
 import Popover from '../elements/popover/Popover.vue'
@@ -50,7 +50,7 @@ function closestIndex(values: readonly number[], target: number): number {
   return closest
 }
 
-const fontSizePresets = computed(() => una.fontSizes ?? [])
+const fontSizePresets = computed(() => una.fontSizes ?? DEFAULT_FONT_SIZE_PRESETS)
 
 // slider stops are preset indexes, so unevenly spaced preset values still sit evenly on the track
 const fontSizeIndex = computed<number[]>({
@@ -191,7 +191,7 @@ function shuffleTheme(): void {
 
         <div class="space-y-1">
           <div class="flex items-center justify-between">
-            <Label for="radius" class="text-xs"> Radius </Label>
+            <Label class="text-xs"> Radius </Label>
             <span class="text-xs text-muted">{{ currentRadiusLabel }}</span>
           </div>
           <div class="px-1 py-2.5">
@@ -217,12 +217,12 @@ function shuffleTheme(): void {
           </div>
         </div>
 
-        <template v-if="fontSizePresets.length">
+        <template v-if="fontSizePresets.length > 1">
           <Separator />
 
           <div class="space-y-1">
             <div class="flex items-center justify-between">
-              <Label for="font-size" class="text-xs"> Font Size </Label>
+              <Label class="text-xs"> Font Size </Label>
               <span class="text-xs text-muted">{{ currentFontSizeLabel }}</span>
             </div>
             <div class="px-1 py-2.5">

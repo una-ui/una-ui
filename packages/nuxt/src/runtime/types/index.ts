@@ -90,7 +90,8 @@ export interface UnaFontSizePreset {
 }
 
 export interface UnaConfig extends Omit<UnaSettings, 'primaryColors' | 'grayColors'> {
-  fontSizes: UnaFontSizePreset[]
+  /** Font size presets offered by the theme switcher. Falls back to DEFAULT_FONT_SIZE_PRESETS when unset. */
+  fontSizes?: UnaFontSizePreset[]
 }
 
 export type OutsideEvent<T extends Event> = CustomEvent<{
