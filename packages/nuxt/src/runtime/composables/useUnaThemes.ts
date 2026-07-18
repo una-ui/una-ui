@@ -40,7 +40,7 @@ const filteredPrimaryColors = (() => {
 
 const filteredGrayColors = Object.fromEntries(
   Object.entries(colors)
-    .filter(([key]) => ['slate', 'gray', 'zinc', 'neutral', 'stone'].includes(key))
+    .filter(([key]) => ['slate', 'gray', 'zinc', 'neutral', 'stone', 'taupe', 'mauve', 'mist', 'olive'].includes(key))
     .map(([key, value]) => [key, Object.fromEntries(
       Object.entries(value)
         .filter(([key]) => ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', '950'].includes(key)),
