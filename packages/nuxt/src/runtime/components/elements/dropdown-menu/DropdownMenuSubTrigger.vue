@@ -12,6 +12,7 @@ import Button from '../Button.vue'
 const props = withDefaults(defineProps<NDropdownMenuSubTriggerProps>(), {
   dropdownMenuItem: '~',
   rounded: 'sm',
+  square: undefined,
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 

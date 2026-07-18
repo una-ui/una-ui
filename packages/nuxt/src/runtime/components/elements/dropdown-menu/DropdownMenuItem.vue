@@ -15,6 +15,7 @@ const props = withDefaults(defineProps<NDropdownMenuItemProps>(), {
   size: 'sm',
   dropdownMenuItem: '~',
   rounded: 'sm',
+  square: undefined,
 })
 
 const slots = defineSlots<any>()

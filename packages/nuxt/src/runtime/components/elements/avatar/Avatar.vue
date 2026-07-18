@@ -11,7 +11,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<NAvatarProps>(), {
   as: 'span',
-  size: 'md',
+  size: undefined,
   rounded: 'full',
   square: '2.5em',
   avatar: 'soft',
@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<NAvatarProps>(), {
       una?.avatarRoot,
       props.class,
     )"
-    :size
+    :size="size || undefined"
     :rounded
     :square
     :avatar

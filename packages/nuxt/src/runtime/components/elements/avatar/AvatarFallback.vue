@@ -9,7 +9,7 @@ const props = defineProps<NAvatarAvatarFallbackProps>()
 
 <template>
   <AvatarFallback
-    v-bind="omitProps(props, ['label', 'una', 'icon'])"
+    v-bind="omitProps(props, ['label', 'una', 'icon', 'square', 'size', 'rounded', 'class'])"
     :class="cn(
       'avatar-fallback',
       una?.avatarFallback,

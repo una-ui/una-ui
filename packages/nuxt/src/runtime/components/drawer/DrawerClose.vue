@@ -2,7 +2,9 @@
 import type { NDrawerCloseProps } from '../../types'
 import { DrawerClose } from 'vaul-vue'
 
-const props = defineProps<NDrawerCloseProps>()
+const props = withDefaults(defineProps<NDrawerCloseProps>(), {
+  square: undefined,
+})
 </script>
 
 <template>

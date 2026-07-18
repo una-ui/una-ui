@@ -15,7 +15,9 @@ import DropdownMenuSubContent from './DropdownMenuSubContent.vue'
 import DropdownMenuSubTrigger from './DropdownMenuSubTrigger.vue'
 import DropdownMenuTrigger from './DropdownMenuTrigger.vue'
 
-const props = defineProps<NDropdownMenuProps>()
+const props = withDefaults(defineProps<NDropdownMenuProps>(), {
+  square: undefined,
+})
 const emits = defineEmits<DropdownMenuRootEmits & DropdownMenuContentEmits>()
 const forwarded = useForwardPropsEmits(props, emits)
 

@@ -9,6 +9,7 @@ import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NSelectTriggerProps>(), {
   select: 'solid-white',
+  square: undefined,
 })
 
 const forwardedProps = useForwardProps(reactiveOmit(props, 'class', 'status', 'una', 'select'))

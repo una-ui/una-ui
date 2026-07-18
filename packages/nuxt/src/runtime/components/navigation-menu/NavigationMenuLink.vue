@@ -13,6 +13,7 @@ const props = withDefaults(defineProps<NNavigationMenuLinkProps>(), {
   navigationMenuLink: 'ghost-white',
   btn: '~',
   as: Button,
+  square: undefined,
 })
 const emits = defineEmits<NavigationMenuLinkEmits>()
 

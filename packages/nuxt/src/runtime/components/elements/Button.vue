@@ -11,6 +11,7 @@ const props = withDefaults(defineProps<NButtonProps>(), {
   size: 'sm',
   rounded: 'md',
   loadingPlacement: 'leading',
+  square: undefined,
   una: () => ({
     btnDefaultVariant: 'btn-default-variant',
   }),
