@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 interface BaseExtensionProps {
-  square?: HTMLAttributes['class']
+  square?: HTMLAttributes['class'] | boolean
   rounded?: HTMLAttributes['class']
   class?: HTMLAttributes['class']
   breadcrumbActive?: string

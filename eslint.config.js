@@ -13,6 +13,8 @@ export default antfu(
     },
     ignores: [
       '**/*.sh',
+      '.agents/**',
+      '.claude/**',
     ],
     rules: {
       'node/prefer-global/process': 'off',

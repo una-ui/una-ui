@@ -13,7 +13,7 @@ interface BaseProps {
   /**
    * Set the height and width of the avatar.
    */
-  square?: HTMLAttributes['class']
+  square?: HTMLAttributes['class'] | boolean
   /**
    * Set the border radius of the avatar.
    */

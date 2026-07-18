@@ -47,6 +47,7 @@ const frameworks = ['Vue', 'React', 'Angular', 'Svelte', 'Solid']
           multiple
           placeholder="Select Contributors"
           label="Vue Community"
+          @update:model-value="console.log('update:model-value', $event)"
         />
       </div>
       <div class="text-sm text-muted">

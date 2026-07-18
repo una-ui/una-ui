@@ -32,13 +32,12 @@ export interface SelectGroup<T extends AcceptableValue> {
 
 export interface NSelectProps<
   T extends AcceptableValue,
-  Items extends Array<T | SelectGroup<T>>,
   M extends boolean = false,
 > extends Omit<SelectExtensions<T>, 'modelValue' | 'defaultValue'> {
   /**
    * The items to display in the select.
    */
-  items?: Items
+  items?: Array<T | SelectGroup<T>>
   /**
    * The key name to use to display in the select items.
    */
@@ -58,9 +57,9 @@ export interface NSelectProps<
    */
   groupSeparator?: boolean
 
-  defaultValue?: M extends true ? any[] : any
+  defaultValue?: M extends true ? AcceptableValue[] : AcceptableValue
 
-  modelValue?: M extends true ? any[] : any
+  modelValue?: M extends true ? AcceptableValue[] : AcceptableValue
 
   multiple?: M
 

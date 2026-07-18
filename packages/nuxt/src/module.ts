@@ -1,5 +1,6 @@
 import type { UnaSettings } from './runtime/types'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
+import { defu } from 'defu'
 import { name, version } from '../package.json'
 import extendUnocssOptions from './una.config'
 
@@ -66,17 +67,25 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.alias['#una'] = resolve('./runtime')
 
-    nuxt.options.appConfig.una = {
-      ...{
+    nuxt.options.appConfig.una = defu(
+      nuxt.options.appConfig.una || {},
+      {
         primary: 'yellow',
         gray: 'stone',
         radius: 0.625,
         fontSize: 16,
         theme: null,
         themes: [],
-      },
-      ...(nuxt.options.appConfig.una || {}),
-    }
+        sidebar: {
+          cookieName: 'sidebar:state',
+          cookieMaxAge: 60 * 60 * 24 * 7,
+          width: '16rem',
+          widthMobile: '18rem',
+          widthIcon: '3rem',
+          keyboardShortcut: 'b',
+        },
+      } satisfies Omit<UnaSettings, 'primaryColors' | 'grayColors'>,
+    )
 
     // Isolate root node from portaled components
     nuxt.options.app.rootAttrs = nuxt.options.app.rootAttrs || {}

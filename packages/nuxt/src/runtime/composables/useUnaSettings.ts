@@ -23,6 +23,7 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     radius: una.radius,
     fontSize: una.fontSize,
     theme: una.theme,
+    sidebar: { ...una.sidebar },
   } as const
 
   const settings = useStorage<Omit<UnaSettings, 'themes'>>('una-settings', defaultSettings, undefined, {
@@ -51,6 +52,7 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     settings.value.gray = defaultSettings.gray
     settings.value.fontSize = defaultSettings.fontSize
     settings.value.radius = defaultSettings.radius
+    settings.value.sidebar = { ...defaultSettings.sidebar }
   }
 
   return {
