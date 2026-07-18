@@ -268,7 +268,7 @@ function shuffleTheme(): void {
         <div class="space-y-1">
           <div class="flex items-center justify-between">
             <Label class="text-xs"> Radius </Label>
-            <span class="text-xs text-muted">{{ currentRadiusLabel }}</span>
+            <span class="text-xs text-muted-foreground">{{ currentRadiusLabel }}</span>
           </div>
           <div class="px-1 py-2.5">
             <Slider
@@ -299,7 +299,7 @@ function shuffleTheme(): void {
           <div class="space-y-1">
             <div class="flex items-center justify-between">
               <Label class="text-xs"> Font Size </Label>
-              <span class="text-xs text-muted">{{ currentFontSizeLabel }}</span>
+              <span class="text-xs text-muted-foreground">{{ currentFontSizeLabel }}</span>
             </div>
             <div class="px-1 py-2.5">
               <Slider
