@@ -10,7 +10,7 @@ function toggleLoading() {
   <div class="flex flex-col gap-4">
     <div>
       <NButton
-        btn="solid-gray"
+        btn="outline-gray"
         :label="`Turn ${loading ? 'off' : 'on'} loading`"
         @click="toggleLoading"
       />

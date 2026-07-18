@@ -8,7 +8,7 @@ import Button from '../../elements/Button.vue'
 import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NSelectTriggerProps>(), {
-  select: 'solid-white',
+  select: 'outline-gray',
   square: undefined,
 })
 

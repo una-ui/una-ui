@@ -2,7 +2,7 @@ import type { DialogCloseProps, DialogContentProps, DialogDescriptionProps, Dial
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NSheetProps extends DialogRootProps, Pick<NSheetContentProps, 'sheet' | 'preventClose' | 'showClose' | 'overlay'> {
+export interface NSheetProps extends DialogRootProps, Pick<NSheetContentProps, 'sheet' | 'dismissible' | 'showClose' | 'overlay'> {
   /**
    * The title of the sheet.
    */
@@ -50,7 +50,7 @@ export interface NSheetContentProps extends DialogContentProps {
   /**
    * Prevent close.
    */
-  preventClose?: boolean
+  dismissible?: boolean
   /**
    * Show close button.
    *

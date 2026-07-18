@@ -20,6 +20,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<NAlertDialogProps>(), {
   overlay: true,
+  dismissible: true,
 })
 const emits = defineEmits<AlertDialogEmits & {
   cancel: [Event]
@@ -56,7 +57,7 @@ const forwarded = useForwardPropsEmits(rootProps, emits)
       <AlertDialogContent
         v-bind="_alertDialogContent"
         :_alert-dialog-overlay
-        :prevent-close
+        :dismissible
         :una
       >
         <VisuallyHidden v-if="(title === DEFAULT_TITLE || !!$slots.title) || (description === DEFAULT_DESCRIPTION || !!$slots.description)">

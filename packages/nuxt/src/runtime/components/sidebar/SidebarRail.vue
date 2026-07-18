@@ -10,6 +10,7 @@ const { toggleSidebar } = useSidebar()
 
 <template>
   <button
+    data-slot="sidebar-rail"
     data-sidebar="rail"
     aria-label="Toggle Sidebar"
     :tabindex="-1"

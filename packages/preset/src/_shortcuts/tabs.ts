@@ -7,13 +7,13 @@ export const staticTabs: Record<`${TabsPrefix}-${string}` | TabsPrefix, string> 
 
   // components
   'tabs-trigger': 'py-0.25em h-[calc(100%-1px)]',
-  'tabs-list': 'bg-muted text-muted inline-flex h-2.5714285714285716em w-fit items-center justify-center rounded-lg p-[3px]',
+  'tabs-list': 'bg-muted text-muted-foreground inline-flex h-2.5714285714285716em w-fit items-center justify-center rounded-lg p-[3px]',
   'tabs-content': 'flex-1 outline-none',
 }
 
 export const dynamicTabs = [
-  [/^tabs-active-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[state=active]:btn-${v}-${c}`],
-  [/^tabs-inactive-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'primary']) => `data-[state=inactive]:btn-${v}-${c}`],
+  [/^tabs-active-([^-]+)-([^-]+)$/, ([, v = 'outline', c = 'gray']) => `data-[state=active]:btn-${v}-${c}`],
+  [/^tabs-inactive-([^-]+)-([^-]+)$/, ([, v = 'outline', c = 'gray']) => `data-[state=inactive]:btn-${v}-${c}`],
 ]
 
 export const tabs = [

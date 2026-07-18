@@ -76,8 +76,10 @@ export default defineNuxtModule<ModuleOptions>({
       {
         primary: 'yellow',
         gray: 'stone',
-        radius: 0.5,
+        radius: 0.625,
         fontSize: 16,
+        theme: false,
+        themes: [],
         sidebar: {
           cookieName: 'sidebar:state',
           cookieMaxAge: 60 * 60 * 24 * 7,

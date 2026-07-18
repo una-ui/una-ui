@@ -14,6 +14,7 @@ const props = withDefaults(defineProps<NSheetCloseProps>(), {
 
 <template>
   <DialogClose
+    data-slot="sheet-close"
     as-child
   >
     <slot>

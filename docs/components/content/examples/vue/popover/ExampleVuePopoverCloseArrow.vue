@@ -10,7 +10,7 @@
       }"
     >
       <template #trigger>
-        <NButton btn="solid-white">
+        <NButton btn="outline-gray">
           Open popover
         </NButton>
       </template>
@@ -19,7 +19,7 @@
         <h4 class="mb-1 font-medium leading-none">
           Dimensions
         </h4>
-        <p class="text-sm text-muted">
+        <p class="text-sm text-muted-foreground">
           Set the dimensions for the layer.
         </p>
         <div class="grid mt-3 gap-2">

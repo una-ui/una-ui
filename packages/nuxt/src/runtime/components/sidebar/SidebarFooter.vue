@@ -7,6 +7,7 @@ const props = defineProps<NSidebarFooterProps>()
 
 <template>
   <div
+    data-slot="sidebar-footer"
     data-sidebar="footer"
     :class="cn(
       'sidebar-footer',
