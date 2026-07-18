@@ -9,10 +9,7 @@ import Avatar from './avatar/Avatar.vue'
 
 const props = withDefaults(defineProps<NAvatarGroupProps>(), {
   as: 'div',
-  size: undefined,
   square: undefined,
-  rounded: undefined,
-  avatar: undefined,
 })
 
 const slots = defineSlots()
@@ -65,15 +62,17 @@ const visibleAvatars = computed(() => {
 
 const rootProps = reactiveOmit(props, ['max', 'as', 'asChild', 'overflowLabel', 'class', 'size'])
 
-function forwardedRootProps() {
-  return Object.fromEntries(
+// Only the group's explicitly-set style props cascade to children; unset/false
+// booleans (square, icon) are dropped so children keep their own defaults.
+const forwardedProps = computed(() =>
+  Object.fromEntries(
     Object.entries(rootProps).filter(([, value]) => value !== undefined && value !== false),
-  )
-}
+  ),
+)
 
 const displayAvatars = computed(() => {
   const result = [...visibleAvatars.value]
-  const groupProps = forwardedRootProps()
+  const groupProps = forwardedProps.value
 
   if (hiddenCount.value > 0 || props.overflowLabel) {
     const avatarProps = children.value.length > 0
@@ -104,18 +103,19 @@ const displayAvatars = computed(() => {
 })
 
 const clonedAvatars = computed(() => {
-  const groupProps = forwardedRootProps()
+  const groupProps = forwardedProps.value
 
-  return displayAvatars.value.map((avatar: VNode, count: number) => {
+  return displayAvatars.value.map((avatar: VNode) => {
+    const ownProps = avatar.props || {}
+    // Cascade group props only where the child hasn't set its own. cloneVNode already
+    // merges `ownProps`, so re-spreading them would duplicate the child's class tokens.
+    const inherited = Object.fromEntries(
+      Object.entries(groupProps).filter(([key]) => !(key in ownProps)),
+    )
+
     const cloned = cloneVNode(avatar, {
-      ...groupProps,
-      ...avatar.props,
-      class: cn(
-        'avatar-group-item',
-        avatar.props?.class,
-        props.class,
-      ),
-      key: count,
+      ...inherited,
+      class: cn('avatar-group-item', props.class),
     })
 
     if (avatar.ref)

@@ -4,7 +4,9 @@ import { reactiveOmit } from '@vueuse/core'
 import { HoverCardTrigger, useForwardProps } from 'reka-ui'
 import { cn } from '../../utils'
 
-const props = defineProps<NHoverCardTriggerProps>()
+const props = withDefaults(defineProps<NHoverCardTriggerProps>(), {
+  square: undefined,
+})
 const delegatedProps = reactiveOmit(props, 'class')
 
 const forwarded = useForwardProps(delegatedProps)
