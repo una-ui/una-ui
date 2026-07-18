@@ -11,7 +11,6 @@ const props = withDefaults(defineProps<NButtonProps>(), {
   size: 'sm',
   rounded: 'md',
   loadingPlacement: 'leading',
-  // Preserve unset so `square ?? !!icon` can auto-enable; Vue Boolean props default to false.
   square: undefined,
   una: () => ({
     btnDefaultVariant: 'btn-default-variant',

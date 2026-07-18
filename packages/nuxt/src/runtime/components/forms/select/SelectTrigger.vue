@@ -9,7 +9,6 @@ import Icon from '../../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NSelectTriggerProps>(), {
   select: 'solid-white',
-  // Preserve unset so Button `square ?? !!icon` can auto-enable.
   square: undefined,
 })
 

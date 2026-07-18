@@ -9,7 +9,6 @@ import Avatar from './avatar/Avatar.vue'
 
 const props = withDefaults(defineProps<NAvatarGroupProps>(), {
   as: 'div',
-  // Keep unset so Boolean-cast props don't forward `false` and wipe Avatar defaults.
   size: undefined,
   square: undefined,
   rounded: undefined,
@@ -64,10 +63,8 @@ const visibleAvatars = computed(() => {
   return [...children.value].slice(0, maxVisibleCount.value).reverse()
 })
 
-// `size` stays on the group root so children inherit font-size via CSS.
 const rootProps = reactiveOmit(props, ['max', 'as', 'asChild', 'overflowLabel', 'class', 'size'])
 
-/** Only forward props that were actually set on the group (skip unset Boolean casts). */
 function forwardedRootProps() {
   return Object.fromEntries(
     Object.entries(rootProps).filter(([, value]) => value !== undefined && value !== false),
@@ -110,8 +107,6 @@ const clonedAvatars = computed(() => {
   const groupProps = forwardedRootProps()
 
   return displayAvatars.value.map((avatar: VNode, count: number) => {
-    // Do not forward group `size` — it stays on the root and cascades via size-inherit.
-    // A child may still set its own `size` through avatar.props.
     const cloned = cloneVNode(avatar, {
       ...groupProps,
       ...avatar.props,

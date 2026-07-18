@@ -9,7 +9,6 @@ const props = withDefaults(defineProps<NBreadcrumbLinkProps>(), {
   breadcrumbActive: '~',
   breadcrumbInactive: '~',
   size: 'sm',
-  // Preserve unset so Button `square ?? !!icon` can auto-enable.
   square: undefined,
 })
 

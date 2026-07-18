@@ -5,7 +5,6 @@ import { cn, randomId } from '../../../utils'
 import Button from '../Button.vue'
 
 const props = withDefaults(defineProps<NDropdownMenuTriggerProps>(), {
-  // Preserve unset so Button `square ?? !!icon` can auto-enable.
   square: undefined,
 })
 

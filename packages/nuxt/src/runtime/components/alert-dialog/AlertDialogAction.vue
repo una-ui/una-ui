@@ -6,7 +6,6 @@ import Button from '../elements/Button.vue'
 const props = withDefaults(defineProps<NAlertDialogActionProps>(), {
   btn: 'solid-primary',
   label: 'Continue',
-  // Preserve unset so Button `square ?? !!icon` can auto-enable.
   square: undefined,
 })
 </script>

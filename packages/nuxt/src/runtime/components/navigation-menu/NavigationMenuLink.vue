@@ -13,7 +13,6 @@ const props = withDefaults(defineProps<NNavigationMenuLinkProps>(), {
   navigationMenuLink: 'ghost-white',
   btn: '~',
   as: Button,
-  // Preserve unset so Button `square ?? !!icon` can auto-enable.
   square: undefined,
 })
 const emits = defineEmits<NavigationMenuLinkEmits>()
