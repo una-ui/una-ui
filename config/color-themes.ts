@@ -17,7 +17,6 @@ const filteredPrimaryColors = Object.fromEntries(
       'purple',
       'indigo',
       'pink',
-      'tomato',
       'green',
       'fuchsia',
       'violet',
