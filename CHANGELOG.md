@@ -126,6 +126,10 @@
 
 
 
+## [0.67.7](https://github.com/una-ui/una-ui/compare/v0.67.6...v0.67.7) (2026-07-18)
+
+
+
 ## [0.67.6](https://github.com/una-ui/una-ui/compare/v0.67.5...v0.67.6) (2026-07-18)
 
 
