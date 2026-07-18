@@ -17,7 +17,7 @@ const isLoading = ref(true)
     >
       <iframe
         :src="url ?? 'https://www.google.com'"
-        class="relative z-20 w-full bg-base" :class="[container ? 'h-[--height]' : 'size-full']"
+        class="relative z-20 w-full bg-base" :class="[container ? 'h-[--height]' : 'h-full']"
         @load="isLoading = false"
       />
     </div>
