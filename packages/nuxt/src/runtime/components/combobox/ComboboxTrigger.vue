@@ -9,6 +9,8 @@ import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NComboboxTriggerProps>(), {
   btn: 'solid-white',
+  // Preserve unset so Button `square ?? !!icon` can auto-enable.
+  square: undefined,
 })
 
 const forwardedProps = useForwardProps(reactiveOmit(props, 'class', 'status', 'una', 'btn'))

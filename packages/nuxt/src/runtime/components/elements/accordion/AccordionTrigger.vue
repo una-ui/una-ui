@@ -7,6 +7,8 @@ import { cn } from '../../../utils'
 const props = withDefaults(defineProps<NAccordionTriggerProps>(), {
   btn: '~ text',
   trailing: 'accordion-trailing-icon',
+  // Preserve unset so Button `square ?? !!icon` can auto-enable.
+  square: undefined,
 })
 const forwardProps = useForwardProps(reactiveOmit(props, ['una']))
 </script>

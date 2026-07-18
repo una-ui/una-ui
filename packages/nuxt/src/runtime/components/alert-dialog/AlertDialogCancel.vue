@@ -7,6 +7,8 @@ import Button from '../elements/Button.vue'
 const props = withDefaults(defineProps<NAlertDialogCancelProps>(), {
   btn: 'solid-gray',
   label: 'Cancel',
+  // Preserve unset so Button `square ?? !!icon` can auto-enable.
+  square: undefined,
 })
 </script>
 

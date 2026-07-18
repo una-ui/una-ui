@@ -8,6 +8,8 @@ import Button from '../Button.vue'
 const props = withDefaults(defineProps<NTabsTriggerProps>(), {
   tabsActive: 'soft-black',
   size: 'sm',
+  // Preserve unset so Button `square ?? !!icon` can auto-enable.
+  square: undefined,
 })
 
 const delegatedProps = reactiveOmit(props, ['class', 'size'])

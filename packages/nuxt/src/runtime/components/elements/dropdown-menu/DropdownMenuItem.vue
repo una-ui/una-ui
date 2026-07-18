@@ -15,6 +15,8 @@ const props = withDefaults(defineProps<NDropdownMenuItemProps>(), {
   size: 'sm',
   dropdownMenuItem: '~',
   rounded: 'sm',
+  // Preserve unset so Button `square ?? !!icon` can auto-enable.
+  square: undefined,
 })
 
 const slots = defineSlots<any>()

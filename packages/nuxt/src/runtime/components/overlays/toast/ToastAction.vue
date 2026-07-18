@@ -13,6 +13,8 @@ defineOptions({
 const props = withDefaults(defineProps<NToastActionProps>(), {
   btn: 'solid-white',
   size: 'xs',
+  // Preserve unset so Button `square ?? !!icon` can auto-enable.
+  square: undefined,
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 </script>

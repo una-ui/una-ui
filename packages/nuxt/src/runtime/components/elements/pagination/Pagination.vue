@@ -17,6 +17,8 @@ const props = withDefaults(defineProps<NPaginationProps>(), {
   showListItem: true,
   showNext: true,
   showPrev: true,
+  // Preserve unset so child defaults (`square: true`) are not wiped by Boolean false.
+  square: undefined,
 })
 
 const emits = defineEmits<PaginationRootEmits>()

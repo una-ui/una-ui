@@ -11,7 +11,9 @@ defineOptions({
 
 const props = withDefaults(defineProps<NAvatarProps>(), {
   as: 'span',
-  size: 'md',
+  // Leave unset so AvatarGroup `size` can cascade via CSS (size-inherit on items).
+  // Standalone default comes from the `avatar` preset (`text-md`).
+  size: undefined,
   rounded: 'full',
   square: '2.5em',
   avatar: 'soft',
@@ -25,7 +27,7 @@ const props = withDefaults(defineProps<NAvatarProps>(), {
       una?.avatarRoot,
       props.class,
     )"
-    :size
+    :size="size || undefined"
     :rounded
     :square
     :avatar

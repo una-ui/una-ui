@@ -15,7 +15,10 @@ import DropdownMenuSubContent from './DropdownMenuSubContent.vue'
 import DropdownMenuSubTrigger from './DropdownMenuSubTrigger.vue'
 import DropdownMenuTrigger from './DropdownMenuTrigger.vue'
 
-const props = defineProps<NDropdownMenuProps>()
+const props = withDefaults(defineProps<NDropdownMenuProps>(), {
+  // Preserve unset so DropdownMenuTrigger `square ?? !!icon` is not wiped by Boolean false.
+  square: undefined,
+})
 const emits = defineEmits<DropdownMenuRootEmits & DropdownMenuContentEmits>()
 const forwarded = useForwardPropsEmits(props, emits)
 

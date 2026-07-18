@@ -8,7 +8,7 @@ const props = defineProps<NAvatarImageProps>()
 
 <template>
   <AvatarImage
-    v-bind="omitProps(props, ['class', 'una'])"
+    v-bind="omitProps(props, ['class', 'una', 'square', 'size', 'rounded'])"
     :src="src!"
     :class="cn(
       'avatar-image',
