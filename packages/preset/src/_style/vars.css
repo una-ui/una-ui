@@ -40,6 +40,9 @@
   --una-sidebar-accent-foreground: var(--una-gray-800);
   --una-sidebar-border: var(--una-gray-200);
   --una-sidebar-ring: var(--una-gray-200);
+
+  --una-destructive: 239, 68, 68;
+  --una-destructive-foreground: 255, 255, 255;
 }
 
 .dark {
@@ -75,4 +78,7 @@
   --una-sidebar-accent-foreground: var(--una-gray-100);
   --una-sidebar-border: var(--una-gray-700);
   --una-sidebar-ring: var(--una-gray-700);
+
+  --una-destructive: 239, 68, 68;
+  --una-destructive-foreground: 255, 255, 255;
 }

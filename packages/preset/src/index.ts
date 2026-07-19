@@ -74,6 +74,10 @@ export default function presetUna(options: unaUIOptions = {
         success: colors.green,
         warning: colors.amber,
         info: colors.blue,
+        destructive: {
+          DEFAULT: 'rgba(var(--una-destructive) / <alpha-value>)',
+          foreground: 'rgba(var(--una-destructive-foreground) / <alpha-value>)',
+        },
       },
       borderRadius: {
         xl: 'calc(var(--una-radius) + 4px)',
