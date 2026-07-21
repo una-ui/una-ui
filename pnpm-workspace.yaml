@@ -51,7 +51,7 @@ catalog:
   clsx: ^2.1.1
   conventional-changelog-cli: ^5.0.0
   defu: ^6.1.4
-  eslint: ^9.39.2
+  eslint: ^10.7.0
   eslint-plugin-format: ^1.4.0
   esno: ^4.8.0
   fast-glob: ^3.3.3
