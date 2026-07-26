@@ -13,8 +13,6 @@ badges:
     target: _blank
 ---
 
-Built on [vue-sonner](https://github.com/xiaoluoboding/vue-sonner).
-
 ::alert{type="warning"}
 **Breaking change.** `NToast` previously wrapped Reka UI and took a single options object —
 `toast({ title, description, actions })`. It now exposes vue-sonner's API, where the message is the
