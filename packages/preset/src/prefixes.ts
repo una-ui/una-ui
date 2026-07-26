@@ -228,6 +228,7 @@ export default [
   'tabs-list',
   'tabs-trigger',
   'theme-switcher',
+  'toast',
   'toaster',
   'toggle',
   'toggle-off',
