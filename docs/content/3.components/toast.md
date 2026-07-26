@@ -121,10 +121,9 @@ passing its id to a later call — the usual way to resolve a loading toast.
 ::
 :::
 
-::alert{type="warning"}
-The bar runs its own timer. vue-sonner exposes no remaining-time hook, so the bar keeps counting
-while the toast itself is paused — hovering the stack or blurring the window pauses dismissal but
-not the bar.
+::alert{type="info"}
+vue-sonner exposes no remaining-time hook, so the bar runs its own timer. It pauses whenever
+vue-sonner pauses dismissal — hovering the stack or hiding the window — so the two stay in step.
 ::
 
 ## Toaster
@@ -141,6 +140,12 @@ not the bar.
 | `richColors`    | `false`        | `boolean`  | Tint the card per type, using vue-sonner's palette rather than una's tokens. |
 
 `duration`, `closeButton` and `richColors` can also be set per toast.
+
+::alert{type="info"}
+Toasts using una-specific options — `actions`, `showProgress`, `leading` or `una` — render through
+una's own component, which vue-sonner treats as fully custom: `closeButton` and `richColors` don't
+apply to them.
+::
 
 ## Theming
 
