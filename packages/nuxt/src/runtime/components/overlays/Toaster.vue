@@ -19,6 +19,11 @@ const props = withDefaults(defineProps<NToasterProps>(), {
 // with light values and its dark block overrides only --normal-*, so the close
 // button would otherwise render near-black on a dark card.
 const tokens = {
+  // sonner nudges its icon with these on top of the row gap, which would make
+  // standard toasts sit 3px wider than the rich ones
+  '--toast-icon-margin-start': '0',
+  '--toast-icon-margin-end': '0',
+
   '--normal-bg': 'oklch(var(--una-popover))',
   '--normal-text': 'oklch(var(--una-popover-foreground))',
   '--normal-border': 'oklch(var(--una-border))',
