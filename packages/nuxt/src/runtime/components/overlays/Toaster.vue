@@ -15,44 +15,27 @@ const props = withDefaults(defineProps<NToasterProps>(), {
 
 // Keep these class strings in this .vue file — UnoCSS does not scan plain .ts,
 // so moving them would silently generate no CSS.
+//
+// `theme` is deliberately not forwarded: vue-sonner's theme rules are not all
+// gated on its skin, and una already themes through the `.dark` class.
 const classes = computed(() => ({
-  toast: cn('toast-root', props.una?.toast),
+  toast: cn('toast toast-row', props.una?.toast),
   title: cn('toast-title', props.una?.toastTitle),
   description: cn('toast-description', props.una?.toastDescription),
-  content: props.una?.toastContent,
+  content: cn('toast-content', props.una?.toastContent),
   icon: cn('toast-icon', props.una?.toastIcon),
-  closeButton: props.una?.toastCloseButton,
+  closeButton: cn('toast-close-button', props.una?.toastCloseButton),
 }))
-
-// The gray scale is remapped alongside --normal-*: vue-sonner declares
-// --gray1..--gray12 with light values only and its dark block overrides neither,
-// so the close button would render near-black on a dark card.
-const tokens = {
-  '--normal-bg': 'oklch(var(--una-popover))',
-  '--normal-text': 'oklch(var(--una-popover-foreground))',
-  '--normal-border': 'oklch(var(--una-border))',
-  '--border-radius': 'var(--una-radius)',
-
-  '--gray1': 'oklch(var(--una-background))',
-  '--gray2': 'oklch(var(--una-muted))',
-  '--gray3': 'oklch(var(--una-muted))',
-  '--gray4': 'oklch(var(--una-border))',
-  '--gray5': 'oklch(var(--una-border))',
-  '--gray6': 'oklch(var(--una-border))',
-  '--gray7': 'oklch(var(--una-border))',
-  '--gray8': 'oklch(var(--una-muted-foreground))',
-  '--gray9': 'oklch(var(--una-muted-foreground))',
-  '--gray10': 'oklch(var(--una-muted-foreground))',
-  '--gray11': 'oklch(var(--una-muted-foreground))',
-  '--gray12': 'oklch(var(--una-foreground))',
-}
 </script>
 
 <template>
   <Toaster
     v-bind="props"
-    :toast-options="{ ...props.toastOptions, classes: { ...classes, ...props.toastOptions?.classes } }"
-    :style="{ ...tokens, ...props.style }"
+    :toast-options="{
+      unstyled: true,
+      ...props.toastOptions,
+      classes: { ...classes, ...props.toastOptions?.classes },
+    }"
   >
     <template #success-icon>
       <Icon name="toast-success-icon" />

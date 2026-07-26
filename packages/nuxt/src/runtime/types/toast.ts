@@ -44,6 +44,8 @@ export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progr
 
 export interface NToastUnaProps {
   toast?: HTMLAttributes['class']
+  toastRow?: HTMLAttributes['class']
+  toastIcon?: HTMLAttributes['class']
   toastContent?: HTMLAttributes['class']
   toastTitle?: HTMLAttributes['class']
   toastDescription?: HTMLAttributes['class']

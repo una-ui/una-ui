@@ -56,9 +56,13 @@ function dismiss() {
 </script>
 
 <template>
-  <div :class="cn('toast', props.una?.toast, props.class)">
-    <div class="toast-row">
-      <Icon v-if="icon" :name="icon" :class="cn('toast-icon', props.type === 'loading' && 'toast-loading')" />
+  <div :class="cn('toast toast-stack', props.una?.toast, props.class)">
+    <div :class="cn('toast-row', props.una?.toastRow)">
+      <Icon
+        v-if="icon"
+        :name="icon"
+        :class="cn('toast-icon', props.type === 'loading' && 'toast-loading', props.una?.toastIcon)"
+      />
 
       <div :class="cn('toast-content', props.una?.toastContent)">
         <div v-if="title" :class="cn('toast-title', props.una?.toastTitle)">
