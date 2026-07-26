@@ -68,7 +68,8 @@
     "tailwind-merge": "catalog:",
     "unocss": "catalog:",
     "unocss-preset-animations": "catalog:",
-    "vaul-vue": "catalog:"
+    "vaul-vue": "catalog:",
+    "vue-sonner": "catalog:"
   },
   "devDependencies": {
     "@iconify-json/lucide": "catalog:",
