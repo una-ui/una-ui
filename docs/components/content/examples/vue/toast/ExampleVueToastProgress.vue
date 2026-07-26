@@ -6,7 +6,7 @@ const { toast } = useToast()
   <div class="grid h-28 place-items-center">
     <div class="flex flex-wrap justify-center gap-2">
       <NButton
-        btn="solid-white"
+        btn="solid-black"
         label="With progress"
         @click="toast.warning('Your trial ends in 3 days', {
           showProgress: true,

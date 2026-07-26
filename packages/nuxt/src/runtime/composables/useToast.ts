@@ -22,11 +22,15 @@ function rich(message: string, opts: RichOptions, type?: ToastType) {
 
   // sonner's single `action`/`cancel` are folded into the array so every button
   // takes the same path — a real `Button` with a `btn` variant
-  const resolved = [
+  const paired = [
     ...(action ? [{ ...action as object, btn: 'outline-gray' }] : []),
     ...(cancel ? [{ ...cancel as object, btn: 'ghost-gray' }] : []),
-    ...(actions ?? []),
-  ] as NToastProps['actions']
+  ]
+  const resolved = [...paired, ...(actions ?? [])] as NToastProps['actions']
+
+  // sonner renders its own action/cancel pair inline, so keep that shape rather
+  // than stacking them — `actions[]` is una's own superset and still stacks.
+  const inlineActions = paired.length > 0 && !actions?.length
 
   return sonner.custom(markRaw(Toast) as any, {
     ...rest,
@@ -36,6 +40,7 @@ function rich(message: string, opts: RichOptions, type?: ToastType) {
       title: message,
       description,
       actions: resolved,
+      inlineActions,
       showProgress,
       progress,
       leading,

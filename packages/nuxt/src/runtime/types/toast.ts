@@ -36,6 +36,8 @@ export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progr
   leading?: HTMLAttributes['class']
   /** Two or more buttons; vue-sonner's own `action`/`cancel` handle the single case. */
   actions?: NToastAction[]
+  /** Render the buttons inline with the text even when there are two. */
+  inlineActions?: boolean
   /** Show a bar counting down `duration`. Runs its own timer — see NToast docs. */
   showProgress?: boolean
   duration?: number

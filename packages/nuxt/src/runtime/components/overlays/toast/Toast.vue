@@ -25,9 +25,10 @@ const ICONS = {
 
 const icon = computed(() => props.leading ?? (props.type ? ICONS[props.type] : undefined))
 
-// one button reads better beside the text; two or more need their own row
-const inlineActions = computed(() => props.actions?.length === 1)
-const stackedActions = computed(() => (props.actions?.length ?? 0) > 1)
+// one button reads better beside the text; two or more need their own row,
+// except sonner's own action/cancel pair, which stays inline as upstream has it
+const inline = computed(() => props.inlineActions || props.actions?.length === 1)
+const stackedActions = computed(() => (props.actions?.length ?? 0) > 0 && !inline.value)
 
 // sonner exposes no remaining-time hook, so the bar runs its own timer. It is
 // deliberately not synced to sonner's pause-on-hover / pause-on-blur.
@@ -78,7 +79,7 @@ function dismiss() {
       </div>
 
       <!-- a lone action sits inline with the text, like sonner's own -->
-      <div v-if="inlineActions" :class="cn('toast-actions', props.una?.toastActions)">
+      <div v-if="inline" :class="cn('toast-actions', props.una?.toastActions)">
         <Button
           v-for="(action, i) in actions"
           :key="i"

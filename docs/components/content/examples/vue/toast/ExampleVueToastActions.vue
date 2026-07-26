@@ -6,7 +6,7 @@ const { toast } = useToast()
   <div class="grid h-28 place-items-center">
     <div class="flex flex-wrap justify-center gap-2">
       <NButton
-        btn="solid-white"
+        btn="solid-black"
         label="Action"
         @click="toast('Event deleted', {
           action: { label: 'Undo', onClick: () => toast.success('Event restored') },
@@ -17,6 +17,15 @@ const { toast } = useToast()
         btn="outline-gray"
         label="Cancel"
         @click="toast('Discard draft?', {
+          cancel: { label: 'Keep', onClick: () => {} },
+        })"
+      />
+
+      <NButton
+        btn="outline-gray"
+        label="Action + cancel"
+        @click="toast('Discard draft?', {
+          action: { label: 'Discard', onClick: () => toast.success('Draft discarded') },
           cancel: { label: 'Keep', onClick: () => {} },
         })"
       />

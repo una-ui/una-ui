@@ -8,7 +8,7 @@ const { toast } = useToast()
 
   <div class="grid h-28 place-items-center gap-2 sm:grid-flow-col">
     <NButton
-      btn="solid-white"
+      btn="solid-black"
       label="Show toast"
       @click="toast('Event has been created')"
     />

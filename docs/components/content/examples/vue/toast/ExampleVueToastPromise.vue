@@ -15,7 +15,7 @@ function upload() {
   <div class="grid h-28 place-items-center">
     <div class="flex flex-wrap justify-center gap-2">
       <NButton
-        btn="solid-white"
+        btn="solid-black"
         label="Promise"
         @click="toast.promise(save(), {
           loading: 'Saving…',
