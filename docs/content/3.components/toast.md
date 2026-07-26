@@ -1,5 +1,8 @@
 ---
 description: 'A succinct message that is displayed temporarily.'
+navBadges:
+  - value: Breaking
+    type: warning
 badges:
   - value: Source
     icon: radix-icons:github-logo
