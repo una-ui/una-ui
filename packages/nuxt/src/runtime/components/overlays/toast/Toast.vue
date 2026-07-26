@@ -85,6 +85,7 @@ function dismiss() {
           btn="outline-gray"
           size="xs"
           v-bind="action"
+          :class="cn('toast-action', action.class)"
           @click="action.onClick?.(); action.dismissOnClick !== false && dismiss()"
         />
       </div>
@@ -97,6 +98,7 @@ function dismiss() {
         btn="outline-gray"
         size="xs"
         v-bind="action"
+        :class="cn('toast-action', action.class)"
         @click="action.onClick?.(); action.dismissOnClick !== false && dismiss()"
       />
     </div>

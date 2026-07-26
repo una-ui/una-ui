@@ -13,6 +13,9 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-content': 'flex flex-col gap-1 min-w-0 flex-1',
   // shrink-0 keeps a lone inline button off the text; justify-end handles the stacked row
   'toast-actions': 'flex flex-wrap shrink-0 justify-end gap-1.5',
+  // una's smallest rectangle button is h-2.571em (~31px at 12px), too heavy for a
+  // toast and it drives the card height — this matches sonner's 24px/8px metrics
+  'toast-action': 'h-6 px-2',
   'toast-progress': 'h-1 -mx-4 -mb-4 mt-1 w-auto rounded-none',
   'toast-title': 'text-sm font-medium',
   'toast-description': 'text-sm text-muted-foreground',
