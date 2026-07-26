@@ -79,6 +79,40 @@ function fakeRequest(ms = 1800, fail = false) {
 
     <section class="flex flex-col gap-2">
       <h2 class="text-sm text-muted-foreground font-medium">
+        Rich toasts
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        <NButton
+          btn="outline-gray"
+          label="multi-action"
+          @click="toast.error('Uh oh! Something went wrong.', {
+            description: 'There was a problem with your request.',
+            actions: [
+              { label: 'Try again', btn: 'solid-error' },
+              { label: 'Details', btn: 'soft-gray' },
+            ],
+          })"
+        />
+        <NButton
+          btn="outline-gray"
+          label="progress"
+          @click="toast.warning('Your trial ends in 3 days', { showProgress: true, progress: 'warning', duration: 6000 })"
+        />
+        <NButton
+          btn="outline-gray"
+          label="both"
+          @click="toast.info('A new version is available', {
+            description: 'Reload to update.',
+            showProgress: true,
+            duration: 8000,
+            actions: [{ label: 'Reload', btn: 'solid-info' }, { label: 'Later', btn: 'soft-gray' }],
+          })"
+        />
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-sm text-muted-foreground font-medium">
         Per-toast overrides
       </h2>
       <div class="flex flex-wrap gap-2">
