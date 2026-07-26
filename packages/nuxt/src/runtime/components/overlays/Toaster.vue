@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<NToasterProps>(), {
 // Keep these class strings in this .vue file — UnoCSS does not scan plain .ts,
 // so moving them would silently generate no CSS.
 const classes = computed(() => ({
-  toast: props.una?.toast,
+  toast: cn('toast-root', props.una?.toast),
   title: cn('toast-title', props.una?.toastTitle),
   description: cn('toast-description', props.una?.toastDescription),
   content: props.una?.toastContent,
