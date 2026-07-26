@@ -88,8 +88,8 @@ function fakeRequest(ms = 1800, fail = false) {
           @click="toast.error('Uh oh! Something went wrong.', {
             description: 'There was a problem with your request.',
             actions: [
-              { label: 'Try again', btn: 'solid-error' },
-              { label: 'Details', btn: 'soft-gray' },
+              { label: 'Try again' },
+              { label: 'Details', btn: 'ghost-gray' },
             ],
           })"
         />
