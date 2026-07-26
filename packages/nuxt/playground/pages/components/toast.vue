@@ -48,6 +48,14 @@ function fakeRequest(ms = 1800, fail = false) {
           label="cancel"
           @click="toast('Discard draft?', { cancel: { label: 'Keep', onClick: () => {} } })"
         />
+        <NButton
+          btn="outline-gray"
+          label="description + action"
+          @click="toast.success('Event has been created', {
+            description: 'Monday, January 3rd at 6:00pm',
+            action: { label: 'Undo', onClick: () => toast('Event restored') },
+          })"
+        />
       </div>
     </section>
 
