@@ -10,7 +10,6 @@ const props = withDefaults(defineProps<NToasterProps>(), {
   duration: 4000,
   visibleToasts: 3,
   expand: false,
-  closeButton: true,
   closeButtonPosition: 'top-right',
 })
 
