@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { NToasterProps } from '../../types'
 import { useColorMode } from '#imports'
+import { reactiveOmit } from '@vueuse/core'
 import { computed } from 'vue'
 import { Toaster } from 'vue-sonner'
 import { cn } from '../../utils'
@@ -13,6 +14,9 @@ const props = withDefaults(defineProps<NToasterProps>(), {
   expand: false,
   closeButtonPosition: 'top-right',
 })
+
+// `una` is ours, and the rest are rebuilt below before they reach sonner
+const toasterProps = reactiveOmit(props, ['una', 'theme', 'toastOptions', 'style'])
 
 // vue-sonner keeps its own skin; una only re-points its colour vars at theme
 // tokens. The gray scale has to come along: sonner declares --gray1..--gray12
@@ -69,7 +73,7 @@ const classes = computed(() => ({
 
 <template>
   <Toaster
-    v-bind="props"
+    v-bind="toasterProps"
     :theme="props.theme ?? theme"
     :toast-options="{
       ...props.toastOptions,
