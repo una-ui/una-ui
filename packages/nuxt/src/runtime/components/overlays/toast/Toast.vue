@@ -25,6 +25,10 @@ const ICONS = {
 
 const icon = computed(() => props.leading ?? (props.type ? ICONS[props.type] : undefined))
 
+// one button reads better beside the text; two or more need their own row
+const inlineActions = computed(() => props.actions?.length === 1)
+const stackedActions = computed(() => (props.actions?.length ?? 0) > 1)
+
 // sonner exposes no remaining-time hook, so the bar runs its own timer. It is
 // deliberately not synced to sonner's pause-on-hover / pause-on-blur.
 const elapsed = ref(0)
@@ -72,9 +76,21 @@ function dismiss() {
           {{ description }}
         </div>
       </div>
+
+      <!-- a lone action sits inline with the text, like sonner's own -->
+      <div v-if="inlineActions" :class="cn('toast-actions', props.una?.toastActions)">
+        <Button
+          v-for="(action, i) in actions"
+          :key="i"
+          btn="outline-gray"
+          size="xs"
+          v-bind="action"
+          @click="action.onClick?.(); action.dismissOnClick !== false && dismiss()"
+        />
+      </div>
     </div>
 
-    <div v-if="actions?.length" :class="cn('toast-actions', props.una?.toastActions)">
+    <div v-if="stackedActions" :class="cn('toast-actions', props.una?.toastActions)">
       <Button
         v-for="(action, i) in actions"
         :key="i"

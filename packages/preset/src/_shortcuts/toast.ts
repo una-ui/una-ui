@@ -11,7 +11,8 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-stack': 'flex flex-col gap-1.5',
   'toast-row': 'flex items-start gap-3',
   'toast-content': 'flex flex-col gap-1 min-w-0 flex-1',
-  'toast-actions': 'flex flex-wrap justify-end gap-1.5',
+  // shrink-0 keeps a lone inline button off the text; justify-end handles the stacked row
+  'toast-actions': 'flex flex-wrap shrink-0 justify-end gap-1.5',
   'toast-progress': 'h-1 -mx-4 -mb-4 mt-1 w-auto rounded-none',
   'toast-title': 'text-sm font-medium',
   'toast-description': 'text-sm text-muted-foreground',
