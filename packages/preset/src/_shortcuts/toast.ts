@@ -20,8 +20,10 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-title': 'text-sm font-medium',
   'toast-description': 'text-sm !text-muted-foreground',
 
-  // shared: nudges the 16px icon onto the title's line box
-  'toast-icon': 'mt-0.5 shrink-0 [&>span[icon-base]]:square-4',
+  // shared: nudges the 16px icon onto the title's line box. Sized both ways —
+  // sonner puts this class on a wrapper around the icon span, the rich toast
+  // puts it on the span itself.
+  'toast-icon': 'mt-0.5 shrink-0 square-4 [&>span[icon-base]]:square-4',
 
   // the card stays neutral, so unlike `alert` the icon carries the type colour
   // itself — via the semantic shortcuts in general.ts
