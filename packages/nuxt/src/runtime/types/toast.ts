@@ -28,7 +28,6 @@ export interface NToastAction extends NButtonProps {
  * and has no progress element.
  */
 export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progress'> {
-  id?: number | string
   type?: 'success' | 'error' | 'warning' | 'info' | 'loading'
   title?: string
   description?: string
@@ -41,6 +40,11 @@ export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progr
   /** Show a bar counting down `duration`. Runs its own timer — see NToast docs. */
   showProgress?: boolean
   duration?: number
+  /**
+   * Injected by vue-sonner while the toast's auto-dismiss is paused — stack
+   * hovered or expanded, window hidden. Holds the progress bar with it.
+   */
+  isPaused?: boolean
   una?: NToastUnaProps
 }
 

@@ -1,19 +1,22 @@
 <script setup lang="ts">
-import type { NToastProps } from '../../../types'
+import type { NToastAction, NToastProps } from '../../../types'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import { toast as sonner } from 'vue-sonner'
-import { cn } from '../../../utils'
+import { cn, omitProps } from '../../../utils'
 import Button from '../../elements/Button.vue'
 import Icon from '../../elements/Icon.vue'
 import Progress from '../../elements/Progress.vue'
 
-// vue-sonner passes internals like `isPaused` to custom components; without
-// this they land on the root as stray attributes.
+// vue-sonner may pass more internals than the ones declared as props; keep any
+// strays off the root element.
 defineOptions({ inheritAttrs: false })
 
 const props = withDefaults(defineProps<NToastProps>(), {
   showProgress: false,
 })
+
+// vue-sonner listens for this on custom components — it dismisses through the
+// exit animation and respects `dismissible`.
+const emit = defineEmits<{ closeToast: [] }>()
 
 const ICONS = {
   success: 'toast-success-icon',
@@ -30,8 +33,8 @@ const icon = computed(() => props.leading ?? (props.type ? ICONS[props.type] : u
 const inline = computed(() => props.inlineActions || props.actions?.length === 1)
 const stackedActions = computed(() => (props.actions?.length ?? 0) > 0 && !inline.value)
 
-// sonner exposes no remaining-time hook, so the bar runs its own timer. It is
-// deliberately not synced to sonner's pause-on-hover / pause-on-blur.
+// sonner exposes no remaining-time hook, so the bar runs its own timer, held
+// while `isPaused` — the exact condition sonner pauses auto-dismiss on.
 const elapsed = ref(0)
 let handle: ReturnType<typeof setInterval> | undefined
 
@@ -44,19 +47,31 @@ const remaining = computed(() => {
 onMounted(() => {
   if (!props.showProgress || !props.duration)
     return
-  const step = 50
+  // wall-clock deltas, not a fixed step — intervals get throttled in
+  // backgrounded tabs and the bar would fall behind the real countdown
+  let last = performance.now()
   handle = setInterval(() => {
-    elapsed.value += step
+    const now = performance.now()
+    if (!props.isPaused)
+      elapsed.value += now - last
+    last = now
     if (elapsed.value >= props.duration!)
       clearInterval(handle)
-  }, step)
+  }, 50)
 })
 
 onBeforeUnmount(() => clearInterval(handle))
 
-function dismiss() {
-  if (props.id !== undefined)
-    sonner.dismiss(props.id)
+// `onClick` must not reach the Button — v-bind would register it as a second
+// click listener and fire it twice.
+function bindings(action: NToastAction) {
+  return omitProps(action, ['onClick', 'dismissOnClick', 'class'])
+}
+
+function onAction(action: NToastAction) {
+  action.onClick?.()
+  if (action.dismissOnClick !== false)
+    emit('closeToast')
 }
 </script>
 
@@ -85,9 +100,9 @@ function dismiss() {
           :key="i"
           btn="outline-gray"
           size="xs"
-          v-bind="action"
+          v-bind="bindings(action)"
           :class="cn('toast-action', action.class)"
-          @click="action.onClick?.(); action.dismissOnClick !== false && dismiss()"
+          @click="onAction(action)"
         />
       </div>
     </div>
@@ -98,9 +113,9 @@ function dismiss() {
         :key="i"
         btn="outline-gray"
         size="xs"
-        v-bind="action"
+        v-bind="bindings(action)"
         :class="cn('toast-action', action.class)"
-        @click="action.onClick?.(); action.dismissOnClick !== false && dismiss()"
+        @click="onAction(action)"
       />
     </div>
 
