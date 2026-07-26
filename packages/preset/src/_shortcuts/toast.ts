@@ -21,11 +21,11 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-icon': 'mt-0.5 shrink-0 [&>span[icon-base]]:square-4',
 
   // the card stays neutral, so unlike `alert` the icon carries the type colour
-  // itself — same -600/-500 pairing the btn and alert variants use
-  'toast-success-icon': 'i-lucide-circle-check text-success-600 dark:text-success-500',
-  'toast-error-icon': 'i-lucide-circle-alert text-error-600 dark:text-error-500',
-  'toast-warning-icon': 'i-lucide-triangle-alert text-warning-600 dark:text-warning-500',
-  'toast-info-icon': 'i-lucide-info text-info-600 dark:text-info-500',
+  // itself — via the semantic shortcuts in general.ts
+  'toast-success-icon': 'i-lucide-circle-check text-success',
+  'toast-error-icon': 'i-lucide-circle-alert text-error',
+  'toast-warning-icon': 'i-lucide-triangle-alert text-warning',
+  'toast-info-icon': 'i-lucide-info text-info',
   'toast-loading-icon': 'i-loading text-muted-foreground',
   'toast-loading': 'animate-spin',
   'toast-close-icon': 'i-close',
