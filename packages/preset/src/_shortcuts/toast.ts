@@ -17,8 +17,10 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   // toast and it drives the card height — this matches sonner's 24px/8px metrics
   'toast-action': 'h-6 px-2',
   'toast-progress': 'h-1 -mx-4 -mb-4 mt-1 w-auto rounded-none',
-  'toast-title': 'text-sm font-medium',
-  'toast-description': 'text-sm !text-muted-foreground',
+  // no font sizes here: the rich card's 13px base and sonner's own 13px keep
+  // titles and descriptions the same size on both paths
+  'toast-title': 'font-medium',
+  'toast-description': '!text-muted-foreground',
 
   // shared: nudges the 16px icon onto the title's line box. Sized both ways —
   // sonner puts this class on a wrapper around the icon span, the rich toast
