@@ -7,14 +7,26 @@ import Toast from '../components/overlays/toast/Toast.vue'
 type RichOptions = ExternalToast & Pick<NToastProps, 'actions' | 'showProgress' | 'progress' | 'leading' | 'una'>
 type ToastType = NToastProps['type']
 
-/** vue-sonner has one `action` + one `cancel` and no progress bar; these need a custom toast. */
+/**
+ * Anything with a button or a progress bar renders through our own component, so
+ * the buttons are real `Button`s carrying `btn` variants rather than sonner's
+ * internal `[data-button]`, which can only be reached with class overrides.
+ */
 function isRich(opts?: RichOptions) {
-  return Boolean(opts && ((opts.actions?.length ?? 0) > 0 || opts.showProgress))
+  return Boolean(opts && ((opts.actions?.length ?? 0) > 0 || opts.action || opts.cancel || opts.showProgress))
 }
 
 function rich(message: string, opts: RichOptions, type?: ToastType) {
-  const { actions, showProgress, progress, leading, una, description, ...rest } = opts
+  const { actions, action, cancel, showProgress, progress, leading, una, description, ...rest } = opts
   const duration = rest.duration ?? 4000
+
+  // sonner's single `action`/`cancel` are folded into the array so every button
+  // takes the same path — a real `Button` with a `btn` variant
+  const resolved = [
+    ...(action ? [{ ...action as object, btn: 'outline-gray' }] : []),
+    ...(cancel ? [{ ...cancel as object, btn: 'ghost-gray' }] : []),
+    ...(actions ?? []),
+  ] as NToastProps['actions']
 
   return sonner.custom(markRaw(Toast) as any, {
     ...rest,
@@ -23,7 +35,7 @@ function rich(message: string, opts: RichOptions, type?: ToastType) {
       type,
       title: message,
       description,
-      actions,
+      actions: resolved,
       showProgress,
       progress,
       leading,

@@ -57,8 +57,6 @@ export interface NToasterUnaProps {
   toastDescription?: HTMLAttributes['class']
   toastContent?: HTMLAttributes['class']
   toastIcon?: HTMLAttributes['class']
-  toastActionButton?: HTMLAttributes['class']
-  toastCancelButton?: HTMLAttributes['class']
   toastCloseButton?: HTMLAttributes['class']
 }
 

@@ -74,6 +74,7 @@ function dismiss() {
       <Button
         v-for="(action, i) in actions"
         :key="i"
+        btn="outline-gray"
         size="xs"
         v-bind="action"
         @click="action.onClick?.(); action.dismissOnClick !== false && dismiss()"

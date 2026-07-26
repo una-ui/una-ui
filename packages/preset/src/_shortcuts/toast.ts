@@ -23,11 +23,6 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-description': 'text-sm !text-muted-foreground',
   // mt nudges the 16px icon onto the title's line box
   'toast-icon': 'mt-0.5 [&>span[icon-base]]:square-4',
-  // una's variants supply focus/shadow, but sonner's [data-button] declares
-  // `border: none` plus background/color at higher specificity — and an
-  // important background would otherwise swallow the variant's hover too
-  'toast-action-button': 'btn-outline-gray !border-1 !border-solid !border-border !bg-transparent !text-foreground hover:!bg-accent',
-  'toast-cancel-button': 'btn-ghost-gray !bg-transparent !text-muted-foreground hover:!bg-secondary/80 hover:!text-secondary-foreground',
 
   'toast-success-icon': 'i-lucide-circle-check',
   'toast-error-icon': 'i-lucide-circle-alert',

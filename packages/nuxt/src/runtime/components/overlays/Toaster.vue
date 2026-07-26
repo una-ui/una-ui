@@ -21,8 +21,6 @@ const classes = computed(() => ({
   description: cn('toast-description', props.una?.toastDescription),
   content: props.una?.toastContent,
   icon: cn('toast-icon', props.una?.toastIcon),
-  actionButton: cn('toast-action-button', props.una?.toastActionButton),
-  cancelButton: cn('toast-cancel-button', props.una?.toastCancelButton),
   closeButton: props.una?.toastCloseButton,
 }))
 
