@@ -52,7 +52,10 @@ const layout = { alignItems: 'flex-start', gap: '12px' }
 const classes = computed(() => ({
   toast: props.una?.toast,
   title: props.una?.toastTitle,
-  description: props.una?.toastDescription,
+  // sonner hardcodes the description colour per theme rather than reading a var,
+  // and its rule is `[data-sonner-toast][data-styled] [data-description]` — three
+  // selectors, so a class cannot outrank it. The only `!` in the component.
+  description: cn('toast-description', props.una?.toastDescription),
   content: props.una?.toastContent,
   icon: cn('toast-icon', props.una?.toastIcon),
   closeButton: props.una?.toastCloseButton,

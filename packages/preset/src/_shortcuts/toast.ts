@@ -18,7 +18,7 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-action': 'h-6 px-2',
   'toast-progress': 'h-1 -mx-4 -mb-4 mt-1 w-auto rounded-none',
   'toast-title': 'text-sm font-medium',
-  'toast-description': 'text-sm text-muted-foreground',
+  'toast-description': 'text-sm !text-muted-foreground',
 
   // shared: nudges the 16px icon onto the title's line box
   'toast-icon': 'mt-0.5 shrink-0 [&>span[icon-base]]:square-4',
