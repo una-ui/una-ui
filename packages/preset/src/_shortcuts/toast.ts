@@ -7,7 +7,8 @@ type ToastPrefix = 'toast'
 export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, string> = {
   // `toast.custom` sets data-styled="false", so rich toasts get no sonner skin.
   // This mirrors sonner's card so they sit flush with the standard ones.
-  'toast': 'w-[var(--width)] flex flex-col gap-1.5 p-4 text-13px border border-[var(--normal-border)] rounded-[var(--border-radius)] bg-[var(--normal-bg)] text-[var(--normal-text)] shadow-[0px_4px_12px_rgba(0,0,0,0.1)]',
+  // overflow-hidden so the flush progress bar is clipped by the card's radius
+  'toast': 'w-[var(--width)] flex flex-col gap-1.5 overflow-hidden p-4 text-13px border border-[var(--normal-border)] rounded-[var(--border-radius)] bg-[var(--normal-bg)] text-[var(--normal-text)] shadow-[0px_4px_12px_rgba(0,0,0,0.1)]',
   'toast-row': 'flex items-start gap-1.5',
   // sonner centres the card's flex items, which floats the icon between title
   // and description instead of sitting it on the title line
@@ -15,7 +16,7 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-actions': 'flex flex-wrap justify-end gap-1.5',
   // flush to the card's bottom edge — cancels the 16px padding so it reads as a
   // lifetime indicator rather than a divider under the actions
-  'toast-progress': 'h-1 -mx-4 -mb-4 mt-1 w-auto rounded-none rounded-b-[var(--border-radius)] overflow-hidden',
+  'toast-progress': 'h-1 -mx-4 -mb-4 mt-1 w-auto rounded-none',
 
   'toast-title': 'text-sm font-semibold',
   // `!` throughout: sonner's `[data-styled='true'] [data-*]` outranks a utility class
