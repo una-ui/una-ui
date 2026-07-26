@@ -85,6 +85,7 @@ function dismiss() {
       :model-value="remaining"
       :class="cn('toast-progress', props.una?.toastProgress)"
       :progress="progress"
+      rounded="none"
     />
   </div>
 </template>

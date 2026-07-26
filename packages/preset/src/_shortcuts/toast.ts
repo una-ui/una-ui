@@ -13,7 +13,9 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   // and description instead of sitting it on the title line
   'toast-root': '!items-start',
   'toast-actions': 'flex flex-wrap justify-end gap-1.5',
-  'toast-progress': 'h-1 rounded-none',
+  // flush to the card's bottom edge — cancels the 16px padding so it reads as a
+  // lifetime indicator rather than a divider under the actions
+  'toast-progress': 'h-1 -mx-4 -mb-4 mt-1 w-auto rounded-none rounded-b-[var(--border-radius)] overflow-hidden',
 
   'toast-title': 'text-sm font-semibold',
   // `!` throughout: sonner's `[data-styled='true'] [data-*]` outranks a utility class
