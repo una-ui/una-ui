@@ -63,6 +63,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.unshift(
       import.meta.resolve('@unocss/reset/tailwind.css'),
       import.meta.resolve('@una-ui/preset/una.css'),
+      // required — vue-sonner's JS entry does not import its own stylesheet
+      import.meta.resolve('vue-sonner/style.css'),
     )
 
     nuxt.options.alias['#una'] = resolve('./runtime')

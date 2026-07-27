@@ -1,0 +1,25 @@
+/*
+ * Tinted rows for ```diff blocks — Shiki's diff grammar only colours the text.
+ *
+ * Matched on the theme's hex values, which Shiki writes inline on each line:
+ * the line-level classes to match instead come from its notation transformers,
+ * which Nuxt Content 2.13 does not accept.
+ *
+ * `display: block` and nothing else. Any percentage width here resolves against
+ * a shrink-to-fit ancestor and inflates it; a plain block fills the same space
+ * without feeding back into it.
+ */
+
+.language-diff .line {
+  display: block;
+}
+
+/* removed — github-light, github-dark */
+.language-diff .line:has(> span[style*='#B31D28']) {
+  background-color: rgb(244 63 94 / 0.12);
+}
+
+/* added — github-light, github-dark */
+.language-diff .line:has(> span[style*='#22863A']) {
+  background-color: rgb(34 197 94 / 0.12);
+}

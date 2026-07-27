@@ -1,34 +1,39 @@
 type ToastPrefix = 'toast'
 
+/**
+ * vue-sonner keeps its own skin for standard toasts, so most of these exist for
+ * the rich ones: `toast.custom` sets data-styled="false", which drops the card,
+ * the content layout and the button styling.
+ */
 export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, string> = {
-  // config
-  'toast': 'pointer-events-auto relative flex w-full space-x-2 justify-end overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all ',
+  // mirrors sonner's card so rich toasts sit flush with the standard ones
+  'toast': 'w-[var(--width)] overflow-hidden p-4 text-13px bg-popover text-popover-foreground border border-border rounded-[var(--border-radius)] shadow-lg',
+  'toast-stack': 'flex flex-col gap-1.5',
+  'toast-row': 'flex items-start gap-3',
+  'toast-content': 'flex flex-col gap-1 min-w-0 flex-1',
+  'toast-actions': 'flex flex-wrap shrink-0 justify-end gap-1.5',
+  // una's smallest rectangle button is ~31px, which would drive the card height;
+  // these are sonner's 24px/8px metrics
+  'toast-action': 'h-6 px-2',
+  'toast-progress': 'h-1 -mx-4 -mb-4 mt-1 w-auto rounded-none',
+  // no font size: both paths inherit 13px, sonner's own and the card's above
+  'toast-title': 'font-medium',
+  'toast-description': '!text-muted-foreground',
 
-  'toast-viewport': 'fixed top-0 z-100 flex max-h-screen gap-y-4 w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-420px',
-  'toast-wrapper': 'w-0 flex flex-1 flex-col gap-2',
-  'toast-title': 'text-sm font-semibold [&+div]:text-xs',
-  'toast-description': 'text-sm opacity-90',
-  'toast-leading': 'square-5',
+  // sized both ways — sonner puts this class on a wrapper around the icon span,
+  // the rich toast puts it on the span itself
+  'toast-icon': 'mt-0.5 shrink-0 square-4 [&>span[icon-base]]:square-4',
 
-  'toast-close': 'bg-transparent flex items-center justify-center absolute right-1 top-1 rounded-md p-1 text-brand/80 opacity-0 transition-opacity hover:text-brand focus:opacity-100 focus:ring-1 focus:ring-brand/80 focus:outline-none group-hover:opacity-100',
+  // the card stays neutral, so unlike `alert` the icon carries the type colour
+  'toast-success-icon': 'i-lucide-circle-check text-success',
+  'toast-error-icon': 'i-lucide-circle-alert text-error',
+  'toast-warning-icon': 'i-lucide-triangle-alert text-warning',
+  'toast-info-icon': 'i-lucide-info text-info',
+  'toast-loading-icon': 'i-loading text-muted-foreground',
+  'toast-loading': 'animate-spin',
   'toast-close-icon': 'i-close',
-  'toast-close-icon-base': 'h-1em w-1em',
-
-  'toast-info': 'grid gap-1',
-  'toast-actions': 'flex shrink-0 gap-1.5',
-  'toast-progress': 'h-1 rounded-none',
 }
 
-export const dynamicToast = [
-  // dynamic variants
-  [/^toast-solid(-(\S+))?$/, ([, , c = 'primary']) => `alert-solid-${c}`],
-  [/^toast-soft(-(\S+))?$/, ([, , c = 'primary']) => `alert-soft-${c}`],
-  [/^toast-outline(-(\S+))?$/, ([, , c = 'primary']) => `alert-outline-${c} bg-background`],
-  [/^toast-border(-(\S+))?$/, ([, , c = 'primary']) => `alert-border-${c}`],
-
-]
-
 export const toast = [
-  ...dynamicToast,
   staticToast,
 ]
