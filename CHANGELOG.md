@@ -1,3 +1,12 @@
+# [1.0.0-alpha.23](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) (2026-07-27)
+
+
+### Bug Fixes
+
+* **preset:** use muted-foreground for muted text ([#602](https://github.com/una-ui/una-ui/issues/602)) ([df02389](https://github.com/una-ui/una-ui/commit/df02389d229adb465e1248fc4ab658671305ce82))
+
+
+
 # [1.0.0-alpha.22](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2026-07-18)
 
 
