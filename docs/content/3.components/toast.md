@@ -168,10 +168,12 @@ Individual parts can be restyled through the `una` prop:
 
 ```diff
 - toast({ title: 'Saved', description: 'All good', closable: true })
-- toast({ toast: 'soft-error', title: 'Failed' })
-- toast({ title: 'Uploading…', _toastProvider: { duration: 8000 } })
 + toast('Saved', { description: 'All good' })
+
+- toast({ toast: 'soft-error', title: 'Failed' })
 + toast.error('Failed')
+
+- toast({ title: 'Uploading…', _toastProvider: { duration: 8000 } })
 + toast('Uploading…', { duration: 8000 })
 ```
 
