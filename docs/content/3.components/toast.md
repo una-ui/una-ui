@@ -166,14 +166,11 @@ Individual parts can be restyled through the `una` prop:
 
 ## Migrating
 
-```ts
-// before
-toast({ title: 'Saved', description: 'All good', closable: true })
-toast({ toast: 'soft-error', title: 'Failed' })
-
-// after
-toast('Saved', { description: 'All good' })
-toast.error('Failed')
+```diff
+- toast({ title: 'Saved', description: 'All good', closable: true })
+- toast({ toast: 'soft-error', title: 'Failed' })
++ toast('Saved', { description: 'All good' })
++ toast.error('Failed')
 ```
 
 - The message is now the first argument; `title` is gone.
