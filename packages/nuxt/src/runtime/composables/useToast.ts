@@ -16,10 +16,9 @@ type RichOptions = Omit<ExternalToast, 'action' | 'cancel'>
 type ToastType = NToastProps['type']
 
 /**
- * Anything una-specific — a button, a progress bar, a custom icon, `una`
- * overrides — renders through our own component, so the buttons are real
- * `Button`s carrying `btn` variants rather than sonner's internal
- * `[data-button]`, which can only be reached with class overrides.
+ * Anything una-specific renders through our own component, so buttons are real
+ * `Button`s carrying `btn` variants rather than sonner's `[data-button]`, which
+ * is reachable only through class overrides.
  */
 function isRich(opts?: RichOptions) {
   return Boolean(opts && ((opts.actions?.length ?? 0) > 0 || opts.action || opts.cancel || opts.showProgress || opts.leading || opts.una))
@@ -27,19 +26,17 @@ function isRich(opts?: RichOptions) {
 
 function rich(message: string, opts: RichOptions, type?: ToastType) {
   const { actions, action, cancel, showProgress, progress, leading, una, description, ...rest } = opts
-  // the bar needs a concrete duration; without one, leave it to the Toaster's
+  // only the bar needs a concrete duration; otherwise leave it to the Toaster
   const duration = rest.duration ?? (showProgress ? 4000 : undefined)
 
-  // sonner's single `action`/`cancel` are folded into the array so every button
-  // takes the same path — a real `Button` with a `btn` variant
   const paired: NToastAction[] = [
     ...(action ? [{ btn: 'outline-gray', ...action }] : []),
     ...(cancel ? [{ btn: 'ghost-gray', ...cancel }] : []),
   ]
   const resolved = [...paired, ...(actions ?? [])]
 
-  // sonner renders its own action/cancel pair inline, so keep that shape rather
-  // than stacking them — `actions[]` is una's own superset and still stacks.
+  // sonner renders its own action/cancel pair inline; `actions[]` is una's
+  // superset and still stacks
   const inlineActions = paired.length > 0 && !actions?.length
 
   const componentProps: NToastProps = {

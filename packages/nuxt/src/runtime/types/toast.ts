@@ -40,10 +40,7 @@ export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progr
   /** Show a bar counting down `duration`. Runs its own timer — see NToast docs. */
   showProgress?: boolean
   duration?: number
-  /**
-   * Injected by vue-sonner while the toast's auto-dismiss is paused — stack
-   * hovered or expanded, window hidden. Holds the progress bar with it.
-   */
+  /** Injected by vue-sonner while auto-dismiss is paused. Holds the bar with it. */
   isPaused?: boolean
   una?: NToastUnaProps
 }

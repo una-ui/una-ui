@@ -1,31 +1,25 @@
 /*
- * GitHub-style rows for ```diff blocks.
+ * Tinted rows for ```diff blocks — Shiki's diff grammar only colours the text.
  *
- * Shiki's diff grammar only colours the text, so a diff otherwise renders as
- * flat red and green lines with nothing to separate them. Tinting the whole row
- * is what makes it read as a diff at a glance; the leading +/- stay as the
- * grammar emits them.
+ * Matched on the theme's hex values, which Shiki writes inline on each line:
+ * the line-level classes to match instead come from its notation transformers,
+ * which Nuxt Content 2.13 does not accept.
  *
- * The hooks are the theme's own hex values, which Shiki writes inline on each
- * line's span — github-light first, github-dark second, both pinned by the
- * content layer. There is no class to match on: line-level classes come from
- * Shiki's notation transformers, which Nuxt Content 2.13 does not accept.
- *
- * `display: block` and nothing else. The row has to span the block's width, and
- * any percentage width here resolves against a shrink-to-fit ancestor and
- * inflates it — a plain block fills the same space without feeding back into it.
+ * `display: block` and nothing else. Any percentage width here resolves against
+ * a shrink-to-fit ancestor and inflates it; a plain block fills the same space
+ * without feeding back into it.
  */
 
 .language-diff .line {
   display: block;
 }
 
-/* removed — github-light #B31D28, github-dark #FDAEB7 */
+/* removed — github-light, github-dark */
 .language-diff .line:has(> span[style*='#B31D28']) {
   background-color: rgb(244 63 94 / 0.12);
 }
 
-/* added — github-light #22863A, github-dark #85E89D */
+/* added — github-light, github-dark */
 .language-diff .line:has(> span[style*='#22863A']) {
   background-color: rgb(34 197 94 / 0.12);
 }

@@ -15,16 +15,14 @@ const props = withDefaults(defineProps<NToasterProps>(), {
   closeButtonPosition: 'top-right',
 })
 
-// `una` is ours, and the rest are rebuilt below before they reach sonner
 const toasterProps = reactiveOmit(props, ['una', 'theme', 'toastOptions', 'style'])
 
-// vue-sonner keeps its own skin; una only re-points its colour vars at theme
-// tokens. The gray scale has to come along: sonner declares --gray1..--gray12
-// with light values and its dark block overrides only --normal-*, so the close
-// button would otherwise render near-black on a dark card.
+// The gray scale has to be remapped alongside --normal-*: sonner declares
+// --gray1..--gray12 with light values and its dark block overrides neither, so
+// the close button would render near-black on a dark card.
 const tokens = {
-  // sonner nudges its icon with these on top of the row gap, which would make
-  // standard toasts sit 3px wider than the rich ones
+  // sonner adds these on top of the row gap, which would make standard toasts
+  // sit 3px wider from their text than the rich ones
   '--toast-icon-margin-start': '0',
   '--toast-icon-margin-end': '0',
 
@@ -47,13 +45,11 @@ const tokens = {
   '--gray12': 'oklch(var(--una-foreground))',
 }
 
-// Follows una's colour mode so sonner's own dark rules (description and close
-// button) resolve correctly; the vars above handle the rest.
+// sonner's own dark rules key off this, not off a class
 const colorMode = useColorMode()
 const theme = computed(() => (colorMode.value === 'dark' ? 'dark' : 'light'))
 
-// Inline, so it beats sonner's `align-items: center` without !important —
-// otherwise the icon floats between title and description.
+// inline so it outranks sonner's `align-items: center` without !important
 const layout = { alignItems: 'flex-start', gap: '12px' }
 
 // Keep these class strings in this .vue file — UnoCSS does not scan plain .ts,
@@ -61,9 +57,8 @@ const layout = { alignItems: 'flex-start', gap: '12px' }
 const classes = computed(() => ({
   toast: props.una?.toast,
   title: props.una?.toastTitle,
-  // sonner hardcodes the description colour per theme rather than reading a var,
-  // and its rule is `[data-sonner-toast][data-styled] [data-description]` — three
-  // selectors, so a class cannot outrank it. The only `!` in the component.
+  // `toast-description` carries a `!`: sonner hardcodes this colour per theme
+  // behind three selectors, which no class can outrank.
   description: cn('toast-description', props.una?.toastDescription),
   content: props.una?.toastContent,
   icon: cn('toast-icon', props.una?.toastIcon),

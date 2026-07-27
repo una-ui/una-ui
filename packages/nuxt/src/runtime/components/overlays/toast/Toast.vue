@@ -6,8 +6,7 @@ import Button from '../../elements/Button.vue'
 import Icon from '../../elements/Icon.vue'
 import Progress from '../../elements/Progress.vue'
 
-// vue-sonner may pass more internals than the ones declared as props; keep any
-// strays off the root element.
+// vue-sonner passes internals beyond the declared props; keep strays off the root
 defineOptions({ inheritAttrs: false })
 
 const props = withDefaults(defineProps<NToastProps>(), {
@@ -28,8 +27,6 @@ const ICONS = {
 
 const icon = computed(() => props.leading ?? (props.type ? ICONS[props.type] : undefined))
 
-// one button reads better beside the text; two or more need their own row,
-// except sonner's own action/cancel pair, which stays inline as upstream has it
 const inline = computed(() => props.inlineActions || props.actions?.length === 1)
 const stackedActions = computed(() => (props.actions?.length ?? 0) > 0 && !inline.value)
 
