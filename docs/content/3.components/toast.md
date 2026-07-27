@@ -169,16 +169,25 @@ Individual parts can be restyled through the `una` prop:
 ```diff
 - toast({ title: 'Saved', description: 'All good', closable: true })
 - toast({ toast: 'soft-error', title: 'Failed' })
+- toast({ title: 'Uploading…', _toastProvider: { duration: 8000 } })
 + toast('Saved', { description: 'All good' })
 + toast.error('Failed')
++ toast('Uploading…', { duration: 8000 })
 ```
 
-- The message is now the first argument; `title` is gone.
-- Variant props (`toast="soft-error"`) are replaced by types — `toast.error()`, `toast.success()`.
-- `closable` becomes `closeButton`, and now defaults to `false`.
-- `NToastProvider`, `NToastViewport`, `NToastTitle`, `NToastDescription`, `NToastAction`,
-  `NToastClose` and `NToastInfo` are removed. `NToaster` renders the whole stack.
-- `actions` and `showProgress` are unchanged.
+| Before                                          | After                                                                     |
+| ----------------------------------------------- | ------------------------------------------------------------------------- |
+| `title: 'Saved'`                                | The message is the first argument — `toast('Saved')`.                     |
+| `toast: 'soft-error'` and other variants        | A type call — `toast.error()`, `toast.success()`, …                       |
+| `closable: true`                                | `closeButton: true`, and it now defaults to `false`.                      |
+| `_toastProvider.duration`                       | `duration` — per toast, or on `NToaster` for all of them.                 |
+| `_toastProvider.swipeDirection`                 | `swipeDirections` on `NToaster`.                                          |
+| `const { dismiss, update } = toast({ … })`      | Keep the returned id — `toast.dismiss(id)`, `toast('New title', { id })`. |
+| `useToast().toasts`                             | Gone — `NToaster` renders the stack itself.                               |
+| Slots — `#title`, `#description`, `#actions`, … | `toast.custom(markRaw(MyToast))` renders a component of your own.         |
+| `NToastProvider` / `Viewport` / `Title` / `…`   | Removed — `NToaster` is the only component left.                          |
+
+`actions[]`, `showProgress` and `leading` carry over unchanged.
 
 ## Presets
 
