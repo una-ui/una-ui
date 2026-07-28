@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { NToastAction, NToastProps } from '../../../types'
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, inject, onBeforeUnmount, onMounted, ref } from 'vue'
 import { cn, omitProps } from '../../../utils'
+import { TOASTER_CLOSE_INJECTION_KEY } from '../../../utils/injectionKeys'
 import Button from '../../elements/Button.vue'
 import Icon from '../../elements/Icon.vue'
 import Progress from '../../elements/Progress.vue'
@@ -26,6 +27,14 @@ const ICONS = {
 } as const
 
 const icon = computed(() => props.leading ?? (props.type ? ICONS[props.type] : undefined))
+
+// falls back to the Toaster's setting, then to on — matching what vue-sonner
+// resolves for standard toasts. Loading toasts stay closeless, as they do there.
+const toasterClose = inject(TOASTER_CLOSE_INJECTION_KEY, undefined)
+const hasClose = computed(() =>
+  props.type !== 'loading' && (props.closeButton ?? toasterClose?.value.closeButton ?? true),
+)
+const closeAriaLabel = computed(() => toasterClose?.value.closeButtonAriaLabel ?? 'Close toast')
 
 const inline = computed(() => props.inlineActions || props.actions?.length === 1)
 const stackedActions = computed(() => (props.actions?.length ?? 0) > 0 && !inline.value)
@@ -102,6 +111,21 @@ function onAction(action: NToastAction) {
           @click="onAction(action)"
         />
       </div>
+
+      <!-- `label` is an icon name here, not text — `toast-close-icon` carries
+           its own size, so the glyph matches the one in the Toaster's slot -->
+      <Button
+        v-if="hasClose"
+        square
+        btn="ghost-muted"
+        size="xs"
+        data-close-button="true"
+        :aria-label="closeAriaLabel"
+        :class="cn('toast-close', props.una?.toastClose)"
+        icon
+        label="toast-close-icon"
+        @click="emit('closeToast')"
+      />
     </div>
 
     <div v-if="stackedActions" :class="cn('toast-actions', props.una?.toastActions)">

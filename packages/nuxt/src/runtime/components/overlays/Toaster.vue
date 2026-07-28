@@ -2,9 +2,10 @@
 import type { NToasterProps } from '../../types'
 import { useColorMode } from '#imports'
 import { reactiveOmit } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, provide } from 'vue'
 import { Toaster } from 'vue-sonner'
 import { cn } from '../../utils'
+import { TOASTER_CLOSE_INJECTION_KEY } from '../../utils/injectionKeys'
 import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NToasterProps>(), {
@@ -12,8 +13,17 @@ const props = withDefaults(defineProps<NToasterProps>(), {
   duration: 4000,
   visibleToasts: 3,
   expand: false,
+  closeButton: true,
   closeButtonPosition: 'top-right',
 })
+
+// rich toasts render through our own component, which vue-sonner skips when it
+// draws the close button — they read these instead. The label lives on
+// `toastOptions`, which is where vue-sonner takes it from for standard toasts.
+provide(TOASTER_CLOSE_INJECTION_KEY, computed(() => ({
+  closeButton: props.closeButton ?? true,
+  closeButtonAriaLabel: props.toastOptions?.closeButtonAriaLabel ?? 'Close toast',
+})))
 
 const toasterProps = reactiveOmit(props, ['una', 'theme', 'toastOptions', 'style'])
 
@@ -62,7 +72,7 @@ const classes = computed(() => ({
   description: cn('toast-description', props.una?.toastDescription),
   content: props.una?.toastContent,
   icon: cn('toast-icon', props.una?.toastIcon),
-  closeButton: props.una?.toastCloseButton,
+  closeButton: cn('toast-close', props.una?.toastClose),
 }))
 </script>
 

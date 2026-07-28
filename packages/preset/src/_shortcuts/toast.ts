@@ -24,6 +24,22 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   // the rich toast puts it on the span itself
   'toast-icon': 'mt-0.5 shrink-0 square-4 [&>span[icon-base]]:square-4',
 
+  // shadcn keeps the close in the row; sonner floats a bordered circle outside
+  // the card corner. Every declaration it sets needs `!` to be undone — they
+  // come from `[data-sonner-toast][data-styled='true'] [data-close-button]`,
+  // which outranks any single class. `ml-auto` is what right-aligns it on the
+  // standard path, where sonner's content div has no flex-grow.
+  //
+  // This carries the whole skin rather than leaning on `btn-ghost-muted`: only
+  // the rich toast's close is an `NButton`: standard toasts get sonner's own
+  // bare button, and this class is all it has. Rich toasts take these over
+  // their variant, which is what keeps the two looking identical.
+  //
+  // `square-6` is `toast-action`'s `h-6` — the two sit side by side on a toast
+  // that has both, so they have to line up
+  'toast-close': '!static !order-last !ml-auto !shrink-0 !square-6 !inline-flex !items-center !justify-center !p-0 !rounded-md !border-none !bg-transparent !transform-none !text-muted-foreground !transition-colors hover:!bg-muted hover:!text-foreground focus-visible:!outline-none focus-visible:!ring-3px focus-visible:!ring-ring/50',
+  'toast-close-icon': 'i-close square-4',
+
   // the card stays neutral, so unlike `alert` the icon carries the type colour
   'toast-success-icon': 'i-lucide-circle-check text-success',
   'toast-error-icon': 'i-lucide-circle-alert text-error',
@@ -31,7 +47,6 @@ export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, strin
   'toast-info-icon': 'i-lucide-info text-info',
   'toast-loading-icon': 'i-loading text-muted-foreground',
   'toast-loading': 'animate-spin',
-  'toast-close-icon': 'i-close',
 }
 
 export const toast = [

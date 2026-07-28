@@ -136,15 +136,27 @@ vue-sonner pauses dismissal — hovering the stack or hiding the window — so t
 | `duration`      | `4000`         | `number`   | How long a toast stays, in milliseconds.                                     |
 | `visibleToasts` | `3`            | `number`   | How many are shown before the rest are stacked.                              |
 | `expand`        | `false`        | `boolean`  | Show the stack expanded instead of collapsed.                                |
-| `closeButton`   | `false`        | `boolean`  | Show a close button on every toast.                                          |
+| `closeButton`   | `true`         | `boolean`  | Show a close button on every toast.                                          |
 | `richColors`    | `false`        | `boolean`  | Tint the card per type, using vue-sonner's palette rather than una's tokens. |
 
 `duration`, `closeButton` and `richColors` can also be set per toast.
 
+The close button sits at the end of the row rather than floating outside the card, and reads the
+same on standard and rich toasts. `loading` toasts never get one — dismiss them by id.
+
+```vue
+<!-- off everywhere -->
+<NToaster :close-button="false" />
+```
+
+```ts
+// off for one toast
+toast('Saving…', { closeButton: false })
+```
+
 ::alert{type="info"}
 Toasts using una-specific options — `actions`, `showProgress`, `leading` or `una` — render through
-una's own component, which vue-sonner treats as fully custom: `closeButton` and `richColors` don't
-apply to them.
+una's own component, which vue-sonner treats as fully custom: `richColors` doesn't apply to them.
 ::
 
 ## Theming
@@ -181,7 +193,7 @@ Individual parts can be restyled through the `una` prop:
 | ----------------------------------------------- | ------------------------------------------------------------------------- |
 | `title: 'Saved'`                                | The message is the first argument — `toast('Saved')`.                     |
 | `toast: 'soft-error'` and other variants        | A type call — `toast.error()`, `toast.success()`, …                       |
-| `closable: true`                                | `closeButton: true`, and it now defaults to `false`.                      |
+| `closable: true`                                | `closeButton` — on by default; pass `false` to drop it.                   |
 | `_toastProvider.duration`                       | `duration` — per toast, or on `NToaster` for all of them.                 |
 | `_toastProvider.swipeDirection`                 | `swipeDirections` on `NToaster`.                                          |
 | `const { dismiss, update } = toast({ … })`      | Keep the returned id — `toast.dismiss(id)`, `toast('New title', { id })`. |

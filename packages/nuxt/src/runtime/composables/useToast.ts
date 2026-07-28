@@ -25,7 +25,7 @@ function isRich(opts?: RichOptions) {
 }
 
 function rich(message: string, opts: RichOptions, type?: ToastType) {
-  const { actions, action, cancel, showProgress, progress, leading, una, description, ...rest } = opts
+  const { actions, action, cancel, showProgress, progress, leading, una, description, closeButton, ...rest } = opts
   // only the bar needs a concrete duration; otherwise leave it to the Toaster
   const duration = rest.duration ?? (showProgress ? 4000 : undefined)
 
@@ -50,6 +50,9 @@ function rich(message: string, opts: RichOptions, type?: ToastType) {
     leading,
     una,
     duration,
+    // pulled out of `rest`: sonner ignores it for custom components, so the
+    // component resolves it itself against the Toaster's setting
+    closeButton,
   }
 
   return sonner.custom(markRaw(Toast) as Component, { ...rest, duration, componentProps })

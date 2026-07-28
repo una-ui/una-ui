@@ -134,6 +134,19 @@ function fakeRequest(ms = 1800, fail = false) {
           label="una override"
           @click="toast('Custom title class', { classes: { title: 'text-primary font-bold' } })"
         />
+        <NButton
+          btn="outline-gray"
+          label="no close button"
+          @click="toast('Cannot be dismissed by hand', { closeButton: false })"
+        />
+        <NButton
+          btn="outline-gray"
+          label="no close button (rich)"
+          @click="toast.info('No close, with actions', {
+            closeButton: false,
+            actions: [{ label: 'Okay' }, { label: 'Later', btn: 'ghost-gray' }],
+          })"
+        />
         <NButton btn="soft-gray" label="dismiss all" @click="toast.dismiss()" />
       </div>
     </section>

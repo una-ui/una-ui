@@ -39,6 +39,16 @@ export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progr
   inlineActions?: boolean
   /** Show a bar counting down `duration`. Runs its own timer — see NToast docs. */
   showProgress?: boolean
+  /**
+   * Overrides the Toaster's own setting. Never shown on `loading`.
+   *
+   * Named after vue-sonner rather than una: `NToasterProps` inherits
+   * `closeButton` from `ToasterProps`, and this has to resolve against it. The
+   * rest of una calls this `showClose` (dialog, drawer, popover, sheet) or
+   * `closable` (alert, badge) — don't "fix" it here without renaming the
+   * inherited one, which would break the vue-sonner pass-through.
+   */
+  closeButton?: boolean
   duration?: number
   /** Injected by vue-sonner while auto-dismiss is paused. Holds the bar with it. */
   isPaused?: boolean
@@ -54,6 +64,7 @@ export interface NToastUnaProps {
   toastDescription?: HTMLAttributes['class']
   toastActions?: HTMLAttributes['class']
   toastProgress?: HTMLAttributes['class']
+  toastClose?: HTMLAttributes['class']
 }
 
 export interface NToasterUnaProps {
@@ -62,7 +73,7 @@ export interface NToasterUnaProps {
   toastDescription?: HTMLAttributes['class']
   toastContent?: HTMLAttributes['class']
   toastIcon?: HTMLAttributes['class']
-  toastCloseButton?: HTMLAttributes['class']
+  toastClose?: HTMLAttributes['class']
 }
 
 /** Re-exported so consumers can type their own helpers without depending on vue-sonner directly. */
