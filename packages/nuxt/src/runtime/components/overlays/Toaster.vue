@@ -2,9 +2,10 @@
 import type { NToasterProps } from '../../types'
 import { useColorMode } from '#imports'
 import { reactiveOmit } from '@vueuse/core'
-import { computed } from 'vue'
+import { computed, provide } from 'vue'
 import { Toaster } from 'vue-sonner'
 import { cn } from '../../utils'
+import { TOASTER_CLOSE_DEFAULTS, TOASTER_CLOSE_INJECTION_KEY } from '../../utils/injectionKeys'
 import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NToasterProps>(), {
@@ -12,8 +13,16 @@ const props = withDefaults(defineProps<NToasterProps>(), {
   duration: 4000,
   visibleToasts: 3,
   expand: false,
-  closeButtonPosition: 'top-right',
+  closeButton: true,
 })
+
+// vue-sonner draws no close button on a custom component, so rich toasts read
+// these instead — resolved in its own order: `toastOptions`, then the prop.
+provide(TOASTER_CLOSE_INJECTION_KEY, computed(() => ({
+  closeButton: props.toastOptions?.closeButton ?? props.closeButton,
+  closeButtonAriaLabel: props.toastOptions?.closeButtonAriaLabel ?? TOASTER_CLOSE_DEFAULTS.closeButtonAriaLabel,
+  class: props.una?.toastClose,
+})))
 
 const toasterProps = reactiveOmit(props, ['una', 'theme', 'toastOptions', 'style'])
 
@@ -25,6 +34,10 @@ const tokens = {
   // sit 3px wider from their text than the rich ones
   '--toast-icon-margin-start': '0',
   '--toast-icon-margin-end': '0',
+
+  // shadcn's `max-w-sm`; sonner's own 356px leaves too little for the text
+  // column once the buttons are 32px
+  '--width': '384px',
 
   '--normal-bg': 'oklch(var(--una-popover))',
   '--normal-text': 'oklch(var(--una-popover-foreground))',
@@ -49,8 +62,9 @@ const tokens = {
 const colorMode = useColorMode()
 const theme = computed(() => (colorMode.value === 'dark' ? 'dark' : 'light'))
 
-// inline so it outranks sonner's `align-items: center` without !important
-const layout = { alignItems: 'flex-start', gap: '12px' }
+// inline so it outranks sonner's own card rules without !important. 14px is
+// shadcn's `text-sm`; sonner's card is 13px and the text inherits from it.
+const layout = { gap: '12px', fontSize: '14px' }
 
 // Keep these class strings in this .vue file — UnoCSS does not scan plain .ts,
 // so moving them would silently generate no CSS.
@@ -61,8 +75,8 @@ const classes = computed(() => ({
   // behind three selectors, which no class can outrank.
   description: cn('toast-description', props.una?.toastDescription),
   content: props.una?.toastContent,
-  icon: cn('toast-icon', props.una?.toastIcon),
-  closeButton: props.una?.toastCloseButton,
+  icon: cn('toast-icon', 'toast-icon-standard', props.una?.toastIcon),
+  closeButton: cn('toast-close', props.una?.toastClose),
 }))
 </script>
 

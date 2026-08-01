@@ -7,7 +7,12 @@ interface BaseExtensions {
   class?: HTMLAttributes['class']
 }
 
-export interface NToasterProps extends Omit<ToasterProps, 'class'>, BaseExtensions {
+/**
+ * `closeButtonPosition` is dropped: the close sits in the row, so the preset
+ * overrides the `position`/`transform` it feeds. Same for the `toastOptions` one,
+ * which can't be omitted from the type.
+ */
+export interface NToasterProps extends Omit<ToasterProps, 'class' | 'closeButtonPosition'>, BaseExtensions {
   /**
    * `UnaUI` preset configuration
    *
@@ -39,6 +44,14 @@ export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progr
   inlineActions?: boolean
   /** Show a bar counting down `duration`. Runs its own timer — see NToast docs. */
   showProgress?: boolean
+  /**
+   * Overrides the Toaster's own setting. Never shown on `loading`.
+   *
+   * Named after vue-sonner, not una's `showClose`/`closable`, because it has to
+   * resolve against the `closeButton` `NToasterProps` inherits from
+   * `ToasterProps` — renaming one without the other breaks the pass-through.
+   */
+  closeButton?: boolean
   duration?: number
   /** Injected by vue-sonner while auto-dismiss is paused. Holds the bar with it. */
   isPaused?: boolean
@@ -54,6 +67,7 @@ export interface NToastUnaProps {
   toastDescription?: HTMLAttributes['class']
   toastActions?: HTMLAttributes['class']
   toastProgress?: HTMLAttributes['class']
+  toastClose?: HTMLAttributes['class']
 }
 
 export interface NToasterUnaProps {
@@ -62,7 +76,7 @@ export interface NToasterUnaProps {
   toastDescription?: HTMLAttributes['class']
   toastContent?: HTMLAttributes['class']
   toastIcon?: HTMLAttributes['class']
-  toastCloseButton?: HTMLAttributes['class']
+  toastClose?: HTMLAttributes['class']
 }
 
 /** Re-exported so consumers can type their own helpers without depending on vue-sonner directly. */

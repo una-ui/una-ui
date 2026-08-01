@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { NToastAction, NToastProps } from '../../../types'
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, inject, onBeforeUnmount, onMounted, ref } from 'vue'
 import { cn, omitProps } from '../../../utils'
+import { TOASTER_CLOSE_DEFAULTS, TOASTER_CLOSE_INJECTION_KEY } from '../../../utils/injectionKeys'
 import Button from '../../elements/Button.vue'
 import Icon from '../../elements/Icon.vue'
 import Progress from '../../elements/Progress.vue'
@@ -26,6 +27,15 @@ const ICONS = {
 } as const
 
 const icon = computed(() => props.leading ?? (props.type ? ICONS[props.type] : undefined))
+
+// falls back to the Toaster's setting. Loading toasts stay closeless, as they
+// do on sonner's own path.
+const toasterClose = inject(TOASTER_CLOSE_INJECTION_KEY, computed(() => TOASTER_CLOSE_DEFAULTS))
+const hasClose = computed(() =>
+  props.type !== 'loading' && (props.closeButton ?? toasterClose.value.closeButton),
+)
+const closeAriaLabel = computed(() => toasterClose.value.closeButtonAriaLabel)
+const closeClass = computed(() => cn('toast-close', toasterClose.value.class, props.una?.toastClose))
 
 const inline = computed(() => props.inlineActions || props.actions?.length === 1)
 const stackedActions = computed(() => (props.actions?.length ?? 0) > 0 && !inline.value)
@@ -78,7 +88,12 @@ function onAction(action: NToastAction) {
       <Icon
         v-if="icon"
         :name="icon"
-        :class="cn('toast-icon', props.type === 'loading' && 'toast-loading', props.una?.toastIcon)"
+        :class="cn(
+          'toast-icon',
+          description && 'toast-icon-leading',
+          props.type === 'loading' && 'toast-loading',
+          props.una?.toastIcon,
+        )"
       />
 
       <div :class="cn('toast-content', props.una?.toastContent)">
@@ -102,6 +117,20 @@ function onAction(action: NToastAction) {
           @click="onAction(action)"
         />
       </div>
+
+      <!-- `label` is an icon name here, not text — that is what `icon` does -->
+      <Button
+        v-if="hasClose"
+        square
+        btn="ghost-muted"
+        size="sm"
+        data-close-button="true"
+        :aria-label="closeAriaLabel"
+        :class="closeClass"
+        icon
+        label="toast-close-icon"
+        @click="emit('closeToast')"
+      />
     </div>
 
     <div v-if="stackedActions" :class="cn('toast-actions', props.una?.toastActions)">
