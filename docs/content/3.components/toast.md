@@ -142,7 +142,9 @@ vue-sonner pauses dismissal — hovering the stack or hiding the window — so t
 `duration`, `closeButton` and `richColors` can also be set per toast.
 
 The close button sits at the end of the row rather than floating outside the card, and reads the
-same on standard and rich toasts. `loading` toasts never get one — dismiss them by id.
+same on standard and rich toasts. `loading` toasts never get one — dismiss them by id. Because the
+button is part of the row, vue-sonner's `closeButtonPosition` has nothing to place and is not
+accepted.
 
 ```vue
 <!-- off everywhere -->
@@ -194,6 +196,7 @@ Individual parts can be restyled through the `una` prop:
 | `title: 'Saved'`                                | The message is the first argument — `toast('Saved')`.                     |
 | `toast: 'soft-error'` and other variants        | A type call — `toast.error()`, `toast.success()`, …                       |
 | `closable: true`                                | `closeButton` — on by default; pass `false` to drop it.                   |
+| `una: { toastCloseButton }`                     | `una: { toastClose }` — same key on `NToaster` and on a single toast.     |
 | `_toastProvider.duration`                       | `duration` — per toast, or on `NToaster` for all of them.                 |
 | `_toastProvider.swipeDirection`                 | `swipeDirections` on `NToaster`.                                          |
 | `const { dismiss, update } = toast({ … })`      | Keep the returned id — `toast.dismiss(id)`, `toast('New title', { id })`. |

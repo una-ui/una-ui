@@ -50,8 +50,7 @@ function rich(message: string, opts: RichOptions, type?: ToastType) {
     leading,
     una,
     duration,
-    // pulled out of `rest`: sonner ignores it for custom components, so the
-    // component resolves it itself against the Toaster's setting
+    // pulled out of `rest`: sonner ignores it for custom components
     closeButton,
   }
 

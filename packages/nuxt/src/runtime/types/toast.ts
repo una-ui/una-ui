@@ -7,7 +7,12 @@ interface BaseExtensions {
   class?: HTMLAttributes['class']
 }
 
-export interface NToasterProps extends Omit<ToasterProps, 'class'>, BaseExtensions {
+/**
+ * `closeButtonPosition` is dropped: the close sits in the row, so the preset
+ * overrides the `position`/`transform` it feeds. Same for the `toastOptions` one,
+ * which can't be omitted from the type.
+ */
+export interface NToasterProps extends Omit<ToasterProps, 'class' | 'closeButtonPosition'>, BaseExtensions {
   /**
    * `UnaUI` preset configuration
    *
@@ -42,11 +47,9 @@ export interface NToastProps extends BaseExtensions, Pick<NProgressProps, 'progr
   /**
    * Overrides the Toaster's own setting. Never shown on `loading`.
    *
-   * Named after vue-sonner rather than una: `NToasterProps` inherits
-   * `closeButton` from `ToasterProps`, and this has to resolve against it. The
-   * rest of una calls this `showClose` (dialog, drawer, popover, sheet) or
-   * `closable` (alert, badge) — don't "fix" it here without renaming the
-   * inherited one, which would break the vue-sonner pass-through.
+   * Named after vue-sonner, not una's `showClose`/`closable`, because it has to
+   * resolve against the `closeButton` `NToasterProps` inherits from
+   * `ToasterProps` — renaming one without the other breaks the pass-through.
    */
   closeButton?: boolean
   duration?: number
