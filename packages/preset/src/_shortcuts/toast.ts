@@ -6,8 +6,10 @@ type ToastPrefix = 'toast'
  * the content layout and the button styling.
  */
 export const staticToast: Record<`${ToastPrefix}-${string}` | ToastPrefix, string> = {
-  // mirrors sonner's card so rich toasts sit flush with the standard ones
-  'toast': 'w-[var(--width)] overflow-hidden p-4 text-13px bg-popover text-popover-foreground border border-border rounded-[var(--border-radius)] shadow-lg',
+  // mirrors sonner's card so rich toasts sit flush with the standard ones.
+  // Below sonner's own 600px breakpoint it stretches the `li` instead: sonner
+  // sizes that to the viewport there, and `--width` would overflow it.
+  'toast': 'w-[var(--width)] [@media(max-width:600px)]:w-full overflow-hidden p-4 text-13px bg-popover text-popover-foreground border border-border rounded-[var(--border-radius)] shadow-lg',
   'toast-stack': 'flex flex-col gap-1.5',
   'toast-row': 'flex items-start gap-3',
   'toast-content': 'flex flex-col gap-1 min-w-0 flex-1',
