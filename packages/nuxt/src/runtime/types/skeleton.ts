@@ -1,8 +1,9 @@
+import type { PrimitiveProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 
 interface Extensions { class?: HTMLAttributes['class'] }
 
-export interface NSkeletonProps extends Extensions {
+export interface NSkeletonProps extends PrimitiveProps, Extensions {
   /**
    * Allows you to add `UnaUI` skeleton preset properties,
    * Think of it as a shortcut for adding options or variants to the preset if available.

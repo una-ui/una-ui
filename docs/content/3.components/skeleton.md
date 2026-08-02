@@ -50,6 +50,25 @@ badges:
 ::
 :::
 
+### Element
+
+| Prop      | Default | Type                 | Description                                             |
+| --------- | ------- | -------------------- | ------------------------------------------------------- |
+| `as`      | `div`   | `AsTag`, `Component` | Change the element the skeleton renders as.             |
+| `asChild` | `false` | `boolean`            | Render the child element directly instead of a wrapper. |
+
+Use `as="span"` inside a `<p>` — a `div` there is invalid and the parser closes the paragraph
+early, breaking hydration. Add `block` or `inline-block` so the span keeps its height.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueSkeletonElement
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/skeleton/ExampleVueSkeletonElement.vue
+::
+:::
+
 ## Slots
 
 | Name      | Props | Description       |
