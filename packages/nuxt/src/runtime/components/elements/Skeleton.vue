@@ -12,6 +12,7 @@ const props = withDefaults(defineProps<NSkeletonProps>(), {
   <Primitive
     :as
     :as-child
+    aria-busy="true"
     :class="
       cn(
         'skeleton',
