@@ -1,3 +1,12 @@
+## [0.67.9](https://github.com/una-ui/una-ui/compare/v0.67.8...v0.67.9) (2026-08-02)
+
+
+### Features
+
+* **Skeleton:** render through Primitive so `as` can change the tag ([#608](https://github.com/una-ui/una-ui/issues/608)) ([096a7f3](https://github.com/una-ui/una-ui/commit/096a7f3b2df31fc48f2174fa4b9fd1fc280d71bc))
+
+
+
 ## [0.67.8](https://github.com/una-ui/una-ui/compare/v0.67.7...v0.67.8) (2026-07-18)
 
 
