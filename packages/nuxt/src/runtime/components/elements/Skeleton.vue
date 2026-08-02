@@ -5,14 +5,13 @@ import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NSkeletonProps>(), {
   as: 'div',
-  asChild: false,
 })
 </script>
 
 <template>
   <Primitive
-    :as="as"
-    :as-child="asChild"
+    :as
+    :as-child
     :class="
       cn(
         'skeleton',

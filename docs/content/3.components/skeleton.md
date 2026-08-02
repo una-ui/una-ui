@@ -52,15 +52,13 @@ badges:
 
 ### Element
 
-| Prop      | Default | Type                  | Description                                             |
-| --------- | ------- | --------------------- | ------------------------------------------------------- |
-| `as`      | `div`   | `string \| Component` | Change the element the skeleton renders as.             |
-| `asChild` | `false` | `boolean`             | Render the child element directly instead of a wrapper. |
+| Prop      | Default | Type                | Description                                             |
+| --------- | ------- | ------------------- | ------------------------------------------------------- |
+| `as`      | `div`   | `AsTag`,`Component` | Change the element the skeleton renders as.             |
+| `asChild` | `false` | `boolean`           | Render the child element directly instead of a wrapper. |
 
-A `div` is not valid inside a `p`, and the parser closes the paragraph at its start tag — which
-lifts the placeholder out as a sibling and leaves the hydrated DOM a different shape from the one
-Vue rendered. Render the skeleton `as="span"` for a placeholder in flowing text. A `span` is
-inline, so give it `block` (or `inline-block`) to keep its height.
+Use `as="span"` inside a `<p>` — a `div` there is invalid and the parser closes the paragraph
+early, breaking hydration. Add `block` or `inline-block` so the span keeps its height.
 
 :::CodeGroup
 ::div{label="Preview" preview}
