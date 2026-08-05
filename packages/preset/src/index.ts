@@ -4,6 +4,7 @@ import type { unaUIOptions } from './types'
 import { fonts } from '@unocss/preset-mini/rules'
 import { handler as h, parseColor } from '@unocss/preset-mini/utils'
 import { colors } from '@unocss/preset-wind4/colors'
+import { preflights as unaPreflights, rules as unaRules } from './_rules/index'
 import { shortcuts } from './shortcuts'
 
 export default function presetUna(options: unaUIOptions = {
@@ -143,6 +144,7 @@ export default function presetUna(options: unaUIOptions = {
         'opacity': 0.5,
         'pointer-events': 'none',
       }],
+      ...unaRules,
     ],
     variants: [
       (input: string) => {
@@ -188,6 +190,7 @@ export default function presetUna(options: unaUIOptions = {
           }
         `,
       },
+      ...unaPreflights.map(css => ({ getCSS: () => css })),
     ],
   }
 }

@@ -145,6 +145,7 @@ export default [
   'resizable-panel',
   'resizable-panel-group',
   'resize',
+  'message-scroller',
   'rounded',
   'scroll-area',
   'scroll-bar',
