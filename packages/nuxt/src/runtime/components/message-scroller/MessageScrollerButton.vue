@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<{
 }>(), {
   direction: 'end',
   behavior: 'smooth',
-  btn: 'solid-white',
+  btn: 'outline-white',
   icon: 'i-lucide-arrow-down',
 })
 

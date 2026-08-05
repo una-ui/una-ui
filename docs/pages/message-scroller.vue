@@ -21,6 +21,7 @@ const messages = ref<DemoMessage[]>(
 )
 
 const autoScroll = ref(true)
+const buttonBtn = ref<string | undefined>(undefined)
 const streaming = ref(false)
 let streamTimer: ReturnType<typeof setInterval> | null = null
 
@@ -80,6 +81,20 @@ onBeforeUnmount(stopStream)
         <NSwitch v-model="autoScroll" />
         autoScroll
       </label>
+      <select v-model="buttonBtn" class="border rounded-md bg-background px-2 py-1 text-sm">
+        <option :value="undefined">
+          btn: default
+        </option>
+        <option value="soft">
+          btn: soft
+        </option>
+        <option value="solid">
+          btn: solid
+        </option>
+        <option value="outline-gray">
+          btn: outline-gray
+        </option>
+      </select>
     </div>
 
     <div class="min-h-0 flex-1 border rounded-lg bg-background">
@@ -104,7 +119,7 @@ onBeforeUnmount(stopStream)
               </NMessageScrollerItem>
             </NMessageScrollerContent>
           </NMessageScrollerViewport>
-          <NMessageScrollerButton />
+          <NMessageScrollerButton :btn="buttonBtn" />
         </NMessageScroller>
       </NMessageScrollerProvider>
     </div>
