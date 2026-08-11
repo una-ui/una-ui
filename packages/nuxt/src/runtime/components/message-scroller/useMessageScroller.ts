@@ -28,6 +28,16 @@ const SCROLL_KEYS = new Set([
   ' ',
 ])
 
+const SCROLL_START_KEYS = new Set(['ArrowUp', 'Home', 'PageUp'])
+
+/**
+ * Whether a scroll key carries the reader toward the start of the transcript.
+ * Space pages toward the end unless shifted.
+ */
+function isScrollTowardStartKey(event: KeyboardEvent) {
+  return SCROLL_START_KEYS.has(event.key) || (event.key === ' ' && event.shiftKey)
+}
+
 const EMPTY_SCROLLABLE: NMessageScrollerScrollable = { start: false, end: false }
 const EMPTY_VISIBLE_IDS: string[] = []
 const EMPTY_VISIBILITY: NMessageScrollerVisibilityState = {
@@ -347,7 +357,7 @@ export interface MessageScrollerContext {
   setViewportElement: (element: HTMLElement | null) => void
   setPreserveScrollOnPrepend: (value: boolean) => void
   syncAfterScroll: () => void
-  userScrollIntent: () => void
+  userScrollIntent: (towardStart?: boolean) => void
 }
 
 export type RegisterMessage = (
@@ -376,6 +386,10 @@ function createEngine(props: NMessageScrollerProviderProps) {
   let firstItem: HTMLElement | null = null
   let itemCount = 0
   let lastScrollTop = 0
+  // Whether the reader sat at the live edge as of the last settled measurement.
+  // Content growing pushes the edge away before the growth is measured, so the
+  // pre-growth answer is the one that says whether they were following along.
+  let atLiveEdge = false
   let defaultScrollPositionApplied = false
   let preserveScrollOnPrepend = true
   let prependRestore: PrependRestore | null = null
@@ -432,6 +446,7 @@ function createEngine(props: NMessageScrollerProviderProps) {
       viewport,
     })
     updateModeFromScroll(measured)
+    atLiveEdge = !measured.end
     const next = mode === 'following-bottom'
       ? { ...measured, end: false }
       : measured
@@ -735,7 +750,7 @@ function createEngine(props: NMessageScrollerProviderProps) {
     if (mode === 'following-bottom' && autoScroll()) {
       scrollToEnd({ behavior: 'auto' })
     }
-    else {
+    else if (!resumeFollowingFromLiveEdge()) {
       commitScrollState()
       scheduleVisibilitySync()
     }
@@ -754,11 +769,29 @@ function createEngine(props: NMessageScrollerProviderProps) {
     capturePrependAnchor()
   }
 
+  /**
+   * Re-enter following when content grows under a reader who was sitting at the
+   * live edge. Growth moves the edge before it can be measured, so a reader who
+   * never scrolls away would otherwise never satisfy the at-the-edge test again
+   * and would be left behind until they used a scroll button.
+   *
+   * Deliberate divergence from the shadcn-vue source, which has no re-entry
+   * here at all — keep it when diffing against upstream. See #622.
+   */
+  function resumeFollowingFromLiveEdge() {
+    if (!autoScroll() || mode !== 'free-scrolling' || !atLiveEdge)
+      return false
+    mode = 'following-bottom'
+    return scrollToEnd({ behavior: 'auto' })
+  }
+
   function handleResize() {
     if (mode === 'following-bottom' && autoScroll()) {
       scrollToEnd({ behavior: 'auto' })
       return
     }
+    if (resumeFollowingFromLiveEdge())
+      return
     const previousSpacerHeight = spacerHeight
     if (reanchorToAnchoredMessage()) {
       // The reply streaming below the anchor consumes the tail spacer as it
@@ -854,14 +887,29 @@ function createEngine(props: NMessageScrollerProviderProps) {
 
   // --- user intent + element setters -----------------------------------------
 
-  function userScrollIntent() {
-    if (
-      mode === 'following-bottom'
-      || mode === 'anchored-to-message'
-      || mode === 'settling-jump'
-    ) {
+  /**
+   * Release the view when the reader scrolls away from wherever it is holding.
+   *
+   * The `towardStart` test is a deliberate divergence from the shadcn-vue
+   * source, which releases `following-bottom` on any gesture — keep it when
+   * diffing against upstream. See #622.
+   */
+  function userScrollIntent(towardStart = true) {
+    if (mode === 'anchored-to-message' || mode === 'settling-jump') {
       streamingTurn = null
       mode = 'free-scrolling'
+      // the reader is leaving: drop the stale at-the-edge answer so a content
+      // growth landing before their scroll event cannot pull them back
+      atLiveEdge = false
+      return
+    }
+    // Only a gesture toward the start takes the reader off the live edge. A
+    // wheel tick or ArrowDown while already pinned to the bottom moves nothing,
+    // so releasing on it would strand autoScroll with the reader still there.
+    if (mode === 'following-bottom' && towardStart) {
+      streamingTurn = null
+      mode = 'free-scrolling'
+      atLiveEdge = false
     }
   }
 
@@ -1010,4 +1058,4 @@ export function useMessageScrollerVisibility(): Ref<NMessageScrollerVisibilitySt
   return computed(() => visibility.value)
 }
 
-export { SCROLL_KEYS }
+export { isScrollTowardStartKey, SCROLL_KEYS }
