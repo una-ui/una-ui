@@ -2,7 +2,7 @@
 import type { NMessageScrollerViewportProps } from '../../types'
 import { onBeforeUnmount, onMounted, useTemplateRef, watch } from 'vue'
 import { cn } from '../../utils'
-import { SCROLL_KEYS, useMessageScrollerContext } from './useMessageScroller'
+import { isScrollTowardStartKey, SCROLL_KEYS, useMessageScrollerContext } from './useMessageScroller'
 
 const props = withDefaults(defineProps<NMessageScrollerViewportProps>(), {
   preserveScrollOnPrepend: true,
@@ -22,9 +22,27 @@ const viewportEl = useTemplateRef<HTMLElement>('viewport')
 
 watch(() => props.preserveScrollOnPrepend, setPreserveScrollOnPrepend, { immediate: true })
 
+// Only a gesture that carries the reader toward the start releases autoScroll:
+// wheeling or paging down while already at the live edge moves nothing.
+function onWheel(event: WheelEvent) {
+  userScrollIntent(event.deltaY < 0)
+}
+
+let touchStartY: number | null = null
+
+function onTouchStart(event: TouchEvent) {
+  touchStartY = event.touches[0]?.clientY ?? null
+}
+
+function onTouchMove(event: TouchEvent) {
+  const y = event.touches[0]?.clientY ?? null
+  // dragging the finger down pulls the transcript toward the start
+  userScrollIntent(touchStartY === null || y === null ? true : y > touchStartY)
+}
+
 function onKeyDown(event: KeyboardEvent) {
   if (SCROLL_KEYS.has(event.key))
-    userScrollIntent()
+    userScrollIntent(isScrollTowardStartKey(event))
 }
 
 let resizeObserver: ResizeObserver | null = null
@@ -65,8 +83,9 @@ onBeforeUnmount(() => {
       props.class,
     )"
     @scroll="syncAfterScroll()"
-    @wheel="userScrollIntent()"
-    @touchmove="userScrollIntent()"
+    @wheel="onWheel"
+    @touchstart="onTouchStart"
+    @touchmove="onTouchMove"
     @keydown="onKeyDown"
   >
     <slot />
