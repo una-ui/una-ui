@@ -1,3 +1,18 @@
+# [1.0.0-alpha.25](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.24...v1.0.0-alpha.25) (2026-08-11)
+
+
+### Bug Fixes
+
+* **MessageScroller:** keep autoScroll following when the reader never left the live edge ([#623](https://github.com/una-ui/una-ui/issues/623)) ([611a50c](https://github.com/una-ui/una-ui/commit/611a50c85087880163c258005129407208c4c252))
+* **Toast:** stop rich toasts overflowing the viewport on mobile ([#610](https://github.com/una-ui/una-ui/issues/610)) ([0268c9f](https://github.com/una-ui/una-ui/commit/0268c9f442e2e3a8c22d7df867aae8c214ecdef0))
+
+
+### Features
+
+* **MessageScroller:** port the message scroller family + scroll-fade/scrollbar utilities ([#620](https://github.com/una-ui/una-ui/issues/620)) ([0ca939d](https://github.com/una-ui/una-ui/commit/0ca939d01878c442a4ad0125f398f01d92158362))
+
+
+
 # [1.0.0-alpha.24](https://github.com/una-ui/una-ui/compare/v0.67.9...v1.0.0-alpha.24) (2026-08-02)
 
 
