@@ -4,8 +4,8 @@ export const staticMessageScroller: Record<`${MessageScrollerPrefix}-${string}` 
   // components
   // the `group/message-scroller` marker lives on the component template: shortcut
   // expansion never reaches the DOM, and group markers only work as real classes
-  'message-scroller': 'relative flex size-full min-h-0 flex-col overflow-hidden',
-  'message-scroller-viewport': 'size-full min-h-0 min-w-0 scroll-fade-b scrollbar-thin scrollbar-gutter-stable overflow-y-auto overscroll-contain contain-content data-[autoscrolling]:scrollbar-thumb-transparent data-[autoscrolling]:scrollbar-track-transparent',
+  'message-scroller': 'relative h-full w-full flex min-h-0 flex-col overflow-hidden',
+  'message-scroller-viewport': 'h-full w-full min-h-0 min-w-0 scroll-fade-b scrollbar-thin scrollbar-gutter-stable overflow-y-auto overscroll-contain contain-content data-[autoscrolling]:scrollbar-thumb-transparent data-[autoscrolling]:scrollbar-track-transparent',
   'message-scroller-content': 'flex h-max min-h-full flex-col gap-8',
   'message-scroller-item': 'min-w-0 shrink-0 [contain-intrinsic-size:auto_10rem] [content-visibility:auto]',
   // the transition lives on the `data-[active]` states, not the base: the button
