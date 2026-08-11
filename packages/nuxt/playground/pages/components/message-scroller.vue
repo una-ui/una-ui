@@ -19,7 +19,21 @@ const messages = ref<DemoMessage[]>(
 )
 
 const autoScroll = ref(true)
-const buttonVariant = ref<string | undefined>(undefined)
+
+// the variant is picked at runtime, so nothing in the template is literal enough
+// for UnoCSS to extract. Writing them as `btn: '…'` properties is what does it:
+// una's vue-script extractor reads prefixed keys out of the script and emits the
+// attributify selectors (`[btn~="solid-gray"]`) NButton renders against.
+const buttonVariants = [
+  { label: 'default (outline-white)', btn: 'outline-white' },
+  { label: 'solid', btn: 'solid' },
+  { label: 'solid-gray', btn: 'solid-gray' },
+  { label: 'outline-gray', btn: 'outline-gray' },
+  { label: 'soft', btn: 'soft' },
+  { label: 'ghost-white', btn: 'ghost-white' },
+]
+const buttonVariantItems = buttonVariants.map(({ label, btn }) => ({ label, value: btn }))
+const buttonVariant = ref('outline-white')
 const streaming = ref(false)
 let streamTimer: ReturnType<typeof setInterval> | null = null
 
@@ -89,20 +103,14 @@ const rows = Array.from({ length: 24 }, (_, i) => `Row ${i + 1}`)
           autoScroll
         </label>
 
-        <select v-model="buttonVariant" class="border rounded-md bg-background px-2 py-1 text-sm">
-          <option :value="undefined">
-            btn: default (outline-white)
-          </option>
-          <option value="solid">
-            btn: solid
-          </option>
-          <option value="solid-gray">
-            btn: solid-gray
-          </option>
-          <option value="outline-gray">
-            btn: outline-gray
-          </option>
-        </select>
+        <div class="w-56">
+          <NSelect
+            v-model="buttonVariant"
+            :items="buttonVariantItems"
+            size="sm"
+            placeholder="btn variant"
+          />
+        </div>
       </div>
 
       <div class="h-120 border rounded-lg bg-background">
