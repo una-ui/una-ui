@@ -126,6 +126,9 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       pathPrefix: false,
       priority: 10,
+      // collocated composable/engine modules (message-scroller/useMessageScroller.ts)
+      // have no default export and must not be scanned as components
+      ignore: ['**/use*.ts'],
     })
 
     // composables
