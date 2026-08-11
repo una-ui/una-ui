@@ -117,6 +117,11 @@ const data = {
           url: '/components/input',
         },
         {
+          title: 'Message Scroller',
+          url: '/components/message-scroller',
+          badge: 'new' as const,
+        },
+        {
           title: 'Navigation Menu',
           url: '/components/navigation-menu',
         },
