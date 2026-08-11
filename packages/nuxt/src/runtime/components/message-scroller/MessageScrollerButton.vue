@@ -12,6 +12,9 @@ const props = withDefaults(defineProps<NMessageScrollerButtonProps>(), {
   btn: 'outline-white',
   label: 'i-lucide-arrow-down',
   icon: true,
+  // explicit: a boolean-typed prop left absent arrives as `false`, not `undefined`,
+  // so Button's `square ?? !!icon` fallback never fires through a wrapper
+  square: true,
 })
 
 const delegatedProps = reactiveOmit(props, ['class', 'una', 'ariaLabel', 'direction', 'behavior'])
