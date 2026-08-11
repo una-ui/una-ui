@@ -774,6 +774,9 @@ function createEngine(props: NMessageScrollerProviderProps) {
    * live edge. Growth moves the edge before it can be measured, so a reader who
    * never scrolls away would otherwise never satisfy the at-the-edge test again
    * and would be left behind until they used a scroll button.
+   *
+   * Deliberate divergence from the shadcn-vue source, which has no re-entry
+   * here at all — keep it when diffing against upstream. See #622.
    */
   function resumeFollowingFromLiveEdge() {
     if (!autoScroll() || mode !== 'free-scrolling' || !atLiveEdge)
@@ -884,6 +887,13 @@ function createEngine(props: NMessageScrollerProviderProps) {
 
   // --- user intent + element setters -----------------------------------------
 
+  /**
+   * Release the view when the reader scrolls away from wherever it is holding.
+   *
+   * The `towardStart` test is a deliberate divergence from the shadcn-vue
+   * source, which releases `following-bottom` on any gesture — keep it when
+   * diffing against upstream. See #622.
+   */
   function userScrollIntent(towardStart = true) {
     if (mode === 'anchored-to-message' || mode === 'settling-jump') {
       streamingTurn = null
