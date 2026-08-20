@@ -3,10 +3,18 @@ type PaginationPrefix = 'pagination'
 export const staticPagination: Record<`${PaginationPrefix}-${string}` | PaginationPrefix, string> = {
   // configurations
   'pagination': 'overflow-hidden',
-  'pagination-list': 'flex items-center gap-1 overflow-hidden',
+  // `shrink-0` because the list already clips: squeezing it between a start
+  // region and the edge would silently hide page buttons
+  'pagination-list': 'flex shrink-0 items-center gap-1 overflow-hidden',
 
   // components
-  'pagination-root': '',
+  // the root lays out start / list / end; inert while the list is its only child
+  'pagination-root': 'flex w-full flex-wrap items-center justify-between gap-4',
+  'pagination-start': 'flex min-w-0 items-center gap-2',
+  'pagination-end': 'flex items-center gap-2',
+  'pagination-info': 'text-sm text-muted-foreground',
+  'pagination-rows-per-page': 'flex items-center gap-2',
+  'pagination-rows-per-page-label': 'text-sm font-medium whitespace-nowrap',
   'pagination-list-item': 'pagination',
 
   'pagination-ellipsis-base': 'btn-(~ square) flex items-center justify-center',
