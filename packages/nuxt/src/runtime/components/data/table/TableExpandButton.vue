@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { NTableExpandButtonProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
+import { useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Button from '../../elements/Button.vue'
@@ -18,6 +19,11 @@ const emit = defineEmits<{
 
 const delegatedProps = reactiveOmit(props, ['class', 'row', 'una', 'label', 'ariaLabel'])
 
+// forward only what was actually passed: props typed as booleans are cast
+// to `false` when absent, and spreading those would override the wrapped
+// component's own defaults
+const forwardedProps = useForwardProps(delegatedProps)
+
 const isExpanded = computed(() => props.row.getIsExpanded())
 
 function onClick() {
@@ -28,7 +34,7 @@ function onClick() {
 
 <template>
   <Button
-    v-bind="delegatedProps"
+    v-bind="forwardedProps"
     :aria-label="props.ariaLabel ?? (isExpanded ? 'Collapse row' : 'Expand row')"
     :label="props.label ?? props.una?.tableExpandIcon ?? 'table-expand-icon'"
     :data-expanded="isExpanded"
