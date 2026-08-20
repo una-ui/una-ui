@@ -70,12 +70,7 @@ export interface NPaginationInfoProps extends BaseExtensionProps {
   una?: Pick<NPaginationUnaProps, 'pagination' | 'paginationInfo'>
 }
 
-// `open` and `defaultOpen` are dropped deliberately. They are declared
-// booleans, so Vue casts an absent value to `false` rather than `undefined`,
-// and spreading that into `NSelect` pins `SelectRoot` controlled-closed —
-// the select would never open. Compose `NSelect` in the `#start` slot if you
-// need to control that.
-export interface NPaginationRowsPerPageProps extends Omit<NSelectProps<number>, 'una' | 'items' | 'label' | 'modelValue' | 'defaultValue' | 'open' | 'defaultOpen'> {
+export interface NPaginationRowsPerPageProps extends Omit<NSelectProps<number>, 'una' | 'items' | 'label' | 'modelValue' | 'defaultValue'> {
   /**
    * The page sizes to offer.
    *

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { NPaginationRowsPerPageProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
+import { useForwardProps } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../../utils'
 import Select from '../../forms/select/Select.vue'
@@ -13,6 +14,11 @@ const props = withDefaults(defineProps<NPaginationRowsPerPageProps>(), {
 const context = usePagination(null)
 
 const delegatedProps = reactiveOmit(props, ['class', 'una', 'pageSizes', 'label', 'itemsPerPage'])
+
+// forward only what was actually passed: props typed as booleans are cast to
+// `false` when absent, and spreading `open: false` would pin `SelectRoot`
+// controlled-closed so the select could never open
+const forwardedProps = useForwardProps(delegatedProps)
 
 const itemsPerPage = computed(() => props.itemsPerPage ?? context?.itemsPerPage.value ?? props.pageSizes[0])
 
@@ -40,7 +46,7 @@ function onUpdate(value: unknown) {
     </slot>
 
     <Select
-      v-bind="delegatedProps"
+      v-bind="forwardedProps"
       :items="props.pageSizes"
       :model-value="itemsPerPage"
       :una="props.una"
