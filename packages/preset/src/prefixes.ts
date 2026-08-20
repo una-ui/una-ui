@@ -1,3 +1,16 @@
+/**
+ * Attributify attribute names the `@una-ui/extractor-vue-script` extractor
+ * watches for in `<script>` blocks.
+ *
+ * An entry belongs here **only if a component renders it as an attributify
+ * attribute** — e.g. `Button.vue` does `v-bind="mergeVariants"`, emitting
+ * `btn="solid-primary"`, and `solid-primary` alone is not a utility, so the
+ * extractor needs the prefix to build `[btn~="solid-primary"]`.
+ *
+ * A `una` key never belongs here: those are full class strings merged by
+ * `cn()`, which the default extractor already sees. This file is not, and is
+ * not meant to be, a mirror of `_shortcuts/`.
+ */
 export default [
   'accordion',
   'accordion-content',
@@ -127,16 +140,9 @@ export default [
   'number-field-decrement',
   'number-field-increment',
   'number-field-input',
-  'pagination',
   'pagination-ellipsis',
   'pagination-selected',
   'pagination-unselected',
-  'pagination-ellipsis',
-  'pagination-first',
-  'pagination-last',
-  'pagination-list-item',
-  'pagination-next',
-  'pagination-prev',
   'pin-input',
   'pin-input-group',
   'pin-input-separator',
@@ -217,16 +223,6 @@ export default [
   'switch',
   'switch-checked',
   'switch-unchecked',
-  'table',
-  'table-body',
-  'table-caption',
-  'table-cell',
-  'table-empty',
-  'table-footer',
-  'table-head',
-  'table-header',
-  'table-loading',
-  'table-row',
   'tabs',
   'tabs-active',
   'tabs-inactive',

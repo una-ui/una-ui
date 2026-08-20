@@ -1,12 +1,19 @@
 import type {
+  Column,
   ColumnDef,
   CoreOptions,
   FilterFn,
   FilterFnOption,
   GroupColumnDef,
+  Row,
+  RowData,
+  Table,
 } from '@tanstack/vue-table'
 import type { PrimitiveProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
+import type { NButtonProps } from './button'
+import type { NCheckboxProps } from './checkbox'
+import type { NInputProps } from './input'
 import type { NProgressProps } from './progress'
 import type { NScrollAreaProps, NScrollAreaUnaProps } from './scroll-area'
 
@@ -137,6 +144,11 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
   _tableCell?: NTableCellProps
   _tableEmpty?: NTableEmptyProps
   _tableLoading?: NTableLoadingProps
+  _tableSortButton?: Omit<NTableSortButtonProps<TData, TValue>, 'column'>
+  _tableColumnFilter?: Omit<NTableColumnFilterProps<TData, TValue>, 'column'>
+  _tableSelectionHeader?: Omit<NTableSelectionHeaderProps<TData>, 'table'>
+  _tableSelectionCell?: Omit<NTableSelectionCellProps<TData>, 'row'>
+  _tableExpandButton?: Omit<NTableExpandButtonProps<TData>, 'row'>
   _scrollArea?: NScrollAreaProps
 
   /**
@@ -225,7 +237,38 @@ export interface NTableCaptionProps extends PrimitiveProps {
   una?: Pick<NTableUnaProps, 'tableCaption'>
 }
 
-interface NTableUnaProps {
+export interface NTableSortButtonProps<TData = any, TValue = any> extends Omit<NButtonProps, 'una'> {
+  /** The TanStack column this button sorts. Supplied by `NTable`. */
+  column: Column<TData, TValue>
+  una?: Pick<NTableUnaProps, 'tableSortButton' | 'tableSortIconBase' | 'tableSortAscIcon' | 'tableSortDescIcon' | 'tableSortNoneIcon'> & NButtonProps['una']
+}
+
+export interface NTableColumnFilterProps<TData = any, TValue = any> extends Omit<NInputProps, 'una'> {
+  class?: HTMLAttributes['class']
+  /** The TanStack column this input filters. Supplied by `NTable`. */
+  column: Column<TData, TValue>
+  una?: Pick<NTableUnaProps, 'tableColumnFilter'> & NInputProps['una']
+}
+
+export interface NTableSelectionHeaderProps<TData = any> extends Omit<NCheckboxProps, 'una'> {
+  /** The TanStack table instance. Supplied by `NTable`. */
+  table: Table<TData>
+  una?: Pick<NTableUnaProps, 'tableSelection' | 'tableSelectionHeader'> & NCheckboxProps['una']
+}
+
+export interface NTableSelectionCellProps<TData = any> extends Omit<NCheckboxProps, 'una'> {
+  /** The TanStack row this checkbox selects. Supplied by `NTable`. */
+  row: Row<TData>
+  una?: Pick<NTableUnaProps, 'tableSelection' | 'tableSelectionCell'> & NCheckboxProps['una']
+}
+
+export interface NTableExpandButtonProps<TData = any> extends Omit<NButtonProps, 'una'> {
+  /** The TanStack row this button expands. Supplied by `NTable`. */
+  row: Row<TData>
+  una?: Pick<NTableUnaProps, 'tableExpandButton' | 'tableExpandIconBase' | 'tableExpandIcon'> & NButtonProps['una']
+}
+
+export interface NTableUnaProps {
   table?: HTMLAttributes['class']
   tableRoot?: HTMLAttributes['class']
   tableBody?: HTMLAttributes['class']
@@ -241,4 +284,38 @@ interface NTableUnaProps {
   tableEmpty?: HTMLAttributes['class']
   tableEmptyText?: HTMLAttributes['class']
   tableEmptyIcon?: HTMLAttributes['class']
+
+  // injected widgets
+  tableSortButton?: HTMLAttributes['class']
+  tableSortIconBase?: HTMLAttributes['class']
+  tableSortAscIcon?: HTMLAttributes['class']
+  tableSortDescIcon?: HTMLAttributes['class']
+  tableSortNoneIcon?: HTMLAttributes['class']
+  tableColumnFilter?: HTMLAttributes['class']
+  tableSelection?: HTMLAttributes['class']
+  tableSelectionHeader?: HTMLAttributes['class']
+  tableSelectionCell?: HTMLAttributes['class']
+  tableExpandButton?: HTMLAttributes['class']
+  tableExpandIconBase?: HTMLAttributes['class']
+  tableExpandIcon?: HTMLAttributes['class']
+}
+
+/**
+ * Per-column configuration, read from `columnDef.meta`.
+ *
+ * `NTable` passes only these keys through to its parts — anything else on
+ * `meta` stays out of the DOM.
+ */
+declare module '@tanstack/vue-table' {
+
+  interface ColumnMeta<TData extends RowData, TValue> {
+    una?: NTableUnaProps
+    _tableHead?: NTableHeadProps
+    _tableCell?: NTableCellProps
+    _tableSortButton?: Omit<NTableSortButtonProps<TData, TValue>, 'column'>
+    _tableColumnFilter?: Omit<NTableColumnFilterProps<TData, TValue>, 'column'>
+    _tableSelectionHeader?: Omit<NTableSelectionHeaderProps<TData>, 'table'>
+    _tableSelectionCell?: Omit<NTableSelectionCellProps<TData>, 'row'>
+    _tableExpandButton?: Omit<NTableExpandButtonProps<TData>, 'row'>
+  }
 }
