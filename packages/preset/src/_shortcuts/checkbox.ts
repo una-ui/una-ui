@@ -3,11 +3,12 @@ type CheckboxPrefix = 'checkbox'
 export const staticCheckbox: Record<`${CheckboxPrefix}-${string}` | CheckboxPrefix, string> = {
   // base
   'checkbox': 'dark:bg-input/30 square-1em shrink-0 rounded-4px shadow-xs transition-shadow outline-none disabled:n-disabled border border-input dark:border-input',
-  'checkbox-label': 'block',
+  'checkbox-label': 'block ps-3',
+  'checkbox-label-reverse': 'block pe-3',
   'checkbox-reverse': 'flex-row-reverse',
 
   // wrappers
-  'checkbox-wrapper': 'gap-x-3 relative inline-flex items-center hover:cursor-pointer',
+  'checkbox-wrapper': 'relative inline-flex items-center hover:cursor-pointer',
 
   // icon
   'checkbox-indicator': 'flex items-center justify-center text-primary-foreground transition-none',
