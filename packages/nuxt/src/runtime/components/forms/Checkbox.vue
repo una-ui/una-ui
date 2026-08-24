@@ -75,7 +75,10 @@ const id = computed(() => props.id ?? randomId('checkbox'))
     <Label
       v-if="$slots.default || label"
       :for="props.for || id"
-      :class="cn('checkbox-label', una?.checkboxLabel)"
+      :class="cn(
+        reverse ? 'checkbox-label-reverse' : 'checkbox-label',
+        una?.checkboxLabel,
+      )"
       v-bind="props._label"
     >
       <slot>
