@@ -15,5 +15,7 @@ const indeterminate = ref<boolean | 'indeterminate'>('indeterminate')
     />
 
     <NCheckbox v-model="checkedWithDisabled" disabled label="Checkbox" />
+
+    <NCheckbox v-model="checked" reverse label="Reverse" />
   </div>
 </template>
