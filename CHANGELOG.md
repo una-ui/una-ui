@@ -1,3 +1,12 @@
+## [0.67.10](https://github.com/una-ui/una-ui/compare/v0.67.9...v0.67.10) (2026-08-24)
+
+
+### Bug Fixes
+
+* **Checkbox:** make space between checkbox and label clickable ([#642](https://github.com/una-ui/una-ui/issues/642)) ([7949025](https://github.com/una-ui/una-ui/commit/79490256de40a94c5a9bca3fd609a70211536d65)), closes [#641](https://github.com/una-ui/una-ui/issues/641)
+
+
+
 # [1.0.0-alpha.25](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.24...v1.0.0-alpha.25) (2026-08-11)
 
 
