@@ -9,10 +9,11 @@ const { autoscrolling, scrollableAttr, scrollToEnd, scrollToMessage, scrollToSta
 
 /**
  * Exposed for controls the provider cannot reach by injection — a composer or
- * toolbar rendered as a SIBLING of this subtree, or in the setup scope that
+ * toolbar rendered as a sibling of this subtree, or in the setup scope that
  * renders `NMessageScrollerProvider`, cannot inject a context provided below it.
- * Those reach the transcript through a template ref instead of
- * `useMessageScroller()`.
+ *
+ * Deliberate divergence from the shadcn-vue source, which exposes nothing here
+ * — keep it when diffing against upstream. See #645.
  */
 defineExpose({ scrollToEnd, scrollToMessage, scrollToStart })
 </script>
