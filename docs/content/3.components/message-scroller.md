@@ -122,7 +122,7 @@ Prefer an opaque variant. The button floats over the transcript, so translucent 
 
 ### Jumping to messages
 
-Inside the provider, `useMessageScroller()` exposes the scroll commands and `useMessageScrollerVisibility()` reports which messages are on screen and which turn the reader is in. Both read the provider's context, so call them from a component **rendered inside** `NMessageScrollerProvider`.
+Inside the provider, `useMessageScroller()` exposes the scroll commands and `useMessageScrollerVisibility()` reports which messages are on screen and which turn the reader is in. Both read the provider's context, so call them from a component **rendered inside** `NMessageScrollerProvider`. A control that sits outside that subtree reaches the scroll commands through a template ref instead — see [Expose](#expose).
 
 | Composable                       | Returns                                                                             |
 | -------------------------------- | ----------------------------------------------------------------------------------- |
@@ -154,6 +154,27 @@ The viewport ships with the [`scroll-fade`](/utilities/scroll-fade) and scrollba
   :una="{ messageScrollerViewport: 'no-scrollbar' }"
 />
 ```
+
+## Expose
+
+`useMessageScroller()` only reaches the context from **inside** the provider. A composer or toolbar rendered as a sibling of the transcript — or the component that renders `NMessageScrollerProvider` in the first place — has nothing to inject, so `NMessageScroller` exposes the same three commands on its instance.
+
+| Name              | Type                                                               | Description                                                      |
+| ----------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| `scrollToEnd`     | `(options?: { behavior?: ScrollBehavior }) => boolean`             | Jumps to the live edge and resumes following it if `autoScroll`. |
+| `scrollToStart`   | `(options?: { behavior?: ScrollBehavior }) => boolean`             | Jumps to the top of the transcript.                              |
+| `scrollToMessage` | `(id: string, options?: NMessageScrollerScrollOptions) => boolean` | Jumps to a message by its `messageId`.                           |
+
+Each returns `false` when the viewport is not mounted yet. `scrollToMessage` queues the jump when the message has not registered yet, so it is safe to call before the item renders — `scrollToEnd` is immediate, so `await nextTick()` after appending a message.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueMessageScrollerExpose
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/message-scroller/ExampleVueMessageScrollerExpose.vue
+::
+:::
 
 ## Props
 
