@@ -5,7 +5,16 @@ import { useMessageScrollerContext } from './useMessageScroller'
 
 const props = defineProps<NMessageScrollerProps>()
 
-const { autoscrolling, scrollableAttr } = useMessageScrollerContext()
+const { autoscrolling, scrollableAttr, scrollToEnd, scrollToMessage, scrollToStart } = useMessageScrollerContext()
+
+/**
+ * Exposed for controls the provider cannot reach by injection — a composer or
+ * toolbar rendered as a SIBLING of this subtree, or in the setup scope that
+ * renders `NMessageScrollerProvider`, cannot inject a context provided below it.
+ * Those reach the transcript through a template ref instead of
+ * `useMessageScroller()`.
+ */
+defineExpose({ scrollToEnd, scrollToMessage, scrollToStart })
 </script>
 
 <template>
