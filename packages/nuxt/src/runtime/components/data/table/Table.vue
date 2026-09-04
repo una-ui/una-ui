@@ -38,14 +38,17 @@ import TableFooter from './TableFooter.vue'
 import TableHead from './TableHead.vue'
 import TableHeader from './TableHeader.vue'
 import TableLoading from './TableLoading.vue'
+import TablePagination from './TablePagination.vue'
 import TableRow from './TableRow.vue'
 import TableSelectionCell from './TableSelectionCell.vue'
 import TableSelectionHeader from './TableSelectionHeader.vue'
 import TableSortButton from './TableSortButton.vue'
+import { provideTableContext } from './useTable'
 
 const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
   enableSortingRemoval: true,
+  showPagination: false,
 })
 const emit = defineEmits<{
   select: [row: TData]
@@ -179,6 +182,15 @@ const table = useVueTable({
   onColumnPinningChange: updaterOrValue => valueUpdater(updaterOrValue, columnPinning),
   onExpandedChange: updaterOrValue => valueUpdater(updaterOrValue, expanded),
   onGroupingChange: updaterOrValue => valueUpdater(updaterOrValue, grouping),
+})
+
+// the seam the built-in pagination bar — and anything composed into
+// `#pagination` — reads the instance through, without a template ref
+provideTableContext({
+  table,
+  pagination: computed(() => pagination.value),
+  setPageIndex: index => table.setPageIndex(index),
+  setPageSize: size => table.setPageSize(size),
 })
 
 function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]): number {
@@ -485,5 +497,18 @@ defineExpose({
         </TableFooter>
       </table>
     </ScrollArea>
+
+    <!-- pagination bar: inside the root, outside the scroll area -->
+    <slot
+      v-if="showPagination || $slots.pagination"
+      name="pagination"
+      :table="table"
+      :pagination="pagination"
+    >
+      <TablePagination
+        :una
+        v-bind="props._tablePagination"
+      />
+    </slot>
   </div>
 </template>

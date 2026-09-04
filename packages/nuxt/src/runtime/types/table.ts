@@ -14,6 +14,7 @@ import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 import type { NCheckboxProps } from './checkbox'
 import type { NInputProps } from './input'
+import type { NPaginationProps } from './pagination'
 import type { NProgressProps } from './progress'
 import type { NScrollAreaProps, NScrollAreaUnaProps } from './scroll-area'
 
@@ -149,12 +150,21 @@ export interface NTableProps<TData, TValue> extends Omit<CoreOptions<TData>, 'da
   _tableSelectionHeader?: Omit<NTableSelectionHeaderProps<TData>, 'table'>
   _tableSelectionCell?: Omit<NTableSelectionCellProps<TData>, 'row'>
   _tableExpandButton?: Omit<NTableExpandButtonProps<TData>, 'row'>
+  _tablePagination?: Omit<NTablePaginationProps, 'table'>
   _scrollArea?: NScrollAreaProps
 
   /**
    * Whether the table is loading.
    */
   loading?: boolean
+  /**
+   * Render the built-in pagination bar inside the root, below the table.
+   * Configure it through `_tablePagination`, or replace it with the
+   * `pagination` slot.
+   *
+   * @default false
+   */
+  showPagination?: boolean
   /**
    * `UnaUI` preset configuration
    *
@@ -268,6 +278,15 @@ export interface NTableExpandButtonProps<TData = any> extends Omit<NButtonProps,
   una?: Pick<NTableUnaProps, 'tableExpandButton' | 'tableExpandIconBase' | 'tableExpandIcon'> & NButtonProps['una']
 }
 
+export interface NTablePaginationProps extends Omit<NPaginationProps, 'page' | 'defaultPage' | 'itemsPerPage' | 'total' | 'una'> {
+  /**
+   * The TanStack table instance. Supplied through context when rendered by
+   * `NTable`; pass it directly to use the bar on its own, outside the root.
+   */
+  table?: Table<any>
+  una?: Pick<NTableUnaProps, 'tablePagination'> & NPaginationProps['una']
+}
+
 export interface NTableUnaProps {
   table?: HTMLAttributes['class']
   tableRoot?: HTMLAttributes['class']
@@ -298,6 +317,7 @@ export interface NTableUnaProps {
   tableExpandButton?: HTMLAttributes['class']
   tableExpandIconBase?: HTMLAttributes['class']
   tableExpandIcon?: HTMLAttributes['class']
+  tablePagination?: HTMLAttributes['class']
 }
 
 /**

@@ -64,6 +64,11 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-expand-button': '',
   'table-expand-icon-base': 'transform transition-transform duration-200',
 
+  // table-pagination
+  // the built-in bar sits inside `table-root` below the table, outside the
+  // scroll area, so it never scrolls with a wide table
+  'table-pagination': 'flex items-center border-t border-border px-4 py-3',
+
   // table-footer
   'table-footer': 'border-t border-border bg-muted font-medium [&>tr]:last:border-b-0',
 }
