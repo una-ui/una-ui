@@ -38,9 +38,21 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
 // the list. Applying the layout unconditionally gave every existing
 // `NPagination` `width: 100%`, which re-flows it wherever it sits as a flex
 // item beside a sibling label — the shape used throughout the table examples.
-const hasStart = computed(() => Boolean(slots.start || props.showInfo || props.showRowsPerPage))
-const hasEnd = computed(() => Boolean(slots.end))
-const hasRegions = computed(() => hasStart.value || hasEnd.value)
+//
+// Plain functions, not computeds: `slots` is an object Vue mutates in place on
+// re-render rather than a reactive source, so a computed reading `slots.start`
+// caches its first result forever and a conditionally-provided `#start` would
+// never appear. Functions re-evaluate with each render, which is what a slot
+// check needs.
+function hasStart() {
+  return Boolean(slots.start || props.showInfo || props.showRowsPerPage)
+}
+function hasEnd() {
+  return Boolean(slots.end)
+}
+function hasRegions() {
+  return hasStart() || hasEnd()
+}
 
 // reka's root context already carries `page` and `pageCount`; this supplies
 // what it lacks, so `itemsPerPage` gains a write path it has no emit for
@@ -57,13 +69,13 @@ providePaginationContext({
     v-bind="rootProps"
     :class="cn(
       'pagination-root',
-      hasRegions && 'pagination-root-regions',
+      hasRegions() && 'pagination-root-regions',
       props.class,
       props.una?.paginationRoot,
     )"
   >
     <div
-      v-if="hasStart"
+      v-if="hasStart()"
       :class="cn('pagination-start', props.una?.paginationStart)"
     >
       <slot name="start">
@@ -195,7 +207,7 @@ providePaginationContext({
     </PaginationList>
 
     <div
-      v-if="hasEnd"
+      v-if="hasEnd()"
       :class="cn('pagination-end', props.una?.paginationEnd)"
     >
       <slot name="end" />

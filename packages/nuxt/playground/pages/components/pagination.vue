@@ -13,6 +13,9 @@ const clampItemsPerPage = ref(10)
 
 // standalone rows-per-page: no NPagination wrapper, driven purely by the emit
 const standaloneSize = ref(20)
+
+// a conditionally-provided #start slot must appear and disappear with the flag
+const showStartSlot = ref(false)
 </script>
 
 <template>
@@ -127,6 +130,29 @@ const standaloneSize = ref(20)
         show-rows-per-page
         show-edges
       />
+    </div>
+
+    <!-- a conditional #start slot must toggle the region on and off -->
+    <div class="space-y-2">
+      <NButton
+        id="toggle-start"
+        btn="outline-gray"
+        size="sm"
+        :label="`toggle #start (currently ${showStartSlot})`"
+        @click="showStartSlot = !showStartSlot"
+      />
+
+      <NPagination
+        id="conditional-start"
+        :page="1"
+        :items-per-page="10"
+        :total
+        show-edges
+      >
+        <template v-if="showStartSlot" #start>
+          <span id="conditional-start-content" class="text-sm">conditional start content</span>
+        </template>
+      </NPagination>
     </div>
 
     <!-- rows-per-page on its own, outside NPagination -->
