@@ -16,6 +16,10 @@ const standaloneSize = ref(20)
 
 // a conditionally-provided #start slot must appear and disappear with the flag
 const showStartSlot = ref(false)
+
+// consumer resets to page 1 itself — our clamp must NOT overwrite that
+const respectPage = ref(3)
+const respectIpp = ref(10)
 </script>
 
 <template>
@@ -114,6 +118,23 @@ const showStartSlot = ref(false)
         show-edges
         :_pagination-info="{ format: 'range' }"
         :_pagination-rows-per-page="{ label: 'Rows per page' }"
+      />
+    </div>
+
+    <!-- the consumer's own page choice must win over our clamp -->
+    <div class="space-y-2">
+      <span id="respect-state">page={{ respectPage }} ipp={{ respectIpp }}</span>
+
+      <NPagination
+        id="respect-pagination"
+        :page="respectPage"
+        :items-per-page="respectIpp"
+        :total
+        show-rows-per-page
+        show-edges
+        :_pagination-rows-per-page="{ label: 'Rows per page' }"
+        @update:page="n => respectPage = n"
+        @update:items-per-page="n => { respectIpp = n; respectPage = 1 }"
       />
     </div>
 

@@ -2,7 +2,7 @@
 import type { NPaginationRowsPerPageProps } from '../../../types'
 import { reactiveOmit } from '@vueuse/core'
 import { injectPaginationRootContext, useForwardProps } from 'reka-ui'
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { cn } from '../../../utils'
 import Select from '../../forms/select/Select.vue'
 import { usePagination } from './usePagination'
@@ -34,19 +34,27 @@ function onUpdate(value: unknown) {
   // used on its own — outside `NPagination` the context is null
   emit('update:itemsPerPage', next)
   context?.onItemsPerPageChange(next)
-
-  // reka recomputes `pageCount` from the new page size but never clamps
-  // `page`, and Next/Last only disable on `page === pageCount` — so growing
-  // the page size would otherwise strand the user past the last page.
-  // Computed here rather than read back off the root, whose props have not
-  // flushed yet.
-  if (rootContext) {
-    const total = context?.total.value ?? 0
-    const nextPageCount = Math.max(1, Math.ceil(total / next))
-    if (rootContext.page.value > nextPageCount)
-      rootContext.onPageChange(nextPageCount)
-  }
 }
+
+// reka recomputes `pageCount` from the new page size but never clamps `page`,
+// and Next/Last only disable on `page === pageCount` — so growing the page
+// size would otherwise strand the user past the last page.
+//
+// This has to be a watcher rather than part of `onUpdate`. The emit above runs
+// the consumer's handler synchronously, and any page that handler sets (`page
+// = 1`, or TanStack's `setPageSize`, which recomputes `pageIndex` itself) has
+// not reached the root's props yet — clamping inline would read a stale page
+// and overwrite the consumer's choice. A watcher fires after the flush, so it
+// sees the settled page and only acts if it is still out of range. It also
+// stays quiet when nothing is bound to `update:itemsPerPage`, since then
+// `pageCount` never changes.
+watch(() => rootContext?.pageCount.value, (pageCount) => {
+  if (!rootContext || !pageCount)
+    return
+
+  if (rootContext.page.value > pageCount)
+    rootContext.onPageChange(pageCount)
+})
 </script>
 
 <template>
