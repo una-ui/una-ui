@@ -230,6 +230,7 @@ export default [
   'table-head',
   'table-header',
   'table-loading',
+  'table-pagination',
   'table-row',
   'table-selection-cell',
   'table-selection-header',
