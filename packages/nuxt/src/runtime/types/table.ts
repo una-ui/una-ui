@@ -284,7 +284,7 @@ export interface NTablePaginationProps extends Omit<NPaginationProps, 'page' | '
    * `NTable`; pass it directly to use the bar on its own, outside the root.
    */
   table?: Table<any>
-  una?: Pick<NTableUnaProps, 'tablePagination'> & NPaginationProps['una']
+  una?: Pick<NTableUnaProps, 'tablePagination' | 'tablePaginationStatus' | 'tablePaginationControls' | 'tablePaginationPageSize' | 'tablePaginationPage' | 'tablePaginationNav'> & NPaginationProps['una']
 }
 
 export interface NTableUnaProps {
@@ -318,6 +318,11 @@ export interface NTableUnaProps {
   tableExpandIconBase?: HTMLAttributes['class']
   tableExpandIcon?: HTMLAttributes['class']
   tablePagination?: HTMLAttributes['class']
+  tablePaginationStatus?: HTMLAttributes['class']
+  tablePaginationControls?: HTMLAttributes['class']
+  tablePaginationPageSize?: HTMLAttributes['class']
+  tablePaginationPage?: HTMLAttributes['class']
+  tablePaginationNav?: HTMLAttributes['class']
 }
 
 /**

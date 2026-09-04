@@ -118,9 +118,11 @@ Loading allows you to show a loading progress indicator in the table. This is us
 
 ### Pagination
 
-`NTable` owns the pagination state and, with `show-pagination`, renders a bar
-for it inside the root, below the table: page meta, a rows-per-page control and
-the page navigation, wired to the table for you. Configure the bar through
+`NTable` owns the pagination state and, with `show-pagination`, renders
+shadcn's pagination bar below the table: the selection count (or row range) on
+the left, then rows per page, `Page X of Y` and the navigation on the right.
+Page numbers are off by default, as in shadcn; turn them on with
+`_tablePagination: { showListItem: true }`. Configure the bar through
 `_tablePagination`, which takes `NPagination`'s props, or replace it entirely
 with the `pagination` slot.
 

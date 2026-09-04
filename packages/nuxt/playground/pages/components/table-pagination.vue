@@ -40,12 +40,11 @@ const standaloneTable = useTemplateRef<Table<Row>>('standaloneTable')
 
 <template>
   <div class="p-6 space-y-12">
-    <section class="space-y-2">
+    <section id="t-default" class="space-y-2">
       <h2 class="font-medium">
         Default — <code>show-pagination</code>
       </h2>
       <NTable
-        id="t-default"
         v-model:pagination="pDefault"
         :columns
         :data
@@ -53,12 +52,11 @@ const standaloneTable = useTemplateRef<Table<Row>>('standaloneTable')
       />
     </section>
 
-    <section class="space-y-2">
+    <section id="t-select" class="space-y-2">
       <h2 class="font-medium">
         Row selection on — start region shows the selection count
       </h2>
       <NTable
-        id="t-select"
         v-model:pagination="pSelect"
         :columns
         :data
@@ -67,12 +65,11 @@ const standaloneTable = useTemplateRef<Table<Row>>('standaloneTable')
       />
     </section>
 
-    <section class="space-y-2">
+    <section id="t-override" class="space-y-2">
       <h2 class="font-medium">
         <code>_table-pagination</code> overrides — page format, no rows-per-page, no edges
       </h2>
       <NTable
-        id="t-override"
         v-model:pagination="pOverride"
         :columns
         :data
@@ -81,12 +78,11 @@ const standaloneTable = useTemplateRef<Table<Row>>('standaloneTable')
       />
     </section>
 
-    <section class="space-y-2">
+    <section id="t-slot" class="space-y-2">
       <h2 class="font-medium">
         <code>#pagination</code> slot replaces the whole bar
       </h2>
       <NTable
-        id="t-slot"
         v-model:pagination="pSlot"
         :columns
         :data
@@ -101,12 +97,11 @@ const standaloneTable = useTemplateRef<Table<Row>>('standaloneTable')
       </NTable>
     </section>
 
-    <section class="space-y-2">
+    <section id="t-server" class="space-y-2">
       <h2 class="font-medium">
         Server-side — <code>manual-pagination</code> + <code>row-count</code>
       </h2>
       <NTable
-        id="t-server"
         v-model:pagination="pServer"
         :columns
         :data="serverPage"
@@ -116,7 +111,7 @@ const standaloneTable = useTemplateRef<Table<Row>>('standaloneTable')
       />
     </section>
 
-    <section class="space-y-2">
+    <section id="t-standalone" class="space-y-2">
       <h2 class="font-medium">
         Standalone — shadcn shape, <code>NTablePagination :table</code> outside the root
       </h2>
@@ -134,12 +129,12 @@ const standaloneTable = useTemplateRef<Table<Row>>('standaloneTable')
       />
     </section>
 
-    <section class="space-y-2">
+    <section id="t-degenerate" class="space-y-2">
       <h2 class="font-medium">
         Empty and loading
       </h2>
-      <NTable id="t-empty" :columns :data="emptyData" show-pagination />
-      <NTable id="t-loading" class="mt-6" :columns :data loading show-pagination />
+      <NTable :columns :data="emptyData" show-pagination />
+      <NTable class="mt-6" :columns :data loading show-pagination />
     </section>
   </div>
 </template>

@@ -9,19 +9,26 @@ import PaginationInfo from '../../elements/pagination/PaginationInfo.vue'
 import PaginationRowsPerPage from '../../elements/pagination/PaginationRowsPerPage.vue'
 import { useTable } from './useTable'
 
+// shadcn's DataTablePagination, part for part: the selection count on the
+// left, then rows per page, "Page X of Y" and first/prev/next/last on the
+// right — and no page numbers, which is what keeps it on one row
 const props = withDefaults(defineProps<NTablePaginationProps>(), {
   showInfo: true,
   showRowsPerPage: true,
-  showEdges: true,
+  showListItem: false,
+  // shadcn's `size-8` navigation buttons
+  square: '8',
 })
 
 const context = useTable(null)
 
-// context when nested in `NTable`, the `table` prop when composed on its own —
+// context when rendered by `NTable`, the `table` prop when composed on its own —
 // the same pattern as `NPaginationInfo`, and shadcn's `<DataTablePagination :table />`
 const table = computed(() => props.table ?? context?.table)
 
-const delegatedProps = reactiveOmit(props, ['class', 'una', 'table'])
+// `showInfo`, `showRowsPerPage` and their prop bags are consumed here: the
+// inner `NPagination` renders the navigation only, never its own regions
+const delegatedProps = reactiveOmit(props, ['class', 'una', 'table', 'showInfo', 'showRowsPerPage', '_paginationInfo', '_paginationRowsPerPage'])
 
 // forward only what was actually passed: props typed as booleans are cast to
 // `false` when absent, and spreading those would override the wrapped
@@ -39,29 +46,45 @@ const total = computed(() => {
   const t = table.value
   if (!t)
     return 0
-  if (t.options.rowCount != null)
-    return t.options.rowCount
-  if (t.options.pageCount != null && t.options.pageCount >= 0)
-    return t.options.pageCount * itemsPerPage.value
+
+  const { rowCount, pageCount: count } = t.options
+  if (rowCount != null)
+    return rowCount
+  if (count != null && count >= 0)
+    return count * itemsPerPage.value
+
   return t.getFilteredRowModel().rows.length
+})
+
+const pageCount = computed(() => {
+  const n = table.value?.getPageCount() ?? 0
+  return n > 0 ? n : Math.max(1, Math.ceil(total.value / itemsPerPage.value))
 })
 
 const selectable = computed(() => Boolean(table.value?.options.enableRowSelection))
 const selectedCount = computed(() => table.value?.getFilteredSelectedRowModel().rows.length ?? 0)
-const rowCount = computed(() => table.value?.getFilteredRowModel().rows.length ?? 0)
+const filteredCount = computed(() => table.value?.getFilteredRowModel().rows.length ?? 0)
 
-function onPage(value: number) {
+const first = computed(() => total.value ? (page.value - 1) * itemsPerPage.value + 1 : 0)
+const last = computed(() => Math.min(page.value * itemsPerPage.value, total.value))
+
+// shadcn's left-hand text; the row range when there is nothing to select
+const status = computed(() => selectable.value
+  ? `${selectedCount.value} of ${filteredCount.value} row(s) selected.`
+  : `Showing ${first.value}–${last.value} of ${total.value}`)
+
+function onPage(n: number) {
   if (context)
-    context.setPageIndex(value - 1)
+    context.setPageIndex(n - 1)
   else
-    table.value?.setPageIndex(value - 1)
+    table.value?.setPageIndex(n - 1)
 }
 
-function onItemsPerPage(value: number) {
+function onItemsPerPage(n: number) {
   if (context)
-    context.setPageSize(value)
+    context.setPageSize(n)
   else
-    table.value?.setPageSize(value)
+    table.value?.setPageSize(n)
 }
 </script>
 
@@ -73,38 +96,65 @@ function onItemsPerPage(value: number) {
       props.class,
     )"
   >
-    <Pagination
-      v-bind="forwardedProps"
-      :page
-      :items-per-page="itemsPerPage"
-      :total
-      :una="props.una"
-      :_pagination-info="{ format: 'range', ...props._paginationInfo }"
-      @update:page="onPage"
-      @update:items-per-page="onItemsPerPage"
+    <div
+      v-if="showInfo"
+      :class="cn('table-pagination-status', props.una?.tablePaginationStatus)"
     >
-      <!-- with row selection on, the start region shows the selection count,
-           as shadcn's bar does; a consumer-provided #start still wins -->
-      <template v-if="selectable && !$slots.start" #start>
-        <PaginationInfo
-          v-if="showInfo"
-          :una
-          v-bind="props._paginationInfo"
-        >
-          {{ selectedCount }} of {{ rowCount }} row(s) selected
-        </PaginationInfo>
+      <slot
+        name="status"
+        :selected="selectedCount"
+        :filtered="filteredCount"
+        :total
+        :first
+        :last
+      >
+        {{ status }}
+      </slot>
+    </div>
 
+    <div :class="cn('table-pagination-controls', props.una?.tablePaginationControls)">
+      <div
+        v-if="showRowsPerPage"
+        :class="cn('table-pagination-page-size', props.una?.tablePaginationPageSize)"
+      >
         <PaginationRowsPerPage
-          v-if="showRowsPerPage"
+          label="Rows per page"
           :disabled="props.disabled"
+          :items-per-page="itemsPerPage"
           :una
-          v-bind="props._paginationRowsPerPage"
+          v-bind="{ _selectTrigger: { class: 'h-8' }, ...props._paginationRowsPerPage }"
+          @update:items-per-page="onItemsPerPage"
         />
-      </template>
+      </div>
 
-      <template v-for="(_, name) in $slots" #[name]="slotData">
-        <slot :name="name" v-bind="slotData" />
-      </template>
-    </Pagination>
+      <!-- literal weight/colour rather than in the shortcut: `pagination-info`
+           sets a muted colour in the same layer, and literals win regardless -->
+      <PaginationInfo
+        :page
+        :page-count="pageCount"
+        :una
+        :class="cn('table-pagination-page font-medium text-foreground', props.una?.tablePaginationPage)"
+        v-bind="props._paginationInfo"
+      />
+
+      <!-- `hidden lg:inline-flex` stays literal for the same reason: it has to
+           beat `.btn`'s own display, which lives in the shortcuts layer -->
+      <Pagination
+        v-bind="forwardedProps"
+        :page
+        :items-per-page="itemsPerPage"
+        :total
+        :una
+        :class="cn('table-pagination-nav', props.una?.tablePaginationNav)"
+        :_pagination-list="{ class: 'gap-2', ...props._paginationList }"
+        :_pagination-first="{ class: 'hidden lg:inline-flex', ...props._paginationFirst }"
+        :_pagination-last="{ class: 'hidden lg:inline-flex', ...props._paginationLast }"
+        @update:page="onPage"
+      >
+        <template v-for="(_, name) in $slots" #[name]="slotData">
+          <slot :name="name" v-bind="slotData" />
+        </template>
+      </Pagination>
+    </div>
   </div>
 </template>

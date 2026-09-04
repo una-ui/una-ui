@@ -45,6 +45,11 @@ import TableSelectionHeader from './TableSelectionHeader.vue'
 import TableSortButton from './TableSortButton.vue'
 import { provideTableContext } from './useTable'
 
+// the root is a fragment once the pagination bar renders beside `table-root`,
+// so attrs cannot be inherited — they keep going to `<table>` through the
+// explicit `v-bind="$attrs"` there, as they always have
+defineOptions({ inheritAttrs: false })
+
 const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
   enableSortingRemoval: true,
@@ -497,18 +502,19 @@ defineExpose({
         </TableFooter>
       </table>
     </ScrollArea>
-
-    <!-- pagination bar: inside the root, outside the scroll area -->
-    <slot
-      v-if="showPagination || $slots.pagination"
-      name="pagination"
-      :table="table"
-      :pagination="pagination"
-    >
-      <TablePagination
-        :una
-        v-bind="props._tablePagination"
-      />
-    </slot>
   </div>
+
+  <!-- pagination bar: a sibling below the root, where shadcn's
+       DataTablePagination sits relative to the bordered table -->
+  <slot
+    v-if="showPagination || $slots.pagination"
+    name="pagination"
+    :table="table"
+    :pagination="pagination"
+  >
+    <TablePagination
+      :una
+      v-bind="props._tablePagination"
+    />
+  </slot>
 </template>
