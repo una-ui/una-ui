@@ -12,8 +12,17 @@ const props = withDefaults(defineProps<NPaginationInfoProps>(), {
 const rootContext = injectPaginationRootContext(null)
 const context = usePagination(null)
 
-const page = computed(() => props.page ?? rootContext?.page.value ?? 1)
 const pageCount = computed(() => props.pageCount ?? rootContext?.pageCount.value ?? 0)
+
+// `page` can legitimately sit outside the range — reka never clamps it, so a
+// shrinking `total` (server-side filtering) or a growing page size leaves it
+// stranded. Clamping here keeps the rendered range coherent instead of
+// printing an impossible one like "Showing 401-100 of 100".
+const rawPage = computed(() => props.page ?? rootContext?.page.value ?? 1)
+const page = computed(() => {
+  const raw = Math.max(1, rawPage.value)
+  return pageCount.value > 0 ? Math.min(raw, pageCount.value) : raw
+})
 const itemsPerPage = computed(() => props.itemsPerPage ?? context?.itemsPerPage.value ?? 0)
 const total = computed(() => props.total ?? context?.total.value)
 

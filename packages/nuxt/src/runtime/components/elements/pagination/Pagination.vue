@@ -30,7 +30,17 @@ const emits = defineEmits<PaginationRootEmits & {
   'update:itemsPerPage': [value: number]
 }>()
 
+const slots = defineSlots()
+
 const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 'disabled', 'itemsPerPage', 'page', 'showEdges', 'siblingCount', 'total'), emits)
+
+// The root only becomes a flex row when there is something to lay out beside
+// the list. Applying the layout unconditionally gave every existing
+// `NPagination` `width: 100%`, which re-flows it wherever it sits as a flex
+// item beside a sibling label — the shape used throughout the table examples.
+const hasStart = computed(() => Boolean(slots.start || props.showInfo || props.showRowsPerPage))
+const hasEnd = computed(() => Boolean(slots.end))
+const hasRegions = computed(() => hasStart.value || hasEnd.value)
 
 // reka's root context already carries `page` and `pageCount`; this supplies
 // what it lacks, so `itemsPerPage` gains a write path it has no emit for
@@ -47,12 +57,13 @@ providePaginationContext({
     v-bind="rootProps"
     :class="cn(
       'pagination-root',
+      hasRegions && 'pagination-root-regions',
       props.class,
       props.una?.paginationRoot,
     )"
   >
     <div
-      v-if="$slots.start || showInfo || showRowsPerPage"
+      v-if="hasStart"
       :class="cn('pagination-start', props.una?.paginationStart)"
     >
       <slot name="start">
@@ -64,6 +75,7 @@ providePaginationContext({
 
         <PaginationRowsPerPage
           v-if="showRowsPerPage"
+          :disabled
           :una
           v-bind="_paginationRowsPerPage"
         />
@@ -183,7 +195,7 @@ providePaginationContext({
     </PaginationList>
 
     <div
-      v-if="$slots.end"
+      v-if="hasEnd"
       :class="cn('pagination-end', props.una?.paginationEnd)"
     >
       <slot name="end" />

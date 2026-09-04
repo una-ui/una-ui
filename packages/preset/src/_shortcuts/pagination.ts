@@ -8,8 +8,11 @@ export const staticPagination: Record<`${PaginationPrefix}-${string}` | Paginati
   'pagination-list': 'flex shrink-0 items-center gap-1 overflow-hidden',
 
   // components
-  // the root lays out start / list / end; inert while the list is its only child
-  'pagination-root': 'flex w-full flex-wrap items-center justify-between gap-4',
+  'pagination-root': '',
+  // applied only when a start/end region actually renders — `w-full` would
+  // otherwise change every existing pagination from shrink-to-fit to full
+  // width and re-flow it wherever it sits as a flex item
+  'pagination-root-regions': 'flex w-full flex-wrap items-center justify-between gap-4',
   'pagination-start': 'flex min-w-0 items-center gap-2',
   'pagination-end': 'flex items-center gap-2',
   'pagination-info': 'text-sm text-muted-foreground',
