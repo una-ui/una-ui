@@ -293,7 +293,7 @@ defineExpose({
                   :column="header.column"
                 >
                   <TableSelectionHeader
-                    v-if="header.column.id === SELECT_COLUMN_ID && enableMultiRowSelection"
+                    v-if="!header.isPlaceholder && header.column.id === SELECT_COLUMN_ID && enableMultiRowSelection"
                     :table
                     :una="columnUna(header.column)"
                     v-bind="{ ...props._tableSelectionHeader, ...header.column.columnDef.meta?._tableSelectionHeader }"

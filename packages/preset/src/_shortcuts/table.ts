@@ -44,10 +44,13 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-loading': 'absolute inset-x-0 overflow-hidden p-0',
 
   // table-sort-button
-  // the negative margin cancels the button's own padding so sortable
-  // headers stay aligned with plain ones
-  'table-sort-button': 'font-normal -ml-1em',
-  'table-sort-icon-base': 'text-sm',
+  // `-ml-1em` cancels the button's own padding so sortable headers align with
+  // plain ones. `font-normal!` because `.btn`'s font-medium is emitted after
+  // this shortcut in the same layer and would otherwise win.
+  'table-sort-button': 'font-normal! -ml-1em',
+  // sized by width/height, not font-size: `btn-trailing` sets font-size on the
+  // same element and is emitted later, so `text-sm` here was inert
+  'table-sort-icon-base': 'square-0.875rem',
 
   // table-column-filter
   'table-column-filter': 'w-auto',
