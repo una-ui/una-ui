@@ -31,5 +31,5 @@ const forwardedProps = useForwardProps(delegatedProps)
         )"
       />
     </slot>
-  </paginationlast>
+  </PaginationLast>
 </template>
