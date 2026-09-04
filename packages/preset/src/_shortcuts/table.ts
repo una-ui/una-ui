@@ -1,8 +1,11 @@
 type TablePrefix = 'table'
 
 export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, string> = {
-  // config
-  'table-default-variant': 'table-solid-gray',
+  // icons
+  'table-sort-asc-icon': 'i-lucide-arrow-up-wide-narrow',
+  'table-sort-desc-icon': 'i-lucide-arrow-down-narrow-wide',
+  'table-sort-none-icon': 'i-lucide-arrow-up-down',
+  'table-expand-icon': 'i-radix-icons-chevron-down',
 
   // table-root
   'table-root': 'relative w-full overflow-x-auto overflow-y-hidden border border-border rounded-md',
@@ -36,11 +39,30 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-empty-icon-name': 'i-tabler-database-x size-2xl',
 
   // table-loading
-  'table-loading-icon': 'animate-spin text-lg', // TODO: to add
-  'table-loading-icon-name': 'i-lucide-refresh-ccw', // TODO: to add
   'table-loading-row': 'data-[loading=true]:border-0 absolute inset-x-0 -mt-1.5px',
   'table-loading-cell': '',
   'table-loading': 'absolute inset-x-0 overflow-hidden p-0',
+
+  // table-sort-button
+  // `-ml-1em` cancels the button's own padding so sortable headers align with
+  // plain ones. `font-normal!` because `.btn`'s font-medium is emitted after
+  // this shortcut in the same layer and would otherwise win.
+  'table-sort-button': 'font-normal! -ml-1em',
+  // sized by width/height, not font-size: `btn-trailing` sets font-size on the
+  // same element and is emitted later, so `text-sm` here was inert
+  'table-sort-icon-base': 'square-0.875rem',
+
+  // table-column-filter
+  'table-column-filter': 'w-auto',
+
+  // table-selection
+  'table-selection': '',
+  'table-selection-header': '',
+  'table-selection-cell': '',
+
+  // table-expand-button
+  'table-expand-button': '',
+  'table-expand-icon-base': 'transform transition-transform duration-200',
 
   // table-footer
   'table-footer': 'border-t border-border bg-muted font-medium [&>tr]:last:border-b-0',

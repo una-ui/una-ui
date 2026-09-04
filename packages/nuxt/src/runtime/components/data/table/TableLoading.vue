@@ -8,6 +8,7 @@ import TableRow from './TableRow.vue'
 
 const props = withDefaults(defineProps<NTableLoadingProps>(), {
   size: '2.5px',
+  colspan: 1,
 })
 const delegatedProps = reactiveOmit(props, ['class'])
 </script>
@@ -28,7 +29,7 @@ const delegatedProps = reactiveOmit(props, ['class'])
           props.una?.tableLoadingCell,
         )
       "
-      :colspan="0"
+      :colspan="props.colspan"
       v-bind="delegatedProps._tableCell"
     >
       <div
