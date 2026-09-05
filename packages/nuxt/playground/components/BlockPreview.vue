@@ -6,13 +6,13 @@ defineProps<{
 </script>
 
 <template>
-  <div class="relative overflow-hidden border rounded-lg bg-base" :class="[container ? '' : 'aspect-[4/2.5]']">
+  <div class="relative overflow-hidden border rounded-lg bg-background" :class="[container ? '' : 'aspect-[4/2.5]']">
     <div
-      :class="[container ? 'w-full' : 'absolute inset-0 hidden w-[1600px] bg-base md:block']"
+      :class="[container ? 'w-full' : 'absolute inset-0 hidden w-[1600px] bg-background md:block']"
     >
       <iframe
         :src="url"
-        class="relative w-full bg-base" :class="[container ? 'h-[--height]' : 'square-full']"
+        class="relative w-full bg-background" :class="[container ? 'h-[--height]' : 'square-full']"
       />
     </div>
   </div>

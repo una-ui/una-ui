@@ -27,14 +27,15 @@ badges:
 
 ### Variant
 
-| Prop   | Default   | Type        | Description                            |
-| ------ | --------- | ----------- | -------------------------------------- |
-| `card` | `outline` | `{variant}` | Controls the visual style of the card. |
+| Prop   | Default | Type        | Description                            |
+| ------ | ------- | ----------- | -------------------------------------- |
+| `card` | `solid` | `{variant}` | Controls the visual style of the card. |
 
 | Variant   | Description                                                    |
 | --------- | -------------------------------------------------------------- |
+| `solid`   | Adds a border while maintaining a solid background.            |
 | `outline` | Adds a subtle border while maintaining a clean background.     |
-| `soft`    | Applies a light background color with matching border.         |
+| `soft`    | Applies a light background color without a border.             |
 | `~`       | Removes all variant styling, keeping only core card structure. |
 
 :::CodeGroup

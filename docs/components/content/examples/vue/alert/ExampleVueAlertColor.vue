@@ -4,7 +4,15 @@ const description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Al
 
 <template>
   <div class="flex flex-col space-y-4">
-    <NAlert alert="outline-info" title="Info color" :description="description" />
+    <NAlert alert="text-gray" title="Text gray (default)" :description="description" />
+
+    <NAlert alert="solid-primary" title="Solid primary" :description="description" />
+
+    <NAlert alert="solid-white" title="Solid white" :description="description" />
+
+    <NAlert alert="solid-black" title="Solid black" :description="description" />
+
+    <NAlert alert="text-info" title="Text info" :description="description" />
 
     <NAlert alert="border-success" title="Success color" :description="description" />
 

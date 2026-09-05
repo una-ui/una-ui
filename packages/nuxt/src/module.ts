@@ -63,6 +63,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.unshift(
       import.meta.resolve('@unocss/reset/tailwind.css'),
       import.meta.resolve('@una-ui/preset/una.css'),
+      // required — vue-sonner's JS entry does not import its own stylesheet
+      import.meta.resolve('vue-sonner/style.css'),
     )
 
     nuxt.options.alias['#una'] = resolve('./runtime')
@@ -76,8 +78,10 @@ export default defineNuxtModule<ModuleOptions>({
       {
         primary: 'yellow',
         gray: 'stone',
-        radius: 0.5,
+        radius: 0.625,
         fontSize: 16,
+        theme: false,
+        themes: [],
         sidebar: {
           cookieName: 'sidebar:state',
           cookieMaxAge: 60 * 60 * 24 * 7,
@@ -122,6 +126,9 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: options.prefix,
       pathPrefix: false,
       priority: 10,
+      // collocated composable/engine modules (message-scroller/useMessageScroller.ts)
+      // have no default export and must not be scanned as components
+      ignore: ['**/use*.ts'],
     })
 
     // composables

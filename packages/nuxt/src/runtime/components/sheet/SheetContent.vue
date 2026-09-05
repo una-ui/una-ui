@@ -2,10 +2,11 @@
 import type { DialogContentEmits } from 'reka-ui'
 import type { NSheetContentProps } from '../../types'
 import { reactiveOmit } from '@vueuse/core'
-import { DialogContent, DialogOverlay, DialogPortal, useForwardPropsEmits } from 'reka-ui'
+import { DialogContent, DialogPortal, useForwardPropsEmits } from 'reka-ui'
 import { computed } from 'vue'
 import { cn } from '../../utils'
 import SheetClose from './SheetClose.vue'
+import SheetOverlay from './SheetOverlay.vue'
 
 defineOptions({
   inheritAttrs: false,
@@ -15,12 +16,13 @@ const props = withDefaults(defineProps<NSheetContentProps>(), {
   sheet: 'right',
   overlay: true,
   showClose: true,
+  dismissible: true,
 })
 const emits = defineEmits<DialogContentEmits>()
 const contentProps = reactiveOmit(props, ['sheet', 'class', '_sheetClose', '_sheetPortal', '_sheetOverlay'])
 const forwarded = useForwardPropsEmits(contentProps, emits)
 const contentEvents = computed(() => {
-  if (props.preventClose) {
+  if (!props.dismissible) {
     return {
       pointerDownOutside: (e: Event) => e.preventDefault(),
       interactOutside: (e: Event) => e.preventDefault(),
@@ -40,17 +42,12 @@ const contentEvents = computed(() => {
     v-bind="props._sheetPortal"
     :class="cn('sheet-portal', props.una?.sheetPortal, props._sheetPortal?.class)"
   >
-    <DialogOverlay
+    <SheetOverlay
       v-if="props.overlay"
       v-bind="_sheetOverlay"
-      :class="cn(
-        'data-[state=closed]:animate-out data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
-        'sheet-overlay',
-        props.una?.sheetOverlay,
-        props._sheetOverlay?.class,
-      )"
     />
     <DialogContent
+      data-slot="sheet-content"
       v-bind="{ ...forwarded, ...$attrs }"
       :sheet
       :class="cn(

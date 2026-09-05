@@ -23,9 +23,9 @@
             <div class="mt-1 flex items-center gap-2">
               <NIcon
                 name="i-lucide-calendar"
-                class="text-muted"
+                class="text-muted-foreground"
               />
-              <span class="text-xs text-muted">
+              <span class="text-xs text-muted-foreground">
                 Joined December 2021
               </span>
             </div>

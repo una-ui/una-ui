@@ -107,8 +107,6 @@ const clonedAvatars = computed(() => {
 
   return displayAvatars.value.map((avatar: VNode) => {
     const ownProps = avatar.props || {}
-    // Cascade group props only where the child hasn't set its own. cloneVNode already
-    // merges `ownProps`, so re-spreading them would duplicate the child's class tokens.
     const inherited = Object.fromEntries(
       Object.entries(groupProps).filter(([key]) => !(key in ownProps)),
     )

@@ -23,6 +23,7 @@ export * from './input'
 export * from './kbd'
 export * from './label'
 export * from './link'
+export * from './message-scroller'
 export * from './navigation-menu'
 export * from './number-field'
 export * from './pagination'
@@ -77,10 +78,18 @@ export interface UnaSidebarConfig {
 export interface UnaSettings {
   primaryColors: Colors
   grayColors: Colors
-  primary: string
-  gray: string
+  theme: string | false
+  primary: string | false
+  gray: string | false
   fontSize: number
   radius: number
+  themes: {
+    name: string
+    cssVars: {
+      light: Colors
+      dark: Colors
+    }
+  }[]
   sidebar: UnaSidebarConfig
 }
 

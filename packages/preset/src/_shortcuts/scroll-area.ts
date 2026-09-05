@@ -23,8 +23,8 @@ export const dynamicScrollArea = [
   // dynamic preset
   [/^scroll-area(-(\S+))?$/, ([, , c]: [string, string, string], { theme }: RuleContext<Theme>) => {
     const parsedColor = parseColor(c, theme)
-    if ((parsedColor?.cssColor?.type === 'rgb' || parsedColor?.cssColor?.type === 'rgba') && parsedColor.cssColor.components)
-      return `bg-${c}-200 dark:bg-${c}-700/58`
+    if (parsedColor?.color)
+      return `bg-${c}-200 dark:bg-${c}-800`
     return undefined
   }],
 ]

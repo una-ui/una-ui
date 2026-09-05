@@ -40,21 +40,25 @@ const backgroundStyle = computed(() => {
 
 <template>
   <NCard
-    class="group relative h-full w-full flex overflow-hidden border rounded-xl pt-5 space-y-6" card="soft" :class="[
+    class="group relative h-full w-full flex overflow-hidden rounded-xl pt-5 space-y-6"
+    card="solid"
+    :class="[
       $props.class,
     ]"
     @mousemove="handleMouseMove"
     @mouseleave="handleMouseLeave"
   >
-    <div :class="cn('relative z-10 space-y-2', props.slotClass)">
-      <slot />
-    </div>
-    <div
-      class="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-      :style="{
-        background: backgroundStyle,
-        opacity: gradientOpacity,
-      }"
-    />
+    <template #content>
+      <div :class="cn('relative z-10 space-y-2', props.slotClass)">
+        <slot />
+      </div>
+      <div
+        class="pointer-events-none absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        :style="{
+          background: backgroundStyle,
+          opacity: gradientOpacity,
+        }"
+      />
+    </template>
   </NCard>
 </template>

@@ -100,7 +100,7 @@ By default, the size prop applies to height, width, padding, and font size. If y
 | Prop                    | Default         | Type                | Description                       |
 | ----------------------- | --------------- | ------------------- | --------------------------------- |
 | `pagination-selected`   | `solid-primary` | `{variant}-{color}` | The color of the selected page.   |
-| `pagination-unselected` | `solid-white`   | `{variant}-{color}` | The color of the unselected page. |
+| `pagination-unselected` | `solid-gray`    | `{variant}-{color}` | The color of the unselected page. |
 | `pagination-ellipsis`   | `text-black`    | `{variant}-{color}` | The color of the ellipsis.        |
 
 :read-more{to="/components/button#color" title="Button variant and color section" target="_blank"}
@@ -150,14 +150,22 @@ By default, the size prop applies to height, width, padding, and font size. If y
 
 ## Slots
 
-| Name        | Props          | Description                                          |
-| ----------- | -------------- | ---------------------------------------------------- |
-| `first`     | -              | Customizes the first page navigation button.         |
-| `last`      | -              | Customizes the last page navigation button.          |
-| `prev`      | -              | Customizes the previous page navigation button.      |
-| `next`      | -              | Customizes the next page navigation button.          |
-| `list-item` | `item`, `page` | Customizes the pagination list item component.       |
-| `ellipsis`  | -              | Customizes the ellipsis indicator in the pagination. |
+| Name        | Props          | Description                                                                 |
+| ----------- | -------------- | --------------------------------------------------------------------------- |
+| `first`     | -              | Customizes the first page navigation button.                                |
+| `last`      | -              | Customizes the last page navigation button.                                 |
+| `prev`      | -              | Customizes the previous page navigation button.                             |
+| `next`      | -              | Customizes the next page navigation button.                                 |
+| `list-item` | `item`, `page` | Customizes the pagination list item component.                              |
+| `ellipsis`  | -              | Customizes the ellipsis indicator in the pagination.                        |
+| `start`     | -              | Region before the page list. Holds the page meta and rows-per-page control. |
+| `end`       | -              | Region after the page list.                                                 |
+
+`start` and `end` sit inside the root but outside the page list, so their
+content is not announced as part of it. They are named for logical order, so
+they follow the reading direction under RTL. The root only becomes a flex row
+when one of them actually renders — a pagination without regions lays out
+exactly as it did before.
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -167,6 +175,51 @@ By default, the size prop applies to height, width, padding, and font size. If y
 @@@ ./components/content/examples/vue/pagination/ExampleVuePaginationSlots.vue
 ::
 :::
+
+## Page meta
+
+Two opt-in parts render into the `start` region. Both default to `false`, so
+an existing `NPagination` renders exactly what it did before.
+
+| Prop                     | Default | Type      | Description                          |
+| ------------------------ | ------- | --------- | ------------------------------------ |
+| `showInfo`               | `false` | `boolean` | Render `NPaginationInfo`.            |
+| `showRowsPerPage`        | `false` | `boolean` | Render `NPaginationRowsPerPage`.     |
+| `_paginationInfo`        | `{}`    | `object`  | Props for the info part.             |
+| `_paginationRowsPerPage` | `{}`    | `object`  | Props for the rows-per-page control. |
+
+`NPaginationInfo` takes a `format` of `page` (default, "Page 1 of 5"), `range`
+("Showing 1–10 of 50") or `total` ("50 items"). `range` and `total` need
+`total`, which is optional on the root, so both fall back to the page form when
+it is absent. For anything else, its default slot exposes `page`, `pageCount`,
+`total`, `itemsPerPage`, `first` and `last` — which is also how you localise it,
+since the built-in strings are English.
+
+`NPaginationRowsPerPage` wraps `NSelect` over a `pageSizes` list, defaulting to
+`[10, 20, 30, 40, 50]`, and writes back through `update:itemsPerPage`.
+
+```vue
+<NPagination
+  v-model:page="page"
+  v-model:items-per-page="itemsPerPage"
+  :total="100"
+  show-info
+  show-rows-per-page
+  :_pagination-info="{ format: 'range' }"
+  :_pagination-rows-per-page="{ label: 'Rows per page' }"
+/>
+```
+
+::alert{type="info"}
+`itemsPerPage` is a plain prop on the underlying primitive, so `:items-per-page`
+keeps working as before; `v-model:items-per-page` is additive and is what the
+rows-per-page control needs in order to write back. When the page size grows
+enough to shrink the page count, the current page is clamped into the new range
+for you.
+::
+
+Both parts also work on their own, outside `NPagination`, by passing the values
+they would otherwise read from context.
 
 ## Presets
 

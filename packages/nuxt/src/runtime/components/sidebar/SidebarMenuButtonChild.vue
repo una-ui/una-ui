@@ -47,6 +47,7 @@ export interface SidebarMenuButtonProps extends PrimitiveProps {
 
 <template>
   <Primitive
+    data-slot="sidebar-menu-button-child"
     data-sidebar="menu_button"
     :data-size="size"
     :data-active="isActive"

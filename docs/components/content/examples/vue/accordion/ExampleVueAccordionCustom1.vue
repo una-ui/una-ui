@@ -30,7 +30,7 @@ const items = [
       trailing: 'i-heroicons-chevron-right',
     }"
     :una="{
-      accordionPanel: 'bg-base',
+      accordionPanel: 'bg-background',
       accordionTrailing: 'transition-rotate duration-300',
       accordionTrailingClose: 'rotate-90',
       accordionTrailingOpen: 'rotate-0',

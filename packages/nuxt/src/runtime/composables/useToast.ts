@@ -1,170 +1,87 @@
-import type { ComputedRef, VNode } from 'vue'
-import type { NToastProps } from '../types'
-import { computed, ref } from 'vue'
+import type { Component } from 'vue'
+import type { ExternalToast } from 'vue-sonner'
+import type { NToastAction, NToastProps } from '../types'
+import { markRaw } from 'vue'
+import { toast as sonner } from 'vue-sonner'
+import Toast from '../components/overlays/toast/Toast.vue'
 
-const TOAST_LIMIT = 10
-const TOAST_REMOVE_DELAY = 1000000
+type RichOptions = Omit<ExternalToast, 'action' | 'cancel'>
+  & Pick<NToastProps, 'actions' | 'showProgress' | 'progress' | 'leading' | 'una'>
+  & {
+    /** Single button, inline with the text. Any `NButton` prop works. */
+    action?: NToastAction
+    /** Single dismissing button, inline with the text. */
+    cancel?: NToastAction
+  }
+type ToastType = NToastProps['type']
 
-export type StringOrVNode
-  = | string
-    | VNode
-    | (() => VNode)
-
-type ToasterToast = NToastProps & {
-  id: string
-  title?: string
-  description?: StringOrVNode
-  actions?: NToastProps[]
+/**
+ * Anything una-specific renders through our own component, so buttons are real
+ * `Button`s carrying `btn` variants rather than sonner's `[data-button]`, which
+ * is reachable only through class overrides.
+ */
+function isRich(opts?: RichOptions) {
+  return Boolean(opts && ((opts.actions?.length ?? 0) > 0 || opts.action || opts.cancel || opts.showProgress || opts.leading || opts.una))
 }
 
-const actionTypes = {
-  ADD_TOAST: 'ADD_TOAST',
-  UPDATE_TOAST: 'UPDATE_TOAST',
-  DISMISS_TOAST: 'DISMISS_TOAST',
-  REMOVE_TOAST: 'REMOVE_TOAST',
-} as const
+function rich(message: string, opts: RichOptions, type?: ToastType) {
+  const { actions, action, cancel, showProgress, progress, leading, una, description, ...rest } = opts
+  // only the bar needs a concrete duration; otherwise leave it to the Toaster
+  const duration = rest.duration ?? (showProgress ? 4000 : undefined)
 
-let count = 0
+  const paired: NToastAction[] = [
+    ...(action ? [{ btn: 'outline-gray', ...action }] : []),
+    ...(cancel ? [{ btn: 'ghost-gray', ...cancel }] : []),
+  ]
+  const resolved = [...paired, ...(actions ?? [])]
 
-function genId() {
-  count = (count + 1) % Number.MAX_VALUE
-  return count.toString()
+  // sonner renders its own action/cancel pair inline; `actions[]` is una's
+  // superset and still stacks
+  const inlineActions = paired.length > 0 && !actions?.length
+
+  const componentProps: NToastProps = {
+    type,
+    title: message,
+    description: description as string,
+    actions: resolved,
+    inlineActions,
+    showProgress,
+    progress,
+    leading,
+    una,
+    duration,
+  }
+
+  return sonner.custom(markRaw(Toast) as Component, { ...rest, duration, componentProps })
 }
 
-type ActionType = typeof actionTypes
-
-type Action
-  = | {
-    type: ActionType['ADD_TOAST']
-    toast: ToasterToast
+function create(type?: ToastType) {
+  return (message: string, opts?: RichOptions) => {
+    if (isRich(opts))
+      return rich(message, opts!, type)
+    return type ? sonner[type](message, opts) : sonner(message, opts)
   }
-  | {
-    type: ActionType['UPDATE_TOAST']
-    toast: Partial<ToasterToast>
-  }
-  | {
-    type: ActionType['DISMISS_TOAST']
-    toastId?: ToasterToast['id']
-  }
-  | {
-    type: ActionType['REMOVE_TOAST']
-    toastId?: ToasterToast['id']
-  }
-
-interface State {
-  toasts: ToasterToast[]
 }
 
-const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
-
-function addToRemoveQueue(toastId: string) {
-  if (toastTimeouts.has(toastId))
-    return
-
-  const timeout = setTimeout(() => {
-    toastTimeouts.delete(toastId)
-    dispatch({
-      type: actionTypes.REMOVE_TOAST,
-      toastId,
-    })
-  }, TOAST_REMOVE_DELAY)
-
-  toastTimeouts.set(toastId, timeout)
-}
-
-const state = ref<State>({
-  toasts: [],
+/** vue-sonner's `toast`, with `actions[]` and `showProgress` added. */
+const toast = Object.assign(create(), sonner, {
+  success: create('success'),
+  error: create('error'),
+  warning: create('warning'),
+  info: create('info'),
+  loading: create('loading'),
 })
 
-function dispatch(action: Action) {
-  switch (action.type) {
-    case actionTypes.ADD_TOAST:
-      state.value.toasts = [action.toast, ...state.value.toasts].slice(0, TOAST_LIMIT)
-      break
-
-    case actionTypes.UPDATE_TOAST:
-      state.value.toasts = state.value.toasts.map(t =>
-        t.id === action.toast.id ? { ...t, ...action.toast } : t,
-      )
-      break
-
-    case actionTypes.DISMISS_TOAST: {
-      const { toastId } = action
-
-      if (toastId) {
-        addToRemoveQueue(toastId)
-      }
-      else {
-        state.value.toasts.forEach((toast) => {
-          addToRemoveQueue(toast.id)
-        })
-      }
-
-      state.value.toasts = state.value.toasts.map(t =>
-        t.id === toastId || toastId === undefined
-          ? {
-              ...t,
-              open: false,
-            }
-          : t,
-      )
-      break
-    }
-
-    case actionTypes.REMOVE_TOAST:
-      if (action.toastId === undefined)
-        state.value.toasts = []
-      else
-        state.value.toasts = state.value.toasts.filter(t => t.id !== action.toastId)
-
-      break
-  }
-}
-
-type Toast = Omit<ToasterToast, 'id'>
-
-function toast(props: Toast) {
-  const id = genId()
-
-  const update = (props: ToasterToast) =>
-    dispatch({
-      type: actionTypes.UPDATE_TOAST,
-      toast: { ...props, id },
-    })
-
-  const dismiss = () => dispatch({ type: actionTypes.DISMISS_TOAST, toastId: id })
-
-  dispatch({
-    type: actionTypes.ADD_TOAST,
-    toast: {
-      ...props,
-      id,
-      open: true,
-      onOpenChange: (open: boolean) => {
-        if (!open)
-          dismiss()
-      },
-    },
-  })
-
-  return {
-    id,
-    dismiss,
-    update,
-  }
-}
-
 interface UseToast {
-  toasts: ComputedRef<ToasterToast[]>
-  toast: (props: Toast) => { id: string, dismiss: () => void, update: (props: ToasterToast) => void }
-  dismiss: (toastId?: string) => void
+  toast: typeof toast
+  /** Dismiss a toast by id, or every toast when called with no argument. */
+  dismiss: typeof sonner.dismiss
 }
 
 function useToast(): UseToast {
   return {
-    toasts: computed(() => state.value.toasts),
     toast,
-    dismiss: (toastId?: string) => dispatch({ type: actionTypes.DISMISS_TOAST, toastId }),
+    dismiss: sonner.dismiss,
   }
 }
 

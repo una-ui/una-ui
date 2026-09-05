@@ -25,6 +25,7 @@ import { input } from './input'
 import { kbd } from './kbd'
 import { label } from './label'
 import { link } from './link'
+import { messageScroller } from './message-scroller'
 import { navigationMenu } from './navigation-menu'
 import { numberField } from './number-field'
 import { pagination } from './pagination'
@@ -88,6 +89,7 @@ export const shortcuts = [
   ...form,
   ...sheet,
   ...scrollArea,
+  ...messageScroller,
   ...navigationMenu,
   ...numberField,
   ...sidebar,

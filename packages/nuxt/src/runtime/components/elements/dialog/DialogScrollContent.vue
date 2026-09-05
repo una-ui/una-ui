@@ -19,13 +19,14 @@ defineOptions({
 const props = withDefaults(defineProps<NDialogContentProps>(), {
   showClose: true,
   overlay: true,
+  dismissible: true,
 })
 const emits = defineEmits<DialogContentEmits>()
 
 const delegatedProps = reactiveOmit(props, ['class', '_dialogOverlay', '_dialogClose'])
 
 const contentEvents = computed(() => {
-  if (props.preventClose) {
+  if (!props.dismissible) {
     return {
       pointerDownOutside: (e: Event) => e.preventDefault(),
       interactOutside: (e: Event) => e.preventDefault(),

@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { NToastInfoProps } from '../../../types'
+import type { NCardActionProps } from '../../../types/card'
 import { cn } from '../../../utils'
 
-const props = defineProps<NToastInfoProps>()
+const props = defineProps<NCardActionProps>()
 </script>
 
 <template>
   <div
+    data-slot="card-action"
     :class="cn(
-      'toast-info',
-      props.una?.toastInfo,
+      'card-action',
       props.class,
     )"
   >

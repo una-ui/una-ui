@@ -59,7 +59,7 @@ const components: { title: string, to: string, description: string }[] = [
                     <div class="mb-2 mt-4 text-lg font-medium">
                       shadcn/ui test
                     </div>
-                    <p class="text-sm text-muted leading-tight">
+                    <p class="text-sm text-muted-foreground leading-tight">
                       Beautifully designed components built with Radix UI and
                       Tailwind CSS.
                     </p>
@@ -70,12 +70,12 @@ const components: { title: string, to: string, description: string }[] = [
                 <NNavigationMenuLink as-child>
                   <NLink
                     to="#/docs/introduction"
-                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent hover:text-accent"
+                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent-foreground hover:text-accent-foreground"
                   >
                     <div class="text-sm font-medium leading-none">
                       Introduction
                     </div>
-                    <p class="line-clamp-2 text-sm text-muted leading-snug">
+                    <p class="line-clamp-2 text-sm text-muted-foreground leading-snug">
                       Re-usable components built using Radix UI and Tailwind CSS.
                     </p>
                   </NLink>
@@ -85,12 +85,12 @@ const components: { title: string, to: string, description: string }[] = [
                 <NNavigationMenuLink as-child>
                   <NLink
                     to="#/docs/installation"
-                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent hover:text-accent"
+                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent-foreground hover:text-accent-foreground"
                   >
                     <div class="text-sm font-medium leading-none">
                       Installation
                     </div>
-                    <p class="line-clamp-2 text-sm text-muted leading-snug">
+                    <p class="line-clamp-2 text-sm text-muted-foreground leading-snug">
                       How to install dependencies and structure your app.
                     </p>
                   </NLink>
@@ -100,12 +100,12 @@ const components: { title: string, to: string, description: string }[] = [
                 <NNavigationMenuLink as-child>
                   <NLink
                     to="#/docs/typography"
-                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent hover:text-accent"
+                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent-foreground hover:text-accent-foreground"
                   >
                     <div class="text-sm font-medium leading-none">
                       Typography
                     </div>
-                    <p class="line-clamp-2 text-sm text-muted leading-snug">
+                    <p class="line-clamp-2 text-sm text-muted-foreground leading-snug">
                       Styles for headings, paragraphs, lists...etc
                     </p>
                   </NLink>
@@ -122,10 +122,10 @@ const components: { title: string, to: string, description: string }[] = [
                 <NNavigationMenuLink as-child>
                   <a
                     :to="component.to"
-                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent hover:text-accent"
+                    class="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors space-y-1 focus:bg-accent hover:bg-accent focus:text-accent-foreground hover:text-accent-foreground"
                   >
                     <div class="text-sm font-medium leading-none">{{ component.title }}</div>
-                    <p class="line-clamp-2 text-sm text-muted leading-snug">
+                    <p class="line-clamp-2 text-sm text-muted-foreground leading-snug">
                       {{ component.description }}
                     </p>
                   </a>

@@ -3,18 +3,27 @@ html {
   --at-apply: font-sans antialiased text-foreground bg-background;
 }
 
-html.dark {
-  color-scheme: dark;
-}
-
-::-moz-selection {
-  background: var(--c-bg-selection);
+* {
+  @apply border-border outline-ring/50;
+  scrollbar-color: oklch(var(--una-border)) transparent;
 }
 
 ::selection {
-  background: var(--c-bg-selection);
+  @apply bg-selection/80 text-selection-foreground;
 }
 
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+body {
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  [data-wrapper] {
+    @apply min-[1800px]:border-t;
+  }
+}
+
+a:active,
+button:active {
+  @apply opacity-60 md:opacity-100;
 }

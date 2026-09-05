@@ -14,6 +14,7 @@ function getKey(item: T) {
 
 <template>
   <ul
+    data-slot="sidebar-menu"
     data-sidebar="menu"
     :class="cn(
       'sidebar-menu',

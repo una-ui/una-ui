@@ -20,7 +20,7 @@
     }"
   >
     <template #trigger>
-      <NButton btn="solid-gray">
+      <NButton btn="outline-gray">
         Show Dialog
       </NButton>
     </template>

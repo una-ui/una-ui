@@ -4,6 +4,7 @@ import { Primitive } from 'reka-ui'
 import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NSkeletonProps>(), {
+  skeleton: 'gray',
   as: 'div',
 })
 </script>

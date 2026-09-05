@@ -62,7 +62,7 @@ const selectedSize = ref('md')
       />
     </div>
 
-    <div class="rounded bg-gray-100 p-4 dark:bg-gray-800">
+    <div class="rounded bg-muted p-4">
       <p>Selected Size: {{ selectedSize }}</p>
       <p>Selected Theme: {{ selectedTheme }}</p>
       <p>Selected Plan: {{ selectedPlan }}</p>

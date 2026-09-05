@@ -8,7 +8,7 @@ import Button from '../elements/Button.vue'
 import Icon from '../elements/Icon.vue'
 
 const props = withDefaults(defineProps<NComboboxTriggerProps>(), {
-  btn: 'solid-white',
+  btn: 'outline-gray',
   square: undefined,
 })
 

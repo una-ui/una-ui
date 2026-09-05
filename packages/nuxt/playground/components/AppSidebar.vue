@@ -47,6 +47,10 @@ const data = {
           url: '/components/accordion',
         },
         {
+          title: 'Alert',
+          url: '/components/alert',
+        },
+        {
           title: 'Alert Dialog',
           url: '/components/alert-dialog',
           badge: 'new' as const,
@@ -111,6 +115,11 @@ const data = {
         {
           title: 'Input',
           url: '/components/input',
+        },
+        {
+          title: 'Message Scroller',
+          url: '/components/message-scroller',
+          badge: 'new' as const,
         },
         {
           title: 'Navigation Menu',
@@ -303,6 +312,9 @@ const data = {
 <template>
   <NSidebar
     collapsible="icon"
+    sidebar="inset"
+    sheet="left"
+    rail
   >
     <template #header>
       <TeamSwitcher :teams="data.teams" />

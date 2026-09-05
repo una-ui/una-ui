@@ -118,12 +118,26 @@ Loading allows you to show a loading progress indicator in the table. This is us
 
 ### Pagination
 
-Pagination allows you to paginate rows in the table. This is useful when you want to paginate rows in the table.
+`NTable` owns the pagination state and, with `show-pagination`, renders
+shadcn's pagination bar below the table: the selection count (or row range) on
+the left, then rows per page, `Page X of Y` and the navigation on the right.
+Page numbers are off by default, as in shadcn; turn them on with
+`_tablePagination: { showListItem: true }`. Configure the bar through
+`_tablePagination`, which takes `NPagination`'s props, or replace it entirely
+with the `pagination` slot.
 
 | Prop               | Default                        | Type                                    | Description                                                 |
 | ------------------ | ------------------------------ | --------------------------------------- | ----------------------------------------------------------- |
 | `pagination`       | `{pageIndex: 0, pageSize: 10}` | `{pageIndex: Number, pageSize: Number}` | Pagination state, can be binded with `v-model`.             |
 | `manualPagination` | `false`                        | `boolean`                               | Enable manual pagination, ideal for server-side pagination. |
+| `showPagination`   | `false`                        | `boolean`                               | Render the built-in pagination bar.                         |
+| `_tablePagination` | `{}`                           | `object`                                | Props for the bar's inner `NPagination`.                    |
+
+With `manualPagination`, pass `rowCount` so the bar knows the full size — the
+table only ever holds the current page. When row selection is on, the bar's
+start region shows the selection count instead of the row range. To compose the
+bar yourself outside the root, `NTablePagination` also takes the table instance
+directly as a `table` prop.
 
 :::CodeGroup
 ::div{label="Preview"}
@@ -370,10 +384,41 @@ Allows you to fetch data from the server. This is useful when you want to fetch 
 
 Configure the progress using the `una` prop and utility classes.
 
-| Prop               | Default | Type     | Description           |
-| ------------------ | ------- | -------- | --------------------- |
-| `columns.meta.una` | `{}`    | `object` | Column Una meta data. |
-| `una`              | `{}`    | `object` | Global Una attribute. |
+| Prop                    | Default | Type     | Description                                    |
+| ----------------------- | ------- | -------- | ---------------------------------------------- |
+| `columns.meta.una`      | `{}`    | `object` | Column Una meta data.                          |
+| `una`                   | `{}`    | `object` | Global Una attribute.                          |
+| `_tableSortButton`      | `{}`    | `object` | Props for the sort button in sortable headers. |
+| `_tableColumnFilter`    | `{}`    | `object` | Props for the per-column filter input.         |
+| `_tableSelectionHeader` | `{}`    | `object` | Props for the select-all checkbox.             |
+| `_tableSelectionCell`   | `{}`    | `object` | Props for the per-row selection checkbox.      |
+| `_tableExpandButton`    | `{}`    | `object` | Props for the row expand toggle.               |
+| `_tablePagination`      | `{}`    | `object` | Props for the built-in pagination bar.         |
+
+Each of the five widgets `NTable` renders on your behalf is a component in its
+own right — `NTableSortButton`, `NTableColumnFilter`, `NTableSelectionHeader`,
+`NTableSelectionCell` and `NTableExpandButton` — so it accepts the full prop
+surface of what it wraps, and can be styled through its own `una` keys or
+swapped out entirely through the slots above.
+
+Set them for the whole table with the `_table*` props, or per column through
+`columns.meta`, which accepts the same keys:
+
+```ts
+const columns = [
+  {
+    header: 'Age',
+    accessorKey: 'age',
+    meta: {
+      una: { tableHead: 'text-center' },
+      _tableColumnFilter: { placeholder: 'Filter age…' },
+    },
+  },
+]
+```
+
+Only `una` and the five `_table*` keys are read from `columns.meta`; anything
+else you store there stays out of the DOM.
 
 :read-more{to="#props" title="Component Props API"}
 
@@ -396,19 +441,33 @@ Configure the progress using the `una` prop and utility classes.
 
 ## Slots
 
-| Name              | Props    | Description         |
-| ----------------- | -------- | ------------------- |
-| `{column}-filter` | `column` | Column filter slot. |
-| `{column}-header` | `column` | Column header slot. |
-| `{column}-cell`   | `cell`   | Column cell slot.   |
-| `{column}-footer` | `column` | Column footer slot. |
-| `header`          | `table`  | Header slot.        |
-| `body`            | `table`  | Body slot.          |
-| `raw`             | `row`    | Row slot.           |
-| `footer`          | `table`  | Footer slot.        |
-| `expanded`        | `row`    | Expanded slot.      |
-| `empty`           | -        | Empty slot.         |
-| `loading`         | -        | Loading slot.       |
+| Name              | Props                 | Description                                                  |
+| ----------------- | --------------------- | ------------------------------------------------------------ |
+| `{column}-filter` | `column`              | Column filter slot.                                          |
+| `{column}-header` | `column`              | Column header slot.                                          |
+| `{column}-cell`   | `cell`                | Column cell slot.                                            |
+| `{column}-footer` | `column`              | Column footer slot.                                          |
+| `header`          | `table`               | Header slot.                                                 |
+| `body`            | `table`               | Body slot.                                                   |
+| `row`             | `row`                 | Row slot.                                                    |
+| `footer`          | `table`               | Footer slot.                                                 |
+| `select-header`   | `column`              | Select-all checkbox slot, when `enableRowSelection` is set.  |
+| `select-cell`     | `cell`                | Per-row selection checkbox slot.                             |
+| `expand-cell`     | `cell`                | Row expand toggle slot, when an `expanded` slot is provided. |
+| `expanded`        | `row`                 | Expanded row content slot.                                   |
+| `empty`           | -                     | Empty slot.                                                  |
+| `loading`         | -                     | Loading slot.                                                |
+| `pagination`      | `table`, `pagination` | Replaces the built-in pagination bar.                        |
+
+::alert{type="warning"}
+`select-header`, `select-cell` and `expand-cell` are keyed off the reserved
+column ids `select` and `expand`. Do not give one of your own columns either
+id — `NTable` warns in dev if you do, because TanStack keys columns by id and
+would silently drop one of the two.
+
+Note that `expand-cell` (the toggle button) and `expanded` (the expanded row's
+content) are different slots.
+::
 
 :::CodeGroup
 ::div{label="Preview"}

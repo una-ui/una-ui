@@ -1,8 +1,5 @@
 ---
 description: 'A set of two-state buttons that can be toggled on or off.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo
