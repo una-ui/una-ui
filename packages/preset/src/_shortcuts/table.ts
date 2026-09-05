@@ -65,11 +65,9 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-expand-icon-base': 'transform transition-transform duration-200',
 
   // table-pagination
-  // the built-in bar sits inside `table-root` below the table, outside the
-  // scroll area, so it never scrolls with a wide table
-  // table-pagination — shadcn's DataTablePagination, part for part: status on
-  // the left, then rows per page, "Page X of Y" and the navigation on the
-  // right; a sibling below `table-root`, hence the `mt-4`
+  // shadcn's DataTablePagination, part for part: status on the left, then rows
+  // per page, "Page X of Y" and the navigation on the right; a sibling below
+  // `table-root`, hence the `mt-4`
   'table-pagination': 'mt-4 flex items-center justify-between px-4',
   'table-pagination-status': 'hidden flex-1 text-sm text-muted-foreground lg:flex',
   'table-pagination-controls': 'flex w-full items-center gap-8 lg:w-fit',
