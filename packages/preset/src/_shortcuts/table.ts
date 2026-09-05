@@ -64,6 +64,17 @@ export const staticTable: Record<`${TablePrefix}-${string}` | TablePrefix, strin
   'table-expand-button': '',
   'table-expand-icon-base': 'transform transition-transform duration-200',
 
+  // table-pagination
+  // shadcn's DataTablePagination, part for part: status on the left, then rows
+  // per page, "Page X of Y" and the navigation on the right; a sibling below
+  // `table-root`, hence the `mt-4`
+  'table-pagination': 'mt-4 flex items-center justify-between px-4',
+  'table-pagination-status': 'hidden flex-1 text-sm text-muted-foreground lg:flex',
+  'table-pagination-controls': 'flex w-full items-center gap-8 lg:w-fit',
+  'table-pagination-page-size': 'hidden items-center gap-2 lg:flex',
+  'table-pagination-page': 'flex w-fit items-center justify-center text-sm',
+  'table-pagination-nav': 'ml-auto flex items-center lg:ml-0',
+
   // table-footer
   'table-footer': 'border-t border-border bg-muted font-medium [&>tr]:last:border-b-0',
 }

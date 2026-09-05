@@ -38,14 +38,22 @@ import TableFooter from './TableFooter.vue'
 import TableHead from './TableHead.vue'
 import TableHeader from './TableHeader.vue'
 import TableLoading from './TableLoading.vue'
+import TablePagination from './TablePagination.vue'
 import TableRow from './TableRow.vue'
 import TableSelectionCell from './TableSelectionCell.vue'
 import TableSelectionHeader from './TableSelectionHeader.vue'
 import TableSortButton from './TableSortButton.vue'
+import { provideTableContext } from './useTable'
+
+// the root is a fragment once the pagination bar renders beside `table-root`,
+// so attrs cannot be inherited — they keep going to `<table>` through the
+// explicit `v-bind="$attrs"` there, as they always have
+defineOptions({ inheritAttrs: false })
 
 const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
   enableSortingRemoval: true,
+  showPagination: false,
 })
 const emit = defineEmits<{
   select: [row: TData]
@@ -179,6 +187,15 @@ const table = useVueTable({
   onColumnPinningChange: updaterOrValue => valueUpdater(updaterOrValue, columnPinning),
   onExpandedChange: updaterOrValue => valueUpdater(updaterOrValue, expanded),
   onGroupingChange: updaterOrValue => valueUpdater(updaterOrValue, grouping),
+})
+
+// the seam the built-in pagination bar — and anything composed into
+// `#pagination` — reads the instance through, without a template ref
+provideTableContext({
+  table,
+  pagination: computed(() => pagination.value),
+  setPageIndex: index => table.setPageIndex(index),
+  setPageSize: size => table.setPageSize(size),
 })
 
 function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]): number {
@@ -486,4 +503,18 @@ defineExpose({
       </table>
     </ScrollArea>
   </div>
+
+  <!-- pagination bar: a sibling below the root, where shadcn's
+       DataTablePagination sits relative to the bordered table -->
+  <slot
+    v-if="showPagination || $slots.pagination"
+    name="pagination"
+    :table="table"
+    :pagination="pagination"
+  >
+    <TablePagination
+      :una
+      v-bind="props._tablePagination"
+    />
+  </slot>
 </template>
