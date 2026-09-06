@@ -5,21 +5,18 @@ const isTooHigh = computed(() => value.value[0] > 50)
 </script>
 
 <template>
-  <NFormGroup
+  <NFormField
+    name="volume"
     label="Volume"
     required
     hint="Adjust the volume"
     :message="isTooHigh ? 'Volume is too high' : ''"
     :status="isTooHigh ? 'error' : undefined"
-    :counter="{
-      value: value[0],
-      max: 50,
-    }"
   >
     <NSlider
       v-model="value"
       :min="0"
       :max="100"
     />
-  </NFormGroup>
+  </NFormField>
 </template>

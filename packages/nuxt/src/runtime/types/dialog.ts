@@ -4,11 +4,12 @@ import type {
   DialogDescriptionProps,
   DialogRootProps,
   DialogTitleProps,
+  DialogTriggerProps,
 } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NDialogProps extends DialogRootProps, Pick<NDialogContentProps, 'preventClose' | 'showClose' | 'overlay' | '_dialogClose' | '_dialogOverlay'> {
+export interface NDialogProps extends DialogRootProps, Pick<NDialogContentProps, 'dismissible' | 'showClose' | 'overlay' | '_dialogClose' | '_dialogOverlay'> {
   /**
    * The title of the dialog.
    */
@@ -18,7 +19,9 @@ export interface NDialogProps extends DialogRootProps, Pick<NDialogContentProps,
    */
   description?: string
   /**
+   * If `true`, the dialog will have a scrollable body.
    *
+   * @default false
    */
   scrollable?: boolean
 
@@ -28,6 +31,7 @@ export interface NDialogProps extends DialogRootProps, Pick<NDialogContentProps,
   _dialogHeader?: NDialogHeaderProps
   _dialogFooter?: NDialogFooterProps
   _dialogContent?: NDialogContentProps
+  _dialogTrigger?: NDialogTriggerProps
 
   /**
    * `UnaUI` preset configuration
@@ -53,7 +57,7 @@ export interface NDialogContentProps extends DialogContentProps, BaseExtensions 
   /**
    * Prevent close.
    */
-  preventClose?: boolean
+  dismissible?: boolean
   /**
    * Show close button.
    *
@@ -95,6 +99,9 @@ export interface NDialogFooterProps extends BaseExtensions {
 }
 
 export interface NDialogCloseProps extends DialogCloseProps, NButtonProps {
+}
+
+export interface NDialogTriggerProps extends DialogTriggerProps {
 }
 
 export interface NDialogUnaProps {

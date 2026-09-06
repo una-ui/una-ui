@@ -1,5 +1,5 @@
 <template>
-  <NAlert alert="soft-error" icon>
+  <NAlert alert="text-error" icon>
     <template #title>
       There were some errors with your submission
     </template>

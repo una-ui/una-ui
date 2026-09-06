@@ -15,7 +15,7 @@ const statusClassVariants = computed(() => {
     success: 'text-success',
     warning: 'text-warning',
     error: 'text-error',
-    default: 'text-muted',
+    default: 'text-muted-foreground',
   }
 
   return text[props.status ?? 'default']

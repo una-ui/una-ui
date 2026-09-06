@@ -1,18 +1,27 @@
 ---
 description: 'A succinct message that is displayed temporarily.'
+navBadges:
+  - value: Breaking
+    type: warning
 badges:
   - value: Source
     icon: radix-icons:github-logo
-    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/overlays/Toast.vue
+    to: https://github.com/una-ui/una-ui/blob/main/packages/nuxt/src/runtime/components/overlays/Toaster.vue
     target: _blank
   - value: API reference
-    to: https://www.reka-ui.com/docs/components/toast
+    to: https://github.com/xiaoluoboding/vue-sonner
     target: _blank
 ---
 
+::alert{type="warning"}
+**Breaking change.** `NToast` previously wrapped Reka UI and took a single options object —
+`toast({ title, description, actions })`. It now exposes vue-sonner's API, where the message is the
+first argument. See [Migrating](#migrating) below.
+::
+
 ## Setup
 
-For the beginning, add the `Toaster` component to your `app.vue`.
+Add `NToaster` once, in your `app.vue`:
 
 ```vue [app.vue]
 <template>
@@ -28,14 +37,7 @@ For the beginning, add the `Toaster` component to your `app.vue`.
 
 ### Basic
 
-Then, you can use the `useToast` composable to add toasts to your app:
-
-| Prop           | Default | Type      | Description              |
-| -------------- | ------- | --------- | ------------------------ |
-| `title`        | -       | `string`  | Title of the toast       |
-| `description`  | -       | `string`  | Description of the toast |
-| `showProgress` | `false` | `boolean` | Show the progress bar.   |
-| `closable`     | `true`  | `boolean` | Display close button.    |
+`useToast()` returns vue-sonner's `toast`. The message is the first argument; everything else is options.
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -46,11 +48,35 @@ Then, you can use the `useToast` composable to add toasts to your app:
 ::
 :::
 
-### With actions
+### Types
 
-| Prop      | Default | Type       | Description          |
-| --------- | ------- | ---------- | -------------------- |
-| `actions` | `[]`    | `Action[]` | The array of action. |
+Each type renders its own coloured icon on a neutral card.
+
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueToastTypes
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/toast/ExampleVueToastTypes.vue
+::
+:::
+
+::alert{type="info"}
+`toast.loading()` never dismisses on its own — resolve it by passing its id to a later call, or call
+`toast.dismiss(id)`.
+::
+
+### Actions
+
+| Option    | Type             | Description                                                         |
+| --------- | ---------------- | ------------------------------------------------------------------- |
+| `action`  | `NToastAction`   | A single button.                                                    |
+| `cancel`  | `NToastAction`   | A single dismissing button.                                         |
+| `actions` | `NToastAction[]` | Two or more buttons. una's own option — vue-sonner allows only one. |
+
+Buttons are [NButton](button) components, so any `NButton` prop works — `btn`, `size`, `leading`.
+They default to `outline-gray`, and `cancel` to `ghost-gray`. A single button sits inline with the
+text; two or more move to their own row underneath.
 
 :::CodeGroup
 ::div{label="Preview" preview}
@@ -61,76 +87,109 @@ Then, you can use the `useToast` composable to add toasts to your app:
 ::
 :::
 
-### Leading Icon
+::alert{type="info"}
+`onClick` dismisses the toast afterwards. Pass `dismissOnClick: false` to keep it open.
+::
 
-| Prop      | Default | Type     | Description                   |
-| --------- | ------- | -------- | ----------------------------- |
-| `leading` | -       | `string` | The leading icon of the toast |
+### Promise and updating
+
+`toast.promise()` follows a promise through its states. Any toast can also be updated in place by
+passing its id to a later call — the usual way to resolve a loading toast.
 
 :::CodeGroup
 ::div{label="Preview" preview}
-:ExampleVueToastLeading
+:ExampleVueToastPromise
 ::
 ::div{label="Code"}
-@@@ ./components/content/examples/vue/toast/ExampleVueToastLeading.vue
+@@@ ./components/content/examples/vue/toast/ExampleVueToastPromise.vue
 ::
 :::
 
-:read-more{to="/components/icon" title="Icon Component" target="_blank"}
+### Progress
 
-### Variant and Color
+| Option         | Default | Type      | Description                          |
+| -------------- | ------- | --------- | ------------------------------------ |
+| `showProgress` | `false` | `boolean` | Show a bar counting down `duration`. |
+| `progress`     | -       | `{color}` | Colour of the bar.                   |
 
-| Prop       | Default        | Type                | Description                      |
-| ---------- | -------------- | ------------------- | -------------------------------- |
-| `toast`    | `outline-gray` | `{variant}-{color}` | Set the toast variant and color. |
-| `progress` | `primary`      | `{color}`           | Set the progress color.          |
+:::CodeGroup
+::div{label="Preview" preview}
+:ExampleVueToastProgress
+::
+::div{label="Code"}
+@@@ ./components/content/examples/vue/toast/ExampleVueToastProgress.vue
+::
+:::
 
 ::alert{type="info"}
-`NToastAction` is wrapped around the [NButton](button) component. This means that all the props and slots of
-`NButton` are available to use or through `toast-action` prop.
+vue-sonner exposes no remaining-time hook, so the bar runs its own timer. It pauses whenever
+vue-sonner pauses dismissal — hovering the stack or hiding the window — so the two stay in step.
 ::
 
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueToastVariant
+## Toaster
+
+`NToaster` accepts every vue-sonner `Toaster` prop.
+
+| Prop            | Default        | Type       | Description                                                                  |
+| --------------- | -------------- | ---------- | ---------------------------------------------------------------------------- |
+| `position`      | `bottom-right` | `Position` | Corner the stack sits in.                                                    |
+| `duration`      | `4000`         | `number`   | How long a toast stays, in milliseconds.                                     |
+| `visibleToasts` | `3`            | `number`   | How many are shown before the rest are stacked.                              |
+| `expand`        | `false`        | `boolean`  | Show the stack expanded instead of collapsed.                                |
+| `closeButton`   | `false`        | `boolean`  | Show a close button on every toast.                                          |
+| `richColors`    | `false`        | `boolean`  | Tint the card per type, using vue-sonner's palette rather than una's tokens. |
+
+`duration`, `closeButton` and `richColors` can also be set per toast.
+
+::alert{type="info"}
+Toasts using una-specific options — `actions`, `showProgress`, `leading` or `una` — render through
+una's own component, which vue-sonner treats as fully custom: `closeButton` and `richColors` don't
+apply to them.
 ::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/toast/ExampleVueToastVariant.vue
-::
-:::
 
-### Provider
+## Theming
 
-Configure the toast provider using the `_toastProvider` prop.
+Colours come from una's theme tokens — the card follows `popover`, `popover-foreground` and
+`border`, and type icons follow `success`, `error`, `warning` and `info`. Dark mode is handled by
+una's colour mode; nothing extra is needed.
 
-| Prop             | Default        | Type                       | Description                                                         |
-| ---------------- | -------------- | -------------------------- | ------------------------------------------------------------------- |
-| `duration`       | `4000`         | `number`                   | Set the duration in milliseconds of the toast.                      |
-| `label`          | `Notification` | `string`                   | An author-localized label for each toast.                           |
-| `swipeDirection` | `right`        | `right` `left` `up` `down` | Direction of pointer swipe that should close the toast.             |
-| `swipeThreshold` | `50`           | `number`                   | Distance in pixels that the swipe pass before a close is triggered. |
+Individual parts can be restyled through the `una` prop:
 
-:read-more{to="https://www.reka-ui.com/docs/components/toast#root" title="Reka Toast Root API." target="_blank"}
+```vue
+<NToaster
+  :una="{
+    toastTitle: 'font-semibold',
+    toastDescription: 'text-xs',
+  }"
+/>
+```
 
-:::CodeGroup
-::div{label="Preview" preview}
-:ExampleVueToastProvider
-::
-::div{label="Code"}
-@@@ ./components/content/examples/vue/toast/ExampleVueToastProvider.vue
-::
-:::
+## Migrating
 
-## Slots
+```diff
+- toast({ title: 'Saved', description: 'All good', closable: true })
++ toast('Saved', { description: 'All good' })
 
-| Name          | Props | Description           |
-| ------------- | ----- | --------------------- |
-| `default`     | -     | The trigger slot.     |
-| `actions`     | -     | The actions slot.     |
-| `info`        | -     | The info slot.        |
-| `title`       | -     | The title slot.       |
-| `description` | -     | The description slot. |
-| `closeIcon`   | -     | The close icon slot.  |
+- toast({ toast: 'soft-error', title: 'Failed' })
++ toast.error('Failed')
+
+- toast({ title: 'Uploading…', _toastProvider: { duration: 8000 } })
++ toast('Uploading…', { duration: 8000 })
+```
+
+| Before                                          | After                                                                     |
+| ----------------------------------------------- | ------------------------------------------------------------------------- |
+| `title: 'Saved'`                                | The message is the first argument — `toast('Saved')`.                     |
+| `toast: 'soft-error'` and other variants        | A type call — `toast.error()`, `toast.success()`, …                       |
+| `closable: true`                                | `closeButton: true`, and it now defaults to `false`.                      |
+| `_toastProvider.duration`                       | `duration` — per toast, or on `NToaster` for all of them.                 |
+| `_toastProvider.swipeDirection`                 | `swipeDirections` on `NToaster`.                                          |
+| `const { dismiss, update } = toast({ … })`      | Keep the returned id — `toast.dismiss(id)`, `toast('New title', { id })`. |
+| `useToast().toasts`                             | Gone — `NToaster` renders the stack itself.                               |
+| Slots — `#title`, `#description`, `#actions`, … | `toast.custom(markRaw(MyToast))` renders a component of your own.         |
+| `NToastProvider` / `Viewport` / `Title` / `…`   | Removed — `NToaster` is the only component left.                          |
+
+`actions[]`, `showProgress` and `leading` carry over unchanged.
 
 ## Presets
 
@@ -147,44 +206,12 @@ Configure the toast provider using the `_toastProvider` prop.
 ## Components
 
 :::CodeGroup
-::div{label="Toast.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/Toast.vue
-
-::
 ::div{label="Toaster.vue" icon="i-vscode-icons-file-type-vue"}
 @@@ ../packages/nuxt/src/runtime/components/overlays/Toaster.vue
 
 ::
-::div{label="ToastRoot.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastRoot.vue
-
-::
-::div{label="ToastProvider.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastProvider.vue
-
-::
-::div{label="ToastViewport.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastViewport.vue
-
-::
-::div{label="ToastInfo.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastInfo.vue
-
-::
-::div{label="ToastTitle.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastTitle.vue
-
-::
-::div{label="ToastDescription.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastDescription.vue
-
-::
-::div{label="ToastAction.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastAction.vue
-
-::
-::div{label="ToastClose.vue" icon="i-vscode-icons-file-type-vue"}
-@@@ ../packages/nuxt/src/runtime/components/overlays/toast/ToastClose.vue
+::div{label="Toast.vue" icon="i-vscode-icons-file-type-vue"}
+@@@ ../packages/nuxt/src/runtime/components/overlays/toast/Toast.vue
 
 ::
 :::

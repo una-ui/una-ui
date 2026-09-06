@@ -13,24 +13,21 @@ export default defineNuxtConfig({
 
   devtools: {
     enabled: true,
-    componentInspector: false,
   },
 
   app: {
     keepalive: false,
   },
 
-  nitro: {
-    routeRules: {
-      '/': {
-        redirect: '/dashboards/default',
-      },
-      '/dashboards': {
-        redirect: '/dashboards/default',
-      },
-      '/components': {
-        redirect: '/components/accordion',
-      },
+  routeRules: {
+    '/': {
+      redirect: '/dashboards/project-management',
+    },
+    '/dashboards': {
+      redirect: '/dashboards/default',
+    },
+    '/components': {
+      redirect: '/components/accordion',
     },
   },
 

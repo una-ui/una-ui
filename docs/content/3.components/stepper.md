@@ -1,8 +1,5 @@
 ---
 description: 'A set of steps that are used to indicate progress through a multi-step process.'
-navBadges:
-  - value: New
-    type: lime
 badges:
   - value: Source
     icon: radix-icons:github-logo

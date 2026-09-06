@@ -7,6 +7,7 @@ const props = defineProps<NCardFooterProps>()
 
 <template>
   <div
+    data-slot="card-footer"
     :class="cn(
       'card-footer',
       props.una?.cardFooter,

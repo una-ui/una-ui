@@ -32,22 +32,24 @@ const props = withDefaults(defineProps<NAvatarProps>(), {
     v-bind="{ ..._avatarRoot, ...$attrs }"
   >
     <slot>
-      <AvatarImage
-        v-if="src"
-        :src
-        :una
-        :alt
-        v-bind="_avatarImage"
-      />
-    </slot>
+      <slot name="image">
+        <AvatarImage
+          v-if="src"
+          :src
+          :una
+          :alt
+          v-bind="_avatarImage"
+        />
+      </slot>
 
-    <AvatarFallback
-      :label="label || alt?.split(' ').map(word => word[0]).join('').slice(0, 2)"
-      :icon
-      v-bind="_avatarFallback"
-      :una
-    >
-      <slot name="fallback" />
-    </AvatarFallback>
+      <AvatarFallback
+        :label="label || alt?.split(' ').map(word => word[0]).join('').slice(0, 2)"
+        :icon
+        v-bind="_avatarFallback"
+        :una
+      >
+        <slot name="fallback" />
+      </AvatarFallback>
+    </slot>
   </AvatarRoot>
 </template>

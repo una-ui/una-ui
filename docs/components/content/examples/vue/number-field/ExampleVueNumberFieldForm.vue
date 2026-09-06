@@ -13,8 +13,7 @@ const { handleSubmit, setFieldValue } = useForm({
 })
 
 const onSubmit = handleSubmit((values) => {
-  toast({
-    title: 'You submitted the following values:',
+  toast('You submitted the following values:', {
     description: JSON.stringify(values, null, 2),
   })
 })

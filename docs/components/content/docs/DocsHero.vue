@@ -28,10 +28,10 @@ const { copy, copied } = useClipboard({ source })
             Una UI
           </span>
         </h1>
-        <h2 class="text-4xl text-accent font-bold lg:text-6xl">
+        <h2 class="text-4xl text-accent-foreground font-bold lg:text-6xl">
           The Atomic UI Framework
         </h2>
-        <p class="text-md text-muted md:text-2xl">
+        <p class="text-md text-muted-foreground md:text-2xl">
           Build fast, modern, and lightweight components powered by the Unocss Engine.
         </p>
       </div>
@@ -47,14 +47,14 @@ const { copy, copied } = useClipboard({ source })
         />
         <NButton
           to="/components/accordion"
-          btn="solid-gray"
+          btn="outline-gray"
           class="font-bold"
           rounded="full"
           p="5 sm:5.5"
           label="View Components"
         />
         <NButton
-          btn="solid-gray"
+          btn="outline-gray"
           class="font-bold"
           p="5 sm:5.5"
           rounded="full"
@@ -92,7 +92,7 @@ const { copy, copied } = useClipboard({ source })
 .image-bg {
   opacity: 0.5;
   transition: opacity 2s ease;
-  background-image: linear-gradient(-80deg, rgb(var(--una-primary)) 30%, var(--c-brand-next));
+  background-image: linear-gradient(-80deg, oklch(var(--una-primary) / 0.5) 40%, var(--c-brand-next));
   filter: blur(120px);
 }
 </style>

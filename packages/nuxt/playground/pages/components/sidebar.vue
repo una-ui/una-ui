@@ -4,7 +4,7 @@
       <BlockPreview
         url="/sidebars/1"
       />
-      <figcaption class="text-center text-sm text-muted">
+      <figcaption class="text-center text-sm text-muted-foreground">
         A sidebar that collapses to icons.
       </figcaption>
     </figure>
@@ -13,7 +13,7 @@
       <BlockPreview
         url="/sidebars/2"
       />
-      <figcaption class="text-center text-sm text-muted">
+      <figcaption class="text-center text-sm text-muted-foreground">
         A floating sidebar that collapses to offcanvas.
       </figcaption>
     </figure>

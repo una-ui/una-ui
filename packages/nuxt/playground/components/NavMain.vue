@@ -36,18 +36,16 @@ defineProps<{
           <NCollapsibleContent>
             <NSidebarMenuSub>
               <NSidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
-                <NSidebarMenuSubButton as-child>
-                  <NLink :to="subItem.url" active-class="bg-sidebar-accent text-sidebar-accent-foreground">
-                    <span>{{ subItem.title }}</span>
-                    <NBadge
-                      v-if="subItem.badge"
-                      size="10px"
-                      :badge="subItem.badge === 'new' ? 'solid-lime' : subItem.badge === 'hot' ? 'solid-orange' : subItem.badge === 'beta' ? 'solid-blue' : 'solid-red'"
-                      class="ml-auto capitalize"
-                    >
-                      {{ subItem.badge }}
-                    </NBadge>
-                  </NLink>
+                <NSidebarMenuSubButton :to="subItem.url" :is-active="subItem.url === $route.path">
+                  <span>{{ subItem.title }}</span>
+                  <NBadge
+                    v-if="subItem.badge"
+                    size="10px"
+                    :badge="subItem.badge === 'new' ? 'solid-lime' : subItem.badge === 'hot' ? 'solid-orange' : subItem.badge === 'beta' ? 'solid-blue' : 'solid-red'"
+                    class="ml-auto capitalize"
+                  >
+                    {{ subItem.badge }}
+                  </NBadge>
                 </NSidebarMenuSubButton>
               </NSidebarMenuSubItem>
             </NSidebarMenuSub>

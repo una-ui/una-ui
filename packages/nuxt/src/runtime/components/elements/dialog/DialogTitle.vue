@@ -13,6 +13,7 @@ const forwardedProps = useForwardProps(delegatedProps)
 
 <template>
   <DialogTitle
+    data-slot="dialog-title"
     v-bind="forwardedProps"
     :class="cn(
       'dialog-title',

@@ -13,6 +13,7 @@ const width = computed(() => {
 
 <template>
   <div
+    data-slot="sidebar-menu-skeleton"
     data-sidebar="menu-skeleton"
     :class="cn(
       'sidebar-menu-skeleton',

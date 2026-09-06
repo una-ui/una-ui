@@ -1,8 +1,5 @@
 ---
 description: 'A versatile wrapper for various form components such as `Input`, `Textarea`, `Select`, and more. It offers a comprehensive set of features, including label, description, hint, message, status, and others.'
-navBadges:
-  - value: Deprecated
-    type: warning
 badges:
   - value: Source
     icon: radix-icons:github-logo

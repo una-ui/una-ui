@@ -8,7 +8,7 @@
 
     <NIcon name="i-error" class="text-error" />
 
-    <NIcon name="i-loading" class="animate-spin text-muted" />
+    <NIcon name="i-loading" class="animate-spin text-muted-foreground" />
 
     <NIcon name="i-close" />
 

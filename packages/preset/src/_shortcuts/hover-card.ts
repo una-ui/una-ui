@@ -7,17 +7,17 @@ export const staticHoverCard: Record<`${HoverCardPrefix}-${string}` | HoverCardP
 
   // components
   'hover-card-trigger': '',
-  'hover-card-content': 'bg-base text-popover zoom-in-95 z-50 w-64 rounded-md border p-4 shadow-md outline-hidden data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
-  'hover-card-arrow': '!bg-transparent !border-none -mt-1px fill-base stroke-base',
+  'hover-card-content': 'bg-background text-popover-foreground animate-in fade-in-0 zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-64 rounded-md border p-4 shadow-md outline-none',
+  'hover-card-arrow': '!bg-transparent !border-none -mt-1px fill-background stroke-border',
 
   // static variants
-  'hover-card-soft-gray': 'bg-muted border border-base',
-  'hover-card-outline-gray': 'bg-base border border-base',
+  'hover-card-soft-gray': 'bg-muted border border-border',
+  'hover-card-outline-gray': 'bg-background border border-border',
 }
 
 export const dynamicHoverCard = [
-  [/^hover-card-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 fill-${c}-50 stroke-${c}-200 border-${c}-200 dark:(bg-${c}-900 border-${c}-700/58 fill-${c}-900 stroke-${c}-700/58)`],
-  [/^hover-card-outline(-(\S+))?$/, ([, , c = 'gray']) => `border stroke-${c}-200 border-${c}-200 dark:(border-${c}-700/58 stroke-${c}-700/58)`],
+  [/^hover-card-soft(-(\S+))?$/, ([, , c = 'gray']) => `bg-${c}-50 fill-${c}-50 stroke-${c}-200 border-${c}-200 dark:(bg-${c}-900 border-${c}-800 fill-${c}-900 stroke-${c}-800)`],
+  [/^hover-card-outline(-(\S+))?$/, ([, , c = 'gray']) => `border stroke-${c}-200 border-${c}-200 dark:(border-${c}-800 stroke-${c}-800)`],
 ]
 
 export const hoverCard = [

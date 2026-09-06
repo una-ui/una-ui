@@ -5,8 +5,8 @@ export const staticForm: Record<`${FormPrefix}-${string}` | FormPrefix, string> 
   'form': '',
 
   'form-field': '',
-  'form-field-description': 'text-muted',
-  'form-field-hint': 'text-sm leading-none text-muted',
+  'form-field-description': 'text-muted-foreground',
+  'form-field-hint': 'text-sm leading-none text-muted-foreground',
   'form-field-message': '',
 
   // wrappers
@@ -22,7 +22,7 @@ export const staticForm: Record<`${FormPrefix}-${string}` | FormPrefix, string> 
 
   'form-message': 'text-0.8rem font-medium transition-all duration-1000 ease-in-out text-error',
   'form-label': '',
-  'form-description': 'text-sm text-muted',
+  'form-description': 'text-sm text-muted-foreground',
   'form-item': 'space-y-2',
 }
 

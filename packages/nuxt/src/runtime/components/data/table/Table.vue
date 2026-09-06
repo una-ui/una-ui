@@ -1,5 +1,7 @@
 <script setup lang="ts" generic="TData, TValue">
 import type {
+  Column,
+  ColumnDef,
   ColumnFiltersState,
   ColumnOrderState,
   ColumnPinningState,
@@ -7,10 +9,8 @@ import type {
   GroupingState,
   Header,
   PaginationState,
-  Row,
   RowSelectionState,
   SortingState,
-  Table,
   VisibilityState,
 } from '@tanstack/vue-table'
 import type { NTableProps } from '../../../types'
@@ -25,35 +25,50 @@ import {
   useVueTable,
 } from '@tanstack/vue-table'
 
-import { computed, h } from 'vue'
+import { computed } from 'vue'
 
 import { cn, valueUpdater } from '../../../utils'
-import Button from '../../elements/Button.vue'
-import Checkbox from '../../forms/Checkbox.vue'
-import Input from '../../forms/Input.vue'
 import ScrollArea from '../../scroll-area/ScrollArea.vue'
 import TableBody from './TableBody.vue'
 import TableCell from './TableCell.vue'
+import TableColumnFilter from './TableColumnFilter.vue'
 import TableEmpty from './TableEmpty.vue'
+import TableExpandButton from './TableExpandButton.vue'
 import TableFooter from './TableFooter.vue'
 import TableHead from './TableHead.vue'
 import TableHeader from './TableHeader.vue'
 import TableLoading from './TableLoading.vue'
+import TablePagination from './TablePagination.vue'
 import TableRow from './TableRow.vue'
+import TableSelectionCell from './TableSelectionCell.vue'
+import TableSelectionHeader from './TableSelectionHeader.vue'
+import TableSortButton from './TableSortButton.vue'
+import { provideTableContext } from './useTable'
+
+// the root is a fragment once the pagination bar renders beside `table-root`,
+// so attrs cannot be inherited — they keep going to `<table>` through the
+// explicit `v-bind="$attrs"` there, as they always have
+defineOptions({ inheritAttrs: false })
 
 const props = withDefaults(defineProps <NTableProps<TData, TValue>>(), {
   enableMultiRowSelection: true,
   enableSortingRemoval: true,
+  showPagination: false,
 })
-
 const emit = defineEmits<{
   select: [row: TData]
   selectAll: [rows: TData[]]
   expand: [row: TData]
   row: [event: Event, row: TData]
 }>()
-
 const slots = defineSlots()
+/**
+ * Column ids `NTable` injects for its own widgets. A user column resolving to
+ * either would be silently dropped — TanStack keys columns by id in a plain
+ * map, so the later definition wins without warning.
+ */
+const SELECT_COLUMN_ID = 'select'
+const EXPAND_COLUMN_ID = 'expand'
 
 const rowSelection = defineModel<RowSelectionState>('rowSelection')
 const sorting = defineModel<SortingState>('sorting')
@@ -72,68 +87,39 @@ const pagination = defineModel<PaginationState>('pagination', {
 })
 
 const columnsWithMisc = computed(() => {
-  let data = []
+  if (import.meta.dev) {
+    const reservedIds = [SELECT_COLUMN_ID, EXPAND_COLUMN_ID]
+    for (const column of props.columns ?? []) {
+      const id = (column as any).id ?? (column as any).accessorKey
+      if (reservedIds.includes(id)) {
+        console.warn(`[NTable]: The column id '${id}' is reserved for the built-in ${id === SELECT_COLUMN_ID ? 'row selection' : 'row expansion'} column. TanStack keys columns by id, so one of the two will be silently dropped. Please choose a different id.`)
+      }
+    }
+  }
+
+  let data = props.columns as ColumnDef<TData, TValue>[]
 
   // add selection column
   data = props.enableRowSelection
     ? [
         {
-          accessorKey: 'selection',
-          header: props.enableMultiRowSelection
-            ? ({ table }: { table: Table<TData> }) => h(Checkbox, {
-                'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
-                'onUpdate:modelValue': (value: boolean | 'indeterminate' | null) => {
-                  table.toggleAllPageRowsSelected(!!value)
-                  emit('selectAll', table.getRowModel().rows.map(row => row.original))
-                },
-                'areaLabel': 'Select all rows',
-                'onClick': (event: Event) => {
-                  event.stopPropagation()
-                },
-              })
-            : '',
-          cell: ({ row }: { row: Row<TData> }) => h(Checkbox, {
-            'modelValue': row.getIsSelected() ?? false,
-            'onUpdate:modelValue': (value: boolean | 'indeterminate' | null) => {
-              row.toggleSelected(!!value)
-              emit('select', row.original)
-            },
-            'areaLabel': 'Select row',
-            'onClick': (event: Event) => {
-              event.stopPropagation()
-            },
-          }),
+          id: SELECT_COLUMN_ID,
           enableSorting: false,
+          enableHiding: false,
+          enableColumnFilter: false,
         },
-        ...props.columns,
+        ...data,
       ]
-    : props.columns
+    : data
 
   // add expanded column
   data = slots.expanded
     ? [
         {
-          accessorKey: 'expanded',
-          header: '',
-          cell: ({ row }: any) => h(Button, {
-            size: 'xs',
-            icon: true,
-            square: true,
-            btn: 'ghost-gray',
-            label: 'i-radix-icons-chevron-down',
-            onClick: () => {
-              row.toggleExpanded()
-              emit('expand', row)
-            },
-            una: {
-              btnIconLabel: cn(
-                'transform transition-transform duration-200',
-                row.getIsExpanded() ? '-rotate-180' : 'rotate-0',
-              ),
-            },
-          }),
+          id: EXPAND_COLUMN_ID,
           enableSorting: false,
           enableHiding: false,
+          enableColumnFilter: false,
         },
         ...data,
       ]
@@ -162,26 +148,71 @@ const table = useVueTable({
     get grouping() { return grouping.value },
   },
 
-  enableMultiRowSelection: props.enableMultiRowSelection,
-  enableSubRowSelection: props.enableSubRowSelection,
-  autoResetAll: props.autoResetAll,
-  enableRowSelection: props.enableRowSelection,
-  enableColumnFilters: props.enableColumnFilters,
-  manualPagination: props.manualPagination,
-  manualSorting: props.manualSorting,
-  manualFiltering: props.manualFiltering,
-  globalFilterFn: props.globalFilterFn,
-  filterFns: props.filterFns,
-  pageCount: props.pageCount,
-  rowCount: props.rowCount,
-  autoResetPageIndex: props.autoResetPageIndex,
-  enableSorting: props.enableSorting,
-  enableSortingRemoval: props.enableSortingRemoval,
-  enableMultiSort: props.enableMultiSort,
-  enableMultiRemove: props.enableMultiRemove,
-  maxMultiSortColCount: props.maxMultiSortColCount,
-  sortingFns: props.sortingFns,
-  isMultiSortEvent: props.isMultiSortEvent,
+  // getters, like `data` and `columns` above: the Vue adapter reads options
+  // through a lazy proxy, so a plain `x: props.x` is captured once at setup
+  // and never sees the prop change — a `rowCount` arriving after a fetch, or
+  // a `pageCount` recomputed for a new page size, left the table on a stale
+  // count
+  get enableMultiRowSelection() {
+    return props.enableMultiRowSelection
+  },
+  get enableSubRowSelection() {
+    return props.enableSubRowSelection
+  },
+  get autoResetAll() {
+    return props.autoResetAll
+  },
+  get enableRowSelection() {
+    return props.enableRowSelection
+  },
+  get enableColumnFilters() {
+    return props.enableColumnFilters
+  },
+  get manualPagination() {
+    return props.manualPagination
+  },
+  get manualSorting() {
+    return props.manualSorting
+  },
+  get manualFiltering() {
+    return props.manualFiltering
+  },
+  get globalFilterFn() {
+    return props.globalFilterFn
+  },
+  get filterFns() {
+    return props.filterFns
+  },
+  get pageCount() {
+    return props.pageCount
+  },
+  get rowCount() {
+    return props.rowCount
+  },
+  get autoResetPageIndex() {
+    return props.autoResetPageIndex
+  },
+  get enableSorting() {
+    return props.enableSorting
+  },
+  get enableSortingRemoval() {
+    return props.enableSortingRemoval
+  },
+  get enableMultiSort() {
+    return props.enableMultiSort
+  },
+  get enableMultiRemove() {
+    return props.enableMultiRemove
+  },
+  get maxMultiSortColCount() {
+    return props.maxMultiSortColCount
+  },
+  get sortingFns() {
+    return props.sortingFns
+  },
+  get isMultiSortEvent() {
+    return props.isMultiSortEvent
+  },
 
   getCoreRowModel: getCoreRowModel(),
   getSortedRowModel: getSortedRowModel(),
@@ -203,6 +234,15 @@ const table = useVueTable({
   onGroupingChange: updaterOrValue => valueUpdater(updaterOrValue, grouping),
 })
 
+// the seam the built-in pagination bar — and anything composed into
+// `#pagination` — reads the instance through, without a template ref
+provideTableContext({
+  table,
+  pagination: computed(() => pagination.value),
+  setPageIndex: index => table.setPageIndex(index),
+  setPageSize: size => table.setPageSize(size),
+})
+
 function getHeaderColumnFiltersCount(headers: Header<unknown, unknown>[]): number {
   let count = 0
   headers.forEach((header) => {
@@ -218,6 +258,33 @@ function getRowAttrs(data?: TData) {
     return props._tableRow(data)
   }
   return props._tableRow
+}
+
+function isReserved(column: Column<TData, any>) {
+  return column.id === SELECT_COLUMN_ID || column.id === EXPAND_COLUMN_ID
+}
+
+function isSortable(column: Column<TData, any>) {
+  return Boolean(
+    column.columnDef.enableSorting
+    || (column.columnDef.enableSorting !== false && props.enableSorting),
+  )
+}
+
+function getAriaSort(column: Column<TData, any>) {
+  if (!isSortable(column))
+    return undefined
+
+  const sorted = column.getIsSorted()
+  return sorted === 'asc' ? 'ascending' : sorted === 'desc' ? 'descending' : 'none'
+}
+
+/**
+ * `columnDef.meta` is an arbitrary user bag, so only the keys `NTable`
+ * understands are read from it — the rest never reaches the DOM.
+ */
+function columnUna(column: Column<TData, any>) {
+  return { ...props.una, ...column.columnDef.meta?.una }
 }
 
 defineExpose({
@@ -260,21 +327,15 @@ defineExpose({
                 :key="header.id"
                 :colspan="header.colSpan"
                 :data-pinned="header.column.getIsPinned()"
-                :una
-                v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
+                :aria-sort="getAriaSort(header.column)"
+                :una="columnUna(header.column)"
+                v-bind="{ ...props._tableHead, ...header.column.columnDef.meta?._tableHead }"
               >
-                <Button
-                  v-if="header.column.columnDef.enableSorting || (header.column.columnDef.enableSorting !== false && enableSorting)"
-                  btn="ghost-gray"
-                  size="sm"
-                  class="font-normal -ml-1em"
-                  :una="{
-                    btnTrailing: 'text-sm',
-                  }"
-                  :trailing="header.column.getIsSorted() === 'asc'
-                    ? 'i-lucide-arrow-up-wide-narrow' : header.column.getIsSorted() === 'desc'
-                      ? 'i-lucide-arrow-down-narrow-wide' : 'i-lucide-arrow-up-down'"
-                  @click="header.column.getToggleSortingHandler()?.($event)"
+                <TableSortButton
+                  v-if="isSortable(header.column)"
+                  :column="header.column"
+                  :una="columnUna(header.column)"
+                  v-bind="{ ...props._tableSortButton, ...header.column.columnDef.meta?._tableSortButton }"
                 >
                   <slot
                     :name="`${header.id}-header`"
@@ -286,15 +347,23 @@ defineExpose({
                       :props="header.getContext()"
                     />
                   </slot>
-                </Button>
+                </TableSortButton>
 
                 <slot
                   v-else
                   :name="`${header.id}-header`"
                   :column="header.column"
                 >
+                  <TableSelectionHeader
+                    v-if="!header.isPlaceholder && header.column.id === SELECT_COLUMN_ID && enableMultiRowSelection"
+                    :table
+                    :una="columnUna(header.column)"
+                    v-bind="{ ...props._tableSelectionHeader, ...header.column.columnDef.meta?._tableSelectionHeader }"
+                    @change="emit('selectAll', $event)"
+                  />
+
                   <FlexRender
-                    v-if="!header.isPlaceholder"
+                    v-else-if="!header.isPlaceholder"
                     :render="header.column.columnDef.header"
                     :props="header.getContext()"
                   />
@@ -316,22 +385,21 @@ defineExpose({
                 <TableHead
                   v-for="header in headerGroup.headers"
                   :key="header.id"
-                  :una
                   :colspan="header.colSpan"
                   class="font-normal"
                   :data-pinned="header.column.getIsPinned()"
-                  v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
+                  :una="columnUna(header.column)"
+                  v-bind="{ ...props._tableHead, ...header.column.columnDef.meta?._tableHead }"
                 >
                   <slot
-                    v-if="header.id !== 'selection' && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
+                    v-if="!isReserved(header.column) && ((header.column.columnDef.enableColumnFilter !== false && enableColumnFilters) || header.column.columnDef.enableColumnFilter)"
                     :name="`${header.id}-filter`"
                     :column="header.column"
                   >
-                    <Input
-                      class="w-auto"
-                      :model-value="header.column.getFilterValue() as string"
-                      :placeholder="header.column.columnDef.header"
-                      @update:model-value="header.column.setFilterValue($event)"
+                    <TableColumnFilter
+                      :column="header.column"
+                      :una="columnUna(header.column)"
+                      v-bind="{ ...props._tableColumnFilter, ...header.column.columnDef.meta?._tableColumnFilter }"
                     />
                   </slot>
                 </TableHead>
@@ -341,6 +409,7 @@ defineExpose({
 
           <TableLoading
             :enabled="props.loading"
+            :colspan="table.getAllLeafColumns().length"
             :una
             v-bind="props._tableLoading"
           >
@@ -374,14 +443,31 @@ defineExpose({
                       v-for="cell in row.getVisibleCells()"
                       :key="cell.id"
                       :data-pinned="cell.column.getIsPinned()"
-                      :una
-                      v-bind="{ ...props._tableCell, ...cell.column.columnDef.meta }"
+                      :una="columnUna(cell.column)"
+                      v-bind="{ ...props._tableCell, ...cell.column.columnDef.meta?._tableCell }"
                     >
                       <slot
                         :name="`${cell.column.id}-cell`"
                         :cell="cell"
                       >
+                        <TableSelectionCell
+                          v-if="cell.column.id === SELECT_COLUMN_ID"
+                          :row
+                          :una="columnUna(cell.column)"
+                          v-bind="{ ...props._tableSelectionCell, ...cell.column.columnDef.meta?._tableSelectionCell }"
+                          @change="emit('select', $event)"
+                        />
+
+                        <TableExpandButton
+                          v-else-if="cell.column.id === EXPAND_COLUMN_ID"
+                          :row
+                          :una="columnUna(cell.column)"
+                          v-bind="{ ...props._tableExpandButton, ...cell.column.columnDef.meta?._tableExpandButton }"
+                          @change="emit('expand', $event)"
+                        />
+
                         <FlexRender
+                          v-else
                           :render="cell.column.columnDef.cell"
                           :props="cell.getContext()"
                         />
@@ -443,8 +529,8 @@ defineExpose({
                   <TableHead
                     v-if="header.column.columnDef.footer"
                     :colspan="header.colSpan"
-                    :una
-                    v-bind="{ ...props._tableHead, ...header.column.columnDef.meta }"
+                    :una="columnUna(header.column)"
+                    v-bind="{ ...props._tableHead, ...header.column.columnDef.meta?._tableHead }"
                   >
                     <slot :name="`${header.id}-footer`" :column="header.column">
                       <FlexRender
@@ -462,4 +548,18 @@ defineExpose({
       </table>
     </ScrollArea>
   </div>
+
+  <!-- pagination bar: a sibling below the root, where shadcn's
+       DataTablePagination sits relative to the bordered table -->
+  <slot
+    v-if="showPagination || $slots.pagination"
+    name="pagination"
+    :table="table"
+    :pagination="pagination"
+  >
+    <TablePagination
+      :una
+      v-bind="props._tablePagination"
+    />
+  </slot>
 </template>

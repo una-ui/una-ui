@@ -7,6 +7,7 @@ const props = defineProps<NSidebarGroupContentProps>()
 
 <template>
   <div
+    data-slot="sidebar-group-content"
     data-sidebar="group-content"
     :class="cn(
       'sidebar-group-content',

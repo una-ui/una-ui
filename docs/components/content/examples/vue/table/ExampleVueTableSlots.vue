@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColumnDef, RowSelectionState, Table } from '@tanstack/vue-table'
+import type { ColumnDef, RowSelectionState } from '@tanstack/vue-table'
 import type { Person } from './makeData'
 import { NAvatar } from '#components'
 
@@ -38,7 +38,7 @@ const columns: ColumnDef<Person>[] = [
               class: 'text-sm font-semibold leading-none',
             }, fullname),
             h('span', {
-              class: 'text-sm text-muted',
+              class: 'text-sm text-muted-foreground',
             }, info.getValue().email),
           ]),
         ],
@@ -67,8 +67,6 @@ const columns: ColumnDef<Person>[] = [
 
 const search = ref('')
 const select = ref<RowSelectionState>()
-
-const table = useTemplateRef<Table<Person>>('table')
 </script>
 
 <template>
@@ -87,7 +85,7 @@ const table = useTemplateRef<Table<Person>>('table')
       <div class="flex items-center gap-x-2 sm:ml-auto">
         <NButton
           label="Rerender"
-          btn="solid-gray"
+          btn="outline-gray"
           leading="i-radix-icons-update"
           class="w-full sm:w-auto sm:shrink-0 active:translate-y-0.5"
           @click="data = makeData(20_000)"
@@ -105,13 +103,13 @@ const table = useTemplateRef<Table<Person>>('table')
 
     <!-- table -->
     <NTable
-      ref="table"
       v-model:row-selection="select"
       :columns
       :data
       :global-filter="search"
       enable-row-selection enable-column-filters enable-sorting
       row-id="username"
+      show-pagination
     >
       <!-- filters -->
       <template #status-filter="{ column }">
@@ -170,55 +168,10 @@ const table = useTemplateRef<Table<Person>>('table')
                   ? 'progress-info' : cell.row.original.progress >= 55
                     ? 'progress-warning' : 'progress-error' }"
           />
-          <span class="ml-2 text-sm text-muted">{{ cell.row.original.progress }}%</span>
+          <span class="ml-2 text-sm text-muted-foreground">{{ cell.row.original.progress }}%</span>
         </div>
       </template>
       <!-- end cell -->
     </NTable>
-
-    <!-- footer -->
-    <div
-      class="flex items-center justify-between px-2"
-    >
-      <div
-        class="hidden text-sm text-muted sm:block"
-      >
-        {{ table?.getFilteredSelectedRowModel().rows.length.toLocaleString() }} of
-        {{ table?.getFilteredRowModel().rows.length.toLocaleString() }} row(s) selected.
-      </div>
-      <div class="flex items-center space-x-6 lg:space-x-8">
-        <div
-          class="hidden items-center justify-center text-sm font-medium sm:flex space-x-2"
-        >
-          <span class="text-nowrap">
-            Rows per page
-          </span>
-
-          <NSelect
-            :items="[10, 20, 30, 40, 50]"
-            :_select-trigger="{
-              class: 'w-15',
-            }"
-            :model-value="table?.getState().pagination.pageSize"
-            @update:model-value="table?.setPageSize($event as unknown as number)"
-          />
-        </div>
-
-        <div
-          class="flex items-center justify-center text-sm font-medium"
-        >
-          Page {{ (table?.getState().pagination.pageIndex ?? 0) + 1 }} of
-          {{ table?.getPageCount().toLocaleString() }}
-        </div>
-
-        <NPagination
-          :page="(table?.getState().pagination.pageIndex ?? 0) + 1"
-          :total="table?.getFilteredRowModel().rows.length"
-          :show-list-item="false"
-          :items-per-page="table?.getState().pagination.pageSize ?? 5"
-          @update:page="table?.setPageIndex($event - 1)"
-        />
-      </div>
-    </div>
   </div>
 </template>

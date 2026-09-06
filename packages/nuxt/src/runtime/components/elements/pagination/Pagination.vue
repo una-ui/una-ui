@@ -3,13 +3,17 @@ import type { PaginationRootEmits } from 'reka-ui'
 import type { NPaginationProps } from '../../../types'
 import { reactivePick } from '@vueuse/core'
 import { PaginationList, PaginationRoot, useForwardPropsEmits } from 'reka-ui'
+import { computed } from 'vue'
 import { cn } from '../../../utils'
 import PaginationEllipsis from './PaginationEllipsis.vue'
 import PaginationFirst from './PaginationFirst.vue'
+import PaginationInfo from './PaginationInfo.vue'
 import PaginationLast from './PaginationLast.vue'
 import PaginationListItem from './PaginationListItem.vue'
 import PaginationNext from './PaginationNext.vue'
 import PaginationPrev from './PaginationPrev.vue'
+import PaginationRowsPerPage from './PaginationRowsPerPage.vue'
+import { providePaginationContext } from './usePagination'
 
 const props = withDefaults(defineProps<NPaginationProps>(), {
   showFirst: true,
@@ -17,11 +21,46 @@ const props = withDefaults(defineProps<NPaginationProps>(), {
   showListItem: true,
   showNext: true,
   showPrev: true,
+  showInfo: false,
+  showRowsPerPage: false,
   square: undefined,
 })
 
-const emits = defineEmits<PaginationRootEmits>()
+const emits = defineEmits<PaginationRootEmits & {
+  'update:itemsPerPage': [value: number]
+}>()
+
+const slots = defineSlots()
+
 const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 'disabled', 'itemsPerPage', 'page', 'showEdges', 'siblingCount', 'total'), emits)
+
+// The root only becomes a flex row when there is something to lay out beside
+// the list. Applying the layout unconditionally gave every existing
+// `NPagination` `width: 100%`, which re-flows it wherever it sits as a flex
+// item beside a sibling label — the shape used throughout the table examples.
+//
+// Plain functions, not computeds: `slots` is an object Vue mutates in place on
+// re-render rather than a reactive source, so a computed reading `slots.start`
+// caches its first result forever and a conditionally-provided `#start` would
+// never appear. Functions re-evaluate with each render, which is what a slot
+// check needs.
+function hasStart() {
+  return Boolean(slots.start || props.showInfo || props.showRowsPerPage)
+}
+function hasEnd() {
+  return Boolean(slots.end)
+}
+function hasRegions() {
+  return hasStart() || hasEnd()
+}
+
+// reka's root context already carries `page` and `pageCount`; this supplies
+// what it lacks, so `itemsPerPage` gains a write path it has no emit for
+providePaginationContext({
+  total: computed(() => props.total),
+  itemsPerPage: computed(() => props.itemsPerPage),
+  onItemsPerPageChange: (value: number) => emits('update:itemsPerPage', value),
+})
 </script>
 
 <template>
@@ -30,10 +69,31 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
     v-bind="rootProps"
     :class="cn(
       'pagination-root',
+      hasRegions() && 'pagination-root-regions',
       props.class,
       props.una?.paginationRoot,
     )"
   >
+    <div
+      v-if="hasStart()"
+      :class="cn('pagination-start', props.una?.paginationStart)"
+    >
+      <slot name="start">
+        <PaginationInfo
+          v-if="showInfo"
+          :una
+          v-bind="_paginationInfo"
+        />
+
+        <PaginationRowsPerPage
+          v-if="showRowsPerPage"
+          :disabled
+          :una
+          v-bind="_paginationRowsPerPage"
+        />
+      </slot>
+    </div>
+
     <PaginationList
       v-slot="{ items }"
       :class="cn(
@@ -145,5 +205,12 @@ const rootProps = useForwardPropsEmits(reactivePick(props, 'as', 'defaultPage', 
         </PaginationLast>
       </slot>
     </PaginationList>
+
+    <div
+      v-if="hasEnd()"
+      :class="cn('pagination-end', props.una?.paginationEnd)"
+    >
+      <slot name="end" />
+    </div>
   </PaginationRoot>
 </template>

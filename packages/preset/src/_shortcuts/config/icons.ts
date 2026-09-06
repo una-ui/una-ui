@@ -1,10 +1,10 @@
 export const staticIcons = {
-  'i-loading': 'i-tabler-loader-2',
-  'i-warning': 'i-tabler-alert-triangle-filled',
-  'i-error': 'i-tabler-exclamation-circle-filled',
-  'i-success': 'i-tabler-circle-check-filled',
-  'i-info': 'i-tabler-info-circle-filled',
-  'i-close': 'i-tabler-x',
-  'i-check': 'i-tabler-check',
+  'i-warning': 'i-lucide-triangle-alert',
+  'i-error': 'i-lucide-circle-alert',
+  'i-success': 'i-lucide-circle-check-big',
+  'i-info': 'i-lucide-info',
+  'i-loading': 'i-lucide-loader',
+  'i-close': 'i-lucide-x',
+  'i-check': 'i-lucide-check',
   'i-dot': 'i-tabler-circle-filled',
 }

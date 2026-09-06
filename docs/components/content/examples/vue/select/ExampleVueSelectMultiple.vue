@@ -14,7 +14,7 @@ const items = ['Evan You', 'Anthony Fu', 'Daniel Roe', 'Pooya Parsa', 'Sébastie
         label="Vue Community"
       />
     </div>
-    <div class="text-sm text-muted">
+    <div class="text-sm text-muted-foreground">
       Selected: {{ selected.join(', ') }}
     </div>
   </div>

@@ -8,7 +8,7 @@
       }"
     >
       <template #trigger>
-        <NButton btn="solid-white">
+        <NButton btn="outline-gray">
           Open popover
         </NButton>
       </template>
@@ -17,7 +17,7 @@
         <h3 class="mb-2 font-medium">
           Popover Title
         </h3>
-        <p class="text-sm text-muted">
+        <p class="text-sm text-muted-foreground">
           This is a basic example of a popover with content.
         </p>
       </div>

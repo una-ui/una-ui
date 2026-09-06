@@ -1,6 +1,7 @@
 import type { PaginationEllipsisProps, PaginationFirstProps, PaginationLastProps, PaginationListItemProps, PaginationListProps, PaginationNextProps, PaginationPrevProps, PaginationRootProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
+import type { NSelectProps } from './select'
 
 interface BaseExtensionProps {
   square?: HTMLAttributes['class'] | boolean
@@ -21,6 +22,19 @@ export interface NPaginationProps extends
   showNext?: isVisible
   showLast?: isVisible
   showListItem?: isVisible
+  /**
+   * Render `NPaginationInfo` in the start region.
+   *
+   * Defaults to `false`, unlike the flags above — the part is new, and
+   * turning it on by default would add page meta to every existing usage.
+   */
+  showInfo?: isVisible
+  /**
+   * Render `NPaginationRowsPerPage` in the start region.
+   *
+   * @default false
+   */
+  showRowsPerPage?: isVisible
 
   // sub-components
   _paginationList?: Partial<NPaginationListProps>
@@ -30,8 +44,47 @@ export interface NPaginationProps extends
   _paginationPrev?: Partial<NPaginationPrevProps>
   _paginationNext?: Partial<NPaginationNextProps>
   _paginationLast?: Partial<NPaginationLastProps>
+  _paginationInfo?: Partial<NPaginationInfoProps>
+  _paginationRowsPerPage?: Partial<NPaginationRowsPerPageProps>
 
   una?: NPaginationUnaProps
+}
+
+export interface NPaginationInfoProps extends BaseExtensionProps {
+  /**
+   * Which shape the default text takes.
+   *
+   * `range` and `total` need `total`, which is optional on the root — both
+   * fall back to `page` when it is absent.
+   *
+   * @default 'page'
+   */
+  format?: 'page' | 'range' | 'total'
+
+  // standalone fallbacks; supplied by context when nested in `NPagination`
+  page?: number
+  pageCount?: number
+  total?: number
+  itemsPerPage?: number
+
+  una?: Pick<NPaginationUnaProps, 'pagination' | 'paginationInfo'>
+}
+
+export interface NPaginationRowsPerPageProps extends Omit<NSelectProps<number>, 'una' | 'items' | 'label' | 'modelValue' | 'defaultValue'> {
+  /**
+   * The page sizes to offer.
+   *
+   * @default [10, 20, 30, 40, 50]
+   */
+  pageSizes?: number[]
+  /**
+   * Caption rendered before the select, e.g. `"Rows per page"`.
+   */
+  label?: string
+  /** Standalone fallback; supplied by context when nested in `NPagination`. */
+  itemsPerPage?: number
+
+  una?: Pick<NPaginationUnaProps, 'pagination' | 'paginationRowsPerPage' | 'paginationRowsPerPageLabel'> & NSelectProps<number>['una']
 }
 
 export interface NPaginationListProps extends PaginationListProps, BaseExtensionProps {
@@ -79,4 +132,11 @@ interface NPaginationUnaProps {
   paginationEllipsis?: HTMLAttributes['class']
   paginationEllipsisIconBase?: HTMLAttributes['class']
   paginationEllipsisIcon?: HTMLAttributes['class']
+
+  // regions and meta parts
+  paginationStart?: HTMLAttributes['class']
+  paginationEnd?: HTMLAttributes['class']
+  paginationInfo?: HTMLAttributes['class']
+  paginationRowsPerPage?: HTMLAttributes['class']
+  paginationRowsPerPageLabel?: HTMLAttributes['class']
 }

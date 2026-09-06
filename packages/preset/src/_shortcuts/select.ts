@@ -23,14 +23,14 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 
   'select-value': 'text-1em data-[status=error]:text-error-active data-[status=success]:text-success-active data-[status=warning]:text-warning-active data-[status=info]:text-info-active data-[placeholder]:n-disabled',
 
-  'select-content': 'relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border border-base bg-popover text-popover shadow-md data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+  'select-content': 'relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-md data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
   'select-content-popper': 'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
 
   'select-group': 'w-full',
 
   'select-separator': '-mx-1 my-1 h-px bg-muted',
 
-  'select-item': 'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-1em outline-none focus:bg-accent focus:text-accent data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
+  'select-item': 'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-1em outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:n-disabled',
 
   'select-item-indicator': 'absolute right-2 size-1.1428571428571428em flex items-center justify-center',
   'select-item-indicator-icon': 'i-check',
@@ -52,14 +52,14 @@ export const staticSelect: Record<`${SelectPrefix}-${string}` | SelectPrefix, st
 export const dynamicSelect = [
   [/^select-([^-]+)-([^-]+)$/, ([, v = 'solid', c = 'gray'], { theme }: RuleContext<Theme>) => {
     const parsedColor = parseColor(c, theme)
-    if ((parsedColor?.cssColor?.type === 'rgb' || parsedColor?.cssColor?.type === 'rgba') && parsedColor.cssColor.components)
+    if (parsedColor?.color)
       return `btn-${v}-${c}`
     return undefined
   }],
 
   [/^select-item(-(\S+))?$/, ([, , c = 'gray'], { theme }: RuleContext<Theme>) => {
     const parsedColor = parseColor(c || 'gray', theme)
-    if ((parsedColor?.cssColor?.type === 'rgb' || parsedColor?.cssColor?.type === 'rgba') && parsedColor.cssColor.components)
+    if (parsedColor?.color)
       return `focus:bg-${c || 'gray'}-100 focus:text-${c || 'gray'}-800 dark:focus:bg-${c || 'gray'}-800 dark:focus:text-${c || 'gray'}-100`
     return undefined
   }],

@@ -7,6 +7,7 @@ const props = defineProps<NSidebarInsetProps>()
 
 <template>
   <main
+    data-slot="sidebar-inset"
     :class="cn(
       'sidebar-inset',
       props.una?.sidebarInset,

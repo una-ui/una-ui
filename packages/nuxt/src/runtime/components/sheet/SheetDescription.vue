@@ -11,10 +11,10 @@ const delegatedProps = reactiveOmit(props, ['class'])
 
 <template>
   <DialogDescription
+    data-slot="sheet-description"
     :class="cn('sheet-description', props.una?.sheetDescription, props.class)"
     v-bind="delegatedProps"
   >
     <slot />
   </DialogDescription>
 </template>
-a

@@ -8,30 +8,32 @@
       class="flex-1"
       :una="{
         cardContent: 'space-y-4',
-        cardDescription: 'text-accent',
+        cardDescription: 'text-accent-foreground',
       }"
     >
-      <div class="flex items-center justify-between">
-        <span class="text-3xl font-bold">$0</span>
-        <span class="text-sm text-muted">/month</span>
-      </div>
+      <template #content>
+        <div class="flex items-center justify-between">
+          <span class="text-3xl font-bold">$0</span>
+          <span class="text-sm text-muted-foreground">/month</span>
+        </div>
 
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Up to 3 projects</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Community support</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Basic analytics</span>
-        </li>
-      </ul>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Up to 3 projects</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Community support</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Basic analytics</span>
+          </li>
+        </ul>
 
-      <NButton label="Get Started" btn="solid-black" class="w-full" />
+        <NButton label="Get Started" btn="solid-black" class="w-full" />
+      </template>
     </NCard>
 
     <!-- Pro Plan Card -->
@@ -42,34 +44,36 @@
       class="flex-1 scale-105"
       :una="{
         cardContent: 'space-y-4',
-        cardDescription: 'text-accent',
+        cardDescription: 'text-accent-foreground',
       }"
     >
-      <div class="flex items-center justify-between">
-        <span class="text-3xl font-bold">$29</span>
-        <span class="text-sm text-accent">/month</span>
-      </div>
+      <template #content>
+        <div class="flex items-center justify-between">
+          <span class="text-3xl font-bold">$29</span>
+          <span class="text-sm text-accent-foreground">/month</span>
+        </div>
 
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Unlimited projects</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Priority support</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Advanced analytics</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Custom domains</span>
-        </li>
-      </ul>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Unlimited projects</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Priority support</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Advanced analytics</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Custom domains</span>
+          </li>
+        </ul>
 
-      <NButton label="Get Started" btn="solid-primary" class="w-full" />
+        <NButton label="Get Started" btn="solid-primary" class="w-full" />
+      </template>
     </NCard>
 
     <!-- Enterprise Plan Card -->
@@ -80,34 +84,36 @@
       class="flex-1"
       :una="{
         cardContent: 'space-y-4',
-        cardDescription: 'text-accent',
+        cardDescription: 'text-accent-foreground',
       }"
     >
-      <div class="flex items-center justify-between">
-        <span class="text-3xl font-bold">$99</span>
-        <span class="text-sm text-muted">/month</span>
-      </div>
+      <template #content>
+        <div class="flex items-center justify-between">
+          <span class="text-3xl font-bold">$99</span>
+          <span class="text-sm text-muted-foreground">/month</span>
+        </div>
 
-      <ul class="space-y-2">
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Everything in Pro</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>24/7 Support</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>SLA guarantee</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <NIcon name="i-lucide-check" class="text-success" />
-          <span>Custom integration</span>
-        </li>
-      </ul>
+        <ul class="space-y-2">
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Everything in Pro</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>24/7 Support</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>SLA guarantee</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <NIcon name="i-lucide-check" class="text-success" />
+            <span>Custom integration</span>
+          </li>
+        </ul>
 
-      <NButton label="Contact Sales" btn="solid-black" class="w-full" />
+        <NButton label="Contact Sales" btn="solid-black" class="w-full" />
+      </template>
     </NCard>
   </div>
 </template>

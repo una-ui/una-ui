@@ -8,7 +8,7 @@
       show-edges
       rounded="none"
       :_pagination-list="{
-        class: 'gap-0 divide-x divide-base border-1 border-base',
+        class: 'gap-0 divide-x divide-border border-1 border-border',
         rounded: 'r-full l-full',
       }"
       :_pagination-prev="{

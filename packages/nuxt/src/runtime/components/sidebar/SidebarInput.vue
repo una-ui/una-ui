@@ -8,6 +8,7 @@ const props = defineProps<NSidebarInputProps>()
 
 <template>
   <Input
+    data-slot="sidebar-input"
     data-sidebar="input"
     :class="cn(
       'sidebar-input',

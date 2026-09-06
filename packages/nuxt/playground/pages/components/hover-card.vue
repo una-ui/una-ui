@@ -35,7 +35,7 @@ const [DefineContent, ReuseContent] = createReusableTemplate()
           Progressive JavaScript framework for building modern web interfaces.
         </p>
         <div class="flex items-center pt-2">
-          <span class="text-sm text-muted">
+          <span class="text-sm text-muted-foreground">
             Joined January 2014
           </span>
         </div>

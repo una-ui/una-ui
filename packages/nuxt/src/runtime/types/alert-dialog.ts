@@ -12,7 +12,7 @@ import type {
 import type { HTMLAttributes } from 'vue'
 import type { NButtonProps } from './button'
 
-export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogContentProps, 'preventClose' | 'overlay' | '_alertDialogCancel' | '_alertDialogAction' | '_alertDialogOverlay'> {
+export interface NAlertDialogProps extends AlertDialogProps, Pick<NAlertDialogContentProps, 'dismissible' | 'overlay' | '_alertDialogCancel' | '_alertDialogAction' | '_alertDialogOverlay'> {
   /**
    * The title of the dialog.
    */
@@ -57,7 +57,7 @@ export interface NAlertDialogContentProps extends AlertDialogContentProps, BaseE
    *
    * @default true
    */
-  preventClose?: boolean
+  dismissible?: boolean
   /**
    * Show overlay.
    *
