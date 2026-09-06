@@ -1,3 +1,33 @@
+# [1.0.0-alpha.27](https://github.com/una-ui/una-ui/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) (2026-09-06)
+
+
+* feat(Table)!: add an opt-in pagination bar shaped after shadcn, with a table context (#648) ([62a5276](https://github.com/una-ui/una-ui/commit/62a527692a92e637b0c16bb4a68a328ce586faad)), closes [#648](https://github.com/una-ui/una-ui/issues/648) [#639](https://github.com/una-ui/una-ui/issues/639) [#634](https://github.com/una-ui/una-ui/issues/634) [#631](https://github.com/una-ui/una-ui/issues/631) [#634](https://github.com/una-ui/una-ui/issues/634)
+* feat(Table)!: extract injected widgets into configurable sub-components (#638) ([03feff2](https://github.com/una-ui/una-ui/commit/03feff28778e5c8c01274083ea8d8a1977dd7753)), closes [#638](https://github.com/una-ui/una-ui/issues/638) [#632](https://github.com/una-ui/una-ui/issues/632) [#628](https://github.com/una-ui/una-ui/issues/628) [#629](https://github.com/una-ui/una-ui/issues/629) [#636](https://github.com/una-ui/una-ui/issues/636) [#637](https://github.com/una-ui/una-ui/issues/637) [#635](https://github.com/una-ui/una-ui/issues/635) [#635](https://github.com/una-ui/una-ui/issues/635)
+
+
+### Bug Fixes
+
+* **Table:** emit row data from [@expand](https://github.com/expand), not the TanStack wrapper ([#651](https://github.com/una-ui/una-ui/issues/651)) ([d0f0879](https://github.com/una-ui/una-ui/commit/d0f0879880ae994efc0f6c8168782e97aaf1c692))
+* **Table:** read the table options reactively ([#649](https://github.com/una-ui/una-ui/issues/649)) ([a5c4e12](https://github.com/una-ui/una-ui/commit/a5c4e129d8b4d4e565fbb921b696555d02c6238d))
+
+
+### Features
+
+* **Pagination:** add Info and RowsPerPage parts with start/end regions ([#639](https://github.com/una-ui/una-ui/issues/639)) ([2516b31](https://github.com/una-ui/una-ui/commit/2516b319dc348019afa24f8c74b00408e1e67160)), closes [#633](https://github.com/una-ui/una-ui/issues/633) [#630](https://github.com/una-ui/una-ui/issues/630) [#635](https://github.com/una-ui/una-ui/issues/635) [#635](https://github.com/una-ui/una-ui/issues/635)
+
+
+### BREAKING CHANGES
+
+* NTable renders a fragment when the bar shows, and
+non-prop attributes now reach only <table>, no longer duplicated onto the
+wrapper as well.
+* the reserved column ids are now 'select' and 'expand'
+instead of 'selection' and 'expanded', so the (previously undocumented)
+per-column slots are #select-header, #select-cell and #expand-cell. The
+#expanded slot for expanded row content is unchanged.
+
+
+
 # [1.0.0-alpha.26](https://github.com/una-ui/una-ui/compare/v0.67.10...v1.0.0-alpha.26) (2026-08-31)
 
 
