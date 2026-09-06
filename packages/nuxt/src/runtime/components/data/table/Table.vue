@@ -148,26 +148,71 @@ const table = useVueTable({
     get grouping() { return grouping.value },
   },
 
-  enableMultiRowSelection: props.enableMultiRowSelection,
-  enableSubRowSelection: props.enableSubRowSelection,
-  autoResetAll: props.autoResetAll,
-  enableRowSelection: props.enableRowSelection,
-  enableColumnFilters: props.enableColumnFilters,
-  manualPagination: props.manualPagination,
-  manualSorting: props.manualSorting,
-  manualFiltering: props.manualFiltering,
-  globalFilterFn: props.globalFilterFn,
-  filterFns: props.filterFns,
-  pageCount: props.pageCount,
-  rowCount: props.rowCount,
-  autoResetPageIndex: props.autoResetPageIndex,
-  enableSorting: props.enableSorting,
-  enableSortingRemoval: props.enableSortingRemoval,
-  enableMultiSort: props.enableMultiSort,
-  enableMultiRemove: props.enableMultiRemove,
-  maxMultiSortColCount: props.maxMultiSortColCount,
-  sortingFns: props.sortingFns,
-  isMultiSortEvent: props.isMultiSortEvent,
+  // getters, like `data` and `columns` above: the Vue adapter reads options
+  // through a lazy proxy, so a plain `x: props.x` is captured once at setup
+  // and never sees the prop change — a `rowCount` arriving after a fetch, or
+  // a `pageCount` recomputed for a new page size, left the table on a stale
+  // count
+  get enableMultiRowSelection() {
+    return props.enableMultiRowSelection
+  },
+  get enableSubRowSelection() {
+    return props.enableSubRowSelection
+  },
+  get autoResetAll() {
+    return props.autoResetAll
+  },
+  get enableRowSelection() {
+    return props.enableRowSelection
+  },
+  get enableColumnFilters() {
+    return props.enableColumnFilters
+  },
+  get manualPagination() {
+    return props.manualPagination
+  },
+  get manualSorting() {
+    return props.manualSorting
+  },
+  get manualFiltering() {
+    return props.manualFiltering
+  },
+  get globalFilterFn() {
+    return props.globalFilterFn
+  },
+  get filterFns() {
+    return props.filterFns
+  },
+  get pageCount() {
+    return props.pageCount
+  },
+  get rowCount() {
+    return props.rowCount
+  },
+  get autoResetPageIndex() {
+    return props.autoResetPageIndex
+  },
+  get enableSorting() {
+    return props.enableSorting
+  },
+  get enableSortingRemoval() {
+    return props.enableSortingRemoval
+  },
+  get enableMultiSort() {
+    return props.enableMultiSort
+  },
+  get enableMultiRemove() {
+    return props.enableMultiRemove
+  },
+  get maxMultiSortColCount() {
+    return props.maxMultiSortColCount
+  },
+  get sortingFns() {
+    return props.sortingFns
+  },
+  get isMultiSortEvent() {
+    return props.isMultiSortEvent
+  },
 
   getCoreRowModel: getCoreRowModel(),
   getSortedRowModel: getSortedRowModel(),
