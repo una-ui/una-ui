@@ -28,7 +28,7 @@ const isExpanded = computed(() => props.row.getIsExpanded())
 
 function onClick() {
   props.row.toggleExpanded()
-  emit('change', props.row)
+  emit('change', props.row.original)
 }
 </script>
 
