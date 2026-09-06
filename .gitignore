@@ -21,3 +21,4 @@ docs-beta
 
 # Claude Code local harness config (regenerated on demand)
 .claude/launch.json
+.claude/worktrees/
