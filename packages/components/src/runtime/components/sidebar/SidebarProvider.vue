@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
 import type { NSidebarProviderProps } from '../../types'
-import { useAppConfig, useCookie } from '#app'
 import { useEventListener, useMediaQuery, useVModel } from '@vueuse/core'
 import { TooltipProvider } from 'reka-ui'
 import { computed, ref } from 'vue'
 import { provideSidebarContext } from '../../composables/useSidebar'
+import { useUnaAppConfig } from '../../composables/useUnaAppConfig'
 import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<NSidebarProviderProps>(), {
@@ -17,7 +17,7 @@ const emits = defineEmits<{
   'update:open': [open: boolean]
 }>()
 
-const { una } = useAppConfig()
+const { components: { useCookie }, ...una } = useUnaAppConfig()
 const sidebarConfig = computed(() => una.sidebar)
 
 const isMobile = useMediaQuery('(max-width: 768px)')

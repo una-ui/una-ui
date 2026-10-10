@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NButtonProps } from '../../../../packages/nuxt/src/runtime/types'
+import type { NButtonProps } from '#una/types'
 
 withDefaults(defineProps<{
   icon: string

@@ -1,5 +1,5 @@
+import type { Colors, UnaSettings } from '#una/types'
 import type { Theme } from '@unocss/preset-wind4'
-import type { Colors, UnaSettings } from '../types'
 import { colors } from '@unocss/preset-wind4/colors'
 
 // filter out the primary colors from the color palette + insert 0 and 1000 for each color

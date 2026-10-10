@@ -1,21 +1,22 @@
+import type { UnaSettings } from '#una/types'
 import type { Ref } from 'vue'
-import type { UnaSettings } from '../types'
-import { useAppConfig, watch } from '#imports'
+import { useUnaAppConfig } from '#una/composables/useUnaAppConfig'
 import { useStorage } from '@vueuse/core'
 import { defu } from 'defu'
-import { useUnaThemes } from './useUnaThemes'
+import { watch } from 'vue'
+import { useUnaThemes } from '../composables/useUnaThemes'
 
 export interface UseUnaSettingsReturn {
-  defaultSettings: Omit<UnaSettings, 'themes'>
-  settings: Ref<Omit<UnaSettings, 'themes'>>
+  defaultSettings: Omit<UnaSettings, 'themes' | 'components'>
+  settings: Ref<Omit<UnaSettings, 'themes' | 'components'>>
   reset: () => void
 }
 
 export function useUnaSettings(): UseUnaSettingsReturn {
-  const { una } = useAppConfig()
+  const una = useUnaAppConfig()
   const { getPrimaryColors, getGrayColors } = useUnaThemes()
 
-  const defaultSettings: Omit<UnaSettings, 'themes'> = {
+  const defaultSettings: Omit<UnaSettings, 'themes' | 'components'> = {
     primaryColors: una.primary ? getPrimaryColors(una.primary) : {},
     grayColors: una.gray ? getGrayColors(una.gray) : {},
     primary: una.primary,
@@ -26,7 +27,7 @@ export function useUnaSettings(): UseUnaSettingsReturn {
     sidebar: { ...una.sidebar },
   } as const
 
-  const settings = useStorage<Omit<UnaSettings, 'themes'>>('una-settings', defaultSettings, undefined, {
+  const settings = useStorage<Omit<UnaSettings, 'themes' | 'components'>>('una-settings', defaultSettings, undefined, {
     mergeDefaults: defu,
   })
 
