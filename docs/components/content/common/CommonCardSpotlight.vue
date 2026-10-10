@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cn } from '../../../../packages/nuxt/src/runtime/utils'
+import { cn } from '#una/utils'
 
 const props = defineProps({
   gradientSize: { type: Number, default: 150 },

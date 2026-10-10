@@ -1,0 +1,77 @@
+{
+  "name": "@una-ui/components",
+  "type": "module",
+  "version": "1.0.0-alpha.27",
+  "description": "Vue components for Una-UI",
+  "author": "Phojie Rengel <phojrengel@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/phojie",
+  "homepage": "https://github.com/una-ui/una-ui/tree/main/packages/components#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/una-ui/una-ui",
+    "directory": "packages/components"
+  },
+  "bugs": {
+    "url": "https://github.com/una-ui/una-ui/issues"
+  },
+  "keywords": [
+    "vue",
+    "vue-components"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./una.config": {
+      "types": "./dist/una.config.d.ts",
+      "import": "./dist/una.config.mjs"
+    },
+    "./runtime/*": "./dist/runtime/*",
+    "./components/*": "./dist/runtime/components/*",
+    "./types": {
+      "types": "./dist/runtime/types/index.d.ts"
+    },
+    "./types/*": "./dist/runtime/types/*"
+  },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "prepack": "nr build",
+    "stub": "unbuild --stub"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@iconify/utils": "catalog:",
+    "@tanstack/vue-table": "catalog:",
+    "@una-ui/extractor-vue-script": "workspace:^",
+    "@una-ui/preset": "workspace:^",
+    "@unocss/core": "catalog:",
+    "@unocss/preset-attributify": "catalog:",
+    "@unocss/preset-icons": "catalog:",
+    "@unocss/reset": "catalog:",
+    "@vueuse/core": "catalog:",
+    "@vueuse/integrations": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "defu": "catalog:",
+    "ohash": "catalog:",
+    "reka-ui": "catalog:",
+    "tailwind-merge": "catalog:",
+    "unocss": "catalog:",
+    "unocss-preset-animations": "catalog:",
+    "vaul-vue": "catalog:",
+    "vee-validate": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "vue-sonner": "catalog:"
+  }
+}

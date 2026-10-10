@@ -1,4 +1,27 @@
-import type { NuxtLinkProps } from 'nuxt/app'
+import type { RouteLocationRaw, RouterLinkProps } from 'vue-router'
+
+/**
+ * A copy of NuxtLinkProps from nuxt (to preserve compatibility)
+ *
+ * @see https://nuxt.com/docs/4.x/api/components/nuxt-link
+ */
+interface NuxtLinkProps extends Omit<RouterLinkProps, 'to'> {
+  custom?: boolean
+  to?: RouteLocationRaw
+  href?: NuxtLinkProps['to']
+  external?: boolean
+  target?: '_blank' | '_parent' | '_self' | '_top' | (string & {}) | null
+  rel?: 'noopener' | 'noreferrer' | 'nofollow' | 'sponsored' | 'ugc' | (string & {}) | null
+  noRel?: boolean
+  prefetchedClass?: string
+  prefetch?: boolean
+  prefetchOn?: 'visibility' | 'interaction' | Partial<{
+    visibility: boolean
+    interaction: boolean
+  }>
+  noPrefetch?: boolean
+  trailingSlash?: 'append' | 'remove'
+}
 
 export interface NLinkProps extends NuxtLinkProps {
   /**

@@ -24,11 +24,7 @@
     },
     "./runtime/*": "./dist/runtime/*",
     "./components/*": "./dist/runtime/components/*",
-    "./composables/*": "./dist/runtime/composables/*",
-    "./utils/*": {
-      "types": "./dist/runtime/utils/*.d.ts",
-      "import": "./dist/runtime/utils/*.js"
-    }
+    "./composables/*": "./dist/runtime/composables/*"
   },
   "module": "./dist/module.mjs",
   "types": "./dist/types.d.mts",
@@ -44,32 +40,13 @@
     "playground:preview": "nuxi preview playground"
   },
   "dependencies": {
-    "@iconify/utils": "catalog:",
     "@nuxt/kit": "catalog:",
     "@nuxtjs/color-mode": "catalog:",
-    "@tanstack/vue-table": "catalog:",
-    "@una-ui/extractor-vue-script": "workspace:^",
-    "@una-ui/preset": "workspace:^",
-    "@unocss/core": "catalog:",
+    "@una-ui/components": "workspace:^",
     "@unocss/nuxt": "catalog:",
-    "@unocss/preset-attributify": "catalog:",
-    "@unocss/preset-icons": "catalog:",
-    "@unocss/reset": "catalog:",
     "@vee-validate/nuxt": "catalog:",
     "@vee-validate/zod": "catalog:",
-    "@vueuse/core": "catalog:",
-    "@vueuse/integrations": "catalog:",
-    "@vueuse/nuxt": "catalog:",
-    "class-variance-authority": "catalog:",
-    "clsx": "catalog:",
-    "defu": "catalog:",
-    "ohash": "catalog:",
-    "reka-ui": "catalog:",
-    "tailwind-merge": "catalog:",
-    "unocss": "catalog:",
-    "unocss-preset-animations": "catalog:",
-    "vaul-vue": "catalog:",
-    "vue-sonner": "catalog:"
+    "@vueuse/nuxt": "catalog:"
   },
   "devDependencies": {
     "@iconify-json/lucide": "catalog:",

@@ -1,10 +1,9 @@
-import type { UnaConfig } from './runtime/types'
+import type { UnaConfig } from '@una-ui/components/types'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
-import { defu } from 'defu'
 import { name, version } from '../package.json'
 import extendUnocssOptions from './una.config'
 
-export type * from './runtime/types'
+export type * from '@una-ui/components/types'
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
@@ -57,7 +56,8 @@ export default defineNuxtModule<ModuleOptions>({
     dev: false,
   },
   async setup(options, nuxt) {
-    const { resolve } = createResolver(import.meta.url)
+    const { resolve: selfResolve } = createResolver(import.meta.url)
+    const { resolve: componentsResolve } = createResolver(import.meta.resolve('@una-ui/components'))
 
     // css
     nuxt.options.css.unshift(
@@ -67,39 +67,11 @@ export default defineNuxtModule<ModuleOptions>({
       import.meta.resolve('vue-sonner/style.css'),
     )
 
-    nuxt.options.alias['#una'] = resolve('./runtime')
-
-    // `fontSizes` presets are intentionally omitted from these defaults: defu (and the
-    // app.config.ts merge via defuFn) concatenates arrays, so a baked-in default would be
-    // appended to — never replaced by — a user list. The ThemeSwitcher falls back to
-    // DEFAULT_FONT_SIZE_PRESETS when `una.fontSizes` is unset, keeping user overrides clean.
-    nuxt.options.appConfig.una = defu(
-      nuxt.options.appConfig.una || {},
-      {
-        primary: 'yellow',
-        gray: 'stone',
-        radius: 0.625,
-        fontSize: 16,
-        theme: false,
-        themes: [],
-        sidebar: {
-          cookieName: 'sidebar:state',
-          cookieMaxAge: 60 * 60 * 24 * 7,
-          width: '16rem',
-          widthMobile: '18rem',
-          widthIcon: '3rem',
-          keyboardShortcut: 'b',
-        },
-      } satisfies UnaConfig,
-    )
+    nuxt.options.alias['#una'] = componentsResolve('./runtime')
 
     // Isolate root node from portaled components
     nuxt.options.app.rootAttrs = nuxt.options.app.rootAttrs || {}
     nuxt.options.app.rootAttrs.class = [nuxt.options.app.rootAttrs.class, 'isolate'].filter(Boolean).join(' ')
-
-    // transpile runtime
-    const runtimeDir = resolve('./runtime')
-    nuxt.options.build.transpile.push(runtimeDir)
 
     // modules
     await installModule(import.meta.resolve('@unocss/nuxt'), extendUnocssOptions(nuxt.options.unocss))
@@ -120,27 +92,33 @@ export default defineNuxtModule<ModuleOptions>({
       },
     })
 
-    // components
-    addComponentsDir({
-      path: resolve('./runtime/components'),
-      prefix: options.prefix,
-      pathPrefix: false,
-      priority: 10,
-      // collocated composable/engine modules (message-scroller/useMessageScroller.ts)
-      // have no default export and must not be scanned as components
-      ignore: ['**/use*.ts'],
-    })
+    for (const resolve of [selfResolve, componentsResolve]) {
+      // transpile runtime
+      nuxt.options.build.transpile.push(resolve('./runtime'))
 
-    // composables
-    addImportsDir(resolve(runtimeDir, 'composables'))
+      // components
+      addComponentsDir({
+        path: resolve('./runtime/components'),
+        prefix: options.prefix,
+        pathPrefix: false,
+        priority: 10,
+        // collocated composable/engine modules (message-scroller/useMessageScroller.ts)
+        // have no default export and must not be scanned as components
+        ignore: ['**/use*.ts'],
+      })
+      // composables
+      addImportsDir(resolve('./runtime/composables'))
+    }
 
     // plugins
     if (options.themeable) {
-      addPlugin(resolve(runtimeDir, 'plugins', 'theme.client'))
-      addPlugin(resolve(runtimeDir, 'plugins', 'theme.server'))
+      addPlugin(selfResolve('./runtime/plugins/theme.client'))
+      addPlugin(selfResolve('./runtime/plugins/theme.server'))
     }
+    // settings plugin must go last because addPlugin defaults to prepend
+    addPlugin(selfResolve('./runtime/plugins/settings'))
 
     // utils
-    addImportsDir(resolve(runtimeDir, 'utils', 'cn'))
+    addImportsDir(componentsResolve('./runtime/utils/cn'))
   },
 })

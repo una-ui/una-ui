@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { UnaSettings } from '../../types'
+import type { UnaSettings } from '#una/types'
 import { useAppConfig, useColorMode } from '#imports'
+import Button from '#una/components/elements/Button.vue'
+import Icon from '#una/components/elements/Icon.vue'
+import Label from '#una/components/elements/Label.vue'
+import Popover from '#una/components/elements/popover/Popover.vue'
+import Separator from '#una/components/elements/Separator.vue'
+import Slider from '#una/components/forms/Slider.vue'
+import { DEFAULT_FONT_SIZE_PRESETS, RADIUS } from '#una/constants'
 import { useToggle } from '@vueuse/core'
 import { SliderRange, SliderThumb, SliderTrack } from 'reka-ui'
 import { capitalize, computed } from 'vue'
 import { useUnaSettings } from '../../composables/useUnaSettings'
 import { useUnaThemes } from '../../composables/useUnaThemes'
-import { DEFAULT_FONT_SIZE_PRESETS, RADIUS } from '../../constants'
-import Button from '../elements/Button.vue'
-import Icon from '../elements/Icon.vue'
-import Label from '../elements/Label.vue'
-import Popover from '../elements/popover/Popover.vue'
-import Separator from '../elements/Separator.vue'
-import Slider from '../forms/Slider.vue'
 
 const colorMode = useColorMode()
 const { una } = useAppConfig()
