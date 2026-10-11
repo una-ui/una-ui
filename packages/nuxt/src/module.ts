@@ -1,9 +1,9 @@
-import type { UnaConfig } from '@una-ui/components/types'
+import type { UnaConfig } from '#una/types'
 import { addComponentsDir, addImportsDir, addPlugin, createResolver, defineNuxtModule, installModule } from '@nuxt/kit'
 import { name, version } from '../package.json'
 import extendUnocssOptions from './una.config'
 
-export type * from '@una-ui/components/types'
+export type * from '#una/types'
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {

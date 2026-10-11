@@ -9,5 +9,6 @@ export default defineBuildConfig({
     'nuxt/schema',
     '@nuxt/schema',
     '@nuxt/kit',
+    '#una',
   ],
 })

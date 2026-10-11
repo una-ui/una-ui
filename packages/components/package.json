@@ -31,9 +31,6 @@
     },
     "./runtime/*": "./dist/runtime/*",
     "./components/*": "./dist/runtime/components/*",
-    "./types": {
-      "types": "./dist/runtime/types/index.d.ts"
-    },
     "./types/*": "./dist/runtime/types/*"
   },
   "module": "./dist/index.mjs",

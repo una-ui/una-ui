@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import type { UnaSettings } from '#una/types'
-import { useAppConfig, useColorMode } from '#imports'
+import { useColorMode } from '#imports'
 import Button from '#una/components/elements/Button.vue'
 import Icon from '#una/components/elements/Icon.vue'
 import Label from '#una/components/elements/Label.vue'
 import Popover from '#una/components/elements/popover/Popover.vue'
 import Separator from '#una/components/elements/Separator.vue'
 import Slider from '#una/components/forms/Slider.vue'
+import { useUnaAppConfig } from '#una/composables/useUnaAppConfig'
 import { DEFAULT_FONT_SIZE_PRESETS, RADIUS } from '#una/constants'
 import { useToggle } from '@vueuse/core'
 import { SliderRange, SliderThumb, SliderTrack } from 'reka-ui'
@@ -15,12 +16,12 @@ import { useUnaSettings } from '../../composables/useUnaSettings'
 import { useUnaThemes } from '../../composables/useUnaThemes'
 
 const colorMode = useColorMode()
-const { una } = useAppConfig()
+const una = useUnaAppConfig()
 
 const [value, toggle] = useToggle()
 const { primaryThemes, grayThemes } = useUnaThemes()
 
-const { una: { themes } } = useAppConfig()
+const { themes } = una
 
 const { settings, reset } = useUnaSettings()
 
