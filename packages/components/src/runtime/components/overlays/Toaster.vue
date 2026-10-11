@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { NToasterProps } from '../../types'
-import { useColorMode } from '#imports'
 import { reactiveOmit } from '@vueuse/core'
 import { computed } from 'vue'
 import { Toaster } from 'vue-sonner'
@@ -15,7 +14,7 @@ const props = withDefaults(defineProps<NToasterProps>(), {
   closeButtonPosition: 'top-right',
 })
 
-const toasterProps = reactiveOmit(props, ['una', 'theme', 'toastOptions', 'style'])
+const toasterProps = reactiveOmit(props, ['una', 'toastOptions', 'style'])
 
 // The gray scale has to be remapped alongside --normal-*: sonner declares
 // --gray1..--gray12 with light values and its dark block overrides neither, so
@@ -45,10 +44,6 @@ const tokens = {
   '--gray12': 'oklch(var(--una-foreground))',
 }
 
-// sonner's own dark rules key off this, not off a class
-const colorMode = useColorMode()
-const theme = computed(() => (colorMode.value === 'dark' ? 'dark' : 'light'))
-
 // inline so it outranks sonner's `align-items: center` without !important
 const layout = { alignItems: 'flex-start', gap: '12px' }
 
@@ -69,7 +64,6 @@ const classes = computed(() => ({
 <template>
   <Toaster
     v-bind="toasterProps"
-    :theme="props.theme ?? theme"
     :toast-options="{
       ...props.toastOptions,
       style: { ...layout, ...props.toastOptions?.style },

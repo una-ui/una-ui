@@ -47,7 +47,7 @@ ${Object.entries(filteredGrayThemes).map(([k, v]) => `  ${k}: ${v};`).join('\n')
 // copyFileSync(resolve(_filename, '..', '../config/color-themes.ts'), resolve(_filename, '..', '../packages/preset/src/_theme/color-themes.ts'))
 
 // generate all prefixes from shortcuts filenames without extension
-const prefixFiles = await fg('packages/nuxt/src/runtime/components/**/*.vue', {
+const prefixFiles = await fg('packages/*/src/runtime/components/**/*.vue', {
   absolute: true,
 })
 

@@ -1,11 +1,12 @@
-import { defineNuxtPlugin, useAppConfig } from '#app'
+import { useUnaAppConfig } from '#una/composables/useUnaAppConfig.js'
+import { defineNuxtPlugin } from 'nuxt/app'
 import { computed, watchEffect } from 'vue'
 import { useUnaSettings } from '../composables/useUnaSettings'
 
 let unaUIStyle: HTMLStyleElement
 
 export default defineNuxtPlugin(() => {
-  const { una: { themes } } = useAppConfig()
+  const { themes } = useUnaAppConfig()
   const { settings } = useUnaSettings()
 
   unaUIStyle = document.createElement('style')

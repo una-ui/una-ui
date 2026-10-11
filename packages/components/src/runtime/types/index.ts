@@ -1,3 +1,5 @@
+import type { Component, Ref } from 'vue'
+
 export * from './accordion'
 export * from './alert'
 export * from './alert-dialog'
@@ -75,6 +77,11 @@ export interface UnaSidebarConfig {
   keyboardShortcut: string
 }
 
+export interface UnaComponentSettings {
+  RouterLink: string | Component
+  useCookie: <T>(name: string, opts: { maxAge: number, default: () => T }) => Ref<T>
+}
+
 export interface UnaSettings {
   primaryColors: Colors
   grayColors: Colors
@@ -91,6 +98,7 @@ export interface UnaSettings {
     }
   }[]
   sidebar: UnaSidebarConfig
+  components: UnaComponentSettings
 }
 
 export interface UnaFontSizePreset {

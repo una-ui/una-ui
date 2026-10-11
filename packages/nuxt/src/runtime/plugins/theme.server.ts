@@ -1,9 +1,9 @@
-import { defineNuxtPlugin, useAppConfig, useHead } from '#app'
-
+import { useUnaAppConfig } from '#una/composables/useUnaAppConfig'
+import { defineNuxtPlugin, useHead } from 'nuxt/app'
 import { useUnaSettings } from '../composables/useUnaSettings'
 
 export default defineNuxtPlugin(() => {
-  const { una: { themes } } = useAppConfig()
+  const { themes } = useUnaAppConfig()
   const { defaultSettings } = useUnaSettings()
   useHead({
     script: [
